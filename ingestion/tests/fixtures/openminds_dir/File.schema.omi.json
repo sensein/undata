@@ -1,0 +1,20 @@
+{
+  "_type": "https://openminds.om-i.org/types/File",
+  "_module": "core",
+  "label": "File",
+  "name": "File",
+  "description": "A file stored in a repository.",
+  "properties": {
+    "https://openminds.om-i.org/props/IRI": {
+      "label": "IRI",
+      "_instruction": "Enter the IRI of this file.",
+      "_required": true
+    },
+    "https://openminds.om-i.org/props/name": {
+      "label": "name",
+      "_instruction": "Enter the name of this file.",
+      "_required": false
+    }
+  },
+  "required": ["https://openminds.om-i.org/props/IRI"]
+}

@@ -1,32 +1,38 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: 1.0.1 → 1.1.0
-Bump rationale: MINOR — new Principle VI added; Technology & Quality Standards
-  section fully populated (replacing the TODO(TECH_STACK) placeholder).
+Version change: 1.1.0 → 1.1.1
+Bump rationale: PATCH — clarification of Principle VI; adds explicit "Bridge Venv
+  Exception" clause allowing separate, uv-managed venvs for evaluating third-party
+  schema libraries that do not yet support Python 3.14. All first-party development
+  remains Python 3.14+. No principle title changed; no section added or removed.
 
-Modified principles: None (existing I–V unchanged)
-Added sections:
-  - Principle VI: Environment Isolation & Reproducibility (new)
-  - Technology & Quality Standards fully filled (was TODO placeholder)
+Modified principles:
+  - Principle VI: Environment Isolation & Reproducibility — added Bridge Venv
+    Exception subsection (rules for isolation, subprocess-only access, separate
+    requirements file, no first-party code in bridge venv).
+
+Added sections: None
 
 Removed sections: None
 
 Templates requiring updates:
   - .specify/templates/plan-template.md  ✅ No changes required; Constitution
     Check section is generic and remains valid.
-  - .specify/templates/spec-template.md  ✅ No changes required; mandatory
-    sections align with all six principles.
-  - .specify/templates/tasks-template.md ✅ No changes required; phase
-    structure and test-optional policy align with Principle II; environment
-    setup tasks already included in Phase 1 (Setup) guidance.
-  - .specify/templates/agent-file-template.md  ✅ No changes required;
-    template is fully generic.
+  - .specify/templates/spec-template.md  ✅ No changes required.
+  - .specify/templates/tasks-template.md ✅ No changes required.
+  - .specify/templates/agent-file-template.md  ✅ No changes required.
   - .specify/templates/checklist-template.md   ✅ No changes required.
-  - CLAUDE.md (root agent file)  ✅ Already reflects Python 3.14 + uv venv
-    conventions established in 002-schema-backend implementation.
+  - CLAUDE.md (root agent file)  ✅ No changes required; Python 3.14 baseline
+    already recorded; bridge venv pattern is a feature-level detail, not a
+    project-wide baseline change.
+  - specs/006-dual-path-adapters/plan.md  ⚠️ Still declares Python 3.12 for the
+    ingestion package. Now constitutional under the bridge venv exception if the
+    ingestion package itself remains Python 3.14 and uses subprocess calls to a
+    bridge venv for third-party library introspection. Plan owner should update the
+    Technical Context section to reflect this architecture.
 
-Deferred TODOs: None — all TODOs resolved in this revision.
+Deferred TODOs: None.
 -->
 
 # undata Constitution
@@ -116,9 +122,40 @@ NON-NEGOTIABLE:
   binary explicitly (e.g., `/app/.venv/bin/python`) or rely on the venv being
   activated via `ENV PATH`.
 
+**Bridge Venv Exception** — third-party schema library evaluation:
+
+When an ingestion adapter must introspect a third-party schema library that
+does not yet support Python 3.14 (e.g., `aind-data-schema`, `openminds-python`,
+`hdmf`/`pynwb`), a separate, purpose-built virtual environment (a "bridge venv")
+using an earlier Python version MAY be created solely for that evaluation.
+The following rules MUST all be satisfied for the exception to apply:
+
+1. **uv-managed**: The bridge venv MUST be created and managed by `uv`
+   (e.g., `uv venv --python 3.12 .venv-bridge-<name>`).
+2. **Subprocess-only access**: All interaction with the bridge venv MUST be via
+   subprocess call or a defined inter-process interface (e.g., a helper script
+   that prints JSON to stdout). Direct import of bridge-venv packages into the
+   main Python 3.14 process is prohibited.
+3. **No first-party code**: Bridge venvs MUST NOT contain any first-party
+   undata source packages. They exist only to invoke third-party library APIs
+   and return serializable data.
+4. **Separate requirements file**: Bridge venv dependencies MUST be declared in
+   a clearly named, separate file (e.g., `pyproject-bridge-<name>.toml` or
+   `requirements-bridge-<name>.txt`) committed alongside the adapter. The main
+   `pyproject.toml` `requires-python` MUST remain `>=3.14`.
+5. **Serializable output only**: Data produced by a bridge venv script MUST be
+   representable as JSON (or another format readable by standard Python 3.14
+   builtins) so no bridge-venv types cross the process boundary.
+6. **Documented in plan**: Any feature that introduces a bridge venv MUST
+   document it explicitly in the plan's Technical Context and Constitution Check
+   sections, citing this exception.
+
 **Rationale**: Reproducible, isolated environments eliminate "works on my
 machine" failures, prevent accidental system-Python contamination, and ensure
 CI/CD and local developer runs execute against identical dependency graphs.
+The bridge venv exception acknowledges real-world library adoption lag while
+preserving the 3.14+ baseline for all first-party development and preventing
+silent fallbacks or mixed-interpreter contamination.
 
 ## Technology & Quality Standards
 
@@ -220,4 +257,4 @@ All PRs and implementation plans MUST include a Constitution Check section
 confirming compliance with active principles. Violations require documented
 justification or the work is blocked.
 
-**Version**: 1.1.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-09
+**Version**: 1.1.1 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-11

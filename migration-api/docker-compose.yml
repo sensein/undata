@@ -1,0 +1,36 @@
+services:
+  migration-api:
+    build: .
+    ports:
+      - "8004:8004"
+    environment:
+      BACKEND_URL: ${BACKEND_URL:-http://localhost:8002}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-change-in-production}
+    depends_on:
+      - redis
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8004/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  celery-worker:
+    build: .
+    command: celery -A src.tasks.celery_app worker --loglevel=info
+    environment:
+      BACKEND_URL: ${BACKEND_URL:-http://localhost:8002}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-change-in-production}
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
