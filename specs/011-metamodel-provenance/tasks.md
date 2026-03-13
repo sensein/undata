@@ -59,10 +59,10 @@ which hand-builds dicts and returns `@context: "http://www.w3.org/ns/prov"` (wro
 **Independent Test**: `GET /elements/{id}/provenance` → HTTP 200, `Content-Type: application/ld+json`,
 `@context == "https://www.w3.org/ns/prov.jsonld"`, `@graph` contains Entity + Activity + Agent nodes.
 
-- [ ] T011 [US1] Write contract tests for the upgraded endpoint in `backend/tests/contract/test_provenance_api.py`: (a) 200 with `@context == "https://www.w3.org/ns/prov.jsonld"`; (b) 3 audit entries → 3 Activity nodes with `prov:startedAtTime`; (c) invalid UUID → 404; run and confirm they **FAIL** against current implementation (wrong context URL)
-- [ ] T012 [US1] Refactor `to_element_prov_jsonld()` in `backend/src/services/schema_changelog.py`: replace manual dict construction with imported Pydantic `Entity`, `Activity`, `Agent` models from `src.models.prov_o`; update `@context` constant to `"https://www.w3.org/ns/prov.jsonld"`
-- [ ] T013 [US1] Verify `GET /elements/{id}/provenance` in `backend/src/api/v1/elements.py` still returns `media_type="application/ld+json"` (no route change needed; verify response header present)
-- [ ] T014 [US1] Run contract tests from T011; confirm all pass; commit: `backend/src/services/schema_changelog.py`, `backend/tests/contract/test_provenance_api.py`
+- [X] T011 [US1] Write contract tests for the upgraded endpoint in `backend/tests/contract/test_provenance_api.py`: (a) 200 with `@context == "https://www.w3.org/ns/prov.jsonld"`; (b) 3 audit entries → 3 Activity nodes with `prov:startedAtTime`; (c) invalid UUID → 404; run and confirm they **FAIL** against current implementation (wrong context URL)
+- [X] T012 [US1] Refactor `to_element_prov_jsonld()` in `backend/src/services/schema_changelog.py`: replace manual dict construction with imported Pydantic `Entity`, `Activity`, `Agent` models from `src.models.prov_o`; update `@context` constant to `"https://www.w3.org/ns/prov.jsonld"`
+- [X] T013 [US1] Verify `GET /elements/{id}/provenance` in `backend/src/api/v1/elements.py` still returns `media_type="application/ld+json"` (no route change needed; verify response header present)
+- [X] T014 [US1] Run contract tests from T011; confirm all pass; commit: `backend/src/services/schema_changelog.py`, `backend/tests/contract/test_provenance_api.py`
 
 **Checkpoint**: `GET /elements/{id}/provenance` returns valid PROV-O JSON-LD with correct context.
 
