@@ -123,7 +123,5 @@ def pytest_collection_modifyitems(config: pytest.Config, items: list[pytest.Item
         missing = [svc for svc in services_required if not available(svc)]
         if missing:
             url_map = {"backend": backend_url, "migration-api": migration_url}
-            reasons = "; ".join(
-                f"{svc} unavailable at {url_map.get(svc, '?')}" for svc in missing
-            )
+            reasons = "; ".join(f"{svc} unavailable at {url_map.get(svc, '?')}" for svc in missing)
             item.add_marker(pytest.mark.skip(reason=reasons))
