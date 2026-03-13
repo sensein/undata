@@ -1,16 +1,16 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: 1.1.1 → 1.2.1
-Bump rationale: MINOR+PATCH — new "Bash Task Hygiene" subsection added to the
-  Development Workflow section (MINOR, v1.2.0); then immediately refined to cover
-  all bash tasks (not just background ones), renaming the subsection and expanding
-  the completion-check rule (PATCH, v1.2.1).
+Version change: 1.2.1 → 1.3.0
+Bump rationale: MINOR — new "Git Commit Discipline" subsection added to the
+  Development Workflow section. Materially expanded guidance requiring the agent
+  to commit every meaningful unit of work and leave no uncommitted changes at
+  session end.
 
 Modified principles: None renamed.
 
 Added sections:
-  - Development Workflow > Bash Task Hygiene (new subsection)
+  - Development Workflow > Git Commit Discipline (new subsection)
 
 Removed sections: None
 
@@ -200,6 +200,30 @@ silent fallbacks or mixed-interpreter contamination.
 
 ## Development Workflow
 
+### Git Commit Discipline
+
+Every meaningful unit of work MUST be committed to git before the session ends.
+The following rules are NON-NEGOTIABLE:
+
+- **Commit per task**: Each completed task (or logical group of closely related
+  changes) MUST result in a git commit before moving to the next task.
+- **No dangling changes**: The agent MUST NOT leave uncommitted file modifications,
+  additions, or deletions at the end of a work session. `git status` MUST show a
+  clean working tree before the session is considered complete.
+- **Push after commit**: Changes MUST be pushed to the remote repository after
+  committing, unless the user explicitly instructs otherwise.
+- **Commit message quality**: Commit messages MUST follow the project's established
+  style (imperative mood, concise subject line, co-author trailer for AI-assisted
+  commits). They MUST accurately describe what changed and why.
+- **Staged content**: Only intentional changes MUST be staged. The agent MUST
+  review `git status` and `git diff --staged` before committing to confirm no
+  unintended files (e.g. secrets, build artifacts, OS files) are included.
+
+**Rationale**: Uncommitted changes are invisible to collaborators, cannot be
+reviewed or reverted atomically, and are at risk of being lost. Committing per
+task creates an auditable, recoverable history that mirrors the speckit lifecycle
+and supports parallel work across branches.
+
 ### Bash Task Hygiene
 
 Every bash command the agent runs MUST be verified for completion and its result
@@ -271,4 +295,4 @@ All PRs and implementation plans MUST include a Constitution Check section
 confirming compliance with active principles. Violations require documented
 justification or the work is blocked.
 
-**Version**: 1.2.1 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-12
+**Version**: 1.3.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-12
