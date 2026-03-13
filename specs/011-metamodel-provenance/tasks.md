@@ -37,12 +37,13 @@ which includes all tables plus new 011 columns (`data_element.schema_ref`,
 
 - [ ] T005 [P] Verify ORM additions already applied to `backend/src/models/db.py`: `DataElement.schema_ref` (UUID FK → dynamic_schema), `MappingFunction.attributed_to` (Text), `MappingFunction.confidence_score` (Float), `MappingFunction.status` (already present); confirm columns present and correct types
 - [ ] T006 [P] Update `DataElementCreate` / `DataElementRead` Pydantic schemas in `backend/src/models/schemas.py`: add `schema_ref: Optional[UUID] = None`; add `@model_validator` or `@field_validator` that raises 422 when `value_type == "object"` and `schema_ref is None`
-- [ ] T007 [P] Update `MappingFunctionRead` Pydantic schema in `backend/src/models/schemas.py`: add `status: str = "active"`, `attributed_to: Optional[str] = None`, `confidence_score: Optional[float] = None`
+- [ ] T007 Update `MappingFunctionRead` Pydantic schema in `backend/src/models/schemas.py`: add `status: str = "active"`, `attributed_to: Optional[str] = None`, `confidence_score: Optional[float] = None` (after T006; both modify `schemas.py`)
 - [ ] T008 Run migration against the test database: `cd backend && docker compose build test && docker compose run --rm --entrypoint="" -e TEST_DATABASE_URL=postgresql+asyncpg://undata:undata@db:5432/undata_test test sh -c "uv run alembic -x url=postgresql+asyncpg://undata:undata@db:5432/undata_test upgrade head"`; verify exits 0
-- [ ] T009 Write contract tests for `schema_ref` enforcement in `backend/tests/contract/test_elements_schema_ref.py`: (a) `POST /elements` with `value_type="object"` and no `schema_ref` → HTTP 422; (b) `POST /elements` with valid `schema_ref` UUID → HTTP 201 with `schema_ref` in response body; ensure tests **FAIL** before T006 is complete
-- [ ] T010 Commit Phase 2 files: `backend/src/models/schemas.py`, `backend/tests/contract/test_elements_schema_ref.py`
+- [ ] T009 Write contract tests for `schema_ref` enforcement in `backend/tests/contract/test_elements_schema_ref.py`: (a) `POST /elements` with `value_type="object"` and no `schema_ref` → HTTP 422; (b) `POST /elements` with valid `schema_ref` UUID → HTTP 201 with `schema_ref` in response body; (c) `POST /elements/children` when parent element has `schema_ref` set → HTTP 422 (FR-003); ensure tests **FAIL** before T006 is complete
+- [ ] T010a Add FR-003 guard to `backend/src/services/elements.py`: in `create_child()` (or equivalent), if the parent `DataElement.schema_ref` is not null, raise HTTP 422 with `detail: "use schema_ref for named types, not DataElementChild"`; run contract test (c) from T009 and confirm it passes
+- [ ] T010 Commit Phase 2 files: `backend/src/models/schemas.py`, `backend/src/services/elements.py`, `backend/tests/contract/test_elements_schema_ref.py`
 
-**Checkpoint**: Migration applied; schema_ref validation active; contract tests passing.
+**Checkpoint**: Migration applied; schema_ref validation active; DataElementChild guard active (FR-003); contract tests passing.
 
 ---
 
@@ -110,6 +111,7 @@ the correct `@context` URL, and `prov:wasDerivedFrom` chain from `SchemaChangeLo
 body has `schema_id` + `fidelity_score`.
 
 - [ ] T023 [US4] Extend contract tests in `backend/tests/contract/test_linkml_io_api.py`: (a) valid YAML → 201 + `RoundtripResult` JSON; (b) duplicate URI → 409; (c) invalid YAML → 422; (d) unknown `slot_uri` → 201 with `loss_points` entry; run and confirm FAIL before T024
+- [ ] T024a [US4] Add a test fixture helper in `backend/tests/contract/test_mappings_accept.py` that seeds a `MappingFunction` row with `status="pending_curation"`, `attributed_to="urn:undata:system"`, `confidence_score=0.85` — this satisfies FR-013 (system-inferred mappings have these values) without requiring a live inference engine; document in a comment that the inference trigger (semantic graph similarity) is deferred to a future feature
 - [ ] T024 [US4] Write contract tests for `PUT /mappings/{id}/accept` in `backend/tests/contract/test_mappings_accept.py`: (a) `pending_curation` mapping → 200 + `status="active"`; (b) confidence below threshold → 422; (c) already `active` mapping → 422; (d) unknown mapping → 404; run and confirm FAIL before T026
 - [ ] T025 [US4] Implement `import_schema(yaml_str: str, session: AsyncSession) -> RoundtripResult` in `backend/src/services/linkml_io.py`: `yaml.safe_load`; validate required keys; check URI uniqueness (409); create `DynamicSchema` + `DataElement` rows; score fidelity; return `RoundtripResult` with `schema_id`
 - [ ] T026 [US4] Add route `POST /schemas/import/linkml` to `backend/src/api/v1/schemas.py`: parse `application/yaml` request body; call `import_schema()`; return HTTP 201
@@ -163,18 +165,18 @@ GitHub Actions publishes to GitHub Pages.
 
 ### Parallel Opportunities
 
-- T005, T006, T007 (Phase 2 ORM + schema): parallel after T004
+- T005, T006 (Phase 2 ORM verify + DataElement schema): parallel after T004; T007 must follow T006 (same file)
 - T018, T030 (US3 tests, US5 YAML): parallel after Phase 2
 - T035, T036 (Polish validation): parallel
 
 ### Single Developer Order
 
 T001 → T002 → T003 → T004 →
-[T005 T006 T007] → T008 → T009 → T010 →
+[T005 T006] → T007 → T008 → T009 → T010a → T010 →
 T011 → T012 → T013 → T014 →
 T015 → T016 → T017 →
 T018 → T019 → T020 → T021 → T022 →
-[T023 T024] → T025 → T026 → T027 → T028 → T029 →
+T023 → T024a → T024 → T025 → T026 → T027 → T028 → T029 →
 [T030 T031] → T032 → T033 → T034 →
 [T035 T036 T037] → T038 → T039
 

@@ -181,8 +181,7 @@ exits 0 and produces `docs/site/metamodel/index.md`.
 - **`MappingFunction.status`**: New column, enum `active`/`pending_curation`.
 - **`backend/data/prov-o.linkml.yaml`**: Hand-curated PROV-O subset as LinkML.
 - **`backend/src/models/prov_o.py`**: Generated Pydantic v2 models from PROV-O LinkML.
-- **`backend/src/services/provenance.py`**: Assembles PROV-O JSON-LD from DB records.
-- **`backend/src/api/v1/provenance.py`**: FastAPI routes for provenance endpoints.
+- **`backend/src/services/schema_changelog.py`**: Assembles PROV-O JSON-LD from `AuditLog` / `SchemaChangeLog` records (upgraded in US1/US2).
 - **`backend/src/services/linkml_io.py`**: LinkML import/export service.
 - **`docs/undata-metamodel.yaml`**: Self-describing meta-model in LinkML.
 - **`.github/workflows/metamodel-docs.yml`**: gen-doc + MkDocs publish workflow.
@@ -197,7 +196,7 @@ exits 0 and produces `docs/site/metamodel/index.md`.
 - **SC-004**: `POST /schemas/import/linkml` creates a schema and returns `RoundtripResult`.
 - **SC-005**: `uv run gen-doc docs/undata-metamodel.yaml` exits 0.
 - **SC-006**: All backend tests pass (no regression on existing 39 tests).
-- **SC-007**: Alembic migration `0010_schema_ref.py` applies cleanly on an existing DB.
+- **SC-007**: Alembic flattened migration `2026_03_12_0001_initial_schema.py` applies cleanly on a fresh DB (`alembic upgrade head` exits 0).
 - **SC-008**: `backend/src/models/prov_o.py` is generated (committed, not hand-written).
 
 ---
