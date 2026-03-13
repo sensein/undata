@@ -1,0 +1,58 @@
+{
+  "realm": "undata",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "undata-backend",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:8002/*"],
+      "webOrigins": ["http://localhost:8002"]
+    }
+  ],
+  "identityProviders": [
+    {
+      "alias": "globus",
+      "providerId": "oidc",
+      "enabled": false,
+      "displayName": "Globus",
+      "config": {
+        "clientId": "",
+        "clientSecret": "",
+        "authorizationUrl": "https://auth.globus.org/v2/oauth2/authorize",
+        "tokenUrl": "https://auth.globus.org/v2/oauth2/token"
+      }
+    },
+    {
+      "alias": "github",
+      "providerId": "github",
+      "enabled": false,
+      "displayName": "GitHub",
+      "config": {
+        "clientId": "",
+        "clientSecret": ""
+      }
+    },
+    {
+      "alias": "incommon",
+      "providerId": "saml",
+      "enabled": false,
+      "displayName": "InCommon (SAML)",
+      "config": {
+        "entityId": "",
+        "singleSignOnServiceUrl": ""
+      }
+    }
+  ],
+  "roles": {
+    "realm": [
+      {"name": "admin"},
+      {"name": "curator"},
+      {"name": "contributor"},
+      {"name": "viewer"}
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+# Minimal BIDS schema sample for testing
+# Mirrors the structure returned by bidsschematools.schema.load_schema()
+objects:
+  metadata:
+    subject_age:
+      name: subject_age
+      display_name: Subject Age
+      description: Age of the subject at time of data acquisition.
+      type: number
+      unit: year
+    session_id:
+      name: session_id
+      display_name: Session ID
+      description: A session is a logical grouping of neuroimaging and behavioral data.
+      type: string
+    task_name:
+      name: task_name
+      display_name: Task Name
+      description: Name of the task. No two tasks should have the same name.
+      type: string
+    sex:
+      name: sex
+      display_name: Sex
+      description: Biological sex of the subject.
+      type: string
+      enum:
+        - male
+        - female
+        - other
+        - n/a

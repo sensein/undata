@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dandiset",
+  "description": "A DANDI dandiset (dataset).",
+  "type": "object",
+  "properties": {
+    "identifier": {
+      "title": "Identifier",
+      "description": "The identifier for this dandiset.",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "description": "A name for this dandiset.",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "description": "A description for this dandiset.",
+      "type": "string"
+    },
+    "contributor": {
+      "title": "Contributor",
+      "description": "Contributors to this dandiset.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Person"
+      }
+    },
+    "license": {
+      "title": "License",
+      "description": "License for this dandiset.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/LicenseType"
+      }
+    },
+    "version": {
+      "title": "Version",
+      "description": "The version of this dandiset.",
+      "type": "string"
+    },
+    "schemaKey": {
+      "title": "Schema Key",
+      "type": "string",
+      "const": "Dandiset"
+    }
+  },
+  "required": ["identifier", "name", "schemaKey"],
+  "$defs": {
+    "Person": {
+      "title": "Person",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "type": "string"
+        },
+        "schemaKey": {
+          "title": "Schema Key",
+          "type": "string",
+          "const": "Person"
+        }
+      },
+      "required": ["name", "schemaKey"]
+    },
+    "LicenseType": {
+      "title": "LicenseType",
+      "type": "string",
+      "enum": ["spdx:CC0-1.0", "spdx:CC-BY-4.0"]
+    }
+  }
+}

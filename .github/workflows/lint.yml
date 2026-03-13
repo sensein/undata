@@ -1,0 +1,33 @@
+name: Lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ruff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Python 3.14
+        run: uv python install 3.14
+
+      - name: Lint ingestion
+        working-directory: ingestion
+        run: |
+          uv sync --all-extras
+          uv run ruff check .
+          uv run ruff format --check .
+
+      - name: Lint tutorials
+        working-directory: tutorials
+        run: |
+          uv sync --all-extras
+          uv run ruff check .
+          uv run ruff format --check .

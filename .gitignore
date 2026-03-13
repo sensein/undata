@@ -1,0 +1,46 @@
+.claude
+
+# uv (root only — subdirectory lock files are committed for reproducibility)
+/uv.lock
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Docker
+*.log
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ingestion: downloaded schema fixtures (run scripts/fetch-schemas.sh to populate)
+ingestion/schemas/
+ingestion/unified.yaml

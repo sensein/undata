@@ -1,0 +1,43 @@
+id: https://example.org/test
+name: test_schema
+version: 0.1.0
+description: Minimal LinkML schema fixture for roundtrip testing
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  test: https://example.org/test/
+
+default_prefix: test
+default_range: string
+
+imports:
+  - linkml:types
+
+slots:
+  name:
+    description: Full name of the entity
+    range: string
+    required: true
+  age:
+    description: Age in years
+    range: integer
+  active:
+    description: Whether the entity is active
+    range: boolean
+  tags:
+    description: List of tags
+    range: string
+    multivalued: true
+
+classes:
+  Person:
+    description: A person entity
+    slots:
+      - name
+      - age
+      - active
+  Dataset:
+    description: A dataset entity
+    slots:
+      - name
+      - tags

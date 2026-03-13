@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SampleObject",
+  "type": "object",
+  "required": ["id"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier"
+    },
+    "count": {
+      "type": "integer",
+      "description": "A count value"
+    },
+    "active": {
+      "type": "boolean",
+      "description": "Whether the object is active"
+    },
+    "home_address": {
+      "$ref": "#/$defs/Address",
+      "description": "Home address of the entity"
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status",
+      "enum": ["active", "inactive"]
+    }
+  },
+  "$defs": {
+    "Address": {
+      "type": "object",
+      "title": "Address",
+      "description": "A postal address",
+      "properties": {
+        "street": {
+          "type": "string",
+          "description": "Street name and number"
+        },
+        "city": {
+          "type": "string",
+          "description": "City name"
+        }
+      }
+    }
+  }
+}
