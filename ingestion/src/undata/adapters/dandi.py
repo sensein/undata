@@ -202,9 +202,7 @@ class DANDIAdapter:
                     )
                     data_type = _TYPE_MAP.get(type_name.lower(), "string")
                     is_req = (
-                        field_info.is_required()
-                        if hasattr(field_info, "is_required")
-                        else False
+                        field_info.is_required() if hasattr(field_info, "is_required") else False
                     )
                     elements.append(
                         NormalizedElement(

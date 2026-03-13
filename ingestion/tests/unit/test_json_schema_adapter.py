@@ -10,7 +10,7 @@ from pathlib import Path
 import pytest
 
 from undata.adapters.json_schema import GenericJSONSchemaAdapter
-from undata.models import NormalizedElement, SchemaClassPayload
+from undata.models import NormalizedElement
 
 FIXTURE = Path(__file__).parent.parent / "fixtures" / "generic_schema_sample.json"
 DANDI_FIXTURE = Path(__file__).parent.parent / "fixtures" / "dandi" / "releases" / "0.6.7"

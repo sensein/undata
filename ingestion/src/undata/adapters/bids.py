@@ -82,18 +82,13 @@ def _classes_from_sidecars(
     try:
         sidecars = schema.rules.sidecars
         # Iterate modalities (anat, asl, beh, eeg, etc.)
-        modality_items = (
-            sidecars.items() if hasattr(sidecars, "items")
-            else vars(sidecars).items()
-        )
+        modality_items = sidecars.items() if hasattr(sidecars, "items") else vars(sidecars).items()
         for modality_name, modality_ns in modality_items:
             if modality_name.startswith("_"):
                 continue
             # Each modality namespace has _properties dict
             props = (
-                vars(modality_ns).get("_properties", {})
-                if hasattr(modality_ns, "__dict__")
-                else {}
+                vars(modality_ns).get("_properties", {}) if hasattr(modality_ns, "__dict__") else {}
             )
             if not isinstance(props, dict):
                 continue

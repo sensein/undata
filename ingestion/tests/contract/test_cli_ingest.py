@@ -7,9 +7,7 @@ from typer.testing import CliRunner
 
 from undata.cli import app
 
-DANDI_FIXTURE_DIR = (
-    Path(__file__).parent.parent / "fixtures" / "dandi" / "releases" / "0.6.7"
-)
+DANDI_FIXTURE_DIR = Path(__file__).parent.parent / "fixtures" / "dandi" / "releases" / "0.6.7"
 
 runner = CliRunner()
 

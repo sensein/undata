@@ -145,8 +145,12 @@ def test_dandi_load_file_extracts_defs_elements():
     # dandiset.json has $defs.Person with name/email/schemaKey properties
     # Without $defs extraction, only top-level properties are captured
     # Person.name or similar $defs-derived element must appear
-    defs_elements = [e for e in elements if "." in (e.source_local_id or "")
-                     and e.source_local_id.split(".")[0] not in ("Dandiset", "Asset")]
+    defs_elements = [
+        e
+        for e in elements
+        if "." in (e.source_local_id or "")
+        and e.source_local_id.split(".")[0] not in ("Dandiset", "Asset")
+    ]
     assert len(defs_elements) > 0, (
         "Expected elements from $defs entries (e.g. Person.name, Person.email). "
         "load_file() may not be extracting $defs yet (FR-019)."

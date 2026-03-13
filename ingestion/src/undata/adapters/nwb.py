@@ -21,6 +21,7 @@ class NWBNamespaceManifest:
     base_dir: Path | None = None
     base_url: str | None = None
 
+
 logger = get_logger(__name__)
 
 _DTYPE_MAP = {

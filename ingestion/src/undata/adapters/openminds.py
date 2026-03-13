@@ -198,20 +198,14 @@ class OpenMINDSAdapter:
             )
         elif mode == "file":
             file_s = self._file_schemas or ([self._data] if self._data else [])
-            elements = sum(
-                (_elements_from_schema(s, self.source_name, "file") for s in file_s), []
-            )
+            elements = sum((_elements_from_schema(s, self.source_name, "file") for s in file_s), [])
         else:  # "both"
             from undata.adapters.merge import merge_elements
 
             code = getattr(self, "_code_schemas", [])
             file_s = self._file_schemas or ([self._data] if self._data else [])
-            code_els = sum(
-                (_elements_from_schema(s, self.source_name, "code") for s in code), []
-            )
-            file_els = sum(
-                (_elements_from_schema(s, self.source_name, "file") for s in file_s), []
-            )
+            code_els = sum((_elements_from_schema(s, self.source_name, "code") for s in code), [])
+            file_els = sum((_elements_from_schema(s, self.source_name, "file") for s in file_s), [])
             elements = merge_elements(code_els, file_els)
             logger.info("Extracted openMINDS elements (both)", extra={"count": len(elements)})
             return elements

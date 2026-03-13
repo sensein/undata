@@ -195,9 +195,7 @@ def test_aind_extract_elements_both_mode_graceful_fallback(monkeypatch, caplog):
 # ── T022: Extended AIND fixtures test (skipif schemas not present) ─────────--
 
 
-AIND_EXTENDED_SCHEMAS_DIR = (
-    Path(__file__).parent.parent.parent.parent / "schemas" / "aind"
-)
+AIND_EXTENDED_SCHEMAS_DIR = Path(__file__).parent.parent.parent.parent / "schemas" / "aind"
 
 
 @pytest.mark.skipif(

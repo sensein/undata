@@ -149,7 +149,7 @@ async def to_prov_jsonld(
         for profile in actor_result.scalars().all():
             actor_map[profile.id] = profile.display_name
 
-    schema_uri = f"https://undata.io/schemas/{schema_id}"
+    schema_uri = f"https://schema.undata.live/schemas/{schema_id}"
     graph: list[dict[str, Any]] = []
 
     # prov:Entity for the schema
@@ -158,7 +158,7 @@ async def to_prov_jsonld(
         "@id": schema_uri,
     }
     if schema and schema.parent_id:
-        entity["prov:wasDerivedFrom"] = {"@id": f"https://undata.io/schemas/{schema.parent_id}"}
+        entity["prov:wasDerivedFrom"] = {"@id": f"https://schema.undata.live/schemas/{schema.parent_id}"}
 
     if logs:
         latest = logs[0]
@@ -219,7 +219,7 @@ async def to_element_prov_jsonld(
         for profile in actor_result.scalars().all():
             actor_map[profile.id] = profile.display_name
 
-    element_uri = f"https://undata.io/elements/{element_id}"
+    element_uri = f"https://schema.undata.live/elements/{element_id}"
     graph: list[dict[str, Any]] = []
 
     # prov:Entity for the element

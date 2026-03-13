@@ -31,7 +31,7 @@ _ELEM_CREATED_BY = "00000000-0000-0000-0000-000000000011"
 _ELEM_CREATED_AT = "00000000-0000-0000-0000-000000000012"
 _ELEM_MODIFIED_AT = "00000000-0000-0000-0000-000000000013"
 _ELEM_DERIVED_FROM = "00000000-0000-0000-0000-000000000014"
-_PROV_SCHEMA_URI = "https://undata.io/schema/00000000-0000-0000-0000-000000000001"
+_PROV_SCHEMA_URI = "https://schema.undata.live/schema/00000000-0000-0000-0000-000000000001"
 
 
 def upgrade() -> None:
@@ -524,7 +524,7 @@ def upgrade() -> None:
                 (id, external_sub, external_iss, email, display_name, is_active, agent_type)
             VALUES
                 ('00000000-0000-0000-0000-000000000000',
-                 'system', 'https://undata.io', 'system@undata.io', 'System', true, 'system')
+                 'system', 'https://schema.undata.live', 'system@schema.undata.live', 'System', true, 'system')
             ON CONFLICT DO NOTHING
             """
         )
@@ -550,7 +550,7 @@ def upgrade() -> None:
         {
             "id": _ELEM_CREATED_BY,
             "source_local_id": "prov_created_by",
-            "uri": f"https://undata.io/element/{_ELEM_CREATED_BY}",
+            "uri": f"https://schema.undata.live/element/{_ELEM_CREATED_BY}",
             "data_type": "string",
             "required": True,
             "description": "prov:wasAttributedTo — actor ID or display name",
@@ -558,7 +558,7 @@ def upgrade() -> None:
         {
             "id": _ELEM_CREATED_AT,
             "source_local_id": "prov_created_at",
-            "uri": f"https://undata.io/element/{_ELEM_CREATED_AT}",
+            "uri": f"https://schema.undata.live/element/{_ELEM_CREATED_AT}",
             "data_type": "string",
             "required": True,
             "description": "prov:generatedAtTime — ISO 8601 timestamp",
@@ -566,7 +566,7 @@ def upgrade() -> None:
         {
             "id": _ELEM_MODIFIED_AT,
             "source_local_id": "prov_modified_at",
-            "uri": f"https://undata.io/element/{_ELEM_MODIFIED_AT}",
+            "uri": f"https://schema.undata.live/element/{_ELEM_MODIFIED_AT}",
             "data_type": "string",
             "required": False,
             "description": "prov:invalidatedAtTime — ISO 8601 timestamp",
@@ -574,7 +574,7 @@ def upgrade() -> None:
         {
             "id": _ELEM_DERIVED_FROM,
             "source_local_id": "prov_derived_from",
-            "uri": f"https://undata.io/element/{_ELEM_DERIVED_FROM}",
+            "uri": f"https://schema.undata.live/element/{_ELEM_DERIVED_FROM}",
             "data_type": "string",
             "required": False,
             "description": "prov:wasDerivedFrom — source URI or ID",

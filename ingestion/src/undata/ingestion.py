@@ -113,7 +113,9 @@ class IngestionPipeline:
             result = resp.json()
             succeeded_items = result.get("succeeded", [])
             failed_items = result.get("failed", [])
-            succeeded += len(succeeded_items) if isinstance(succeeded_items, list) else int(succeeded_items)
+            succeeded += (
+                len(succeeded_items) if isinstance(succeeded_items, list) else int(succeeded_items)
+            )
             failed += len(failed_items) if isinstance(failed_items, list) else int(failed_items)
             failures.extend(failed_items if isinstance(failed_items, list) else [])
 
