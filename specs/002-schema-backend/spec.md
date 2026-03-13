@@ -3,13 +3,21 @@
 **Feature Branch**: `002-schema-backend`
 **Created**: 2026-03-07
 **Status**: Complete
-**Last Updated**: 2026-03-09
+**Last Updated**: 2026-03-12
 **Input**: Persistent backend service that houses data elements and their mappings,
 serving as the authoritative data store for the undata integration system.
 
 ---
 
 ## Clarifications
+
+### Session 2026-03-12
+
+- Q: How should an object-typed DataElement reference its schema structure? → A: `data_type="object"` elements carry a `schema_ref` FK to a `DynamicSchema` — the element's value is an instance of that schema. `DataElementChild` is retained for anonymous inline structures only; named schema references use `schema_ref`.
+- Q: What provenance model should underpin change tracking? → A: PROV-O internal model; every mutation is a `prov:Activity` with `wasGeneratedBy`, `wasAssociatedWith`, and `used` relations stored internally; exposed via `GET /{resource}/{id}/provenance` returning JSON-LD.
+- Q: Should the semantic graph be used to infer mapping function types? → A: Aliases MUST have identical semantic graphs (same entities/property/unit) and differ only in label/name — all aliases are `skos:exactMatch`. Non-identity mappings inferred from semantic graph patterns (e.g. same property+entity, different unit → unit-conversion) are attributed to the system agent, assigned `status="pending_curation"`, and flagged for human review before acceptance. If the caller provides an explicit `confidence_threshold` parameter, mappings meeting that threshold are auto-accepted without curation.
+- Q: Should LinkML serve as the canonical internal schema language? → A: No — the backend model remains PostgreSQL-native and independent. LinkML is a supported import/export format (`GET /schemas/{id}/linkml`, `POST /schemas/import/linkml`). Roundtrip fidelity is tracked via `RoundtripResult`; known loss points (slot versioning, URI stability policy, PROV-O) are documented. Roundtrips that cannot be lossless are flagged explicitly.
+- Q: What form should the system meta-model take? → A: A self-describing LinkML YAML (`docs/undata-metamodel.yaml`) defining all core concepts as LinkML classes/slots with `slot_uri`, `class_uri`, PROV-O annotations, and SKOS mappings. Generated artifacts (JSON Schema, Python dataclasses) produced via LinkML tools. A GitHub Actions workflow renders and publishes the meta-model docs alongside the JupyterBook.
 
 ### Session 2026-03-08
 
@@ -459,25 +467,47 @@ GET `/units/unresolvable` returns only elements with `qudt_unresolvable=true`.
   transitive) at registration time.
 - **FR-011**: Service MUST preserve all historical versions of a mapping on update.
 
-**Audit Trail**
+**Audit Trail & Provenance (PROV-O)**
 
-- **FR-012**: Service MUST record an audit log entry for every mutation (create, update,
-  delete) on data elements and mappings.
-- **FR-013**: Audit log entries MUST include: record type, record identifier, operation
-  type, timestamp, actor identity, and a diff of changed fields.
-- **FR-014**: Service MUST expose the full history of any data element or mapping as a
-  queryable, ordered sequence of audit entries.
+- **FR-012**: Service MUST record a provenance record for every mutation (create, update,
+  delete) on data elements, mappings, and schemas. Each record MUST be modelled internally
+  as a PROV-O `Activity` with: the affected resource as `prov:Entity`, the actor as
+  `prov:Agent` (`wasAssociatedWith`), the previous version as `used`, and the new version
+  as `wasGeneratedBy`. System-generated inferences (e.g. mapping suggestions) MUST be
+  attributed to a dedicated system `prov:Agent`.
+- **FR-013**: Provenance records MUST include: resource type, resource URI, operation type,
+  timestamp, actor identity (human or system), `prov:startedAtTime`, `prov:endedAtTime`,
+  and a diff of changed fields.
+- **FR-014**: Service MUST expose `GET /{resource}/{id}/provenance` returning a
+  JSON-LD document conforming to the PROV-O vocabulary (`Content-Type: application/ld+json`).
+  The full ordered mutation history MUST be reconstructable from this endpoint.
 
-**Alias Detection**
+**Alias Detection & Mapping Inference**
 
-- **FR-017**: Service MUST expose an on-demand alias detection endpoint that, when called,
-  runs embedding-based similarity search across stored data elements and returns a paginated
-  list of candidate alias pairs with their similarity scores and SSSOM predicate suggestions.
-  Detection MUST NOT run automatically on element create or update; it is triggered
-  exclusively by explicit client request.
+- **FR-017**: Service MUST expose an on-demand alias detection endpoint that runs
+  embedding-based similarity search and semantic graph structural comparison across stored
+  data elements. Detection MUST NOT run automatically on element create or update; it is
+  triggered exclusively by explicit client request.
+
+  **Alias semantics**: Two elements are aliases (`skos:exactMatch`) if and only if their
+  `semantic_graph` structures are identical (same entities, property, and unit — label/name
+  differences are permitted). The alias detection response MUST include a
+  `semantic_graph_overlap` object per candidate pair.
+
+  **Mapping inference**: When two elements share the same `property` and `entity` values
+  but differ in `unit` (or other non-identity semantic differences), the endpoint MUST
+  include a `suggested_mapping` object: `{function_type, rationale, confidence}` derived
+  from semantic graph pattern matching. Inferred mappings are attributed to the system
+  agent (`actor: "system"`) and assigned `status="pending_curation"` — they are NOT
+  registered automatically unless the caller provides a `confidence_threshold` parameter
+  AND the candidate's `confidence` meets or exceeds that threshold.
+
 - **FR-018**: The alias detection response MUST follow the same paginated envelope used by
-  all other list endpoints (`total`, `limit`, `offset`, `items`); each item MUST include
-  both element identifiers, similarity score, and suggested `sssom_predicate`.
+  all other list endpoints (`total`, `limit`, `offset`, `items`). Each item MUST include:
+  both element identifiers and URIs, `similarity_score`, `sssom_predicate` (only
+  `skos:exactMatch` for true aliases), `semantic_graph_overlap` (with `property_match`,
+  `unit_match`, `entity_labels_match`, `domain_match`), and — when applicable —
+  `suggested_mapping: {function_type, rationale, confidence}`.
 
 **Security**
 
@@ -638,12 +668,39 @@ GET `/units/unresolvable` returns only elements with `qudt_unresolvable=true`.
 
 **Nested Schemas**
 
-- **FR-030**: `DataElement` records MUST support nesting: an element whose `data_type`
-  is `object` or `array` MAY declare child `DataElement` references, forming a tree
-  structure. Each child element remains independently identified by its own URI; the
-  parent-child relationship is recorded in a `DataElementChild` join table with a
-  `position` field for ordered nesting. Nested lookups MUST be traversable via the
-  `GET /elements/{id}` detail endpoint.
+- **FR-030**: `DataElement` records MUST support nesting. An element whose `data_type`
+  is `"object"` MUST carry a `schema_ref` FK to a `DynamicSchema` — the element's
+  value is an instance of that named schema. An element whose `data_type` is `"array"`
+  MAY carry a `schema_ref` (homogeneous array of schema instances) or an `items_type`
+  (homogeneous array of a primitive type). Anonymous inline structures (where the
+  nested schema has no independent identity) use `DataElementChild` with a `position`
+  field. Each child element retains its own independent URI. Nested lookups MUST be
+  traversable via `GET /elements/{id}`. Circular `schema_ref` references MUST be
+  rejected with HTTP 400.
+
+**LinkML Import / Export**
+
+- **FR-035**: Service MUST expose `GET /schemas/{id}/linkml` returning a LinkML YAML
+  `SchemaDefinition` for the requested `DynamicSchema`. The response MUST include a
+  `X-Roundtrip-Fidelity` header (0.0–1.0) and a `X-Roundtrip-Loss` header listing
+  known loss points (e.g. `slot_versioning`, `uri_stability_policy`, `prov_o`).
+- **FR-036**: Service MUST expose `POST /schemas/import/linkml` accepting a LinkML YAML
+  body and returning a `RoundtripResult` (`{fidelity_score, loss_points, schema_id}`).
+  Elements are created from LinkML `SlotDefinition`s; classes become `DynamicSchema`
+  records; `is_a` and `mixins` are mapped to the schema inheritance model. Loss points
+  that prevent import MUST return HTTP 422 with the specific loss point identified.
+
+**System Meta-model**
+
+- **FR-037**: The project MUST maintain a self-describing LinkML YAML meta-model at
+  `docs/undata-metamodel.yaml` that formally defines all core concepts:
+  `DataElement`, `SemanticGraph`, `SemanticGraphEntity`, `SemanticGraphProperty`,
+  `SemanticGraphUnit`, `MappingFunction`, `DynamicSchema`, `ProvenanceRecord`,
+  `AliasGroup`, `SchemaSource`. Each class and slot MUST carry `class_uri` / `slot_uri`
+  referencing well-known ontology terms (PROV-O, SKOS, schema.org, OBI) where applicable.
+  The meta-model MUST be versioned (CalVer) and a GitHub Actions workflow MUST render
+  it via `gen-doc` (LinkML doc generator) and publish the output alongside the
+  JupyterBook at every push to `main`.
 
 **Reliability**
 
@@ -665,8 +722,10 @@ GET `/units/unresolvable` returns only elements with `qudt_unresolvable=true`.
   startup and serves as the canonical namespace for curated cross-source elements.
 - **DynamicSchema**: A named, versioned composition of `DataElement` references with a
   persistent URI; represents a schema constructed at runtime from stored elements.
-- **DataElementChild**: Join table recording parent-child nesting relationships between
-  `DataElement` records, with a `position` for ordered nesting.
+- **DataElementChild**: Join table recording anonymous inline parent-child nesting between
+  `DataElement` records, with a `position` for ordered nesting. Used only when the nested
+  structure has no independent `DynamicSchema` identity. Named object-typed elements use
+  `schema_ref` instead.
 - **UserProfile**: Local user record linked to an external IdP identity (`external_sub`,
   `external_iss`, `email`, `display_name`); created on first successful OIDC login.
 - **APIKey**: Hashed Bearer token bound to a `UserProfile`; carries `issued_at`,
