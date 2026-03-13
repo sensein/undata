@@ -77,9 +77,9 @@ the correct `@context` URL, and `prov:wasDerivedFrom` chain from `SchemaChangeLo
 **Independent Test**: `GET /schemas/{id}/provenance` → HTTP 200, `application/ld+json`,
 `@graph` contains Entity nodes linked by `prov:wasDerivedFrom`.
 
-- [ ] T015 [US2] Extend contract tests in `backend/tests/contract/test_provenance_api.py`: (a) schema with 2 changelog entries → `prov:wasDerivedFrom` present in `@graph`; (b) new-URI change (semantic_boundary_crossed=True) → two Entity nodes with distinct `@id`; (c) invalid schema id → 404; run and confirm they **FAIL** before T016
-- [ ] T016 [US2] Refactor `to_prov_jsonld()` in `backend/src/services/schema_changelog.py`: replace manual dict construction with Pydantic PROV-O models; update `@context` to `"https://www.w3.org/ns/prov.jsonld"`; ensure `prov:wasDerivedFrom` is set when `SchemaChangeLog.semantic_boundary_crossed` is True
-- [ ] T017 [US2] Run all contract tests; confirm T011 tests still pass (no regression); commit `backend/src/services/schema_changelog.py` (updated), `backend/tests/contract/test_provenance_api.py` (extended)
+- [X] T015 [US2] Extend contract tests in `backend/tests/contract/test_provenance_api.py`: (a) schema with 2 changelog entries → `prov:wasDerivedFrom` present in `@graph`; (b) new-URI change (semantic_boundary_crossed=True) → two Entity nodes with distinct `@id`; (c) invalid schema id → 404; run and confirm they **FAIL** before T016
+- [X] T016 [US2] Refactor `to_prov_jsonld()` in `backend/src/services/schema_changelog.py`: replace manual dict construction with Pydantic PROV-O models; update `@context` to `"https://www.w3.org/ns/prov.jsonld"`; ensure `prov:wasDerivedFrom` is set when `SchemaChangeLog.semantic_boundary_crossed` is True
+- [X] T017 [US2] Run all contract tests; confirm T011 tests still pass (no regression); commit `backend/src/services/schema_changelog.py` (updated), `backend/tests/contract/test_provenance_api.py` (extended)
 
 **Checkpoint**: Both provenance endpoints return valid PROV-O JSON-LD with correct context URL.
 

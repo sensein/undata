@@ -154,7 +154,7 @@ async def to_prov_jsonld(
     schema_uri = f"https://schema.undata.live/schemas/{schema_id}"
     graph: list[dict[str, Any]] = []
 
-    # prov:Entity for the schema
+    # prov:Entity for the schema (current state)
     entity_kwargs: dict[str, Any] = {"id": schema_uri}
     if schema and schema.parent_id:
         entity_kwargs["wasDerivedFrom"] = {
@@ -166,6 +166,26 @@ async def to_prov_jsonld(
         entity_kwargs["wasAttributedTo"] = {"@id": f"urn:agent:{latest.actor_id}"}
 
     graph.append(Entity(**entity_kwargs).to_jsonld())
+
+    # T016/FR-005: emit additional prov:Entity nodes for semantic boundary crossings.
+    # When semantic_boundary_crossed=True, that changelog entry represents a version
+    # of the schema with a distinct URI (the schema acquired a new URI at that point).
+    # We emit a derived-entity chain: current_uri ← wasDerivedFrom ← prior_uri.
+    boundary_logs = [lg for lg in logs if getattr(lg, "semantic_boundary_crossed", False)]
+    for i, bl in enumerate(boundary_logs):
+        prior_uri = f"https://schema.undata.live/schemas/{schema_id}/v{bl.version_num}"
+        prior_entity: dict[str, Any] = {"id": prior_uri}
+        if i + 1 < len(boundary_logs):
+            next_bl = boundary_logs[i + 1]
+            prior_entity["wasDerivedFrom"] = {
+                "@id": f"https://schema.undata.live/schemas/{schema_id}/v{next_bl.version_num}"
+            }
+        # The current entity is derived from the most recent boundary version
+        if i == 0:
+            entity_kwargs["wasDerivedFrom"] = {"@id": prior_uri}
+            # Patch the already-appended entity in graph[0]
+            graph[0] = Entity(**entity_kwargs).to_jsonld()
+        graph.append(Entity(**prior_entity).to_jsonld())
 
     # prov:Activity + prov:Agent for each log entry
     seen_agents: set[str] = set()
