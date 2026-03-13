@@ -332,3 +332,43 @@ class MappingService:
             .order_by(MappingFunctionVersion.version_num.asc())
         )
         return list(result.scalars().all())
+
+    @staticmethod
+    async def accept_mapping(
+        session: AsyncSession,
+        mapping_id: UUID,
+        confidence_threshold: float | None = None,
+    ) -> MappingFunction:
+        """Accept a pending_curation mapping, optionally gated by confidence_threshold (FR-014).
+
+        Raises:
+            ValueError: mapping not found, already active, or confidence below threshold.
+        """
+        result = await session.execute(
+            select(MappingFunction).where(MappingFunction.id == mapping_id)
+        )
+        mapping = result.scalar_one_or_none()
+        if mapping is None:
+            raise ValueError(f"Mapping {mapping_id} not found")
+
+        if mapping.status != "pending_curation":
+            raise ValueError(
+                f"Mapping {mapping_id} cannot be accepted: status is '{mapping.status}', "
+                "expected 'pending_curation'"
+            )
+
+        if confidence_threshold is not None:
+            score = mapping.confidence_score
+            if score is None or score < confidence_threshold:
+                raise ValueError(
+                    f"Mapping confidence_score {score!r} is below threshold {confidence_threshold}"
+                )
+
+        mapping.status = "active"
+        await session.flush()
+        logger.info(
+            "Mapping accepted",
+            extra={"mapping_id": str(mapping_id), "confidence_score": mapping.confidence_score},
+        )
+        return mapping
+
