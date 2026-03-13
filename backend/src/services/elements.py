@@ -269,10 +269,11 @@ class ElementService:
             id=element_id,
             uri=uri,
             source_id=data.source_id,
-            source_local_id=data.source_local_id,
+            source_local_id=data.source_local_id or str(element_id),
             version_num=1,
             element_kind=element_kind,
             node_kind=getattr(data, "node_kind", None) or "field",
+            schema_ref=getattr(data, "schema_ref", None),
         )
         session.add(element)
         try:

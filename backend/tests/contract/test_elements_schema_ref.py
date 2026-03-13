@@ -1,7 +1,12 @@
 """Contract tests for schema_ref enforcement (FR-002, FR-003) — T009/T010a.
 
-TDD: T009(a,b) MUST FAIL before T006 (schema_ref validator in DataElementCreate).
-     T009(c) MUST FAIL before T010a (DataElementChild guard in elements service).
+FR-002: schema_ref is OPTIONAL on object-typed elements. Two valid paths:
+  - object + schema_ref → named DynamicSchema reference
+  - object + no schema_ref → anonymous inline structure via DataElementChild
+
+FR-003: If schema_ref IS set, DataElementChild nesting MUST be rejected (mutually exclusive).
+
+TDD: T009(b,c) MUST FAIL before T006/T010a are implemented.
 """
 
 from __future__ import annotations
@@ -46,12 +51,12 @@ async def target_schema(client, curator_token, source):
 
 
 class TestSchemaRefEnforcement:
-    """T009(a,b) — schema_ref validation in POST /elements."""
+    """T009(b) — schema_ref in POST /elements."""
 
-    async def test_object_type_without_schema_ref_returns_422(
+    async def test_object_type_without_schema_ref_returns_201(
         self, client, curator_token, source
     ):
-        """POST /elements with data_type='object' and no schema_ref → 422 (FR-002)."""
+        """POST /elements with data_type='object' and no schema_ref → 201 (anonymous inline path)."""
         resp = await client.post(
             "/api/v1/elements",
             headers={"Authorization": f"Bearer {curator_token}"},
@@ -61,8 +66,9 @@ class TestSchemaRefEnforcement:
                 "source_id": source["id"],
             },
         )
-        assert resp.status_code == 422, (
-            f"Expected 422 for object type without schema_ref, got {resp.status_code}: {resp.text}"
+        assert resp.status_code == 201, (
+            f"Expected 201 for object type without schema_ref (DataElementChild path), "
+            f"got {resp.status_code}: {resp.text}"
         )
 
     async def test_object_type_with_valid_schema_ref_returns_201(

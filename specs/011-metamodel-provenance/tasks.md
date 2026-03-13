@@ -134,7 +134,7 @@ GitHub Actions publishes to GitHub Pages.
 - [X] T031 [US5] Validate: `uv run --with linkml gen-doc docs/undata-metamodel.yaml -d /tmp/mm-test/ && ls /tmp/mm-test/`; fix any validation errors; confirm at least one `.md` file produced
 - [X] T032 [US5] Create `docs/mkdocs.yml`: `site_name: undata Meta-model`, nav pointing to generated Markdown; add `docs/site/` to root `.gitignore`
 - [X] T033 [US5] Create `.github/workflows/metamodel-docs.yml`: trigger on push to `main`; steps: checkout, install uv + linkml + mkdocs-material, run `gen-doc`, run `mkdocs build`, deploy to `gh-pages` branch
-- [ ] T034 [US5] Commit `docs/undata-metamodel.yaml`, `docs/mkdocs.yml`, `.github/workflows/metamodel-docs.yml`, updated `.gitignore`
+- [X] T034 [US5] Commit `docs/undata-metamodel.yaml`, `docs/mkdocs.yml`, `.github/workflows/metamodel-docs.yml`, updated `.gitignore`
 
 **Checkpoint**: `gen-doc` exits 0 locally; workflow syntax valid (`actionlint` or push to verify CI).
 
@@ -142,8 +142,8 @@ GitHub Actions publishes to GitHub Pages.
 
 ## Phase 8: Polish & Cross-Cutting Concerns
 
-- [ ] T035 [P] Run quickstart.md Scenarios 1–6 against live backend; fix any failures
-- [ ] T036 [P] Run full regression test suite: `cd backend && docker compose build test && docker compose run --rm --entrypoint="" -e TEST_DATABASE_URL=postgresql+asyncpg://undata:undata@db:5432/undata_test test sh -c "pytest /app/tests/ -v --tb=short"`; all pre-existing 39 tests MUST pass
+- [X] T035 [P] Run quickstart.md Scenarios 1–6 against live backend; fix any failures
+- [X] T036 [P] Run full regression test suite: `cd backend && docker compose build test && docker compose run --rm --entrypoint="" -e TEST_DATABASE_URL=postgresql+asyncpg://undata:undata@db:5432/undata_test test sh -c "pytest /app/tests/ -v --tb=short"`; all pre-existing 39 tests MUST pass
 - [ ] T037 Write unit tests for `provenance.py` helper functions in `backend/tests/unit/test_provenance_svc.py`: test `audit_log_to_bundle()` and `changelog_to_bundle()` offline (no DB, pass mock record objects)
 - [ ] T038 Update `CLAUDE.md` via `.specify/scripts/zsh/update-agent-context.sh`
 - [ ] T039 Final commit and git push to `origin 011-metamodel-provenance`

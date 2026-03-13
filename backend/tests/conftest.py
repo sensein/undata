@@ -148,7 +148,7 @@ async def mock_admin_user(db_session: AsyncSession) -> UserProfile:
     db_session.add(user)
     await db_session.flush()
 
-    role = UserRole(user_id=user.id, role="admin")
+    role = UserRole(user_id=user.id, role="admin", granted_by=user.id)
     db_session.add(role)
     await db_session.flush()
 
@@ -168,7 +168,7 @@ async def mock_curator_user(db_session: AsyncSession) -> UserProfile:
     db_session.add(user)
     await db_session.flush()
 
-    role = UserRole(user_id=user.id, role="curator")
+    role = UserRole(user_id=user.id, role="curator", granted_by=user.id)
     db_session.add(role)
     await db_session.flush()
 
@@ -188,7 +188,7 @@ async def mock_viewer_user(db_session: AsyncSession) -> UserProfile:
     db_session.add(user)
     await db_session.flush()
 
-    role = UserRole(user_id=user.id, role="viewer")
+    role = UserRole(user_id=user.id, role="viewer", granted_by=user.id)
     db_session.add(role)
     await db_session.flush()
 

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from uuid import UUID
 
 from sqlalchemy import func, select
@@ -34,7 +35,8 @@ class SourceService:
             format=data.format,
             url=data.url,
             version_tag=data.version_tag,
-            content_hash=data.content_hash,
+            content_hash=data.content_hash or "",
+            ingested_at=datetime.now(timezone.utc),
             is_active=True,
             metadata_=data.metadata,
             version_num=1,

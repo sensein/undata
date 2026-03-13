@@ -216,13 +216,7 @@ class DataElementCreate(BaseModel):
     child_element_ids: list[dict[str, Any]] | None = None  # [{element_id, field_name, position}]
     element_kind: str | None = None  # derived at service layer; optional on create
     node_kind: str | None = None  # defaults to 'field' at service layer
-    schema_ref: UUID | None = None  # FK → dynamic_schema; required when data_type == "object"
-
-    @model_validator(mode="after")
-    def validate_schema_ref(self) -> "DataElementCreate":
-        if self.data_type == "object" and self.schema_ref is None:
-            raise ValueError("schema_ref is required when data_type is 'object'")
-        return self
+    schema_ref: UUID | None = None  # FK → dynamic_schema; mutually exclusive with DataElementChild
 
 
 class DataElementUpdate(BaseModel):

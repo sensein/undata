@@ -162,7 +162,7 @@ class MappingService:
             version_num=1,
             description=data.description,
             expression=data.expression,
-            expression_type=data.expression_type,
+            expression_type=data.expression_type or "identity",
             parameter_schema=data.parameter_schema,
             sssom_predicate=data.sssom_predicate,
             created_by=actor_id,

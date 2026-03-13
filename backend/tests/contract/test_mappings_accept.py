@@ -55,7 +55,7 @@ async def pending_mapping(client, curator_token):
         "/api/v1/mappings",
         headers={"Authorization": f"Bearer {curator_token}"},
         json={
-            "input_element_ids": [el_a.json()["id"]],
+            "input_element_ids": [{"element_id": el_a.json()["id"], "position": 0}],
             "output_element_id": el_b.json()["id"],
             "function_type": "identity",
         },

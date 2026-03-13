@@ -242,7 +242,6 @@ async def accept_mapping(
             raise HTTPException(status_code=404, detail={"error": "not_found", "message": msg})
         raise HTTPException(status_code=422, detail={"error": "accept_rejected", "message": msg})
 
-    await session.commit()
     from src.models.schemas import MappingFunctionResponse
 
     return MappingFunctionResponse.model_validate(mapping)

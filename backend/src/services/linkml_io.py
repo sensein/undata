@@ -19,7 +19,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from src.logging import get_logger
+from src.core.logging import get_logger
 
 logger = get_logger(__name__)
 
@@ -127,7 +127,7 @@ async def export_schema(
         # Fetch aliases for this element
         alias_result = await session.execute(
             select(AliasGroup)
-            .join(AliasGroupMember, AliasGroup.id == AliasGroupMember.group_id)
+            .join(AliasGroupMember, AliasGroup.id == AliasGroupMember.alias_group_id)
             .where(AliasGroupMember.element_id == element.id)
             .options(selectinload(AliasGroup.members))
         )

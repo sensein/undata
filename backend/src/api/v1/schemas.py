@@ -743,5 +743,4 @@ async def import_schema_linkml(
             status_code=422, detail={"error": "invalid_yaml", "message": str(exc)}
         )
 
-    await session.commit()
     return result
