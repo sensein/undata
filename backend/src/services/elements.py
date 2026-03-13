@@ -340,6 +340,13 @@ class ElementService:
         if parent is None:
             raise ElementNotFoundError(f"Parent element {parent_id} not found")
 
+        # FR-003: reject DataElementChild when parent has a named schema_ref
+        if parent.schema_ref is not None:
+            raise InvalidNestingError(
+                "Use schema_ref for named types — DataElementChild is only for anonymous inline "
+                "structures. Parent element already references a DynamicSchema via schema_ref."
+            )
+
         # Load parent's current version for data_type check
         version_result = await session.execute(
             select(DataElementVersion).where(DataElementVersion.id == parent.current_version_id)
