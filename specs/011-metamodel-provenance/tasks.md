@@ -92,11 +92,11 @@ the correct `@context` URL, and `prov:wasDerivedFrom` chain from `SchemaChangeLo
 **Independent Test**: `GET /schemas/{id}/linkml` → HTTP 200, `Content-Type: application/yaml`,
 `X-Roundtrip-Fidelity` header present and parseable as float.
 
-- [ ] T018 [US3] Write contract tests in `backend/tests/contract/test_linkml_io_api.py`: (a) valid schema → 200 + YAML body containing `classes:` + `X-Roundtrip-Fidelity` header ∈ [0.0, 1.0]; (b) schema with alias group → slot `aliases:` list in YAML; (c) schema with `schema_ref` element → referenced class present in YAML; (d) invalid id → 404; run and confirm they **FAIL** (route does not exist yet)
-- [ ] T019 [US3] Define `RoundtripResult(BaseModel)` in `backend/src/services/linkml_io.py`: `fidelity_score: float`, `loss_points: list[str]`, `schema_id: Optional[UUID] = None`
-- [ ] T020 [US3] Implement `export_schema(schema_id: UUID, session: AsyncSession) -> tuple[str, RoundtripResult]` in `backend/src/services/linkml_io.py`: load `DynamicSchema` + elements via `selectinload`; build LinkML YAML dict (prefixes, imports, classes, slots); serialize with `yaml.dump`; compute fidelity score from loss_points list (schema_ref inline, alias groups, PROV metadata, unknown slot_uri)
-- [ ] T021 [US3] Add route `GET /schemas/{schema_id}/linkml` to `backend/src/api/v1/schemas.py`: call `export_schema()`; return `Response(content=yaml_str, media_type="application/yaml", headers={"X-Roundtrip-Fidelity": str(result.fidelity_score)})`
-- [ ] T022 [US3] Run contract tests from T018; confirm all pass; commit `backend/src/services/linkml_io.py`, `backend/src/api/v1/schemas.py`, `backend/tests/contract/test_linkml_io_api.py`
+- [X] T018 [US3] Write contract tests in `backend/tests/contract/test_linkml_io_api.py`: (a) valid schema → 200 + YAML body containing `classes:` + `X-Roundtrip-Fidelity` header ∈ [0.0, 1.0]; (b) schema with alias group → slot `aliases:` list in YAML; (c) schema with `schema_ref` element → referenced class present in YAML; (d) invalid id → 404; run and confirm they **FAIL** (route does not exist yet)
+- [X] T019 [US3] Define `RoundtripResult(BaseModel)` in `backend/src/services/linkml_io.py`: `fidelity_score: float`, `loss_points: list[str]`, `schema_id: Optional[UUID] = None`
+- [X] T020 [US3] Implement `export_schema(schema_id: UUID, session: AsyncSession) -> tuple[str, RoundtripResult]` in `backend/src/services/linkml_io.py`: load `DynamicSchema` + elements via `selectinload`; build LinkML YAML dict (prefixes, imports, classes, slots); serialize with `yaml.dump`; compute fidelity score from loss_points list (schema_ref inline, alias groups, PROV metadata, unknown slot_uri)
+- [X] T021 [US3] Add route `GET /schemas/{schema_id}/linkml` to `backend/src/api/v1/schemas.py`: call `export_schema()`; return `Response(content=yaml_str, media_type="application/yaml", headers={"X-Roundtrip-Fidelity": str(result.fidelity_score)})`
+- [X] T022 [US3] Run contract tests from T018; confirm all pass; commit `backend/src/services/linkml_io.py`, `backend/src/api/v1/schemas.py`, `backend/tests/contract/test_linkml_io_api.py`
 
 **Checkpoint**: LinkML export endpoint functional and producing valid YAML.
 

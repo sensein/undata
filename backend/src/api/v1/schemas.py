@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -675,3 +675,73 @@ async def detach_provenance_mixin(
         activity_type="mixin_detach",
         db=session,
     )
+
+
+# ---------------------------------------------------------------------------
+# LinkML export (T021 — FR-008)
+# ---------------------------------------------------------------------------
+
+
+@router.get("/{schema_id}/linkml")
+async def export_schema_linkml(
+    schema_id: UUID,
+    session: AsyncSession = Depends(get_db),
+):
+    """Export a DynamicSchema as LinkML YAML (FR-008).
+
+    Returns application/yaml with X-Roundtrip-Fidelity header.
+    """
+    from fastapi.responses import Response
+
+    from src.services.linkml_io import export_schema
+
+    try:
+        yaml_str, result = await export_schema(schema_id, session)
+    except ValueError as exc:
+        raise HTTPException(status_code=404, detail={"error": "not_found", "message": str(exc)})
+
+    return Response(
+        content=yaml_str,
+        media_type="application/yaml",
+        headers={"X-Roundtrip-Fidelity": str(result.fidelity_score)},
+    )
+
+
+# ---------------------------------------------------------------------------
+# LinkML import (T026 — FR-009)
+# ---------------------------------------------------------------------------
+
+
+@router.post("/import/linkml", status_code=201)
+async def import_schema_linkml(
+    request: Request,
+    session: AsyncSession = Depends(get_db),
+    current_user=Depends(require_role(Role.CONTRIBUTOR)),
+):
+    """Import a LinkML YAML and create a DynamicSchema (FR-009).
+
+    Accepts application/yaml body. Returns RoundtripResult JSON.
+    """
+    from src.services.linkml_io import DuplicateSchemaURIError, import_schema
+
+    body_bytes = await request.body()
+    try:
+        yaml_str = body_bytes.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise HTTPException(
+            status_code=422, detail={"error": "invalid_encoding", "message": str(exc)}
+        )
+
+    try:
+        result = await import_schema(yaml_str, session, current_user.id)
+    except DuplicateSchemaURIError as exc:
+        raise HTTPException(
+            status_code=409, detail={"error": "schema_uri_conflict", "message": str(exc)}
+        )
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=422, detail={"error": "invalid_yaml", "message": str(exc)}
+        )
+
+    await session.commit()
+    return result
