@@ -144,9 +144,9 @@ GitHub Actions publishes to GitHub Pages.
 
 - [X] T035 [P] Run quickstart.md Scenarios 1–6 against live backend; fix any failures
 - [X] T036 [P] Run full regression test suite: `cd backend && docker compose build test && docker compose run --rm --entrypoint="" -e TEST_DATABASE_URL=postgresql+asyncpg://undata:undata@db:5432/undata_test test sh -c "pytest /app/tests/ -v --tb=short"`; all pre-existing 39 tests MUST pass
-- [ ] T037 Write unit tests for `provenance.py` helper functions in `backend/tests/unit/test_provenance_svc.py`: test `audit_log_to_bundle()` and `changelog_to_bundle()` offline (no DB, pass mock record objects)
-- [ ] T038 Update `CLAUDE.md` via `.specify/scripts/zsh/update-agent-context.sh`
-- [ ] T039 Final commit and git push to `origin 011-metamodel-provenance`
+- [X] T037 Write unit tests for `provenance.py` helper functions in `backend/tests/unit/test_provenance_svc.py`: test `audit_log_to_bundle()` and `changelog_to_bundle()` offline (no DB, pass mock record objects)
+- [X] T038 Update `CLAUDE.md` via `.specify/scripts/zsh/update-agent-context.sh`
+- [X] T039 Final commit and git push to `origin 011-metamodel-provenance`
 
 ---
 
