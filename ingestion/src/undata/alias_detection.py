@@ -69,12 +69,13 @@ class AliasDetector:
 
     async def _fetch_elements(self) -> list[dict]:
         elements: list[dict] = []
-        page = 1
-        async with httpx.AsyncClient(timeout=30.0) as client:
+        offset = 0
+        limit = 500
+        async with httpx.AsyncClient(timeout=30.0, follow_redirects=True) as client:
             while True:
                 resp = await client.get(
                     f"{self._backend_url}/elements",
-                    params={"page": page, "limit": 500},
+                    params={"offset": offset, "limit": limit},
                     headers=self._headers(),
                 )
                 resp.raise_for_status()
@@ -87,9 +88,9 @@ class AliasDetector:
                     if self._source_filter and src not in self._source_filter:
                         continue
                     elements.append(item)
-                if len(items) < 500:
+                if len(items) < limit:
                     break
-                page += 1
+                offset += limit
         return elements
 
     def _detect_exact_aliases(self, elements: list[dict]) -> list[AliasCandidate]:
@@ -133,7 +134,7 @@ class AliasDetector:
             return []
 
         model = SentenceTransformer("all-MiniLM-L6-v2")
-        descriptions = [el.get("description", el.get("name", "")) for el in elements]
+        descriptions = [(el.get("description") or el.get("name") or "") for el in elements]
         embeddings = model.encode(descriptions, convert_to_tensor=True)
 
         candidates: list[AliasCandidate] = []
@@ -188,7 +189,7 @@ class AliasDetector:
         )
 
         if not self._dry_run and all_candidates:
-            async with httpx.AsyncClient(timeout=30.0) as client:
+            async with httpx.AsyncClient(timeout=30.0, follow_redirects=True) as client:
                 for candidate in all_candidates:
                     try:
                         await self._register_mapping(client, candidate)

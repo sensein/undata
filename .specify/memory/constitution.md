@@ -1,36 +1,27 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: 1.1.0 → 1.1.1
-Bump rationale: PATCH — clarification of Principle VI; adds explicit "Bridge Venv
-  Exception" clause allowing separate, uv-managed venvs for evaluating third-party
-  schema libraries that do not yet support Python 3.14. All first-party development
-  remains Python 3.14+. No principle title changed; no section added or removed.
+Version change: 1.1.1 → 1.2.1
+Bump rationale: MINOR+PATCH — new "Bash Task Hygiene" subsection added to the
+  Development Workflow section (MINOR, v1.2.0); then immediately refined to cover
+  all bash tasks (not just background ones), renaming the subsection and expanding
+  the completion-check rule (PATCH, v1.2.1).
 
-Modified principles:
-  - Principle VI: Environment Isolation & Reproducibility — added Bridge Venv
-    Exception subsection (rules for isolation, subprocess-only access, separate
-    requirements file, no first-party code in bridge venv).
+Modified principles: None renamed.
 
-Added sections: None
+Added sections:
+  - Development Workflow > Bash Task Hygiene (new subsection)
 
 Removed sections: None
 
 Templates requiring updates:
-  - .specify/templates/plan-template.md  ✅ No changes required; Constitution
-    Check section is generic and remains valid.
+  - .specify/templates/plan-template.md  ✅ No changes required.
   - .specify/templates/spec-template.md  ✅ No changes required.
   - .specify/templates/tasks-template.md ✅ No changes required.
   - .specify/templates/agent-file-template.md  ✅ No changes required.
   - .specify/templates/checklist-template.md   ✅ No changes required.
-  - CLAUDE.md (root agent file)  ✅ No changes required; Python 3.14 baseline
-    already recorded; bridge venv pattern is a feature-level detail, not a
-    project-wide baseline change.
-  - specs/006-dual-path-adapters/plan.md  ⚠️ Still declares Python 3.12 for the
-    ingestion package. Now constitutional under the bridge venv exception if the
-    ingestion package itself remains Python 3.14 and uses subprocess calls to a
-    bridge venv for third-party library introspection. Plan owner should update the
-    Technical Context section to reflect this architecture.
+  - CLAUDE.md (root agent file)  ✅ No changes required; rule is agent-session
+    behaviour, not a project technology baseline.
 
 Deferred TODOs: None.
 -->
@@ -209,6 +200,29 @@ silent fallbacks or mixed-interpreter contamination.
 
 ## Development Workflow
 
+### Bash Task Hygiene
+
+Every bash command the agent runs MUST be verified for completion and its result
+acted upon or explicitly dismissed.
+
+- **Background tasks**: A task launched with `run_in_background` MUST be stopped
+  (via `TaskStop` or equivalent) as soon as its result is obtained or the task is
+  no longer needed. Background tasks MUST NOT be left running across conversation
+  turns once their purpose is fulfilled.
+- **Foreground tasks**: The exit code and output of every foreground bash command
+  MUST be checked before proceeding. A non-zero exit code MUST be investigated,
+  not silently ignored.
+- Tasks that become redundant mid-session (e.g., superseded by a code fix or a
+  later command) MUST be stopped or their output explicitly discarded with a
+  logged reason.
+- At the end of any implementation session the agent MUST confirm no background
+  tasks remain running.
+
+**Rationale**: Unverified commands and abandoned tasks leave the session in an
+unknown state, produce confusing notifications in future sessions, and indicate
+that the agent has lost track of its own work. Rigorous task hygiene is a
+prerequisite for reliable, auditable agent-assisted development.
+
 All work MUST flow through the speckit lifecycle:
 
 1. **Specify** (`/speckit.specify`): Capture user stories and acceptance
@@ -257,4 +271,4 @@ All PRs and implementation plans MUST include a Constitution Check section
 confirming compliance with active principles. Violations require documented
 justification or the work is blocked.
 
-**Version**: 1.1.1 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-11
+**Version**: 1.2.1 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-12

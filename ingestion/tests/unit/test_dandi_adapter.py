@@ -132,3 +132,68 @@ def test_dandi_extract_elements_both_mode():
     unique_file = file_slids - code_slids
     assert unique_code.issubset(both_slids), "Both mode lost code-only elements"
     assert unique_file.issubset(both_slids), "Both mode lost file-only elements"
+
+
+# ── T011: $defs extraction from JSON Schema files ────────────────────────────
+
+
+def test_dandi_load_file_extracts_defs_elements():
+    """load_file() extracts elements from $defs entries that have properties (FR-019)."""
+    adapter = DANDIAdapter()
+    adapter.load_file(str(DANDI_FIXTURE_DIR))
+    elements = adapter.extract_elements("file")
+    # dandiset.json has $defs.Person with name/email/schemaKey properties
+    # Without $defs extraction, only top-level properties are captured
+    # Person.name or similar $defs-derived element must appear
+    defs_elements = [e for e in elements if "." in (e.source_local_id or "")
+                     and e.source_local_id.split(".")[0] not in ("Dandiset", "Asset")]
+    assert len(defs_elements) > 0, (
+        "Expected elements from $defs entries (e.g. Person.name, Person.email). "
+        "load_file() may not be extracting $defs yet (FR-019)."
+    )
+
+
+def test_dandi_load_file_defs_creates_class_payloads():
+    """load_file() creates SchemaClassPayload for each $defs entry with properties (FR-019)."""
+    adapter = DANDIAdapter()
+    adapter.load_file(str(DANDI_FIXTURE_DIR))
+    classes = adapter.extract_classes("file")
+    class_names = {c.class_name for c in classes}
+    # dandiset.json has $defs.Person with properties
+    assert "Person" in class_names, (
+        f"Expected 'Person' class from $defs extraction, got: {sorted(class_names)}. "
+        "extract_classes('file') may not be generating SchemaClassPayload for $defs."
+    )
+
+
+# ── T012: Self-referencing Pydantic model fallback ───────────────────────────
+
+
+def test_dandi_load_code_self_ref_model_fallback():
+    """load_code() falls back to model.model_fields for models returning 0 properties (FR-020)."""
+
+    # Create a mock dandischema module with a self-referencing model
+    import pydantic
+
+    class SelfRefModel(pydantic.BaseModel):
+        name: str = "test"
+        value: int = 0
+
+    # Patch model_json_schema to return empty properties (simulating $ref recursion)
+    SelfRefModel.model_json_schema = classmethod(  # type: ignore[method-assign]
+        lambda cls, **kw: {"title": "SelfRefModel", "properties": {}}
+    )
+
+    adapter = DANDIAdapter()
+    # Load only our mock model
+    adapter._models = [SelfRefModel]
+
+    elements = adapter.extract_elements("code")
+
+    # Without fallback: 0 elements (model_json_schema returns empty properties)
+    # With fallback to model.model_fields: should get 'name' and 'value'
+    field_names = {e.name for e in elements}
+    assert "name" in field_names or "value" in field_names, (
+        f"Expected elements from model.model_fields fallback, got: {field_names}. "
+        "load_code() must fall back to model.model_fields when model_json_schema returns 0 props."
+    )

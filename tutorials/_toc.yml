@@ -1,0 +1,10 @@
+format: jb-book
+root: README
+chapters:
+  - file: 01_getting_started
+  - file: 02_ingest_schemas
+  - file: 03_browse_elements
+  - file: 04_mappings_aliases
+  - file: 05_linkml_export
+  - file: 06_schema_roundtrip
+  - file: 07_data_migration

@@ -1,7 +1,7 @@
 .claude
 
-# uv
-uv.lock
+# uv (root only — subdirectory lock files are committed for reproducibility)
+/uv.lock
 
 # Python
 __pycache__/
@@ -40,3 +40,7 @@ coverage.xml
 # OS
 .DS_Store
 Thumbs.db
+
+# ingestion: downloaded schema fixtures (run scripts/fetch-schemas.sh to populate)
+ingestion/schemas/
+ingestion/unified.yaml

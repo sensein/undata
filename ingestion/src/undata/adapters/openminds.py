@@ -107,7 +107,10 @@ class OpenMINDSAdapter:
             for type_uri, cls in schemas_latest.items():
                 schema: dict = {"_type": type_uri, "properties": {}}
                 try:
-                    if hasattr(cls, "model_fields"):
+                    if isinstance(cls, dict):
+                        # Registry value is already a schema dict
+                        schema["properties"] = cls.get("properties", {})
+                    elif hasattr(cls, "model_fields"):
                         schema["properties"] = {k: {} for k in cls.model_fields}
                     elif hasattr(cls, "__fields__"):
                         schema["properties"] = {k: {} for k in cls.__fields__}

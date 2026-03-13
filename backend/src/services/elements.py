@@ -110,14 +110,24 @@ def _semantic_graph_to_json(data: DataElementCreate | DataElementUpdate) -> dict
     return data.semantic_graph.model_dump()
 
 
+_embedding_model: "SentenceTransformer | None" = None
+
+
+def _get_embedding_model() -> "SentenceTransformer":
+    global _embedding_model
+    if _embedding_model is None:
+        from sentence_transformers import SentenceTransformer
+
+        _embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+    return _embedding_model
+
+
 async def _generate_embedding(text_content: str | None) -> list[float] | None:
     """Generate sentence embedding using all-MiniLM-L6-v2."""
     if not text_content:
         return None
     try:
-        from sentence_transformers import SentenceTransformer
-
-        model = SentenceTransformer("all-MiniLM-L6-v2")
+        model = _get_embedding_model()
         embedding = model.encode(text_content).tolist()
         return embedding
     except Exception as exc:

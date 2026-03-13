@@ -68,6 +68,76 @@ def _elements_from_fields(
     return elements
 
 
+def _classes_from_sidecars(
+    schema, all_fields: dict, extraction_path: str
+) -> list[SchemaClassPayload]:
+    """Build SchemaClassPayload list from schema.rules.sidecars modality groups.
+
+    Structure: schema.rules.sidecars.<modality>._properties = {
+        "<GroupName>": {"selectors": [...], "fields": {"FieldName": ..., ...}}
+    }
+    """
+    seen_groups: dict[str, set[str]] = {}  # group_name → set of field names
+
+    try:
+        sidecars = schema.rules.sidecars
+        # Iterate modalities (anat, asl, beh, eeg, etc.)
+        modality_items = (
+            sidecars.items() if hasattr(sidecars, "items")
+            else vars(sidecars).items()
+        )
+        for modality_name, modality_ns in modality_items:
+            if modality_name.startswith("_"):
+                continue
+            # Each modality namespace has _properties dict
+            props = (
+                vars(modality_ns).get("_properties", {})
+                if hasattr(modality_ns, "__dict__")
+                else {}
+            )
+            if not isinstance(props, dict):
+                continue
+            for group_name, group_def in props.items():
+                if group_name.startswith("_"):
+                    continue
+                # group_def may be dict with "fields" key or Namespace
+                if isinstance(group_def, dict):
+                    group_fields = group_def.get("fields", {})
+                elif hasattr(group_def, "fields"):
+                    group_fields = group_def.fields
+                    if hasattr(group_fields, "__dict__"):
+                        group_fields = vars(group_fields)
+                else:
+                    group_fields = {}
+
+                if hasattr(group_fields, "keys"):
+                    field_names = set(group_fields.keys())
+                else:
+                    field_names = set()
+
+                if group_name not in seen_groups:
+                    seen_groups[group_name] = set()
+                seen_groups[group_name].update(field_names)
+    except Exception as exc:
+        logger.warning("Failed to load BIDS sidecar groups", extra={"error": str(exc)})
+
+    classes = []
+    for group_name, field_names in sorted(seen_groups.items()):
+        slids = [fn for fn in sorted(field_names) if fn in all_fields]
+        if not slids:
+            slids = sorted(field_names)
+        classes.append(
+            SchemaClassPayload(
+                class_name=group_name,
+                description=f"BIDS sidecar group '{group_name}'",
+                element_source_local_ids=slids,
+                extraction_path=extraction_path,
+                schema_format="code",
+            )
+        )
+    return classes
+
+
 def _classes_from_fields(
     fields: dict, source_name: str, extraction_path: str
 ) -> list[SchemaClassPayload]:
@@ -100,6 +170,7 @@ class BIDSAdapter:
         self._raw_fields: dict = {}  # code-path data (bidsschematools)
         self._file_fields: dict = {}  # file-path data (raw YAML)
         self._path: str = ""
+        self._bst_schema = None  # bidsschematools schema object (for sidecar groups)
 
     # ── Compatibility shim ───────────────────────────────────────────────────
 
@@ -113,14 +184,48 @@ class BIDSAdapter:
 
     # ── Dual-path loaders ────────────────────────────────────────────────────
 
+    # All 9 vocabulary object types in bidsschematools
+    _VOCAB_TYPES = [
+        "metadata",
+        "columns",
+        "entities",
+        "suffixes",
+        "enums",
+        "formats",
+        "datatypes",
+        "extensions",
+        "files",
+    ]
+
     def load_code(self) -> None:
-        """Load BIDS schema via bundled bidsschematools library."""
+        """Load BIDS schema via bundled bidsschematools library (all 9 vocabulary types)."""
         try:
             import bidsschematools.schema as bst
 
             schema = bst.load_schema()
-            self._raw_fields = dict(schema.objects.metadata)
-            logger.info("Loaded bundled BIDS schema via bidsschematools")
+            self._raw_fields = {}
+            for vocab_type in self._VOCAB_TYPES:
+                obj = getattr(schema.objects, vocab_type, None)
+                if obj is None:
+                    continue
+                entries = dict(obj) if hasattr(obj, "keys") else {}
+                for field_name, field_def in entries.items():
+                    # Tag each entry with its vocabulary_type
+                    if hasattr(field_def, "__dict__"):
+                        field_dict = vars(field_def).copy()
+                    elif isinstance(field_def, dict):
+                        field_dict = field_def.copy()
+                    else:
+                        field_dict = {}
+                    field_dict["vocabulary_type"] = vocab_type
+                    self._raw_fields[field_name] = field_dict
+
+            # Store schema for sidecar-based class grouping
+            self._bst_schema = schema
+            logger.info(
+                "Loaded bundled BIDS schema via bidsschematools",
+                extra={"count": len(self._raw_fields)},
+            )
         except ImportError as exc:
             raise ImportError(
                 f"bidsschematools is required for load_code(): {exc}. "
@@ -185,6 +290,8 @@ class BIDSAdapter:
 
     def extract_classes(self, mode: ExtractionMode = "file") -> list[SchemaClassPayload]:
         if mode == "code":
+            if self._bst_schema is not None:
+                return _classes_from_sidecars(self._bst_schema, self._raw_fields, "code")
             return _classes_from_fields(self._raw_fields, self.source_name, "code")
         elif mode == "file":
             fields = self._file_fields if self._file_fields else self._raw_fields
@@ -192,7 +299,10 @@ class BIDSAdapter:
         else:  # "both"
             from undata.adapters.merge import merge_classes
 
-            code_cls = _classes_from_fields(self._raw_fields, self.source_name, "code")
+            if self._bst_schema is not None:
+                code_cls = _classes_from_sidecars(self._bst_schema, self._raw_fields, "code")
+            else:
+                code_cls = _classes_from_fields(self._raw_fields, self.source_name, "code")
             file_fields = self._file_fields if self._file_fields else {}
             file_cls = _classes_from_fields(file_fields, self.source_name, "file")
             return merge_classes(code_cls, file_cls)

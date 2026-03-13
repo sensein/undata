@@ -156,3 +156,38 @@ def test_openminds_extract_elements_both_mode(monkeypatch):
     both_slids = {e.source_local_id for e in both_els if e.source_local_id}
     assert code_slids - file_slids <= both_slids, "Both mode lost code-only elements"
     assert file_slids - code_slids <= both_slids, "Both mode lost file-only elements"
+
+
+# ── T021: Full load verification with 292 mocked schemas ─────────────────────
+
+
+def test_openminds_load_code_full_registry_count(monkeypatch):
+    """load_code() with 292 mocked schema types yields ≥ 200 elements (SC-002 threshold proxy).
+
+    Live-backend threshold is ≥ 500 (SC-002); unit test uses ≥ 200 (mock has fewer props).
+    """
+    import sys
+    import types
+
+    # Build mock openminds registry with 292 schema types (2 properties each)
+    mock_openminds = types.ModuleType("openminds")
+    latest_types = {}
+    for i in range(292):
+        uri = f"https://openminds.ebrains.eu/type/Schema{i:03d}"
+        latest_types[uri] = {
+            "properties": {
+                "name": {"type": "string"},
+                "identifier": {"type": "string"},
+            }
+        }
+    mock_openminds.registry = {"types": {"latest": latest_types}}
+    monkeypatch.setitem(sys.modules, "openminds", mock_openminds)
+
+    adapter = OpenMINDSAdapter()
+    adapter.load_code()
+    elements = adapter.extract_elements("code")
+    count = len(elements)
+    assert count >= 200, (
+        f"Expected ≥ 200 elements from 292 mocked schema types (2 props each), got {count}. "
+        "Live-backend SC-002 threshold is ≥ 500 (real 292 schemas with more properties)."
+    )

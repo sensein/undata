@@ -160,3 +160,59 @@ def test_bids_extract_elements_both_mode():
     unique_file = file_slids - code_slids
     assert unique_code.issubset(both_slids), "Both mode lost code-only elements"
     assert unique_file.issubset(both_slids), "Both mode lost file-only elements"
+
+
+# ── T007: Full vocabulary count + vocabulary_type annotation ─────────────────
+
+
+def test_bids_load_code_full_vocabulary_count():
+    """load_code() loads all 9 vocabulary types: ≥ 900 elements total (FR-017)."""
+    pytest.importorskip("bidsschematools")
+    adapter = BIDSAdapter()
+    adapter.load_code()
+    elements = adapter.extract_elements("code")
+    assert len(elements) >= 900, (
+        f"Expected ≥ 900 elements from all 9 vocabulary types, got {len(elements)}. "
+        "load_code() may only be loading schema.objects.metadata (449 entries)."
+    )
+
+
+def test_bids_load_code_vocabulary_type_annotation():
+    """Each element from load_code() has vocabulary_type in raw_metadata (FR-017)."""
+    pytest.importorskip("bidsschematools")
+    adapter = BIDSAdapter()
+    adapter.load_code()
+    elements = adapter.extract_elements("code")
+    assert len(elements) > 0
+    missing = [e.name for e in elements if "vocabulary_type" not in (e.raw_metadata or {})]
+    assert not missing, (
+        f"Elements missing raw_metadata['vocabulary_type']: {missing[:5]}... "
+        "All elements must have vocabulary_type annotation."
+    )
+
+
+# ── T008: Sidecar-based class grouping ───────────────────────────────────────
+
+
+def test_bids_extract_classes_uses_sidecar_groups():
+    """extract_classes('code') returns modality-based sidecar groups, not _-split singletons.
+
+    With schema.rules.sidecars: ~20-30 modality groups, each with multiple fields.
+    With _-split heuristic: ~400+ singletons, most with 1 field.
+    """
+    pytest.importorskip("bidsschematools")
+    adapter = BIDSAdapter()
+    adapter.load_code()
+    classes = adapter.extract_classes("code")
+    # Sidecar-based: ~100-200 named groups. _-split singletons: 900+ (one per field).
+    assert len(classes) <= 500, (
+        f"Expected ≤ 500 sidecar groups, got {len(classes)}. "
+        "Likely using _-split heuristic (creates ~900+ singletons for 1012 fields)."
+    )
+    assert len(classes) >= 15, f"Expected ≥ 15 sidecar groups, got {len(classes)}"
+    # Sidecar groups each contain multiple fields; most singletons have only 1 element
+    avg_elements = sum(len(c.element_source_local_ids) for c in classes) / len(classes)
+    assert avg_elements >= 2, (
+        f"Expected avg ≥ 2 elements per class (sidecar group), got {avg_elements:.1f}. "
+        "Likely using _-split singleton heuristic."
+    )

@@ -4,9 +4,22 @@ from __future__ import annotations
 
 import hashlib
 import json
+from dataclasses import dataclass
+from pathlib import Path
 
 from undata.logging import get_logger
 from undata.models import ExtractionMode, NormalizedElement, SchemaClassPayload
+
+
+@dataclass
+class NWBNamespaceManifest:
+    """Parsed NWB namespace manifest (*.namespace.yaml)."""
+
+    namespace_name: str
+    version: str
+    doc_files: list[str]
+    base_dir: Path | None = None
+    base_url: str | None = None
 
 logger = get_logger(__name__)
 
@@ -167,7 +180,13 @@ class NWBAdapter:
             ) from exc
 
     def load_file(self, path_or_url: str) -> None:
-        """Load NWB spec YAML from a local file or remote URL."""
+        """Load NWB spec YAML from a local file, directory, or remote URL.
+
+        Three detection modes:
+        1. ``groups:`` key → load groups directly (backward-compatible)
+        2. ``namespaces:`` key → namespace manifest, parse namespaces[].doc[].source
+        3. Directory → glob *.namespace.yaml first; fallback: all *.yaml
+        """
         if not path_or_url:
             raise ValueError(
                 "path_or_url is required for NWB file-path loading. "
@@ -176,17 +195,109 @@ class NWBAdapter:
         import yaml
 
         if path_or_url.startswith(("http://", "https://")):
-            import httpx
-
-            resp = httpx.get(path_or_url)
-            resp.raise_for_status()
-            data = yaml.safe_load(resp.text)
+            self._file_groups = self._load_from_url(path_or_url, yaml)
         else:
-            with open(path_or_url) as fh:
-                data = yaml.safe_load(fh)
+            p = Path(path_or_url)
+            if p.is_dir():
+                self._file_groups = self._load_from_directory(p, yaml)
+            else:
+                with open(p) as fh:
+                    data = yaml.safe_load(fh)
+                self._file_groups = self._parse_yaml_data(data, p.parent, None, yaml)
 
-        self._file_groups = data.get("groups", []) if isinstance(data, dict) else []
-        logger.info("Loaded NWB schema via file", extra={"path": path_or_url})
+        logger.info(
+            "Loaded NWB schema via file",
+            extra={"path": path_or_url, "groups": len(self._file_groups)},
+        )
+
+    def _load_from_directory(self, directory: Path, yaml) -> list[dict]:
+        """Load from a directory: prefer *.namespace.yaml, fallback to all *.yaml."""
+        namespace_files = list(directory.glob("*.namespace.yaml"))
+        if namespace_files:
+            groups: list[dict] = []
+            for ns_file in sorted(namespace_files):
+                with open(ns_file) as fh:
+                    data = yaml.safe_load(fh)
+                groups.extend(self._parse_yaml_data(data, directory, None, yaml))
+            return groups
+        # Fallback: load all *.yaml files individually
+        groups = []
+        for yf in sorted(directory.glob("*.yaml")):
+            with open(yf) as fh:
+                data = yaml.safe_load(fh)
+            if isinstance(data, dict):
+                groups.extend(data.get("groups", []))
+        return groups
+
+    def _load_from_url(self, url: str, yaml) -> list[dict]:
+        """Load from a URL; if namespace manifest, traverse referenced files."""
+        import httpx
+
+        resp = httpx.get(url)
+        resp.raise_for_status()
+        data = yaml.safe_load(resp.text)
+        # Determine base URL (strip filename)
+        base_url = url.rsplit("/", 1)[0] + "/" if "/" in url else url
+        return self._parse_yaml_data(data, None, base_url, yaml)
+
+    def _parse_yaml_data(
+        self, data: dict | None, base_dir: Path | None, base_url: str | None, yaml
+    ) -> list[dict]:
+        """Parse a YAML data dict: groups: key or namespaces: key."""
+        if not isinstance(data, dict):
+            return []
+        if "groups" in data:
+            # Case 1: single YAML file with groups (backward-compatible)
+            return data.get("groups", [])
+        if "namespaces" in data:
+            # Case 2: namespace manifest → parse doc[].source
+            manifest = self._parse_namespace_manifest(data, base_dir, base_url)
+            return self._load_manifest_files(manifest, yaml)
+        return []
+
+    def _parse_namespace_manifest(
+        self, data: dict, base_dir: Path | None, base_url: str | None
+    ) -> NWBNamespaceManifest:
+        """Build NWBNamespaceManifest from parsed namespace YAML."""
+        namespaces = data.get("namespaces", [])
+        ns = namespaces[0] if namespaces else {}
+        name = ns.get("name", "unknown")
+        version = ns.get("version", "0.0.0")
+        doc_files = []
+        for entry in ns.get("doc", []):
+            if isinstance(entry, dict) and "source" in entry:
+                doc_files.append(entry["source"])
+        return NWBNamespaceManifest(
+            namespace_name=name,
+            version=str(version),
+            doc_files=doc_files,
+            base_dir=base_dir,
+            base_url=base_url,
+        )
+
+    def _load_manifest_files(self, manifest: NWBNamespaceManifest, yaml) -> list[dict]:
+        """Load all domain YAML files referenced by a namespace manifest."""
+        groups: list[dict] = []
+        for filename in manifest.doc_files:
+            if manifest.base_url:
+                import httpx
+
+                url = manifest.base_url + filename
+                resp = httpx.get(url)
+                resp.raise_for_status()
+                data = yaml.safe_load(resp.text)
+            elif manifest.base_dir:
+                filepath = manifest.base_dir / filename
+                if not filepath.exists():
+                    logger.warning("NWB domain file not found", extra={"path": str(filepath)})
+                    continue
+                with open(filepath) as fh:
+                    data = yaml.safe_load(fh)
+            else:
+                continue
+            if isinstance(data, dict):
+                groups.extend(data.get("groups", []))
+        return groups
 
     # ── Extraction ───────────────────────────────────────────────────────────
 

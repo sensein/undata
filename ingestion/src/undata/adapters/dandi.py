@@ -35,16 +35,18 @@ def _json_type_to_normalized(json_type: str | list | None) -> tuple[str, bool]:
     return _TYPE_MAP.get(json_type, "string"), False
 
 
-def _elements_from_json_schema(
-    schema: dict, source_name: str, extraction_path: str = "file"
+def _elements_from_props(
+    props: dict,
+    required_fields: set,
+    title: str,
+    source_name: str,
+    extraction_path: str,
 ) -> list[NormalizedElement]:
-    """Extract NormalizedElements from a single JSON Schema dict."""
+    """Build NormalizedElements from a properties dict."""
     elements: list[NormalizedElement] = []
-    title = schema.get("title", "Unknown")
-    props: dict = schema.get("properties", {})
-    required_fields: set = set(schema.get("required", []))
-
     for field_name, field_info in props.items():
+        if not isinstance(field_info, dict):
+            continue
         raw_type = field_info.get("type")
         description = field_info.get("description", field_info.get("title", ""))
         enum_vals = field_info.get("enum")
@@ -72,6 +74,35 @@ def _elements_from_json_schema(
                 raw_metadata=field_info,
             )
         )
+    return elements
+
+
+def _elements_from_json_schema(
+    schema: dict, source_name: str, extraction_path: str = "file"
+) -> list[NormalizedElement]:
+    """Extract NormalizedElements from a single JSON Schema dict (top-level + $defs)."""
+    elements: list[NormalizedElement] = []
+    title = schema.get("title", "Unknown")
+
+    # Top-level properties
+    props: dict = schema.get("properties", {})
+    required_fields: set = set(schema.get("required", []))
+    elements.extend(
+        _elements_from_props(props, required_fields, title, source_name, extraction_path)
+    )
+
+    # $defs entries that have their own properties (nested entity types)
+    for def_name, def_schema in schema.get("$defs", {}).items():
+        if not isinstance(def_schema, dict):
+            continue
+        def_props = def_schema.get("properties", {})
+        if not def_props:
+            continue
+        def_required = set(def_schema.get("required", []))
+        elements.extend(
+            _elements_from_props(def_props, def_required, def_name, source_name, extraction_path)
+        )
+
     return elements
 
 
@@ -156,6 +187,42 @@ class DANDIAdapter:
                 continue
 
             props: dict = schema.get("properties", {})
+
+            # Fallback for self-referencing Pydantic v2 models that return 0 properties
+            # due to $ref recursion (e.g. BioSample, PropertyValue)
+            if not props and hasattr(model_cls, "model_fields"):
+                for field_name, field_info in model_cls.model_fields.items():
+                    unique_id = f"{model_name}.{field_name}"
+                    if unique_id in seen:
+                        continue
+                    seen.add(unique_id)
+                    annotation = getattr(field_info, "annotation", None)
+                    type_name = getattr(
+                        annotation, "__name__", str(annotation) if annotation else "string"
+                    )
+                    data_type = _TYPE_MAP.get(type_name.lower(), "string")
+                    is_req = (
+                        field_info.is_required()
+                        if hasattr(field_info, "is_required")
+                        else False
+                    )
+                    elements.append(
+                        NormalizedElement(
+                            name=field_name,
+                            data_type=data_type,
+                            description=str(getattr(field_info, "description", "") or ""),
+                            required=is_req,
+                            multivalued=False,
+                            allowed_values=None,
+                            constraints={},
+                            source_local_id=unique_id,
+                            source_name=self.source_name,
+                            extraction_path="code",
+                            raw_metadata={"type": type_name},
+                        )
+                    )
+                continue
+
             required_fields: set = set(schema.get("required", []))
 
             for field_name, field_info in props.items():
@@ -256,6 +323,7 @@ class DANDIAdapter:
 
         classes = []
         for schema in self._file_schemas:
+            # Top-level class
             title = schema.get("title", "Unknown")
             props = schema.get("properties", {})
             slids = [f"{title}.{p}" for p in props]
@@ -268,6 +336,23 @@ class DANDIAdapter:
                     schema_format="json",
                 )
             )
+            # $defs entries with their own properties (nested entity types)
+            for def_name, def_schema in schema.get("$defs", {}).items():
+                if not isinstance(def_schema, dict):
+                    continue
+                def_props = def_schema.get("properties", {})
+                if not def_props:
+                    continue
+                def_slids = [f"{def_name}.{p}" for p in def_props]
+                classes.append(
+                    SchemaClassPayload(
+                        class_name=def_name,
+                        description=def_schema.get("description", def_schema.get("title", "")),
+                        element_source_local_ids=def_slids,
+                        extraction_path="file",
+                        schema_format="json",
+                    )
+                )
         return classes
 
     def get_version_info(self) -> dict:

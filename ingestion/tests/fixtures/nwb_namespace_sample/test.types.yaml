@@ -1,0 +1,11 @@
+groups:
+  - neurodata_type_def: TestTimeSeries
+    neurodata_type_inc: NWBDataInterface
+    doc: "A test time series type"
+    attributes:
+      - name: data
+        dtype: numeric
+        doc: "The data values"
+      - name: timestamps
+        dtype: float32
+        doc: "Timestamps for samples"

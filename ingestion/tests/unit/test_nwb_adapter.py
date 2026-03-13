@@ -160,6 +160,67 @@ def test_nwb_load_code_raises_import_error(monkeypatch):
 # ── T042: extract_elements(mode="both") test ─────────────────────────────────
 
 
+NWB_NAMESPACE_DIR = Path(__file__).parent.parent / "fixtures" / "nwb_namespace_sample"
+
+
+# ── T015: Directory detection of namespace YAML ──────────────────────────────
+
+
+def test_nwb_load_file_directory_detects_namespace():
+    """load_file(directory) detects *.namespace.yaml and loads all referenced domain YAMLs."""
+    adapter = NWBAdapter()
+    adapter.load_file(str(NWB_NAMESPACE_DIR))
+    elements = adapter.extract_elements("file")
+    assert len(elements) > 0, (
+        "Expected elements after loading namespace directory. "
+        "load_file(dir) must detect *.namespace.yaml and traverse namespaces[].doc[].source."
+    )
+    names = {e.name for e in elements}
+    assert "data" in names or "timestamps" in names, (
+        f"Expected 'data' or 'timestamps' from test.types.yaml, got: {names}. "
+        "Namespace traversal may not be loading domain YAML files."
+    )
+
+
+# ── T016: Namespace YAML path traversal ──────────────────────────────────────
+
+
+def test_nwb_load_file_namespace_yaml_traversal():
+    """load_file(namespace.yaml) traverses namespaces[].doc[].source (NOT catalog)."""
+    namespace_yaml = NWB_NAMESPACE_DIR / "test.namespace.yaml"
+    adapter = NWBAdapter()
+    adapter.load_file(str(namespace_yaml))
+    elements = adapter.extract_elements("file")
+    assert len(elements) > 0, (
+        "Expected elements after loading namespace YAML path. "
+        "load_file(namespace.yaml) must parse namespaces[].doc[].source key."
+    )
+    names = {e.name for e in elements}
+    assert "data" in names or "timestamps" in names, (
+        f"Expected 'data' or 'timestamps' from test.types.yaml, got: {names}."
+    )
+
+
+# ── T017: parent_class_name from neurodata_type_inc ──────────────────────────
+
+
+def test_nwb_extract_classes_parent_class_name_from_namespace():
+    """extract_classes() after namespace load emits parent_class_name from neurodata_type_inc."""
+    namespace_yaml = NWB_NAMESPACE_DIR / "test.namespace.yaml"
+    adapter = NWBAdapter()
+    adapter.load_file(str(namespace_yaml))
+    classes = adapter.extract_classes("file")
+    test_ts = next((c for c in classes if c.class_name == "TestTimeSeries"), None)
+    assert test_ts is not None, (
+        f"Expected 'TestTimeSeries' class after namespace traversal, got: "
+        f"{[c.class_name for c in classes]}."
+    )
+    assert test_ts.parent_class_name == "NWBDataInterface", (
+        f"Expected parent_class_name='NWBDataInterface', got: {test_ts.parent_class_name}. "
+        "extract_classes() must read neurodata_type_inc as parent_class_name."
+    )
+
+
 def test_nwb_extract_elements_both_mode(monkeypatch):
     """mode='both' merges code (mocked pynwb) + file (fixture YAML) elements."""
     import sys

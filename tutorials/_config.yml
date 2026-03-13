@@ -1,0 +1,20 @@
+title: undata Tutorials
+author: undata contributors
+copyright: "2026"
+
+execute:
+  execute_notebooks: off
+  timeout: 300
+
+only_build_toc_files: true
+
+exclude_patterns:
+  - _build
+  - "**.ipynb_checkpoints"
+  - conftest.py
+  - .venv
+  - .pytest_cache
+
+html:
+  use_repository_button: false
+  use_issues_button: false

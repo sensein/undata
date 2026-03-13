@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 logger = get_logger(__name__)
 
-BULK_CHUNK_SIZE = 200
+BULK_CHUNK_SIZE = 50
 
 
 def _element_to_payload(el: NormalizedElement, source_id: str) -> dict:
@@ -60,6 +60,33 @@ class IngestionPipeline:
             },
             headers=self._headers(),
         )
+        if resp.status_code == 409:
+            # Duplicate source — already ingested; log WARN and return existing ID
+            logger.warning(
+                "Source already exists (409 Duplicate) — using existing source",
+                extra={"source_name": source_name},
+            )
+            # Try to get the existing source ID from the 409 response body
+            try:
+                body = resp.json()
+                if "id" in body:
+                    return body["id"]
+            except Exception:
+                pass
+            # Fallback: GET /sources?name=... to find the existing source ID
+            list_resp = await client.get(
+                f"{self._backend_url}/sources",
+                params={"name": source_name},
+                headers=self._headers(),
+            )
+            list_resp.raise_for_status()
+            items = list_resp.json().get("items", [])
+            if items:
+                return items[0]["id"]
+            # If we still can't find it, raise to avoid silent data loss
+            raise RuntimeError(
+                f"Source '{source_name}' returned 409 but could not be found via GET /sources"
+            )
         resp.raise_for_status()
         return resp.json()["id"]
 
@@ -75,17 +102,20 @@ class IngestionPipeline:
 
         for i in range(0, len(elements), BULK_CHUNK_SIZE):
             chunk = elements[i : i + BULK_CHUNK_SIZE]
-            payload = [_element_to_payload(el, source_id) for el in chunk]
+            payload = {"elements": [_element_to_payload(el, source_id) for el in chunk]}
             resp = await client.post(
                 f"{self._backend_url}/elements/bulk",
                 json=payload,
                 headers=self._headers(),
             )
-            resp.raise_for_status()
+            if resp.status_code not in (200, 201, 207):
+                resp.raise_for_status()
             result = resp.json()
-            succeeded += result.get("succeeded", 0)
-            failed += result.get("failed", 0)
-            failures.extend(result.get("failures", []))
+            succeeded_items = result.get("succeeded", [])
+            failed_items = result.get("failed", [])
+            succeeded += len(succeeded_items) if isinstance(succeeded_items, list) else int(succeeded_items)
+            failed += len(failed_items) if isinstance(failed_items, list) else int(failed_items)
+            failures.extend(failed_items if isinstance(failed_items, list) else [])
 
         return succeeded, failed, failures
 
@@ -165,7 +195,7 @@ class IngestionPipeline:
                 duration_seconds=time.monotonic() - start,
             )
 
-        async with httpx.AsyncClient(timeout=60.0) as client:
+        async with httpx.AsyncClient(timeout=300.0, follow_redirects=True) as client:
             source_id = await self._upsert_source(client, source_name, source_format, version_info)
             succeeded, failed, failures = await self._bulk_post(client, source_id, elements)
 

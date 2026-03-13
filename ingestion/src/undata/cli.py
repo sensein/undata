@@ -302,5 +302,63 @@ def validate(
     raise typer.Exit(0 if report["status"] == "PASS" else 1)
 
 
+@app.command()
+def roundtrip(
+    path: str = typer.Argument(..., help="Path to JSON Schema or LinkML YAML file"),
+    fmt: str | None = typer.Option(
+        None,
+        "--format",
+        help='Schema format: "json" or "linkml". Auto-detected from extension if omitted.',
+    ),
+) -> None:
+    """Check roundtrip fidelity of a JSON Schema or LinkML YAML file."""
+    from undata.roundtrip import roundtrip_json_schema, roundtrip_linkml
+
+    # Auto-detect format from extension
+    if fmt is None:
+        lower = path.lower()
+        if lower.endswith(".json"):
+            fmt = "json"
+        elif lower.endswith(".yaml") or lower.endswith(".yml"):
+            fmt = "linkml"
+        else:
+            typer.echo(
+                "Error: cannot auto-detect format. Use --format json or --format linkml.",
+                err=True,
+            )
+            raise typer.Exit(2)
+
+    if fmt not in ("json", "linkml"):
+        typer.echo(f"Error: --format must be 'json' or 'linkml'. Got: {fmt!r}", err=True)
+        raise typer.Exit(2)
+
+    try:
+        if fmt == "json":
+            result = roundtrip_json_schema(path)
+        else:
+            result = roundtrip_linkml(path)
+    except (ValueError, FileNotFoundError, OSError) as exc:
+        typer.echo(f"Error: {exc}", err=True)
+        raise typer.Exit(2)
+
+    score = result.fidelity_score
+    status = "PASS" if score >= 1.0 else "FAIL"
+    typer.echo(f"Roundtrip fidelity: {score:.2f} ({status})")
+    typer.echo(
+        f"  Missing elements:  {len(result.missing_elements)}"
+        + (f"  {result.missing_elements}" if result.missing_elements else "")
+    )
+    typer.echo(
+        f"  Missing classes:   {len(result.missing_classes)}"
+        + (f"  {result.missing_classes}" if result.missing_classes else "")
+    )
+    if result.warnings:
+        typer.echo("  Warnings:")
+        for w in result.warnings:
+            typer.echo(f"    - {w}")
+
+    raise typer.Exit(0 if score >= 1.0 else 1)
+
+
 if __name__ == "__main__":
     app()

@@ -190,3 +190,31 @@ def test_aind_extract_elements_both_mode_graceful_fallback(monkeypatch, caplog):
     assert any("aind" in r.message.lower() or "both" in r.message.lower() for r in warn_records), (
         "Expected WARNING about code-path unavailability in both-mode"
     )
+
+
+# ── T022: Extended AIND fixtures test (skipif schemas not present) ─────────--
+
+
+AIND_EXTENDED_SCHEMAS_DIR = (
+    Path(__file__).parent.parent.parent.parent / "schemas" / "aind"
+)
+
+
+@pytest.mark.skipif(
+    not AIND_EXTENDED_SCHEMAS_DIR.exists(),
+    reason="Run `bash scripts/fetch-schemas.sh` first to download extended AIND fixtures",
+)
+def test_aind_load_file_extended_schemas():
+    """load_file(path) loads ≥ 20 elements from extended AIND JSON Schema files in schemas/aind/.
+
+    Requires `bash ingestion/scripts/fetch-schemas.sh` to populate schemas/aind/ first.
+    """
+    from undata.adapters.aind import AINDAdapter
+
+    adapter = AINDAdapter()
+    adapter.load_file(str(AIND_EXTENDED_SCHEMAS_DIR))
+    elements = adapter.extract_elements("file")
+    assert len(elements) >= 20, (
+        f"Expected ≥ 20 elements from extended AIND schemas in {AIND_EXTENDED_SCHEMAS_DIR}, "
+        f"got {len(elements)}."
+    )
