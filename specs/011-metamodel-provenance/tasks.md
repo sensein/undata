@@ -19,10 +19,10 @@
 **Purpose**: Generate PROV-O Pydantic models from OWL→LinkML conversion.
 All generated files are committed and used by subsequent phases.
 
-- [ ] T001 Add `linkml-owl` to `[dependency-groups] dev` in `backend/pyproject.toml`; run `uv sync` in `backend/`; verify `uv run linkml-owl-to-linkml --help` exits 0 (if CLI unavailable, document in `backend/data/prov-o.linkml.yaml` header and write YAML manually per data-model.md)
-- [ ] T002 Fetch PROV-O OWL and produce `backend/data/prov-o.linkml.yaml`: run `uv run linkml-owl-to-linkml --input https://www.w3.org/ns/prov-o --output backend/data/prov-o-raw.linkml.yaml` then prune to 6 classes (Entity, Activity, Agent, Generation, Usage, Bundle) with correct `class_uri` values; save final as `backend/data/prov-o.linkml.yaml`
-- [ ] T003 Generate Pydantic v2 models: run `uv run gen-pydantic backend/data/prov-o.linkml.yaml --output backend/src/models/prov_o.py`; verify output contains `class Entity`, `class Activity`, `class Agent`, `class Bundle`
-- [ ] T004 Commit generated files: `backend/data/prov-o.linkml.yaml`, `backend/data/prov-o-raw.linkml.yaml`, `backend/src/models/prov_o.py`, `backend/pyproject.toml`
+- [X] T001 Add `linkml-owl` to `[dependency-groups] dev` in `backend/pyproject.toml`; run `uv sync` in `backend/`; verify `uv run linkml-owl-to-linkml --help` exits 0 (if CLI unavailable, document in `backend/data/prov-o.linkml.yaml` header and write YAML manually per data-model.md)
+- [X] T002 Fetch PROV-O OWL and produce `backend/data/prov-o.linkml.yaml`: run `uv run linkml-owl-to-linkml --input https://www.w3.org/ns/prov-o --output backend/data/prov-o-raw.linkml.yaml` then prune to 6 classes (Entity, Activity, Agent, Generation, Usage, Bundle) with correct `class_uri` values; save final as `backend/data/prov-o.linkml.yaml`
+- [X] T003 Generate Pydantic v2 models: run `uv run gen-pydantic backend/data/prov-o.linkml.yaml --output backend/src/models/prov_o.py`; verify output contains `class Entity`, `class Activity`, `class Agent`, `class Bundle`
+- [X] T004 Commit generated files: `backend/data/prov-o.linkml.yaml`, `backend/data/prov-o-raw.linkml.yaml`, `backend/src/models/prov_o.py`, `backend/pyproject.toml`
 
 ---
 
