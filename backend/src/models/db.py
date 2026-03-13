@@ -193,6 +193,9 @@ class DataElement(Base):
     deleted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     element_kind: Mapped[str] = mapped_column(Text, nullable=False, server_default=text("'scalar'"))
     node_kind: Mapped[str] = mapped_column(Text, nullable=False, server_default=text("'field'"))
+    schema_ref: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("dynamic_schema.id", ondelete="SET NULL"), nullable=True
+    )
 
     source: Mapped["SchemaSource | None"] = relationship("SchemaSource", back_populates="elements")
     current_version: Mapped["DataElementVersion | None"] = relationship(
@@ -315,6 +318,9 @@ class MappingFunction(Base):
     status: Mapped[str] = mapped_column(String(20), nullable=False, default="active")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, server_default=text("now()"))
     deleted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+    attributed_to: Mapped[str | None] = mapped_column(Text, nullable=True)
+    confidence_score: Mapped[float | None] = mapped_column(Float, nullable=True)
 
     output_element: Mapped["DataElement | None"] = relationship(
         "DataElement", foreign_keys=[output_element_id]
