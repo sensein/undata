@@ -1,0 +1,26 @@
+site_name: undata Meta-model
+site_description: LinkML meta-model describing the undata schema system
+site_url: https://schema.undata.live/meta/
+
+docs_dir: generated
+site_dir: site
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+
+nav:
+  - Home: index.md
+  - Classes:
+      - DataElement: DataElement.md
+      - DynamicSchema: DynamicSchema.md
+      - SemanticGraph: SemanticGraph.md
+      - MappingFunction: MappingFunction.md
+      - ProvenanceRecord: ProvenanceRecord.md
+  - Enumerations:
+      - ValueType: ValueType.md
+      - MappingFunctionType: MappingFunctionType.md
+      - MappingStatus: MappingStatus.md
+  - Schema: undata-metamodel.md

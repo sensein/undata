@@ -130,10 +130,10 @@ GitHub Actions publishes to GitHub Pages.
 
 **Independent Test**: `uv run --with linkml gen-doc docs/undata-metamodel.yaml -d /tmp/metamodel-test/` exits 0 and produces at least one `.md` file.
 
-- [ ] T030 [US5] Create `docs/undata-metamodel.yaml` with the full meta-model from `specs/011-metamodel-provenance/data-model.md`: classes DataElement, DynamicSchema, SemanticGraph, MappingFunction, ProvenanceRecord with `class_uri` / `slot_uri` anchors; enums ValueType, MappingFunctionType, MappingStatus
-- [ ] T031 [US5] Validate: `uv run --with linkml gen-doc docs/undata-metamodel.yaml -d /tmp/mm-test/ && ls /tmp/mm-test/`; fix any validation errors; confirm at least one `.md` file produced
-- [ ] T032 [US5] Create `docs/mkdocs.yml`: `site_name: undata Meta-model`, nav pointing to generated Markdown; add `docs/site/` to root `.gitignore`
-- [ ] T033 [US5] Create `.github/workflows/metamodel-docs.yml`: trigger on push to `main`; steps: checkout, install uv + linkml + mkdocs-material, run `gen-doc`, run `mkdocs build`, deploy to `gh-pages` branch
+- [X] T030 [US5] Create `docs/undata-metamodel.yaml` with the full meta-model from `specs/011-metamodel-provenance/data-model.md`: classes DataElement, DynamicSchema, SemanticGraph, MappingFunction, ProvenanceRecord with `class_uri` / `slot_uri` anchors; enums ValueType, MappingFunctionType, MappingStatus
+- [X] T031 [US5] Validate: `uv run --with linkml gen-doc docs/undata-metamodel.yaml -d /tmp/mm-test/ && ls /tmp/mm-test/`; fix any validation errors; confirm at least one `.md` file produced
+- [X] T032 [US5] Create `docs/mkdocs.yml`: `site_name: undata Meta-model`, nav pointing to generated Markdown; add `docs/site/` to root `.gitignore`
+- [X] T033 [US5] Create `.github/workflows/metamodel-docs.yml`: trigger on push to `main`; steps: checkout, install uv + linkml + mkdocs-material, run `gen-doc`, run `mkdocs build`, deploy to `gh-pages` branch
 - [ ] T034 [US5] Commit `docs/undata-metamodel.yaml`, `docs/mkdocs.yml`, `.github/workflows/metamodel-docs.yml`, updated `.gitignore`
 
 **Checkpoint**: `gen-doc` exits 0 locally; workflow syntax valid (`actionlint` or push to verify CI).
