@@ -140,8 +140,10 @@ exits 0 and produces `docs/site/metamodel/index.md`.
 
 - **FR-001**: `data_element` table MUST have a nullable `schema_ref UUID FK →
   dynamic_schema(id) ON DELETE SET NULL`.
-- **FR-002**: When `value_type = "object"`, `schema_ref` MUST be set; API MUST
-  return HTTP 422 if `schema_ref` is null for object-typed elements.
+- **FR-002**: When `value_type = "object"`, the element SHOULD have either
+  `schema_ref` (named DynamicSchema reference) or `DataElementChild` nesting
+  (anonymous inline structure). Both paths are valid; they are mutually exclusive
+  (enforced by FR-003).
 - **FR-003**: `DataElementChild` is retained ONLY for anonymous inline structures
   (no `schema_ref`); system MUST NOT create `DataElementChild` when a named
   `DynamicSchema` is the type.
@@ -150,8 +152,9 @@ exits 0 and produces `docs/site/metamodel/index.md`.
 - **FR-005**: `GET /schemas/{id}/provenance` MUST return `application/ld+json`
   assembled from `SchemaChangeLog` entries using Pydantic PROV-O models.
 - **FR-006**: PROV-O JSON-LD MUST include `@context: "https://www.w3.org/ns/prov.jsonld"`.
-- **FR-007**: PROV-O Pydantic models MUST be generated from `backend/data/prov-o.linkml.yaml`
-  via `gen-pydantic`; the `prov` Python package MUST NOT be added as a dependency.
+- **FR-007**: PROV-O Pydantic models MUST be derived from `backend/data/prov-o.linkml.yaml`
+  (generated via `gen-pydantic` or hand-authored when toolchain is incompatible with
+  the project Python version); the `prov` Python package MUST NOT be added as a dependency.
 - **FR-008**: `GET /schemas/{id}/linkml` MUST return `application/yaml` with header
   `X-Roundtrip-Fidelity: <float 0.0–1.0>`.
 - **FR-009**: `POST /schemas/import/linkml` MUST return HTTP 201 with a
