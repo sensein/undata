@@ -1,11 +1,14 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { ElementCard } from "@/components/ElementCard";
 import { ErrorBanner } from "@/components/ErrorBanner";
 import { LoadingSkeleton } from "@/components/LoadingSkeleton";
 import { getElements } from "@/lib/api/elements";
 import type { FilterState } from "@/lib/types";
 import { useQuery } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 interface SearchResultsProps {
   query: string;
@@ -18,6 +21,9 @@ export function SearchResults({
   filters,
   offset = 0,
 }: SearchResultsProps) {
+  const router = useRouter();
+  const [selected, setSelected] = useState<Set<string>>(new Set());
+
   const { data, isLoading, error } = useQuery({
     queryKey: ["elements", query, filters, offset],
     queryFn: () =>
@@ -31,6 +37,25 @@ export function SearchResults({
         limit: 20,
       }),
   });
+
+  function toggleSelect(id: string) {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else if (next.size < 2) {
+        next.add(id);
+      }
+      return next;
+    });
+  }
+
+  function handleCompare() {
+    const ids = Array.from(selected);
+    if (ids.length === 2) {
+      router.push(`/compare?a=${ids[0]}&b=${ids[1]}`);
+    }
+  }
 
   if (isLoading) return <LoadingSkeleton count={5} />;
   if (error) return <ErrorBanner error={error as Error} />;
@@ -52,12 +77,35 @@ export function SearchResults({
 
   return (
     <div>
-      <p className="mb-4 text-sm text-muted-foreground">
-        {data.total} result{data.total !== 1 ? "s" : ""}
-      </p>
+      <div className="mb-4 flex items-center justify-between">
+        <p className="text-sm text-muted-foreground">
+          {data.total} result{data.total !== 1 ? "s" : ""}
+        </p>
+        {selected.size === 2 && (
+          <Button size="sm" onClick={handleCompare}>
+            Compare selected
+          </Button>
+        )}
+        {selected.size === 1 && (
+          <p className="text-sm text-muted-foreground">
+            Select one more element to compare
+          </p>
+        )}
+      </div>
       <div className="space-y-3">
         {data.items.map((element) => (
-          <ElementCard key={element.id} element={element} />
+          <div key={element.id} className="flex items-start gap-3">
+            <input
+              type="checkbox"
+              checked={selected.has(element.id)}
+              onChange={() => toggleSelect(element.id)}
+              className="mt-4"
+              aria-label={`Select ${element.name} for comparison`}
+            />
+            <div className="flex-1">
+              <ElementCard element={element} />
+            </div>
+          </div>
         ))}
       </div>
     </div>
