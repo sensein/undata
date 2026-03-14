@@ -15,19 +15,14 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Install Python 3.14
-        run: uv python install 3.14
-
       - name: Lint ingestion
         working-directory: ingestion
         run: |
-          uv sync --all-extras
-          uv run ruff check .
-          uv run ruff format --check .
+          uvx ruff check .
+          uvx ruff format --check .
 
       - name: Lint tutorials
         working-directory: tutorials
         run: |
-          uv sync --all-extras
-          uv run ruff check .
-          uv run ruff format --check .
+          uvx ruff check .
+          uvx ruff format --check .

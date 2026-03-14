@@ -6,7 +6,7 @@ from datetime import datetime
 from typing import Any, Generic, TypeVar
 from uuid import UUID
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 T = TypeVar("T")
 
@@ -216,6 +216,7 @@ class DataElementCreate(BaseModel):
     child_element_ids: list[dict[str, Any]] | None = None  # [{element_id, field_name, position}]
     element_kind: str | None = None  # derived at service layer; optional on create
     node_kind: str | None = None  # defaults to 'field' at service layer
+    schema_ref: UUID | None = None  # FK → dynamic_schema; mutually exclusive with DataElementChild
 
 
 class DataElementUpdate(BaseModel):
@@ -308,6 +309,7 @@ class DataElementResponse(BaseModel):
     deleted_at: datetime | None
     element_kind: str = "scalar"
     node_kind: str = "field"
+    schema_ref: UUID | None = None
 
 
 class SupersedeElementRequest(BaseModel):
@@ -458,6 +460,8 @@ class MappingFunctionResponse(BaseModel):
     function_type: str
     output_element_id: UUID
     status: str
+    attributed_to: str | None = None
+    confidence_score: float | None = None
     version_num: int
     created_at: datetime
     deleted_at: datetime | None

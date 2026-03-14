@@ -211,3 +211,37 @@ async def get_mapping_history(
         )
         for v in versions
     ]
+
+
+
+# ---------------------------------------------------------------------------
+# PUT /mappings/{id}/accept (T028 — FR-014)
+# ---------------------------------------------------------------------------
+
+
+@router.put("/{mapping_id}/accept")
+async def accept_mapping(
+    mapping_id: UUID,
+    confidence_threshold: float | None = None,
+    session: AsyncSession = Depends(get_db),
+):
+    """Accept a pending_curation mapping, optionally gated by confidence score (FR-014).
+
+    Raises 422 if the mapping is not in pending_curation status or confidence is below threshold.
+    Raises 404 if the mapping does not exist.
+    """
+    from src.services.mappings import MappingService
+
+    try:
+        mapping = await MappingService.accept_mapping(
+            session, mapping_id, confidence_threshold=confidence_threshold
+        )
+    except ValueError as exc:
+        msg = str(exc)
+        if "not found" in msg:
+            raise HTTPException(status_code=404, detail={"error": "not_found", "message": msg})
+        raise HTTPException(status_code=422, detail={"error": "accept_rejected", "message": msg})
+
+    from src.models.schemas import MappingFunctionResponse
+
+    return MappingFunctionResponse.model_validate(mapping)

@@ -10,7 +10,7 @@ from undata.logging import get_logger
 logger = get_logger(__name__)
 
 
-class ViolationSeverity(str, enum.Enum):
+class ViolationSeverity(enum.StrEnum):
     ERROR = "ERROR"
     WARNING = "WARNING"
     INFO = "INFO"
@@ -120,7 +120,10 @@ class ValidationService:
                 violations.append(
                     Violation(
                         field=slot_name,
-                        message=f"Field '{slot_name}' expected numeric type, got {type(value).__name__}.",
+                        message=(
+                            f"Field '{slot_name}' expected numeric type,"
+                            f" got {type(value).__name__}."
+                        ),
                         severity=ViolationSeverity.WARNING,
                     )
                 )

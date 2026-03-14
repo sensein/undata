@@ -1,9 +1,10 @@
-"""SchemaChangeLogService — record, list, and render PROV-DM provenance for DynamicSchema.
+"""SchemaChangeLogService — record, list, and render PROV-O provenance for DynamicSchema.
 
 Implements:
 - record(): Insert a SchemaChangeLog row after any schema mutation
 - list(): Paginated query with optional breaking_only filter
-- to_prov_jsonld(): Assemble W3C PROV-DM JSON-LD from SchemaChangeLog rows
+- to_prov_jsonld(): Assemble W3C PROV-O JSON-LD from SchemaChangeLog rows (FR-005, FR-006)
+- to_element_prov_jsonld(): Assemble PROV-O JSON-LD for a DataElement (FR-004, FR-006)
 """
 
 from __future__ import annotations
@@ -16,6 +17,7 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.models.db import SchemaChangeLog, UserProfile
+from src.models.prov_o import PROV_CONTEXT, Activity, Agent, Bundle, Entity
 
 
 async def record(
@@ -124,7 +126,7 @@ async def to_prov_jsonld(
     schema_id: uuid.UUID,
     db: AsyncSession,
 ) -> dict[str, Any]:
-    """Assemble W3C PROV-DM JSON-LD for a schema from its SchemaChangeLog rows."""
+    """Assemble W3C PROV-O JSON-LD for a schema from its SchemaChangeLog rows (FR-005, FR-006)."""
     from src.models.db import DynamicSchema
 
     schema_result = await db.execute(
@@ -149,49 +151,67 @@ async def to_prov_jsonld(
         for profile in actor_result.scalars().all():
             actor_map[profile.id] = profile.display_name
 
-    schema_uri = f"https://undata.io/schemas/{schema_id}"
+    schema_uri = f"https://schema.undata.live/schemas/{schema_id}"
     graph: list[dict[str, Any]] = []
 
-    # prov:Entity for the schema
-    entity: dict[str, Any] = {
-        "@type": "prov:Entity",
-        "@id": schema_uri,
-    }
+    # prov:Entity for the schema (current state)
+    entity_kwargs: dict[str, Any] = {"id": schema_uri}
     if schema and schema.parent_id:
-        entity["prov:wasDerivedFrom"] = {"@id": f"https://undata.io/schemas/{schema.parent_id}"}
-
+        entity_kwargs["wasDerivedFrom"] = {
+            "@id": f"https://schema.undata.live/schemas/{schema.parent_id}"
+        }
     if logs:
         latest = logs[0]
-        entity["prov:wasGeneratedBy"] = {"@id": f"urn:activity:{latest.id}"}
-        entity["prov:wasAttributedTo"] = {"@id": f"urn:agent:{latest.actor_id}"}
+        entity_kwargs["wasGeneratedBy"] = {"@id": f"urn:activity:{latest.id}"}
+        entity_kwargs["wasAttributedTo"] = {"@id": f"urn:agent:{latest.actor_id}"}
 
-    graph.append(entity)
+    graph.append(Entity(**entity_kwargs).to_jsonld())
+
+    # T016/FR-005: emit additional prov:Entity nodes for semantic boundary crossings.
+    # When semantic_boundary_crossed=True, that changelog entry represents a version
+    # of the schema with a distinct URI (the schema acquired a new URI at that point).
+    # We emit a derived-entity chain: current_uri ← wasDerivedFrom ← prior_uri.
+    boundary_logs = [lg for lg in logs if getattr(lg, "semantic_boundary_crossed", False)]
+    for i, bl in enumerate(boundary_logs):
+        prior_uri = f"https://schema.undata.live/schemas/{schema_id}/v{bl.version_num}"
+        prior_entity: dict[str, Any] = {"id": prior_uri}
+        if i + 1 < len(boundary_logs):
+            next_bl = boundary_logs[i + 1]
+            prior_entity["wasDerivedFrom"] = {
+                "@id": f"https://schema.undata.live/schemas/{schema_id}/v{next_bl.version_num}"
+            }
+        # The current entity is derived from the most recent boundary version
+        if i == 0:
+            entity_kwargs["wasDerivedFrom"] = {"@id": prior_uri}
+            # Patch the already-appended entity in graph[0]
+            graph[0] = Entity(**entity_kwargs).to_jsonld()
+        graph.append(Entity(**prior_entity).to_jsonld())
 
     # prov:Activity + prov:Agent for each log entry
+    seen_agents: set[str] = set()
     for log in logs:
         ts = log.timestamp.isoformat() if log.timestamp else None
+        agent_id = f"urn:agent:{log.actor_id}"
         graph.append(
-            {
-                "@type": "prov:Activity",
-                "@id": f"urn:activity:{log.id}",
-                "prov:startedAtTime": ts,
-                "prov:endedAtTime": ts,
-                "prov:wasAssociatedWith": {"@id": f"urn:agent:{log.actor_id}"},
-            }
+            Activity(
+                **{
+                    "@id": f"urn:activity:{log.id}",
+                    "prov:startedAtTime": ts,
+                    "prov:endedAtTime": ts,
+                    "prov:wasAssociatedWith": {"@id": agent_id},
+                }
+            ).to_jsonld()
         )
-        agent_name = actor_map.get(log.actor_id)
-        graph.append(
-            {
-                "@type": "prov:Agent",
-                "@id": f"urn:agent:{log.actor_id}",
-                "foaf:name": agent_name or str(log.actor_id),
-            }
-        )
+        if agent_id not in seen_agents:
+            seen_agents.add(agent_id)
+            agent_name = actor_map.get(log.actor_id)
+            graph.append(
+                Agent(
+                    **{"@id": agent_id, "foaf:name": agent_name or str(log.actor_id)}
+                ).to_jsonld()
+            )
 
-    return {
-        "@context": "http://www.w3.org/ns/prov",
-        "@graph": graph,
-    }
+    return Bundle(graph=graph).to_jsonld()
 
 
 async def to_element_prov_jsonld(
@@ -199,7 +219,7 @@ async def to_element_prov_jsonld(
     element_id: uuid.UUID,
     db: AsyncSession,
 ) -> dict[str, Any]:
-    """Assemble W3C PROV-DM JSON-LD for an element from its DataElementVersion history."""
+    """Assemble W3C PROV-O JSON-LD for an element from its DataElementVersion history (FR-004, FR-006)."""
     from src.models.db import DataElementVersion
 
     versions_result = await db.execute(
@@ -219,42 +239,39 @@ async def to_element_prov_jsonld(
         for profile in actor_result.scalars().all():
             actor_map[profile.id] = profile.display_name
 
-    element_uri = f"https://undata.io/elements/{element_id}"
+    element_uri = f"https://schema.undata.live/elements/{element_id}"
     graph: list[dict[str, Any]] = []
 
     # prov:Entity for the element
-    entity: dict[str, Any] = {
-        "@type": "prov:Entity",
-        "@id": element_uri,
-    }
+    entity_kwargs: dict[str, Any] = {"id": element_uri}
     if versions:
         latest = versions[0]
-        entity["prov:wasGeneratedBy"] = {"@id": f"urn:activity:el-{latest.id}"}
-        entity["prov:wasAttributedTo"] = {"@id": f"urn:agent:{latest.created_by}"}
-    graph.append(entity)
+        entity_kwargs["wasGeneratedBy"] = {"@id": f"urn:activity:el-{latest.id}"}
+        entity_kwargs["wasAttributedTo"] = {"@id": f"urn:agent:{latest.created_by}"}
+    graph.append(Entity(**entity_kwargs).to_jsonld())
 
     # prov:Activity + prov:Agent for each version
+    seen_agents: set[str] = set()
     for version in versions:
         ts = version.created_at.isoformat() if version.created_at else None
+        agent_id = f"urn:agent:{version.created_by}"
         graph.append(
-            {
-                "@type": "prov:Activity",
-                "@id": f"urn:activity:el-{version.id}",
-                "prov:startedAtTime": ts,
-                "prov:endedAtTime": ts,
-                "prov:wasAssociatedWith": {"@id": f"urn:agent:{version.created_by}"},
-            }
+            Activity(
+                **{
+                    "@id": f"urn:activity:el-{version.id}",
+                    "prov:startedAtTime": ts,
+                    "prov:endedAtTime": ts,
+                    "prov:wasAssociatedWith": {"@id": agent_id},
+                }
+            ).to_jsonld()
         )
-        agent_name = actor_map.get(version.created_by)
-        graph.append(
-            {
-                "@type": "prov:Agent",
-                "@id": f"urn:agent:{version.created_by}",
-                "foaf:name": agent_name or str(version.created_by),
-            }
-        )
+        if agent_id not in seen_agents:
+            seen_agents.add(agent_id)
+            agent_name = actor_map.get(version.created_by)
+            graph.append(
+                Agent(
+                    **{"@id": agent_id, "foaf:name": agent_name or str(version.created_by)}
+                ).to_jsonld()
+            )
 
-    return {
-        "@context": "http://www.w3.org/ns/prov",
-        "@graph": graph,
-    }
+    return Bundle(graph=graph).to_jsonld()

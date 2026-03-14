@@ -201,6 +201,7 @@ async def _build_element_response(
         alias_groups=alias_groups,
         mappings_as_input=mappings_as_input,
         mappings_as_output=mappings_as_output,
+        schema_ref=element.schema_ref,
         version_num=element.version_num,
         created_at=element.created_at,
         deleted_at=element.deleted_at,

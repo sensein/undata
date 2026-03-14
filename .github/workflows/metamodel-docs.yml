@@ -1,0 +1,46 @@
+name: Publish Meta-model Docs
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/undata-metamodel.yaml"
+      - "docs/mkdocs.yml"
+      - ".github/workflows/metamodel-docs.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Install Python
+        run: uv python install 3.12
+
+      - name: Generate Markdown from LinkML schema
+        run: |
+          uv run --with linkml gen-doc docs/undata-metamodel.yaml -d docs/generated/
+
+      - name: Install MkDocs and Material theme
+        run: uv tool install mkdocs-material
+
+      - name: Build MkDocs site
+        working-directory: docs
+        run: uvx mkdocs build --strict
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/site
+          force_orphan: true

@@ -269,10 +269,11 @@ class ElementService:
             id=element_id,
             uri=uri,
             source_id=data.source_id,
-            source_local_id=data.source_local_id,
+            source_local_id=data.source_local_id or str(element_id),
             version_num=1,
             element_kind=element_kind,
             node_kind=getattr(data, "node_kind", None) or "field",
+            schema_ref=getattr(data, "schema_ref", None),
         )
         session.add(element)
         try:
@@ -339,6 +340,13 @@ class ElementService:
         parent = parent_result.scalar_one_or_none()
         if parent is None:
             raise ElementNotFoundError(f"Parent element {parent_id} not found")
+
+        # FR-003: reject DataElementChild when parent has a named schema_ref
+        if parent.schema_ref is not None:
+            raise InvalidNestingError(
+                "Use schema_ref for named types — DataElementChild is only for anonymous inline "
+                "structures. Parent element already references a DynamicSchema via schema_ref."
+            )
 
         # Load parent's current version for data_type check
         version_result = await session.execute(

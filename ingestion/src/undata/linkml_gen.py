@@ -150,9 +150,7 @@ class LinkMLSchemaGenerator:
             # Fetch resolved elements for mixin slot dedup
             if node.is_mixin:
                 try:
-                    res_resp = await client.get(
-                        f"{self._backend_url}/schemas/{node.id}/resolved"
-                    )
+                    res_resp = await client.get(f"{self._backend_url}/schemas/{node.id}/resolved")
                     res_resp.raise_for_status()
                     resolved = res_resp.json()
                     ctx.mixin_slot_sets[node.name] = {

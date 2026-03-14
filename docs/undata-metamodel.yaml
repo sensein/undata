@@ -1,0 +1,252 @@
+# undata Meta-model (FR-010)
+# Self-describing LinkML schema for the undata domain.
+# Rendered via gen-doc + MkDocs; published via GitHub Actions (metamodel-docs.yml).
+#
+# Validate locally:
+#   uv run --with linkml gen-doc docs/undata-metamodel.yaml -d /tmp/mm-test/
+#
+# Domain: schema.undata.live
+# Spec: specs/011-metamodel-provenance/data-model.md
+
+id: https://schema.undata.live/meta/undata-metamodel
+name: undata-metamodel
+description: >-
+  LinkML meta-model describing the undata schema system —
+  data elements, schemas, semantic graphs, mappings, and provenance.
+
+license: Apache-2.0
+version: 2026.03.0
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  prov: http://www.w3.org/ns/prov#
+  skos: http://www.w3.org/2004/02/skos/core#
+  sssom: https://w3id.org/sssom/
+  owl: http://www.w3.org/2002/07/owl#
+  schema: https://schema.org/
+  undata: https://schema.undata.live/meta/
+
+default_prefix: undata
+default_range: string
+
+imports:
+  - linkml:types
+
+# ---------------------------------------------------------------------------
+# Enums
+# ---------------------------------------------------------------------------
+
+enums:
+  ValueType:
+    description: The scalar or composite data type of a DataElement value.
+    permissible_values:
+      string:
+        description: UTF-8 text.
+      integer:
+        description: Whole number (64-bit signed).
+      float:
+        description: IEEE 754 double-precision floating-point.
+      boolean:
+        description: true / false.
+      array:
+        description: Ordered or unordered collection of values.
+      object:
+        description: A composite value that is itself an instance of a DynamicSchema.
+
+  MappingFunctionType:
+    description: The transformation type between two DataElements.
+    permissible_values:
+      identity:
+        description: Source value equals target value without transformation.
+      unit_conversion:
+        description: Numeric conversion with a unit factor (e.g. kg → lb).
+      scaling:
+        description: Linear scaling by a constant factor.
+      structural:
+        description: Field rename, type cast, or nesting change.
+      unknown:
+        description: Transformation type not yet determined.
+
+  MappingStatus:
+    description: Curation status of a MappingFunction.
+    permissible_values:
+      active:
+        description: Mapping is accepted and in use.
+      pending_curation:
+        description: System-inferred mapping awaiting human review.
+
+# ---------------------------------------------------------------------------
+# Classes
+# ---------------------------------------------------------------------------
+
+classes:
+
+  DataElement:
+    class_uri: schema:Property
+    description: >-
+      A named, typed field in a schema. The atomic unit of the undata knowledge
+      graph. Every DataElement has a URI, a value type, and an optional
+      ontological anchor (semantic_graph). Object-typed elements carry a
+      schema_ref FK pointing to the DynamicSchema that defines their structure.
+    attributes:
+      id:
+        identifier: true
+        range: uriorcurie
+        description: Persistent URI for this element (e.g. https://schema.undata.live/elements/{uuid}).
+        slot_uri: schema:identifier
+      name:
+        required: true
+        range: string
+        description: Human-readable field name.
+        slot_uri: schema:name
+      value_type:
+        required: true
+        range: ValueType
+        description: Scalar or composite type of the element's value.
+        slot_uri: schema:rangeIncludes
+      description:
+        range: string
+        description: Free-text description of what this element represents.
+        slot_uri: schema:description
+      required:
+        range: boolean
+        description: Whether this element must be present in a conforming record.
+      multivalued:
+        range: boolean
+        description: Whether this element may hold more than one value.
+      schema_ref:
+        range: DynamicSchema
+        description: >-
+          When value_type=object, points to the DynamicSchema that defines the
+          element's structure. Mutually exclusive with DataElementChild nesting.
+        slot_uri: schema:rangeIncludes
+      semantic_graph:
+        range: SemanticGraph
+        description: Ontological anchoring of this element.
+      version:
+        range: string
+        description: CalVer version string for this element's definition.
+
+  DynamicSchema:
+    class_uri: owl:Class
+    description: >-
+      A named, versioned collection of DataElements. The primary unit of schema
+      composition in undata. Schemas may have mixins (ProvenanceMixin), a parent
+      (inheritance), and are identified by a persistent URI.
+    attributes:
+      id:
+        identifier: true
+        range: uriorcurie
+        description: Persistent URI for this schema.
+        slot_uri: schema:identifier
+      name:
+        required: true
+        range: string
+        description: Human-readable schema name.
+        slot_uri: schema:name
+      description:
+        range: string
+        description: Purpose and context of this schema.
+        slot_uri: schema:description
+      version_num:
+        range: integer
+        description: Monotonically increasing version counter.
+      elements:
+        range: DataElement
+        multivalued: true
+        inlined_as_list: true
+        description: Ordered list of DataElements that constitute this schema.
+      is_mixin:
+        range: boolean
+        description: True if this schema is a mixin (not directly instantiable).
+      parent_id:
+        range: DynamicSchema
+        description: Parent schema for single-inheritance composition.
+        slot_uri: owl:subClassOf
+
+  SemanticGraph:
+    class_uri: skos:ConceptScheme
+    description: >-
+      The ontological anchoring of a DataElement. Captures the entity, property,
+      unit, and external URIs that define what the element is measuring.
+      Changes to the semantic graph that alter meaning trigger a new URI;
+      superficial changes (description, formatting) yield a new version only.
+    attributes:
+      ontology_term:
+        range: uriorcurie
+        description: URI of the ontology term this element is an instance of.
+        slot_uri: skos:exactMatch
+      unit:
+        range: string
+        description: UCUM or QUDT unit symbol (e.g. "kg", "mmHg").
+        slot_uri: schema:unitCode
+      external_uri:
+        range: uriorcurie
+        description: Resolved QUDT / OBO ontology URI for the unit.
+      cmixf_valid:
+        range: boolean
+        description: Whether the unit symbol passes cmixf-12 validation.
+
+  MappingFunction:
+    class_uri: sssom:Mapping
+    description: >-
+      A directed transformation between a source DataElement and a target
+      DataElement. May be identity (exact synonym) or a typed transformation
+      (unit conversion, scaling, structural). System-inferred mappings are
+      created with status=pending_curation and attributed_to=urn:undata:system.
+    attributes:
+      id:
+        identifier: true
+        range: uriorcurie
+        description: Persistent URI for this mapping.
+        slot_uri: schema:identifier
+      source:
+        required: true
+        range: DataElement
+        description: Source element of the mapping.
+        slot_uri: sssom:subject_id
+      target:
+        required: true
+        range: DataElement
+        description: Target element of the mapping.
+        slot_uri: sssom:object_id
+      function_type:
+        range: MappingFunctionType
+        description: Transformation type.
+        slot_uri: sssom:mapping_justification
+      status:
+        range: MappingStatus
+        description: Curation status — active or pending_curation.
+      confidence_score:
+        range: float
+        description: Similarity score [0.0–1.0] from the inference system.
+      attributed_to:
+        range: string
+        description: >-
+          URI of the agent that created this mapping
+          (e.g. urn:undata:system for automated inference).
+        slot_uri: prov:wasAttributedTo
+
+  ProvenanceRecord:
+    class_uri: prov:Bundle
+    description: >-
+      A W3C PROV-O bundle describing the lifecycle of a DataElement or
+      DynamicSchema. Assembled on-demand from AuditLog / SchemaChangeLog rows.
+      Serialized as application/ld+json with
+      @context: "https://www.w3.org/ns/prov.jsonld".
+    attributes:
+      id:
+        identifier: true
+        range: uriorcurie
+        description: URI of the resource this provenance bundle describes.
+      context:
+        range: uriorcurie
+        description: JSON-LD @context URL (always https://www.w3.org/ns/prov.jsonld).
+      entities:
+        range: string
+        multivalued: true
+        description: List of prov:Entity @id URIs in this bundle.
+      activities:
+        range: string
+        multivalued: true
+        description: List of prov:Activity @id URIs in this bundle.

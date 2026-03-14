@@ -283,9 +283,7 @@ async def test_linkml_gen_deduplicates_mixin_slots():
     )
     # Mixin resolved elements include "created_at"
     respx.get(f"{BASE_URL}/schemas/{mixin_id}/resolved").mock(
-        return_value=httpx.Response(
-            200, json={"elements": [{"name": "created_at"}]}
-        )
+        return_value=httpx.Response(200, json={"elements": [{"name": "created_at"}]})
     )
     respx.get(f"{BASE_URL}/schemas/{schema_id}/resolved").mock(
         return_value=httpx.Response(200, json={"elements": []})
