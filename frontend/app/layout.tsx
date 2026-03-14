@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "@/components/Providers";
+import Link from "next/link";
 import "./globals.css";
 
 const inter = Inter({
@@ -24,15 +25,15 @@ export default function RootLayout({
         <Providers>
           <header className="border-b px-6 py-3">
             <nav className="mx-auto flex max-w-7xl items-center gap-6">
-              <a href="/" className="text-lg font-semibold">
+              <Link href="/" className="text-lg font-semibold">
                 undata
-              </a>
-              <a href="/elements" className="text-sm text-muted-foreground hover:text-foreground">
+              </Link>
+              <Link href="/elements" className="text-sm text-muted-foreground hover:text-foreground">
                 Elements
-              </a>
-              <a href="/add" className="text-sm text-muted-foreground hover:text-foreground">
+              </Link>
+              <Link href="/add" className="text-sm text-muted-foreground hover:text-foreground">
                 Contribute
-              </a>
+              </Link>
             </nav>
           </header>
           <main className="mx-auto max-w-7xl px-6 py-8">{children}</main>

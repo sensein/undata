@@ -1,5 +1,4 @@
 declare module "react-cytoscapejs" {
-  import type { Component } from "react";
   import type cytoscape from "cytoscape";
 
   interface CytoscapeComponentProps {

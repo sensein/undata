@@ -2,6 +2,7 @@
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import DOMPurify from "dompurify";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 interface SearchBarProps {
@@ -30,7 +31,10 @@ export function SearchBar({ initialQuery = "", onSearch }: SearchBarProps) {
   }, []);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const raw = e.target.value.slice(0, MAX_QUERY_LENGTH);
+    const raw = DOMPurify.sanitize(e.target.value, { ALLOWED_TAGS: [] }).slice(
+      0,
+      MAX_QUERY_LENGTH,
+    );
     setValue(raw);
     debouncedSearch(raw.trim());
   }

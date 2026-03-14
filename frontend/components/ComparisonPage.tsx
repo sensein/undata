@@ -5,6 +5,7 @@ import { ErrorBanner } from "@/components/ErrorBanner";
 import { LoadingSkeleton } from "@/components/LoadingSkeleton";
 import { getElementById } from "@/lib/api/elements";
 import { useQuery } from "@tanstack/react-query";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 export function ComparisonPage() {
@@ -38,9 +39,9 @@ export function ComparisonPage() {
         <p className="text-lg">Select two elements to compare</p>
         <p className="mt-1 text-sm">
           Use the checkboxes on the{" "}
-          <a href="/elements" className="underline">
+          <Link href="/elements" className="underline">
             search page
-          </a>{" "}
+          </Link>{" "}
           to pick two elements.
         </p>
       </div>
