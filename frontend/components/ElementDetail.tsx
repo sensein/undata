@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { RelationshipGraph } from "@/components/RelationshipGraph";
 import type { DataElementDetail as ElementDetailType } from "@/lib/types";
 import Link from "next/link";
 
@@ -128,15 +129,12 @@ export function ElementDetail({ element }: Props) {
         </Card>
       </div>
 
-      {/* Relationship graph placeholder — Phase 4 (US2) */}
       <Card>
         <CardHeader>
           <CardTitle className="text-base">Relationship Graph</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-muted-foreground">
-            Interactive graph coming soon...
-          </p>
+          <RelationshipGraph elementId={element.id} />
         </CardContent>
       </Card>
     </div>
