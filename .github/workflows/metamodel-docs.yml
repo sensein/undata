@@ -31,12 +31,9 @@ jobs:
         run: |
           uv run --with linkml gen-doc docs/undata-metamodel.yaml -d docs/generated/
 
-      - name: Install MkDocs and Material theme
-        run: uv tool install mkdocs-material
-
       - name: Build MkDocs site
         working-directory: docs
-        run: uvx mkdocs build --strict
+        run: uvx --with mkdocs-material mkdocs build --strict
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

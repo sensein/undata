@@ -41,9 +41,7 @@ jobs:
 
       - name: Run migrations
         working-directory: backend
-        env:
-          DATABASE_URL: postgresql+asyncpg://undata:undata@localhost:5432/undata_test
-        run: uv run alembic upgrade head
+        run: uv run alembic -x url=postgresql+asyncpg://undata:undata@localhost:5432/undata_test upgrade head
 
       - name: Run tests
         working-directory: backend
