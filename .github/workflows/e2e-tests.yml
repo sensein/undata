@@ -15,12 +15,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Start full stack
+      - name: Start core services
         run: |
           cp .env.example .env
           docker compose up -d db redis meilisearch
-          docker compose up -d --build backend
-          docker compose up -d --build frontend
+
+      - name: Build and start backend (no Keycloak dependency)
+        run: |
+          docker compose build backend frontend
+          docker compose up -d --no-deps backend
+          docker compose up -d --no-deps frontend
 
       - name: Wait for backend healthy
         run: |
