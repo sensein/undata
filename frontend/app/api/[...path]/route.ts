@@ -13,7 +13,9 @@ export async function handler(
   url.search = request.nextUrl.search;
 
   const headers = new Headers(request.headers);
-  const token = process.env.API_TOKEN;
+  // Prefer cookie-based auth (Keycloak OIDC), fall back to env API_TOKEN
+  const cookieToken = request.cookies.get("access_token")?.value;
+  const token = cookieToken || process.env.API_TOKEN;
   if (token) {
     headers.set("Authorization", `Bearer ${token}`);
   }

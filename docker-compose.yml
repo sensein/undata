@@ -120,8 +120,11 @@ services:
     ports:
       - "${FRONTEND_PORT:-3000}:3000"
     environment:
-      NEXT_PUBLIC_BACKEND_URL: http://backend:8002
-      NEXT_PUBLIC_MEILI_URL: http://meilisearch:7700
+      NEXT_PUBLIC_BACKEND_URL: http://localhost:${BACKEND_PORT:-8002}
+      NEXT_PUBLIC_MEILI_URL: http://localhost:${MEILI_PORT:-7700}
+      NEXT_PUBLIC_MIGRATION_URL: http://localhost:${MIGRATION_API_PORT:-8004}
+      BACKEND_INTERNAL_URL: http://backend:8002
+      MIGRATION_INTERNAL_URL: http://migration-api:8004
       MEILI_MASTER_KEY: ${MEILI_MASTER_KEY:-dev-master-key}
       API_TOKEN: ${API_TOKEN:-}
     depends_on:
