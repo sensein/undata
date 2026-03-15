@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
       process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8002";
     const meiliUrl =
       process.env.NEXT_PUBLIC_MEILI_URL || "http://localhost:7700";
+    const migrationUrl =
+      process.env.NEXT_PUBLIC_MIGRATION_URL || "http://localhost:8004";
     return [
       {
         source: "/api/backend/:path*",
@@ -15,6 +17,10 @@ const nextConfig: NextConfig = {
       {
         source: "/api/search/:path*",
         destination: `${meiliUrl}/:path*`,
+      },
+      {
+        source: "/api/migration/:path*",
+        destination: `${migrationUrl}/api/:path*`,
       },
     ];
   },

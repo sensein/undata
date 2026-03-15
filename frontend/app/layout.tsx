@@ -34,6 +34,9 @@ export default function RootLayout({
               <Link href="/add" className="text-sm text-muted-foreground hover:text-foreground">
                 Contribute
               </Link>
+              <Link href="/migrations" className="text-sm text-muted-foreground hover:text-foreground">
+                Migrations
+              </Link>
             </nav>
           </header>
           <main className="mx-auto max-w-7xl px-6 py-8">{children}</main>

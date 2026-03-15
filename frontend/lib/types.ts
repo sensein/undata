@@ -128,3 +128,51 @@ export interface SearchParams {
   limit?: number;
   offset?: number;
 }
+
+// Migration API types
+
+export interface PathwaySummary {
+  id: string;
+  source_schema: { id: string; name: string };
+  target_schema: { id: string; name: string };
+  step_count: number;
+  created_at: string;
+}
+
+export interface PathwayStep {
+  position: number;
+  mapping_id: string;
+  function_type: string;
+  expression: string | null;
+  expression_type: string | null;
+  input_element: string;
+  output_element: string;
+}
+
+export interface PathwayDetail extends PathwaySummary {
+  steps: PathwayStep[];
+}
+
+export interface MigrationJob {
+  id: string;
+  pathway_id: string;
+  status: "pending" | "running" | "completed" | "failed";
+  progress: number;
+  input_data: Record<string, unknown> | null;
+  output_data: Record<string, unknown> | null;
+  error: string | null;
+  created_at: string;
+  completed_at: string | null;
+}
+
+export interface SchemaDiffResult {
+  schema_a: { id: string; name: string };
+  schema_b: { id: string; name: string };
+  added: string[];
+  removed: string[];
+  modified: Array<{
+    field: string;
+    old_type: string;
+    new_type: string;
+  }>;
+}
