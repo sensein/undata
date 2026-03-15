@@ -68,9 +68,7 @@ jobs:
 
       - name: Run Playwright E2E tests
         working-directory: frontend
-        env:
-          PLAYWRIGHT_BASE_URL: http://localhost:3000
-        run: pnpm exec playwright test --reporter=github
+        run: pnpm exec playwright test --config=playwright.ci.config.ts
 
       - name: Upload Playwright report
         if: always()
