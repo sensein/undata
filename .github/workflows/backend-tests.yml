@@ -37,7 +37,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: backend
-        run: uv sync
+        run: uv sync --all-extras
 
       - name: Run migrations
         working-directory: backend

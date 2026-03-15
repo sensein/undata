@@ -7,7 +7,12 @@ import type {
 } from "@/lib/types";
 import { ApiError } from "./client";
 
-const MIGRATION_URL = process.env.NEXT_PUBLIC_MIGRATION_URL || "";
+const MIGRATION_URL =
+  typeof window === "undefined"
+    ? process.env.MIGRATION_INTERNAL_URL ||
+      process.env.NEXT_PUBLIC_MIGRATION_URL ||
+      ""
+    : process.env.NEXT_PUBLIC_MIGRATION_URL || "";
 
 async function migrationFetch<T>(
   path: string,

@@ -1,4 +1,11 @@
-const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "";
+// BACKEND_INTERNAL_URL is used for server-side fetches (Docker internal DNS).
+// NEXT_PUBLIC_BACKEND_URL is used for client-side fetches (browser-accessible).
+const BASE_URL =
+  typeof window === "undefined"
+    ? process.env.BACKEND_INTERNAL_URL ||
+      process.env.NEXT_PUBLIC_BACKEND_URL ||
+      ""
+    : process.env.NEXT_PUBLIC_BACKEND_URL || "";
 
 export class ApiError extends Error {
   status: number;
