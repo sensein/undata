@@ -1,0 +1,25 @@
+element:
+  id: https://schema.undata.live/elements/e001
+  source_local_id: BIDS.subject_age
+  source_id: https://schema.undata.live/sources/bids-v1
+  created_at: "2026-03-09T15:30:00Z"
+
+versions:
+  - version_num: 1
+    name: subject_age
+    data_type: integer
+    description: Age of the research subject in years
+    required: true
+    multivalued: false
+    constraints:
+      minimum: 0
+      maximum: 150
+    semantic_graph:
+      ontology_term: http://purl.obolibrary.org/obo/NCIT_C124353
+      unit: year
+      external_uri: https://qudt.org/vocab/UNIT/YR
+      cmixf_valid: true
+    created_at: "2026-03-09T15:30:00Z"
+    created_by: urn:undata:system
+
+current_version: 1
