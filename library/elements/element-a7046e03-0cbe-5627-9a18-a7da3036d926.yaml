@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a7046e03-0cbe-5627-9a18-a7da3036d926
+  source_local_id: aind.metadata.SpeciesModel.common_name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.632226+00:00'
+versions:
+- version_num: 1
+  name: common_name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.632224+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

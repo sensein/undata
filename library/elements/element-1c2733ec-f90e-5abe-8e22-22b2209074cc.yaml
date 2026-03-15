@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/1c2733ec-f90e-5abe-8e22-22b2209074cc
+  source_local_id: aind.metadata.Manipulator.additional_settings
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.446800+00:00'
+versions:
+- version_num: 1
+  name: additional_settings
+  data_type: object
+  created_at: '2026-03-15T22:48:07.446798+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

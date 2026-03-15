@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/1ed31e8e-4480-5220-9342-f9a09c5a639b
+  source_local_id: aind.processing.ResourceUsage.usage_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:08.019554+00:00'
+versions:
+- version_num: 1
+  name: usage_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:08.019552+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

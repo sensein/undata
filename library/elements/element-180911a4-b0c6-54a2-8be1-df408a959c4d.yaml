@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/180911a4-b0c6-54a2-8be1-df408a959c4d
+  source_local_id: aind.instrument._Champalimaud_Foundation.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.931508+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.931505+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

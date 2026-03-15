@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/b6d0dac8-b4f9-5ef8-a5bb-f00844046119
+  source_local_id: aind.metadata.Person.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.537221+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.537219+00:00'
+  created_by: urn:undata:ingestion
+  description: First and last name OR anonymous ID
+  required: true
+current_version: 1

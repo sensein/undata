@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/a14e9927-2b56-53bf-a185-7da88c64bc6e
+  source_local_id: aind.metadata.Slap2Plane.slap2_acquisition_type
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.620835+00:00'
+versions:
+- version_num: 1
+  name: slap2_acquisition_type
+  data_type: string
+  created_at: '2026-03-15T22:48:07.620833+00:00'
+  created_by: urn:undata:ingestion
+  description: Stimulus modalities
+  required: true
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/d6a1914b-b40b-57bc-94cf-0784fbc2e711
+  source_local_id: aind.metadata.Objective.objective_type
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.512339+00:00'
+versions:
+- version_num: 1
+  name: objective_type
+  data_type: string
+  created_at: '2026-03-15T22:48:07.512337+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

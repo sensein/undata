@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/84a21d4d-ae9b-58ee-8e26-20d7d2d5356a
+  source_local_id: aind.instrument._Mcgovern_Institute_For_Brain_Research.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.019879+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:07.019877+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

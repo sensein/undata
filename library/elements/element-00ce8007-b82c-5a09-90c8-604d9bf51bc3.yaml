@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/00ce8007-b82c-5a09-90c8-604d9bf51bc3
+  source_local_id: aind.procedures.BrainStructureModel.id
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.311880+00:00'
+versions:
+- version_num: 1
+  name: id
+  data_type: string
+  created_at: '2026-03-15T22:48:06.311878+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

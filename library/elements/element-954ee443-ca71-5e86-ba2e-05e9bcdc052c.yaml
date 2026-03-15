@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/954ee443-ca71-5e86-ba2e-05e9bcdc052c
+  source_local_id: aind.metadata.MouseSubject.source
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.489068+00:00'
+versions:
+- version_num: 1
+  name: source
+  data_type: object
+  created_at: '2026-03-15T22:48:07.489065+00:00'
+  created_by: urn:undata:ingestion
+  description: Where the subject was acquired from. If bred in-house, use Allen Institute.
+  required: true
+current_version: 1

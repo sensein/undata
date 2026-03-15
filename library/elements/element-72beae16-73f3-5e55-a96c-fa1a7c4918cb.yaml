@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/72beae16-73f3-5e55-a96c-fa1a7c4918cb
+  source_local_id: aind.metadata._Fujinon.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.773698+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.773697+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

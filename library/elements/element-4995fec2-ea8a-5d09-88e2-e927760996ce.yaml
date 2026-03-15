@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/4995fec2-ea8a-5d09-88e2-e927760996ce
+  source_local_id: aind.metadata.Detector.sensor_width
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.282857+00:00'
+versions:
+- version_num: 1
+  name: sensor_width
+  data_type: float
+  created_at: '2026-03-15T22:48:07.282855+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

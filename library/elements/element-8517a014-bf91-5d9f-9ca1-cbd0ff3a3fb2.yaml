@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8517a014-bf91-5d9f-9ca1-cbd0ff3a3fb2
+  source_local_id: aind.acquisition.VolumeCalibration.protocol_id
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.011119+00:00'
+versions:
+- version_num: 1
+  name: protocol_id
+  data_type: string
+  created_at: '2026-03-15T22:48:06.011117+00:00'
+  created_by: urn:undata:ingestion
+  description: DOI for protocols.io
+current_version: 1

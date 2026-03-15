@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/45808996-c5ad-5ed3-80e6-30d8114d214e
+  source_local_id: aind.subject._Edmund_Optics.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.681058+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:05.681056+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

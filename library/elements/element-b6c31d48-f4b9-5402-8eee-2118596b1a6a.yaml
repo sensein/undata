@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/b6c31d48-f4b9-5402-8eee-2118596b1a6a
+  source_local_id: aind.metadata.Olfactometer.harp_device_type
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.517142+00:00'
+versions:
+- version_num: 1
+  name: harp_device_type
+  data_type: object
+  created_at: '2026-03-15T22:48:07.517140+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

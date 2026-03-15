@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/a6c5069b-def4-5792-ab14-0d65cab2f588
+  source_local_id: aind.metadata.StimulusEpoch.notes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.640690+00:00'
+versions:
+- version_num: 1
+  name: notes
+  data_type: string
+  created_at: '2026-03-15T22:48:07.640688+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

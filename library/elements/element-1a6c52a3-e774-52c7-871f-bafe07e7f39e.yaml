@@ -2,12 +2,12 @@ element:
   id: https://schema.undata.live/elements/1a6c52a3-e774-52c7-871f-bafe07e7f39e
   source_local_id: aind.subject.subject_details
   source_id: https://schema.undata.live/sources/aind
-  created_at: '2026-03-15T21:05:11.505285+00:00'
+  created_at: '2026-03-15T22:48:05.589462+00:00'
 versions:
 - version_num: 1
   name: subject_details
   data_type: object
-  description: ''
-  created_at: '2026-03-15T21:05:11.505291+00:00'
+  created_at: '2026-03-15T22:48:05.589452+00:00'
   created_by: urn:undata:ingestion
+  required: true
 current_version: 1

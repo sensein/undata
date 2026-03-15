@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/a49d6779-ffda-594c-b748-eec3e3fc4297
+  source_local_id: aind.metadata.Computer.operating_system
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.232645+00:00'
+versions:
+- version_num: 1
+  name: operating_system
+  data_type: string
+  created_at: '2026-03-15T22:48:07.232643+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/3288c893-8db9-5e07-9e43-e28968c9a2db
+  source_local_id: aind.metadata._Hamamatsu.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.777881+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:07.777879+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

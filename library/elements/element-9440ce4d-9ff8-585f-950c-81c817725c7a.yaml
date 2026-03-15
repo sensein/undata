@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/9440ce4d-9ff8-585f-950c-81c817725c7a
+  source_local_id: aind.metadata.SpecimenProcedure.protocol_id
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.636143+00:00'
+versions:
+- version_num: 1
+  name: protocol_id
+  data_type: string
+  created_at: '2026-03-15T22:48:07.636141+00:00'
+  created_by: urn:undata:ingestion
+  description: DOI for protocols.io
+current_version: 1

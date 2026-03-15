@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4470f1b4-8718-5d0e-a877-1bc9ff229197
+  source_local_id: aind.procedures.HybridizationChainReaction.start_time
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.364466+00:00'
+versions:
+- version_num: 1
+  name: start_time
+  data_type: string
+  created_at: '2026-03-15T22:48:06.364464+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

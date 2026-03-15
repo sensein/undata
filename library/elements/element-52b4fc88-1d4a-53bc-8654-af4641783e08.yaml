@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/52b4fc88-1d4a-53bc-8654-af4641783e08
+  source_local_id: aind.acquisition.MRIScan.rare_factor
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.941879+00:00'
+versions:
+- version_num: 1
+  name: rare_factor
+  data_type: float
+  created_at: '2026-03-15T22:48:05.941877+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

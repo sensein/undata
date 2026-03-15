@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/e3fcba3b-af32-5440-8a7e-b342eb918e83
+  source_local_id: aind.metadata.DataProcess.code
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.269173+00:00'
+versions:
+- version_num: 1
+  name: code
+  data_type: object
+  created_at: '2026-03-15T22:48:07.269171+00:00'
+  created_by: urn:undata:ingestion
+  description: Code used for processing
+  required: true
+current_version: 1

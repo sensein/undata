@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/e8c3f002-399f-5ade-96dc-478c50fe318c
+  source_local_id: aind.procedures.InjectionDynamics.injection_current
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.370969+00:00'
+versions:
+- version_num: 1
+  name: injection_current
+  data_type: float
+  created_at: '2026-03-15T22:48:06.370967+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

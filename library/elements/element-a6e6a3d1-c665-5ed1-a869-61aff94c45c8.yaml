@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/a6e6a3d1-c665-5ed1-a869-61aff94c45c8
+  source_local_id: aind.metadata.Lamp.additional_settings
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.394764+00:00'
+versions:
+- version_num: 1
+  name: additional_settings
+  data_type: object
+  created_at: '2026-03-15T22:48:07.394762+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/cb3795bd-574a-5fb5-88e1-9927cc1633ab
+  source_local_id: aind.instrument._Second_Order_Effects.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.082170+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.082168+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

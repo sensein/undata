@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/42c5d6d0-7570-57a2-b348-9ac3e9c03538
+  source_local_id: aind.acquisition._Cambridge_Technology.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.049174+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.049172+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

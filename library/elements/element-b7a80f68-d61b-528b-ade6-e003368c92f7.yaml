@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/b7a80f68-d61b-528b-ade6-e003368c92f7
+  source_local_id: aind.metadata.MousePlatformConfig.active_control
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.483933+00:00'
+versions:
+- version_num: 1
+  name: active_control
+  data_type: boolean
+  created_at: '2026-03-15T22:48:07.483931+00:00'
+  created_by: urn:undata:ingestion
+  description: True when movement of the mouse platform is dynamically controlled
+    by the experimenter
+current_version: 1

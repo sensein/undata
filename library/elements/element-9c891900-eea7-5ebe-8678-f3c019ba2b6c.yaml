@@ -2,12 +2,14 @@ element:
   id: https://schema.undata.live/elements/9c891900-eea7-5ebe-8678-f3c019ba2b6c
   source_local_id: aind.instrument.components
   source_id: https://schema.undata.live/sources/aind
-  created_at: '2026-03-15T21:05:11.529191+00:00'
+  created_at: '2026-03-15T22:48:06.659743+00:00'
 versions:
 - version_num: 1
   name: components
   data_type: string
-  description: List of all devices in the instrument
-  created_at: '2026-03-15T21:05:11.529193+00:00'
+  created_at: '2026-03-15T22:48:06.659739+00:00'
   created_by: urn:undata:ingestion
+  description: List of all devices in the instrument
+  required: true
+  multivalued: true
 current_version: 1

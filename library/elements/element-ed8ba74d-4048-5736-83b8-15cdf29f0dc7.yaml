@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ed8ba74d-4048-5736-83b8-15cdf29f0dc7
+  source_local_id: aind.instrument._Doric.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.954507+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.954505+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

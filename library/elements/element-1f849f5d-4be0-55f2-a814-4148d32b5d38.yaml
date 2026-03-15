@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/1f849f5d-4be0-55f2-a814-4148d32b5d38
+  source_local_id: aind.instrument.FiberProbe.core_diameter
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.758685+00:00'
+versions:
+- version_num: 1
+  name: core_diameter
+  data_type: float
+  created_at: '2026-03-15T22:48:06.758683+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/185813d2-d368-5158-b8fc-4d2fe53aaf2d
+  source_local_id: aind.procedures.Container.container_type
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.324639+00:00'
+versions:
+- version_num: 1
+  name: container_type
+  data_type: string
+  created_at: '2026-03-15T22:48:06.324631+00:00'
+  created_by: urn:undata:ingestion
+  description: Type of container, e.g. Docker, Singularity
+  required: true
+current_version: 1

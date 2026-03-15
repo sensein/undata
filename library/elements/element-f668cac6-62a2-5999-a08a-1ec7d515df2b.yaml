@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/f668cac6-62a2-5999-a08a-1ec7d515df2b
+  source_local_id: aind.metadata.CameraAssembly.camera
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.211495+00:00'
+versions:
+- version_num: 1
+  name: camera
+  data_type: object
+  created_at: '2026-03-15T22:48:07.211493+00:00'
+  created_by: urn:undata:ingestion
+  description: Camera Detector
+  required: true
+current_version: 1

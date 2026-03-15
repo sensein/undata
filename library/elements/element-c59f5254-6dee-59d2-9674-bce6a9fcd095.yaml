@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c59f5254-6dee-59d2-9674-bce6a9fcd095
+  source_local_id: aind.metadata.Section.end_coordinate
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.616481+00:00'
+versions:
+- version_num: 1
+  name: end_coordinate
+  data_type: object
+  created_at: '2026-03-15T22:48:07.616479+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

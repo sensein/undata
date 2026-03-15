@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/2c06282e-763b-5ec4-8ce8-9e41a806ee51
+  source_local_id: aind.model.example_run_code
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.964988+00:00'
+versions:
+- version_num: 1
+  name: example_run_code
+  data_type: object
+  created_at: '2026-03-15T22:48:07.964986+00:00'
+  created_by: urn:undata:ingestion
+  description: Code to run the model, possibly including example parameters/data
+  required: true
+current_version: 1

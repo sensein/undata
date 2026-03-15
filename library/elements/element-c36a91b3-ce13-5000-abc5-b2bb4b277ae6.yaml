@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c36a91b3-ce13-5000-abc5-b2bb4b277ae6
+  source_local_id: aind.procedures._Transducer_Techniques.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.642264+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.642262+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

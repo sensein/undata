@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/0f197904-979f-5e25-808c-10b7fc7107b6
+  source_local_id: aind.metadata.AdditionalImagingDevice.additional_settings
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.159625+00:00'
+versions:
+- version_num: 1
+  name: additional_settings
+  data_type: object
+  created_at: '2026-03-15T22:48:07.159623+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

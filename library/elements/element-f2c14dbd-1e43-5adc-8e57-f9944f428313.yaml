@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f2c14dbd-1e43-5adc-8e57-f9944f428313
+  source_local_id: aind.metadata._Tymphany.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.945132+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:07.945130+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

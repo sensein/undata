@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/726ab51c-0e94-5d5c-aa3e-cb70445f59a2
+  source_local_id: aind.metadata.EphysProbe.additional_settings
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.321676+00:00'
+versions:
+- version_num: 1
+  name: additional_settings
+  data_type: object
+  created_at: '2026-03-15T22:48:07.321674+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

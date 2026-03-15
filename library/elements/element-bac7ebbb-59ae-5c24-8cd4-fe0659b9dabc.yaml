@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/bac7ebbb-59ae-5c24-8cd4-fe0659b9dabc
+  source_local_id: aind.subject.MouseSubject.housing
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.606108+00:00'
+versions:
+- version_num: 1
+  name: housing
+  data_type: object
+  created_at: '2026-03-15T22:48:05.606106+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

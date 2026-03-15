@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/59efb74b-85e2-5b97-a5d6-5fd91e91cc47
+  source_local_id: aind.instrument.AirPuffDevice.diameter_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.667164+00:00'
+versions:
+- version_num: 1
+  name: diameter_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:06.667161+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Length Measurements
+  required: true
+current_version: 1

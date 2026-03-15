@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f9eca32b-4e79-51c7-b605-202c66b394a6
+  source_local_id: aind.quality_control.CurationHistory.curator
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:08.023745+00:00'
+versions:
+- version_num: 1
+  name: curator
+  data_type: string
+  created_at: '2026-03-15T22:48:08.023743+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

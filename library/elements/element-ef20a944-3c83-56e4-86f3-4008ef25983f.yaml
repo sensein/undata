@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ef20a944-3c83-56e4-86f3-4008ef25983f
+  source_local_id: aind.acquisition.VolumeCalibration.fit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.014455+00:00'
+versions:
+- version_num: 1
+  name: fit
+  data_type: object
+  created_at: '2026-03-15T22:48:06.014452+00:00'
+  created_by: urn:undata:ingestion
+  description: Fit equation for the calibration data used during data acquisition
+current_version: 1

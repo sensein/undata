@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/766ab370-feaf-506a-b471-edb4f9323b1a
+  source_local_id: aind.procedures._Johns_Hopkins_University.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.534762+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.534760+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f2d5edc4-f5b1-5821-9d6e-08f813e04bc8
+  source_local_id: aind.acquisition._Cajal_Neuroscience.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.047874+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.047872+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

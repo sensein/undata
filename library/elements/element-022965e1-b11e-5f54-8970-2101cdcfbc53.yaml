@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/022965e1-b11e-5f54-8970-2101cdcfbc53
+  source_local_id: aind.metadata._Spinnaker.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.917338+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.917336+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

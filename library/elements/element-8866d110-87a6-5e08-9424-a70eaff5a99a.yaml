@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8866d110-87a6-5e08-9424-a70eaff5a99a
+  source_local_id: aind.procedures.SpecimenProcedure.start_date
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.417305+00:00'
+versions:
+- version_num: 1
+  name: start_date
+  data_type: string
+  created_at: '2026-03-15T22:48:06.417303+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

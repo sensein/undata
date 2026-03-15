@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/da841982-e3be-5c7e-b1a3-e6331c6970f6
+  source_local_id: aind.metadata.Software.version
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.626276+00:00'
+versions:
+- version_num: 1
+  name: version
+  data_type: string
+  created_at: '2026-03-15T22:48:07.626274+00:00'
+  created_by: urn:undata:ingestion
+  description: Version of the software package
+current_version: 1

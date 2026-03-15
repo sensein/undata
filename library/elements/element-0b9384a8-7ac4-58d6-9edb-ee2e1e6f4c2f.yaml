@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/0b9384a8-7ac4-58d6-9edb-ee2e1e6f4c2f
+  source_local_id: aind.instrument.Disc.model
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.735966+00:00'
+versions:
+- version_num: 1
+  name: model
+  data_type: string
+  created_at: '2026-03-15T22:48:06.735965+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

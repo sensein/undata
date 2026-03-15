@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/e8b16a9f-e192-5c36-8015-df4d297d30f3
+  source_local_id: aind.metadata._Mks_Newport.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.845319+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.845317+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

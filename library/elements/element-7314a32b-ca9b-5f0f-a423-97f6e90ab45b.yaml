@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7314a32b-ca9b-5f0f-a423-97f6e90ab45b
+  source_local_id: aind.metadata.DataDescription.license
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.260563+00:00'
+versions:
+- version_num: 1
+  name: license
+  data_type: string
+  created_at: '2026-03-15T22:48:07.260561+00:00'
+  created_by: urn:undata:ingestion
+  description: Licenses
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/7357f74b-addd-56e2-a170-14eb5ea0c507
+  source_local_id: aind.instrument._Cajal_Neuroscience.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.924829+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.924827+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

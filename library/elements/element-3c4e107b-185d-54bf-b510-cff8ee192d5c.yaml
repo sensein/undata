@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/3c4e107b-185d-54bf-b510-cff8ee192d5c
+  source_local_id: aind.metadata.Filter.model
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.337494+00:00'
+versions:
+- version_num: 1
+  name: model
+  data_type: string
+  created_at: '2026-03-15T22:48:07.337491+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

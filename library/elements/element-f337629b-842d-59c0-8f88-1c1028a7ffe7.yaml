@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/f337629b-842d-59c0-8f88-1c1028a7ffe7
+  source_local_id: aind.metadata.PowerCalibration.output
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.566648+00:00'
+versions:
+- version_num: 1
+  name: output
+  data_type: string
+  created_at: '2026-03-15T22:48:07.566646+00:00'
+  created_by: urn:undata:ingestion
+  description: Power output (provide the average if repeated)
+  required: true
+  multivalued: true
+current_version: 1

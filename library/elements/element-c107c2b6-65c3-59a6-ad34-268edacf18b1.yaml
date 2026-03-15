@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c107c2b6-65c3-59a6-ad34-268edacf18b1
+  source_local_id: aind.procedures._Open_Ephys_Production_Site.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.592819+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.592817+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

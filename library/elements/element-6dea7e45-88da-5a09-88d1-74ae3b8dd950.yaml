@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/6dea7e45-88da-5a09-88d1-74ae3b8dd950
+  source_local_id: aind.instrument.Treadmill.model
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.872790+00:00'
+versions:
+- version_num: 1
+  name: model
+  data_type: string
+  created_at: '2026-03-15T22:48:06.872788+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

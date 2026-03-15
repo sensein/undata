@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/437c7763-813d-54f3-b1ac-da86b93cb0df
+  source_local_id: aind.metadata.DAQDevice.serial_number
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.256142+00:00'
+versions:
+- version_num: 1
+  name: serial_number
+  data_type: string
+  created_at: '2026-03-15T22:48:07.256141+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

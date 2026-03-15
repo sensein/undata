@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/8794dfa0-55d7-52e2-a276-aa4090d9fb06
+  source_local_id: aind.metadata.Objective.additional_settings
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.510145+00:00'
+versions:
+- version_num: 1
+  name: additional_settings
+  data_type: object
+  created_at: '2026-03-15T22:48:07.510143+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

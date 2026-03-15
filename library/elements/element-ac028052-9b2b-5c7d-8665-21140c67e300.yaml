@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/ac028052-9b2b-5c7d-8665-21140c67e300
+  source_local_id: aind.metadata.Section.partial_slice
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.617713+00:00'
+versions:
+- version_num: 1
+  name: partial_slice
+  data_type: string
+  created_at: '2026-03-15T22:48:07.617711+00:00'
+  created_by: urn:undata:ingestion
+  description: If sectioning does not include the entire slice, indicate which part
+    of the slice is retained.
+current_version: 1

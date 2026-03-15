@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/8230a99d-d004-523d-84da-3819bc9b8eab
+  source_local_id: aind.procedures._Lama_Glama.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.541071+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.541069+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

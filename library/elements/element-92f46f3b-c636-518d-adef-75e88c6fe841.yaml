@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/92f46f3b-c636-518d-adef-75e88c6fe841
+  source_local_id: aind.metadata.Scanner.manufacturer
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.606925+00:00'
+versions:
+- version_num: 1
+  name: manufacturer
+  data_type: string
+  created_at: '2026-03-15T22:48:07.606923+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

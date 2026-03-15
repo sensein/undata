@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/7d61d9b3-1d6b-5aa3-ac33-bd536424ec44
+  source_local_id: aind.instrument.Scanner.serial_number
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.858023+00:00'
+versions:
+- version_num: 1
+  name: serial_number
+  data_type: string
+  created_at: '2026-03-15T22:48:06.858021+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

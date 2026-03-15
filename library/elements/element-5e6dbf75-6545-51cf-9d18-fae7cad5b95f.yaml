@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/5e6dbf75-6545-51cf-9d18-fae7cad5b95f
+  source_local_id: aind.data_description._Columbia_University.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.253647+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.253645+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

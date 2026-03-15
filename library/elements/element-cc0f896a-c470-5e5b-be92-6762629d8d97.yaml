@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/cc0f896a-c470-5e5b-be92-6762629d8d97
+  source_local_id: aind.instrument.Camera.model
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.680196+00:00'
+versions:
+- version_num: 1
+  name: model
+  data_type: string
+  created_at: '2026-03-15T22:48:06.680194+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

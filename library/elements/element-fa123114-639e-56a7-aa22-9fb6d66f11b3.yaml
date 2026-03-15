@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/fa123114-639e-56a7-aa22-9fb6d66f11b3
+  source_local_id: aind.instrument._Basler.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.915186+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.915182+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

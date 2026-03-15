@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/0ee8b7f7-b09b-555e-93ef-c1834fd9dde3
+  source_local_id: aind.metadata.CameraAssembly.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.210589+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.210587+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

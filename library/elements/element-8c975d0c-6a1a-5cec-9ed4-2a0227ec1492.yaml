@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/8c975d0c-6a1a-5cec-9ed4-2a0227ec1492
+  source_local_id: aind.metadata._Environmentsensor.whoami
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.766436+00:00'
+versions:
+- version_num: 1
+  name: whoami
+  data_type: float
+  created_at: '2026-03-15T22:48:07.766431+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

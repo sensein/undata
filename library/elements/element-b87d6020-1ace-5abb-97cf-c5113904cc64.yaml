@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/b87d6020-1ace-5abb-97cf-c5113904cc64
+  source_local_id: aind.acquisition.DataStream.stream_end_time
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.899320+00:00'
+versions:
+- version_num: 1
+  name: stream_end_time
+  data_type: string
+  created_at: '2026-03-15T22:48:05.899318+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

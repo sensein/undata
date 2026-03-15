@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/272c01b2-ca42-5199-8ce7-65534ed044ed
+  source_local_id: aind.instrument.FiberProbe.ferrule_material
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.760244+00:00'
+versions:
+- version_num: 1
+  name: ferrule_material
+  data_type: string
+  created_at: '2026-03-15T22:48:06.760241+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

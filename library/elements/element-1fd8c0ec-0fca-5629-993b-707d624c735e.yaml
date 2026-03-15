@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/1fd8c0ec-0fca-5629-993b-707d624c735e
+  source_local_id: aind.metadata.Injection.injection_materials
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.382304+00:00'
+versions:
+- version_num: 1
+  name: injection_materials
+  data_type: string
+  created_at: '2026-03-15T22:48:07.382301+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+  multivalued: true
+current_version: 1

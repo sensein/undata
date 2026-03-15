@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/03f57665-df67-58e2-8f47-53667c51ccaf
+  source_local_id: aind.instrument.HarpDevice.is_clock_generator
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.773013+00:00'
+versions:
+- version_num: 1
+  name: is_clock_generator
+  data_type: boolean
+  created_at: '2026-03-15T22:48:06.773011+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

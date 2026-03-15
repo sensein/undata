@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/510e4ecc-acd4-5553-9026-55e574414a93
+  source_local_id: aind.metadata._Rfidreader.whoami
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.896988+00:00'
+versions:
+- version_num: 1
+  name: whoami
+  data_type: float
+  created_at: '2026-03-15T22:48:07.896987+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

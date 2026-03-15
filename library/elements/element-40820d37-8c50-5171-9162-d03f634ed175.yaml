@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/40820d37-8c50-5171-9162-d03f634ed175
+  source_local_id: aind.metadata.MISModuleConfig.arc_angle
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.429917+00:00'
+versions:
+- version_num: 1
+  name: arc_angle
+  data_type: float
+  created_at: '2026-03-15T22:48:07.429915+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

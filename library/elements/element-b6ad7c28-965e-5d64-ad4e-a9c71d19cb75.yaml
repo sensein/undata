@@ -2,12 +2,13 @@ element:
   id: https://schema.undata.live/elements/b6ad7c28-965e-5d64-ad4e-a9c71d19cb75
   source_local_id: aind.acquisition.instrument_id
   source_id: https://schema.undata.live/sources/aind
-  created_at: '2026-03-15T21:05:11.510495+00:00'
+  created_at: '2026-03-15T22:48:05.845793+00:00'
 versions:
 - version_num: 1
   name: instrument_id
   data_type: string
-  description: Should match the Instrument.instrument_id
-  created_at: '2026-03-15T21:05:11.510497+00:00'
+  created_at: '2026-03-15T22:48:05.845791+00:00'
   created_by: urn:undata:ingestion
+  description: Should match the Instrument.instrument_id
+  required: true
 current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/1cb24cb1-af2f-58d7-8f60-5f2bc0d88d3a
+  source_local_id: aind.acquisition.Slap2Plane.specimen_id
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.993610+00:00'
+versions:
+- version_num: 1
+  name: specimen_id
+  data_type: string
+  created_at: '2026-03-15T22:48:05.993608+00:00'
+  created_by: urn:undata:ingestion
+  description: 'Unique index identifying the cell being imaged: <subject_id>_###'
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/1307d345-458c-50a7-8ded-3c2b9a6a5515
+  source_local_id: aind.subject._Asus.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.634326+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:05.634324+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

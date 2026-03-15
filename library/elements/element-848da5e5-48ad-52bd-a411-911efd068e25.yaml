@@ -2,12 +2,11 @@ element:
   id: https://schema.undata.live/elements/848da5e5-48ad-52bd-a411-911efd068e25
   source_local_id: aind.instrument.notes
   source_id: https://schema.undata.live/sources/aind
-  created_at: '2026-03-15T21:05:11.528338+00:00'
+  created_at: '2026-03-15T22:48:06.658733+00:00'
 versions:
 - version_num: 1
   name: notes
   data_type: string
-  description: ''
-  created_at: '2026-03-15T21:05:11.528340+00:00'
+  created_at: '2026-03-15T22:48:06.658731+00:00'
   created_by: urn:undata:ingestion
 current_version: 1

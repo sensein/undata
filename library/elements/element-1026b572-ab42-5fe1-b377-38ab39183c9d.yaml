@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/1026b572-ab42-5fe1-b377-38ab39183c9d
+  source_local_id: aind.acquisition.LaserConfig.power_measured_at
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.927073+00:00'
+versions:
+- version_num: 1
+  name: power_measured_at
+  data_type: string
+  created_at: '2026-03-15T22:48:05.927071+00:00'
+  created_by: urn:undata:ingestion
+  description: 'For example: objective, patch cable, etc'
+current_version: 1

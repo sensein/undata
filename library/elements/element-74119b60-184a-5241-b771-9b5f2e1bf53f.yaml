@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/74119b60-184a-5241-b771-9b5f2e1bf53f
+  source_local_id: aind.instrument.Axis.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.671662+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.671660+00:00'
+  created_by: urn:undata:ingestion
+  description: Axis name
+  required: true
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/542f6d19-7955-58f2-851a-18b5bf48f9ee
+  source_local_id: aind.metadata.FluorescentStain.fluorophore
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.344037+00:00'
+versions:
+- version_num: 1
+  name: fluorophore
+  data_type: object
+  created_at: '2026-03-15T22:48:07.344035+00:00'
+  created_by: urn:undata:ingestion
+  description: Flurophore used in HCR, Immunolabeling, etc
+  required: true
+current_version: 1

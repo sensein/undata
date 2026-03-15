@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/e8533c6c-9caa-58c8-91d0-296ec4ea85ad
+  source_local_id: aind.procedures._Te_Connectivity.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.627667+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.627665+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

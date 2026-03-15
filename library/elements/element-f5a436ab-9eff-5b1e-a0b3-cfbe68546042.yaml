@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f5a436ab-9eff-5b1e-a0b3-cfbe68546042
+  source_local_id: aind.metadata._Abcam.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.685484+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:07.685482+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

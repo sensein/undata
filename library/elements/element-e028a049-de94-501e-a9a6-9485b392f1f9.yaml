@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/e028a049-de94-501e-a9a6-9485b392f1f9
+  source_local_id: aind.metadata.Wheel.magnetic_brake
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.681693+00:00'
+versions:
+- version_num: 1
+  name: magnetic_brake
+  data_type: object
+  created_at: '2026-03-15T22:48:07.681691+00:00'
+  created_by: urn:undata:ingestion
+  description: Generic device
+  required: true
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/106c83f5-c7ac-5aa7-9885-cf5d24153421
+  source_local_id: aind.instrument.PowerCalibration.repeats
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.853077+00:00'
+versions:
+- version_num: 1
+  name: repeats
+  data_type: float
+  created_at: '2026-03-15T22:48:06.853075+00:00'
+  created_by: urn:undata:ingestion
+  description: If each input was repeated multiple times, provide the number of repeats
+current_version: 1

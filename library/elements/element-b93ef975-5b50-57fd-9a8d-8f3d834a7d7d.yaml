@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/b93ef975-5b50-57fd-9a8d-8f3d834a7d7d
+  source_local_id: aind.metadata.ModelEvaluation.output_path
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.460147+00:00'
+versions:
+- version_num: 1
+  name: output_path
+  data_type: string
+  created_at: '2026-03-15T22:48:07.460145+00:00'
+  created_by: urn:undata:ingestion
+  description: Path to processing outputs, if stored.
+current_version: 1

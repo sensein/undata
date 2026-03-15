@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f65a782e-a13b-5a17-9855-d15d4e9664d9
+  source_local_id: aind.procedures._Mks_Newport.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.567317+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.567315+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

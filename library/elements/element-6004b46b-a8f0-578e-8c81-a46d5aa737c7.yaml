@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/6004b46b-a8f0-578e-8c81-a46d5aa737c7
+  source_local_id: aind.instrument.CalibrationFit.fit_parameters
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.678454+00:00'
+versions:
+- version_num: 1
+  name: fit_parameters
+  data_type: object
+  created_at: '2026-03-15T22:48:06.678452+00:00'
+  created_by: urn:undata:ingestion
+  description: Parameters of the fit equation, e.g. slope and intercept for linear
+    fit
+current_version: 1

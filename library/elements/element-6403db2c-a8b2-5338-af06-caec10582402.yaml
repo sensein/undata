@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/6403db2c-a8b2-5338-af06-caec10582402
+  source_local_id: aind.subject._Cambridge_Technology.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.649665+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:05.649663+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

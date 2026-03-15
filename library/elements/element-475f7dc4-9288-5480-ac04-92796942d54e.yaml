@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/475f7dc4-9288-5480-ac04-92796942d54e
+  source_local_id: aind.procedures._Jenoptik.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.533109+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.533107+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

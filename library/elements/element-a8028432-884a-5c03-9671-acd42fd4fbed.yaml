@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/a8028432-884a-5c03-9671-acd42fd4fbed
+  source_local_id: aind.subject.MouseSubject.genotype
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.604682+00:00'
+versions:
+- version_num: 1
+  name: genotype
+  data_type: string
+  created_at: '2026-03-15T22:48:05.604680+00:00'
+  created_by: urn:undata:ingestion
+  description: Genotype of the animal providing both alleles
+  required: true
+current_version: 1

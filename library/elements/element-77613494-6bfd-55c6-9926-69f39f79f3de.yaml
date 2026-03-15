@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/77613494-6bfd-55c6-9926-69f39f79f3de
+  source_local_id: aind.procedures._Spinnaker.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.624393+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.624391+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

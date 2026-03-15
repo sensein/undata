@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/1f00fe17-ed20-5468-8e23-d9995c38e7f1
+  source_local_id: aind.processing.Code.language
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:08.002482+00:00'
+versions:
+- version_num: 1
+  name: language
+  data_type: string
+  created_at: '2026-03-15T22:48:08.002479+00:00'
+  created_by: urn:undata:ingestion
+  description: Programming language used
+current_version: 1

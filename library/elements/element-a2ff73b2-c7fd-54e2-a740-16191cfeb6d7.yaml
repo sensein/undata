@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/a2ff73b2-c7fd-54e2-a740-16191cfeb6d7
+  source_local_id: aind.subject._National_Instruments.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.760193+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:05.760191+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f2d655db-a7e0-54ee-ae68-e0f2eef55058
+  source_local_id: aind.subject._Navitar.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.761583+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:05.761581+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a9ba03b0-9a82-5e37-a146-b3972c4a8186
+  source_local_id: aind.model.ResourceUsage.os
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.992227+00:00'
+versions:
+- version_num: 1
+  name: os
+  data_type: string
+  created_at: '2026-03-15T22:48:07.992225+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

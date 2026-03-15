@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/a7aa67d2-c5e8-5f90-85a7-d047dc13001c
+  source_local_id: aind.metadata._Huazhong_University_Of_Science_And_Technology.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.783773+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:07.783771+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

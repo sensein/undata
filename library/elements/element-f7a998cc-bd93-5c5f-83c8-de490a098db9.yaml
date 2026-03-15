@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f7a998cc-bd93-5c5f-83c8-de490a098db9
+  source_local_id: aind.metadata.Wheel.size_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.680352+00:00'
+versions:
+- version_num: 1
+  name: size_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.680350+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Length Measurements
+current_version: 1

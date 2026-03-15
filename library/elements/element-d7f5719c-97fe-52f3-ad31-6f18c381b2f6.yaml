@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/d7f5719c-97fe-52f3-ad31-6f18c381b2f6
+  source_local_id: aind.instrument.Arena.size
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.670301+00:00'
+versions:
+- version_num: 1
+  name: size
+  data_type: object
+  created_at: '2026-03-15T22:48:06.670299+00:00'
+  created_by: urn:undata:ingestion
+  description: Scale
+  required: true
+current_version: 1

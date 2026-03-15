@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/d8898703-ba30-508c-9a15-c3e08cf4fd8a
+  source_local_id: aind.acquisition.Reagent.rrid
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.986022+00:00'
+versions:
+- version_num: 1
+  name: rrid
+  data_type: object
+  created_at: '2026-03-15T22:48:05.986020+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

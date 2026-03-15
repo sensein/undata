@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/039a7d77-14c8-5121-9336-ad1e9f807b70
+  source_local_id: aind.instrument.FiberPatchCord.notes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.754047+00:00'
+versions:
+- version_num: 1
+  name: notes
+  data_type: string
+  created_at: '2026-03-15T22:48:06.754045+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

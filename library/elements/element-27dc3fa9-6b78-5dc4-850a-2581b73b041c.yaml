@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/27dc3fa9-6b78-5dc4-850a-2581b73b041c
+  source_local_id: aind.acquisition._Custom.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.069013+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.069011+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

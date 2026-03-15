@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/9e012b75-3a66-5bed-bd55-9d5df0e1eda4
+  source_local_id: aind.subject._Templeton_World_Charity_Foundation.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.817203+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.817202+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

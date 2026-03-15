@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c3652847-ace7-5b0e-a456-1035a5e498e5
+  source_local_id: aind.procedures._Arecont_Vision_Costar.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.457486+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.457484+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

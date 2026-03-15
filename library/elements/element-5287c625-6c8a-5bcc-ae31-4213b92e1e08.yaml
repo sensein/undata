@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/5287c625-6c8a-5bcc-ae31-4213b92e1e08
+  source_local_id: aind.metadata.Instrument.modification_date
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.389196+00:00'
+versions:
+- version_num: 1
+  name: modification_date
+  data_type: string
+  created_at: '2026-03-15T22:48:07.389194+00:00'
+  created_by: urn:undata:ingestion
+  description: Date of the last change to the instrument, hardware addition/removal,
+    calibration, etc.
+  required: true
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/1f45e645-5093-5284-afed-75b3196fec67
+  source_local_id: aind.metadata._Spim.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.916907+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.916905+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

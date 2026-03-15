@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ed8cae50-e6e5-595b-b07e-c05f279b10ff
+  source_local_id: aind.metadata.aind_data_schema_models__organizations___Unknown.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.960926+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.960924+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

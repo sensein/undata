@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/df2944f6-755a-5de8-bfa7-0a49235f40be
+  source_local_id: aind.instrument.Scanner.magnetic_strength_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.860552+00:00'
+versions:
+- version_num: 1
+  name: magnetic_strength_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:06.860550+00:00'
+  created_by: urn:undata:ingestion
+  description: Magnetic field units
+  required: true
+current_version: 1

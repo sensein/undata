@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/bc586531-5312-5ee0-a326-09485da99dca
+  source_local_id: aind.metadata.Lamp.temperature
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.396873+00:00'
+versions:
+- version_num: 1
+  name: temperature
+  data_type: float
+  created_at: '2026-03-15T22:48:07.396871+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

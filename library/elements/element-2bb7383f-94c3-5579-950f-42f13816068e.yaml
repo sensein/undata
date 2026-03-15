@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/2bb7383f-94c3-5579-950f-42f13816068e
+  source_local_id: aind.subject._New_Scale_Technologies.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.766942+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:05.766940+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

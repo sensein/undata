@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/e8b1e5a4-856f-5b6f-ac7b-8bca2d587b5c
+  source_local_id: aind.metadata.InjectionDynamics.alternating_current
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.387875+00:00'
+versions:
+- version_num: 1
+  name: alternating_current
+  data_type: string
+  created_at: '2026-03-15T22:48:07.387873+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

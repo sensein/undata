@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/c284bb20-0745-5791-84d3-8d69744de3f2
+  source_local_id: aind.subject.MouseSubject.species
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.603668+00:00'
+versions:
+- version_num: 1
+  name: species
+  data_type: object
+  created_at: '2026-03-15T22:48:05.603664+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

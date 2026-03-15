@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7ef32279-aa2c-5d89-b4db-e66922fbe46f
+  source_local_id: aind.procedures.Surgery.measured_coordinates
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.424693+00:00'
+versions:
+- version_num: 1
+  name: measured_coordinates
+  data_type: object
+  created_at: '2026-03-15T22:48:06.424691+00:00'
+  created_by: urn:undata:ingestion
+  description: Coordinates measured during the procedure, for example Bregma and Lambda
+current_version: 1

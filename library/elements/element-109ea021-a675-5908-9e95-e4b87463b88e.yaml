@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/109ea021-a675-5908-9e95-e4b87463b88e
+  source_local_id: aind.metadata.Camera.sensor_format_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.202704+00:00'
+versions:
+- version_num: 1
+  name: sensor_format_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.202702+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

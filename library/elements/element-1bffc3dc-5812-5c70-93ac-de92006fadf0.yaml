@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/1bffc3dc-5812-5c70-93ac-de92006fadf0
+  source_local_id: aind.instrument._Treadmill.whoami
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.122363+00:00'
+versions:
+- version_num: 1
+  name: whoami
+  data_type: float
+  created_at: '2026-03-15T22:48:07.122361+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

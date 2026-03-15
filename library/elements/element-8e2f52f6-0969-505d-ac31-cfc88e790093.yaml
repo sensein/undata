@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/8e2f52f6-0969-505d-ac31-cfc88e790093
+  source_local_id: aind.metadata.Plane.targeted_structure
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.553115+00:00'
+versions:
+- version_num: 1
+  name: targeted_structure
+  data_type: object
+  created_at: '2026-03-15T22:48:07.553112+00:00'
+  created_by: urn:undata:ingestion
+  description: Base model for brain strutures
+  required: true
+current_version: 1

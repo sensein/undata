@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ba2f8df4-6505-5c35-bc8a-8bd96904f8d8
+  source_local_id: aind.subject._Applied_Scientific_Instrumentation.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.627901+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.627899+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

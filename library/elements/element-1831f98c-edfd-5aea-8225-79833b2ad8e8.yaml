@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/1831f98c-edfd-5aea-8225-79833b2ad8e8
+  source_local_id: aind.acquisition._Hamilton.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.091908+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.091906+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

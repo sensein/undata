@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6219c788-e4dd-551d-aea7-dc3e49bef6cd
+  source_local_id: aind.quality_control.CurationHistory.timestamp
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:08.024178+00:00'
+versions:
+- version_num: 1
+  name: timestamp
+  data_type: string
+  created_at: '2026-03-15T22:48:08.024176+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

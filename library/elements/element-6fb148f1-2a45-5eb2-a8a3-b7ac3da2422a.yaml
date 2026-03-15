@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/6fb148f1-2a45-5eb2-a8a3-b7ac3da2422a
+  source_local_id: aind.acquisition._Neurophotometrics.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.159650+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.159648+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

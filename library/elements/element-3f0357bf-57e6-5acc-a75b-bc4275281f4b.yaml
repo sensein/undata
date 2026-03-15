@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/3f0357bf-57e6-5acc-a75b-bc4275281f4b
+  source_local_id: aind.instrument.CalibrationFit.fit_type
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.677986+00:00'
+versions:
+- version_num: 1
+  name: fit_type
+  data_type: string
+  created_at: '2026-03-15T22:48:06.677984+00:00'
+  created_by: urn:undata:ingestion
+  description: Type of fit for calibration data
+  required: true
+current_version: 1

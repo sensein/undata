@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f0239870-cec4-5691-ba00-0630c9b4ad7d
+  source_local_id: aind.metadata.Wheel.width
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.679927+00:00'
+versions:
+- version_num: 1
+  name: width
+  data_type: float
+  created_at: '2026-03-15T22:48:07.679925+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

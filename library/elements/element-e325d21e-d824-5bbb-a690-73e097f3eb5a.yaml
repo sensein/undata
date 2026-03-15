@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e325d21e-d824-5bbb-a690-73e097f3eb5a
+  source_local_id: aind.metadata.Scanner.magnetic_strength
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.608602+00:00'
+versions:
+- version_num: 1
+  name: magnetic_strength
+  data_type: float
+  created_at: '2026-03-15T22:48:07.608600+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/dcbae780-209e-5df8-bbb9-36c0ffa5b98d
+  source_local_id: aind.subject._Basler.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.637736+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:05.637735+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

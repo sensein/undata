@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/70871392-4c80-513a-b93f-6a3eb0cca8d2
+  source_local_id: aind.procedures.Fluorophore.excitation_wavelength_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.349211+00:00'
+versions:
+- version_num: 1
+  name: excitation_wavelength_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:06.349209+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Length Measurements
+current_version: 1

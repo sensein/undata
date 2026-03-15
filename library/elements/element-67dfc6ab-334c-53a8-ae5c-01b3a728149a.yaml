@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/67dfc6ab-334c-53a8-ae5c-01b3a728149a
+  source_local_id: aind.procedures._Conoptics.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.489898+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.489896+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

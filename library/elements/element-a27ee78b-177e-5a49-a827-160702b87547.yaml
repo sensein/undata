@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a27ee78b-177e-5a49-a827-160702b87547
+  source_local_id: aind.model.ModelTraining.output_parameters
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.987816+00:00'
+versions:
+- version_num: 1
+  name: output_parameters
+  data_type: object
+  created_at: '2026-03-15T22:48:07.987814+00:00'
+  created_by: urn:undata:ingestion
+  description: Output parameters
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/b3fb25ed-7bfb-54ed-a702-5b022eb81436
+  source_local_id: aind.procedures._Vicuna_Pacos.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.649906+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.649904+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

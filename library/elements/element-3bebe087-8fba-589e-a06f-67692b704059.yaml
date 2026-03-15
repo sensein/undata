@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/3bebe087-8fba-589e-a06f-67692b704059
+  source_local_id: aind.metadata.InjectionDynamics.volume_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.385719+00:00'
+versions:
+- version_num: 1
+  name: volume_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.385717+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

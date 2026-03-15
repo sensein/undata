@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/6b9ff6e1-36f5-5df8-bfcb-cc58633bf4d4
+  source_local_id: aind.instrument._Same_Sky.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.077876+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.077874+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

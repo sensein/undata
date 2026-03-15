@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/2d3fc874-d4c4-5353-acae-dca45200188e
+  source_local_id: aind.metadata.AirPuffDevice.additional_settings
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.166732+00:00'
+versions:
+- version_num: 1
+  name: additional_settings
+  data_type: object
+  created_at: '2026-03-15T22:48:07.166730+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

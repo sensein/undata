@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/3f6a8c78-c42e-5378-a715-8e918c719ea3
+  source_local_id: aind.instrument._Pluma.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.067561+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.067559+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

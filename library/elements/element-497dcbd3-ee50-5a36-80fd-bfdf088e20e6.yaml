@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/497dcbd3-ee50-5a36-80fd-bfdf088e20e6
+  source_local_id: aind.procedures._Lifecanvas.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.548159+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.548157+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

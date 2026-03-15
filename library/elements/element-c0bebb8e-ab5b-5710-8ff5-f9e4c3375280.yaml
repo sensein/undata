@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c0bebb8e-ab5b-5710-8ff5-f9e4c3375280
+  source_local_id: aind.acquisition._Lumencor.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.127688+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.127686+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

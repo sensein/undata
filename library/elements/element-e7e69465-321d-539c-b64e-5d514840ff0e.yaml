@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e7e69465-321d-539c-b64e-5d514840ff0e
+  source_local_id: aind.acquisition.AcquisitionSubjectDetails.animal_weight_prior
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.850739+00:00'
+versions:
+- version_num: 1
+  name: animal_weight_prior
+  data_type: float
+  created_at: '2026-03-15T22:48:05.850737+00:00'
+  created_by: urn:undata:ingestion
+  description: Animal weight before procedure
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/bd6fc2bb-ac1b-53d3-9ae3-31ac69cf7ba9
+  source_local_id: aind.acquisition.Channel.detector
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.879287+00:00'
+versions:
+- version_num: 1
+  name: detector
+  data_type: object
+  created_at: '2026-03-15T22:48:05.879285+00:00'
+  created_by: urn:undata:ingestion
+  description: Configuration of detector settings
+  required: true
+current_version: 1

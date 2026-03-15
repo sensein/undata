@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/2153e31b-617a-5137-b3cb-51d5499c531f
+  source_local_id: aind.metadata.LickSpoutConfig.coordinate_system
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.418994+00:00'
+versions:
+- version_num: 1
+  name: coordinate_system
+  data_type: object
+  created_at: '2026-03-15T22:48:07.418992+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

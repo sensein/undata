@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/de368b1f-ac7d-580b-a0a1-3c856dc5c455
+  source_local_id: aind.subject._National_Center_For_Complementary_And_Integrative_Health.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.754057+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:05.754055+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

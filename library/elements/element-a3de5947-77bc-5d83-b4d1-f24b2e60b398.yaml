@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/a3de5947-77bc-5d83-b4d1-f24b2e60b398
+  source_local_id: aind.metadata._Tamron.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.923447+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:07.923445+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

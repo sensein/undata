@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/dd31b58c-4340-5f50-8c75-88ab2da9040d
+  source_local_id: aind.metadata.Code.input_data
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.226856+00:00'
+versions:
+- version_num: 1
+  name: input_data
+  data_type: string
+  created_at: '2026-03-15T22:48:07.226854+00:00'
+  created_by: urn:undata:ingestion
+  description: Input data used in the code or script
+current_version: 1

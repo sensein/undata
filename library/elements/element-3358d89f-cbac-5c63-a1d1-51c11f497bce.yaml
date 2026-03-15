@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/3358d89f-cbac-5c63-a1d1-51c11f497bce
+  source_local_id: aind.acquisition.Atlas.axis_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.861180+00:00'
+versions:
+- version_num: 1
+  name: axis_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:05.861178+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Length Measurements
+  required: true
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/f24791c0-6b29-5aac-b0b6-88f626dd3331
+  source_local_id: aind.metadata.Plane.power_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.552578+00:00'
+versions:
+- version_num: 1
+  name: power_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.552575+00:00'
+  created_by: urn:undata:ingestion
+  description: Unit for power, set or measured
+  required: true
+current_version: 1

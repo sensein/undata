@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/2633361a-c51a-5bc0-ab3b-8496c81d4bcd
+  source_local_id: aind.metadata._Euresys.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.770303+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:07.770301+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

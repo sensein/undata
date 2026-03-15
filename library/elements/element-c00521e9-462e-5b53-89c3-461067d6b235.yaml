@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c00521e9-462e-5b53-89c3-461067d6b235
+  source_local_id: aind.subject._Asus.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.633075+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.633073+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

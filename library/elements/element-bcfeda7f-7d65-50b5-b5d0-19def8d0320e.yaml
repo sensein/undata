@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/bcfeda7f-7d65-50b5-b5d0-19def8d0320e
+  source_local_id: aind.metadata.OlfactometerChannel.flow_capacity
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.519825+00:00'
+versions:
+- version_num: 1
+  name: flow_capacity
+  data_type: float
+  created_at: '2026-03-15T22:48:07.519823+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ccc81ff2-e662-53b3-a6f9-e0a97d05b1b0
+  source_local_id: aind.metadata.PlanarImage.dimensions_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.538962+00:00'
+versions:
+- version_num: 1
+  name: dimensions_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.538960+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Length Measurements
+current_version: 1

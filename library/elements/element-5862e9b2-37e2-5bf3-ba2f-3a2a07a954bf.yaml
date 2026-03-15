@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/5862e9b2-37e2-5bf3-ba2f-3a2a07a954bf
+  source_local_id: aind.metadata._Baylor_College_Of_Medicine.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.712235+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:07.712233+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

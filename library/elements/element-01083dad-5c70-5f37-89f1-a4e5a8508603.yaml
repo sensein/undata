@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/01083dad-5c70-5f37-89f1-a4e5a8508603
+  source_local_id: aind.instrument._Soundcard.whoami
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.093156+00:00'
+versions:
+- version_num: 1
+  name: whoami
+  data_type: float
+  created_at: '2026-03-15T22:48:07.093154+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

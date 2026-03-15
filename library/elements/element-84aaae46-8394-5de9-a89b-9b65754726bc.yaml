@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/84aaae46-8394-5de9-a89b-9b65754726bc
+  source_local_id: aind.metadata.HarpDevice.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.359710+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.359708+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

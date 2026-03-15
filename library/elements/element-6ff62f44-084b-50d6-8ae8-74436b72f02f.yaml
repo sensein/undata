@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/6ff62f44-084b-50d6-8ae8-74436b72f02f
+  source_local_id: aind.subject._Crestoptics.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.669799+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.669798+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

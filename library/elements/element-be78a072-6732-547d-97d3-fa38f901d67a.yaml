@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/be78a072-6732-547d-97d3-fa38f901d67a
+  source_local_id: aind.procedures.Atlas.size
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.303833+00:00'
+versions:
+- version_num: 1
+  name: size
+  data_type: string
+  created_at: '2026-03-15T22:48:06.303831+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+  multivalued: true
+current_version: 1

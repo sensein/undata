@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/430f50aa-f064-5a23-adc3-4e89d0bdb1dc
+  source_local_id: aind.procedures.ViralMaterial.addgene_id
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.432703+00:00'
+versions:
+- version_num: 1
+  name: addgene_id
+  data_type: object
+  created_at: '2026-03-15T22:48:06.432700+00:00'
+  created_by: urn:undata:ingestion
+  description: Registry must be Addgene
+current_version: 1

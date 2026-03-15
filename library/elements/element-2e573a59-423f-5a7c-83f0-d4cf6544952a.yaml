@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/2e573a59-423f-5a7c-83f0-d4cf6544952a
+  source_local_id: aind.metadata.ViralMaterial.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.663770+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.663767+00:00'
+  created_by: urn:undata:ingestion
+  description: Full genome for virus construct
+  required: true
+current_version: 1

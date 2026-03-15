@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/46885ac1-e6bb-556f-968c-d4a7fb9a9253
+  source_local_id: aind.metadata.LickSpout.solenoid_valve
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.413535+00:00'
+versions:
+- version_num: 1
+  name: solenoid_valve
+  data_type: object
+  created_at: '2026-03-15T22:48:07.413532+00:00'
+  created_by: urn:undata:ingestion
+  description: Generic device
+  required: true
+current_version: 1

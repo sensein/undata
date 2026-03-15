@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c18c6409-5e05-58b2-8a40-e5fb6ff11670
+  source_local_id: aind.metadata._Oxxius.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.883422+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.883420+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

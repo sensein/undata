@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/9c50abde-174c-58b4-ab4a-9adc810906e0
+  source_local_id: aind.metadata.CoupledPlane.coupled_plane_index
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.241619+00:00'
+versions:
+- version_num: 1
+  name: coupled_plane_index
+  data_type: float
+  created_at: '2026-03-15T22:48:07.241616+00:00'
+  created_by: urn:undata:ingestion
+  description: Plane index of the coupled plane
+  required: true
+current_version: 1

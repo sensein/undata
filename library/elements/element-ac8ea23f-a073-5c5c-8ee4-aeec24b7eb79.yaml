@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ac8ea23f-a073-5c5c-8ee4-aeec24b7eb79
+  source_local_id: aind.procedures._Midwest_Optical_Systems_Inc_.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.563116+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.563114+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

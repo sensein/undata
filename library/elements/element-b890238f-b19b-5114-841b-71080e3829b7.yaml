@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/b890238f-b19b-5114-841b-71080e3829b7
+  source_local_id: aind.metadata.Monitor.serial_number
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.471429+00:00'
+versions:
+- version_num: 1
+  name: serial_number
+  data_type: string
+  created_at: '2026-03-15T22:48:07.471427+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

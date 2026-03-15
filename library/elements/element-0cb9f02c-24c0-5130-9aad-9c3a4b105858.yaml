@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/0cb9f02c-24c0-5130-9aad-9c3a4b105858
+  source_local_id: aind.instrument.Olfactometer.firmware_version
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.830688+00:00'
+versions:
+- version_num: 1
+  name: firmware_version
+  data_type: string
+  created_at: '2026-03-15T22:48:06.830686+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

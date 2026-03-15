@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/5d324fd6-e115-5928-8a7f-dc311d85a881
+  source_local_id: aind.metadata.HumanSubject.sex
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.370726+00:00'
+versions:
+- version_num: 1
+  name: sex
+  data_type: string
+  created_at: '2026-03-15T22:48:07.370724+00:00'
+  created_by: urn:undata:ingestion
+  description: Subject sex name
+  required: true
+current_version: 1

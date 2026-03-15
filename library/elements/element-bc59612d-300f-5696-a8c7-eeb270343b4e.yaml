@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/bc59612d-300f-5696-a8c7-eeb270343b4e
+  source_local_id: aind.instrument.DigitalMicromirrorDevice.padding_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.731808+00:00'
+versions:
+- version_num: 1
+  name: padding_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:06.731806+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Length Measurements
+current_version: 1

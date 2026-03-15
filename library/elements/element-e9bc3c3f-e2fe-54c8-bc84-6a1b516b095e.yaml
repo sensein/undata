@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/e9bc3c3f-e2fe-54c8-bc84-6a1b516b095e
+  source_local_id: aind.metadata.DAQDevice.notes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.257938+00:00'
+versions:
+- version_num: 1
+  name: notes
+  data_type: string
+  created_at: '2026-03-15T22:48:07.257936+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

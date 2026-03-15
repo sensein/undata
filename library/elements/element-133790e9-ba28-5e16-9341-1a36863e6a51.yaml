@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/133790e9-ba28-5e16-9341-1a36863e6a51
+  source_local_id: aind.instrument.Laser.coupling
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.782130+00:00'
+versions:
+- version_num: 1
+  name: coupling
+  data_type: string
+  created_at: '2026-03-15T22:48:06.782128+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

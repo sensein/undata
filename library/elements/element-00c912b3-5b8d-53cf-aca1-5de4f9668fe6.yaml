@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/00c912b3-5b8d-53cf-aca1-5de4f9668fe6
+  source_local_id: aind.acquisition.AirPuffConfig.relative_position
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.855414+00:00'
+versions:
+- version_num: 1
+  name: relative_position
+  data_type: string
+  created_at: '2026-03-15T22:48:05.855412+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+  multivalued: true
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/cf8d46af-46a8-5d7a-b1c7-8e2bb7f688c3
+  source_local_id: aind.acquisition._Other.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.173290+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.173288+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

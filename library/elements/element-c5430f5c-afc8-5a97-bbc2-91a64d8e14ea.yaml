@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c5430f5c-afc8-5a97-bbc2-91a64d8e14ea
+  source_local_id: aind.subject._Crestoptics.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.670220+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:05.670218+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

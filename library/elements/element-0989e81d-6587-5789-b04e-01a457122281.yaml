@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/0989e81d-6587-5789-b04e-01a457122281
+  source_local_id: aind.metadata.Acquisition.subject_id
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.145801+00:00'
+versions:
+- version_num: 1
+  name: subject_id
+  data_type: string
+  created_at: '2026-03-15T22:48:07.145799+00:00'
+  created_by: urn:undata:ingestion
+  description: Unique identifier for the subject
+  required: true
+current_version: 1

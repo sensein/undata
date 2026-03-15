@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/30d8a178-6a35-5fc1-bf80-24119690b5a1
+  source_local_id: aind.acquisition.Connection.send_and_receive
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.890800+00:00'
+versions:
+- version_num: 1
+  name: send_and_receive
+  data_type: boolean
+  created_at: '2026-03-15T22:48:05.890798+00:00'
+  created_by: urn:undata:ingestion
+  description: Whether the connection is bidirectional (send and receive data)
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/09581f84-4313-5383-a6ca-e10f8db2b34c
+  source_local_id: aind.procedures.EphysProbe.probe_model
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.337686+00:00'
+versions:
+- version_num: 1
+  name: probe_model
+  data_type: string
+  created_at: '2026-03-15T22:48:06.337684+00:00'
+  created_by: urn:undata:ingestion
+  description: Probe model name
+  required: true
+current_version: 1

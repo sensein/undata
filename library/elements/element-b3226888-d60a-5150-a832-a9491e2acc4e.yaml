@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/b3226888-d60a-5150-a832-a9491e2acc4e
+  source_local_id: aind.instrument._Synchronizer.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.100473+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.100471+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

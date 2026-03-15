@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ba78621e-665b-585d-ad26-7c8becd5b4ca
+  source_local_id: aind.instrument._Leica.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.004641+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.004639+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

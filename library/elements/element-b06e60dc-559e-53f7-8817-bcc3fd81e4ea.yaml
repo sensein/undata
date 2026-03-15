@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/b06e60dc-559e-53f7-8817-bcc3fd81e4ea
+  source_local_id: aind.subject._Vicuna_Pacos.common_name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.833354+00:00'
+versions:
+- version_num: 1
+  name: common_name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.833352+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

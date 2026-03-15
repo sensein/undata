@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ca11f381-bf0d-531f-b316-8af44e219e51
+  source_local_id: aind.metadata.Monitor.brightness_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.477429+00:00'
+versions:
+- version_num: 1
+  name: brightness_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.477427+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/07a96133-d4a1-592d-9442-ae2350b4f8c3
+  source_local_id: aind.subject.CalibrationObject.objects
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.593981+00:00'
+versions:
+- version_num: 1
+  name: objects
+  data_type: string
+  created_at: '2026-03-15T22:48:05.593978+00:00'
+  created_by: urn:undata:ingestion
+  description: For calibration objects that are built up from one or more devices.
+current_version: 1

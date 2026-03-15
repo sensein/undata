@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ce4a273f-a315-5bdb-b0ae-27351f85b365
+  source_local_id: aind.instrument._Mks_Newport.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.030642+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.030640+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

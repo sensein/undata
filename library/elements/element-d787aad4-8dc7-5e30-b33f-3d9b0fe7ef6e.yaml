@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/d787aad4-8dc7-5e30-b33f-3d9b0fe7ef6e
+  source_local_id: aind.metadata.MRIScan.subject_position
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.439275+00:00'
+versions:
+- version_num: 1
+  name: subject_position
+  data_type: string
+  created_at: '2026-03-15T22:48:07.439273+00:00'
+  created_by: urn:undata:ingestion
+  description: Subject position
+  required: true
+current_version: 1

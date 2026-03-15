@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f995f0e4-bfcb-5ce8-ae8b-e6e0fe9cae3b
+  source_local_id: aind.metadata.QCStatus.timestamp
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.588157+00:00'
+versions:
+- version_num: 1
+  name: timestamp
+  data_type: string
+  created_at: '2026-03-15T22:48:07.588155+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/a5d1775d-9b2e-5dbd-a668-93375931ec6b
+  source_local_id: aind.acquisition._Raspberry_Pi.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.181785+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.181783+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

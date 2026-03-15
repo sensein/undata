@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/9622e116-6e8d-516d-8bc3-1d84bfe31b19
+  source_local_id: aind.acquisition.MISModuleConfig.notes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.937866+00:00'
+versions:
+- version_num: 1
+  name: notes
+  data_type: string
+  created_at: '2026-03-15T22:48:05.937864+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/e721ecf3-196b-5ee3-97ef-0c8e30106b27
+  source_local_id: aind.procedures.AtlasCoordinate.coordinate_system
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.306077+00:00'
+versions:
+- version_num: 1
+  name: coordinate_system
+  data_type: object
+  created_at: '2026-03-15T22:48:06.306075+00:00'
+  created_by: urn:undata:ingestion
+  description: Definition an atlas
+  required: true
+current_version: 1

@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/7533ef86-604a-522b-b620-962081f7f514
+  source_local_id: aind.acquisition.Calibration.output
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.874743+00:00'
+versions:
+- version_num: 1
+  name: output
+  data_type: string
+  created_at: '2026-03-15T22:48:05.874741+00:00'
+  created_by: urn:undata:ingestion
+  description: Calibration output (provide the average if repeated)
+  required: true
+  multivalued: true
+current_version: 1

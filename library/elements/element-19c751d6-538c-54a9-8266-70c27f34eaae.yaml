@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/19c751d6-538c-54a9-8266-70c27f34eaae
+  source_local_id: aind.instrument._Ibl_Behavior_Control.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.977307+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.977304+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

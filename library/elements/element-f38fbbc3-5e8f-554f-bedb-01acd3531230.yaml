@@ -1,0 +1,17 @@
+element:
+  id: https://schema.undata.live/elements/f38fbbc3-5e8f-554f-bedb-01acd3531230
+  source_local_id: aind.quality_control.QCMetric.stage
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:08.030438+00:00'
+versions:
+- version_num: 1
+  name: stage
+  data_type: string
+  created_at: '2026-03-15T22:48:08.030436+00:00'
+  created_by: urn:undata:ingestion
+  description: 'Quality control stage
+
+
+    When during data processing the QC metrics were derived.'
+  required: true
+current_version: 1

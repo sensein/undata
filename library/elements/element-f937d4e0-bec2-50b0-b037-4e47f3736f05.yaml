@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f937d4e0-bec2-50b0-b037-4e47f3736f05
+  source_local_id: aind.acquisition.OlfactometerChannelInfo.dilution
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.959480+00:00'
+versions:
+- version_num: 1
+  name: dilution
+  data_type: float
+  created_at: '2026-03-15T22:48:05.959478+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

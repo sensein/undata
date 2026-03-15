@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/2256228e-7501-5004-a571-b6cf0d402fe7
+  source_local_id: aind.acquisition._Allied.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.027530+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.027528+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/b74d18a1-327b-5427-ac24-dd1f1a4e1971
+  source_local_id: aind.procedures.Anaesthetic.anaesthetic_type
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.299884+00:00'
+versions:
+- version_num: 1
+  name: anaesthetic_type
+  data_type: string
+  created_at: '2026-03-15T22:48:06.299882+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

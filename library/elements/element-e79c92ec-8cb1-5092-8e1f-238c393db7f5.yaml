@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/e79c92ec-8cb1-5092-8e1f-238c393db7f5
+  source_local_id: aind.metadata.MISCameraConfig.detector_config
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.428999+00:00'
+versions:
+- version_num: 1
+  name: detector_config
+  data_type: object
+  created_at: '2026-03-15T22:48:07.428997+00:00'
+  created_by: urn:undata:ingestion
+  description: Configuration of detector settings
+  required: true
+current_version: 1

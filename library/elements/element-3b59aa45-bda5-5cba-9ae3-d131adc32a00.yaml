@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/3b59aa45-bda5-5cba-9ae3-d131adc32a00
+  source_local_id: aind.metadata.Instrument.calibrations
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.390188+00:00'
+versions:
+- version_num: 1
+  name: calibrations
+  data_type: string
+  created_at: '2026-03-15T22:48:07.390186+00:00'
+  created_by: urn:undata:ingestion
+  description: List of calibration measurements takend during instrument setup and
+    maintenance
+current_version: 1

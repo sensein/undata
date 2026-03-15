@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/e5b29bcb-229d-5d5d-9ba4-c0f1d1c175e5
+  source_local_id: aind.acquisition.OlfactometerConfig.channel_configs
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.960902+00:00'
+versions:
+- version_num: 1
+  name: channel_configs
+  data_type: string
+  created_at: '2026-03-15T22:48:05.960899+00:00'
+  created_by: urn:undata:ingestion
+  description: List of channels with their odorant and concentration
+  required: true
+  multivalued: true
+current_version: 1

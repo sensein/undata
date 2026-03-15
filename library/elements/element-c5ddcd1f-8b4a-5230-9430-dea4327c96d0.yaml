@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/c5ddcd1f-8b4a-5230-9430-dea4327c96d0
+  source_local_id: aind.metadata.LightEmittingDiode.wavelength_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.424195+00:00'
+versions:
+- version_num: 1
+  name: wavelength_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.424193+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Length Measurements
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e478cc59-a94a-52ec-ba1e-5934044bab41
+  source_local_id: aind.instrument.HarpDevice.channels
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.770440+00:00'
+versions:
+- version_num: 1
+  name: channels
+  data_type: string
+  created_at: '2026-03-15T22:48:06.770438+00:00'
+  created_by: urn:undata:ingestion
+  multivalued: true
+current_version: 1

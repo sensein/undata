@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/450a86cb-6e6c-5dad-af5e-768812b124ed
+  source_local_id: aind.instrument.DAQDevice.manufacturer
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.707182+00:00'
+versions:
+- version_num: 1
+  name: manufacturer
+  data_type: object
+  created_at: '2026-03-15T22:48:06.707180+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

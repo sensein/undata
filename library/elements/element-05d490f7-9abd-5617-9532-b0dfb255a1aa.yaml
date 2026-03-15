@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/05d490f7-9abd-5617-9532-b0dfb255a1aa
+  source_local_id: aind.procedures._University_Of_Pennsylvania.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.647743+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.647741+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

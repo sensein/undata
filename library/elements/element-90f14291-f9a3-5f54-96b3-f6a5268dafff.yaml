@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/90f14291-f9a3-5f54-96b3-f6a5268dafff
+  source_local_id: aind.subject.PIDName.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.608503+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:05.608501+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

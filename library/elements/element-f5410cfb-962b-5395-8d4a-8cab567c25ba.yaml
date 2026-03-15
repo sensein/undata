@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f5410cfb-962b-5395-8d4a-8cab567c25ba
+  source_local_id: aind.instrument.PockelsCell.time_setting_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.844838+00:00'
+versions:
+- version_num: 1
+  name: time_setting_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:06.844836+00:00'
+  created_by: urn:undata:ingestion
+  description: Unitless options
+current_version: 1

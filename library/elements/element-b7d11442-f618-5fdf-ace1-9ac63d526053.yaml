@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/b7d11442-f618-5fdf-ace1-9ac63d526053
+  source_local_id: aind.acquisition._Thermo_Fisher_Scientific.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.216921+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.216919+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

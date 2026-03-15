@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f80f8728-6a42-5aa2-ae7e-1b1b5ac0f017
+  source_local_id: aind.acquisition._Oxxius.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.174550+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.174549+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

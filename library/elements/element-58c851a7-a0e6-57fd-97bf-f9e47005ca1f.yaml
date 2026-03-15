@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/58c851a7-a0e6-57fd-97bf-f9e47005ca1f
+  source_local_id: aind.metadata.VolumeCalibration.output
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.669916+00:00'
+versions:
+- version_num: 1
+  name: output
+  data_type: string
+  created_at: '2026-03-15T22:48:07.669913+00:00'
+  created_by: urn:undata:ingestion
+  description: Volume output (provide the average if repeated)
+  required: true
+  multivalued: true
+current_version: 1

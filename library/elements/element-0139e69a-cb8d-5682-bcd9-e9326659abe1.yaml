@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/0139e69a-cb8d-5682-bcd9-e9326659abe1
+  source_local_id: aind.instrument.VolumeCalibration.repeats
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.882302+00:00'
+versions:
+- version_num: 1
+  name: repeats
+  data_type: float
+  created_at: '2026-03-15T22:48:06.882300+00:00'
+  created_by: urn:undata:ingestion
+  description: If each input was repeated multiple times, provide the number of repeats
+current_version: 1

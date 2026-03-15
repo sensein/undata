@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/97ce619c-b2b0-5027-9be4-97c93f778435
+  source_local_id: aind.metadata.acquisition
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.144416+00:00'
+versions:
+- version_num: 1
+  name: acquisition
+  data_type: object
+  created_at: '2026-03-15T22:48:07.144414+00:00'
+  created_by: urn:undata:ingestion
+  description: Data acquisition
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c1b32f07-1177-52d0-bf5c-e7cd81a14e61
+  source_local_id: aind.procedures._Invitrogen.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.523007+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.523005+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

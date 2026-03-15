@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/a75502b1-44b2-5923-9970-7f25f625f6bd
+  source_local_id: aind.quality_control.default_grouping
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:08.022298+00:00'
+versions:
+- version_num: 1
+  name: default_grouping
+  data_type: string
+  created_at: '2026-03-15T22:48:08.022296+00:00'
+  created_by: urn:undata:ingestion
+  description: Tag *keys* that should be used to group metrics hierarchically for
+    visualization
+  required: true
+  multivalued: true
+current_version: 1

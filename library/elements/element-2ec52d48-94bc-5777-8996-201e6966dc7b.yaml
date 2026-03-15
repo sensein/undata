@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/2ec52d48-94bc-5777-8996-201e6966dc7b
+  source_local_id: aind.metadata.DetectorConfig.exposure_time_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.291678+00:00'
+versions:
+- version_num: 1
+  name: exposure_time_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.291676+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Time Measurements
+current_version: 1

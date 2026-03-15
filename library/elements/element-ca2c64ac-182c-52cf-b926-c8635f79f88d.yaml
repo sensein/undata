@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/ca2c64ac-182c-52cf-b926-c8635f79f88d
+  source_local_id: aind.metadata.Detector.data_interface
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.280237+00:00'
+versions:
+- version_num: 1
+  name: data_interface
+  data_type: string
+  created_at: '2026-03-15T22:48:07.280235+00:00'
+  created_by: urn:undata:ingestion
+  description: Connection between a device and a PC
+  required: true
+current_version: 1

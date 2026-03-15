@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/482de5e9-0301-5c08-bb8b-65372567fcfe
+  source_local_id: aind.metadata.Laser.wavelength
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.400305+00:00'
+versions:
+- version_num: 1
+  name: wavelength
+  data_type: float
+  created_at: '2026-03-15T22:48:07.400302+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

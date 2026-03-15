@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/95457494-3cd9-55a5-a2ee-518aae9f1ada
+  source_local_id: aind.instrument._Crestoptics.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.946772+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.946770+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/b1311921-0645-501d-9f50-3100e6a00485
+  source_local_id: aind.acquisition.BrainInjection.targeted_structure
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.866091+00:00'
+versions:
+- version_num: 1
+  name: targeted_structure
+  data_type: object
+  created_at: '2026-03-15T22:48:05.866089+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

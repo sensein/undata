@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/680fc19d-8580-5c4c-98ad-7e2278f42882
+  source_local_id: aind.subject._Interuniversity_Microelectronics_Center.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.700777+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.700775+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

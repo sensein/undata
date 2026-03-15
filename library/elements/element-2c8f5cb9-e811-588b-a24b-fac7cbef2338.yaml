@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/2c8f5cb9-e811-588b-a24b-fac7cbef2338
+  source_local_id: aind.procedures.GeneProbeSet.lot_number
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.351856+00:00'
+versions:
+- version_num: 1
+  name: lot_number
+  data_type: string
+  created_at: '2026-03-15T22:48:06.351854+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

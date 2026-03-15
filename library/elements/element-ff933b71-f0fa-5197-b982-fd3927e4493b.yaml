@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ff933b71-f0fa-5197-b982-fd3927e4493b
+  source_local_id: aind.metadata._Meadowlark_Optics.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.837227+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:07.837224+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

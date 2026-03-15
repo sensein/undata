@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/284b2ec6-a1b8-50be-a1ac-d2ec0653b3e3
+  source_local_id: aind.acquisition.Calibration.output_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.875227+00:00'
+versions:
+- version_num: 1
+  name: output_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:05.875225+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

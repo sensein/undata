@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/97ea4985-4b1a-5725-b194-758a98c6d695
+  source_local_id: aind.procedures.CatheterImplant.device_config
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.318002+00:00'
+versions:
+- version_num: 1
+  name: device_config
+  data_type: object
+  created_at: '2026-03-15T22:48:06.318000+00:00'
+  created_by: urn:undata:ingestion
+  description: Configuration of a catheter
+  required: true
+current_version: 1

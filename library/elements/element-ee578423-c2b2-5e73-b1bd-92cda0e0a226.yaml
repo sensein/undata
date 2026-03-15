@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/ee578423-c2b2-5e73-b1bd-92cda0e0a226
+  source_local_id: aind.acquisition.Slap2Plane.fov_index
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.994074+00:00'
+versions:
+- version_num: 1
+  name: fov_index
+  data_type: float
+  created_at: '2026-03-15T22:48:05.994072+00:00'
+  created_by: urn:undata:ingestion
+  description: For FOVs that are imaged multiple times, assign a shared index to each
+    instance of the FOV
+current_version: 1

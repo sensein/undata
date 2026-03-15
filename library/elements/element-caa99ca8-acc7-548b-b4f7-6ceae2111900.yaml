@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/caa99ca8-acc7-548b-b4f7-6ceae2111900
+  source_local_id: aind.metadata._Archimedes.whoami
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.700539+00:00'
+versions:
+- version_num: 1
+  name: whoami
+  data_type: float
+  created_at: '2026-03-15T22:48:07.700537+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

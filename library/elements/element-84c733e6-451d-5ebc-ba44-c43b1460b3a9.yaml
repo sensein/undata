@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/84c733e6-451d-5ebc-ba44-c43b1460b3a9
+  source_local_id: aind.subject.MouseSubject.alleles
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.604166+00:00'
+versions:
+- version_num: 1
+  name: alleles
+  data_type: string
+  created_at: '2026-03-15T22:48:05.604164+00:00'
+  created_by: urn:undata:ingestion
+  description: Allele names and persistent IDs
+  multivalued: true
+current_version: 1

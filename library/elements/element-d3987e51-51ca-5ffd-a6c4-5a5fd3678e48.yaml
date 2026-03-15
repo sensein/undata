@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/d3987e51-51ca-5ffd-a6c4-5a5fd3678e48
+  source_local_id: aind.metadata.ProbeReagent.expiration_date
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.576067+00:00'
+versions:
+- version_num: 1
+  name: expiration_date
+  data_type: string
+  created_at: '2026-03-15T22:48:07.576065+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

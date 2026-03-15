@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f10681f2-00a5-52bd-97f2-25246721dc8d
+  source_local_id: aind.metadata.Camera.sensor_height
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.201404+00:00'
+versions:
+- version_num: 1
+  name: sensor_height
+  data_type: float
+  created_at: '2026-03-15T22:48:07.201402+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

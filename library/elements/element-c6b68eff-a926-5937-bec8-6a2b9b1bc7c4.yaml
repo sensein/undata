@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/c6b68eff-a926-5937-bec8-6a2b9b1bc7c4
+  source_local_id: aind.metadata.OlfactometerChannelInfo.dilution_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.521986+00:00'
+versions:
+- version_num: 1
+  name: dilution_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.521984+00:00'
+  created_by: urn:undata:ingestion
+  description: Concentraion units
+current_version: 1

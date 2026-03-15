@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c330d40d-502d-508d-92d6-b035692e01be
+  source_local_id: aind.subject._Invitrogen.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.703939+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:05.703937+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

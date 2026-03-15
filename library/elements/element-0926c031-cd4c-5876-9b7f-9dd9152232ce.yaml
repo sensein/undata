@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/0926c031-cd4c-5876-9b7f-9dd9152232ce
+  source_local_id: aind.instrument._Quantifi.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.072623+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.072621+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

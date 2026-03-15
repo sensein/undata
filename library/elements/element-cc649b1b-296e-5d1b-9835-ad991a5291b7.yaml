@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/cc649b1b-296e-5d1b-9835-ad991a5291b7
+  source_local_id: aind.instrument.Olfactometer.tag_version
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.832360+00:00'
+versions:
+- version_num: 1
+  name: tag_version
+  data_type: string
+  created_at: '2026-03-15T22:48:06.832359+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

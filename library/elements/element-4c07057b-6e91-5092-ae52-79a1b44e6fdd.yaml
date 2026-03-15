@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/4c07057b-6e91-5092-ae52-79a1b44e6fdd
+  source_local_id: aind.subject._Emory_University.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.683216+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:05.683214+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/75aea266-26df-5752-bf47-7cd1b38f12ff
+  source_local_id: aind.metadata.Monitor.contrast
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.476144+00:00'
+versions:
+- version_num: 1
+  name: contrast
+  data_type: float
+  created_at: '2026-03-15T22:48:07.476142+00:00'
+  created_by: urn:undata:ingestion
+  description: Monitor's contrast setting
+current_version: 1

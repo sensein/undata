@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/571207b1-ab1d-5ea9-921e-c27247468da6
+  source_local_id: aind.acquisition._Dodotronic.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.072628+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.072626+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

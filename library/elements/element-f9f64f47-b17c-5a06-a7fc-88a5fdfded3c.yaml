@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f9f64f47-b17c-5a06-a7fc-88a5fdfded3c
+  source_local_id: aind.instrument._New_Scale_Technologies.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.049153+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:07.049151+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

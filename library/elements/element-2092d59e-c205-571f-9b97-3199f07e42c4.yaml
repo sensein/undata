@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/2092d59e-c205-571f-9b97-3199f07e42c4
+  source_local_id: aind.acquisition.Slap2Plane.frame_rates
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.995877+00:00'
+versions:
+- version_num: 1
+  name: frame_rates
+  data_type: string
+  created_at: '2026-03-15T22:48:05.995875+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+  multivalued: true
+current_version: 1

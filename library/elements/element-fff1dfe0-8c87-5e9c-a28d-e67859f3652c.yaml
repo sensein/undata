@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/fff1dfe0-8c87-5e9c-a28d-e67859f3652c
+  source_local_id: aind.instrument.AirPuffDevice.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.663896+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.663894+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

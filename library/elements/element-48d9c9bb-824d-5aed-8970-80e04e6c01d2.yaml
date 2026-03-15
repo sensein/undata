@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/48d9c9bb-824d-5aed-8970-80e04e6c01d2
+  source_local_id: aind.metadata._Ecephys.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.760630+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.760628+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

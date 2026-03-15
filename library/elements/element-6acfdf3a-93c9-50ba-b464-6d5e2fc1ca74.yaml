@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/6acfdf3a-93c9-50ba-b464-6d5e2fc1ca74
+  source_local_id: aind.metadata.Treadmill.pulse_per_revolution
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.659763+00:00'
+versions:
+- version_num: 1
+  name: pulse_per_revolution
+  data_type: float
+  created_at: '2026-03-15T22:48:07.659761+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

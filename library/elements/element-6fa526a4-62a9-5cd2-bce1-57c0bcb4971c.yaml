@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6fa526a4-62a9-5cd2-bce1-57c0bcb4971c
+  source_local_id: aind.metadata.ViralMaterial.titer
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.665185+00:00'
+versions:
+- version_num: 1
+  name: titer
+  data_type: float
+  created_at: '2026-03-15T22:48:07.665183+00:00'
+  created_by: urn:undata:ingestion
+  description: Final titer of viral material, accounting for mixture/diliution
+current_version: 1

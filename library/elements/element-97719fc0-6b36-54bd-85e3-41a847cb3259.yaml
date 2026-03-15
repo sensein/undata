@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/97719fc0-6b36-54bd-85e3-41a847cb3259
+  source_local_id: aind.procedures.MyomatrixContact.muscle
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.378036+00:00'
+versions:
+- version_num: 1
+  name: muscle
+  data_type: object
+  created_at: '2026-03-15T22:48:06.378032+00:00'
+  created_by: urn:undata:ingestion
+  description: Use MouseEmgMuscles
+  required: true
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/15e4bb37-2c47-51c5-ace4-54dab9f95029
+  source_local_id: aind.metadata.Surgery.animal_weight_post
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.646435+00:00'
+versions:
+- version_num: 1
+  name: animal_weight_post
+  data_type: float
+  created_at: '2026-03-15T22:48:07.646433+00:00'
+  created_by: urn:undata:ingestion
+  description: Animal weight after procedure
+current_version: 1

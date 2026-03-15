@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/27a79ea0-443d-5573-a66b-f2dd02aa20e0
+  source_local_id: aind.metadata.PockelsCell.model
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.555004+00:00'
+versions:
+- version_num: 1
+  name: model
+  data_type: string
+  created_at: '2026-03-15T22:48:07.555003+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

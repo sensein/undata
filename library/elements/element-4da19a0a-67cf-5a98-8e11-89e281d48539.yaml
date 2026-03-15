@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/4da19a0a-67cf-5a98-8e11-89e281d48539
+  source_local_id: aind.procedures._Bruker.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.465351+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.465349+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

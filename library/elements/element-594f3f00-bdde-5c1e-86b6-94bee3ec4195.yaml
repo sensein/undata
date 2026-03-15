@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/594f3f00-bdde-5c1e-86b6-94bee3ec4195
+  source_local_id: aind.instrument.VolumeCalibration.input
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.881355+00:00'
+versions:
+- version_num: 1
+  name: input
+  data_type: string
+  created_at: '2026-03-15T22:48:06.881353+00:00'
+  created_by: urn:undata:ingestion
+  description: Length of time solenoid/valve is open
+  required: true
+  multivalued: true
+current_version: 1

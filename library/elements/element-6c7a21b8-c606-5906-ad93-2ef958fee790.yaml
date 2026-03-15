@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6c7a21b8-c606-5906-ad93-2ef958fee790
+  source_local_id: aind.instrument.Enclosure.laser_interlock
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.744996+00:00'
+versions:
+- version_num: 1
+  name: laser_interlock
+  data_type: boolean
+  created_at: '2026-03-15T22:48:06.744994+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

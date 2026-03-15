@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/730f1951-5cba-5c89-bc05-ac8a9733c504
+  source_local_id: aind.instrument.ScanningStage.travel
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.863767+00:00'
+versions:
+- version_num: 1
+  name: travel
+  data_type: float
+  created_at: '2026-03-15T22:48:06.863765+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

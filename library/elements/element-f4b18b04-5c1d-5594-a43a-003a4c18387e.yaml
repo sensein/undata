@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f4b18b04-5c1d-5594-a43a-003a4c18387e
+  source_local_id: aind.metadata.Connection.source_port
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.233533+00:00'
+versions:
+- version_num: 1
+  name: source_port
+  data_type: string
+  created_at: '2026-03-15T22:48:07.233531+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

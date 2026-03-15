@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/9d0c8668-6022-52ac-961c-a07c0be67b4c
+  source_local_id: aind.metadata._Janelia_Research_Campus.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.804195+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:07.804193+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

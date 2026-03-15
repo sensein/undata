@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/2e4ff5c2-1b55-562e-bb33-887b5a67aa84
+  source_local_id: aind.procedures.Fluorophore.fluorophore_type
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.348314+00:00'
+versions:
+- version_num: 1
+  name: fluorophore_type
+  data_type: string
+  created_at: '2026-03-15T22:48:06.348312+00:00'
+  created_by: urn:undata:ingestion
+  description: Fluorophores types
+  required: true
+current_version: 1

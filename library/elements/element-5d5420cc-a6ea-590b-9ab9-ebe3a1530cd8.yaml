@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/5d5420cc-a6ea-590b-9ab9-ebe3a1530cd8
+  source_local_id: aind.subject._Raspberry_Pi.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.790192+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:05.790190+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

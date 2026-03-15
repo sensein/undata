@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/d95e8610-63c4-54d3-9a8c-3aa68a161746
+  source_local_id: aind.model.CombinedData.assets
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.973572+00:00'
+versions:
+- version_num: 1
+  name: assets
+  data_type: string
+  created_at: '2026-03-15T22:48:07.973570+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+  multivalued: true
+current_version: 1

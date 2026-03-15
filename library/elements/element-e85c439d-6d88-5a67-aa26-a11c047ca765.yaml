@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e85c439d-6d88-5a67-aa26-a11c047ca765
+  source_local_id: aind.acquisition.MRIScan.repetition_time_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.944074+00:00'
+versions:
+- version_num: 1
+  name: repetition_time_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:05.944072+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Time Measurements
+current_version: 1

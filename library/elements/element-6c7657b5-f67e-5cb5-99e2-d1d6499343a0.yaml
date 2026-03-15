@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/6c7657b5-f67e-5cb5-99e2-d1d6499343a0
+  source_local_id: aind.metadata.Camera.additional_settings
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.197024+00:00'
+versions:
+- version_num: 1
+  name: additional_settings
+  data_type: object
+  created_at: '2026-03-15T22:48:07.197022+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

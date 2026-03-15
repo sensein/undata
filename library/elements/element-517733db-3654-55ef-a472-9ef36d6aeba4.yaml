@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/517733db-3654-55ef-a472-9ef36d6aeba4
+  source_local_id: aind.subject._Johns_Hopkins_University.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.716306+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:05.716303+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

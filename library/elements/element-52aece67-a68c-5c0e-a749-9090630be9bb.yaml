@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/52aece67-a68c-5c0e-a749-9090630be9bb
+  source_local_id: aind.metadata._Confocal.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.745281+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.745279+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

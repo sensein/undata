@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/bd28a117-0fb0-544b-a0c5-9b1999ace9ee
+  source_local_id: aind.metadata._Outputexpander.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.883004+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.883002+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/7bd6b532-61e1-5cf3-950c-f9e7f63dfec7
+  source_local_id: aind.instrument.PockelsCell.additional_settings
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.842662+00:00'
+versions:
+- version_num: 1
+  name: additional_settings
+  data_type: object
+  created_at: '2026-03-15T22:48:06.842660+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

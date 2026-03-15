@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/c50296bc-c106-5c9d-992b-451e9d368b62
+  source_local_id: aind.model.ModelTraining.test_performance
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.989571+00:00'
+versions:
+- version_num: 1
+  name: test_performance
+  data_type: string
+  created_at: '2026-03-15T22:48:07.989570+00:00'
+  created_by: urn:undata:ingestion
+  description: Performance on test data, evaluated during training
+current_version: 1

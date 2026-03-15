@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/50ff1325-10a5-5b36-a2c6-083abc05defd
+  source_local_id: aind.acquisition._National_Institute_Of_Mental_Health.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.150594+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.150592+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

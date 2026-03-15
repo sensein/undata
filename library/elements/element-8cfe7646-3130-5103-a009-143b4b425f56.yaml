@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8cfe7646-3130-5103-a009-143b4b425f56
+  source_local_id: aind.acquisition.DetectorConfig.crop_width
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.905675+00:00'
+versions:
+- version_num: 1
+  name: crop_width
+  data_type: float
+  created_at: '2026-03-15T22:48:05.905673+00:00'
+  created_by: urn:undata:ingestion
+  description: Overrides any value set in the Instrument metadata
+current_version: 1

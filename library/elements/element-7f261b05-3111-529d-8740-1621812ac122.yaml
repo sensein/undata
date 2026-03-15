@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7f261b05-3111-529d-8740-1621812ac122
+  source_local_id: aind.metadata.Arena.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.170273+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.170271+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

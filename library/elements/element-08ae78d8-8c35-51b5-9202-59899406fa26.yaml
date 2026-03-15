@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/08ae78d8-8c35-51b5-9202-59899406fa26
+  source_local_id: aind.data_description._Chan_Zuckerberg_Initiative.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.252325+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.252323+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/2be5bb88-33ed-5900-babc-4d6d1e874f26
+  source_local_id: aind.metadata.Surgery.workstation_id
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.647723+00:00'
+versions:
+- version_num: 1
+  name: workstation_id
+  data_type: string
+  created_at: '2026-03-15T22:48:07.647721+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/730e0a9b-b5f9-597a-af13-2bd519eb7bc7
+  source_local_id: aind.procedures._Quantifi.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.604651+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.604649+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

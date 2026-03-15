@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/07c9d94c-5b71-5de5-b765-52d3953b3583
+  source_local_id: aind.metadata.DataDescription.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.262405+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.262403+00:00'
+  created_by: urn:undata:ingestion
+  description: When left blank, a name will be generated based on subject_id and creation_time.
+    Conventionally also used as the name of the data folder.
+current_version: 1

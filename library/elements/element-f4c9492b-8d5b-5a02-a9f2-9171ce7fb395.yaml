@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f4c9492b-8d5b-5a02-a9f2-9171ce7fb395
+  source_local_id: aind.instrument._Spinnaker.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.097038+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.097036+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

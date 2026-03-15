@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/bc134518-ce73-5837-8d9e-3774a69ff9c1
+  source_local_id: aind.metadata.MouseSubject.date_of_birth
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.485070+00:00'
+versions:
+- version_num: 1
+  name: date_of_birth
+  data_type: string
+  created_at: '2026-03-15T22:48:07.485065+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

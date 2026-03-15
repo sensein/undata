@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/5f530118-ace0-5025-814a-3c85786e4d9b
+  source_local_id: aind.metadata.CurationMetric.modality
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.247757+00:00'
+versions:
+- version_num: 1
+  name: modality
+  data_type: object
+  created_at: '2026-03-15T22:48:07.247755+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

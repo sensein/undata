@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ca781cfc-366d-5149-b92e-ed7d6649148e
+  source_local_id: aind.acquisition.MISCameraConfig.coordinate_system
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.933812+00:00'
+versions:
+- version_num: 1
+  name: coordinate_system
+  data_type: object
+  created_at: '2026-03-15T22:48:05.933810+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

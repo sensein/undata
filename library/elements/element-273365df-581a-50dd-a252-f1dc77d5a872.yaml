@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/273365df-581a-50dd-a252-f1dc77d5a872
+  source_local_id: aind.metadata.Acquisition.acquisition_start_tz
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.147262+00:00'
+versions:
+- version_num: 1
+  name: acquisition_start_tz
+  data_type: float
+  created_at: '2026-03-15T22:48:07.147260+00:00'
+  created_by: urn:undata:ingestion
+  description: Automatically populated by a validator based on acquisition_start_time.
+    Will be a TimeZoneName (IANA name) when the datetime uses a ZoneInfo timezone,
+    or an integer UTC offset in hours for fixed-offset timezones. Use ZoneInfo (from
+    the zoneinfo standard library) to preserve the named timezone.
+current_version: 1

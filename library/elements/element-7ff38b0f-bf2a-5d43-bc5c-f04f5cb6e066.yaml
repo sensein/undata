@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/7ff38b0f-bf2a-5d43-bc5c-f04f5cb6e066
+  source_local_id: aind.procedures._New_Scale_Technologies.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.583968+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.583966+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

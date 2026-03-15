@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/772ef1e1-283f-5234-87b1-81d57fc07e0d
+  source_local_id: aind.acquisition.PlanarImage.image_to_acquisition_transform
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.967712+00:00'
+versions:
+- version_num: 1
+  name: image_to_acquisition_transform
+  data_type: string
+  created_at: '2026-03-15T22:48:05.967709+00:00'
+  created_by: urn:undata:ingestion
+  description: Position, rotation, and scale of the image. Note that depth should
+    be in the planes.
+  required: true
+  multivalued: true
+current_version: 1

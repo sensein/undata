@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/d9f6baa0-d783-533a-9967-9c9437094c20
+  source_local_id: aind.procedures._Aa_Opto_Electronic.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.438868+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.438866+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

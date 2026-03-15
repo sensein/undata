@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f1a59792-27d4-54be-8145-d70a57dc73cc
+  source_local_id: aind.metadata.ProbeConfig.other_targeted_structure
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.569438+00:00'
+versions:
+- version_num: 1
+  name: other_targeted_structure
+  data_type: string
+  created_at: '2026-03-15T22:48:07.569436+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

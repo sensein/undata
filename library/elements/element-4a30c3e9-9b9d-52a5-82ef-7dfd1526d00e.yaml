@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4a30c3e9-9b9d-52a5-82ef-7dfd1526d00e
+  source_local_id: aind.metadata.GenericSubjectProcedure.start_date
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.351414+00:00'
+versions:
+- version_num: 1
+  name: start_date
+  data_type: string
+  created_at: '2026-03-15T22:48:07.351412+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

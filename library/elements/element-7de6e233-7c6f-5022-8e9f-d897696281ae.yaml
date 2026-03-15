@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/7de6e233-7c6f-5022-8e9f-d897696281ae
+  source_local_id: aind.acquisition.PlanarImage.planes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.968692+00:00'
+versions:
+- version_num: 1
+  name: planes
+  data_type: string
+  created_at: '2026-03-15T22:48:05.968686+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+  multivalued: true
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/1173641f-2517-5950-8e72-ccb3ccd20e91
+  source_local_id: aind.metadata.MouseSubject.sex
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.484405+00:00'
+versions:
+- version_num: 1
+  name: sex
+  data_type: string
+  created_at: '2026-03-15T22:48:07.484403+00:00'
+  created_by: urn:undata:ingestion
+  description: Subject sex name
+  required: true
+current_version: 1

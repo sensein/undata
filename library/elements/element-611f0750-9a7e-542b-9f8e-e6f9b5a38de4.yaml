@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/611f0750-9a7e-542b-9f8e-e6f9b5a38de4
+  source_local_id: aind.procedures._Callithrix_Jacchus.common_name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.469102+00:00'
+versions:
+- version_num: 1
+  name: common_name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.469100+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/50149c73-6cb4-5414-a8e1-63158d449c5c
+  source_local_id: aind.instrument.DigitalMicromirrorDevice.invert_pixel_values
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.730489+00:00'
+versions:
+- version_num: 1
+  name: invert_pixel_values
+  data_type: boolean
+  created_at: '2026-03-15T22:48:06.730487+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

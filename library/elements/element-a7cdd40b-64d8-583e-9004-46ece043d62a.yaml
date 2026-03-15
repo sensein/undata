@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a7cdd40b-64d8-583e-9004-46ece043d62a
+  source_local_id: aind.metadata.Reagent.source
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.591816+00:00'
+versions:
+- version_num: 1
+  name: source
+  data_type: object
+  created_at: '2026-03-15T22:48:07.591814+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/8ec12a0e-1d20-5c3d-bb9a-e5391b3e074e
+  source_local_id: aind.metadata.Filter.center_wavelength
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.340106+00:00'
+versions:
+- version_num: 1
+  name: center_wavelength
+  data_type: float
+  created_at: '2026-03-15T22:48:07.340104+00:00'
+  created_by: urn:undata:ingestion
+  description: Single wavelength or list of wavelengths for MULTIBAND or MULTI_NOTCH
+    filters
+current_version: 1

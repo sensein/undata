@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/350ae6ab-4e76-5baf-ab18-dfed710e42de
+  source_local_id: aind.acquisition.LightEmittingDiodeConfig.power_measured_at
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.932893+00:00'
+versions:
+- version_num: 1
+  name: power_measured_at
+  data_type: string
+  created_at: '2026-03-15T22:48:05.932891+00:00'
+  created_by: urn:undata:ingestion
+  description: 'For example: objective, patch cable, etc'
+current_version: 1

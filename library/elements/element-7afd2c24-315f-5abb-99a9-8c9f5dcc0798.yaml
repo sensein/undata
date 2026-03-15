@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/7afd2c24-315f-5abb-99a9-8c9f5dcc0798
+  source_local_id: aind.model.architecture
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.965465+00:00'
+versions:
+- version_num: 1
+  name: architecture
+  data_type: string
+  created_at: '2026-03-15T22:48:07.965463+00:00'
+  created_by: urn:undata:ingestion
+  description: Model architecture / type of model
+  required: true
+current_version: 1

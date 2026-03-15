@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/d64367d9-239b-5af3-8980-6e44aa0804cb
+  source_local_id: aind.metadata.MouseSubject.rrid
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.490105+00:00'
+versions:
+- version_num: 1
+  name: rrid
+  data_type: object
+  created_at: '2026-03-15T22:48:07.490103+00:00'
+  created_by: urn:undata:ingestion
+  description: RRID of mouse if acquired from supplier
+current_version: 1

@@ -2,13 +2,15 @@ element:
   id: https://schema.undata.live/elements/6dabeb4d-aff9-55c2-a413-e1a7c8692d3f
   source_local_id: aind.data_description.investigators
   source_id: https://schema.undata.live/sources/aind
-  created_at: '2026-03-15T21:05:11.519722+00:00'
+  created_at: '2026-03-15T22:48:06.235939+00:00'
 versions:
 - version_num: 1
   name: investigators
   data_type: string
+  created_at: '2026-03-15T22:48:06.235937+00:00'
+  created_by: urn:undata:ingestion
   description: Full name(s) of key investigators (e.g. PI, lead scientist, contact
     person)
-  created_at: '2026-03-15T21:05:11.519724+00:00'
-  created_by: urn:undata:ingestion
+  required: true
+  multivalued: true
 current_version: 1

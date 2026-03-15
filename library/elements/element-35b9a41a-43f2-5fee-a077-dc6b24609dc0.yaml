@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/35b9a41a-43f2-5fee-a077-dc6b24609dc0
+  source_local_id: aind.instrument.Disc.encoder
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.738563+00:00'
+versions:
+- version_num: 1
+  name: encoder
+  data_type: string
+  created_at: '2026-03-15T22:48:06.738561+00:00'
+  created_by: urn:undata:ingestion
+  description: Encoder hardware type
+current_version: 1

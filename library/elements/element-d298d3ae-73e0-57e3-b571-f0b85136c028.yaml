@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/d298d3ae-73e0-57e3-b571-f0b85136c028
+  source_local_id: aind.metadata.Wheel.model
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.678259+00:00'
+versions:
+- version_num: 1
+  name: model
+  data_type: string
+  created_at: '2026-03-15T22:48:07.678257+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

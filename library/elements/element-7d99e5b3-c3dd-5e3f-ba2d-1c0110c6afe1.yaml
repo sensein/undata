@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/7d99e5b3-c3dd-5e3f-ba2d-1c0110c6afe1
+  source_local_id: aind.metadata._New_York_University.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.869410+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:07.869408+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

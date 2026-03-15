@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/30210cbc-b2c5-5992-acad-a5806c40c22e
+  source_local_id: aind.metadata.SpecimenProcedure.procedure_details
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.637045+00:00'
+versions:
+- version_num: 1
+  name: procedure_details
+  data_type: string
+  created_at: '2026-03-15T22:48:07.637043+00:00'
+  created_by: urn:undata:ingestion
+  description: Details of the procedures, including reagents and sectioning information.
+  multivalued: true
+current_version: 1

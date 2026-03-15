@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/fe150abd-e3b0-536c-aa5c-55b5b0642764
+  source_local_id: aind.metadata.CurationMetric.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.247327+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.247325+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

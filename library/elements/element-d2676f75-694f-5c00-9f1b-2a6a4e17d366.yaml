@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/d2676f75-694f-5c00-9f1b-2a6a4e17d366
+  source_local_id: aind.metadata.Maintenance.protocol_id
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.441519+00:00'
+versions:
+- version_num: 1
+  name: protocol_id
+  data_type: string
+  created_at: '2026-03-15T22:48:07.441517+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

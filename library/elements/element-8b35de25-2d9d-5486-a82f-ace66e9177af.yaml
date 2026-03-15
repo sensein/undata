@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8b35de25-2d9d-5486-a82f-ace66e9177af
+  source_local_id: aind.metadata.quality_control
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.144864+00:00'
+versions:
+- version_num: 1
+  name: quality_control
+  data_type: object
+  created_at: '2026-03-15T22:48:07.144861+00:00'
+  created_by: urn:undata:ingestion
+  description: Description of quality metrics for a data asset
+current_version: 1

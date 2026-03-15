@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/dc12aabe-8503-51b6-8204-2833c29ef916
+  source_local_id: aind.processing.DataProcess.process_type
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:08.008279+00:00'
+versions:
+- version_num: 1
+  name: process_type
+  data_type: string
+  created_at: '2026-03-15T22:48:08.008277+00:00'
+  created_by: urn:undata:ingestion
+  description: Process names
+  required: true
+current_version: 1

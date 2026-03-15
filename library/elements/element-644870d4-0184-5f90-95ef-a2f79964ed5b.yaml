@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/644870d4-0184-5f90-95ef-a2f79964ed5b
+  source_local_id: aind.model.ModelTraining.notes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.988258+00:00'
+versions:
+- version_num: 1
+  name: notes
+  data_type: string
+  created_at: '2026-03-15T22:48:07.988256+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

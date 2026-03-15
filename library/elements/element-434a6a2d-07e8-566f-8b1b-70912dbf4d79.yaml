@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/434a6a2d-07e8-566f-8b1b-70912dbf4d79
+  source_local_id: aind.procedures._Mbf_Bioscience.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.555673+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.555671+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

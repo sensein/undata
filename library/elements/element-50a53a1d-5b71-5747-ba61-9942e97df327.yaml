@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/50a53a1d-5b71-5747-ba61-9942e97df327
+  source_local_id: aind.metadata.PerformanceMetric.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.532920+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.532918+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

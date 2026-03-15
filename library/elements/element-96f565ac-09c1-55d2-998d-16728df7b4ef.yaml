@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/96f565ac-09c1-55d2-998d-16728df7b4ef
+  source_local_id: aind.acquisition._Oxxius.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.174975+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.174973+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

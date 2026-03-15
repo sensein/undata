@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/b28b4f9a-4caf-552d-8e4d-160aa26b1bb9
+  source_local_id: aind.metadata.NeuropixelsBasestation.hardware_version
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.502753+00:00'
+versions:
+- version_num: 1
+  name: hardware_version
+  data_type: string
+  created_at: '2026-03-15T22:48:07.502751+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

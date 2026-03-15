@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/51e92873-f80a-588b-beb1-1cf0fc61c3fb
+  source_local_id: aind.subject._Homo_Sapiens.common_name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.694270+00:00'
+versions:
+- version_num: 1
+  name: common_name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.694268+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

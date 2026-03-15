@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/055d727b-d0da-57bf-a190-abfacb4899fc
+  source_local_id: aind.instrument._Thermo_Fisher_Scientific.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.115933+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.115931+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

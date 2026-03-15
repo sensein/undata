@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/831d37e6-8e26-53fb-b279-f979f74aaf26
+  source_local_id: aind.instrument._Behavior_Videos.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.918470+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.918467+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

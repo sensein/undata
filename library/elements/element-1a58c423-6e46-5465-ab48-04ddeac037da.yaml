@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/1a58c423-6e46-5465-ab48-04ddeac037da
+  source_local_id: aind.instrument.Enclosure.size_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.743251+00:00'
+versions:
+- version_num: 1
+  name: size_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:06.743249+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Length Measurements
+  required: true
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/a0ed38f9-2f9d-5f36-873d-fbd152185ec9
+  source_local_id: aind.metadata.TarsVirusIdentifiers.prep_type
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.651923+00:00'
+versions:
+- version_num: 1
+  name: prep_type
+  data_type: string
+  created_at: '2026-03-15T22:48:07.651921+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

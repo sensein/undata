@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/6d388a96-19e9-5b44-9fbb-b8d0bcccf249
+  source_local_id: aind.acquisition.NonViralMaterial.expiration_date
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.957225+00:00'
+versions:
+- version_num: 1
+  name: expiration_date
+  data_type: string
+  created_at: '2026-03-15T22:48:05.957222+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

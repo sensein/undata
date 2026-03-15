@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/fec29a39-1d0f-53f4-aac6-97abb3d7e624
+  source_local_id: aind.instrument.EphysAssembly.probes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.746757+00:00'
+versions:
+- version_num: 1
+  name: probes
+  data_type: string
+  created_at: '2026-03-15T22:48:06.746755+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+  multivalued: true
+current_version: 1

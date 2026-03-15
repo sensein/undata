@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/79a7cdd4-6d2a-5897-9cbf-ebac13fea0ab
+  source_local_id: aind.metadata._Macaca_Mulatta.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.829210+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:07.829208+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

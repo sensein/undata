@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c513c96f-075f-5939-ac1e-ababb4aa9198
+  source_local_id: aind.instrument._Hobgoblin.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.974520+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.974518+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

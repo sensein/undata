@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/19fc5808-8fda-55b7-b857-bf43042cbbd5
+  source_local_id: aind.procedures.CatheterImplant.implanted_device
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.317538+00:00'
+versions:
+- version_num: 1
+  name: implanted_device
+  data_type: object
+  created_at: '2026-03-15T22:48:06.317536+00:00'
+  created_by: urn:undata:ingestion
+  description: Description of a catheter device
+  required: true
+current_version: 1

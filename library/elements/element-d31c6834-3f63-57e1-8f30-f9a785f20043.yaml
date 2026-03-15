@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/d31c6834-3f63-57e1-8f30-f9a785f20043
+  source_local_id: aind.instrument.PatchClampEphysAssembly.headstage
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.840528+00:00'
+versions:
+- version_num: 1
+  name: headstage
+  data_type: object
+  created_at: '2026-03-15T22:48:06.840525+00:00'
+  created_by: urn:undata:ingestion
+  description: Generic device
+  required: true
+current_version: 1

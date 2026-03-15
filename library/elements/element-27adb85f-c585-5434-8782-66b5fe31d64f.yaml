@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/27adb85f-c585-5434-8782-66b5fe31d64f
+  source_local_id: aind.acquisition._Midwest_Optical_Systems_Inc_.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.138952+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.138950+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

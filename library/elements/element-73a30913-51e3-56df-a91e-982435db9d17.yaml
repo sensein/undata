@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/73a30913-51e3-56df-a91e-982435db9d17
+  source_local_id: aind.procedures._Prizmatix.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.604228+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.604226+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

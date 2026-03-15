@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/68ec91f9-f401-5498-a726-60f6d44062ea
+  source_local_id: aind.metadata.MotorizedStage.notes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.480036+00:00'
+versions:
+- version_num: 1
+  name: notes
+  data_type: string
+  created_at: '2026-03-15T22:48:07.480029+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

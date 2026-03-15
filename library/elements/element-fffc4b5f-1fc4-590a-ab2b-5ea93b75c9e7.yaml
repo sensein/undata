@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/fffc4b5f-1fc4-590a-ab2b-5ea93b75c9e7
+  source_local_id: aind.model.ModelTraining.code
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.985024+00:00'
+versions:
+- version_num: 1
+  name: code
+  data_type: object
+  created_at: '2026-03-15T22:48:07.985022+00:00'
+  created_by: urn:undata:ingestion
+  description: Code used for processing
+  required: true
+current_version: 1

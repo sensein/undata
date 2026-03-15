@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ea1e49c6-ee81-5ae0-99ac-3f2070464ecb
+  source_local_id: aind.instrument.LightEmittingDiode.bandwidth
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.798512+00:00'
+versions:
+- version_num: 1
+  name: bandwidth
+  data_type: float
+  created_at: '2026-03-15T22:48:06.798510+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

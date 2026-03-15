@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f3483ff9-b9f9-5772-8141-d2ea1de3329a
+  source_local_id: aind.metadata._Mpi.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.847380+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.847378+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

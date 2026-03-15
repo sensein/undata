@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/6c8a37f7-dfbb-5b67-b15e-31b1ab726fb5
+  source_local_id: aind.instrument._Columbia_University.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.939742+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.939740+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

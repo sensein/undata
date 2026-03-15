@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/e3b609e7-de90-5951-9f02-0ca33a455c02
+  source_local_id: aind.instrument._Janelia_Research_Campus.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.993762+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.993760+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

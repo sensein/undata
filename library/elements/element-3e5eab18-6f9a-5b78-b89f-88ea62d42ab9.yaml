@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/3e5eab18-6f9a-5b78-b89f-88ea62d42ab9
+  source_local_id: aind.metadata._Thermo_Fisher_Scientific.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.936470+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.936468+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

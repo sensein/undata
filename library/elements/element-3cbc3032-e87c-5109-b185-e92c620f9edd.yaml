@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/3cbc3032-e87c-5109-b185-e92c620f9edd
+  source_local_id: aind.acquisition._Same_Sky.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.184316+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.184314+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

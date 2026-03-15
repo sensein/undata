@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/6c7d63ff-3db6-544c-9acf-3c5e96624a3f
+  source_local_id: aind.procedures._Semrock.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.615208+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.615206+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

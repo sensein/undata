@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6f746936-00bd-5da0-96c5-87c086c02a4e
+  source_local_id: aind.procedures.WaterRestriction.minimum_water_per_day_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.436208+00:00'
+versions:
+- version_num: 1
+  name: minimum_water_per_day_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:06.436206+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Volume Measurements
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/b7a13eaa-84ad-5f2e-b407-3bf94b9965a4
+  source_local_id: aind.metadata.Funding.funder
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.346316+00:00'
+versions:
+- version_num: 1
+  name: funder
+  data_type: object
+  created_at: '2026-03-15T22:48:07.346314+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

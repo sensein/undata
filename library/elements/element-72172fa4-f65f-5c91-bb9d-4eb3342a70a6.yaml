@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/72172fa4-f65f-5c91-bb9d-4eb3342a70a6
+  source_local_id: aind.instrument._University_Of_California_San_Diego.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.125575+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.125573+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

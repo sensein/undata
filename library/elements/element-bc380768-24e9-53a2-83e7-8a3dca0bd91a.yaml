@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/bc380768-24e9-53a2-83e7-8a3dca0bd91a
+  source_local_id: aind.procedures._Addgene.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.442613+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.442611+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

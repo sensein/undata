@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/7cf53236-3b68-5518-81c9-0ec8af2e538c
+  source_local_id: aind.acquisition._Transducer_Techniques.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.219484+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.219482+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

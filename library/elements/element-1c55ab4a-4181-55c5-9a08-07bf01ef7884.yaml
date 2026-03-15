@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/1c55ab4a-4181-55c5-9a08-07bf01ef7884
+  source_local_id: aind.metadata._Whiterabbit.whoami
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.958014+00:00'
+versions:
+- version_num: 1
+  name: whoami
+  data_type: float
+  created_at: '2026-03-15T22:48:07.958012+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

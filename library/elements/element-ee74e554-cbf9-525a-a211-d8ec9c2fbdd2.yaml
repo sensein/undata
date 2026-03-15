@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ee74e554-cbf9-525a-a211-d8ec9c2fbdd2
+  source_local_id: aind.acquisition._Neuralynx.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.158361+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.158359+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

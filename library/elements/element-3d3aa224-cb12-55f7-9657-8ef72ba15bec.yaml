@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/3d3aa224-cb12-55f7-9657-8ef72ba15bec
+  source_local_id: aind.model.ModelTraining.stage
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.984566+00:00'
+versions:
+- version_num: 1
+  name: stage
+  data_type: string
+  created_at: '2026-03-15T22:48:07.984564+00:00'
+  created_by: urn:undata:ingestion
+  description: Stages of processing
+  required: true
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/761333b1-21f5-564c-b58c-65bfe7559159
+  source_local_id: aind.metadata.BrainInjection.injection_materials
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.180242+00:00'
+versions:
+- version_num: 1
+  name: injection_materials
+  data_type: string
+  created_at: '2026-03-15T22:48:07.180240+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+  multivalued: true
+current_version: 1

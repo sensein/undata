@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/eca21547-c815-5c87-b1d4-ea228e5080cb
+  source_local_id: aind.instrument.Rotation.angles_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.856712+00:00'
+versions:
+- version_num: 1
+  name: angles_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:06.856710+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Angle Measurements
+current_version: 1

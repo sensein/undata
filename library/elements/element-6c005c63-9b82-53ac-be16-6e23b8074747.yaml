@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/6c005c63-9b82-53ac-be16-6e23b8074747
+  source_local_id: aind.model.ModelTraining.train_performance
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.989089+00:00'
+versions:
+- version_num: 1
+  name: train_performance
+  data_type: string
+  created_at: '2026-03-15T22:48:07.989087+00:00'
+  created_by: urn:undata:ingestion
+  description: Performance on training set
+  required: true
+  multivalued: true
+current_version: 1

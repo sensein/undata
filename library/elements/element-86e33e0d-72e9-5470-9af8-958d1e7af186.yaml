@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/86e33e0d-72e9-5470-9af8-958d1e7af186
+  source_local_id: aind.instrument.Camera.chroma
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.684071+00:00'
+versions:
+- version_num: 1
+  name: chroma
+  data_type: string
+  created_at: '2026-03-15T22:48:06.684069+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

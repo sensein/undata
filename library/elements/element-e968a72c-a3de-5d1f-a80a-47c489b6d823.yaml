@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/e968a72c-a3de-5d1f-a80a-47c489b6d823
+  source_local_id: aind.instrument.DAQDevice.data_interface
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.708832+00:00'
+versions:
+- version_num: 1
+  name: data_interface
+  data_type: string
+  created_at: '2026-03-15T22:48:06.708830+00:00'
+  created_by: urn:undata:ingestion
+  description: Connection between a device and a PC
+  required: true
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ef512afa-bbc5-56ee-a262-5a23ca09e94b
+  source_local_id: aind.metadata.FluorescentStain.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.341024+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.341022+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

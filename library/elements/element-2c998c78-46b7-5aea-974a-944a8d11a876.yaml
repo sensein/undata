@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/2c998c78-46b7-5aea-974a-944a8d11a876
+  source_local_id: aind.metadata.Disc.radius_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.308623+00:00'
+versions:
+- version_num: 1
+  name: radius_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.308621+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Length Measurements
+current_version: 1

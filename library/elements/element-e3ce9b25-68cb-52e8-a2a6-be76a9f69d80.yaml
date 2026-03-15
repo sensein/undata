@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/e3ce9b25-68cb-52e8-a2a6-be76a9f69d80
+  source_local_id: aind.procedures._Nresearch_Inc.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.590347+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.590345+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

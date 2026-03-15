@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/a5feb4a0-6c07-5655-b0a6-e3871ebd0fd5
+  source_local_id: aind.metadata.QualityControl.notes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.589495+00:00'
+versions:
+- version_num: 1
+  name: notes
+  data_type: string
+  created_at: '2026-03-15T22:48:07.589493+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

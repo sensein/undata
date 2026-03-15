@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/daa918a4-b95f-5a98-8f63-49061d602088
+  source_local_id: aind.metadata.DigitalMicromirrorDevice.serial_number
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.299132+00:00'
+versions:
+- version_num: 1
+  name: serial_number
+  data_type: string
+  created_at: '2026-03-15T22:48:07.299130+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

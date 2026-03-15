@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/6aeeaf11-c314-5068-bc34-b14d5a2b8811
+  source_local_id: aind.acquisition.ImageSPIM.file_name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.913784+00:00'
+versions:
+- version_num: 1
+  name: file_name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.913782+00:00'
+  created_by: urn:undata:ingestion
+  description: Relative path to a file from the metadata root folder
+  required: true
+current_version: 1

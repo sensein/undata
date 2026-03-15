@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/494e26ff-eede-55af-95a0-965dce23655d
+  source_local_id: aind.metadata.Maintenance.reagents
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.441949+00:00'
+versions:
+- version_num: 1
+  name: reagents
+  data_type: string
+  created_at: '2026-03-15T22:48:07.441947+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7800435e-f120-5314-963b-9f0ce6a62539
+  source_local_id: aind.quality_control.QCMetric.modality
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:08.030004+00:00'
+versions:
+- version_num: 1
+  name: modality
+  data_type: object
+  created_at: '2026-03-15T22:48:08.030002+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

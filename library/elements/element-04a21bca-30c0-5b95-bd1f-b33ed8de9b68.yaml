@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/04a21bca-30c0-5b95-bd1f-b33ed8de9b68
+  source_local_id: aind.quality_control._Confocal.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:08.038752+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:08.038751+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

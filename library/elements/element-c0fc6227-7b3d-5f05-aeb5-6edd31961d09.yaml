@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/c0fc6227-7b3d-5f05-aeb5-6edd31961d09
+  source_local_id: aind.metadata.AirPuffDevice.diameter
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.167583+00:00'
+versions:
+- version_num: 1
+  name: diameter
+  data_type: float
+  created_at: '2026-03-15T22:48:07.167581+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

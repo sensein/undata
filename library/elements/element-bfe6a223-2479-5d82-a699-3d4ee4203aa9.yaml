@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/bfe6a223-2479-5d82-a699-3d4ee4203aa9
+  source_local_id: aind.procedures.ProbeReagent.lot_number
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.400255+00:00'
+versions:
+- version_num: 1
+  name: lot_number
+  data_type: string
+  created_at: '2026-03-15T22:48:06.400253+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

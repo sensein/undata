@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/b646d6ae-5aa7-5ba6-99c0-5cf913a66a80
+  source_local_id: aind.metadata.Wheel.radius
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.679505+00:00'
+versions:
+- version_num: 1
+  name: radius
+  data_type: float
+  created_at: '2026-03-15T22:48:07.679503+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8bef8763-eaa5-51c6-88b6-dc3b20861a45
+  source_local_id: aind.metadata.ProteinProbe.mass
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.582032+00:00'
+versions:
+- version_num: 1
+  name: mass
+  data_type: float
+  created_at: '2026-03-15T22:48:07.582030+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

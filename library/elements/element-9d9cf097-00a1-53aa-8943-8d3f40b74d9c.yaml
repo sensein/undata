@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/9d9cf097-00a1-53aa-8943-8d3f40b74d9c
+  source_local_id: aind.metadata._Lasos_Lasertechnik.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.815083+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:07.815080+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

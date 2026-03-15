@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/398ca89e-af34-56dc-a80e-987af59ea754
+  source_local_id: aind.metadata.WellnessReport.report
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.676329+00:00'
+versions:
+- version_num: 1
+  name: report
+  data_type: string
+  created_at: '2026-03-15T22:48:07.676325+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

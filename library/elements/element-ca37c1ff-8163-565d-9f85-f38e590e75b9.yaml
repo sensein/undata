@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ca37c1ff-8163-565d-9f85-f38e590e75b9
+  source_local_id: aind.subject._Baylor_College_Of_Medicine.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.638598+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:05.638596+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

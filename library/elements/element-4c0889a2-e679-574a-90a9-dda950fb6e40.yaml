@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/4c0889a2-e679-574a-90a9-dda950fb6e40
+  source_local_id: aind.subject._Allen_Institute_For_Brain_Science.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.621824+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:05.621822+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

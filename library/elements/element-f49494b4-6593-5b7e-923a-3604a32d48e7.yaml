@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f49494b4-6593-5b7e-923a-3604a32d48e7
+  source_local_id: aind.subject._Conoptics.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.668108+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.668106+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

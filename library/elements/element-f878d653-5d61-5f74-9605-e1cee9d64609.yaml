@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f878d653-5d61-5f74-9605-e1cee9d64609
+  source_local_id: aind.instrument._Integrated_Dna_Technologies.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.981981+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.981979+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

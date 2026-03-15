@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/673b8f97-3a53-5431-950b-c6fb40d676dd
+  source_local_id: aind.procedures._Integrated_Dna_Technologies.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.519620+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.519618+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

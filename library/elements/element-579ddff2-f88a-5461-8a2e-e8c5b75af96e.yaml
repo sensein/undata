@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/579ddff2-f88a-5461-8a2e-e8c5b75af96e
+  source_local_id: aind.acquisition.ImageSPIM.image_end_time
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.915620+00:00'
+versions:
+- version_num: 1
+  name: image_end_time
+  data_type: string
+  created_at: '2026-03-15T22:48:05.915618+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

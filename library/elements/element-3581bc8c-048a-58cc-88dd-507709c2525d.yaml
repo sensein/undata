@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/3581bc8c-048a-58cc-88dd-507709c2525d
+  source_local_id: aind.metadata._Same_Sky.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.898614+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.898612+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/4d5eee28-d013-5503-aba8-5ca6ce75958d
+  source_local_id: aind.metadata.DataStream.connections
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.276713+00:00'
+versions:
+- version_num: 1
+  name: connections
+  data_type: string
+  created_at: '2026-03-15T22:48:07.276711+00:00'
+  created_by: urn:undata:ingestion
+  description: Connections are links between devices that are specific to this acquisition
+    (i.e. not already defined in the Instrument)
+  multivalued: true
+current_version: 1

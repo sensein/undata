@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/e67945ff-7bc7-5826-911d-238b4112ee3b
+  source_local_id: aind.subject._Allen_Institute_For_Neural_Dynamics.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.623137+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:05.623135+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

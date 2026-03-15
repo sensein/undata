@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/b7a15cdb-60c6-5e60-82a7-56ab9d58157d
+  source_local_id: aind.subject._Sigma_Aldrich.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.802573+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:05.802571+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

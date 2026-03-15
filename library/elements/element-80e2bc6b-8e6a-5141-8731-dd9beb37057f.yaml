@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/80e2bc6b-8e6a-5141-8731-dd9beb37057f
+  source_local_id: aind.instrument._Tamron.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.101758+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.101756+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

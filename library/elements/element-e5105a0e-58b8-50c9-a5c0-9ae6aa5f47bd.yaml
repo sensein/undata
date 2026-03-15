@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/e5105a0e-58b8-50c9-a5c0-9ae6aa5f47bd
+  source_local_id: aind.procedures.GenericSubjectProcedure.notes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.355299+00:00'
+versions:
+- version_num: 1
+  name: notes
+  data_type: string
+  created_at: '2026-03-15T22:48:06.355298+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

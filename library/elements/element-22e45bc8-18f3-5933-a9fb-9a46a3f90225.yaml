@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/22e45bc8-18f3-5933-a9fb-9a46a3f90225
+  source_local_id: aind.metadata.MouseSubject.strain
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.485573+00:00'
+versions:
+- version_num: 1
+  name: strain
+  data_type: object
+  created_at: '2026-03-15T22:48:07.485571+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

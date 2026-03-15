@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f9f69e49-d8a3-5563-aa35-e9d1f0fe2ffe
+  source_local_id: aind.subject._Equus_Asinus.common_name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.684074+00:00'
+versions:
+- version_num: 1
+  name: common_name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.684072+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

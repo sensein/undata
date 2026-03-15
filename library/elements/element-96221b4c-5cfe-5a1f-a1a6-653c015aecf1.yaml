@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/96221b4c-5cfe-5a1f-a1a6-653c015aecf1
+  source_local_id: aind.acquisition._Ir_Robot_Co.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.102369+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.102367+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/d108cef8-e155-5c77-9c0a-10771465bf6a
+  source_local_id: aind.metadata.Enclosure.grounded
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.315513+00:00'
+versions:
+- version_num: 1
+  name: grounded
+  data_type: boolean
+  created_at: '2026-03-15T22:48:07.315511+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/8a21d94e-ab43-58d3-84f5-912e1dde9eeb
+  source_local_id: aind.procedures._The_Lee_Company.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.637285+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.637283+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/3c22aa12-c508-53e0-a988-b01c24f6ce07
+  source_local_id: aind.procedures._Jenoptik.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.533950+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.533948+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

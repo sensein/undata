@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/dcc247d6-3910-5ca2-b476-332f0644e424
+  source_local_id: aind.metadata.BreedingInfo.breeding_group
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.185179+00:00'
+versions:
+- version_num: 1
+  name: breeding_group
+  data_type: string
+  created_at: '2026-03-15T22:48:07.185177+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

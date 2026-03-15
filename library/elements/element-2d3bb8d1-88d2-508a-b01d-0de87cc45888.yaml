@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/2d3bb8d1-88d2-508a-b01d-0de87cc45888
+  source_local_id: aind.procedures._Custom.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.492836+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.492835+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

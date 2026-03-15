@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/8460c74d-1df2-5958-abe0-961ec62c4134
+  source_local_id: aind.instrument.Detector.additional_settings
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.712663+00:00'
+versions:
+- version_num: 1
+  name: additional_settings
+  data_type: object
+  created_at: '2026-03-15T22:48:06.712661+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

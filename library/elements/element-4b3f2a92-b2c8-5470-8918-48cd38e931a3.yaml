@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4b3f2a92-b2c8-5470-8918-48cd38e931a3
+  source_local_id: aind.metadata.MotorizedStage.travel_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.480869+00:00'
+versions:
+- version_num: 1
+  name: travel_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.480867+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Length Measurements
+current_version: 1

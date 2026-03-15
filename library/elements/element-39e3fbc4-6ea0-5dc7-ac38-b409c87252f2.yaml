@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/39e3fbc4-6ea0-5dc7-ac38-b409c87252f2
+  source_local_id: aind.metadata.PockelsCell.polygonal_scanner
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.556249+00:00'
+versions:
+- version_num: 1
+  name: polygonal_scanner
+  data_type: string
+  created_at: '2026-03-15T22:48:07.556247+00:00'
+  created_by: urn:undata:ingestion
+  description: Must match name of Polygonal scanner
+current_version: 1

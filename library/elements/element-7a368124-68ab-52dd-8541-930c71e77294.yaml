@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7a368124-68ab-52dd-8541-930c71e77294
+  source_local_id: aind.metadata.CoupledPlane.depth
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.238924+00:00'
+versions:
+- version_num: 1
+  name: depth
+  data_type: float
+  created_at: '2026-03-15T22:48:07.238922+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

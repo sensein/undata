@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/09761659-15b7-5fcb-bb95-77e523b88282
+  source_local_id: aind.instrument.CameraAssembly.coordinate_system
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.693026+00:00'
+versions:
+- version_num: 1
+  name: coordinate_system
+  data_type: object
+  created_at: '2026-03-15T22:48:06.693024+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/44cf33cd-8481-5b41-aef5-f2adbb3aed2a
+  source_local_id: aind.procedures._National_Institute_Of_Neurological_Disorders_And_Stroke.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.576127+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.576125+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

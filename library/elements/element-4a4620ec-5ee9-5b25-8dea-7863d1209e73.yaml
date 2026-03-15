@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/4a4620ec-5ee9-5b25-8dea-7863d1209e73
+  source_local_id: aind.metadata.PockelsCell.beam_modulation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.557983+00:00'
+versions:
+- version_num: 1
+  name: beam_modulation
+  data_type: float
+  created_at: '2026-03-15T22:48:07.557981+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

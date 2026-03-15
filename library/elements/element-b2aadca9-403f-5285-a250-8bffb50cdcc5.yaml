@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/b2aadca9-403f-5285-a250-8bffb50cdcc5
+  source_local_id: aind.procedures._Nresearch_Inc.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.589114+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.589112+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

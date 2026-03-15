@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/0a9d6435-5b87-52f3-ae65-244831af595b
+  source_local_id: aind.instrument.Camera.gain
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.688717+00:00'
+versions:
+- version_num: 1
+  name: gain
+  data_type: float
+  created_at: '2026-03-15T22:48:06.688715+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

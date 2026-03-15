@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/af70d143-3360-57d9-8b6a-742096f03703
+  source_local_id: aind.metadata.CombinedData.database_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.229111+00:00'
+versions:
+- version_num: 1
+  name: database_identifier
+  data_type: object
+  created_at: '2026-03-15T22:48:07.229109+00:00'
+  created_by: urn:undata:ingestion
+  description: ID or link to the Combined Data asset, if materialized.
+current_version: 1

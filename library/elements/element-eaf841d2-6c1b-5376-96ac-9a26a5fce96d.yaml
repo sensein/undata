@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/eaf841d2-6c1b-5376-96ac-9a26a5fce96d
+  source_local_id: aind.metadata.Filter.notes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.338374+00:00'
+versions:
+- version_num: 1
+  name: notes
+  data_type: string
+  created_at: '2026-03-15T22:48:07.338372+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

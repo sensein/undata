@@ -84,61 +84,113 @@ def _get_data_type(prop: dict[str, Any], defs: dict[str, Any]) -> str:
 
 def _load_schemas_from_dir(schema_dir: Path) -> list[tuple[str, dict[str, Any]]]:
     schemas = []
+    # First try the known fixture files
     for fname in _SCHEMA_FILES:
         fpath = schema_dir / fname
         if fpath.exists():
             with open(fpath) as fh:
                 schemas.append((fname.replace("_schema.json", ""), json.load(fh)))
+    # Also discover any other .json files not in the hardcoded list
+    for fpath in sorted(schema_dir.glob("*.json")):
+        if fpath.name in _SCHEMA_FILES:
+            continue
+        with open(fpath) as fh:
+            model_name = fpath.stem.replace("_schema", "")
+            schemas.append((model_name, json.load(fh)))
     return schemas
+
+
+def _extract_props_from_object(
+    properties: dict[str, Any],
+    required_fields: set[str],
+    defs: dict[str, Any],
+    source_name: str,
+    model_name: str,
+    prefix: str,
+    extraction_path: str,
+    schema_file: str,
+) -> list[NormalizedElement]:
+    """Extract NormalizedElement list from a JSON Schema properties dict."""
+    elements: list[NormalizedElement] = []
+    for prop_name, prop_def in properties.items():
+        if prop_name in ("object_type", "describedBy", "schema_version"):
+            continue
+
+        resolved = prop_def
+        if "$ref" in prop_def and not prop_def.get("type"):
+            resolved = _resolve_ref(prop_def["$ref"], defs)
+
+        title = prop_def.get("title") or resolved.get("title") or prop_name
+        description = prop_def.get("description") or resolved.get("description") or ""
+        data_type = _get_data_type(prop_def, defs)
+
+        raw_type = prop_def.get("type")
+        multivalued = raw_type == "array" or "items" in prop_def
+
+        allowed_values: list[str] = []
+        enum_src = resolved.get("enum") or prop_def.get("enum") or []
+        if enum_src:
+            allowed_values = [str(v) for v in enum_src if v is not None]
+
+        source_local_id = f"{prefix}.{prop_name}"
+        elements.append(
+            NormalizedElement(
+                name=prop_name,
+                data_type=data_type,
+                description=description,
+                required=prop_name in required_fields,
+                multivalued=multivalued,
+                allowed_values=allowed_values,
+                constraints={},
+                source_local_id=source_local_id,
+                source_name=source_name,
+                extraction_path=extraction_path,
+                raw_metadata={
+                    "schema_file": schema_file,
+                    "title": title,
+                    "model": model_name,
+                },
+            )
+        )
+    return elements
 
 
 def _elements_from_schemas(
     schemas: list[tuple[str, dict]], source_name: str, extraction_path: str = "file"
 ) -> list[NormalizedElement]:
     elements: list[NormalizedElement] = []
+    seen_ids: set[str] = set()
+
     for model_name, schema in schemas:
         defs = schema.get("$defs", {})
-        required_fields = set(schema.get("required", []))
-        properties = schema.get("properties", {})
+        schema_file = f"{model_name}_schema.json"
 
-        for prop_name, prop_def in properties.items():
-            if prop_name in ("object_type", "describedBy", "schema_version"):
+        # 1. Top-level properties
+        top_props = schema.get("properties", {})
+        top_required = set(schema.get("required", []))
+        for el in _extract_props_from_object(
+            top_props, top_required, defs, source_name,
+            model_name, f"aind.{model_name}", extraction_path, schema_file,
+        ):
+            if el.source_local_id not in seen_ids:
+                seen_ids.add(el.source_local_id)
+                elements.append(el)
+
+        # 2. Recurse into $defs — each def is a model with its own properties
+        for def_name, def_schema in defs.items():
+            def_props = def_schema.get("properties", {})
+            if not def_props:
                 continue
+            def_required = set(def_schema.get("required", []))
+            prefix = f"aind.{model_name}.{def_name}"
+            for el in _extract_props_from_object(
+                def_props, def_required, defs, source_name,
+                def_name, prefix, extraction_path, schema_file,
+            ):
+                if el.source_local_id not in seen_ids:
+                    seen_ids.add(el.source_local_id)
+                    elements.append(el)
 
-            resolved = prop_def
-            if "$ref" in prop_def and not prop_def.get("type"):
-                resolved = _resolve_ref(prop_def["$ref"], defs)
-
-            title = prop_def.get("title") or resolved.get("title") or prop_name
-            description = prop_def.get("description") or resolved.get("description") or ""
-            data_type = _get_data_type(prop_def, defs)
-
-            raw_type = prop_def.get("type")
-            multivalued = raw_type == "array" or "items" in prop_def
-
-            allowed_values: list[str] = []
-            enum_src = resolved.get("enum") or prop_def.get("enum") or []
-            if enum_src:
-                allowed_values = [str(v) for v in enum_src if v is not None]
-
-            elements.append(
-                NormalizedElement(
-                    name=prop_name,
-                    data_type=data_type,
-                    description=description,
-                    required=prop_name in required_fields,
-                    multivalued=multivalued,
-                    allowed_values=allowed_values,
-                    constraints={},
-                    source_local_id=f"aind.{model_name}.{prop_name}",
-                    source_name=source_name,
-                    extraction_path=extraction_path,
-                    raw_metadata={
-                        "schema_file": f"{model_name}_schema.json",
-                        "title": title,
-                    },
-                )
-            )
     return elements
 
 
@@ -163,6 +215,21 @@ def _classes_from_schemas(
                 schema_format="json" if extraction_path == "file" else "code",
             )
         )
+        # Also create classes for $defs models
+        for def_name, def_schema in schema.get("$defs", {}).items():
+            def_props = def_schema.get("properties", {})
+            if not def_props:
+                continue
+            def_slids = [f"aind.{model_name}.{def_name}.{p}" for p in def_props]
+            classes.append(
+                SchemaClassPayload(
+                    class_name=def_schema.get("title", def_name),
+                    description=def_schema.get("description", ""),
+                    element_source_local_ids=def_slids,
+                    extraction_path=extraction_path,
+                    schema_format="json" if extraction_path == "file" else "code",
+                )
+            )
     return classes
 
 

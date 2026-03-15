@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7cfcc24a-f70b-5289-91ed-56565287504d
+  source_local_id: aind.metadata.CoupledPlane.power_ratio
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.242098+00:00'
+versions:
+- version_num: 1
+  name: power_ratio
+  data_type: float
+  created_at: '2026-03-15T22:48:07.242096+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

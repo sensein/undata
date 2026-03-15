@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/552259e4-8618-5e3e-a38a-5dacc404d72f
+  source_local_id: aind.metadata.ProbeImplant.device_config
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.573025+00:00'
+versions:
+- version_num: 1
+  name: device_config
+  data_type: object
+  created_at: '2026-03-15T22:48:07.573023+00:00'
+  created_by: urn:undata:ingestion
+  description: Configuration for a device inserted into a brain
+  required: true
+current_version: 1

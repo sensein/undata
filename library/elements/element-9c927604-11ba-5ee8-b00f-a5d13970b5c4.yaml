@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/9c927604-11ba-5ee8-b00f-a5d13970b5c4
+  source_local_id: aind.metadata.ResourceUsage.gpu
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.596047+00:00'
+versions:
+- version_num: 1
+  name: gpu
+  data_type: string
+  created_at: '2026-03-15T22:48:07.596045+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

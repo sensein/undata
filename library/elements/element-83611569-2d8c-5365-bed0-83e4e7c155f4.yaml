@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/83611569-2d8c-5365-bed0-83e4e7c155f4
+  source_local_id: aind.procedures._Raspberry_Pi.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.606319+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.606312+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/31065859-22d1-53a2-afeb-d67716cfc89b
+  source_local_id: aind.procedures.ProbeConfig.coordinate_system
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.395517+00:00'
+versions:
+- version_num: 1
+  name: coordinate_system
+  data_type: object
+  created_at: '2026-03-15T22:48:06.395515+00:00'
+  created_by: urn:undata:ingestion
+  description: Device coordinate system, defines un-rotated probe's orientation relative
+    to the Acquisition.coordinate_system
+  required: true
+current_version: 1

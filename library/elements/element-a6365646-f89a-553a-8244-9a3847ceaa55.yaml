@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a6365646-f89a-553a-8244-9a3847ceaa55
+  source_local_id: aind.processing.DataProcess.pipeline_name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:08.010600+00:00'
+versions:
+- version_num: 1
+  name: pipeline_name
+  data_type: string
+  created_at: '2026-03-15T22:48:08.010598+00:00'
+  created_by: urn:undata:ingestion
+  description: Pipeline names must exist in Processing.pipelines
+current_version: 1

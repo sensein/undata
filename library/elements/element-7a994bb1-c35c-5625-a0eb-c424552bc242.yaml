@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/7a994bb1-c35c-5625-a0eb-c424552bc242
+  source_local_id: aind.acquisition._Huazhong_University_Of_Science_And_Technology.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.092780+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.092778+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

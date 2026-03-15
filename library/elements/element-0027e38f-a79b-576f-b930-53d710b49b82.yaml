@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/0027e38f-a79b-576f-b930-53d710b49b82
+  source_local_id: aind.instrument._Vestibularh1.whoami
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.131267+00:00'
+versions:
+- version_num: 1
+  name: whoami
+  data_type: float
+  created_at: '2026-03-15T22:48:07.131258+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

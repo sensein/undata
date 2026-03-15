@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/734ceb0c-7fd3-5239-aa55-12e88ae9c76d
+  source_local_id: aind.acquisition._National_Institute_Of_Mental_Health.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.150163+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.150161+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

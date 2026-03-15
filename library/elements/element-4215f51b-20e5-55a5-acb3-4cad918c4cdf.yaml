@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/4215f51b-20e5-55a5-acb3-4cad918c4cdf
+  source_local_id: aind.quality_control.QCStatus.status
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:08.034063+00:00'
+versions:
+- version_num: 1
+  name: status
+  data_type: string
+  created_at: '2026-03-15T22:48:08.034061+00:00'
+  created_by: urn:undata:ingestion
+  description: QC Status
+  required: true
+current_version: 1

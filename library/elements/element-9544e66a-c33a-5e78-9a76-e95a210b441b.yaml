@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/9544e66a-c33a-5e78-9a76-e95a210b441b
+  source_local_id: aind.instrument.DigitalMicromirrorDevice.model
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.728757+00:00'
+versions:
+- version_num: 1
+  name: model
+  data_type: string
+  created_at: '2026-03-15T22:48:06.728749+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

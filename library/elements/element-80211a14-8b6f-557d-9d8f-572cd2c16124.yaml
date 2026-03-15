@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/80211a14-8b6f-557d-9d8f-572cd2c16124
+  source_local_id: aind.metadata.StimulusEpoch.stimulus_modalities
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.639824+00:00'
+versions:
+- version_num: 1
+  name: stimulus_modalities
+  data_type: string
+  created_at: '2026-03-15T22:48:07.639822+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+  multivalued: true
+current_version: 1

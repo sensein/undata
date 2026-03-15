@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/94f148ed-1c7d-5bc2-ab4b-55163b7bda7a
+  source_local_id: aind.metadata._Lumen_Dynamics.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.824880+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:07.824878+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

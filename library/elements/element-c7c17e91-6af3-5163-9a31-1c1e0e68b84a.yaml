@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c7c17e91-6af3-5163-9a31-1c1e0e68b84a
+  source_local_id: aind.metadata._Charles_River_Laboratories.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.737362+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:07.737360+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/3a64e8eb-08a6-575f-91cd-245bba690d17
+  source_local_id: aind.acquisition._Barseq.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.037083+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.037082+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/b25222b8-66d3-5423-89d1-6578f999971e
+  source_local_id: aind.metadata._Lumen_Dynamics.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.825743+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:07.825740+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/d437ddd0-4cc2-517a-94a8-b027a8c59348
+  source_local_id: aind.metadata.MRIScan.echo_time_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.436483+00:00'
+versions:
+- version_num: 1
+  name: echo_time_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.436481+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Time Measurements
+current_version: 1

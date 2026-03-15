@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4e12351e-e3b6-5620-b9eb-00b12390dfaa
+  source_local_id: aind.instrument.Disc.decoder
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.738999+00:00'
+versions:
+- version_num: 1
+  name: decoder
+  data_type: string
+  created_at: '2026-03-15T22:48:06.738997+00:00'
+  created_by: urn:undata:ingestion
+  description: Decoder chip type
+current_version: 1

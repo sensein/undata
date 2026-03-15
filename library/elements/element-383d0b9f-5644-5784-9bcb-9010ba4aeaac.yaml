@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/383d0b9f-5644-5784-9bcb-9010ba4aeaac
+  source_local_id: aind.procedures._Allen_Institute.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.445110+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.445108+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

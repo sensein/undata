@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/70efc4a5-a51b-5f30-9afa-bd90c7f2e16b
+  source_local_id: aind.procedures._Sigma_Aldrich.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.618586+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.618585+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

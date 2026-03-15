@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/d6762023-3464-5c7f-b012-5dfba6d1eece
+  source_local_id: aind.acquisition._Sigma_Aldrich.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.192877+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.192876+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

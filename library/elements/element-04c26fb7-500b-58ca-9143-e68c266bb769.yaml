@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/04c26fb7-500b-58ca-9143-e68c266bb769
+  source_local_id: aind.metadata.Monitor.refresh_rate
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.473521+00:00'
+versions:
+- version_num: 1
+  name: refresh_rate
+  data_type: float
+  created_at: '2026-03-15T22:48:07.473519+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/df506b46-c003-5376-a5c4-2305892a0051
+  source_local_id: aind.metadata.ProbeConfig.transform
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.570804+00:00'
+versions:
+- version_num: 1
+  name: transform
+  data_type: string
+  created_at: '2026-03-15T22:48:07.570802+00:00'
+  created_by: urn:undata:ingestion
+  description: Entry coordinate, depth, and rotation in the Acquisition.coordinate_system
+  required: true
+  multivalued: true
+current_version: 1

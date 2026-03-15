@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/23914924-a6d6-5821-a3dd-b35a5d637ba9
+  source_local_id: aind.procedures._Columbia_University.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.486905+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.486903+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

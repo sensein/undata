@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6ba64e73-ac32-527f-8f12-3b4fd6182235
+  source_local_id: aind.procedures.TarsVirusIdentifiers.prep_date
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.427312+00:00'
+versions:
+- version_num: 1
+  name: prep_date
+  data_type: string
+  created_at: '2026-03-15T22:48:06.427310+00:00'
+  created_by: urn:undata:ingestion
+  description: Date this prep lot was titered
+current_version: 1

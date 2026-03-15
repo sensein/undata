@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/fcc04db9-18fb-5298-8613-87002b5d1ee9
+  source_local_id: aind.metadata.LickSpoutConfig.device_name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.416238+00:00'
+versions:
+- version_num: 1
+  name: device_name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.416236+00:00'
+  created_by: urn:undata:ingestion
+  description: Must match a device defined in the instrument.json
+  required: true
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/b09cae88-8161-5a1d-b5ea-f3a387570abb
+  source_local_id: aind.metadata.Acquisition.manipulations
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.153689+00:00'
+versions:
+- version_num: 1
+  name: manipulations
+  data_type: string
+  created_at: '2026-03-15T22:48:07.153687+00:00'
+  created_by: urn:undata:ingestion
+  description: Procedures performed during the acquisition.
+  multivalued: true
+current_version: 1

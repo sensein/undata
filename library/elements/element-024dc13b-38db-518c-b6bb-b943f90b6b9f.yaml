@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/024dc13b-38db-518c-b6bb-b943f90b6b9f
+  source_local_id: aind.metadata._Mri.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.848609+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.848607+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

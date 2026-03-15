@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/7325fa34-fea2-5b74-8680-d75745fa7658
+  source_local_id: aind.acquisition.LickSpoutConfig.relative_position
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.929821+00:00'
+versions:
+- version_num: 1
+  name: relative_position
+  data_type: string
+  created_at: '2026-03-15T22:48:05.929819+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+  multivalued: true
+current_version: 1

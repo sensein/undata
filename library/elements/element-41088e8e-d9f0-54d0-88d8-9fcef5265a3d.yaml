@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/41088e8e-d9f0-54d0-88d8-9fcef5265a3d
+  source_local_id: aind.subject._National_Institute_Of_Neurological_Disorders_And_Stroke.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.757436+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.757434+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/b6214742-832d-55c9-862a-b4f6cd8f7831
+  source_local_id: aind.model.intended_use
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.966814+00:00'
+versions:
+- version_num: 1
+  name: intended_use
+  data_type: string
+  created_at: '2026-03-15T22:48:07.966812+00:00'
+  created_by: urn:undata:ingestion
+  description: Semantic description of intended use
+  required: true
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/c41edb32-1f92-5c44-a1b4-7033468724a5
+  source_local_id: aind.metadata.Olfactometer.core_version
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.517588+00:00'
+versions:
+- version_num: 1
+  name: core_version
+  data_type: string
+  created_at: '2026-03-15T22:48:07.517586+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

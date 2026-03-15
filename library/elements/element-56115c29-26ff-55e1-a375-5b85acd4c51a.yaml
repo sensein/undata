@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/56115c29-26ff-55e1-a375-5b85acd4c51a
+  source_local_id: aind.instrument._Infinity_Photo_Optical.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.979446+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:06.979440+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

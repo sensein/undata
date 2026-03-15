@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/d862a8de-0fc5-56ac-bc8e-81b85003ba35
+  source_local_id: aind.procedures.ProteinProbe.sequence
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.403315+00:00'
+versions:
+- version_num: 1
+  name: sequence
+  data_type: string
+  created_at: '2026-03-15T22:48:06.403313+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

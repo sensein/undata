@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/f716596f-f3c4-5cfc-b7e9-f9f6761b7f48
+  source_local_id: aind.acquisition.CatheterConfig.device_name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.877458+00:00'
+versions:
+- version_num: 1
+  name: device_name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.877456+00:00'
+  created_by: urn:undata:ingestion
+  description: Must match a device defined in the instrument.json
+  required: true
+current_version: 1

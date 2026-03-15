@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/038050a3-106c-50e2-8bfd-89e7f37271ba
+  source_local_id: aind.instrument._Aa_Opto_Electronic.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.890208+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.890206+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/edabef32-359e-5e9a-9a26-643d62af073a
+  source_local_id: aind.metadata.FiberPatchCord.additional_settings
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.328184+00:00'
+versions:
+- version_num: 1
+  name: additional_settings
+  data_type: object
+  created_at: '2026-03-15T22:48:07.328182+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

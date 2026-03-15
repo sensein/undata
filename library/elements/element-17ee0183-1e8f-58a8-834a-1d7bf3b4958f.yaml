@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/17ee0183-1e8f-58a8-834a-1d7bf3b4958f
+  source_local_id: aind.instrument.MotorizedStage.travel
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.815536+00:00'
+versions:
+- version_num: 1
+  name: travel
+  data_type: float
+  created_at: '2026-03-15T22:48:06.815534+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/b4f055fc-c5e2-541f-9065-7aa2ff19fabd
+  source_local_id: aind.procedures._Addgene.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.442196+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.442194+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/e04b80e1-932c-505b-b099-543167c1e85c
+  source_local_id: aind.metadata.PerformanceMetrics.output_parameters
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.533765+00:00'
+versions:
+- version_num: 1
+  name: output_parameters
+  data_type: object
+  created_at: '2026-03-15T22:48:07.533763+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

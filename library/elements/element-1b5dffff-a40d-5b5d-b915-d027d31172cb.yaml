@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/1b5dffff-a40d-5b5d-b915-d027d31172cb
+  source_local_id: aind.instrument.Lamp.wavelength_max
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.776879+00:00'
+versions:
+- version_num: 1
+  name: wavelength_max
+  data_type: float
+  created_at: '2026-03-15T22:48:06.776877+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

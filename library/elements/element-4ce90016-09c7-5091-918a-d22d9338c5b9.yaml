@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/4ce90016-09c7-5091-918a-d22d9338c5b9
+  source_local_id: aind.subject._Allen_Institute.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.620544+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:05.620542+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

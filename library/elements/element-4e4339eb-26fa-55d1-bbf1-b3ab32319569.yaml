@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4e4339eb-26fa-55d1-bbf1-b3ab32319569
+  source_local_id: aind.acquisition.PlanarImageStack.channel_name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.969138+00:00'
+versions:
+- version_num: 1
+  name: channel_name
+  data_type: string
+  created_at: '2026-03-15T22:48:05.969136+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

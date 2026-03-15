@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/95725a54-6c9a-5859-977a-f6c8e8f83619
+  source_local_id: aind.instrument.Calibration.calibration_date
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.673070+00:00'
+versions:
+- version_num: 1
+  name: calibration_date
+  data_type: string
+  created_at: '2026-03-15T22:48:06.673068+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

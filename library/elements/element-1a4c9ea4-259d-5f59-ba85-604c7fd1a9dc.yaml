@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/1a4c9ea4-259d-5f59-ba85-604c7fd1a9dc
+  source_local_id: aind.metadata.Arena.size_unit
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.173265+00:00'
+versions:
+- version_num: 1
+  name: size_unit
+  data_type: string
+  created_at: '2026-03-15T22:48:07.173263+00:00'
+  created_by: urn:undata:ingestion
+  description: Enumeration of Length Measurements
+  required: true
+current_version: 1

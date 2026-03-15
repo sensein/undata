@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/55b48313-cbde-5e26-bf96-d79c83073142
+  source_local_id: aind.metadata.Fluorophore.excitation_wavelength
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.345389+00:00'
+versions:
+- version_num: 1
+  name: excitation_wavelength
+  data_type: float
+  created_at: '2026-03-15T22:48:07.345387+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

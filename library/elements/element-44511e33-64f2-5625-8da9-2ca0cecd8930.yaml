@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/44511e33-64f2-5625-8da9-2ca0cecd8930
+  source_local_id: aind.metadata.Model.software_framework
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.453425+00:00'
+versions:
+- version_num: 1
+  name: software_framework
+  data_type: object
+  created_at: '2026-03-15T22:48:07.453423+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

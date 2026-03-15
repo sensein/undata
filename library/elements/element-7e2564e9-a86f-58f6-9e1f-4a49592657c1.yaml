@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/7e2564e9-a86f-58f6-9e1f-4a49592657c1
+  source_local_id: aind.metadata.Filter.cut_off_wavelength
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.339263+00:00'
+versions:
+- version_num: 1
+  name: cut_off_wavelength
+  data_type: float
+  created_at: '2026-03-15T22:48:07.339261+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/be09051f-340f-53c9-8972-14bfc2e9293c
+  source_local_id: aind.instrument._Allen_Institute_For_Brain_Science.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.898450+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.898448+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

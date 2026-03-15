@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/65241544-a7ef-5b4a-9a87-277e22779231
+  source_local_id: aind.instrument._Isi.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.987880+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.987878+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

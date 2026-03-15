@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/9b6e7881-2c76-5c64-bfa3-134878b722fc
+  source_local_id: aind.instrument.Disc.output
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.738115+00:00'
+versions:
+- version_num: 1
+  name: output
+  data_type: string
+  created_at: '2026-03-15T22:48:06.738113+00:00'
+  created_by: urn:undata:ingestion
+  description: analog or digital electronics
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/858cf9b7-ec1c-54d5-a6b9-80eee4e040e9
+  source_local_id: aind.acquisition.MRIScan.additional_scan_parameters
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.941450+00:00'
+versions:
+- version_num: 1
+  name: additional_scan_parameters
+  data_type: object
+  created_at: '2026-03-15T22:48:05.941448+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

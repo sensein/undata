@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/8d76a3ef-a7c3-50dd-bf4d-cb02b56497d4
+  source_local_id: aind.metadata.ManipulatorConfig.coordinate_system
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.448101+00:00'
+versions:
+- version_num: 1
+  name: coordinate_system
+  data_type: object
+  created_at: '2026-03-15T22:48:07.448099+00:00'
+  created_by: urn:undata:ingestion
+  description: Definition of a coordinate system relative to a brain
+  required: true
+current_version: 1

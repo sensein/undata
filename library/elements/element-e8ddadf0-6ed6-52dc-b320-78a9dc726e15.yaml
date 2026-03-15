@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e8ddadf0-6ed6-52dc-b320-78a9dc726e15
+  source_local_id: aind.metadata.MouseAnatomyModel.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.482612+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:07.482610+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

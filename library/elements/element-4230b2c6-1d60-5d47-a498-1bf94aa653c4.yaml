@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/4230b2c6-1d60-5d47-a498-1bf94aa653c4
+  source_local_id: aind.acquisition._The_Lee_Company.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.215626+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.215624+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

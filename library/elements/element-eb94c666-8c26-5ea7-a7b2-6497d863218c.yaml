@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/eb94c666-8c26-5ea7-a7b2-6497d863218c
+  source_local_id: aind.metadata.AdditionalImagingDevice.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.157886+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.157884+00:00'
+  created_by: urn:undata:ingestion
+  required: true
+current_version: 1

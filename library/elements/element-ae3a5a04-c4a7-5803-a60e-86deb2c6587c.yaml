@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ae3a5a04-c4a7-5803-a60e-86deb2c6587c
+  source_local_id: aind.procedures._Cajal_Neuroscience.name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.467005+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  created_at: '2026-03-15T22:48:06.467003+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

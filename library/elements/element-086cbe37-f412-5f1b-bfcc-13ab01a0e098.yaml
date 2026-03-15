@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/086cbe37-f412-5f1b-bfcc-13ab01a0e098
+  source_local_id: aind.subject.Device.notes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.596692+00:00'
+versions:
+- version_num: 1
+  name: notes
+  data_type: string
+  created_at: '2026-03-15T22:48:05.596690+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

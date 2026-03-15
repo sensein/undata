@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/1919bc94-cd49-5f49-894e-325941f53e21
+  source_local_id: aind.metadata.ResourceUsage.ram_usage
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.599163+00:00'
+versions:
+- version_num: 1
+  name: ram_usage
+  data_type: string
+  created_at: '2026-03-15T22:48:07.599162+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

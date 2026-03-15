@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/1755107b-b226-5c00-b99f-ce2af768da2a
+  source_local_id: aind.metadata.Acquisition.coordinate_system
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.151085+00:00'
+versions:
+- version_num: 1
+  name: coordinate_system
+  data_type: object
+  created_at: '2026-03-15T22:48:07.151083+00:00'
+  created_by: urn:undata:ingestion
+  description: Origin and axis definitions for determining the configured position
+    of devices during acquisition. Required when coordinates are provided within the
+    Acquisition
+current_version: 1

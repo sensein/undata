@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/3475b0cc-ad68-5616-a868-92692c90cc4b
+  source_local_id: aind.metadata.Catheter.catheter_design
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.215900+00:00'
+versions:
+- version_num: 1
+  name: catheter_design
+  data_type: string
+  created_at: '2026-03-15T22:48:07.215898+00:00'
+  created_by: urn:undata:ingestion
+  description: Type of catheter design
+  required: true
+current_version: 1

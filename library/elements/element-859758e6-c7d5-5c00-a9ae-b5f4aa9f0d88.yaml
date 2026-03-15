@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/859758e6-c7d5-5c00-a9ae-b5f4aa9f0d88
+  source_local_id: aind.procedures._Quantifi.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.605887+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.605885+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

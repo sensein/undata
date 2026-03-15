@@ -2,13 +2,14 @@ element:
   id: https://schema.undata.live/elements/d169e867-1e4f-5cbe-b512-941232b4ae7c
   source_local_id: aind.acquisition.stimulus_epochs
   source_id: https://schema.undata.live/sources/aind
-  created_at: '2026-03-15T21:05:11.513800+00:00'
+  created_at: '2026-03-15T22:48:05.849279+00:00'
 versions:
 - version_num: 1
   name: stimulus_epochs
   data_type: string
+  created_at: '2026-03-15T22:48:05.849277+00:00'
+  created_by: urn:undata:ingestion
   description: A stimulus epoch captures all stimuli being presented during an acquisition.
     Epochs should be split when the purpose of the stimulus changes.
-  created_at: '2026-03-15T21:05:11.513802+00:00'
-  created_by: urn:undata:ingestion
+  multivalued: true
 current_version: 1

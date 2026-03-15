@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/33d8ad0f-a4f4-5851-ae73-b2e1765bb487
+  source_local_id: aind.procedures.Surgery.coordinate_system
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.424218+00:00'
+versions:
+- version_num: 1
+  name: coordinate_system
+  data_type: object
+  created_at: '2026-03-15T22:48:06.424216+00:00'
+  created_by: urn:undata:ingestion
+  description: Only required when the Surgery.coordinate_system is different from
+    the Procedures.coordinate_system
+current_version: 1

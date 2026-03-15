@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/d0550a5b-0d18-5269-a86e-4208c6d9385b
+  source_local_id: aind.procedures._Mitutuyo.registry_identifier
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.566893+00:00'
+versions:
+- version_num: 1
+  name: registry_identifier
+  data_type: string
+  created_at: '2026-03-15T22:48:06.566891+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

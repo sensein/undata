@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/dd72df53-9a5c-535e-91c3-2cc5464d9803
+  source_local_id: aind.procedures._Allen_Institute.abbreviation
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:06.445517+00:00'
+versions:
+- version_num: 1
+  name: abbreviation
+  data_type: string
+  created_at: '2026-03-15T22:48:06.445516+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

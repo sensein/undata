@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/7150cf31-0338-504b-a44d-8bb410ca18b1
+  source_local_id: aind.acquisition.PerformanceMetrics.trials_finished
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.965744+00:00'
+versions:
+- version_num: 1
+  name: trials_finished
+  data_type: float
+  created_at: '2026-03-15T22:48:05.965742+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

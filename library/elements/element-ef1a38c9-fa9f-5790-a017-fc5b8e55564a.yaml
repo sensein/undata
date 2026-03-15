@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/ef1a38c9-fa9f-5790-a017-fc5b8e55564a
+  source_local_id: aind.metadata.SampleCollection.sample_type
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.602487+00:00'
+versions:
+- version_num: 1
+  name: sample_type
+  data_type: string
+  created_at: '2026-03-15T22:48:07.602485+00:00'
+  created_by: urn:undata:ingestion
+  description: Sample type
+  required: true
+current_version: 1

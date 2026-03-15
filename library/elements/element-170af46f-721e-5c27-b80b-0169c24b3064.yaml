@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/170af46f-721e-5c27-b80b-0169c24b3064
+  source_local_id: aind.metadata._Nikon.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.870676+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:07.870675+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/87905589-5e14-5987-975b-42d44bbd2a54
+  source_local_id: aind.metadata._Olympus.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.874874+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:07.874872+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

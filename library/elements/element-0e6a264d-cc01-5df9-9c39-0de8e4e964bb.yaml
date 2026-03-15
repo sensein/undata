@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/0e6a264d-cc01-5df9-9c39-0de8e4e964bb
+  source_local_id: aind.metadata.aind_data_schema_models__species___Unknown.species
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.962819+00:00'
+versions:
+- version_num: 1
+  name: species
+  data_type: string
+  created_at: '2026-03-15T22:48:07.962817+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/e982bc0f-9794-5bb9-80f8-ff4c2bc2ef09
+  source_local_id: aind.acquisition.Rotation.angles
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:05.987260+00:00'
+versions:
+- version_num: 1
+  name: angles
+  data_type: string
+  created_at: '2026-03-15T22:48:05.987258+00:00'
+  created_by: urn:undata:ingestion
+  description: Right-hand rule, positive angles rotate CCW
+  required: true
+  multivalued: true
+current_version: 1

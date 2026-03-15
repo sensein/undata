@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/959a8d0c-3672-5f34-9fe7-579d45c0c699
+  source_local_id: aind.metadata.LightEmittingDiodeConfig.device_name
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.425468+00:00'
+versions:
+- version_num: 1
+  name: device_name
+  data_type: string
+  created_at: '2026-03-15T22:48:07.425466+00:00'
+  created_by: urn:undata:ingestion
+  description: Must match a device defined in the instrument.json
+  required: true
+current_version: 1

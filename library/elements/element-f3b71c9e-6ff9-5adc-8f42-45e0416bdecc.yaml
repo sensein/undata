@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/f3b71c9e-6ff9-5adc-8f42-45e0416bdecc
+  source_local_id: aind.metadata._Mks_Newport.registry
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T22:48:07.846141+00:00'
+versions:
+- version_num: 1
+  name: registry
+  data_type: string
+  created_at: '2026-03-15T22:48:07.846139+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1
