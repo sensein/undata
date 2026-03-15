@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/e9d85517-e71a-5300-adab-a128291ba457
+  source_local_id: RelatedParticipant.relation
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.949423+00:00'
+versions:
+- version_num: 1
+  name: relation
+  data_type: string
+  description: 'Indicates how the current participant or subject is related to the
+    other participant or subject. This relation should satisfy: Participant/Subject
+    <relation> relatedParticipant/Subject.'
+  created_at: '2026-03-15T22:28:29.949425+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

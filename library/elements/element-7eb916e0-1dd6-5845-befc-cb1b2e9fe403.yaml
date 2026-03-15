@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7eb916e0-1dd6-5845-befc-cb1b2e9fe403
+  source_local_id: ApproachType.name
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.795945+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  description: The name of the item.
+  created_at: '2026-03-15T22:28:29.795947+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

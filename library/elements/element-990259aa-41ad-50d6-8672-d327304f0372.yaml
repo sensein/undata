@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/990259aa-41ad-50d6-8672-d327304f0372
+  source_local_id: Software.https://openminds.om-i.org/props/shortName
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.013607+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/shortName
+  data_type: string
+  description: Shortened or fully abbreviated name of something or somebody.
+  created_at: '2026-03-15T22:28:31.013608+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

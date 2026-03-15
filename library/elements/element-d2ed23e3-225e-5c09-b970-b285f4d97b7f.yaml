@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/d2ed23e3-225e-5c09-b970-b285f4d97b7f
+  source_local_id: NWB.VoltageClampSeries.resistance_comp_bandwidth
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.468178+00:00'
+versions:
+- version_num: 1
+  name: resistance_comp_bandwidth
+  data_type: float
+  description: Resistance compensation bandwidth, in hertz.
+  created_at: '2026-03-15T22:28:31.468180+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

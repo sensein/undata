@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/dc463434-3e61-5ef3-9da8-470759061a00
+  source_local_id: NWB.TimeSeries.comments
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.404287+00:00'
+versions:
+- version_num: 1
+  name: comments
+  data_type: string
+  description: Human-readable comments about the TimeSeries. This second descriptive
+    field can be used to store additional information, or descriptive information
+    if the primary description field is populated with a computer-readable string.
+  created_at: '2026-03-15T22:28:31.404291+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

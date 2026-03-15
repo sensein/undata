@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/653ff44a-a33b-55e9-9ac2-6e8670b881ac
+  source_local_id: TissueSampleSlicing.https://openminds.om-i.org/props/protocol
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.179445+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/protocol
+  data_type: array
+  description: Plan that describes the process of a scientific or medical experiment,
+    treatment, or procedure.
+  created_at: '2026-03-15T22:28:31.179447+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

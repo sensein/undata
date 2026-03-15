@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/d47e4095-58f2-57b2-b8d9-0959361455e6
+  source_local_id: OrganismSubstance.https://openminds.om-i.org/props/synonym
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.807568+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/synonym
+  data_type: array
+  description: Words or expressions used in the same language that have the same or
+    nearly the same meaning in some or all senses.
+  created_at: '2026-03-15T22:28:30.807569+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

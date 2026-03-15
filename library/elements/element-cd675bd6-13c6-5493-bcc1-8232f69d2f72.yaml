@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/cd675bd6-13c6-5493-bcc1-8232f69d2f72
+  source_local_id: File.https://openminds.om-i.org/props/contentDescription
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.478325+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/contentDescription
+  data_type: string
+  description: Enter a short content description for this file instance.
+  created_at: '2026-03-15T22:28:30.478327+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

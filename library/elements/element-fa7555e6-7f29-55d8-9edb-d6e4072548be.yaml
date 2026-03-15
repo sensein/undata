@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/fa7555e6-7f29-55d8-9edb-d6e4072548be
+  source_local_id: ContactInformation.https://openminds.om-i.org/props/email
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.276017+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/email
+  data_type: array
+  description: Address to which or from which an electronic mail can be sent.
+  created_at: '2026-03-15T22:28:30.276018+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/0f2ff6af-078f-5500-96ec-5eb1620d03ce
+  source_local_id: ElectricalStimulusType.https://openminds.om-i.org/props/description
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.429877+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/description
+  data_type: string
+  description: Longer statement or account giving the characteristics of someone or
+    something.
+  created_at: '2026-03-15T22:28:30.429879+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

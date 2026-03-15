@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/b195dea8-4c4a-5517-94b5-4bc3039f5ac1
+  source_local_id: CommonCoordinateFramework.https://openminds.om-i.org/props/relatedPublication
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.243230+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/relatedPublication
+  data_type: array
+  description: Reference to something that was made available for the general public
+    to see or buy.
+  created_at: '2026-03-15T22:28:30.243234+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

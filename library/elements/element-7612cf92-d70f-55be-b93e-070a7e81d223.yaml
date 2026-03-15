@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/7612cf92-d70f-55be-b93e-070a7e81d223
+  source_local_id: ContentTypePattern.https://openminds.om-i.org/props/regex
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.283903+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/regex
+  data_type: string
+  description: Enter the regular expression for common elements within the file names
+    (including their file path and/or extension) of the files formatted using the
+    stated 'contentType'.
+  created_at: '2026-03-15T22:28:30.283905+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

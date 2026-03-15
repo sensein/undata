@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/db713125-e8b5-5ed3-aae0-6a2bfa0a6e7a
+  source_local_id: Rhombus.https://openminds.om-i.org/props/diagonalLengths
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.943879+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/diagonalLengths
+  data_type: array
+  description: Enter the lengths of the two perpendicular diagonals of this rhombus.
+  created_at: '2026-03-15T22:28:30.943881+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e9d224b9-2fc1-58c8-9dab-3933f1159fbb
+  source_local_id: NWB.ImagingPlane.indicator
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.531500+00:00'
+versions:
+- version_num: 1
+  name: indicator
+  data_type: string
+  description: Calcium indicator.
+  created_at: '2026-03-15T22:28:31.531502+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

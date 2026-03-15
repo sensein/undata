@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/aa56acdc-fb2c-54de-8ec9-615fc7a01ff9
+  source_local_id: NWB.CurrentClampSeries.bias_current
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.461538+00:00'
+versions:
+- version_num: 1
+  name: bias_current
+  data_type: float
+  description: Bias current, in amps.
+  created_at: '2026-03-15T22:28:31.461540+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/c66e835d-91a5-52eb-9e0e-12721f24ba8c
+  source_local_id: ParcellationEntity.https://openminds.om-i.org/props/hasParent
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.825284+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/hasParent
+  data_type: array
+  description: Reference to a parent object or legal person.
+  created_at: '2026-03-15T22:28:30.825286+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

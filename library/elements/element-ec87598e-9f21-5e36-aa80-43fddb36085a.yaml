@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ec87598e-9f21-5e36-aa80-43fddb36085a
+  source_local_id: SubjectGroup.https://openminds.om-i.org/props/additionalRemarks
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.107425+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/additionalRemarks
+  data_type: string
+  description: Mention of what deserves additional attention or notice.
+  created_at: '2026-03-15T22:28:31.107427+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

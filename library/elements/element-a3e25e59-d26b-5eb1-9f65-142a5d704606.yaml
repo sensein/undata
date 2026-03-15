@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a3e25e59-d26b-5eb1-9f65-142a5d704606
+  source_local_id: Person.awardNumber
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.903003+00:00'
+versions:
+- version_num: 1
+  name: awardNumber
+  data_type: string
+  description: Identifier associated with a sponsored or gift award.
+  created_at: '2026-03-15T22:28:29.903005+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

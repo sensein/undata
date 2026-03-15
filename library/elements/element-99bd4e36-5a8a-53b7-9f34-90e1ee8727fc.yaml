@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/99bd4e36-5a8a-53b7-9f34-90e1ee8727fc
+  source_local_id: ModelVersion.https://openminds.om-i.org/props/isVersionOf
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.727475+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/isVersionOf
+  data_type: string
+  description: Add the version-independent information about this model.
+  created_at: '2026-03-15T22:28:30.727477+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

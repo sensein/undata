@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f5d504e2-2f8a-5a33-b4f9-5e381a7cd1c9
+  source_local_id: TissueSampleSlicing.https://openminds.om-i.org/props/performedBy
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.178485+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/performedBy
+  data_type: array
+  description: Add all agents that performed this activity.
+  created_at: '2026-03-15T22:28:31.178486+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/3d9f212c-9085-5dcb-827c-888cfc2b9854
+  source_local_id: GridVolumeSequence.https://openminds.om-i.org/props/voxelSize
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.545696+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/voxelSize
+  data_type: array
+  description: Extent of the discrete elements comprising a three-dimensional entity.
+  created_at: '2026-03-15T22:28:30.545697+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

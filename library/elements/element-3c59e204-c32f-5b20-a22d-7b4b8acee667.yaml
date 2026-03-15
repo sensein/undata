@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/3c59e204-c32f-5b20-a22d-7b4b8acee667
+  source_local_id: ProtocolExecution.https://openminds.om-i.org/props/preparationDesign
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.904106+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/preparationDesign
+  data_type: string
+  description: Add the initial preparation type for this activity.
+  created_at: '2026-03-15T22:28:30.904108+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

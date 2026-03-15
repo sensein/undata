@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/78746071-73ce-59fc-aadc-a9b01b6feaf7
+  source_local_id: MRIScannerUsage.https://openminds.om-i.org/props/totalReadOutTime
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.037394+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/totalReadOutTime
+  data_type: string
+  description: Enter the total readout time (TRT), defined as the time interval between
+    acquisition of the first and last k-space lines in the phase-encoding direction
+    during a single readout, expressed in milliseconds. This value is typically computed
+    automatically and can be retrieved from the DICOM header.
+  created_at: '2026-03-15T22:28:30.037395+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

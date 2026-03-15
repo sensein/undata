@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/2211446e-41c9-566f-b7ce-c7d06d3cc6b9
+  source_local_id: BareAsset.approach
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.834500+00:00'
+versions:
+- version_num: 1
+  name: approach
+  data_type: string
+  description: Approach
+  created_at: '2026-03-15T22:28:29.834502+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

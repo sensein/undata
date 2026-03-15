@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/61780499-9bb4-5c6c-838c-3ada519cf33d
+  source_local_id: ResearchProductGroup.https://openminds.om-i.org/props/context
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.942900+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/context
+  data_type: string
+  description: Enter the common context for this research product group.
+  created_at: '2026-03-15T22:28:30.942902+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

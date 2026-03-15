@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/2f6c545a-7b95-533e-95e9-74c400fd44f4
+  source_local_id: NWB.TimeIntervals.start_time
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.445334+00:00'
+versions:
+- version_num: 1
+  name: start_time
+  data_type: float
+  description: Start time of epoch, in seconds.
+  created_at: '2026-03-15T22:28:31.445336+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

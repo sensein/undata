@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/8b084b98-379b-5b7a-9383-bedaff69a19b
+  source_local_id: NWB.PlaneSegmentation.image_mask
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.526981+00:00'
+versions:
+- version_num: 1
+  name: image_mask
+  data_type: object
+  description: ROI masks for each ROI. Each image mask is the size of the original
+    imaging plane (or volume) and members of the ROI are finite non-zero. At least
+    one of `image_mask`, `pixel_mask`, or `voxel_mask` is required.
+  created_at: '2026-03-15T22:28:31.526983+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

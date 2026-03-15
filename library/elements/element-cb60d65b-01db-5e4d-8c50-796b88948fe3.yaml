@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/cb60d65b-01db-5e4d-8c50-796b88948fe3
+  source_local_id: NWB.NWBFile.session_description
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.451090+00:00'
+versions:
+- version_num: 1
+  name: session_description
+  data_type: string
+  description: A description of the experimental session and data in the file.
+  created_at: '2026-03-15T22:28:31.451091+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

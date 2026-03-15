@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/09695a9e-0c67-5549-bfdd-a70d8b315164
+  source_local_id: RightCone.https://openminds.om-i.org/props/apexBaseDistance
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.944364+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/apexBaseDistance
+  data_type: string
+  description: Enter the perpendicular distance from the center of the base plane
+    to the apex of this right cone.
+  created_at: '2026-03-15T22:28:30.944366+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

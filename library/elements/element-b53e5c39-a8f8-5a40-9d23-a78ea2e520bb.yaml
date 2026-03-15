@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/b53e5c39-a8f8-5a40-9d23-a78ea2e520bb
+  source_local_id: WorkflowRecipeVersion.https://openminds.om-i.org/props/accessibility
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.266678+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/accessibility
+  data_type: string
+  description: Level to which something is accessible to someone or something.
+  created_at: '2026-03-15T22:28:31.266683+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

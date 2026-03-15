@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4f48ec97-d489-5914-8137-375c1f2a9c32
+  source_local_id: Service.https://openminds.om-i.org/props/contribution
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.961882+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/contribution
+  data_type: array
+  description: Add all contributions to this service.
+  created_at: '2026-03-15T22:28:30.961884+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

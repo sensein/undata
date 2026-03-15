@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/1d2badef-185c-5720-a5c2-0e329fb9161d
+  source_local_id: SetupType.https://openminds.om-i.org/props/synonym
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.980678+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/synonym
+  data_type: array
+  description: Words or expressions used in the same language that have the same or
+    nearly the same meaning in some or all senses.
+  created_at: '2026-03-15T22:28:30.980680+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/fe7df7ac-18cf-5a50-b6c7-f85f396b2812
+  source_local_id: AnatomicalPlane.https://openminds.om-i.org/props/otherOntologyIdentifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.135631+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/otherOntologyIdentifier
+  data_type: array
+  description: Enter all internationalized resource identifiers (IRIs) pointing to
+    ontology entries that are equivalent to this term (e.g., UBERON). Do not repeat
+    the preferred ontology identifier.
+  created_at: '2026-03-15T22:28:30.135634+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

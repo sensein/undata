@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/9b2e8d09-a061-53b1-8d4e-eabdc6ad4d6f
+  source_local_id: Organization.https://openminds.om-i.org/props/membership
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.816328+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/membership
+  data_type: array
+  description: "Add all membership records (one per member) for this organization.\
+    \ Who is considered a qualified member is typically defined in the organization\u2019\
+    s membership agreements."
+  created_at: '2026-03-15T22:28:30.816329+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

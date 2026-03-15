@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/c18c7b8e-de29-5fe6-ba3c-44e2114f86a4
+  source_local_id: ElectricalStimulusType.https://openminds.om-i.org/props/definition
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.429382+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/definition
+  data_type: string
+  description: Short, but precise statement of the meaning of a word, word group,
+    sign or a symbol.
+  created_at: '2026-03-15T22:28:30.429384+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

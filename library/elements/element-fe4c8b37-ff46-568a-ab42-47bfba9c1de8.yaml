@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/fe4c8b37-ff46-568a-ab42-47bfba9c1de8
+  source_local_id: Setup.https://openminds.om-i.org/props/location
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.975107+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/location
+  data_type: string
+  description: Enter the geographic location of this setup. This may include room
+    number, building, institution and/or city.
+  created_at: '2026-03-15T22:28:30.975108+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

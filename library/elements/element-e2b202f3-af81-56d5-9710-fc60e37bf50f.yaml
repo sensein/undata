@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/e2b202f3-af81-56d5-9710-fc60e37bf50f
+  source_local_id: CoordinatePoint.https://openminds.om-i.org/props/coordinateFramework
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.290645+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/coordinateFramework
+  data_type: string
+  description: Add the coordinate framework in which this coordinate point exists
+    in.
+  created_at: '2026-03-15T22:28:30.290646+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

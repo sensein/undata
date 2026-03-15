@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f96ee424-d2cb-5fae-a4fa-d473295b9551
+  source_local_id: LivePaper.https://openminds.om-i.org/props/supportChannel
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.623752+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/supportChannel
+  data_type: array
+  description: Way of communication used to interact with users or customers.
+  created_at: '2026-03-15T22:28:30.623754+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a9aa699a-8588-5f59-9731-64d840a4c5b4
+  source_local_id: NWB.IntracellularElectrodesTable.description
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.478175+00:00'
+versions:
+- version_num: 1
+  name: description
+  data_type: string
+  description: Description of what is in this dynamic table.
+  created_at: '2026-03-15T22:28:31.478177+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/d8fcf3d8-7b7e-55af-b711-45b18f265cc7
+  source_local_id: Comment.https://openminds.om-i.org/props/about
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.234719+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/about
+  data_type: string
+  description: Add the research product (version) that this comment is about.
+  created_at: '2026-03-15T22:28:30.234722+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

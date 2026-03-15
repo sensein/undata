@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6fa49118-e993-552d-a85e-acfcf1f9c012
+  source_local_id: PublicationVolume.https://openminds.om-i.org/props/isPartOf
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.913146+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/isPartOf
+  data_type: string
+  description: Reference to the ensemble of multiple things or beings.
+  created_at: '2026-03-15T22:28:30.913149+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/be043383-177e-592c-b1e5-f41bfb0bbf9f
+  source_local_id: NWB.ClusterWaveforms.waveform_sd
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.442045+00:00'
+versions:
+- version_num: 1
+  name: waveform_sd
+  data_type: float
+  description: Stdev of waveforms for each cluster, using the same indices as in mean
+  created_at: '2026-03-15T22:28:31.442047+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/37d9932e-3931-5cb7-9415-ac0d2199849a
+  source_local_id: StaticMRIAcquisition.https://openminds.om-i.org/props/registrationData
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.067691+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/registrationData
+  data_type: array
+  description: Add the registration data used for this acquisition, linking to the
+    transformation and/or reference files applied during image alignment in post-processing.
+    If no registration was performed, leave this field null.
+  created_at: '2026-03-15T22:28:31.067693+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

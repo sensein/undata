@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/d12d7e85-da9f-51f6-b3c5-2a1f48d1a9f2
+  source_local_id: Model.https://openminds.om-i.org/props/keyword
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.698286+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/keyword
+  data_type: array
+  description: Significant word or concept that are representative of something or
+    someone.
+  created_at: '2026-03-15T22:28:30.698288+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

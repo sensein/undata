@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/9671a63b-4e01-503e-a8b3-3da31df82262
+  source_local_id: GenericComputation.https://openminds.om-i.org/props/status
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.519271+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/status
+  data_type: string
+  description: Enter the current status of this computation.
+  created_at: '2026-03-15T22:28:30.519273+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

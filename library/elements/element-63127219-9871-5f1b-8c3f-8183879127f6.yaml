@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/63127219-9871-5f1b-8c3f-8183879127f6
+  source_local_id: Asset.encodingFormat
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.808190+00:00'
+versions:
+- version_num: 1
+  name: encodingFormat
+  data_type: string
+  description: File encoding format
+  created_at: '2026-03-15T22:28:29.808192+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

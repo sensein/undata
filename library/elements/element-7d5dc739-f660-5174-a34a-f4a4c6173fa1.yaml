@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/7d5dc739-f660-5174-a34a-f4a4c6173fa1
+  source_local_id: ProtocolExecution.https://openminds.om-i.org/props/behavioralProtocol
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.899068+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/behavioralProtocol
+  data_type: array
+  description: Add all behavioral protocols that were performed during this protocol
+    execution.
+  created_at: '2026-03-15T22:28:30.899069+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

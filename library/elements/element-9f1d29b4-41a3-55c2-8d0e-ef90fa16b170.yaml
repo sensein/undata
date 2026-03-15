@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/9f1d29b4-41a3-55c2-8d0e-ef90fa16b170
+  source_local_id: FilePathPattern.https://openminds.om-i.org/props/groupingType
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.492868+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/groupingType
+  data_type: array
+  description: Add all grouping types that are defined by this file path pattern.
+  created_at: '2026-03-15T22:28:30.492870+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

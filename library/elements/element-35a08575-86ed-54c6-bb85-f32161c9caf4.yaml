@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/35a08575-86ed-54c6-bb85-f32161c9caf4
+  source_local_id: QuantitativeValueArray.https://openminds.om-i.org/props/positiveUncertainties
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.929242+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/positiveUncertainties
+  data_type: array
+  description: Enter the positive uncertainties for all values. Note that the length
+    of the arrays have to match.
+  created_at: '2026-03-15T22:28:30.929244+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

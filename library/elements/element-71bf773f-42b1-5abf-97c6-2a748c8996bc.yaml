@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/71bf773f-42b1-5abf-97c6-2a748c8996bc
+  source_local_id: TissueSampleCollection.https://openminds.om-i.org/props/laterality
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.165210+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/laterality
+  data_type: array
+  description: Differentiation between a pair of lateral homologous parts of the body.
+  created_at: '2026-03-15T22:28:31.165212+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

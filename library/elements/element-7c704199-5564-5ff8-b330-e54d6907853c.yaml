@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/7c704199-5564-5ff8-b330-e54d6907853c
+  source_local_id: Dandiset.license
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.863732+00:00'
+versions:
+- version_num: 1
+  name: license
+  data_type: array
+  description: Licenses associated with the item. DANDI only supports a subset of
+    Creative Commons Licenses (creativecommons.org) applicable to datasets.
+  created_at: '2026-03-15T22:28:29.863734+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

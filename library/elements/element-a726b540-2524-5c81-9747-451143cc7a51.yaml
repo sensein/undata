@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a726b540-2524-5c81-9747-451143cc7a51
+  source_local_id: PublishedAsset.url
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.925441+00:00'
+versions:
+- version_num: 1
+  name: url
+  data_type: string
+  description: permalink to the item
+  created_at: '2026-03-15T22:28:29.925442+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

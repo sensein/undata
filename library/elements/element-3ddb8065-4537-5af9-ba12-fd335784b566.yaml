@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/3ddb8065-4537-5af9-ba12-fd335784b566
+  source_local_id: ScholarlyArticle.https://openminds.om-i.org/props/usageCondition
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.956672+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/usageCondition
+  data_type: array
+  description: Add all licenses and available data usage agreements applicable to
+    this creative work.
+  created_at: '2026-03-15T22:28:30.956673+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

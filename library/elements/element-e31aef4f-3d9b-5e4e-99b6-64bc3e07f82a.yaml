@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e31aef4f-3d9b-5e4e-99b6-64bc3e07f82a
+  source_local_id: PublishActivity.used
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.915607+00:00'
+versions:
+- version_num: 1
+  name: used
+  data_type: string
+  description: A listing of equipment used for the activity.
+  created_at: '2026-03-15T22:28:29.915609+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

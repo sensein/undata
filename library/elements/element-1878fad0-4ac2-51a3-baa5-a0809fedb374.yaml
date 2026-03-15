@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/1878fad0-4ac2-51a3-baa5-a0809fedb374
+  source_local_id: NWB.DeviceModel.model_number
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.419707+00:00'
+versions:
+- version_num: 1
+  name: model_number
+  data_type: string
+  description: The model number (or part/product number) of the device, e.g., PRB_1_4_0480_1,
+    PLX-VP-32-15SE(75)-(260-80)(460-10)-300-(1)CON/32m-V, BERGAMO.
+  created_at: '2026-03-15T22:28:31.419709+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

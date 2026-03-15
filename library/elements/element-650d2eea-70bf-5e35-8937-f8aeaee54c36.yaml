@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/650d2eea-70bf-5e35-8937-f8aeaee54c36
+  source_local_id: CranialWindowPreparation.https://openminds.om-i.org/props/endTime
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.299796+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/endTime
+  data_type: string
+  description: Enter the date and/or time on when this activity ended, formatted as
+    either '2023-02-07T16:00:00+00:00' (date-time) or '16:00:00+00:00' (time).
+  created_at: '2026-03-15T22:28:30.299797+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

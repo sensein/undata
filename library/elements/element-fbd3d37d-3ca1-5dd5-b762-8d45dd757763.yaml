@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/fbd3d37d-3ca1-5dd5-b762-8d45dd757763
+  source_local_id: TissueSample.https://openminds.om-i.org/props/studiedState
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.157543+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/studiedState
+  data_type: array
+  description: Reference to a point in time at which something or someone was studied
+    in a particular mode or condition.
+  created_at: '2026-03-15T22:28:31.157544+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

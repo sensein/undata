@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/226a45c0-5a4a-5788-b231-54111928975a
+  source_local_id: SpecimenAge.https://openminds.om-i.org/props/reference
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.056440+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/reference
+  data_type: string
+  description: Enter the age reference for the specified age value.
+  created_at: '2026-03-15T22:28:31.056443+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

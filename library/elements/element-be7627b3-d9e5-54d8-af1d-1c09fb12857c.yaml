@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/be7627b3-d9e5-54d8-af1d-1c09fb12857c
+  source_local_id: Handedness.https://openminds.om-i.org/props/name
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.551645+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/name
+  data_type: string
+  description: Word or phrase that constitutes the distinctive designation of a being
+    or thing.
+  created_at: '2026-03-15T22:28:30.551647+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

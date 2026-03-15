@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/3568e13b-52c1-596c-afb7-0601397c17da
+  source_local_id: ServiceDeployment.https://openminds.om-i.org/props/provides
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.969012+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/provides
+  data_type: array
+  description: Add the interfaces that have been deployed.
+  created_at: '2026-03-15T22:28:30.969014+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

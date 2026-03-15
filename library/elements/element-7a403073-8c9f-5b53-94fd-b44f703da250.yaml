@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7a403073-8c9f-5b53-94fd-b44f703da250
+  source_local_id: Contributor.roleName
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.857599+00:00'
+versions:
+- version_num: 1
+  name: roleName
+  data_type: string
+  description: Role(s) of the contributor. Multiple roles can be selected.
+  created_at: '2026-03-15T22:28:29.857601+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

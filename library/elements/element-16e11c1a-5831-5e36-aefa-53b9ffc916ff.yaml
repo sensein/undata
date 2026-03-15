@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/16e11c1a-5831-5e36-aefa-53b9ffc916ff
+  source_local_id: WorkflowRecipeVersion.https://openminds.om-i.org/props/isVariantOf
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.273789+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/isVariantOf
+  data_type: array
+  description: Add all workflow recipe versions that can be used alternatively to
+    this workflow recipe version.
+  created_at: '2026-03-15T22:28:31.273791+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

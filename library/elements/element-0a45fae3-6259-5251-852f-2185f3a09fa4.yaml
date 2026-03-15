@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/0a45fae3-6259-5251-852f-2185f3a09fa4
+  source_local_id: NWB.IntracellularElectrodesTable.electrode
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.478641+00:00'
+versions:
+- version_num: 1
+  name: electrode
+  data_type: object
+  description: Column for storing the reference to the intracellular electrode.
+  created_at: '2026-03-15T22:28:31.478643+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

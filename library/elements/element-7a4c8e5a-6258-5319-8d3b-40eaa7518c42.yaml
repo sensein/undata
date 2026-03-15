@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/7a4c8e5a-6258-5319-8d3b-40eaa7518c42
+  source_local_id: MRICoilUsage.https://openminds.om-i.org/props/metadataLocation
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.000727+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/metadataLocation
+  data_type: array
+  description: Add all files or file bundles containing additional information about
+    the usage of this device.
+  created_at: '2026-03-15T22:28:30.000729+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

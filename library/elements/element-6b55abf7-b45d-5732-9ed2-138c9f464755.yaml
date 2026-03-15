@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/6b55abf7-b45d-5732-9ed2-138c9f464755
+  source_local_id: MRIScannerUsage.https://openminds.om-i.org/props/transmitterBandwidth
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.038002+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/transmitterBandwidth
+  data_type: string
+  description: Enter the transmitter bandwidth, defined as the frequency range excited
+    by the radiofrequency pulse per pixel, expressed in hertz per pixel. This value
+    is specified in the sequence protocol and can be retrieved from the DICOM header.
+  created_at: '2026-03-15T22:28:30.038004+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/044a1801-0d41-585a-9321-f6490bbf0339
+  source_local_id: Consortium.https://openminds.om-i.org/props/memberships
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.275072+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/memberships
+  data_type: array
+  description: Add all membership records (one per member) for this consortium.
+  created_at: '2026-03-15T22:28:30.275074+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

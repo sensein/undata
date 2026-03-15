@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/8f923eeb-7369-5145-8d2b-f5f357a9bdaa
+  source_local_id: NWB.Clustering.peak_over_rms
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.443892+00:00'
+versions:
+- version_num: 1
+  name: peak_over_rms
+  data_type: float
+  description: Maximum ratio of waveform peak to RMS on any channel in the cluster
+    (provides a basic clustering metric).
+  created_at: '2026-03-15T22:28:31.443893+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

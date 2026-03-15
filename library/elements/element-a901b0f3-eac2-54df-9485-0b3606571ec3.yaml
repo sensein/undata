@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a901b0f3-eac2-54df-9485-0b3606571ec3
+  source_local_id: CustomAnnotation.https://openminds.om-i.org/props/coordinateFramework
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.317061+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/coordinateFramework
+  data_type: string
+  description: Add the coordinate framework for this custom annotation.
+  created_at: '2026-03-15T22:28:30.317063+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/928e9864-a041-5e15-bc3a-5ce4f4022c39
+  source_local_id: DynamicMRIAcquisition.https://openminds.om-i.org/props/volumeTiming
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.424681+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/volumeTiming
+  data_type: string
+  description: Enter the volume timing as an array specifying the acquisition time
+    of each volume relative to the start of the dynamic scan, expressed in seconds,
+    with one entry per acquired volume. These values may be derived from the repetition
+    time or extracted from the acquisition metadata.
+  created_at: '2026-03-15T22:28:30.424683+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

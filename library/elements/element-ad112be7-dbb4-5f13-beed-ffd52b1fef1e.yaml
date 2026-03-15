@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/ad112be7-dbb4-5f13-beed-ffd52b1fef1e
+  source_local_id: ElectrodeArray.https://openminds.om-i.org/props/electrodeIdentifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.439677+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/electrodeIdentifier
+  data_type: array
+  description: Enter the identifiers for each electrode of this electrode array. Note
+    that the number of identifiers should match the number of electrodes of the array
+    as stated under 'numberOfElectrodes'.
+  created_at: '2026-03-15T22:28:30.439679+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

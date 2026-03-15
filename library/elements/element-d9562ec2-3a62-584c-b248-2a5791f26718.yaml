@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/d9562ec2-3a62-584c-b248-2a5791f26718
+  source_local_id: PropertyValue.value
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.910543+00:00'
+versions:
+- version_num: 1
+  name: value
+  data_type: string
+  description: The value associated with this property.
+  created_at: '2026-03-15T22:28:29.910545+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

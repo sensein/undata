@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/e20c9c1b-9aeb-5492-b924-028bf245c50a
+  source_local_id: ChemicalMixture.https://openminds.om-i.org/props/type
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.221119+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/type
+  data_type: string
+  description: Distinct class to which a group of entities or concepts with similar
+    characteristics or attributes belong to.
+  created_at: '2026-03-15T22:28:30.221121+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

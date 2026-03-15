@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/58d71dab-9374-5b37-b284-9d230e22121b
+  source_local_id: ExperimentalApproach.https://openminds.om-i.org/props/preferredOntologyIdentifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.472540+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/preferredOntologyIdentifier
+  data_type: string
+  description: Persistent identifier of a preferred ontological term.
+  created_at: '2026-03-15T22:28:30.472541+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

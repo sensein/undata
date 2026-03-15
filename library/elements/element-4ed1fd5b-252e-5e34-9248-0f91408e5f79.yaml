@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4ed1fd5b-252e-5e34-9248-0f91408e5f79
+  source_local_id: MetaDataModelVersion.https://openminds.om-i.org/props/repository
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.687932+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/repository
+  data_type: string
+  description: Place, room, or container where something is deposited or stored.
+  created_at: '2026-03-15T22:28:30.687934+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

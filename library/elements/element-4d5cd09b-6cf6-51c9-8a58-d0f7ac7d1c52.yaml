@@ -1,0 +1,22 @@
+element:
+  id: https://schema.undata.live/elements/4d5cd09b-6cf6-51c9-8a58-d0f7ac7d1c52
+  source_local_id: NWB.FilteredEphys
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.430609+00:00'
+versions:
+- version_num: 1
+  name: FilteredEphys
+  data_type: object
+  description: Electrophysiology data from one or more channels that has been subjected
+    to filtering. Examples of filtered data include Theta and Gamma (LFP has its own
+    interface). FilteredEphys modules publish an ElectricalSeries for each filtered
+    channel or set of channels. The name of each ElectricalSeries is arbitrary but
+    should be informative. The source of the filtered data, whether this is from analysis
+    of another time series or as acquired by hardware, should be noted in each's TimeSeries::description
+    field. There is no assumed 1::1 correspondence between filtered ephys signals
+    and electrodes, as a single signal can apply to many nearby electrodes, and one
+    electrode may have different filtered (e.g., theta and/or gamma) signals represented.
+    Filter properties should be noted in the ElectricalSeries 'filtering' attribute.
+  created_at: '2026-03-15T22:28:31.430610+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

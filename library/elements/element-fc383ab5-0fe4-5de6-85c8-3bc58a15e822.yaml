@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/fc383ab5-0fe4-5de6-85c8-3bc58a15e822
+  source_local_id: Pipette.https://openminds.om-i.org/props/internalDiameter
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.864089+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/internalDiameter
+  data_type: string
+  description: Enter the internal diameter of the pipette.
+  created_at: '2026-03-15T22:28:30.864090+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

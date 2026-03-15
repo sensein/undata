@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/3692d77c-fc1f-531a-a683-9353d089bb5c
+  source_local_id: NWB.OptogeneticSeries.data
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.515895+00:00'
+versions:
+- version_num: 1
+  name: data
+  data_type: string
+  description: Applied power for optogenetic stimulus, in watts. Shape can be 1D or
+    2D. 2D data is meant to be used in an extension of OptogeneticSeries that defines
+    what the second dimension represents.
+  created_at: '2026-03-15T22:28:31.515897+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

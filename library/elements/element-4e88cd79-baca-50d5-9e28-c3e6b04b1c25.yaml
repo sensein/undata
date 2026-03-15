@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/4e88cd79-baca-50d5-9e28-c3e6b04b1c25
+  source_local_id: Project.https://openminds.om-i.org/props/type
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.890556+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/type
+  data_type: string
+  description: Distinct class to which a group of entities or concepts with similar
+    characteristics or attributes belong to.
+  created_at: '2026-03-15T22:28:30.890557+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

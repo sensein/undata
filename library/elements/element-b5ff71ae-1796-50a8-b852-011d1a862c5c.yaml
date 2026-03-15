@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/b5ff71ae-1796-50a8-b852-011d1a862c5c
+  source_local_id: SoftwareFeature.https://openminds.om-i.org/props/preferredCrossReference
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.023095+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  data_type: string
+  description: Enter the internationalized resource identifier (IRI) pointing to the
+    preferred cross-reference to an external database or registry (e.g., KnowledgeSpace).
+  created_at: '2026-03-15T22:28:31.023097+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

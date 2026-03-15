@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/d7f56abf-3631-5eb1-8c13-71292ae70ba5
+  source_local_id: StockNumber.https://openminds.om-i.org/props/vendor
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.086816+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/vendor
+  data_type: string
+  description: Add the vendor that has the item with this identifier in stock.
+  created_at: '2026-03-15T22:28:31.086817+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

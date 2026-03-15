@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/da4d3508-f205-5a23-8bac-ff81d24d16d6
+  source_local_id: PublishedAsset.publishedBy
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.918725+00:00'
+versions:
+- version_num: 1
+  name: publishedBy
+  data_type: string
+  description: The URL should contain the provenance of the publishing process.
+  created_at: '2026-03-15T22:28:29.918726+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

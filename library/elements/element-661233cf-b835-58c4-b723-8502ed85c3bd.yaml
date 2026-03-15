@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/661233cf-b835-58c4-b723-8502ed85c3bd
+  source_local_id: NWB.TimeIntervals.timeseries_index
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.447570+00:00'
+versions:
+- version_num: 1
+  name: timeseries_index
+  data_type: object
+  description: Index for timeseries.
+  created_at: '2026-03-15T22:28:31.447572+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

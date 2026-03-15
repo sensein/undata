@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/c1e3583f-1d90-5111-9503-fc68fa48794b
+  source_local_id: Chapter.https://openminds.om-i.org/props/creationDate
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.213292+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/creationDate
+  data_type: string
+  description: Enter the date on which this creative work was created, formatted as
+    '2023-02-07'.
+  created_at: '2026-03-15T22:28:30.213294+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

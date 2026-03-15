@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/7f0e9ada-bc7c-5b81-b702-c49fb80a17a1
+  source_local_id: PropertyValueList.https://openminds.om-i.org/props/propertyValuePair
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.895860+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/propertyValuePair
+  data_type: array
+  description: Enter all numerical and string property-value pairs that belong to
+    this property-value list.
+  created_at: '2026-03-15T22:28:30.895862+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

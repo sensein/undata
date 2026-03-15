@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/5e92338a-a852-5e18-ae40-573d17783dd0
+  source_local_id: WorkflowRecipeVersion.https://openminds.om-i.org/props/hasPart
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.271757+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/hasPart
+  data_type: array
+  description: Add all entities that are components of this workflow recipe version
+    (e.g., other workflow recipe versions or software used in this workflow).
+  created_at: '2026-03-15T22:28:31.271759+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

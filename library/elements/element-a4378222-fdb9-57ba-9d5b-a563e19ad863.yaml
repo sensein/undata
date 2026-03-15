@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/a4378222-fdb9-57ba-9d5b-a563e19ad863
+  source_local_id: CommonModel.protocol
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.847918+00:00'
+versions:
+- version_num: 1
+  name: protocol
+  data_type: string
+  description: A list of persistent URLs describing the protocol (e.g. protocols.io,
+    or other DOIs).
+  created_at: '2026-03-15T22:28:29.847923+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

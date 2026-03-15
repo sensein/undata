@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/1fd27768-b04b-5652-ad74-3a85957aa0ce
+  source_local_id: Dandiset.ethicsApproval
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.864730+00:00'
+versions:
+- version_num: 1
+  name: ethicsApproval
+  data_type: string
+  description: Ethics approvals
+  created_at: '2026-03-15T22:28:29.864731+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

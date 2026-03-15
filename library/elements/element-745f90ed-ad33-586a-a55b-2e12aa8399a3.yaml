@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/745f90ed-ad33-586a-a55b-2e12aa8399a3
+  source_local_id: AnatomicalAtlas.https://openminds.om-i.org/props/contribution
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.093491+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/contribution
+  data_type: array
+  description: Add all individual, organisational, or consortial contributions to
+    this research product. Inherited by all product versions unless overridden at
+    the version level.
+  created_at: '2026-03-15T22:28:30.093493+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

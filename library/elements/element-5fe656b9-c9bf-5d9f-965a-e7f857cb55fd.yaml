@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/5fe656b9-c9bf-5d9f-965a-e7f857cb55fd
+  source_local_id: GridImage.https://openminds.om-i.org/props/dimension
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.530643+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/dimension
+  data_type: array
+  description: Enter the dimension of this grid image in pixels.
+  created_at: '2026-03-15T22:28:30.530644+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

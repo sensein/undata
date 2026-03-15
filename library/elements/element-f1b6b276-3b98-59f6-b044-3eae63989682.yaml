@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/f1b6b276-3b98-59f6-b044-3eae63989682
+  source_local_id: CustomAnatomicalEntity.https://openminds.om-i.org/props/relationAssessment
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.316486+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/relationAssessment
+  data_type: array
+  description: Add all relations (qualitative or quantitative) of this custom anatomical
+    entity to other anatomical entities.
+  created_at: '2026-03-15T22:28:30.316488+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

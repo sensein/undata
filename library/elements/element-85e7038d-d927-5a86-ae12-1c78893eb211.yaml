@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/85e7038d-d927-5a86-ae12-1c78893eb211
+  source_local_id: CommonCoordinateFrameworkVersion.https://openminds.om-i.org/props/publicationStatus
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.257672+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/publicationStatus
+  data_type: string
+  description: Add the relevant publication status indicating the current lifecycle
+    state of the resource (published, embargoed, disposed, retracted, etc.).
+  created_at: '2026-03-15T22:28:30.257674+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

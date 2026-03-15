@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/490ad46b-f3c3-5f51-9ce1-c2bd5411fdca
+  source_local_id: SubjectGroupState.https://openminds.om-i.org/props/attribute
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.113847+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/attribute
+  data_type: array
+  description: Add all attributes that can be ascribed to this subject group state.
+  created_at: '2026-03-15T22:28:31.113849+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

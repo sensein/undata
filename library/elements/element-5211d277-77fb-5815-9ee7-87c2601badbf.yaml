@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/5211d277-77fb-5815-9ee7-87c2601badbf
+  source_local_id: AssetsSummary.numberOfFiles
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.816783+00:00'
+versions:
+- version_num: 1
+  name: numberOfFiles
+  data_type: string
+  description: Number of Files
+  created_at: '2026-03-15T22:28:29.816784+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

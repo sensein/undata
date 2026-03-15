@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/5a9d5a2b-c36d-5049-a322-7f8a045efe90
+  source_local_id: NWB.TimeSeriesReferenceVectorData
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.397790+00:00'
+versions:
+- version_num: 1
+  name: TimeSeriesReferenceVectorData
+  data_type: object
+  description: Column storing references to a TimeSeries (rows). For each TimeSeries
+    this VectorData column stores the start_index and count to indicate the range
+    in time to be selected as well as an object reference to the TimeSeries.
+  created_at: '2026-03-15T22:28:31.397793+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/65fe6c2a-5391-5c27-ba44-484caf404457
+  source_local_id: Session.identifier
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.956511+00:00'
+versions:
+- version_num: 1
+  name: identifier
+  data_type: string
+  description: Identifier
+  created_at: '2026-03-15T22:28:29.956516+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4bd82024-f2d3-5242-8d42-3b0c2abfacfc
+  source_local_id: DataCopy.https://openminds.om-i.org/props/environment
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.339484+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/environment
+  data_type: string
+  description: Add the computational environment in which this computation was executed.
+  created_at: '2026-03-15T22:28:30.339486+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

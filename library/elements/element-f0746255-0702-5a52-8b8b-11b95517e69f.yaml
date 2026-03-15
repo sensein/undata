@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f0746255-0702-5a52-8b8b-11b95517e69f
+  source_local_id: EphysStimulus.https://openminds.om-i.org/props/epoch
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.465729+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/epoch
+  data_type: string
+  description: Enter the total epoch length of this stimulus.
+  created_at: '2026-03-15T22:28:30.465730+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

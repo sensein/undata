@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/18e9182a-a17e-5ab0-bc98-c2ef3b95f920
+  source_local_id: Optimization.https://openminds.om-i.org/props/launchConfiguration
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.789005+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/launchConfiguration
+  data_type: string
+  description: Add the launch configuration of this computation (e.g., command-line
+    arguments).
+  created_at: '2026-03-15T22:28:30.789007+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

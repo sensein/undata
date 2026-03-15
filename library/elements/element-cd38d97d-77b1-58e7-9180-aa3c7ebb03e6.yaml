@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/cd38d97d-77b1-58e7-9180-aa3c7ebb03e6
+  source_local_id: ModelVersion.https://openminds.om-i.org/props/description
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.721649+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/description
+  data_type: string
+  description: Longer statement or account giving the characteristics of someone or
+    something.
+  created_at: '2026-03-15T22:28:30.721650+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

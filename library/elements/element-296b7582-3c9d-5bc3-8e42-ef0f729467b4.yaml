@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/296b7582-3c9d-5bc3-8e42-ef0f729467b4
+  source_local_id: RegularPolygon.https://openminds.om-i.org/props/circumradius
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.941933+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/circumradius
+  data_type: string
+  description: Enter the common distance from the center to a vertex of this regular
+    polygon.
+  created_at: '2026-03-15T22:28:30.941935+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e27b5bd0-33a2-5d65-8546-e1876b1ea61c
+  source_local_id: NWB.OnePhotonSeries.power
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.520627+00:00'
+versions:
+- version_num: 1
+  name: power
+  data_type: float
+  description: Power of the excitation in mW, if known.
+  created_at: '2026-03-15T22:28:31.520628+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

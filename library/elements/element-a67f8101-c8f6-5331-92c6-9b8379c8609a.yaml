@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/a67f8101-c8f6-5331-92c6-9b8379c8609a
+  source_local_id: GridVolume.https://openminds.om-i.org/props/dataLocation
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.538104+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/dataLocation
+  data_type: string
+  description: Add a reference to the file to which this grid volume information applies.
+    If the information applies uniformly to a grid volume file series, a reference
+    to the corresponding file bundle may be provided instead.
+  created_at: '2026-03-15T22:28:30.538106+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

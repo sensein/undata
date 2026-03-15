@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/a2c430b5-e143-580e-833d-00747a2c552d
+  source_local_id: Kite.https://openminds.om-i.org/props/legLengths
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.583117+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/legLengths
+  data_type: array
+  description: Enter the two common leg lengths (for the shorter and longer leg pairs)
+    of this kite.
+  created_at: '2026-03-15T22:28:30.583123+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/f870a3a4-942c-56be-86f7-429396faf188
+  source_local_id: ElectrodeArrayUsage.https://openminds.om-i.org/props/anatomicalLocationOfArray
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.443701+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/anatomicalLocationOfArray
+  data_type: array
+  description: Add all anatomical entities that semantically best describe the overall
+    anatomical location of the electrode array.
+  created_at: '2026-03-15T22:28:30.443703+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/9fa2be5b-b4b2-5982-ad77-1d0d3a5afd1d
+  source_local_id: ParcellationEntityVersion.https://openminds.om-i.org/props/abbreviation
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.827843+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/abbreviation
+  data_type: string
+  description: Enter the official abbreviation of this parcellation entity version.
+  created_at: '2026-03-15T22:28:30.827845+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,19 @@
+element:
+  id: https://schema.undata.live/elements/d81f9945-c688-53f2-8e70-d39b66d46f15
+  source_local_id: NWB.ImageSegmentation
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.525813+00:00'
+versions:
+- version_num: 1
+  name: ImageSegmentation
+  data_type: object
+  description: Stores pixels in an image that represent different regions of interest
+    (ROIs) or masks. All segmentation for a given imaging plane is stored together,
+    with storage for multiple imaging planes (masks) supported. Each ROI is stored
+    in its own subgroup, with the ROI group containing both a 2D mask and a list of
+    pixels that make up this mask. Segments can also be used for masking neuropil.
+    If segmentation is allowed to change with time, a new imaging plane (or module)
+    is required and ROI names should remain consistent between them.
+  created_at: '2026-03-15T22:28:31.525814+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

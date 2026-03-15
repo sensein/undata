@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/ea9f9d16-b1c3-5129-8c89-f65b423de08c
+  source_local_id: MRIScannerUsage.https://openminds.om-i.org/props/metadataLocation
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.028077+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/metadataLocation
+  data_type: array
+  description: Add all files or file bundles containing additional information about
+    the usage of this device.
+  created_at: '2026-03-15T22:28:30.028079+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

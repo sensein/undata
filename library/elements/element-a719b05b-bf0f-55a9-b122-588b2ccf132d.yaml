@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/a719b05b-bf0f-55a9-b122-588b2ccf132d
+  source_local_id: MRIScannerUsage.https://openminds.om-i.org/props/inversionTime
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.026179+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/inversionTime
+  data_type: string
+  description: Enter the inversion time (TI), defined as the interval between the
+    inversion pulse and the excitation pulse, expressed in milliseconds. This value
+    is specified in the sequence protocol and can be retrieved from the DICOM header.
+  created_at: '2026-03-15T22:28:30.026181+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

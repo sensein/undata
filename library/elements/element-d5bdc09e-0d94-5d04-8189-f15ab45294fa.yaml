@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/d5bdc09e-0d94-5d04-8189-f15ab45294fa
+  source_local_id: NWB.ImageReferences
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.401911+00:00'
+versions:
+- version_num: 1
+  name: ImageReferences
+  data_type: string
+  description: Ordered dataset of references to BaseImage (e.g., Image or ExternalImage)
+    objects.
+  created_at: '2026-03-15T22:28:31.401913+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/42952233-7e6b-58e1-ac93-fcb031889774
+  source_local_id: QualitativeRelationAssessment.https://openminds.om-i.org/props/inRelationTo
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.923735+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/inRelationTo
+  data_type: string
+  description: Reference to a related element.
+  created_at: '2026-03-15T22:28:30.923737+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

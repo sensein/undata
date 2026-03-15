@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/052e13bc-ff9f-549d-99f0-c45dda97dea0
+  source_local_id: CustomPropertySet.https://openminds.om-i.org/props/context
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.325689+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/context
+  data_type: string
+  description: Enter the common context for this custom property set.
+  created_at: '2026-03-15T22:28:30.325691+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

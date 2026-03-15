@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/b2ef8a36-ef37-51b6-b3c6-4cdb91de6f1a
+  source_local_id: RelatedParticipant.name
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.948374+00:00'
+versions:
+- version_num: 1
+  name: name
+  data_type: string
+  description: Name of the participant or subject
+  created_at: '2026-03-15T22:28:29.948376+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

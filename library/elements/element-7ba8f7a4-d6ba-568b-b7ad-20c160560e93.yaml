@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7ba8f7a4-d6ba-568b-b7ad-20c160560e93
+  source_local_id: PublishedDandiset.identifier
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.943118+00:00'
+versions:
+- version_num: 1
+  name: identifier
+  data_type: string
+  description: A Dandiset identifier that can be resolved by identifiers.org.
+  created_at: '2026-03-15T22:28:29.943120+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

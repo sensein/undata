@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/6eb9edd0-5339-539c-a5d8-8c4eb73258b9
+  source_local_id: PipetteUsage.https://openminds.om-i.org/props/chlorideReversalPotential
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.867460+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/chlorideReversalPotential
+  data_type: array
+  description: Enter all chloride reversal potentials for the intracellular solution(s)
+    of the pipette measured during its use.
+  created_at: '2026-03-15T22:28:30.867462+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

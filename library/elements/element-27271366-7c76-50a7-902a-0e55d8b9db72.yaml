@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/27271366-7c76-50a7-902a-0e55d8b9db72
+  source_local_id: Model.https://openminds.om-i.org/props/abstractionLevel
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.693641+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/abstractionLevel
+  data_type: string
+  description: Extent of simplification of physical, spatial, or temporal details
+    or attributes in the study of objects or systems.
+  created_at: '2026-03-15T22:28:30.693643+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

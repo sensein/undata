@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/08cf7133-fbed-5d6f-a60f-f185a6cd1c58
+  source_local_id: NWB.NWBData
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.397154+00:00'
+versions:
+- version_num: 1
+  name: NWBData
+  data_type: string
+  description: An abstract data type for a dataset.
+  created_at: '2026-03-15T22:28:31.397162+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,18 @@
+element:
+  id: https://schema.undata.live/elements/34d3002b-6682-5f6d-8d8f-5fc2bf2749db
+  source_local_id: MRIScannerUsage.https://openminds.om-i.org/props/sliceAngulation
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.032969+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/sliceAngulation
+  data_type: array
+  description: "Enter the slice plane orientation as a three-element unit normal vector\
+    \ [nx, ny, nz] in scanner coordinates, where each component is a dimensionless\
+    \ floating-point value between -1 and +1 and the vector has unit length (nx\xB2\
+    \ + ny\xB2 + nz\xB2 = 1). For non-oblique acquisitions, the vector aligns with\
+    \ a principal axis (for example, [0, 0, 1]), and for oblique acquisitions, the\
+    \ components are fractional."
+  created_at: '2026-03-15T22:28:30.032971+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

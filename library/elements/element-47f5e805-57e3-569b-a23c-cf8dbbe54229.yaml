@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/47f5e805-57e3-569b-a23c-cf8dbbe54229
+  source_local_id: SpecimenAge.https://openminds.om-i.org/props/age
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.055752+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/age
+  data_type: string
+  description: Time of life or existence at which some particular qualification, capacity
+    or event arises.
+  created_at: '2026-03-15T22:28:31.055754+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/e1a1e44a-3741-5245-93c1-b1c297e073bd
+  source_local_id: NWB.Units.waveforms_index_index
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.514916+00:00'
+versions:
+- version_num: 1
+  name: waveforms_index_index
+  data_type: object
+  description: Index into the 'waveforms_index' dataset. One value for every unit
+    (row in the table). See 'waveforms' for more detail.
+  created_at: '2026-03-15T22:28:31.514918+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/cd75ff12-81f3-50a4-ba11-15a5fac4513b
+  source_local_id: NWB.MotionCorrection
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.536572+00:00'
+versions:
+- version_num: 1
+  name: MotionCorrection
+  data_type: object
+  description: 'An image stack where all frames are shifted (registered) to a common
+    coordinate system, to account for movement and drift between frames. Note: each
+    frame at each point in time is assumed to be 2-D (has only x & y dimensions).'
+  created_at: '2026-03-15T22:28:31.536574+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

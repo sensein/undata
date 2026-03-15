@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/7074f50b-b6c0-5186-ae5a-2ca1b66c07e1
+  source_local_id: Contributor.includeInCitation
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.858080+00:00'
+versions:
+- version_num: 1
+  name: includeInCitation
+  data_type: string
+  description: A flag to indicate whether a contributor should be included when generating
+    a citation for the item.
+  created_at: '2026-03-15T22:28:29.858082+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/a3df84f2-f864-5fee-aa4b-7523d88936c9
+  source_local_id: CommonCoordinateFrameworkVersion.https://openminds.om-i.org/props/abbreviation
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.245817+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/abbreviation
+  data_type: string
+  description: Enter the official abbreviation of this common coordinate framework
+    version.
+  created_at: '2026-03-15T22:28:30.245819+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

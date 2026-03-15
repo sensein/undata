@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/52412c83-b194-5e9c-b1b7-28c0be01244c
+  source_local_id: InterfaceVersion.https://openminds.om-i.org/props/specification
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.579386+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/specification
+  data_type: string
+  description: Detailed and precise presentation of, or proposal for something.
+  created_at: '2026-03-15T22:28:30.579387+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

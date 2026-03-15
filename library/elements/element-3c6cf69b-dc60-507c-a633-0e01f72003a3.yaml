@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/3c6cf69b-dc60-507c-a633-0e01f72003a3
+  source_local_id: MetaDataModelVersion.https://openminds.om-i.org/props/specificationFormat
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.689480+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/specificationFormat
+  data_type: array
+  description: Form in which a particular data structure or object state is specified
+    in.
+  created_at: '2026-03-15T22:28:30.689482+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

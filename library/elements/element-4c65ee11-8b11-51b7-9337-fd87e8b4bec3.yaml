@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4c65ee11-8b11-51b7-9337-fd87e8b4bec3
+  source_local_id: NWB.IntervalSeries.data
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.503559+00:00'
+versions:
+- version_num: 1
+  name: data
+  data_type: string
+  description: Use values >0 if interval started, <0 if interval ended.
+  created_at: '2026-03-15T22:28:31.503561+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a1832c52-5d20-587d-b224-5b1ec39bc627
+  source_local_id: QuantitativeRelationAssessment.https://openminds.om-i.org/props/criteria
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.924878+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/criteria
+  data_type: string
+  description: Aspects or standards on which a judgement or decision is based.
+  created_at: '2026-03-15T22:28:30.924880+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

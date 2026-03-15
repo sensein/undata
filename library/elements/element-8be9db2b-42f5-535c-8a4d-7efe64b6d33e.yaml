@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/8be9db2b-42f5-535c-8a4d-7efe64b6d33e
+  source_local_id: CommonCoordinateFramework.https://openminds.om-i.org/props/contributorAffiliation
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.238093+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/contributorAffiliation
+  data_type: array
+  description: Add all affiliations for the individual contributors to this research
+    product. Inherited by all product versions unless overridden at the version level.
+  created_at: '2026-03-15T22:28:30.238095+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

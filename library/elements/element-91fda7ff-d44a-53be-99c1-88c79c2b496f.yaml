@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/91fda7ff-d44a-53be-99c1-88c79c2b496f
+  source_local_id: MetaDataModel.https://openminds.om-i.org/props/supportChannel
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.669343+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/supportChannel
+  data_type: array
+  description: Way of communication used to interact with users or customers.
+  created_at: '2026-03-15T22:28:30.669344+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

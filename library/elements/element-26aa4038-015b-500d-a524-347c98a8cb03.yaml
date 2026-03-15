@@ -1,0 +1,17 @@
+element:
+  id: https://schema.undata.live/elements/26aa4038-015b-500d-a524-347c98a8cb03
+  source_local_id: NWB.ElectrodeGroup
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.431987+00:00'
+versions:
+- version_num: 1
+  name: ElectrodeGroup
+  data_type: object
+  description: A physical grouping of electrodes, e.g., a shank of an array. An electrode
+    group is typically used to describe electrodes that are physically connected on
+    a single device and are often (but not always) used together for analysis, such
+    as for spike sorting. Note that this is descriptive metadata; electrodes from
+    different groups can still be spike-sorted together if needed.
+  created_at: '2026-03-15T22:28:31.431989+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

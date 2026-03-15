@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/f17bdc04-d0f9-5f98-a846-18aa19afe2b1
+  source_local_id: CommonCoordinateFrameworkVersion.https://openminds.om-i.org/props/defaultImage
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.249771+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/defaultImage
+  data_type: array
+  description: Two or three dimensional image that particluarly represents a specific
+    coordinate space.
+  created_at: '2026-03-15T22:28:30.249773+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

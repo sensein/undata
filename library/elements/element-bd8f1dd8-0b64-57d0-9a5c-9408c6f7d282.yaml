@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/bd8f1dd8-0b64-57d0-9a5c-9408c6f7d282
+  source_local_id: NWB.VoltageClampSeries.whole_cell_capacitance_comp
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.469599+00:00'
+versions:
+- version_num: 1
+  name: whole_cell_capacitance_comp
+  data_type: float
+  description: Whole cell capacitance compensation, in farads.
+  created_at: '2026-03-15T22:28:31.469600+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

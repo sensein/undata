@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/6d631494-9716-5659-9515-92e9709018f2
+  source_local_id: ViewerSpecification.https://openminds.om-i.org/props/anchorPoint
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.237444+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/anchorPoint
+  data_type: array
+  description: Enter the coordinates of the anchor point that a viewer should use.
+    Either state the anchor point of the annotation again or state another coordinate
+    point.
+  created_at: '2026-03-15T22:28:31.237446+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

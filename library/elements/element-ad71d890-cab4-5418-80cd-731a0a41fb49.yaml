@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/ad71d890-cab4-5418-80cd-731a0a41fb49
+  source_local_id: InterfaceVersion.https://openminds.om-i.org/props/versionSpecification
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.581352+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/versionSpecification
+  data_type: string
+  description: Enter a short description (or summary) of the novelties/peculiarities
+    of this research product version in comparison to its preceding versions. If this
+    research product version is the first version, you can enter the following disclaimer
+    'This is the first version of this research product'.
+  created_at: '2026-03-15T22:28:30.581353+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

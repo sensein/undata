@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/db67551c-b4d4-5bce-bea2-5ca3ff50b514
+  source_local_id: Chapter.https://openminds.om-i.org/props/contributorAffiliation
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.212267+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/contributorAffiliation
+  data_type: array
+  description: Add all affiliations for the individual contributors to this research
+    product version.
+  created_at: '2026-03-15T22:28:30.212269+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

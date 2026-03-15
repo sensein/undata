@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ae57fc1a-b536-5f92-a61b-e41737b3bf83
+  source_local_id: Simulation.https://openminds.om-i.org/props/performedBy
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.990198+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/performedBy
+  data_type: array
+  description: Add all agents that performed this activity.
+  created_at: '2026-03-15T22:28:30.990200+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

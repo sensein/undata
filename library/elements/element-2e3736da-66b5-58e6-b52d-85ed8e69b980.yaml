@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/2e3736da-66b5-58e6-b52d-85ed8e69b980
+  source_local_id: AssetsSummary.numberOfSamples
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.817687+00:00'
+versions:
+- version_num: 1
+  name: numberOfSamples
+  data_type: string
+  description: Number of Samples
+  created_at: '2026-03-15T22:28:29.817689+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

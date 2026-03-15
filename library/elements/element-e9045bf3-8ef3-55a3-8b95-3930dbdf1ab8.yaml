@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e9045bf3-8ef3-55a3-8b95-3930dbdf1ab8
+  source_local_id: NWB.FeatureExtraction.features
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.426677+00:00'
+versions:
+- version_num: 1
+  name: features
+  data_type: float
+  description: Multi-dimensional array of features extracted from each event.
+  created_at: '2026-03-15T22:28:31.426679+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

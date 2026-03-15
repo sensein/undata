@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/90ff5551-46b6-514a-93a0-2197c7026de6
+  source_local_id: BioSample.anatomy
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.841042+00:00'
+versions:
+- version_num: 1
+  name: anatomy
+  data_type: string
+  description: Identifier for what organ the sample belongs to. Use the most specific
+    descriptor from sources such as UBERON.
+  created_at: '2026-03-15T22:28:29.841044+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/cea7bd07-29b7-5f05-99a1-7c2197f4c1c4
+  source_local_id: IdentifiersDotOrgID.https://openminds.om-i.org/props/identifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:29.993169+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/identifier
+  data_type: string
+  description: Term or code used to identify something or someone.
+  created_at: '2026-03-15T22:28:29.993171+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/d447982d-6706-504b-99a2-837a5d9d4bac
+  source_local_id: Trapezoid.https://openminds.om-i.org/props/baseDistance
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.195492+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/baseDistance
+  data_type: string
+  description: Enter the perpendicular distance between the parallel lines of the
+    major and minor bases of this trapezoid.
+  created_at: '2026-03-15T22:28:31.195494+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

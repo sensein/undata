@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/b14bf4fa-8841-5ecf-8f10-1b6a29e82f3d
+  source_local_id: NWB.ImagingRetinotopy.focal_depth_image
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.540746+00:00'
+versions:
+- version_num: 1
+  name: focal_depth_image
+  data_type: integer
+  description: 'Gray-scale image taken with same settings/parameters (e.g., focal
+    depth, wavelength) as data collection. Array format: [rows][columns].'
+  created_at: '2026-03-15T22:28:31.540747+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

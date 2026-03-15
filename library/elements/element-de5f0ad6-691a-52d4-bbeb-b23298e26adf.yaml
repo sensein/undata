@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/de5f0ad6-691a-52d4-bbeb-b23298e26adf
+  source_local_id: ISSN.https://openminds.om-i.org/props/identifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:29.992659+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/identifier
+  data_type: string
+  description: Term or code used to identify something or someone.
+  created_at: '2026-03-15T22:28:29.992661+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

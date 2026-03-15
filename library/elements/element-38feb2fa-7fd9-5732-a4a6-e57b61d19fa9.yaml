@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/38feb2fa-7fd9-5732-a4a6-e57b61d19fa9
+  source_local_id: TissueSampleCollectionState.https://openminds.om-i.org/props/pathology
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.172877+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/pathology
+  data_type: array
+  description: Structural and functional deviation from the normal that constitutes
+    a disease or characterizes a particular disease.
+  created_at: '2026-03-15T22:28:31.172879+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

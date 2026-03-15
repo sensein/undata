@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/08e5d343-0d68-5793-8dc4-52a7158adf7c
+  source_local_id: NWB.SequentialRecordingsTable.stimulus_type
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.486907+00:00'
+versions:
+- version_num: 1
+  name: stimulus_type
+  data_type: string
+  description: The type of stimulus used for the sequential recording.
+  created_at: '2026-03-15T22:28:31.486908+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

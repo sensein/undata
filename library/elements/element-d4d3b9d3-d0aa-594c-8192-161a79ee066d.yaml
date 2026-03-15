@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/d4d3b9d3-d0aa-594c-8192-161a79ee066d
+  source_local_id: NWB.Subject
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.453193+00:00'
+versions:
+- version_num: 1
+  name: Subject
+  data_type: object
+  description: Information about the animal or person from which the data was measured.
+  created_at: '2026-03-15T22:28:31.453194+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

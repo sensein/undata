@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/795d3c14-0896-51e7-aa15-1af071b68119
+  source_local_id: Allele.alleleSymbol
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.790713+00:00'
+versions:
+- version_num: 1
+  name: alleleSymbol
+  data_type: string
+  description: Allele Symbol
+  created_at: '2026-03-15T22:28:29.790715+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

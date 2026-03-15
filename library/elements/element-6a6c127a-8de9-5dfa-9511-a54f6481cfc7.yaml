@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6a6c127a-8de9-5dfa-9511-a54f6481cfc7
+  source_local_id: PublishedDandiset.datePublished
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.935299+00:00'
+versions:
+- version_num: 1
+  name: datePublished
+  data_type: string
+  description: Date Published
+  created_at: '2026-03-15T22:28:29.935301+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/ecefe1cc-3d23-5558-90e8-04c98fdac27c
+  source_local_id: BioSample.identifier
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.839696+00:00'
+versions:
+- version_num: 1
+  name: identifier
+  data_type: string
+  created_at: '2026-03-15T22:28:29.839698+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

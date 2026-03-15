@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/6ca72eb7-7500-50d5-b7e9-88cb9e38497a
+  source_local_id: AnatomicalAtlasVersion.https://openminds.om-i.org/props/type
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.115990+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/type
+  data_type: string
+  description: Distinct class to which a group of entities or concepts with similar
+    characteristics or attributes belong to.
+  created_at: '2026-03-15T22:28:30.115994+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/9eae67d6-e249-5464-b0c7-fe2fe3d32311
+  source_local_id: TactileStimulusType.https://openminds.om-i.org/props/preferredOntologyIdentifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.131307+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/preferredOntologyIdentifier
+  data_type: string
+  description: Persistent identifier of a preferred ontological term.
+  created_at: '2026-03-15T22:28:31.131309+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

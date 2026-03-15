@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e19e188c-4954-5307-a2d6-c3719566157e
+  source_local_id: Resource.resourceType
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.953179+00:00'
+versions:
+- version_num: 1
+  name: resourceType
+  data_type: string
+  description: The type of resource.
+  created_at: '2026-03-15T22:28:29.953181+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

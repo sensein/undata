@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ae30da00-843d-5c55-9fd0-5240a71c4eb2
+  source_local_id: Dandiset.repository
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.867181+00:00'
+versions:
+- version_num: 1
+  name: repository
+  data_type: string
+  description: location of the item
+  created_at: '2026-03-15T22:28:29.867183+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

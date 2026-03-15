@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/2eea51a5-c75b-5207-b4ec-319bd8dda3ca
+  source_local_id: CommonCoordinateFramework.https://openminds.om-i.org/props/contribution
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.237391+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/contribution
+  data_type: array
+  description: Add all individual, organisational, or consortial contributions to
+    this research product. Inherited by all product versions unless overridden at
+    the version level.
+  created_at: '2026-03-15T22:28:30.237393+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

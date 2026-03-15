@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/87bff24e-1ab6-512f-82ed-dd8cfb997b3f
+  source_local_id: NWB.SequentialRecordingsTable
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.485362+00:00'
+versions:
+- version_num: 1
+  name: SequentialRecordingsTable
+  data_type: object
+  description: A table for grouping different sequential recordings from the SimultaneousRecordingsTable
+    table together. This is typically used to group together sequential recordings
+    where a sequence of stimuli of the same type with varying parameters have been
+    presented in a sequence.
+  created_at: '2026-03-15T22:28:31.485364+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

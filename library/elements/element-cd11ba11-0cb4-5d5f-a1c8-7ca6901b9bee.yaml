@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/cd11ba11-0cb4-5d5f-a1c8-7ca6901b9bee
+  source_local_id: ElectrodePlacement.https://openminds.om-i.org/props/device
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.450202+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/device
+  data_type: array
+  description: Piece of equipment or mechanism (hardware) designed to serve a special
+    purpose or perform a special function.
+  created_at: '2026-03-15T22:28:30.450204+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

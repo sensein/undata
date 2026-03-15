@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/38d3923d-1b9f-5e7c-97c2-d1b8dfa454a9
+  source_local_id: NWB.ElectricalSeries.electrodes
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.422654+00:00'
+versions:
+- version_num: 1
+  name: electrodes
+  data_type: object
+  description: DynamicTableRegion pointer to the electrodes that this time series
+    was generated from.
+  created_at: '2026-03-15T22:28:31.422656+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

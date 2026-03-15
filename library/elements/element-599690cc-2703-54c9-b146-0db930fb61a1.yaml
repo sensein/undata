@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/599690cc-2703-54c9-b146-0db930fb61a1
+  source_local_id: NWB.ImagingPlane.description
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.530005+00:00'
+versions:
+- version_num: 1
+  name: description
+  data_type: string
+  description: Description of the imaging plane.
+  created_at: '2026-03-15T22:28:31.530007+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

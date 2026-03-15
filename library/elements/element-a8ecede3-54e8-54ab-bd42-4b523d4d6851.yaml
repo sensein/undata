@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a8ecede3-54e8-54ab-bd42-4b523d4d6851
+  source_local_id: SoftwareVersion.https://openminds.om-i.org/props/digitalIdentifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.027690+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/digitalIdentifier
+  data_type: string
+  description: Digital handle to identify objects or legal persons.
+  created_at: '2026-03-15T22:28:31.027692+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/5eae3a5c-e29e-5d69-9d25-4218b8511d3b
+  source_local_id: ElectricalStimulusType.https://openminds.om-i.org/props/preferredOntologyIdentifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.432490+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/preferredOntologyIdentifier
+  data_type: string
+  description: Persistent identifier of a preferred ontological term.
+  created_at: '2026-03-15T22:28:30.432492+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

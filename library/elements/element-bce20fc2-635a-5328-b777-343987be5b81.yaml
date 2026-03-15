@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/bce20fc2-635a-5328-b777-343987be5b81
+  source_local_id: NWB.SpatialSeries.data
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.410661+00:00'
+versions:
+- version_num: 1
+  name: data
+  data_type: string
+  description: 1-D or 2-D array storing position or direction relative to some reference
+    frame.
+  created_at: '2026-03-15T22:28:31.410663+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

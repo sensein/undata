@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/affc6867-1166-529e-b959-e95cd16c69a6
+  source_local_id: NWB.ElectrodesTable
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.434038+00:00'
+versions:
+- version_num: 1
+  name: ElectrodesTable
+  data_type: object
+  description: A table of all electrodes (i.e. channels) used for recording. Introduced
+    in NWB 2.8.0. Replaces the "electrodes" table (neurodata_type_inc DynamicTable,
+    no neurodata_type_def) that is part of NWBFile.
+  created_at: '2026-03-15T22:28:31.434040+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

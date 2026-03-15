@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/3222f4b0-01c3-57dd-a7dc-5309933cbb24
+  source_local_id: BareAsset.dateModified
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.832705+00:00'
+versions:
+- version_num: 1
+  name: dateModified
+  data_type: string
+  description: Asset (file or metadata) modification date and time
+  created_at: '2026-03-15T22:28:29.832706+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

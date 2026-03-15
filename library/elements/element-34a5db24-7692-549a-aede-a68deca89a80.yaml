@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/34a5db24-7692-549a-aede-a68deca89a80
+  source_local_id: FileBundle.https://openminds.om-i.org/props/hash
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.486398+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/hash
+  data_type: string
+  description: Term used for the process of converting any data into a single value.
+    Often also directly refers to the resulting single value.
+  created_at: '2026-03-15T22:28:30.486399+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

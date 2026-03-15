@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7e16abf5-920c-5491-8369-af7f741ab1fb
+  source_local_id: NWB.OpticalSeries.field_of_view
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.496506+00:00'
+versions:
+- version_num: 1
+  name: field_of_view
+  data_type: float
+  description: Width, height and depth of image, or imaged area, in meters.
+  created_at: '2026-03-15T22:28:31.496508+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a9f56496-4400-580c-9f4c-954186ab3294
+  source_local_id: ModelVersion.https://openminds.om-i.org/props/fullName
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.724127+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/fullName
+  data_type: string
+  description: Whole, non-abbreviated name of something or somebody.
+  created_at: '2026-03-15T22:28:30.724128+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

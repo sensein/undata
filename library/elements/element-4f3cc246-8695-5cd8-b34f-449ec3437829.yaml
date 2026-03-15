@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/4f3cc246-8695-5cd8-b34f-449ec3437829
+  source_local_id: Software.https://openminds.om-i.org/props/documentation
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.010495+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/documentation
+  data_type: string
+  description: Add the publication or file that acts as the documentation of this
+    research product. Inherited by all product versions unless overridden at the version
+    level.
+  created_at: '2026-03-15T22:28:31.010497+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

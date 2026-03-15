@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/6096f223-cb7f-5dd7-ab5a-ad5e72e98285
+  source_local_id: Configuration.https://openminds.om-i.org/props/lookupLabel
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.272963+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/lookupLabel
+  data_type: string
+  description: Enter a lookup label for this configuration that may help you to find
+    this instance more easily.
+  created_at: '2026-03-15T22:28:30.272965+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

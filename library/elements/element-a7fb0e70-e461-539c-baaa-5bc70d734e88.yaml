@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/a7fb0e70-e461-539c-baaa-5bc70d734e88
+  source_local_id: IsoscelesTriangle.https://openminds.om-i.org/props/legLength
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.582451+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/legLength
+  data_type: string
+  description: Enter the common length of the two equal sides meeting at the apex
+    of this isosceles triangle.
+  created_at: '2026-03-15T22:28:30.582453+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6f86a259-3bef-5b28-9d20-ec3f28e4e399
+  source_local_id: Dandiset.contributor
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.862322+00:00'
+versions:
+- version_num: 1
+  name: contributor
+  data_type: array
+  description: People or Organizations that have contributed to this Dandiset.
+  created_at: '2026-03-15T22:28:29.862324+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

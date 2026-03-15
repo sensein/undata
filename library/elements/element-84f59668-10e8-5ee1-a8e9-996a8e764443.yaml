@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/84f59668-10e8-5ee1-a8e9-996a8e764443
+  source_local_id: SoftwareVersion.https://openminds.om-i.org/props/usageCondition
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.039783+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/usageCondition
+  data_type: array
+  description: Add all licenses and available data usage agreements applicable to
+    this product version.
+  created_at: '2026-03-15T22:28:31.039785+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

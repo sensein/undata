@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/21a6634b-276e-5a45-b751-e4d31bd6f264
+  source_local_id: ValidationTest.https://openminds.om-i.org/props/scoreType
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.216507+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/scoreType
+  data_type: string
+  description: Add the type of score calculated in this validation test.
+  created_at: '2026-03-15T22:28:31.216509+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

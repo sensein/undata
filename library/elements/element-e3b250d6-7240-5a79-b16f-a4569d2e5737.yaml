@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/e3b250d6-7240-5a79-b16f-a4569d2e5737
+  source_local_id: ModificationScope.https://openminds.om-i.org/props/otherCrossReference
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.747591+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/otherCrossReference
+  data_type: array
+  description: Enter all internationalized resource identifiers (IRIs) pointing to
+    cross-references to external databases or registries that are equivalent to this
+    term (e.g., Wikidata). Do not repeat the preferred cross-reference.
+  created_at: '2026-03-15T22:28:30.747593+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

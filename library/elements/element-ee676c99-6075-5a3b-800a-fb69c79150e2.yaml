@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/ee676c99-6075-5a3b-800a-fb69c79150e2
+  source_local_id: StringProperty.https://openminds.om-i.org/props/externalDefinitionOfName
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.094518+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/externalDefinitionOfName
+  data_type: string
+  description: Enter the internationalized resource identifier (IRI) to an external
+    definition of the property name.
+  created_at: '2026-03-15T22:28:31.094520+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

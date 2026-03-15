@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/780973e7-c6df-512a-bfe1-cb451d61dab1
+  source_local_id: BiologicalSex.https://openminds.om-i.org/props/otherOntologyIdentifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.177240+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/otherOntologyIdentifier
+  data_type: array
+  description: Enter all internationalized resource identifiers (IRIs) pointing to
+    ontology entries that are equivalent to this term (e.g., UBERON). Do not repeat
+    the preferred ontology identifier.
+  created_at: '2026-03-15T22:28:30.177241+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

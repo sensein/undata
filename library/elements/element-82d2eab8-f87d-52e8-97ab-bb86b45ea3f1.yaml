@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/82d2eab8-f87d-52e8-97ab-bb86b45ea3f1
+  source_local_id: StaticMRIAcquisition.https://openminds.om-i.org/props/specimenOrientation
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.068250+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/specimenOrientation
+  data_type: string
+  description: Add the specimen orientation as the anatomical directions corresponding
+    to the scanner X, Y, and Z axes, describing the alignment of the specimen's anatomy
+    with the scanner coordinate system. Note that this orientation may differ from
+    the prescribed slice orientation, especially in nonstandard specimen positioning.
+  created_at: '2026-03-15T22:28:31.068251+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

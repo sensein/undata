@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f9a5c3f2-5005-56af-b67b-6ba3ce829ec5
+  source_local_id: Participant.strain
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.893901+00:00'
+versions:
+- version_num: 1
+  name: strain
+  data_type: string
+  description: Identifier for the strain of the participant or subject.
+  created_at: '2026-03-15T22:28:29.893903+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

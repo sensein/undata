@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/158359a1-9748-59d0-9d79-d56fc2c8f0ad
+  source_local_id: ValidationTestVersion.https://openminds.om-i.org/props/versionIdentifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.231543+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/versionIdentifier
+  data_type: string
+  description: Term or code used to identify the version of something.
+  created_at: '2026-03-15T22:28:31.231544+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

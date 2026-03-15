@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/b779c081-85ed-5b46-abab-dd41f25a8534
+  source_local_id: LocalFile.https://openminds.om-i.org/props/copyOf
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.645574+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/copyOf
+  data_type: string
+  description: Add the file of which this is a copy.
+  created_at: '2026-03-15T22:28:30.645575+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

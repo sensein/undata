@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ad00c8da-1fb5-5fa7-a685-48910de13b25
+  source_local_id: Allele.schemaKey
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.789823+00:00'
+versions:
+- version_num: 1
+  name: schemaKey
+  data_type: string
+  description: Schema Key
+  created_at: '2026-03-15T22:28:29.789825+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

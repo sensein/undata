@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/e8ade984-4dfc-5f9a-9fd6-109f0117001f
+  source_local_id: FileRepository.https://openminds.om-i.org/props/IRI
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.493888+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/IRI
+  data_type: string
+  description: Stands for Internationalized Resource Identifier which is an internet
+    protocol standard that builds on the URI protocol, extending the set of permitted
+    characters to include Unicode/ISO 10646.
+  created_at: '2026-03-15T22:28:30.493890+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

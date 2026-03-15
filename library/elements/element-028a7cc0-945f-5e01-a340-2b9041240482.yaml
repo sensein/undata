@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/028a7cc0-945f-5e01-a340-2b9041240482
+  source_local_id: MRIScannerUsage.https://openminds.om-i.org/props/accelerationFactor
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.021225+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/accelerationFactor
+  data_type: string
+  description: "Enter the acceleration factor (R), defined as the ratio of fully sampled\
+    \ to reduced k-space acquisition, with R \u2265 1 and R = 1 indicating no acceleration.\
+    \ This value is specified in the sequence protocol and can be retrieved from the\
+    \ DICOM header."
+  created_at: '2026-03-15T22:28:30.021227+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8d389171-3d1c-56a7-8338-91cfb391cb41
+  source_local_id: NWB.PlaneSegmentation.voxel_mask_index
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.528559+00:00'
+versions:
+- version_num: 1
+  name: voxel_mask_index
+  data_type: object
+  description: Index into voxel_mask.
+  created_at: '2026-03-15T22:28:31.528561+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

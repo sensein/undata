@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/0d731726-a755-5fbb-ac44-23f3da909244
+  source_local_id: NWB.CurrentClampStimulusSeries
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.465378+00:00'
+versions:
+- version_num: 1
+  name: CurrentClampStimulusSeries
+  data_type: object
+  description: Stimulus current applied during current clamp recording.
+  created_at: '2026-03-15T22:28:31.465380+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

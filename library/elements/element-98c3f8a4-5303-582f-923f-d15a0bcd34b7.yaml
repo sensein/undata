@@ -1,0 +1,17 @@
+element:
+  id: https://schema.undata.live/elements/98c3f8a4-5303-582f-923f-d15a0bcd34b7
+  source_local_id: NWB.OpticalSeries
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.495445+00:00'
+versions:
+- version_num: 1
+  name: OpticalSeries
+  data_type: object
+  description: Image data that is presented or recorded. A stimulus template movie
+    will be stored only as an image. When the image is presented as stimulus, additional
+    data is required, such as field of view (e.g., how much of the visual field the
+    image covers, or how what is the area of the target being imaged). If the OpticalSeries
+    represents acquired imaging data, orientation is also important.
+  created_at: '2026-03-15T22:28:31.495446+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

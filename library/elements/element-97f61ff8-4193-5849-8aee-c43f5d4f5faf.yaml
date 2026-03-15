@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/97f61ff8-4193-5849-8aee-c43f5d4f5faf
+  source_local_id: Organization.email
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.889267+00:00'
+versions:
+- version_num: 1
+  name: email
+  data_type: string
+  description: Email
+  created_at: '2026-03-15T22:28:29.889268+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

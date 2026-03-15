@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/dc01d031-d355-5e0c-9eed-88f3ea469e1b
+  source_local_id: CranialWindowPreparation.https://openminds.om-i.org/props/preparationDesign
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.302755+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/preparationDesign
+  data_type: string
+  description: Add the initial preparation type for this activity.
+  created_at: '2026-03-15T22:28:30.302757+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

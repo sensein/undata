@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8f5fe58c-00dd-59e9-a96a-7e69b7cc7d7b
+  source_local_id: QuantitativeValueRange.https://openminds.om-i.org/props/maxValue
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.931284+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/maxValue
+  data_type: string
+  description: Greatest quantity attained or allowed.
+  created_at: '2026-03-15T22:28:30.931286+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

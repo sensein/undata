@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/33f7ba79-31b8-573a-9ad0-10706ecf1459
+  source_local_id: Environment.https://openminds.om-i.org/props/hardware
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.463267+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/hardware
+  data_type: string
+  description: Add the hardware system on which this computational environment runs.
+  created_at: '2026-03-15T22:28:30.463268+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

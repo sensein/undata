@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/3d52d67c-70db-5388-ae29-14fb76a60454
+  source_local_id: NWB.EventDetection.detection_method
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.428528+00:00'
+versions:
+- version_num: 1
+  name: detection_method
+  data_type: string
+  description: Description of how events were detected, such as voltage threshold,
+    or dV/dT threshold, as well as relevant values.
+  created_at: '2026-03-15T22:28:31.428530+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

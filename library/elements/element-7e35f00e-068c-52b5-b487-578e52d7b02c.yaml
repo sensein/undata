@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7e35f00e-068c-52b5-b487-578e52d7b02c
+  source_local_id: NWB.ElectrodesTable.group_name
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.435565+00:00'
+versions:
+- version_num: 1
+  name: group_name
+  data_type: string
+  description: Name of the ElectrodeGroup this electrode is a part of.
+  created_at: '2026-03-15T22:28:31.435567+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

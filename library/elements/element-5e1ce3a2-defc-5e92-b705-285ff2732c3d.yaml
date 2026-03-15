@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/5e1ce3a2-defc-5e92-b705-285ff2732c3d
+  source_local_id: ChemicalSubstance.https://openminds.om-i.org/props/additionalRemarks
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.226014+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/additionalRemarks
+  data_type: string
+  description: Mention of what deserves additional attention or notice.
+  created_at: '2026-03-15T22:28:30.226016+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e23e8fe0-59a1-58d4-a18c-e24b49ecc497
+  source_local_id: CranialWindowPreparation.https://openminds.om-i.org/props/performedBy
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.302268+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/performedBy
+  data_type: array
+  description: Add all agents that performed this activity.
+  created_at: '2026-03-15T22:28:30.302270+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

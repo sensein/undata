@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/cc38e791-97bf-5014-9b43-c467868bae44
+  source_local_id: GeoCoordinates.https://openminds.om-i.org/props/longitude
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.528517+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/longitude
+  data_type: string
+  description: Enter the longitude of the location in decimal degrees, following the
+    definitions of the WGS84 system.
+  created_at: '2026-03-15T22:28:30.528519+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

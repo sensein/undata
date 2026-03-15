@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/890ec20f-4029-52b5-8adf-9ac9a3ed8c74
+  source_local_id: License.https://openminds.om-i.org/props/webpage
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.616604+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/webpage
+  data_type: array
+  description: Hypertext document (block of information) found on the World Wide Web.
+  created_at: '2026-03-15T22:28:30.616606+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

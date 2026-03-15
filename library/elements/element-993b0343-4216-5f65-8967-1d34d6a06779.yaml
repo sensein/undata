@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/993b0343-4216-5f65-8967-1d34d6a06779
+  source_local_id: WorkflowRecipeVersion.https://openminds.om-i.org/props/versionIdentifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.279024+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/versionIdentifier
+  data_type: string
+  description: Term or code used to identify the version of something.
+  created_at: '2026-03-15T22:28:31.279025+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

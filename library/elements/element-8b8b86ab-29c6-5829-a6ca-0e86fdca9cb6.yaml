@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/8b8b86ab-29c6-5829-a6ca-0e86fdca9cb6
+  source_local_id: DynamicMRIAcquisition.https://openminds.om-i.org/props/targetAnatomy
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.423470+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/targetAnatomy
+  data_type: string
+  description: Add the target anatomy, indicating the primary anatomical structure
+    or region intended to be imaged in this acquisition. This field describes the
+    imaging objective (for example, organ, tissue, or structure) and may be derived
+    from the acquisition protocol description.
+  created_at: '2026-03-15T22:28:30.423472+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

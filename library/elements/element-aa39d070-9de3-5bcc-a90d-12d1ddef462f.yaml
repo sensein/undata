@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/aa39d070-9de3-5bcc-a90d-12d1ddef462f
+  source_local_id: BareAsset.wasGeneratedBy
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.830185+00:00'
+versions:
+- version_num: 1
+  name: wasGeneratedBy
+  data_type: string
+  description: Describe the session, project or activity that generated this asset.
+  created_at: '2026-03-15T22:28:29.830187+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

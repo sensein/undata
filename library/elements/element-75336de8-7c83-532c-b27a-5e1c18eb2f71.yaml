@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/75336de8-7c83-532c-b27a-5e1c18eb2f71
+  source_local_id: NWB.ClusterWaveforms.waveform_filtering
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.441018+00:00'
+versions:
+- version_num: 1
+  name: waveform_filtering
+  data_type: string
+  description: Filtering applied to data before generating mean/sd
+  created_at: '2026-03-15T22:28:31.441019+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6257fe16-5b6f-5963-88dc-371f84b0e619
+  source_local_id: TissueCulturePreparation.https://openminds.om-i.org/props/cultureType
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.146137+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/cultureType
+  data_type: string
+  description: Add the cell culture type of the resulting tissue cell culture.
+  created_at: '2026-03-15T22:28:31.146139+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

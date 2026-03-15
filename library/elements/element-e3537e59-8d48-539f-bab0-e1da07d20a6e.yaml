@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/e3537e59-8d48-539f-bab0-e1da07d20a6e
+  source_local_id: LearningResource.https://openminds.om-i.org/props/name
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.604511+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/name
+  data_type: string
+  description: Word or phrase that constitutes the distinctive designation of a being
+    or thing.
+  created_at: '2026-03-15T22:28:30.604513+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

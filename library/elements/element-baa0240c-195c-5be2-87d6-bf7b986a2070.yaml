@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/baa0240c-195c-5be2-87d6-bf7b986a2070
+  source_local_id: AssetsSummary.numberOfBytes
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.816309+00:00'
+versions:
+- version_num: 1
+  name: numberOfBytes
+  data_type: string
+  description: Number of Bytes
+  created_at: '2026-03-15T22:28:29.816311+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

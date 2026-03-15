@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/a24a1a81-4b58-5b5d-b77f-595b4266a2ae
+  source_local_id: AnatomicalAtlas.https://openminds.om-i.org/props/ontologyIdentifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.099202+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/ontologyIdentifier
+  data_type: string
+  description: Term or code used to identify something or someone registered within
+    a particular ontology.
+  created_at: '2026-03-15T22:28:30.099204+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

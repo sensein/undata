@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/bec41d5c-de39-5b88-a7e0-940f24b8fb15
+  source_local_id: Rectangle.https://openminds.om-i.org/props/minorSideLength
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.941446+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/minorSideLength
+  data_type: string
+  description: Enter the common length of the minor sides of this rectangle.
+  created_at: '2026-03-15T22:28:30.941447+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

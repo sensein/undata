@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/0a01fdaf-8d2c-5eca-b8c1-534626828c2a
+  source_local_id: NWB.NWBFile.identifier
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.450556+00:00'
+versions:
+- version_num: 1
+  name: identifier
+  data_type: string
+  description: A unique text identifier for the file. For example, concatenated lab
+    name, file creation date/time and experimentalist, or a hash of these and/or other
+    values. The goal is that the string should be unique to all other files.
+  created_at: '2026-03-15T22:28:31.450558+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

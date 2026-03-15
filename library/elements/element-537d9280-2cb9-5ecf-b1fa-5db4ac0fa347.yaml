@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/537d9280-2cb9-5ecf-b1fa-5db4ac0fa347
+  source_local_id: WorkflowRecipeVersion.https://openminds.om-i.org/props/isVersionOf
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.274314+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/isVersionOf
+  data_type: string
+  description: Add the version-independent information about this workflow recipe.
+  created_at: '2026-03-15T22:28:31.274316+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

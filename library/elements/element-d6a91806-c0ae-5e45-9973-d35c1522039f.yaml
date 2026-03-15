@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/d6a91806-c0ae-5e45-9973-d35c1522039f
+  source_local_id: NWB.BehavioralTimeSeries
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.412979+00:00'
+versions:
+- version_num: 1
+  name: BehavioralTimeSeries
+  data_type: object
+  description: TimeSeries for storing behavioral time series data. See description
+    of BehavioralEpochs for more details.
+  created_at: '2026-03-15T22:28:31.412981+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

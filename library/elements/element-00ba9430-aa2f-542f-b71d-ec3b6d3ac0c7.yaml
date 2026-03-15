@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/00ba9430-aa2f-542f-b71d-ec3b6d3ac0c7
+  source_local_id: LearningResource.https://openminds.om-i.org/props/order
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.605157+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/order
+  data_type: string
+  description: Enter the order in which this resource should appear, relative to other
+    resources with the same topic.
+  created_at: '2026-03-15T22:28:30.605159+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

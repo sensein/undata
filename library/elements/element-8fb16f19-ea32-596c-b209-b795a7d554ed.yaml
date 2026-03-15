@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8fb16f19-ea32-596c-b209-b795a7d554ed
+  source_local_id: Dandiset.access
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.866278+00:00'
+versions:
+- version_num: 1
+  name: access
+  data_type: array
+  description: Access information
+  created_at: '2026-03-15T22:28:29.866280+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

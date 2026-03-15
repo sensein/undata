@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8265ccb1-0173-5612-a9ca-7f95b7cb194e
+  source_local_id: TissueSampleState.https://openminds.om-i.org/props/weight
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.186702+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/weight
+  data_type: string
+  description: Amount that a thing or being weighs.
+  created_at: '2026-03-15T22:28:31.186704+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

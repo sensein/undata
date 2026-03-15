@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/c677bac3-4a12-59a7-af06-30c5495994e0
+  source_local_id: SoftwareVersion.https://openminds.om-i.org/props/language
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.033548+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/language
+  data_type: array
+  description: System of communication (words, their pronunciation, and the methods
+    of combining them) used and understood by a particular community.
+  created_at: '2026-03-15T22:28:31.033550+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

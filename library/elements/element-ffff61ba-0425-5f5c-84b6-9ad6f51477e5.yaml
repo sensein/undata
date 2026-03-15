@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ffff61ba-0425-5f5c-84b6-9ad6f51477e5
+  source_local_id: Project.https://openminds.om-i.org/props/homepage
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.889605+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/homepage
+  data_type: string
+  description: Main website of something or someone.
+  created_at: '2026-03-15T22:28:30.889606+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

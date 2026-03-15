@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/23f1f72d-1eb5-5b94-8084-a946609a24cf
+  source_local_id: NWB.ElectrodesTable.filtering
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.437924+00:00'
+versions:
+- version_num: 1
+  name: filtering
+  data_type: string
+  description: Description of hardware filtering, including the filter name and frequency
+    cutoffs.
+  created_at: '2026-03-15T22:28:31.437926+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

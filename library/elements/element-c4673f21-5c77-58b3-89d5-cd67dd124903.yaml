@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/c4673f21-5c77-58b3-89d5-cd67dd124903
+  source_local_id: ScholarlyArticle.https://openminds.om-i.org/props/modificationDate
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.954175+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/modificationDate
+  data_type: string
+  description: Enter the date on which this creative work was last modified, formatted
+    as '2023-02-07'.
+  created_at: '2026-03-15T22:28:30.954177+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

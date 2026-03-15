@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/253d6d3d-9219-5cf7-ac89-a9078d5b920e
+  source_local_id: AccessForm.https://openminds.om-i.org/props/otherOntologyIdentifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.061628+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/otherOntologyIdentifier
+  data_type: array
+  description: Enter all internationalized resource identifiers (IRIs) pointing to
+    ontology entries that are equivalent to this term (e.g., UBERON). Do not repeat
+    the preferred ontology identifier.
+  created_at: '2026-03-15T22:28:30.061630+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/0c6229a0-c146-55e5-8d62-0a5419c69ab8
+  source_local_id: ApproachType.identifier
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.795300+00:00'
+versions:
+- version_num: 1
+  name: identifier
+  data_type: string
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+  created_at: '2026-03-15T22:28:29.795302+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

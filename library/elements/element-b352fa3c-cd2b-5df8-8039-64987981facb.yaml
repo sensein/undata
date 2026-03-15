@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/b352fa3c-cd2b-5df8-8039-64987981facb
+  source_local_id: NWB.Device.model_name
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.417594+00:00'
+versions:
+- version_num: 1
+  name: model_name
+  data_type: string
+  description: DEPRECATED. The model name of the device, e.g., Neuropixels 1.0, V-Probe,
+    Bergamo III. Instead of using this field, create and add a new DeviceModel named
+    the model name and link to that DeviceModel from this Device.
+  created_at: '2026-03-15T22:28:31.417596+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

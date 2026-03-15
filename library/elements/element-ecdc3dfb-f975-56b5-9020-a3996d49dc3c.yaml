@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ecdc3dfb-f975-56b5-9020-a3996d49dc3c
+  source_local_id: NWB.FeatureExtraction.description
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.426203+00:00'
+versions:
+- version_num: 1
+  name: description
+  data_type: string
+  description: Description of features (eg, ''PC1'') for each of the extracted features.
+  created_at: '2026-03-15T22:28:31.426205+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

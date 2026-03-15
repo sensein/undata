@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/901fc484-ceae-5776-ae98-b9c2965bdf58
+  source_local_id: CranialWindowPreparation.https://openminds.om-i.org/props/protocol
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.303239+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/protocol
+  data_type: array
+  description: Plan that describes the process of a scientific or medical experiment,
+    treatment, or procedure.
+  created_at: '2026-03-15T22:28:30.303241+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

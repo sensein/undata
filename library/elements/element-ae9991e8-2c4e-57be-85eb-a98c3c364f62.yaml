@@ -1,0 +1,18 @@
+element:
+  id: https://schema.undata.live/elements/ae9991e8-2c4e-57be-85eb-a98c3c364f62
+  source_local_id: NWB.ElectricalSeries.filtering
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.421459+00:00'
+versions:
+- version_num: 1
+  name: filtering
+  data_type: string
+  description: Filtering applied to all channels of the data. For example, if this
+    ElectricalSeries represents high-pass-filtered data (also known as AP Band), then
+    this value could be "High-pass 4-pole Bessel filter at 500 Hz". If this ElectricalSeries
+    represents low-pass-filtered LFP data and the type of filter is unknown, then
+    this value could be "Low-pass filter at 300 Hz". If a non-standard filter type
+    is used, provide as much detail about the filter properties as possible.
+  created_at: '2026-03-15T22:28:31.421462+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

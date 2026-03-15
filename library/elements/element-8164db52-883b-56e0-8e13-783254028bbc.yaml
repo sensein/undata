@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8164db52-883b-56e0-8e13-783254028bbc
+  source_local_id: WorkflowRecipeVersion.https://openminds.om-i.org/props/shortName
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.277533+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/shortName
+  data_type: string
+  description: Shortened or fully abbreviated name of something or somebody.
+  created_at: '2026-03-15T22:28:31.277535+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

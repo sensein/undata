@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a0df12a3-b3b2-55d9-a708-45649f7af1d7
+  source_local_id: Spheroid.https://openminds.om-i.org/props/equatorialDiameter
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.058397+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/equatorialDiameter
+  data_type: string
+  description: Enter the equatorial diameters of this spheroid.
+  created_at: '2026-03-15T22:28:31.058399+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

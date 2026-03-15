@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/32e2a190-ce48-5cdd-a286-6beef7609870
+  source_local_id: NWB.AnnotationSeries
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.501723+00:00'
+versions:
+- version_num: 1
+  name: AnnotationSeries
+  data_type: object
+  description: Stores user annotations made during an experiment. The data[] field
+    stores a text array, and timestamps are stored for each annotation (ie, interval=1).
+    This is largely an alias to a standard TimeSeries storing a text array but that
+    is identifiable as storing annotations in a machine-readable way.
+  created_at: '2026-03-15T22:28:31.501731+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

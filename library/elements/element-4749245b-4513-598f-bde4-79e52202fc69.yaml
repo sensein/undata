@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/4749245b-4513-598f-bde4-79e52202fc69
+  source_local_id: CellPatching.https://openminds.om-i.org/props/customPropertySet
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.196733+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/customPropertySet
+  data_type: array
+  description: Add any user-defined parameters grouped in context-specific sets that
+    are not covered in the standardized properties of this activity.
+  created_at: '2026-03-15T22:28:30.196737+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

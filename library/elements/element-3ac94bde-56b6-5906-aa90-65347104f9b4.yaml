@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/3ac94bde-56b6-5906-aa90-65347104f9b4
+  source_local_id: QuantitativeRelationAssessment.https://openminds.om-i.org/props/quantitativeOverlap
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.926178+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/quantitativeOverlap
+  data_type: string
+  description: Numerical characterization of how much two things occupy the same space.
+  created_at: '2026-03-15T22:28:30.926179+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

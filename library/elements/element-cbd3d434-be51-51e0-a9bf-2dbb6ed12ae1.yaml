@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/cbd3d434-be51-51e0-a9bf-2dbb6ed12ae1
+  source_local_id: Dandiset.manifestLocation
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.871283+00:00'
+versions:
+- version_num: 1
+  name: manifestLocation
+  data_type: array
+  description: Manifest Location
+  created_at: '2026-03-15T22:28:29.871286+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/b92b5054-34d8-55d3-a20a-49e6df14aaf3
+  source_local_id: NWB.AbstractFeatureSeries.features
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.501002+00:00'
+versions:
+- version_num: 1
+  name: features
+  data_type: string
+  description: Description of the features represented in TimeSeries::data.
+  created_at: '2026-03-15T22:28:31.501003+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

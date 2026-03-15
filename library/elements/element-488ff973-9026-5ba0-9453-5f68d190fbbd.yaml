@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/488ff973-9026-5ba0-9453-5f68d190fbbd
+  source_local_id: RightCylinder.https://openminds.om-i.org/props/baseShape
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.945840+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/baseShape
+  data_type: string
+  description: Enter the two-dimensional elliptic base shape of the two planes of
+    this right cylinder.
+  created_at: '2026-03-15T22:28:30.945841+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

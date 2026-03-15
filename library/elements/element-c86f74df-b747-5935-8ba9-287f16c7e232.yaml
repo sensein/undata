@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/c86f74df-b747-5935-8ba9-287f16c7e232
+  source_local_id: AnatomicalAtlasVersion.https://openminds.om-i.org/props/accessibility
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.102374+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/accessibility
+  data_type: string
+  description: Level to which something is accessible to someone or something.
+  created_at: '2026-03-15T22:28:30.102375+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/f7ce7334-5230-5291-b3a7-29dca8005429
+  source_local_id: ParcellationEntity.https://openminds.om-i.org/props/relatedInterspeciesAnatomy
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.827295+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/relatedInterspeciesAnatomy
+  data_type: string
+  description: Add the corresponding cross-species anatomical entity from the UBERON-derived
+    terminologies that represents the generic anatomical concept underlying the atlas
+    parcellation entity.
+  created_at: '2026-03-15T22:28:30.827297+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

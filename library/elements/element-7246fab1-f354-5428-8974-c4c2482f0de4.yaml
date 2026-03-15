@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/7246fab1-f354-5428-8974-c4c2482f0de4
+  source_local_id: PipetteUsage.https://openminds.om-i.org/props/spatialLocation
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.874425+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/spatialLocation
+  data_type: string
+  description: Add the coordinate point that best describes the spatial location of
+    the pipette tip during its use.
+  created_at: '2026-03-15T22:28:30.874427+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4a7b3c39-4bf1-594d-a97b-f60f211fd80f
+  source_local_id: SexType.id
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.959711+00:00'
+versions:
+- version_num: 1
+  name: id
+  data_type: string
+  description: Uniform resource identifier
+  created_at: '2026-03-15T22:28:29.959717+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

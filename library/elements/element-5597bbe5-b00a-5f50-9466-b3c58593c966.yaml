@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/5597bbe5-b00a-5f50-9466-b3c58593c966
+  source_local_id: TissueSampleCollection.https://openminds.om-i.org/props/type
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.168721+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/type
+  data_type: array
+  description: Distinct class to which a group of entities or concepts with similar
+    characteristics or attributes belong to.
+  created_at: '2026-03-15T22:28:31.168723+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4b7b4fee-78b2-5217-828e-6a4969906e57
+  source_local_id: ModelValidation.https://openminds.om-i.org/props/recipe
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.714027+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/recipe
+  data_type: string
+  description: Add the workflow recipe version used for this computation.
+  created_at: '2026-03-15T22:28:30.714029+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

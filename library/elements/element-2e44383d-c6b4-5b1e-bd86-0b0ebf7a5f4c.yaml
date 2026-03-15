@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/2e44383d-c6b4-5b1e-bd86-0b0ebf7a5f4c
+  source_local_id: AtlasAnnotation.https://openminds.om-i.org/props/criteriaQualityType
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.149696+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/criteriaQualityType
+  data_type: string
+  description: Distinct class that defines how the judgement or decision was made
+    for a particular criteria.
+  created_at: '2026-03-15T22:28:30.149697+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

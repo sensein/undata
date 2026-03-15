@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/0bbb04da-5669-5cea-bf26-1b61e27978a4
+  source_local_id: NWB.OpticalSeries.orientation
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.497406+00:00'
+versions:
+- version_num: 1
+  name: orientation
+  data_type: string
+  description: Description of image relative to some reference frame (e.g., which
+    way is up). Must also specify frame of reference.
+  created_at: '2026-03-15T22:28:31.497408+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

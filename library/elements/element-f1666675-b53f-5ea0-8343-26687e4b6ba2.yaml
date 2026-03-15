@@ -1,0 +1,21 @@
+element:
+  id: https://schema.undata.live/elements/f1666675-b53f-5ea0-8343-26687e4b6ba2
+  source_local_id: NWB.ImagingRetinotopy
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.537575+00:00'
+versions:
+- version_num: 1
+  name: ImagingRetinotopy
+  data_type: object
+  description: 'DEPRECATED. Intrinsic signal optical imaging or widefield imaging
+    for measuring retinotopy. Stores orthogonal maps (e.g., altitude/azimuth; radius/theta)
+    of responses to specific stimuli and a combined polarity map from which to identify
+    visual areas. This group does not store the raw responses imaged during retinotopic
+    mapping or the stimuli presented, but rather the resulting phase and power maps
+    after applying a Fourier transform on the averaged responses. Note: for data consistency,
+    all images and arrays are stored in the format [row][column] and [row, col], which
+    equates to [y][x]. Field of view and dimension arrays may appear backward (i.e.,
+    y before x).'
+  created_at: '2026-03-15T22:28:31.537576+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

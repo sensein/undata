@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/2f0bd7ac-005f-5d05-85bb-7df5d0d83f4b
+  source_local_id: AssetsSummary.dataStandard
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.818760+00:00'
+versions:
+- version_num: 1
+  name: dataStandard
+  data_type: string
+  description: Data Standard
+  created_at: '2026-03-15T22:28:29.818762+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

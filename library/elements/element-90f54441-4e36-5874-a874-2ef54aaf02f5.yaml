@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/90f54441-4e36-5874-a874-2ef54aaf02f5
+  source_local_id: ParcellationEntityVersion.https://openminds.om-i.org/props/ontologyIdentifier
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.832764+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/ontologyIdentifier
+  data_type: array
+  description: Term or code used to identify something or someone registered within
+    a particular ontology.
+  created_at: '2026-03-15T22:28:30.832767+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

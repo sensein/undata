@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/236408dc-8a1d-52aa-8e4c-5680287ddc50
+  source_local_id: Participant.disorder
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.897317+00:00'
+versions:
+- version_num: 1
+  name: disorder
+  data_type: string
+  description: Any current diagnosed disease or disorder associated with the participant
+    or subject.
+  created_at: '2026-03-15T22:28:29.897319+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

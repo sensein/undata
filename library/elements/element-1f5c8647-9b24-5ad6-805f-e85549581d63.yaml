@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/1f5c8647-9b24-5ad6-805f-e85549581d63
+  source_local_id: NWB.DfOverF
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.524818+00:00'
+versions:
+- version_num: 1
+  name: DfOverF
+  data_type: object
+  description: dF/F information about a region of interest (ROI). Storage hierarchy
+    of dF/F should be the same as for segmentation (i.e., same names for ROIs and
+    for image planes).
+  created_at: '2026-03-15T22:28:31.524820+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

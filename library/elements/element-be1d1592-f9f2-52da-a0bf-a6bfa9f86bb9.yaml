@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/be1d1592-f9f2-52da-a0bf-a6bfa9f86bb9
+  source_local_id: ServiceLink.https://openminds.om-i.org/props/previewImage
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.972900+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/previewImage
+  data_type: string
+  description: Add an image file to this service link that acts as a preview of its
+    content or could function as an icon.
+  created_at: '2026-03-15T22:28:30.972902+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

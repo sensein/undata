@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/330fd815-fe8d-50c1-93cd-03e5da9d26a1
+  source_local_id: StimulationActivity.https://openminds.om-i.org/props/stimulus
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.076461+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/stimulus
+  data_type: array
+  description: Add all stimuli used during this activity.
+  created_at: '2026-03-15T22:28:31.076463+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

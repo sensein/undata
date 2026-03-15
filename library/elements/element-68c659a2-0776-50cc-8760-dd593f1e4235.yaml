@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/68c659a2-0776-50cc-8760-dd593f1e4235
+  source_local_id: ProtocolExecution.https://openminds.om-i.org/props/studyTarget
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.905767+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/studyTarget
+  data_type: array
+  description: Structure or function that was targeted within a study.
+  created_at: '2026-03-15T22:28:30.905768+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

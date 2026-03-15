@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ec4a8056-b04d-5db4-9f78-bf858774f763
+  source_local_id: PublishedAsset.wasAttributedTo
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.932655+00:00'
+versions:
+- version_num: 1
+  name: wasAttributedTo
+  data_type: string
+  description: Associated participant(s) or subject(s).
+  created_at: '2026-03-15T22:28:29.932657+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

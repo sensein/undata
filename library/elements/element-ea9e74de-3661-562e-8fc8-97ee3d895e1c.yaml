@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/ea9e74de-3661-562e-8fc8-97ee3d895e1c
+  source_local_id: SubjectState.https://openminds.om-i.org/props/ageCategory
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.119028+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/ageCategory
+  data_type: string
+  description: Distinct life cycle class that is defined by a similar age or age range
+    (developmental stage) within a group of individual beings.
+  created_at: '2026-03-15T22:28:31.119029+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

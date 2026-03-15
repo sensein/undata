@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/97492bb0-c15c-5797-946f-576f187f7ba7
+  source_local_id: Participant.age
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.895411+00:00'
+versions:
+- version_num: 1
+  name: age
+  data_type: string
+  description: A representation of age using ISO 8601 duration. This should include
+    a valueReference if anything other than date of birth is used.
+  created_at: '2026-03-15T22:28:29.895413+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

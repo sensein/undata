@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/70448ea1-d842-5534-a94a-2b43522f8673
+  source_local_id: EphysStimulus.https://openminds.om-i.org/props/specification
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.467900+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/specification
+  data_type: array
+  description: Detailed and precise presentation of, or proposal for something.
+  created_at: '2026-03-15T22:28:30.467902+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

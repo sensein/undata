@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/5454f06b-8bd9-56cb-8967-37828da14946
+  source_local_id: LearningResource.https://openminds.om-i.org/props/learningOutcome
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.603359+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/learningOutcome
+  data_type: string
+  description: Enter a description for the expected learning outcomes of this learning
+    resource.
+  created_at: '2026-03-15T22:28:30.603360+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

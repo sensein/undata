@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/842b95f5-0066-52e7-9211-d535d92d2dc1
+  source_local_id: ElectrodeArrayUsage.https://openminds.om-i.org/props/usedSpecimen
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.448541+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/usedSpecimen
+  data_type: string
+  description: Add the state of the tissue sample or subject that this device was
+    used on.
+  created_at: '2026-03-15T22:28:30.448545+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/60dd67d9-e659-57ff-9668-db0e83f5a8bf
+  source_local_id: Organ.https://openminds.om-i.org/props/definition
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.795342+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/definition
+  data_type: string
+  description: Short, but precise statement of the meaning of a word, word group,
+    sign or a symbol.
+  created_at: '2026-03-15T22:28:30.795344+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

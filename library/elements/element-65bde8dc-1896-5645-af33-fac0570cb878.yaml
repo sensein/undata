@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/65bde8dc-1896-5645-af33-fac0570cb878
+  source_local_id: Locus.schemaKey
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.884091+00:00'
+versions:
+- version_num: 1
+  name: schemaKey
+  data_type: string
+  description: Schema Key
+  created_at: '2026-03-15T22:28:29.884094+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

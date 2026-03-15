@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/d60b63b8-59e2-51ac-9a9e-f9c711564643
+  source_local_id: MetaDataModelVersion.https://openminds.om-i.org/props/contribution
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.674550+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/contribution
+  data_type: array
+  description: Add all individual, organisational, or consortial contributions to
+    this research product version. These values override the inherited values from
+    the version-independent product.
+  created_at: '2026-03-15T22:28:30.674552+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

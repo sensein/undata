@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e7122b81-6769-5bc2-ac4e-ddb0a3918579
+  source_local_id: Service.https://openminds.om-i.org/props/howToCite
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.964108+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/howToCite
+  data_type: string
+  description: Preferred format for citing a particular object or legal person.
+  created_at: '2026-03-15T22:28:30.964110+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

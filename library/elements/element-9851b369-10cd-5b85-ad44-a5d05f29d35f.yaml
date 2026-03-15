@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/9851b369-10cd-5b85-ad44-a5d05f29d35f
+  source_local_id: Organization.id
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.887481+00:00'
+versions:
+- version_num: 1
+  name: id
+  data_type: string
+  description: Uniform resource identifier
+  created_at: '2026-03-15T22:28:29.887482+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/50c847fa-5c20-5422-9fb6-797946575a80
+  source_local_id: NWB.NWBContainer
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.402397+00:00'
+versions:
+- version_num: 1
+  name: NWBContainer
+  data_type: object
+  description: An abstract data type for a generic container storing collections of
+    data and metadata. Base type for all data and metadata containers.
+  created_at: '2026-03-15T22:28:31.402399+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

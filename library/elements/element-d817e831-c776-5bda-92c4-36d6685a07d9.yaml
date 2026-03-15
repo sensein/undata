@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/d817e831-c776-5bda-92c4-36d6685a07d9
+  source_local_id: ElectrodeUsage.https://openminds.om-i.org/props/contactResistance
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.457158+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/contactResistance
+  data_type: string
+  description: Enter the contact resistance of this electrode during its use.
+  created_at: '2026-03-15T22:28:30.457160+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

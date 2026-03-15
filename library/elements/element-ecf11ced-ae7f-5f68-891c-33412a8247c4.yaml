@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/ecf11ced-ae7f-5f68-891c-33412a8247c4
+  source_local_id: Optimization.https://openminds.om-i.org/props/resourceUsage
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.791469+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/resourceUsage
+  data_type: array
+  description: Enter all resources used during this computation (e.g., core-hours
+    or energy).
+  created_at: '2026-03-15T22:28:30.791471+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/308e6433-21a9-5f69-b328-fd0c1b5c3fbb
+  source_local_id: ElectrodeArrayUsage.https://openminds.om-i.org/props/contactResistances
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.444826+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/contactResistances
+  data_type: array
+  description: Enter the contact resistance for each electrode of this array during
+    its use, in the same order that the electrode identifiers for this electrode array
+    have been specified.
+  created_at: '2026-03-15T22:28:30.444827+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

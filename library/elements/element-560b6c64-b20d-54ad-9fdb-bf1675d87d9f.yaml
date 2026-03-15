@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/560b6c64-b20d-54ad-9fdb-bf1675d87d9f
+  source_local_id: Electrode.https://openminds.om-i.org/props/insulatorMaterial
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.434957+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/insulatorMaterial
+  data_type: string
+  description: Add the insulator material of this electrode.
+  created_at: '2026-03-15T22:28:30.434959+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

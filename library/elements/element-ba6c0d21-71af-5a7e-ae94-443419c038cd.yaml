@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ba6c0d21-71af-5a7e-ae94-443419c038cd
+  source_local_id: SoftwareVersion.https://openminds.om-i.org/props/operatingDevice
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.034069+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/operatingDevice
+  data_type: array
+  description: Add all operating devices compatible with this software version.
+  created_at: '2026-03-15T22:28:31.034071+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

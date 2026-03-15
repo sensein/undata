@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/36d55cbd-2d42-5abc-8e39-fd37086a3fcb
+  source_local_id: TermSuggestion.https://openminds.om-i.org/props/addExistingTerminology
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.136430+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/addExistingTerminology
+  data_type: string
+  description: Reference to an existing terminology (distinct class to group related
+    terms).
+  created_at: '2026-03-15T22:28:31.136432+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

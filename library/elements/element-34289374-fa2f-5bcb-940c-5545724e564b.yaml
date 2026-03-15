@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/34289374-fa2f-5bcb-940c-5545724e564b
+  source_local_id: Chapter.https://openminds.om-i.org/props/funding
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.214273+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/funding
+  data_type: array
+  description: Money provided by a legal person for a particular purpose.
+  created_at: '2026-03-15T22:28:30.214274+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

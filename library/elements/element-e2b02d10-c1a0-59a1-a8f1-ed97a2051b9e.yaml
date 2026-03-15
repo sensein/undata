@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/e2b02d10-c1a0-59a1-a8f1-ed97a2051b9e
+  source_local_id: MRIScannerUsage.https://openminds.om-i.org/props/fatSuppressionTechnique
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.023741+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/fatSuppressionTechnique
+  data_type: string
+  description: Add the fat suppression technique used for this acquisition (for example,
+    fat saturation, SPAIR, STIR, or Dixon); if no fat suppression was applied, leave
+    this field null. This information is typically specified in the sequence protocol
+    and can be retrieved from the DICOM header.
+  created_at: '2026-03-15T22:28:30.023743+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

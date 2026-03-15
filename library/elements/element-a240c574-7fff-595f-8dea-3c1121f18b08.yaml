@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a240c574-7fff-595f-8dea-3c1121f18b08
+  source_local_id: ModelValidation.https://openminds.om-i.org/props/startedBy
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.716215+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/startedBy
+  data_type: string
+  description: Add the agent that started this computation.
+  created_at: '2026-03-15T22:28:30.716217+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/97da0136-e598-52be-bd78-ad9379261a4f
+  source_local_id: Dandiset.keywords
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.865350+00:00'
+versions:
+- version_num: 1
+  name: keywords
+  data_type: string
+  description: Keywords used to describe this content.
+  created_at: '2026-03-15T22:28:29.865352+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

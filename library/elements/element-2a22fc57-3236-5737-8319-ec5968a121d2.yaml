@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/2a22fc57-3236-5737-8319-ec5968a121d2
+  source_local_id: HardwareProduct.https://openminds.om-i.org/props/scope
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.557881+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/scope
+  data_type: array
+  description: Extent of something.
+  created_at: '2026-03-15T22:28:30.557889+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

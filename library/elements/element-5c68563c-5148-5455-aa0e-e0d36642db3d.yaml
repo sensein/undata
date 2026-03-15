@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/5c68563c-5148-5455-aa0e-e0d36642db3d
+  source_local_id: NWB.SpikeEventSeries.data
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.424664+00:00'
+versions:
+- version_num: 1
+  name: data
+  data_type: string
+  description: Spike waveforms.
+  created_at: '2026-03-15T22:28:31.424666+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

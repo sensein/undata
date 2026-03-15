@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/d996e712-2952-54f8-8fc4-4c2a90453b43
+  source_local_id: NWB.RepetitionsTable
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.487367+00:00'
+versions:
+- version_num: 1
+  name: RepetitionsTable
+  data_type: object
+  description: A table for grouping different sequential intracellular recordings
+    together. With each SequentialRecording typically representing a particular type
+    of stimulus, the RepetitionsTable table is typically used to group sets of stimuli
+    applied in sequence.
+  created_at: '2026-03-15T22:28:31.487369+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

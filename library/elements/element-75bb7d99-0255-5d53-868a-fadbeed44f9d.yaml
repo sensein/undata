@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/75bb7d99-0255-5d53-868a-fadbeed44f9d
+  source_local_id: Accessibility.https://openminds.om-i.org/props/paymentModel
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.070110+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/paymentModel
+  data_type: array
+  description: Add all relevant payment model types indicating how access costs are
+    determined. If no payment is requires, select zero-cost payment model.
+  created_at: '2026-03-15T22:28:30.070111+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

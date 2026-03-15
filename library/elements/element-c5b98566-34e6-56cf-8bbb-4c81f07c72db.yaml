@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/c5b98566-34e6-56cf-8bbb-4c81f07c72db
+  source_local_id: ElectrodeArray.https://openminds.om-i.org/props/conductorMaterial
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.438149+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/conductorMaterial
+  data_type: string
+  description: Add the conductor material of this electrode array.
+  created_at: '2026-03-15T22:28:30.438152+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

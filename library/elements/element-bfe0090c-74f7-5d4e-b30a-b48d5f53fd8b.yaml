@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/bfe0090c-74f7-5d4e-b30a-b48d5f53fd8b
+  source_local_id: SubjectState.https://openminds.om-i.org/props/relativeTimeIndication
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.122960+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/relativeTimeIndication
+  data_type: string
+  description: If there is a temporal relation between the states of a specimen (set),
+    enter the relative time that has passed between this and the preceding specimen
+    (set) state referenced under 'descendedFrom'.
+  created_at: '2026-03-15T22:28:31.122962+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

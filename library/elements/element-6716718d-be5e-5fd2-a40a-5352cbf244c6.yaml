@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6716718d-be5e-5fd2-a40a-5352cbf244c6
+  source_local_id: Affiliation.https://openminds.om-i.org/props/person
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.076791+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/person
+  data_type: string
+  description: Add the individual to whom this affiliation belongs.
+  created_at: '2026-03-15T22:28:30.076792+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

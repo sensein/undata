@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/0ba9bae3-446c-5267-a15c-8646a2f76eac
+  source_local_id: QuantitativeValue.https://openminds.om-i.org/props/unit
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.927807+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/unit
+  data_type: string
+  description: Determinate quantity adopted as a standard of measurement.
+  created_at: '2026-03-15T22:28:30.927808+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

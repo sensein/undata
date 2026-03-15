@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6613cfbf-302e-5097-8b54-1bf13cd0cbf2
+  source_local_id: NWB.Units.obs_intervals_index
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.509666+00:00'
+versions:
+- version_num: 1
+  name: obs_intervals_index
+  data_type: object
+  description: Index into the obs_intervals dataset.
+  created_at: '2026-03-15T22:28:31.509668+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

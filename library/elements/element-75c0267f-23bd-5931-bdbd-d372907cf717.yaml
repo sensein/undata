@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/75c0267f-23bd-5931-bdbd-d372907cf717
+  source_local_id: NWB.VoltageClampSeries.resistance_comp_prediction
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.469122+00:00'
+versions:
+- version_num: 1
+  name: resistance_comp_prediction
+  data_type: float
+  description: Resistance compensation prediction, in percent.
+  created_at: '2026-03-15T22:28:31.469123+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

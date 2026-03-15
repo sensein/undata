@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/fe87a92e-afbf-5bff-98ce-b535d3b13961
+  source_local_id: PublishedAsset.schemaKey
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.918272+00:00'
+versions:
+- version_num: 1
+  name: schemaKey
+  data_type: string
+  description: Schema Key
+  created_at: '2026-03-15T22:28:29.918274+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

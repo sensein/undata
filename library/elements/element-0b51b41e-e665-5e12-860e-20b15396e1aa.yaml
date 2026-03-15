@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/0b51b41e-e665-5e12-860e-20b15396e1aa
+  source_local_id: Accessibility.https://openminds.om-i.org/props/form
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.069609+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/form
+  data_type: string
+  description: Add the relevant access form indicating whether the user interacts
+    directly or through mediation.
+  created_at: '2026-03-15T22:28:30.069610+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

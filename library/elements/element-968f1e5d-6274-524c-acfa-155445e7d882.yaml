@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/968f1e5d-6274-524c-acfa-155445e7d882
+  source_local_id: SubjectGroup.https://openminds.om-i.org/props/species
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.110694+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/species
+  data_type: array
+  description: Category of biological classification comprising related organisms
+    or populations potentially capable of interbreeding, and being designated by a
+    binomial that consists of the name of a genus followed by a Latin or latinized
+    uncapitalized noun or adjective.
+  created_at: '2026-03-15T22:28:31.110696+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

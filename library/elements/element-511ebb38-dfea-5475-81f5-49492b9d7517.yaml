@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/511ebb38-dfea-5475-81f5-49492b9d7517
+  source_local_id: SoftwareVersion.https://openminds.om-i.org/props/isVersionOf
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.032570+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/isVersionOf
+  data_type: string
+  description: Add the version-independent information about this software.
+  created_at: '2026-03-15T22:28:31.032571+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

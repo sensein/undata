@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/729f4cde-128e-588b-9344-b49c30b9de8f
+  source_local_id: NWB.OpticalSeries.distance
+  source_id: https://schema.undata.live/sources/nwb
+  created_at: '2026-03-15T22:28:31.496067+00:00'
+versions:
+- version_num: 1
+  name: distance
+  data_type: float
+  description: Distance from camera/monitor to target/eye.
+  created_at: '2026-03-15T22:28:31.496068+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

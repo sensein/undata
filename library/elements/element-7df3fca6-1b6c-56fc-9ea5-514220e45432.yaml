@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7df3fca6-1b6c-56fc-9ea5-514220e45432
+  source_local_id: WebResource.https://openminds.om-i.org/props/format
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.253302+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/format
+  data_type: string
+  description: Method of digitally organizing and structuring data or information.
+  created_at: '2026-03-15T22:28:31.253304+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

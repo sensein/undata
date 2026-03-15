@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/611a5d69-d892-5f4c-97cb-79ce9813221b
+  source_local_id: WorkflowRecipeVersion.https://openminds.om-i.org/props/copyright
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:31.268236+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/copyright
+  data_type: string
+  description: Exclusive and assignable legal right of an originator to reproduce,
+    publish, sell, or distribute the matter and form of a creative work for a defined
+    time period.
+  created_at: '2026-03-15T22:28:31.268237+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

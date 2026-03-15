@@ -1,0 +1,16 @@
+element:
+  id: https://schema.undata.live/elements/cbeb7bc1-5849-595d-951c-081920c27441
+  source_local_id: MRIScannerUsage.https://openminds.om-i.org/props/MRIWeighting
+  source_id: https://schema.undata.live/sources/openminds
+  created_at: '2026-03-15T22:28:30.020064+00:00'
+versions:
+- version_num: 1
+  name: https://openminds.om-i.org/props/MRIWeighting
+  data_type: string
+  description: Add the magnetic resonance imaging weighting type describing the dominant
+    source of image contrast. This designation reflects the contrast determined by
+    repetition time, echo time, and inversion time and can be identified from the
+    sequence protocol.
+  created_at: '2026-03-15T22:28:30.020066+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

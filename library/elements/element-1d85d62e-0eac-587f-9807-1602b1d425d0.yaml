@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/1d85d62e-0eac-587f-9807-1602b1d425d0
+  source_local_id: Asset.blobDateModified
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.810111+00:00'
+versions:
+- version_num: 1
+  name: blobDateModified
+  data_type: string
+  description: Asset file modification date and time.
+  created_at: '2026-03-15T22:28:29.810113+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,12 @@
+element:
+  id: https://schema.undata.live/elements/7275f1e8-afc4-5420-9c0a-bfcf8866389d
+  source_local_id: PropertyValue.minValue
+  source_id: https://schema.undata.live/sources/dandi
+  created_at: '2026-03-15T22:28:29.909720+00:00'
+versions:
+- version_num: 1
+  name: minValue
+  data_type: string
+  created_at: '2026-03-15T22:28:29.909722+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1
