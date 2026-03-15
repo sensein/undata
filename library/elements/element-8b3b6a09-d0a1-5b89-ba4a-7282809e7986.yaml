@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8b3b6a09-d0a1-5b89-ba4a-7282809e7986
+  source_local_id: coordinate_system
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.167307+00:00'
+versions:
+- version_num: 1
+  name: coordinate_system
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.167309+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7232bda7-9887-5da0-bb68-f16395e6ca51
+  source_local_id: PDw
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.239677+00:00'
+versions:
+- version_num: 1
+  name: PDw
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.239679+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/1c14ae9b-6388-5021-9d36-045b3b021aa9
+  source_local_id: T2w
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.247580+00:00'
+versions:
+- version_num: 1
+  name: T2w
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.247586+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

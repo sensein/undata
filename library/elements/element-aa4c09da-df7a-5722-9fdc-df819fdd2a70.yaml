@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/aa4c09da-df7a-5722-9fdc-df819fdd2a70
+  source_local_id: DecayCorrectionFactor
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.986536+00:00'
+versions:
+- version_num: 1
+  name: DecayCorrectionFactor
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.986539+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

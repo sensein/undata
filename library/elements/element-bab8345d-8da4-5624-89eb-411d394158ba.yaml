@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/bab8345d-8da4-5624-89eb-411d394158ba
+  source_local_id: NegativeContrast
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.077268+00:00'
+versions:
+- version_num: 1
+  name: NegativeContrast
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.077270+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8a9c8295-4281-5bde-924c-890b71c641e6
+  source_local_id: EchoTime1
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.010914+00:00'
+versions:
+- version_num: 1
+  name: EchoTime1
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.010916+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

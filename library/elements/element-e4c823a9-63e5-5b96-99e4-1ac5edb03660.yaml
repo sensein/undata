@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e4c823a9-63e5-5b96-99e4-1ac5edb03660
+  source_local_id: Acknowledgements
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.950290+00:00'
+versions:
+- version_num: 1
+  name: Acknowledgements
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.950293+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

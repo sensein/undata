@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8f1818e9-1820-541a-9604-e33f836a44b6
+  source_local_id: ECOGChannelCount
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.999874+00:00'
+versions:
+- version_num: 1
+  name: ECOGChannelCount
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.999877+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

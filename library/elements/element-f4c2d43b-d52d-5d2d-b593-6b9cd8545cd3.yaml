@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f4c2d43b-d52d-5d2d-b593-6b9cd8545cd3
+  source_local_id: InjectionEnd
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.041886+00:00'
+versions:
+- version_num: 1
+  name: InjectionEnd
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.041888+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

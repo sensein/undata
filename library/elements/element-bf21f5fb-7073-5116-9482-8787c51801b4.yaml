@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/bf21f5fb-7073-5116-9482-8787c51801b4
+  source_local_id: VELChannelCount
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.156182+00:00'
+versions:
+- version_num: 1
+  name: VELChannelCount
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.156185+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

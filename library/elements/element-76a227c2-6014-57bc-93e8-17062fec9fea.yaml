@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/76a227c2-6014-57bc-93e8-17062fec9fea
+  source_local_id: ContrastBolusIngredient
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.982420+00:00'
+versions:
+- version_num: 1
+  name: ContrastBolusIngredient
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.982422+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

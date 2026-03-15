@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ad3c9531-4d42-58a2-878a-aba6213b003e
+  source_local_id: fdt
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.386996+00:00'
+versions:
+- version_num: 1
+  name: fdt
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.386999+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

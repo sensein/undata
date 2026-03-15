@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f72b6a99-e56f-5438-bf83-68a8eda4d256
+  source_local_id: CoordinateReportStrategy
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.982858+00:00'
+versions:
+- version_num: 1
+  name: CoordinateReportStrategy
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.982860+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

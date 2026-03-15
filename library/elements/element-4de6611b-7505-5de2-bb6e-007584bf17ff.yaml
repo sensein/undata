@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4de6611b-7505-5de2-bb6e-007584bf17ff
+  source_local_id: beh
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.254399+00:00'
+versions:
+- version_num: 1
+  name: beh
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.254401+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

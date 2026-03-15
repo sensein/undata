@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/cf75207e-38a0-5c18-abe2-6ee74777dc25
+  source_local_id: GADOLINIUM
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.359984+00:00'
+versions:
+- version_num: 1
+  name: GADOLINIUM
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.359986+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

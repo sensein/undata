@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a1e109cb-a3ea-5990-80dc-c79a71734e9d
+  source_local_id: ScanStart
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.123102+00:00'
+versions:
+- version_num: 1
+  name: ScanStart
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.123105+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

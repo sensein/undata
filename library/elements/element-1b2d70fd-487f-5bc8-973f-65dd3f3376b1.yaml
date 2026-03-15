@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/1b2d70fd-487f-5bc8-973f-65dd3f3376b1
+  source_local_id: mrsref
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.269380+00:00'
+versions:
+- version_num: 1
+  name: mrsref
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.269382+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

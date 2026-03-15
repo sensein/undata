@@ -1,0 +1,15 @@
+element:
+  id: https://schema.undata.live/elements/6401b7b8-7c81-5051-9b60-04cda47ca78f
+  source_local_id: aind.data_description.modalities
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T21:05:11.521102+00:00'
+versions:
+- version_num: 1
+  name: modalities
+  data_type: string
+  description: A short name for the specific manner, characteristic, pattern of application,
+    or the employment of any technology or formal procedure to generate data for a
+    study
+  created_at: '2026-03-15T21:05:11.521104+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

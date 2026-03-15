@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/2415e4ab-7046-58aa-8fe8-1cf651a3fa63
+  source_local_id: calibration
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.304454+00:00'
+versions:
+- version_num: 1
+  name: calibration
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.304458+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6d9962cd-4df3-5c28-b0ac-b6a510f81d76
+  source_local_id: tif
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.396773+00:00'
+versions:
+- version_num: 1
+  name: tif
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.396785+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

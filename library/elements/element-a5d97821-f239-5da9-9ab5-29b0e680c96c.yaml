@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a5d97821-f239-5da9-9ab5-29b0e680c96c
+  source_local_id: AcquisitionDuration
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.951125+00:00'
+versions:
+- version_num: 1
+  name: AcquisitionDuration
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.951136+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

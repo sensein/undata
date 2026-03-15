@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/1a85a94d-357a-5a80-bb21-879323dd7243
+  source_local_id: sourcedata
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.406541+00:00'
+versions:
+- version_num: 1
+  name: sourcedata
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.406543+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

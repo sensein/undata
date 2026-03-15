@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/b9abb699-955e-5ed1-ab9f-bd1c73dc4d24
+  source_local_id: MPM
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.233840+00:00'
+versions:
+- version_num: 1
+  name: MPM
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.233842+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

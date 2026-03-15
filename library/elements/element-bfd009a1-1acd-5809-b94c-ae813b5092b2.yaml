@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/bfd009a1-1acd-5809-b94c-ae813b5092b2
+  source_local_id: wavelength_nominal
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.204907+00:00'
+versions:
+- version_num: 1
+  name: wavelength_nominal
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.204909+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/927a7036-55bd-5f8f-a18f-79a39665e9d6
+  source_local_id: MolarActivity
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.074087+00:00'
+versions:
+- version_num: 1
+  name: MolarActivity
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.074089+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

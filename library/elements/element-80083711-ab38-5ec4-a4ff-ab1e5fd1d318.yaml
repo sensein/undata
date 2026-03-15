@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/80083711-ab38-5ec4-a4ff-ab1e5fd1d318
+  source_local_id: Instructions
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.044146+00:00'
+versions:
+- version_num: 1
+  name: Instructions
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.044148+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

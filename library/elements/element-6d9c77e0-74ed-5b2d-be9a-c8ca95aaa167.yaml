@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6d9c77e0-74ed-5b2d-be9a-c8ca95aaa167
+  source_local_id: EchoTime__fmap
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.011905+00:00'
+versions:
+- version_num: 1
+  name: EchoTime__fmap
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.011908+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

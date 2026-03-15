@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/b8baa7ef-d04c-5285-945e-550cd89e34d5
+  source_local_id: JNTANG
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.328183+00:00'
+versions:
+- version_num: 1
+  name: JNTANG
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.328186+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

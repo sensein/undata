@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/c932b40f-15b7-5059-b27e-a9953ac0fd89
+  source_local_id: T2star
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.245856+00:00'
+versions:
+- version_num: 1
+  name: T2star
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.245858+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

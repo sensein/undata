@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/aa8e654e-3f74-587e-b69b-75d8598a9bad
+  source_local_id: x_coordinate
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.171626+00:00'
+versions:
+- version_num: 1
+  name: x_coordinate
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.171628+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

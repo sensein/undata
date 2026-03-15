@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7326c26c-9255-54b5-b1cd-56e0b45b0c3b
+  source_local_id: session_id
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.192468+00:00'
+versions:
+- version_num: 1
+  name: session_id
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.192470+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

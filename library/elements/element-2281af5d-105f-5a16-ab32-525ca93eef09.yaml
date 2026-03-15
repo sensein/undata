@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/2281af5d-105f-5a16-ab32-525ca93eef09
+  source_local_id: notch
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.183753+00:00'
+versions:
+- version_num: 1
+  name: notch
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.183763+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

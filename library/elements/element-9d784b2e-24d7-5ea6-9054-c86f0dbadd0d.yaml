@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/9d784b2e-24d7-5ea6-9054-c86f0dbadd0d
+  source_local_id: TRIG
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.338139+00:00'
+versions:
+- version_num: 1
+  name: TRIG
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.338141+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

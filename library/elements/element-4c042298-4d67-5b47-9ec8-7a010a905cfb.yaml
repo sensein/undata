@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4c042298-4d67-5b47-9ec8-7a010a905cfb
+  source_local_id: fsaveragesym
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.318991+00:00'
+versions:
+- version_num: 1
+  name: fsaveragesym
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.318993+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

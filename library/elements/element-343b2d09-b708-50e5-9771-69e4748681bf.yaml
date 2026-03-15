@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/343b2d09-b708-50e5-9771-69e4748681bf
+  source_local_id: tracked_point__channels
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.199598+00:00'
+versions:
+- version_num: 1
+  name: tracked_point__channels
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.199600+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

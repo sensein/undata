@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8e6b545b-0eb3-5355-9095-a092370cb7dc
+  source_local_id: MagneticFieldStrength
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.064738+00:00'
+versions:
+- version_num: 1
+  name: MagneticFieldStrength
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.064740+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

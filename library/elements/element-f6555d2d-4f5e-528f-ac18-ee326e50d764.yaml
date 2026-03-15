@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f6555d2d-4f5e-528f-ac18-ee326e50d764
+  source_local_id: SEEG
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.343270+00:00'
+versions:
+- version_num: 1
+  name: SEEG
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.343274+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

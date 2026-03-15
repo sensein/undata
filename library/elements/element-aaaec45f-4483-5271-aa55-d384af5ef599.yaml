@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/aaaec45f-4483-5271-aa55-d384af5ef599
+  source_local_id: segmentation
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.220786+00:00'
+versions:
+- version_num: 1
+  name: segmentation
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.220788+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

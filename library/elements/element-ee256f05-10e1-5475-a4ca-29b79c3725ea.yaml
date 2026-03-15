@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ee256f05-10e1-5475-a4ca-29b79c3725ea
+  source_local_id: PharmaceuticalDoseUnits
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.092501+00:00'
+versions:
+- version_num: 1
+  name: PharmaceuticalDoseUnits
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.092503+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

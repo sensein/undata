@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/52cd7b37-0f95-59e0-a189-fb3ac46399de
+  source_local_id: PowerLineFrequency
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.098627+00:00'
+versions:
+- version_num: 1
+  name: PowerLineFrequency
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.098636+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

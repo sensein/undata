@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4675d1b3-b7f9-5616-ae66-2553e72dc834
+  source_local_id: AnalyticalApproach
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.953297+00:00'
+versions:
+- version_num: 1
+  name: AnalyticalApproach
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.953299+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

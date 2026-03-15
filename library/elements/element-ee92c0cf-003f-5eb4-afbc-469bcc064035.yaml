@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ee92c0cf-003f-5eb4-afbc-469bcc064035
+  source_local_id: dwi
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.259249+00:00'
+versions:
+- version_num: 1
+  name: dwi
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.259252+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

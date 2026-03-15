@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/981c00d0-a5e3-54fe-a79f-e55c87ad522d
+  source_local_id: AnatomicalLandmarkCoordinateUnits
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.955444+00:00'
+versions:
+- version_num: 1
+  name: AnatomicalLandmarkCoordinateUnits
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.955448+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

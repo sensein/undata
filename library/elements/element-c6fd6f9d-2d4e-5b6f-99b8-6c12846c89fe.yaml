@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/c6fd6f9d-2d4e-5b6f-99b8-6c12846c89fe
+  source_local_id: LabelingEfficiency
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.048642+00:00'
+versions:
+- version_num: 1
+  name: LabelingEfficiency
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.048644+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

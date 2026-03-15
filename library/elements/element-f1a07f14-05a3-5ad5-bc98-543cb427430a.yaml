@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f1a07f14-05a3-5ad5-bc98-543cb427430a
+  source_local_id: CapManufacturersModelName
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.971719+00:00'
+versions:
+- version_num: 1
+  name: CapManufacturersModelName
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.971722+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

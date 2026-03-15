@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/47ba9186-dfef-5f14-b622-eab172192056
+  source_local_id: M0Type
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.056081+00:00'
+versions:
+- version_num: 1
+  name: M0Type
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.056083+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/671018fa-2b12-5e52-96a9-3230efc05eb3
+  source_local_id: EditPulse
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.012802+00:00'
+versions:
+- version_num: 1
+  name: EditPulse
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.012805+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

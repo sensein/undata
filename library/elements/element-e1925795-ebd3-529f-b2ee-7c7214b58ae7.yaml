@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e1925795-ebd3-529f-b2ee-7c7214b58ae7
+  source_local_id: DigitizedHeadPointsCoordinateSystemDescription
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.995237+00:00'
+versions:
+- version_num: 1
+  name: DigitizedHeadPointsCoordinateSystemDescription
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.995240+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

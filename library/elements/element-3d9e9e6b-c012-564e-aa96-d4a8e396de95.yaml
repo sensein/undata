@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/3d9e9e6b-c012-564e-aa96-d4a8e396de95
+  source_local_id: GAUSSHANN
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.287915+00:00'
+versions:
+- version_num: 1
+  name: GAUSSHANN
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.287917+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

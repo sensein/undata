@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/121229e5-00ab-524a-a0fb-d8f208c766ca
+  source_local_id: motion
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.268565+00:00'
+versions:
+- version_num: 1
+  name: motion
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.268567+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

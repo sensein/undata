@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/dc61e99c-26f8-50e7-b161-0e7f185df1f3
+  source_local_id: LabelingPulseAverageGradient
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.050412+00:00'
+versions:
+- version_num: 1
+  name: LabelingPulseAverageGradient
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.050414+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

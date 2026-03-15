@@ -1,0 +1,14 @@
+element:
+  id: https://schema.undata.live/elements/366536e3-32ce-5d37-ba9a-98b7c76007e3
+  source_local_id: aind.instrument.coordinate_system
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T21:05:11.527427+00:00'
+versions:
+- version_num: 1
+  name: coordinate_system
+  data_type: object
+  description: Origin and axis definitions for determining the position of the instrument's
+    components
+  created_at: '2026-03-15T21:05:11.527429+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

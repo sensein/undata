@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/caeac85b-46d7-52a5-9431-e8d8e270b9e1
+  source_local_id: Columns
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.979647+00:00'
+versions:
+- version_num: 1
+  name: Columns
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.979649+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

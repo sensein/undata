@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/2008165c-19c6-5703-9b27-edec59ed76d5
+  source_local_id: EOG
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.332839+00:00'
+versions:
+- version_num: 1
+  name: EOG
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.332841+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

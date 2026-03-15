@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/652c2f5a-7916-535e-9187-14173a2d811f
+  source_local_id: NumberOfVolumesDiscardedByScanner
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.082834+00:00'
+versions:
+- version_num: 1
+  name: NumberOfVolumesDiscardedByScanner
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.082836+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

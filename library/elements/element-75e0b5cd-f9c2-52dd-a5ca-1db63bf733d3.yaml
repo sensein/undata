@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/75e0b5cd-f9c2-52dd-a5ca-1db63bf733d3
+  source_local_id: PulseDuration
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.099935+00:00'
+versions:
+- version_num: 1
+  name: PulseDuration
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.099937+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

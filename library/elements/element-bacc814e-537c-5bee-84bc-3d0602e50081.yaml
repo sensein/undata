@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/bacc814e-537c-5bee-84bc-3d0602e50081
+  source_local_id: md
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.389554+00:00'
+versions:
+- version_num: 1
+  name: md
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.389556+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

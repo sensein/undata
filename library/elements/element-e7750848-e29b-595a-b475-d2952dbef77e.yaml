@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e7750848-e29b-595a-b475-d2952dbef77e
+  source_local_id: DelayAfterTrigger
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.987985+00:00'
+versions:
+- version_num: 1
+  name: DelayAfterTrigger
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.987990+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

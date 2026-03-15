@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/47e73be3-5617-5d91-bcbf-05bad6094e7b
+  source_local_id: TotalAcquiredPairs
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.146209+00:00'
+versions:
+- version_num: 1
+  name: TotalAcquiredPairs
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.146211+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

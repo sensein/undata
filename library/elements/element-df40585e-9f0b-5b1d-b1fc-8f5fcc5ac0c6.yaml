@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/df40585e-9f0b-5b1d-b1fc-8f5fcc5ac0c6
+  source_local_id: OneD
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.285725+00:00'
+versions:
+- version_num: 1
+  name: OneD
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.285727+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/bc63a746-83cc-5255-9a2e-5ec3354e4b18
+  source_local_id: hplc_recovery_fractions
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.176527+00:00'
+versions:
+- version_num: 1
+  name: hplc_recovery_fractions
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.176529+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/3fbd8f89-3b33-5094-85ba-a83f4fee2cc3
+  source_local_id: rrid
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.378427+00:00'
+versions:
+- version_num: 1
+  name: rrid
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.378429+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

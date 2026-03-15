@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8b04b5a9-08d2-5de8-a0b2-3c34f1d41b04
+  source_local_id: aind.instrument.temperature_control
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T21:05:11.527890+00:00'
+versions:
+- version_num: 1
+  name: temperature_control
+  data_type: boolean
+  description: Does the instrument maintain a constant temperature?
+  created_at: '2026-03-15T21:05:11.527892+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

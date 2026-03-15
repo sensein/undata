@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/77b0ac0d-3fb4-539f-b2d6-a1928eed073c
+  source_local_id: SoftwareFilters
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.131961+00:00'
+versions:
+- version_num: 1
+  name: SoftwareFilters
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.131963+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

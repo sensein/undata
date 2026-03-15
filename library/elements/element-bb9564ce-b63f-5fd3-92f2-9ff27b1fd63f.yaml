@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/bb9564ce-b63f-5fd3-92f2-9ff27b1fd63f
+  source_local_id: PlasmaAvail
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.096327+00:00'
+versions:
+- version_num: 1
+  name: PlasmaAvail
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.096329+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

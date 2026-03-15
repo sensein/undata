@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/cc8cb4de-604b-52c5-af62-d174220a9ac2
+  source_local_id: MaxMovement
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.068319+00:00'
+versions:
+- version_num: 1
+  name: MaxMovement
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.068325+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

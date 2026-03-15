@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/0d72bb4a-c2b2-5a82-8571-e4c6a16b88ff
+  source_local_id: SpecificRadioactivityUnits
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.137467+00:00'
+versions:
+- version_num: 1
+  name: SpecificRadioactivityUnits
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.137469+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

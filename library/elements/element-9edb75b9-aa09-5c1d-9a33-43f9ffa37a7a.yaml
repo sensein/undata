@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/9edb75b9-aa09-5c1d-9a33-43f9ffa37a7a
+  source_local_id: HEDVersion
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.029269+00:00'
+versions:
+- version_num: 1
+  name: HEDVersion
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.029272+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

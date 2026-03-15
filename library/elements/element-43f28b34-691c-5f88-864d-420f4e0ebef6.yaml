@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/43f28b34-691c-5f88-864d-420f4e0ebef6
+  source_local_id: LATENCYChannelCount
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.053044+00:00'
+versions:
+- version_num: 1
+  name: LATENCYChannelCount
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.053046+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

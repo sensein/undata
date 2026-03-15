@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/93c1c702-f1eb-5a9e-ba6a-39fd5bd7d462
+  source_local_id: Genomic
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.299162+00:00'
+versions:
+- version_num: 1
+  name: Genomic
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.299164+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

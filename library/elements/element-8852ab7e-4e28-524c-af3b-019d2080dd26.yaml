@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8852ab7e-4e28-524c-af3b-019d2080dd26
+  source_local_id: microvascular
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.372382+00:00'
+versions:
+- version_num: 1
+  name: microvascular
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.372387+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/0b67b723-c9b7-5d71-a2ca-c9964dc15ee4
+  source_local_id: InstitutionName
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.043242+00:00'
+versions:
+- version_num: 1
+  name: InstitutionName
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.043245+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

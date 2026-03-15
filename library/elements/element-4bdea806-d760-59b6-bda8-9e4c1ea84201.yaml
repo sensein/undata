@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4bdea806-d760-59b6-bda8-9e4c1ea84201
+  source_local_id: HeadStabilization
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.033863+00:00'
+versions:
+- version_num: 1
+  name: HeadStabilization
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.033865+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

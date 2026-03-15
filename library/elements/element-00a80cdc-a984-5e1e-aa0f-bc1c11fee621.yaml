@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/00a80cdc-a984-5e1e-aa0f-bc1c11fee621
+  source_local_id: BodyPartDetails
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.966170+00:00'
+versions:
+- version_num: 1
+  name: BodyPartDetails
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.966173+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/3443c541-37de-5e3f-aee0-89375751557d
+  source_local_id: volume_type
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.204382+00:00'
+versions:
+- version_num: 1
+  name: volume_type
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.204384+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6169a118-541d-596e-aad7-adde5791c156
+  source_local_id: AUDIO
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.332003+00:00'
+versions:
+- version_num: 1
+  name: AUDIO
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.332006+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

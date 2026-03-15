@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/5b56cf14-8747-5e4a-8e92-a2ad0140dd7c
+  source_local_id: ScanOptions
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.122615+00:00'
+versions:
+- version_num: 1
+  name: ScanOptions
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.122618+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

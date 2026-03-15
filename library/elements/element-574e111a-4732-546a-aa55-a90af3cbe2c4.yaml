@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/574e111a-4732-546a-aa55-a90af3cbe2c4
+  source_local_id: OuterVolumeSuppression
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.086723+00:00'
+versions:
+- version_num: 1
+  name: OuterVolumeSuppression
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.086725+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

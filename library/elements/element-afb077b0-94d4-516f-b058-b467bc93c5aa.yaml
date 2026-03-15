@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/afb077b0-94d4-516f-b058-b467bc93c5aa
+  source_local_id: TB1AFI
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.248151+00:00'
+versions:
+- version_num: 1
+  name: TB1AFI
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.248155+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

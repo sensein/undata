@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/52be2714-d112-559a-97b2-acb38d98f655
+  source_local_id: EEGGround
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.002450+00:00'
+versions:
+- version_num: 1
+  name: EEGGround
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.002453+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

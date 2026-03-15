@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/b9373969-980b-5dd7-88fc-25814d1f6bf6
+  source_local_id: blood
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.254835+00:00'
+versions:
+- version_num: 1
+  name: blood
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.254837+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

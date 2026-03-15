@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/452ee8b8-6fec-5f1c-b41b-5c47c7026e98
+  source_local_id: ieeg
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.264408+00:00'
+versions:
+- version_num: 1
+  name: ieeg
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.264411+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

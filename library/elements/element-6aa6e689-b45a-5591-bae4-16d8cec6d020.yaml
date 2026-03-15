@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6aa6e689-b45a-5591-bae4-16d8cec6d020
+  source_local_id: ElectrodeMaterial
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.003948+00:00'
+versions:
+- version_num: 1
+  name: ElectrodeMaterial
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.003950+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

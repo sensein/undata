@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/7b44a969-2fcd-58dc-8ef3-7de79efd36a8
+  source_local_id: TracerRadionuclide
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.149214+00:00'
+versions:
+- version_num: 1
+  name: TracerRadionuclide
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.149217+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/ab0fea7a-a106-5ff0-ab6b-78d32fce6b7c
+  source_local_id: S0map
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.242584+00:00'
+versions:
+- version_num: 1
+  name: S0map
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.242586+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

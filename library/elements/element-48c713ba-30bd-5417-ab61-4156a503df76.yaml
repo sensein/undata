@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/48c713ba-30bd-5417-ab61-4156a503df76
+  source_local_id: physio
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.273444+00:00'
+versions:
+- version_num: 1
+  name: physio
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.273445+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

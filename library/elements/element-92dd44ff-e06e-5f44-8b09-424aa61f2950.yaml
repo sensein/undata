@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/92dd44ff-e06e-5f44-8b09-424aa61f2950
+  source_local_id: BasedOn
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.964498+00:00'
+versions:
+- version_num: 1
+  name: BasedOn
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.964501+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

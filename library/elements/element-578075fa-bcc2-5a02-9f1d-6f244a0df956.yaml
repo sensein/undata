@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/578075fa-bcc2-5a02-9f1d-6f244a0df956
+  source_local_id: Lesion
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.295243+00:00'
+versions:
+- version_num: 1
+  name: Lesion
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.295248+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

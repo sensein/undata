@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/51bf21de-6efd-5279-92da-17f6049b577d
+  source_local_id: iEEGCoordinateUnits
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.161406+00:00'
+versions:
+- version_num: 1
+  name: iEEGCoordinateUnits
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.161408+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

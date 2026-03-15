@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/5774b1d8-2c0a-5e9f-84a0-65bd8377db74
+  source_local_id: eeg
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.259698+00:00'
+versions:
+- version_num: 1
+  name: eeg
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.259701+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

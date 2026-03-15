@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/cb0b99cd-00c2-5580-94e2-0ca1e095fd8d
+  source_local_id: ICBM452Warp5Space
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.307756+00:00'
+versions:
+- version_num: 1
+  name: ICBM452Warp5Space
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.307758+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

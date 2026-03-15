@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/c4220bd0-5394-55f4-89fb-f805edcaccae
+  source_local_id: ModeOfAdministration
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.073620+00:00'
+versions:
+- version_num: 1
+  name: ModeOfAdministration
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.073623+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

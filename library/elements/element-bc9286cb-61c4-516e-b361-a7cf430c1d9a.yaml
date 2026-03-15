@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/bc9286cb-61c4-516e-b361-a7cf430c1d9a
+  source_local_id: EEGCoordinateSystem
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.000763+00:00'
+versions:
+- version_num: 1
+  name: EEGCoordinateSystem
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.000765+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

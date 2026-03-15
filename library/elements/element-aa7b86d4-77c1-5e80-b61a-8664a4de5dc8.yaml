@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/aa7b86d4-77c1-5e80-b61a-8664a4de5dc8
+  source_local_id: off__mtransfer
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.325435+00:00'
+versions:
+- version_num: 1
+  name: off__mtransfer
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.325437+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

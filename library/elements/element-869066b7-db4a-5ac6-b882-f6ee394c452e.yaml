@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/869066b7-db4a-5ac6-b882-f6ee394c452e
+  source_local_id: ScanningSequence
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.123640+00:00'
+versions:
+- version_num: 1
+  name: ScanningSequence
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.123644+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

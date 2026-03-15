@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/830d8b42-bd4f-5bb0-bac5-1ade8360c16c
+  source_local_id: MAGNChannelCount
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.056537+00:00'
+versions:
+- version_num: 1
+  name: MAGNChannelCount
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.056539+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

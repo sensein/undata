@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/6d0808c7-8d2d-59f5-9dcb-ed11eca956ad
+  source_local_id: breast_milk
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.367118+00:00'
+versions:
+- version_num: 1
+  name: breast_milk
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.367120+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

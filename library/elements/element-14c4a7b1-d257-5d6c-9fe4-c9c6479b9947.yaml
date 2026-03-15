@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/14c4a7b1-d257-5d6c-9fe4-c9c6479b9947
+  source_local_id: aslcontext
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.253519+00:00'
+versions:
+- version_num: 1
+  name: aslcontext
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.253522+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

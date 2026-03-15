@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/70f94418-06ac-534c-b329-335cd5ac56f8
+  source_local_id: GRADIENT
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.369154+00:00'
+versions:
+- version_num: 1
+  name: GRADIENT
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.369156+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

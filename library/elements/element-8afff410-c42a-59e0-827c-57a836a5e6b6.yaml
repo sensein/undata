@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8afff410-c42a-59e0-827c-57a836a5e6b6
+  source_local_id: cohort
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.212781+00:00'
+versions:
+- version_num: 1
+  name: cohort
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.212783+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

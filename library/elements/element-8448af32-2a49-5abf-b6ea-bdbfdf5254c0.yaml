@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/8448af32-2a49-5abf-b6ea-bdbfdf5254c0
+  source_local_id: Gain
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.025935+00:00'
+versions:
+- version_num: 1
+  name: Gain
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.025938+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

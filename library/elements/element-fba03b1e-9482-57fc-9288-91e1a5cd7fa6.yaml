@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/fba03b1e-9482-57fc-9288-91e1a5cd7fa6
+  source_local_id: EMGCoordinateSystem
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.005747+00:00'
+versions:
+- version_num: 1
+  name: EMGCoordinateSystem
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.005750+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

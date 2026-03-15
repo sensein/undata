@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/c4dba28d-d64d-5ff3-9280-9caa6f9cd222
+  source_local_id: aind.acquisition.notes
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T21:05:11.511446+00:00'
+versions:
+- version_num: 1
+  name: notes
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:05:11.511447+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

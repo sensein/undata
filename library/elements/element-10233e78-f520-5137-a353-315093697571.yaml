@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/10233e78-f520-5137-a353-315093697571
+  source_local_id: technical_sample
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.356151+00:00'
+versions:
+- version_num: 1
+  name: technical_sample
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.356153+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

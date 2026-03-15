@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/51fcbb96-feec-54ee-b641-6452ebf10bdb
+  source_local_id: TaskDescription
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.143635+00:00'
+versions:
+- version_num: 1
+  name: TaskDescription
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.143637+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

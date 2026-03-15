@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/57be2069-a794-5081-849f-620df2eb6f1c
+  source_local_id: ScaleFactor
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.121598+00:00'
+versions:
+- version_num: 1
+  name: ScaleFactor
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.121601+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

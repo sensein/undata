@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/281a54a9-59d6-569e-a0aa-b33a4a7b2ef0
+  source_local_id: right_hand
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.364275+00:00'
+versions:
+- version_num: 1
+  name: right_hand
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.364277+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

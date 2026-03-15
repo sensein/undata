@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/3fb32724-7a60-51f9-8e0e-00553bdb0922
+  source_local_id: ParentCoordinateSystem
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.089863+00:00'
+versions:
+- version_num: 1
+  name: ParentCoordinateSystem
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.089865+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/231610ef-0e65-5ac1-842f-86d530fb43ab
+  source_local_id: aind.acquisition.acquisition_end_time
+  source_id: https://schema.undata.live/sources/aind
+  created_at: '2026-03-15T21:05:11.508646+00:00'
+versions:
+- version_num: 1
+  name: acquisition_end_time
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:05:11.508649+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

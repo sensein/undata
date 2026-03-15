@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/02fd8abe-cdab-55c3-895f-a398a7118c3a
+  source_local_id: POSChannelCount
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.097756+00:00'
+versions:
+- version_num: 1
+  name: POSChannelCount
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.097758+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

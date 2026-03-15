@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/799b5bf7-cc5d-5dd3-a8d6-4866a3190048
+  source_local_id: flip
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.215220+00:00'
+versions:
+- version_num: 1
+  name: flip
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.215224+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

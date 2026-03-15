@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/4ee3a248-96a9-55ad-ad70-9d41c5bbcb3b
+  source_local_id: duration
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.171196+00:00'
+versions:
+- version_num: 1
+  name: duration
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.171198+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

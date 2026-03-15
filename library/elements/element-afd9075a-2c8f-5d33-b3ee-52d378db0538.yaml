@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/afd9075a-2c8f-5d33-b3ee-52d378db0538
+  source_local_id: FiducialsCoordinateUnits
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.020627+00:00'
+versions:
+- version_num: 1
+  name: FiducialsCoordinateUnits
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.020629+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/a4367633-a9ca-51c8-8e5f-b6b9e4f8ff68
+  source_local_id: B1ShimmingTechnique
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.962320+00:00'
+versions:
+- version_num: 1
+  name: B1ShimmingTechnique
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.962323+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

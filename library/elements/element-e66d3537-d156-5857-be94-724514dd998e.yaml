@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/e66d3537-d156-5857-be94-724514dd998e
+  source_local_id: IRT1
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.231296+00:00'
+versions:
+- version_num: 1
+  name: IRT1
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.231298+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

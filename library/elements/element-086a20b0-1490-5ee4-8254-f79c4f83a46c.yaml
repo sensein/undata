@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/086a20b0-1490-5ee4-8254-f79c4f83a46c
+  source_local_id: InjectedVolume
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.041456+00:00'
+versions:
+- version_num: 1
+  name: InjectedVolume
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.041459+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

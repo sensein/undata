@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/511458fb-dd35-58f0-96c4-7839bfe8d26b
+  source_local_id: nii_gz
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.392496+00:00'
+versions:
+- version_num: 1
+  name: nii_gz
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.392500+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

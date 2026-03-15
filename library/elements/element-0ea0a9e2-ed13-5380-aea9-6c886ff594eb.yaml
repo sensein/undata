@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/0ea0a9e2-ed13-5380-aea9-6c886ff594eb
+  source_local_id: Units
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.152810+00:00'
+versions:
+- version_num: 1
+  name: Units
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.152814+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

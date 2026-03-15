@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/f844e880-9af9-5ef1-8f6c-6c79c49853d9
+  source_local_id: FrequencyOffset
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.025017+00:00'
+versions:
+- version_num: 1
+  name: FrequencyOffset
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.025020+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/0f4ff913-c97f-510f-9392-319e071538ff
+  source_local_id: amniotic_fluid
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.367926+00:00'
+versions:
+- version_num: 1
+  name: amniotic_fluid
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.367928+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

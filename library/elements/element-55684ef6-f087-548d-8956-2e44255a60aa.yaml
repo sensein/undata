@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/55684ef6-f087-548d-8956-2e44255a60aa
+  source_local_id: SpoilingGradientDuration
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.139257+00:00'
+versions:
+- version_num: 1
+  name: SpoilingGradientDuration
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.139259+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

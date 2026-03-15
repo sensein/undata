@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/36a8b3f8-733b-555f-b6e3-239faeec8173
+  source_local_id: TracerName
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.148268+00:00'
+versions:
+- version_num: 1
+  name: TracerName
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.148277+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

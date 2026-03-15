@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/60788ee6-c09e-5db1-8f1d-e2f0aa42c80b
+  source_local_id: LabelingPulseFlipAngle
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.051286+00:00'
+versions:
+- version_num: 1
+  name: LabelingPulseFlipAngle
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.051289+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

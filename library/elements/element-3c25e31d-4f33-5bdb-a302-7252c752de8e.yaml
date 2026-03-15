@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/3c25e31d-4f33-5bdb-a302-7252c752de8e
+  source_local_id: HeadCircumference
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.031200+00:00'
+versions:
+- version_num: 1
+  name: HeadCircumference
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.031203+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/397de66f-73ca-5ec5-a264-269bd40a8943
+  source_local_id: AssociatedEmptyRoom
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.957928+00:00'
+versions:
+- version_num: 1
+  name: AssociatedEmptyRoom
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.957930+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

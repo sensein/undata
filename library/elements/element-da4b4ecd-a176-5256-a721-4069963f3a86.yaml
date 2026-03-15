@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/da4b4ecd-a176-5256-a721-4069963f3a86
+  source_local_id: IntendedFor__ds_relative
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.045245+00:00'
+versions:
+- version_num: 1
+  name: IntendedFor__ds_relative
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.045250+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

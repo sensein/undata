@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/933d0b23-128a-5c0b-b3cf-0fd6855d3c6a
+  source_local_id: MetaboliteMethod
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.070642+00:00'
+versions:
+- version_num: 1
+  name: MetaboliteMethod
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.070645+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

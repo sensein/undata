@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/0b123023-35ea-5dce-a0ed-d0d8245a9e09
+  source_local_id: TrackingSystemName
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.151435+00:00'
+versions:
+- version_num: 1
+  name: TrackingSystemName
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.151437+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

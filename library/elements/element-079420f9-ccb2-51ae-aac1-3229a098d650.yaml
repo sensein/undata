@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/079420f9-ccb2-51ae-aac1-3229a098d650
+  source_local_id: trigger
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.200466+00:00'
+versions:
+- version_num: 1
+  name: trigger
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.200468+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

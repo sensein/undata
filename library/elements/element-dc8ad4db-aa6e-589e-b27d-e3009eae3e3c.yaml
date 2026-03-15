@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/dc8ad4db-aa6e-589e-b27d-e3009eae3e3c
+  source_local_id: UNCInfant1V21
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.319824+00:00'
+versions:
+- version_num: 1
+  name: UNCInfant1V21
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.319826+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

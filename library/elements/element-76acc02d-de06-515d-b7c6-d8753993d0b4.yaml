@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/76acc02d-de06-515d-b7c6-d8753993d0b4
+  source_local_id: BackgroundSuppressionNumberPulses
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:26.963607+00:00'
+versions:
+- version_num: 1
+  name: BackgroundSuppressionNumberPulses
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:26.963609+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

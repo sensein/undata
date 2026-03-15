@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/441b04e9-ec6c-5abf-b7d5-d2a6355cea6f
+  source_local_id: LabelingDuration
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.048192+00:00'
+versions:
+- version_num: 1
+  name: LabelingDuration
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.048194+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1

@@ -1,0 +1,13 @@
+element:
+  id: https://schema.undata.live/elements/1538f4ab-e70b-50a0-b1c5-6220a60e9002
+  source_local_id: SequenceVariant
+  source_id: https://schema.undata.live/sources/bids
+  created_at: '2026-03-15T21:02:27.128095+00:00'
+versions:
+- version_num: 1
+  name: SequenceVariant
+  data_type: string
+  description: ''
+  created_at: '2026-03-15T21:02:27.128097+00:00'
+  created_by: urn:undata:ingestion
+current_version: 1
