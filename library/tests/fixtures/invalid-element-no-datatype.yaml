@@ -1,0 +1,8 @@
+semantic:
+  ontology_term: http://example.org/term
+  # data_type is MISSING — required field
+
+provenance:
+  - source: test
+    class: TestClass
+    name: broken_field

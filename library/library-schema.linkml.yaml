@@ -1,116 +1,103 @@
 id: https://schema.undata.live/library/library-schema
 name: undata-library-schema
+version: "2026.03.1"
 description: >-
-  LinkML schema defining the undata-library flat-file format for storing
-  data elements, mappings, and version history.
-version: "2026.03.0"
+  Content-addressed RDF property model for neuroscience data elements.
+  Elements are rdf:Property instances identified by semantic graph hash.
+  Schemas are sh:NodeShape instances identified by property set hash.
 
 prefixes:
   linkml: https://w3id.org/linkml/
   undata: https://schema.undata.live/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  owl: http://www.w3.org/2002/07/owl#
   schema: http://schema.org/
   prov: http://www.w3.org/ns/prov#
   sssom: https://w3id.org/sssom/
-  skos: http://www.w3.org/2004/02/skos/core#
 
 default_range: string
-
 imports:
   - linkml:types
 
 enums:
   DataType:
-    description: Allowed data types for element values
     permissible_values:
-      string:
-        description: UTF-8 text
-      integer:
-        description: Whole number (64-bit)
-      float:
-        description: IEEE 754 double-precision
-      boolean:
-        description: true/false
-      array:
-        description: Ordered collection
-      object:
-        description: Composite value
+      string: { description: "UTF-8 text" }
+      integer: { description: "Whole number" }
+      float: { description: "Floating-point number" }
+      boolean: { description: "true/false" }
+      array: { description: "Ordered collection" }
+      object: { description: "Composite value" }
 
   MappingFunctionType:
-    description: Type of transformation between elements
     permissible_values:
-      identity:
-        description: Exact synonym — no transformation
-      unit_conversion:
-        description: Numeric with unit factor
-      scaling:
-        description: Linear scale factor
-      structural:
-        description: Field rename or type cast
-      unknown:
-        description: Type not yet determined
-
-  MappingStatus:
-    description: Curation status of a mapping
-    permissible_values:
-      active:
-        description: Accepted and in use
-      pending_curation:
-        description: Awaiting human review
+      identity: { description: "Exact synonym" }
+      unit_conversion: { description: "Numeric with unit factor" }
+      scaling: { description: "Linear scale factor" }
+      structural: { description: "Field rename or type cast" }
+      unknown: { description: "Not yet determined" }
 
 classes:
   ElementRecord:
-    description: >-
-      A data element with its complete version history, stored as a
-      single YAML file.
-    class_uri: undata:ElementRecord
+    description: A data element (rdf:Property) with content-addressed identity.
+    class_uri: rdf:Property
     attributes:
-      element:
-        range: ElementMetadata
+      semantic:
+        range: SemanticIdentity
         required: true
         inlined: true
-      versions:
-        range: ElementVersion
+      provenance:
+        range: ProvenanceEntry
         multivalued: true
         inlined_as_list: true
         required: true
-      current_version:
-        range: integer
-        required: true
 
-  ElementMetadata:
-    description: Static element identity and source information
-    class_uri: schema:Property
+  SemanticIdentity:
+    description: >-
+      The essential disambiguators that determine element identity.
+      Hashed to produce the content-addressed URI.
     attributes:
-      id:
+      ontology_term:
         range: uriorcurie
+        description: Ontology concept URI
+      data_type:
+        range: DataType
         required: true
-        slot_uri: schema:identifier
-      source_local_id:
+      unit:
+        range: string
+        description: Measurement unit (UCUM/QUDT symbol)
+      constraints:
+        range: Constraints
+        inlined: true
+
+  Constraints:
+    attributes:
+      minimum:
+        range: float
+      maximum:
+        range: float
+      pattern:
+        range: string
+      allowed_values:
+        range: string
+        multivalued: true
+
+  ProvenanceEntry:
+    description: One source's attestation of this property.
+    class_uri: prov:Entity
+    attributes:
+      source:
         range: string
         required: true
-        slot_uri: undata:source_local_id
-      source_id:
-        range: uriorcurie
-        slot_uri: undata:source_id
-      created_at:
-        range: datetime
-        required: true
-        slot_uri: prov:generatedAtTime
-
-  ElementVersion:
-    description: A single versioned snapshot of an element definition
-    class_uri: undata:ElementVersion
-    attributes:
-      version_num:
-        range: integer
+      class:
+        range: string
         required: true
       name:
         range: string
         required: true
         slot_uri: schema:name
-      data_type:
-        range: DataType
-        required: true
       description:
         range: string
         slot_uri: schema:description
@@ -118,118 +105,47 @@ classes:
         range: boolean
       multivalued:
         range: boolean
-      allowed_values:
-        range: string
-        multivalued: true
-      constraints:
-        range: string
-        description: JSON-encoded constraints object
-      semantic_graph:
-        range: SemanticGraph
-        inlined: true
-      created_at:
-        range: datetime
+
+  SchemaRecord:
+    description: A class shape (sh:NodeShape) with content-addressed identity.
+    class_uri: sh:NodeShape
+    attributes:
+      semantic:
+        range: SchemaIdentity
         required: true
-        slot_uri: prov:generatedAtTime
-      created_by:
-        range: uriorcurie
-        slot_uri: prov:wasAttributedTo
-      changelog:
-        range: ChangeEntry
+        inlined: true
+      provenance:
+        range: SchemaProvenance
         multivalued: true
         inlined_as_list: true
-
-  SemanticGraph:
-    description: Ontological anchoring for a data element
-    class_uri: skos:ConceptScheme
-    attributes:
-      ontology_term:
-        range: uriorcurie
-      unit:
-        range: string
-      external_uri:
-        range: uriorcurie
-      cmixf_valid:
-        range: boolean
-
-  ChangeEntry:
-    description: Records what changed in a version
-    class_uri: prov:Activity
-    attributes:
-      change_type:
-        range: string
         required: true
-      reason:
-        range: string
-      breaking:
-        range: boolean
 
-  MappingRecord:
+  SchemaIdentity:
     description: >-
-      A mapping function with its version history, stored as a single
-      YAML file.
-    class_uri: sssom:Mapping
+      Property set + inheritance that determine schema identity.
     attributes:
-      mapping:
-        range: MappingMetadata
-        required: true
-        inlined: true
-      versions:
-        range: MappingVersion
-        multivalued: true
-        inlined_as_list: true
-        required: true
-      current_version:
-        range: integer
-        required: true
-
-  MappingMetadata:
-    description: Static mapping identity
-    class_uri: sssom:Mapping
-    attributes:
-      id:
-        range: uriorcurie
-        required: true
-        slot_uri: schema:identifier
-      output_element_id:
-        range: uriorcurie
-        slot_uri: sssom:object_id
-      status:
-        range: MappingStatus
-      attributed_to:
-        range: uriorcurie
-        slot_uri: prov:wasAttributedTo
-      confidence_score:
-        range: float
-        slot_uri: sssom:confidence
-      created_at:
-        range: datetime
-        required: true
-        slot_uri: prov:generatedAtTime
-
-  MappingVersion:
-    description: A single versioned snapshot of a mapping definition
-    class_uri: undata:MappingVersion
-    attributes:
-      version_num:
-        range: integer
-        required: true
-      function_type:
-        range: MappingFunctionType
-      expression:
-        range: string
-      expression_type:
-        range: string
-      input_element_ids:
+      properties:
         range: uriorcurie
         multivalued: true
-      sssom_predicate:
-        range: string
-        slot_uri: sssom:predicate_id
-      created_at:
-        range: datetime
-        required: true
-        slot_uri: prov:generatedAtTime
-      created_by:
+        description: Element URIs this class shape requires
+      subclass_of:
         range: uriorcurie
-        slot_uri: prov:wasAttributedTo
+        slot_uri: rdfs:subClassOf
+      mixins:
+        range: uriorcurie
+        multivalued: true
+
+  SchemaProvenance:
+    description: One source's attestation of this class shape.
+    class_uri: prov:Entity
+    attributes:
+      source:
+        range: string
+        required: true
+      name:
+        range: string
+        required: true
+        slot_uri: schema:name
+      description:
+        range: string
+        slot_uri: schema:description

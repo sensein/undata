@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  ontology_term: http://purl.obolibrary.org/obo/PATO_0000047
+
+provenance:
+  - source: bids
+    class: Participant
+    name: sex
+    description: "Sex of the participant"
+    required: true
+  - source: nwb
+    class: Subject
+    name: sex
+    description: "Sex of subject"
+  - source: dandi
+    class: DandiModel
+    name: sex
+    description: "Subject sex"
