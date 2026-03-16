@@ -1,7 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/NWBData_36kcny87
-  mixins: []
-provenance:
-- source: nwb
-  name: ExternalImage

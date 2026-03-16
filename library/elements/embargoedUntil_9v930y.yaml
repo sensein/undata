@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: AccessRequirements
+  name: embargoedUntil
+  description: Date on which embargo ends.

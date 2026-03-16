@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: TimeIntervals
+  name: tags
+  description: User-defined tags that identify or categorize events.

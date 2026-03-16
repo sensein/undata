@@ -1,0 +1,6 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: ImageSPIM
+  name: image_end_time

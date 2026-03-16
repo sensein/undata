@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: common_principles
+  name: suffix
+  description: 'An alphanumeric string that forms part of a filename, located after
+    all
+
+    [entities](SPEC_ROOT/common-principles.md#entities) and
+
+    following a final `_`, right before the **file extension**;
+
+    for example, it is `eeg` in `sub-05_task-matchingpennies_eeg.vhdr`.
+
+    '

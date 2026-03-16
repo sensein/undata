@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: instrument
+  name: calibrations
+  description: List of calibration measurements takend during instrument setup and
+    maintenance

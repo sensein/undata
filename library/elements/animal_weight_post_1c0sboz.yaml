@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: aind
+  class: AcquisitionSubjectDetails
+  name: animal_weight_post
+  description: Animal weight after procedure

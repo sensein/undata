@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: AnchorElectrode
+  description: 'Name of the electrode in the child (device) coordinate system whose
+    coordinates in
+
+    the parent (anatomical) coordinate system are given in `AnchorCoordinates`.
+
+    '

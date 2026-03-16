@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: CameraAssembly
+  name: camera
+  description: Camera Detector

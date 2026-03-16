@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: target_muscle
+  description: 'Name of the muscle(s) from which the EMG signal in this channel is
+    believed to originate.
+
+    When exact muscle is unknown (such as when using electrode grids that cover multiple
+    muscles),
+
+    groups of muscles may be named instead (for example "flexors of the left forearm").
+
+    '

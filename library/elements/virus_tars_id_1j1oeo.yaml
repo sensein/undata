@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: TarsVirusIdentifiers
+  name: virus_tars_id
+- source: aind
+  class: TarsVirusIdentifiers
+  name: virus_tars_id

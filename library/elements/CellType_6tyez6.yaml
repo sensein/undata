@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: CellType
+  description: 'Describes the type of cell analyzed.
+
+    Values SHOULD come from the
+
+    [cell ontology](https://obofoundry.org/ontology/cl.html).
+
+    '

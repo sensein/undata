@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: Units
+  name: electrodes_index
+  description: Index into electrodes.

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: BodyPartDetailsOntology
+  description: '[URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator) of
+    ontology used for
+
+    BodyPartDetails (for example: `"https://www.ebi.ac.uk/ols/ontologies/uberon"`).
+
+    '

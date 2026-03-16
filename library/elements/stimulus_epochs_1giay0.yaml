@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Acquisition
+  name: stimulus_epochs
+  description: A stimulus epoch captures all stimuli being presented during an acquisition.
+    Epochs should be split when the purpose of the stimulus changes.

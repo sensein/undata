@@ -1,0 +1,11 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: ModelTraining
+  name: code
+  description: Code used for processing
+- source: aind
+  class: ModelTraining
+  name: code
+  description: Code used for processing

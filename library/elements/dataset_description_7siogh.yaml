@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: files
+  name: dataset_description
+  description: 'The file `dataset_description.json` is a JSON file describing the
+    dataset.
+
+    '

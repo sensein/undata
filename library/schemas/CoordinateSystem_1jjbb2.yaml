@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/axes_c236bh
+  - https://schema.undata.live/elements/axes_nshog02
+  - https://schema.undata.live/elements/axis_unit_16hz3c
+  - https://schema.undata.live/elements/axis_unit_2burhwp
+  - https://schema.undata.live/elements/name_1468z7
+  - https://schema.undata.live/elements/name_279kekk
+  - https://schema.undata.live/elements/origin_1l9b8u
+  - https://schema.undata.live/elements/origin_34z4vxw
+  mixins: []
+provenance:
+- source: aind
+  name: CoordinateSystem

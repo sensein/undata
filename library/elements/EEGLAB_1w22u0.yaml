@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: EEGLAB
+  description: 'ALS orientation and the origin exactly between LPA and RPA.
+
+    For more information, see the
+
+    [EEGLAB wiki page](https://eeglab.org/tutorials/ConceptsGuide/coordinateSystem.html#eeglab-coordinate-system).
+
+    '

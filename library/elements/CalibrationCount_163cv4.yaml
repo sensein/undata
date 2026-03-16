@@ -1,0 +1,9 @@
+semantic:
+  data_type: integer
+provenance:
+- source: bids
+  class: metadata
+  name: CalibrationCount
+  description: 'The number of calibrations corresponding to this run.
+
+    '

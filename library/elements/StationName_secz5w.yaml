@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: StationName
+  description: 'Institution defined name of the machine that produced the measurements.
+
+    '

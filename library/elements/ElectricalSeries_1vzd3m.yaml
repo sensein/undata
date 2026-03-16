@@ -1,0 +1,10 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: ElectricalSeries
+  name: ElectricalSeries
+  description: A time series of acquired voltage data from extracellular recordings.
+    The data field is an int or float array storing data in volts. The first dimension
+    should always represent time. The second dimension, if present, should represent
+    channels.

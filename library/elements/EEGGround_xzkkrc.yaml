@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: EEGGround
+  description: 'Description of the location of the ground electrode
+
+    (for example, `"placed on right mastoid (M2)"`).
+
+    '

@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: AnnotationSeries
+  name: data
+  description: Annotations made during an experiment.

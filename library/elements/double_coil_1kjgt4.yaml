@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: double_coil
+  description: 'CASL Type: when a double coil is used for labeling.
+
+    '

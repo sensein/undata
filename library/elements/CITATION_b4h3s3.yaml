@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: files
+  name: CITATION
+  description: 'A description of the citation information for the dataset, following
+    the
+
+    [Citation File Format](https://citation-file-format.github.io/) specification.
+
+    This file permits more detailed and structured descriptions than
+
+    [dataset_description.json](SPEC_ROOT/glossary.md#dataset_description-files).
+
+    '

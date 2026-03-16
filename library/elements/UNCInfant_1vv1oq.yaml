@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: UNCInfant
+  description: 'Infant Brain Atlases from Neonates to 1- and 2-year-olds.
+
+    '

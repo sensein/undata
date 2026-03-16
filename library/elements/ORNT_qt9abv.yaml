@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: ORNT
+  description: 'Orientation channel, one channel for each spatial axis or quaternion
+    component.
+
+    Column `component` for the axis or quaternion label MUST be added to the `*_channels.tsv`
+    file
+
+    (x, y, z, quat_x, quat_y, quat_z, or quat_w).
+
+    '

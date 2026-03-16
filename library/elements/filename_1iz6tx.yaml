@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: filename
+  description: 'Relative paths to files.
+
+    '

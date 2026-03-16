@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: SkinPreparation
+  description: 'How skin was prepared prior to sensor device placement, for example,
+    `"alcohol wipe"`
+
+    or `"abrasive gel"`.
+
+    '

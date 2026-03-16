@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: fsaverage6
+  description: 'Images were sampled to the FreeSurfer surface reconstructed from the
+    subject''s T1w image,
+
+    and registered to an fsaverage template.
+
+    For new datasets, the recommended alternative is fsaverage.
+
+    '

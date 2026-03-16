@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: SR
+  description: 'Super-resolution microscopy imaging data
+
+    '

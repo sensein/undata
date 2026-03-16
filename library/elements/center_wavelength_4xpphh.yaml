@@ -1,0 +1,8 @@
+semantic:
+  data_type: integer
+provenance:
+- source: aind
+  class: Filter
+  name: center_wavelength
+  description: Single wavelength or list of wavelengths for MULTIBAND or MULTI_NOTCH
+    filters

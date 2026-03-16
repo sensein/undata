@@ -1,0 +1,7 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: aind
+  class: CalibrationObject
+  name: empty
+  description: Set to true if the calibration was performed with no object.

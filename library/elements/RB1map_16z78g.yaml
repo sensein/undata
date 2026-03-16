@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: RB1map
+  description: 'In arbitrary units (arbitrary).
+
+    Radio frequency (RF) receive (B1-) sensitivity maps are REQUIRED to use this
+
+    suffix regardless of the method used to generate them.
+
+    RB1map intensity values are RECOMMENDED to be represented as percent
+
+    multiplicative factors such that Amplitude<sub>effective</sub> =
+
+    B1-<sub>intensity</sub>\*Amplitude<sub>ideal</sub>.
+
+    '

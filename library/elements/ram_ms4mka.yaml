@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+provenance:
+- source: aind
+  class: ResourceUsage
+  name: ram
+- source: aind
+  class: ResourceUsage
+  name: ram
+- source: aind
+  class: ResourceUsage
+  name: ram

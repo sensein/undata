@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1s9ij5
+  - https://schema.undata.live/elements/additional_settings_3isr1vv
+  - https://schema.undata.live/elements/catheter_design_11hq1c
+  - https://schema.undata.live/elements/catheter_design_21z42ex
+  - https://schema.undata.live/elements/catheter_material_1bo5qqg
+  - https://schema.undata.live/elements/catheter_material_o5sbng
+  - https://schema.undata.live/elements/catheter_port_ewvtev
+  - https://schema.undata.live/elements/catheter_port_tfbcd55
+  - https://schema.undata.live/elements/manufacturer_1k3c2h
+  - https://schema.undata.live/elements/manufacturer_32ob7p8
+  - https://schema.undata.live/elements/model_1qawxc
+  - https://schema.undata.live/elements/model_3exg9ag
+  - https://schema.undata.live/elements/name_1hobun
+  - https://schema.undata.live/elements/name_2xwn3fj
+  - https://schema.undata.live/elements/notes_1da6w73
+  - https://schema.undata.live/elements/notes_oz75fm
+  - https://schema.undata.live/elements/serial_number_11exwn
+  - https://schema.undata.live/elements/serial_number_21tmi2s
+  mixins: []
+provenance:
+- source: aind
+  name: Catheter

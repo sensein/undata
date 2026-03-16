@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: nwb
+  description: 'A [Neurodata Without Borders](https://nwb-schema.readthedocs.io/en/latest/)
+    file.
+
+
+    Each recording consists of a single `.nwb` file.
+
+    '

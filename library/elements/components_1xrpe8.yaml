@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: instrument
+  name: components
+  description: List of all devices in the instrument

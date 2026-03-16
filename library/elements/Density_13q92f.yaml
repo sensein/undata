@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: Density
+  description: 'Specifies the interpretation of the density keyword.
+
+    If an object is used, then the keys should be values for the `den` entity
+
+    and values should be descriptions of those `den` values.
+
+    '

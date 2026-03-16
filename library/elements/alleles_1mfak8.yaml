@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: GenotypeInfo
+  name: alleles
+  description: Information about alleles at the locus.

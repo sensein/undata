@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: SINCGAUSS
+  description: 'A sinc-shaped pulse with a Gaussian window.
+
+    '

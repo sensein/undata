@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: Units
+  name: waveforms_index
+  description: Index into the 'waveforms' dataset. One value for every spike event.
+    See 'waveforms' for more detail.

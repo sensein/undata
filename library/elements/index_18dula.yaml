@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: formats
+  name: index
+  description: 'Non-negative, optionally prefixed with leading zeros for better visual
+    homogeneity and sorting.
+
+    '

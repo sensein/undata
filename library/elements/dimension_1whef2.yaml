@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: nwb
+  class: ImageSeries
+  name: dimension
+  description: Number of pixels on x, y, (and z) axes.

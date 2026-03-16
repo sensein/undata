@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: TubingLength
+  description: 'The length of the blood tubing, from the subject to the detector in
+    meters.
+
+    '

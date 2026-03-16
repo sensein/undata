@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: PlaneSegmentation
+  name: PlaneSegmentation
+  description: Results from image segmentation of a specific imaging plane. At least
+    one of `image_mask`, `pixel_mask`, or `voxel_mask` is required.

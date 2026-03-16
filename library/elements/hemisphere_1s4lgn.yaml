@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: hemisphere
+  description: 'The hemisphere in which the electrode is placed.
+
+    '

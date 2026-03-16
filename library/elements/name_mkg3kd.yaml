@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Equipment
+  name: name
+  description: A name for the equipment.

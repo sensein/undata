@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: dandi
+  class: EthicsApproval
+  name: contactPoint
+  description: Information about the ethics approval committee.

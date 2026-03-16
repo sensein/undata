@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: name__segmentations
+  description: 'The unique label name.
+
+    '

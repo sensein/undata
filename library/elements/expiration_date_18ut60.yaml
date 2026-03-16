@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Reagent
+  name: expiration_date
+- source: aind
+  class: Reagent
+  name: expiration_date

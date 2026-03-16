@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: reference__eeg
+  description: 'Name of the reference electrode(s).
+
+    This column is not needed when it is common to all channels.
+
+    In that case the reference electrode(s) can be specified in `*_eeg.json` as `EEGReference`).
+
+    '

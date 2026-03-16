@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/coordinate_system_name_14y8jj
+  - https://schema.undata.live/elements/coordinate_system_name_28sseu2
+  - https://schema.undata.live/elements/end_coordinate_138e7x
+  - https://schema.undata.live/elements/end_coordinate_25erp57
+  - https://schema.undata.live/elements/includes_surrounding_tissue_bz0mr0
+  - https://schema.undata.live/elements/includes_surrounding_tissue_nmfkfn1
+  - https://schema.undata.live/elements/output_specimen_id_1wj2pl
+  - https://schema.undata.live/elements/output_specimen_id_3r7qlg3
+  - https://schema.undata.live/elements/partial_slice_1i4cfl
+  - https://schema.undata.live/elements/partial_slice_2ys8qks
+  - https://schema.undata.live/elements/start_coordinate_1fprjj
+  - https://schema.undata.live/elements/start_coordinate_2u1euzd
+  - https://schema.undata.live/elements/targeted_structure_1fobr8m
+  - https://schema.undata.live/elements/targeted_structure_q6uqgl
+  - https://schema.undata.live/elements/thickness_16mqqr
+  - https://schema.undata.live/elements/thickness_2c466dr
+  - https://schema.undata.live/elements/thickness_unit_1tevhz
+  - https://schema.undata.live/elements/thickness_unit_3l2cwkj
+  mixins: []
+provenance:
+- source: aind
+  name: PlanarSection

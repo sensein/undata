@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: files
+  name: derivatives
+  description: 'Derivative data (for example preprocessed files).
+
+    See the [relevant section](SPEC_ROOT/common-principles.md#source-vs-raw-vs-derived-data)
+
+    for more information.
+
+    '

@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: time
+  description: 'Time, in seconds, relative to `TimeZero` defined by the `*_pet.json`.
+
+    For example, 5.
+
+    '

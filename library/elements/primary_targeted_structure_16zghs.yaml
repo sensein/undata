@@ -1,0 +1,11 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: ProbeConfig
+  name: primary_targeted_structure
+  description: Base model for brain strutures
+- source: aind
+  class: ProbeConfig
+  name: primary_targeted_structure
+  description: Base model for brain strutures

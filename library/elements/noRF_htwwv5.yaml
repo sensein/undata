@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: noRF
+  description: 'An ASL volume type: noRF.
+
+    The no radio frequency excitation (noRF) image is a noise scan acquired by disabling
+    the
+
+    radio frequency excitation,
+
+    while maintaining all other parameters from the associated scan.
+
+    These volumes may optionally be separated into a separate file with the ``noRF``
+    suffix.
+
+    '

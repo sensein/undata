@@ -1,0 +1,11 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: bids
+  class: metadata
+  name: DigitizedHeadPoints
+  description: '`true` or `false` value indicating whether head points outlining the
+
+    scalp/face surface are contained within this recording.
+
+    '

@@ -1,0 +1,10 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: Curators
+  description: 'List of curators who helped make the atlas accessible in a database
+    or dataset.
+
+    '

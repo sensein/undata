@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: SampleFixation
+  description: 'Description of the tissue sample fixation
+
+    (for example: `"4% paraformaldehyde, 2% glutaraldehyde"`).
+
+    '

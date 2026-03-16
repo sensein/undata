@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: entities
+  name: label
+  description: 'Tissue-type label, following a prescribed vocabulary.
+
+    Applies to binary masks and probabilistic/partial volume segmentations
+
+    that describe a single tissue type.
+
+
+    This entity is only applicable to derivative data.
+
+    '

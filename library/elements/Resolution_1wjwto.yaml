@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: Resolution
+  description: 'Specifies the interpretation of the resolution keyword.
+
+    If an object is used, then the keys should be values for the `res` entity
+
+    and values should be descriptions of those `res` values.
+
+    '

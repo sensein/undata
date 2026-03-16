@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: TarsVirusIdentifiers
+  name: prep_date
+  description: Date this prep lot was titered

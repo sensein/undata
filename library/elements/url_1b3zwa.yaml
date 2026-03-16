@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: ContactPoint
+  name: url
+  description: A Web page to find information on how to contact.

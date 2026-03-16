@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: formats
+  name: number
+  description: 'A number which may be an integer or float, positive or negative.
+
+    '

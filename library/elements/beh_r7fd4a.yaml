@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: beh
+  description: 'Behavioral recordings from tasks.
+
+    These files are similar to events files, but do not include the `"onset"` and
+
+    `"duration"` columns that are mandatory for events files.
+
+    '

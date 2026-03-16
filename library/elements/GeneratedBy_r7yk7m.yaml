@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: GeneratedBy
+  description: 'Used to specify provenance of the dataset.
+
+    '

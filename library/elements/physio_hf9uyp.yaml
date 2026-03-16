@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: physio
+  description: 'Physiological recordings such as cardiac and respiratory signals.
+
+    '

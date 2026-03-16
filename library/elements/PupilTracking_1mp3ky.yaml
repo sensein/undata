@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: PupilTracking
+  name: PupilTracking
+  description: Eye-tracking data, representing pupil size.

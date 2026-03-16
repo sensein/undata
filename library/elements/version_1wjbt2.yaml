@@ -1,0 +1,6 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: model
+  name: version

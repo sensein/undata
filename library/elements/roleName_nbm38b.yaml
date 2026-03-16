@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: Contributor
+  name: roleName
+  description: Role(s) of the contributor. Multiple roles can be selected.

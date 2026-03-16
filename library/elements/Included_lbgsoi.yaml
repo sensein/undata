@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: Included
+  description: 'An m0scan volume is contained within the associated `asl` file.
+
+    '

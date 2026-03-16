@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: NWBFile
+  name: nwb_version
+  description: File version string. Use semantic versioning, e.g. 1.2.1. This will
+    be the name of the format with trailing major, minor and patch numbers.

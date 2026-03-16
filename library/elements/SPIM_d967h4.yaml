@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: SPIM
+  description: 'Selective plane illumination microscopy imaging data
+
+    '

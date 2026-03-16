@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: procedures
+  name: specimen_procedures
+  description: Procedures performed on tissue extracted after perfusion

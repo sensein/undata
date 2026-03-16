@@ -1,0 +1,26 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ElectrodeMaterial
+  description: 'Material of the electrode (for example, `Tin`, `Ag/AgCl`, `Gold`).
+
+    If multiple sensor devices with heterogeneous electrode materials are recorded
+    into
+
+    the same data file,
+
+    electrode material SHOULD be recorded in the `material` column of `*_electrodes.tsv`
+    instead.
+
+    If instead those devices were recorded into separate data files (distinguished
+    for example
+
+    by the `recording` entity),
+
+    separate `*_emg.json` files (similarly distinguished) MAY be included,
+
+    each with their own `ElectrodeMaterial` values.
+
+    '

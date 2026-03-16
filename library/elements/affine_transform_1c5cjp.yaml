@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Affine
+  name: affine_transform
+- source: aind
+  class: Affine
+  name: affine_transform
+- source: aind
+  class: Affine
+  name: affine_transform

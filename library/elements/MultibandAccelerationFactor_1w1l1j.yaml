@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: MultibandAccelerationFactor
+  description: 'The multiband factor, for multiband acquisitions.
+
+    '

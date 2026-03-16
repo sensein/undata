@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ElectrodeGroup
+  name: location
+  description: Location of electrode group. Specify the area, layer, comments on estimation
+    of area/layer, etc. Use standard atlas names for anatomical regions when possible.

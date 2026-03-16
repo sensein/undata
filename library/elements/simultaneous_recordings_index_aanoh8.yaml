@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: SequentialRecordingsTable
+  name: simultaneous_recordings_index
+  description: Index dataset for the simultaneous_recordings column.

@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: metadata
+  name: data_description
+  description: A logical collection of data files.

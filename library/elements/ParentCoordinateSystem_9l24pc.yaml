@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ParentCoordinateSystem
+  description: 'The name of a JSON mapping key that defines the parent (anatomical)
+    coordinate system
+
+    in which this child (device) coordinate system is anchored.
+
+    '

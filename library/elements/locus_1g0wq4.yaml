@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: GenotypeInfo
+  name: locus
+  description: Locus at which information was extracted.

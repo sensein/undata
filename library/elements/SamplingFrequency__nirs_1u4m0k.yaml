@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: SamplingFrequency__nirs
+  description: 'Sampling frequency (in Hz) of all the data in the recording,
+
+    regardless of their type (for example, `2400`).
+
+    '

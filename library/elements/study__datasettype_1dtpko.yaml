@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: study__datasettype
+  description: 'A study BIDS dataset to organize the data for the entire study (original
+    source data, raw BIDS,
+
+    derivatives) as a valid BIDS dataset.
+
+    '

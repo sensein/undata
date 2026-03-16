@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ReconMethodImplementationVersion
+  description: 'Identification for the software used, such as name and version.
+
+    '

@@ -1,0 +1,13 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: QCMetric
+  name: tags
+  description: 'Tags group QCMetric objects. Unique keys define groups of tags, for
+    example {''probe'': ''probeA''}.'
+- source: aind
+  class: QCMetric
+  name: tags
+  description: 'Tags group QCMetric objects. Unique keys define groups of tags, for
+    example {''probe'': ''probeA''}.'

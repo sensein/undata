@@ -1,0 +1,6 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Craniotomy
+  name: implant_part_number

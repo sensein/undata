@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: CorrectedImageStack
+  name: CorrectedImageStack
+  description: Results from motion correction of an image stack.

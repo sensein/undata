@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: Columns
+  description: 'Names of columns in file.
+
+    '

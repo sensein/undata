@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: reference__emg
+  description: 'The reference for the given channel.
+
+    When the reference is an electrode in `*_electrodes.tsv`, use the name of that
+    electrode.
+
+    For channels originating from bipolar devices, use `"bipolar"`.
+
+    For non-EMG channels (for example, trigger channels, microphones) use `"n/a"`.
+
+    '

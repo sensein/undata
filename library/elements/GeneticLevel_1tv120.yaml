@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: GeneticLevel
+  description: 'Describes the level of analysis.
+
+    Values MUST be one of `"Genetic"`, `"Genomic"`, `"Epigenomic"`,
+
+    `"Transcriptomic"`, `"Metabolomic"`, or `"Proteomic"`.
+
+
+    For more information on these levels, see
+
+    [Multi-omics approaches to disease](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1215-1)
+
+    by Hasin et al. 2017.
+
+    '

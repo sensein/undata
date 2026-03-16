@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abbreviation_18t0tlj
+  - https://schema.undata.live/elements/abbreviation_mpij9o
+  - https://schema.undata.live/elements/name_1j2kya7
+  - https://schema.undata.live/elements/name_rwtctm
+  - https://schema.undata.live/elements/registry_e21gi6
+  - https://schema.undata.live/elements/registry_identifier_1ovmus
+  - https://schema.undata.live/elements/registry_identifier_3c49t7y
+  - https://schema.undata.live/elements/registry_rqgil7u
+  mixins: []
+provenance:
+- source: aind
+  name: PIDName

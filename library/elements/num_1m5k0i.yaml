@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: nwb
+  class: Clustering
+  name: num
+  description: Cluster number of each event

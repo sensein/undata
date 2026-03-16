@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: DecompositionSeries
+  name: source_channels
+  description: DynamicTableRegion pointer to the channels that this decomposition
+    series was generated from.

@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: LabelingPulseMaximumGradient
+  description: 'The maximum amplitude of the gradient switched on during the application
+    of
+
+    the labeling RF pulse(s), in milliteslas per meter.
+
+    '

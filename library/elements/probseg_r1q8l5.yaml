@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: probseg
+  description: 'A probabilistic segmentation.
+
+
+    This suffix may only be used in derivative datasets.
+
+    '

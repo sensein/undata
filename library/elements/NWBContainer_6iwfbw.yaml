@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: NWBContainer
+  name: NWBContainer
+  description: An abstract data type for a generic container storing collections of
+    data and metadata. Base type for all data and metadata containers.

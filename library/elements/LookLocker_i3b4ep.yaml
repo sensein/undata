@@ -1,0 +1,9 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: bids
+  class: metadata
+  name: LookLocker
+  description: 'Boolean indicating if a Look-Locker readout is used.
+
+    '

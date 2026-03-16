@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: PlasmaFreeFractionMethod
+  description: 'Method used to estimate free fraction.
+
+    '

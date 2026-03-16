@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: derived_from
+  description: '`sample-<label>` entity from which a sample is derived,
+
+    for example a slice of tissue (`sample-02`) derived from a block of tissue (`sample-01`).
+
+    '

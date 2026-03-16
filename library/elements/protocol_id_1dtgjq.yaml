@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: SpecimenProcedure
+  name: protocol_id
+  description: DOI for protocols.io

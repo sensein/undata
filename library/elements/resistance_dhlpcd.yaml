@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: IntracellularElectrode
+  name: resistance
+  description: Electrode resistance, in ohms.

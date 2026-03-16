@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: PerformanceMetric
+  name: name
+- source: aind
+  class: PerformanceMetric
+  name: name

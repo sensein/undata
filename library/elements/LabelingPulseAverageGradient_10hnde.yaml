@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: LabelingPulseAverageGradient
+  description: 'The average labeling gradient, in milliteslas per meter.
+
+    '

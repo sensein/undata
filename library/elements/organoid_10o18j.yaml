@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: organoid
+  description: 'A biosample type (`sample_type`): organoid
+
+    '

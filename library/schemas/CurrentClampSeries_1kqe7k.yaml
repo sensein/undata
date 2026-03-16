@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/CurrentClampSeries_15nf6g
+  - https://schema.undata.live/elements/bias_current_1a00o4
+  - https://schema.undata.live/elements/bridge_balance_1c3od7
+  - https://schema.undata.live/elements/capacitance_compensation_n8l7di
+  - https://schema.undata.live/elements/data_1eqldx
+  mixins: []
+provenance:
+- source: nwb
+  name: CurrentClampSeries

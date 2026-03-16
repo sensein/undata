@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metaentities
+  name: matches
+  description: '`matches` is used as a placeholder in BIDS filenames templates to
+    denote that several files
+
+    share exactly the same sequence of entities and labels in their basename.
+
+
+    For example, in the following filename template:
+
+
+    ```Text
+
+    <matches>_bold.nii.gz
+
+    <matches>_events.tsv
+
+    <matches>_events.json
+
+    ```
+
+
+    `<matches>` could correspond to `sub-control01_task-nback_run-1`.
+
+    '

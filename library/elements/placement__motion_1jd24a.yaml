@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: placement__motion
+  description: 'Placement of the tracked point on the body (for example,
+
+    participant, avatar centroid, torso, left arm).
+
+    It can refer to an external vocabulary for describing body parts.
+
+    '

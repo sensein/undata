@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: NIRSCoordinateUnits
+  description: 'Units of the coordinates of `NIRSCoordinateSystem`.
+
+    '

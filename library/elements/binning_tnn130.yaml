@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: nwb
+  class: OnePhotonSeries
+  name: binning
+  description: Amount of pixels combined into 'bins'; could be 1, 2, 4, 8, etc.

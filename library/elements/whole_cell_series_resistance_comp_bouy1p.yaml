@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: VoltageClampSeries
+  name: whole_cell_series_resistance_comp
+  description: Whole cell series resistance compensation, in ohms.

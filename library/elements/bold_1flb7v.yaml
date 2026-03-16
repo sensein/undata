@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: bold
+  description: 'Blood-Oxygen-Level Dependent contrast (specialized T2\* weighting)
+
+    '

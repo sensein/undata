@@ -1,0 +1,6 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: GroundWireImplant
+  name: ground_wire_diameter_unit

@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DataDescription
+  name: institution
+  description: An established society, corporation, foundation or other organization
+    that collected this data

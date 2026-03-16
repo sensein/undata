@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ScanningSequence
+  description: 'Description of the type of data acquired.
+
+    Corresponds to [DICOM Tag 0018, 0020](http://www.dicomlookup.com/dicomtags/(0018,0020))
+
+    `Scanning Sequence`.
+
+    '

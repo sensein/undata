@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/lights_off_time_1leibf
+  - https://schema.undata.live/elements/lights_off_time_359dzu9
+  - https://schema.undata.live/elements/lights_on_time_10t2gx
+  - https://schema.undata.live/elements/lights_on_time_20mgtq1
+  mixins: []
+provenance:
+- source: aind
+  name: LightCycle

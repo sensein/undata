@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Connection
+  name: target_device
+- source: aind
+  class: Connection
+  name: target_device

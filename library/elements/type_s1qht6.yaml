@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: CurationMetric
+  name: type
+- source: aind
+  class: CurationMetric
+  name: type

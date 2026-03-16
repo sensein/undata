@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Calibration
+  name: description
+  description: Brief description of what is being calibrated
+- source: aind
+  class: Calibration
+  name: description
+  description: Brief description of what is being calibrated

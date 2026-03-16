@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: ViralMaterial
+  name: titer_unit
+  description: For example, gc/mL

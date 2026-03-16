@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/RoiResponseSeries_p7kt22
+  - https://schema.undata.live/elements/data_1eg78q
+  - https://schema.undata.live/elements/rois_1ajrwd
+  mixins: []
+provenance:
+- source: nwb
+  name: RoiResponseSeries

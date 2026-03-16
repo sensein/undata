@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: Device
+  name: manufacturer
+  description: DEPRECATED. The name of the manufacturer of the device, e.g., Imec,
+    Plexon, Thorlabs. Instead of using this field, store the value in DeviceModel.manufacturer
+    and link to that DeviceModel from this Device.

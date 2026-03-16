@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Atlas
+  name: axes
+  description: Axis names and directions
+- source: aind
+  class: Atlas
+  name: axes
+  description: Axis names and directions

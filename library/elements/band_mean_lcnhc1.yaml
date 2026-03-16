@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: FrequencyBandsTable
+  name: band_mean
+  description: The mean Gaussian filters, in Hz.

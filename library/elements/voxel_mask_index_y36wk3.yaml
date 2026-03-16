@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: PlaneSegmentation
+  name: voxel_mask_index
+  description: Index into voxel_mask.

@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: CapTrak
+  description: 'RAS orientation and the origin approximately between LPA and RPA
+
+    '

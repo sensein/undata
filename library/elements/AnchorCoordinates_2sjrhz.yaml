@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: AnchorCoordinates
+  description: 'Coordinates of the `AnchorElectrode` in the parent (anatomical) coordinate
+    system.
+
+    This should be an array of numbers of length 3, in the units given in
+
+    `EMGCoordinateSystemUnits` within the JSON object named in `ParentCoordinateSystem`.
+
+    '

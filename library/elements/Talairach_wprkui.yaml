@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: Talairach
+  description: 'Piecewise linear scaling of the brain is implemented as described
+    in TT88.
+
+    '

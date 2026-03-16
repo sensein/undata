@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: DataDescription
+  name: tags
+  description: Descriptive strings to help categorize and search for data

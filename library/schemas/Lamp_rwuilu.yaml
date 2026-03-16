@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1b0y7y
+  - https://schema.undata.live/elements/additional_settings_2ksbtbx
+  - https://schema.undata.live/elements/manufacturer_db049q
+  - https://schema.undata.live/elements/manufacturer_q941dlc
+  - https://schema.undata.live/elements/model_9shgrm
+  - https://schema.undata.live/elements/model_jbhc993
+  - https://schema.undata.live/elements/name_11ukqq
+  - https://schema.undata.live/elements/name_22oh0sq
+  - https://schema.undata.live/elements/notes_i1c2ll
+  - https://schema.undata.live/elements/notes_zl6vlmw
+  - https://schema.undata.live/elements/serial_number_1f5vyk
+  - https://schema.undata.live/elements/serial_number_2sy6yjo
+  - https://schema.undata.live/elements/temperature_fqr3bl
+  - https://schema.undata.live/elements/temperature_unit_1kr3mrq
+  - https://schema.undata.live/elements/temperature_unit_srhk3r
+  - https://schema.undata.live/elements/temperature_v28y52c
+  - https://schema.undata.live/elements/wavelength_max_11wbvuq
+  - https://schema.undata.live/elements/wavelength_max_j7gzqu
+  - https://schema.undata.live/elements/wavelength_min_1t4z64
+  - https://schema.undata.live/elements/wavelength_min_3kitu5w
+  - https://schema.undata.live/elements/wavelength_unit_1cku2r6
+  - https://schema.undata.live/elements/wavelength_unit_omcijl
+  mixins: []
+provenance:
+- source: aind
+  name: Lamp

@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: bval
+  description: 'A space-delimited file containing diffusion-encoding weightings (b-values).
+
+
+    The `bval` file contains the *b*-values (in s/mm<sup>2</sup>) corresponding to
+    the
+
+    volumes in the relevant NIfTI file, with 0 designating *b*=0 volumes.
+
+    '

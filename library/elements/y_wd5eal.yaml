@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: y
+  description: 'The y dimension of the coordinate system.
+
+    '

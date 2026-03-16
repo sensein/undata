@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: DOI
+  description: 'A Digital Object Identifier (DOI) is a persistent, resolvable name
+    for a digital resource.
+
+    (see [URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator))
+
+    '

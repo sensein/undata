@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: InjectionDynamics
+  name: alternating_current
+- source: aind
+  class: InjectionDynamics
+  name: alternating_current

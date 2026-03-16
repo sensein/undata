@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: label
+  description: 'An ASL volume type: label.
+
+    The label image is acquired in the exact same way as the control image,
+
+    except that the blood magnetization flowing into the imaging region has been inverted.
+
+    '

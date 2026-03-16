@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/TimeSeriesReferenceVectorData_2jqfqst
-  - https://schema.undata.live/elements/control_2l8rbh99
-  mixins: []
-provenance:
-- source: nwb
-  name: IntervalSeries

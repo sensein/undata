@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/notes_xvcg5r
+  - https://schema.undata.live/elements/subject_details_2wa8sy
+  - https://schema.undata.live/elements/subject_id_mlpimb7
+  mixins: []
+provenance:
+- source: aind
+  name: Subject

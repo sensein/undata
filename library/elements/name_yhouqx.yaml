@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: ModelTraining
+  name: name
+  description: '[''Unique name of the processing step.'', '' If not provided, the
+    type will be used as the name.'']'
+- source: aind
+  class: ModelTraining
+  name: name
+  description: '[''Unique name of the processing step.'', '' If not provided, the
+    type will be used as the name.'']'

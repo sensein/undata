@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: SampleExtractionInstitution
+  description: 'The name of the institution in charge of the extraction of the sample,
+
+    if different from the institution in charge of the equipment that produced the
+    image.
+
+    '

@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: NWBData
+  name: NWBData
+  description: An abstract data type for a dataset.

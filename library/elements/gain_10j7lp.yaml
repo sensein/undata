@@ -1,0 +1,6 @@
+semantic:
+  data_type: float
+provenance:
+- source: aind
+  class: Detector
+  name: gain

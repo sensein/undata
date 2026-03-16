@@ -1,0 +1,6 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DataStream
+  name: stream_start_time

@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abbreviation_15g99d
+  - https://schema.undata.live/elements/abbreviation_29scdud
+  - https://schema.undata.live/elements/name_1w13gz
+  - https://schema.undata.live/elements/name_3q89jgk
+  - https://schema.undata.live/elements/registry_cahpgq
+  - https://schema.undata.live/elements/registry_identifier_1cfua3
+  - https://schema.undata.live/elements/registry_identifier_2nkqm6h
+  - https://schema.undata.live/elements/registry_o92ljyx
+  mixins: []
+provenance:
+- source: aind
+  name: _Item

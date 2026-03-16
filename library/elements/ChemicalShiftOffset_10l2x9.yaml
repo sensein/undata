@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: ChemicalShiftOffset
+  description: 'The chemical shift at the center of `SpectralWidth` corresponding
+    to 0 Hz,
+
+    specified in ppm (for example, `4.65`).
+
+    '

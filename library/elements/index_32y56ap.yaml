@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: aind
+  class: MRIScan
+  name: index
+  description: Index of the scan in the session, starting at 1

@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DataProcess
+  name: pipeline_name
+  description: Pipeline names must exist in Processing.pipelines
+- source: aind
+  class: DataProcess
+  name: pipeline_name
+  description: Pipeline names must exist in Processing.pipelines

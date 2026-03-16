@@ -1,0 +1,9 @@
+semantic:
+  data_type: integer
+provenance:
+- source: bids
+  class: metadata
+  name: NumberTransmitCoilActiveElements
+  description: 'The number of active RF elements used by the transmit coil.
+
+    '

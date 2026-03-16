@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: Surgery
+  name: measured_coordinates
+  description: Coordinates measured during the procedure, for example Bregma and Lambda

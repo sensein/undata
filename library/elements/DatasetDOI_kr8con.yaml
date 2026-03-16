@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: DatasetDOI
+  description: 'The Digital Object Identifier of the dataset (not the corresponding
+    paper).
+
+    DOIs SHOULD be expressed as a valid
+
+    [URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator);
+
+    bare DOIs such as `10.0.2.3/dfjj.10` are
+
+    [DEPRECATED](SPEC_ROOT/common-principles.md#definitions).
+
+    '

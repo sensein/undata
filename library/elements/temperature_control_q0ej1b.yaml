@@ -1,0 +1,7 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: aind
+  class: Instrument
+  name: temperature_control
+  description: Does the instrument maintain a constant temperature?

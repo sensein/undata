@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: PatchClampSeries
+  name: data
+  description: Recorded voltage or current.

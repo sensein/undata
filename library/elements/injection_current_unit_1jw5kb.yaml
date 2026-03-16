@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: InjectionDynamics
+  name: injection_current_unit
+- source: aind
+  class: InjectionDynamics
+  name: injection_current_unit

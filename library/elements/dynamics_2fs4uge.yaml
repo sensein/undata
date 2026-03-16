@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Injection
+  name: dynamics
+  description: List of injection events, one per location/depth

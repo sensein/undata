@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abbreviation_1oeto9e
+  - https://schema.undata.live/elements/abbreviation_um8xe7
+  - https://schema.undata.live/elements/name_90646p
+  - https://schema.undata.live/elements/name_hrm2xsv
+  - https://schema.undata.live/elements/registry_1ajmwzy
+  - https://schema.undata.live/elements/registry_identifier_1722hfp
+  - https://schema.undata.live/elements/registry_identifier_ltlwmf
+  - https://schema.undata.live/elements/registry_nl8yiy
+  mixins: []
+provenance:
+- source: aind
+  name: _Arduino

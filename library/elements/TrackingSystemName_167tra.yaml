@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: TrackingSystemName
+  description: 'A human-readable name of the tracking system to complement `"tracksys"`
+    label
+
+    of the corresponding *_motion.tsv filename.
+
+    '

@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: plasma_radioactivity
+  description: 'Radioactivity in plasma, in unit of plasma radioactivity (for example,
+    `kBq/mL`).
+
+    '

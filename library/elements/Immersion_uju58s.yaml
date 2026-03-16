@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: Immersion
+  description: 'Lens immersion medium. If the file format is OME-TIFF, the value MUST
+    be consistent
+
+    with the `Immersion` OME metadata field.
+
+    '

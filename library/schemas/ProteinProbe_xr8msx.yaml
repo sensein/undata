@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/mass_24bjf5
+  - https://schema.undata.live/elements/mass_46l47wo
+  - https://schema.undata.live/elements/mass_unit_12tkcb
+  - https://schema.undata.live/elements/mass_unit_24libai
+  - https://schema.undata.live/elements/protein_1pbwz1
+  - https://schema.undata.live/elements/protein_3d0e9pb
+  - https://schema.undata.live/elements/sequence_1j069a
+  - https://schema.undata.live/elements/sequence_30j1jj6
+  - https://schema.undata.live/elements/species_1l4n8m
+  - https://schema.undata.live/elements/species_34pxebb
+  mixins: []
+provenance:
+- source: aind
+  name: ProteinProbe

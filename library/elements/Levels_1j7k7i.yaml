@@ -1,0 +1,12 @@
+semantic:
+  data_type: object
+provenance:
+- source: bids
+  class: metadata
+  name: Levels
+  description: 'For categorical variables: An object of possible values (keys) and
+    their
+
+    descriptions (values).
+
+    '

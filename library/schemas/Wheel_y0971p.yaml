@@ -1,0 +1,32 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_3ddg7o
+  - https://schema.undata.live/elements/additional_settings_6nha0r6
+  - https://schema.undata.live/elements/encoder_27r7e9
+  - https://schema.undata.live/elements/encoder_4dd4bpt
+  - https://schema.undata.live/elements/magnetic_brake_1vkcj5
+  - https://schema.undata.live/elements/magnetic_brake_3pb7w3u
+  - https://schema.undata.live/elements/manufacturer_1k43gn2
+  - https://schema.undata.live/elements/manufacturer_sfttnp
+  - https://schema.undata.live/elements/model_h3h8jz
+  - https://schema.undata.live/elements/model_xqe0oca
+  - https://schema.undata.live/elements/name_1heg7s
+  - https://schema.undata.live/elements/name_2xd5ebq
+  - https://schema.undata.live/elements/notes_1sy2yp
+  - https://schema.undata.live/elements/notes_3k583v2
+  - https://schema.undata.live/elements/pulse_per_revolution_13e59r
+  - https://schema.undata.live/elements/pulse_per_revolution_25q484j
+  - https://schema.undata.live/elements/radius_1ar8lg
+  - https://schema.undata.live/elements/radius_2k95z5k
+  - https://schema.undata.live/elements/serial_number_1ftw0j
+  - https://schema.undata.live/elements/serial_number_2u9jt3z
+  - https://schema.undata.live/elements/size_unit_1b5zqh1
+  - https://schema.undata.live/elements/size_unit_nwkuws
+  - https://schema.undata.live/elements/torque_sensor_1p34mw
+  - https://schema.undata.live/elements/torque_sensor_3cj240n
+  - https://schema.undata.live/elements/width_15i6zf
+  - https://schema.undata.live/elements/width_29w5yci
+  mixins: []
+provenance:
+- source: aind
+  name: Wheel

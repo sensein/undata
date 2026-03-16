@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: BolusCutOffTechnique
+  description: 'Name of the technique used, for example `"Q2TIPS"`, `"QUIPSS"`, `"QUIPSSII"`.
+
+    Corresponds to [DICOM Tag 0018, 925E](http://www.dicomlookup.com/dicomtags/(0018,925E))
+
+    `ASL Bolus Cut-off Technique`.
+
+    '

@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: IntracellularElectrodesTable
+  name: electrode
+  description: Column for storing the reference to the intracellular electrode.

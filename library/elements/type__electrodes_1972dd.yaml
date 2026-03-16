@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: type__electrodes
+  description: 'Type of the electrode (for example, cup, ring, clip-on, wire, needle).
+
+    '

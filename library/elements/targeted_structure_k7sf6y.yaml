@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: Slap2Plane
+  name: targeted_structure
+  description: Base model for brain strutures

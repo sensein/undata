@@ -1,0 +1,29 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: InterelectrodeDistance
+  description: 'Distance between pairs or grids of electrodes rigidly attached to
+    the same sensor device.
+
+    If multiple sensor devices with heterogeneous inter-electrode distances are recorded
+    into
+
+    the same data file,
+
+    inter-electrode distance SHOULD be recorded in the `interelectrode_distance` column
+    of
+
+    `*_electrodes.tsv` instead.
+
+    If instead those devices were recorded into separate data files (distinguished
+    for example
+
+    by the `recording` entity),
+
+    separate `*_emg.json` files (similarly distinguished) MAY be included,
+
+    each with their own `InterelectrodeDistance` values.
+
+    '

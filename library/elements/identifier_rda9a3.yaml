@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Software
+  name: identifier
+  description: RRID of the software from scicrunch.org.

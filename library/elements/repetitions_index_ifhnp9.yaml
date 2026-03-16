@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ExperimentalConditionsTable
+  name: repetitions_index
+  description: Index dataset for the repetitions column.

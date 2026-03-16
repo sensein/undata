@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: Participant
+  name: relatedParticipant
+  description: Information about related participants or subjects in a study or across
+    studies.

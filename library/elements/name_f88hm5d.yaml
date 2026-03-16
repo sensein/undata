@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: _Brightfield
+  name: name
+- source: aind
+  class: _Brightfield
+  name: name

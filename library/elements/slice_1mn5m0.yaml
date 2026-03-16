@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: IntracellularElectrode
+  name: slice
+  description: Information about slice used for recording.

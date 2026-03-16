@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: CodingSchemeDesignator
+  description: 'The identifier of the coding scheme in which the coded entry is defined.
+
+    Corresponds to [DICOM Tag 0008, 0102](http://www.dicomlookup.com/dicomtags/(0008,0102))
+
+    `Coding Scheme Designator`.
+
+    '

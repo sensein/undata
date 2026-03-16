@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: OptogeneticSeries
+  name: OptogeneticSeries
+  description: An optogenetic stimulus.

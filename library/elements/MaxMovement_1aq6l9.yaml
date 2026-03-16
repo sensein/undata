@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: MaxMovement
+  description: 'Maximum head movement (in mm) detected during the recording,
+
+    as measured by the head localization coils (for example, `4.8`).
+
+    '

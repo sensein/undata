@@ -1,0 +1,26 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: entities
+  name: flip
+  description: 'If files belonging to an entity-linked file collection are acquired
+    at different
+
+    flip angles, the `_flip-<index>` entity pair MUST be used to distinguish
+
+    individual files.
+
+
+    This entity represents the `"FlipAngle"` metadata field.
+
+    Therefore, if the `flip-<index>` entity is present in a filename,
+
+    `"FlipAngle"` MUST be defined in the associated metadata.
+
+    Please note that the `<index>` denotes the number/index (in the form of a nonnegative
+    integer),
+
+    not the `"FlipAngle"` value of the separate JSON file.
+
+    '

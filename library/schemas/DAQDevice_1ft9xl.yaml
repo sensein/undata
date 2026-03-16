@@ -1,0 +1,26 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1gk6b4
+  - https://schema.undata.live/elements/additional_settings_2vpex8k
+  - https://schema.undata.live/elements/channels_17jspq
+  - https://schema.undata.live/elements/channels_2dxe34w
+  - https://schema.undata.live/elements/data_interface_1hdpv9
+  - https://schema.undata.live/elements/data_interface_2xbpeu1
+  - https://schema.undata.live/elements/firmware_version_1j2xylm
+  - https://schema.undata.live/elements/firmware_version_rwzy6c
+  - https://schema.undata.live/elements/hardware_version_11iq085
+  - https://schema.undata.live/elements/hardware_version_j0kpml
+  - https://schema.undata.live/elements/manufacturer_98bwja
+  - https://schema.undata.live/elements/manufacturer_i7pqxhw
+  - https://schema.undata.live/elements/model_h8kxwo
+  - https://schema.undata.live/elements/model_y0ghcs1
+  - https://schema.undata.live/elements/name_1la5ph
+  - https://schema.undata.live/elements/name_350szo0
+  - https://schema.undata.live/elements/notes_16sh5bw
+  - https://schema.undata.live/elements/notes_loqvrh
+  - https://schema.undata.live/elements/serial_number_1fe0jv
+  - https://schema.undata.live/elements/serial_number_2te89lx
+  mixins: []
+provenance:
+- source: aind
+  name: DAQDevice

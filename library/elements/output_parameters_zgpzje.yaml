@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: ModelEvaluation
+  name: output_parameters
+  description: Output parameters
+- source: aind
+  class: ModelEvaluation
+  name: output_parameters
+  description: Output parameters

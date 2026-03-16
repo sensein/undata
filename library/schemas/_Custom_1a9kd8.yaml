@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abbreviation_moj2fb
+  - https://schema.undata.live/elements/name_1wh7az
+  - https://schema.undata.live/elements/registry_1i7o0p
+  - https://schema.undata.live/elements/registry_identifier_12xy4r
+  mixins: []
+provenance:
+- source: aind
+  name: _Custom

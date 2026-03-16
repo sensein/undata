@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: SinglesRate
+  description: 'Singles rate for each frame (same units as `Units`, for example, `"Bq/mL"`).
+
+    '

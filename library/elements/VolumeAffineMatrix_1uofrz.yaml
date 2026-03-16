@@ -1,0 +1,24 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: VolumeAffineMatrix
+  description: 'A 4-by-4 matrix using identical conventions and coordinate system
+    to
+
+    the *{qs}form* NIfTI affine matrix to define the orientation,
+
+    position, and size of an additional VOI.
+
+    This VOI defines a spatial region in addition to the primary method of localization
+
+    (encoded in the NIfTI header *{qs}form*).
+
+    Typically not defined for data stored with a single spatial voxel or FID-MRSI.
+
+    For example: `[[30, 0, 0, -30], [0, 30, -2.27, -72.67], [0, 2.27, 29.91, 5.47],
+
+    [0, 0, 0, 1]]`.
+
+    '

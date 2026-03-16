@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Channel
+  name: additional_device_names
+  description: Mirrors, dichroics, etc

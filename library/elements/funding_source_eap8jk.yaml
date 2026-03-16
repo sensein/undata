@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: data_description
+  name: funding_source
+  description: Funding source. If internal funding, select 'Allen Institute'

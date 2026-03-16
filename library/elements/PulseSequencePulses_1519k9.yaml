@@ -1,0 +1,17 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: PulseSequencePulses
+  description: 'The list of pulses used in the pulse sequence.
+
+    If this field is specified, the array size MUST equal the array size of `"PulseSequenceTiming"`.
+
+    The strings MAY be of the format `<pulse_name>_R<time-bandwidth_product>`.
+
+    For example, a sLASER sequence may be described as such:
+
+    `["P10_R6", "HS4_R25", "HS4_R25", "HS4_R25", "HS4_R25"]`.
+
+    '

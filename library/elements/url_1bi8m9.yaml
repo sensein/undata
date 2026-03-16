@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DataAsset
+  name: url
+  description: URL pointing to the data asset
+- source: aind
+  class: DataAsset
+  name: url
+  description: URL pointing to the data asset

@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: datatypes
+  name: func
+  description: 'Task (including resting state) imaging data
+
+    '

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: MissingValues
+  description: 'Describes how missing values are represented in the given recording
+    system
+
+    (for example a tracking system in motion), can take values such as, "NaN", "0".
+
+    '

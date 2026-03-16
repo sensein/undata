@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Manipulation
+  name: end_time
+  description: Must be between the acquisition start and end times

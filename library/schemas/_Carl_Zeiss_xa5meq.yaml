@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abbreviation_1ns6g5
+  - https://schema.undata.live/elements/abbreviation_39yf8g2
+  - https://schema.undata.live/elements/name_1dkd7n
+  - https://schema.undata.live/elements/name_2psp7f1
+  - https://schema.undata.live/elements/registry_1cx1j4
+  - https://schema.undata.live/elements/registry_2oiog3g
+  - https://schema.undata.live/elements/registry_identifier_7ceiky
+  - https://schema.undata.live/elements/registry_identifier_ehostyz
+  mixins: []
+provenance:
+- source: aind
+  name: _Carl_Zeiss

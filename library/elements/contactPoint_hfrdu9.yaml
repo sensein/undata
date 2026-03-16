@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: dandi
+  class: Organization
+  name: contactPoint
+  description: Contact for the organization

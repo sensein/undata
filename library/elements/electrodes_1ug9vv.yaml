@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ElectricalSeries
+  name: electrodes
+  description: DynamicTableRegion pointer to the electrodes that this time series
+    was generated from.

@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: ICBM452AirSpace
+  description: 'Reference space defined by the "average of 452 T1-weighted MRIs of
+    normal young adult brains"
+
+    with "linear transforms of the subjects into the atlas space using a 12-parameter
+    affine
+
+    transformation".
+
+    '

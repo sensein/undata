@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: TracerRadionuclide
+  description: 'Radioisotope labeling tracer (for example, `"C11"`).
+
+    '

@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: RoiResponseSeries
+  name: rois
+  description: DynamicTableRegion referencing into an ROITable containing information
+    on the ROIs stored in this timeseries.

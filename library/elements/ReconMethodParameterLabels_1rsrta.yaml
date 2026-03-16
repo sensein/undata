@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: ReconMethodParameterLabels
+  description: 'Names of reconstruction parameters (for example, `["subsets", "iterations"]`).
+
+    '

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: SequenceVariant
+  description: 'Variant of the ScanningSequence.
+
+    Corresponds to [DICOM Tag 0018, 0021](http://www.dicomlookup.com/dicomtags/(0018,0021))
+
+    `Sequence Variant`.
+
+    '

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: SYSCLOCK
+  description: 'Elapsed time since trial/recording start, as provided by the recording
+    device.
+
+    For device-external timestamp signals, use `LATENCY`.
+
+    For TTL-based synchronization signals, use `TRIG`.
+
+    '

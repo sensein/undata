@@ -1,0 +1,17 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: pupil_size
+  description: 'Pupil size, as area or diameter, of the recorded eye, in the
+
+    units specified in the corresponding metadata sidecar.
+
+    It is RECOMMENDED to indicate the particular type of pupil size that is
+
+    being recorded in the `Description` field of this column.
+
+    It is RECOMMENDED to specify the `Units` field corresponding to this column.
+
+    '

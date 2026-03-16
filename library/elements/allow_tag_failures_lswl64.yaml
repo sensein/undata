@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: QualityControl
+  name: allow_tag_failures
+  description: List of tag *values* that are allowed to fail without failing the overall
+    QC

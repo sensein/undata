@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: SpatialSeries
+  name: data
+  description: 1-D or 2-D array storing position or direction relative to some reference
+    frame.

@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: PropertyValue
+  name: propertyID
+  description: A commonly used identifier for the characteristic represented by the
+    property. For example, a known prefix like DOI or a full URL.

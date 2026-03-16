@@ -1,0 +1,15 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: bids
+  class: metadata
+  name: Derivative
+  description: 'Indicates that values in the corresponding column are transformations
+    of values
+
+    from other columns (for example a summary score based on a subset of items in
+    a
+
+    questionnaire).
+
+    '

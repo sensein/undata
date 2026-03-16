@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: cbv
+  description: 'Cerebral Blood Volume contrast (specialized T2\* weighting or difference
+    between T1 weighted images)
+
+    '

@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1rante
+  - https://schema.undata.live/elements/manufacturer_1pjqda
+  - https://schema.undata.live/elements/model_xjssd6
+  - https://schema.undata.live/elements/name_1q7vpo
+  - https://schema.undata.live/elements/notes_1ebiz3
+  - https://schema.undata.live/elements/operating_system_15xgss
+  - https://schema.undata.live/elements/serial_number_73nriu
+  mixins: []
+provenance:
+- source: aind
+  name: Computer

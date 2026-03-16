@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: AverageCalibrationError
+  description: 'Average calibration error in degrees of visual angle.
+
+    '

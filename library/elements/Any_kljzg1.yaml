@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: Any
+  description: 'Any extension is allowed.
+
+    '

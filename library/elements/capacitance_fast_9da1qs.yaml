@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: VoltageClampSeries
+  name: capacitance_fast
+  description: Fast capacitance, in farads.

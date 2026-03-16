@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: instrument
+  name: coordinate_system
+  description: Origin and axis definitions for determining the position of the instrument's
+    components

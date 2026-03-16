@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: formats
+  name: date
+  description: 'A date in the form `"YYYY-MM-DD[Z]"`,
+
+    where [Z] is an optional, valid timezone code.
+
+    '

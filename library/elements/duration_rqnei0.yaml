@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: aind
+  class: Anaesthetic
+  name: duration
+- source: aind
+  class: Anaesthetic
+  name: duration

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: DigitizedHeadPoints__coordsystem
+  description: 'Relative path to the file containing the locations of digitized head
+    points
+
+    collected during the session (for example, `"sub-01_headshape.pos"`).
+
+    RECOMMENDED for all MEG systems, especially for CTF and BTi/4D.
+
+    For Neuromag/Elekta/MEGIN, the head points will be stored in the `.fif` file.
+
+    '

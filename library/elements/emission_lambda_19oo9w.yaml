@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: OpticalChannel
+  name: emission_lambda
+  description: Emission wavelength for channel, in nm.

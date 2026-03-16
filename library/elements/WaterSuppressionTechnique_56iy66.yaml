@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: WaterSuppressionTechnique
+  description: 'The name of the pulse sequence used for water suppression (for example,
+    `"CHESS"`, `"VAPOR"`).
+
+    '

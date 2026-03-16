@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: acquisition
+  name: maintenance
+  description: List of maintenance on instrument prior to acquisition.

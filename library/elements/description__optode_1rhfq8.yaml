@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: description__optode
+  description: 'Free-form text description of the optode, or other information of
+    interest.
+
+    '

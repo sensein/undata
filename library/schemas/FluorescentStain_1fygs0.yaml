@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/expiration_date_1eyycn
+  - https://schema.undata.live/elements/expiration_date_2skigkb
+  - https://schema.undata.live/elements/fluorophore_10xob8g
+  - https://schema.undata.live/elements/fluorophore_ipwp23
+  - https://schema.undata.live/elements/initiator_name_17drg4
+  - https://schema.undata.live/elements/initiator_name_2dlhegc
+  - https://schema.undata.live/elements/lot_number_1vrarz
+  - https://schema.undata.live/elements/lot_number_3poxn9p
+  - https://schema.undata.live/elements/name_1ypv2a
+  - https://schema.undata.live/elements/name_3vj6y5t
+  - https://schema.undata.live/elements/probe_1uuzdgb
+  - https://schema.undata.live/elements/probe_xvwsgp
+  - https://schema.undata.live/elements/rrid_11mggw
+  - https://schema.undata.live/elements/rrid_228gcdl
+  - https://schema.undata.live/elements/source_1r8po1
+  - https://schema.undata.live/elements/source_3gs4zku
+  - https://schema.undata.live/elements/stain_type_1hkbzs
+  - https://schema.undata.live/elements/stain_type_2xor959
+  mixins: []
+provenance:
+- source: aind
+  name: FluorescentStain

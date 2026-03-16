@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ScratchData
+  name: notes
+  description: Any notes the user has about the dataset being stored

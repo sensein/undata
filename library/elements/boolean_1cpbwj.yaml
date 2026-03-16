@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: formats
+  name: boolean
+  description: 'A boolean.
+
+    Must be either "true" or "false".
+
+    '

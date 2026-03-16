@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/contactPoint_2l8rbh9
-  - https://schema.undata.live/elements/id_36kcny8
-  - https://schema.undata.live/elements/wasAssociatedWith_34qbbrb
-  mixins: []
-provenance:
-- source: dandi
-  name: AssetsSummary

@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: DecayCorrectionFactor
+  description: 'Decay correction factor for each frame.
+
+    '

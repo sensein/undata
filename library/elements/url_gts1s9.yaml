@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Software
+  name: url
+  description: Web page for the software.

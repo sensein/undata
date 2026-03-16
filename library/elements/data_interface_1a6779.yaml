@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - CameraLink
+    - Coax
+    - Ethernet
+    - PCIe
+    - PXI
+    - USB
+    - Other
+provenance:
+- source: aind
+  class: Camera
+  name: data_interface
+  description: Connection between a device and a PC

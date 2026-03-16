@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: InjectedMassPerWeightUnits
+  description: 'Unit format of the injected mass per kilogram bodyweight
+
+    (for example, `"ug/kg"`).
+
+    '

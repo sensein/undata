@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/TimeSeriesReferenceVectorData_2jqfqst
-  - https://schema.undata.live/elements/control_2l8rbh99
-  - https://schema.undata.live/elements/resolution_jn1jmh5a
-  mixins: []
-provenance:
-- source: nwb
-  name: OnePhotonSeries

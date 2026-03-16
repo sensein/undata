@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: CurrentClampStimulusSeries
+  name: CurrentClampStimulusSeries
+  description: Stimulus current applied during current clamp recording.

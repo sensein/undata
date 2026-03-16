@@ -1,0 +1,9 @@
+semantic:
+  data_type: integer
+provenance:
+- source: bids
+  class: columns
+  name: index
+  description: 'The label integer index.
+
+    '

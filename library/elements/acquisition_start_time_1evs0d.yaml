@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Acquisition
+  name: acquisition_start_time
+  description: During validation, timezone information will be moved into the acquisition_start_tz
+    field.

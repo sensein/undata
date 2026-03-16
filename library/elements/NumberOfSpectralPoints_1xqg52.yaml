@@ -1,0 +1,12 @@
+semantic:
+  data_type: integer
+provenance:
+- source: bids
+  class: metadata
+  name: NumberOfSpectralPoints
+  description: 'The number of complex data points in each recorded transient of the
+    detected time-domain MR
+
+    signal, equivalent to the number of points in a single spectrum.
+
+    '

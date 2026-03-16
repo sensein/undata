@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: EOG
+  description: 'Generic electrooculogram (eye), different from HEOG and VEOG.
+
+    '

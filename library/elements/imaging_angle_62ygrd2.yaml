@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: aind
+  class: ImageSPIM
+  name: imaging_angle
+  description: Angle of the detector relative to the image plane relative to perpendicular

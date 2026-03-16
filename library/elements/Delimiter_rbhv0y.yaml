@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: Delimiter
+  description: 'If rows in a column may be interpreted as a lists of values, the character
+    that
+
+    separates one value from the next.
+
+    '

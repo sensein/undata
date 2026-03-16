@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: IXI549Space
+  description: 'Reference space defined by the average of the "549 (...) subjects
+    from the IXI dataset"
+
+    linearly transformed to ICBM MNI 452.
+
+
+    Used by SPM12.
+
+    '

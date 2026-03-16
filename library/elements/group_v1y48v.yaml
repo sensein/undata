@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: data_description
+  name: group
+  description: A short name for the group of individuals that collected this data

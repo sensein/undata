@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: FITERR
+  description: 'Fit error signal from each head localization coil.
+
+    '

@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: OnePhotonSeries
+  name: exposure_time
+  description: Exposure time of the sample; often the inverse of the frequency.

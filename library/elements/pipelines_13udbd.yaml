@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Processing
+  name: pipelines
+  description: For processing done with pipelines, list the repositories here. Pipelines
+    must use the name field ,and be referenced in the pipeline_name field of a DataProcess.

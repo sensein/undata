@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: NonViralMaterial
+  name: concentration_unit
+  description: For example, mg/mL

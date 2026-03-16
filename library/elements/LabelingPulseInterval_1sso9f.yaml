@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: LabelingPulseInterval
+  description: 'Delay between the peaks of the individual labeling pulses, in milliseconds.
+
+    '

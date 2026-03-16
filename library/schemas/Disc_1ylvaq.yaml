@@ -1,0 +1,32 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_evv1gj
+  - https://schema.undata.live/elements/additional_settings_tdas3i8
+  - https://schema.undata.live/elements/decoder_12agitg
+  - https://schema.undata.live/elements/decoder_jems4z
+  - https://schema.undata.live/elements/encoder_firmware_fdkpan
+  - https://schema.undata.live/elements/encoder_firmware_uc8xtet
+  - https://schema.undata.live/elements/encoder_h4g0o0
+  - https://schema.undata.live/elements/encoder_xsan7xy
+  - https://schema.undata.live/elements/manufacturer_amkiwy
+  - https://schema.undata.live/elements/manufacturer_kyuaytd
+  - https://schema.undata.live/elements/model_1wfz4f
+  - https://schema.undata.live/elements/model_3r1mf9b
+  - https://schema.undata.live/elements/name_1vng9v
+  - https://schema.undata.live/elements/name_3phcd91
+  - https://schema.undata.live/elements/notes_1qcie9t
+  - https://schema.undata.live/elements/notes_vlkehl
+  - https://schema.undata.live/elements/output_1gstz5
+  - https://schema.undata.live/elements/output_2w6hv9k
+  - https://schema.undata.live/elements/radius_11gxk7
+  - https://schema.undata.live/elements/radius_21xjvqg
+  - https://schema.undata.live/elements/radius_unit_1c8jt9h
+  - https://schema.undata.live/elements/radius_unit_og4d6r
+  - https://schema.undata.live/elements/serial_number_1udnbc
+  - https://schema.undata.live/elements/serial_number_3myyu7a
+  - https://schema.undata.live/elements/surface_material_1n07qat
+  - https://schema.undata.live/elements/surface_material_twlize
+  mixins: []
+provenance:
+- source: aind
+  name: Disc

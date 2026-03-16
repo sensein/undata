@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: procedures
+  name: coordinate_system
+  description: Origin and axis definitions for determining the configured position
+    of devices implanted during procedures. Required when coordinates are provided
+    within the Procedures

@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: TarsVirusIdentifiers
+  name: prep_lot_number
+- source: aind
+  class: TarsVirusIdentifiers
+  name: prep_lot_number

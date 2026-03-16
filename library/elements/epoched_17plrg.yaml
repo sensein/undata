@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: epoched
+  description: 'Recording is limited to time windows around events of interest
+
+    (for example, stimulus presentations or subject responses).
+
+    '

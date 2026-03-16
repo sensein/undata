@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DataProcess
+  name: output_path
+  description: Path to processing outputs, if stored.
+- source: aind
+  class: DataProcess
+  name: output_path
+  description: Path to processing outputs, if stored.

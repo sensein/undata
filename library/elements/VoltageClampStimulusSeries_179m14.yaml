@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: VoltageClampStimulusSeries
+  name: VoltageClampStimulusSeries
+  description: Stimulus voltage applied during a voltage clamp recording.

@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: BehavioralTimeSeries
+  name: BehavioralTimeSeries
+  description: TimeSeries for storing behavioral time series data. See description
+    of BehavioralEpochs for more details.

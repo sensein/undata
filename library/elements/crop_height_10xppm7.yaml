@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: aind
+  class: DetectorConfig
+  name: crop_height
+  description: Overrides any value set in the Instrument metadata

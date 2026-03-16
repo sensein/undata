@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: common_principles
+  name: space
+  description: 'A space in BIDS is a reference [coordinate system](SPEC_ROOT/appendices/coordinate-systems.md)
+
+    defined by neuroimaging data, which may originate from an individual participant
+    (native space)
+
+    or a standardized reference derived from multiple participants (template space).
+
+    '

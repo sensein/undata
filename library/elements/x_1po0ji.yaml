@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: x
+  description: 'Recorded position along the x-axis.
+
+    '

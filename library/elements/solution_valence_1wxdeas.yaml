@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Positive
+    - Negative
+    - Neutral
+    - Unknown
+provenance:
+- source: aind
+  class: LickSpoutConfig
+  name: solution_valence
+  description: Valence of a stimulus

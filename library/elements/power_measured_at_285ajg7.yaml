@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: LightEmittingDiodeConfig
+  name: power_measured_at
+  description: 'For example: objective, patch cable, etc'

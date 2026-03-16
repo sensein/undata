@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: B1ShimmingTechnique
+  description: 'The technique used to shim the *B*<sub>1</sub> field (for example,
+    `"Simple phase align"`
+
+    or `"Pre-saturated TurboFLASH"`).
+
+    '

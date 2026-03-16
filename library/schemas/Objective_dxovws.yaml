@@ -1,0 +1,26 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1k6e2n
+  - https://schema.undata.live/elements/additional_settings_32uc9ee
+  - https://schema.undata.live/elements/immersion_1riojy
+  - https://schema.undata.live/elements/immersion_3hbt3mj
+  - https://schema.undata.live/elements/magnification_1m7dkb
+  - https://schema.undata.live/elements/magnification_36ucih9
+  - https://schema.undata.live/elements/manufacturer_11i1hh
+  - https://schema.undata.live/elements/manufacturer_21zqnle
+  - https://schema.undata.live/elements/model_1sjzm5o
+  - https://schema.undata.live/elements/model_wpuj33
+  - https://schema.undata.live/elements/name_111jof
+  - https://schema.undata.live/elements/name_21370xv
+  - https://schema.undata.live/elements/notes_1a9ync
+  - https://schema.undata.live/elements/notes_2jb2to7
+  - https://schema.undata.live/elements/numerical_aperture_12ewga
+  - https://schema.undata.live/elements/numerical_aperture_23skqsw
+  - https://schema.undata.live/elements/objective_type_180jys
+  - https://schema.undata.live/elements/objective_type_2eugcmg
+  - https://schema.undata.live/elements/serial_number_1lsgv2
+  - https://schema.undata.live/elements/serial_number_360xk2y
+  mixins: []
+provenance:
+- source: aind
+  name: Objective

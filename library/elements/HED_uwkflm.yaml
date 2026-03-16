@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: HED
+  description: 'Hierarchical Event Descriptor (HED) tags.
+
+    See the [HED Appendix](SPEC_ROOT/appendices/hed.md) for details.
+
+    '

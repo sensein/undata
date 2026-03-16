@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: Dandiset
+  name: license
+  description: Licenses associated with the item. DANDI only supports a subset of
+    Creative Commons Licenses (creativecommons.org) applicable to datasets.

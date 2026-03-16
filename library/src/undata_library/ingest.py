@@ -45,27 +45,36 @@ def ingest_source(
     created = 0
     merged = 0
 
-    # Group by semantic hash
-    hash_to_records: dict[str, tuple[SemanticIdentity, list[ProvenanceEntry]]] = {}
+    # Group by semantic hash.
+    # When the semantic graph is underspecified (no ontology_term, no unit,
+    # no constraints), include the attribute name in the hash to prevent
+    # unrelated properties from collapsing. The attribute name IS semantic
+    # when no richer annotation exists.
+    hash_to_records: dict[str, tuple[SemanticIdentity, list[ProvenanceEntry], str]] = {}
 
     for sem, prov in pairs:
         sem_dict = sem.model_dump(exclude_none=True)
-        # Normalize enum values to strings for hashing
         if "data_type" in sem_dict:
             sem_dict["data_type"] = str(sem_dict["data_type"])
-        sha, _ = compute_sha256(canonical_json(sem_dict)), canonical_json(sem_dict)
+
+        has_rich_semantics = sem.ontology_term is not None or sem.unit is not None
+        if not has_rich_semantics:
+            # Include attribute name + class as disambiguators when
+            # the semantic graph is underspecified
+            sem_dict["_attribute"] = prov.name
+            sem_dict["_class"] = prov.class_
+
         sha = compute_sha256(canonical_json(sem_dict))
 
         if sha not in hash_to_records:
-            hash_to_records[sha] = (sem, [])
+            hash_to_records[sha] = (sem, [], prov.name)
         hash_to_records[sha][1].append(prov)
 
-    for sha, (sem, provs) in hash_to_records.items():
+    for sha, (sem, provs, first_name) in hash_to_records.items():
         key = generate_short_key(sha, existing_keys)
         existing_keys.add(key)
 
-        # Determine attribute name (first provenance entry's name)
-        attr_name = provs[0].name
+        attr_name = first_name
         filename = f"{attr_name}_{key}.yaml"
         filepath = elements_dir / filename
 

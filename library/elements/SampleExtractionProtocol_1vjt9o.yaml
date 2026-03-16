@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: SampleExtractionProtocol
+  description: 'Description of the sample extraction protocol or
+
+    [URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator)
+
+    (for example from [protocols.io](https://www.protocols.io/)).
+
+    '

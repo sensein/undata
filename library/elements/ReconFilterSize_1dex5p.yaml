@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ReconFilterSize
+  description: 'Kernel size of post-recon filter (FWHM) in default units `"mm"`.
+
+    '

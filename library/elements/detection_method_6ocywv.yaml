@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: EventDetection
+  name: detection_method
+  description: Description of how events were detected, such as voltage threshold,
+    or dV/dT threshold, as well as relevant values.

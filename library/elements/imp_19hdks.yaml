@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: ElectrodesTable
+  name: imp
+  description: Impedance of the channel, in ohms.

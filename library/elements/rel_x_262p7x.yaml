@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: ElectrodesTable
+  name: rel_x
+  description: x coordinate in electrode group. Units should be specified in microns.

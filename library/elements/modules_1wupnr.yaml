@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: EphysAssemblyConfig
+  name: modules
+  description: Configurations for conveniently tracking manipulator modules, e.g.
+    on the New Scale dome.

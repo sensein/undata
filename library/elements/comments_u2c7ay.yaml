@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: TimeSeries
+  name: comments
+  description: Human-readable comments about the TimeSeries. This second descriptive
+    field can be used to store additional information, or descriptive information
+    if the primary description field is populated with a computer-readable string.

@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: files
+  name: code
+  description: 'A directory in which to store any code
+
+    (for example the one used to generate the derivatives from the raw data).
+
+    See the [Code section](SPEC_ROOT/modality-agnostic-files/code.md)
+
+    for more information.
+
+    '

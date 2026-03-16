@@ -1,0 +1,8 @@
+semantic:
+  data_type: integer
+provenance:
+- source: nwb
+  class: ImagingRetinotopy
+  name: focal_depth_image
+  description: 'Gray-scale image taken with same settings/parameters (e.g., focal
+    depth, wavelength) as data collection. Array format: [rows][columns].'

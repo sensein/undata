@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: abbreviation
+  description: 'The unique label abbreviation
+
+    '

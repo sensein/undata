@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/common_name_4w8ued
+  - https://schema.undata.live/elements/common_name_9nqw1v5
+  - https://schema.undata.live/elements/name_1etcnuu
+  - https://schema.undata.live/elements/name_pr5kxc
+  - https://schema.undata.live/elements/registry_1e0kf8o
+  - https://schema.undata.live/elements/registry_identifier_12b7t3
+  - https://schema.undata.live/elements/registry_identifier_23lb0y8
+  - https://schema.undata.live/elements/registry_pcke51
+  mixins: []
+provenance:
+- source: aind
+  name: _Mus_Musculus

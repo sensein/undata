@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: InstitutionalDepartmentName
+  description: 'The department in the institution in charge of the equipment that
+    produced
+
+    the measurements.
+
+    '

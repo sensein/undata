@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: CommonModel
+  name: acknowledgement
+  description: Any acknowledgments not covered by contributors or external resources.

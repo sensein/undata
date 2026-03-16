@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: AnalyticalApproach
+  description: 'Methodology or methodologies used to analyze the `"GeneticLevel"`.
+
+    Values MUST be taken from the
+
+    [database of Genotypes and Phenotypes
+
+    (dbGaP)](https://www.ncbi.nlm.nih.gov/gap/advanced)
+
+    under /Study/Molecular Data Type (for example, SNP Genotypes (Array) or
+
+    Methylation (CpG).
+
+    '

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: txt
+  description: 'A free-form text file.
+
+
+    Tab-delimited files should have the `.tsv` extension rather than a `.txt` extension.
+
+    '

@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: FrequencyBandsTable
+  name: FrequencyBandsTable
+  description: Table for describing the bands that DecompositionSeries was generated
+    from. There should be one row in this table for each band.

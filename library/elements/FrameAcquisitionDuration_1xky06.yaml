@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: FrameAcquisitionDuration
+  description: 'Duration (in seconds) of volume acquisition.
+
+    Corresponds to DICOM Tag 0018, 9220 `Frame Acquisition Duration`.
+
+    '

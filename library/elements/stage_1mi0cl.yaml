@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Raw data
+    - Processing
+    - Analysis
+    - Multi-asset
+provenance:
+- source: aind
+  class: QCMetric
+  name: stage
+  description: 'Quality control stage
+
+
+    When during data processing the QC metrics were derived.'
+- source: aind
+  class: QCMetric
+  name: stage
+  description: 'Quality control stage
+
+
+    When during data processing the QC metrics were derived.'

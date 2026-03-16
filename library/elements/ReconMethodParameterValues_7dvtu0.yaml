@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: ReconMethodParameterValues
+  description: 'Values of reconstruction parameters (for example, `[21, 3]`).
+
+    '

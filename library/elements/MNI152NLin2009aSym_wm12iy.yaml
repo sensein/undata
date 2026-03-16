@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: MNI152NLin2009aSym
+  description: 'Also known as ICBM (non-linear coregistration with 40 iterations,
+    released in 2009).
+
+    This is the first symmetric version.
+
+
+    Used by the DARTEL toolbox in SPM12b.
+
+    '

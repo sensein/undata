@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: trace
+  description: 'Trace-weighted image, as the mean intensity of diffusion-weighted
+    images
+
+    '

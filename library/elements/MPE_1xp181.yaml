@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: MPE
+  description: 'Multi-photon excitation microscopy imaging data
+
+    '

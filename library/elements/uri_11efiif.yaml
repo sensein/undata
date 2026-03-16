@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Container
+  name: uri
+  description: URI of the container, e.g. Docker Hub URL
+- source: aind
+  class: Container
+  name: uri
+  description: URI of the container, e.g. Docker Hub URL
+- source: aind
+  class: Container
+  name: uri
+  description: URI of the container, e.g. Docker Hub URL

@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: CurrentClampSeries
+  name: capacitance_compensation
+  description: Capacitance compensation, in farads.

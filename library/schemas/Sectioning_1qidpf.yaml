@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/sections_bgp3ve
+  - https://schema.undata.live/elements/sections_mma9tgo
+  mixins: []
+provenance:
+- source: aind
+  name: Sectioning

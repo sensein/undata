@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: ImagingPlane
+  name: excitation_lambda
+  description: Excitation wavelength, in nm.

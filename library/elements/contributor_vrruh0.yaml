@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: BareAsset
+  name: contributor
+  description: 'Contributors to this item: persons or organizations.'

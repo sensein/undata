@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Reagent
+  name: lot_number
+- source: aind
+  class: Reagent
+  name: lot_number

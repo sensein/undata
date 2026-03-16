@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: StimulusEpoch
+  name: curriculum_status
+  description: Status within the training protocol curriculum

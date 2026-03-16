@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ClusterWaveforms
+  name: waveform_filtering
+  description: Filtering applied to data before generating mean/sd

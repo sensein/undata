@@ -1,0 +1,42 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_scan_parameters_7v7o20
+  - https://schema.undata.live/elements/additional_scan_parameters_fisvk1c
+  - https://schema.undata.live/elements/affine_transform_1mr0p0y
+  - https://schema.undata.live/elements/affine_transform_trxr1u
+  - https://schema.undata.live/elements/device_name_1vrbom
+  - https://schema.undata.live/elements/device_name_3pozfny
+  - https://schema.undata.live/elements/echo_time_10jz7r
+  - https://schema.undata.live/elements/echo_time_204j4hu
+  - https://schema.undata.live/elements/echo_time_unit_1eczot
+  - https://schema.undata.live/elements/echo_time_unit_2rd6f5k
+  - https://schema.undata.live/elements/effective_echo_time_1ag3m3b
+  - https://schema.undata.live/elements/effective_echo_time_njgft6
+  - https://schema.undata.live/elements/index_1k8bgp
+  - https://schema.undata.live/elements/index_32y56ap
+  - https://schema.undata.live/elements/mr_acquisition_type_19slqc
+  - https://schema.undata.live/elements/mr_acquisition_type_2ictt9o
+  - https://schema.undata.live/elements/notes_14c9yp
+  - https://schema.undata.live/elements/notes_27lgjbf
+  - https://schema.undata.live/elements/pulse_sequence_type_1mnrbs
+  - https://schema.undata.live/elements/pulse_sequence_type_37qo5vv
+  - https://schema.undata.live/elements/rare_factor_1nvhd5g
+  - https://schema.undata.live/elements/rare_factor_ucg0u9
+  - https://schema.undata.live/elements/repetition_time_18hcld
+  - https://schema.undata.live/elements/repetition_time_2frlbuv
+  - https://schema.undata.live/elements/repetition_time_unit_1luexzx
+  - https://schema.undata.live/elements/repetition_time_unit_tbevae
+  - https://schema.undata.live/elements/resolution_1uyy3uw
+  - https://schema.undata.live/elements/resolution_unit_1ivf6kd
+  - https://schema.undata.live/elements/resolution_unit_rt6pnt
+  - https://schema.undata.live/elements/resolution_xxx4pv
+  - https://schema.undata.live/elements/scanner_coordinate_system_13amvg
+  - https://schema.undata.live/elements/scanner_coordinate_system_25j6u0k
+  - https://schema.undata.live/elements/setup_9133k6
+  - https://schema.undata.live/elements/setup_htf5q38
+  - https://schema.undata.live/elements/subject_position_6vfynq
+  - https://schema.undata.live/elements/subject_position_dk84o5c
+  mixins: []
+provenance:
+- source: aind
+  name: MRIScan

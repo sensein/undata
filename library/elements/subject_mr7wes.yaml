@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: common_principles
+  name: subject
+  description: 'A person or animal participating in the study.
+
+    Used interchangeably with term **Participant**.
+
+    '

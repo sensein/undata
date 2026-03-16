@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: Subject
+  name: description
+  description: Description of subject and where subject came from (e.g., breeder,
+    if animal).

@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: PowerCalibration
+  name: fit
+  description: Fit equation for the calibration data used during data acquisition
+- source: aind
+  class: PowerCalibration
+  name: fit
+  description: Fit equation for the calibration data used during data acquisition

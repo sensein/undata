@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: acquisition
+  name: specimen_id
+  description: Specimen ID is required for in vitro imaging modalities

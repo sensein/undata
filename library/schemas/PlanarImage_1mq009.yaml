@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channel_name_gf4i76
+  - https://schema.undata.live/elements/channel_name_wec5ll2
+  - https://schema.undata.live/elements/dimensions_1qnjzsq
+  - https://schema.undata.live/elements/dimensions_unit_15atu78
+  - https://schema.undata.live/elements/dimensions_unit_kxk1wr
+  - https://schema.undata.live/elements/dimensions_vr5ww5
+  - https://schema.undata.live/elements/image_to_acquisition_transform_brrz1b
+  - https://schema.undata.live/elements/image_to_acquisition_transform_n859lwv
+  - https://schema.undata.live/elements/planes_1ec1rnp
+  - https://schema.undata.live/elements/planes_pidvuv
+  mixins: []
+provenance:
+- source: aind
+  name: PlanarImage

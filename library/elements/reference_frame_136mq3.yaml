@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: reference_frame
+  description: 'Specification of a reference frame in which the motion data are to
+    be interpreted.
+
+    The description of the levels in `*_channels.json` SHOULD use `RotationRule`,
+
+    `RotationOrder`, and `SpatialAxes`, and MAY use `Description` for the specification.
+
+    '

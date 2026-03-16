@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/scale_1b01l1
+  - https://schema.undata.live/elements/scale_2kqjf51
+  mixins: []
+provenance:
+- source: aind
+  name: Scale

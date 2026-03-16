@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: RepetitionsTable
+  name: sequential_recordings_index
+  description: Index dataset for the sequential_recordings column.

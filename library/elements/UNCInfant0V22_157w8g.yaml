@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: UNCInfant0V22
+  description: 'Infant Brain Atlases from Neonates to 1- and 2-year-olds. See https://www.nitrc.org/projects/pediatricatlas.
+
+    For new datasets, the recommended alternative is UNCInfant.
+
+    '

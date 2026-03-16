@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: ScatterFraction
+  description: 'Scatter fraction for each frame (Units: 0-100%).
+
+    '

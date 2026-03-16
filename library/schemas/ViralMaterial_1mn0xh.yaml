@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/addgene_id_4l9gaf
+  - https://schema.undata.live/elements/addgene_id_922r04s
+  - https://schema.undata.live/elements/name_1bzzhy
+  - https://schema.undata.live/elements/name_2mpgf1g
+  - https://schema.undata.live/elements/tars_identifiers_1uifo42
+  - https://schema.undata.live/elements/tars_identifiers_xpjuv5
+  - https://schema.undata.live/elements/titer_180kt4
+  - https://schema.undata.live/elements/titer_2eui0hf
+  - https://schema.undata.live/elements/titer_unit_i7w0o3
+  - https://schema.undata.live/elements/titer_unit_zy4f32w
+  mixins: []
+provenance:
+- source: aind
+  name: ViralMaterial

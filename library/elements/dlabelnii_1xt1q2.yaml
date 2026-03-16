@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: dlabelnii
+  description: 'A CIFTI-2 dense label file.
+
+
+    This extension may only be used in derivative datasets.
+
+    '

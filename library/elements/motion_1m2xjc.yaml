@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: motion
+  description: 'Data recorded from a tracking system store.
+
+    '

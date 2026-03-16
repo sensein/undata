@@ -1,0 +1,8 @@
+semantic:
+  data_type: integer
+provenance:
+- source: aind
+  class: Slap2Plane
+  name: fov_index
+  description: For FOVs that are imaged multiple times, assign a shared index to each
+    instance of the FOV

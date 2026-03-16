@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: IZeroClampSeries
+  name: bias_current
+  description: Bias current, in amps, fixed to 0.0.

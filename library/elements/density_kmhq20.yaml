@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: entities
+  name: density
+  description: 'Density of non-parametric surfaces.
+
+
+    This entity represents the `"Density"` metadata field.
+
+    Therefore, if the `den-<label>` entity is present in a filename,
+
+    `"Density"` MUST also be added in the JSON file, to provide interpretation.
+
+
+    This entity is only applicable to derivative data.
+
+    '

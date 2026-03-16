@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: EstimationReference
+  description: 'Reference to the study/studies on which the implementation is based.
+
+    '

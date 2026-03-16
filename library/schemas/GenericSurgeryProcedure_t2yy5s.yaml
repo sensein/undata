@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_1x1bw62
+  - https://schema.undata.live/elements/description_yzmahb
+  - https://schema.undata.live/elements/notes_16gdktn
+  - https://schema.undata.live/elements/notes_lim4jk
+  - https://schema.undata.live/elements/protocol_id_14zxpdg
+  - https://schema.undata.live/elements/protocol_id_ks1b72
+  mixins: []
+provenance:
+- source: aind
+  name: GenericSurgeryProcedure

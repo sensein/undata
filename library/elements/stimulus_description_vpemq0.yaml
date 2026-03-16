@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: PatchClampSeries
+  name: stimulus_description
+  description: Protocol/stimulus name for this patch-clamp dataset.

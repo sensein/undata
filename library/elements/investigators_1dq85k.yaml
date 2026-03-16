@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: DataDescription
+  name: investigators
+  description: Full name(s) of key investigators (e.g. PI, lead scientist, contact
+    person)

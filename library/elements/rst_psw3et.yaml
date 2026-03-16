@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: rst
+  description: 'A [reStructuredText](https://docutils.sourceforge.io/rst.html) file.
+
+    '

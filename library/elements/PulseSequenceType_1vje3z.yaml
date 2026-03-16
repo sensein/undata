@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: PulseSequenceType
+  description: 'A general description of the pulse sequence used for the scan.
+
+    '

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: orig
+  description: 'A (potentially unique) per-image space.
+
+    Useful for describing the source of transforms from an input image to a target
+    space.
+
+    '

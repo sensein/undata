@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ManufacturersModelName
+  description: 'Manufacturer''s model name of the equipment that produced the measurements.
+
+    '

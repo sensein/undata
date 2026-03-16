@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/NWBFile_sabcpy
+  - https://schema.undata.live/elements/file_create_date_o9ujsa
+  - https://schema.undata.live/elements/identifier_1mvmwu
+  - https://schema.undata.live/elements/nwb_version_10auzu
+  - https://schema.undata.live/elements/session_description_1eqhoy
+  - https://schema.undata.live/elements/session_start_time_124lyw
+  - https://schema.undata.live/elements/timestamps_reference_time_1qf81f
+  mixins: []
+provenance:
+- source: nwb
+  name: NWBFile

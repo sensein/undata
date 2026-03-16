@@ -1,0 +1,8 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: aind
+  class: Section
+  name: includes_surrounding_tissue
+  description: Whether the section includes additional tissue surrounding the targeted
+    structure.

@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/acquisition_end_time_1jk5nj
+  - https://schema.undata.live/elements/acquisition_start_time_1glnqt
+  - https://schema.undata.live/elements/acquisition_start_tz_16phqp
+  - https://schema.undata.live/elements/acquisition_type_oauywc
+  - https://schema.undata.live/elements/calibrations_icyic2
+  - https://schema.undata.live/elements/coordinate_system_18c2s5
+  - https://schema.undata.live/elements/data_streams_fxckyp
+  - https://schema.undata.live/elements/ethics_review_id_1pngcd
+  - https://schema.undata.live/elements/experimenters_1psy44
+  - https://schema.undata.live/elements/instrument_id_1phrxc
+  - https://schema.undata.live/elements/maintenance_z9mgxh
+  - https://schema.undata.live/elements/manipulations_stzreb
+  - https://schema.undata.live/elements/notes_1qhtxx
+  - https://schema.undata.live/elements/protocol_id_ul8ua8
+  - https://schema.undata.live/elements/specimen_id_l86hep
+  - https://schema.undata.live/elements/stimulus_epochs_j1fujg
+  - https://schema.undata.live/elements/subject_details_neov3c
+  - https://schema.undata.live/elements/subject_id_tl2yc3
+  mixins: []
+provenance:
+- source: aind
+  name: acquisition

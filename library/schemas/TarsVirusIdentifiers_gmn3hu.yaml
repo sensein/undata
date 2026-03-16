@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/plasmid_tars_alias_1q1l4a
+  - https://schema.undata.live/elements/prep_date_nmwzhr
+  - https://schema.undata.live/elements/prep_lot_number_1u8zc4
+  - https://schema.undata.live/elements/prep_protocol_bg9rjt
+  - https://schema.undata.live/elements/prep_type_159dx0
+  - https://schema.undata.live/elements/virus_tars_id_1j1oeo
+  mixins: []
+provenance:
+- source: aind
+  name: TarsVirusIdentifiers

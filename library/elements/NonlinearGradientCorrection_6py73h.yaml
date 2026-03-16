@@ -1,0 +1,11 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: bids
+  class: metadata
+  name: NonlinearGradientCorrection
+  description: 'Boolean stating if the image saved has been corrected for gradient
+
+    nonlinearities by the scanner sequence.
+
+    '

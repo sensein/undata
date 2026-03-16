@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: common_principles
+  name: sample
+  description: 'A sample pertaining to a subject such as tissue, primary cell or cell-free
+    sample.
+
+    Sample labels MUST be unique within a subject and it is RECOMMENDED
+
+    that they be unique throughout the dataset.
+
+    '

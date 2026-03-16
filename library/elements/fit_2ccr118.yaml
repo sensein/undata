@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: VolumeCalibration
+  name: fit
+  description: Fit equation for the calibration data used during data acquisition

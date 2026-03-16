@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: InfusionSpeed
+  description: 'If given, infusion speed.
+
+    '

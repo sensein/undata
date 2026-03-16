@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Channel
+  name: intended_measurement
+  description: What signal is this channel measuring

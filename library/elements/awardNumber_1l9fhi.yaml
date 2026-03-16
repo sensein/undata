@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Organization
+  name: awardNumber
+  description: Identifier associated with a sponsored or gift award.

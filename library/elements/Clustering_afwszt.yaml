@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: Clustering
+  name: Clustering
+  description: DEPRECATED Clustered spike data, whether from automatic clustering
+    tools (e.g., klustakwik) or as a result of manual sorting.

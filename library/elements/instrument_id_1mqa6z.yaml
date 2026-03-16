@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: instrument
+  name: instrument_id
+  description: Unique instrument identifier

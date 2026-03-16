@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1b7m079
+  - https://schema.undata.live/elements/additional_settings_nxee31
+  - https://schema.undata.live/elements/manufacturer_1leq67u
+  - https://schema.undata.live/elements/manufacturer_1leq67ui
+  - https://schema.undata.live/elements/model_1eokk4
+  - https://schema.undata.live/elements/model_2s00xsm
+  - https://schema.undata.live/elements/name_1g0t9ay
+  - https://schema.undata.live/elements/name_qd6jvq
+  - https://schema.undata.live/elements/notes_1r2s2c
+  - https://schema.undata.live/elements/notes_3ggfj60
+  - https://schema.undata.live/elements/serial_number_2r2le0o
+  - https://schema.undata.live/elements/serial_number_2r2le0on
+  mixins: []
+provenance:
+- source: aind
+  name: Device

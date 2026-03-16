@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: EchoTime__fmap
+  description: 'The time (in seconds) when the echo corresponding to this map was
+    acquired.
+
+    '

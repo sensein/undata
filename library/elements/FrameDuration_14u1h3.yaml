@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: FrameDuration
+  description: 'Time duration of each frame in default unit seconds.
+
+    This corresponds to [DICOM Tag 0018, 1242](http://www.dicomlookup.com/dicomtags/(0018,1242))
+
+    `Actual Frame Duration` converted to seconds.
+
+    '

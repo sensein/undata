@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: BioSample
+  name: wasDerivedFrom
+  description: Describes the hierarchy of sample derivation or aggregation.

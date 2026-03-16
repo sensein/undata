@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/BehavioralEpochs_9qfqse
+  mixins: []
+provenance:
+- source: nwb
+  name: BehavioralEpochs

@@ -1,0 +1,6 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: aind
+  class: HCRSeries
+  name: strip_qc_compatible

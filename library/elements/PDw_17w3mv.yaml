@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: PDw
+  description: 'In arbitrary units (arbitrary).
+
+    The contrast of these images is mainly determined by spatial variations in
+
+    the spin density (1H) of the imaged specimen.
+
+    This contrast is achieved at short echo times and long repetition times;
+
+    for gradient echo, this weighting is also possible with a short TR (TR<<T1) and
+    a small flip angle.
+
+    '

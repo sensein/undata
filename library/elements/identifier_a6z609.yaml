@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Contributor
+  name: identifier
+  description: Use a common identifier such as ORCID (orcid.org) for people or ROR
+    (ror.org) for institutions.

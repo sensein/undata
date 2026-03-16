@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: LabelingPulseDuration
+  description: 'Duration of the individual labeling pulses, in milliseconds.
+
+    '

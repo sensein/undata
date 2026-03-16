@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DataDescription
+  name: restrictions
+  description: Detail any restrictions on publishing or sharing these data

@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: Haematocrit
+  description: 'Measured haematocrit, meaning the volume of erythrocytes divided by
+    the
+
+    volume of whole blood.
+
+    '

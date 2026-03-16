@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: entities
+  name: cohort
+  description: 'A set of subjects sharing one or more common characteristics.
+
+
+    In the context of a template, the `cohort-<label>` entity identifies a subset
+    of
+
+    subjects or sessions that were used to construct template variations.
+
+    For example, a developmental template may use scans from participants of different
+    ages,
+
+    longitudinal sessions of the same participants, or a combination of the two.
+
+    '

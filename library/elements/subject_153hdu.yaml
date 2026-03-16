@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: entities
+  name: subject
+  description: 'A person or animal participating in the study.
+
+    '

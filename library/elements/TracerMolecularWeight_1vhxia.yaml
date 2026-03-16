@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: TracerMolecularWeight
+  description: 'Accurate molecular weight of the tracer used.
+
+    '

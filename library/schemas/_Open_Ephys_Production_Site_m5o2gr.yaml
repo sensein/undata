@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abbreviation_197lxl
+  - https://schema.undata.live/elements/abbreviation_2h7ek7q
+  - https://schema.undata.live/elements/name_1g2glm
+  - https://schema.undata.live/elements/name_2uqgo9e
+  - https://schema.undata.live/elements/registry_1hj5lj
+  - https://schema.undata.live/elements/registry_2xmflpn
+  - https://schema.undata.live/elements/registry_identifier_1iwfzz
+  - https://schema.undata.live/elements/registry_identifier_30bon1g
+  mixins: []
+provenance:
+- source: aind
+  name: _Open_Ephys_Production_Site

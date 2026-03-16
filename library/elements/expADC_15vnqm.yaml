@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: expADC
+  description: 'Exponental ADC / Attenuation Coefficient / Attenuation Factor map,
+
+    as the ratio of trace-weighted to non-diffusion-weighted image intensity
+
+    '

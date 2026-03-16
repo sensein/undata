@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: PASLType
+  description: 'Type of the labeling pulse of the `PASL` labeling,
+
+    for example `"FAIR"`, `"EPISTAR"`, or `"PICORE"`.
+
+    '

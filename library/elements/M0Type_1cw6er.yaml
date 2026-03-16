@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: M0Type
+  description: 'Describes the presence of M0 information.
+
+    `"Separate"` means that a separate `*_m0scan.nii[.gz]` is present.
+
+    `"Included"` means that an m0scan volume is contained within the current
+
+    `*_asl.nii[.gz]`.
+
+    `"Estimate"` means that a single whole-brain M0 value is provided.
+
+    `"Absent"` means that no specific M0 information is present.
+
+    '

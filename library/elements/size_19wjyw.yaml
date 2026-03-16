@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: size
+  description: 'Surface area of the electrode, units MUST be in `mm^2`.
+
+    '

@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: DecompositionSeries
+  name: DecompositionSeries
+  description: Spectral analysis of a time series, e.g. of an LFP or a speech signal.

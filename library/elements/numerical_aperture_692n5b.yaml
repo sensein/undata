@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: aind
+  class: FiberProbe
+  name: numerical_aperture
+- source: aind
+  class: FiberProbe
+  name: numerical_aperture

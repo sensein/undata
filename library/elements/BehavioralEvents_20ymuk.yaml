@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: BehavioralEvents
+  name: BehavioralEvents
+  description: TimeSeries for storing behavioral events. See description of BehavioralEpochs
+    for more details.

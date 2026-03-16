@@ -1,0 +1,9 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: ElectrodesTable
+  name: ElectrodesTable
+  description: A table of all electrodes (i.e. channels) used for recording. Introduced
+    in NWB 2.8.0. Replaces the "electrodes" table (neurodata_type_inc DynamicTable,
+    no neurodata_type_def) that is part of NWBFile.

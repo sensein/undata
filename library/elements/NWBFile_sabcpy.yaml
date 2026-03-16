@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: NWBFile
+  name: NWBFile
+  description: An NWB file storing cellular-based neurophysiology data from a single
+    experimental session.

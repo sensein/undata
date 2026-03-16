@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: metadata
+  name: other_identifiers
+  description: Links to the data asset on secondary platforms.

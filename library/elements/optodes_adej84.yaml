@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: optodes
+  description: 'Either a light emitting device, sometimes called a transmitter, or
+    a photoelectric transducer, sometimes called a
+
+    receiver.
+
+    '

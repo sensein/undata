@@ -1,0 +1,11 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: bids
+  class: metadata
+  name: DigitizedLandmarks
+  description: '`true` or `false` value indicating whether anatomical landmark points
+
+    (fiducials) are contained within this recording.
+
+    '

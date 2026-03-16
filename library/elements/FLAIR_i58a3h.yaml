@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: FLAIR
+  description: 'In arbitrary units (arbitrary).
+
+    Structural images with predominant T2 contribution (also known as T2-FLAIR),
+
+    in which signal from fluids (for example, CSF) is nulled out by adjusting
+
+    inversion time, coupled with notably long repetition and echo times.
+
+    '

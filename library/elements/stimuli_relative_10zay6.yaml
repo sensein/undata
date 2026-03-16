@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: formats
+  name: stimuli_relative
+  description: 'A path to a stimulus file, relative to a `/stimuli` directory somewhere.
+
+
+    The validation for this format is minimal.
+
+    It simply ensures that the value is a string with any characters that may appear
+    in a valid path,
+
+    without starting with "/" (an absolute path) or "stimuli/"
+
+    (a relative path starting with the stimuli directory, rather than relative to
+    that directory).
+
+    '

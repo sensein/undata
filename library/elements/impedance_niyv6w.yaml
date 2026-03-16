@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: impedance
+  description: 'Impedance of the electrode, units MUST be in `kOhm`.
+
+    '

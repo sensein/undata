@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: VolumeCalibration
+  name: input
+  description: Length of time solenoid/valve is open
+- source: aind
+  class: VolumeCalibration
+  name: input
+  description: Length of time solenoid/valve is open

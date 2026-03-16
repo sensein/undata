@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: Metabolomic
+  description: 'Data link to participants'' products of cellular metabolic functions.
+
+    '

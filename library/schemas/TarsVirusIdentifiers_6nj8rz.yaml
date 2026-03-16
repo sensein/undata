@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/plasmid_tars_alias_1q1l4a
+  - https://schema.undata.live/elements/plasmid_tars_alias_3ef1on4
+  - https://schema.undata.live/elements/prep_date_1amxcrc
+  - https://schema.undata.live/elements/prep_date_nmwzhr
+  - https://schema.undata.live/elements/prep_lot_number_1u8zc4
+  - https://schema.undata.live/elements/prep_lot_number_3mpreig
+  - https://schema.undata.live/elements/prep_protocol_bg9rjt
+  - https://schema.undata.live/elements/prep_protocol_mlg01kq
+  - https://schema.undata.live/elements/prep_type_159dx0
+  - https://schema.undata.live/elements/prep_type_29esctp
+  - https://schema.undata.live/elements/virus_tars_id_1j1oeo
+  - https://schema.undata.live/elements/virus_tars_id_30m0duh
+  mixins: []
+provenance:
+- source: aind
+  name: TarsVirusIdentifiers

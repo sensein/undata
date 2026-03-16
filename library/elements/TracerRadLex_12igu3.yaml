@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: TracerRadLex
+  description: 'ID of the tracer compound from the RadLex Ontology.
+
+    '

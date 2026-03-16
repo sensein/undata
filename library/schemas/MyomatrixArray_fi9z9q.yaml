@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_19i7rr
+  - https://schema.undata.live/elements/additional_settings_2hsbyi5
+  - https://schema.undata.live/elements/array_type_82044g
+  - https://schema.undata.live/elements/array_type_fw76sun
+  - https://schema.undata.live/elements/manufacturer_17jx6q
+  - https://schema.undata.live/elements/manufacturer_2dxmwt6
+  - https://schema.undata.live/elements/model_9zoi3g
+  - https://schema.undata.live/elements/model_jpofvso
+  - https://schema.undata.live/elements/name_1bzjte
+  - https://schema.undata.live/elements/name_2molh3p
+  - https://schema.undata.live/elements/notes_1vf4mcc
+  - https://schema.undata.live/elements/notes_y64d0i
+  - https://schema.undata.live/elements/serial_number_4cdyum
+  - https://schema.undata.live/elements/serial_number_8kkdqhy
+  - https://schema.undata.live/elements/threads_h3con2
+  - https://schema.undata.live/elements/threads_xq519d7
+  mixins: []
+provenance:
+- source: aind
+  name: MyomatrixArray

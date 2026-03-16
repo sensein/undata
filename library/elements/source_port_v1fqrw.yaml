@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Connection
+  name: source_port
+- source: aind
+  class: Connection
+  name: source_port

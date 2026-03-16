@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ElectrodesTable
+  name: filtering
+  description: Description of hardware filtering, including the filter name and frequency
+    cutoffs.

@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: CurationMetric
+  name: curation_history
+- source: aind
+  class: CurationMetric
+  name: curation_history

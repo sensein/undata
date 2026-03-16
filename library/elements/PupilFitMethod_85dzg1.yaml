@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: PupilFitMethod
+  description: 'The method employed for fitting the pupil, for example
+
+    `"centre-of-mass"` or `"ellipse"`.
+
+    If `"centre-of-mass"` or `"ellipse"` method is used, it is RECOMMENDED to
+
+    use these exact labels.
+
+    '

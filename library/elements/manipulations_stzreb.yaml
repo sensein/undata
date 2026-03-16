@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: acquisition
+  name: manipulations
+  description: Procedures performed during the acquisition.

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: angio
+  description: 'Magnetic resonance angiography sequences focus on enhancing the contrast
+    of
+
+    blood vessels (generally arteries, but sometimes veins) against other tissue
+
+    types.
+
+    '

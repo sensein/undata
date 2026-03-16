@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: files
+  name: samples
+  description: 'The purpose of this file is to describe properties of samples, indicated
+    by the `sample` entity.
+
+    This file is REQUIRED if `sample-<label>` is present in any filename within the
+    dataset.
+
+    Each sample MUST be described by one and only one row.
+
+    '

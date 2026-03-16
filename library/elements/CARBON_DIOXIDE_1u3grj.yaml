@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: CARBON_DIOXIDE
+  description: 'A Contrast Bolus Ingredient: Carbon Dioxide
+
+    '

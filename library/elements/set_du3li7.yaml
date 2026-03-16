@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: set
+  description: 'An [EEGLAB](https://sccn.ucsd.edu/eeglab/index.php) file.
+
+
+    The format used by the MATLAB toolbox [EEGLAB](https://sccn.ucsd.edu/eeglab/index.php).
+
+    Each recording consists of a `.set` file with an optional `.fdt` file.
+
+    '

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: EMGCoordinateSystemDescription
+  description: 'Free-form text description of the coordinate system, typically defining
+    the origin
+
+    and positive x,y,z axis directions, relative to anatomical landmarks.
+
+    May also include a link to a documentation page or paper describing the
+
+    system in greater detail.
+
+    '

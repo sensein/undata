@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: Units
+  name: electrode_group
+  description: Electrode group that each spike unit came from.

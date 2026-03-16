@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: ModelTraining
+  name: test_performance
+  description: Performance on test data, evaluated during training
+- source: aind
+  class: ModelTraining
+  name: test_performance
+  description: Performance on test data, evaluated during training

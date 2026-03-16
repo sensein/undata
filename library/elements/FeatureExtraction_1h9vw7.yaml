@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: FeatureExtraction
+  name: FeatureExtraction
+  description: Features, such as PC1 and PC2, that are extracted from signals stored
+    in a SpikeEventSeries or other source.

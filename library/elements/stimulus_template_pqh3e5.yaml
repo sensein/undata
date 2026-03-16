@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: IntracellularStimuliTable
+  name: stimulus_template
+  description: Column storing the reference to the stimulus template for the recording
+    (rows).

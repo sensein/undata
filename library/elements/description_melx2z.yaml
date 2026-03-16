@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: TimeSeries
+  name: description
+  description: Description of the time series.

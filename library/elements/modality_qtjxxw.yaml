@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: entities
+  name: modality
+  description: 'The `mod-<label>` entity corresponds to modality label for defacing
+
+    masks, for example, T1w, inplaneT1, referenced by a defacemask image.
+
+    For example, `sub-01_mod-T1w_defacemask.nii.gz`.
+
+    '

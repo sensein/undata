@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: MNI152NLin6Sym
+  description: 'Also known as symmetric ICBM 6th generation (non-linear coregistration).
+
+
+    Used by FSL.
+
+    '

@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: formats
+  name: hed_version
+  description: 'The version string of the used HED schema.
+
+    '

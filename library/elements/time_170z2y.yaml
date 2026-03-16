@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: formats
+  name: time
+  description: 'A time in the form `"hh:mm:ss"`.
+
+    '

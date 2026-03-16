@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: snirf
+  description: 'HDF5 file organized according to the [SNIRF specification](https://github.com/fNIRS/snirf)
+
+    '

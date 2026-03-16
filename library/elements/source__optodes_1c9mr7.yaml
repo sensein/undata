@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: source__optodes
+  description: 'The type of source. Only to be used if the field `SourceType` in `*_nirs.json`
+    is set to `mixed`.
+
+    '

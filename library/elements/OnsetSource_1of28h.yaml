@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: OnsetSource
+  description: 'An existing column name in an corresponding recoding data TSV file
+    that
+
+    indexes or is correspondent to the `"onset"` column of the present TSV file.
+
+    For example, `"timestamp"` column.
+
+    '

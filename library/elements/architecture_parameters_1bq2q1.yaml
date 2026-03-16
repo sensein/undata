@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Model
+  name: architecture_parameters
+  description: Parameters of model architecture, such as input signature or number
+    of layers.

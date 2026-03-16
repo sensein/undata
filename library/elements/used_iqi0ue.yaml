@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: Activity
+  name: used
+  description: A listing of equipment used for the activity.

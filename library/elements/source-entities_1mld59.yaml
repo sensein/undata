@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metaentities
+  name: source-entities
+  description: '`source-entities` is used as a placeholder in BIDS derivatives filenames
+    templates.
+
+
+    `source-entities` MUST be the entire source filename, with the omission of
+
+    the source suffix and extension.
+
+    One exception to this rule is filename entities that are no longer relevant.
+
+    '

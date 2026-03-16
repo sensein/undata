@@ -1,0 +1,9 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: bids
+  class: metadata
+  name: ImageDecayCorrected
+  description: 'Boolean flag specifying whether the image data have been decay-corrected.
+
+    '

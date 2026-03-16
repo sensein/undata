@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - air
+    - multi
+    - oil
+    - PBS
+    - water
+    - other
+    - easy index
+    - ethyl cinnimate
+    - aqueous clearing buffer
+provenance:
+- source: aind
+  class: Immersion
+  name: medium
+  description: Immersion medium name

@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: model
+  name: intended_use
+  description: Semantic description of intended use

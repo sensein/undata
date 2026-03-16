@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: Units
+  name: waveform_sd
+  description: Spike waveform standard deviation for each spike unit.

@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Housing
+  name: cohoused_subjects
+  description: List of IDs of other subjects housed in same cage

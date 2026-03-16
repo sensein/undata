@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: SampleChamberConfig
+  name: chamber_immersion
+  description: Configuration of immersion medium

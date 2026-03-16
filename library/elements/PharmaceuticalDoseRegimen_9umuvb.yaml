@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: PharmaceuticalDoseRegimen
+  description: 'Details of the pharmaceutical dose regimen.
+
+    Either adequate description or short-code relating to regimen documented
+
+    elsewhere (for example, `"single oral bolus"`).
+
+    '

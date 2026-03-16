@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: VoltageClampSeries
+  name: data
+  description: Recorded current.

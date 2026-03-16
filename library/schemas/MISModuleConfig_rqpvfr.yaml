@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/angle_unit_1nte1z
+  - https://schema.undata.live/elements/angle_unit_3a0t9u2
+  - https://schema.undata.live/elements/arc_angle_18492x
+  - https://schema.undata.live/elements/arc_angle_2f1qzxe
+  - https://schema.undata.live/elements/module_angle_1to7cp
+  - https://schema.undata.live/elements/module_angle_3lkrkks
+  - https://schema.undata.live/elements/notes_1d4l6wr
+  - https://schema.undata.live/elements/notes_owcx98
+  - https://schema.undata.live/elements/rotation_angle_1egdq3u
+  - https://schema.undata.live/elements/rotation_angle_pkkxdq
+  mixins: []
+provenance:
+- source: aind
+  name: MISModuleConfig

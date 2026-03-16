@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: CodeURL
+  description: URL where the code used to generate the dataset may be found.

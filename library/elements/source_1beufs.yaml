@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: HumanSubject
+  name: source
+  description: Where the subject was acquired from.

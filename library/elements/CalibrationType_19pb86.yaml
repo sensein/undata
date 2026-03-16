@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: CalibrationType
+  description: 'The type of the calibration procedure executed last.
+
+    For example the `"H3"` for horizontal calibration with 3 positions
+
+    or `"HV9"` for horizontal and vertical calibration with 9 positions,
+
+    or one point calibration.
+
+    '

@@ -1,0 +1,10 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: bids
+  class: metadata
+  name: OuterVolumeSuppression
+  description: 'Boolean indicating whether outer-volume suppression was used prior
+    to acquisition.
+
+    '

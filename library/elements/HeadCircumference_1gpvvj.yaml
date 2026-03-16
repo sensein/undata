@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: HeadCircumference
+  description: 'Circumference of the participant''s head, expressed in cm (for example,
+    `58`).
+
+    '

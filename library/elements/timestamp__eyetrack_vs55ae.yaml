@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: timestamp__eyetrack
+  description: 'Timestamp issued by the eye-tracker indexing the continuous recordings
+    corresponding to
+
+    the sampled eye.
+
+    '

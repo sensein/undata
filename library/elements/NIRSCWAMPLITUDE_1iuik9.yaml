@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: NIRSCWAMPLITUDE
+  description: 'Continuous wave amplitude measurements. Equivalent to dataType 001
+    in SNIRF.
+
+    '

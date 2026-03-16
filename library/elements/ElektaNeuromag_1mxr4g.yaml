@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: ElektaNeuromag
+  description: 'RAS orientation and the origin between the ears.
+
+    [DEPRECATED](SPEC_ROOT/common-principles.md#definitions).
+
+    Dataset curators SHOULD use `NeuromagElektaMEGIN` instead.
+
+    '

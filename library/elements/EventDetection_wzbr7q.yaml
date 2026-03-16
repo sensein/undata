@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: EventDetection
+  name: EventDetection
+  description: Detected spike events from voltage trace(s).

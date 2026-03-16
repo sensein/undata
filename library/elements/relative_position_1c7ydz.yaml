@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: BrainInjection
+  name: relative_position
+- source: aind
+  class: BrainInjection
+  name: relative_position

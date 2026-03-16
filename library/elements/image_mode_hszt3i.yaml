@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ExternalImage
+  name: image_mode
+  description: Image mode (color mode) of the image, e.g., "RGB", "RGBA", "grayscale",
+    and "LA".

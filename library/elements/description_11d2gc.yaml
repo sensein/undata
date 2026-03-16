@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: IntracellularElectrode
+  name: description
+  description: Description of electrode (e.g.,  whole-cell, sharp, etc.).

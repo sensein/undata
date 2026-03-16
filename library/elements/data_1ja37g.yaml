@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ElectricalSeries
+  name: data
+  description: Recorded voltage data.

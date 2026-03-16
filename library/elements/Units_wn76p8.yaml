@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: Units
+  name: Units
+  description: Data about spiking units. Event times of observed units (e.g. cell,
+    synapse, etc.) should be concatenated and stored in spike_times.

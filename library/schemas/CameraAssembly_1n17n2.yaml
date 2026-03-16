@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/camera_13b3cb
+  - https://schema.undata.live/elements/coordinate_system_s5zhrh
+  - https://schema.undata.live/elements/filter_9prfx7
+  - https://schema.undata.live/elements/lens_tt8g8e
+  - https://schema.undata.live/elements/name_imoj4x
+  - https://schema.undata.live/elements/relative_position_1i1qj4
+  - https://schema.undata.live/elements/target_nx9g0x
+  - https://schema.undata.live/elements/transform_nda9qu
+  mixins: []
+provenance:
+- source: aind
+  name: CameraAssembly

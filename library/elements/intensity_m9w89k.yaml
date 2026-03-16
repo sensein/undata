@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: OnePhotonSeries
+  name: intensity
+  description: Intensity of the excitation in mW/mm^2, if known.

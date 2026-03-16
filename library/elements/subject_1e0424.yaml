@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: metadata
+  name: subject
+  description: Subject of data collection.

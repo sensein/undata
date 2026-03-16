@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: quality_control
+  name: key_experimenters
+  description: Experimenters who are responsible for quality control of this data
+    asset

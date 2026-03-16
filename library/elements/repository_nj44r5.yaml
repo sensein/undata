@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Resource
+  name: repository
+  description: Name of the repository in which the resource is housed.

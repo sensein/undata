@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: T2star
+  description: 'Ambiguous, may refer to a parametric image or to a conventional image.
+
+    **Change:** Replaced by `T2starw` or `T2starmap`.
+
+    '

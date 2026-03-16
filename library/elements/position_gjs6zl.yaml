@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: ElectrodeGroup
+  name: position
+  description: stereotaxic or common framework coordinates

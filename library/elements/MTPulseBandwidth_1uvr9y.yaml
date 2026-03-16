@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: MTPulseBandwidth
+  description: 'The excitation bandwidth of the magnetization transfer pulse in Hertz
+    (Hz).
+
+    '

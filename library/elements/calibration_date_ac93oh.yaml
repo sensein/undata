@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: VolumeCalibration
+  name: calibration_date
+- source: aind
+  class: VolumeCalibration
+  name: calibration_date

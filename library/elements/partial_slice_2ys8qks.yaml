@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: PlanarSection
+  name: partial_slice
+  description: If sectioning does not include the entire slice, indicate which part
+    of the slice is retained.

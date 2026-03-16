@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: IntracellularElectrode
+  name: initial_access_resistance
+  description: Initial access resistance.

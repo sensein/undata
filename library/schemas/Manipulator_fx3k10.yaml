@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1fer6e
+  - https://schema.undata.live/elements/additional_settings_2tfosv7
+  - https://schema.undata.live/elements/manufacturer_1imze6d
+  - https://schema.undata.live/elements/manufacturer_rowqv2
+  - https://schema.undata.live/elements/model_1duvj3q
+  - https://schema.undata.live/elements/model_p9ojr5
+  - https://schema.undata.live/elements/name_17zwzi7
+  - https://schema.undata.live/elements/name_margw9
+  - https://schema.undata.live/elements/notes_1781ke
+  - https://schema.undata.live/elements/notes_2da76kh
+  - https://schema.undata.live/elements/serial_number_1i0ncmm
+  - https://schema.undata.live/elements/serial_number_rdl8ms
+  mixins: []
+provenance:
+- source: aind
+  name: Manipulator

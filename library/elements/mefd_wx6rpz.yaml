@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: mefd
+  description: 'A directory in the [MEF3](https://osf.io/e3sf9/) format.
+
+
+    Each recording consists of a `.mefd` directory.
+
+    '

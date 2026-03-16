@@ -1,0 +1,9 @@
+semantic:
+  data_type: integer
+provenance:
+- source: bids
+  class: metadata
+  name: MotionChannelCount
+  description: 'Number of motion channels (for example, `275`).
+
+    '

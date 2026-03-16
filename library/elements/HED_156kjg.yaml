@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: HED
+  description: 'Hierarchical Event Descriptor (HED) information,
+
+    see the [HED Appendix](SPEC_ROOT/appendices/hed.md) for details.
+
+    '

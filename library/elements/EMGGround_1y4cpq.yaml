@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: EMGGround
+  description: 'Description of the location of the ground electrode
+
+    (for example, `"right radial styloid process"`).
+
+    '

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: CogAtlasID
+  description: '[URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator)
+
+    of the corresponding [Cognitive Atlas](https://www.cognitiveatlas.org/)
+
+    Task term.
+
+    '

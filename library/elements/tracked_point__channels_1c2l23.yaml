@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: tracked_point__channels
+  description: 'Label of the point that is being tracked, for example, label of a
+    tracker
+
+    or a marker (for example,`"LeftFoot"`, `"RightWrist"`).
+
+    '

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ScanOptions
+  description: 'Parameters of ScanningSequence.
+
+    Corresponds to [DICOM Tag 0018, 0022](http://www.dicomlookup.com/dicomtags/(0018,0022))
+
+    `Scan Options`.
+
+    '

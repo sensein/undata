@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/coordinate_system_name_1yltvvo
+  - https://schema.undata.live/elements/coordinate_system_name_zs95ub
+  - https://schema.undata.live/elements/coordinates_ehk15l
+  - https://schema.undata.live/elements/coordinates_sl2mkxm
+  - https://schema.undata.live/elements/dynamics_1jj7u3
+  - https://schema.undata.live/elements/dynamics_31km8qc
+  - https://schema.undata.live/elements/injection_materials_fisjq4
+  - https://schema.undata.live/elements/injection_materials_umjkmvv
+  - https://schema.undata.live/elements/protocol_id_ejnayp
+  - https://schema.undata.live/elements/protocol_id_sp7592m
+  - https://schema.undata.live/elements/relative_position_1c7ydz
+  - https://schema.undata.live/elements/relative_position_2n56h2l
+  - https://schema.undata.live/elements/targeted_structure_d1lmjj
+  - https://schema.undata.live/elements/targeted_structure_pqk5yco
+  mixins: []
+provenance:
+- source: aind
+  name: BrainInjection

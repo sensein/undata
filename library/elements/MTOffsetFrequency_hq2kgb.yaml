@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: MTOffsetFrequency
+  description: 'The frequency offset of the magnetization transfer pulse with respect
+    to the
+
+    central H1 Larmor frequency in Hertz (Hz).
+
+    '

@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: ModelTraining
+  name: train_performance
+  description: Performance on training set
+- source: aind
+  class: ModelTraining
+  name: train_performance
+  description: Performance on training set

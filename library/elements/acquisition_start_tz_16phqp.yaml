@@ -1,0 +1,10 @@
+semantic:
+  data_type: integer
+provenance:
+- source: aind
+  class: acquisition
+  name: acquisition_start_tz
+  description: Automatically populated by a validator based on acquisition_start_time.
+    Will be a TimeZoneName (IANA name) when the datetime uses a ZoneInfo timezone,
+    or an integer UTC offset in hours for fixed-offset timezones. Use ZoneInfo (from
+    the zoneinfo standard library) to preserve the named timezone.

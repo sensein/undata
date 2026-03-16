@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: GenotypeInfo
+  name: wasGeneratedBy
+  description: Information about session activity used to determine genotype.

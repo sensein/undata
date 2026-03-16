@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Monitor
+  name: transform
+  description: Position and orientation of the device in the instrument coordinate
+    system

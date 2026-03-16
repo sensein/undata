@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: aind
+  class: NonViralMaterial
+  name: concentration
+  description: Must provide concentration unit

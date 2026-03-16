@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: EchoTime2
+  description: 'The time (in seconds) when the second (longer) echo occurs.
+
+    '

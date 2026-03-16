@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: ImagingRetinotopy
+  name: axis_2_phase_map
+  description: Phase response to stimulus on the second measured axis.

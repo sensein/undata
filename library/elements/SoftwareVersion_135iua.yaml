@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: SoftwareVersion
+  description: 'Version of the software that was used to present the stimuli.
+
+    '

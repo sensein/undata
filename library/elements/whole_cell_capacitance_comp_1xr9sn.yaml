@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: VoltageClampSeries
+  name: whole_cell_capacitance_comp
+  description: Whole cell capacitance compensation, in farads.

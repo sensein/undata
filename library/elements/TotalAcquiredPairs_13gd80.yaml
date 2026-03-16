@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: TotalAcquiredPairs
+  description: 'The total number of acquired `control`-`label` pairs.
+
+    A single pair consists of a single `control` and a single `label` image.
+
+    '

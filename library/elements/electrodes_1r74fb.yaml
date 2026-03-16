@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: Units
+  name: electrodes
+  description: Electrode that each spike unit came from, specified using a DynamicTableRegion.

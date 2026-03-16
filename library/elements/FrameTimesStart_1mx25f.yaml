@@ -1,0 +1,10 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: FrameTimesStart
+  description: 'Start times for all frames relative to `"TimeZero"` in default unit
+    seconds.
+
+    '

@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: NWBDataInterface
+  name: NWBDataInterface
+  description: An abstract data type for a generic container storing collections of
+    data, as opposed to metadata.

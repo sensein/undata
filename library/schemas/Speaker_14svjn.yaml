@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1w7q0r5
+  - https://schema.undata.live/elements/additional_settings_ykm30o
+  - https://schema.undata.live/elements/coordinate_system_1fnmvga
+  - https://schema.undata.live/elements/coordinate_system_q6i4gf
+  - https://schema.undata.live/elements/manufacturer_1tvq6w
+  - https://schema.undata.live/elements/manufacturer_3lzlygt
+  - https://schema.undata.live/elements/model_1rioe3l
+  - https://schema.undata.live/elements/model_w6xr6u
+  - https://schema.undata.live/elements/name_1f71qb
+  - https://schema.undata.live/elements/name_2t0hdir
+  - https://schema.undata.live/elements/notes_60xzre
+  - https://schema.undata.live/elements/notes_bw1qwpm
+  - https://schema.undata.live/elements/relative_position_1dk0k5
+  - https://schema.undata.live/elements/relative_position_2ps08qb
+  - https://schema.undata.live/elements/serial_number_1r3d5u
+  - https://schema.undata.live/elements/serial_number_3ghl5pg
+  - https://schema.undata.live/elements/transform_1hcoo6
+  - https://schema.undata.live/elements/transform_2x9o0ps
+  mixins: []
+provenance:
+- source: aind
+  name: Speaker

@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: Separate
+  description: 'A separate `m0scan` file is present.
+
+    '

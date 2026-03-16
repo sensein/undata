@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: ModelPretraining
+  name: source_url
+  description: URL for pretrained weights
+- source: aind
+  class: ModelPretraining
+  name: source_url
+  description: URL for pretrained weights

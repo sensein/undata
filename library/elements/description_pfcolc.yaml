@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: description
+  description: 'Brief free-text description of the channel, or other information of
+    interest.
+
+    '

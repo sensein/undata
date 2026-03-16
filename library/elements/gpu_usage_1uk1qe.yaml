@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: ResourceUsage
+  name: gpu_usage
+- source: aind
+  class: ResourceUsage
+  name: gpu_usage
+- source: aind
+  class: ResourceUsage
+  name: gpu_usage
