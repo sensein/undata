@@ -169,8 +169,14 @@ def _elements_from_schemas(
         top_props = schema.get("properties", {})
         top_required = set(schema.get("required", []))
         for el in _extract_props_from_object(
-            top_props, top_required, defs, source_name,
-            model_name, f"aind.{model_name}", extraction_path, schema_file,
+            top_props,
+            top_required,
+            defs,
+            source_name,
+            model_name,
+            f"aind.{model_name}",
+            extraction_path,
+            schema_file,
         ):
             if el.source_local_id not in seen_ids:
                 seen_ids.add(el.source_local_id)
@@ -184,8 +190,14 @@ def _elements_from_schemas(
             def_required = set(def_schema.get("required", []))
             prefix = f"aind.{model_name}.{def_name}"
             for el in _extract_props_from_object(
-                def_props, def_required, defs, source_name,
-                def_name, prefix, extraction_path, schema_file,
+                def_props,
+                def_required,
+                defs,
+                source_name,
+                def_name,
+                prefix,
+                extraction_path,
+                schema_file,
             ):
                 if el.source_local_id not in seen_ids:
                     seen_ids.add(el.source_local_id)

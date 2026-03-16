@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: hplc_recovery_fractions
+  description: 'HPLC recovery fractions (the fraction of activity that gets loaded
+    onto the HPLC).
+
+    '

@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: m0scan
+  description: 'The M0 image is a calibration image, used to estimate the equilibrium
+
+    magnetization of blood.
+
+    '

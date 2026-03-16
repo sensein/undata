@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_lam2lm
+  - https://schema.undata.live/elements/identifier_1b6kas
+  - https://schema.undata.live/elements/name_s4swr1
+  - https://schema.undata.live/elements/schemaKey_1fedjf
+  mixins: []
+provenance:
+- source: dandi
+  name: StandardsType

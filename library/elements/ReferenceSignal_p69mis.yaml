@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ReferenceSignal
+  description: 'The path(s) to the MRS reference file(s), if present, to which the
+    associated
+
+    MRS data file corresponds.
+
+    Contains one or more [BIDS URIs](SPEC_ROOT/common-principles.md#bids-uri).
+
+    '

@@ -1,0 +1,31 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: iEEGCoordinateSystem
+  description: 'Defines the coordinate system for the iEEG sensors.
+
+    See the
+
+    [Coordinate Systems Appendix](SPEC_ROOT/appendices/coordinate-systems.md)
+
+    for a list of restricted keywords for coordinate systems.
+
+    If `"Other"`, provide definition of the coordinate system in
+
+    `iEEGCoordinateSystemDescription`.
+
+    If positions correspond to pixel indices in a 2D image
+
+    (of either a volume-rendering, surface-rendering, operative photo, or
+
+    operative drawing), this MUST be `"Pixels"`.
+
+    For more information, see the section on
+
+    [2D coordinate systems](SPEC_ROOT/modality-specific-files/intracranial\
+
+    -electroencephalography.md#allowed-2d-coordinate-systems).
+
+    '

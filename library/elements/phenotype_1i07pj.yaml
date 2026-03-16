@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: files
+  name: phenotype
+  description: 'A directory where to store participant level measurements (for
+
+    example responses from multiple questionnaires) split into
+
+    individual files separate from `participants.tsv`.
+
+    See the [relevant section](SPEC_ROOT/modality-agnostic-files/phenotypic-and-assessment-data.md)
+
+    for more information.
+
+    '

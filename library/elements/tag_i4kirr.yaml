@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Container
+  name: tag
+  description: Tag of the container, e.g. version number
+- source: aind
+  class: Container
+  name: tag
+  description: Tag of the container, e.g. version number

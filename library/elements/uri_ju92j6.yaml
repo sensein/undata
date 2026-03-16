@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: formats
+  name: uri
+  description: 'A uniform resource indicator.
+
+    '

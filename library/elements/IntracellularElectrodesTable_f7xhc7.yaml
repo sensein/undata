@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: IntracellularElectrodesTable
+  name: IntracellularElectrodesTable
+  description: Table for storing intracellular electrode related metadata.

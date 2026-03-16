@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: BloodDensity
+  description: 'Measured blood density. Unit of blood density should be in `"g/mL"`.
+
+    '

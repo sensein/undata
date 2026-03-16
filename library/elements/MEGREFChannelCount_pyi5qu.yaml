@@ -1,0 +1,13 @@
+semantic:
+  data_type: integer
+provenance:
+- source: bids
+  class: metadata
+  name: MEGREFChannelCount
+  description: 'Number of MEG reference channels (for example, `23`).
+
+    For systems without such channels (for example, Neuromag Vectorview),
+
+    `MEGREFChannelCount` should be set to `0`.
+
+    '

@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: Participant
+  name: sameAs
+  description: An identifier to link participants or subjects across datasets.

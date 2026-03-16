@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: ClusterWaveforms
+  name: waveform_sd
+  description: Stdev of waveforms for each cluster, using the same indices as in mean

@@ -1,0 +1,8 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: ElectrodesTable
+  name: y
+  description: y coordinate of the channel location in the brain (+y is inferior).
+    Units should be specified in microns.

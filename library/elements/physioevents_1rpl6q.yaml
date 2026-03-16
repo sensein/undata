@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: physioevents
+  description: 'Event timing information corresponding to physiological recordings
+    and other
+
+    asynchronous data such as messages.
+
+    '

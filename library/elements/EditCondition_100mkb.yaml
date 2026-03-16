@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: EditCondition
+  description: 'If spectral editing was applied, this lists the application order
+    of `"EditPulse"`.
+
+    For example, `["ON", "OFF"]` for a MEGA-edited experiment or
+
+    `["A", "B", "C", "D"]` for a HERMES-edited experiment.
+
+    '

@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: aind
+  class: WaterRestriction
+  name: baseline_weight
+  description: Weight at start of water restriction

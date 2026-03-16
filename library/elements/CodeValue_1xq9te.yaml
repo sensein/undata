@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: CodeValue
+  description: 'An identifier that is unambiguous within the Coding Scheme
+
+    denoted by Coding Scheme Designator and Coding Scheme Version.
+
+    Corresponds to [DICOM Tag 0008, 0100](http://www.dicomlookup.com/dicomtags/(0008,0100))
+
+    `Code Value`.
+
+    '

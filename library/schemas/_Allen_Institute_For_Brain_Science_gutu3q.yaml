@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abbreviation_1f23ts
+  - https://schema.undata.live/elements/name_1febgr
+  - https://schema.undata.live/elements/registry_identifier_14min3
+  - https://schema.undata.live/elements/registry_inrn5e
+  mixins: []
+provenance:
+- source: aind
+  name: _Allen_Institute_For_Brain_Science

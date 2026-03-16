@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/Device_7hxvmy
+  - https://schema.undata.live/elements/description_1rlr7g
+  - https://schema.undata.live/elements/manufacturer_t3gmpa
+  - https://schema.undata.live/elements/model_name_1ncm1j
+  - https://schema.undata.live/elements/model_number_ctu5iz
+  - https://schema.undata.live/elements/serial_number_1e7mko
+  mixins: []
+provenance:
+- source: nwb
+  name: Device

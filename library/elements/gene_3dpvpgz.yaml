@@ -1,0 +1,9 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: GeneProbe
+  name: gene
+  description: 'Model for associate a name with a persistent identifier (PID),
+
+    the registry for that PID, and abbreviation for that registry'

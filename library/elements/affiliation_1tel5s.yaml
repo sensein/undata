@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: Person
+  name: affiliation
+  description: An organization that this person is affiliated with.

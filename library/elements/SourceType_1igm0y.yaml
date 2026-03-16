@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: SourceType
+  description: 'Type of source. Preferably a specific model/part number is supplied.
+
+    This is a freeform description, but the following keywords are suggested:
+
+    `"LED"`, `"LASER"`, `"VCSEL"`. If individual channels have different SourceType,
+
+    then the field here should be specified as "mixed"
+
+    and this column should be included in optodes.tsv.
+
+    '

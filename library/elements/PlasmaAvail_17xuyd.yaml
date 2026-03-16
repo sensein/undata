@@ -1,0 +1,9 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: bids
+  class: metadata
+  name: PlasmaAvail
+  description: 'Boolean that specifies if plasma measurements are available.
+
+    '

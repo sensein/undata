@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: TRIG
+  description: 'Analog (TTL in Volt) or digital (binary TTL) trigger channel.
+
+    '

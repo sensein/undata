@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/name_13c2bk
+  - https://schema.undata.live/elements/name_25m0cd9
+  - https://schema.undata.live/elements/whoami_16ah7py
+  - https://schema.undata.live/elements/whoami_lfmhu8
+  mixins: []
+provenance:
+- source: aind
+  name: _Pycontroladapter

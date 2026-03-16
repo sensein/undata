@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: EEGLAB-HJ
+  description: 'ALS orientation and the origin exactly between LHJ and RHJ.
+
+    For more information, see the
+
+    [EEGLAB wiki page](https://eeglab.org/tutorials/ConceptsGuide/coordinateSystem.html#\
+
+    eeglab-hj-coordinate-system).
+
+    '

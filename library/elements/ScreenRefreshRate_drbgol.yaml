@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: ScreenRefreshRate
+  description: 'Refresh rate of the screen (when used), in Hertz (equivalent to frames
+    per second, "FPS").
+
+    '

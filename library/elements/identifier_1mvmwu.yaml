@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: NWBFile
+  name: identifier
+  description: A unique text identifier for the file. For example, concatenated lab
+    name, file creation date/time and experimentalist, or a hash of these and/or other
+    values. The goal is that the string should be unique to all other files.

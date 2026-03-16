@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: signal_electrode
+  description: 'The name of the electrode from which the `reference`''s signal is
+    subtracted to yield the channel''s data.
+
+    For channels originating from bipolar devices, the `signal_electrode` MAY be the
+    same as the channel `name`.
+
+    '

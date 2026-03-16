@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: EthicsApproval
+  name: identifier
+  description: Approved Protocol identifier, often a number or alphanumeric string.

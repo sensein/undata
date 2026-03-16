@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Band pass
+    - Dichroic
+    - Long pass
+    - Multiband
+    - Neutral density
+    - Notch
+    - Multi notch
+    - Short pass
+provenance:
+- source: aind
+  class: Filter
+  name: filter_type
+  description: Filter type

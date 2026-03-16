@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: GenericSurgeryProcedure
+  name: protocol_id
+  description: DOI for protocols.io

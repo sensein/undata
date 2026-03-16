@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: OpticalSeries
+  name: orientation
+  description: Description of image relative to some reference frame (e.g., which
+    way is up). Must also specify frame of reference.

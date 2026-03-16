@@ -1,0 +1,44 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1vc9py0
+  - https://schema.undata.live/elements/additional_settings_y4o7jm
+  - https://schema.undata.live/elements/brightness_7mii6k
+  - https://schema.undata.live/elements/brightness_f1mzal8
+  - https://schema.undata.live/elements/brightness_unit_1m89d4
+  - https://schema.undata.live/elements/brightness_unit_36w3999
+  - https://schema.undata.live/elements/contrast_1dhuvh1
+  - https://schema.undata.live/elements/contrast_p330uh
+  - https://schema.undata.live/elements/contrast_unit_cxqodb
+  - https://schema.undata.live/elements/contrast_unit_piy09h4
+  - https://schema.undata.live/elements/coordinate_system_1gzde5
+  - https://schema.undata.live/elements/coordinate_system_2wjed40
+  - https://schema.undata.live/elements/height_1xxgjr
+  - https://schema.undata.live/elements/height_3tz5fyy
+  - https://schema.undata.live/elements/manufacturer_g7lvgd
+  - https://schema.undata.live/elements/manufacturer_vzi6dnc
+  - https://schema.undata.live/elements/model_52w6uw
+  - https://schema.undata.live/elements/model_a0v50rk
+  - https://schema.undata.live/elements/name_120hyb
+  - https://schema.undata.live/elements/name_2305par
+  - https://schema.undata.live/elements/notes_1ifxxd
+  - https://schema.undata.live/elements/notes_2zf4hi8
+  - https://schema.undata.live/elements/refresh_rate_13auvk
+  - https://schema.undata.live/elements/refresh_rate_25jmmhg
+  - https://schema.undata.live/elements/relative_position_19856h
+  - https://schema.undata.live/elements/relative_position_2h8gjb1
+  - https://schema.undata.live/elements/serial_number_1kqzpgs
+  - https://schema.undata.live/elements/serial_number_srfkhl
+  - https://schema.undata.live/elements/size_unit_1xe7lfu
+  - https://schema.undata.live/elements/size_unit_z65azq
+  - https://schema.undata.live/elements/transform_1ip087c
+  - https://schema.undata.live/elements/transform_rpxnrh
+  - https://schema.undata.live/elements/viewing_distance_1r66g0
+  - https://schema.undata.live/elements/viewing_distance_3gn4zxu
+  - https://schema.undata.live/elements/viewing_distance_unit_124dqf
+  - https://schema.undata.live/elements/viewing_distance_unit_237ti34
+  - https://schema.undata.live/elements/width_btxpkn
+  - https://schema.undata.live/elements/width_ncenckj
+  mixins: []
+provenance:
+- source: aind
+  name: Monitor

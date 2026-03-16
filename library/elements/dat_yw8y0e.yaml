@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: dat
+  description: 'A fine-calibration file used for Neuromag/Elekta/MEGIN MEG recording
+    hardware.
+
+    '

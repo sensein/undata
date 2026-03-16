@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ElectrodeGroup
+  name: description
+  description: Description of this electrode group.

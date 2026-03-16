@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: nii_gz
+  description: 'A compressed Neuroimaging Informatics Technology Initiative (NIfTI)
+    data file.
+
+    '

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - kilohertz
+    - hertz
+    - millihertz
+provenance:
+- source: aind
+  class: Slap2Plane
+  name: frame_rates_unit
+  description: Enumeration of Frequency Measurements

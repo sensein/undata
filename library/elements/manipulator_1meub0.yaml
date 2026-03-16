@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: EphysAssembly
+  name: manipulator
+  description: Manipulator used on a dome module

@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ScreenResolution
+  description: 'Screen resolution in pixel
+
+    (for example `[1920, 1200]` for a screen of 1920-width by 1080-height pixels),
+
+    if no screen use `n/a`.
+
+    `ScreenResolution` is REQUIRED when the experiment included simultaneous eye-tracking
+
+    recordings with `SampleCoordinateSystem` matching `"gaze-on-screen"`.
+
+    '

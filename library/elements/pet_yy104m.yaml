@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: pet
+  description: 'PET imaging data SHOULD be stored in 4D
+
+    (or 3D, if only one volume was acquired) NIfTI files with the `_pet` suffix.
+
+    Volumes MUST be stored in chronological order
+
+    (the order they were acquired in).
+
+    '

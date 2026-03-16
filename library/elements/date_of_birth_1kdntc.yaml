@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: Subject
+  name: date_of_birth
+  description: Date of birth of subject. Can be supplied instead of 'age'.

@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: Funding
+  description: 'List of sources of funding (grant numbers).
+
+    '

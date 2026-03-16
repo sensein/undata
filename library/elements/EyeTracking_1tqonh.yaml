@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: EyeTracking
+  name: EyeTracking
+  description: Eye-tracking data, representing direction of gaze.

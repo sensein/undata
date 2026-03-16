@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/TimeIntervals_fij2td
+  - https://schema.undata.live/elements/start_time_11jxpl
+  - https://schema.undata.live/elements/stop_time_dywscb
+  - https://schema.undata.live/elements/tags_1q5zn7
+  - https://schema.undata.live/elements/tags_index_1xxle6
+  - https://schema.undata.live/elements/timeseries_bbks4s
+  - https://schema.undata.live/elements/timeseries_index_1sijsg
+  mixins: []
+provenance:
+- source: nwb
+  name: TimeIntervals

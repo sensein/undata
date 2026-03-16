@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/contactPoint_62u8el
+  - https://schema.undata.live/elements/id_1v69th
+  - https://schema.undata.live/elements/identifier_q8w1qv
+  - https://schema.undata.live/elements/schemaKey_jf27ks
+  mixins: []
+provenance:
+- source: dandi
+  name: EthicsApproval

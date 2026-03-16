@@ -1,0 +1,9 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: Fluorescence
+  name: Fluorescence
+  description: Fluorescence information about a region of interest (ROI). Storage
+    hierarchy of fluorescence should be the same as for segmentation (ie, same names
+    for ROIs and for image planes).

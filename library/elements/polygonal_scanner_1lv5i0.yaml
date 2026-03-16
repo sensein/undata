@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: PockelsCell
+  name: polygonal_scanner
+  description: Must match name of Polygonal scanner

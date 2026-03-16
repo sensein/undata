@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: MouseSubject
+  name: restrictions
+  description: Any restrictions on use or publishing based on subject source

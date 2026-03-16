@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: Descriptors
+  description: 'List of relevant descriptors (for example, journal articles) for dataset
+
+    using a valid
+
+    [URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator)
+
+    when possible.
+
+    '

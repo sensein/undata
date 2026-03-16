@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/device_name_1m6kex
+  - https://schema.undata.live/elements/manipulator_9rw158
+  - https://schema.undata.live/elements/patch_cords_1wa750
+  - https://schema.undata.live/elements/probes_1nlsl5
+  mixins: []
+provenance:
+- source: aind
+  name: FiberAssemblyConfig

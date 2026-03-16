@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: FrequencyBandsTable
+  name: band_name
+  description: Name of the band, e.g. theta.

@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: nirs
+  description: Data associated with a Shared Near Infrared Spectroscopy Format file.

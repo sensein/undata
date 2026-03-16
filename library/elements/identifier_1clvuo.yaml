@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Person
+  name: identifier
+  description: An ORCID (orcid.org) identifier for an individual.

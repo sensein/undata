@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Acquisition
+  name: data_streams
+  description: A data stream is a collection of devices that are acquiring data simultaneously.
+    Each acquisition can include multiple streams. Streams should be split when configurations
+    are changed.

@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1e7hzu4
+  - https://schema.undata.live/elements/additional_settings_pg2vq6
+  - https://schema.undata.live/elements/channels_3o6il6
+  - https://schema.undata.live/elements/channels_78sxq9e
+  - https://schema.undata.live/elements/data_interface_1lz12p
+  - https://schema.undata.live/elements/data_interface_36dvmgf
+  - https://schema.undata.live/elements/firmware_version_1yhng6s
+  - https://schema.undata.live/elements/firmware_version_zq4x1w
+  - https://schema.undata.live/elements/hardware_version_dppniz
+  - https://schema.undata.live/elements/hardware_version_r24uq1o
+  - https://schema.undata.live/elements/manufacturer_8zn2v2
+  - https://schema.undata.live/elements/manufacturer_hqkiqo7
+  - https://schema.undata.live/elements/model_12r0yt
+  - https://schema.undata.live/elements/model_24gi0tp
+  - https://schema.undata.live/elements/name_1wk4kv
+  - https://schema.undata.live/elements/name_3r9tban
+  - https://schema.undata.live/elements/notes_1hcsbo
+  - https://schema.undata.live/elements/notes_2x9v874
+  - https://schema.undata.live/elements/ports_hkv5l7
+  - https://schema.undata.live/elements/ports_yop066e
+  - https://schema.undata.live/elements/serial_number_12aicra
+  - https://schema.undata.live/elements/serial_number_jenpk2
+  mixins: []
+provenance:
+- source: aind
+  name: OpenEphysAcquisitionBoard

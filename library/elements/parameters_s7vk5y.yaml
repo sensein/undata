@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Code
+  name: parameters
+  description: Parameters used in the code or script
+- source: aind
+  class: Code
+  name: parameters
+  description: Parameters used in the code or script

@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: CalibrationPosition
+  description: 'A list of `[x, y]` coordinates in the `CalibrationUnit`.
+
+    For example, using 5 positions calibration presented on an HD screen,
+
+    it could be `[[960,50],[960,540],[960,1030],[50,540],[1870,540]]`.
+
+    '

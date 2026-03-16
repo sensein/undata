@@ -1,0 +1,10 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: SequentialRecordingsTable
+  name: SequentialRecordingsTable
+  description: A table for grouping different sequential recordings from the SimultaneousRecordingsTable
+    table together. This is typically used to group together sequential recordings
+    where a sequence of stimuli of the same type with varying parameters have been
+    presented in a sequence.

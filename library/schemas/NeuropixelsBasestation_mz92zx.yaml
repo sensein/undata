@@ -1,0 +1,34 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1t3iac
+  - https://schema.undata.live/elements/additional_settings_3kfxhvs
+  - https://schema.undata.live/elements/basestation_firmware_version_1xjooob
+  - https://schema.undata.live/elements/basestation_firmware_version_z8x70e
+  - https://schema.undata.live/elements/bsc_firmware_version_1rnr9l
+  - https://schema.undata.live/elements/bsc_firmware_version_3hltlte
+  - https://schema.undata.live/elements/channels_19i3o6
+  - https://schema.undata.live/elements/channels_2hs3vb8
+  - https://schema.undata.live/elements/data_interface_1d9gcxz
+  - https://schema.undata.live/elements/data_interface_oytpah
+  - https://schema.undata.live/elements/firmware_version_1wa6a1
+  - https://schema.undata.live/elements/firmware_version_3qq6cv7
+  - https://schema.undata.live/elements/hardware_version_6odkay
+  - https://schema.undata.live/elements/hardware_version_d6a6hut
+  - https://schema.undata.live/elements/manufacturer_13k50c
+  - https://schema.undata.live/elements/manufacturer_261xw92
+  - https://schema.undata.live/elements/model_17zexr
+  - https://schema.undata.live/elements/model_2es7ecx
+  - https://schema.undata.live/elements/name_1byxkw
+  - https://schema.undata.live/elements/name_2mndlor
+  - https://schema.undata.live/elements/notes_7vdtng
+  - https://schema.undata.live/elements/notes_fj50s63
+  - https://schema.undata.live/elements/ports_11eg03g
+  - https://schema.undata.live/elements/ports_iyenqq
+  - https://schema.undata.live/elements/serial_number_1e9u5a
+  - https://schema.undata.live/elements/serial_number_2r6ye4v
+  - https://schema.undata.live/elements/slot_1qfdm8
+  - https://schema.undata.live/elements/slot_3f69bdp
+  mixins: []
+provenance:
+- source: aind
+  name: NeuropixelsBasestation

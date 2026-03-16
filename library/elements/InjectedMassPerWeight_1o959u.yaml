@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: InjectedMassPerWeight
+  description: 'Injected mass per kilogram bodyweight.
+
+    '

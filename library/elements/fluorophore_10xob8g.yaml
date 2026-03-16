@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: FluorescentStain
+  name: fluorophore
+  description: Flurophore used in HCR, Immunolabeling, etc

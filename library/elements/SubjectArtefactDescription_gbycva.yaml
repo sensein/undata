@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: SubjectArtefactDescription
+  description: 'Freeform description of the observed subject artifact and its possible
+    cause
+
+    (for example, `"Vagus Nerve Stimulator"`, `"non-removable implant"`).
+
+    If this field is set to `"n/a"`, it will be interpreted as absence of major
+
+    source of artifacts except cardiac and blinks.
+
+    '

@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: VolumeCalibration
+  name: output
+  description: Volume output (provide the average if repeated)
+- source: aind
+  class: VolumeCalibration
+  name: output
+  description: Volume output (provide the average if repeated)

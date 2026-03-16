@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: CogPOID
+  description: '[URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator)
+
+    of the corresponding [CogPO](http://www.cogpo.org/) term.
+
+    '

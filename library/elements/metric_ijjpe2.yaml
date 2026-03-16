@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: DecompositionSeries
+  name: metric
+  description: The metric used, e.g. phase, amplitude, power.

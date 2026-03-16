@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: RoiResponseSeries
+  name: RoiResponseSeries
+  description: ROI responses over an imaging plane. The first dimension represents
+    time. The second dimension, if present, represents ROIs.

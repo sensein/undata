@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: mhd
+  description: 'Produced by ITAB-ARGOS153 systems. This file a binary header file,
+    and is generated along with a
+
+    raw data file with the `.raw` extension.
+
+    '

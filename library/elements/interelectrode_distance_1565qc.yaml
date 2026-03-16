@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: interelectrode_distance
+  description: 'Distance between adjacent electrodes (in a pair or grid) that are
+    rigidly attached to
+
+    the same sensor device, or between the `signal_electrode` and its `reference`
+
+    when each is independently placed.
+
+    '

@@ -1,0 +1,8 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: ImagingRetinotopy
+  name: sign_map
+  description: Sine of the angle between the direction of the gradient in axis_1 and
+    axis_2.

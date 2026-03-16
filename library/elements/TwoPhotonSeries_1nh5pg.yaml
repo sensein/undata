@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: TwoPhotonSeries
+  name: TwoPhotonSeries
+  description: Image stack recorded over time from 2-photon microscope.

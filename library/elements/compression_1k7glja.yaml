@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DetectorConfig
+  name: compression
+  description: Compression algorithm used during acquisition

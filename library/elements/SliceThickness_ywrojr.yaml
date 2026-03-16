@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: SliceThickness
+  description: 'Slice thickness of the tissue sample in the unit micrometers (`"um"`)
+    (for example: `5`).
+
+    '

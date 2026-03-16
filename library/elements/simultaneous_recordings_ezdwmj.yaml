@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: SequentialRecordingsTable
+  name: simultaneous_recordings
+  description: A reference to one or more rows in the SimultaneousRecordingsTable
+    table.

@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: FiberProbe
+  name: manufacturer
+- source: aind
+  class: FiberProbe
+  name: manufacturer

@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Code
+  name: core_dependency
+  description: For code with a core software package dependency, e.g. Bonsai
+- source: aind
+  class: Code
+  name: core_dependency
+  description: For code with a core software package dependency, e.g. Bonsai

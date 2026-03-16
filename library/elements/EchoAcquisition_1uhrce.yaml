@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: EchoAcquisition
+  description: 'How the detected echo was acquired when the analog-to-digital converter
+    was turned on.
+
+    For example, `"Half echo"`, `"Full echo"`.
+
+    '

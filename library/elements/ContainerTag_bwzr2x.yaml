@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ContainerTag
+  description: 'Tag of software container image used to produce the dataset
+
+    '

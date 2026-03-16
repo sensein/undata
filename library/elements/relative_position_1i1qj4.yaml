@@ -1,0 +1,6 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: CameraAssembly
+  name: relative_position

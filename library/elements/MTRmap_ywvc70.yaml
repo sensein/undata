@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: MTRmap
+  description: 'In arbitrary units (arbitrary).
+
+    MTR maps are REQUIRED to use this suffix regardless of the method used to
+
+    generate them.
+
+    MTRmap intensity values are RECOMMENDED to be represented in percentage in
+
+    the range of 0-100%.
+
+    '

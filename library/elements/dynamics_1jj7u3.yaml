@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: BrainInjection
+  name: dynamics
+  description: List of injection events, one per location/depth
+- source: aind
+  class: BrainInjection
+  name: dynamics
+  description: List of injection events, one per location/depth

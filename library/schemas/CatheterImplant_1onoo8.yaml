@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/device_config_1vykki
+  - https://schema.undata.live/elements/implanted_device_73riin
+  - https://schema.undata.live/elements/where_performed_1r1s80
+  mixins: []
+provenance:
+- source: aind
+  name: CatheterImplant

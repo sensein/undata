@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: data_description
+  name: source_data
+  description: For derived assets, list the source data asset names used to create
+    this data

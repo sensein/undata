@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: ViralMaterial
+  name: name
+  description: Full genome for virus construct
+- source: aind
+  class: ViralMaterial
+  name: name
+  description: Full genome for virus construct

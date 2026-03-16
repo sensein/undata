@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: GrayscaleImage
+  name: GrayscaleImage
+  description: A grayscale image.

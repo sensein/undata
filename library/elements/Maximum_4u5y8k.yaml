@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: Maximum
+  description: 'Maximum value a column entry is permitted to have.
+
+    '

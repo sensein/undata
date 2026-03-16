@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: OCT
+  description: 'Optical coherence tomography imaging data
+
+    '

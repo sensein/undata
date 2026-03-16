@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: NIRSCWHBR
+  description: 'Continuous wave deoxygenated hemoglobin (deoxyhemoglobin) concentration
+    measurements.
+
+    Equivalent to dataTypeLabel HbR in SNIRF.
+
+    '

@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/coordinate_system_name_1ncmws
+  - https://schema.undata.live/elements/coordinate_system_name_393r7ym
+  - https://schema.undata.live/elements/craniotomy_type_14ktmq
+  - https://schema.undata.live/elements/craniotomy_type_282bl7m
+  - https://schema.undata.live/elements/dura_removed_17p68d
+  - https://schema.undata.live/elements/dura_removed_2e7zwuw
+  - https://schema.undata.live/elements/implant_part_number_9unqpm
+  - https://schema.undata.live/elements/implant_part_number_jfrsad9
+  - https://schema.undata.live/elements/position_10wuat
+  - https://schema.undata.live/elements/position_20twtum
+  - https://schema.undata.live/elements/protective_material_7z1j15
+  - https://schema.undata.live/elements/protective_material_fqcvwpb
+  - https://schema.undata.live/elements/protocol_id_1j7f7h
+  - https://schema.undata.live/elements/protocol_id_30xcf1e
+  - https://schema.undata.live/elements/size_17cxl6s
+  - https://schema.undata.live/elements/size_lz44jo
+  - https://schema.undata.live/elements/size_unit_19pcax
+  - https://schema.undata.live/elements/size_unit_2i6e476
+  mixins: []
+provenance:
+- source: aind
+  name: Craniotomy

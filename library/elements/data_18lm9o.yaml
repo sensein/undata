@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: nwb
+  class: IndexSeries
+  name: data
+  description: Index of the image (using zero-indexing) in the linked Images object.

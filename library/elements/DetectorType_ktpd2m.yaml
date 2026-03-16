@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: DetectorType
+  description: 'Type of detector. This is a free form description with the following
+    suggested terms:
+
+    `"SiPD"`, `"APD"`. Preferably a specific model/part number is supplied.
+
+    If individual channels have different `DetectorType`,
+
+    then the field here should be specified as `"mixed"`
+
+    and this column should be included in `optodes.tsv`.
+
+    '

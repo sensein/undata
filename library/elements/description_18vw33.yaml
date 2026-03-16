@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: Clustering
+  name: description
+  description: Description of clusters or clustering, (e.g. cluster 0 is noise, clusters
+    curated using Klusters, etc)

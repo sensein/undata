@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channel_index_1mgdj9
+  - https://schema.undata.live/elements/channel_index_37c3qee
+  - https://schema.undata.live/elements/channel_type_fonkrk
+  - https://schema.undata.live/elements/channel_type_uy3y7jw
+  - https://schema.undata.live/elements/flow_capacity_9lyl6u
+  - https://schema.undata.live/elements/flow_capacity_iylwpxc
+  - https://schema.undata.live/elements/flow_unit_1hhxtj
+  - https://schema.undata.live/elements/flow_unit_2xk183w
+  mixins: []
+provenance:
+- source: aind
+  name: OlfactometerChannel

@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: PD
+  description: 'Ambiguous, may refer to a parametric image or to a conventional image.
+
+    **Change:** Replaced by `PDw` or `PDmap`.
+
+    '

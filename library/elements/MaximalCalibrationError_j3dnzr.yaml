@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: MaximalCalibrationError
+  description: 'Maximal calibration error in degrees of visual angle.
+
+    '

@@ -1,10 +1,8 @@
-"""Pydantic v2 models matching library-schema.linkml.yaml."""
+"""Pydantic v2 models for undata-library v2 — content-addressed RDF property model."""
 
 from __future__ import annotations
 
-from datetime import datetime
 from enum import Enum
-from typing import Any
 
 from pydantic import BaseModel, Field
 
@@ -26,76 +24,116 @@ class MappingFunctionType(str, Enum):
     unknown = "unknown"
 
 
-class MappingStatus(str, Enum):
-    active = "active"
-    pending_curation = "pending_curation"
+# ---------------------------------------------------------------------------
+# Element (rdf:Property)
+# ---------------------------------------------------------------------------
 
 
-class SemanticGraph(BaseModel):
+class Constraints(BaseModel):
+    minimum: float | None = None
+    maximum: float | None = None
+    pattern: str | None = None
+    allowed_values: list[str] | None = None
+
+
+class SemanticIdentity(BaseModel):
+    """Identity block — hashed for content-addressed URI."""
+
     ontology_term: str | None = None
-    unit: str | None = None
-    external_uri: str | None = None
-    cmixf_valid: bool | None = None
-
-
-class ChangeEntry(BaseModel):
-    change_type: str
-    reason: str | None = None
-    breaking: bool | None = None
-
-
-class ElementVersion(BaseModel):
-    version_num: int
-    name: str
     data_type: DataType
+    unit: str | None = None
+    constraints: Constraints | None = None
+
+
+class ProvenanceEntry(BaseModel):
+    """One source's attestation of this property."""
+
+    source: str
+    class_: str = Field(alias="class")
+    name: str
     description: str | None = None
     required: bool | None = None
     multivalued: bool | None = None
-    allowed_values: list[str] | None = None
-    constraints: dict[str, Any] | None = None
-    semantic_graph: SemanticGraph | None = None
-    created_at: datetime
-    created_by: str | None = None
-    changelog: list[ChangeEntry] | None = None
 
-
-class ElementMetadata(BaseModel):
-    id: str
-    source_local_id: str
-    source_id: str | None = None
-    created_at: datetime
+    model_config = {"populate_by_name": True}
 
 
 class ElementRecord(BaseModel):
-    element: ElementMetadata
-    versions: list[ElementVersion] = Field(min_length=1)
-    current_version: int
+    """A data element (rdf:Property) with semantic identity + provenance."""
+
+    semantic: SemanticIdentity
+    provenance: list[ProvenanceEntry] = Field(min_length=1)
 
 
-class MappingVersion(BaseModel):
-    version_num: int
-    function_type: MappingFunctionType | None = None
-    expression: str | None = None
-    expression_type: str | None = None
-    input_element_ids: list[str] | None = None
-    sssom_predicate: str | None = None
-    created_at: datetime
-    created_by: str | None = None
+# ---------------------------------------------------------------------------
+# Schema (sh:NodeShape)
+# ---------------------------------------------------------------------------
 
 
-class MappingMetadata(BaseModel):
-    id: str
-    output_element_id: str | None = None
-    status: MappingStatus | None = None
+class SchemaIdentity(BaseModel):
+    """Identity block for a class shape — hashed."""
+
+    properties: list[str] = Field(default_factory=list)
+    subclass_of: str | None = None
+    mixins: list[str] = Field(default_factory=list)
+
+
+class SchemaProvenance(BaseModel):
+    """One source's attestation of this class shape."""
+
+    source: str
+    name: str
+    description: str | None = None
+
+
+class SchemaRecord(BaseModel):
+    """A class shape (sh:NodeShape) with semantic identity + provenance."""
+
+    semantic: SchemaIdentity
+    provenance: list[SchemaProvenance] = Field(min_length=1)
+
+
+# ---------------------------------------------------------------------------
+# Mapping
+# ---------------------------------------------------------------------------
+
+
+class MappingProvenance(BaseModel):
+    source: str
     attributed_to: str | None = None
-    confidence_score: float | None = None
-    created_at: datetime
 
 
 class MappingRecord(BaseModel):
-    mapping: MappingMetadata
-    versions: list[MappingVersion] = Field(min_length=1)
-    current_version: int
+    source_element: str
+    target_element: str
+    function_type: MappingFunctionType
+    expression: str | None = None
+    expression_type: str | None = None
+    confidence: float | None = None
+    sssom_predicate: str | None = None
+    provenance: list[MappingProvenance] = Field(default_factory=list)
+
+
+# ---------------------------------------------------------------------------
+# Hash Registry
+# ---------------------------------------------------------------------------
+
+
+class HashRegistryEntry(BaseModel):
+    sha256: str
+    attribute: str | None = None
+    name: str | None = None
+    uri: str
+
+
+class HashRegistry(BaseModel):
+    elements: dict[str, HashRegistryEntry] = Field(default_factory=dict)
+    schemas: dict[str, HashRegistryEntry] = Field(default_factory=dict)
+
+
+# ---------------------------------------------------------------------------
+# Validation report (reused from v1)
+# ---------------------------------------------------------------------------
 
 
 class ValidationViolation(BaseModel):

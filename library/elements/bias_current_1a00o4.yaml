@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: CurrentClampSeries
+  name: bias_current
+  description: Bias current, in amps.

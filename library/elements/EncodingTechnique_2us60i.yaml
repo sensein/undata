@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: EncodingTechnique
+  description: 'The encoding technique used during readout.
+
+    For example, `"Cartesian"`, `"EPSI"`, `"Spiral"`,
+
+    or `"Density-weighted concentric ring trajectory"`.
+
+    '

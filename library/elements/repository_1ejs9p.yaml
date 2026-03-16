@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: PublishedAsset
+  name: repository
+  description: location of the item

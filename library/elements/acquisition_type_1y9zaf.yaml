@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Acquisition
+  name: acquisition_type
+  description: Descriptive string detailing the type of acquisition, should be consistent
+    across similar acquisitions for the same experiment.

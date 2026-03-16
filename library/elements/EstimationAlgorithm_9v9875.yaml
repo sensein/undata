@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: EstimationAlgorithm
+  description: 'Type of algorithm used to perform fitting
+
+    (for example, `"linear"`, `"non-linear"`, `"LM"` and such).
+
+    '

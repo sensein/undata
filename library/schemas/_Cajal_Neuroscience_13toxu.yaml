@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abbreviation_1xqjbg
+  - https://schema.undata.live/elements/abbreviation_3tlhoxh
+  - https://schema.undata.live/elements/name_14mg31
+  - https://schema.undata.live/elements/name_285ix5v
+  - https://schema.undata.live/elements/registry_1v2u9wb
+  - https://schema.undata.live/elements/registry_identifier_de5o33
+  - https://schema.undata.live/elements/registry_identifier_qfc2yu8
+  - https://schema.undata.live/elements/registry_xzw65s
+  mixins: []
+provenance:
+- source: aind
+  name: _Cajal_Neuroscience

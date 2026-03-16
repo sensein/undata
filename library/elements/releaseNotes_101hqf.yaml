@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: PublishedDandiset
+  name: releaseNotes
+  description: The description of the release

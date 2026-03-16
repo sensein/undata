@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: pixels
+  description: 'A dimension specified in pixels.
+
+    '

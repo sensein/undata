@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Water
+    - Sucrose
+    - Quinine
+    - Citric acid
+    - Other
+provenance:
+- source: aind
+  class: LickSpoutConfig
+  name: solution
+  description: Solution names

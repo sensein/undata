@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: PowerCalibration
+  name: output
+  description: Power output (provide the average if repeated)
+- source: aind
+  class: PowerCalibration
+  name: output
+  description: Power output (provide the average if repeated)

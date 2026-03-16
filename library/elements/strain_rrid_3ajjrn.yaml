@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: strain_rrid
+  description: 'For species different from `homo sapiens`, research resource identifier
+
+    ([RRID](https://rrid.site/data/source/nlx_154697-1/search))
+
+    of the strain of the species, for example: `RRID:IMSR_JAX:000664`.
+
+    '

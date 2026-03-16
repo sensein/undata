@@ -1,0 +1,9 @@
+semantic:
+  data_type: integer
+provenance:
+- source: bids
+  class: metadata
+  name: JNTANGChannelCount
+  description: 'Number of joint angle channels.
+
+    '

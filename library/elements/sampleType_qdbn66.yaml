@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: BioSample
+  name: sampleType
+  description: Identifier for the sample characteristics (e.g., from OBI, Encode).

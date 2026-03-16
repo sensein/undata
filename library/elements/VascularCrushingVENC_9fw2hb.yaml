@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: VascularCrushingVENC
+  description: 'The crusher gradient strength, in centimeters per second.
+
+    Specify either one number for the total time-series, or provide an array of
+
+    numbers, for example when using QUASAR, using the value zero to identify
+
+    volumes for which `VascularCrushing` was turned off.
+
+    Corresponds to [DICOM Tag 0018, 925A](http://www.dicomlookup.com/dicomtags/(0018,925A))
+
+    `ASL Crusher Flow Limit`.
+
+    '

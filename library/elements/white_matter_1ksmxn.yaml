@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: white_matter
+  description: 'The origin of a tissue: white matter
+
+    '

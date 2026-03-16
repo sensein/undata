@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channels_1yd8tiy
+  - https://schema.undata.live/elements/channels_znwirk
+  - https://schema.undata.live/elements/device_name_10hmny
+  - https://schema.undata.live/elements/device_name_1zzwatm
+  mixins: []
+provenance:
+- source: aind
+  name: PatchCordConfig

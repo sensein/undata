@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Fail
+    - Pass
+    - Pending
+provenance:
+- source: aind
+  class: QCStatus
+  name: status
+  description: QC Status
+- source: aind
+  class: QCStatus
+  name: status
+  description: QC Status

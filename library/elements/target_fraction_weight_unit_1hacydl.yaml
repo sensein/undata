@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - percent
+    - fraction of cycle
+provenance:
+- source: aind
+  class: WaterRestriction
+  name: target_fraction_weight_unit
+  description: Unitless options

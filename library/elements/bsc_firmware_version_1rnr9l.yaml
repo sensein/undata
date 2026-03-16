@@ -1,0 +1,6 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: NeuropixelsBasestation
+  name: bsc_firmware_version

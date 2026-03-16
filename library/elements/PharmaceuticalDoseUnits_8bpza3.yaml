@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: PharmaceuticalDoseUnits
+  description: 'Unit format relating to pharmaceutical dose
+
+    (for example, `"mg"` or `"mg/kg"`).
+
+    '

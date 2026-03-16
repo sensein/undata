@@ -1,0 +1,26 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: fsaverageSym
+  description: 'The `fsaverageSym` is a symmetric surface reference system
+
+    (formerly described as `fsaveragesym`).
+
+    Additionally, by convention,
+
+    `fsaverageSym` is used as shorthand for a **dual template** providing both volumetric
+    and
+
+    surface coordinates references,
+
+    where the surface template is `fsaverageSym` and the volumetric template corresponds
+    to a
+
+    FreeSurfer variant of `MNI305` space.
+
+
+    Used by Freesurfer.
+
+    '

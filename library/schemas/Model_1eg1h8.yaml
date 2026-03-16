@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/architecture_2dfo38
+  - https://schema.undata.live/elements/architecture_parameters_1bq2q1
+  - https://schema.undata.live/elements/evaluations_4pvfl2
+  - https://schema.undata.live/elements/example_run_code_18t1f3
+  - https://schema.undata.live/elements/intended_use_ho4w82
+  - https://schema.undata.live/elements/limitations_6rxxhv
+  - https://schema.undata.live/elements/name_123q3x
+  - https://schema.undata.live/elements/notes_6u68g6
+  - https://schema.undata.live/elements/software_framework_126s1d
+  - https://schema.undata.live/elements/training_10vkf4
+  - https://schema.undata.live/elements/version_iztzhu
+  mixins: []
+provenance:
+- source: aind
+  name: Model

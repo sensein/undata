@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: name__optodes
+  description: 'Name of the optode, must be unique.
+
+    '

@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: z__optodes
+  description: 'Recorded position along the z-axis.
+
+    `"n/a"` if not available.
+
+    '

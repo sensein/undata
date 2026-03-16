@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: Keywords
+  description: 'A list of keywords that describe the content or subject matter of
+    the dataset.
+
+    These may be used to enhance the findability of the dataset on public archives.
+
+    '

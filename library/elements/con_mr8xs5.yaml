@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: con
+  description: 'Raw continuous data from a KIT/Yokogawa/Ricoh MEG system.
+
+
+    Successor to the `.sqd` extension for raw continuous data.
+
+    '

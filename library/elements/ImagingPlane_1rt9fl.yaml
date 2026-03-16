@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: ImagingPlane
+  name: ImagingPlane
+  description: An imaging plane and its metadata.

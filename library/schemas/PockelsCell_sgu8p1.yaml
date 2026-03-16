@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_12nt68
+  - https://schema.undata.live/elements/beam_modulation_1xa0y6
+  - https://schema.undata.live/elements/beam_modulation_unit_rwa1lx
+  - https://schema.undata.live/elements/manufacturer_1wmjdy
+  - https://schema.undata.live/elements/model_kallfh
+  - https://schema.undata.live/elements/name_qy5jle
+  - https://schema.undata.live/elements/notes_5vwnfz
+  - https://schema.undata.live/elements/off_time_v52k86
+  - https://schema.undata.live/elements/on_time_ff5zz5
+  - https://schema.undata.live/elements/polygonal_scanner_1lv5i0
+  - https://schema.undata.live/elements/serial_number_1fes01
+  - https://schema.undata.live/elements/time_setting_unit_1pxcww
+  mixins: []
+provenance:
+- source: aind
+  name: PockelsCell

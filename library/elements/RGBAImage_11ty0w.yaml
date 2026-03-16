@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: RGBAImage
+  name: RGBAImage
+  description: A color image with transparency.

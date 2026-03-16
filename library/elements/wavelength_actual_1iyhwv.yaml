@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: wavelength_actual
+  description: 'Measured wavelength of light in nm.
+
+    `n/a` for channels that do not contain raw NIRS signals (acceleration).
+
+    This field is equivalent to `measurementList.wavelengthActual` in the SNIRF specification.
+
+    '

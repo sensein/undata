@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: MTsat
+  description: 'In arbitrary units (arbitrary).
+
+    MTsat maps are REQUIRED to use this suffix regardless of the method used to
+
+    generate them.
+
+    '

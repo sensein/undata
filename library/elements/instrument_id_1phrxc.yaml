@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: acquisition
+  name: instrument_id
+  description: Should match the Instrument.instrument_id

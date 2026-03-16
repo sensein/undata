@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: group__emg
+  description: 'Which group the electrode or channel belongs to (typically this indicates
+    electrodes
+
+    or bipolar channels on the same grid, strip, or other device).
+
+    '

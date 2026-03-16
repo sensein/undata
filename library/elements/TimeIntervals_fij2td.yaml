@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: TimeIntervals
+  name: TimeIntervals
+  description: A container for aggregating epoch data and the TimeSeries that each
+    epoch applies to.

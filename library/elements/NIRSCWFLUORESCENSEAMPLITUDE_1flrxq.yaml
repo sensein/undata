@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: NIRSCWFLUORESCENSEAMPLITUDE
+  description: 'Continuous wave fluorescence amplitude measurements. Equivalent to
+    dataType 051 in SNIRF.
+
+    '

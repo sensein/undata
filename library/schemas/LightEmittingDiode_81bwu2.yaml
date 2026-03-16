@@ -1,0 +1,26 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_125i385
+  - https://schema.undata.live/elements/additional_settings_jc4cit
+  - https://schema.undata.live/elements/bandwidth_1qzrjs
+  - https://schema.undata.live/elements/bandwidth_3gahf8o
+  - https://schema.undata.live/elements/bandwidth_unit_7wdmxy
+  - https://schema.undata.live/elements/bandwidth_unit_fl3onr3
+  - https://schema.undata.live/elements/manufacturer_1e8j44d
+  - https://schema.undata.live/elements/manufacturer_pglozh
+  - https://schema.undata.live/elements/model_fytdo6
+  - https://schema.undata.live/elements/model_vi5piw8
+  - https://schema.undata.live/elements/name_17hzc6
+  - https://schema.undata.live/elements/name_2dtt3em
+  - https://schema.undata.live/elements/notes_avdufv
+  - https://schema.undata.live/elements/notes_lg8ei6w
+  - https://schema.undata.live/elements/serial_number_10lam8a
+  - https://schema.undata.live/elements/serial_number_ijmt3p
+  - https://schema.undata.live/elements/wavelength_1b6jbn
+  - https://schema.undata.live/elements/wavelength_2l3cltj
+  - https://schema.undata.live/elements/wavelength_unit_1anl8q
+  - https://schema.undata.live/elements/wavelength_unit_2k1ysz5
+  mixins: []
+provenance:
+- source: aind
+  name: LightEmittingDiode

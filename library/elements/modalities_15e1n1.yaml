@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: instrument
+  name: modalities
+  description: List of all possible modalities that the instrument is capable of acquiring

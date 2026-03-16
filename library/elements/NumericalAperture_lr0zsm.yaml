@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: NumericalAperture
+  description: 'Lens numerical aperture (for example: `1.4`). If the file format is
+    OME-TIFF,
+
+    the value MUST be consistent with the `LensNA` OME metadata field.
+
+    '

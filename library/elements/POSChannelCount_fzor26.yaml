@@ -1,0 +1,9 @@
+semantic:
+  data_type: integer
+provenance:
+- source: bids
+  class: metadata
+  name: POSChannelCount
+  description: 'Number of position channels.
+
+    '

@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/collection_method_19h8as
+  - https://schema.undata.live/elements/collection_method_2hqdyy7
+  - https://schema.undata.live/elements/collection_volume_1x0zh8d
+  - https://schema.undata.live/elements/collection_volume_unit_hzcet0
+  - https://schema.undata.live/elements/collection_volume_unit_zh9hgta
+  - https://schema.undata.live/elements/collection_volume_yzfzyq
+  - https://schema.undata.live/elements/sample_type_7k910o
+  - https://schema.undata.live/elements/sample_type_ex67xbr
+  - https://schema.undata.live/elements/time_1gphdy
+  - https://schema.undata.live/elements/time_2vzvxqx
+  mixins: []
+provenance:
+- source: aind
+  name: SampleCollection

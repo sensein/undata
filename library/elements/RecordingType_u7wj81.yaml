@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: RecordingType
+  description: 'Defines whether the recording is `"continuous"`, `"discontinuous"`,
+    or
+
+    `"epoched"`, where `"epoched"` is limited to time windows about events of
+
+    interest (for example, stimulus presentations or subject responses).
+
+    '

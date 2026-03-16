@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: FrequencyBandsTable
+  name: band_stdev
+  description: The standard deviation of Gaussian filters, in Hz.

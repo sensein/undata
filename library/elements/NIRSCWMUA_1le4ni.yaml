@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: NIRSCWMUA
+  description: 'Continuous wave optical absorption measurements. Equivalent to dataTypeLabel
+    mua in SNIRF.
+
+    '

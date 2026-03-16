@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: QualityControl
+  name: default_grouping
+  description: Tag *keys* that should be used to group metrics hierarchically for
+    visualization

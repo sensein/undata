@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: SimultaneousRecordingsTable
+  name: SimultaneousRecordingsTable
+  description: A table for grouping different intracellular recordings from the IntracellularRecordingsTable
+    table together that were recorded simultaneously from different electrodes.

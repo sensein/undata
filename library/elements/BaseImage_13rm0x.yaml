@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: BaseImage
+  name: BaseImage
+  description: An abstract base type for image data. Parent type for Image and ExternalImage
+    types.

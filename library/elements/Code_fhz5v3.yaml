@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: Code
+  description: '[URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator)
+
+    of the code used to present the stimuli.
+
+    Persistent identifiers such as DOIs are preferred.
+
+    If multiple versions of code may be hosted at the same location,
+
+    revision-specific URIs are recommended.
+
+    '

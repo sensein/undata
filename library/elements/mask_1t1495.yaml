@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: mask
+  description: 'A binary mask that functions as a discrete "label" for a single structure.
+
+
+    This suffix may only be used in derivative datasets.
+
+    '

@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: StimulusEpoch
+  name: stimulus_start_time
+  description: When a specific stimulus begins. This might be the same as the acquisition
+    start time.

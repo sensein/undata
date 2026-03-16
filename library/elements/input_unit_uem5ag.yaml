@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - hour
+    - minute
+    - second
+    - millisecond
+    - microsecond
+    - nanosecond
+provenance:
+- source: aind
+  class: VolumeCalibration
+  name: input_unit
+  description: Enumeration of Time Measurements
+- source: aind
+  class: VolumeCalibration
+  name: input_unit
+  description: Enumeration of Time Measurements

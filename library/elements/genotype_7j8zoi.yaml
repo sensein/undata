@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: Subject
+  name: genotype
+  description: Genetic strain. If absent, assume Wild Type (WT).

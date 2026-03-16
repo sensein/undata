@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: Gain
+  description: 'Signal gain from an in-line amplifier, applied between the EMG sensor/device
+    and the data acquisition computer.
+
+    See also Preamplification.
+
+    '

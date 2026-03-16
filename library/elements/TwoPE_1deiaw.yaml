@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: TwoPE
+  description: '2-photon excitation microscopy imaging data
+
+    '

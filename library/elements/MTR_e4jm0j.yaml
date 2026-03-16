@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: MTR
+  description: 'This method is to calculate a semi-quantitative magnetization transfer
+    ratio
+
+    map.
+
+    '

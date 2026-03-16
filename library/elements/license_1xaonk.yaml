@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - MIT
+    - CC-BY-4.0
+provenance:
+- source: aind
+  class: DataDescription
+  name: license
+  description: Licenses

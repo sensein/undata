@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: AttenuationCorrection
+  description: 'Short description of the attenuation correction method used.
+
+    '

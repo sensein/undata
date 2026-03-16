@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: MolarActivityMeasTime
+  description: 'Time to which molar radioactivity measurement above applies in the
+    default
+
+    unit `"hh:mm:ss"`.
+
+    '

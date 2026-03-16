@@ -1,0 +1,8 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: ImagingPlane
+  name: imaging_rate
+  description: Rate that images are acquired, in Hz. If the corresponding TimeSeries
+    is present, the rate should be stored there instead.

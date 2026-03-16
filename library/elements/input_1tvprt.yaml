@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Calibration
+  name: input
+  description: Calibration input
+- source: aind
+  class: Calibration
+  name: input
+  description: Calibration input

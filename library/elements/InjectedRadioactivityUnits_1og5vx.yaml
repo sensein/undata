@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: InjectedRadioactivityUnits
+  description: 'Unit format of the specified injected radioactivity (for example,
+    `"MBq"`).
+
+    '

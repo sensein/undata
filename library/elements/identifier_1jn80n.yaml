@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Agent
+  name: identifier
+  description: Identifier for an agent.

@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: ADC
+  description: 'Analog to Digital input.
+
+    '

@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: OMEBigTiff
+  description: 'A [BigTIFF](https://www.awaresystems.be/imaging/tiff/bigtiff.html)
+    image file, for very large images.
+
+    '

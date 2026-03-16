@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: CombinedData
+  name: name
+- source: aind
+  class: CombinedData
+  name: name
+- source: aind
+  class: CombinedData
+  name: name

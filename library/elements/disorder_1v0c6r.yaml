@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: Participant
+  name: disorder
+  description: Any current diagnosed disease or disorder associated with the participant
+    or subject.

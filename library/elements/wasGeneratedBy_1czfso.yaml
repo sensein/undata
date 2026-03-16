@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: PublishedAsset
+  name: wasGeneratedBy
+  description: Describe the session, project or activity that generated this asset.

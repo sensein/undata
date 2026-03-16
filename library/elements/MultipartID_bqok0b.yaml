@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: MultipartID
+  description: 'A unique (per participant) label tagging DWI runs that are part of
+    a
+
+    multipart scan.
+
+    '

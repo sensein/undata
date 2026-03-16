@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/body_part_3k6cs1
+  - https://schema.undata.live/elements/body_part_70whtf5
+  - https://schema.undata.live/elements/in_muscle_1y1xvtl
+  - https://schema.undata.live/elements/in_muscle_zi69z8
+  - https://schema.undata.live/elements/muscle_18nhcx1
+  - https://schema.undata.live/elements/muscle_mmpfy0
+  - https://schema.undata.live/elements/relative_position_17msn3o
+  - https://schema.undata.live/elements/relative_position_m442p2
+  mixins: []
+provenance:
+- source: aind
+  name: MyomatrixContact

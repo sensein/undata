@@ -1,0 +1,6 @@
+semantic:
+  data_type: integer
+provenance:
+- source: aind
+  class: MRIScan
+  name: rare_factor

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: SampleStaining
+  description: 'Description(s) of the tissue sample staining (for example: `"Osmium"`).
+
+    MAY be an array of strings if different stains are used in each channel of the
+    file
+
+    (for example: `["LFB", "PLP"]`).
+
+    '

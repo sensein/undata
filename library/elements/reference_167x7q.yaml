@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ElectrodesTable
+  name: reference
+  description: Description of the reference electrode and/or reference scheme used
+    for this electrode, e.g., "stainless steel skull screw" or "online common average
+    referencing".

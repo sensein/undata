@@ -1,0 +1,6 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Arena
+  name: objects_in_arena

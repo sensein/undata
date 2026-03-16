@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Acquisition
+  name: calibrations
+  description: List of calibration measurements taken prior to acquisition.

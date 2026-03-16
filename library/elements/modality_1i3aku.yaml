@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: QCMetric
+  name: modality
+- source: aind
+  class: QCMetric
+  name: modality

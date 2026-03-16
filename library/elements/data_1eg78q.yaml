@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: RoiResponseSeries
+  name: data
+  description: Signals from ROIs.

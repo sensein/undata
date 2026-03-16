@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1ot38i
+  - https://schema.undata.live/elements/additional_settings_3bz91h5
+  - https://schema.undata.live/elements/diameter_1n5eap
+  - https://schema.undata.live/elements/diameter_38ph0df
+  - https://schema.undata.live/elements/diameter_unit_3zojfq
+  - https://schema.undata.live/elements/diameter_unit_7vhu75y
+  - https://schema.undata.live/elements/manufacturer_1omczy
+  - https://schema.undata.live/elements/manufacturer_3blz335
+  - https://schema.undata.live/elements/model_1eotkt1
+  - https://schema.undata.live/elements/model_pouxcn
+  - https://schema.undata.live/elements/name_1skapwb
+  - https://schema.undata.live/elements/name_wq05ol
+  - https://schema.undata.live/elements/notes_1o7ur2n
+  - https://schema.undata.live/elements/notes_uipr6g
+  - https://schema.undata.live/elements/serial_number_1kmrzo
+  - https://schema.undata.live/elements/serial_number_33qo7ru
+  mixins: []
+provenance:
+- source: aind
+  name: AirPuffDevice

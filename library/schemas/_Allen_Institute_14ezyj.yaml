@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abbreviation_1i8fyhi
+  - https://schema.undata.live/elements/abbreviation_rhjgh1
+  - https://schema.undata.live/elements/name_1fuewf
+  - https://schema.undata.live/elements/name_2ual2ln
+  - https://schema.undata.live/elements/registry_1kjypks
+  - https://schema.undata.live/elements/registry_identifier_1mwg0p
+  - https://schema.undata.live/elements/registry_identifier_387t4ob
+  - https://schema.undata.live/elements/registry_snvcev
+  mixins: []
+provenance:
+- source: aind
+  name: _Allen_Institute

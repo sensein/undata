@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: pathology
+  description: 'String value describing the pathology of the sample or type of control.
+
+    When different from `healthy`, pathology SHOULD be specified.
+
+    The pathology may be specified in either `samples.tsv` or
+
+    `sessions.tsv`, depending on whether the pathology changes over time.
+
+    '

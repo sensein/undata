@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: json
+  description: 'A JSON file.
+
+
+    In the BIDS specification, JSON files are primarily used as "sidecar" files, in
+    which metadata describing "data"
+
+    files are encoded.
+
+    These sidecar files follow the inheritance principle.
+
+
+    There are also a few special cases of JSON files being first-order data files,
+    such as `genetic_info.json`.
+
+    '

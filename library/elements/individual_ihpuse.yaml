@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: individual
+  description: 'Participant specific anatomical space (for example derived from T1w
+    and/or T2w images).
+
+    This coordinate system requires specifying an additional, participant-specific
+    file to be fully defined.
+
+    In context of surfaces this space has been referred to as `fsnative`.
+
+
+    In order for this space to be interpretable, `SpatialReference` metadata MUST
+    be provided.
+
+    '

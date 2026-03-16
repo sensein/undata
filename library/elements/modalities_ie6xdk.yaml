@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: DataStream
+  name: modalities
+  description: Modalities that are acquired in this stream

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: labelgii
+  description: 'A GIFTI label/annotation file.
+
+
+    This extension may only be used in derivative datasets.
+
+    '

@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: metabolite_polar_fraction
+  description: 'Polar metabolite fraction of the radiotracer (0-1).
+
+    '

@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: OpticalChannel
+  name: OpticalChannel
+  description: An optical channel used to record from an imaging plane.

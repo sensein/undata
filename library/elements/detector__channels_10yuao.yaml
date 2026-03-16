@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: detector__channels
+  description: 'Name of the detector as specified in the `*_optodes.tsv` file.
+
+    `n/a` for channels that do not contain NIRS signals (for example, acceleration).
+
+    '

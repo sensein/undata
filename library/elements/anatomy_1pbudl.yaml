@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: BioSample
+  name: anatomy
+  description: Identifier for what organ the sample belongs to. Use the most specific
+    descriptor from sources such as UBERON.

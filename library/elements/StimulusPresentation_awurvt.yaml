@@ -1,0 +1,12 @@
+semantic:
+  data_type: object
+provenance:
+- source: bids
+  class: metadata
+  name: StimulusPresentation
+  description: 'Object containing key-value pairs related to the software used to
+    present
+
+    the stimuli during the experiment.
+
+    '

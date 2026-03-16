@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/name_1r2gnd1
+  - https://schema.undata.live/elements/name_vypwgs
+  - https://schema.undata.live/elements/registry_1vw77b
+  - https://schema.undata.live/elements/registry_3pylqx2
+  - https://schema.undata.live/elements/registry_identifier_1n46d3
+  - https://schema.undata.live/elements/registry_identifier_38n2bq4
+  - https://schema.undata.live/elements/species_f55rse
+  - https://schema.undata.live/elements/species_tvn8dbn
+  mixins: []
+provenance:
+- source: aind
+  name: _C57Bl_6J

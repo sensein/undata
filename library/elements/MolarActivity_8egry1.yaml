@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: MolarActivity
+  description: 'Molar activity of compound injected.
+
+    Corresponds to [DICOM Tag 0018, 1077](http://www.dicomlookup.com/dicomtags/(0018,1077))
+
+    `Radiopharmaceutical Specific Activity`.
+
+    '

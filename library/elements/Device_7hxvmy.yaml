@@ -1,0 +1,9 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: Device
+  name: Device
+  description: Metadata about a specific instance of a data acquisition device, e.g.,
+    recording system, electrode, microscope. Link to a DeviceModel.model to represent
+    information about the model of the device.

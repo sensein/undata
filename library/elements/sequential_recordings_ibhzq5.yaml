@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: RepetitionsTable
+  name: sequential_recordings
+  description: A reference to one or more rows in the SequentialRecordingsTable table.

@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: sampling_frequency
+  description: 'Sampling rate of the channel in Hz.
+
+    '

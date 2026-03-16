@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: entities
+  name: atlas
+  description: 'The `atlas-<label>` entity identifies files that are part of, or derived
+    from, an atlas.
+
+    '

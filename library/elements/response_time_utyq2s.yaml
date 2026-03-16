@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: response_time
+  description: 'Response time measured in seconds.
+
+    A negative response time can be used to represent preemptive responses and
+
+    `n/a` denotes a missed response.
+
+    '

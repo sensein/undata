@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: entities
+  name: ceagent
+  description: 'The `ce-<label>` entity can be used to distinguish sequences using
+    different contrast enhanced images.
+
+    The label is the name of the contrast agent.
+
+
+    This entity represents the `"ContrastBolusIngredient"` metadata field.
+
+    Therefore, if the `ce-<label>` entity is present in a filename,
+
+    `"ContrastBolusIngredient"` MAY also be added in the JSON file, with the same
+    label.
+
+    '

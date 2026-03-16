@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: aslcontext
+  description: 'A TSV file defining the image types for volumes in an associated ASL
+    file.
+
+    '

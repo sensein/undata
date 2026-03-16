@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - AlexNet
+    - Custom
+    - ResNet
+    - VGGNet
+    - UNet
+    - Transformer
+    - Random Forest
+    - Support Vector Machine
+provenance:
+- source: aind
+  class: model
+  name: architecture
+  description: Model architecture / type of model

@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: Directory
+  description: 'A directory with no extension.
+
+    Corresponds to BTi/4D data.
+
+    '

@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: MTPulseDuration
+  description: 'Duration of the magnetization transfer RF pulse in seconds.
+
+    '

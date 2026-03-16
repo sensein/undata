@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: StimulusEpoch
+  name: active_devices
+  description: Device names must match devices in the Instrument

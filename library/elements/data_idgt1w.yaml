@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: VoltageClampStimulusSeries
+  name: data
+  description: Stimulus voltage applied.

@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: real
+  description: 'A real-valued image, typically paired with an associated "imaginary"
+    (part-imag) image.
+
+    '

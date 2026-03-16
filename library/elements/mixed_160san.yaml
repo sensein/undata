@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: mixed
+  description: 'Mixed detector types were used for this NIRS recording, specify in
+    `optodes.tsv`.
+
+    '

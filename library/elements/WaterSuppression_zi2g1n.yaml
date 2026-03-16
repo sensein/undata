@@ -1,0 +1,9 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: bids
+  class: metadata
+  name: WaterSuppression
+  description: 'Boolean indicating whether water suppression was used prior to acquisition.
+
+    '

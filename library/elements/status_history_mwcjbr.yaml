@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: QCMetric
+  name: status_history
+- source: aind
+  class: QCMetric
+  name: status_history

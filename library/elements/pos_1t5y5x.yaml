@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: pos
+  description: 'File containing digitized positions of the head points.
+
+
+    This may be produced by a 4D neuroimaging/BTi MEG system or a CTF MEG system.
+
+    '

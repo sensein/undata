@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ImageReferences
+  name: ImageReferences
+  description: Ordered dataset of references to BaseImage (e.g., Image or ExternalImage)
+    objects.

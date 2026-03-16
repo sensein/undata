@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Instrument
+  name: location
+  description: Location of the instrument

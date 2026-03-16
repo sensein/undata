@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/output_parameters_46srkv
+  - https://schema.undata.live/elements/output_parameters_89je6fa
+  - https://schema.undata.live/elements/reward_consumed_during_epoch_194m9j
+  - https://schema.undata.live/elements/reward_consumed_during_epoch_2h1i4fa
+  - https://schema.undata.live/elements/reward_consumed_unit_14s6lg
+  - https://schema.undata.live/elements/reward_consumed_unit_28gudv6
+  - https://schema.undata.live/elements/trials_finished_1jm9gg
+  - https://schema.undata.live/elements/trials_finished_31qmj9m
+  - https://schema.undata.live/elements/trials_rewarded_6na420
+  - https://schema.undata.live/elements/trials_rewarded_d44c8lc
+  - https://schema.undata.live/elements/trials_total_17atyf
+  - https://schema.undata.live/elements/trials_total_2dfp9az
+  mixins: []
+provenance:
+- source: aind
+  name: PerformanceMetrics

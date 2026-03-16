@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: PublishedDandiset
+  name: protocol
+  description: A list of persistent URLs describing the protocol (e.g. protocols.io,
+    or other DOIs).

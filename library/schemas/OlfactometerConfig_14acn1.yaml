@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channel_configs_1mn4oz
+  - https://schema.undata.live/elements/channel_configs_37pfi68
+  - https://schema.undata.live/elements/device_name_12j3r3
+  - https://schema.undata.live/elements/device_name_240v9rb
+  mixins: []
+provenance:
+- source: aind
+  name: OlfactometerConfig

@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: AbstractFeatureSeries
+  name: feature_units
+  description: Units of each feature.

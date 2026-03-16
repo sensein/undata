@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: onset__physioevents
+  description: 'Onset of the event relative to the timeline defined by the corresponding
+
+    physiological recording file.
+
+
+    Typically, it will correspond to a timestamp issued by the recording device.
+
+    '

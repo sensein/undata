@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: phasediff
+  description: 'Some scanners subtract the `phase1` from the `phase2` map and generate
+    a
+
+    unique `phasediff` file.
+
+    For instance, this is a common output for the built-in fieldmap sequence of
+
+    Siemens scanners.
+
+    '

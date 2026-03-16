@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+provenance:
+- source: aind
+  class: ResourceTimestamped
+  name: usage
+- source: aind
+  class: ResourceTimestamped
+  name: usage
+- source: aind
+  class: ResourceTimestamped
+  name: usage

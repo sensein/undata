@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: BrainInjection
+  name: protocol_id
+  description: DOI for protocols.io
+- source: aind
+  class: BrainInjection
+  name: protocol_id
+  description: DOI for protocols.io

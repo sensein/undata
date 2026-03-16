@@ -1,0 +1,10 @@
+semantic:
+  data_type: integer
+provenance:
+- source: bids
+  class: metadata
+  name: NumberOfTransients
+  description: 'The number of single applications of the pulse sequence recorded during
+    an MRS acquisition.
+
+    '

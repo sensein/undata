@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: reference__ieeg
+  description: 'Specification of the reference (for example, `mastoid`, `ElectrodeName01`,
+    `intracranial`, `CAR`, `other`, `n/a`).
+
+    If the channel is not an electrode channel (for example, a microphone channel)
+    use `n/a`.
+
+    '

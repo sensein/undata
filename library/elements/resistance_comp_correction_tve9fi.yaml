@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: VoltageClampSeries
+  name: resistance_comp_correction
+  description: Resistance compensation correction, in percent.

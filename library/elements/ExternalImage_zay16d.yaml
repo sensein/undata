@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ExternalImage
+  name: ExternalImage
+  description: A type for referencing an external image file. The single file path
+    or URI to the external image file should be stored in the dataset. This type should
+    NOT be used if the image is stored in another NWB file and that file is linked
+    to this file.

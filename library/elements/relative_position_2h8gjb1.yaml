@@ -1,0 +1,6 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Monitor
+  name: relative_position

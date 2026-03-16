@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: CombinedData
+  name: description
+  description: Intention or approach used to select group of assets
+- source: aind
+  class: CombinedData
+  name: description
+  description: Intention or approach used to select group of assets
+- source: aind
+  class: CombinedData
+  name: description
+  description: Intention or approach used to select group of assets

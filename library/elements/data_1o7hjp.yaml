@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: DecompositionSeries
+  name: data
+  description: Data decomposed into frequency bands.

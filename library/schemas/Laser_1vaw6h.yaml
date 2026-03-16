@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1v10og
+  - https://schema.undata.live/elements/additional_settings_3o92x1l
+  - https://schema.undata.live/elements/coupling_1qm3rho
+  - https://schema.undata.live/elements/coupling_efficiency_1e56ya
+  - https://schema.undata.live/elements/coupling_efficiency_2qxsi4k
+  - https://schema.undata.live/elements/coupling_efficiency_unit_1jtli6
+  - https://schema.undata.live/elements/coupling_efficiency_unit_3253itu
+  - https://schema.undata.live/elements/coupling_vqffwv
+  - https://schema.undata.live/elements/manufacturer_1k2mjd7
+  - https://schema.undata.live/elements/manufacturer_sf300v
+  - https://schema.undata.live/elements/model_7g76ul
+  - https://schema.undata.live/elements/model_ep6gx2r
+  - https://schema.undata.live/elements/name_1fhehih
+  - https://schema.undata.live/elements/name_q3cedr
+  - https://schema.undata.live/elements/notes_guboyx
+  - https://schema.undata.live/elements/notes_x8bsv63
+  - https://schema.undata.live/elements/serial_number_4au0uo
+  - https://schema.undata.live/elements/serial_number_8hhzye3
+  - https://schema.undata.live/elements/wavelength_1611oo
+  - https://schema.undata.live/elements/wavelength_2axd35e
+  - https://schema.undata.live/elements/wavelength_unit_fk7rr5
+  - https://schema.undata.live/elements/wavelength_unit_upcn1xp
+  mixins: []
+provenance:
+- source: aind
+  name: Laser

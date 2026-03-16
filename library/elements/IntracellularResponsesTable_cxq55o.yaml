@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: IntracellularResponsesTable
+  name: IntracellularResponsesTable
+  description: Table for storing intracellular response related metadata.

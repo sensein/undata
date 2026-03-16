@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: FeatureExtraction
+  name: times
+  description: Times of events that features correspond to (can be a link).

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: entities
+  name: hemisphere
+  description: 'The `hemi-<label>` entity indicates which hemibrain is described by
+    the file.
+
+    Allowed label values for this entity are `L` and `R`, for the left and right
+
+    hemibrains, respectively.
+
+    '

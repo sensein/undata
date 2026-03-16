@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Procedures
+  name: subject_procedures
+  description: Procedures performed on a live subject

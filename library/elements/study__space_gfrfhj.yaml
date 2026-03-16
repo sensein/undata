@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: study__space
+  description: 'Custom space defined using a group/study-specific template.
+
+    This coordinate system requires specifying an additional file to be fully defined.
+
+
+    In order for this space to be interpretable, `SpatialReference` metadata MUST
+    be provided.
+
+    '

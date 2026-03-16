@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/beh_7n3jrp
+  - https://schema.undata.live/elements/eeg_by00my
+  - https://schema.undata.live/elements/emg_npavv6
+  - https://schema.undata.live/elements/ieeg_1kkjdo
+  - https://schema.undata.live/elements/meg_1qo2em
+  - https://schema.undata.live/elements/micr_13c60l
+  - https://schema.undata.live/elements/motion_17ggad
+  - https://schema.undata.live/elements/mri_1wm2mo
+  - https://schema.undata.live/elements/mrs_oe2d2g
+  - https://schema.undata.live/elements/nirs_iovdd1
+  - https://schema.undata.live/elements/pet_j26wes
+  mixins: []
+provenance:
+- source: bids
+  name: modalities

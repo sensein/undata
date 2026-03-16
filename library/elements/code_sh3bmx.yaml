@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: StimulusEpoch
+  name: code
+  description: Custom code/script used to control the behavior/stimulus. Use the Code.parameters
+    field to store stimulus properties

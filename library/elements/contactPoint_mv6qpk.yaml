@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: dandi
+  class: AccessRequirements
+  name: contactPoint
+  description: Who or where to look for information about access.

@@ -1,0 +1,26 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: formats
+  name: datetime
+  description: 'An [RFC 3339](https://doi.org/10.17487/RFC3339) timestamp, with OPTIONAL
+    time offset.
+
+    Datetimes take the form `"YYYY-MM-DDThh:mm:ss[.000000][Z|+hh:mm|-hh:mm]"`,
+
+    where `[.000000]` is an OPTIONAL subsecond resolution between 1 and 6 decimal
+    points,
+
+    and `[Z|+hh:mm|-hh:mm]` is a time offset.
+
+    The character `Z` indicates Coordinated Universal Time (UTC),
+
+    or else an integral number of minutes may be specified.
+
+
+    For simplicity, this format validates RFC3339-invalid dates such as 2024-02-31,
+
+    but implementations SHOULD error on non-existent dates and times.
+
+    '

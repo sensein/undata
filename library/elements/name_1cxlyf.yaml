@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: QCMetric
+  name: name
+- source: aind
+  class: QCMetric
+  name: name

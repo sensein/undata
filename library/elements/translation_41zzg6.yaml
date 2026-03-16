@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: AtlasCoordinate
+  name: translation
+- source: aind
+  class: AtlasCoordinate
+  name: translation

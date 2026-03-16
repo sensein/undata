@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: formats
+  name: string
+  description: 'The basic string type (not a specific format).
+
+    This should allow any free-form string.
+
+    '

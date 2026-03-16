@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: SampleEmbedding
+  description: 'Description of the tissue sample embedding (for example: `"Epoxy resin"`).
+
+    '

@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: PublishedDandiset
+  name: url
+  description: Permalink to the Dandiset.

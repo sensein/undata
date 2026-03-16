@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: Locus
+  name: identifier
+  description: Identifier for genotyping locus.

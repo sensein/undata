@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abbreviation_1sw2bbn
+  - https://schema.undata.live/elements/abbreviation_wvyuf7
+  - https://schema.undata.live/elements/name_18di41
+  - https://schema.undata.live/elements/name_2fk03fh
+  - https://schema.undata.live/elements/registry_1h8a82
+  - https://schema.undata.live/elements/registry_2x0ze1b
+  - https://schema.undata.live/elements/registry_identifier_1r3xht
+  - https://schema.undata.live/elements/registry_identifier_3gip9z3
+  mixins: []
+provenance:
+- source: aind
+  name: _Thorlabs

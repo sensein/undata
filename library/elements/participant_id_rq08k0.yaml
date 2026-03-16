@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: participant_id
+  description: 'A participant identifier of the form `sub-<label>`,
+
+    matching a participant entity found in the dataset.
+
+    '

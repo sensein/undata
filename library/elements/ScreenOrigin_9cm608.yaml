@@ -1,0 +1,16 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: ScreenOrigin
+  description: 'Location of the spatial coordinates'' origin for the visual stimuli
+    presentation,
+
+    described by a list of two keywords such as ("top", "left") if the coordinates
+
+    refer to the top-left corner of the screen, or ("center", "center") if the position
+
+    (0, 0) is at the center or the screen''s extent.
+
+    '

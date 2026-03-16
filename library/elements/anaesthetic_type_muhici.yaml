@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Anaesthetic
+  name: anaesthetic_type
+- source: aind
+  class: Anaesthetic
+  name: anaesthetic_type

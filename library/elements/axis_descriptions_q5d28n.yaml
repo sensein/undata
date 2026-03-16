@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ImagingRetinotopy
+  name: axis_descriptions
+  description: Two-element array describing the contents of the two response axis
+    fields. Description should be something like ['altitude', 'azimuth'] or '['radius',
+    'theta'].

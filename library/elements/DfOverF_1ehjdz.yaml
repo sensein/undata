@@ -1,0 +1,9 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: DfOverF
+  name: DfOverF
+  description: dF/F information about a region of interest (ROI). Storage hierarchy
+    of dF/F should be the same as for segmentation (i.e., same names for ROIs and
+    for image planes).

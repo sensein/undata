@@ -1,0 +1,9 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: bids
+  class: metadata
+  name: BackgroundSuppression
+  description: 'Boolean indicating if background suppression is used.
+
+    '

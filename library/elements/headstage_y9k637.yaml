@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: EphysProbe
+  name: headstage
+- source: aind
+  class: EphysProbe
+  name: headstage

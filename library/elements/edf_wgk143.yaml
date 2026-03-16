@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: edf
+  description: 'A [European data format](https://www.edfplus.info/) file.
+
+
+    Each recording consists of a single `.edf`` file.
+
+    [`edf+`](https://www.edfplus.info/specs/edfplus.html) files are permitted.
+
+    The capital `.EDF` extension MUST NOT be used.
+
+    '

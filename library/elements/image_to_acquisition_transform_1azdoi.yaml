@@ -1,0 +1,8 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: PlanarImageStack
+  name: image_to_acquisition_transform
+  description: Position, rotation, and scale of the image. Note that depth should
+    be in the planes.

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: URL
+  description: 'A Uniform Resource Locator (URL) is a structured reference to an object
+    that
+
+    includes a resource transfer scheme and a location.
+
+    (see [URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator))
+
+    '

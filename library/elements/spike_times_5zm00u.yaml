@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: Units
+  name: spike_times
+  description: Spike times for each unit in seconds.

@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1gohwn
+  - https://schema.undata.live/elements/additional_settings_2vxxxi6
+  - https://schema.undata.live/elements/headstage_1vlwwie
+  - https://schema.undata.live/elements/headstage_y9k637
+  - https://schema.undata.live/elements/manufacturer_19ct11
+  - https://schema.undata.live/elements/manufacturer_2hhnpr0
+  - https://schema.undata.live/elements/model_1gs61b6
+  - https://schema.undata.live/elements/model_qr1nq4
+  - https://schema.undata.live/elements/name_16cskdw
+  - https://schema.undata.live/elements/name_lgsqn3
+  - https://schema.undata.live/elements/notes_b7jx79
+  - https://schema.undata.live/elements/notes_m48rhmd
+  - https://schema.undata.live/elements/probe_model_1qjra8
+  - https://schema.undata.live/elements/probe_model_3fewejs
+  - https://schema.undata.live/elements/serial_number_1pcbgs
+  - https://schema.undata.live/elements/serial_number_3d16v6k
+  mixins: []
+provenance:
+- source: aind
+  name: EphysProbe

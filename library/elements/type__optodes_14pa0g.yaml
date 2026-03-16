@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: type__optodes
+  description: 'The type of the optode.
+
+    '

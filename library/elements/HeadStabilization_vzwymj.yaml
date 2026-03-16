@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: HeadStabilization
+  description: 'Head restraint method used during the experiment
+
+    to prevent rotation and/or translation of the head.
+
+    Example: "chin-rest", "head-rest", "bite-bar", "chin-rest and head-rest", "none"
+
+    '

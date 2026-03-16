@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/RGBImage_cclke0
+  mixins: []
+provenance:
+- source: nwb
+  name: RGBImage

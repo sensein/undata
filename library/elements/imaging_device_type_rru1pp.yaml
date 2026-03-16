@@ -1,0 +1,22 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Beam expander
+    - Sample Chamber
+    - Diffuser
+    - Galvo
+    - Laser combiner
+    - Laser coupler
+    - Prism
+    - Objective
+    - Rotation mount
+    - Slit
+    - Spatial light modulator
+    - Tunable lens
+    - Other
+provenance:
+- source: aind
+  class: AdditionalImagingDevice
+  name: imaging_device_type
+  description: Imaginge device type name

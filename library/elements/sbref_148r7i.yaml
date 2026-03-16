@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: sbref
+  description: 'Single-band reference for one or more multi-band `dwi` images.
+
+    '

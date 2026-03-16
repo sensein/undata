@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: common_principles
+  name: data_acquisition
+  description: 'A continuous uninterrupted block of time during which a brain scanning
+    instrument
+
+    or an electromyography recording device was acquiring data
+
+    according to a particular scanning sequence/protocol.
+
+    '

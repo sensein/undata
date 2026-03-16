@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: ImagingPlane
+  name: grid_spacing
+  description: Space between pixels in (x, y) or voxels in (x, y, z) directions, in
+    the specified unit. Assumes imaging plane is a regular grid. See also reference_frame
+    to interpret the grid.

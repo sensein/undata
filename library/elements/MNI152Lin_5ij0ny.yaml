@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: MNI152Lin
+  description: 'Also known as ICBM (version with linear coregistration).
+
+
+    Used by SPM99 to SPM8.
+
+    '

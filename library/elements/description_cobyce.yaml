@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: OpticalChannel
+  name: description
+  description: Description or other notes about the channel.

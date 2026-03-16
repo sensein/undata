@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: License
+  description: 'The license for the dataset.
+
+    The use of license name abbreviations is RECOMMENDED for specifying a license
+
+    (see [Licenses](SPEC_ROOT/appendices/licenses.md)).
+
+    The corresponding full license text MAY be specified in an additional
+
+    `LICENSE` file.
+
+    '

@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: MatrixSize
+  description: 'An array of integers with a length of 3 denoting the matrix size of
+    the acquisition slab.
+
+    This should be specified as, for example, `[32, 32, 1]` for a 2D acquisition
+
+    or `[32, 1, 1]` for a 1D acquisition.
+
+    '

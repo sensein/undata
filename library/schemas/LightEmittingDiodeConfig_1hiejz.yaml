@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/device_name_4bym4x
+  - https://schema.undata.live/elements/device_name_8jq36qu
+  - https://schema.undata.live/elements/power_1y0p771
+  - https://schema.undata.live/elements/power_measured_at_14mbu4
+  - https://schema.undata.live/elements/power_measured_at_285ajg7
+  - https://schema.undata.live/elements/power_unit_1ooqh5
+  - https://schema.undata.live/elements/power_unit_3bqnqmb
+  - https://schema.undata.live/elements/power_zhjmow
+  mixins: []
+provenance:
+- source: aind
+  name: LightEmittingDiodeConfig

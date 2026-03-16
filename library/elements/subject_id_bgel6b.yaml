@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: Subject
+  name: subject_id
+  description: ID of animal/person used/participating in experiment (lab convention).

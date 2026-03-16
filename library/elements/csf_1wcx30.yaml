@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: csf
+  description: 'Cerebrospinal fluid (for example, the origin of a sample or tissue)
+
+    '

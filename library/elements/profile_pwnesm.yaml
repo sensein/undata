@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Bolus
+    - Continuous
+    - Pulsed
+provenance:
+- source: aind
+  class: InjectionDynamics
+  name: profile
+  description: Injection profile
+- source: aind
+  class: InjectionDynamics
+  name: profile
+  description: Injection profile

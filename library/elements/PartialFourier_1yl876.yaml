@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: PartialFourier
+  description: 'The fraction of partial Fourier information collected.
+
+    '

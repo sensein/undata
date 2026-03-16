@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: Acknowledgements
+  description: 'Text acknowledging contributions of individuals or institutions beyond
+
+    those listed in Authors or Funding.
+
+    '

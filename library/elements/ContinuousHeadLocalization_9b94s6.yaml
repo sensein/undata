@@ -1,0 +1,11 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: bids
+  class: metadata
+  name: ContinuousHeadLocalization
+  description: '`true` or `false` value indicating whether continuous head localization
+
+    was performed.
+
+    '

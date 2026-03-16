@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: AtlasCoordinate
+  name: coordinate_system
+  description: Definition an atlas

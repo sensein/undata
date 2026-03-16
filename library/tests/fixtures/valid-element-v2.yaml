@@ -1,0 +1,18 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C124353
+  data_type: integer
+  unit: year
+  constraints:
+    minimum: 0
+    maximum: 150
+
+provenance:
+  - source: bids
+    class: Participant
+    name: age
+    description: "Age of the participant in years"
+    required: true
+  - source: nwb
+    class: Subject
+    name: age
+    description: "Age of subject"

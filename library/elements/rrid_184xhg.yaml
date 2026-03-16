@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: formats
+  name: rrid
+  description: 'A [research resource identifier](https://rrid.site).
+
+    '

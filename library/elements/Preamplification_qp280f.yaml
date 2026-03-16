@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: Preamplification
+  description: 'Amplification built into an EMG bipolar sensor, electrode grid, or
+    other device.
+
+    See also Gain.
+
+    '

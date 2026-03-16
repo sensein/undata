@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: common_principles
+  name: dataset
+  description: 'A set of neuroimaging and behavioral data acquired for a purpose of
+    a particular study.
+
+    A dataset consists of data acquired from one or more subjects, possibly from multiple
+    sessions.
+
+    '

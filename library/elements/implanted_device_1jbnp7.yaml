@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: MyomatrixInsertion
+  name: implanted_device
+  description: Description of a Myomatrix array

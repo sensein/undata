@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_ct3ox6
+  - https://schema.undata.live/elements/ethics_review_id_xpm9ni
+  - https://schema.undata.live/elements/experimenters_gxjlaa
+  - https://schema.undata.live/elements/notes_n7bk7e
+  - https://schema.undata.live/elements/protocol_id_7pn8rt
+  - https://schema.undata.live/elements/start_date_l1va83
+  mixins: []
+provenance:
+- source: aind
+  name: GenericSubjectProcedure

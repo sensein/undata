@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: CommonModel
+  name: about
+  description: The subject matter of the content, such as disorders, brain anatomy.

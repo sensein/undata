@@ -1,0 +1,10 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: RandomRate
+  description: 'Random rate for each frame (same units as `"Units"`, for example,
+    `"Bq/mL"`).
+
+    '

@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+provenance:
+- source: bids
+  class: metadata
+  name: EditPulse
+  description: 'If spectral editing was applied, this details the editing parameters.
+
+    For example:
+
+    `{"ON": {"FrequencyOffset": 1.9, "PulseDuration": 16},
+
+    "OFF": {"FrequencyOffset": 7.5, "PulseDuration": 16}}`.
+
+    '

@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: nwb
+  class: SweepTable
+  name: sweep_number
+  description: Sweep number of the PatchClampSeries in that row.

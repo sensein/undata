@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: QCStatus
+  name: evaluator
+- source: aind
+  class: QCStatus
+  name: evaluator

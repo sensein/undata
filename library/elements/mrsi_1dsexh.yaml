@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: mrsi
+  description: 'MRS acquisitions where additional imaging gradients are used
+
+    to detect the MR signal from 1, 2, or 3 spatial dimensions.
+
+    '

@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: LevelType
+  description: 'Indicate what analysis level the atlas was derived from; for example,
+    "group" or "individual".
+
+    '

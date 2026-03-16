@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: technical_sample
+  description: 'A biosample type (`sample_type`): technical sample
+
+    '

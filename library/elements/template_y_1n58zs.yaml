@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: template_y
+  description: 'Assumed or ideal position along the y axis.
+
+    '

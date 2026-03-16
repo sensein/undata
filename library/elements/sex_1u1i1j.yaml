@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: sex
+  description: 'String value indicating phenotypical sex, one of "male", "female",
+    "other".
+
+
+    For "male", use one of these values: `male`, `m`, `M`, `MALE`, `Male`.
+
+
+    For "female", use one of these values: `female`, `f`, `F`, `FEMALE`, `Female`.
+
+
+    For "other", use one of these values: `other`, `o`, `O`, `OTHER`, `Other`.
+
+    '

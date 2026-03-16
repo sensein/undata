@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: in_vitro
+  description: 'The environment of a sample: in vitro
+
+    '

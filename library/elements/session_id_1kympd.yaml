@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: session_id
+  description: 'A session identifier of the form `ses-<label>`,
+
+    matching a session found in the dataset.
+
+    '

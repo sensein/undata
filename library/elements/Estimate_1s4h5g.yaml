@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: Estimate
+  description: 'A single whole-brain M0 value is provided in the metadata.
+
+    '

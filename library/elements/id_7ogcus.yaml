@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Locus
+  name: id
+  description: Uniform resource identifier

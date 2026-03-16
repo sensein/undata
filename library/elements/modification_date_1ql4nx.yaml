@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Instrument
+  name: modification_date
+  description: Date of the last change to the instrument, hardware addition/removal,
+    calibration, etc.

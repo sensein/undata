@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/lick_spouts_l8lzkf
+  - https://schema.undata.live/elements/motorized_stage_x111ls
+  - https://schema.undata.live/elements/name_l3yuz3
+  mixins: []
+provenance:
+- source: aind
+  name: LickSpoutAssembly

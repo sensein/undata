@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: TimeIntervals
+  name: timeseries_index
+  description: Index for timeseries.

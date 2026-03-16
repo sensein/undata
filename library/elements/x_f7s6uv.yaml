@@ -1,0 +1,8 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: ElectrodesTable
+  name: x
+  description: x coordinate of the channel location in the brain (+x is posterior).
+    Units should be specified in microns.

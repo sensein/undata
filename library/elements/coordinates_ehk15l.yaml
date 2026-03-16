@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: BrainInjection
+  name: coordinates
+- source: aind
+  class: BrainInjection
+  name: coordinates

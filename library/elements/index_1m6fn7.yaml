@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: common_principles
+  name: index
+  description: 'A nonnegative integer, possibly prefixed with arbitrary number of
+    0s for consistent indentation,
+
+    for example, it is `01` in `run-01` following `run-<index>` specification.
+
+    '

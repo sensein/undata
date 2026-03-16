@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/calibration_date_12p53g
+  - https://schema.undata.live/elements/description_1ph8az
+  - https://schema.undata.live/elements/device_name_1obvsr
+  - https://schema.undata.live/elements/fit_ku576x
+  - https://schema.undata.live/elements/input_1tvprt
+  - https://schema.undata.live/elements/input_unit_mj5b5m
+  - https://schema.undata.live/elements/measured_at_9w77to
+  - https://schema.undata.live/elements/notes_1dk1lc
+  - https://schema.undata.live/elements/output_djleam
+  - https://schema.undata.live/elements/output_unit_1ko7ox
+  - https://schema.undata.live/elements/protocol_id_13swdp
+  - https://schema.undata.live/elements/repeats_aejhra
+  mixins: []
+provenance:
+- source: aind
+  name: Calibration

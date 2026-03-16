@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: SequentialRecordingsTable
+  name: stimulus_type
+  description: The type of stimulus used for the sequential recording.

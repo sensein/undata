@@ -1,89 +1,105 @@
 # undata-library
 
-Flat-file library of neuroscience data elements and mappings in LinkML YAML format with
-version history, validation, and CLI tools.
+Content-addressed registry of neuroscience data elements and class schemas in LinkML YAML format.
 
-**This directory can be used as a standalone git repository.** See [Standalone Setup](#standalone-setup) below.
+**Design**: Elements are `rdf:Property` instances identified by their semantic graph hash.
+Schemas are `sh:NodeShape` instances identified by their property set hash.
+Identity ≠ provenance — two sources defining the same concept produce one element with multiple provenance entries.
 
 ## Contents
 
-- **1032 data elements** from BIDS (981) and AIND (51) schemas
-- **LinkML meta-schema** (`library-schema.linkml.yaml`) defining the data format
-- **Python CLI** for validation, diff, export, import, and indexing
+- **136 unique data elements** (deduplicated from 9,629 source attributes across 5 schemas)
+- **859 class schemas** with property membership from BIDS, DANDI, NWB, AIND, openMINDS
+- **Content-addressed filenames**: `{attribute}_{6-char-hash}.yaml`
+- **LinkML meta-schema**: `library-schema.linkml.yaml`
 
 ## Install
 
 ```bash
 pip install -e .
-# or
-uv sync
+# or with source extractors
+pip install -e ".[bids,dandi]"
 ```
 
-## Usage
+## Element Format
+
+Each element's identity is its semantic graph (ontology_term, data_type, unit, constraints).
+Everything else is provenance:
+
+```yaml
+# elements/age_3c1gtm.yaml
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C124353
+  data_type: integer
+  unit: year
+  constraints:
+    minimum: 0
+    maximum: 150
+
+provenance:
+  - source: bids
+    class: Participant
+    name: age
+    description: "Age of the participant in years"
+    required: true
+  - source: nwb
+    class: Subject
+    name: age
+    description: "Age of subject"
+```
+
+Same semantic graph → same file → automatic cross-source deduplication.
+
+## CLI Commands
 
 ```bash
 # Validate all YAML files
-undata-library validate elements/
+undata-library validate elements/ schemas/
 
-# Show version differences
-undata-library diff elements/element-abc123.yaml
-undata-library diff elements/element-abc123.yaml --format json
+# Compute content hash for a file
+undata-library hash elements/age_3c1gtm.yaml
 
-# Export from a running backend
-undata-library export --backend-url http://localhost:8002 --output .
-
-# Import YAML files to a backend
-undata-library import --backend-url http://localhost:8002 --path elements/
+# Ingest from raw schema files (offline, no backend)
+undata-library ingest --source bids --library-path .
+undata-library ingest --source nwb --path /path/to/nwb/schemas/ --library-path .
+undata-library ingest --source aind --path /path/to/aind/schemas/ --library-path .
 
 # Build machine-readable index
-undata-library index --output index.yaml
+undata-library index
+
+# Show provenance differences within an element
+undata-library diff elements/age_3c1gtm.yaml
+undata-library diff elements/age_3c1gtm.yaml --format json
 ```
 
-## Data Format
-
-Each element is a single YAML file with embedded version history:
-
-```yaml
-element:
-  id: https://schema.undata.live/elements/{uuid}
-  source_local_id: BIDS.subject_age
-  source_id: https://schema.undata.live/sources/bids
-  created_at: "2026-03-09T15:30:00Z"
-
-versions:
-  - version_num: 1
-    name: subject_age
-    data_type: integer
-    description: Age of the research subject in years
-    created_at: "2026-03-09T15:30:00Z"
-    created_by: urn:undata:system
-
-current_version: 1
-```
-
-The schema is defined by `library-schema.linkml.yaml` with classes: `ElementRecord`,
-`ElementVersion`, `MappingRecord`, `MappingVersion`, `SemanticGraph`, `ChangeEntry`.
-
-## Standalone Setup
-
-To use this as an independent repository:
+## Standalone Repository Setup
 
 ```bash
-# 1. Create the standalone repo
+# Create the standalone repo
 gh repo create sensein/undata-library --public
-cd /path/to/undata/library
-git init
-git remote add origin https://github.com/sensein/undata-library.git
-git add .
-git commit -m "Initial commit: 1032 elements + LinkML schema + CLI"
-git push -u origin main
+git init && git remote add origin https://github.com/sensein/undata-library.git
+git add . && git commit -m "Initial commit" && git push -u origin main
 
-# 2. Add as submodule to the main undata repo
+# Add as submodule to the main undata repo
 cd /path/to/undata
 rm -rf library
 git submodule add https://github.com/sensein/undata-library.git library
-git commit -m "feat: add undata-library as git submodule"
 ```
+
+## Architecture
+
+```
+Identity (hashed)           Provenance (NOT hashed)
+─────────────────           ──────────────────────
+ontology_term               source
+data_type                   class
+unit                        name
+constraints                 description
+                            required, multivalued
+```
+
+Two elements with identical semantic graphs ARE the same element.
+Cross-source equivalence is automatic via content-addressing.
 
 ## License
 

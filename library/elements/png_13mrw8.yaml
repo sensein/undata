@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: png
+  description: 'A [Portable Network Graphics](http://www.libpng.org/pub/png/) file.
+
+    '

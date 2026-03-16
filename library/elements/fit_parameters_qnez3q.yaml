@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: CalibrationFit
+  name: fit_parameters
+  description: Parameters of the fit equation, e.g. slope and intercept for linear
+    fit
+- source: aind
+  class: CalibrationFit
+  name: fit_parameters
+  description: Parameters of the fit equation, e.g. slope and intercept for linear
+    fit

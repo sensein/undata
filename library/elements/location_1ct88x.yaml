@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: IntracellularElectrode
+  name: location
+  description: Location of the electrode. Specify the area, layer, comments on estimation
+    of area/layer, stereotaxic coordinates if in vivo, etc. Use standard atlas names
+    for anatomical regions when possible.

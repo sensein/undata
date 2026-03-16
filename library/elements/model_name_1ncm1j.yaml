@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: Device
+  name: model_name
+  description: DEPRECATED. The model name of the device, e.g., Neuropixels 1.0, V-Probe,
+    Bergamo III. Instead of using this field, create and add a new DeviceModel named
+    the model name and link to that DeviceModel from this Device.

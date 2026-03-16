@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: ImagingConfig
+  name: coordinate_system
+  description: Required for ImageSPIM objects and when the imaging coordinate system
+    differs from the Acquisition.coordinate_system

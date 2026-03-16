@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ReconFilterType
+  description: 'Type of post-recon smoothing (for example, `["Shepp"]`).
+
+    '

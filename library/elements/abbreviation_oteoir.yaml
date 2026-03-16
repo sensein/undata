@@ -1,0 +1,6 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: aind_data_schema_models__organizations___Unknown
+  name: abbreviation

@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: units__nirs
+  description: 'Physical unit of the value represented in this channel,
+
+    specified according to the SI unit symbol and possibly prefix symbol,
+
+    or as a derived SI unit (for example, `V`, or unitless for changes in optical
+    densities).
+
+    For guidelines about units see the [Appendix](SPEC_ROOT/appendices/units.md)
+
+    and [Common Principles](SPEC_ROOT/common-principles.md#units) pages.
+
+    '

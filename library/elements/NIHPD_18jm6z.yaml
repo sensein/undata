@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: NIHPD
+  description: 'Pediatric templates generated from the NIHPD sample.
+
+    Available for different age groups
+
+    (4.5-18.5 y.o., 4.5-8.5 y.o., 7-11 y.o., 7.5-13.5 y.o., 10-14 y.o., 13-18.5 y.o.).
+
+    This template also comes in either -symmetric or -asymmetric flavor.
+
+    '

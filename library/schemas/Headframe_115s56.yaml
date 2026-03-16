@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/headframe_material_1h3fg2
+  - https://schema.undata.live/elements/headframe_material_2wrejfg
+  - https://schema.undata.live/elements/headframe_part_number_1jz93s
+  - https://schema.undata.live/elements/headframe_part_number_32g98pr
+  - https://schema.undata.live/elements/headframe_type_14r170
+  - https://schema.undata.live/elements/headframe_type_28ekp2z
+  - https://schema.undata.live/elements/protocol_id_h3qcph
+  - https://schema.undata.live/elements/protocol_id_xqw05bj
+  - https://schema.undata.live/elements/well_part_number_1tswed
+  - https://schema.undata.live/elements/well_part_number_3lu1421
+  - https://schema.undata.live/elements/well_type_c8bf0c
+  - https://schema.undata.live/elements/well_type_o4s4iii
+  mixins: []
+provenance:
+- source: aind
+  name: Headframe

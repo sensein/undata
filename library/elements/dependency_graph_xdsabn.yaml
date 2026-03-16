@@ -1,0 +1,8 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: Processing
+  name: dependency_graph
+  description: Directed graph of processing step dependencies. Each key is a process
+    name, and the value is a list of process names that are inputs to that process.

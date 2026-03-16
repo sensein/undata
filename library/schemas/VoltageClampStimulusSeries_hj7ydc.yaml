@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/VoltageClampStimulusSeries_179m14
+  - https://schema.undata.live/elements/data_idgt1w
+  mixins: []
+provenance:
+- source: nwb
+  name: VoltageClampStimulusSeries

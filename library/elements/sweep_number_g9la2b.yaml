@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: nwb
+  class: PatchClampSeries
+  name: sweep_number
+  description: Sweep number, allows to group different PatchClampSeries together.

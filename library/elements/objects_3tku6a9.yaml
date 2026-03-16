@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: CalibrationObject
+  name: objects
+  description: For calibration objects that are built up from one or more devices.

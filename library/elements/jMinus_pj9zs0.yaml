@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: jMinus
+  description: 'The encoding direction is along the second axis of the data in the
+    NIFTI file,
+
+    and the encoding value decreases from the zero index to the maximum index.
+
+    '

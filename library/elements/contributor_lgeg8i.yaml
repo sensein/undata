@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: PublishedDandiset
+  name: contributor
+  description: People or Organizations that have contributed to this Dandiset.

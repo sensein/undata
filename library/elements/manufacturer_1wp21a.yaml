@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: DeviceModel
+  name: manufacturer
+  description: The name of the manufacturer of the device model, e.g., Imec, Plexon,
+    Thorlabs.

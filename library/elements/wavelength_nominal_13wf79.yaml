@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: wavelength_nominal
+  description: 'Specified wavelength of light in nm.
+
+    `n/a` for channels that do not contain raw NIRS signals (for example, acceleration).
+
+    This field is equivalent to `/nirs(i)/probe/wavelengths` in the SNIRF specification.
+
+    '

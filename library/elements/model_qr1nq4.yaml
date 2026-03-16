@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: EphysProbe
+  name: model
+- source: aind
+  class: EphysProbe
+  name: model

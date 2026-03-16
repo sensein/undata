@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: OpticalSeries
+  name: distance
+  description: Distance from camera/monitor to target/eye.

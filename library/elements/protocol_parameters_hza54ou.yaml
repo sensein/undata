@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: SpecimenProcedure
+  name: protocol_parameters
+  description: Parameters defined in the protocol and their value during this procedure

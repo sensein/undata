@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: PASL
+  description: 'Pulsed arterial spin labeling was employed.
+
+    '

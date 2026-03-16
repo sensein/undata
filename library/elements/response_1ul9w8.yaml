@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: IntracellularResponsesTable
+  name: response
+  description: Column storing the reference to the recorded response for the recording
+    (rows)

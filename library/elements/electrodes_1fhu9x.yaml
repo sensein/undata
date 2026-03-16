@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: electrodes
+  description: 'File that gives the location of (i)EEG or EMG electrodes.
+
+    '

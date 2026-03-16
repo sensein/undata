@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: JNTANG
+  description: 'Joint angle channel between two fixed axis belonging to two bodyparts.
+
+    Angle SHOULD be defined between proximal and distal bodypart in `deg`.
+
+    '

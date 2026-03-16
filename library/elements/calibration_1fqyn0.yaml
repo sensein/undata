@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: calibration
+  description: 'The fine-calibration file, is produced by the MaxFilter software and
+    the work of
+
+    Neuromag/Elekta/MEGIN engineers during maintenance of the MEG acquisition system.
+
+    It is specific to the site of recording and may change in the process of regular
+    system maintenance.
+
+    it is usually shared with a crosstalk file.
+
+    '

@@ -1,0 +1,14 @@
+semantic:
+  data_type: object
+provenance:
+- source: bids
+  class: metadata
+  name: Container
+  description: 'Used to specify the location and relevant attributes of software container
+    image
+
+    used to produce the dataset. Valid keys in this object include `Type`, `Tag` and
+
+    [`URI`][uri] with [string][] values.
+
+    '

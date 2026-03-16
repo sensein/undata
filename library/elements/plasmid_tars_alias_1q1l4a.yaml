@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: TarsVirusIdentifiers
+  name: plasmid_tars_alias
+  description: Alias used to reference the plasmid, usually begins 'AiP'
+- source: aind
+  class: TarsVirusIdentifiers
+  name: plasmid_tars_alias
+  description: Alias used to reference the plasmid, usually begins 'AiP'

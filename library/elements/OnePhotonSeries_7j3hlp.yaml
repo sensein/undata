@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: OnePhotonSeries
+  name: OnePhotonSeries
+  description: Image stack recorded over time from 1-photon microscope.

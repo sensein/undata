@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: Position
+  name: Position
+  description: Position data, whether along the x, x/y or x/y/z axis.

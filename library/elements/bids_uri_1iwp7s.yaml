@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: formats
+  name: bids_uri
+  description: 'A BIDS uniform resource indicator.
+
+
+    The validation for this format is minimal.
+
+    It simply ensures that the value is a string with any characters that may appear
+    in a valid URI,
+
+    starting with "bids:".
+
+    '

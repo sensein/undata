@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_s4zvzs
+  - https://schema.undata.live/elements/air_filtration_1t6dz7
+  - https://schema.undata.live/elements/external_material_1fcuwf
+  - https://schema.undata.live/elements/grounded_1smqs8
+  - https://schema.undata.live/elements/internal_material_9lot1l
+  - https://schema.undata.live/elements/laser_interlock_1nl4vc
+  - https://schema.undata.live/elements/manufacturer_tsqoik
+  - https://schema.undata.live/elements/model_hidchv
+  - https://schema.undata.live/elements/name_17bvvk
+  - https://schema.undata.live/elements/notes_wa3p8u
+  - https://schema.undata.live/elements/serial_number_1ivabu
+  - https://schema.undata.live/elements/size_195p33
+  - https://schema.undata.live/elements/size_unit_gh3m33
+  mixins: []
+provenance:
+- source: aind
+  name: Enclosure

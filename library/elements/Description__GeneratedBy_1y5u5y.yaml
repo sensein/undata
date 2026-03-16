@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: Description__GeneratedBy
+  description: 'Plain-text description of the pipeline or process that generated the
+    outputs.
+
+    RECOMMENDED if `Name` is `"Manual"`.
+
+    '

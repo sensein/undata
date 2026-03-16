@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: unloc
+  description: 'MRS acquisitions run without localization.
+
+    This includes signals detected using coil sensitivity only.
+
+    '

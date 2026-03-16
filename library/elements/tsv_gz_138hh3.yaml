@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: tsv_gz
+  description: 'A gzipped tab-delimited file.
+
+    This file extension is only used for very large tabular data, such as physiological
+    recordings.
+
+    For smaller data, the unzipped `.tsv` extension is preferred.
+
+    '

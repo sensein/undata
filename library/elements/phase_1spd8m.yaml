@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: phase
+  description: 'A phase image, typically paird with an associated "magnitude" (part-mag)
+    image.
+
+    Images with this key/value pair MAY be in radians or in arbitrary units.
+
+    The sidecar JSON file MUST include the units of the `phase` image.
+
+    The possible options are `rad` or `arbitrary`.
+
+    '

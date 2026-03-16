@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: Manipulation
+  name: procedures
+  description: Procedures performed during the manipulation

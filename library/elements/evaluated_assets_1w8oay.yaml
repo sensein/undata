@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: CurationMetric
+  name: evaluated_assets
+  description: Set to None except when a metric's calculation required data coming
+    from a different data asset.
+- source: aind
+  class: CurationMetric
+  name: evaluated_assets
+  description: Set to None except when a metric's calculation required data coming
+    from a different data asset.

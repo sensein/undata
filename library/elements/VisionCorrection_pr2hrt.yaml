@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: VisionCorrection
+  description: 'Equipment used to correct participant vision during an experiment.
+
+    Example: "spectacles", "lenses", "none".
+
+    '

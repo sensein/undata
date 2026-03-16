@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: placement_description
+  description: 'Additional details of the approach to EMG sensor placement.
+
+    See description of the `EMGPlacementSchemeDescription` field in `*_emg.json`.
+
+    '

@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: entities
+  name: nucleus
+  description: 'The `nuc-<label>` entity can be used to distinguish acquisitions tuned
+
+    to detect different nuclei.
+
+    The label is the name of the nucleus or nuclei, which corresponds to DICOM Tag
+    `0018, 9100`.
+
+    If present in the filename, `"ResonantNucleus"` MUST also be included in
+
+    the associated metadata.
+
+    '

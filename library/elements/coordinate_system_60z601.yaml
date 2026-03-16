@@ -1,0 +1,13 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: ProbeConfig
+  name: coordinate_system
+  description: Device coordinate system, defines un-rotated probe's orientation relative
+    to the Acquisition.coordinate_system
+- source: aind
+  class: ProbeConfig
+  name: coordinate_system
+  description: Device coordinate system, defines un-rotated probe's orientation relative
+    to the Acquisition.coordinate_system

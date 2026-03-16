@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: message
+  description: 'Brief free-text description of a message (for example in a log generated
+
+    by a device), or other information of interest.
+
+    '

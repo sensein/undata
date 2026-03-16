@@ -1,0 +1,8 @@
+semantic:
+  data_type: integer
+provenance:
+- source: nwb
+  class: ImagingRetinotopy
+  name: vasculature_image
+  description: 'Gray-scale anatomical image of cortical surface. Array structure:
+    [rows][columns]'

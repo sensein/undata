@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: StimulusEpoch
+  name: training_protocol_name
+  description: Name of the training protocol used during the acquisition, must match
+    a protocol in the Procedures

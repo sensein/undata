@@ -1,0 +1,9 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: TimeSeriesReferenceVectorData
+  name: TimeSeriesReferenceVectorData
+  description: Column storing references to a TimeSeries (rows). For each TimeSeries
+    this VectorData column stores the start_index and count to indicate the range
+    in time to be selected as well as an object reference to the TimeSeries.

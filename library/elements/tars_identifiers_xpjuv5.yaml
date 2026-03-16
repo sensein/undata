@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: ViralMaterial
+  name: tars_identifiers
+  description: TARS database identifiers
+- source: aind
+  class: ViralMaterial
+  name: tars_identifiers
+  description: TARS database identifiers

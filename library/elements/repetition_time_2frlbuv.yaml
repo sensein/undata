@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: aind
+  class: MRIScan
+  name: repetition_time
+  description: BIDS RepetitionTime / DICOM Tag 0018,0080

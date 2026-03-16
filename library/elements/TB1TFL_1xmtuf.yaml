@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: TB1TFL
+  description: 'The result of a Siemens `tfl_b1_map` product sequence.
+
+    This sequence produces two images.
+
+    The first image appears like an anatomical image and the second output is a
+
+    scaled flip angle map.
+
+    '

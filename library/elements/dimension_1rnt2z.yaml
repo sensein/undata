@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: dimension
+  description: 'Size of the group (grid/strip/probe) that this electrode belongs to.
+
+    Must be of form `[AxB]` with the smallest dimension first (for example, `[1x8]`).
+
+    '

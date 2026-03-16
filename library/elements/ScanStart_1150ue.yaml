@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: ScanStart
+  description: 'Time of start of scan with respect to `TimeZero` in the default unit
+    seconds.
+
+    '

@@ -1,0 +1,26 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_i3i9e3
+  - https://schema.undata.live/elements/additional_settings_zph5etj
+  - https://schema.undata.live/elements/encoder_6e2ggt
+  - https://schema.undata.live/elements/encoder_clxygjw
+  - https://schema.undata.live/elements/manufacturer_1wrgnh
+  - https://schema.undata.live/elements/manufacturer_3roacli
+  - https://schema.undata.live/elements/model_17a0sl
+  - https://schema.undata.live/elements/model_2de3pwi
+  - https://schema.undata.live/elements/name_18e4eg
+  - https://schema.undata.live/elements/name_2fl82o3
+  - https://schema.undata.live/elements/notes_5u0pga
+  - https://schema.undata.live/elements/notes_bidvvfh
+  - https://schema.undata.live/elements/pulse_per_revolution_1df3l1
+  - https://schema.undata.live/elements/pulse_per_revolution_2pib20b
+  - https://schema.undata.live/elements/serial_number_f2lqpl
+  - https://schema.undata.live/elements/serial_number_tqlnefk
+  - https://schema.undata.live/elements/treadmill_width_9avvr3
+  - https://schema.undata.live/elements/treadmill_width_icr889b
+  - https://schema.undata.live/elements/width_unit_107hv9
+  - https://schema.undata.live/elements/width_unit_1zfwizx
+  mixins: []
+provenance:
+- source: aind
+  name: Treadmill

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: deltam
+  description: 'An ASL volume type: deltam.
+
+    The deltaM image is a perfusion-weighted image, obtained by the subtraction of
+    `control` - `label`.
+
+    '

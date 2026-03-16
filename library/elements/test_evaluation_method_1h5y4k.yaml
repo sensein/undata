@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: ModelTraining
+  name: test_evaluation_method
+  description: Approach to cross-validation or Train/test splitting
+- source: aind
+  class: ModelTraining
+  name: test_evaluation_method
+  description: Approach to cross-validation or Train/test splitting

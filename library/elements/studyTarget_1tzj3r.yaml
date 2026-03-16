@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: PublishedAsset
+  name: studyTarget
+  description: Objectives or specific questions of the study.

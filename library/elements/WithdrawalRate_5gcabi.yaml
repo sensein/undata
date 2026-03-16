@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: WithdrawalRate
+  description: 'The rate at which the blood was withdrawn from the subject.
+
+    The unit of the specified withdrawal rate should be in `"mL/s"`.
+
+    '

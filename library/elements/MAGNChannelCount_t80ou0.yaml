@@ -1,0 +1,9 @@
+semantic:
+  data_type: integer
+provenance:
+- source: bids
+  class: metadata
+  name: MAGNChannelCount
+  description: 'Number of magnetometer channels.
+
+    '

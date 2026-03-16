@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DataDescription
+  name: data_summary
+  description: Semantic summary of experimental goal

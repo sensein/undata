@@ -1,7 +1,8 @@
-"""Build an index.yaml registry from element and mapping YAML files."""
+"""Build index.yaml registry from v2 element and schema files."""
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -9,70 +10,69 @@ import yaml
 
 
 def build_index(base_path: Path) -> dict[str, Any]:
-    """Scan elements/ and mappings/ directories, build registry."""
+    """Scan elements/ and schemas/ directories, build registry."""
     elements_dir = base_path / "elements"
-    mappings_dir = base_path / "mappings"
+    schemas_dir = base_path / "schemas"
 
     elements: list[dict[str, Any]] = []
-    mappings: list[dict[str, Any]] = []
+    schemas: list[dict[str, Any]] = []
+    multi_source = 0
 
     if elements_dir.exists():
         for f in sorted(elements_dir.glob("*.yaml")):
             try:
                 data = yaml.safe_load(f.read_text(encoding="utf-8"))
-                if isinstance(data, dict) and "element" in data:
-                    el = data["element"]
-                    versions = data.get("versions", [])
-                    current = data.get("current_version", 1)
-                    name = ""
-                    if versions:
-                        current_ver = next(
-                            (v for v in versions if v.get("version_num") == current),
-                            versions[-1],
-                        )
-                        name = current_ver.get("name", "")
-                    elements.append({
-                        "id": el.get("id", ""),
-                        "source_local_id": el.get("source_local_id", ""),
-                        "name": name,
-                        "current_version": current,
-                        "version_count": len(versions),
+                if not isinstance(data, dict) or "semantic" not in data:
+                    continue
+                prov = data.get("provenance", [])
+                name = prov[0].get("name", "") if prov else ""
+                sources = [p.get("source", "") for p in prov]
+                if len(set(sources)) > 1:
+                    multi_source += 1
+                elements.append(
+                    {
                         "file": str(f.relative_to(base_path)),
-                    })
+                        "name": name,
+                        "data_type": data["semantic"].get("data_type", ""),
+                        "sources": sorted(set(sources)),
+                        "provenance_count": len(prov),
+                    }
+                )
             except (yaml.YAMLError, OSError):
                 continue
 
-    if mappings_dir.exists():
-        for f in sorted(mappings_dir.glob("*.yaml")):
+    if schemas_dir.exists():
+        for f in sorted(schemas_dir.glob("*.yaml")):
             try:
                 data = yaml.safe_load(f.read_text(encoding="utf-8"))
-                if isinstance(data, dict) and "mapping" in data:
-                    m = data["mapping"]
-                    mappings.append({
-                        "id": m.get("id", ""),
-                        "status": m.get("status", ""),
-                        "current_version": data.get("current_version", 1),
-                        "version_count": len(data.get("versions", [])),
+                if not isinstance(data, dict) or "semantic" not in data:
+                    continue
+                prov = data.get("provenance", [])
+                name = prov[0].get("name", "") if prov else ""
+                schemas.append(
+                    {
                         "file": str(f.relative_to(base_path)),
-                    })
+                        "name": name,
+                        "property_count": len(data["semantic"].get("properties", [])),
+                        "provenance_count": len(prov),
+                    }
+                )
             except (yaml.YAMLError, OSError):
                 continue
 
     return {
-        "generated_at": None,  # Set by caller
+        "generated_at": None,
         "element_count": len(elements),
-        "mapping_count": len(mappings),
+        "schema_count": len(schemas),
+        "multi_source_elements": multi_source,
         "elements": elements,
-        "mappings": mappings,
+        "schemas": schemas,
     }
 
 
 def write_index(base_path: Path, output: Path) -> dict[str, Any]:
     """Build index and write to YAML file."""
-    from datetime import datetime, timezone
-
     idx = build_index(base_path)
     idx["generated_at"] = datetime.now(timezone.utc).isoformat()
-
     output.write_text(yaml.dump(idx, default_flow_style=False, sort_keys=False), encoding="utf-8")
     return idx

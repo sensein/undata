@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ElectrodesTable
+  name: group
+  description: Reference to the ElectrodeGroup this electrode is a part of.

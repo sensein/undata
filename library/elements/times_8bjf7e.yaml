@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: EventDetection
+  name: times
+  description: DEPRECATED. Timestamps of events, in seconds.

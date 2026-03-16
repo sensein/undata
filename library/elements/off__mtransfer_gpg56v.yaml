@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: off__mtransfer
+  description: 'The image acquired in the absence of the magnetization transfer pulse.
+
+    '

@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: OnePhotonSeries
+  name: scan_line_rate
+  description: Lines imaged per second. This is also stored in /general/optophysiology
+    but is kept here as it is useful information for analysis, and so good to be stored
+    w/ the actual data.

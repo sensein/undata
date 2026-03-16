@@ -1,0 +1,20 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: MixingTime
+  description: 'In the context of a stimulated- and spin-echo 3D EPI sequence for
+    B1+ mapping
+
+    or a stimulated-echo MRS sequence,
+
+    corresponds to the interval between spin- and stimulated-echo pulses.
+
+    In the context of a diffusion-weighted double spin-echo sequence,
+
+    corresponds to the interval between two successive diffusion sensitizing
+
+    gradients, specified in seconds.
+
+    '

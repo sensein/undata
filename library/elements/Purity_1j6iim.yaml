@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: Purity
+  description: 'Purity of the radiolabeled compound (between 0 and 100%).
+
+    '

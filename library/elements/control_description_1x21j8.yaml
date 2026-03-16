@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: TimeSeries
+  name: control_description
+  description: Description of each control value. Must be present if control is present.
+    If present, control_description[0] should describe time points where control ==
+    0.

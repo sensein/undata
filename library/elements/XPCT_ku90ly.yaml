@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: XPCT
+  description: 'X-ray phase-contrast tomography imaging data
+
+    '

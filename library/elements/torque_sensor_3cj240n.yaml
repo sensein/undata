@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: Wheel
+  name: torque_sensor
+  description: Generic device

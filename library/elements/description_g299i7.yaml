@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: BareAsset
+  name: description
+  description: A description of the item.

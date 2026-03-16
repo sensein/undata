@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: Instructions
+  description: 'Text of the instructions given to participants before the recording.
+
+    '

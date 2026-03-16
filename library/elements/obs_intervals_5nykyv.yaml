@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: Units
+  name: obs_intervals
+  description: Observation intervals for each unit.

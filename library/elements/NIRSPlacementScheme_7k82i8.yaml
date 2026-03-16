@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: NIRSPlacementScheme
+  description: 'Placement scheme of NIRS optodes.
+
+    Either the name of a standardized placement system (for example, `"10-20"`)
+
+    or an array of standardized position names (for example, `["Cz", "Pz"]`).
+
+    This field should only be used if a cap was not used.
+
+    If a standard cap was used, then it should be specified in `CapManufacturer`
+
+    and `CapManufacturersModelName` and this field should be set to `"n/a"`
+
+    '

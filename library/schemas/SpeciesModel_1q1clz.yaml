@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/common_name_gls7p2
+  - https://schema.undata.live/elements/common_name_wrh4al5
+  - https://schema.undata.live/elements/name_15k91f
+  - https://schema.undata.live/elements/name_2a082ly
+  - https://schema.undata.live/elements/registry_1sruts
+  - https://schema.undata.live/elements/registry_3jsxv9k
+  - https://schema.undata.live/elements/registry_identifier_1xmygac
+  - https://schema.undata.live/elements/registry_identifier_zakvqk
+  mixins: []
+provenance:
+- source: aind
+  name: SpeciesModel

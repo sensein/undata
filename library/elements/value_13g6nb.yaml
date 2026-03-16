@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: PropertyValue
+  name: value
+  description: The value associated with this property.

@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: OpticalSeries
+  name: data
+  description: Images presented to subject, either grayscale or RGB

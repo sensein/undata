@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: tif
+  description: 'A [Tag Image File Format](https://en.wikipedia.org/wiki/TIFF) file.
+
+    '

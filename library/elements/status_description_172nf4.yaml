@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: status_description
+  description: 'Freeform text description of noise or artifact affecting data quality
+    on the channel.
+
+    It is meant to explain why the channel was declared bad in the `status` column.
+
+    '

@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: ChunkTransformationMatrixAxis
+  description: 'Describe the axis of the ChunkTransformationMatrix
+
+    (for examples: `["X", "Y"]` or `["Z", "Y", "X"]`).
+
+    '

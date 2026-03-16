@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: units
+  description: 'Physical unit of the value represented in this channel,
+
+    for example, `V` for Volt, or `fT/cm` for femto Tesla per centimeter
+
+    (see [Units](SPEC_ROOT/common-principles.md#units)).
+
+    '

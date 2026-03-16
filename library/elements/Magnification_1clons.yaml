@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: Magnification
+  description: 'Lens magnification (for example: `40`). If the file format is OME-TIFF,
+
+    the value MUST be consistent with the `"NominalMagnification"` OME metadata field.
+
+    '

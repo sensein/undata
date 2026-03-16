@@ -1,0 +1,8 @@
+semantic:
+  data_type: integer
+provenance:
+- source: dandi
+  class: SampleType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.

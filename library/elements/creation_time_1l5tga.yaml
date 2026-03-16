@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DataDescription
+  name: creation_time
+  description: Time that data files were created, used to uniquely identify the data

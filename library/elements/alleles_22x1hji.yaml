@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: MouseSubject
+  name: alleles
+  description: Allele names and persistent IDs

@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: Injection
+  name: targeted_structure
+  description: Use InjectionTargets
+- source: aind
+  class: Injection
+  name: targeted_structure
+  description: Use InjectionTargets

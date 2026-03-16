@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/active_devices_1mqf7ub
+  - https://schema.undata.live/elements/active_devices_trmv6n
+  - https://schema.undata.live/elements/code_1k6l8i5
+  - https://schema.undata.live/elements/code_sh3bmx
+  - https://schema.undata.live/elements/configurations_121tth4
+  - https://schema.undata.live/elements/configurations_ja9b5x
+  - https://schema.undata.live/elements/curriculum_status_1mbicf
+  - https://schema.undata.live/elements/curriculum_status_372i2hi
+  - https://schema.undata.live/elements/notes_1pjr9c
+  - https://schema.undata.live/elements/notes_3dfv8r7
+  - https://schema.undata.live/elements/performance_metrics_1fgsnr
+  - https://schema.undata.live/elements/performance_metrics_2tjpsd1
+  - https://schema.undata.live/elements/stimulus_end_time_12g5pn
+  - https://schema.undata.live/elements/stimulus_end_time_23v21o9
+  - https://schema.undata.live/elements/stimulus_modalities_1g7gs9
+  - https://schema.undata.live/elements/stimulus_modalities_2v0c6wt
+  - https://schema.undata.live/elements/stimulus_name_1tzjhn
+  - https://schema.undata.live/elements/stimulus_name_3m74uww
+  - https://schema.undata.live/elements/stimulus_start_time_1t323v
+  - https://schema.undata.live/elements/stimulus_start_time_3kf1km4
+  - https://schema.undata.live/elements/training_protocol_name_1nkmwm
+  - https://schema.undata.live/elements/training_protocol_name_39jjgix
+  mixins: []
+provenance:
+- source: aind
+  name: StimulusEpoch

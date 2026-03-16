@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DataDescription
+  name: project_name
+  description: A name for a set of coordinated activities intended to achieve one
+    or more objectives.

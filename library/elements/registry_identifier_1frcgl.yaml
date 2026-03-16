@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: MouseAnatomyModel
+  name: registry_identifier
+- source: aind
+  class: MouseAnatomyModel
+  name: registry_identifier

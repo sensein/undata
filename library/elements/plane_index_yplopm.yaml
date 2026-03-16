@@ -1,0 +1,6 @@
+semantic:
+  data_type: integer
+provenance:
+- source: aind
+  class: CoupledPlane
+  name: plane_index

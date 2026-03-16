@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: Units
+  name: waveform_mean
+  description: Spike waveform mean for each spike unit.

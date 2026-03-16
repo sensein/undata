@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/common_name_1dlnsn
+  - https://schema.undata.live/elements/common_name_2pv94bc
+  - https://schema.undata.live/elements/name_14360y
+  - https://schema.undata.live/elements/name_273hhmv
+  - https://schema.undata.live/elements/registry_1cthqzb
+  - https://schema.undata.live/elements/registry_identifier_13c02a4
+  - https://schema.undata.live/elements/registry_identifier_jxnrs2
+  - https://schema.undata.live/elements/registry_oqqh70
+  mixins: []
+provenance:
+- source: aind
+  name: _Gallus_Gallus

@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: Units
+  name: spike_times_index
+  description: Index into the spike_times dataset.

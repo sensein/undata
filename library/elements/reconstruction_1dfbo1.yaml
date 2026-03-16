@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: entities
+  name: reconstruction
+  description: 'The `rec-<label>` entity can be used to distinguish different reconstruction
+    algorithms
+
+    (for example, `MoCo` for the ones using motion correction).
+
+    '

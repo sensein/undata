@@ -1,0 +1,9 @@
+semantic:
+  data_type: object
+provenance:
+- source: bids
+  class: metadata
+  name: Genetics
+  description: 'An object containing information about the genetics descriptor.
+
+    '

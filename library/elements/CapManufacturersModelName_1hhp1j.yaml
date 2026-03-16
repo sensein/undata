@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: CapManufacturersModelName
+  description: 'Manufacturer''s designation of the cap model
+
+    (for example, `"actiCAP 64 Ch Standard-2"`).
+
+    '

@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: PulseDuration
+  description: 'Pulse duration if spectral editing was applied, in milliseconds
+
+    '

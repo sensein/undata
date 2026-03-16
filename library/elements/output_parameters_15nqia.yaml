@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DataProcess
+  name: output_parameters
+  description: Output parameters
+- source: aind
+  class: DataProcess
+  name: output_parameters
+  description: Output parameters

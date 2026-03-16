@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: dseg
+  description: 'A discrete segmentation.
+
+
+    This suffix may only be used in derivative datasets.
+
+    '

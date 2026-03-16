@@ -1,0 +1,9 @@
+semantic:
+  data_type: integer
+provenance:
+- source: nwb
+  class: TimeSeries
+  name: control
+  description: Numerical labels that apply to each time point in data for the purpose
+    of querying and slicing data by these values. If present, the length of this array
+    should be the same size as the first dimension of data.

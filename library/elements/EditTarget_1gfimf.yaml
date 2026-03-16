@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: EditTarget
+  description: 'If spectral editing was applied, this describes the metabolites that
+    were selectively targeted
+
+    (for example, `"GABA"` or `"Lac"`).
+
+    If multiple metabolites were targeted (for example, in a HERMES acquisition),
+
+    an array can be used: `["GABA", "GSH"]`.
+
+    '

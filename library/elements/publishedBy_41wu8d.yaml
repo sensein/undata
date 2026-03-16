@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: PublishedAsset
+  name: publishedBy
+  description: The URL should contain the provenance of the publishing process.

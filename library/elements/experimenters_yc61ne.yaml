@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: ModelTraining
+  name: experimenters
+  description: People responsible for processing
+- source: aind
+  class: ModelTraining
+  name: experimenters
+  description: People responsible for processing

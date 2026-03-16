@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: EchoTime1
+  description: 'The time (in seconds) when the first (shorter) echo occurs.
+
+    '

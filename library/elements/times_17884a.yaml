@@ -1,0 +1,8 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: Clustering
+  name: times
+  description: Times of clustered events, in seconds. This may be a link to times
+    field in associated FeatureExtraction module.

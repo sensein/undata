@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: RelatedParticipant
+  name: relation
+  description: 'Indicates how the current participant or subject is related to the
+    other participant or subject. This relation should satisfy: Participant/Subject
+    <relation> relatedParticipant/Subject.'

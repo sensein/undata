@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: TaskDescription
+  description: 'Longer description of the task.
+
+    '

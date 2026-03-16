@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: Type
+  description: 'Short identifier of the mask.
+
+    The value `"Brain"` refers to a brain mask.
+
+    The value `"Lesion"` refers to a lesion mask.
+
+    The value `"Face"` refers to a face mask.
+
+    The value `"ROI"` refers to a region of interest mask.
+
+    '

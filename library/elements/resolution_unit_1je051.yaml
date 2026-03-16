@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - meter
+    - centimeter
+    - millimeter
+    - micrometer
+    - nanometer
+    - inch
+    - pixel
+provenance:
+- source: aind
+  class: Atlas
+  name: resolution_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Atlas
+  name: resolution_unit
+  description: Enumeration of Length Measurements

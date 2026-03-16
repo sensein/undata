@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: coordinate_system
+  description: 'Name of the coordinate system defined in `coordsystem.json` in which
+    the electrode''s
+
+    `x`, `y`, and (optionally) `z` coordinates are given.
+
+    '

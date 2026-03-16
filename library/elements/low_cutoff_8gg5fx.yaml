@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: low_cutoff
+  description: 'Frequencies used for the high-pass filter applied to the channel in
+    Hz.
+
+    If no high-pass filter applied, use `n/a`.
+
+    '

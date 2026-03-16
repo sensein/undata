@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: SampleChamberConfig
+  name: device_name
+  description: Must match a device defined in the instrument.json

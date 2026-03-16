@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/baseline_weight_1c36ok
+  - https://schema.undata.live/elements/baseline_weight_2mvromt
+  - https://schema.undata.live/elements/end_date_1bn6wv
+  - https://schema.undata.live/elements/end_date_2m07n87
+  - https://schema.undata.live/elements/ethics_review_id_1fph6n
+  - https://schema.undata.live/elements/ethics_review_id_2u0uf9i
+  - https://schema.undata.live/elements/minimum_water_per_day_1theu7
+  - https://schema.undata.live/elements/minimum_water_per_day_3l7d4iz
+  - https://schema.undata.live/elements/minimum_water_per_day_unit_e4zlsi
+  - https://schema.undata.live/elements/minimum_water_per_day_unit_rw9yaqw
+  - https://schema.undata.live/elements/start_date_11u5xi
+  - https://schema.undata.live/elements/start_date_22nnsp2
+  - https://schema.undata.live/elements/target_fraction_weight_1f5zv6
+  - https://schema.undata.live/elements/target_fraction_weight_2syenzc
+  - https://schema.undata.live/elements/target_fraction_weight_unit_1hacydl
+  - https://schema.undata.live/elements/target_fraction_weight_unit_r09l3c
+  - https://schema.undata.live/elements/weight_unit_1drune
+  - https://schema.undata.live/elements/weight_unit_2q7gtum
+  mixins: []
+provenance:
+- source: aind
+  name: WaterRestriction

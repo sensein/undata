@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: NIRSCWHBO
+  description: 'Continuous wave oxygenated hemoglobin (oxyhemoglobin) concentration
+    measurements.
+
+    Equivalent to dataTypeLabel HbO in SNIRF.
+
+    '

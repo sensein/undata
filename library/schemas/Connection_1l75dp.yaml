@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/send_and_receive_1w38ts
+  - https://schema.undata.live/elements/send_and_receive_3qci62z
+  - https://schema.undata.live/elements/source_device_4lt0wc
+  - https://schema.undata.live/elements/source_device_935d94m
+  - https://schema.undata.live/elements/source_port_1p8sl3v
+  - https://schema.undata.live/elements/source_port_v1fqrw
+  - https://schema.undata.live/elements/target_device_14g6kc
+  - https://schema.undata.live/elements/target_device_27t5ybd
+  - https://schema.undata.live/elements/target_port_9x8410
+  - https://schema.undata.live/elements/target_port_jku1fq0
+  mixins: []
+provenance:
+- source: aind
+  name: Connection

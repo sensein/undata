@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/cage_id_18mdxrz
+  - https://schema.undata.live/elements/cage_id_mm5goy
+  - https://schema.undata.live/elements/cohoused_subjects_1sgzioe
+  - https://schema.undata.live/elements/cohoused_subjects_wobqst
+  - https://schema.undata.live/elements/home_cage_enrichment_19ne8rq
+  - https://schema.undata.live/elements/home_cage_enrichment_n4wpdj
+  - https://schema.undata.live/elements/light_cycle_1638il
+  - https://schema.undata.live/elements/light_cycle_2b1omkt
+  - https://schema.undata.live/elements/room_id_1jz83n
+  - https://schema.undata.live/elements/room_id_32g79e6
+  mixins: []
+provenance:
+- source: aind
+  name: Housing

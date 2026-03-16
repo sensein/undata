@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: nii
+  description: 'A Neuroimaging Informatics Technology Initiative (NIfTI) data file.
+
+    '

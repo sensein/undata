@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: RawDataFilters
+  description: 'Filter settings applied to eye-movement raw data.
+
+    '

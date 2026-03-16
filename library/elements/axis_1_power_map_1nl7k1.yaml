@@ -1,0 +1,8 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: ImagingRetinotopy
+  name: axis_1_power_map
+  description: Power response on the first measured axis. Response is scaled so 0.0
+    is no power in the response and 1.0 is maximum relative power.

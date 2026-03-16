@@ -1,0 +1,6 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: aind
+  class: Olfactometer
+  name: is_clock_generator

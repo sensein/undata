@@ -1,0 +1,7 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: BareAsset
+  name: measurementTechnique
+  description: ''

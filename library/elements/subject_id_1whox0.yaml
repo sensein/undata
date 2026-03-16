@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DataDescription
+  name: subject_id
+  description: Unique identifier for the subject of data acquisition

@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: LabelingEfficiency
+  description: 'Labeling efficiency, specified as a number between zero and one,
+
+    only if obtained externally (for example phase-contrast based).
+
+    '

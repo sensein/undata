@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: SpoilingGradientMoment
+  description: 'Zeroth moment of the spoiler gradient lobe in
+
+    millitesla times second per meter (mT.s/m).
+
+    '

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: blood
+  description: 'Blood measurements of radioactivity stored in
+
+    [tabular files](SPEC_ROOT/common-principles.md#tabular-files)
+
+    and located in the `pet/` directory along with the corresponding PET data.
+
+    '

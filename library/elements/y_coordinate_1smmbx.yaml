@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: columns
+  name: y_coordinate
+  description: 'Gaze position y-coordinate of the recorded eye, in the coordinate
+
+    units specified in the corresponding metadata sidecar.
+
+    '

@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: extensions
+  name: CTF
+  description: 'A directory for MEG data, typically containing a `.meg4` file for
+    the data and a `.res4` file for the resources.
+
+    '

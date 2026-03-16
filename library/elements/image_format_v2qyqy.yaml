@@ -1,0 +1,8 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: ExternalImage
+  name: image_format
+  description: Common name of the image file format. Only widely readable, open file
+    formats are allowed. Allowed values are "PNG", "JPEG", and "GIF".

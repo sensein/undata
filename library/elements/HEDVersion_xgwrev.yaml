@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: HEDVersion
+  description: 'If HED tags are used:
+
+    The version of the HED schema used to validate HED tags for study.
+
+    May include a single schema or a base schema and one or more library schema.
+
+    '

@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: in_vitro_differentiated_cells
+  description: 'A biosample type (`sample_type`): in vitro differentiated cells
+
+    '

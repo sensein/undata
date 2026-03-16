@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: MagneticFieldStrength
+  description: 'Nominal field strength of MR magnet in Tesla.
+
+    Corresponds to [DICOM Tag 0018, 0087](http://www.dicomlookup.com/dicomtags/(0018,0087))
+
+    `Magnetic Field Strength`.
+
+    '

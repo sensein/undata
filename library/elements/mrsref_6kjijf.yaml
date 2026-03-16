@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: mrsref
+  description: 'An MRS acquisition collected to serve as a concentration reference
+    for absolute quantification
+
+    or as a calibration reference for preprocessing (for example, eddy-current correction).
+
+    '

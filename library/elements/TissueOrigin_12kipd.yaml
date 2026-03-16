@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: TissueOrigin
+  description: 'Describes the type of tissue analyzed for `"SampleOrigin"` `brain`.
+
+    '

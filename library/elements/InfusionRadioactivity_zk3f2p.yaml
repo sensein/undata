@@ -1,0 +1,15 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: InfusionRadioactivity
+  description: 'Amount of radioactivity infused into the patient.
+
+    This value must be less than or equal to the total injected radioactivity
+
+    (`"InjectedRadioactivity"`).
+
+    Units should be the same as `"InjectedRadioactivityUnits"`.
+
+    '

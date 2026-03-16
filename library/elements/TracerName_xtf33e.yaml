@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: TracerName
+  description: 'Name of the tracer compound used (for example, `"CIMBI-36"`)
+
+    '

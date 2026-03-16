@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: TracerSNOMED
+  description: 'ID of the tracer compound from the SNOMED Ontology
+
+    (subclass of Radioactive isotope).
+
+    '

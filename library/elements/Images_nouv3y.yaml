@@ -1,0 +1,9 @@
+semantic:
+  data_type: object
+provenance:
+- source: nwb
+  class: Images
+  name: Images
+  description: A collection of images with an optional way to specify the order of
+    the images using the "order_of_images" dataset. An order must be specified if
+    the images are referenced by index, e.g., from an IndexSeries.

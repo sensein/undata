@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/atlas_coordinate_16021k
+  - https://schema.undata.live/elements/atlas_coordinate_2avergc
+  - https://schema.undata.live/elements/coordinate_system_60z601
+  - https://schema.undata.live/elements/coordinate_system_bw42926
+  - https://schema.undata.live/elements/device_name_1ln76c
+  - https://schema.undata.live/elements/device_name_35qjafo
+  - https://schema.undata.live/elements/dye_1526igh
+  - https://schema.undata.live/elements/dye_kt69kz
+  - https://schema.undata.live/elements/notes_5ezug4
+  - https://schema.undata.live/elements/notes_aoqq0b6
+  - https://schema.undata.live/elements/other_targeted_structure_fss1p1
+  - https://schema.undata.live/elements/other_targeted_structure_v68w6rf
+  - https://schema.undata.live/elements/primary_targeted_structure_16zghs
+  - https://schema.undata.live/elements/primary_targeted_structure_2ct9cul
+  - https://schema.undata.live/elements/transform_1xm1h9
+  - https://schema.undata.live/elements/transform_3tcmdcr
+  mixins: []
+provenance:
+- source: aind
+  name: ProbeConfig

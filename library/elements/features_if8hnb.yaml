@@ -1,0 +1,7 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: AbstractFeatureSeries
+  name: features
+  description: Description of the features represented in TimeSeries::data.

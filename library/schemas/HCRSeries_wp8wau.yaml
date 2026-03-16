@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/cell_id_1o3vxy
+  - https://schema.undata.live/elements/cell_id_3alivl5
+  - https://schema.undata.live/elements/codebook_name_1p9hw4
+  - https://schema.undata.live/elements/codebook_name_3cvmg93
+  - https://schema.undata.live/elements/hcr_rounds_1oyejf
+  - https://schema.undata.live/elements/hcr_rounds_3c9qhvj
+  - https://schema.undata.live/elements/number_of_rounds_19kpt45
+  - https://schema.undata.live/elements/number_of_rounds_n3jtv6
+  - https://schema.undata.live/elements/strip_qc_compatible_1p3lzu5
+  - https://schema.undata.live/elements/strip_qc_compatible_uyt6bf
+  mixins: []
+provenance:
+- source: aind
+  name: HCRSeries

@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: Genetic
+  description: 'Data report on a single genetic location (typically directly in the
+    `participants.tsv` file).
+
+    '

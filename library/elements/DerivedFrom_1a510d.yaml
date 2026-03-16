@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: DerivedFrom
+  description: 'Indicate what data modality the atlas was derived from; for example,
+    "cytoarchitecture", "resting-state", or "task".
+
+    '

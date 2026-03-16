@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/anaesthesia_1t6gsp
+  - https://schema.undata.live/elements/anaesthesia_3klrndb
+  - https://schema.undata.live/elements/end_time_11x38h3
+  - https://schema.undata.live/elements/end_time_j7uurt
+  - https://schema.undata.live/elements/notes_1tb9bz
+  - https://schema.undata.live/elements/notes_3kv82rd
+  - https://schema.undata.live/elements/procedures_1p1msrg
+  - https://schema.undata.live/elements/procedures_uxt3an
+  - https://schema.undata.live/elements/start_time_1h6vm5
+  - https://schema.undata.live/elements/start_time_2wy7j96
+  mixins: []
+provenance:
+- source: aind
+  name: Manipulation

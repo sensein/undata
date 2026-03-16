@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: CapManufacturer
+  description: 'Name of the cap manufacturer (for example, `"EasyCap"`).
+
+    '

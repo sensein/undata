@@ -1,0 +1,30 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/alleles_11yx2v
+  - https://schema.undata.live/elements/alleles_22x1hji
+  - https://schema.undata.live/elements/breeding_info_55pfpq
+  - https://schema.undata.live/elements/breeding_info_a6ewm7p
+  - https://schema.undata.live/elements/date_of_birth_1sxono
+  - https://schema.undata.live/elements/date_of_birth_3k4fvpv
+  - https://schema.undata.live/elements/genotype_1aqd80f
+  - https://schema.undata.live/elements/genotype_nonrje
+  - https://schema.undata.live/elements/housing_16hdzu
+  - https://schema.undata.live/elements/housing_2btlvcl
+  - https://schema.undata.live/elements/restrictions_1woi2i
+  - https://schema.undata.live/elements/restrictions_3rig1xw
+  - https://schema.undata.live/elements/rrid_19quei
+  - https://schema.undata.live/elements/rrid_2i9cuyw
+  - https://schema.undata.live/elements/sex_9bpr81
+  - https://schema.undata.live/elements/sex_iee67wv
+  - https://schema.undata.live/elements/source_2iweo5
+  - https://schema.undata.live/elements/source_4zcq2ls
+  - https://schema.undata.live/elements/species_16u7a6
+  - https://schema.undata.live/elements/species_2ciw103
+  - https://schema.undata.live/elements/strain_gc4ggy
+  - https://schema.undata.live/elements/strain_w8eyuo1
+  - https://schema.undata.live/elements/wellness_reports_1l6hnb
+  - https://schema.undata.live/elements/wellness_reports_34tkfcx
+  mixins: []
+provenance:
+- source: aind
+  name: MouseSubject

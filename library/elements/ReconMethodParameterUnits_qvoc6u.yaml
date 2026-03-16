@@ -1,0 +1,9 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: ReconMethodParameterUnits
+  description: 'Unit of reconstruction parameters (for example, `["none", "none"]`).
+
+    '

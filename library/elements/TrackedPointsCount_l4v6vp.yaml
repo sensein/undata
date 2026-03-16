@@ -1,0 +1,9 @@
+semantic:
+  data_type: float
+provenance:
+- source: bids
+  class: metadata
+  name: TrackedPointsCount
+  description: 'Number of different tracked points tracked in a motion tracking system.
+
+    '

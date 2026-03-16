@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: DewarPosition
+  description: "Position of the dewar during the MEG scan:\n`\"upright\"`, `\"supine\"\
+    ` or `\"degrees\"` of angle from vertical:\nfor example on CTF systems, `\"upright=15\xB0\
+    , supine=90\xB0\"`.\n"

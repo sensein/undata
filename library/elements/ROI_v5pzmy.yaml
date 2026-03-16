@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: ROI
+  description: 'A region of interest mask.
+
+    '

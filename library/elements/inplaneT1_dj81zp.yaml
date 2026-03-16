@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: inplaneT1
+  description: 'In arbitrary units (arbitrary).
+
+    T1 weighted structural image matched to a functional (task) image.
+
+    '

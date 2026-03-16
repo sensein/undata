@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_d5u0mv
+  - https://schema.undata.live/elements/additional_settings_pywugh9
+  - https://schema.undata.live/elements/diameter_1olodk
+  - https://schema.undata.live/elements/diameter_3bkmi73
+  - https://schema.undata.live/elements/diameter_unit_1j0w8n
+  - https://schema.undata.live/elements/diameter_unit_30kgt30
+  - https://schema.undata.live/elements/manufacturer_19d928
+  - https://schema.undata.live/elements/manufacturer_2hijcme
+  - https://schema.undata.live/elements/model_1c1nij
+  - https://schema.undata.live/elements/model_2msqu1y
+  - https://schema.undata.live/elements/name_1wmd6m
+  - https://schema.undata.live/elements/name_3re8cnz
+  - https://schema.undata.live/elements/notes_1bqkzw
+  - https://schema.undata.live/elements/notes_2m6wiz5
+  - https://schema.undata.live/elements/serial_number_14fevp5
+  - https://schema.undata.live/elements/serial_number_khmux3
+  mixins: []
+provenance:
+- source: aind
+  name: Tube

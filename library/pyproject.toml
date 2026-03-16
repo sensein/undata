@@ -13,10 +13,16 @@ dependencies = [
     "click>=8.0",
 ]
 
+[project.optional-dependencies]
+bids = ["bidsschematools"]
+dandi = ["dandischema"]
+
 [dependency-groups]
 dev = [
     "pytest>=8.0",
     "ruff>=0.15",
+    "bidsschematools",
+    "dandischema",
 ]
 
 [project.scripts]

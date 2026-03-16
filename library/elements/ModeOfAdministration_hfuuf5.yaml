@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ModeOfAdministration
+  description: 'Mode of administration of the injection
+
+    (for example, `"bolus"`, `"infusion"`, or `"bolus-infusion"`).
+
+    '

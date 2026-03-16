@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: DataProcess
+  name: end_date_time
+- source: aind
+  class: DataProcess
+  name: end_date_time

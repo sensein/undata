@@ -1,0 +1,11 @@
+semantic:
+  data_type: integer
+provenance:
+- source: bids
+  class: metadata
+  name: NIRSChannelCount
+  description: 'Total number of NIRS channels, including short channels.
+
+    Corresponds to the number of rows in `channels.tsv` with any NIRS type.
+
+    '

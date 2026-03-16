@@ -1,0 +1,11 @@
+semantic:
+  data_type: integer
+provenance:
+- source: bids
+  class: metadata
+  name: NIRSDetectorOptodeCount
+  description: 'Number of NIRS detectors.
+
+    Corresponds to the number of rows in `optodes.tsv` with type `"detector"`.
+
+    '

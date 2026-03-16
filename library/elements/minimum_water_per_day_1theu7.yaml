@@ -1,0 +1,6 @@
+semantic:
+  data_type: float
+provenance:
+- source: aind
+  class: WaterRestriction
+  name: minimum_water_per_day

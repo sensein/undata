@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - meter
+    - centimeter
+    - millimeter
+    - micrometer
+    - nanometer
+    - inch
+    - pixel
+provenance:
+- source: aind
+  class: CoordinateSystem
+  name: axis_unit
+  description: Enumeration of Length Measurements

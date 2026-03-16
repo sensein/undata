@@ -1,0 +1,12 @@
+semantic:
+  data_type: integer
+provenance:
+- source: aind
+  class: ResourceUsage
+  name: cpu_cores
+- source: aind
+  class: ResourceUsage
+  name: cpu_cores
+- source: aind
+  class: ResourceUsage
+  name: cpu_cores

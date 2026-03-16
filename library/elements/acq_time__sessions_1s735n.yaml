@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: acq_time__sessions
+  description: 'Acquisition time refers to when the first data point of the first
+    run was acquired.
+
+    Datetime format and their deidentification are described in
+
+    [Units](SPEC_ROOT/common-principles.md#units).
+
+    '

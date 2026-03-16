@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_13u6zdd
+  - https://schema.undata.live/elements/description_k6vp5p
+  - https://schema.undata.live/elements/device_name_1vsj11p
+  - https://schema.undata.live/elements/device_name_ycwuu0
+  - https://schema.undata.live/elements/maintenance_date_164qv62
+  - https://schema.undata.live/elements/maintenance_date_lcpwvz
+  - https://schema.undata.live/elements/notes_37v5yj
+  - https://schema.undata.live/elements/notes_6cm1o3j
+  - https://schema.undata.live/elements/protocol_id_1sp29j
+  - https://schema.undata.live/elements/protocol_id_3jnfg8b
+  - https://schema.undata.live/elements/reagents_1nmi9u
+  - https://schema.undata.live/elements/reagents_39n8dq4
+  mixins: []
+provenance:
+- source: aind
+  name: Maintenance

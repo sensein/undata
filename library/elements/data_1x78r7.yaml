@@ -1,0 +1,7 @@
+semantic:
+  data_type: integer
+provenance:
+- source: nwb
+  class: IntervalSeries
+  name: data
+  description: Use values >0 if interval started, <0 if interval ended.

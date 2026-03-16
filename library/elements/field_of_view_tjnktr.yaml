@@ -1,0 +1,7 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: TwoPhotonSeries
+  name: field_of_view
+  description: Width, height and depth of image, or imaged area, in meters.

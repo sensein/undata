@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - meter
+    - centimeter
+    - millimeter
+    - micrometer
+    - nanometer
+    - inch
+    - pixel
+provenance:
+- source: aind
+  class: FiberProbe
+  name: core_diameter_unit
+  description: Enumeration of Length Measurements

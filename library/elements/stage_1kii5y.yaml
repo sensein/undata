@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Processing
+    - Analysis
+provenance:
+- source: aind
+  class: ModelEvaluation
+  name: stage
+  description: Stages of processing
+- source: aind
+  class: ModelEvaluation
+  name: stage
+  description: Stages of processing

@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: suffixes
+  name: meg
+  description: 'Unprocessed MEG data stored in the native file format of the MEG instrument
+
+    with which the data was collected.
+
+    '

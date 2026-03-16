@@ -1,0 +1,7 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: model
+  name: example_run_code
+  description: Code to run the model, possibly including example parameters/data

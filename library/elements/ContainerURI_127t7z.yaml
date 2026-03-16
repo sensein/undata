@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+provenance:
+- source: bids
+  class: metadata
+  name: ContainerURI
+  description: 'URI for software container image used to produce the dataset
+
+    '

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: aind
+  class: QCMetric
+  name: description
+  description: Describes the measured value and the rule that links the value and
+    status.
+- source: aind
+  class: QCMetric
+  name: description
+  description: Describes the measured value and the rule that links the value and
+    status.
