@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/imaging_device_type_1vo59g
+  - https://schema.undata.live/elements/subject_id_36kcny87p
+  mixins: []
+provenance:
+- source: aind
+  name: AdditionalImagingDevice

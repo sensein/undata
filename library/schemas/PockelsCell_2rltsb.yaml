@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/animal_weight_prior_jn1jmh5a2
+  - https://schema.undata.live/elements/subject_id_36kcny87p
+  - https://schema.undata.live/elements/time_setting_unit_wgf2zy
+  mixins: []
+provenance:
+- source: aind
+  name: PockelsCell

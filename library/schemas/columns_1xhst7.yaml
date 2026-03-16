@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/HED_1m2b6o
+  - https://schema.undata.live/elements/duration_9ycenu
+  - https://schema.undata.live/elements/index_1b9a0a
+  - https://schema.undata.live/elements/short_channel_xd2wy4
+  mixins: []
+provenance:
+- source: bids
+  name: columns

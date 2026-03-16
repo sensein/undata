@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/animal_weight_prior_jn1jmh5a2
+  - https://schema.undata.live/elements/animal_weight_prior_jn1jmh5a2y
+  - https://schema.undata.live/elements/name_36kcny87po
+  - https://schema.undata.live/elements/sample_type_1ic9qp5
+  - https://schema.undata.live/elements/sample_type_rjhaez
+  - https://schema.undata.live/elements/subject_id_36kcny87p
+  - https://schema.undata.live/elements/volume_unit_124untk
+  - https://schema.undata.live/elements/volume_unit_jbsh2e
+  mixins: []
+provenance:
+- source: aind
+  name: SampleCollection

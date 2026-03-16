@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/animal_weight_prior_jn1jmh5a2
+  - https://schema.undata.live/elements/frame_rate_unit_rcaveo
+  mixins: []
+provenance:
+- source: aind
+  name: SamplingStrategy

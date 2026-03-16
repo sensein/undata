@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/coordinate_system_2jqfqstx
+  - https://schema.undata.live/elements/empty_1tttvcfiq
+  - https://schema.undata.live/elements/other_identifiers_2jqfqstxo
+  - https://schema.undata.live/elements/relative_position_1iuv30x
+  - https://schema.undata.live/elements/relative_position_rswiyf
+  - https://schema.undata.live/elements/variable_power_1tttvcfi
+  mixins: []
+provenance:
+- source: aind
+  name: MyomatrixContact

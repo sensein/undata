@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/acquisition_start_tz_2l8rbh99q
+  - https://schema.undata.live/elements/axis_unit_shazty
+  - https://schema.undata.live/elements/fluorophore_type_m3gv6m
+  mixins: []
+provenance:
+- source: aind
+  name: Fluorophore

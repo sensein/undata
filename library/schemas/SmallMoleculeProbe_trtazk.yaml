@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/animal_weight_prior_jn1jmh5a2
+  - https://schema.undata.live/elements/animal_weight_prior_jn1jmh5a2y
+  - https://schema.undata.live/elements/coordinate_system_2jqfqstx
+  - https://schema.undata.live/elements/other_identifiers_2jqfqstxo
+  - https://schema.undata.live/elements/weight_unit_1w2vw5
+  - https://schema.undata.live/elements/weight_unit_3qbsncg
+  mixins: []
+provenance:
+- source: aind
+  name: SmallMoleculeProbe

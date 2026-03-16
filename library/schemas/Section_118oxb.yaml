@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/animal_weight_prior_jn1jmh5a2
+  - https://schema.undata.live/elements/experimenters_34qbbrb1
+  - https://schema.undata.live/elements/subject_id_36kcny87p
+  - https://schema.undata.live/elements/variable_power_1tttvcfi
+  mixins: []
+provenance:
+- source: aind
+  name: Section

@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/TimeSeriesReferenceVectorData_2jqfqst
+  mixins: []
+provenance:
+- source: nwb
+  name: LFP

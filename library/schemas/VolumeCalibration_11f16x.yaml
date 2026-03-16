@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/acquisition_start_tz_2l8rbh99q
+  - https://schema.undata.live/elements/duration_unit_1iebmr
+  - https://schema.undata.live/elements/experimenters_34qbbrb1
+  - https://schema.undata.live/elements/subject_id_36kcny87p
+  - https://schema.undata.live/elements/volume_unit_jbsh2e
+  mixins: []
+provenance:
+- source: aind
+  name: VolumeCalibration

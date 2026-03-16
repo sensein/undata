@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/acquisition_start_tz_2l8rbh99q
+  - https://schema.undata.live/elements/axis_unit_shazty
+  - https://schema.undata.live/elements/experimenters_34qbbrb1
+  - https://schema.undata.live/elements/imaging_angle_unit_1yuukz
+  - https://schema.undata.live/elements/subject_id_36kcny87p
+  mixins: []
+provenance:
+- source: aind
+  name: ImageSPIM

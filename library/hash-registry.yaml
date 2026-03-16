@@ -679,4 +679,1704 @@ elements:
     attribute: procedure_type
     name: null
     uri: https://schema.undata.live/elements/procedure_type_2vhtsua
-schemas: {}
+schemas:
+  7a3dlv:
+    sha256: 1a3d2da30ad5daf61096b826f86c325c363d6963fb932ca53bb7b9d56f67e032
+    attribute: null
+    name: metadata
+    uri: https://schema.undata.live/schemas/metadata_7a3dlv
+  1xhst7:
+    sha256: fa7667df9a9a6e60d727063dc70529125c64a99495688f75bd75457700644283
+    attribute: null
+    name: columns
+    uri: https://schema.undata.live/schemas/columns_1xhst7
+  1nz8iw:
+    sha256: d82ae0a2e7e475db29617113461078d744c787f0d83913be3098aee33c01e3bf
+    attribute: null
+    name: common_principles
+    uri: https://schema.undata.live/schemas/common_principles_1nz8iw
+  3accjp7:
+    sha256: d82ae0a2e7e475db29617113461078d744c787f0d83913be3098aee33c01e3bf
+    attribute: null
+    name: datatypes
+    uri: https://schema.undata.live/schemas/datatypes_3accjp7
+  3accjp7v:
+    sha256: d82ae0a2e7e475db29617113461078d744c787f0d83913be3098aee33c01e3bf
+    attribute: null
+    name: entities
+    uri: https://schema.undata.live/schemas/entities_3accjp7v
+  3accjp7vo:
+    sha256: d82ae0a2e7e475db29617113461078d744c787f0d83913be3098aee33c01e3bf
+    attribute: null
+    name: enums
+    uri: https://schema.undata.live/schemas/enums_3accjp7vo
+  3accjp7voq:
+    sha256: d82ae0a2e7e475db29617113461078d744c787f0d83913be3098aee33c01e3bf
+    attribute: null
+    name: suffixes
+    uri: https://schema.undata.live/schemas/suffixes_3accjp7voq
+  165eva:
+    sha256: 97e9a2f347d38c4f9fc307341f66a4945a27b72856d6a6df0c053b44b29c15e3
+    attribute: null
+    name: AccessRequirements
+    uri: https://schema.undata.live/schemas/AccessRequirements_165eva
+  2b5z81z:
+    sha256: 97e9a2f347d38c4f9fc307341f66a4945a27b72856d6a6df0c053b44b29c15e3
+    attribute: null
+    name: Anatomy
+    uri: https://schema.undata.live/schemas/Anatomy_2b5z81z
+  2b5z81zx:
+    sha256: 97e9a2f347d38c4f9fc307341f66a4945a27b72856d6a6df0c053b44b29c15e3
+    attribute: null
+    name: ApproachType
+    uri: https://schema.undata.live/schemas/ApproachType_2b5z81zx
+  2b5z81zxs:
+    sha256: 97e9a2f347d38c4f9fc307341f66a4945a27b72856d6a6df0c053b44b29c15e3
+    attribute: null
+    name: AssayType
+    uri: https://schema.undata.live/schemas/AssayType_2b5z81zxs
+  x5uqc0:
+    sha256: 0351ebd4307d0054a02bc71ab503a2d4943a2478e3e2144b6427d747f88e2f11
+    attribute: null
+    name: AssetsSummary
+    uri: https://schema.undata.live/schemas/AssetsSummary_x5uqc0
+  2b5z81zxsu:
+    sha256: 97e9a2f347d38c4f9fc307341f66a4945a27b72856d6a6df0c053b44b29c15e3
+    attribute: null
+    name: StrainType
+    uri: https://schema.undata.live/schemas/StrainType_2b5z81zxsu
+  1tfki9o:
+    sha256: 0351ebd4307d0054a02bc71ab503a2d4943a2478e3e2144b6427d747f88e2f11
+    attribute: null
+    name: Disorder
+    uri: https://schema.undata.live/schemas/Disorder_1tfki9o
+  1p67bk:
+    sha256: dc78105eb95d25dab3cc60bee521dd437acdfb33a3b96812a7732e9d7f05ede3
+    attribute: null
+    name: Organization
+    uri: https://schema.undata.live/schemas/Organization_1p67bk
+  1tfki9ox:
+    sha256: 0351ebd4307d0054a02bc71ab503a2d4943a2478e3e2144b6427d747f88e2f11
+    attribute: null
+    name: Participant
+    uri: https://schema.undata.live/schemas/Participant_1tfki9ox
+  1rcx6w:
+    sha256: e459893794aec8ae5a0c11a4311e32d7515b6ed90cdf7a7a2c0e97a612af103c
+    attribute: null
+    name: Activity
+    uri: https://schema.undata.live/schemas/Activity_1rcx6w
+  8skvj9:
+    sha256: 1fb198a519b2a10ce1802b4db5d44727d059885c39559ee3daf442b86bf4f11e
+    attribute: null
+    name: Affiliation
+    uri: https://schema.undata.live/schemas/Affiliation_8skvj9
+  hcmyfjb:
+    sha256: 1fb198a519b2a10ce1802b4db5d44727d059885c39559ee3daf442b86bf4f11e
+    attribute: null
+    name: Agent
+    uri: https://schema.undata.live/schemas/Agent_hcmyfjb
+  3h0fygf:
+    sha256: e459893794aec8ae5a0c11a4311e32d7515b6ed90cdf7a7a2c0e97a612af103c
+    attribute: null
+    name: Allele
+    uri: https://schema.undata.live/schemas/Allele_3h0fygf
+  3h0fygfp:
+    sha256: e459893794aec8ae5a0c11a4311e32d7515b6ed90cdf7a7a2c0e97a612af103c
+    attribute: null
+    name: Asset
+    uri: https://schema.undata.live/schemas/Asset_3h0fygfp
+  3h0fygfpf:
+    sha256: e459893794aec8ae5a0c11a4311e32d7515b6ed90cdf7a7a2c0e97a612af103c
+    attribute: null
+    name: BareAsset
+    uri: https://schema.undata.live/schemas/BareAsset_3h0fygfpf
+  3h0fygfpf0:
+    sha256: e459893794aec8ae5a0c11a4311e32d7515b6ed90cdf7a7a2c0e97a612af103c
+    attribute: null
+    name: Session
+    uri: https://schema.undata.live/schemas/Session_3h0fygfpf0
+  kynl6j:
+    sha256: 4b8cfcfbed1128356824483e694cd2f6b16a6cbbdfb79c557b1e35c3e0a31270
+    attribute: null
+    name: Contributor
+    uri: https://schema.undata.live/schemas/Contributor_kynl6j
+  hcmyfjbv:
+    sha256: 1fb198a519b2a10ce1802b4db5d44727d059885c39559ee3daf442b86bf4f11e
+    attribute: null
+    name: DandiBaseModel
+    uri: https://schema.undata.live/schemas/DandiBaseModel_hcmyfjbv
+  hcmyfjbv7:
+    sha256: 1fb198a519b2a10ce1802b4db5d44727d059885c39559ee3daf442b86bf4f11e
+    attribute: null
+    name: Equipment
+    uri: https://schema.undata.live/schemas/Equipment_hcmyfjbv7
+  15czufj:
+    sha256: 4b8cfcfbed1128356824483e694cd2f6b16a6cbbdfb79c557b1e35c3e0a31270
+    attribute: null
+    name: Person
+    uri: https://schema.undata.live/schemas/Person_15czufj
+  kkim6b:
+    sha256: 4a22a4c32687682f92e3cb303e962710e6e195ee86f786e728884698a92fa254
+    attribute: null
+    name: PropertyValue
+    uri: https://schema.undata.live/schemas/PropertyValue_kkim6b
+  hcmyfjbv78:
+    sha256: 1fb198a519b2a10ce1802b4db5d44727d059885c39559ee3daf442b86bf4f11e
+    attribute: null
+    name: Software
+    uri: https://schema.undata.live/schemas/Software_hcmyfjbv78
+  z5tek2:
+    sha256: 7eb97ff23ac52d847422a2c0ccb17c60cdaac52a966073a9bf96c35de49767ac
+    attribute: null
+    name: NWBData
+    uri: https://schema.undata.live/schemas/NWBData_z5tek2
+  1xdk43o:
+    sha256: 7eb97ff23ac52d847422a2c0ccb17c60cdaac52a966073a9bf96c35de49767ac
+    attribute: null
+    name: BaseImage
+    uri: https://schema.undata.live/schemas/BaseImage_1xdk43o
+  1s8pcd:
+    sha256: 066e724d0d473c4c2b8d84d3e190be2caf8d35db3bc179fcf8df7b012d049048
+    attribute: null
+    name: Image
+    uri: https://schema.undata.live/schemas/Image_1s8pcd
+  1xdk43oy:
+    sha256: 7eb97ff23ac52d847422a2c0ccb17c60cdaac52a966073a9bf96c35de49767ac
+    attribute: null
+    name: ExternalImage
+    uri: https://schema.undata.live/schemas/ExternalImage_1xdk43oy
+  1xdk43oy8:
+    sha256: 7eb97ff23ac52d847422a2c0ccb17c60cdaac52a966073a9bf96c35de49767ac
+    attribute: null
+    name: ImageReferences
+    uri: https://schema.undata.live/schemas/ImageReferences_1xdk43oy8
+  17js79:
+    sha256: 9cf492b6c7f7a0664f0f358fbc4dda8218c310e67a82596961090e41f91c92dc
+    attribute: null
+    name: TimeSeries
+    uri: https://schema.undata.live/schemas/TimeSeries_17js79
+  1wsd8v:
+    sha256: f7ea9a2ae2f887bd53cb03ef3c932d6f5fc8578a47a7a68cae8060d7fab032e9
+    attribute: null
+    name: ProcessingModule
+    uri: https://schema.undata.live/schemas/ProcessingModule_1wsd8v
+  3rq2nsj:
+    sha256: f7ea9a2ae2f887bd53cb03ef3c932d6f5fc8578a47a7a68cae8060d7fab032e9
+    attribute: null
+    name: Images
+    uri: https://schema.undata.live/schemas/Images_3rq2nsj
+  3rq2nsjt:
+    sha256: f7ea9a2ae2f887bd53cb03ef3c932d6f5fc8578a47a7a68cae8060d7fab032e9
+    attribute: null
+    name: SpatialSeries
+    uri: https://schema.undata.live/schemas/SpatialSeries_3rq2nsjt
+  3rq2nsjt4:
+    sha256: f7ea9a2ae2f887bd53cb03ef3c932d6f5fc8578a47a7a68cae8060d7fab032e9
+    attribute: null
+    name: Device
+    uri: https://schema.undata.live/schemas/Device_3rq2nsjt4
+  3rq2nsjt4o:
+    sha256: f7ea9a2ae2f887bd53cb03ef3c932d6f5fc8578a47a7a68cae8060d7fab032e9
+    attribute: null
+    name: PlaneSegmentation
+    uri: https://schema.undata.live/schemas/PlaneSegmentation_3rq2nsjt4o
+  1sqdx0:
+    sha256: e94d427127b2bb12bc6437b05738f72ec3bb4bc131b28989eaa2a3ed7e5aec3a
+    attribute: null
+    name: ElectricalSeries
+    uri: https://schema.undata.live/schemas/ElectricalSeries_1sqdx0
+  3jq1h05:
+    sha256: e94d427127b2bb12bc6437b05738f72ec3bb4bc131b28989eaa2a3ed7e5aec3a
+    attribute: null
+    name: SpikeEventSeries
+    uri: https://schema.undata.live/schemas/SpikeEventSeries_3jq1h05
+  3jq1h05b:
+    sha256: e94d427127b2bb12bc6437b05738f72ec3bb4bc131b28989eaa2a3ed7e5aec3a
+    attribute: null
+    name: FeatureExtraction
+    uri: https://schema.undata.live/schemas/FeatureExtraction_3jq1h05b
+  2dxd2o9:
+    sha256: 9cf492b6c7f7a0664f0f358fbc4dda8218c310e67a82596961090e41f91c92dc
+    attribute: null
+    name: EventDetection
+    uri: https://schema.undata.live/schemas/EventDetection_2dxd2o9
+  3jq1h05be:
+    sha256: e94d427127b2bb12bc6437b05738f72ec3bb4bc131b28989eaa2a3ed7e5aec3a
+    attribute: null
+    name: ElectrodesTable
+    uri: https://schema.undata.live/schemas/ElectrodesTable_3jq1h05be
+  3jq1h05bev:
+    sha256: e94d427127b2bb12bc6437b05738f72ec3bb4bc131b28989eaa2a3ed7e5aec3a
+    attribute: null
+    name: OpticalChannel
+    uri: https://schema.undata.live/schemas/OpticalChannel_3jq1h05bev
+  2dxd2o9e:
+    sha256: 9cf492b6c7f7a0664f0f358fbc4dda8218c310e67a82596961090e41f91c92dc
+    attribute: null
+    name: Clustering
+    uri: https://schema.undata.live/schemas/Clustering_2dxd2o9e
+  1xdk43oy88:
+    sha256: 7eb97ff23ac52d847422a2c0ccb17c60cdaac52a966073a9bf96c35de49767ac
+    attribute: null
+    name: RGBAImage
+    uri: https://schema.undata.live/schemas/RGBAImage_1xdk43oy88
+  2dxd2o9ed:
+    sha256: 9cf492b6c7f7a0664f0f358fbc4dda8218c310e67a82596961090e41f91c92dc
+    attribute: null
+    name: PatchClampSeries
+    uri: https://schema.undata.live/schemas/PatchClampSeries_2dxd2o9ed
+  1aha6x:
+    sha256: a7846a8e84bd28a82c3c0655be77cfd2bb1c287c99688a4213d1bbbd862f9e2a
+    attribute: null
+    name: SweepTable
+    uri: https://schema.undata.live/schemas/SweepTable_1aha6x
+  2jpites:
+    sha256: a7846a8e84bd28a82c3c0655be77cfd2bb1c287c99688a4213d1bbbd862f9e2a
+    attribute: null
+    name: ImageSeries
+    uri: https://schema.undata.live/schemas/ImageSeries_2jpites
+  2dxd2o9ed2:
+    sha256: 9cf492b6c7f7a0664f0f358fbc4dda8218c310e67a82596961090e41f91c92dc
+    attribute: null
+    name: ImagingRetinotopy
+    uri: https://schema.undata.live/schemas/ImagingRetinotopy_2dxd2o9ed2
+  nfg5dk:
+    sha256: 5470aa387e9dc5349f34ddfe487d50c79bd38ffaf67714d5522287daaab30788
+    attribute: null
+    name: TimeSeriesReferenceVectorData
+    uri: https://schema.undata.live/schemas/TimeSeriesReferenceVectorData_nfg5dk
+  1a86x1z:
+    sha256: 5470aa387e9dc5349f34ddfe487d50c79bd38ffaf67714d5522287daaab30788
+    attribute: null
+    name: NWBContainer
+    uri: https://schema.undata.live/schemas/NWBContainer_1a86x1z
+  1a86x1zg:
+    sha256: 5470aa387e9dc5349f34ddfe487d50c79bd38ffaf67714d5522287daaab30788
+    attribute: null
+    name: NWBDataInterface
+    uri: https://schema.undata.live/schemas/NWBDataInterface_1a86x1zg
+  1a86x1zgr:
+    sha256: 5470aa387e9dc5349f34ddfe487d50c79bd38ffaf67714d5522287daaab30788
+    attribute: null
+    name: BehavioralEpochs
+    uri: https://schema.undata.live/schemas/BehavioralEpochs_1a86x1zgr
+  1a86x1zgrc:
+    sha256: 5470aa387e9dc5349f34ddfe487d50c79bd38ffaf67714d5522287daaab30788
+    attribute: null
+    name: CorrectedImageStack
+    uri: https://schema.undata.live/schemas/CorrectedImageStack_1a86x1zgrc
+  1k3d5a:
+    sha256: ca2a1f1a49c77a0214800d907a3f19428e35333df14077ed3a3a41e0a7823289
+    attribute: null
+    name: IndexSeries
+    uri: https://schema.undata.live/schemas/IndexSeries_1k3d5a
+  32odca0:
+    sha256: ca2a1f1a49c77a0214800d907a3f19428e35333df14077ed3a3a41e0a7823289
+    attribute: null
+    name: IntervalSeries
+    uri: https://schema.undata.live/schemas/IntervalSeries_32odca0
+  s1r1jc:
+    sha256: 6516d188e2d3c85ea520171d505514db857496d07f89aa7bff228712d2c7f7df
+    attribute: null
+    name: OnePhotonSeries
+    uri: https://schema.undata.live/schemas/OnePhotonSeries_s1r1jc
+  ohuqre:
+    sha256: 5848f3faaf4a76d26b1c5c1e7bade53fd89d400293b4879a5ca6bc4d60071419
+    attribute: null
+    name: TwoPhotonSeries
+    uri: https://schema.undata.live/schemas/TwoPhotonSeries_ohuqre
+  16pj3t:
+    sha256: 99ed3b261bb048c40e473710e70aa5e2b660fb95ca42ee5ffbeb9f7059aeb953
+    attribute: null
+    name: acquisition
+    uri: https://schema.undata.live/schemas/acquisition_16pj3t
+  2c9o79n:
+    sha256: 99ed3b261bb048c40e473710e70aa5e2b660fb95ca42ee5ffbeb9f7059aeb953
+    attribute: null
+    name: Calibration
+    uri: https://schema.undata.live/schemas/Calibration_2c9o79n
+  vs5a3n:
+    sha256: 728b3a63928648e08831593e1a484fef058db289f86b561ce9060137a1223311
+    attribute: null
+    name: Channel
+    uri: https://schema.undata.live/schemas/Channel_vs5a3n
+  1lfziy:
+    sha256: cf083dba9dce3d3bdd9da795179e79fe668a8e993395d0d09b5fe3411a7e9c37
+    attribute: null
+    name: CoupledPlane
+    uri: https://schema.undata.live/schemas/CoupledPlane_1lfziy
+  dybg1c:
+    sha256: 3249dbf091cb9dd126f077a4eb09d1575cc951ae4cbd411ee5d8916a309ac3ba
+    attribute: null
+    name: DetectorConfig
+    uri: https://schema.undata.live/schemas/DetectorConfig_dybg1c
+  ke06ma:
+    sha256: 497bbf820746b488def5dba3b1543deeb5a819d459f55942a92fadb2df9bd4fe
+    attribute: null
+    name: ImageSPIM
+    uri: https://schema.undata.live/schemas/ImageSPIM_ke06ma
+  11i3hf:
+    sha256: 872980ecd947867b38426502b463def45c946f1e366f2ce01fed06946203cea8
+    attribute: null
+    name: LaserConfig
+    uri: https://schema.undata.live/schemas/LaserConfig_11i3hf
+  g4e3jv:
+    sha256: 3a1acd7bb5f1e70ff79a321387fb79390614d030317231a8c6e067ba324606f6
+    attribute: null
+    name: MRIScan
+    uri: https://schema.undata.live/schemas/MRIScan_g4e3jv
+  exa20x:
+    sha256: 35c9e1c1aa1ac67ae9093f41f08f4134b2031a4d522001aeff9d90c5f5c2ba5f
+    attribute: null
+    name: OlfactometerChannelInfo
+    uri: https://schema.undata.live/schemas/OlfactometerChannelInfo_exa20x
+  ggfdje:
+    sha256: 3b4f424a95ecc89ecb2edfe3f84f34e0c183ad6aeef8e071a2a00ba563b242e8
+    attribute: null
+    name: PerformanceMetrics
+    uri: https://schema.undata.live/schemas/PerformanceMetrics_ggfdje
+  1cul62:
+    sha256: b00eaffe564e05723c86fa32d45be8336154c8e91adbd5e2c8036d6ed03fbdec
+    attribute: null
+    name: PowerCalibration
+    uri: https://schema.undata.live/schemas/PowerCalibration_1cul62
+  153wox:
+    sha256: 94286d287c114c59185f1d60785f3664ef23dea8b28cb4a3ba20687c65248b09
+    attribute: null
+    name: Slap2Plane
+    uri: https://schema.undata.live/schemas/Slap2Plane_153wox
+  edcoxt:
+    sha256: 33cb2e416b268c0b4229b5a6adf28778c1bdef05d2bc8f825b9df9bd1e488e4d
+    attribute: null
+    name: ViralMaterial
+    uri: https://schema.undata.live/schemas/ViralMaterial_edcoxt
+  11f16x:
+    sha256: 03bef8c9326bf8a23b8706d789ea33cdbc8d4a14408f8c7f511f4d4bced641d9
+    attribute: null
+    name: VolumeCalibration
+    uri: https://schema.undata.live/schemas/VolumeCalibration_11f16x
+  1yjyd2:
+    sha256: fe4841b5a0e45fc9febaccd2e964c795f7cc54fdfbe7c959b7ec1dfa99cff6ce
+    attribute: null
+    name: Camera
+    uri: https://schema.undata.live/schemas/Camera_1yjyd2
+  1a2kr8:
+    sha256: a60b80d61fc735ebf35079d60ecd39fcb5f8431c31604ca22f2147cb40a04ebe
+    attribute: null
+    name: DAQChannel
+    uri: https://schema.undata.live/schemas/DAQChannel_1a2kr8
+  3v7j9u4:
+    sha256: fe4841b5a0e45fc9febaccd2e964c795f7cc54fdfbe7c959b7ec1dfa99cff6ce
+    attribute: null
+    name: Detector
+    uri: https://schema.undata.live/schemas/Detector_3v7j9u4
+  dpm75y:
+    sha256: 316adac662f8ea20b47abaa4cbb3eb2ea78546374cd120e6c18dddc2f00c8e4d
+    attribute: null
+    name: DigitalMicromirrorDevice
+    uri: https://schema.undata.live/schemas/DigitalMicromirrorDevice_dpm75y
+  7kgyr2:
+    sha256: 1b4723ee43c249d9b6d20bc207ce4c496c65b51a924fc036c1cbb149a31f28b9
+    attribute: null
+    name: Filter
+    uri: https://schema.undata.live/schemas/Filter_7kgyr2
+  u9ak1p:
+    sha256: 6d0d64fdbc1887459190df1b264618ebbfbc025b6c161c5f60ccd1db3ea89e55
+    attribute: null
+    name: Lamp
+    uri: https://schema.undata.live/schemas/Lamp_u9ak1p
+  21zulik:
+    sha256: 872980ecd947867b38426502b463def45c946f1e366f2ce01fed06946203cea8
+    attribute: null
+    name: Laser
+    uri: https://schema.undata.live/schemas/Laser_21zulik
+  1np9hiv:
+    sha256: 6d0d64fdbc1887459190df1b264618ebbfbc025b6c161c5f60ccd1db3ea89e55
+    attribute: null
+    name: LightEmittingDiode
+    uri: https://schema.undata.live/schemas/LightEmittingDiode_1np9hiv
+  rjtb2w:
+    sha256: 634b1c58c431995074e271ceea0e4c1c5eaa2c43d1ce56737dad64c375d47b37
+    attribute: null
+    name: Monitor
+    uri: https://schema.undata.live/schemas/Monitor_rjtb2w
+  13m26s:
+    sha256: 8ec460d02f8e43f5bd6a47959364f544f551d1a8edf305a8a1998cc1d4393d33
+    attribute: null
+    name: NeuropixelsBasestation
+    uri: https://schema.undata.live/schemas/NeuropixelsBasestation_13m26s
+  6l4v1f:
+    sha256: 17bd8323ff2aee5d7c4cdc42aa0d66118c2defc2105f8beba8a872ec83df954e
+    attribute: null
+    name: OlfactometerChannel
+    uri: https://schema.undata.live/schemas/OlfactometerChannel_6l4v1f
+  ra3n09:
+    sha256: 62522d39c778d9051dc6df60b0f6adddd41bd7e3d98e55804a406a85a4e94772
+    attribute: null
+    name: PolygonalScanner
+    uri: https://schema.undata.live/schemas/PolygonalScanner_ra3n09
+  yme2cp:
+    sha256: 7cc7a1698aef1b7350991fdc43225b179e6e55fd0001d28d3e29bb43785330ee
+    attribute: null
+    name: ProbePort
+    uri: https://schema.undata.live/schemas/ProbePort_yme2cp
+  21zulikv:
+    sha256: 872980ecd947867b38426502b463def45c946f1e366f2ce01fed06946203cea8
+    attribute: null
+    name: Treadmill
+    uri: https://schema.undata.live/schemas/Treadmill_21zulikv
+  14qfpa:
+    sha256: 92cf27c3b0f0c51670b85f3c3137e95b92b8a02eb702e457f39144a81ff1e6c0
+    attribute: null
+    name: Wheel
+    uri: https://schema.undata.live/schemas/Wheel_14qfpa
+  scs0t6n:
+    sha256: 33cb2e416b268c0b4229b5a6adf28778c1bdef05d2bc8f825b9df9bd1e488e4d
+    attribute: null
+    name: _Analoginput
+    uri: https://schema.undata.live/schemas/_Analoginput_scs0t6n
+  scs0t6nt:
+    sha256: 33cb2e416b268c0b4229b5a6adf28778c1bdef05d2bc8f825b9df9bd1e488e4d
+    attribute: null
+    name: _Archimedes
+    uri: https://schema.undata.live/schemas/_Archimedes_scs0t6nt
+  scs0t6nt4:
+    sha256: 33cb2e416b268c0b4229b5a6adf28778c1bdef05d2bc8f825b9df9bd1e488e4d
+    attribute: null
+    name: _Cameracontroller
+    uri: https://schema.undata.live/schemas/_Cameracontroller_scs0t6nt4
+  scs0t6nt45:
+    sha256: 33cb2e416b268c0b4229b5a6adf28778c1bdef05d2bc8f825b9df9bd1e488e4d
+    attribute: null
+    name: aind_data_schema_models__harp_types___Behavior
+    uri: https://schema.undata.live/schemas/aind_data_schema_models__harp_types___Behavior_scs0t6nt45
+  1uqcxm:
+    sha256: f081d7319d62d4075cb5f23feca79be2e2defce127b3c270d61287739109c123
+    attribute: null
+    name: Fluorophore
+    uri: https://schema.undata.live/schemas/Fluorophore_1uqcxm
+  1863xj:
+    sha256: 9f30c2889b1b63cc2d2aa8c41bf748c7ac754b1ab6f79af7a3cc4d88bab4cea1
+    attribute: null
+    name: GroundWireImplant
+    uri: https://schema.undata.live/schemas/GroundWireImplant_1863xj
+  1ommkl:
+    sha256: da8257c35f78e0da21f0e71da256e5aff43a7186e8b0df67f8104bd2f65eb444
+    attribute: null
+    name: HCRSeries
+    uri: https://schema.undata.live/schemas/HCRSeries_1ommkl
+  8ixrfq:
+    sha256: 1eba7b26c84e811a553b8f590fef208a9c81e523190fae6916a9f05244b22775
+    attribute: null
+    name: HybridizationChainReaction
+    uri: https://schema.undata.live/schemas/HybridizationChainReaction_8ixrfq
+  1z92ad:
+    sha256: 07221ad592f4c9e3758a289c0b979cb130ad5ffe31dc5dd2ee8aff0940c81656
+    attribute: null
+    name: WaterRestriction
+    uri: https://schema.undata.live/schemas/WaterRestriction_1z92ad
+  dtpf4t:
+    sha256: 31d3a9dd475ecfe95e9e2678bdd7b9feac6c131c2586c37838ff996c59fd2734
+    attribute: null
+    name: HumanSubject
+    uri: https://schema.undata.live/schemas/HumanSubject_dtpf4t
+  1i4x40:
+    sha256: c31cae831c9bec8973ea1dc98733935c32abb6950539026e2b46c5e1a87dd884
+    attribute: null
+    name: AcquisitionSubjectDetails
+    uri: https://schema.undata.live/schemas/AcquisitionSubjectDetails_1i4x40
+  1gvv4e:
+    sha256: be99f715d76db01825b81e034e7e5c42eb3b1be71b4ca3b9050ea3a06593d2ba
+    attribute: null
+    name: AirPuffConfig
+    uri: https://schema.undata.live/schemas/AirPuffConfig_1gvv4e
+  106os1:
+    sha256: 826a79e5254507553fa9f8cb634c7eb7692d0e933e52980b5e52cb6da27989a0
+    attribute: null
+    name: Anaesthetic
+    uri: https://schema.undata.live/schemas/Anaesthetic_106os1
+  97998i:
+    sha256: 2129c202c35b52dd07146b479024b3b204d76c79e978a769a644a97659d6257b
+    attribute: null
+    name: Immersion
+    uri: https://schema.undata.live/schemas/Immersion_97998i
+  161soe:
+    sha256: 978cf398cf2a381449b9d8882d7d2a6b03e7732feb246c7884ece15ab6d249e6
+    attribute: null
+    name: InjectionDynamics
+    uri: https://schema.undata.live/schemas/InjectionDynamics_161soe
+  clu0if:
+    sha256: 2d6f4317fdb691def9d67637e119fd0afd7bff7a5fcdf618595d8d5d1f637ecd
+    attribute: null
+    name: LickSpoutConfig
+    uri: https://schema.undata.live/schemas/LickSpoutConfig_clu0if
+  fros0i:
+    sha256: 38d53ad2358d49c9c27531adbd4e4e8c615ef1625dcd5f443406f43fc4bbfeae
+    attribute: null
+    name: LightEmittingDiodeConfig
+    uri: https://schema.undata.live/schemas/LightEmittingDiodeConfig_fros0i
+  z3lpkd:
+    sha256: 7e80c3adfb6292680a01f2df5fe858cafaf8a502258dbb6f6ec4a1f609681042
+    attribute: null
+    name: MISModuleConfig
+    uri: https://schema.undata.live/schemas/MISModuleConfig_z3lpkd
+  v43evoe:
+    sha256: 38d53ad2358d49c9c27531adbd4e4e8c615ef1625dcd5f443406f43fc4bbfeae
+    attribute: null
+    name: NonViralMaterial
+    uri: https://schema.undata.live/schemas/NonViralMaterial_v43evoe
+  18d098:
+    sha256: 9fe18bb98186751db73650901214e8f50592be09fbc93aaaee146dc2577064fa
+    attribute: null
+    name: PlanarImageStack
+    uri: https://schema.undata.live/schemas/PlanarImageStack_18d098
+  11l6f7:
+    sha256: 87787b764bcb12be469892e9f5dbe2509488001424883549930a8419086311d3
+    attribute: null
+    name: Plane
+    uri: https://schema.undata.live/schemas/Plane_11l6f7
+  ihjbp1:
+    sha256: 42a0faf5a2572ebe9711a3fb8b6146ed7ac0266cba5cec8108038de507b67459
+    attribute: null
+    name: SamplingStrategy
+    uri: https://schema.undata.live/schemas/SamplingStrategy_ihjbp1
+  v43evoec:
+    sha256: 38d53ad2358d49c9c27531adbd4e4e8c615ef1625dcd5f443406f43fc4bbfeae
+    attribute: null
+    name: SpeakerConfig
+    uri: https://schema.undata.live/schemas/SpeakerConfig_v43evoec
+  1rwn64:
+    sha256: e652facbc3a75978b7029e7d019dcdf39f355a77d9c6d7b5dbdba93c2daf2f44
+    attribute: null
+    name: AirPuffDevice
+    uri: https://schema.undata.live/schemas/AirPuffDevice_1rwn64
+  3i3csve:
+    sha256: e652facbc3a75978b7029e7d019dcdf39f355a77d9c6d7b5dbdba93c2daf2f44
+    attribute: null
+    name: Disc
+    uri: https://schema.undata.live/schemas/Disc_3i3csve
+  v43evoecx:
+    sha256: 38d53ad2358d49c9c27531adbd4e4e8c615ef1625dcd5f443406f43fc4bbfeae
+    attribute: null
+    name: FiberPatchCord
+    uri: https://schema.undata.live/schemas/FiberPatchCord_v43evoecx
+  3i3csve1:
+    sha256: e652facbc3a75978b7029e7d019dcdf39f355a77d9c6d7b5dbdba93c2daf2f44
+    attribute: null
+    name: FiberProbe
+    uri: https://schema.undata.live/schemas/FiberProbe_3i3csve1
+  xoqmlb:
+    sha256: 796930df6f3b8ad7be5639d6fd3324cde3dc55186ef6c56cd101b0c5c38eae93
+    attribute: null
+    name: LickSpout
+    uri: https://schema.undata.live/schemas/LickSpout_xoqmlb
+  3i3csve1v:
+    sha256: e652facbc3a75978b7029e7d019dcdf39f355a77d9c6d7b5dbdba93c2daf2f44
+    attribute: null
+    name: MotorizedStage
+    uri: https://schema.undata.live/schemas/MotorizedStage_3i3csve1v
+  s3m7d6:
+    sha256: 6546a1ca815ea0235e4f71dabb763475c931dd079e663ea56c4886ea5eec6b8e
+    attribute: null
+    name: Objective
+    uri: https://schema.undata.live/schemas/Objective_s3m7d6
+  2rltsb:
+    sha256: 09f8cd0b98831b9538cee733bad2464b0f7897612fff4a637c647c5e4074429e
+    attribute: null
+    name: PockelsCell
+    uri: https://schema.undata.live/schemas/PockelsCell_2rltsb
+  sk5hbk:
+    sha256: 66ee6af04a8e4706cbb4318ae3b053e43a6e09f12e95b865c849168b8424d32c
+    attribute: null
+    name: Scanner
+    uri: https://schema.undata.live/schemas/Scanner_sk5hbk
+  1catpt:
+    sha256: ae1431fc149f6822dcc4e0e1716b38feefb4d4d9d0a6bd5ff977735cd24a7d2e
+    attribute: null
+    name: ScanningStage
+    uri: https://schema.undata.live/schemas/ScanningStage_1catpt
+  3i3csve1vz:
+    sha256: e652facbc3a75978b7029e7d019dcdf39f355a77d9c6d7b5dbdba93c2daf2f44
+    attribute: null
+    name: Tube
+    uri: https://schema.undata.live/schemas/Tube_3i3csve1vz
+  kgo0rb:
+    sha256: 49bff9d72882762302d69c3a8ec7ce7a5c61e7b54565e505e938a283f4c7801d
+    attribute: null
+    name: Craniotomy
+    uri: https://schema.undata.live/schemas/Craniotomy_kgo0rb
+  gafz24:
+    sha256: 3ab5e93c4d58e8e607ee5ee3d8457683d8689757ef458fdff4a19557deb96fb9
+    attribute: null
+    name: PlanarSection
+    uri: https://schema.undata.live/schemas/PlanarSection_gafz24
+  1geh37:
+    sha256: bcdc486dc58b3152a12d2c1dec0266c2c45fa370aec127f9dd2a4f3983f3b121
+    attribute: null
+    name: ProteinProbe
+    uri: https://schema.undata.live/schemas/ProteinProbe_1geh37
+  1so1w7:
+    sha256: e911715906d7120f854f850a0f30ab8a37df9087b29be9764310035d785ac88a
+    attribute: null
+    name: SampleCollection
+    uri: https://schema.undata.live/schemas/SampleCollection_1so1w7
+  118oxb:
+    sha256: 86387ab5d69aa6d10cc1afd4181eaba98b4be706fa8ee9c3cf9f9d2f9a614e18
+    attribute: null
+    name: Section
+    uri: https://schema.undata.live/schemas/Section_118oxb
+  192vff:
+    sha256: a27875d7ea71a60fc0f1f04317c982a52c4d4a2edd872758ed0371ef54344380
+    attribute: null
+    name: SmallMoleculeProbe
+    uri: https://schema.undata.live/schemas/SmallMoleculeProbe_192vff
+  14l6o1:
+    sha256: 924894453b088e7b81914341266a7d0cb19f0767e9032544fa2109ce9aac7535
+    attribute: null
+    name: Surgery
+    uri: https://schema.undata.live/schemas/Surgery_14l6o1
+  cg4s60:
+    sha256: 2cdd2798f025eb6a6531c6d1983d6066c92a87fdedc8f12be7bac04145dc03bc
+    attribute: null
+    name: MyomatrixArray
+    uri: https://schema.undata.live/schemas/MyomatrixArray_cg4s60
+  vficd4:
+    sha256: 71475a18231fd8c8d7ddbdad495fdc80ce9a0afab49aea5c12b6b25af09e7a7b
+    attribute: null
+    name: Atlas
+    uri: https://schema.undata.live/schemas/Atlas_vficd4
+  1uraal:
+    sha256: 06aeeedd23c23b4dacb908c1bfc6c259bf57503d397c36ad5bde638ff8140d59
+    attribute: null
+    name: CoordinateSystem
+    uri: https://schema.undata.live/schemas/CoordinateSystem_1uraal
+  1jpd4f:
+    sha256: c8c34cb8a5f6c5b1a01e29046468515e435e06523cf28e78d203e38cbdac8e36
+    attribute: null
+    name: PlanarImage
+    uri: https://schema.undata.live/schemas/PlanarImage_1jpd4f
+  cg355y:
+    sha256: 2cdbfce673478a608c9303f75c538ca7443d886688e0276d55d196a426988b68
+    attribute: null
+    name: Arena
+    uri: https://schema.undata.live/schemas/Arena_cg355y
+  1f9gzp:
+    sha256: b8c16dc13e481ac38b62d3b6c5057169756f6a1d2f037b58c5d7da0a9b6b68fc
+    attribute: null
+    name: Enclosure
+    uri: https://schema.undata.live/schemas/Enclosure_1f9gzp
+  j7tyjs:
+    sha256: 4542e72863c7baa7a92859a451621b2ae7cf09729c5b80dcf8dd4f1ddccbef81
+    attribute: null
+    name: Catheter
+    uri: https://schema.undata.live/schemas/Catheter_j7tyjs
+  1dnxb4:
+    sha256: b2fe9196a44fd009f44731114fec7dc9aa75870578563b7891481696170ccaa4
+    attribute: null
+    name: AtlasCoordinate
+    uri: https://schema.undata.live/schemas/AtlasCoordinate_1dnxb4
+  1wk0so:
+    sha256: f714b529d46d65c83c6d793f3668427ebce41682a400c481df35f186777ccfc4
+    attribute: null
+    name: CatheterConfig
+    uri: https://schema.undata.live/schemas/CatheterConfig_1wk0so
+  twtpxo:
+    sha256: 6bcddc8c597c75b8799b41d04f99476655a4a95b2e5ec65a91c8079df3a1bf08
+    attribute: null
+    name: CombinedData
+    uri: https://schema.undata.live/schemas/CombinedData_twtpxo
+  1n0nw9i:
+    sha256: 6bcddc8c597c75b8799b41d04f99476655a4a95b2e5ec65a91c8079df3a1bf08
+    attribute: null
+    name: EphysAssemblyConfig
+    uri: https://schema.undata.live/schemas/EphysAssemblyConfig_1n0nw9i
+  1n0nw9iw:
+    sha256: 6bcddc8c597c75b8799b41d04f99476655a4a95b2e5ec65a91c8079df3a1bf08
+    attribute: null
+    name: FiberAssemblyConfig
+    uri: https://schema.undata.live/schemas/FiberAssemblyConfig_1n0nw9iw
+  1n0nw9iwh:
+    sha256: 6bcddc8c597c75b8799b41d04f99476655a4a95b2e5ec65a91c8079df3a1bf08
+    attribute: null
+    name: MISCameraConfig
+    uri: https://schema.undata.live/schemas/MISCameraConfig_1n0nw9iwh
+  3r9luk6:
+    sha256: f714b529d46d65c83c6d793f3668427ebce41682a400c481df35f186777ccfc4
+    attribute: null
+    name: ManipulatorConfig
+    uri: https://schema.undata.live/schemas/ManipulatorConfig_3r9luk6
+  1n0nw9iwhy:
+    sha256: 6bcddc8c597c75b8799b41d04f99476655a4a95b2e5ec65a91c8079df3a1bf08
+    attribute: null
+    name: LaserAssembly
+    uri: https://schema.undata.live/schemas/LaserAssembly_1n0nw9iwhy
+  3r9luk6c:
+    sha256: f714b529d46d65c83c6d793f3668427ebce41682a400c481df35f186777ccfc4
+    attribute: null
+    name: SampleChamberConfig
+    uri: https://schema.undata.live/schemas/SampleChamberConfig_3r9luk6c
+  pr1yvv:
+    sha256: 5ccf65db4245d21ecdbd7f5b0daa7a7d63d5cf206a5a871097f37e78d2274a1a
+    attribute: null
+    name: instrument
+    uri: https://schema.undata.live/schemas/instrument_pr1yvv
+  mnvyvi:
+    sha256: 51ae514ef67f635847edc4fcba5ab5f7e0ef37df50cb2a3a5c9d4a042a08bfe5
+    attribute: null
+    name: CameraAssembly
+    uri: https://schema.undata.live/schemas/CameraAssembly_mnvyvi
+  3r9luk6co:
+    sha256: f714b529d46d65c83c6d793f3668427ebce41682a400c481df35f186777ccfc4
+    attribute: null
+    name: PatchClampEphysAssembly
+    uri: https://schema.undata.live/schemas/PatchClampEphysAssembly_3r9luk6co
+  3r9luk6coi:
+    sha256: f714b529d46d65c83c6d793f3668427ebce41682a400c481df35f186777ccfc4
+    attribute: null
+    name: ProbeImplant
+    uri: https://schema.undata.live/schemas/ProbeImplant_3r9luk6coi
+  1nag2s:
+    sha256: d5af8823153f77943305ba8cc39b344dce853419c8358c2d50f6359ee4584e1d
+    attribute: null
+    name: FluorescentStain
+    uri: https://schema.undata.live/schemas/FluorescentStain_1nag2s
+  2pzpy98:
+    sha256: b2fe9196a44fd009f44731114fec7dc9aa75870578563b7891481696170ccaa4
+    attribute: null
+    name: GeneProbe
+    uri: https://schema.undata.live/schemas/GeneProbe_2pzpy98
+  uh2bh1:
+    sha256: 6dd48f95b913f5d90cad468fc6214d5e94302ee5fc1cccb7b87c7500ed719dc4
+    attribute: null
+    name: MyomatrixContact
+    uri: https://schema.undata.live/schemas/MyomatrixContact_uh2bh1
+  2pzpy98q:
+    sha256: b2fe9196a44fd009f44731114fec7dc9aa75870578563b7891481696170ccaa4
+    attribute: null
+    name: MyomatrixThread
+    uri: https://schema.undata.live/schemas/MyomatrixThread_2pzpy98q
+  99qgls:
+    sha256: 21694390b27db2c573f762fcf3a38d8bdfed8e95f6d3d75e364c6818eba2f096
+    attribute: null
+    name: SpecimenProcedure
+    uri: https://schema.undata.live/schemas/SpecimenProcedure_99qgls
+  z2ejns:
+    sha256: 7e6209086249b3d07afa7bd1c81bd5fc614b1c30362c9a1b9e957fc8aa3f0f7e
+    attribute: null
+    name: DAQDevice
+    uri: https://schema.undata.live/schemas/DAQDevice_z2ejns
+  4wbr1n:
+    sha256: 11a70dab2369aa8eded1c476861987c441d1ef74763a4bccb44728fa986d01c7
+    attribute: null
+    name: HarpDevice
+    uri: https://schema.undata.live/schemas/HarpDevice_4wbr1n
+  9nwmiyz:
+    sha256: 11a70dab2369aa8eded1c476861987c441d1ef74763a4bccb44728fa986d01c7
+    attribute: null
+    name: Olfactometer
+    uri: https://schema.undata.live/schemas/Olfactometer_9nwmiyz
+  192afv:
+    sha256: a26984ea32bc19e23acc6f53a207e40713e3acbd4970321e1244137d7951956c
+    attribute: null
+    name: data_description
+    uri: https://schema.undata.live/schemas/data_description_192afv
+  105ir8:
+    sha256: 824c8f511e03695e2594969d3c36f2ff1811814a67343f493c00d266a71c3925
+    attribute: null
+    name: Axis
+    uri: https://schema.undata.live/schemas/Axis_105ir8
+  1u41u1:
+    sha256: ee461a592973514b811f5c04dc02c68a7249860486a1674917edf74bafbfa05c
+    attribute: null
+    name: Affine
+    uri: https://schema.undata.live/schemas/Affine_1u41u1
+  18erdp:
+    sha256: a00e7c1836b42e9aa7dfa18546108ac6c3cf1ed4d2f68e40b93f492a2dd6b4b0
+    attribute: null
+    name: BrainInjection
+    uri: https://schema.undata.live/schemas/BrainInjection_18erdp
+  2fmheuo:
+    sha256: a00e7c1836b42e9aa7dfa18546108ac6c3cf1ed4d2f68e40b93f492a2dd6b4b0
+    attribute: null
+    name: Code
+    uri: https://schema.undata.live/schemas/Code_2fmheuo
+  2fmheuok:
+    sha256: a00e7c1836b42e9aa7dfa18546108ac6c3cf1ed4d2f68e40b93f492a2dd6b4b0
+    attribute: null
+    name: DataStream
+    uri: https://schema.undata.live/schemas/DataStream_2fmheuok
+  2fmheuokp:
+    sha256: a00e7c1836b42e9aa7dfa18546108ac6c3cf1ed4d2f68e40b93f492a2dd6b4b0
+    attribute: null
+    name: ImagingConfig
+    uri: https://schema.undata.live/schemas/ImagingConfig_2fmheuokp
+  2fmheuokpx:
+    sha256: a00e7c1836b42e9aa7dfa18546108ac6c3cf1ed4d2f68e40b93f492a2dd6b4b0
+    attribute: null
+    name: procedures
+    uri: https://schema.undata.live/schemas/procedures_2fmheuokpx
+  yf3n51:
+    sha256: 7c0ccee576e80ca2db2857aea6b05c3da49c4a629a38df35b75c1301ae60ca96
+    attribute: null
+    name: MousePlatformConfig
+    uri: https://schema.undata.live/schemas/MousePlatformConfig_yf3n51
+  6wr0dk:
+    sha256: 18e732a861ad194f8e36c59b27122c9c818b9417e1eac79f910aa3a90b18a662
+    attribute: null
+    name: Rotation
+    uri: https://schema.undata.live/schemas/Rotation_6wr0dk
+  3mg16dr:
+    sha256: ee461a592973514b811f5c04dc02c68a7249860486a1674917edf74bafbfa05c
+    attribute: null
+    name: Scale
+    uri: https://schema.undata.live/schemas/Scale_3mg16dr
+  3mg16drg:
+    sha256: ee461a592973514b811f5c04dc02c68a7249860486a1674917edf74bafbfa05c
+    attribute: null
+    name: Translation
+    uri: https://schema.undata.live/schemas/Translation_3mg16drg
+  1jdeb5:
+    sha256: c79098e85c3993b5770c069515c3ed1b92a29bb6d1017a2a6ae8a2ad9c3cb749
+    attribute: null
+    name: PlanarSectioning
+    uri: https://schema.undata.live/schemas/PlanarSectioning_1jdeb5
+  3mg16drgb:
+    sha256: ee461a592973514b811f5c04dc02c68a7249860486a1674917edf74bafbfa05c
+    attribute: null
+    name: Sectioning
+    uri: https://schema.undata.live/schemas/Sectioning_3mg16drgb
+  1vwuhaz:
+    sha256: 7c0ccee576e80ca2db2857aea6b05c3da49c4a629a38df35b75c1301ae60ca96
+    attribute: null
+    name: CalibrationObject
+    uri: https://schema.undata.live/schemas/CalibrationObject_1vwuhaz
+  j6o2cs:
+    sha256: 452513ec2bde09c0fd199abdac3b6dbccee277ecdbab5600e4236ac993f2f76d
+    attribute: null
+    name: MouseSubject
+    uri: https://schema.undata.live/schemas/MouseSubject_j6o2cs
+  5bd1t1:
+    sha256: 13286965896af3c798f469516700750eab87bab96f041bda4663224b25d6b0df
+    attribute: null
+    name: CalibrationFit
+    uri: https://schema.undata.live/schemas/CalibrationFit_5bd1t1
+  1xcdbu:
+    sha256: f9eb3d4b803a411eb0b817eeecde1b7df5852c4bbb8580890af1105d0fa27d1c
+    attribute: null
+    name: AdditionalImagingDevice
+    uri: https://schema.undata.live/schemas/AdditionalImagingDevice_1xcdbu
+  175lwz:
+    sha256: 9b894b3fd296ee8db3c61e6276ef245da902d4db9a75cb8bee4a7db9d4d28463
+    attribute: null
+    name: EphysProbe
+    uri: https://schema.undata.live/schemas/EphysProbe_175lwz
+  i2spu5:
+    sha256: 41273bcd09093de5ad5e57725def50c47ffe4875f359606a0b7e805e2fe44574
+    attribute: null
+    name: MouseAnatomyModel
+    uri: https://schema.undata.live/schemas/MouseAnatomyModel_i2spu5
+  zo2r225:
+    sha256: 41273bcd09093de5ad5e57725def50c47ffe4875f359606a0b7e805e2fe44574
+    attribute: null
+    name: Person
+    uri: https://schema.undata.live/schemas/Person_zo2r225
+  zo2r225x:
+    sha256: 41273bcd09093de5ad5e57725def50c47ffe4875f359606a0b7e805e2fe44574
+    attribute: null
+    name: _Callithrix_Jacchus
+    uri: https://schema.undata.live/schemas/_Callithrix_Jacchus_zo2r225x
+  zo2r225xy:
+    sha256: 41273bcd09093de5ad5e57725def50c47ffe4875f359606a0b7e805e2fe44574
+    attribute: null
+    name: _Carpa_Hircus
+    uri: https://schema.undata.live/schemas/_Carpa_Hircus_zo2r225xy
+  zo2r225xym:
+    sha256: 41273bcd09093de5ad5e57725def50c47ffe4875f359606a0b7e805e2fe44574
+    attribute: null
+    name: SpeciesModel
+    uri: https://schema.undata.live/schemas/SpeciesModel_zo2r225xym
+  1oouck:
+    sha256: dabb2329bafc5bd1bedd97a2800a9e36079cb7a994f2db1f0de34a0a013b84d4
+    attribute: null
+    name: BrainStructureModel
+    uri: https://schema.undata.live/schemas/BrainStructureModel_1oouck
+  j766rf:
+    sha256: 4531fabb8d2b24fa7ad474db4c58ec53b9cc8dc10b40fecb1605e6973b0e9c1d
+    attribute: null
+    name: Connection
+    uri: https://schema.undata.live/schemas/Connection_j766rf
+  3bqvdqg:
+    sha256: dabb2329bafc5bd1bedd97a2800a9e36079cb7a994f2db1f0de34a0a013b84d4
+    attribute: null
+    name: Container
+    uri: https://schema.undata.live/schemas/Container_3bqvdqg
+  3bqvdqgg:
+    sha256: dabb2329bafc5bd1bedd97a2800a9e36079cb7a994f2db1f0de34a0a013b84d4
+    attribute: null
+    name: DataAsset
+    uri: https://schema.undata.live/schemas/DataAsset_3bqvdqgg
+  3bqvdqggh:
+    sha256: dabb2329bafc5bd1bedd97a2800a9e36079cb7a994f2db1f0de34a0a013b84d4
+    attribute: null
+    name: DeviceConfig
+    uri: https://schema.undata.live/schemas/DeviceConfig_3bqvdqggh
+  3bqvdqgghp:
+    sha256: dabb2329bafc5bd1bedd97a2800a9e36079cb7a994f2db1f0de34a0a013b84d4
+    attribute: null
+    name: subject
+    uri: https://schema.undata.live/schemas/subject_3bqvdqgghp
+  2c9o79nm:
+    sha256: 99ed3b261bb048c40e473710e70aa5e2b660fb95ca42ee5ffbeb9f7059aeb953
+    attribute: null
+    name: acquisition
+    uri: https://schema.undata.live/schemas/acquisition_2c9o79nm
+  1jve3t:
+    sha256: c95dc5dce50098213dbdbf985fd2320fd8ad351cd6f30f0cfaebe6d25c008d27
+    attribute: null
+    name: Calibration
+    uri: https://schema.undata.live/schemas/Calibration_1jve3t
+  jsfiv8:
+    sha256: 4752d544895c5f69813dadd32a56c3886a63046fae25a4e95db2ff1353ea21e7
+    attribute: null
+    name: Channel
+    uri: https://schema.undata.live/schemas/Channel_jsfiv8
+  12jsqr:
+    sha256: 8aefc17cf162d194a6d6ea686d5f8fac01edf3d35b46464c336a4a8b810459bf
+    attribute: null
+    name: CoupledPlane
+    uri: https://schema.undata.live/schemas/CoupledPlane_12jsqr
+  omtg94:
+    sha256: 58c82d88474f2a2b359cb535e22ac4c692169a9d3d2c9417357116e7aab5e276
+    attribute: null
+    name: DetectorConfig
+    uri: https://schema.undata.live/schemas/DetectorConfig_omtg94
+  ha5ill:
+    sha256: 3e491b6976f0ee5a3f35c5f744a1e985914973ba07324953ec921358a392813d
+    attribute: null
+    name: ImageSPIM
+    uri: https://schema.undata.live/schemas/ImageSPIM_ha5ill
+  1tjlhy:
+    sha256: ec39e52aa18d4459033bac0dec8e90ea4de9d9822151bd69b4121a29f8813671
+    attribute: null
+    name: LaserConfig
+    uri: https://schema.undata.live/schemas/LaserConfig_1tjlhy
+  1xzhgc:
+    sha256: fc3ba3fdcc9b91307663e5cace50c21e08122619ba74d88fd547d6b56b04a46d
+    attribute: null
+    name: MRIScan
+    uri: https://schema.undata.live/schemas/MRIScan_1xzhgc
+  1qb2dh:
+    sha256: e08f53c840d0cc1d9c4361eae4a4bb9102258f38088dc6ffe93ddfce40bf3014
+    attribute: null
+    name: OlfactometerChannelInfo
+    uri: https://schema.undata.live/schemas/OlfactometerChannelInfo_1qb2dh
+  20smum:
+    sha256: 0749aaaecc6006b792e322327b4cf5dfcd0307288a597024bccaeca0673c0042
+    attribute: null
+    name: PerformanceMetrics
+    uri: https://schema.undata.live/schemas/PerformanceMetrics_20smum
+  t7kjtn:
+    sha256: 69469c5bc159fc6beafb6dad2c58b46d8a7801d335db2e84ed59867ab66139e5
+    attribute: null
+    name: PowerCalibration
+    uri: https://schema.undata.live/schemas/PowerCalibration_t7kjtn
+  1qzuiw:
+    sha256: e30a763aebbae9a6e1975d75ac85135fbeaa90792f3b75edba6028ee1db6b861
+    attribute: null
+    name: Slap2Plane
+    uri: https://schema.undata.live/schemas/Slap2Plane_1qzuiw
+  1d2gv5:
+    sha256: 04e992e11ab5d82a1ac9e9ce254a7354bde135a56b32acaf2046bc125d69ec98
+    attribute: null
+    name: ViralMaterial
+    uri: https://schema.undata.live/schemas/ViralMaterial_1d2gv5
+  1785g8:
+    sha256: 9bca7562e568890240805bff32b5f0b2a3bc6d5b42189d11be09f0cbf09fad0b
+    attribute: null
+    name: VolumeCalibration
+    uri: https://schema.undata.live/schemas/VolumeCalibration_1785g8
+  1xl5mz:
+    sha256: facc6c9e177fac2ad3ecd20456cfededf749a50702eaa65f8b6912b2162aae65
+    attribute: null
+    name: Camera
+    uri: https://schema.undata.live/schemas/Camera_1xl5mz
+  pvy9mp:
+    sha256: 5d4ce841672572c75a49eb81739a85db6f79c53d9d781fba65cfc0105c6d8d85
+    attribute: null
+    name: DAQChannel
+    uri: https://schema.undata.live/schemas/DAQChannel_pvy9mp
+  3tavjnq:
+    sha256: facc6c9e177fac2ad3ecd20456cfededf749a50702eaa65f8b6912b2162aae65
+    attribute: null
+    name: Detector
+    uri: https://schema.undata.live/schemas/Detector_3tavjnq
+  b0h517:
+    sha256: 27b13fbb929db064ca382e6132fbd78be9f96ba0f086e2a23058381fd9e970e1
+    attribute: null
+    name: DigitalMicromirrorDevice
+    uri: https://schema.undata.live/schemas/DigitalMicromirrorDevice_b0h517
+  ctntj0:
+    sha256: 0148a9d7a7d6a79234726d3f12ab7c31e3e0a37cb6230fd818700b58baddeff8
+    attribute: null
+    name: Filter
+    uri: https://schema.undata.live/schemas/Filter_ctntj0
+  1nblzo:
+    sha256: d5cd5eead3908f4412c300b94d16574df7589ec0185fb8bd1d784584a090cf1f
+    attribute: null
+    name: Lamp
+    uri: https://schema.undata.live/schemas/Lamp_1nblzo
+  3lbobsf:
+    sha256: ec39e52aa18d4459033bac0dec8e90ea4de9d9822151bd69b4121a29f8813671
+    attribute: null
+    name: Laser
+    uri: https://schema.undata.live/schemas/Laser_3lbobsf
+  391qdjf:
+    sha256: d5cd5eead3908f4412c300b94d16574df7589ec0185fb8bd1d784584a090cf1f
+    attribute: null
+    name: LightEmittingDiode
+    uri: https://schema.undata.live/schemas/LightEmittingDiode_391qdjf
+  g0svj6:
+    sha256: 39becea28622dd72d7135f6b055e68afdb7408e998126b4bda3c42889e7ff745
+    attribute: null
+    name: Monitor
+    uri: https://schema.undata.live/schemas/Monitor_g0svj6
+  38fqdm:
+    sha256: 0ba8274ad9ec6c82c4748c335bf503bb7dc56441a39a990eff394ae971726d4b
+    attribute: null
+    name: NeuropixelsBasestation
+    uri: https://schema.undata.live/schemas/NeuropixelsBasestation_38fqdm
+  167fu5:
+    sha256: 981d955a2e69cb613e3aeccfb0c3011f4aeea45bb4bb31eebf094058386f2368
+    attribute: null
+    name: OlfactometerChannel
+    uri: https://schema.undata.live/schemas/OlfactometerChannel_167fu5
+  7ag35x:
+    sha256: 1a463a0537a5adec8f30c06e75830ce1bd16ae8520feba675036bf60679be41a
+    attribute: null
+    name: PolygonalScanner
+    uri: https://schema.undata.live/schemas/PolygonalScanner_7ag35x
+  16jnh2:
+    sha256: 9956913701a8abd2611a9f41e37b6a3195ae2a3967061e73573e7c1b14e24363
+    attribute: null
+    name: ProbePort
+    uri: https://schema.undata.live/schemas/ProbePort_16jnh2
+  3lbobsfm:
+    sha256: ec39e52aa18d4459033bac0dec8e90ea4de9d9822151bd69b4121a29f8813671
+    attribute: null
+    name: Treadmill
+    uri: https://schema.undata.live/schemas/Treadmill_3lbobsfm
+  8q8hel:
+    sha256: 1f75841d126a682cdda333d1e0745ccec160ac04b5188da5f17909f1e23ab7db
+    attribute: null
+    name: Wheel
+    uri: https://schema.undata.live/schemas/Wheel_8q8hel
+  2otduuq:
+    sha256: 04e992e11ab5d82a1ac9e9ce254a7354bde135a56b32acaf2046bc125d69ec98
+    attribute: null
+    name: _Analoginput
+    uri: https://schema.undata.live/schemas/_Analoginput_2otduuq
+  2otduuqb:
+    sha256: 04e992e11ab5d82a1ac9e9ce254a7354bde135a56b32acaf2046bc125d69ec98
+    attribute: null
+    name: _Archimedes
+    uri: https://schema.undata.live/schemas/_Archimedes_2otduuqb
+  2otduuqbw:
+    sha256: 04e992e11ab5d82a1ac9e9ce254a7354bde135a56b32acaf2046bc125d69ec98
+    attribute: null
+    name: _Cameracontroller
+    uri: https://schema.undata.live/schemas/_Cameracontroller_2otduuqbw
+  2otduuqbw5:
+    sha256: 04e992e11ab5d82a1ac9e9ce254a7354bde135a56b32acaf2046bc125d69ec98
+    attribute: null
+    name: aind_data_schema_models__harp_types___Behavior
+    uri: https://schema.undata.live/schemas/aind_data_schema_models__harp_types___Behavior_2otduuqbw5
+  1uihjt:
+    sha256: efb818a014dc70a787aca0630dbd48e45be9dd083ea923561bf9f72ecb597123
+    attribute: null
+    name: Fluorophore
+    uri: https://schema.undata.live/schemas/Fluorophore_1uihjt
+  5e88nz:
+    sha256: 1371dfdfe1bcbd0bde5289aa6cf2e7e3eb7b4518d47e87755131b07af0849696
+    attribute: null
+    name: GroundWireImplant
+    uri: https://schema.undata.live/schemas/GroundWireImplant_5e88nz
+  1xkggo:
+    sha256: faba8062f82de2306935e6b7e332df01e3fbf33c455e97734bf3bea1d3d33102
+    attribute: null
+    name: HCRSeries
+    uri: https://schema.undata.live/schemas/HCRSeries_1xkggo
+  1fy3gr:
+    sha256: bb38859ca2c09243c054693cbb6b90feffe72eada7a7da95c5975a21996450c8
+    attribute: null
+    name: HybridizationChainReaction
+    uri: https://schema.undata.live/schemas/HybridizationChainReaction_1fy3gr
+  1wd364:
+    sha256: f662fec9ea5f8b1ab39c581ccd4982d52b37a340980c2998dc98a9e127fff37c
+    attribute: null
+    name: WaterRestriction
+    uri: https://schema.undata.live/schemas/WaterRestriction_1wd364
+  1t5217:
+    sha256: eac53b9d527c0a43ea08cd7a1e64bd79f0f42c1ecef866faf37aa70499666d37
+    attribute: null
+    name: HumanSubject
+    uri: https://schema.undata.live/schemas/HumanSubject_1t5217
+  1v0b2q:
+    sha256: f180ce884af2327d2b235382bdab576a69feae074afc9b548d6ae4dba9f20a5b
+    attribute: null
+    name: Acquisition
+    uri: https://schema.undata.live/schemas/Acquisition_1v0b2q
+  v7xuw5:
+    sha256: 70855da5a6d9df6b52009ead83f4bac3b6720deb461de69f8c2a7e618f5abbed
+    attribute: null
+    name: ResourceUsage
+    uri: https://schema.undata.live/schemas/ResourceUsage_v7xuw5
+  iqygf0:
+    sha256: 01e082ef1f3e77ad7f96a1ab988278ee1b47a98104776e5a4e3a61b9a027ad8f
+    attribute: null
+    name: AcquisitionSubjectDetails
+    uri: https://schema.undata.live/schemas/AcquisitionSubjectDetails_iqygf0
+  vziba2:
+    sha256: 7347e89a3ceb4884d90d790e4bf9b0723fd7e0830794fcf26503a1f5c0722eb7
+    attribute: null
+    name: AirPuffConfig
+    uri: https://schema.undata.live/schemas/AirPuffConfig_vziba2
+  6us9n0:
+    sha256: 00afb09b15a54f5a2dcb090d2c364fc622c8c362baa567bbe48675aed1e5b3da
+    attribute: null
+    name: Anaesthetic
+    uri: https://schema.undata.live/schemas/Anaesthetic_6us9n0
+  1vilm0:
+    sha256: f355a0be3d12c42dfed8653a9d5c6ab18a919cd20f95153e8111fbb86ccda18c
+    attribute: null
+    name: Immersion
+    uri: https://schema.undata.live/schemas/Immersion_1vilm0
+  1q202y:
+    sha256: dfa708fdf3f96fed9f9b1e88f350c7bdb8aa6b6453fc0491365a93f0eb211af4
+    attribute: null
+    name: InjectionDynamics
+    uri: https://schema.undata.live/schemas/InjectionDynamics_1q202y
+  iz8ueo:
+    sha256: 4466d6f0b3701d791a9df6c668d3663059a4ef3af3b4001737b2984ec2276e55
+    attribute: null
+    name: LickSpoutConfig
+    uri: https://schema.undata.live/schemas/LickSpoutConfig_iz8ueo
+  1ujr22:
+    sha256: efd87e4549afb35d53f76030349afdd781652438e4b680d1ed9e7f05b2e0b2fc
+    attribute: null
+    name: LightEmittingDiodeConfig
+    uri: https://schema.undata.live/schemas/LightEmittingDiodeConfig_1ujr22
+  1vslsg:
+    sha256: f4560b44ce8ad18abbbd717ce883bcfcb563e838b66366f2a33ae54c55f4f5ac
+    attribute: null
+    name: MISModuleConfig
+    uri: https://schema.undata.live/schemas/MISModuleConfig_1vslsg
+  3nb0ep2:
+    sha256: efd87e4549afb35d53f76030349afdd781652438e4b680d1ed9e7f05b2e0b2fc
+    attribute: null
+    name: NonViralMaterial
+    uri: https://schema.undata.live/schemas/NonViralMaterial_3nb0ep2
+  1j473o:
+    sha256: c6a4ce664a07af488e55f45e5cefaf0c501d84a89287874719fb2969593ef927
+    attribute: null
+    name: PlanarImageStack
+    uri: https://schema.undata.live/schemas/PlanarImageStack_1j473o
+  r98jzi:
+    sha256: 623c0c2e17e6513d221cae1274dc3b543196abcb8c822d260c30448c43c077de
+    attribute: null
+    name: Plane
+    uri: https://schema.undata.live/schemas/Plane_r98jzi
+  xtdf11:
+    sha256: 79dfee5577de93eeadbced2b97bdf405df3fc94f1ab2d36b65826de0acba4978
+    attribute: null
+    name: SamplingStrategy
+    uri: https://schema.undata.live/schemas/SamplingStrategy_xtdf11
+  3nb0ep2f:
+    sha256: efd87e4549afb35d53f76030349afdd781652438e4b680d1ed9e7f05b2e0b2fc
+    attribute: null
+    name: SpeakerConfig
+    uri: https://schema.undata.live/schemas/SpeakerConfig_3nb0ep2f
+  1gvij6:
+    sha256: be91008ed23dd99a59f8abf76fac98e1b40aa52280d3dd8442a965e77bfa827e
+    attribute: null
+    name: AirPuffDevice
+    uri: https://schema.undata.live/schemas/AirPuffDevice_1gvij6
+  2wbsdq8:
+    sha256: be91008ed23dd99a59f8abf76fac98e1b40aa52280d3dd8442a965e77bfa827e
+    attribute: null
+    name: Disc
+    uri: https://schema.undata.live/schemas/Disc_2wbsdq8
+  3nb0ep2f4:
+    sha256: efd87e4549afb35d53f76030349afdd781652438e4b680d1ed9e7f05b2e0b2fc
+    attribute: null
+    name: FiberPatchCord
+    uri: https://schema.undata.live/schemas/FiberPatchCord_3nb0ep2f4
+  2wbsdq8s:
+    sha256: be91008ed23dd99a59f8abf76fac98e1b40aa52280d3dd8442a965e77bfa827e
+    attribute: null
+    name: FiberProbe
+    uri: https://schema.undata.live/schemas/FiberProbe_2wbsdq8s
+  16qbjz:
+    sha256: 9a017bed8e8f0e66a631562af25e1d4ff93a2513ed2a5e4b6ca9eba1af2b5cae
+    attribute: null
+    name: LickSpout
+    uri: https://schema.undata.live/schemas/LickSpout_16qbjz
+  2wbsdq8s8:
+    sha256: be91008ed23dd99a59f8abf76fac98e1b40aa52280d3dd8442a965e77bfa827e
+    attribute: null
+    name: MotorizedStage
+    uri: https://schema.undata.live/schemas/MotorizedStage_2wbsdq8s8
+  1nhxwx:
+    sha256: d66fa1f31d4953fab605c4ecd24a3c087ea8c2532413a8f0a477168745567d52
+    attribute: null
+    name: Objective
+    uri: https://schema.undata.live/schemas/Objective_1nhxwx
+  11lsdc:
+    sha256: 87881b8d60ce4e705cec2a3160a861c5c5825ce61f45a5d5c8ffb09c0708eea1
+    attribute: null
+    name: PockelsCell
+    uri: https://schema.undata.live/schemas/PockelsCell_11lsdc
+  5ixs5a:
+    sha256: 13ea92be7c51d21afe9c5249a6d8a346f009d0e94004046001b48752fb6b9ade
+    attribute: null
+    name: Scanner
+    uri: https://schema.undata.live/schemas/Scanner_5ixs5a
+  136wd5:
+    sha256: 8d3fcc90e27eaa8d3c608f3221a30c681fbaf0f61c9a0b4cb1185babe0d5f5d0
+    attribute: null
+    name: ScanningStage
+    uri: https://schema.undata.live/schemas/ScanningStage_136wd5
+  2wbsdq8s8k:
+    sha256: be91008ed23dd99a59f8abf76fac98e1b40aa52280d3dd8442a965e77bfa827e
+    attribute: null
+    name: Tube
+    uri: https://schema.undata.live/schemas/Tube_2wbsdq8s8k
+  14j078:
+    sha256: 9210b7973d4389ea6fc8e51ad64e36468a5580c53e166529a8075a0775c8b445
+    attribute: null
+    name: Craniotomy
+    uri: https://schema.undata.live/schemas/Craniotomy_14j078
+  1fyymh:
+    sha256: bb4eb462d4660cb3a5ea14d1f2f02705b6a3232018e88ed3a59eda290585b2e4
+    attribute: null
+    name: PlanarSection
+    uri: https://schema.undata.live/schemas/PlanarSection_1fyymh
+  1w31qk:
+    sha256: f561afbf9b6714e7d7ebeaee5c3e5e60d4c0848c35fa27dba07979be64f7a4fb
+    attribute: null
+    name: ProteinProbe
+    uri: https://schema.undata.live/schemas/ProteinProbe_1w31qk
+  5wt4nd:
+    sha256: 154e10c9c0364e539963b60cf26737568926d5c0b094331f52a3707637a419e4
+    attribute: null
+    name: SampleCollection
+    uri: https://schema.undata.live/schemas/SampleCollection_5wt4nd
+  1n7yff:
+    sha256: d56fb5ab9868d9dd2096a2516c8c4ce70df06ac75474d7bfb273cf2e9dd67274
+    attribute: null
+    name: Section
+    uri: https://schema.undata.live/schemas/Section_1n7yff
+  trtazk:
+    sha256: 6b4d6be09c2f68e4ed596f06cded35671872341fbe5ac08735474ee25c690ac5
+    attribute: null
+    name: SmallMoleculeProbe
+    uri: https://schema.undata.live/schemas/SmallMoleculeProbe_trtazk
+  8whv08:
+    sha256: 2015f73826225ec218d29299e0b493f722ea8391bf253f1f3719b60a2fff67f9
+    attribute: null
+    name: Surgery
+    uri: https://schema.undata.live/schemas/Surgery_8whv08
+  kch8tw:
+    sha256: 4954a2f44b524e9144c11e1ac13a826cae3dc078a71ea300a50cedeac6bd018c
+    attribute: null
+    name: ResourceTimestamped
+    uri: https://schema.undata.live/schemas/ResourceTimestamped_kch8tw
+  syl4v5:
+    sha256: 68605de172d01e7ce658497d017adcd27ae96ef89837ba457471130179216330
+    attribute: null
+    name: Model
+    uri: https://schema.undata.live/schemas/Model_syl4v5
+  1l53wm4:
+    sha256: 68605de172d01e7ce658497d017adcd27ae96ef89837ba457471130179216330
+    attribute: null
+    name: model
+    uri: https://schema.undata.live/schemas/model_1l53wm4
+  7ccxt0:
+    sha256: 1a773e2450ca159e5f352809d998f9f1b1f0d75c5f87fab9f8d691bcb64f41f1
+    attribute: null
+    name: MyomatrixArray
+    uri: https://schema.undata.live/schemas/MyomatrixArray_7ccxt0
+  1nuvxp:
+    sha256: d7bb6670a6f071a8912fd821dcbc7a69761c02cc04db19632cb5f8203384d2a7
+    attribute: null
+    name: Atlas
+    uri: https://schema.undata.live/schemas/Atlas_1nuvxp
+  1p52v1:
+    sha256: dc5b429bf7b736976f80ea6dd4813dfbb066d975154d29fff4d8aaea1f6e434c
+    attribute: null
+    name: CoordinateSystem
+    uri: https://schema.undata.live/schemas/CoordinateSystem_1p52v1
+  p6w9sv:
+    sha256: 5acac39fcc095bc692e72a72c24530fa26b612675c56ee03197f6d27c93db6ed
+    attribute: null
+    name: PlanarImage
+    uri: https://schema.undata.live/schemas/PlanarImage_p6w9sv
+  1j09k1:
+    sha256: c64009c332350bdba85855e6b47eea648bf6265d99684f59f55d64da6e536c0d
+    attribute: null
+    name: Arena
+    uri: https://schema.undata.live/schemas/Arena_1j09k1
+  fd2i7e:
+    sha256: 375e91aa969ee2fe14999463e618233c8deea0559a9b9fee2f805e0bf7e0efd8
+    attribute: null
+    name: Enclosure
+    uri: https://schema.undata.live/schemas/Enclosure_fd2i7e
+  1sdcsg:
+    sha256: 0671c20099203f5db888c0dd0663088e2fe154941233cde5318e744d23e467c6
+    attribute: null
+    name: Catheter
+    uri: https://schema.undata.live/schemas/Catheter_1sdcsg
+  187iek:
+    sha256: 9f54b1456c856124bcd98c9bcd7178029ccae08837c2aca928c20e7425592775
+    attribute: null
+    name: AtlasCoordinate
+    uri: https://schema.undata.live/schemas/AtlasCoordinate_187iek
+  1n4z5l:
+    sha256: d523570b04dd50c9e578b76e4cfa59af98dc294609aef8b20ea9e5fdbd24bf66
+    attribute: null
+    name: CatheterConfig
+    uri: https://schema.undata.live/schemas/CatheterConfig_1n4z5l
+  k7zml6:
+    sha256: 48e1941a60cd2e5d948b06ce4b14ace7ab7590bab5a80e87ede510c214e088a7
+    attribute: null
+    name: CombinedData
+    uri: https://schema.undata.live/schemas/CombinedData_k7zml6
+  13wdrja:
+    sha256: 48e1941a60cd2e5d948b06ce4b14ace7ab7590bab5a80e87ede510c214e088a7
+    attribute: null
+    name: EphysAssemblyConfig
+    uri: https://schema.undata.live/schemas/EphysAssemblyConfig_13wdrja
+  13wdrjao:
+    sha256: 48e1941a60cd2e5d948b06ce4b14ace7ab7590bab5a80e87ede510c214e088a7
+    attribute: null
+    name: FiberAssemblyConfig
+    uri: https://schema.undata.live/schemas/FiberAssemblyConfig_13wdrjao
+  13wdrjaoj:
+    sha256: 48e1941a60cd2e5d948b06ce4b14ace7ab7590bab5a80e87ede510c214e088a7
+    attribute: null
+    name: MISCameraConfig
+    uri: https://schema.undata.live/schemas/MISCameraConfig_13wdrjaoj
+  38on4so:
+    sha256: d523570b04dd50c9e578b76e4cfa59af98dc294609aef8b20ea9e5fdbd24bf66
+    attribute: null
+    name: ManipulatorConfig
+    uri: https://schema.undata.live/schemas/ManipulatorConfig_38on4so
+  13wdrjaoj3:
+    sha256: 48e1941a60cd2e5d948b06ce4b14ace7ab7590bab5a80e87ede510c214e088a7
+    attribute: null
+    name: LaserAssembly
+    uri: https://schema.undata.live/schemas/LaserAssembly_13wdrjaoj3
+  38on4sof:
+    sha256: d523570b04dd50c9e578b76e4cfa59af98dc294609aef8b20ea9e5fdbd24bf66
+    attribute: null
+    name: SampleChamberConfig
+    uri: https://schema.undata.live/schemas/SampleChamberConfig_38on4sof
+  1et5j9w:
+    sha256: 5ccf65db4245d21ecdbd7f5b0daa7a7d63d5cf206a5a871097f37e78d2274a1a
+    attribute: null
+    name: instrument
+    uri: https://schema.undata.live/schemas/instrument_1et5j9w
+  135eqi:
+    sha256: 8d199ecb09334d3daf40777c54f05d9f1e00ffc672c523d3d07e7ab4bf4ba64b
+    attribute: null
+    name: CameraAssembly
+    uri: https://schema.undata.live/schemas/CameraAssembly_135eqi
+  38on4sofs:
+    sha256: d523570b04dd50c9e578b76e4cfa59af98dc294609aef8b20ea9e5fdbd24bf66
+    attribute: null
+    name: PatchClampEphysAssembly
+    uri: https://schema.undata.live/schemas/PatchClampEphysAssembly_38on4sofs
+  38on4sofsa:
+    sha256: d523570b04dd50c9e578b76e4cfa59af98dc294609aef8b20ea9e5fdbd24bf66
+    attribute: null
+    name: ProbeImplant
+    uri: https://schema.undata.live/schemas/ProbeImplant_38on4sofsa
+  tledn9:
+    sha256: 6aa90595c96d2fc1b20507dfe48c1684ee746e65831b425d2058d7d31aac4a59
+    attribute: null
+    name: FluorescentStain
+    uri: https://schema.undata.live/schemas/FluorescentStain_tledn9
+  2f86hie:
+    sha256: 9f54b1456c856124bcd98c9bcd7178029ccae08837c2aca928c20e7425592775
+    attribute: null
+    name: GeneProbe
+    uri: https://schema.undata.live/schemas/GeneProbe_2f86hie
+  1flbmn:
+    sha256: b9f128661c66281f4669d1cd4a27da0e3c49bff7b71e547951f2edf435ff1db3
+    attribute: null
+    name: MyomatrixContact
+    uri: https://schema.undata.live/schemas/MyomatrixContact_1flbmn
+  2f86hie6:
+    sha256: 9f54b1456c856124bcd98c9bcd7178029ccae08837c2aca928c20e7425592775
+    attribute: null
+    name: MyomatrixThread
+    uri: https://schema.undata.live/schemas/MyomatrixThread_2f86hie6
+  2t6glu:
+    sha256: 0a211e929f16b31ee03669bc0b012d6adaeebb2befdeec1317ca0c92f4497996
+    attribute: null
+    name: SpecimenProcedure
+    uri: https://schema.undata.live/schemas/SpecimenProcedure_2t6glu
+  zjl600:
+    sha256: 00194deada87de6936780d53c3eecc2d47fffe16f8a2ddc9f1b7bc54efe8c8e8
+    attribute: null
+    name: DAQDevice
+    uri: https://schema.undata.live/schemas/DAQDevice_zjl600
+  1dzf87:
+    sha256: b4253e556734dad48d4f7a0fed227ef3203d29d057de27f74698a27d3bdfe55a
+    attribute: null
+    name: HarpDevice
+    uri: https://schema.undata.live/schemas/HarpDevice_1dzf87
+  2qmenau:
+    sha256: b4253e556734dad48d4f7a0fed227ef3203d29d057de27f74698a27d3bdfe55a
+    attribute: null
+    name: Olfactometer
+    uri: https://schema.undata.live/schemas/Olfactometer_2qmenau
+  2gwwqce:
+    sha256: a26984ea32bc19e23acc6f53a207e40713e3acbd4970321e1244137d7951956c
+    attribute: null
+    name: data_description
+    uri: https://schema.undata.live/schemas/data_description_2gwwqce
+  1m47n0:
+    sha256: d1751c3569deefb12e8abc5b626182b2359f28a8c5a49f98f11cf6154b1918cd
+    attribute: null
+    name: DataDescription
+    uri: https://schema.undata.live/schemas/DataDescription_1m47n0
+  1yf9su:
+    sha256: fdd041398e5c4b6ca3c0818725e61d58531c8f3037970ea8842126a971b5e2e0
+    attribute: null
+    name: Axis
+    uri: https://schema.undata.live/schemas/Axis_1yf9su
+  1fjmxq:
+    sha256: b9c5f3466d0bebe772bbec72edffadfc3340715f175ea6d053657444924bc308
+    attribute: null
+    name: CalibrationObject
+    uri: https://schema.undata.live/schemas/CalibrationObject_1fjmxq
+  1qzxv7:
+    sha256: e30cd72db5bc7ad8039ffa3ba84981066d866234b5d290339e1a561fea15711b
+    attribute: null
+    name: Connection
+    uri: https://schema.undata.live/schemas/Connection_1qzxv7
+  12qp63:
+    sha256: 8ba09d10af646e5ae3b11d920490c84132cb93b70e485361a58900aee1c53a2d
+    attribute: null
+    name: Instrument
+    uri: https://schema.undata.live/schemas/Instrument_12qp63
+  2tpbl6d:
+    sha256: b9c5f3466d0bebe772bbec72edffadfc3340715f175ea6d053657444924bc308
+    attribute: null
+    name: MousePlatformConfig
+    uri: https://schema.undata.live/schemas/MousePlatformConfig_2tpbl6d
+  14dk1b:
+    sha256: 918510b474113e5497d2504622c7c0231e294aad6897aab41f6f6ae35a135c6f
+    attribute: null
+    name: Affine
+    uri: https://schema.undata.live/schemas/Affine_14dk1b
+  gqvz83:
+    sha256: 3c5b5e13d25ef58a091d31e41ff60346ba97ed8b405ef7bff0ea8f47d6474299
+    attribute: null
+    name: BrainInjection
+    uri: https://schema.undata.live/schemas/BrainInjection_gqvz83
+  x1jp9lk:
+    sha256: 3c5b5e13d25ef58a091d31e41ff60346ba97ed8b405ef7bff0ea8f47d6474299
+    attribute: null
+    name: Code
+    uri: https://schema.undata.live/schemas/Code_x1jp9lk
+  x1jp9lke:
+    sha256: 3c5b5e13d25ef58a091d31e41ff60346ba97ed8b405ef7bff0ea8f47d6474299
+    attribute: null
+    name: DataStream
+    uri: https://schema.undata.live/schemas/DataStream_x1jp9lke
+  x1jp9lkeo:
+    sha256: 3c5b5e13d25ef58a091d31e41ff60346ba97ed8b405ef7bff0ea8f47d6474299
+    attribute: null
+    name: ImagingConfig
+    uri: https://schema.undata.live/schemas/ImagingConfig_x1jp9lkeo
+  x1jp9lkeoz:
+    sha256: 3c5b5e13d25ef58a091d31e41ff60346ba97ed8b405ef7bff0ea8f47d6474299
+    attribute: null
+    name: Housing
+    uri: https://schema.undata.live/schemas/Housing_x1jp9lkeoz
+  1lw1ac:
+    sha256: d0a38e9aa1b9778099405f2551fc3e35bb7b27b1f383f4a80849145a1c4bdf94
+    attribute: null
+    name: Rotation
+    uri: https://schema.undata.live/schemas/Rotation_1lw1ac
+  27nzfw1:
+    sha256: 918510b474113e5497d2504622c7c0231e294aad6897aab41f6f6ae35a135c6f
+    attribute: null
+    name: Scale
+    uri: https://schema.undata.live/schemas/Scale_27nzfw1
+  27nzfw1x:
+    sha256: 918510b474113e5497d2504622c7c0231e294aad6897aab41f6f6ae35a135c6f
+    attribute: null
+    name: Translation
+    uri: https://schema.undata.live/schemas/Translation_27nzfw1x
+  1ypowa:
+    sha256: fedb4a6ee9edc23a7a81d60227cafae1cc4559691763fe9a32cc7d9035698a58
+    attribute: null
+    name: PlanarSectioning
+    uri: https://schema.undata.live/schemas/PlanarSectioning_1ypowa
+  27nzfw1x6:
+    sha256: 918510b474113e5497d2504622c7c0231e294aad6897aab41f6f6ae35a135c6f
+    attribute: null
+    name: Sectioning
+    uri: https://schema.undata.live/schemas/Sectioning_27nzfw1x6
+  ouf2mw:
+    sha256: 598af9187496c79adfd34bd5e8102209b6f824423bcc5e29ce00a7009cffa063
+    attribute: null
+    name: MouseSubject
+    uri: https://schema.undata.live/schemas/MouseSubject_ouf2mw
+  1k7s50:
+    sha256: ca9b4f50fe101f37a00d2335ce9b41bdfe6015eb9c0fd319c2058568266f93a8
+    attribute: null
+    name: CurationMetric
+    uri: https://schema.undata.live/schemas/CurationMetric_1k7s50
+  nx5e0a:
+    sha256: 5636532a5fd82da2f67be0f0b4a1ace0f82e7ad74ca0d25ac620a93b3aa0dabe
+    attribute: null
+    name: DataProcess
+    uri: https://schema.undata.live/schemas/DataProcess_nx5e0a
+  1b748rt:
+    sha256: 5636532a5fd82da2f67be0f0b4a1ace0f82e7ad74ca0d25ac620a93b3aa0dabe
+    attribute: null
+    name: ModelEvaluation
+    uri: https://schema.undata.live/schemas/ModelEvaluation_1b748rt
+  1b748rt2:
+    sha256: 5636532a5fd82da2f67be0f0b4a1ace0f82e7ad74ca0d25ac620a93b3aa0dabe
+    attribute: null
+    name: ModelTraining
+    uri: https://schema.undata.live/schemas/ModelTraining_1b748rt2
+  a96iwm:
+    sha256: 24f5b636010ea20ee3df88894075915915ddbf472bf8a727914adcf151710d3a
+    attribute: null
+    name: Procedures
+    uri: https://schema.undata.live/schemas/Procedures_a96iwm
+  c34d6s:
+    sha256: 2b8faec4d9682b083de0b7b14533fc7c189e04a7685d58581e1f037c8e3480b6
+    attribute: null
+    name: Processing
+    uri: https://schema.undata.live/schemas/Processing_c34d6s
+  32x31ld:
+    sha256: ca9b4f50fe101f37a00d2335ce9b41bdfe6015eb9c0fd319c2058568266f93a8
+    attribute: null
+    name: QCMetric
+    uri: https://schema.undata.live/schemas/QCMetric_32x31ld
+  nuj2551:
+    sha256: 2b8faec4d9682b083de0b7b14533fc7c189e04a7685d58581e1f037c8e3480b6
+    attribute: null
+    name: QualityControl
+    uri: https://schema.undata.live/schemas/QualityControl_nuj2551
+  nuj2551t:
+    sha256: 2b8faec4d9682b083de0b7b14533fc7c189e04a7685d58581e1f037c8e3480b6
+    attribute: null
+    name: processing
+    uri: https://schema.undata.live/schemas/processing_nuj2551t
+  nuj2551t8:
+    sha256: 2b8faec4d9682b083de0b7b14533fc7c189e04a7685d58581e1f037c8e3480b6
+    attribute: null
+    name: quality_control
+    uri: https://schema.undata.live/schemas/quality_control_nuj2551t8
+  6vi5k4:
+    sha256: 18c743a48931a2a518f29cfa37fc255c7d78dd8728a49029a7ab4bf7f2b8b235
+    attribute: null
+    name: CalibrationFit
+    uri: https://schema.undata.live/schemas/CalibrationFit_6vi5k4
+  15hpze:
+    sha256: 958a74893d3ad7fba6614e21aead72f6a208bcb234dd99485074c26108e7ac7d
+    attribute: null
+    name: AdditionalImagingDevice
+    uri: https://schema.undata.live/schemas/AdditionalImagingDevice_15hpze
+  4h63sl:
+    sha256: 102299b5bf0e0c26274dcd25df59efa5350e60ad4ae7fafb21db23a281ae3665
+    attribute: null
+    name: metadata
+    uri: https://schema.undata.live/schemas/metadata_4h63sl
+  evv47w:
+    sha256: 35a59e1c98affd519e68701a8d0481a25f058fe14bf59769292fe7d2cbdc3278
+    attribute: null
+    name: BrainStructureModel
+    uri: https://schema.undata.live/schemas/BrainStructureModel_evv47w
+  tdaxjkh:
+    sha256: 35a59e1c98affd519e68701a8d0481a25f058fe14bf59769292fe7d2cbdc3278
+    attribute: null
+    name: BreedingInfo
+    uri: https://schema.undata.live/schemas/BreedingInfo_tdaxjkh
+  tdaxjkh1:
+    sha256: 35a59e1c98affd519e68701a8d0481a25f058fe14bf59769292fe7d2cbdc3278
+    attribute: null
+    name: Computer
+    uri: https://schema.undata.live/schemas/Computer_tdaxjkh1
+  tdaxjkh1h:
+    sha256: 35a59e1c98affd519e68701a8d0481a25f058fe14bf59769292fe7d2cbdc3278
+    attribute: null
+    name: Container
+    uri: https://schema.undata.live/schemas/Container_tdaxjkh1h
+  1wbib0:
+    sha256: f63a834405819882321f052a42aa5d4c12fbb5531cb97490513283f79af950d0
+    attribute: null
+    name: CurationHistory
+    uri: https://schema.undata.live/schemas/CurationHistory_1wbib0
+  tdaxjkh1hi:
+    sha256: 35a59e1c98affd519e68701a8d0481a25f058fe14bf59769292fe7d2cbdc3278
+    attribute: null
+    name: _Behavior
+    uri: https://schema.undata.live/schemas/_Behavior_tdaxjkh1hi
+  6yi04j:
+    sha256: 19140b23c31986579a38f5264aad6c5b651530bf77f06cd8b7d2951b50474766
+    attribute: null
+    name: EphysProbe
+    uri: https://schema.undata.live/schemas/EphysProbe_6yi04j
+  3qst49e:
+    sha256: f63a834405819882321f052a42aa5d4c12fbb5531cb97490513283f79af950d0
+    attribute: null
+    name: ModelPretraining
+    uri: https://schema.undata.live/schemas/ModelPretraining_3qst49e
+  1tyvdf:
+    sha256: edc15bc978ea9f5cd7cb0a7369e7bccd6b79f8b8b45993470e06d306623a449b
+    attribute: null
+    name: MouseAnatomyModel
+    uri: https://schema.undata.live/schemas/MouseAnatomyModel_1tyvdf
+  3qst49e0:
+    sha256: f63a834405819882321f052a42aa5d4c12fbb5531cb97490513283f79af950d0
+    attribute: null
+    name: PerformanceMetric
+    uri: https://schema.undata.live/schemas/PerformanceMetric_3qst49e0
+  3m5t9vd:
+    sha256: edc15bc978ea9f5cd7cb0a7369e7bccd6b79f8b8b45993470e06d306623a449b
+    attribute: null
+    name: Person
+    uri: https://schema.undata.live/schemas/Person_3m5t9vd
+  o7lm81:
+    sha256: 57422ac1740398534481d3f20c37551ded13d625706f2f823e7be7fe27a1f2df
+    attribute: null
+    name: QCStatus
+    uri: https://schema.undata.live/schemas/QCStatus_o7lm81
+  3m5t9vd5:
+    sha256: edc15bc978ea9f5cd7cb0a7369e7bccd6b79f8b8b45993470e06d306623a449b
+    attribute: null
+    name: SpeciesModel
+    uri: https://schema.undata.live/schemas/SpeciesModel_3m5t9vd5
+  3qst49e0i:
+    sha256: f63a834405819882321f052a42aa5d4c12fbb5531cb97490513283f79af950d0
+    attribute: null
+    name: Subject
+    uri: https://schema.undata.live/schemas/Subject_3qst49e0i
+  3m5t9vd5v:
+    sha256: edc15bc978ea9f5cd7cb0a7369e7bccd6b79f8b8b45993470e06d306623a449b
+    attribute: null
+    name: _Callithrix_Jacchus
+    uri: https://schema.undata.live/schemas/_Callithrix_Jacchus_3m5t9vd5v
+  3m5t9vd5v0:
+    sha256: edc15bc978ea9f5cd7cb0a7369e7bccd6b79f8b8b45993470e06d306623a449b
+    attribute: null
+    name: _Vicuna_Pacos
+    uri: https://schema.undata.live/schemas/_Vicuna_Pacos_3m5t9vd5v0

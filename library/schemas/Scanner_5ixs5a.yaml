@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/animal_weight_prior_jn1jmh5a2
+  - https://schema.undata.live/elements/animal_weight_prior_jn1jmh5a2y
+  - https://schema.undata.live/elements/magnetic_strength_unit_gczpzr
+  - https://schema.undata.live/elements/magnetic_strength_unit_wa4nlk6
+  - https://schema.undata.live/elements/name_36kcny87po
+  - https://schema.undata.live/elements/subject_id_36kcny87p
+  mixins: []
+provenance:
+- source: aind
+  name: Scanner

@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/experimenters_34qbbrb1t
+  - https://schema.undata.live/elements/name_36kcny87po
+  - https://schema.undata.live/elements/other_identifiers_2jqfqstxo
+  - https://schema.undata.live/elements/process_type_cjhrcs
+  - https://schema.undata.live/elements/stage_a5cmoh
+  mixins: []
+provenance:
+- source: aind
+  name: ModelEvaluation

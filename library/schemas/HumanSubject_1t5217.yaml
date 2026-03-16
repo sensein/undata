@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/acquisition_start_tz_2l8rbh99q
+  - https://schema.undata.live/elements/acquisition_start_tz_2l8rbh99qy
+  - https://schema.undata.live/elements/coordinate_system_2jqfqstx
+  - https://schema.undata.live/elements/name_36kcny87po
+  - https://schema.undata.live/elements/other_identifiers_2jqfqstxo
+  - https://schema.undata.live/elements/sex_1b6fbz
+  - https://schema.undata.live/elements/sex_2l34qdo
+  - https://schema.undata.live/elements/subject_id_36kcny87p
+  mixins: []
+provenance:
+- source: aind
+  name: HumanSubject

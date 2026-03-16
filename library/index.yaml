@@ -1,822 +1,4258 @@
-generated_at: '2026-03-16T20:07:04.504313+00:00'
+generated_at: '2026-03-16T20:14:28.990742+00:00'
 element_count: 136
-schema_count: 0
+schema_count: 859
 multi_source_elements: 0
 elements:
 - file: elements/AnatomicalLandmarkCoordinates_1ahqvp.yaml
   name: AnatomicalLandmarkCoordinates
-  data_type: DataType.object_
+  data_type: object
   sources:
   - bids
   provenance_count: 11
 - file: elements/AnchorCoordinates_1l4uar.yaml
   name: AnchorCoordinates
-  data_type: DataType.array
+  data_type: array
   sources:
   - bids
   provenance_count: 39
 - file: elements/HED_1m2b6o.yaml
   name: HED
-  data_type: DataType.string
+  data_type: string
   sources:
   - bids
   provenance_count: 820
 - file: elements/NWBData_36kcny87.yaml
   name: NWBData
-  data_type: DataType.string
+  data_type: string
   sources:
   - nwb
   provenance_count: 134
 - file: elements/TimeSeriesReferenceVectorData_2jqfqst.yaml
   name: TimeSeriesReferenceVectorData
-  data_type: DataType.object_
+  data_type: object
   sources:
   - nwb
   provenance_count: 74
 - file: elements/acquisition_start_tz_2l8rbh99q.yaml
   name: acquisition_start_tz
-  data_type: DataType.integer
+  data_type: integer
   sources:
   - aind
   provenance_count: 117
 - file: elements/acquisition_start_tz_2l8rbh99qy.yaml
   name: acquisition_start_tz
-  data_type: DataType.integer
+  data_type: integer
   sources:
   - aind
   provenance_count: 116
 - file: elements/animal_weight_prior_jn1jmh5a2.yaml
   name: animal_weight_prior
-  data_type: DataType.float_
+  data_type: float
   sources:
   - aind
   provenance_count: 88
 - file: elements/animal_weight_prior_jn1jmh5a2y.yaml
   name: animal_weight_prior
-  data_type: DataType.float_
+  data_type: float
   sources:
   - aind
   provenance_count: 87
 - file: elements/architecture_iu4m7u.yaml
   name: architecture
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/array_type_1ukth9.yaml
   name: array_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/array_type_3nd47tn.yaml
   name: array_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/axis_unit_shazty.yaml
   name: axis_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 47
 - file: elements/bin_mode_1gq5zdb.yaml
   name: bin_mode
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/bin_mode_qq1526.yaml
   name: bin_mode
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/catheter_design_177krmx.yaml
   name: catheter_design
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/catheter_design_lweef1.yaml
   name: catheter_design
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/catheter_material_1y5psan.yaml
   name: catheter_material
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/catheter_material_zk35l8.yaml
   name: catheter_material
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/catheter_port_bq87qg.yaml
   name: catheter_port
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/catheter_port_n5391hp.yaml
   name: catheter_port
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/channel_type_1yqihjy.yaml
   name: channel_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/channel_type_99sh1y.yaml
   name: channel_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/channel_type_ialh0so.yaml
   name: channel_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/channel_type_zumm31.yaml
   name: channel_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/contactPoint_2l8rbh9.yaml
   name: contactPoint
-  data_type: DataType.integer
+  data_type: integer
   sources:
   - dandi
   provenance_count: 23
 - file: elements/control_2l8rbh99.yaml
   name: control
-  data_type: DataType.integer
+  data_type: integer
   sources:
   - nwb
   provenance_count: 11
 - file: elements/cooling_1m0al2.yaml
   name: cooling
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/cooling_36gdf1f.yaml
   name: cooling
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/coordinate_system_2jqfqstx.yaml
   name: coordinate_system
-  data_type: DataType.object_
+  data_type: object
   sources:
   - aind
   provenance_count: 54
 - file: elements/craniotomy_type_1ehm5t.yaml
   name: craniotomy_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/craniotomy_type_2rmavty.yaml
   name: craniotomy_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/data_interface_d6hy26.yaml
   name: data_interface
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 6
 - file: elements/data_interface_q082495.yaml
   name: data_interface
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 6
 - file: elements/data_level_1q20gw.yaml
   name: data_level
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/data_level_3efvyzy.yaml
   name: data_level
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/detector_type_6a0jqk.yaml
   name: detector_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/detector_type_cdy2eep.yaml
   name: detector_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/diameter_unit_1k70dgk.yaml
   name: diameter_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 40
 - file: elements/dilution_unit_1dqld0.yaml
   name: dilution_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/dilution_unit_2q4zgy9.yaml
   name: dilution_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/direction_1pmiqf.yaml
   name: direction
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 3
 - file: elements/direction_3dlbiij.yaml
   name: direction
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/duration_9ycenu.yaml
   name: duration
-  data_type: DataType.float_
+  data_type: float
   sources:
   - bids
   provenance_count: 115
 - file: elements/duration_unit_1iebmr.yaml
   name: duration_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 7
 - file: elements/duration_unit_2zbxgs0.yaml
   name: duration_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 5
 - file: elements/empty_1tttvcfiq.yaml
   name: empty
-  data_type: DataType.boolean
+  data_type: boolean
   sources:
   - aind
   provenance_count: 18
 - file: elements/experimenters_34qbbrb1.yaml
   name: experimenters
-  data_type: DataType.array
+  data_type: array
   sources:
   - aind
   provenance_count: 161
 - file: elements/experimenters_34qbbrb1t.yaml
   name: experimenters
-  data_type: DataType.array
+  data_type: array
   sources:
   - aind
   provenance_count: 182
 - file: elements/filter_type_1nbrhev.yaml
   name: filter_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/filter_type_u2g8n1.yaml
   name: filter_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/fit_type_125n80.yaml
   name: fit_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/fit_type_23ab956.yaml
   name: fit_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/fluorophore_type_17liukf.yaml
   name: fluorophore_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/fluorophore_type_m3gv6m.yaml
   name: fluorophore_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/frame_rate_unit_1hy3v41.yaml
   name: frame_rate_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/frame_rate_unit_rcaveo.yaml
   name: frame_rate_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/id_36kcny8.yaml
   name: id
-  data_type: DataType.string
+  data_type: string
   sources:
   - dandi
   provenance_count: 256
 - file: elements/imaging_angle_unit_1yuukz.yaml
   name: imaging_angle_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 5
 - file: elements/imaging_angle_unit_3vt15kt.yaml
   name: imaging_angle_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 3
 - file: elements/imaging_device_type_1vo59g.yaml
   name: imaging_device_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/imaging_device_type_3pipo7j.yaml
   name: imaging_device_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/includeInCitation_1tttvcf.yaml
   name: includeInCitation
-  data_type: DataType.boolean
+  data_type: boolean
   sources:
   - dandi
   provenance_count: 3
 - file: elements/index_1b9a0a.yaml
   name: index
-  data_type: DataType.integer
+  data_type: integer
   sources:
   - bids
   provenance_count: 34
 - file: elements/license_1nq6z9i.yaml
   name: license
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/license_u9rj54.yaml
   name: license
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/magnetic_strength_unit_gczpzr.yaml
   name: magnetic_strength_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/magnetic_strength_unit_wa4nlk6.yaml
   name: magnetic_strength_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/maxValue_jn1jmh5.yaml
   name: maxValue
-  data_type: DataType.float_
+  data_type: float
   sources:
   - dandi
   provenance_count: 2
 - file: elements/medium_13x2wk4.yaml
   name: medium
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/medium_k8cd9u.yaml
   name: medium
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/mr_acquisition_type_2a5l5y.yaml
   name: mr_acquisition_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/mr_acquisition_type_4i3k5hl.yaml
   name: mr_acquisition_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/name_15r5273.yaml
   name: name
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/name_1ob2v8b.yaml
   name: name
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/name_36kcny87po.yaml
   name: name
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1426
 - file: elements/name_l5to47.yaml
   name: name
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 4
 - file: elements/name_ukclru.yaml
   name: name
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/origin_a2bda2.yaml
   name: origin
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 5
 - file: elements/origin_juvmbd8.yaml
   name: origin
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/other_identifiers_2jqfqstxo.yaml
   name: other_identifiers
-  data_type: DataType.object_
+  data_type: object
   sources:
   - aind
   provenance_count: 68
 - file: elements/power_function_1i8ipc.yaml
   name: power_function
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/power_function_2z0h8fb.yaml
   name: power_function
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/power_unit_hsbees.yaml
   name: power_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 5
 - file: elements/power_unit_z3e9uzz.yaml
   name: power_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 4
 - file: elements/probe_model_162sjr7.yaml
   name: probe_model
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/probe_model_lbq9ww.yaml
   name: probe_model
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/procedure_type_1ggbvu.yaml
   name: procedure_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/procedure_type_2vhtsua.yaml
   name: procedure_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/process_type_cjhrcs.yaml
   name: process_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 6
 - file: elements/profile_1gz0ub.yaml
   name: profile
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/profile_2wiplmr.yaml
   name: profile
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/pulse_sequence_type_1bp79i.yaml
   name: pulse_sequence_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/pulse_sequence_type_2m46edb.yaml
   name: pulse_sequence_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/registry_18vqr01.yaml
   name: registry
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 15
 - file: elements/registry_mqw60o.yaml
   name: registry
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 28
 - file: elements/relative_position_1iuv30x.yaml
   name: relative_position
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/relative_position_rswiyf.yaml
   name: relative_position
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/resolution_jn1jmh5a.yaml
   name: resolution
-  data_type: DataType.float_
+  data_type: float
   sources:
   - nwb
   provenance_count: 64
 - file: elements/sample_type_1ic9qp5.yaml
   name: sample_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/sample_type_rjhaez.yaml
   name: sample_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/section_orientation_1rj11m.yaml
   name: section_orientation
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/section_orientation_3hchqu2.yaml
   name: section_orientation
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/sex_1b6fbz.yaml
   name: sex
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/sex_2l34qdo.yaml
   name: sex
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/short_channel_xd2wy4.yaml
   name: short_channel
-  data_type: DataType.boolean
+  data_type: boolean
   sources:
   - bids
   provenance_count: 24
 - file: elements/slap2_acquisition_type_1ryhnvm.yaml
   name: slap2_acquisition_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/slap2_acquisition_type_wey9vp.yaml
   name: slap2_acquisition_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/solution_42id67.yaml
   name: solution
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/solution_812qzpr.yaml
   name: solution
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/speed_unit_1gpvt9.yaml
   name: speed_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/speed_unit_2w0oedo.yaml
   name: speed_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/stage_1ya2j5.yaml
   name: stage
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 4
 - file: elements/stage_a5cmoh.yaml
   name: stage
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 6
 - file: elements/stage_axis_direction_1kgf4r.yaml
   name: stage_axis_direction
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/stage_axis_direction_33e4nq2.yaml
   name: stage_axis_direction
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/stain_type_1i7l6x.yaml
   name: stain_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/stain_type_2yyn43k.yaml
   name: stain_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/status_13qiiy.yaml
   name: status
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/subject_id_36kcny87p.yaml
   name: subject_id
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2942
 - file: elements/subject_position_121dqn.yaml
   name: subject_position
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/subject_position_231wf6r.yaml
   name: subject_position
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/target_1r3e0au.yaml
   name: target
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/target_vz6t4m.yaml
   name: target
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/time_setting_unit_1s1duxs.yaml
   name: time_setting_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/time_setting_unit_wgf2zy.yaml
   name: time_setting_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/trigger_type_1lvsya.yaml
   name: trigger_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/trigger_type_367ii66.yaml
   name: trigger_type
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 1
 - file: elements/valence_1i0j8xg.yaml
   name: valence
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/valence_rdj5rx.yaml
   name: valence
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 2
 - file: elements/variable_power_1tttvcfi.yaml
   name: variable_power
-  data_type: DataType.boolean
+  data_type: boolean
   sources:
   - aind
   provenance_count: 19
 - file: elements/volume_unit_124untk.yaml
   name: volume_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 4
 - file: elements/volume_unit_jbsh2e.yaml
   name: volume_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 5
 - file: elements/wasAssociatedWith_34qbbrb.yaml
   name: wasAssociatedWith
-  data_type: DataType.array
+  data_type: array
   sources:
   - dandi
   provenance_count: 113
 - file: elements/weight_unit_1w2vw5.yaml
   name: weight_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 5
 - file: elements/weight_unit_3qbsncg.yaml
   name: weight_unit
-  data_type: DataType.string
+  data_type: string
   sources:
   - aind
   provenance_count: 5
-schemas: []
+schemas:
+- file: schemas/AbstractFeatureSeries_3rq2nsjt4o.yaml
+  name: AbstractFeatureSeries
+  property_count: 2
+  provenance_count: 1
+- file: schemas/AccessRequirements_165eva.yaml
+  name: AccessRequirements
+  property_count: 2
+  provenance_count: 1
+- file: schemas/AcquisitionSubjectDetails_1i4x40.yaml
+  name: AcquisitionSubjectDetails
+  property_count: 3
+  provenance_count: 1
+- file: schemas/AcquisitionSubjectDetails_iqygf0.yaml
+  name: AcquisitionSubjectDetails
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Acquisition_1v0b2q.yaml
+  name: Acquisition
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Activity_1rcx6w.yaml
+  name: Activity
+  property_count: 2
+  provenance_count: 1
+- file: schemas/AdditionalImagingDevice_15hpze.yaml
+  name: AdditionalImagingDevice
+  property_count: 4
+  provenance_count: 1
+- file: schemas/AdditionalImagingDevice_1xcdbu.yaml
+  name: AdditionalImagingDevice
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Affiliation_8skvj9.yaml
+  name: Affiliation
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Affine_14dk1b.yaml
+  name: Affine
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Affine_1u41u1.yaml
+  name: Affine
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Agent_hcmyfjb.yaml
+  name: Agent
+  property_count: 1
+  provenance_count: 1
+- file: schemas/AirPuffConfig_1gvv4e.yaml
+  name: AirPuffConfig
+  property_count: 4
+  provenance_count: 1
+- file: schemas/AirPuffConfig_vziba2.yaml
+  name: AirPuffConfig
+  property_count: 8
+  provenance_count: 1
+- file: schemas/AirPuffDevice_1gvij6.yaml
+  name: AirPuffDevice
+  property_count: 6
+  provenance_count: 1
+- file: schemas/AirPuffDevice_1rwn64.yaml
+  name: AirPuffDevice
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Allele_3h0fygf.yaml
+  name: Allele
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Anaesthetic_106os1.yaml
+  name: Anaesthetic
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Anaesthetic_6us9n0.yaml
+  name: Anaesthetic
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Anatomy_2b5z81z.yaml
+  name: Anatomy
+  property_count: 2
+  provenance_count: 1
+- file: schemas/AnnotationSeries_3rq2nsjt4o.yaml
+  name: AnnotationSeries
+  property_count: 2
+  provenance_count: 1
+- file: schemas/ApproachType_2b5z81zx.yaml
+  name: ApproachType
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Arena_1j09k1.yaml
+  name: Arena
+  property_count: 8
+  provenance_count: 1
+- file: schemas/Arena_cg355y.yaml
+  name: Arena
+  property_count: 4
+  provenance_count: 1
+- file: schemas/AssayType_2b5z81zxs.yaml
+  name: AssayType
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Asset_3h0fygfp.yaml
+  name: Asset
+  property_count: 2
+  provenance_count: 1
+- file: schemas/AssetsSummary_x5uqc0.yaml
+  name: AssetsSummary
+  property_count: 3
+  provenance_count: 1
+- file: schemas/AtlasCoordinate_187iek.yaml
+  name: AtlasCoordinate
+  property_count: 4
+  provenance_count: 1
+- file: schemas/AtlasCoordinate_1dnxb4.yaml
+  name: AtlasCoordinate
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Atlas_1nuvxp.yaml
+  name: Atlas
+  property_count: 10
+  provenance_count: 1
+- file: schemas/Atlas_vficd4.yaml
+  name: Atlas
+  property_count: 5
+  provenance_count: 1
+- file: schemas/Axis_105ir8.yaml
+  name: Axis
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Axis_1yf9su.yaml
+  name: Axis
+  property_count: 4
+  provenance_count: 1
+- file: schemas/BareAsset_3h0fygfpf.yaml
+  name: BareAsset
+  property_count: 2
+  provenance_count: 1
+- file: schemas/BaseImage_1xdk43o.yaml
+  name: BaseImage
+  property_count: 1
+  provenance_count: 1
+- file: schemas/BaseType_2b5z81zxsu.yaml
+  name: BaseType
+  property_count: 2
+  provenance_count: 1
+- file: schemas/BehavioralEpochs_1a86x1zgr.yaml
+  name: BehavioralEpochs
+  property_count: 1
+  provenance_count: 1
+- file: schemas/BehavioralEvents_1a86x1zgrc.yaml
+  name: BehavioralEvents
+  property_count: 1
+  provenance_count: 1
+- file: schemas/BehavioralTimeSeries_1a86x1zgrc.yaml
+  name: BehavioralTimeSeries
+  property_count: 1
+  provenance_count: 1
+- file: schemas/BioSample_3h0fygfpf0.yaml
+  name: BioSample
+  property_count: 2
+  provenance_count: 1
+- file: schemas/BrainInjection_18erdp.yaml
+  name: BrainInjection
+  property_count: 2
+  provenance_count: 1
+- file: schemas/BrainInjection_gqvz83.yaml
+  name: BrainInjection
+  property_count: 4
+  provenance_count: 1
+- file: schemas/BrainStructureModel_1oouck.yaml
+  name: BrainStructureModel
+  property_count: 1
+  provenance_count: 1
+- file: schemas/BrainStructureModel_evv47w.yaml
+  name: BrainStructureModel
+  property_count: 2
+  provenance_count: 1
+- file: schemas/BreedingInfo_3bqvdqgghp.yaml
+  name: BreedingInfo
+  property_count: 1
+  provenance_count: 1
+- file: schemas/BreedingInfo_tdaxjkh.yaml
+  name: BreedingInfo
+  property_count: 2
+  provenance_count: 1
+- file: schemas/CalibrationFit_5bd1t1.yaml
+  name: CalibrationFit
+  property_count: 2
+  provenance_count: 1
+- file: schemas/CalibrationFit_6vi5k4.yaml
+  name: CalibrationFit
+  property_count: 4
+  provenance_count: 1
+- file: schemas/CalibrationObject_1fjmxq.yaml
+  name: CalibrationObject
+  property_count: 6
+  provenance_count: 1
+- file: schemas/CalibrationObject_1vwuhaz.yaml
+  name: CalibrationObject
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Calibration_1jve3t.yaml
+  name: Calibration
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Calibration_2c9o79n.yaml
+  name: Calibration
+  property_count: 3
+  provenance_count: 1
+- file: schemas/CameraAssembly_135eqi.yaml
+  name: CameraAssembly
+  property_count: 8
+  provenance_count: 1
+- file: schemas/CameraAssembly_mnvyvi.yaml
+  name: CameraAssembly
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Camera_1xl5mz.yaml
+  name: Camera
+  property_count: 16
+  provenance_count: 1
+- file: schemas/Camera_1yjyd2.yaml
+  name: Camera
+  property_count: 8
+  provenance_count: 1
+- file: schemas/CatheterConfig_1n4z5l.yaml
+  name: CatheterConfig
+  property_count: 4
+  provenance_count: 1
+- file: schemas/CatheterConfig_1wk0so.yaml
+  name: CatheterConfig
+  property_count: 2
+  provenance_count: 1
+- file: schemas/CatheterImplant_38on4sofsa.yaml
+  name: CatheterImplant
+  property_count: 4
+  provenance_count: 1
+- file: schemas/CatheterImplant_3r9luk6coi.yaml
+  name: CatheterImplant
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Catheter_1sdcsg.yaml
+  name: Catheter
+  property_count: 8
+  provenance_count: 1
+- file: schemas/Catheter_j7tyjs.yaml
+  name: Catheter
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Channel_jsfiv8.yaml
+  name: Channel
+  property_count: 10
+  provenance_count: 1
+- file: schemas/Channel_vs5a3n.yaml
+  name: Channel
+  property_count: 5
+  provenance_count: 1
+- file: schemas/ClusterWaveforms_3jq1h05bev.yaml
+  name: ClusterWaveforms
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Clustering_2dxd2o9e.yaml
+  name: Clustering
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Code_2fmheuo.yaml
+  name: Code
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Code_x1jp9lk.yaml
+  name: Code
+  property_count: 4
+  provenance_count: 1
+- file: schemas/CombinedData_k7zml6.yaml
+  name: CombinedData
+  property_count: 6
+  provenance_count: 1
+- file: schemas/CombinedData_twtpxo.yaml
+  name: CombinedData
+  property_count: 3
+  provenance_count: 1
+- file: schemas/CommonModel_3h0fygfpf0.yaml
+  name: CommonModel
+  property_count: 2
+  provenance_count: 1
+- file: schemas/CompassDirection_1a86x1zgrc.yaml
+  name: CompassDirection
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Computer_3bqvdqgghp.yaml
+  name: Computer
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Computer_tdaxjkh1.yaml
+  name: Computer
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Connection_1qzxv7.yaml
+  name: Connection
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Connection_j766rf.yaml
+  name: Connection
+  property_count: 2
+  provenance_count: 1
+- file: schemas/ContactPoint_2b5z81zxsu.yaml
+  name: ContactPoint
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Container_3bqvdqg.yaml
+  name: Container
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Container_tdaxjkh1h.yaml
+  name: Container
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Contributor_kynl6j.yaml
+  name: Contributor
+  property_count: 3
+  provenance_count: 1
+- file: schemas/CoordinateSystem_1p52v1.yaml
+  name: CoordinateSystem
+  property_count: 8
+  provenance_count: 1
+- file: schemas/CoordinateSystem_1uraal.yaml
+  name: CoordinateSystem
+  property_count: 4
+  provenance_count: 1
+- file: schemas/CorrectedImageStack_1a86x1zgrc.yaml
+  name: CorrectedImageStack
+  property_count: 1
+  provenance_count: 1
+- file: schemas/CoupledPlane_12jsqr.yaml
+  name: CoupledPlane
+  property_count: 10
+  provenance_count: 1
+- file: schemas/CoupledPlane_1lfziy.yaml
+  name: CoupledPlane
+  property_count: 5
+  provenance_count: 1
+- file: schemas/Craniotomy_14j078.yaml
+  name: Craniotomy
+  property_count: 10
+  provenance_count: 1
+- file: schemas/Craniotomy_kgo0rb.yaml
+  name: Craniotomy
+  property_count: 5
+  provenance_count: 1
+- file: schemas/CurationHistory_1wbib0.yaml
+  name: CurationHistory
+  property_count: 1
+  provenance_count: 1
+- file: schemas/CurationMetric_1k7s50.yaml
+  name: CurationMetric
+  property_count: 4
+  provenance_count: 1
+- file: schemas/CurrentClampSeries_3jq1h05bev.yaml
+  name: CurrentClampSeries
+  property_count: 3
+  provenance_count: 1
+- file: schemas/CurrentClampStimulusSeries_3rq2nsjt4o.yaml
+  name: CurrentClampStimulusSeries
+  property_count: 2
+  provenance_count: 1
+- file: schemas/DAQChannel_1a2kr8.yaml
+  name: DAQChannel
+  property_count: 5
+  provenance_count: 1
+- file: schemas/DAQChannel_pvy9mp.yaml
+  name: DAQChannel
+  property_count: 10
+  provenance_count: 1
+- file: schemas/DAQDevice_z2ejns.yaml
+  name: DAQDevice
+  property_count: 3
+  provenance_count: 1
+- file: schemas/DAQDevice_zjl600.yaml
+  name: DAQDevice
+  property_count: 6
+  provenance_count: 1
+- file: schemas/DandiBaseModel_hcmyfjbv.yaml
+  name: DandiBaseModel
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Dandiset_3h0fygfpf0.yaml
+  name: Dandiset
+  property_count: 2
+  provenance_count: 1
+- file: schemas/DataAsset_3bqvdqgg.yaml
+  name: DataAsset
+  property_count: 1
+  provenance_count: 1
+- file: schemas/DataAsset_tdaxjkh1hi.yaml
+  name: DataAsset
+  property_count: 2
+  provenance_count: 1
+- file: schemas/DataDescription_1m47n0.yaml
+  name: DataDescription
+  property_count: 4
+  provenance_count: 1
+- file: schemas/DataProcess_nx5e0a.yaml
+  name: DataProcess
+  property_count: 5
+  provenance_count: 1
+- file: schemas/DataStream_2fmheuok.yaml
+  name: DataStream
+  property_count: 2
+  provenance_count: 1
+- file: schemas/DataStream_x1jp9lke.yaml
+  name: DataStream
+  property_count: 4
+  provenance_count: 1
+- file: schemas/DecompositionSeries_3rq2nsjt4o.yaml
+  name: DecompositionSeries
+  property_count: 2
+  provenance_count: 1
+- file: schemas/DetectorConfig_dybg1c.yaml
+  name: DetectorConfig
+  property_count: 5
+  provenance_count: 1
+- file: schemas/DetectorConfig_omtg94.yaml
+  name: DetectorConfig
+  property_count: 10
+  provenance_count: 1
+- file: schemas/Detector_3tavjnq.yaml
+  name: Detector
+  property_count: 16
+  provenance_count: 1
+- file: schemas/Detector_3v7j9u4.yaml
+  name: Detector
+  property_count: 8
+  provenance_count: 1
+- file: schemas/DeviceConfig_3bqvdqggh.yaml
+  name: DeviceConfig
+  property_count: 1
+  provenance_count: 1
+- file: schemas/DeviceConfig_tdaxjkh1hi.yaml
+  name: DeviceConfig
+  property_count: 2
+  provenance_count: 1
+- file: schemas/DeviceModel_3rq2nsjt4o.yaml
+  name: DeviceModel
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Device_3bqvdqgghp.yaml
+  name: Device
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Device_3rq2nsjt4.yaml
+  name: Device
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Device_tdaxjkh1hi.yaml
+  name: Device
+  property_count: 2
+  provenance_count: 1
+- file: schemas/DfOverF_1a86x1zgrc.yaml
+  name: DfOverF
+  property_count: 1
+  provenance_count: 1
+- file: schemas/DigitalMicromirrorDevice_b0h517.yaml
+  name: DigitalMicromirrorDevice
+  property_count: 12
+  provenance_count: 1
+- file: schemas/DigitalMicromirrorDevice_dpm75y.yaml
+  name: DigitalMicromirrorDevice
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Disc_2wbsdq8.yaml
+  name: Disc
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Disc_3i3csve.yaml
+  name: Disc
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Disorder_1tfki9o.yaml
+  name: Disorder
+  property_count: 3
+  provenance_count: 1
+- file: schemas/ElectricalSeries_1sqdx0.yaml
+  name: ElectricalSeries
+  property_count: 3
+  provenance_count: 1
+- file: schemas/ElectrodeGroup_3rq2nsjt4o.yaml
+  name: ElectrodeGroup
+  property_count: 2
+  provenance_count: 1
+- file: schemas/ElectrodesTable_3jq1h05be.yaml
+  name: ElectrodesTable
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Enclosure_1f9gzp.yaml
+  name: Enclosure
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Enclosure_fd2i7e.yaml
+  name: Enclosure
+  property_count: 8
+  provenance_count: 1
+- file: schemas/EphysAssemblyConfig_13wdrja.yaml
+  name: EphysAssemblyConfig
+  property_count: 6
+  provenance_count: 1
+- file: schemas/EphysAssemblyConfig_1n0nw9i.yaml
+  name: EphysAssemblyConfig
+  property_count: 3
+  provenance_count: 1
+- file: schemas/EphysAssembly_13wdrjaoj3.yaml
+  name: EphysAssembly
+  property_count: 6
+  provenance_count: 1
+- file: schemas/EphysAssembly_1n0nw9iwhy.yaml
+  name: EphysAssembly
+  property_count: 3
+  provenance_count: 1
+- file: schemas/EphysProbe_175lwz.yaml
+  name: EphysProbe
+  property_count: 2
+  provenance_count: 1
+- file: schemas/EphysProbe_6yi04j.yaml
+  name: EphysProbe
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Equipment_hcmyfjbv7.yaml
+  name: Equipment
+  property_count: 1
+  provenance_count: 1
+- file: schemas/EthicsApproval_2b5z81zxsu.yaml
+  name: EthicsApproval
+  property_count: 2
+  provenance_count: 1
+- file: schemas/EventDetection_2dxd2o9.yaml
+  name: EventDetection
+  property_count: 4
+  provenance_count: 1
+- file: schemas/EventWaveform_1a86x1zgrc.yaml
+  name: EventWaveform
+  property_count: 1
+  provenance_count: 1
+- file: schemas/ExperimentalConditionsTable_3rq2nsjt4o.yaml
+  name: ExperimentalConditionsTable
+  property_count: 2
+  provenance_count: 1
+- file: schemas/ExternalImage_1xdk43oy.yaml
+  name: ExternalImage
+  property_count: 1
+  provenance_count: 1
+- file: schemas/EyeTracking_1a86x1zgrc.yaml
+  name: EyeTracking
+  property_count: 1
+  provenance_count: 1
+- file: schemas/FeatureExtraction_3jq1h05b.yaml
+  name: FeatureExtraction
+  property_count: 3
+  provenance_count: 1
+- file: schemas/FiberAssemblyConfig_13wdrjao.yaml
+  name: FiberAssemblyConfig
+  property_count: 6
+  provenance_count: 1
+- file: schemas/FiberAssemblyConfig_1n0nw9iw.yaml
+  name: FiberAssemblyConfig
+  property_count: 3
+  provenance_count: 1
+- file: schemas/FiberAssembly_13wdrjaoj3.yaml
+  name: FiberAssembly
+  property_count: 6
+  provenance_count: 1
+- file: schemas/FiberAssembly_1n0nw9iwhy.yaml
+  name: FiberAssembly
+  property_count: 3
+  provenance_count: 1
+- file: schemas/FiberPatchCord_3nb0ep2f4.yaml
+  name: FiberPatchCord
+  property_count: 4
+  provenance_count: 1
+- file: schemas/FiberPatchCord_v43evoecx.yaml
+  name: FiberPatchCord
+  property_count: 2
+  provenance_count: 1
+- file: schemas/FiberProbe_2wbsdq8s.yaml
+  name: FiberProbe
+  property_count: 6
+  provenance_count: 1
+- file: schemas/FiberProbe_3i3csve1.yaml
+  name: FiberProbe
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Filter_7kgyr2.yaml
+  name: Filter
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Filter_ctntj0.yaml
+  name: Filter
+  property_count: 8
+  provenance_count: 1
+- file: schemas/FilteredEphys_1a86x1zgrc.yaml
+  name: FilteredEphys
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Fluorescence_1a86x1zgrc.yaml
+  name: Fluorescence
+  property_count: 1
+  provenance_count: 1
+- file: schemas/FluorescentStain_1nag2s.yaml
+  name: FluorescentStain
+  property_count: 3
+  provenance_count: 1
+- file: schemas/FluorescentStain_tledn9.yaml
+  name: FluorescentStain
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Fluorophore_1uihjt.yaml
+  name: Fluorophore
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Fluorophore_1uqcxm.yaml
+  name: Fluorophore
+  property_count: 3
+  provenance_count: 1
+- file: schemas/FrequencyBandsTable_3jq1h05bev.yaml
+  name: FrequencyBandsTable
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Funding_2fmheuokpx.yaml
+  name: Funding
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Funding_x1jp9lkeoz.yaml
+  name: Funding
+  property_count: 4
+  provenance_count: 1
+- file: schemas/GeneProbeSet_2fmheuokpx.yaml
+  name: GeneProbeSet
+  property_count: 2
+  provenance_count: 1
+- file: schemas/GeneProbeSet_x1jp9lkeoz.yaml
+  name: GeneProbeSet
+  property_count: 4
+  provenance_count: 1
+- file: schemas/GeneProbe_2f86hie.yaml
+  name: GeneProbe
+  property_count: 4
+  provenance_count: 1
+- file: schemas/GeneProbe_2pzpy98.yaml
+  name: GeneProbe
+  property_count: 2
+  provenance_count: 1
+- file: schemas/GenericSubjectProcedure_2fmheuokpx.yaml
+  name: GenericSubjectProcedure
+  property_count: 2
+  provenance_count: 1
+- file: schemas/GenericSubjectProcedure_x1jp9lkeoz.yaml
+  name: GenericSubjectProcedure
+  property_count: 4
+  provenance_count: 1
+- file: schemas/GenericSurgeryProcedure_3bqvdqgghp.yaml
+  name: GenericSurgeryProcedure
+  property_count: 1
+  provenance_count: 1
+- file: schemas/GenericSurgeryProcedure_tdaxjkh1hi.yaml
+  name: GenericSurgeryProcedure
+  property_count: 2
+  provenance_count: 1
+- file: schemas/GenericType_2b5z81zxsu.yaml
+  name: GenericType
+  property_count: 2
+  provenance_count: 1
+- file: schemas/GenotypeInfo_3h0fygfpf0.yaml
+  name: GenotypeInfo
+  property_count: 2
+  provenance_count: 1
+- file: schemas/GrayscaleImage_1xdk43oy88.yaml
+  name: GrayscaleImage
+  property_count: 1
+  provenance_count: 1
+- file: schemas/GroundWireImplant_1863xj.yaml
+  name: GroundWireImplant
+  property_count: 4
+  provenance_count: 1
+- file: schemas/GroundWireImplant_5e88nz.yaml
+  name: GroundWireImplant
+  property_count: 8
+  provenance_count: 1
+- file: schemas/HCRSeries_1ommkl.yaml
+  name: HCRSeries
+  property_count: 4
+  provenance_count: 1
+- file: schemas/HCRSeries_1xkggo.yaml
+  name: HCRSeries
+  property_count: 8
+  provenance_count: 1
+- file: schemas/HarpDevice_1dzf87.yaml
+  name: HarpDevice
+  property_count: 8
+  provenance_count: 1
+- file: schemas/HarpDevice_4wbr1n.yaml
+  name: HarpDevice
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Headframe_3bqvdqgghp.yaml
+  name: Headframe
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Headframe_tdaxjkh1hi.yaml
+  name: Headframe
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Housing_2fmheuokpx.yaml
+  name: Housing
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Housing_x1jp9lkeoz.yaml
+  name: Housing
+  property_count: 4
+  provenance_count: 1
+- file: schemas/HumanSubject_1t5217.yaml
+  name: HumanSubject
+  property_count: 8
+  provenance_count: 1
+- file: schemas/HumanSubject_dtpf4t.yaml
+  name: HumanSubject
+  property_count: 4
+  provenance_count: 1
+- file: schemas/HybridizationChainReaction_1fy3gr.yaml
+  name: HybridizationChainReaction
+  property_count: 8
+  provenance_count: 1
+- file: schemas/HybridizationChainReaction_8ixrfq.yaml
+  name: HybridizationChainReaction
+  property_count: 4
+  provenance_count: 1
+- file: schemas/IZeroClampSeries_3jq1h05bev.yaml
+  name: IZeroClampSeries
+  property_count: 3
+  provenance_count: 1
+- file: schemas/ImageMaskSeries_1a86x1zgrc.yaml
+  name: ImageMaskSeries
+  property_count: 1
+  provenance_count: 1
+- file: schemas/ImageReferences_1xdk43oy8.yaml
+  name: ImageReferences
+  property_count: 1
+  provenance_count: 1
+- file: schemas/ImageSPIM_ha5ill.yaml
+  name: ImageSPIM
+  property_count: 10
+  provenance_count: 1
+- file: schemas/ImageSPIM_ke06ma.yaml
+  name: ImageSPIM
+  property_count: 5
+  provenance_count: 1
+- file: schemas/ImageSegmentation_1a86x1zgrc.yaml
+  name: ImageSegmentation
+  property_count: 1
+  provenance_count: 1
+- file: schemas/ImageSeries_2jpites.yaml
+  name: ImageSeries
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Image_1s8pcd.yaml
+  name: Image
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Images_3rq2nsj.yaml
+  name: Images
+  property_count: 2
+  provenance_count: 1
+- file: schemas/ImagingConfig_2fmheuokp.yaml
+  name: ImagingConfig
+  property_count: 2
+  provenance_count: 1
+- file: schemas/ImagingConfig_x1jp9lkeo.yaml
+  name: ImagingConfig
+  property_count: 4
+  provenance_count: 1
+- file: schemas/ImagingPlane_3jq1h05bev.yaml
+  name: ImagingPlane
+  property_count: 3
+  provenance_count: 1
+- file: schemas/ImagingRetinotopy_2dxd2o9ed2.yaml
+  name: ImagingRetinotopy
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Immersion_1vilm0.yaml
+  name: Immersion
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Immersion_97998i.yaml
+  name: Immersion
+  property_count: 2
+  provenance_count: 1
+- file: schemas/IndexSeries_1k3d5a.yaml
+  name: IndexSeries
+  property_count: 2
+  provenance_count: 1
+- file: schemas/InjectionDynamics_161soe.yaml
+  name: InjectionDynamics
+  property_count: 3
+  provenance_count: 1
+- file: schemas/InjectionDynamics_1q202y.yaml
+  name: InjectionDynamics
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Injection_2fmheuokpx.yaml
+  name: Injection
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Injection_x1jp9lkeoz.yaml
+  name: Injection
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Instrument_12qp63.yaml
+  name: Instrument
+  property_count: 4
+  provenance_count: 1
+- file: schemas/IntervalSeries_32odca0.yaml
+  name: IntervalSeries
+  property_count: 2
+  provenance_count: 1
+- file: schemas/IntracellularElectrode_3rq2nsjt4o.yaml
+  name: IntracellularElectrode
+  property_count: 2
+  provenance_count: 1
+- file: schemas/IntracellularElectrodesTable_3rq2nsjt4o.yaml
+  name: IntracellularElectrodesTable
+  property_count: 2
+  provenance_count: 1
+- file: schemas/IntracellularRecordingsTable_3rq2nsjt4o.yaml
+  name: IntracellularRecordingsTable
+  property_count: 2
+  provenance_count: 1
+- file: schemas/IntracellularResponsesTable_3rq2nsjt4o.yaml
+  name: IntracellularResponsesTable
+  property_count: 2
+  provenance_count: 1
+- file: schemas/IntracellularStimuliTable_3rq2nsjt4o.yaml
+  name: IntracellularStimuliTable
+  property_count: 2
+  provenance_count: 1
+- file: schemas/LFP_1a86x1zgrc.yaml
+  name: LFP
+  property_count: 1
+  provenance_count: 1
+- file: schemas/LabMetaData_1a86x1zgrc.yaml
+  name: LabMetaData
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Lamp_1nblzo.yaml
+  name: Lamp
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Lamp_u9ak1p.yaml
+  name: Lamp
+  property_count: 3
+  provenance_count: 1
+- file: schemas/LaserAssembly_13wdrjaoj3.yaml
+  name: LaserAssembly
+  property_count: 6
+  provenance_count: 1
+- file: schemas/LaserAssembly_1n0nw9iwhy.yaml
+  name: LaserAssembly
+  property_count: 3
+  provenance_count: 1
+- file: schemas/LaserConfig_11i3hf.yaml
+  name: LaserConfig
+  property_count: 4
+  provenance_count: 1
+- file: schemas/LaserConfig_1tjlhy.yaml
+  name: LaserConfig
+  property_count: 8
+  provenance_count: 1
+- file: schemas/Laser_21zulik.yaml
+  name: Laser
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Laser_3lbobsf.yaml
+  name: Laser
+  property_count: 8
+  provenance_count: 1
+- file: schemas/Lens_3bqvdqgghp.yaml
+  name: Lens
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Lens_tdaxjkh1hi.yaml
+  name: Lens
+  property_count: 2
+  provenance_count: 1
+- file: schemas/LickSpoutAssembly_2fmheuokpx.yaml
+  name: LickSpoutAssembly
+  property_count: 2
+  provenance_count: 1
+- file: schemas/LickSpoutAssembly_x1jp9lkeoz.yaml
+  name: LickSpoutAssembly
+  property_count: 4
+  provenance_count: 1
+- file: schemas/LickSpoutConfig_clu0if.yaml
+  name: LickSpoutConfig
+  property_count: 6
+  provenance_count: 1
+- file: schemas/LickSpoutConfig_iz8ueo.yaml
+  name: LickSpoutConfig
+  property_count: 12
+  provenance_count: 1
+- file: schemas/LickSpout_16qbjz.yaml
+  name: LickSpout
+  property_count: 8
+  provenance_count: 1
+- file: schemas/LickSpout_xoqmlb.yaml
+  name: LickSpout
+  property_count: 4
+  provenance_count: 1
+- file: schemas/LightCycle_3bqvdqgghp.yaml
+  name: LightCycle
+  property_count: 1
+  provenance_count: 1
+- file: schemas/LightCycle_tdaxjkh1hi.yaml
+  name: LightCycle
+  property_count: 2
+  provenance_count: 1
+- file: schemas/LightEmittingDiodeConfig_1ujr22.yaml
+  name: LightEmittingDiodeConfig
+  property_count: 4
+  provenance_count: 1
+- file: schemas/LightEmittingDiodeConfig_fros0i.yaml
+  name: LightEmittingDiodeConfig
+  property_count: 2
+  provenance_count: 1
+- file: schemas/LightEmittingDiode_1np9hiv.yaml
+  name: LightEmittingDiode
+  property_count: 3
+  provenance_count: 1
+- file: schemas/LightEmittingDiode_391qdjf.yaml
+  name: LightEmittingDiode
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Locus_3h0fygfpf0.yaml
+  name: Locus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/MISCameraConfig_13wdrjaoj.yaml
+  name: MISCameraConfig
+  property_count: 6
+  provenance_count: 1
+- file: schemas/MISCameraConfig_1n0nw9iwh.yaml
+  name: MISCameraConfig
+  property_count: 3
+  provenance_count: 1
+- file: schemas/MISModuleConfig_1vslsg.yaml
+  name: MISModuleConfig
+  property_count: 6
+  provenance_count: 1
+- file: schemas/MISModuleConfig_z3lpkd.yaml
+  name: MISModuleConfig
+  property_count: 3
+  provenance_count: 1
+- file: schemas/MRIScan_1xzhgc.yaml
+  name: MRIScan
+  property_count: 18
+  provenance_count: 1
+- file: schemas/MRIScan_g4e3jv.yaml
+  name: MRIScan
+  property_count: 9
+  provenance_count: 1
+- file: schemas/Maintenance_2fmheuokpx.yaml
+  name: Maintenance
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Maintenance_x1jp9lkeoz.yaml
+  name: Maintenance
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Manipulation_2fmheuokpx.yaml
+  name: Manipulation
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Manipulation_x1jp9lkeoz.yaml
+  name: Manipulation
+  property_count: 4
+  provenance_count: 1
+- file: schemas/ManipulatorConfig_38on4so.yaml
+  name: ManipulatorConfig
+  property_count: 4
+  provenance_count: 1
+- file: schemas/ManipulatorConfig_3r9luk6.yaml
+  name: ManipulatorConfig
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Manipulator_3bqvdqgghp.yaml
+  name: Manipulator
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Manipulator_tdaxjkh1hi.yaml
+  name: Manipulator
+  property_count: 2
+  provenance_count: 1
+- file: schemas/MeasurementTechniqueType_2b5z81zxsu.yaml
+  name: MeasurementTechniqueType
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Microscope_3bqvdqgghp.yaml
+  name: Microscope
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Microscope_tdaxjkh1hi.yaml
+  name: Microscope
+  property_count: 2
+  provenance_count: 1
+- file: schemas/ModelEvaluation_1b748rt.yaml
+  name: ModelEvaluation
+  property_count: 5
+  provenance_count: 1
+- file: schemas/ModelPretraining_3qst49e.yaml
+  name: ModelPretraining
+  property_count: 1
+  provenance_count: 1
+- file: schemas/ModelTraining_1b748rt2.yaml
+  name: ModelTraining
+  property_count: 5
+  provenance_count: 1
+- file: schemas/Model_syl4v5.yaml
+  name: Model
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Monitor_g0svj6.yaml
+  name: Monitor
+  property_count: 10
+  provenance_count: 1
+- file: schemas/Monitor_rjtb2w.yaml
+  name: Monitor
+  property_count: 5
+  provenance_count: 1
+- file: schemas/MotionCorrection_1a86x1zgrc.yaml
+  name: MotionCorrection
+  property_count: 1
+  provenance_count: 1
+- file: schemas/MotorizedStage_2wbsdq8s8.yaml
+  name: MotorizedStage
+  property_count: 6
+  provenance_count: 1
+- file: schemas/MotorizedStage_3i3csve1v.yaml
+  name: MotorizedStage
+  property_count: 3
+  provenance_count: 1
+- file: schemas/MouseAnatomyModel_1tyvdf.yaml
+  name: MouseAnatomyModel
+  property_count: 4
+  provenance_count: 1
+- file: schemas/MouseAnatomyModel_i2spu5.yaml
+  name: MouseAnatomyModel
+  property_count: 2
+  provenance_count: 1
+- file: schemas/MousePlatformConfig_2tpbl6d.yaml
+  name: MousePlatformConfig
+  property_count: 6
+  provenance_count: 1
+- file: schemas/MousePlatformConfig_yf3n51.yaml
+  name: MousePlatformConfig
+  property_count: 3
+  provenance_count: 1
+- file: schemas/MouseSubject_j6o2cs.yaml
+  name: MouseSubject
+  property_count: 3
+  provenance_count: 1
+- file: schemas/MouseSubject_ouf2mw.yaml
+  name: MouseSubject
+  property_count: 6
+  provenance_count: 1
+- file: schemas/MyomatrixArray_7ccxt0.yaml
+  name: MyomatrixArray
+  property_count: 6
+  provenance_count: 1
+- file: schemas/MyomatrixArray_cg4s60.yaml
+  name: MyomatrixArray
+  property_count: 3
+  provenance_count: 1
+- file: schemas/MyomatrixContact_1flbmn.yaml
+  name: MyomatrixContact
+  property_count: 6
+  provenance_count: 1
+- file: schemas/MyomatrixContact_uh2bh1.yaml
+  name: MyomatrixContact
+  property_count: 3
+  provenance_count: 1
+- file: schemas/MyomatrixInsertion_38on4sofsa.yaml
+  name: MyomatrixInsertion
+  property_count: 4
+  provenance_count: 1
+- file: schemas/MyomatrixInsertion_3r9luk6coi.yaml
+  name: MyomatrixInsertion
+  property_count: 2
+  provenance_count: 1
+- file: schemas/MyomatrixThread_2f86hie6.yaml
+  name: MyomatrixThread
+  property_count: 4
+  provenance_count: 1
+- file: schemas/MyomatrixThread_2pzpy98q.yaml
+  name: MyomatrixThread
+  property_count: 2
+  provenance_count: 1
+- file: schemas/NWBContainer_1a86x1z.yaml
+  name: NWBContainer
+  property_count: 1
+  provenance_count: 1
+- file: schemas/NWBDataInterface_1a86x1zg.yaml
+  name: NWBDataInterface
+  property_count: 1
+  provenance_count: 1
+- file: schemas/NWBData_z5tek2.yaml
+  name: NWBData
+  property_count: 1
+  provenance_count: 1
+- file: schemas/NWBFile_3rq2nsjt4o.yaml
+  name: NWBFile
+  property_count: 2
+  provenance_count: 1
+- file: schemas/NeuropixelsBasestation_13m26s.yaml
+  name: NeuropixelsBasestation
+  property_count: 4
+  provenance_count: 1
+- file: schemas/NeuropixelsBasestation_38fqdm.yaml
+  name: NeuropixelsBasestation
+  property_count: 8
+  provenance_count: 1
+- file: schemas/NonViralMaterial_3nb0ep2.yaml
+  name: NonViralMaterial
+  property_count: 4
+  provenance_count: 1
+- file: schemas/NonViralMaterial_v43evoe.yaml
+  name: NonViralMaterial
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Objective_1nhxwx.yaml
+  name: Objective
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Objective_s3m7d6.yaml
+  name: Objective
+  property_count: 3
+  provenance_count: 1
+- file: schemas/OlfactometerChannelInfo_1qb2dh.yaml
+  name: OlfactometerChannelInfo
+  property_count: 8
+  provenance_count: 1
+- file: schemas/OlfactometerChannelInfo_exa20x.yaml
+  name: OlfactometerChannelInfo
+  property_count: 4
+  provenance_count: 1
+- file: schemas/OlfactometerChannel_167fu5.yaml
+  name: OlfactometerChannel
+  property_count: 6
+  provenance_count: 1
+- file: schemas/OlfactometerChannel_6l4v1f.yaml
+  name: OlfactometerChannel
+  property_count: 3
+  provenance_count: 1
+- file: schemas/OlfactometerConfig_2fmheuokpx.yaml
+  name: OlfactometerConfig
+  property_count: 2
+  provenance_count: 1
+- file: schemas/OlfactometerConfig_x1jp9lkeoz.yaml
+  name: OlfactometerConfig
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Olfactometer_2qmenau.yaml
+  name: Olfactometer
+  property_count: 8
+  provenance_count: 1
+- file: schemas/Olfactometer_9nwmiyz.yaml
+  name: Olfactometer
+  property_count: 4
+  provenance_count: 1
+- file: schemas/OligoProbe_3bqvdqgghp.yaml
+  name: OligoProbe
+  property_count: 1
+  provenance_count: 1
+- file: schemas/OligoProbe_tdaxjkh1hi.yaml
+  name: OligoProbe
+  property_count: 2
+  provenance_count: 1
+- file: schemas/OnePhotonSeries_s1r1jc.yaml
+  name: OnePhotonSeries
+  property_count: 3
+  provenance_count: 1
+- file: schemas/OpenEphysAcquisitionBoard_2fmheuokpx.yaml
+  name: OpenEphysAcquisitionBoard
+  property_count: 2
+  provenance_count: 1
+- file: schemas/OpenEphysAcquisitionBoard_x1jp9lkeoz.yaml
+  name: OpenEphysAcquisitionBoard
+  property_count: 4
+  provenance_count: 1
+- file: schemas/OpticalChannel_3jq1h05bev.yaml
+  name: OpticalChannel
+  property_count: 3
+  provenance_count: 1
+- file: schemas/OpticalSeries_3jq1h05bev.yaml
+  name: OpticalSeries
+  property_count: 3
+  provenance_count: 1
+- file: schemas/OptogeneticSeries_3rq2nsjt4o.yaml
+  name: OptogeneticSeries
+  property_count: 2
+  provenance_count: 1
+- file: schemas/OptogeneticStimulusSite_3jq1h05bev.yaml
+  name: OptogeneticStimulusSite
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Organization_1p67bk.yaml
+  name: Organization
+  property_count: 4
+  provenance_count: 1
+- file: schemas/PIDName_3bqvdqgghp.yaml
+  name: PIDName
+  property_count: 1
+  provenance_count: 1
+- file: schemas/PIDName_tdaxjkh1hi.yaml
+  name: PIDName
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Participant_1tfki9ox.yaml
+  name: Participant
+  property_count: 3
+  provenance_count: 1
+- file: schemas/PatchClampEphysAssembly_38on4sofs.yaml
+  name: PatchClampEphysAssembly
+  property_count: 4
+  provenance_count: 1
+- file: schemas/PatchClampEphysAssembly_3r9luk6co.yaml
+  name: PatchClampEphysAssembly
+  property_count: 2
+  provenance_count: 1
+- file: schemas/PatchClampSeries_2dxd2o9ed.yaml
+  name: PatchClampSeries
+  property_count: 4
+  provenance_count: 1
+- file: schemas/PatchCordConfig_2fmheuokpx.yaml
+  name: PatchCordConfig
+  property_count: 2
+  provenance_count: 1
+- file: schemas/PatchCordConfig_x1jp9lkeoz.yaml
+  name: PatchCordConfig
+  property_count: 4
+  provenance_count: 1
+- file: schemas/PerformanceMetric_3qst49e0.yaml
+  name: PerformanceMetric
+  property_count: 1
+  provenance_count: 1
+- file: schemas/PerformanceMetrics_20smum.yaml
+  name: PerformanceMetrics
+  property_count: 6
+  provenance_count: 1
+- file: schemas/PerformanceMetrics_ggfdje.yaml
+  name: PerformanceMetrics
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Perfusion_2fmheuokpx.yaml
+  name: Perfusion
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Perfusion_x1jp9lkeoz.yaml
+  name: Perfusion
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Person_15czufj.yaml
+  name: Person
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Person_3m5t9vd.yaml
+  name: Person
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Person_zo2r225.yaml
+  name: Person
+  property_count: 2
+  provenance_count: 1
+- file: schemas/PlanarImageStack_18d098.yaml
+  name: PlanarImageStack
+  property_count: 5
+  provenance_count: 1
+- file: schemas/PlanarImageStack_1j473o.yaml
+  name: PlanarImageStack
+  property_count: 10
+  provenance_count: 1
+- file: schemas/PlanarImage_1jpd4f.yaml
+  name: PlanarImage
+  property_count: 3
+  provenance_count: 1
+- file: schemas/PlanarImage_p6w9sv.yaml
+  name: PlanarImage
+  property_count: 6
+  provenance_count: 1
+- file: schemas/PlanarSection_1fyymh.yaml
+  name: PlanarSection
+  property_count: 10
+  provenance_count: 1
+- file: schemas/PlanarSection_gafz24.yaml
+  name: PlanarSection
+  property_count: 5
+  provenance_count: 1
+- file: schemas/PlanarSectioning_1jdeb5.yaml
+  name: PlanarSectioning
+  property_count: 3
+  provenance_count: 1
+- file: schemas/PlanarSectioning_1ypowa.yaml
+  name: PlanarSectioning
+  property_count: 6
+  provenance_count: 1
+- file: schemas/PlaneSegmentation_3rq2nsjt4o.yaml
+  name: PlaneSegmentation
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Plane_11l6f7.yaml
+  name: Plane
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Plane_r98jzi.yaml
+  name: Plane
+  property_count: 8
+  provenance_count: 1
+- file: schemas/PockelsCell_11lsdc.yaml
+  name: PockelsCell
+  property_count: 6
+  provenance_count: 1
+- file: schemas/PockelsCell_2rltsb.yaml
+  name: PockelsCell
+  property_count: 3
+  provenance_count: 1
+- file: schemas/PolygonalScanner_7ag35x.yaml
+  name: PolygonalScanner
+  property_count: 6
+  provenance_count: 1
+- file: schemas/PolygonalScanner_ra3n09.yaml
+  name: PolygonalScanner
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Position_1a86x1zgrc.yaml
+  name: Position
+  property_count: 1
+  provenance_count: 1
+- file: schemas/PowerCalibration_1cul62.yaml
+  name: PowerCalibration
+  property_count: 4
+  provenance_count: 1
+- file: schemas/PowerCalibration_t7kjtn.yaml
+  name: PowerCalibration
+  property_count: 8
+  provenance_count: 1
+- file: schemas/ProbeConfig_13wdrjaoj3.yaml
+  name: ProbeConfig
+  property_count: 6
+  provenance_count: 1
+- file: schemas/ProbeConfig_1n0nw9iwhy.yaml
+  name: ProbeConfig
+  property_count: 3
+  provenance_count: 1
+- file: schemas/ProbeImplant_38on4sofsa.yaml
+  name: ProbeImplant
+  property_count: 4
+  provenance_count: 1
+- file: schemas/ProbeImplant_3r9luk6coi.yaml
+  name: ProbeImplant
+  property_count: 2
+  provenance_count: 1
+- file: schemas/ProbePort_16jnh2.yaml
+  name: ProbePort
+  property_count: 4
+  provenance_count: 1
+- file: schemas/ProbePort_yme2cp.yaml
+  name: ProbePort
+  property_count: 2
+  provenance_count: 1
+- file: schemas/ProbeReagent_3bqvdqgghp.yaml
+  name: ProbeReagent
+  property_count: 1
+  provenance_count: 1
+- file: schemas/ProbeReagent_tdaxjkh1hi.yaml
+  name: ProbeReagent
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Procedures_a96iwm.yaml
+  name: Procedures
+  property_count: 2
+  provenance_count: 1
+- file: schemas/ProcessingModule_1wsd8v.yaml
+  name: ProcessingModule
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Processing_c34d6s.yaml
+  name: Processing
+  property_count: 3
+  provenance_count: 1
+- file: schemas/Project_3h0fygfpf0.yaml
+  name: Project
+  property_count: 2
+  provenance_count: 1
+- file: schemas/PropertyValue_kkim6b.yaml
+  name: PropertyValue
+  property_count: 3
+  provenance_count: 1
+- file: schemas/ProteinProbe_1geh37.yaml
+  name: ProteinProbe
+  property_count: 4
+  provenance_count: 1
+- file: schemas/ProteinProbe_1w31qk.yaml
+  name: ProteinProbe
+  property_count: 8
+  provenance_count: 1
+- file: schemas/PublishActivity_3h0fygfpf0.yaml
+  name: PublishActivity
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Publishable_hcmyfjbv78.yaml
+  name: Publishable
+  property_count: 1
+  provenance_count: 1
+- file: schemas/PublishedAsset_3h0fygfpf0.yaml
+  name: PublishedAsset
+  property_count: 2
+  provenance_count: 1
+- file: schemas/PublishedDandiset_3h0fygfpf0.yaml
+  name: PublishedDandiset
+  property_count: 2
+  provenance_count: 1
+- file: schemas/PupilTracking_1a86x1zgrc.yaml
+  name: PupilTracking
+  property_count: 1
+  provenance_count: 1
+- file: schemas/QCMetric_32x31ld.yaml
+  name: QCMetric
+  property_count: 4
+  provenance_count: 1
+- file: schemas/QCStatus_o7lm81.yaml
+  name: QCStatus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/QualityControl_nuj2551.yaml
+  name: QualityControl
+  property_count: 3
+  provenance_count: 1
+- file: schemas/RGBAImage_1xdk43oy88.yaml
+  name: RGBAImage
+  property_count: 1
+  provenance_count: 1
+- file: schemas/RGBImage_1xdk43oy88.yaml
+  name: RGBImage
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Reagent_3bqvdqgghp.yaml
+  name: Reagent
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Reagent_tdaxjkh1hi.yaml
+  name: Reagent
+  property_count: 2
+  provenance_count: 1
+- file: schemas/RelatedParticipant_hcmyfjbv78.yaml
+  name: RelatedParticipant
+  property_count: 1
+  provenance_count: 1
+- file: schemas/RepetitionsTable_3rq2nsjt4o.yaml
+  name: RepetitionsTable
+  property_count: 2
+  provenance_count: 1
+- file: schemas/ResourceTimestamped_kch8tw.yaml
+  name: ResourceTimestamped
+  property_count: 2
+  provenance_count: 1
+- file: schemas/ResourceUsage_v7xuw5.yaml
+  name: ResourceUsage
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Resource_hcmyfjbv78.yaml
+  name: Resource
+  property_count: 1
+  provenance_count: 1
+- file: schemas/RoiResponseSeries_3rq2nsjt4o.yaml
+  name: RoiResponseSeries
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Rotation_1lw1ac.yaml
+  name: Rotation
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Rotation_6wr0dk.yaml
+  name: Rotation
+  property_count: 2
+  provenance_count: 1
+- file: schemas/SampleChamberConfig_38on4sof.yaml
+  name: SampleChamberConfig
+  property_count: 4
+  provenance_count: 1
+- file: schemas/SampleChamberConfig_3r9luk6c.yaml
+  name: SampleChamberConfig
+  property_count: 2
+  provenance_count: 1
+- file: schemas/SampleCollection_1so1w7.yaml
+  name: SampleCollection
+  property_count: 4
+  provenance_count: 1
+- file: schemas/SampleCollection_5wt4nd.yaml
+  name: SampleCollection
+  property_count: 8
+  provenance_count: 1
+- file: schemas/SampleType_2b5z81zxsu.yaml
+  name: SampleType
+  property_count: 2
+  provenance_count: 1
+- file: schemas/SamplingStrategy_ihjbp1.yaml
+  name: SamplingStrategy
+  property_count: 2
+  provenance_count: 1
+- file: schemas/SamplingStrategy_xtdf11.yaml
+  name: SamplingStrategy
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Scale_27nzfw1.yaml
+  name: Scale
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Scale_3mg16dr.yaml
+  name: Scale
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Scanner_5ixs5a.yaml
+  name: Scanner
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Scanner_sk5hbk.yaml
+  name: Scanner
+  property_count: 3
+  provenance_count: 1
+- file: schemas/ScanningStage_136wd5.yaml
+  name: ScanningStage
+  property_count: 10
+  provenance_count: 1
+- file: schemas/ScanningStage_1catpt.yaml
+  name: ScanningStage
+  property_count: 5
+  provenance_count: 1
+- file: schemas/ScratchData_1xdk43oy88.yaml
+  name: ScratchData
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Section_118oxb.yaml
+  name: Section
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Section_1n7yff.yaml
+  name: Section
+  property_count: 8
+  provenance_count: 1
+- file: schemas/Sectioning_27nzfw1x6.yaml
+  name: Sectioning
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Sectioning_3mg16drgb.yaml
+  name: Sectioning
+  property_count: 1
+  provenance_count: 1
+- file: schemas/SequentialRecordingsTable_3rq2nsjt4o.yaml
+  name: SequentialRecordingsTable
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Session_3h0fygfpf0.yaml
+  name: Session
+  property_count: 2
+  provenance_count: 1
+- file: schemas/SexType_2b5z81zxsu.yaml
+  name: SexType
+  property_count: 2
+  provenance_count: 1
+- file: schemas/SimultaneousRecordingsTable_3rq2nsjt4o.yaml
+  name: SimultaneousRecordingsTable
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Slap2Plane_153wox.yaml
+  name: Slap2Plane
+  property_count: 9
+  provenance_count: 1
+- file: schemas/Slap2Plane_1qzuiw.yaml
+  name: Slap2Plane
+  property_count: 18
+  provenance_count: 1
+- file: schemas/SmallMoleculeProbe_192vff.yaml
+  name: SmallMoleculeProbe
+  property_count: 3
+  provenance_count: 1
+- file: schemas/SmallMoleculeProbe_trtazk.yaml
+  name: SmallMoleculeProbe
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Software_3bqvdqgghp.yaml
+  name: Software
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Software_hcmyfjbv78.yaml
+  name: Software
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Software_tdaxjkh1hi.yaml
+  name: Software
+  property_count: 2
+  provenance_count: 1
+- file: schemas/SpatialSeries_3rq2nsjt.yaml
+  name: SpatialSeries
+  property_count: 2
+  provenance_count: 1
+- file: schemas/SpeakerConfig_3nb0ep2f.yaml
+  name: SpeakerConfig
+  property_count: 4
+  provenance_count: 1
+- file: schemas/SpeakerConfig_v43evoec.yaml
+  name: SpeakerConfig
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Speaker_2fmheuokpx.yaml
+  name: Speaker
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Speaker_x1jp9lkeoz.yaml
+  name: Speaker
+  property_count: 4
+  provenance_count: 1
+- file: schemas/SpeciesModel_3m5t9vd5.yaml
+  name: SpeciesModel
+  property_count: 4
+  provenance_count: 1
+- file: schemas/SpeciesModel_zo2r225xym.yaml
+  name: SpeciesModel
+  property_count: 2
+  provenance_count: 1
+- file: schemas/SpeciesType_2b5z81zxsu.yaml
+  name: SpeciesType
+  property_count: 2
+  provenance_count: 1
+- file: schemas/SpecimenProcedure_2t6glu.yaml
+  name: SpecimenProcedure
+  property_count: 8
+  provenance_count: 1
+- file: schemas/SpecimenProcedure_99qgls.yaml
+  name: SpecimenProcedure
+  property_count: 4
+  provenance_count: 1
+- file: schemas/SpikeEventSeries_3jq1h05.yaml
+  name: SpikeEventSeries
+  property_count: 3
+  provenance_count: 1
+- file: schemas/StandardsType_2b5z81zxsu.yaml
+  name: StandardsType
+  property_count: 2
+  provenance_count: 1
+- file: schemas/StimulusEpoch_2fmheuokpx.yaml
+  name: StimulusEpoch
+  property_count: 2
+  provenance_count: 1
+- file: schemas/StimulusEpoch_x1jp9lkeoz.yaml
+  name: StimulusEpoch
+  property_count: 4
+  provenance_count: 1
+- file: schemas/StrainType_2b5z81zxsu.yaml
+  name: StrainType
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Subject_3qst49e0i.yaml
+  name: Subject
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Subject_3rq2nsjt4o.yaml
+  name: Subject
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Surgery_14l6o1.yaml
+  name: Surgery
+  property_count: 5
+  provenance_count: 1
+- file: schemas/Surgery_8whv08.yaml
+  name: Surgery
+  property_count: 10
+  provenance_count: 1
+- file: schemas/SweepTable_1aha6x.yaml
+  name: SweepTable
+  property_count: 3
+  provenance_count: 1
+- file: schemas/TarsVirusIdentifiers_2fmheuokpx.yaml
+  name: TarsVirusIdentifiers
+  property_count: 2
+  provenance_count: 1
+- file: schemas/TarsVirusIdentifiers_x1jp9lkeoz.yaml
+  name: TarsVirusIdentifiers
+  property_count: 4
+  provenance_count: 1
+- file: schemas/TimeIntervals_3jq1h05bev.yaml
+  name: TimeIntervals
+  property_count: 3
+  provenance_count: 1
+- file: schemas/TimeSeriesReferenceVectorData_nfg5dk.yaml
+  name: TimeSeriesReferenceVectorData
+  property_count: 1
+  provenance_count: 1
+- file: schemas/TimeSeries_17js79.yaml
+  name: TimeSeries
+  property_count: 4
+  provenance_count: 1
+- file: schemas/TrainingProtocol_3bqvdqgghp.yaml
+  name: TrainingProtocol
+  property_count: 1
+  provenance_count: 1
+- file: schemas/TrainingProtocol_tdaxjkh1hi.yaml
+  name: TrainingProtocol
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Translation_27nzfw1x.yaml
+  name: Translation
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Translation_3mg16drg.yaml
+  name: Translation
+  property_count: 1
+  provenance_count: 1
+- file: schemas/Treadmill_21zulikv.yaml
+  name: Treadmill
+  property_count: 4
+  provenance_count: 1
+- file: schemas/Treadmill_3lbobsfm.yaml
+  name: Treadmill
+  property_count: 8
+  provenance_count: 1
+- file: schemas/Tube_2wbsdq8s8k.yaml
+  name: Tube
+  property_count: 6
+  provenance_count: 1
+- file: schemas/Tube_3i3csve1vz.yaml
+  name: Tube
+  property_count: 3
+  provenance_count: 1
+- file: schemas/TwoPhotonSeries_ohuqre.yaml
+  name: TwoPhotonSeries
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Units_3jq1h05bev.yaml
+  name: Units
+  property_count: 3
+  provenance_count: 1
+- file: schemas/ViralMaterial_1d2gv5.yaml
+  name: ViralMaterial
+  property_count: 4
+  provenance_count: 1
+- file: schemas/ViralMaterial_edcoxt.yaml
+  name: ViralMaterial
+  property_count: 2
+  provenance_count: 1
+- file: schemas/VoltageClampSeries_3jq1h05bev.yaml
+  name: VoltageClampSeries
+  property_count: 3
+  provenance_count: 1
+- file: schemas/VoltageClampStimulusSeries_3rq2nsjt4o.yaml
+  name: VoltageClampStimulusSeries
+  property_count: 2
+  provenance_count: 1
+- file: schemas/VolumeCalibration_11f16x.yaml
+  name: VolumeCalibration
+  property_count: 5
+  provenance_count: 1
+- file: schemas/VolumeCalibration_1785g8.yaml
+  name: VolumeCalibration
+  property_count: 10
+  provenance_count: 1
+- file: schemas/WaterRestriction_1wd364.yaml
+  name: WaterRestriction
+  property_count: 12
+  provenance_count: 1
+- file: schemas/WaterRestriction_1z92ad.yaml
+  name: WaterRestriction
+  property_count: 6
+  provenance_count: 1
+- file: schemas/WellnessReport_3bqvdqgghp.yaml
+  name: WellnessReport
+  property_count: 1
+  provenance_count: 1
+- file: schemas/WellnessReport_tdaxjkh1hi.yaml
+  name: WellnessReport
+  property_count: 2
+  provenance_count: 1
+- file: schemas/Wheel_14qfpa.yaml
+  name: Wheel
+  property_count: 5
+  provenance_count: 1
+- file: schemas/Wheel_8q8hel.yaml
+  name: Wheel
+  property_count: 10
+  provenance_count: 1
+- file: schemas/_Aa_Opto_Electronic_3bqvdqgghp.yaml
+  name: _Aa_Opto_Electronic
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Aa_Opto_Electronic_tdaxjkh1hi.yaml
+  name: _Aa_Opto_Electronic
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Abcam_3bqvdqgghp.yaml
+  name: _Abcam
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Abcam_tdaxjkh1hi.yaml
+  name: _Abcam
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Addgene_3bqvdqgghp.yaml
+  name: _Addgene
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Addgene_tdaxjkh1hi.yaml
+  name: _Addgene
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Ailipu_Technology_Co_3bqvdqgghp.yaml
+  name: _Ailipu_Technology_Co
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Ailipu_Technology_Co_tdaxjkh1hi.yaml
+  name: _Ailipu_Technology_Co
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Allen_Institute_3bqvdqgghp.yaml
+  name: _Allen_Institute
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Allen_Institute_For_Brain_Science_3bqvdqgghp.yaml
+  name: _Allen_Institute_For_Brain_Science
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Allen_Institute_For_Brain_Science_tdaxjkh1hi.yaml
+  name: _Allen_Institute_For_Brain_Science
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Allen_Institute_For_Neural_Dynamics_3bqvdqgghp.yaml
+  name: _Allen_Institute_For_Neural_Dynamics
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Allen_Institute_For_Neural_Dynamics_tdaxjkh1hi.yaml
+  name: _Allen_Institute_For_Neural_Dynamics
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Allen_Institute_tdaxjkh1hi.yaml
+  name: _Allen_Institute
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Allied_3bqvdqgghp.yaml
+  name: _Allied
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Allied_tdaxjkh1hi.yaml
+  name: _Allied
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Ams_Osram_3bqvdqgghp.yaml
+  name: _Ams_Osram
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Ams_Osram_tdaxjkh1hi.yaml
+  name: _Ams_Osram
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Analoginput_2otduuq.yaml
+  name: _Analoginput
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Analoginput_scs0t6n.yaml
+  name: _Analoginput
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Applied_Scientific_Instrumentation_3bqvdqgghp.yaml
+  name: _Applied_Scientific_Instrumentation
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Applied_Scientific_Instrumentation_tdaxjkh1hi.yaml
+  name: _Applied_Scientific_Instrumentation
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Archimedes_2otduuqb.yaml
+  name: _Archimedes
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Archimedes_scs0t6nt.yaml
+  name: _Archimedes
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Arduino_3bqvdqgghp.yaml
+  name: _Arduino
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Arduino_tdaxjkh1hi.yaml
+  name: _Arduino
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Arecont_Vision_Costar_3bqvdqgghp.yaml
+  name: _Arecont_Vision_Costar
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Arecont_Vision_Costar_tdaxjkh1hi.yaml
+  name: _Arecont_Vision_Costar
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Asus_3bqvdqgghp.yaml
+  name: _Asus
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Asus_tdaxjkh1hi.yaml
+  name: _Asus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Balb_C_3bqvdqgghp.yaml
+  name: _Balb_C
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Balb_C_tdaxjkh1hi.yaml
+  name: _Balb_C
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Barseq_3bqvdqgghp.yaml
+  name: _Barseq
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Barseq_tdaxjkh1hi.yaml
+  name: _Barseq
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Basler_3bqvdqgghp.yaml
+  name: _Basler
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Basler_tdaxjkh1hi.yaml
+  name: _Basler
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Baylor_College_Of_Medicine_3bqvdqgghp.yaml
+  name: _Baylor_College_Of_Medicine
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Baylor_College_Of_Medicine_tdaxjkh1hi.yaml
+  name: _Baylor_College_Of_Medicine
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Behavior_3bqvdqgghp.yaml
+  name: _Behavior
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Behavior_Videos_3bqvdqgghp.yaml
+  name: _Behavior_Videos
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Behavior_Videos_tdaxjkh1hi.yaml
+  name: _Behavior_Videos
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Behavior_tdaxjkh1hi.yaml
+  name: _Behavior
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Boston_University_3bqvdqgghp.yaml
+  name: _Boston_University
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Boston_University_tdaxjkh1hi.yaml
+  name: _Boston_University
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Brightfield_3bqvdqgghp.yaml
+  name: _Brightfield
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Brightfield_tdaxjkh1hi.yaml
+  name: _Brightfield
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Bruker_3bqvdqgghp.yaml
+  name: _Bruker
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Bruker_tdaxjkh1hi.yaml
+  name: _Bruker
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_C57Bl_6J_3bqvdqgghp.yaml
+  name: _C57Bl_6J
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_C57Bl_6J_tdaxjkh1hi.yaml
+  name: _C57Bl_6J
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Cajal_Neuroscience_3bqvdqgghp.yaml
+  name: _Cajal_Neuroscience
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Cajal_Neuroscience_tdaxjkh1hi.yaml
+  name: _Cajal_Neuroscience
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Callithrix_Jacchus_3m5t9vd5v.yaml
+  name: _Callithrix_Jacchus
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Callithrix_Jacchus_zo2r225x.yaml
+  name: _Callithrix_Jacchus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Cambridge_Technology_3bqvdqgghp.yaml
+  name: _Cambridge_Technology
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Cambridge_Technology_tdaxjkh1hi.yaml
+  name: _Cambridge_Technology
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Cameracontroller_2otduuqbw.yaml
+  name: _Cameracontroller
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Cameracontroller_scs0t6nt4.yaml
+  name: _Cameracontroller
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Cameracontrollergen2_2otduuqbw5.yaml
+  name: _Cameracontrollergen2
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Cameracontrollergen2_scs0t6nt45.yaml
+  name: _Cameracontrollergen2
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Carl_Zeiss_3bqvdqgghp.yaml
+  name: _Carl_Zeiss
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Carl_Zeiss_tdaxjkh1hi.yaml
+  name: _Carl_Zeiss
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Carpa_Hircus_3m5t9vd5v0.yaml
+  name: _Carpa_Hircus
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Carpa_Hircus_zo2r225xy.yaml
+  name: _Carpa_Hircus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Cavia_Porcellus_3m5t9vd5v0.yaml
+  name: _Cavia_Porcellus
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Cavia_Porcellus_zo2r225xym.yaml
+  name: _Cavia_Porcellus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Champalimaud_Foundation_3bqvdqgghp.yaml
+  name: _Champalimaud_Foundation
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Champalimaud_Foundation_tdaxjkh1hi.yaml
+  name: _Champalimaud_Foundation
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Chan_Zuckerberg_Initiative_3bqvdqgghp.yaml
+  name: _Chan_Zuckerberg_Initiative
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Chan_Zuckerberg_Initiative_tdaxjkh1hi.yaml
+  name: _Chan_Zuckerberg_Initiative
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Charles_River_Laboratories_3bqvdqgghp.yaml
+  name: _Charles_River_Laboratories
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Charles_River_Laboratories_tdaxjkh1hi.yaml
+  name: _Charles_River_Laboratories
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Chroma_3bqvdqgghp.yaml
+  name: _Chroma
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Chroma_tdaxjkh1hi.yaml
+  name: _Chroma
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Clocksynchronizer_2otduuqbw5.yaml
+  name: _Clocksynchronizer
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Clocksynchronizer_scs0t6nt45.yaml
+  name: _Clocksynchronizer
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Coherent_Scientific_3bqvdqgghp.yaml
+  name: _Coherent_Scientific
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Coherent_Scientific_tdaxjkh1hi.yaml
+  name: _Coherent_Scientific
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Columbia_University_3bqvdqgghp.yaml
+  name: _Columbia_University
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Columbia_University_tdaxjkh1hi.yaml
+  name: _Columbia_University
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Computar_3bqvdqgghp.yaml
+  name: _Computar
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Computar_tdaxjkh1hi.yaml
+  name: _Computar
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Confocal_3bqvdqgghp.yaml
+  name: _Confocal
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Confocal_tdaxjkh1hi.yaml
+  name: _Confocal
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Conoptics_3bqvdqgghp.yaml
+  name: _Conoptics
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Conoptics_tdaxjkh1hi.yaml
+  name: _Conoptics
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Crestoptics_3bqvdqgghp.yaml
+  name: _Crestoptics
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Crestoptics_tdaxjkh1hi.yaml
+  name: _Crestoptics
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Custom_3bqvdqgghp.yaml
+  name: _Custom
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Custom_tdaxjkh1hi.yaml
+  name: _Custom
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Cuttlefish_2otduuqbw5.yaml
+  name: _Cuttlefish
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Cuttlefish_scs0t6nt45.yaml
+  name: _Cuttlefish
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Cuttlefishfip_2otduuqbw5.yaml
+  name: _Cuttlefishfip
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Cuttlefishfip_scs0t6nt45.yaml
+  name: _Cuttlefishfip
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Digikey_3bqvdqgghp.yaml
+  name: _Digikey
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Digikey_tdaxjkh1hi.yaml
+  name: _Digikey
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Dodotronic_3bqvdqgghp.yaml
+  name: _Dodotronic
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Dodotronic_tdaxjkh1hi.yaml
+  name: _Dodotronic
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Doric_3bqvdqgghp.yaml
+  name: _Doric
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Doric_tdaxjkh1hi.yaml
+  name: _Doric
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Driver12Volts_2otduuqbw5.yaml
+  name: _Driver12Volts
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Driver12Volts_scs0t6nt45.yaml
+  name: _Driver12Volts
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Ealing_3bqvdqgghp.yaml
+  name: _Ealing
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Ealing_tdaxjkh1hi.yaml
+  name: _Ealing
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Ecephys_3bqvdqgghp.yaml
+  name: _Ecephys
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Ecephys_tdaxjkh1hi.yaml
+  name: _Ecephys
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Edmund_Optics_3bqvdqgghp.yaml
+  name: _Edmund_Optics
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Edmund_Optics_tdaxjkh1hi.yaml
+  name: _Edmund_Optics
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Em_3bqvdqgghp.yaml
+  name: _Em
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Em_tdaxjkh1hi.yaml
+  name: _Em
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Emg_3bqvdqgghp.yaml
+  name: _Emg
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Emg_tdaxjkh1hi.yaml
+  name: _Emg
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Emory_University_3bqvdqgghp.yaml
+  name: _Emory_University
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Emory_University_tdaxjkh1hi.yaml
+  name: _Emory_University
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Environmentsensor_2otduuqbw5.yaml
+  name: _Environmentsensor
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Environmentsensor_scs0t6nt45.yaml
+  name: _Environmentsensor
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Equus_Asinus_3m5t9vd5v0.yaml
+  name: _Equus_Asinus
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Equus_Asinus_zo2r225xym.yaml
+  name: _Equus_Asinus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Euresys_3bqvdqgghp.yaml
+  name: _Euresys
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Euresys_tdaxjkh1hi.yaml
+  name: _Euresys
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Fib_3bqvdqgghp.yaml
+  name: _Fib
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Fib_tdaxjkh1hi.yaml
+  name: _Fib
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Flypad_2otduuqbw5.yaml
+  name: _Flypad
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Flypad_scs0t6nt45.yaml
+  name: _Flypad
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Fmost_3bqvdqgghp.yaml
+  name: _Fmost
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Fmost_tdaxjkh1hi.yaml
+  name: _Fmost
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Fujinon_3bqvdqgghp.yaml
+  name: _Fujinon
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Fujinon_tdaxjkh1hi.yaml
+  name: _Fujinon
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Gallus_Gallus_3m5t9vd5v0.yaml
+  name: _Gallus_Gallus
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Gallus_Gallus_zo2r225xym.yaml
+  name: _Gallus_Gallus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Hamamatsu_3bqvdqgghp.yaml
+  name: _Hamamatsu
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Hamamatsu_tdaxjkh1hi.yaml
+  name: _Hamamatsu
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Hamilton_3bqvdqgghp.yaml
+  name: _Hamilton
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Hamilton_tdaxjkh1hi.yaml
+  name: _Hamilton
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Hobgoblin_2otduuqbw5.yaml
+  name: _Hobgoblin
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Hobgoblin_scs0t6nt45.yaml
+  name: _Hobgoblin
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Homo_Sapiens_3m5t9vd5v0.yaml
+  name: _Homo_Sapiens
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Homo_Sapiens_zo2r225xym.yaml
+  name: _Homo_Sapiens
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Huazhong_University_Of_Science_And_Technology_3bqvdqgghp.yaml
+  name: _Huazhong_University_Of_Science_And_Technology
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Huazhong_University_Of_Science_And_Technology_tdaxjkh1hi.yaml
+  name: _Huazhong_University_Of_Science_And_Technology
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Ibl_Behavior_Control_2otduuqbw5.yaml
+  name: _Ibl_Behavior_Control
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Ibl_Behavior_Control_scs0t6nt45.yaml
+  name: _Ibl_Behavior_Control
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Icephys_3bqvdqgghp.yaml
+  name: _Icephys
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Icephys_tdaxjkh1hi.yaml
+  name: _Icephys
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Infinity_Photo_Optical_3bqvdqgghp.yaml
+  name: _Infinity_Photo_Optical
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Infinity_Photo_Optical_tdaxjkh1hi.yaml
+  name: _Infinity_Photo_Optical
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Inputexpander_2otduuqbw5.yaml
+  name: _Inputexpander
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Inputexpander_scs0t6nt45.yaml
+  name: _Inputexpander
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Integrated_Dna_Technologies_3bqvdqgghp.yaml
+  name: _Integrated_Dna_Technologies
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Integrated_Dna_Technologies_tdaxjkh1hi.yaml
+  name: _Integrated_Dna_Technologies
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Interuniversity_Microelectronics_Center_3bqvdqgghp.yaml
+  name: _Interuniversity_Microelectronics_Center
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Interuniversity_Microelectronics_Center_tdaxjkh1hi.yaml
+  name: _Interuniversity_Microelectronics_Center
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Invitrogen_3bqvdqgghp.yaml
+  name: _Invitrogen
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Invitrogen_tdaxjkh1hi.yaml
+  name: _Invitrogen
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Ir_Robot_Co_3bqvdqgghp.yaml
+  name: _Ir_Robot_Co
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Ir_Robot_Co_tdaxjkh1hi.yaml
+  name: _Ir_Robot_Co
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Isi_3bqvdqgghp.yaml
+  name: _Isi
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Isi_tdaxjkh1hi.yaml
+  name: _Isi
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Isl_Products_International_3bqvdqgghp.yaml
+  name: _Isl_Products_International
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Isl_Products_International_tdaxjkh1hi.yaml
+  name: _Isl_Products_International
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Item_3bqvdqgghp.yaml
+  name: _Item
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Item_tdaxjkh1hi.yaml
+  name: _Item
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Jackson_Laboratory_3bqvdqgghp.yaml
+  name: _Jackson_Laboratory
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Jackson_Laboratory_tdaxjkh1hi.yaml
+  name: _Jackson_Laboratory
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Janelia_Research_Campus_3bqvdqgghp.yaml
+  name: _Janelia_Research_Campus
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Janelia_Research_Campus_tdaxjkh1hi.yaml
+  name: _Janelia_Research_Campus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Jenoptik_3bqvdqgghp.yaml
+  name: _Jenoptik
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Jenoptik_tdaxjkh1hi.yaml
+  name: _Jenoptik
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Johns_Hopkins_University_3bqvdqgghp.yaml
+  name: _Johns_Hopkins_University
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Johns_Hopkins_University_tdaxjkh1hi.yaml
+  name: _Johns_Hopkins_University
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Julabo_3bqvdqgghp.yaml
+  name: _Julabo
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Julabo_tdaxjkh1hi.yaml
+  name: _Julabo
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Kowa_3bqvdqgghp.yaml
+  name: _Kowa
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Kowa_tdaxjkh1hi.yaml
+  name: _Kowa
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Lama_Glama_3m5t9vd5v0.yaml
+  name: _Lama_Glama
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Lama_Glama_zo2r225xym.yaml
+  name: _Lama_Glama
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Lasos_Lasertechnik_3bqvdqgghp.yaml
+  name: _Lasos_Lasertechnik
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Lasos_Lasertechnik_tdaxjkh1hi.yaml
+  name: _Lasos_Lasertechnik
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Ledcontroller_2otduuqbw5.yaml
+  name: _Ledcontroller
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Ledcontroller_scs0t6nt45.yaml
+  name: _Ledcontroller
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Leica_3bqvdqgghp.yaml
+  name: _Leica
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Leica_tdaxjkh1hi.yaml
+  name: _Leica
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Lg_3bqvdqgghp.yaml
+  name: _Lg
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Lg_tdaxjkh1hi.yaml
+  name: _Lg
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Licketysplit_2otduuqbw5.yaml
+  name: _Licketysplit
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Licketysplit_scs0t6nt45.yaml
+  name: _Licketysplit
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Lifecanvas_3bqvdqgghp.yaml
+  name: _Lifecanvas
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Lifecanvas_tdaxjkh1hi.yaml
+  name: _Lifecanvas
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Loadcells_2otduuqbw5.yaml
+  name: _Loadcells
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Loadcells_scs0t6nt45.yaml
+  name: _Loadcells
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Lumen_Dynamics_3bqvdqgghp.yaml
+  name: _Lumen_Dynamics
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Lumen_Dynamics_tdaxjkh1hi.yaml
+  name: _Lumen_Dynamics
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Lumencor_3bqvdqgghp.yaml
+  name: _Lumencor
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Lumencor_tdaxjkh1hi.yaml
+  name: _Lumencor
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Macaca_Mulatta_3m5t9vd5v0.yaml
+  name: _Macaca_Mulatta
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Macaca_Mulatta_zo2r225xym.yaml
+  name: _Macaca_Mulatta
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Mapseq_3bqvdqgghp.yaml
+  name: _Mapseq
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Mapseq_tdaxjkh1hi.yaml
+  name: _Mapseq
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Massachusetts_Institute_Of_Technology_3bqvdqgghp.yaml
+  name: _Massachusetts_Institute_Of_Technology
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Massachusetts_Institute_Of_Technology_tdaxjkh1hi.yaml
+  name: _Massachusetts_Institute_Of_Technology
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Mbf_Bioscience_3bqvdqgghp.yaml
+  name: _Mbf_Bioscience
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Mbf_Bioscience_tdaxjkh1hi.yaml
+  name: _Mbf_Bioscience
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Mcgovern_Institute_For_Brain_Research_3bqvdqgghp.yaml
+  name: _Mcgovern_Institute_For_Brain_Research
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Mcgovern_Institute_For_Brain_Research_tdaxjkh1hi.yaml
+  name: _Mcgovern_Institute_For_Brain_Research
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Meadowlark_Optics_3bqvdqgghp.yaml
+  name: _Meadowlark_Optics
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Meadowlark_Optics_tdaxjkh1hi.yaml
+  name: _Meadowlark_Optics
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Merfish_3bqvdqgghp.yaml
+  name: _Merfish
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Merfish_tdaxjkh1hi.yaml
+  name: _Merfish
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Michael_J_Fox_Foundation_For_Parkinson_S_Research_3bqvdqgghp.yaml
+  name: _Michael_J_Fox_Foundation_For_Parkinson_S_Research
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Michael_J_Fox_Foundation_For_Parkinson_S_Research_tdaxjkh1hi.yaml
+  name: _Michael_J_Fox_Foundation_For_Parkinson_S_Research
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Midwest_Optical_Systems_Inc__3bqvdqgghp.yaml
+  name: _Midwest_Optical_Systems_Inc_
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Midwest_Optical_Systems_Inc__tdaxjkh1hi.yaml
+  name: _Midwest_Optical_Systems_Inc_
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Mit_Department_Of_Brain_And_Cognitive_Sciences_3bqvdqgghp.yaml
+  name: _Mit_Department_Of_Brain_And_Cognitive_Sciences
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Mit_Department_Of_Brain_And_Cognitive_Sciences_tdaxjkh1hi.yaml
+  name: _Mit_Department_Of_Brain_And_Cognitive_Sciences
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Mitutuyo_3bqvdqgghp.yaml
+  name: _Mitutuyo
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Mitutuyo_tdaxjkh1hi.yaml
+  name: _Mitutuyo
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Mks_Newport_3bqvdqgghp.yaml
+  name: _Mks_Newport
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Mks_Newport_tdaxjkh1hi.yaml
+  name: _Mks_Newport
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Mpi_3bqvdqgghp.yaml
+  name: _Mpi
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Mpi_tdaxjkh1hi.yaml
+  name: _Mpi
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Mri_3bqvdqgghp.yaml
+  name: _Mri
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Mri_tdaxjkh1hi.yaml
+  name: _Mri
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Multipwmgenerator_2otduuqbw5.yaml
+  name: _Multipwmgenerator
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Multipwmgenerator_scs0t6nt45.yaml
+  name: _Multipwmgenerator
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Mus_Musculus_3m5t9vd5v0.yaml
+  name: _Mus_Musculus
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Mus_Musculus_zo2r225xym.yaml
+  name: _Mus_Musculus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_National_Center_For_Complementary_And_Integrative_Health_3bqvdqgghp.yaml
+  name: _National_Center_For_Complementary_And_Integrative_Health
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_National_Center_For_Complementary_And_Integrative_Health_tdaxjkh1hi.yaml
+  name: _National_Center_For_Complementary_And_Integrative_Health
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_National_Institute_Of_Mental_Health_3bqvdqgghp.yaml
+  name: _National_Institute_Of_Mental_Health
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_National_Institute_Of_Mental_Health_tdaxjkh1hi.yaml
+  name: _National_Institute_Of_Mental_Health
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_National_Institute_Of_Neurological_Disorders_And_Stroke_3bqvdqgghp.yaml
+  name: _National_Institute_Of_Neurological_Disorders_And_Stroke
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_National_Institute_Of_Neurological_Disorders_And_Stroke_tdaxjkh1hi.yaml
+  name: _National_Institute_Of_Neurological_Disorders_And_Stroke
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_National_Instruments_3bqvdqgghp.yaml
+  name: _National_Instruments
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_National_Instruments_tdaxjkh1hi.yaml
+  name: _National_Instruments
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Navitar_3bqvdqgghp.yaml
+  name: _Navitar
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Navitar_tdaxjkh1hi.yaml
+  name: _Navitar
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Neuralynx_3bqvdqgghp.yaml
+  name: _Neuralynx
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Neuralynx_tdaxjkh1hi.yaml
+  name: _Neuralynx
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Neurophotometrics_3bqvdqgghp.yaml
+  name: _Neurophotometrics
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Neurophotometrics_tdaxjkh1hi.yaml
+  name: _Neurophotometrics
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Neurophotometricsfp3002_2otduuqbw5.yaml
+  name: _Neurophotometricsfp3002
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Neurophotometricsfp3002_scs0t6nt45.yaml
+  name: _Neurophotometricsfp3002
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_New_Scale_Technologies_3bqvdqgghp.yaml
+  name: _New_Scale_Technologies
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_New_Scale_Technologies_tdaxjkh1hi.yaml
+  name: _New_Scale_Technologies
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_New_York_University_3bqvdqgghp.yaml
+  name: _New_York_University
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_New_York_University_tdaxjkh1hi.yaml
+  name: _New_York_University
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Nikon_3bqvdqgghp.yaml
+  name: _Nikon
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Nikon_tdaxjkh1hi.yaml
+  name: _Nikon
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Nresearch_Inc_3bqvdqgghp.yaml
+  name: _Nresearch_Inc
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Nresearch_Inc_tdaxjkh1hi.yaml
+  name: _Nresearch_Inc
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Olfactometer_2otduuqbw5.yaml
+  name: _Olfactometer
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Olfactometer_scs0t6nt45.yaml
+  name: _Olfactometer
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Olympus_3bqvdqgghp.yaml
+  name: _Olympus
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Olympus_tdaxjkh1hi.yaml
+  name: _Olympus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Open_Ephys_Production_Site_3bqvdqgghp.yaml
+  name: _Open_Ephys_Production_Site
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Open_Ephys_Production_Site_tdaxjkh1hi.yaml
+  name: _Open_Ephys_Production_Site
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Optotune_3bqvdqgghp.yaml
+  name: _Optotune
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Optotune_tdaxjkh1hi.yaml
+  name: _Optotune
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Oryctolagus_Cuniculus_3m5t9vd5v0.yaml
+  name: _Oryctolagus_Cuniculus
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Oryctolagus_Cuniculus_zo2r225xym.yaml
+  name: _Oryctolagus_Cuniculus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Other_3bqvdqgghp.yaml
+  name: _Other
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Other_tdaxjkh1hi.yaml
+  name: _Other
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Outputexpander_2otduuqbw5.yaml
+  name: _Outputexpander
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Outputexpander_scs0t6nt45.yaml
+  name: _Outputexpander
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Oxxius_3bqvdqgghp.yaml
+  name: _Oxxius
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Oxxius_tdaxjkh1hi.yaml
+  name: _Oxxius
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Placid_Industries_3bqvdqgghp.yaml
+  name: _Placid_Industries
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Placid_Industries_tdaxjkh1hi.yaml
+  name: _Placid_Industries
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Pluma_2otduuqbw5.yaml
+  name: _Pluma
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Pluma_scs0t6nt45.yaml
+  name: _Pluma
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Poke_2otduuqbw5.yaml
+  name: _Poke
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Poke_scs0t6nt45.yaml
+  name: _Poke
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Pophys_3bqvdqgghp.yaml
+  name: _Pophys
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Pophys_tdaxjkh1hi.yaml
+  name: _Pophys
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Prizmatix_3bqvdqgghp.yaml
+  name: _Prizmatix
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Prizmatix_tdaxjkh1hi.yaml
+  name: _Prizmatix
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Pycontroladapter_2otduuqbw5.yaml
+  name: _Pycontroladapter
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Pycontroladapter_scs0t6nt45.yaml
+  name: _Pycontroladapter
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Quantifi_3bqvdqgghp.yaml
+  name: _Quantifi
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Quantifi_tdaxjkh1hi.yaml
+  name: _Quantifi
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Raspberry_Pi_3bqvdqgghp.yaml
+  name: _Raspberry_Pi
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Raspberry_Pi_tdaxjkh1hi.yaml
+  name: _Raspberry_Pi
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Rattus_Norvegicus_3m5t9vd5v0.yaml
+  name: _Rattus_Norvegicus
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Rattus_Norvegicus_zo2r225xym.yaml
+  name: _Rattus_Norvegicus
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Rfidreader_2otduuqbw5.yaml
+  name: _Rfidreader
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Rfidreader_scs0t6nt45.yaml
+  name: _Rfidreader
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Rgbarray_2otduuqbw5.yaml
+  name: _Rgbarray
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Rgbarray_scs0t6nt45.yaml
+  name: _Rgbarray
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Same_Sky_3bqvdqgghp.yaml
+  name: _Same_Sky
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Same_Sky_tdaxjkh1hi.yaml
+  name: _Same_Sky
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Schneider_Kreuznach_3bqvdqgghp.yaml
+  name: _Schneider_Kreuznach
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Schneider_Kreuznach_tdaxjkh1hi.yaml
+  name: _Schneider_Kreuznach
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Scrnaseq_3bqvdqgghp.yaml
+  name: _Scrnaseq
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Scrnaseq_tdaxjkh1hi.yaml
+  name: _Scrnaseq
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Second_Order_Effects_3bqvdqgghp.yaml
+  name: _Second_Order_Effects
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Second_Order_Effects_tdaxjkh1hi.yaml
+  name: _Second_Order_Effects
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Semrock_3bqvdqgghp.yaml
+  name: _Semrock
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Semrock_tdaxjkh1hi.yaml
+  name: _Semrock
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Sicgen_3bqvdqgghp.yaml
+  name: _Sicgen
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Sicgen_tdaxjkh1hi.yaml
+  name: _Sicgen
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Sigma_Aldrich_3bqvdqgghp.yaml
+  name: _Sigma_Aldrich
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Sigma_Aldrich_tdaxjkh1hi.yaml
+  name: _Sigma_Aldrich
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Simons_Foundation_3bqvdqgghp.yaml
+  name: _Simons_Foundation
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Simons_Foundation_tdaxjkh1hi.yaml
+  name: _Simons_Foundation
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Simpleanaloggenerator_2otduuqbw5.yaml
+  name: _Simpleanaloggenerator
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Simpleanaloggenerator_scs0t6nt45.yaml
+  name: _Simpleanaloggenerator
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Slap2_3bqvdqgghp.yaml
+  name: _Slap2
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Slap2_tdaxjkh1hi.yaml
+  name: _Slap2
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Sniffdetector_2otduuqbw5.yaml
+  name: _Sniffdetector
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Sniffdetector_scs0t6nt45.yaml
+  name: _Sniffdetector
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Soundcard_2otduuqbw5.yaml
+  name: _Soundcard
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Soundcard_scs0t6nt45.yaml
+  name: _Soundcard
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Spectra_Physics_3bqvdqgghp.yaml
+  name: _Spectra_Physics
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Spectra_Physics_tdaxjkh1hi.yaml
+  name: _Spectra_Physics
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Spim_3bqvdqgghp.yaml
+  name: _Spim
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Spim_tdaxjkh1hi.yaml
+  name: _Spim
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Spinnaker_3bqvdqgghp.yaml
+  name: _Spinnaker
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Spinnaker_tdaxjkh1hi.yaml
+  name: _Spinnaker
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Stepperdriver_2otduuqbw5.yaml
+  name: _Stepperdriver
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Stepperdriver_scs0t6nt45.yaml
+  name: _Stepperdriver
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Stpt_3bqvdqgghp.yaml
+  name: _Stpt
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Stpt_tdaxjkh1hi.yaml
+  name: _Stpt
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Synchronizer_2otduuqbw5.yaml
+  name: _Synchronizer
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Synchronizer_scs0t6nt45.yaml
+  name: _Synchronizer
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Syringepump_2otduuqbw5.yaml
+  name: _Syringepump
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Syringepump_scs0t6nt45.yaml
+  name: _Syringepump
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Tamron_3bqvdqgghp.yaml
+  name: _Tamron
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Tamron_tdaxjkh1hi.yaml
+  name: _Tamron
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Te_Connectivity_3bqvdqgghp.yaml
+  name: _Te_Connectivity
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Te_Connectivity_tdaxjkh1hi.yaml
+  name: _Te_Connectivity
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Technical_Manufacturing_Corporation_3bqvdqgghp.yaml
+  name: _Technical_Manufacturing_Corporation
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Technical_Manufacturing_Corporation_tdaxjkh1hi.yaml
+  name: _Technical_Manufacturing_Corporation
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Teledyne_Flir_3bqvdqgghp.yaml
+  name: _Teledyne_Flir
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Teledyne_Flir_tdaxjkh1hi.yaml
+  name: _Teledyne_Flir
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Teledyne_Vision_Solutions_3bqvdqgghp.yaml
+  name: _Teledyne_Vision_Solutions
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Teledyne_Vision_Solutions_tdaxjkh1hi.yaml
+  name: _Teledyne_Vision_Solutions
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Templeton_World_Charity_Foundation_3bqvdqgghp.yaml
+  name: _Templeton_World_Charity_Foundation
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Templeton_World_Charity_Foundation_tdaxjkh1hi.yaml
+  name: _Templeton_World_Charity_Foundation
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_The_Imaging_Source_3bqvdqgghp.yaml
+  name: _The_Imaging_Source
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_The_Imaging_Source_tdaxjkh1hi.yaml
+  name: _The_Imaging_Source
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_The_Lee_Company_3bqvdqgghp.yaml
+  name: _The_Lee_Company
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_The_Lee_Company_tdaxjkh1hi.yaml
+  name: _The_Lee_Company
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Thermo_Fisher_Scientific_3bqvdqgghp.yaml
+  name: _Thermo_Fisher_Scientific
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Thermo_Fisher_Scientific_tdaxjkh1hi.yaml
+  name: _Thermo_Fisher_Scientific
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Thorlabs_3bqvdqgghp.yaml
+  name: _Thorlabs
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Thorlabs_tdaxjkh1hi.yaml
+  name: _Thorlabs
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Timestampgeneratorgen1_2otduuqbw5.yaml
+  name: _Timestampgeneratorgen1
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Timestampgeneratorgen1_scs0t6nt45.yaml
+  name: _Timestampgeneratorgen1
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Timestampgeneratorgen3_2otduuqbw5.yaml
+  name: _Timestampgeneratorgen3
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Timestampgeneratorgen3_scs0t6nt45.yaml
+  name: _Timestampgeneratorgen3
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Transducer_Techniques_3bqvdqgghp.yaml
+  name: _Transducer_Techniques
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Transducer_Techniques_tdaxjkh1hi.yaml
+  name: _Transducer_Techniques
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Treadmill_2otduuqbw5.yaml
+  name: _Treadmill
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Treadmill_scs0t6nt45.yaml
+  name: _Treadmill
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Tymphany_3bqvdqgghp.yaml
+  name: _Tymphany
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Tymphany_tdaxjkh1hi.yaml
+  name: _Tymphany
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_University_Of_California_San_Diego_3bqvdqgghp.yaml
+  name: _University_Of_California_San_Diego
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_University_Of_California_San_Diego_tdaxjkh1hi.yaml
+  name: _University_Of_California_San_Diego
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_University_Of_Pennsylvania_3bqvdqgghp.yaml
+  name: _University_Of_Pennsylvania
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_University_Of_Pennsylvania_tdaxjkh1hi.yaml
+  name: _University_Of_Pennsylvania
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Unknown_3bqvdqgghp.yaml
+  name: _Unknown
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Usbhub_2otduuqbw5.yaml
+  name: _Usbhub
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Usbhub_scs0t6nt45.yaml
+  name: _Usbhub
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Vestibularh1_2otduuqbw5.yaml
+  name: _Vestibularh1
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Vestibularh1_scs0t6nt45.yaml
+  name: _Vestibularh1
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Vestibularh2_2otduuqbw5.yaml
+  name: _Vestibularh2
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Vestibularh2_scs0t6nt45.yaml
+  name: _Vestibularh2
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Vicuna_Pacos_3m5t9vd5v0.yaml
+  name: _Vicuna_Pacos
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Vicuna_Pacos_zo2r225xym.yaml
+  name: _Vicuna_Pacos
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Vieworks_3bqvdqgghp.yaml
+  name: _Vieworks
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Vieworks_tdaxjkh1hi.yaml
+  name: _Vieworks
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Vortran_3bqvdqgghp.yaml
+  name: _Vortran
+  property_count: 1
+  provenance_count: 1
+- file: schemas/_Vortran_tdaxjkh1hi.yaml
+  name: _Vortran
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Wear_2otduuqbw5.yaml
+  name: _Wear
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Wear_scs0t6nt45.yaml
+  name: _Wear
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Wearbasestationgen2_2otduuqbw5.yaml
+  name: _Wearbasestationgen2
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Wearbasestationgen2_scs0t6nt45.yaml
+  name: _Wearbasestationgen2
+  property_count: 2
+  provenance_count: 1
+- file: schemas/_Whiterabbit_2otduuqbw5.yaml
+  name: _Whiterabbit
+  property_count: 4
+  provenance_count: 1
+- file: schemas/_Whiterabbit_scs0t6nt45.yaml
+  name: _Whiterabbit
+  property_count: 2
+  provenance_count: 1
+- file: schemas/acquisition_16pj3t.yaml
+  name: acquisition
+  property_count: 3
+  provenance_count: 1
+- file: schemas/acquisition_2c9o79nm.yaml
+  name: acquisition
+  property_count: 3
+  provenance_count: 1
+- file: schemas/aind_data_schema_models__harp_types___Behavior_2otduuqbw5.yaml
+  name: aind_data_schema_models__harp_types___Behavior
+  property_count: 4
+  provenance_count: 1
+- file: schemas/aind_data_schema_models__harp_types___Behavior_scs0t6nt45.yaml
+  name: aind_data_schema_models__harp_types___Behavior
+  property_count: 2
+  provenance_count: 1
+- file: schemas/aind_data_schema_models__modalities___Behavior_3bqvdqgghp.yaml
+  name: aind_data_schema_models__modalities___Behavior
+  property_count: 1
+  provenance_count: 1
+- file: schemas/aind_data_schema_models__modalities___Behavior_tdaxjkh1hi.yaml
+  name: aind_data_schema_models__modalities___Behavior
+  property_count: 2
+  provenance_count: 1
+- file: schemas/aind_data_schema_models__organizations___Unknown_3bqvdqgghp.yaml
+  name: aind_data_schema_models__organizations___Unknown
+  property_count: 1
+  provenance_count: 1
+- file: schemas/aind_data_schema_models__organizations___Unknown_tdaxjkh1hi.yaml
+  name: aind_data_schema_models__organizations___Unknown
+  property_count: 2
+  provenance_count: 1
+- file: schemas/aind_data_schema_models__species___Unknown_3bqvdqgghp.yaml
+  name: aind_data_schema_models__species___Unknown
+  property_count: 1
+  provenance_count: 1
+- file: schemas/aind_data_schema_models__species___Unknown_tdaxjkh1hi.yaml
+  name: aind_data_schema_models__species___Unknown
+  property_count: 2
+  provenance_count: 1
+- file: schemas/columns_1xhst7.yaml
+  name: columns
+  property_count: 4
+  provenance_count: 1
+- file: schemas/common_principles_1nz8iw.yaml
+  name: common_principles
+  property_count: 1
+  provenance_count: 1
+- file: schemas/data_description_192afv.yaml
+  name: data_description
+  property_count: 4
+  provenance_count: 1
+- file: schemas/data_description_2gwwqce.yaml
+  name: data_description
+  property_count: 4
+  provenance_count: 1
+- file: schemas/datatypes_3accjp7.yaml
+  name: datatypes
+  property_count: 1
+  provenance_count: 1
+- file: schemas/entities_3accjp7v.yaml
+  name: entities
+  property_count: 1
+  provenance_count: 1
+- file: schemas/enums_3accjp7vo.yaml
+  name: enums
+  property_count: 1
+  provenance_count: 1
+- file: schemas/extensions_3accjp7voq.yaml
+  name: extensions
+  property_count: 1
+  provenance_count: 1
+- file: schemas/files_3accjp7voq.yaml
+  name: files
+  property_count: 1
+  provenance_count: 1
+- file: schemas/formats_3accjp7voq.yaml
+  name: formats
+  property_count: 1
+  provenance_count: 1
+- file: schemas/instrument_1et5j9w.yaml
+  name: instrument
+  property_count: 4
+  provenance_count: 1
+- file: schemas/instrument_pr1yvv.yaml
+  name: instrument
+  property_count: 4
+  provenance_count: 1
+- file: schemas/metadata_4h63sl.yaml
+  name: metadata
+  property_count: 2
+  provenance_count: 1
+- file: schemas/metadata_7a3dlv.yaml
+  name: metadata
+  property_count: 6
+  provenance_count: 1
+- file: schemas/metaentities_3accjp7voq.yaml
+  name: metaentities
+  property_count: 1
+  provenance_count: 1
+- file: schemas/modalities_3accjp7voq.yaml
+  name: modalities
+  property_count: 1
+  provenance_count: 1
+- file: schemas/model_1l53wm4.yaml
+  name: model
+  property_count: 4
+  provenance_count: 1
+- file: schemas/procedures_2fmheuokpx.yaml
+  name: procedures
+  property_count: 2
+  provenance_count: 1
+- file: schemas/processing_nuj2551t.yaml
+  name: processing
+  property_count: 3
+  provenance_count: 1
+- file: schemas/quality_control_nuj2551t8.yaml
+  name: quality_control
+  property_count: 3
+  provenance_count: 1
+- file: schemas/subject_3bqvdqgghp.yaml
+  name: subject
+  property_count: 1
+  provenance_count: 1
+- file: schemas/suffixes_3accjp7voq.yaml
+  name: suffixes
+  property_count: 1
+  provenance_count: 1

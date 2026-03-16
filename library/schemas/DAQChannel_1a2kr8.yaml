@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/acquisition_start_tz_2l8rbh99q
+  - https://schema.undata.live/elements/animal_weight_prior_jn1jmh5a2
+  - https://schema.undata.live/elements/channel_type_zumm31
+  - https://schema.undata.live/elements/subject_id_36kcny87p
+  - https://schema.undata.live/elements/variable_power_1tttvcfi
+  mixins: []
+provenance:
+- source: aind
+  name: DAQChannel
