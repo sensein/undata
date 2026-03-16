@@ -1,197 +1,119 @@
-# Implementation Plan: undata-library
+# Implementation Plan: undata-library v2 — Content-Addressed RDF Property Model
 
-**Branch**: `015-undata-library` | **Date**: 2026-03-15 | **Spec**: spec.md
+**Branch**: `015-undata-library-v2` | **Date**: 2026-03-16 | **Spec**: spec.md (v2 with clarifications)
 
 ## Summary
 
-Standalone Python package defining a LinkML schema for flat-file storage of data elements,
-mappings, and schemas with embedded version history. Provides CLI for validate, export,
-import, diff, and index operations. Lives in its own git repo, added as a submodule to
-the main undata repo.
+Redesign the library around RDF property semantics with content-addressed identity.
+Elements are `rdf:Property` instances identified by their semantic graph hash.
+Schemas are `sh:NodeShape` instances identified by their property set hash.
+Provenance (source name, class, description) is stored separately from identity.
+
+This replaces the v1 model (9,629 flat elements with UUID filenames) with a
+deduplicated, content-addressed registry using `{attribute}_{6-char-id}` naming.
 
 ## Technical Context
 
-**Language/Version**: Python 3.12+ (broader compatibility than backend's 3.14)
-**Primary Dependencies**: linkml-runtime >=1.8, pydantic >=2.0, pyyaml, httpx, click
-**Storage**: Flat YAML files in `elements/`, `mappings/`, `schemas/` directories
-**Testing**: pytest with offline fixtures (no backend required for unit tests)
-**Package**: `undata-library` on PyPI (or internal registry)
-**Submodule**: `library/` in main undata repo
+**Language**: Python 3.12+
+**Dependencies**: pydantic >=2.0, pyyaml, click, httpx (existing from v1)
+**New**: hashlib (stdlib — no new deps)
+**Testing**: pytest with offline fixtures
+**Reuses**: existing `library/` directory, pyproject.toml, CLI structure
 
 ## Constitution Check
 
 | Principle | Status | Notes |
 |-----------|--------|-------|
-| I. Simplicity | ✅ | Flat YAML files; no database; minimal deps |
-| II. TDD | ✅ | Tests first for validation, diff; fixtures for export/import |
-| III. API-First | ✅ | CLI contract defined; LinkML schema is the interface contract |
-| V. Versioning | ✅ | CalVer for package; element versions embedded in YAML |
-| VI. Env Isolation | ✅ | uv-managed; standalone from main repo |
+| I. Simplicity | ✅ | Same deps; cleaner model (identity ≠ provenance) |
+| II. TDD | ✅ | Tests for hashing, dedup, validation before implementation |
+| III. API-First | ✅ | CLI contract + file format contract defined |
+| V. Versioning | ✅ | Content-addressed = immutable identity; provenance versioned |
+| VI. Env Isolation | ✅ | uv-managed, standalone |
 
-## Project Structure
+## Project Structure (v2)
 
 ```text
-undata-library/                     # Standalone git repo
-├── pyproject.toml                  # Package config (undata-library)
-├── library-schema.linkml.yaml      # LinkML meta-schema (THE contract)
+library/
+├── pyproject.toml                  # (modified: same package, updated version)
+├── library-schema.linkml.yaml      # (rewritten: RDF property + SHACL shape model)
+├── hash-registry.yaml              # NEW: 6-char key → SHA-256 → URI
 │
 ├── src/undata_library/
-│   ├── __init__.py                 # Package version, public API
-│   ├── models.py                   # Pydantic: ElementRecord, MappingRecord, etc.
-│   ├── validation.py               # LinkML validation + cross-ref checks
-│   ├── export.py                   # Backend API → YAML files
-│   ├── import_lib.py               # YAML files → Backend API
-│   ├── diff.py                     # Version diff engine
-│   ├── index.py                    # Build index.yaml registry
-│   └── cli.py                      # Click CLI: validate, export, import, diff, index
+│   ├── __init__.py
+│   ├── models.py                   # REWRITTEN: SemanticIdentity, Provenance, etc.
+│   ├── hashing.py                  # NEW: content hash + 6-char key generation
+│   ├── validation.py               # MODIFIED: validate new format
+│   ├── export.py                   # REWRITTEN: content-addressed export
+│   ├── import_lib.py               # MODIFIED: import new format
+│   ├── ingest.py                   # NEW: direct schema ingestion (no backend)
+│   ├── diff.py                     # MODIFIED: diff provenance entries
+│   ├── index.py                    # MODIFIED: index new format
+│   └── cli.py                      # MODIFIED: add hash + ingest commands
 │
-├── elements/                       # Element YAML files (one per element)
-│   └── .gitkeep
-├── mappings/                       # Mapping YAML files
-│   └── .gitkeep
-├── schemas/                        # Schema definition YAML files
-│   └── .gitkeep
-│
-├── index.yaml                      # Auto-generated registry
+├── elements/                       # REWRITTEN: {attr}_{6-char-id}.yaml
+├── schemas/                        # NEW: populated with class shapes
+├── mappings/                       # Future: non-identity mappings
 │
 ├── tests/
-│   ├── conftest.py
-│   ├── test_validation.py          # Validates fixtures against schema
-│   ├── test_models.py              # Pydantic model tests
-│   ├── test_diff.py                # Version diff tests
-│   ├── test_export.py              # Export with mocked backend
-│   ├── test_import.py              # Import with mocked backend
-│   └── fixtures/
-│       ├── valid-element.yaml
-│       ├── invalid-element-missing-field.yaml
-│       ├── invalid-element-bad-enum.yaml
-│       ├── valid-mapping.yaml
-│       └── multi-version-element.yaml
+│   ├── test_hashing.py             # NEW: hash determinism, collision, 6-char keys
+│   ├── test_models.py              # REWRITTEN: new model validation
+│   ├── test_validation.py          # MODIFIED: new format fixtures
+│   ├── test_ingest.py              # NEW: ingestion from raw schemas
+│   ├── test_diff.py                # MODIFIED
+│   ├── test_index.py               # MODIFIED
+│   └── fixtures/                   # REWRITTEN: new format examples
 │
-└── README.md
-```
-
-## Data Format Design
-
-### Element Record (one YAML file per element)
-
-```yaml
-element:
-  id: https://schema.undata.live/elements/{uuid}
-  source_local_id: BIDS.subject_age
-  source_id: https://schema.undata.live/sources/{uuid}
-  created_at: 2026-03-09T15:30:00Z
-
-versions:
-  - version_num: 1
-    name: subject_age
-    data_type: integer
-    description: Age of the research subject in years
-    required: true
-    multivalued: false
-    constraints:
-      minimum: 0
-      maximum: 150
-    semantic_graph:
-      ontology_term: http://purl.obolibrary.org/obo/NCIT_C124353
-      unit: year
-      external_uri: https://qudt.org/vocab/UNIT/YR
-    created_at: 2026-03-09T15:30:00Z
-    created_by: urn:undata:system
-
-  - version_num: 2
-    name: subject_age
-    data_type: integer
-    description: Age of the research subject in years (clarified)
-    required: true
-    multivalued: false
-    constraints:
-      minimum: 0
-      maximum: 150
-    semantic_graph:
-      ontology_term: http://purl.obolibrary.org/obo/NCIT_C124353
-      unit: year
-      external_uri: https://qudt.org/vocab/UNIT/YR
-    created_at: 2026-03-10T08:00:00Z
-    created_by: urn:undata:curator-001
-    changelog:
-      - change_type: description_update
-        reason: Clarified definition for domain experts
-        breaking: false
-
-current_version: 2
-```
-
-### Mapping Record (one YAML file per mapping)
-
-```yaml
-mapping:
-  id: https://schema.undata.live/mappings/{uuid}
-  output_element_id: https://schema.undata.live/elements/{uuid}
-  status: active
-  attributed_to: urn:undata:system
-  confidence_score: 0.95
-  created_at: 2026-03-09T16:00:00Z
-
-versions:
-  - version_num: 1
-    function_type: identity
-    input_element_ids:
-      - https://schema.undata.live/elements/{uuid-a}
-    expression_type: identity
-    sssom_predicate: skos:exactMatch
-    created_at: 2026-03-09T16:00:00Z
-    created_by: urn:undata:system
-
-current_version: 1
-```
-
-## LinkML Schema Design (library-schema.linkml.yaml)
-
-Key classes:
-- `ElementRecord` (root): `element` (ElementMetadata) + `versions` (ElementVersion[]) + `current_version`
-- `ElementMetadata`: `id`, `source_local_id`, `source_id`, `created_at`
-- `ElementVersion`: all versioned fields + `changelog` (ChangeEntry[])
-- `MappingRecord` (root): `mapping` (MappingMetadata) + `versions` (MappingVersion[]) + `current_version`
-- `MappingMetadata`: `id`, `output_element_id`, `status`, `attributed_to`, `confidence_score`
-- `MappingVersion`: `function_type`, `expression`, `input_element_ids`, etc.
-- Enums: `DataType`, `MappingFunctionType`, `MappingStatus`
-
-Prefixes: `linkml:`, `schema:`, `prov:`, `sssom:`, `undata:`
-
-## CLI Design
-
-```bash
-undata-library validate [PATH]           # Validate YAML against schema
-undata-library export --backend-url URL  # Export backend → YAML
-undata-library import --backend-url URL  # Import YAML → backend
-undata-library diff FILE [--from N --to M] [--format text|json]
-undata-library index [--output index.yaml]
-```
-
-Entry point via `[project.scripts]` in pyproject.toml:
-```toml
-[project.scripts]
-undata-library = "undata_library.cli:main"
+├── index.yaml
+└── README.md                       # UPDATED
 ```
 
 ## Phases
 
-1. **Phase 1**: Scaffold repo, pyproject.toml, LinkML schema, Pydantic models
-2. **Phase 2**: Validation engine + CLI `validate` command + test fixtures
-3. **Phase 3**: Export from backend + CLI `export` command
-4. **Phase 4**: Import to backend + CLI `import` command
-5. **Phase 5**: Diff engine + CLI `diff` command
-6. **Phase 6**: Index builder + CLI `index` command
-7. **Phase 7**: Add as git submodule to main repo, update CLAUDE.md
+### Phase 1: Core — Hashing + Models + LinkML Schema
+- Rewrite `models.py` with `SemanticIdentity`, `ProvenanceEntry`, `ElementRecord`, `SchemaRecord`
+- Create `hashing.py`: `compute_semantic_hash()`, `generate_short_key()`, `build_uri()`
+- Rewrite `library-schema.linkml.yaml` for the new RDF property model
+- Write test fixtures in new format
+- Tests: hash determinism, collision detection, model validation
 
-## Integration with Main Repo
+### Phase 2: Validation + CLI
+- Rewrite `validation.py` for new format
+- Update CLI `validate` command
+- Add CLI `hash` command
+- Tests: validate new fixtures
 
-```bash
-# In main undata repo
-git submodule add https://github.com/sensein/undata-library.git library
-echo "library/" >> .gitmodules
-```
+### Phase 3: Ingestion Pipeline
+- Create `ingest.py`: read raw schemas (BIDS/NWB/AIND/DANDI/openMINDS) →
+  extract semantic graphs → compute hashes → merge provenance → write files
+- Add CLI `ingest` command
+- Re-export all 5 sources through the new pipeline
+- Tests: ingest from fixtures, verify dedup
 
-The backend can optionally depend on `undata-library` for export/import operations,
-or the CLI can be used standalone.
+### Phase 4: Schema Shapes
+- Extract class shapes from ingested sources
+- Write `schemas/` files with property URIs + inheritance
+- Build `hash-registry.yaml` for schemas
+- Tests: schema hash, inheritance tracking
+
+### Phase 5: Export/Import + Index
+- Rewrite `export.py` for content-addressed output
+- Update `import_lib.py` for new format
+- Update `index.py` for new directory structure
+- Tests: export/import round-trip
+
+### Phase 6: Polish
+- Update README.md
+- Run full validation on all files
+- Update CLAUDE.md
+- Commit and push
+
+## Key Design Decisions
+
+| Decision | Rationale |
+|----------|-----------|
+| Content-addressed identity | Same semantic graph = same element, automatic dedup |
+| 6-char alphanumeric keys | Human-readable, URL-safe, collision-free at scale |
+| Identity ≠ provenance | Follows reproschema pattern; enables multi-source convergence |
+| RDF-native in LinkML | Standard vocabularies (rdf:Property, sh:NodeShape, owl:equivalentProperty) |
+| Direct ingestion (no backend) | Library can be populated from raw schema files offline |
+| Underspecification OK | Partial hashes for elements without ontology terms |
