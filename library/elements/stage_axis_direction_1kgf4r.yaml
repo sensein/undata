@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Detection axis
+    - Illumination axis
+    - Perpendicular axis
+provenance:
+- source: aind
+  class: ScanningStage
+  name: stage_axis_direction
+  description: Direction of motion for motorized stage

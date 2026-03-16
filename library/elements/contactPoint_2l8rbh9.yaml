@@ -1,0 +1,107 @@
+semantic:
+  data_type: integer
+provenance:
+- source: dandi
+  class: AccessRequirements
+  name: contactPoint
+  description: Who or where to look for information about access.
+- source: dandi
+  class: Anatomy
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+- source: dandi
+  class: ApproachType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+- source: dandi
+  class: AssayType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+- source: dandi
+  class: AssetsSummary
+  name: numberOfBytes
+  description: ''
+- source: dandi
+  class: AssetsSummary
+  name: numberOfFiles
+  description: ''
+- source: dandi
+  class: AssetsSummary
+  name: numberOfSubjects
+  description: ''
+- source: dandi
+  class: AssetsSummary
+  name: numberOfSamples
+  description: ''
+- source: dandi
+  class: AssetsSummary
+  name: numberOfCells
+  description: ''
+- source: dandi
+  class: BaseType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+- source: dandi
+  class: ContactPoint
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Disorder
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+- source: dandi
+  class: EthicsApproval
+  name: contactPoint
+  description: Information about the ethics approval committee.
+- source: dandi
+  class: GenericType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+- source: dandi
+  class: MeasurementTechniqueType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+- source: dandi
+  class: Organization
+  name: contactPoint
+  description: Contact for the organization
+- source: dandi
+  class: Participant
+  name: strain
+  description: Identifier for the strain of the participant or subject.
+- source: dandi
+  class: SampleType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+- source: dandi
+  class: SexType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+- source: dandi
+  class: SpeciesType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+- source: dandi
+  class: StandardsType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+- source: dandi
+  class: StrainType
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: StrainType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.

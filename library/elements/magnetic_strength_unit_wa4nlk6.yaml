@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - tesla
+    - millitesla
+    - microtesla
+provenance:
+- source: aind
+  class: Scanner
+  name: magnetic_strength_unit
+  description: Magnetic field units

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - derived
+    - raw
+    - simulated
+provenance:
+- source: aind
+  class: DataDescription
+  name: data_level
+  description: Level of processing that data has undergone

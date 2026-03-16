@@ -1,0 +1,155 @@
+semantic:
+  data_type: object
+provenance:
+- source: bids
+  class: metadata
+  name: AnatomicalLandmarkCoordinates
+  description: 'Key-value pairs of the labels and 3-D digitized locations of anatomical
+    landmarks,
+
+    interpreted following the `"AnatomicalLandmarkCoordinateSystem"`
+
+    (for example, `{"NAS": [12.7,21.3,13.9], "LPA": [5.2,11.3,9.6],
+
+    "RPA": [20.2,11.3,9.1]}`.
+
+    Each array MUST contain three numeric values corresponding to x, y, and z
+
+    axis of the coordinate system in that exact order.
+
+    '
+- source: bids
+  class: metadata
+  name: AnatomicalLandmarkCoordinates__mri
+  description: 'Key-value pairs of any number of additional anatomical landmarks and
+    their
+
+    coordinates in voxel units (where first voxel has index 0,0,0)
+
+    relative to the associated anatomical MRI
+
+    (for example, `{"AC": [127,119,149], "PC": [128,93,141],
+
+    "IH": [131,114,206]}`, or `{"NAS": [127,213,139], "LPA": [52,113,96],
+
+    "RPA": [202,113,91]}`).
+
+    Each array MUST contain three numeric values corresponding to x, y, and z
+
+    axis of the coordinate system in that exact order.
+
+    '
+- source: bids
+  class: metadata
+  name: Container
+  description: 'Used to specify the location and relevant attributes of software container
+    image
+
+    used to produce the dataset. Valid keys in this object include `Type`, `Tag` and
+
+    [`URI`][uri] with [string][] values.
+
+    '
+- source: bids
+  class: metadata
+  name: DatasetLinks
+  description: 'Used to map a given `<dataset-name>` from a [BIDS URI](SPEC_ROOT/common-principles.md#bids-uri)
+
+    of the form `bids:<dataset-name>:path/within/dataset` to a local or remote location.
+
+    The `<dataset-name>`: `""` (an empty string) is a reserved keyword that MUST NOT
+    be a key in
+
+    `DatasetLinks` (example: `bids::path/within/dataset`).
+
+    '
+- source: bids
+  class: metadata
+  name: EditPulse
+  description: 'If spectral editing was applied, this details the editing parameters.
+
+    For example:
+
+    `{"ON": {"FrequencyOffset": 1.9, "PulseDuration": 16},
+
+    "OFF": {"FrequencyOffset": 7.5, "PulseDuration": 16}}`.
+
+    '
+- source: bids
+  class: metadata
+  name: FiducialsCoordinates
+  description: 'Key-value pairs of the labels and 3-D digitized position of anatomical
+
+    landmarks, interpreted following the `"FiducialsCoordinateSystem"`
+
+    (for example, `{"NAS": [12.7,21.3,13.9], "LPA": [5.2,11.3,9.6],
+
+    "RPA": [20.2,11.3,9.1]}`).
+
+    Each array MUST contain three numeric values corresponding to x, y, and z
+
+    axis of the coordinate system in that exact order.
+
+    '
+- source: bids
+  class: metadata
+  name: Genetics
+  description: 'An object containing information about the genetics descriptor.
+
+    '
+- source: bids
+  class: metadata
+  name: HeadCoilCoordinates
+  description: 'Key-value pairs describing head localization coil labels and their
+
+    coordinates, interpreted following the `HeadCoilCoordinateSystem`
+
+    (for example, `{"NAS": [12.7,21.3,13.9], "LPA": [5.2,11.3,9.6],
+
+    "RPA": [20.2,11.3,9.1]}`).
+
+    Note that coils are not always placed at locations that have a known
+
+    anatomical name (for example, for Neuromag/Elekta/MEGIN, Yokogawa systems);
+
+    in that case generic labels can be used
+
+    (for example, `{"coil1": [12.2,21.3,12.3], "coil2": [6.7,12.3,8.6],
+
+    "coil3": [21.9,11.0,8.1]}`).
+
+    Each array MUST contain three numeric values corresponding to x, y, and z
+
+    axis of the coordinate system in that exact order.
+
+    '
+- source: bids
+  class: metadata
+  name: Levels
+  description: 'For categorical variables: An object of possible values (keys) and
+    their
+
+    descriptions (values).
+
+    '
+- source: bids
+  class: metadata
+  name: MeasurementToolMetadata
+  description: 'A description of the measurement tool as a whole.
+
+    Contains two fields: `"Description"` and `"TermURL"`.
+
+    `"Description"` is a free text description of the measurement tool.
+
+    `"TermURL"` is a URL to an entity in an ontology corresponding to this tool.
+
+    '
+- source: bids
+  class: metadata
+  name: StimulusPresentation
+  description: 'Object containing key-value pairs related to the software used to
+    present
+
+    the stimuli during the experiment.
+
+    '

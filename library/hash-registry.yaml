@@ -1,0 +1,682 @@
+elements:
+  1m2b6o:
+    sha256: d14460a05590669eb9cb515727d0c9c2e52ff6861aa38c7c7b0a36b9387ae6c9
+    attribute: HED
+    name: null
+    uri: https://schema.undata.live/elements/HED_1m2b6o
+  9ycenu:
+    sha256: 23dffb3a6df82b39ec9a8e9ca1e8fa050ba61abc4c0bfaad269e3eb965f360cc
+    attribute: duration
+    name: null
+    uri: https://schema.undata.live/elements/duration_9ycenu
+  1b9a0a:
+    sha256: aa51e4fb77f3430f13c18b48b39952db3af195e0dfbacce9ab520071d8983f26
+    attribute: index
+    name: null
+    uri: https://schema.undata.live/elements/index_1b9a0a
+  xd2wy4:
+    sha256: 783e644c4324f6c17f5958fe7f743cb886aba862edbe13b18c8f745896a2a002
+    attribute: short_channel
+    name: null
+    uri: https://schema.undata.live/elements/short_channel_xd2wy4
+  1l4uar:
+    sha256: cdea9a07fb270113fbbb9e471be7371b966125e57aa3abdc5e45a54d3226a291
+    attribute: AnchorCoordinates
+    name: null
+    uri: https://schema.undata.live/elements/AnchorCoordinates_1l4uar
+  1ahqvp:
+    sha256: a7904c02fa6584a02bc8dbba2d3f90064f4ba47e9bd9cca0208afbd14faaf05e
+    attribute: AnatomicalLandmarkCoordinates
+    name: null
+    uri: https://schema.undata.live/elements/AnatomicalLandmarkCoordinates_1ahqvp
+  36kcny8:
+    sha256: d14460a05590669eb9cb515727d0c9c2e52ff6861aa38c7c7b0a36b9387ae6c9
+    attribute: id
+    name: null
+    uri: https://schema.undata.live/elements/id_36kcny8
+  2l8rbh9:
+    sha256: aa51e4fb77f3430f13c18b48b39952db3af195e0dfbacce9ab520071d8983f26
+    attribute: contactPoint
+    name: null
+    uri: https://schema.undata.live/elements/contactPoint_2l8rbh9
+  34qbbrb:
+    sha256: cdea9a07fb270113fbbb9e471be7371b966125e57aa3abdc5e45a54d3226a291
+    attribute: wasAssociatedWith
+    name: null
+    uri: https://schema.undata.live/elements/wasAssociatedWith_34qbbrb
+  1tttvcf:
+    sha256: 783e644c4324f6c17f5958fe7f743cb886aba862edbe13b18c8f745896a2a002
+    attribute: includeInCitation
+    name: null
+    uri: https://schema.undata.live/elements/includeInCitation_1tttvcf
+  jn1jmh5:
+    sha256: 23dffb3a6df82b39ec9a8e9ca1e8fa050ba61abc4c0bfaad269e3eb965f360cc
+    attribute: maxValue
+    name: null
+    uri: https://schema.undata.live/elements/maxValue_jn1jmh5
+  36kcny87:
+    sha256: d14460a05590669eb9cb515727d0c9c2e52ff6861aa38c7c7b0a36b9387ae6c9
+    attribute: NWBData
+    name: null
+    uri: https://schema.undata.live/elements/NWBData_36kcny87
+  2jqfqst:
+    sha256: a7904c02fa6584a02bc8dbba2d3f90064f4ba47e9bd9cca0208afbd14faaf05e
+    attribute: TimeSeriesReferenceVectorData
+    name: null
+    uri: https://schema.undata.live/elements/TimeSeriesReferenceVectorData_2jqfqst
+  jn1jmh5a:
+    sha256: 23dffb3a6df82b39ec9a8e9ca1e8fa050ba61abc4c0bfaad269e3eb965f360cc
+    attribute: resolution
+    name: null
+    uri: https://schema.undata.live/elements/resolution_jn1jmh5a
+  2l8rbh99:
+    sha256: aa51e4fb77f3430f13c18b48b39952db3af195e0dfbacce9ab520071d8983f26
+    attribute: control
+    name: null
+    uri: https://schema.undata.live/elements/control_2l8rbh99
+  36kcny87p:
+    sha256: d14460a05590669eb9cb515727d0c9c2e52ff6861aa38c7c7b0a36b9387ae6c9
+    attribute: subject_id
+    name: null
+    uri: https://schema.undata.live/elements/subject_id_36kcny87p
+  2l8rbh99q:
+    sha256: aa51e4fb77f3430f13c18b48b39952db3af195e0dfbacce9ab520071d8983f26
+    attribute: acquisition_start_tz
+    name: null
+    uri: https://schema.undata.live/elements/acquisition_start_tz_2l8rbh99q
+  34qbbrb1:
+    sha256: cdea9a07fb270113fbbb9e471be7371b966125e57aa3abdc5e45a54d3226a291
+    attribute: experimenters
+    name: null
+    uri: https://schema.undata.live/elements/experimenters_34qbbrb1
+  jn1jmh5a2:
+    sha256: 23dffb3a6df82b39ec9a8e9ca1e8fa050ba61abc4c0bfaad269e3eb965f360cc
+    attribute: animal_weight_prior
+    name: null
+    uri: https://schema.undata.live/elements/animal_weight_prior_jn1jmh5a2
+  1w2vw5:
+    sha256: f55d86805398dbfd8423cd2006f9a4e3ea92ebc911370a4f37ca5bad99142ea5
+    attribute: weight_unit
+    name: null
+    uri: https://schema.undata.live/elements/weight_unit_1w2vw5
+  rdj5rx:
+    sha256: 62aa1cfdc57667eb5037f083d3131a0540d40eec4b950dc762a012e7a0d1a9f7
+    attribute: valence
+    name: null
+    uri: https://schema.undata.live/elements/valence_rdj5rx
+  1iebmr:
+    sha256: c40dadf2d042b0581ac64319d5331fc24f370f98d86a7b43c3abac8e3695fa96
+    attribute: duration_unit
+    name: null
+    uri: https://schema.undata.live/elements/duration_unit_1iebmr
+  ukclru:
+    sha256: 6e28c53ab8b717d379f22d533d2789794f2d0a01f5fd74a9e54a2bbc72bbaee3
+    attribute: name
+    name: null
+    uri: https://schema.undata.live/elements/name_ukclru
+  a2bda2:
+    sha256: 2445c1fa6f6ee1af96bf48d548671a5c27344cef54199228ec74e88b21f8d17b
+    attribute: origin
+    name: null
+    uri: https://schema.undata.live/elements/origin_a2bda2
+  shazty:
+    sha256: 66a574e6b515673ad4dce491cfe0e96816419fa1d96c0e22a32681a7d442d0ba
+    attribute: axis_unit
+    name: null
+    uri: https://schema.undata.live/elements/axis_unit_shazty
+  2jqfqstx:
+    sha256: a7904c02fa6584a02bc8dbba2d3f90064f4ba47e9bd9cca0208afbd14faaf05e
+    attribute: coordinate_system
+    name: null
+    uri: https://schema.undata.live/elements/coordinate_system_2jqfqstx
+  l5to47:
+    sha256: 4c44b857f259e89e44779bfcb8c61049e843cf9c4105a407fee5c7144a071363
+    attribute: name
+    name: null
+    uri: https://schema.undata.live/elements/name_l5to47
+  1pmiqf:
+    sha256: de1a40435ae9b7b54d5a2950e2fe3dce9c1147b5b29e65e71da30cf11d5c1f7f
+    attribute: direction
+    name: null
+    uri: https://schema.undata.live/elements/direction_1pmiqf
+  125n80:
+    sha256: 898505404d1f34e9f4f6be098c66755fce3fd593fd3a613803274cebd6f35b3b
+    attribute: fit_type
+    name: null
+    uri: https://schema.undata.live/elements/fit_type_125n80
+  1tttvcfi:
+    sha256: 783e644c4324f6c17f5958fe7f743cb886aba862edbe13b18c8f745896a2a002
+    attribute: variable_power
+    name: null
+    uri: https://schema.undata.live/elements/variable_power_1tttvcfi
+  hsbees:
+    sha256: 401a9db4faeadbc0a3fd5424a6fe5eef0490fa88d70e633a298e0c315819e06c
+    attribute: power_unit
+    name: null
+    uri: https://schema.undata.live/elements/power_unit_hsbees
+  1lvsya:
+    sha256: d09d9fab9fea5e6c1d2fef137ea0213839a1f97d24f69ad8206b44011ac1b467
+    attribute: trigger_type
+    name: null
+    uri: https://schema.undata.live/elements/trigger_type_1lvsya
+  1yuukz:
+    sha256: ff5f7bcdce2ae4cf919e9425a9c940e2d6ad3ee69136986c01721e64da9b6527
+    attribute: imaging_angle_unit
+    name: null
+    uri: https://schema.undata.live/elements/imaging_angle_unit_1yuukz
+  k8cd9u:
+    sha256: 48eaa63240e06fa8fcd33fab9d4f121663d26ae98dbe5aef69b3d29f5705eb1f
+    attribute: medium
+    name: null
+    uri: https://schema.undata.live/elements/medium_k8cd9u
+  1gz0ub:
+    sha256: beeaec8727a1c20ca495447aea50363b1e94c2a2f91b24099e67fd8cc6f091e9
+    attribute: profile
+    name: null
+    uri: https://schema.undata.live/elements/profile_1gz0ub
+  42id67:
+    sha256: 0eaae52ff923bc8d9ca8f173f4a1229c5ec8a4ee1430da5704f8cf732347caa5
+    attribute: solution
+    name: null
+    uri: https://schema.undata.live/elements/solution_42id67
+  jbsh2e:
+    sha256: 45a85c66c68b4f64199ec19bd2fdb9e30f5f970339fc8d10dc12444d68ba094c
+    attribute: volume_unit
+    name: null
+    uri: https://schema.undata.live/elements/volume_unit_jbsh2e
+  1bp79i:
+    sha256: abea00e1947cb3ab6f66935b4a7313cf60b936f31dae4158ab7372c6d0365db3
+    attribute: pulse_sequence_type
+    name: null
+    uri: https://schema.undata.live/elements/pulse_sequence_type_1bp79i
+  2a5l5y:
+    sha256: 08398c66e149d6056480c6d2d7ab6b40488d6e498ff73c144da0d24f2f35f2c2
+    attribute: mr_acquisition_type
+    name: null
+    uri: https://schema.undata.live/elements/mr_acquisition_type_2a5l5y
+  121dqn:
+    sha256: 8917c12e2d7676d330062b5e541b22435d20c9a48c5e5b38fcf4c569096b2bb2
+    attribute: subject_position
+    name: null
+    uri: https://schema.undata.live/elements/subject_position_121dqn
+  mqw60o:
+    sha256: 51fb5878e9277a88065144878a79c7a9b09b9165797e11cefae111521dd2ab9d
+    attribute: registry
+    name: null
+    uri: https://schema.undata.live/elements/registry_mqw60o
+  1dqld0:
+    sha256: b342f3276e562783b249c8802b8077366c12e5809c35eb0d9537d13a42a94e72
+    attribute: dilution_unit
+    name: null
+    uri: https://schema.undata.live/elements/dilution_unit_1dqld0
+  1i8ipc:
+    sha256: c378f0cd4c167429739f4c010d5f895bd170fd929bba8384f7d67f7bcabad266
+    attribute: power_function
+    name: null
+    uri: https://schema.undata.live/elements/power_function_1i8ipc
+  rcaveo:
+    sha256: 628a9580941aaf26b540129a6980cb46f1ae1e0e8e6a5c6253a760748bd8e0bb
+    attribute: frame_rate_unit
+    name: null
+    uri: https://schema.undata.live/elements/frame_rate_unit_rcaveo
+  wey9vp:
+    sha256: 74d3b4850cba5844a9c22fb678f661982d6d51d635e72fd5daab291df2dcc239
+    attribute: slap2_acquisition_type
+    name: null
+    uri: https://schema.undata.live/elements/slap2_acquisition_type_wey9vp
+  u9rj54:
+    sha256: 6d197aa8f9be129246e569c251cc79641d4be88898c5fcaf7421441febfb977e
+    attribute: license
+    name: null
+    uri: https://schema.undata.live/elements/license_u9rj54
+  1q20gw:
+    sha256: dfa74f9ff04ec4b74c3a8baa17f9f7e29c7eecdefd318991b152f3e132819a3e
+    attribute: data_level
+    name: null
+    uri: https://schema.undata.live/elements/data_level_1q20gw
+  1vo59g:
+    sha256: f3e3c32a9a1b26768ba602b142174a33a087720114c9d905938c18bb13a814e1
+    attribute: imaging_device_type
+    name: null
+    uri: https://schema.undata.live/elements/imaging_device_type_1vo59g
+  6a0jqk:
+    sha256: 16a085ec7266160c86080a7b57cc062562826907bdf62c559b62ac8da5f0a2cd
+    attribute: detector_type
+    name: null
+    uri: https://schema.undata.live/elements/detector_type_6a0jqk
+  d6hy26:
+    sha256: 2f80e0ae183bbc0451fcdf7407800b5a93e6e058e39b0a41e53b4afeff3816d8
+    attribute: data_interface
+    name: null
+    uri: https://schema.undata.live/elements/data_interface_d6hy26
+  1m0al2:
+    sha256: d110b11acd9d4c647bb85427aca464abe2b1d295dcb7d065a5f2fe3b7e28b005
+    attribute: cooling
+    name: null
+    uri: https://schema.undata.live/elements/cooling_1m0al2
+  qq1526:
+    sha256: 604fd1de04591cbc184d21b870ff23fe3ad1e7a043bc69133ac2b8d17d08a919
+    attribute: bin_mode
+    name: null
+    uri: https://schema.undata.live/elements/bin_mode_qq1526
+  vz6t4m:
+    sha256: 733fb7f669432b10c944894c94f6bbd189e19820873ad9a040910ab946f9cca5
+    attribute: target
+    name: null
+    uri: https://schema.undata.live/elements/target_vz6t4m
+  zumm31:
+    sha256: 8135634dfd8e01f2be1c2b9fa058c0d5dada3d1f81eab7c9fb8628d8cf49a03d
+    attribute: channel_type
+    name: null
+    uri: https://schema.undata.live/elements/channel_type_zumm31
+  lbq9ww:
+    sha256: 4cdc13b03d783c332c1ef505e4349af716ef58ba608682750ae43eacba4d3d67
+    attribute: probe_model
+    name: null
+    uri: https://schema.undata.live/elements/probe_model_lbq9ww
+  u2g8n1:
+    sha256: 6c5e09bd6b74d99d29a15dfa2d7115265b47a47a8fd0446381ef27c144e28fc1
+    attribute: filter_type
+    name: null
+    uri: https://schema.undata.live/elements/filter_type_u2g8n1
+  99sh1y:
+    sha256: 216ab2562b7b3828b348e4e02d6cf9e977af08c050a81a46380c05e5d10b06c5
+    attribute: channel_type
+    name: null
+    uri: https://schema.undata.live/elements/channel_type_99sh1y
+  wgf2zy:
+    sha256: 74f94cee8c9c88ecc4100c7bc6a2b242e1490da56c4cca7351809dad89ea174e
+    attribute: time_setting_unit
+    name: null
+    uri: https://schema.undata.live/elements/time_setting_unit_wgf2zy
+  1gpvt9:
+    sha256: be00aeeea20eace4104e045da041a77e16736bdbd5175233d48a343e60dbe18c
+    attribute: speed_unit
+    name: null
+    uri: https://schema.undata.live/elements/speed_unit_1gpvt9
+  gczpzr:
+    sha256: 3af73a57d15ffc3b684bcb888d6117b099572fab13d4a16c25ae77b697131aa3
+    attribute: magnetic_strength_unit
+    name: null
+    uri: https://schema.undata.live/elements/magnetic_strength_unit_gczpzr
+  1kgf4r:
+    sha256: cb78b5d5273260730060bce01aca3a2c4acea37848cd7a70d1d36705fbeb1563
+    attribute: stage_axis_direction
+    name: null
+    uri: https://schema.undata.live/elements/stage_axis_direction_1kgf4r
+  zk35l8:
+    sha256: 80273f0cef1e85f54d30f6b7f53d3fc6d259a2844ea88e117cd1ac018fcd02f8
+    attribute: catheter_material
+    name: null
+    uri: https://schema.undata.live/elements/catheter_material_zk35l8
+  lweef1:
+    sha256: 4eedd47d60bd271212234df7fb4ecc3c23c41705fe143c5f2e3ab16e8c0c986c
+    attribute: catheter_design
+    name: null
+    uri: https://schema.undata.live/elements/catheter_design_lweef1
+  bq87qg:
+    sha256: 2a453f28c62448da14340546e684ec9f6ee09eeabafe35cae5d646a673932057
+    attribute: catheter_port
+    name: null
+    uri: https://schema.undata.live/elements/catheter_port_bq87qg
+  1ehm5t:
+    sha256: b5f77ffdd3dfdee7abb99ea6b42e916571f0a62b52261b3f2b07a61fe727860a
+    attribute: craniotomy_type
+    name: null
+    uri: https://schema.undata.live/elements/craniotomy_type_1ehm5t
+  1i7l6x:
+    sha256: c36115659f9ac8c90d0172992349212210cb402b33a16b4a259d7cf8c9711d9a
+    attribute: stain_type
+    name: null
+    uri: https://schema.undata.live/elements/stain_type_1i7l6x
+  m3gv6m:
+    sha256: 4fa2fcde3dac67a7959dfa775e8013bb2898fba1d3e4099d11df9176ada9889f
+    attribute: fluorophore_type
+    name: null
+    uri: https://schema.undata.live/elements/fluorophore_type_m3gv6m
+  1ukth9:
+    sha256: eff3d89f94017f18b3fb1d8e4839f30e0bf7b860e665891869aedf67d76881e8
+    attribute: array_type
+    name: null
+    uri: https://schema.undata.live/elements/array_type_1ukth9
+  rswiyf:
+    sha256: 64340ff700cfdcc75b88f91db2d1ff20ebf54626ae52426c2da60d90af2ef734
+    attribute: relative_position
+    name: null
+    uri: https://schema.undata.live/elements/relative_position_rswiyf
+  1rj11m:
+    sha256: e4f60d7a997df54b295eaebcf88dc9b85e33d7cd74b2ee592873f636b0825942
+    attribute: section_orientation
+    name: null
+    uri: https://schema.undata.live/elements/section_orientation_1rj11m
+  rjhaez:
+    sha256: 63428dfb549753bfe847a7636e17bb32ce0a019fa18acc7ebf0e3e66d6632874
+    attribute: sample_type
+    name: null
+    uri: https://schema.undata.live/elements/sample_type_rjhaez
+  1ggbvu:
+    sha256: bd0bd60018faa4b11af1ed5130d6984a3db8087a9a89d4ff922adbea9c2c044d
+    attribute: procedure_type
+    name: null
+    uri: https://schema.undata.live/elements/procedure_type_1ggbvu
+  1b6fbz:
+    sha256: aa08cc762797d9a4fdc6e3e1ce8a4c5595f04f29d5a7e7de2d4eca4dfc57ba2c
+    attribute: sex
+    name: null
+    uri: https://schema.undata.live/elements/sex_1b6fbz
+  36kcny87po:
+    sha256: d14460a05590669eb9cb515727d0c9c2e52ff6861aa38c7c7b0a36b9387ae6c9
+    attribute: name
+    name: null
+    uri: https://schema.undata.live/elements/name_36kcny87po
+  2jqfqstxo:
+    sha256: a7904c02fa6584a02bc8dbba2d3f90064f4ba47e9bd9cca0208afbd14faaf05e
+    attribute: other_identifiers
+    name: null
+    uri: https://schema.undata.live/elements/other_identifiers_2jqfqstxo
+  2l8rbh99qy:
+    sha256: aa51e4fb77f3430f13c18b48b39952db3af195e0dfbacce9ab520071d8983f26
+    attribute: acquisition_start_tz
+    name: null
+    uri: https://schema.undata.live/elements/acquisition_start_tz_2l8rbh99qy
+  34qbbrb1t:
+    sha256: cdea9a07fb270113fbbb9e471be7371b966125e57aa3abdc5e45a54d3226a291
+    attribute: experimenters
+    name: null
+    uri: https://schema.undata.live/elements/experimenters_34qbbrb1t
+  jn1jmh5a2y:
+    sha256: 23dffb3a6df82b39ec9a8e9ca1e8fa050ba61abc4c0bfaad269e3eb965f360cc
+    attribute: animal_weight_prior
+    name: null
+    uri: https://schema.undata.live/elements/animal_weight_prior_jn1jmh5a2y
+  3qbsncg:
+    sha256: f55d86805398dbfd8423cd2006f9a4e3ea92ebc911370a4f37ca5bad99142ea5
+    attribute: weight_unit
+    name: null
+    uri: https://schema.undata.live/elements/weight_unit_3qbsncg
+  3pipo7j:
+    sha256: f3e3c32a9a1b26768ba602b142174a33a087720114c9d905938c18bb13a814e1
+    attribute: imaging_device_type
+    name: null
+    uri: https://schema.undata.live/elements/imaging_device_type_3pipo7j
+  1i0j8xg:
+    sha256: 62aa1cfdc57667eb5037f083d3131a0540d40eec4b950dc762a012e7a0d1a9f7
+    attribute: valence
+    name: null
+    uri: https://schema.undata.live/elements/valence_1i0j8xg
+  1k70dgk:
+    sha256: 66a574e6b515673ad4dce491cfe0e96816419fa1d96c0e22a32681a7d442d0ba
+    attribute: diameter_unit
+    name: null
+    uri: https://schema.undata.live/elements/diameter_unit_1k70dgk
+  2zbxgs0:
+    sha256: c40dadf2d042b0581ac64319d5331fc24f370f98d86a7b43c3abac8e3695fa96
+    attribute: duration_unit
+    name: null
+    uri: https://schema.undata.live/elements/duration_unit_2zbxgs0
+  1ob2v8b:
+    sha256: 6e28c53ab8b717d379f22d533d2789794f2d0a01f5fd74a9e54a2bbc72bbaee3
+    attribute: name
+    name: null
+    uri: https://schema.undata.live/elements/name_1ob2v8b
+  juvmbd8:
+    sha256: 2445c1fa6f6ee1af96bf48d548671a5c27344cef54199228ec74e88b21f8d17b
+    attribute: origin
+    name: null
+    uri: https://schema.undata.live/elements/origin_juvmbd8
+  15r5273:
+    sha256: 4c44b857f259e89e44779bfcb8c61049e843cf9c4105a407fee5c7144a071363
+    attribute: name
+    name: null
+    uri: https://schema.undata.live/elements/name_15r5273
+  3dlbiij:
+    sha256: de1a40435ae9b7b54d5a2950e2fe3dce9c1147b5b29e65e71da30cf11d5c1f7f
+    attribute: direction
+    name: null
+    uri: https://schema.undata.live/elements/direction_3dlbiij
+  23ab956:
+    sha256: 898505404d1f34e9f4f6be098c66755fce3fd593fd3a613803274cebd6f35b3b
+    attribute: fit_type
+    name: null
+    uri: https://schema.undata.live/elements/fit_type_23ab956
+  1tttvcfiq:
+    sha256: 783e644c4324f6c17f5958fe7f743cb886aba862edbe13b18c8f745896a2a002
+    attribute: empty
+    name: null
+    uri: https://schema.undata.live/elements/empty_1tttvcfiq
+  cdy2eep:
+    sha256: 16a085ec7266160c86080a7b57cc062562826907bdf62c559b62ac8da5f0a2cd
+    attribute: detector_type
+    name: null
+    uri: https://schema.undata.live/elements/detector_type_cdy2eep
+  q082495:
+    sha256: 2f80e0ae183bbc0451fcdf7407800b5a93e6e058e39b0a41e53b4afeff3816d8
+    attribute: data_interface
+    name: null
+    uri: https://schema.undata.live/elements/data_interface_q082495
+  36gdf1f:
+    sha256: d110b11acd9d4c647bb85427aca464abe2b1d295dcb7d065a5f2fe3b7e28b005
+    attribute: cooling
+    name: null
+    uri: https://schema.undata.live/elements/cooling_36gdf1f
+  1gq5zdb:
+    sha256: 604fd1de04591cbc184d21b870ff23fe3ad1e7a043bc69133ac2b8d17d08a919
+    attribute: bin_mode
+    name: null
+    uri: https://schema.undata.live/elements/bin_mode_1gq5zdb
+  1r3e0au:
+    sha256: 733fb7f669432b10c944894c94f6bbd189e19820873ad9a040910ab946f9cca5
+    attribute: target
+    name: null
+    uri: https://schema.undata.live/elements/target_1r3e0au
+  1y5psan:
+    sha256: 80273f0cef1e85f54d30f6b7f53d3fc6d259a2844ea88e117cd1ac018fcd02f8
+    attribute: catheter_material
+    name: null
+    uri: https://schema.undata.live/elements/catheter_material_1y5psan
+  177krmx:
+    sha256: 4eedd47d60bd271212234df7fb4ecc3c23c41705fe143c5f2e3ab16e8c0c986c
+    attribute: catheter_design
+    name: null
+    uri: https://schema.undata.live/elements/catheter_design_177krmx
+  n5391hp:
+    sha256: 2a453f28c62448da14340546e684ec9f6ee09eeabafe35cae5d646a673932057
+    attribute: catheter_port
+    name: null
+    uri: https://schema.undata.live/elements/catheter_port_n5391hp
+  z3e9uzz:
+    sha256: 401a9db4faeadbc0a3fd5424a6fe5eef0490fa88d70e633a298e0c315819e06c
+    attribute: power_unit
+    name: null
+    uri: https://schema.undata.live/elements/power_unit_z3e9uzz
+  2rmavty:
+    sha256: b5f77ffdd3dfdee7abb99ea6b42e916571f0a62b52261b3f2b07a61fe727860a
+    attribute: craniotomy_type
+    name: null
+    uri: https://schema.undata.live/elements/craniotomy_type_2rmavty
+  1ya2j5:
+    sha256: fd4aef7df2d2a19d3d184b46f79d045f339796603d6078c5d10190bc71df7f5d
+    attribute: stage
+    name: null
+    uri: https://schema.undata.live/elements/stage_1ya2j5
+  1yqihjy:
+    sha256: 8135634dfd8e01f2be1c2b9fa058c0d5dada3d1f81eab7c9fb8628d8cf49a03d
+    attribute: channel_type
+    name: null
+    uri: https://schema.undata.live/elements/channel_type_1yqihjy
+  1nq6z9i:
+    sha256: 6d197aa8f9be129246e569c251cc79641d4be88898c5fcaf7421441febfb977e
+    attribute: license
+    name: null
+    uri: https://schema.undata.live/elements/license_1nq6z9i
+  3efvyzy:
+    sha256: dfa74f9ff04ec4b74c3a8baa17f9f7e29c7eecdefd318991b152f3e132819a3e
+    attribute: data_level
+    name: null
+    uri: https://schema.undata.live/elements/data_level_3efvyzy
+  cjhrcs:
+    sha256: 2d3347bc7a12b3bcedb39e727a871b55879f0242e1b5cd8e1b792b6df1f706c7
+    attribute: process_type
+    name: null
+    uri: https://schema.undata.live/elements/process_type_cjhrcs
+  a5cmoh:
+    sha256: 24938ad1cb48b3a2bd8f156972460b4d3b18aa499dd8e4a40134d08eff6e8339
+    attribute: stage
+    name: null
+    uri: https://schema.undata.live/elements/stage_a5cmoh
+  367ii66:
+    sha256: d09d9fab9fea5e6c1d2fef137ea0213839a1f97d24f69ad8206b44011ac1b467
+    attribute: trigger_type
+    name: null
+    uri: https://schema.undata.live/elements/trigger_type_367ii66
+  162sjr7:
+    sha256: 4cdc13b03d783c332c1ef505e4349af716ef58ba608682750ae43eacba4d3d67
+    attribute: probe_model
+    name: null
+    uri: https://schema.undata.live/elements/probe_model_162sjr7
+  1nbrhev:
+    sha256: 6c5e09bd6b74d99d29a15dfa2d7115265b47a47a8fd0446381ef27c144e28fc1
+    attribute: filter_type
+    name: null
+    uri: https://schema.undata.live/elements/filter_type_1nbrhev
+  2yyn43k:
+    sha256: c36115659f9ac8c90d0172992349212210cb402b33a16b4a259d7cf8c9711d9a
+    attribute: stain_type
+    name: null
+    uri: https://schema.undata.live/elements/stain_type_2yyn43k
+  17liukf:
+    sha256: 4fa2fcde3dac67a7959dfa775e8013bb2898fba1d3e4099d11df9176ada9889f
+    attribute: fluorophore_type
+    name: null
+    uri: https://schema.undata.live/elements/fluorophore_type_17liukf
+  2l34qdo:
+    sha256: aa08cc762797d9a4fdc6e3e1ce8a4c5595f04f29d5a7e7de2d4eca4dfc57ba2c
+    attribute: sex
+    name: null
+    uri: https://schema.undata.live/elements/sex_2l34qdo
+  3vt15kt:
+    sha256: ff5f7bcdce2ae4cf919e9425a9c940e2d6ad3ee69136986c01721e64da9b6527
+    attribute: imaging_angle_unit
+    name: null
+    uri: https://schema.undata.live/elements/imaging_angle_unit_3vt15kt
+  13x2wk4:
+    sha256: 48eaa63240e06fa8fcd33fab9d4f121663d26ae98dbe5aef69b3d29f5705eb1f
+    attribute: medium
+    name: null
+    uri: https://schema.undata.live/elements/medium_13x2wk4
+  2wiplmr:
+    sha256: beeaec8727a1c20ca495447aea50363b1e94c2a2f91b24099e67fd8cc6f091e9
+    attribute: profile
+    name: null
+    uri: https://schema.undata.live/elements/profile_2wiplmr
+  812qzpr:
+    sha256: 0eaae52ff923bc8d9ca8f173f4a1229c5ec8a4ee1430da5704f8cf732347caa5
+    attribute: solution
+    name: null
+    uri: https://schema.undata.live/elements/solution_812qzpr
+  124untk:
+    sha256: 45a85c66c68b4f64199ec19bd2fdb9e30f5f970339fc8d10dc12444d68ba094c
+    attribute: volume_unit
+    name: null
+    uri: https://schema.undata.live/elements/volume_unit_124untk
+  2m46edb:
+    sha256: abea00e1947cb3ab6f66935b4a7313cf60b936f31dae4158ab7372c6d0365db3
+    attribute: pulse_sequence_type
+    name: null
+    uri: https://schema.undata.live/elements/pulse_sequence_type_2m46edb
+  4i3k5hl:
+    sha256: 08398c66e149d6056480c6d2d7ab6b40488d6e498ff73c144da0d24f2f35f2c2
+    attribute: mr_acquisition_type
+    name: null
+    uri: https://schema.undata.live/elements/mr_acquisition_type_4i3k5hl
+  231wf6r:
+    sha256: 8917c12e2d7676d330062b5e541b22435d20c9a48c5e5b38fcf4c569096b2bb2
+    attribute: subject_position
+    name: null
+    uri: https://schema.undata.live/elements/subject_position_231wf6r
+  iu4m7u:
+    sha256: 43e3af7a7a8de19db5be294395e83777c2f4076225ecf1c7551530635962fc83
+    attribute: architecture
+    name: null
+    uri: https://schema.undata.live/elements/architecture_iu4m7u
+  18vqr01:
+    sha256: 51fb5878e9277a88065144878a79c7a9b09b9165797e11cefae111521dd2ab9d
+    attribute: registry
+    name: null
+    uri: https://schema.undata.live/elements/registry_18vqr01
+  3nd47tn:
+    sha256: eff3d89f94017f18b3fb1d8e4839f30e0bf7b860e665891869aedf67d76881e8
+    attribute: array_type
+    name: null
+    uri: https://schema.undata.live/elements/array_type_3nd47tn
+  1iuv30x:
+    sha256: 64340ff700cfdcc75b88f91db2d1ff20ebf54626ae52426c2da60d90af2ef734
+    attribute: relative_position
+    name: null
+    uri: https://schema.undata.live/elements/relative_position_1iuv30x
+  ialh0so:
+    sha256: 216ab2562b7b3828b348e4e02d6cf9e977af08c050a81a46380c05e5d10b06c5
+    attribute: channel_type
+    name: null
+    uri: https://schema.undata.live/elements/channel_type_ialh0so
+  2q4zgy9:
+    sha256: b342f3276e562783b249c8802b8077366c12e5809c35eb0d9537d13a42a94e72
+    attribute: dilution_unit
+    name: null
+    uri: https://schema.undata.live/elements/dilution_unit_2q4zgy9
+  2z0h8fb:
+    sha256: c378f0cd4c167429739f4c010d5f895bd170fd929bba8384f7d67f7bcabad266
+    attribute: power_function
+    name: null
+    uri: https://schema.undata.live/elements/power_function_2z0h8fb
+  3hchqu2:
+    sha256: e4f60d7a997df54b295eaebcf88dc9b85e33d7cd74b2ee592873f636b0825942
+    attribute: section_orientation
+    name: null
+    uri: https://schema.undata.live/elements/section_orientation_3hchqu2
+  1s1duxs:
+    sha256: 74f94cee8c9c88ecc4100c7bc6a2b242e1490da56c4cca7351809dad89ea174e
+    attribute: time_setting_unit
+    name: null
+    uri: https://schema.undata.live/elements/time_setting_unit_1s1duxs
+  2w0oedo:
+    sha256: be00aeeea20eace4104e045da041a77e16736bdbd5175233d48a343e60dbe18c
+    attribute: speed_unit
+    name: null
+    uri: https://schema.undata.live/elements/speed_unit_2w0oedo
+  13qiiy:
+    sha256: 8f36867dadf2280649d8a335d304f1d89f29a6cd4a6221f18205ff860b26e00e
+    attribute: status
+    name: null
+    uri: https://schema.undata.live/elements/status_13qiiy
+  1ic9qp5:
+    sha256: 63428dfb549753bfe847a7636e17bb32ce0a019fa18acc7ebf0e3e66d6632874
+    attribute: sample_type
+    name: null
+    uri: https://schema.undata.live/elements/sample_type_1ic9qp5
+  1hy3v41:
+    sha256: 628a9580941aaf26b540129a6980cb46f1ae1e0e8e6a5c6253a760748bd8e0bb
+    attribute: frame_rate_unit
+    name: null
+    uri: https://schema.undata.live/elements/frame_rate_unit_1hy3v41
+  wa4nlk6:
+    sha256: 3af73a57d15ffc3b684bcb888d6117b099572fab13d4a16c25ae77b697131aa3
+    attribute: magnetic_strength_unit
+    name: null
+    uri: https://schema.undata.live/elements/magnetic_strength_unit_wa4nlk6
+  33e4nq2:
+    sha256: cb78b5d5273260730060bce01aca3a2c4acea37848cd7a70d1d36705fbeb1563
+    attribute: stage_axis_direction
+    name: null
+    uri: https://schema.undata.live/elements/stage_axis_direction_33e4nq2
+  1ryhnvm:
+    sha256: 74d3b4850cba5844a9c22fb678f661982d6d51d635e72fd5daab291df2dcc239
+    attribute: slap2_acquisition_type
+    name: null
+    uri: https://schema.undata.live/elements/slap2_acquisition_type_1ryhnvm
+  2vhtsua:
+    sha256: bd0bd60018faa4b11af1ed5130d6984a3db8087a9a89d4ff922adbea9c2c044d
+    attribute: procedure_type
+    name: null
+    uri: https://schema.undata.live/elements/procedure_type_2vhtsua
+schemas: {}

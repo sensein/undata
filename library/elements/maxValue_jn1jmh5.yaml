@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+provenance:
+- source: dandi
+  class: PropertyValue
+  name: maxValue
+  description: ''
+- source: dandi
+  class: PropertyValue
+  name: minValue
+  description: ''

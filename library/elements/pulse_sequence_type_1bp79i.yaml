@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - RARE
+    - FLASH
+    - MSME
+    - Other
+provenance:
+- source: aind
+  class: MRIScan
+  name: pulse_sequence_type
+  description: BIDS PulseSequenceType

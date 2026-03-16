@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - molar
+    - micromolar
+    - nanomolar
+    - '% m/m'
+    - '% v/v'
+provenance:
+- source: aind
+  class: OlfactometerChannelInfo
+  name: dilution_unit
+  description: Concentraion units

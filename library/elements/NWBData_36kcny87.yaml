@@ -1,0 +1,672 @@
+semantic:
+  data_type: string
+provenance:
+- source: nwb
+  class: NWBData
+  name: NWBData
+  description: An abstract data type for a dataset.
+- source: nwb
+  class: BaseImage
+  name: BaseImage
+  description: An abstract base type for image data. Parent type for Image and ExternalImage
+    types.
+- source: nwb
+  class: BaseImage
+  name: description
+  description: Description of the image.
+- source: nwb
+  class: Image
+  name: Image
+  description: A type for storing image data directly. Shape can be 2-D (x, y), or
+    3-D where the third dimension can have three or four elements, e.g. (x, y, (r,
+    g, b)) or (x, y, (r, g, b, a)).
+- source: nwb
+  class: ExternalImage
+  name: ExternalImage
+  description: A type for referencing an external image file. The single file path
+    or URI to the external image file should be stored in the dataset. This type should
+    NOT be used if the image is stored in another NWB file and that file is linked
+    to this file.
+- source: nwb
+  class: ExternalImage
+  name: image_mode
+  description: Image mode (color mode) of the image, e.g., "RGB", "RGBA", "grayscale",
+    and "LA".
+- source: nwb
+  class: ExternalImage
+  name: image_format
+  description: Common name of the image file format. Only widely readable, open file
+    formats are allowed. Allowed values are "PNG", "JPEG", and "GIF".
+- source: nwb
+  class: ImageReferences
+  name: ImageReferences
+  description: Ordered dataset of references to BaseImage (e.g., Image or ExternalImage)
+    objects.
+- source: nwb
+  class: TimeSeries
+  name: description
+  description: Description of the time series.
+- source: nwb
+  class: TimeSeries
+  name: comments
+  description: Human-readable comments about the TimeSeries. This second descriptive
+    field can be used to store additional information, or descriptive information
+    if the primary description field is populated with a computer-readable string.
+- source: nwb
+  class: TimeSeries
+  name: data
+  description: Data values. Data can be in 1-D, 2-D, 3-D, or 4-D. The first dimension
+    should always represent time. This can also be used to store binary data (e.g.,
+    image frames). This can also be a link to data stored in an external file.
+- source: nwb
+  class: TimeSeries
+  name: control_description
+  description: Description of each control value. Must be present if control is present.
+    If present, control_description[0] should describe time points where control ==
+    0.
+- source: nwb
+  class: ProcessingModule
+  name: description
+  description: Description of this collection of processed data.
+- source: nwb
+  class: Images
+  name: description
+  description: Description of this collection of images.
+- source: nwb
+  class: Images
+  name: order_of_images
+  description: Ordered dataset of references to BaseImage objects stored in the parent
+    group. Each object in the Images group should be stored once and only once, so
+    the dataset should have the same length as the number of images.
+- source: nwb
+  class: SpatialSeries
+  name: data
+  description: 1-D or 2-D array storing position or direction relative to some reference
+    frame.
+- source: nwb
+  class: SpatialSeries
+  name: reference_frame
+  description: Description defining what exactly 'straight-ahead' means.
+- source: nwb
+  class: Device
+  name: description
+  description: Description of the device as free-form text. If there is any software/firmware
+    associated with the device, the names and versions of those can be added to NWBFile.was_generated_by.
+- source: nwb
+  class: Device
+  name: manufacturer
+  description: DEPRECATED. The name of the manufacturer of the device, e.g., Imec,
+    Plexon, Thorlabs. Instead of using this field, store the value in DeviceModel.manufacturer
+    and link to that DeviceModel from this Device.
+- source: nwb
+  class: Device
+  name: model_number
+  description: DEPRECATED. The model number (or part/product number) of the device,
+    e.g., PRB_1_4_0480_1, PLX-VP-32-15SE(75)-(260-80)(460-10)-300-(1)CON/32m-V, BERGAMO.
+    Instead of using this field, store the value in DeviceModel.model_number and link
+    to that DeviceModel from this Device.
+- source: nwb
+  class: Device
+  name: model_name
+  description: DEPRECATED. The model name of the device, e.g., Neuropixels 1.0, V-Probe,
+    Bergamo III. Instead of using this field, create and add a new DeviceModel named
+    the model name and link to that DeviceModel from this Device.
+- source: nwb
+  class: Device
+  name: serial_number
+  description: The serial number of the device.
+- source: nwb
+  class: DeviceModel
+  name: manufacturer
+  description: The name of the manufacturer of the device model, e.g., Imec, Plexon,
+    Thorlabs.
+- source: nwb
+  class: DeviceModel
+  name: model_number
+  description: The model number (or part/product number) of the device, e.g., PRB_1_4_0480_1,
+    PLX-VP-32-15SE(75)-(260-80)(460-10)-300-(1)CON/32m-V, BERGAMO.
+- source: nwb
+  class: DeviceModel
+  name: description
+  description: Description of the device model as free-form text.
+- source: nwb
+  class: ElectricalSeries
+  name: filtering
+  description: Filtering applied to all channels of the data. For example, if this
+    ElectricalSeries represents high-pass-filtered data (also known as AP Band), then
+    this value could be "High-pass 4-pole Bessel filter at 500 Hz". If this ElectricalSeries
+    represents low-pass-filtered LFP data and the type of filter is unknown, then
+    this value could be "Low-pass filter at 300 Hz". If a non-standard filter type
+    is used, provide as much detail about the filter properties as possible.
+- source: nwb
+  class: ElectricalSeries
+  name: data
+  description: Recorded voltage data.
+- source: nwb
+  class: ElectricalSeries
+  name: electrodes
+  description: DynamicTableRegion pointer to the electrodes that this time series
+    was generated from.
+- source: nwb
+  class: SpikeEventSeries
+  name: data
+  description: Spike waveforms.
+- source: nwb
+  class: FeatureExtraction
+  name: description
+  description: Description of features (eg, ''PC1'') for each of the extracted features.
+- source: nwb
+  class: FeatureExtraction
+  name: electrodes
+  description: DynamicTableRegion pointer to the electrodes that this time series
+    was generated from.
+- source: nwb
+  class: EventDetection
+  name: detection_method
+  description: Description of how events were detected, such as voltage threshold,
+    or dV/dT threshold, as well as relevant values.
+- source: nwb
+  class: ElectrodeGroup
+  name: description
+  description: Description of this electrode group.
+- source: nwb
+  class: ElectrodeGroup
+  name: location
+  description: Location of electrode group. Specify the area, layer, comments on estimation
+    of area/layer, etc. Use standard atlas names for anatomical regions when possible.
+- source: nwb
+  class: ElectrodesTable
+  name: location
+  description: Location of the electrode (channel). Specify the area, layer, comments
+    on estimation of area/layer, stereotaxic coordinates if in vivo, etc. Use standard
+    atlas names for anatomical regions when possible.
+- source: nwb
+  class: ElectrodesTable
+  name: group
+  description: Reference to the ElectrodeGroup this electrode is a part of.
+- source: nwb
+  class: ElectrodesTable
+  name: group_name
+  description: Name of the ElectrodeGroup this electrode is a part of.
+- source: nwb
+  class: ElectrodesTable
+  name: filtering
+  description: Description of hardware filtering, including the filter name and frequency
+    cutoffs.
+- source: nwb
+  class: ElectrodesTable
+  name: reference
+  description: Description of the reference electrode and/or reference scheme used
+    for this electrode, e.g., "stainless steel skull screw" or "online common average
+    referencing".
+- source: nwb
+  class: ClusterWaveforms
+  name: waveform_filtering
+  description: Filtering applied to data before generating mean/sd
+- source: nwb
+  class: Clustering
+  name: description
+  description: Description of clusters or clustering, (e.g. cluster 0 is noise, clusters
+    curated using Klusters, etc)
+- source: nwb
+  class: TimeIntervals
+  name: tags
+  description: User-defined tags that identify or categorize events.
+- source: nwb
+  class: TimeIntervals
+  name: tags_index
+  description: Index for tags.
+- source: nwb
+  class: TimeIntervals
+  name: timeseries
+  description: An index into a TimeSeries object.
+- source: nwb
+  class: TimeIntervals
+  name: timeseries_index
+  description: Index for timeseries.
+- source: nwb
+  class: ScratchData
+  name: ScratchData
+  description: Any one-off datasets
+- source: nwb
+  class: ScratchData
+  name: notes
+  description: Any notes the user has about the dataset being stored
+- source: nwb
+  class: NWBFile
+  name: nwb_version
+  description: File version string. Use semantic versioning, e.g. 1.2.1. This will
+    be the name of the format with trailing major, minor and patch numbers.
+- source: nwb
+  class: NWBFile
+  name: file_create_date
+  description: 'A record of the date the file was created and of subsequent modifications.
+    The date is stored in UTC with local timezone offset as ISO 8601 extended formatted
+    strings: 2018-09-28T14:43:54.123+02:00. Dates stored in UTC end in "Z" with no
+    timezone offset. Date accuracy is up to milliseconds. The file can be created
+    after the experiment was run, so this may differ from the experiment start time.
+    Each modification to the nwb file adds a new entry to the array.'
+- source: nwb
+  class: NWBFile
+  name: identifier
+  description: A unique text identifier for the file. For example, concatenated lab
+    name, file creation date/time and experimentalist, or a hash of these and/or other
+    values. The goal is that the string should be unique to all other files.
+- source: nwb
+  class: NWBFile
+  name: session_description
+  description: A description of the experimental session and data in the file.
+- source: nwb
+  class: NWBFile
+  name: session_start_time
+  description: 'Date and time of the experiment/session start. The date is stored
+    in UTC with local timezone offset as ISO 8601 extended formatted string: 2018-09-28T14:43:54.123+02:00.
+    Dates stored in UTC end in "Z" with no timezone offset. Date accuracy is up to
+    milliseconds.'
+- source: nwb
+  class: NWBFile
+  name: timestamps_reference_time
+  description: 'Date and time corresponding to time zero of all timestamps. The date
+    is stored in UTC with local timezone offset as ISO 8601 extended formatted string:
+    2018-09-28T14:43:54.123+02:00. Dates stored in UTC end in "Z" with no timezone
+    offset. Date accuracy is up to milliseconds. All times stored in the file use
+    this time as reference (i.e., time zero).'
+- source: nwb
+  class: Subject
+  name: age
+  description: Age of subject. Can be supplied instead of 'date_of_birth'. The ISO
+    8601 Duration format is recommended, e.g., 'P90D' for 90 days old. If the precise
+    age is unknown, an age range can be given by '[lower bound]/[upper bound]' e.g.
+    'P10D/P20D' would mean that the age is in between 10 and 20 days. If only the
+    lower bound is known, then including only the slash after that lower bound can
+    be used to indicate a missing bound. For instance, 'P90Y/' would indicate that
+    the age is 90 years or older.
+- source: nwb
+  class: Subject
+  name: date_of_birth
+  description: Date of birth of subject. Can be supplied instead of 'age'.
+- source: nwb
+  class: Subject
+  name: description
+  description: Description of subject and where subject came from (e.g., breeder,
+    if animal).
+- source: nwb
+  class: Subject
+  name: genotype
+  description: Genetic strain. If absent, assume Wild Type (WT).
+- source: nwb
+  class: Subject
+  name: sex
+  description: Gender of subject.
+- source: nwb
+  class: Subject
+  name: species
+  description: Species of subject.
+- source: nwb
+  class: Subject
+  name: strain
+  description: Strain of subject.
+- source: nwb
+  class: Subject
+  name: subject_id
+  description: ID of animal/person used/participating in experiment (lab convention).
+- source: nwb
+  class: Subject
+  name: weight
+  description: Weight at time of experiment, at time of surgery and at other important
+    times.
+- source: nwb
+  class: PatchClampSeries
+  name: stimulus_description
+  description: Protocol/stimulus name for this patch-clamp dataset.
+- source: nwb
+  class: PatchClampSeries
+  name: data
+  description: Recorded voltage or current.
+- source: nwb
+  class: CurrentClampSeries
+  name: data
+  description: Recorded voltage.
+- source: nwb
+  class: IZeroClampSeries
+  name: stimulus_description
+  description: An IZeroClampSeries has no stimulus, so this attribute is automatically
+    set to "N/A"
+- source: nwb
+  class: CurrentClampStimulusSeries
+  name: data
+  description: Stimulus current applied.
+- source: nwb
+  class: VoltageClampSeries
+  name: data
+  description: Recorded current.
+- source: nwb
+  class: VoltageClampStimulusSeries
+  name: data
+  description: Stimulus voltage applied.
+- source: nwb
+  class: IntracellularElectrode
+  name: cell_id
+  description: unique ID of the cell
+- source: nwb
+  class: IntracellularElectrode
+  name: description
+  description: Description of electrode (e.g.,  whole-cell, sharp, etc.).
+- source: nwb
+  class: IntracellularElectrode
+  name: filtering
+  description: Electrode specific filtering.
+- source: nwb
+  class: IntracellularElectrode
+  name: initial_access_resistance
+  description: Initial access resistance.
+- source: nwb
+  class: IntracellularElectrode
+  name: location
+  description: Location of the electrode. Specify the area, layer, comments on estimation
+    of area/layer, stereotaxic coordinates if in vivo, etc. Use standard atlas names
+    for anatomical regions when possible.
+- source: nwb
+  class: IntracellularElectrode
+  name: resistance
+  description: Electrode resistance, in ohms.
+- source: nwb
+  class: IntracellularElectrode
+  name: seal
+  description: Information about seal used for recording.
+- source: nwb
+  class: IntracellularElectrode
+  name: slice
+  description: Information about slice used for recording.
+- source: nwb
+  class: SweepTable
+  name: series
+  description: The PatchClampSeries with the sweep number in that row.
+- source: nwb
+  class: SweepTable
+  name: series_index
+  description: Index for series.
+- source: nwb
+  class: IntracellularElectrodesTable
+  name: description
+  description: Description of what is in this dynamic table.
+- source: nwb
+  class: IntracellularElectrodesTable
+  name: electrode
+  description: Column for storing the reference to the intracellular electrode.
+- source: nwb
+  class: IntracellularStimuliTable
+  name: description
+  description: Description of what is in this dynamic table.
+- source: nwb
+  class: IntracellularStimuliTable
+  name: stimulus
+  description: Column storing the reference to the recorded stimulus for the recording
+    (rows).
+- source: nwb
+  class: IntracellularStimuliTable
+  name: stimulus_template
+  description: Column storing the reference to the stimulus template for the recording
+    (rows).
+- source: nwb
+  class: IntracellularResponsesTable
+  name: description
+  description: Description of what is in this dynamic table.
+- source: nwb
+  class: IntracellularResponsesTable
+  name: response
+  description: Column storing the reference to the recorded response for the recording
+    (rows)
+- source: nwb
+  class: IntracellularRecordingsTable
+  name: description
+  description: Description of the contents of this table. Inherited from AlignedDynamicTable
+    and overwritten here to fix the value of the attribute.
+- source: nwb
+  class: SimultaneousRecordingsTable
+  name: recordings
+  description: A reference to one or more rows in the IntracellularRecordingsTable
+    table.
+- source: nwb
+  class: SimultaneousRecordingsTable
+  name: recordings_index
+  description: Index dataset for the recordings column.
+- source: nwb
+  class: SequentialRecordingsTable
+  name: simultaneous_recordings
+  description: A reference to one or more rows in the SimultaneousRecordingsTable
+    table.
+- source: nwb
+  class: SequentialRecordingsTable
+  name: simultaneous_recordings_index
+  description: Index dataset for the simultaneous_recordings column.
+- source: nwb
+  class: SequentialRecordingsTable
+  name: stimulus_type
+  description: The type of stimulus used for the sequential recording.
+- source: nwb
+  class: RepetitionsTable
+  name: sequential_recordings
+  description: A reference to one or more rows in the SequentialRecordingsTable table.
+- source: nwb
+  class: RepetitionsTable
+  name: sequential_recordings_index
+  description: Index dataset for the sequential_recordings column.
+- source: nwb
+  class: ExperimentalConditionsTable
+  name: repetitions
+  description: A reference to one or more rows in the RepetitionsTable table.
+- source: nwb
+  class: ExperimentalConditionsTable
+  name: repetitions_index
+  description: Index dataset for the repetitions column.
+- source: nwb
+  class: GrayscaleImage
+  name: GrayscaleImage
+  description: A grayscale image.
+- source: nwb
+  class: RGBImage
+  name: RGBImage
+  description: A color image.
+- source: nwb
+  class: RGBAImage
+  name: RGBAImage
+  description: A color image with transparency.
+- source: nwb
+  class: ImageSeries
+  name: data
+  description: Binary data representing images across frames. If data are stored in
+    an external file, this should be an empty 3D array.
+- source: nwb
+  class: ImageSeries
+  name: external_file
+  description: Paths to one or more external file(s). The field is only present if
+    format='external'. This is only relevant if the image series is stored in the
+    file system as one or more image file(s). This field should NOT be used if the
+    image is stored in another NWB file and that file is linked to this file.
+- source: nwb
+  class: ImageSeries
+  name: format
+  description: Format of image. If this is 'external', then the attribute 'external_file'
+    contains the path information to the image files. If this is 'raw', then the raw
+    (single-channel) binary data is stored in the 'data' dataset. If this attribute
+    is not present, then the default format='raw' case is assumed.
+- source: nwb
+  class: OpticalSeries
+  name: data
+  description: Images presented to subject, either grayscale or RGB
+- source: nwb
+  class: OpticalSeries
+  name: orientation
+  description: Description of image relative to some reference frame (e.g., which
+    way is up). Must also specify frame of reference.
+- source: nwb
+  class: AbstractFeatureSeries
+  name: data
+  description: Values of each feature at each time.
+- source: nwb
+  class: AbstractFeatureSeries
+  name: feature_units
+  description: Units of each feature.
+- source: nwb
+  class: AbstractFeatureSeries
+  name: features
+  description: Description of the features represented in TimeSeries::data.
+- source: nwb
+  class: AnnotationSeries
+  name: data
+  description: Annotations made during an experiment.
+- source: nwb
+  class: FrequencyBandsTable
+  name: band_name
+  description: Name of the band, e.g. theta.
+- source: nwb
+  class: DecompositionSeries
+  name: data
+  description: Data decomposed into frequency bands.
+- source: nwb
+  class: DecompositionSeries
+  name: metric
+  description: The metric used, e.g. phase, amplitude, power.
+- source: nwb
+  class: DecompositionSeries
+  name: source_channels
+  description: DynamicTableRegion pointer to the channels that this decomposition
+    series was generated from.
+- source: nwb
+  class: Units
+  name: spike_times_index
+  description: Index into the spike_times dataset.
+- source: nwb
+  class: Units
+  name: obs_intervals_index
+  description: Index into the obs_intervals dataset.
+- source: nwb
+  class: Units
+  name: electrodes_index
+  description: Index into electrodes.
+- source: nwb
+  class: Units
+  name: electrodes
+  description: Electrode that each spike unit came from, specified using a DynamicTableRegion.
+- source: nwb
+  class: Units
+  name: electrode_group
+  description: Electrode group that each spike unit came from.
+- source: nwb
+  class: Units
+  name: waveforms
+  description: Individual waveforms for each spike on each electrode. This is a doubly
+    indexed column. The 'waveforms_index' column indexes which waveforms in this column
+    belong to the same spike event for a given unit, where each waveform was recorded
+    from a different electrode. The 'waveforms_index_index' column indexes the 'waveforms_index'
+    column to indicate which spike events belong to a given unit. For example, if
+    the 'waveforms_index_index' column has values [2, 5, 6], then the first 2 elements
+    of the 'waveforms_index' column correspond to the 2 spike events of the first
+    unit, the next 3 elements of the 'waveforms_index' column correspond to the 3
+    spike events of the second unit, and the next 1 element of the 'waveforms_index'
+    column corresponds to the 1 spike event of the third unit. If the 'waveforms_index'
+    column has values [3, 6, 8, 10, 12, 13], then the first 3 elements of the 'waveforms'
+    column contain the 3 spike waveforms that were recorded from 3 different electrodes
+    for the first spike time of the first unit. See https://nwb-schema.readthedocs.io/en/stable/format_description.html#doubly-ragged-arrays
+    for a graphical representation of this example. When there is only one electrode
+    for each unit (i.e., each spike time is associated with a single waveform), then
+    the 'waveforms_index' column will have values 1, 2, ..., N, where N is the number
+    of spike events. The number of electrodes for each spike event should be the same
+    within a given unit. The 'electrodes' column should be used to indicate which
+    electrodes are associated with each unit, and the order of the waveforms within
+    a given unit x spike event should be the same as the order of the electrodes referenced
+    in the 'electrodes' column of this table. The number of samples for each waveform
+    must be the same.
+- source: nwb
+  class: Units
+  name: waveforms_index
+  description: Index into the 'waveforms' dataset. One value for every spike event.
+    See 'waveforms' for more detail.
+- source: nwb
+  class: Units
+  name: waveforms_index_index
+  description: Index into the 'waveforms_index' dataset. One value for every unit
+    (row in the table). See 'waveforms' for more detail.
+- source: nwb
+  class: OptogeneticSeries
+  name: data
+  description: Applied power for optogenetic stimulus, in watts. Shape can be 1D or
+    2D. 2D data is meant to be used in an extension of OptogeneticSeries that defines
+    what the second dimension represents.
+- source: nwb
+  class: OptogeneticStimulusSite
+  name: description
+  description: Description of stimulation site.
+- source: nwb
+  class: OptogeneticStimulusSite
+  name: location
+  description: Location of the stimulation site. Specify the area, layer, comments
+    on estimation of area/layer, stereotaxic coordinates if in vivo, etc. Use standard
+    atlas names for anatomical regions when possible.
+- source: nwb
+  class: RoiResponseSeries
+  name: data
+  description: Signals from ROIs.
+- source: nwb
+  class: RoiResponseSeries
+  name: rois
+  description: DynamicTableRegion referencing into an ROITable containing information
+    on the ROIs stored in this timeseries.
+- source: nwb
+  class: PlaneSegmentation
+  name: image_mask
+  description: ROI masks for each ROI. Each image mask is the size of the original
+    imaging plane (or volume) and members of the ROI are finite non-zero. At least
+    one of `image_mask`, `pixel_mask`, or `voxel_mask` is required.
+- source: nwb
+  class: PlaneSegmentation
+  name: pixel_mask_index
+  description: Index into pixel_mask.
+- source: nwb
+  class: PlaneSegmentation
+  name: voxel_mask_index
+  description: Index into voxel_mask.
+- source: nwb
+  class: ImagingPlane
+  name: description
+  description: Description of the imaging plane.
+- source: nwb
+  class: ImagingPlane
+  name: indicator
+  description: Calcium indicator.
+- source: nwb
+  class: ImagingPlane
+  name: location
+  description: Location of the imaging plane. Specify the area, layer, comments on
+    estimation of area/layer, stereotaxic coordinates if in vivo, etc. Use standard
+    atlas names for anatomical regions when possible.
+- source: nwb
+  class: ImagingPlane
+  name: reference_frame
+  description: Describes reference frame of origin_coords and grid_spacing. For example,
+    this can be a text description of the anatomical location and orientation of the
+    grid defined by origin_coords and grid_spacing or the vectors needed to transform
+    or rotate the grid to a common anatomical axis (e.g., AP/DV/ML). This field is
+    necessary to interpret origin_coords and grid_spacing. If origin_coords and grid_spacing
+    are not present, then this field is not required. For example, if the microscope
+    takes 10 x 10 x 2 images, where the first value of the data matrix (index (0,
+    0, 0)) corresponds to (-1.2, -0.6, -2) mm relative to bregma, the spacing between
+    pixels is 0.2 mm in x, 0.2 mm in y and 0.5 mm in z, and larger numbers in x means
+    more anterior, larger numbers in y means more rightward, and larger numbers in
+    z means more ventral, then enter the following -- origin_coords = (-1.2, -0.6,
+    -2) grid_spacing = (0.2, 0.2, 0.5) reference_frame = "Origin coordinates are relative
+    to bregma. First dimension corresponds to anterior-posterior axis (larger index
+    = more anterior). Second dimension corresponds to medial-lateral axis (larger
+    index = more rightward). Third dimension corresponds to dorsal-ventral axis (larger
+    index = more ventral)."
+- source: nwb
+  class: OpticalChannel
+  name: description
+  description: Description or other notes about the channel.
+- source: nwb
+  class: ImagingRetinotopy
+  name: axis_descriptions
+  description: Two-element array describing the contents of the two response axis
+    fields. Description should be something like ['altitude', 'azimuth'] or '['radius',
+    'theta'].

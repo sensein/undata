@@ -1,0 +1,18 @@
+semantic:
+  data_type: boolean
+provenance:
+- source: dandi
+  class: Contributor
+  name: includeInCitation
+  description: A flag to indicate whether a contributor should be included when generating
+    a citation for the item.
+- source: dandi
+  class: Organization
+  name: includeInCitation
+  description: A flag to indicate whether a contributor should be included when generating
+    a citation for the item
+- source: dandi
+  class: Person
+  name: includeInCitation
+  description: A flag to indicate whether a contributor should be included when generating
+    a citation for the item.

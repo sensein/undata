@@ -29,12 +29,14 @@ def diff_provenance(path: Path) -> list[dict[str, Any]]:
         val_a = getattr(a, field)
         val_b = getattr(b, field)
         if val_a != val_b:
-            diffs.append({
-                "field": field,
-                "source_a": a.source,
-                "value_a": val_a,
-                "source_b": b.source,
-                "value_b": val_b,
-            })
+            diffs.append(
+                {
+                    "field": field,
+                    "source_a": a.source,
+                    "value_a": val_a,
+                    "source_b": b.source,
+                    "value_b": val_b,
+                }
+            )
 
     return diffs

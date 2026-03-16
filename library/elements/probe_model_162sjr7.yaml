@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Michigan uLED Probe (Version 1)
+    - MPI Photonic Probe (Version 1)
+    - Neuropixels Opto (Demonstrator)
+    - Neuropixels UHD (Fixed)
+    - Neuropixels UHD (Switchable)
+    - Neuropixels 1.0
+    - Neuropixels 2.0 (Single Shank)
+    - Neuropixels 2.0 (Multi Shank)
+    - Neuropixels 2.0 (Quad Base)
+    - Custom
+provenance:
+- source: aind
+  class: EphysProbe
+  name: probe_model
+  description: Probe model name

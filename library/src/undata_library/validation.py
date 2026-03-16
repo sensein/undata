@@ -18,7 +18,8 @@ def validate_file(path: Path) -> ValidationReport:
         text = path.read_text(encoding="utf-8")
     except OSError as exc:
         return ValidationReport(
-            valid=False, path=str(path),
+            valid=False,
+            path=str(path),
             violations=[ValidationViolation(field="file", message=str(exc))],
         )
 
@@ -26,19 +27,22 @@ def validate_file(path: Path) -> ValidationReport:
         data = yaml.safe_load(text)
     except yaml.YAMLError as exc:
         return ValidationReport(
-            valid=False, path=str(path),
+            valid=False,
+            path=str(path),
             violations=[ValidationViolation(field="yaml", message=str(exc))],
         )
 
     if not isinstance(data, dict):
         return ValidationReport(
-            valid=False, path=str(path),
+            valid=False,
+            path=str(path),
             violations=[ValidationViolation(field="root", message="YAML root must be a mapping")],
         )
 
     if "semantic" not in data:
         return ValidationReport(
-            valid=False, path=str(path),
+            valid=False,
+            path=str(path),
             violations=[ValidationViolation(field="root", message="Missing 'semantic' block")],
         )
 
@@ -50,11 +54,14 @@ def validate_file(path: Path) -> ValidationReport:
         model_cls = ElementRecord
     else:
         return ValidationReport(
-            valid=False, path=str(path),
-            violations=[ValidationViolation(
-                field="semantic",
-                message="Cannot determine record type: need 'data_type' (element) or 'properties' (schema)",
-            )],
+            valid=False,
+            path=str(path),
+            violations=[
+                ValidationViolation(
+                    field="semantic",
+                    message="Cannot determine record type: need 'data_type' (element) or 'properties' (schema)",
+                )
+            ],
         )
 
     try:

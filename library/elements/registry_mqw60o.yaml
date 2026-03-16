@@ -1,0 +1,127 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Addgene (ADDGENE)
+    - Digital Object Identifier (DOI)
+    - Edinburgh Mouse Atlas Project (EMAPA)
+    - Mouse Genome Informatics (MGI)
+    - NCBI GenBank (GENBANK)
+    - National Center for Biotechnology Information (NCBI)
+    - Open Researcher and Contributor ID (ORCID)
+    - Research Organization Registry (ROR)
+    - Research Resource Identifiers (RRID)
+    - Universal Protein Resource (UNIPROT)
+provenance:
+- source: aind
+  class: MouseAnatomyModel
+  name: registry
+  description: Registries
+- source: aind
+  class: Person
+  name: registry
+  description: Registries
+- source: aind
+  class: MouseAnatomyModel
+  name: registry
+  description: Registries
+- source: aind
+  class: _Callithrix_Jacchus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Carpa_Hircus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Cavia_Porcellus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Equus_Asinus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Gallus_Gallus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Homo_Sapiens
+  name: registry
+  description: Registries
+- source: aind
+  class: _Lama_Glama
+  name: registry
+  description: Registries
+- source: aind
+  class: _Macaca_Mulatta
+  name: registry
+  description: Registries
+- source: aind
+  class: _Mus_Musculus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Oryctolagus_Cuniculus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Rattus_Norvegicus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Vicuna_Pacos
+  name: registry
+  description: Registries
+- source: aind
+  class: SpeciesModel
+  name: registry
+  description: Registries
+- source: aind
+  class: _Callithrix_Jacchus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Carpa_Hircus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Cavia_Porcellus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Equus_Asinus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Gallus_Gallus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Homo_Sapiens
+  name: registry
+  description: Registries
+- source: aind
+  class: _Lama_Glama
+  name: registry
+  description: Registries
+- source: aind
+  class: _Macaca_Mulatta
+  name: registry
+  description: Registries
+- source: aind
+  class: _Mus_Musculus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Oryctolagus_Cuniculus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Rattus_Norvegicus
+  name: registry
+  description: Registries
+- source: aind
+  class: _Vicuna_Pacos
+  name: registry
+  description: Registries

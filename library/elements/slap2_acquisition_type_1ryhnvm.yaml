@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - integration
+    - raster
+provenance:
+- source: aind
+  class: Slap2Plane
+  name: slap2_acquisition_type
+  description: Stimulus modalities

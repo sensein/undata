@@ -1,0 +1,228 @@
+semantic:
+  data_type: object
+provenance:
+- source: aind
+  class: AtlasCoordinate
+  name: coordinate_system
+  description: Definition an atlas
+- source: aind
+  class: CatheterConfig
+  name: targeted_structure
+  description: Use options from MouseBloodVessels
+- source: aind
+  class: Channel
+  name: detector
+  description: Configuration of detector settings
+- source: aind
+  class: CombinedData
+  name: database_identifier
+  description: ID or link to the Combined Data asset, if materialized.
+- source: aind
+  class: CoupledPlane
+  name: targeted_structure
+  description: Base model for brain strutures
+- source: aind
+  class: EphysAssemblyConfig
+  name: manipulator
+  description: Configuration of a manipulator
+- source: aind
+  class: FiberAssemblyConfig
+  name: manipulator
+  description: Configuration of a manipulator
+- source: aind
+  class: MISCameraConfig
+  name: detector_config
+  description: Configuration of detector settings
+- source: aind
+  class: MISCameraConfig
+  name: module
+  description: Modular insertion system module configuration
+- source: aind
+  class: ManipulatorConfig
+  name: coordinate_system
+  description: Definition of a coordinate system relative to a brain
+- source: aind
+  class: ManipulatorConfig
+  name: local_axis_positions
+  description: Translation
+- source: aind
+  class: Plane
+  name: targeted_structure
+  description: Base model for brain strutures
+- source: aind
+  class: ProbeConfig
+  name: primary_targeted_structure
+  description: Base model for brain strutures
+- source: aind
+  class: ProbeConfig
+  name: coordinate_system
+  description: Device coordinate system, defines un-rotated probe's orientation relative
+    to the Acquisition.coordinate_system
+- source: aind
+  class: SampleChamberConfig
+  name: chamber_immersion
+  description: Configuration of immersion medium
+- source: aind
+  class: Slap2Plane
+  name: targeted_structure
+  description: Base model for brain strutures
+- source: aind
+  class: instrument
+  name: coordinate_system
+  description: Origin and axis definitions for determining the position of the instrument's
+    components
+- source: aind
+  class: Arena
+  name: size
+  description: Scale
+- source: aind
+  class: CameraAssembly
+  name: camera
+  description: Camera Detector
+- source: aind
+  class: CameraAssembly
+  name: lens
+  description: Lens
+- source: aind
+  class: Enclosure
+  name: size
+  description: Scale
+- source: aind
+  class: EphysAssembly
+  name: manipulator
+  description: Manipulator used on a dome module
+- source: aind
+  class: FiberAssembly
+  name: manipulator
+  description: Manipulator used on a dome module
+- source: aind
+  class: LaserAssembly
+  name: manipulator
+  description: Manipulator used on a dome module
+- source: aind
+  class: LaserAssembly
+  name: collimator
+  description: Generic device
+- source: aind
+  class: LaserAssembly
+  name: fiber
+  description: Description of a patch cord
+- source: aind
+  class: LickSpout
+  name: solenoid_valve
+  description: Generic device
+- source: aind
+  class: PatchClampEphysAssembly
+  name: manipulator
+  description: Manipulator used on a dome module
+- source: aind
+  class: PatchClampEphysAssembly
+  name: headstage
+  description: Generic device
+- source: aind
+  class: Wheel
+  name: encoder
+  description: Generic device
+- source: aind
+  class: Wheel
+  name: magnetic_brake
+  description: Generic device
+- source: aind
+  class: Wheel
+  name: torque_sensor
+  description: Generic device
+- source: aind
+  class: AtlasCoordinate
+  name: coordinate_system
+  description: Definition an atlas
+- source: aind
+  class: CatheterConfig
+  name: targeted_structure
+  description: Use options from MouseBloodVessels
+- source: aind
+  class: CatheterImplant
+  name: implanted_device
+  description: Description of a catheter device
+- source: aind
+  class: CatheterImplant
+  name: device_config
+  description: Configuration of a catheter
+- source: aind
+  class: CombinedData
+  name: database_identifier
+  description: ID or link to the Combined Data asset, if materialized.
+- source: aind
+  class: FluorescentStain
+  name: fluorophore
+  description: Flurophore used in HCR, Immunolabeling, etc
+- source: aind
+  class: GeneProbe
+  name: gene
+  description: 'Model for associate a name with a persistent identifier (PID),
+
+    the registry for that PID, and abbreviation for that registry'
+- source: aind
+  class: GroundWireImplant
+  name: ground_electrode_location
+  description: Base model for mouse anatomy
+- source: aind
+  class: MyomatrixContact
+  name: body_part
+  description: Use MouseBodyParts
+- source: aind
+  class: MyomatrixContact
+  name: muscle
+  description: Use MouseEmgMuscles
+- source: aind
+  class: MyomatrixInsertion
+  name: ground_electrode
+  description: Ground wire implant procedure
+- source: aind
+  class: MyomatrixInsertion
+  name: implanted_device
+  description: Description of a Myomatrix array
+- source: aind
+  class: MyomatrixThread
+  name: ground_electrode_location
+  description: Use GroundWireLocations
+- source: aind
+  class: PlanarSection
+  name: start_coordinate
+  description: Translation
+- source: aind
+  class: ProbeConfig
+  name: primary_targeted_structure
+  description: Base model for brain strutures
+- source: aind
+  class: ProbeConfig
+  name: coordinate_system
+  description: Device coordinate system, defines un-rotated probe's orientation relative
+    to the Acquisition.coordinate_system
+- source: aind
+  class: ProbeImplant
+  name: device_config
+  description: Configuration for a device inserted into a brain
+- source: aind
+  class: ProteinProbe
+  name: protein
+  description: 'Model for associate a name with a persistent identifier (PID),
+
+    the registry for that PID, and abbreviation for that registry'
+- source: aind
+  class: SmallMoleculeProbe
+  name: molecule
+  description: 'Model for associate a name with a persistent identifier (PID),
+
+    the registry for that PID, and abbreviation for that registry'
+- source: aind
+  class: SpecimenProcedure
+  name: protocol_parameters
+  description: Parameters defined in the protocol and their value during this procedure
+- source: aind
+  class: Surgery
+  name: measured_coordinates
+  description: Coordinates measured during the procedure, for example Bregma and Lambda
+- source: aind
+  class: HumanSubject
+  name: species
+  description: Base model for species

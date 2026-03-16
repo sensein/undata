@@ -1,0 +1,24 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - microwatt
+    - milliwatt
+    - percent
+provenance:
+- source: aind
+  class: CoupledPlane
+  name: power_unit
+  description: Unit for power, set or measured
+- source: aind
+  class: Plane
+  name: power_unit
+  description: Unit for power, set or measured
+- source: aind
+  class: PowerCalibration
+  name: output_unit
+  description: Unit for power, set or measured
+- source: aind
+  class: Slap2Plane
+  name: power_unit
+  description: Unit for power, set or measured

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - linear_interpolation
+    - linear
+    - other
+provenance:
+- source: aind
+  class: CalibrationFit
+  name: fit_type
+  description: Type of fit for calibration data

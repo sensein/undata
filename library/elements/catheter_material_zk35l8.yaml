@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Naked
+    - VAB silicone
+    - VAB mesh
+provenance:
+- source: aind
+  class: Catheter
+  name: catheter_material
+  description: Type of catheter material

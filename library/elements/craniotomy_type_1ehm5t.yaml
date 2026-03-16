@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Dual hemisphere craniotomy
+    - Whole hemisphere craniotomy
+    - Circle
+    - Square
+    - Other
+provenance:
+- source: aind
+  class: Craniotomy
+  name: craniotomy_type
+  description: Name of craniotomy Type

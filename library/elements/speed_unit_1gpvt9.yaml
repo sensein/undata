@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - rotations per minute
+provenance:
+- source: aind
+  class: PolygonalScanner
+  name: speed_unit
+  description: Enumeration of Speed Measurements

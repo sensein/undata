@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Cytoskeleton
+    - Fill
+    - RNA
+    - Protein
+    - Nuclear
+    - Vasculature
+provenance:
+- source: aind
+  class: FluorescentStain
+  name: stain_type
+  description: Stain types for probes describing what is being labeled

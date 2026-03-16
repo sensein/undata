@@ -103,15 +103,17 @@ def index(path: str, output: str) -> None:
     out = base / output if not Path(output).is_absolute() else Path(output)
     idx = write_index(base, out)
     click.echo(
-        f"Index written to {out}: "
-        f"{idx['element_count']} elements, {idx['schema_count']} schemas."
+        f"Index written to {out}: {idx['element_count']} elements, {idx['schema_count']} schemas."
     )
 
 
 @main.command()
 @click.argument("file", type=click.Path(exists=True))
 @click.option(
-    "--format", "fmt", type=click.Choice(["text", "json"]), default="text",
+    "--format",
+    "fmt",
+    type=click.Choice(["text", "json"]),
+    default="text",
 )
 def diff(file: str, fmt: str) -> None:
     """Show provenance differences in an element file."""
@@ -130,3 +132,19 @@ def diff(file: str, fmt: str) -> None:
             click.echo(f"  {d['field']}:")
             click.echo(f"    {d['source_a']} → {d['value_a']}")
             click.echo(f"    {d['source_b']} → {d['value_b']}")
+
+
+@main.command()
+@click.option("--source", required=True, help="Source name (bids, nwb, dandi, aind, openminds)")
+@click.option("--path", "-p", default=None, help="Path to raw schema files")
+@click.option("--library-path", "-l", default=".", help="Path to library root")
+def ingest(source: str, path: str | None, library_path: str) -> None:
+    """Ingest elements from raw schema files into the library."""
+    from .ingest import ingest_source
+
+    schema_path = Path(path) if path else None
+    stats = ingest_source(source, schema_path, Path(library_path))
+    click.echo(
+        f"Ingested {source}: {stats['total']} unique elements "
+        f"({stats['created']} created, {stats['merged']} merged)."
+    )

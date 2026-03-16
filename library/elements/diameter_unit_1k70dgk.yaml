@@ -1,0 +1,172 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - meter
+    - centimeter
+    - millimeter
+    - micrometer
+    - nanometer
+    - inch
+    - pixel
+provenance:
+- source: aind
+  class: AirPuffDevice
+  name: diameter_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Arena
+  name: size_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Atlas
+  name: axis_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Atlas
+  name: size_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Atlas
+  name: resolution_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Camera
+  name: size_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Camera
+  name: bin_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Camera
+  name: crop_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: CoordinateSystem
+  name: axis_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: CoupledPlane
+  name: depth_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Detector
+  name: size_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Detector
+  name: bin_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Detector
+  name: crop_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: DigitalMicromirrorDevice
+  name: padding_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: DigitalMicromirrorDevice
+  name: line_shear_anchors_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Disc
+  name: radius_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Enclosure
+  name: size_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: FiberProbe
+  name: core_diameter_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: FiberProbe
+  name: length_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Filter
+  name: wavelength_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Fluorophore
+  name: excitation_wavelength_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: ImageSPIM
+  name: dimensions_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Lamp
+  name: wavelength_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Laser
+  name: wavelength_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: LaserConfig
+  name: wavelength_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: LickSpout
+  name: spout_diameter_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: LightEmittingDiode
+  name: wavelength_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Monitor
+  name: size_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Monitor
+  name: viewing_distance_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: MotorizedStage
+  name: travel_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: PlanarImage
+  name: dimensions_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: PlanarImageStack
+  name: dimensions_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: PlanarImageStack
+  name: depth_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Plane
+  name: depth_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: ScanningStage
+  name: travel_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Slap2Plane
+  name: depth_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Slap2Plane
+  name: y_dilations_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Treadmill
+  name: width_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Tube
+  name: diameter_unit
+  description: Enumeration of Length Measurements
+- source: aind
+  class: Wheel
+  name: size_unit
+  description: Enumeration of Length Measurements

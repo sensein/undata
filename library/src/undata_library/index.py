@@ -29,13 +29,15 @@ def build_index(base_path: Path) -> dict[str, Any]:
                 sources = [p.get("source", "") for p in prov]
                 if len(set(sources)) > 1:
                     multi_source += 1
-                elements.append({
-                    "file": str(f.relative_to(base_path)),
-                    "name": name,
-                    "data_type": data["semantic"].get("data_type", ""),
-                    "sources": sorted(set(sources)),
-                    "provenance_count": len(prov),
-                })
+                elements.append(
+                    {
+                        "file": str(f.relative_to(base_path)),
+                        "name": name,
+                        "data_type": data["semantic"].get("data_type", ""),
+                        "sources": sorted(set(sources)),
+                        "provenance_count": len(prov),
+                    }
+                )
             except (yaml.YAMLError, OSError):
                 continue
 
@@ -47,12 +49,14 @@ def build_index(base_path: Path) -> dict[str, Any]:
                     continue
                 prov = data.get("provenance", [])
                 name = prov[0].get("name", "") if prov else ""
-                schemas.append({
-                    "file": str(f.relative_to(base_path)),
-                    "name": name,
-                    "property_count": len(data["semantic"].get("properties", [])),
-                    "provenance_count": len(prov),
-                })
+                schemas.append(
+                    {
+                        "file": str(f.relative_to(base_path)),
+                        "name": name,
+                        "property_count": len(data["semantic"].get("properties", [])),
+                        "provenance_count": len(prov),
+                    }
+                )
             except (yaml.YAMLError, OSError):
                 continue
 
@@ -70,7 +74,5 @@ def write_index(base_path: Path, output: Path) -> dict[str, Any]:
     """Build index and write to YAML file."""
     idx = build_index(base_path)
     idx["generated_at"] = datetime.now(timezone.utc).isoformat()
-    output.write_text(
-        yaml.dump(idx, default_flow_style=False, sort_keys=False), encoding="utf-8"
-    )
+    output.write_text(yaml.dump(idx, default_flow_style=False, sort_keys=False), encoding="utf-8")
     return idx

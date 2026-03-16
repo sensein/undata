@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Analog Input
+    - Analog Output
+    - Digital Input
+    - Digital Output
+provenance:
+- source: aind
+  class: DAQChannel
+  name: channel_type
+  description: DAQ Channel type

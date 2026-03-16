@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Prone
+    - Supine
+provenance:
+- source: aind
+  class: MRIScan
+  name: subject_position
+  description: Subject position

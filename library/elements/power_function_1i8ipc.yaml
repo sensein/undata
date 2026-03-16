@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Constant
+    - Linear
+    - Exponential
+    - Other
+provenance:
+- source: aind
+  class: PlanarImageStack
+  name: power_function
+  description: Power functions

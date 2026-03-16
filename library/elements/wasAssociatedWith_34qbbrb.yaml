@@ -1,0 +1,470 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: Activity
+  name: wasAssociatedWith
+  description: ''
+- source: dandi
+  class: Activity
+  name: used
+  description: A listing of equipment used for the activity.
+- source: dandi
+  class: Allele
+  name: identifier
+  description: Identifier for genotyping allele.
+- source: dandi
+  class: Asset
+  name: contributor
+  description: 'Contributors to this item: persons or organizations.'
+- source: dandi
+  class: Asset
+  name: about
+  description: The subject matter of the content, such as disorders, brain anatomy.
+- source: dandi
+  class: Asset
+  name: studyTarget
+  description: Objectives or specific questions of the study.
+- source: dandi
+  class: Asset
+  name: license
+  description: Licenses associated with the item. DANDI only supports a subset of
+    Creative Commons Licenses (creativecommons.org) applicable to datasets.
+- source: dandi
+  class: Asset
+  name: protocol
+  description: A list of persistent URLs describing the protocol (e.g. protocols.io,
+    or other DOIs).
+- source: dandi
+  class: Asset
+  name: ethicsApproval
+  description: ''
+- source: dandi
+  class: Asset
+  name: keywords
+  description: Keywords used to describe this content.
+- source: dandi
+  class: Asset
+  name: access
+  description: ''
+- source: dandi
+  class: Asset
+  name: relatedResource
+  description: ''
+- source: dandi
+  class: Asset
+  name: wasGeneratedBy
+  description: Describe the session, project or activity that generated this asset.
+- source: dandi
+  class: Asset
+  name: sameAs
+  description: ''
+- source: dandi
+  class: Asset
+  name: approach
+  description: ''
+- source: dandi
+  class: Asset
+  name: measurementTechnique
+  description: ''
+- source: dandi
+  class: Asset
+  name: variableMeasured
+  description: ''
+- source: dandi
+  class: Asset
+  name: wasDerivedFrom
+  description: ''
+- source: dandi
+  class: Asset
+  name: wasAttributedTo
+  description: Associated participant(s) or subject(s).
+- source: dandi
+  class: Asset
+  name: contentUrl
+  description: ''
+- source: dandi
+  class: AssetsSummary
+  name: dataStandard
+  description: ''
+- source: dandi
+  class: AssetsSummary
+  name: approach
+  description: ''
+- source: dandi
+  class: AssetsSummary
+  name: measurementTechnique
+  description: ''
+- source: dandi
+  class: AssetsSummary
+  name: variableMeasured
+  description: ''
+- source: dandi
+  class: AssetsSummary
+  name: species
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: contributor
+  description: 'Contributors to this item: persons or organizations.'
+- source: dandi
+  class: BareAsset
+  name: about
+  description: The subject matter of the content, such as disorders, brain anatomy.
+- source: dandi
+  class: BareAsset
+  name: studyTarget
+  description: Objectives or specific questions of the study.
+- source: dandi
+  class: BareAsset
+  name: license
+  description: Licenses associated with the item. DANDI only supports a subset of
+    Creative Commons Licenses (creativecommons.org) applicable to datasets.
+- source: dandi
+  class: BareAsset
+  name: protocol
+  description: A list of persistent URLs describing the protocol (e.g. protocols.io,
+    or other DOIs).
+- source: dandi
+  class: BareAsset
+  name: ethicsApproval
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: keywords
+  description: Keywords used to describe this content.
+- source: dandi
+  class: BareAsset
+  name: access
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: relatedResource
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: wasGeneratedBy
+  description: Describe the session, project or activity that generated this asset.
+- source: dandi
+  class: BareAsset
+  name: sameAs
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: approach
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: measurementTechnique
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: variableMeasured
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: wasDerivedFrom
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: wasAttributedTo
+  description: Associated participant(s) or subject(s).
+- source: dandi
+  class: BioSample
+  name: assayType
+  description: Identifier for the assay(s) used (e.g., OBI).
+- source: dandi
+  class: BioSample
+  name: anatomy
+  description: Identifier for what organ the sample belongs to. Use the most specific
+    descriptor from sources such as UBERON.
+- source: dandi
+  class: BioSample
+  name: wasDerivedFrom
+  description: Describes the hierarchy of sample derivation or aggregation.
+- source: dandi
+  class: BioSample
+  name: wasAttributedTo
+  description: Participant(s) or Subject(s) associated with this sample.
+- source: dandi
+  class: BioSample
+  name: sameAs
+  description: ''
+- source: dandi
+  class: BioSample
+  name: hasMember
+  description: ''
+- source: dandi
+  class: CommonModel
+  name: contributor
+  description: 'Contributors to this item: persons or organizations.'
+- source: dandi
+  class: CommonModel
+  name: about
+  description: The subject matter of the content, such as disorders, brain anatomy.
+- source: dandi
+  class: CommonModel
+  name: studyTarget
+  description: Objectives or specific questions of the study.
+- source: dandi
+  class: CommonModel
+  name: license
+  description: Licenses associated with the item. DANDI only supports a subset of
+    Creative Commons Licenses (creativecommons.org) applicable to datasets.
+- source: dandi
+  class: CommonModel
+  name: protocol
+  description: A list of persistent URLs describing the protocol (e.g. protocols.io,
+    or other DOIs).
+- source: dandi
+  class: CommonModel
+  name: ethicsApproval
+  description: ''
+- source: dandi
+  class: CommonModel
+  name: keywords
+  description: Keywords used to describe this content.
+- source: dandi
+  class: CommonModel
+  name: access
+  description: ''
+- source: dandi
+  class: CommonModel
+  name: relatedResource
+  description: ''
+- source: dandi
+  class: Contributor
+  name: roleName
+  description: Role(s) of the contributor. Multiple roles can be selected.
+- source: dandi
+  class: Dandiset
+  name: contributor
+  description: People or Organizations that have contributed to this Dandiset.
+- source: dandi
+  class: Dandiset
+  name: about
+  description: The subject matter of the content, such as disorders, brain anatomy.
+- source: dandi
+  class: Dandiset
+  name: studyTarget
+  description: Objectives or specific questions of the study.
+- source: dandi
+  class: Dandiset
+  name: license
+  description: Licenses associated with the item. DANDI only supports a subset of
+    Creative Commons Licenses (creativecommons.org) applicable to datasets.
+- source: dandi
+  class: Dandiset
+  name: protocol
+  description: A list of persistent URLs describing the protocol (e.g. protocols.io,
+    or other DOIs).
+- source: dandi
+  class: Dandiset
+  name: ethicsApproval
+  description: ''
+- source: dandi
+  class: Dandiset
+  name: keywords
+  description: Keywords used to describe this content.
+- source: dandi
+  class: Dandiset
+  name: access
+  description: ''
+- source: dandi
+  class: Dandiset
+  name: relatedResource
+  description: ''
+- source: dandi
+  class: Dandiset
+  name: manifestLocation
+  description: ''
+- source: dandi
+  class: Disorder
+  name: dxdate
+  description: Dates of diagnosis
+- source: dandi
+  class: GenotypeInfo
+  name: alleles
+  description: Information about alleles at the locus.
+- source: dandi
+  class: GenotypeInfo
+  name: wasGeneratedBy
+  description: Information about session activity used to determine genotype.
+- source: dandi
+  class: Locus
+  name: identifier
+  description: Identifier for genotyping locus.
+- source: dandi
+  class: Organization
+  name: roleName
+  description: Role(s) of the contributor. Multiple roles can be selected.
+- source: dandi
+  class: Participant
+  name: altName
+  description: ''
+- source: dandi
+  class: Participant
+  name: genotype
+  description: Genotype descriptor of participant or subject if available
+- source: dandi
+  class: Participant
+  name: disorder
+  description: Any current diagnosed disease or disorder associated with the participant
+    or subject.
+- source: dandi
+  class: Participant
+  name: relatedParticipant
+  description: Information about related participants or subjects in a study or across
+    studies.
+- source: dandi
+  class: Participant
+  name: sameAs
+  description: An identifier to link participants or subjects across datasets.
+- source: dandi
+  class: Person
+  name: roleName
+  description: Role(s) of the contributor. Multiple roles can be selected.
+- source: dandi
+  class: Person
+  name: affiliation
+  description: An organization that this person is affiliated with.
+- source: dandi
+  class: Project
+  name: wasAssociatedWith
+  description: ''
+- source: dandi
+  class: Project
+  name: used
+  description: A listing of equipment used for the activity.
+- source: dandi
+  class: PropertyValue
+  name: value
+  description: The value associated with this property.
+- source: dandi
+  class: PublishActivity
+  name: wasAssociatedWith
+  description: ''
+- source: dandi
+  class: PublishActivity
+  name: used
+  description: A listing of equipment used for the activity.
+- source: dandi
+  class: PublishedAsset
+  name: contributor
+  description: 'Contributors to this item: persons or organizations.'
+- source: dandi
+  class: PublishedAsset
+  name: about
+  description: The subject matter of the content, such as disorders, brain anatomy.
+- source: dandi
+  class: PublishedAsset
+  name: studyTarget
+  description: Objectives or specific questions of the study.
+- source: dandi
+  class: PublishedAsset
+  name: license
+  description: Licenses associated with the item. DANDI only supports a subset of
+    Creative Commons Licenses (creativecommons.org) applicable to datasets.
+- source: dandi
+  class: PublishedAsset
+  name: protocol
+  description: A list of persistent URLs describing the protocol (e.g. protocols.io,
+    or other DOIs).
+- source: dandi
+  class: PublishedAsset
+  name: ethicsApproval
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: keywords
+  description: Keywords used to describe this content.
+- source: dandi
+  class: PublishedAsset
+  name: access
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: relatedResource
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: wasGeneratedBy
+  description: Describe the session, project or activity that generated this asset.
+- source: dandi
+  class: PublishedAsset
+  name: sameAs
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: approach
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: measurementTechnique
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: variableMeasured
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: wasDerivedFrom
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: wasAttributedTo
+  description: Associated participant(s) or subject(s).
+- source: dandi
+  class: PublishedAsset
+  name: contentUrl
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: contributor
+  description: People or Organizations that have contributed to this Dandiset.
+- source: dandi
+  class: PublishedDandiset
+  name: about
+  description: The subject matter of the content, such as disorders, brain anatomy.
+- source: dandi
+  class: PublishedDandiset
+  name: studyTarget
+  description: Objectives or specific questions of the study.
+- source: dandi
+  class: PublishedDandiset
+  name: license
+  description: Licenses associated with the item. DANDI only supports a subset of
+    Creative Commons Licenses (creativecommons.org) applicable to datasets.
+- source: dandi
+  class: PublishedDandiset
+  name: protocol
+  description: A list of persistent URLs describing the protocol (e.g. protocols.io,
+    or other DOIs).
+- source: dandi
+  class: PublishedDandiset
+  name: ethicsApproval
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: keywords
+  description: Keywords used to describe this content.
+- source: dandi
+  class: PublishedDandiset
+  name: access
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: relatedResource
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: manifestLocation
+  description: ''
+- source: dandi
+  class: Session
+  name: wasAssociatedWith
+  description: ''
+- source: dandi
+  class: Session
+  name: used
+  description: A listing of equipment used for the activity.

@@ -1,0 +1,581 @@
+semantic:
+  data_type: array
+provenance:
+- source: aind
+  class: acquisition
+  name: experimenters
+- source: aind
+  class: acquisition
+  name: protocol_id
+  description: DOI for protocols.io
+- source: aind
+  class: acquisition
+  name: ethics_review_id
+- source: aind
+  class: acquisition
+  name: calibrations
+  description: List of calibration measurements taken prior to acquisition.
+- source: aind
+  class: acquisition
+  name: maintenance
+  description: List of maintenance on instrument prior to acquisition.
+- source: aind
+  class: acquisition
+  name: data_streams
+  description: A data stream is a collection of devices that are acquiring data simultaneously.
+    Each acquisition can include multiple streams. Streams should be split when configurations
+    are changed.
+- source: aind
+  class: acquisition
+  name: stimulus_epochs
+  description: A stimulus epoch captures all stimuli being presented during an acquisition.
+    Epochs should be split when the purpose of the stimulus changes.
+- source: aind
+  class: acquisition
+  name: manipulations
+  description: Procedures performed during the acquisition.
+- source: aind
+  class: Affine
+  name: affine_transform
+- source: aind
+  class: AirPuffConfig
+  name: relative_position
+- source: aind
+  class: AirPuffConfig
+  name: transform
+- source: aind
+  class: Atlas
+  name: axes
+  description: Axis names and directions
+- source: aind
+  class: Atlas
+  name: size
+- source: aind
+  class: Atlas
+  name: resolution
+- source: aind
+  class: AtlasCoordinate
+  name: translation
+- source: aind
+  class: BrainInjection
+  name: injection_materials
+- source: aind
+  class: BrainInjection
+  name: relative_position
+- source: aind
+  class: BrainInjection
+  name: dynamics
+  description: List of injection events, one per location/depth
+- source: aind
+  class: BrainInjection
+  name: coordinates
+- source: aind
+  class: Calibration
+  name: input
+  description: Calibration input
+- source: aind
+  class: Calibration
+  name: output
+  description: Calibration output (provide the average if repeated)
+- source: aind
+  class: Channel
+  name: additional_device_names
+  description: Mirrors, dichroics, etc
+- source: aind
+  class: Channel
+  name: light_sources
+- source: aind
+  class: Channel
+  name: excitation_filters
+- source: aind
+  class: Channel
+  name: emission_filters
+- source: aind
+  class: Code
+  name: input_data
+  description: Input data used in the code or script
+- source: aind
+  class: CombinedData
+  name: assets
+- source: aind
+  class: CoordinateSystem
+  name: axes
+  description: Axis names and directions
+- source: aind
+  class: DataStream
+  name: modalities
+  description: Modalities that are acquired in this stream
+- source: aind
+  class: DataStream
+  name: code
+- source: aind
+  class: DataStream
+  name: active_devices
+  description: Device names must match devices in the Instrument
+- source: aind
+  class: DataStream
+  name: configurations
+  description: Configurations are parameters controlling active devices during this
+    stream
+- source: aind
+  class: DataStream
+  name: connections
+  description: Connections are links between devices that are specific to this acquisition
+    (i.e. not already defined in the Instrument)
+- source: aind
+  class: EphysAssemblyConfig
+  name: probes
+- source: aind
+  class: EphysAssemblyConfig
+  name: modules
+  description: Configurations for conveniently tracking manipulator modules, e.g.
+    on the New Scale dome.
+- source: aind
+  class: FiberAssemblyConfig
+  name: probes
+- source: aind
+  class: FiberAssemblyConfig
+  name: patch_cords
+- source: aind
+  class: ImageSPIM
+  name: image_to_acquisition_transform
+  description: Position, rotation, and scale of the image. Note that depth should
+    be in the planes.
+- source: aind
+  class: ImagingConfig
+  name: channels
+- source: aind
+  class: ImagingConfig
+  name: images
+- source: aind
+  class: Injection
+  name: injection_materials
+- source: aind
+  class: Injection
+  name: relative_position
+- source: aind
+  class: Injection
+  name: dynamics
+  description: List of injection events, one per location/depth
+- source: aind
+  class: LickSpoutConfig
+  name: relative_position
+- source: aind
+  class: LickSpoutConfig
+  name: transform
+  description: Entry coordinate, depth, and rotation in the Acquisition.coordinate_system
+- source: aind
+  class: MISCameraConfig
+  name: relative_position
+- source: aind
+  class: MISCameraConfig
+  name: transform
+  description: Position and orientation of the device in the instrument coordinate
+    system
+- source: aind
+  class: MRIScan
+  name: affine_transform
+  description: NIFTI sform/qform, Bruker vc_transform, etc
+- source: aind
+  class: Maintenance
+  name: reagents
+- source: aind
+  class: Manipulation
+  name: procedures
+  description: Procedures performed during the manipulation
+- source: aind
+  class: MousePlatformConfig
+  name: objects_in_arena
+- source: aind
+  class: OlfactometerConfig
+  name: channel_configs
+  description: List of channels with their odorant and concentration
+- source: aind
+  class: PatchCordConfig
+  name: channels
+- source: aind
+  class: PlanarImage
+  name: image_to_acquisition_transform
+  description: Position, rotation, and scale of the image. Note that depth should
+    be in the planes.
+- source: aind
+  class: PlanarImage
+  name: planes
+- source: aind
+  class: PlanarImageStack
+  name: image_to_acquisition_transform
+  description: Position, rotation, and scale of the image. Note that depth should
+    be in the planes.
+- source: aind
+  class: PlanarImageStack
+  name: planes
+- source: aind
+  class: PowerCalibration
+  name: input
+  description: Power, voltage, or percentage input strength
+- source: aind
+  class: PowerCalibration
+  name: output
+  description: Power output (provide the average if repeated)
+- source: aind
+  class: ProbeConfig
+  name: other_targeted_structure
+- source: aind
+  class: ProbeConfig
+  name: transform
+  description: Entry coordinate, depth, and rotation in the Acquisition.coordinate_system
+- source: aind
+  class: Rotation
+  name: angles
+  description: Right-hand rule, positive angles rotate CCW
+- source: aind
+  class: Scale
+  name: scale
+- source: aind
+  class: Slap2Plane
+  name: structure_types
+- source: aind
+  class: Slap2Plane
+  name: y_dilations
+- source: aind
+  class: Slap2Plane
+  name: frame_rates
+- source: aind
+  class: StimulusEpoch
+  name: stimulus_modalities
+- source: aind
+  class: StimulusEpoch
+  name: active_devices
+  description: Device names must match devices in the Instrument
+- source: aind
+  class: StimulusEpoch
+  name: configurations
+- source: aind
+  class: TarsVirusIdentifiers
+  name: plasmid_tars_alias
+  description: Alias used to reference the plasmid, usually begins 'AiP'
+- source: aind
+  class: Translation
+  name: translation
+- source: aind
+  class: VolumeCalibration
+  name: input
+  description: Length of time solenoid/valve is open
+- source: aind
+  class: VolumeCalibration
+  name: output
+  description: Volume output (provide the average if repeated)
+- source: aind
+  class: data_description
+  name: tags
+  description: Descriptive strings to help categorize and search for data
+- source: aind
+  class: data_description
+  name: funding_source
+  description: Funding source. If internal funding, select 'Allen Institute'
+- source: aind
+  class: data_description
+  name: investigators
+  description: Full name(s) of key investigators (e.g. PI, lead scientist, contact
+    person)
+- source: aind
+  class: data_description
+  name: modalities
+  description: A short name for the specific manner, characteristic, pattern of application,
+    or the employment of any technology or formal procedure to generate data for a
+    study
+- source: aind
+  class: data_description
+  name: source_data
+  description: For derived assets, list the source data asset names used to create
+    this data
+- source: aind
+  class: Funding
+  name: fundee
+  description: Person(s) funded by this mechanism
+- source: aind
+  class: instrument
+  name: modalities
+  description: List of all possible modalities that the instrument is capable of acquiring
+- source: aind
+  class: instrument
+  name: calibrations
+  description: List of calibration measurements takend during instrument setup and
+    maintenance
+- source: aind
+  class: instrument
+  name: connections
+  description: List of all connections between devices in the instrument
+- source: aind
+  class: instrument
+  name: components
+  description: List of all devices in the instrument
+- source: aind
+  class: Affine
+  name: affine_transform
+- source: aind
+  class: Arena
+  name: objects_in_arena
+- source: aind
+  class: Calibration
+  name: input
+  description: Calibration input
+- source: aind
+  class: Calibration
+  name: output
+  description: Calibration output (provide the average if repeated)
+- source: aind
+  class: CameraAssembly
+  name: relative_position
+- source: aind
+  class: CameraAssembly
+  name: transform
+  description: Position and orientation of the device in the instrument coordinate
+    system
+- source: aind
+  class: CoordinateSystem
+  name: axes
+  description: Axis names and directions
+- source: aind
+  class: DAQDevice
+  name: channels
+- source: aind
+  class: DigitalMicromirrorDevice
+  name: dmd_curtain
+- source: aind
+  class: DigitalMicromirrorDevice
+  name: line_shear_anchors
+- source: aind
+  class: EphysAssembly
+  name: probes
+- source: aind
+  class: FiberAssembly
+  name: fibers
+- source: aind
+  class: HarpDevice
+  name: channels
+- source: aind
+  class: LaserAssembly
+  name: lasers
+- source: aind
+  class: LickSpoutAssembly
+  name: lick_spouts
+- source: aind
+  class: Monitor
+  name: relative_position
+- source: aind
+  class: Monitor
+  name: transform
+  description: Position and orientation of the device in the instrument coordinate
+    system
+- source: aind
+  class: NeuropixelsBasestation
+  name: channels
+- source: aind
+  class: NeuropixelsBasestation
+  name: ports
+- source: aind
+  class: Olfactometer
+  name: channels
+- source: aind
+  class: OpenEphysAcquisitionBoard
+  name: channels
+- source: aind
+  class: OpenEphysAcquisitionBoard
+  name: ports
+- source: aind
+  class: PowerCalibration
+  name: input
+  description: Power, voltage, or percentage input strength
+- source: aind
+  class: PowerCalibration
+  name: output
+  description: Power output (provide the average if repeated)
+- source: aind
+  class: ProbePort
+  name: probes
+- source: aind
+  class: Rotation
+  name: angles
+  description: Right-hand rule, positive angles rotate CCW
+- source: aind
+  class: Scale
+  name: scale
+- source: aind
+  class: Speaker
+  name: relative_position
+- source: aind
+  class: Speaker
+  name: transform
+  description: Position and orientation of the device in the instrument coordinate
+    system
+- source: aind
+  class: Translation
+  name: translation
+- source: aind
+  class: VolumeCalibration
+  name: input
+  description: Length of time solenoid/valve is open
+- source: aind
+  class: VolumeCalibration
+  name: output
+  description: Volume output (provide the average if repeated)
+- source: aind
+  class: procedures
+  name: subject_procedures
+  description: Procedures performed on a live subject
+- source: aind
+  class: procedures
+  name: specimen_procedures
+  description: Procedures performed on tissue extracted after perfusion
+- source: aind
+  class: Affine
+  name: affine_transform
+- source: aind
+  class: Atlas
+  name: axes
+  description: Axis names and directions
+- source: aind
+  class: Atlas
+  name: size
+- source: aind
+  class: Atlas
+  name: resolution
+- source: aind
+  class: AtlasCoordinate
+  name: translation
+- source: aind
+  class: BrainInjection
+  name: injection_materials
+- source: aind
+  class: BrainInjection
+  name: relative_position
+- source: aind
+  class: BrainInjection
+  name: dynamics
+  description: List of injection events, one per location/depth
+- source: aind
+  class: BrainInjection
+  name: coordinates
+- source: aind
+  class: Code
+  name: input_data
+  description: Input data used in the code or script
+- source: aind
+  class: CombinedData
+  name: assets
+- source: aind
+  class: CoordinateSystem
+  name: axes
+  description: Axis names and directions
+- source: aind
+  class: Craniotomy
+  name: position
+- source: aind
+  class: GeneProbe
+  name: probes
+- source: aind
+  class: GeneProbeSet
+  name: gene_probes
+- source: aind
+  class: GenericSubjectProcedure
+  name: experimenters
+- source: aind
+  class: HCRSeries
+  name: hcr_rounds
+- source: aind
+  class: HybridizationChainReaction
+  name: stains
+- source: aind
+  class: Injection
+  name: injection_materials
+- source: aind
+  class: Injection
+  name: relative_position
+- source: aind
+  class: Injection
+  name: dynamics
+  description: List of injection events, one per location/depth
+- source: aind
+  class: MyomatrixArray
+  name: threads
+- source: aind
+  class: MyomatrixThread
+  name: contacts
+- source: aind
+  class: Perfusion
+  name: output_specimen_ids
+  description: IDs of specimens resulting from this procedure.
+- source: aind
+  class: PlanarSection
+  name: partial_slice
+  description: If sectioning does not include the entire slice, indicate which part
+    of the slice is retained.
+- source: aind
+  class: PlanarSectioning
+  name: sections
+  description: Use PlanarSection for new implementations
+- source: aind
+  class: ProbeConfig
+  name: other_targeted_structure
+- source: aind
+  class: ProbeConfig
+  name: transform
+  description: Entry coordinate, depth, and rotation in the Acquisition.coordinate_system
+- source: aind
+  class: Rotation
+  name: angles
+  description: Right-hand rule, positive angles rotate CCW
+- source: aind
+  class: Scale
+  name: scale
+- source: aind
+  class: Section
+  name: partial_slice
+  description: If sectioning does not include the entire slice, indicate which part
+    of the slice is retained.
+- source: aind
+  class: Sectioning
+  name: sections
+- source: aind
+  class: SpecimenProcedure
+  name: experimenters
+- source: aind
+  class: SpecimenProcedure
+  name: protocol_id
+  description: DOI for protocols.io
+- source: aind
+  class: SpecimenProcedure
+  name: procedure_details
+  description: Details of the procedures, including reagents and sectioning information.
+- source: aind
+  class: Surgery
+  name: experimenters
+- source: aind
+  class: Surgery
+  name: procedures
+- source: aind
+  class: TarsVirusIdentifiers
+  name: plasmid_tars_alias
+  description: Alias used to reference the plasmid, usually begins 'AiP'
+- source: aind
+  class: Translation
+  name: translation
+- source: aind
+  class: CalibrationObject
+  name: objects
+  description: For calibration objects that are built up from one or more devices.
+- source: aind
+  class: Housing
+  name: home_cage_enrichment
+- source: aind
+  class: Housing
+  name: cohoused_subjects
+  description: List of IDs of other subjects housed in same cage
+- source: aind
+  class: MouseSubject
+  name: alleles
+  description: Allele names and persistent IDs
+- source: aind
+  class: MouseSubject
+  name: wellness_reports

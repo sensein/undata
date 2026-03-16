@@ -1,0 +1,1035 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: AccessRequirements
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: AccessRequirements
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: AccessRequirements
+  name: status
+  description: The access status of the item.
+- source: dandi
+  class: AccessRequirements
+  name: description
+  description: Information about access requirements when embargoed or restricted
+- source: dandi
+  class: AccessRequirements
+  name: embargoedUntil
+  description: Date on which embargo ends.
+- source: dandi
+  class: Activity
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Activity
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Activity
+  name: identifier
+  description: ''
+- source: dandi
+  class: Activity
+  name: name
+  description: The name of the activity.
+- source: dandi
+  class: Activity
+  name: description
+  description: The description of the activity.
+- source: dandi
+  class: Activity
+  name: startDate
+  description: ''
+- source: dandi
+  class: Activity
+  name: endDate
+  description: ''
+- source: dandi
+  class: Affiliation
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Affiliation
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Affiliation
+  name: identifier
+  description: Use an ror.org identifier for institutions.
+- source: dandi
+  class: Affiliation
+  name: name
+  description: Name of organization
+- source: dandi
+  class: Agent
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Agent
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Agent
+  name: identifier
+  description: Identifier for an agent.
+- source: dandi
+  class: Agent
+  name: name
+  description: ''
+- source: dandi
+  class: Agent
+  name: url
+  description: ''
+- source: dandi
+  class: Allele
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Allele
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Allele
+  name: alleleSymbol
+  description: ''
+- source: dandi
+  class: Allele
+  name: alleleType
+  description: ''
+- source: dandi
+  class: Anatomy
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Anatomy
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Anatomy
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: ApproachType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: ApproachType
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: ApproachType
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: AssayType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: AssayType
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: AssayType
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: Asset
+  name: id
+  description: Uniform resource identifier.
+- source: dandi
+  class: Asset
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Asset
+  name: schemaVersion
+  description: ''
+- source: dandi
+  class: Asset
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: Asset
+  name: description
+  description: A description of the item.
+- source: dandi
+  class: Asset
+  name: acknowledgement
+  description: Any acknowledgments not covered by contributors or external resources.
+- source: dandi
+  class: Asset
+  name: url
+  description: permalink to the item
+- source: dandi
+  class: Asset
+  name: repository
+  description: location of the item
+- source: dandi
+  class: Asset
+  name: contentSize
+  description: ''
+- source: dandi
+  class: Asset
+  name: encodingFormat
+  description: ''
+- source: dandi
+  class: Asset
+  name: digest
+  description: ''
+- source: dandi
+  class: Asset
+  name: path
+  description: ''
+- source: dandi
+  class: Asset
+  name: dateModified
+  description: ''
+- source: dandi
+  class: Asset
+  name: blobDateModified
+  description: ''
+- source: dandi
+  class: Asset
+  name: dataType
+  description: ''
+- source: dandi
+  class: Asset
+  name: identifier
+  description: ''
+- source: dandi
+  class: AssetsSummary
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: AssetsSummary
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: BareAsset
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: schemaVersion
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: BareAsset
+  name: description
+  description: A description of the item.
+- source: dandi
+  class: BareAsset
+  name: acknowledgement
+  description: Any acknowledgments not covered by contributors or external resources.
+- source: dandi
+  class: BareAsset
+  name: url
+  description: permalink to the item
+- source: dandi
+  class: BareAsset
+  name: repository
+  description: location of the item
+- source: dandi
+  class: BareAsset
+  name: contentSize
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: encodingFormat
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: digest
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: path
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: dateModified
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: blobDateModified
+  description: ''
+- source: dandi
+  class: BareAsset
+  name: dataType
+  description: ''
+- source: dandi
+  class: BaseType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: BaseType
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: BaseType
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: BioSample
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: BioSample
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: BioSample
+  name: identifier
+  description: ''
+- source: dandi
+  class: BioSample
+  name: sampleType
+  description: Identifier for the sample characteristics (e.g., from OBI, Encode).
+- source: dandi
+  class: CommonModel
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: CommonModel
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: CommonModel
+  name: schemaVersion
+  description: ''
+- source: dandi
+  class: CommonModel
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: CommonModel
+  name: description
+  description: A description of the item.
+- source: dandi
+  class: CommonModel
+  name: acknowledgement
+  description: Any acknowledgments not covered by contributors or external resources.
+- source: dandi
+  class: CommonModel
+  name: url
+  description: permalink to the item
+- source: dandi
+  class: CommonModel
+  name: repository
+  description: location of the item
+- source: dandi
+  class: CommonModel
+  name: wasGeneratedBy
+  description: ''
+- source: dandi
+  class: ContactPoint
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: ContactPoint
+  name: email
+  description: Email address of contact.
+- source: dandi
+  class: ContactPoint
+  name: url
+  description: A Web page to find information on how to contact.
+- source: dandi
+  class: Contributor
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Contributor
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Contributor
+  name: identifier
+  description: Use a common identifier such as ORCID (orcid.org) for people or ROR
+    (ror.org) for institutions.
+- source: dandi
+  class: Contributor
+  name: name
+  description: ''
+- source: dandi
+  class: Contributor
+  name: email
+  description: ''
+- source: dandi
+  class: Contributor
+  name: url
+  description: ''
+- source: dandi
+  class: Contributor
+  name: awardNumber
+  description: Identifier associated with a sponsored or gift award.
+- source: dandi
+  class: DandiBaseModel
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: DandiBaseModel
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Dandiset
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Dandiset
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Dandiset
+  name: schemaVersion
+  description: ''
+- source: dandi
+  class: Dandiset
+  name: name
+  description: A title associated with the Dandiset.
+- source: dandi
+  class: Dandiset
+  name: description
+  description: A description of the Dandiset
+- source: dandi
+  class: Dandiset
+  name: acknowledgement
+  description: Any acknowledgments not covered by contributors or external resources.
+- source: dandi
+  class: Dandiset
+  name: url
+  description: permalink to the item
+- source: dandi
+  class: Dandiset
+  name: repository
+  description: location of the item
+- source: dandi
+  class: Dandiset
+  name: wasGeneratedBy
+  description: Project(s) that generated this Dandiset.
+- source: dandi
+  class: Dandiset
+  name: identifier
+  description: A Dandiset identifier that can be resolved by identifiers.org.
+- source: dandi
+  class: Dandiset
+  name: dateCreated
+  description: ''
+- source: dandi
+  class: Dandiset
+  name: dateModified
+  description: ''
+- source: dandi
+  class: Dandiset
+  name: citation
+  description: ''
+- source: dandi
+  class: Dandiset
+  name: assetsSummary
+  description: ''
+- source: dandi
+  class: Dandiset
+  name: version
+  description: ''
+- source: dandi
+  class: Disorder
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Disorder
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Disorder
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: Equipment
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Equipment
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Equipment
+  name: identifier
+  description: ''
+- source: dandi
+  class: Equipment
+  name: name
+  description: A name for the equipment.
+- source: dandi
+  class: Equipment
+  name: description
+  description: The description of the equipment.
+- source: dandi
+  class: EthicsApproval
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: EthicsApproval
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: EthicsApproval
+  name: identifier
+  description: Approved Protocol identifier, often a number or alphanumeric string.
+- source: dandi
+  class: GenericType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: GenericType
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: GenericType
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: GenotypeInfo
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: GenotypeInfo
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: GenotypeInfo
+  name: locus
+  description: Locus at which information was extracted.
+- source: dandi
+  class: Locus
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Locus
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Locus
+  name: locusType
+  description: ''
+- source: dandi
+  class: MeasurementTechniqueType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: MeasurementTechniqueType
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: MeasurementTechniqueType
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: Organization
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Organization
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Organization
+  name: identifier
+  description: Use an ror.org identifier for institutions.
+- source: dandi
+  class: Organization
+  name: name
+  description: ''
+- source: dandi
+  class: Organization
+  name: email
+  description: ''
+- source: dandi
+  class: Organization
+  name: url
+  description: ''
+- source: dandi
+  class: Organization
+  name: awardNumber
+  description: Identifier associated with a sponsored or gift award.
+- source: dandi
+  class: Participant
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Participant
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Participant
+  name: identifier
+  description: ''
+- source: dandi
+  class: Participant
+  name: cellLine
+  description: Cell line associated with the participant or subject.
+- source: dandi
+  class: Participant
+  name: vendor
+  description: ''
+- source: dandi
+  class: Participant
+  name: age
+  description: A representation of age using ISO 8601 duration. This should include
+    a valueReference if anything other than date of birth is used.
+- source: dandi
+  class: Participant
+  name: sex
+  description: Identifier for sex of the participant or subject if available. (e.g.
+    from OBI)
+- source: dandi
+  class: Participant
+  name: species
+  description: An identifier indicating the taxonomic classification of the participant
+    or subject.
+- source: dandi
+  class: Person
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Person
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Person
+  name: identifier
+  description: An ORCID (orcid.org) identifier for an individual.
+- source: dandi
+  class: Person
+  name: name
+  description: 'Use the format: familyname, given names ...'
+- source: dandi
+  class: Person
+  name: email
+  description: ''
+- source: dandi
+  class: Person
+  name: url
+  description: ''
+- source: dandi
+  class: Person
+  name: awardNumber
+  description: Identifier associated with a sponsored or gift award.
+- source: dandi
+  class: Project
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Project
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Project
+  name: identifier
+  description: ''
+- source: dandi
+  class: Project
+  name: name
+  description: The name of the project that generated this Dandiset or asset.
+- source: dandi
+  class: Project
+  name: description
+  description: A brief description of the project.
+- source: dandi
+  class: Project
+  name: startDate
+  description: ''
+- source: dandi
+  class: Project
+  name: endDate
+  description: ''
+- source: dandi
+  class: PropertyValue
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: PropertyValue
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: PropertyValue
+  name: unitText
+  description: ''
+- source: dandi
+  class: PropertyValue
+  name: valueReference
+  description: ''
+- source: dandi
+  class: PropertyValue
+  name: propertyID
+  description: A commonly used identifier for the characteristic represented by the
+    property. For example, a known prefix like DOI or a full URL.
+- source: dandi
+  class: PublishActivity
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: PublishActivity
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: PublishActivity
+  name: identifier
+  description: ''
+- source: dandi
+  class: PublishActivity
+  name: name
+  description: The name of the activity.
+- source: dandi
+  class: PublishActivity
+  name: description
+  description: The description of the activity.
+- source: dandi
+  class: PublishActivity
+  name: startDate
+  description: ''
+- source: dandi
+  class: PublishActivity
+  name: endDate
+  description: ''
+- source: dandi
+  class: Publishable
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Publishable
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Publishable
+  name: publishedBy
+  description: The URL should contain the provenance of the publishing process.
+- source: dandi
+  class: Publishable
+  name: datePublished
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: id
+  description: Uniform resource identifier.
+- source: dandi
+  class: PublishedAsset
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: publishedBy
+  description: The URL should contain the provenance of the publishing process.
+- source: dandi
+  class: PublishedAsset
+  name: datePublished
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: schemaVersion
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: PublishedAsset
+  name: description
+  description: A description of the item.
+- source: dandi
+  class: PublishedAsset
+  name: acknowledgement
+  description: Any acknowledgments not covered by contributors or external resources.
+- source: dandi
+  class: PublishedAsset
+  name: url
+  description: permalink to the item
+- source: dandi
+  class: PublishedAsset
+  name: repository
+  description: location of the item
+- source: dandi
+  class: PublishedAsset
+  name: contentSize
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: encodingFormat
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: digest
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: path
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: dateModified
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: blobDateModified
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: dataType
+  description: ''
+- source: dandi
+  class: PublishedAsset
+  name: identifier
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: id
+  description: Uniform resource identifier.
+- source: dandi
+  class: PublishedDandiset
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: publishedBy
+  description: The URL should contain the provenance of the publishing process.
+- source: dandi
+  class: PublishedDandiset
+  name: datePublished
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: schemaVersion
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: name
+  description: A title associated with the Dandiset.
+- source: dandi
+  class: PublishedDandiset
+  name: description
+  description: A description of the Dandiset
+- source: dandi
+  class: PublishedDandiset
+  name: acknowledgement
+  description: Any acknowledgments not covered by contributors or external resources.
+- source: dandi
+  class: PublishedDandiset
+  name: url
+  description: Permalink to the Dandiset.
+- source: dandi
+  class: PublishedDandiset
+  name: repository
+  description: location of the item
+- source: dandi
+  class: PublishedDandiset
+  name: wasGeneratedBy
+  description: Project(s) that generated this Dandiset.
+- source: dandi
+  class: PublishedDandiset
+  name: identifier
+  description: A Dandiset identifier that can be resolved by identifiers.org.
+- source: dandi
+  class: PublishedDandiset
+  name: dateCreated
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: dateModified
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: citation
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: assetsSummary
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: version
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: doi
+  description: ''
+- source: dandi
+  class: PublishedDandiset
+  name: releaseNotes
+  description: The description of the release
+- source: dandi
+  class: RelatedParticipant
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: RelatedParticipant
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: RelatedParticipant
+  name: identifier
+  description: ''
+- source: dandi
+  class: RelatedParticipant
+  name: name
+  description: ''
+- source: dandi
+  class: RelatedParticipant
+  name: url
+  description: ''
+- source: dandi
+  class: RelatedParticipant
+  name: relation
+  description: 'Indicates how the current participant or subject is related to the
+    other participant or subject. This relation should satisfy: Participant/Subject
+    <relation> relatedParticipant/Subject.'
+- source: dandi
+  class: Resource
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Resource
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Resource
+  name: identifier
+  description: ''
+- source: dandi
+  class: Resource
+  name: name
+  description: ''
+- source: dandi
+  class: Resource
+  name: url
+  description: ''
+- source: dandi
+  class: Resource
+  name: repository
+  description: Name of the repository in which the resource is housed.
+- source: dandi
+  class: Resource
+  name: relation
+  description: 'Indicates how the resource is related to the dataset. This relation
+    should satisfy: dandiset <relation> resource.'
+- source: dandi
+  class: Resource
+  name: resourceType
+  description: The type of resource.
+- source: dandi
+  class: SampleType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: SampleType
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: SampleType
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: Session
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Session
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Session
+  name: identifier
+  description: ''
+- source: dandi
+  class: Session
+  name: name
+  description: The name of the logical session associated with the asset.
+- source: dandi
+  class: Session
+  name: description
+  description: A brief description of the session.
+- source: dandi
+  class: Session
+  name: startDate
+  description: ''
+- source: dandi
+  class: Session
+  name: endDate
+  description: ''
+- source: dandi
+  class: SexType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: SexType
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: SexType
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: Software
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Software
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: Software
+  name: identifier
+  description: RRID of the software from scicrunch.org.
+- source: dandi
+  class: Software
+  name: name
+  description: ''
+- source: dandi
+  class: Software
+  name: version
+  description: ''
+- source: dandi
+  class: Software
+  name: url
+  description: Web page for the software.
+- source: dandi
+  class: SpeciesType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: SpeciesType
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: SpeciesType
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: StandardsType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: StandardsType
+  name: schemaKey
+  description: ''
+- source: dandi
+  class: StandardsType
+  name: name
+  description: The name of the item.
+- source: dandi
+  class: StrainType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: StrainType
+  name: name
+  description: The name of the item.

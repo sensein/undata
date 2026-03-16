@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Superior
+    - Inferior
+    - Anterior
+    - Posterior
+    - Left
+    - Right
+    - Medial
+    - Lateral
+    - Origin
+provenance:
+- source: aind
+  class: MyomatrixContact
+  name: relative_position
+  description: Position relative to procedures coordinate system

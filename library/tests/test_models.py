@@ -40,10 +40,12 @@ class TestElementRecord:
 
     def test_provenance_requires_at_least_one(self):
         with pytest.raises(ValidationError):
-            ElementRecord.model_validate({
-                "semantic": {"data_type": "string"},
-                "provenance": [],
-            })
+            ElementRecord.model_validate(
+                {
+                    "semantic": {"data_type": "string"},
+                    "provenance": [],
+                }
+            )
 
 
 class TestSchemaRecord:
@@ -55,11 +57,13 @@ class TestSchemaRecord:
         assert len(record.provenance) == 2
 
     def test_schema_with_subclass(self):
-        record = SchemaRecord.model_validate({
-            "semantic": {
-                "properties": ["https://schema.undata.live/elements/age_x7k2m9"],
-                "subclass_of": "https://schema.undata.live/schemas/base_a1b2c3",
-            },
-            "provenance": [{"source": "nwb", "name": "TimeSeries"}],
-        })
+        record = SchemaRecord.model_validate(
+            {
+                "semantic": {
+                    "properties": ["https://schema.undata.live/elements/age_x7k2m9"],
+                    "subclass_of": "https://schema.undata.live/schemas/base_a1b2c3",
+                },
+                "provenance": [{"source": "nwb", "name": "TimeSeries"}],
+            }
+        )
         assert record.semantic.subclass_of == "https://schema.undata.live/schemas/base_a1b2c3"

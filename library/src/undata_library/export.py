@@ -37,9 +37,7 @@ async def export_elements(
 
     async with httpx.AsyncClient(base_url=backend_url, headers=headers) as client:
         while True:
-            resp = await client.get(
-                "/api/v1/elements", params={"limit": limit, "offset": offset}
-            )
+            resp = await client.get("/api/v1/elements", params={"limit": limit, "offset": offset})
             resp.raise_for_status()
             data = resp.json()
             items = data.get("items", [])
@@ -84,9 +82,7 @@ async def export_mappings(
 
     async with httpx.AsyncClient(base_url=backend_url, headers=headers) as client:
         while True:
-            resp = await client.get(
-                "/api/v1/mappings", params={"limit": limit, "offset": offset}
-            )
+            resp = await client.get("/api/v1/mappings", params={"limit": limit, "offset": offset})
             resp.raise_for_status()
             data = resp.json()
             items = data.get("items", [])
