@@ -18,9 +18,9 @@
 
 ## Phase 2: Data Migration
 
-- [ ] T010 Create Alembic migration `0005_migrate_v1_to_v2.py`: read each `data_element` + `data_element_version`, compute semantic hash, insert into `element` + `element_provenance_v2`; merge duplicates by hash
-- [ ] T011 Write migration verification script: compare record counts, verify no data loss, check hash uniqueness
-- [ ] T012 Run migration on test DB; verify all records migrated; commit Phase 2
+- [X] T010 Create Alembic migration `0005_migrate_v1_to_v2.py`: read each `data_element` + `data_element_version`, compute semantic hash, insert into `element` + `element_provenance_v2`; merge duplicates by hash
+- [X] T011 Write migration verification script: compare record counts, verify no data loss, check hash uniqueness
+- [X] T012 Run migration on test DB; verify all records migrated; commit Phase 2
 
 ## Phase 3: API v2 Endpoints
 
@@ -37,8 +37,8 @@
 - [X] T020 Rewrite `library/src/undata_library/export.py`: fetch from `/api/v2/elements`, `/api/v2/values`, `/api/v2/schemas` → write v2 YAML files + hash-registry
 - [X] T021 Rewrite `library/src/undata_library/import_lib.py`: read v2 YAML files → POST to `/api/v2/elements`, `/api/v2/values`, `/api/v2/schemas`
 - [X] T022 Add `--backend-url` option to `ingest` CLI command: extract from raw schemas → POST to backend API instead of writing local files
-- [ ] T023 Write tests: (a) export produces valid v2 YAML; (b) import creates elements via API; (c) round-trip export→import preserves data
-- [ ] T024 Commit Phase 4
+- [X] T023 Write tests: (a) export produces valid v2 YAML; (b) import creates elements via API; (c) round-trip export→import preserves data
+- [X] T024 Commit Phase 4
 
 ## Phase 5: Frontend Updates
 
@@ -54,7 +54,7 @@
 
 ## Phase 6: Deprecate v1 + Polish
 
-- [ ] T034 Create backward-compatible v1 wrappers: `/api/v1/elements` routes to v2 with flat response format
+- [X] T034 Create backward-compatible v1 wrappers: `/api/v1/elements` routes to v2 with flat response format
 - [X] T035 Update all backend tests to use v2 models
 - [X] T036 Update `README.md` (root + library) with v2 architecture diagram
 - [X] T037 Update CLAUDE.md
