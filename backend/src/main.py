@@ -149,3 +149,14 @@ app.include_router(units_router, prefix="/api/v1")
 from src.api.v1.pathways import router as pathways_router  # noqa: E402
 
 app.include_router(pathways_router, prefix="/api/v1")
+
+# 017: V2 content-addressed API
+from src.routes.elements_v2 import router as elements_v2_router  # noqa: E402
+from src.routes.mappings_v2 import router as mappings_v2_router  # noqa: E402
+from src.routes.schemas_v2 import router as schemas_v2_router  # noqa: E402
+from src.routes.values_v2 import router as values_v2_router  # noqa: E402
+
+app.include_router(elements_v2_router)
+app.include_router(values_v2_router)
+app.include_router(schemas_v2_router)
+app.include_router(mappings_v2_router)
