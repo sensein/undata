@@ -3,7 +3,7 @@
 import { ComparisonView } from "@/components/ComparisonView";
 import { ErrorBanner } from "@/components/ErrorBanner";
 import { LoadingSkeleton } from "@/components/LoadingSkeleton";
-import { getElementById } from "@/lib/api/elements";
+import { getElementByUri } from "@/lib/api/elements";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -19,7 +19,7 @@ export function ComparisonPage() {
     error: errorA,
   } = useQuery({
     queryKey: ["element", idA],
-    queryFn: () => getElementById(idA!),
+    queryFn: () => getElementByUri(idA!),
     enabled: !!idA,
   });
 
@@ -29,7 +29,7 @@ export function ComparisonPage() {
     error: errorB,
   } = useQuery({
     queryKey: ["element", idB],
-    queryFn: () => getElementById(idB!),
+    queryFn: () => getElementByUri(idB!),
     enabled: !!idB,
   });
 

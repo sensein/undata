@@ -1,68 +1,39 @@
 import { cleanup, render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it, vi } from "vitest";
-
-// Mock react-query to return test data
-vi.mock("@tanstack/react-query", () => ({
-  useQuery: vi.fn().mockReturnValue({
-    data: {
-      id: "elem-1",
-      name: "test_element",
-      data_type: "string",
-      description: "A test element",
-      required: false,
-      multivalued: false,
-      source: { id: "src-1", name: "BIDS", version_tag: "1.0" },
-      alias_count: 1,
-      mapping_count: 1,
-      version_num: 1,
-      allowed_values: null,
-      constraints: {},
-      alias_groups: [
-        { id: "ag-1", name: "age_group", member_count: 2, sssom_predicate: "skos:exactMatch" },
-      ],
-      mappings_as_input: [
-        { id: "m-1", function_type: "identity", output_name: "subject_age" },
-      ],
-      mappings_as_output: [],
-      created_at: "2026-03-01T00:00:00Z",
-      deleted_at: null,
-    },
-    error: null,
-    isLoading: false,
-  }),
-}));
-
-// Mock next/navigation
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({ push: vi.fn() }),
-}));
-
-// Import after mocks
+import { afterEach, describe, expect, it } from "vitest";
 import { RelationshipGraph } from "@/components/RelationshipGraph";
+import type { DataElement } from "@/lib/types";
+
+const mockElement: DataElement = {
+  uri: "https://schema.undata.live/elements/age_x7k2m9",
+  semantic: { ontology_term: "http://example.org/age", data_type: "float", unit: "year", constraints: null },
+  provenance: [
+    { source: "bids", class: "Participant", name: "age", description: "Age", required: true, multivalued: null },
+    { source: "nwb", class: "Subject", name: "age", description: "Subject age", required: null, multivalued: null },
+  ],
+};
 
 describe("RelationshipGraph", () => {
   afterEach(() => cleanup());
 
-  it("renders fallback table when Cytoscape not loaded", () => {
-    render(<RelationshipGraph elementId="elem-1" />);
-    // Should render the table fallback since Cytoscape dynamic import won't resolve in jsdom
-    expect(screen.getByText("Node")).toBeInTheDocument();
-    expect(screen.getByText("Type")).toBeInTheDocument();
-    expect(screen.getByText("Relation")).toBeInTheDocument();
+  it("renders element name", () => {
+    render(<RelationshipGraph element={mockElement} />);
+    expect(screen.getByText("age")).toBeInTheDocument();
   });
 
-  it("renders alias nodes in fallback table", () => {
-    render(<RelationshipGraph elementId="elem-1" />);
-    expect(screen.getByText("age_group")).toBeInTheDocument();
+  it("renders data type", () => {
+    render(<RelationshipGraph element={mockElement} />);
+    expect(screen.getByText("float")).toBeInTheDocument();
   });
 
-  it("renders mapping nodes in fallback table", () => {
-    render(<RelationshipGraph elementId="elem-1" />);
-    expect(screen.getByText("subject_age")).toBeInTheDocument();
+  it("renders provenance sources", () => {
+    render(<RelationshipGraph element={mockElement} />);
+    expect(screen.getByText("bids")).toBeInTheDocument();
+    expect(screen.getByText("nwb")).toBeInTheDocument();
   });
 
-  it("renders depth slider", () => {
-    render(<RelationshipGraph elementId="elem-1" />);
-    expect(screen.getByLabelText("Graph depth")).toBeInTheDocument();
+  it("renders class.name for each provenance", () => {
+    render(<RelationshipGraph element={mockElement} />);
+    expect(screen.getByText("Participant.age")).toBeInTheDocument();
+    expect(screen.getByText("Subject.age")).toBeInTheDocument();
   });
 });

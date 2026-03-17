@@ -1,55 +1,77 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import { ElementCard } from "@/components/ElementCard";
-import type { DataElementSummary } from "@/lib/types";
+import type { DataElement } from "@/lib/types";
 
-const mockElement: DataElementSummary = {
-  id: "abc-123",
-  name: "subject_age",
-  data_type: "number",
-  description: "Age of the participant at the time of data acquisition",
-  required: true,
-  multivalued: false,
-  source: { id: "src-1", name: "BIDS" },
-  alias_count: 2,
-  mapping_count: 1,
-  version_num: 1,
+const mockElement: DataElement = {
+  uri: "https://schema.undata.live/elements/age_x7k2m9",
+  semantic: {
+    ontology_term: "http://purl.obolibrary.org/obo/NCIT_C25150",
+    data_type: "float",
+    unit: "year",
+    constraints: null,
+  },
+  provenance: [
+    {
+      source: "bids",
+      class: "Participant",
+      name: "subject_age",
+      description: "Age of the participant at the time of data acquisition",
+      required: true,
+      multivalued: null,
+    },
+    {
+      source: "nwb",
+      class: "Subject",
+      name: "age",
+      description: "Subject age",
+      required: null,
+      multivalued: null,
+    },
+  ],
 };
 
 describe("ElementCard", () => {
   afterEach(() => cleanup());
 
-  it("renders element name", () => {
+  it("renders element name from first provenance", () => {
     render(<ElementCard element={mockElement} />);
     expect(screen.getByText("subject_age")).toBeInTheDocument();
   });
 
   it("renders data type badge", () => {
     render(<ElementCard element={mockElement} />);
-    expect(screen.getByText("number")).toBeInTheDocument();
+    expect(screen.getByText("float")).toBeInTheDocument();
   });
 
-  it("renders source badge", () => {
+  it("renders source badges", () => {
     render(<ElementCard element={mockElement} />);
-    expect(screen.getByText("BIDS")).toBeInTheDocument();
+    expect(screen.getByText("bids")).toBeInTheDocument();
+    expect(screen.getByText("nwb")).toBeInTheDocument();
   });
 
-  it("renders alias count", () => {
+  it("renders multi-source count", () => {
     render(<ElementCard element={mockElement} />);
-    expect(screen.getByText("2 aliases")).toBeInTheDocument();
+    expect(screen.getByText("2 sources")).toBeInTheDocument();
   });
 
   it("truncates long descriptions to 120 chars", () => {
     const longDesc = "A".repeat(200);
-    const el = { ...mockElement, description: longDesc };
+    const el: DataElement = {
+      ...mockElement,
+      provenance: [{ ...mockElement.provenance[0], description: longDesc }],
+    };
     render(<ElementCard element={el} />);
     const desc = screen.getByText(/A{120}\.\.\./);
     expect(desc).toBeInTheDocument();
   });
 
-  it("links to element detail page", () => {
+  it("links to element detail page with encoded URI", () => {
     render(<ElementCard element={mockElement} />);
     const link = screen.getByRole("link");
-    expect(link).toHaveAttribute("href", "/elements/abc-123");
+    expect(link).toHaveAttribute(
+      "href",
+      `/elements/${encodeURIComponent(mockElement.uri)}`,
+    );
   });
 });

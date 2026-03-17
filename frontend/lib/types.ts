@@ -43,31 +43,7 @@ export interface ElementMappingResponse {
   confidence: number | null;
 }
 
-// Legacy API Response Types (retained for backward compatibility)
-
-export interface DataElementSummary {
-  id: string;
-  name: string;
-  data_type: string;
-  description: string;
-  required: boolean;
-  multivalued: boolean;
-  source: { id: string; name: string };
-  alias_count: number;
-  mapping_count: number;
-  version_num: number;
-}
-
-export interface DataElementDetail extends DataElementSummary {
-  allowed_values: string[] | null;
-  constraints: Record<string, unknown>;
-  source: { id: string; name: string; version_tag: string };
-  alias_groups: AliasGroupSummary[];
-  mappings_as_input: MappingRef[];
-  mappings_as_output: MappingRef[];
-  created_at: string;
-  deleted_at: string | null;
-}
+// Legacy types removed — DataElement above is the canonical type
 
 export interface AliasGroupSummary {
   id: string;
@@ -82,7 +58,7 @@ export interface AliasGroupDetail {
   sssom_predicate: string;
   confidence: number | null;
   detection_method: string;
-  members: DataElementSummary[];
+  members: DataElement[];
 }
 
 export interface MappingRef {
@@ -141,8 +117,8 @@ export interface GraphState {
 }
 
 export interface ComparisonState {
-  element_a: DataElementDetail | null;
-  element_b: DataElementDetail | null;
+  element_a: DataElement | null;
+  element_b: DataElement | null;
   diffs: FieldDiff[];
 }
 
