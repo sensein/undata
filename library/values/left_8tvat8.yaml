@@ -3,5 +3,9 @@ semantic:
   value_type: categorical
   label: left
 provenance:
+- source: bids
+  raw_value: L
+- source: bids
+  raw_value: left
 - source: aind
   raw_value: Left

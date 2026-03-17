@@ -1,0 +1,182 @@
+semantic:
+  ontology_term: http://schema.org/identifier
+  data_type: string
+provenance:
+- source: dandi
+  class: AccessRequirements
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Activity
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Affiliation
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Agent
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Allele
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Anatomy
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: ApproachType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: AssayType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Asset
+  name: id
+  description: Uniform resource identifier.
+- source: dandi
+  class: AssetsSummary
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: BareAsset
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: BaseType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: BioSample
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: CommonModel
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: ContactPoint
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Contributor
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: DandiBaseModel
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Dandiset
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Disorder
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Equipment
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: EthicsApproval
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: GenericType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: GenotypeInfo
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Locus
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: MeasurementTechniqueType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Organization
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Participant
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Person
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Project
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: PropertyValue
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: PublishActivity
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Publishable
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: PublishedAsset
+  name: id
+  description: Uniform resource identifier.
+- source: dandi
+  class: PublishedDandiset
+  name: id
+  description: Uniform resource identifier.
+- source: dandi
+  class: RelatedParticipant
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Resource
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: SampleType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Session
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: SexType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: Software
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: SpeciesType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: StandardsType
+  name: id
+  description: Uniform resource identifier
+- source: dandi
+  class: StrainType
+  name: id
+  description: Uniform resource identifier
+- source: aind
+  class: BrainStructureModel
+  name: id
+- source: aind
+  class: BrainStructureModel
+  name: id

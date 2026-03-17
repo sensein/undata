@@ -1,7 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: aind
-  class: PlanarSectioning
-  name: sections
-  description: Use PlanarSection for new implementations

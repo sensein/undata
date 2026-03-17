@@ -1,7 +1,0 @@
-semantic:
-  data_type: float
-provenance:
-- source: nwb
-  class: OnePhotonSeries
-  name: power
-  description: Power of the excitation in mW, if known.

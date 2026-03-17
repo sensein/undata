@@ -1,7 +1,0 @@
-semantic:
-  data_type: object
-provenance:
-- source: aind
-  class: Channel
-  name: detector
-  description: Configuration of detector settings

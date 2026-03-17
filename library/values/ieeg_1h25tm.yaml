@@ -1,0 +1,7 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/OBI_0002458
+  value_type: categorical
+  label: ieeg
+provenance:
+- source: bids
+  raw_value: ECOG

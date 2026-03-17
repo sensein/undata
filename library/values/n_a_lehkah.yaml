@@ -2,5 +2,7 @@ semantic:
   value_type: categorical
   label: n/a
 provenance:
+- source: bids
+  raw_value: n/a
 - source: aind
   raw_value: N/A

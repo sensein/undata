@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: nwb
-  class: Subject
-  name: sex
-  description: Gender of subject.

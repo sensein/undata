@@ -3,5 +3,7 @@ semantic:
   value_type: categorical
   label: male
 provenance:
+- source: bids
+  raw_value: m
 - source: aind
   raw_value: Male

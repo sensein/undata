@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/expiration_date_1eyycn
+  - https://schema.undata.live/elements/fluorophore_ipwp23
+  - https://schema.undata.live/elements/initiator_name_17drg4
+  - https://schema.undata.live/elements/lot_number_1vrarz
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/probe_xvwsgp
+  - https://schema.undata.live/elements/rrid_11mggw
+  - https://schema.undata.live/elements/source_l0vtfm
+  - https://schema.undata.live/elements/stain_type_1hkbzs
+  mixins: []
+provenance:
+- source: aind
+  name: FluorescentStain

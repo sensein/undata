@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - mm
+    - um
+    - nm
+provenance:
+- source: bids
+  class: metadata
+  name: PixelSizeUnits
+  description: 'Unit format of the specified `"PixelSize"`. MUST be one of: `"mm"`
+    (millimeter), `"um"`
+
+    (micrometer) or `"nm"` (nanometer).
+
+    '

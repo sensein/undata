@@ -1,0 +1,12 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C25688
+  data_type: string
+  constraints:
+    allowed_values:
+    - dandi:OpenAccess
+    - dandi:EmbargoedAccess
+provenance:
+- source: dandi
+  class: AccessRequirements
+  name: status
+  description: The access status of the item.

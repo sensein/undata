@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: dandi
-  class: Project
-  name: name
-  description: The name of the project that generated this Dandiset or asset.

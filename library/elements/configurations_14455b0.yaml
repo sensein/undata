@@ -1,8 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: aind
-  class: DataStream
-  name: configurations
-  description: Configurations are parameters controlling active devices during this
-    stream

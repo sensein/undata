@@ -1,0 +1,29 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/PATO_0000047
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: sex
+  description: 'String value indicating phenotypical sex, one of "male", "female",
+    "other".
+
+
+    For "male", use one of these values: `male`, `m`, `M`, `MALE`, `Male`.
+
+
+    For "female", use one of these values: `female`, `f`, `F`, `FEMALE`, `Female`.
+
+
+    For "other", use one of these values: `other`, `o`, `O`, `OTHER`, `Other`.
+
+    '
+- source: dandi
+  class: Participant
+  name: sex
+  description: Identifier for sex of the participant or subject if available. (e.g.
+    from OBI)
+- source: nwb
+  class: Subject
+  name: sex
+  description: Gender of subject.

@@ -1,0 +1,11 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C73600
+  data_type: float
+  unit: hertz
+provenance:
+- source: bids
+  class: columns
+  name: sampling_frequency
+  description: 'Sampling rate of the channel in Hz.
+
+    '

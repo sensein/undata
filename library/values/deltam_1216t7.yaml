@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: deltam
+provenance:
+- source: bids
+  raw_value: deltam

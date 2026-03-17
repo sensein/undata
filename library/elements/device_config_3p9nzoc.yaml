@@ -1,7 +1,0 @@
-semantic:
-  data_type: object
-provenance:
-- source: aind
-  class: ProbeImplant
-  name: device_config
-  description: Configuration for a device inserted into a brain

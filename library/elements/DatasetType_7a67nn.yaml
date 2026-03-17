@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - raw
+    - derivative
+    - study
+provenance:
+- source: bids
+  class: metadata
+  name: DatasetType
+  description: 'The interpretation of the dataset.
+
+    For backwards compatibility, the default value is `"raw"`.
+
+    '

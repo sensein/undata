@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/headframe_material_1h3fg2
+  - https://schema.undata.live/elements/headframe_part_number_1jz93s
+  - https://schema.undata.live/elements/headframe_type_14r170
+  - https://schema.undata.live/elements/protocol_id_h3qcph
+  - https://schema.undata.live/elements/well_part_number_1tswed
+  - https://schema.undata.live/elements/well_type_c8bf0c
+  mixins: []
+provenance:
+- source: aind
+  name: Headframe

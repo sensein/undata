@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - m
+    - mm
+    - cm
+    - n/a
+provenance:
+- source: bids
+  class: metadata
+  name: MEGCoordinateUnits
+  description: 'Units of the coordinates of `"MEGCoordinateSystem"`.
+
+    '

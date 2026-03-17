@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: emg
+provenance:
+- source: bids
+  raw_value: EMG

@@ -1,7 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: aind
-  class: MRIScan
-  name: affine_transform
-  description: NIFTI sform/qform, Bruker vc_transform, etc

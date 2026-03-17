@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: dandi
-  class: Activity
-  name: description
-  description: The description of the activity.

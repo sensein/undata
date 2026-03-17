@@ -1,0 +1,30 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C25150
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: age
+  description: 'Numeric value in years (float or integer value).
+
+
+    For privacy purposes, participant ages should be capped at 89.
+
+    Using "89+" for ages above 88 is DEPRECATED.
+
+    '
+- source: dandi
+  class: Participant
+  name: age
+  description: A representation of age using ISO 8601 duration. This should include
+    a valueReference if anything other than date of birth is used.
+- source: nwb
+  class: Subject
+  name: age
+  description: Age of subject. Can be supplied instead of 'date_of_birth'. The ISO
+    8601 Duration format is recommended, e.g., 'P90D' for 90 days old. If the precise
+    age is unknown, an age range can be given by '[lower bound]/[upper bound]' e.g.
+    'P10D/P20D' would mean that the age is in between 10 and 20 days. If only the
+    lower bound is known, then including only the slash after that lower bound can
+    be used to indicate a missing bound. For instance, 'P90Y/' would indicate that
+    the age is 90 years or older.

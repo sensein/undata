@@ -1,8 +1,0 @@
-semantic:
-  data_type: object
-provenance:
-- source: aind
-  class: quality_control
-  name: status
-  description: Mapping of tags, modalities, and stages to their evaluated status,
-    automatically computed

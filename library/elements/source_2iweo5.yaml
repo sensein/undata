@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: MouseSubject
-  name: source
-  description: Where the subject was acquired from. If bred in-house, use Allen Institute.

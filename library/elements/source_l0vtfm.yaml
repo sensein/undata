@@ -1,0 +1,39 @@
+semantic:
+  ontology_term: http://purl.org/dc/terms/source
+  data_type: string
+provenance:
+- source: bids
+  class: enums
+  name: source
+  description: 'A light emitting device, sometimes called a transmitter.
+
+    '
+- source: aind
+  class: NonViralMaterial
+  name: source
+- source: aind
+  class: Reagent
+  name: source
+- source: aind
+  class: FluorescentStain
+  name: source
+- source: aind
+  class: GeneProbeSet
+  name: source
+- source: aind
+  class: NonViralMaterial
+  name: source
+- source: aind
+  class: ProbeReagent
+  name: source
+- source: aind
+  class: Reagent
+  name: source
+- source: aind
+  class: HumanSubject
+  name: source
+  description: Where the subject was acquired from.
+- source: aind
+  class: MouseSubject
+  name: source
+  description: Where the subject was acquired from. If bred in-house, use Allen Institute.

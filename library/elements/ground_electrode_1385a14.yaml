@@ -1,7 +1,0 @@
-semantic:
-  data_type: object
-provenance:
-- source: aind
-  class: MyomatrixInsertion
-  name: ground_electrode
-  description: Ground wire implant procedure

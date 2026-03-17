@@ -1,9 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: bids
-  class: metadata
-  name: EEGCoordinateUnits
-  description: 'Units of the coordinates of `EEGCoordinateSystem`.
-
-    '

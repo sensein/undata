@@ -1,0 +1,24 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C48232
+  data_type: float
+  unit: watt
+provenance:
+- source: nwb
+  class: OnePhotonSeries
+  name: power
+  description: Power of the excitation in mW, if known.
+- source: aind
+  class: CoupledPlane
+  name: power
+- source: aind
+  class: LaserConfig
+  name: power
+- source: aind
+  class: LightEmittingDiodeConfig
+  name: power
+- source: aind
+  class: Plane
+  name: power
+- source: aind
+  class: Slap2Plane
+  name: power

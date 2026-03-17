@@ -1,8 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: nwb
-  class: Subject
-  name: weight
-  description: Weight at time of experiment, at time of surgery and at other important
-    times.

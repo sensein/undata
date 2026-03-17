@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: dcite:datapaper
+provenance:
+- source: dandi
+  raw_value: dcite:DataPaper

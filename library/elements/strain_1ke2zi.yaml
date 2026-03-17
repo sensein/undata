@@ -1,0 +1,19 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C14419
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: strain
+  description: 'For species different from `homo sapiens`, string value indicating
+
+    the strain of the species, for example: `C57BL/6J`.
+
+    '
+- source: nwb
+  class: Subject
+  name: strain
+  description: Strain of subject.
+- source: aind
+  class: MouseSubject
+  name: strain

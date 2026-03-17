@@ -1,7 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: aind
-  class: Perfusion
-  name: output_specimen_ids
-  description: IDs of specimens resulting from this procedure.

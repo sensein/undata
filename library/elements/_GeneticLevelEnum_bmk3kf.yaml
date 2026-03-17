@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Genetic
+    - Genomic
+    - Epigenomic
+    - Transcriptomic
+    - Metabolomic
+    - Proteomic
+provenance:
+- source: bids
+  class: enums
+  name: _GeneticLevelEnum

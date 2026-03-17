@@ -1,8 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: dandi
-  class: Participant
-  name: sex
-  description: Identifier for sex of the participant or subject if available. (e.g.
-    from OBI)

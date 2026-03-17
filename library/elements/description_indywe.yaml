@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: dandi
-  class: PublishedAsset
-  name: description
-  description: A description of the item.

@@ -1,7 +1,0 @@
-semantic:
-  data_type: float
-provenance:
-- source: aind
-  class: MRIScan
-  name: echo_time
-  description: BIDS EchoTime / DICOM Tag 0018,0081

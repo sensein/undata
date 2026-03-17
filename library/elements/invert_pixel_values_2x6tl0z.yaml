@@ -1,6 +1,0 @@
-semantic:
-  data_type: boolean
-provenance:
-- source: aind
-  class: DigitalMicromirrorDevice
-  name: invert_pixel_values

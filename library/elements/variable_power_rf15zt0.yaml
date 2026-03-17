@@ -1,8 +1,0 @@
-semantic:
-  data_type: boolean
-provenance:
-- source: aind
-  class: Channel
-  name: variable_power
-  description: Set to true when the power varies across Planes -- put the power in
-    the Plane.power field

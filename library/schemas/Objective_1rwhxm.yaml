@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1k6e2n
+  - https://schema.undata.live/elements/immersion_1riojy
+  - https://schema.undata.live/elements/magnification_1m7dkb
+  - https://schema.undata.live/elements/manufacturer_1d47pt
+  - https://schema.undata.live/elements/model_wpuj33
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/notes_1a9ync
+  - https://schema.undata.live/elements/numerical_aperture_12ewga
+  - https://schema.undata.live/elements/objective_type_180jys
+  - https://schema.undata.live/elements/serial_number_16grzg
+  mixins: []
+provenance:
+- source: aind
+  name: Objective

@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: lesion
+provenance:
+- source: bids
+  raw_value: Lesion

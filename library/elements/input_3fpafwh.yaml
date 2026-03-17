@@ -1,7 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: aind
-  class: PowerCalibration
-  name: input
-  description: Power, voltage, or percentage input strength

@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: fermi
+provenance:
+- source: bids
+  raw_value: FERMI

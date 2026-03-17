@@ -5,3 +5,7 @@ provenance:
   class: Subject
   name: subject_id
   description: ID of animal/person used/participating in experiment (lab convention).
+- source: aind
+  class: Subject
+  name: subject_id
+  description: Unique identifier for the subject of data acquisition

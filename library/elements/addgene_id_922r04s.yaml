@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: ViralMaterial
-  name: addgene_id
-  description: Registry must be Addgene

@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - generic
+    - eyetrack
+provenance:
+- source: bids
+  class: metadata
+  name: PhysioType
+  description: 'Defines the specific type of physiological recording.
+
+    For backwards compatibility, the default value is `"generic"`.
+
+    '

@@ -1,8 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: aind
-  class: DataStream
-  name: connections
-  description: Connections are links between devices that are specific to this acquisition
-    (i.e. not already defined in the Instrument)

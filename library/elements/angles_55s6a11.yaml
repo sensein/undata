@@ -1,7 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: aind
-  class: Rotation
-  name: angles
-  description: Right-hand rule, positive angles rotate CCW

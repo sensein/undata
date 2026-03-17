@@ -1,9 +1,0 @@
-semantic:
-  data_type: object
-provenance:
-- source: aind
-  class: ProteinProbe
-  name: protein
-  description: 'Model for associate a name with a persistent identifier (PID),
-
-    the registry for that PID, and abbreviation for that registry'

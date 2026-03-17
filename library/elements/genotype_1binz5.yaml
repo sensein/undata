@@ -1,0 +1,12 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C16631
+  data_type: string
+provenance:
+- source: nwb
+  class: Subject
+  name: genotype
+  description: Genetic strain. If absent, assume Wild Type (WT).
+- source: aind
+  class: MouseSubject
+  name: genotype
+  description: Genotype of the animal providing both alleles

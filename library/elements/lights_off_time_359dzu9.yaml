@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: LightCycle
-  name: lights_off_time
-  description: Time in UTC that lights were turned off

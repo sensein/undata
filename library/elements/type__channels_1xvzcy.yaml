@@ -1,0 +1,61 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - ACCEL
+    - ADC
+    - ANGACCEL
+    - AUDIO
+    - DAC
+    - DBS
+    - ECG
+    - ECOG
+    - EEG
+    - EMG
+    - EOG
+    - EYEGAZE
+    - FITERR
+    - GSR
+    - GYRO
+    - HEOG
+    - HLU
+    - JNTANG
+    - LATENCY
+    - MAGN
+    - MEGGRADAXIAL
+    - MEGGRADPLANAR
+    - MEGMAG
+    - MEGOTHER
+    - MEGREFGRADAXIAL
+    - MEGREFGRADPLANAR
+    - MEGREFMAG
+    - MISC
+    - NIRSCWAMPLITUDE
+    - NIRSCWFLUORESCENSEAMPLITUDE
+    - NIRSCWHBO
+    - NIRSCWHBR
+    - NIRSCWMUA
+    - NIRSCWOPTICALDENSITY
+    - ORNT
+    - OTHER
+    - PD
+    - POS
+    - PPG
+    - PUPIL
+    - REF
+    - RESP
+    - SEEG
+    - SYSCLOCK
+    - TEMP
+    - TRIG
+    - VEL
+    - VEOG
+provenance:
+- source: bids
+  class: columns
+  name: type__channels
+  description: 'Type of channel; MUST use the channel types listed below.
+
+    Note that the type MUST be in upper-case.
+
+    '

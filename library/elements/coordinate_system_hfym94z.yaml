@@ -1,7 +1,0 @@
-semantic:
-  data_type: object
-provenance:
-- source: aind
-  class: ManipulatorConfig
-  name: coordinate_system
-  description: Definition of a coordinate system relative to a brain

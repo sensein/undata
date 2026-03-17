@@ -1,0 +1,7 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/OBI_0001917
+  value_type: categorical
+  label: eeg
+provenance:
+- source: bids
+  raw_value: EEG

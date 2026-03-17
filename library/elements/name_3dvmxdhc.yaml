@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: Person
-  name: name
-  description: First and last name OR anonymous ID

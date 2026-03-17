@@ -1,7 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: aind
-  class: Funding
-  name: fundee
-  description: Person(s) funded by this mechanism

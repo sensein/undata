@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: dandi
-  class: PublishedDandiset
-  name: name
-  description: A title associated with the Dandiset.

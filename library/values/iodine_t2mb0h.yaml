@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: iodine
+provenance:
+- source: bids
+  raw_value: IODINE

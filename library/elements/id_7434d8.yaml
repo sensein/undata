@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: dandi
-  class: Dandiset
-  name: id
-  description: Uniform resource identifier

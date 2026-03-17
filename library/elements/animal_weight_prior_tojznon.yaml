@@ -1,7 +1,0 @@
-semantic:
-  data_type: float
-provenance:
-- source: aind
-  class: Surgery
-  name: animal_weight_prior
-  description: Animal weight before procedure

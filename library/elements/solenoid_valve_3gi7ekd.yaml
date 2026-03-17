@@ -1,7 +1,0 @@
-semantic:
-  data_type: object
-provenance:
-- source: aind
-  class: LickSpout
-  name: solenoid_valve
-  description: Generic device

@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: quat_z
+provenance:
+- source: bids
+  raw_value: quat_z

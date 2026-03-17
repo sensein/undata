@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: dandi
-  class: Publishable
-  name: id
-  description: Uniform resource identifier

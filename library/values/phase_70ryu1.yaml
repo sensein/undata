@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: phase
+provenance:
+- source: bids
+  raw_value: phase

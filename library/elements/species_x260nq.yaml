@@ -1,0 +1,43 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C45293
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: species
+  description: 'The `species` column SHOULD be a binomial species name from the
+
+    [NCBI Taxonomy](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi)
+
+    (for example, `homo sapiens`, `mus musculus`, `rattus norvegicus`).
+
+    For backwards compatibility, if `species` is absent, the participant is assumed
+    to be
+
+    `homo sapiens`.
+
+    '
+- source: dandi
+  class: Participant
+  name: species
+  description: An identifier indicating the taxonomic classification of the participant
+    or subject.
+- source: nwb
+  class: Subject
+  name: species
+  description: Species of subject.
+- source: aind
+  class: ProteinProbe
+  name: species
+- source: aind
+  class: MouseSubject
+  name: species
+- source: aind
+  class: _Balb_C
+  name: species
+- source: aind
+  class: _C57Bl_6J
+  name: species
+- source: aind
+  class: aind_data_schema_models__species___Unknown
+  name: species

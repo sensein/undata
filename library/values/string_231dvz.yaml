@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: string
+provenance:
+- source: bids
+  raw_value: string
