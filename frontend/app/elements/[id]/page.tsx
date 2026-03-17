@@ -1,4 +1,4 @@
-import { getElementById } from "@/lib/api/elements";
+import { getElementByUri } from "@/lib/api/elements";
 import { ElementDetail } from "@/components/ElementDetail";
 import { notFound } from "next/navigation";
 
@@ -11,7 +11,7 @@ export default async function ElementDetailPage({ params }: Props) {
 
   let element;
   try {
-    element = await getElementById(id);
+    element = await getElementByUri(decodeURIComponent(id));
   } catch {
     notFound();
   }

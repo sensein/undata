@@ -150,3 +150,41 @@ def ingest(source: str, path: str | None, library_path: str) -> None:
         f"Ingested {source}: {stats['total']} unique elements "
         f"({stats['created']} created, {stats['merged']} merged)."
     )
+
+
+@main.command("export")
+@click.option("--backend-url", required=True, help="Backend API base URL")
+@click.option("--output", "-o", default=".", help="Output directory")
+@click.option("--token", envvar="API_TOKEN", help="Bearer token for auth")
+def export_cmd(backend_url: str, output: str, token: str | None) -> None:
+    """Export elements, values, and schemas from backend to v2 YAML files."""
+    import asyncio
+
+    from .export import export_elements, export_schemas, export_values
+
+    out = Path(output)
+    el = asyncio.run(export_elements(backend_url, out / "elements", token))
+    val = asyncio.run(export_values(backend_url, out / "values", token))
+    sch = asyncio.run(export_schemas(backend_url, out / "schemas", token))
+    click.echo(f"Exported {el} elements, {val} values, {sch} schemas to {out}.")
+
+
+@main.command("import")
+@click.option("--backend-url", required=True, help="Backend API base URL")
+@click.option("--path", "-p", default=".", help="Path to library root")
+@click.option("--token", envvar="API_TOKEN", help="Bearer token for auth")
+def import_cmd(backend_url: str, path: str, token: str | None) -> None:
+    """Import v2 YAML files to backend."""
+    import asyncio
+
+    from .import_lib import import_elements, import_schemas, import_values
+
+    lib = Path(path)
+    el_c, el_m = asyncio.run(import_elements(backend_url, lib / "elements", token))
+    val_c, val_m = asyncio.run(import_values(backend_url, lib / "values", token))
+    sch_c, sch_m = asyncio.run(import_schemas(backend_url, lib / "schemas", token))
+    click.echo(
+        f"Imported: {el_c} elements created, {el_m} merged; "
+        f"{val_c} values created, {val_m} merged; "
+        f"{sch_c} schemas created, {sch_m} merged."
+    )

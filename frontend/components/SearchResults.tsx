@@ -94,13 +94,13 @@ export function SearchResults({
       </div>
       <div className="space-y-3">
         {data.items.map((element) => (
-          <div key={element.id} className="flex items-start gap-3">
+          <div key={element.uri} className="flex items-start gap-3">
             <input
               type="checkbox"
-              checked={selected.has(element.id)}
-              onChange={() => toggleSelect(element.id)}
+              checked={selected.has(element.uri)}
+              onChange={() => toggleSelect(element.uri)}
               className="mt-4"
-              aria-label={`Select ${element.name} for comparison`}
+              aria-label={`Select ${element.provenance[0]?.name || "element"} for comparison`}
             />
             <div className="flex-1">
               <ElementCard element={element} />

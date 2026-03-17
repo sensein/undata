@@ -41,16 +41,16 @@ export default async function AliasGroupDetailPage({ params }: Props) {
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">
-            {group.members.map((member) => (
-              <li key={member.id} className="flex items-center gap-3">
+            {group.members.map((member, i) => (
+              <li key={member.uri || i} className="flex items-center gap-3">
                 <Link
-                  href={`/elements/${member.id}`}
+                  href={`/elements/${encodeURIComponent(member.uri)}`}
                   className="font-medium text-blue-600 hover:underline"
                 >
-                  {member.name}
+                  {member.provenance[0]?.name || "unknown"}
                 </Link>
-                <Badge variant="outline">{member.data_type}</Badge>
-                <Badge variant="secondary">{member.source.name}</Badge>
+                <Badge variant="outline">{member.semantic.data_type}</Badge>
+                <Badge variant="secondary">{member.provenance[0]?.source}</Badge>
               </li>
             ))}
           </ul>

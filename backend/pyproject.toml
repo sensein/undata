@@ -19,7 +19,11 @@ dependencies = [
     "uvicorn[standard]>=0.29",
     "rdflib>=7.0",
     "cmixf>=0.2",
+    "undata-library",
 ]
+
+[tool.uv.sources]
+undata-library = { path = "../library", editable = true }
 
 [project.optional-dependencies]
 dev = [

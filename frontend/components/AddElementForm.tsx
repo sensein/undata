@@ -56,14 +56,15 @@ export function AddElementForm() {
 
   const exactMatches =
     duplicates?.items.filter(
-      (el) => el.name.toLowerCase() === form.name.toLowerCase(),
+      (el) =>
+        el.provenance[0]?.name.toLowerCase() === form.name.toLowerCase(),
     ) || [];
 
   const mutation = useMutation({
     mutationFn: (payload: Parameters<typeof createElement>[0]) =>
       createElement(payload),
     onSuccess: (data) => {
-      router.push(`/elements/${data.id}`);
+      router.push(`/elements/${encodeURIComponent(data.uri)}`);
     },
   });
 
@@ -105,13 +106,18 @@ export function AddElementForm() {
       .filter(Boolean);
 
     mutation.mutate({
-      name: form.name.trim(),
-      data_type: form.data_type,
-      description: form.description.trim(),
-      required: form.required,
-      multivalued: form.multivalued,
-      source_id: form.source_id,
-      allowed_values: allowed.length > 0 ? allowed : undefined,
+      semantic: {
+        data_type: form.data_type,
+        constraints: allowed.length > 0 ? { allowed_values: allowed } : undefined,
+      },
+      provenance: [
+        {
+          source: form.source_id || "user",
+          class: "UserContributed",
+          name: form.name.trim(),
+          description: form.description.trim() || undefined,
+        },
+      ],
     });
   }
 
@@ -143,16 +149,16 @@ export function AddElementForm() {
               Potential duplicate found:
             </p>
             <ul className="mt-1 space-y-1">
-              {exactMatches.map((el) => (
-                <li key={el.id}>
+              {exactMatches.map((el, i) => (
+                <li key={el.uri || i}>
                   <Link
-                    href={`/elements/${el.id}`}
+                    href={`/elements/${encodeURIComponent(el.uri)}`}
                     className="text-blue-600 hover:underline"
                   >
-                    {el.name}
+                    {el.provenance[0]?.name || "unknown"}
                   </Link>{" "}
                   <span className="text-muted-foreground">
-                    ({el.source.name})
+                    ({el.provenance[0]?.source})
                   </span>
                 </li>
               ))}
