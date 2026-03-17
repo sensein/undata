@@ -5,12 +5,16 @@ from httpx import AsyncClient
 
 
 class TestPostElement:
-    async def test_create_returns_201(self, client: AsyncClient):
+    async def test_create_returns_201(self, client: AsyncClient, curator_token: str):
         body = {
             "semantic": {"data_type": "integer", "ontology_term": "http://example.org/age"},
             "provenance": [{"source": "bids", "class": "Participant", "name": "age"}],
         }
-        resp = await client.post("/api/v1/elements", json=body)
+        resp = await client.post(
+            "/api/v1/elements",
+            json=body,
+            headers={"Authorization": f"Bearer {curator_token}"},
+        )
         assert resp.status_code == 201
         data = resp.json()
         assert "uri" in data
@@ -18,29 +22,30 @@ class TestPostElement:
         assert data["semantic"]["data_type"] == "integer"
         assert len(data["provenance"]) == 1
 
-    async def test_same_semantic_returns_200_merges(self, client: AsyncClient):
+    async def test_same_semantic_returns_200_merges(self, client: AsyncClient, curator_token: str):
         semantic = {"data_type": "string", "ontology_term": "http://example.org/test_merge"}
+        headers = {"Authorization": f"Bearer {curator_token}"}
         body1 = {"semantic": semantic, "provenance": [{"source": "a", "class": "A", "name": "f"}]}
         body2 = {"semantic": semantic, "provenance": [{"source": "b", "class": "B", "name": "f"}]}
 
-        resp1 = await client.post("/api/v1/elements", json=body1)
+        resp1 = await client.post("/api/v1/elements", json=body1, headers=headers)
         assert resp1.status_code == 201
 
-        resp2 = await client.post("/api/v1/elements", json=body2)
+        resp2 = await client.post("/api/v1/elements", json=body2, headers=headers)
         assert resp2.status_code == 200
         assert resp1.json()["uri"] == resp2.json()["uri"]
         assert len(resp2.json()["provenance"]) == 2
 
 
 class TestGetElements:
-    async def test_list_elements(self, client: AsyncClient):
-        # Create one first
+    async def test_list_elements(self, client: AsyncClient, curator_token: str):
         await client.post(
             "/api/v1/elements",
             json={
                 "semantic": {"data_type": "boolean"},
                 "provenance": [{"source": "test", "class": "T", "name": "flag"}],
             },
+            headers={"Authorization": f"Bearer {curator_token}"},
         )
         resp = await client.get("/api/v1/elements")
         assert resp.status_code == 200
@@ -49,26 +54,28 @@ class TestGetElements:
         assert "total" in data
         assert data["total"] >= 1
 
-    async def test_filter_by_source(self, client: AsyncClient):
+    async def test_filter_by_source(self, client: AsyncClient, curator_token: str):
         await client.post(
             "/api/v1/elements",
             json={
                 "semantic": {"data_type": "string", "ontology_term": "http://example.org/src_filter"},
                 "provenance": [{"source": "only_this", "class": "X", "name": "z"}],
             },
+            headers={"Authorization": f"Bearer {curator_token}"},
         )
         resp = await client.get("/api/v1/elements", params={"source": "only_this"})
         assert resp.status_code == 200
         for item in resp.json()["items"]:
             assert any(p["source"] == "only_this" for p in item["provenance"])
 
-    async def test_get_by_uri(self, client: AsyncClient):
+    async def test_get_by_uri(self, client: AsyncClient, curator_token: str):
         create_resp = await client.post(
             "/api/v1/elements",
             json={
                 "semantic": {"data_type": "float", "unit": "meter"},
                 "provenance": [{"source": "test", "class": "T", "name": "height"}],
             },
+            headers={"Authorization": f"Bearer {curator_token}"},
         )
         uri = create_resp.json()["uri"]
         resp = await client.get(f"/api/v1/elements/{uri}")
@@ -76,5 +83,7 @@ class TestGetElements:
         assert resp.json()["uri"] == uri
 
     async def test_get_nonexistent_returns_404(self, client: AsyncClient):
-        resp = await client.get("/api/v1/elements/https://schema.undata.live/elements/nonexistent_000000")
+        resp = await client.get(
+            "/api/v1/elements/https://schema.undata.live/elements/nonexistent_000000"
+        )
         assert resp.status_code == 404

@@ -13,9 +13,11 @@ from undata_library.hashing import (
 )
 
 from ..db.session import get_db
+from ..models.db import UserProfile
+from ..services.authz import Role, require_role
 from ..models.value import ValueConcept, ValueProvenance
 
-router = APIRouter(prefix="/api/v1/values", tags=["values-v2"])
+router = APIRouter(prefix="/api/v1/values", tags=["values"])
 
 
 class ValueCreateRequest(BaseModel):
@@ -46,6 +48,7 @@ def _value_to_response(v: ValueConcept) -> ValueResponse:
 async def create_value(
     body: ValueCreateRequest,
     session: AsyncSession = Depends(get_db),
+    current_user: UserProfile = Depends(require_role(Role.CONTRIBUTOR)),
 ):
     sem_dict = dict(body.semantic)
     sha = compute_sha256(canonical_json(sem_dict))

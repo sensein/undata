@@ -16,7 +16,8 @@ jobs:
       matrix:
         include:
           - service: backend
-            context: ./backend
+            context: .
+            dockerfile: backend/Dockerfile
           - service: migration-api
             context: ./migration-api
           - service: frontend
@@ -40,6 +41,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ${{ matrix.context }}
+          file: ${{ matrix.dockerfile || format('{0}/Dockerfile', matrix.context) }}
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/undata-${{ matrix.service }}:${{ steps.tag.outputs.version }}

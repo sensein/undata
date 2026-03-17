@@ -13,9 +13,11 @@ from undata_library.hashing import (
 )
 
 from ..db.session import get_db
+from ..models.db import UserProfile
+from ..services.authz import Role, require_role
 from ..models.schema import SchemaProvenance, SchemaShape
 
-router = APIRouter(prefix="/api/v1/schemas", tags=["schemas-v2"])
+router = APIRouter(prefix="/api/v1/schemas", tags=["schemas"])
 
 
 class SchemaCreateRequest(BaseModel):
@@ -49,6 +51,7 @@ def _schema_to_response(s: SchemaShape) -> SchemaResponse:
 async def create_schema(
     body: SchemaCreateRequest,
     session: AsyncSession = Depends(get_db),
+    current_user: UserProfile = Depends(require_role(Role.CONTRIBUTOR)),
 ):
     sem_dict = dict(body.semantic)
     sha = compute_sha256(canonical_json(sem_dict))
