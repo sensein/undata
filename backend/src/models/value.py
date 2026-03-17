@@ -9,8 +9,8 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from .db import Base
 
 
-class ValueConceptV2(Base):
-    __tablename__ = "value_concept_v2"
+class ValueConcept(Base):
+    __tablename__ = "value_concept"
 
     id: Mapped[int] = mapped_column(primary_key=True)
     semantic_hash: Mapped[str] = mapped_column(String(64), unique=True, index=True)
@@ -18,23 +18,23 @@ class ValueConceptV2(Base):
     semantic: Mapped[dict] = mapped_column(JSONB, nullable=False)
     created_at: Mapped[datetime] = mapped_column(server_default=text("now()"))
 
-    provenance: Mapped[list["ValueProvenanceV2"]] = relationship(
+    provenance: Mapped[list["ValueProvenance"]] = relationship(
         back_populates="value_concept", cascade="all, delete-orphan", lazy="selectin"
     )
 
 
-class ValueProvenanceV2(Base):
-    __tablename__ = "value_provenance_v2"
+class ValueProvenance(Base):
+    __tablename__ = "value_provenance"
     __table_args__ = (
         UniqueConstraint("value_concept_id", "source", "raw_value", name="uq_val_prov_source_raw"),
     )
 
     id: Mapped[int] = mapped_column(primary_key=True)
     value_concept_id: Mapped[int] = mapped_column(
-        ForeignKey("value_concept_v2.id", ondelete="CASCADE")
+        ForeignKey("value_concept.id", ondelete="CASCADE")
     )
     source: Mapped[str] = mapped_column(String(100), nullable=False)
     raw_value: Mapped[str] = mapped_column(String(500), nullable=False)
     added_at: Mapped[datetime] = mapped_column(server_default=text("now()"))
 
-    value_concept: Mapped["ValueConceptV2"] = relationship(back_populates="provenance")
+    value_concept: Mapped["ValueConcept"] = relationship(back_populates="provenance")

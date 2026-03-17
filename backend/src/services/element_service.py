@@ -10,10 +10,10 @@ from undata_library.hashing import (
     generate_short_key,
 )
 
-from ..models.element_v2 import ElementProvenanceV2, ElementV2
+from ..models.element import ElementProvenance, Element
 
 
-class ElementV2Service:
+class ElementService:
     def __init__(self, session: AsyncSession):
         self.session = session
 
@@ -21,7 +21,7 @@ class ElementV2Service:
         self,
         semantic: dict,
         provenance: list[dict],
-    ) -> tuple[ElementV2, bool]:
+    ) -> tuple[Element, bool]:
         """Create a new element or merge provenance into an existing one.
 
         Returns (element, created) where created=True if new, False if merged.
@@ -34,7 +34,7 @@ class ElementV2Service:
         sha = compute_sha256(canonical)
 
         # Check if element exists
-        stmt = select(ElementV2).where(ElementV2.semantic_hash == sha)
+        stmt = select(Element).where(Element.semantic_hash == sha)
         result = await self.session.execute(stmt)
         existing = result.scalar_one_or_none()
 
@@ -46,7 +46,7 @@ class ElementV2Service:
             for prov in provenance:
                 if (prov["source"], prov["name"]) not in existing_keys:
                     existing.provenance.append(
-                        ElementProvenanceV2(
+                        ElementProvenance(
                             source=prov["source"],
                             class_=prov.get("class", ""),
                             name=prov["name"],
@@ -62,7 +62,7 @@ class ElementV2Service:
         attr_name = provenance[0]["name"] if provenance else "unknown"
 
         # Get existing keys for collision detection
-        existing_keys_stmt = select(ElementV2.uri)
+        existing_keys_stmt = select(Element.uri)
         existing_result = await self.session.execute(existing_keys_stmt)
         existing_short_keys = set()
         for (uri,) in existing_result:
@@ -74,14 +74,14 @@ class ElementV2Service:
         uri = build_element_uri(attr_name, key)
 
         # Create element
-        element = ElementV2(
+        element = Element(
             semantic_hash=sha,
             uri=uri,
             semantic=semantic,
         )
         for prov in provenance:
             element.provenance.append(
-                ElementProvenanceV2(
+                ElementProvenance(
                     source=prov["source"],
                     class_=prov.get("class", ""),
                     name=prov["name"],
@@ -95,13 +95,13 @@ class ElementV2Service:
         await self.session.flush()
         return element, True
 
-    async def get_by_uri(self, uri: str) -> ElementV2 | None:
-        stmt = select(ElementV2).where(ElementV2.uri == uri)
+    async def get_by_uri(self, uri: str) -> Element | None:
+        stmt = select(Element).where(Element.uri == uri)
         result = await self.session.execute(stmt)
         return result.scalar_one_or_none()
 
-    async def get_by_hash(self, semantic_hash: str) -> ElementV2 | None:
-        stmt = select(ElementV2).where(ElementV2.semantic_hash == semantic_hash)
+    async def get_by_hash(self, semantic_hash: str) -> Element | None:
+        stmt = select(Element).where(Element.semantic_hash == semantic_hash)
         result = await self.session.execute(stmt)
         return result.scalar_one_or_none()
 
@@ -112,36 +112,36 @@ class ElementV2Service:
         ontology_term: str | None = None,
         limit: int = 100,
         offset: int = 0,
-    ) -> tuple[list[ElementV2], int]:
+    ) -> tuple[list[Element], int]:
         """List elements with optional filters. Returns (elements, total_count)."""
         from sqlalchemy import func
 
-        stmt = select(ElementV2)
-        count_stmt = select(func.count(ElementV2.id))
+        stmt = select(Element)
+        count_stmt = select(func.count(Element.id))
 
         if source:
-            stmt = stmt.join(ElementProvenanceV2).where(
-                ElementProvenanceV2.source == source
+            stmt = stmt.join(ElementProvenance).where(
+                ElementProvenance.source == source
             )
-            count_stmt = count_stmt.join(ElementProvenanceV2).where(
-                ElementProvenanceV2.source == source
+            count_stmt = count_stmt.join(ElementProvenance).where(
+                ElementProvenance.source == source
             )
 
         if data_type:
-            stmt = stmt.where(ElementV2.semantic["data_type"].astext == data_type)
+            stmt = stmt.where(Element.semantic["data_type"].astext == data_type)
             count_stmt = count_stmt.where(
-                ElementV2.semantic["data_type"].astext == data_type
+                Element.semantic["data_type"].astext == data_type
             )
 
         if ontology_term:
             stmt = stmt.where(
-                ElementV2.semantic["ontology_term"].astext == ontology_term
+                Element.semantic["ontology_term"].astext == ontology_term
             )
             count_stmt = count_stmt.where(
-                ElementV2.semantic["ontology_term"].astext == ontology_term
+                Element.semantic["ontology_term"].astext == ontology_term
             )
 
         total = (await self.session.execute(count_stmt)).scalar() or 0
-        stmt = stmt.order_by(ElementV2.created_at.desc()).limit(limit).offset(offset)
+        stmt = stmt.order_by(Element.created_at.desc()).limit(limit).offset(offset)
         result = await self.session.execute(stmt)
         return list(result.scalars().all()), total

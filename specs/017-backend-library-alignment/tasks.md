@@ -7,27 +7,27 @@
 ## Phase 1: Library Dependency + New DB Tables
 
 - [X] T001 Add `undata-library` as dependency in `backend/pyproject.toml` (path dependency: `../library`); verify `from undata_library.models import ElementRecord` works in backend context
-- [X] T002 Create SQLAlchemy ORM models in `backend/src/models/element_v2.py`: `ElementV2` (semantic_hash CHAR(64) unique, uri VARCHAR, semantic JSONB, created_at), `ElementProvenanceV2` (FK → ElementV2, source, class_, name, description, required, multivalued, added_at)
-- [X] T003 [P] Create ORM models in `backend/src/models/value_v2.py`: `ValueConceptV2` (semantic_hash, uri, semantic JSONB), `ValueProvenanceV2` (FK, source, raw_value, added_at)
-- [X] T004 [P] Create ORM models in `backend/src/models/schema_v2.py`: `SchemaShapeV2` (semantic_hash, uri, semantic JSONB), `SchemaProvenanceV2` (FK, source, name, description)
-- [X] T005 [P] Create ORM model in `backend/src/models/mapping_v2.py`: `ElementMappingV2` (source_element_uri, target_element_uri, function_type, expression, expression_type, sssom_predicate, confidence)
+- [X] T002 Create SQLAlchemy ORM models in `backend/src/models/element.py`: `Element` (semantic_hash CHAR(64) unique, uri VARCHAR, semantic JSONB, created_at), `ElementProvenanceV2` (FK → Element, source, class_, name, description, required, multivalued, added_at)
+- [X] T003 [P] Create ORM models in `backend/src/models/value.py`: `ValueConcept` (semantic_hash, uri, semantic JSONB), `ValueProvenanceV2` (FK, source, raw_value, added_at)
+- [X] T004 [P] Create ORM models in `backend/src/models/schema.py`: `SchemaShape` (semantic_hash, uri, semantic JSONB), `SchemaProvenanceV2` (FK, source, name, description)
+- [X] T005 [P] Create ORM model in `backend/src/models/mapping.py`: `ElementMapping` (source_element_uri, target_element_uri, function_type, expression, expression_type, sssom_predicate, confidence)
 - [ ] T006 Create Alembic migration `0004_v2_tables.py`: add all v2 tables (non-destructive, old tables untouched)
-- [X] T007 Write `backend/src/services/element_v2_service.py`: `create_or_merge(semantic, provenance)` — computes hash via `undata_library.hashing`, checks existence, appends provenance or creates new; returns URI
-- [ ] T008 Write tests for element_v2_service: (a) create new element returns URI; (b) same semantic graph returns same URI + appends provenance; (c) different graph returns different URI
+- [X] T007 Write `backend/src/services/element_service.py`: `create_or_merge(semantic, provenance)` — computes hash via `undata_library.hashing`, checks existence, appends provenance or creates new; returns URI
+- [ ] T008 Write tests for element_service: (a) create new element returns URI; (b) same semantic graph returns same URI + appends provenance; (c) different graph returns different URI
 - [ ] T009 Run migration + tests; commit Phase 1
 
 ## Phase 2: Data Migration
 
-- [ ] T010 Create Alembic migration `0005_migrate_v1_to_v2.py`: read each `data_element` + `data_element_version`, compute semantic hash, insert into `element_v2` + `element_provenance_v2`; merge duplicates by hash
+- [ ] T010 Create Alembic migration `0005_migrate_v1_to_v2.py`: read each `data_element` + `data_element_version`, compute semantic hash, insert into `element` + `element_provenance_v2`; merge duplicates by hash
 - [ ] T011 Write migration verification script: compare record counts, verify no data loss, check hash uniqueness
 - [ ] T012 Run migration on test DB; verify all records migrated; commit Phase 2
 
 ## Phase 3: API v2 Endpoints
 
-- [X] T013 Create `backend/src/routes/elements_v2.py`: `POST /api/v2/elements` (accepts `{semantic, provenance}`, returns URI), `GET /api/v2/elements` (list with filters: source, data_type, ontology_term), `GET /api/v2/elements/{uri}` (single with full provenance)
-- [X] T014 [P] Create `backend/src/routes/values_v2.py`: `POST/GET /api/v2/values`
-- [X] T015 [P] Create `backend/src/routes/schemas_v2.py`: `POST/GET /api/v2/schemas`
-- [X] T016 [P] Create `backend/src/routes/mappings_v2.py`: `POST/GET /api/v2/mappings`
+- [X] T013 Create `backend/src/routes/elements.py`: `POST /api/v2/elements` (accepts `{semantic, provenance}`, returns URI), `GET /api/v2/elements` (list with filters: source, data_type, ontology_term), `GET /api/v2/elements/{uri}` (single with full provenance)
+- [X] T014 [P] Create `backend/src/routes/values.py`: `POST/GET /api/v2/values`
+- [X] T015 [P] Create `backend/src/routes/schemas.py`: `POST/GET /api/v2/schemas`
+- [X] T016 [P] Create `backend/src/routes/mappings.py`: `POST/GET /api/v2/mappings`
 - [X] T017 Register v2 routes in `backend/src/main.py`
 - [ ] T018 Write API tests: (a) POST element → 201 with URI; (b) POST same semantic → 200 with merged provenance; (c) GET elements filters by source; (d) GET element by URI returns full provenance
 - [ ] T019 Run tests; commit Phase 3
@@ -42,7 +42,7 @@
 
 ## Phase 5: Frontend Updates
 
-- [ ] T025 Update `frontend/lib/types.ts`: add `ElementV2`, `ProvenanceEntry`, `ValueConcept`, `SchemaShape`, `ElementMapping` types matching v2 API
+- [ ] T025 Update `frontend/lib/types.ts`: add `Element`, `ProvenanceEntry`, `ValueConcept`, `SchemaShape`, `ElementMapping` types matching v2 API
 - [ ] T026 Create `frontend/lib/api/elements-v2.ts`: API client for v2 endpoints
 - [ ] T027 Update `frontend/app/elements/[id]/page.tsx` + create `frontend/components/ElementDetailV2.tsx`: render semantic identity block + provenance list with cross-source badges
 - [ ] T028 [P] Create `frontend/app/values/page.tsx` + `frontend/components/ValueConceptCard.tsx`: browse value concepts with ontology terms and raw_value per source

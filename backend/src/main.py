@@ -122,10 +122,10 @@ from src.api.v1.sources import router as sources_router  # noqa: E402
 app.include_router(sources_router, prefix="/api/v1")
 
 # 017: Content-addressed elements, values, schemas, mappings
-from src.routes.elements_v2 import router as elements_router  # noqa: E402
-from src.routes.mappings_v2 import router as mappings_router  # noqa: E402
-from src.routes.schemas_v2 import router as schemas_router  # noqa: E402
-from src.routes.values_v2 import router as values_router  # noqa: E402
+from src.routes.elements import router as elements_router  # noqa: E402
+from src.routes.mappings import router as mappings_router  # noqa: E402
+from src.routes.schemas import router as schemas_router  # noqa: E402
+from src.routes.values import router as values_router  # noqa: E402
 
 app.include_router(elements_router)
 app.include_router(values_router)

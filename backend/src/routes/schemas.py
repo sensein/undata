@@ -13,7 +13,7 @@ from undata_library.hashing import (
 )
 
 from ..models.db import get_session
-from ..models.schema_v2 import SchemaProvenanceV2, SchemaShapeV2
+from ..models.schema import SchemaProvenance, SchemaShape
 
 router = APIRouter(prefix="/api/v1/schemas", tags=["schemas-v2"])
 
@@ -34,7 +34,7 @@ class SchemaListResponse(BaseModel):
     total: int
 
 
-def _schema_to_response(s: SchemaShapeV2) -> SchemaResponse:
+def _schema_to_response(s: SchemaShape) -> SchemaResponse:
     return SchemaResponse(
         uri=s.uri,
         semantic=s.semantic,
@@ -55,7 +55,7 @@ async def create_schema(
 
     existing = (
         await session.execute(
-            select(SchemaShapeV2).where(SchemaShapeV2.semantic_hash == sha)
+            select(SchemaShape).where(SchemaShape.semantic_hash == sha)
         )
     ).scalar_one_or_none()
 
@@ -64,7 +64,7 @@ async def create_schema(
         for prov in body.provenance:
             if (prov["source"], prov["name"]) not in existing_keys:
                 existing.provenance.append(
-                    SchemaProvenanceV2(
+                    SchemaProvenance(
                         source=prov["source"],
                         name=prov["name"],
                         description=prov.get("description"),
@@ -81,10 +81,10 @@ async def create_schema(
     key = generate_short_key(sha)
     uri = build_schema_uri(name, key)
 
-    schema = SchemaShapeV2(semantic_hash=sha, uri=uri, semantic=body.semantic)
+    schema = SchemaShape(semantic_hash=sha, uri=uri, semantic=body.semantic)
     for prov in body.provenance:
         schema.provenance.append(
-            SchemaProvenanceV2(
+            SchemaProvenance(
                 source=prov["source"],
                 name=prov["name"],
                 description=prov.get("description"),
@@ -104,13 +104,13 @@ async def list_schemas(
 ) -> SchemaListResponse:
     from sqlalchemy import func
 
-    stmt = select(SchemaShapeV2)
-    count_stmt = select(func.count(SchemaShapeV2.id))
+    stmt = select(SchemaShape)
+    count_stmt = select(func.count(SchemaShape.id))
 
     if source:
-        stmt = stmt.join(SchemaProvenanceV2).where(SchemaProvenanceV2.source == source)
-        count_stmt = count_stmt.join(SchemaProvenanceV2).where(
-            SchemaProvenanceV2.source == source
+        stmt = stmt.join(SchemaProvenance).where(SchemaProvenance.source == source)
+        count_stmt = count_stmt.join(SchemaProvenance).where(
+            SchemaProvenance.source == source
         )
 
     total = (await session.execute(count_stmt)).scalar() or 0

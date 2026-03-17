@@ -13,7 +13,7 @@ from undata_library.hashing import (
 )
 
 from ..models.db import get_session
-from ..models.value_v2 import ValueConceptV2, ValueProvenanceV2
+from ..models.value import ValueConcept, ValueProvenance
 
 router = APIRouter(prefix="/api/v1/values", tags=["values-v2"])
 
@@ -34,7 +34,7 @@ class ValueListResponse(BaseModel):
     total: int
 
 
-def _value_to_response(v: ValueConceptV2) -> ValueResponse:
+def _value_to_response(v: ValueConcept) -> ValueResponse:
     return ValueResponse(
         uri=v.uri,
         semantic=v.semantic,
@@ -52,7 +52,7 @@ async def create_value(
 
     existing = (
         await session.execute(
-            select(ValueConceptV2).where(ValueConceptV2.semantic_hash == sha)
+            select(ValueConcept).where(ValueConcept.semantic_hash == sha)
         )
     ).scalar_one_or_none()
 
@@ -61,7 +61,7 @@ async def create_value(
         for prov in body.provenance:
             if (prov["source"], prov["raw_value"]) not in existing_keys:
                 existing.provenance.append(
-                    ValueProvenanceV2(source=prov["source"], raw_value=prov["raw_value"])
+                    ValueProvenance(source=prov["source"], raw_value=prov["raw_value"])
                 )
         await session.commit()
         from fastapi.responses import JSONResponse
@@ -72,10 +72,10 @@ async def create_value(
     key = generate_short_key(sha)
     uri = build_value_uri(label, key)
 
-    value = ValueConceptV2(semantic_hash=sha, uri=uri, semantic=body.semantic)
+    value = ValueConcept(semantic_hash=sha, uri=uri, semantic=body.semantic)
     for prov in body.provenance:
         value.provenance.append(
-            ValueProvenanceV2(source=prov["source"], raw_value=prov["raw_value"])
+            ValueProvenance(source=prov["source"], raw_value=prov["raw_value"])
         )
     session.add(value)
     await session.commit()
@@ -91,13 +91,13 @@ async def list_values(
 ) -> ValueListResponse:
     from sqlalchemy import func
 
-    stmt = select(ValueConceptV2)
-    count_stmt = select(func.count(ValueConceptV2.id))
+    stmt = select(ValueConcept)
+    count_stmt = select(func.count(ValueConcept.id))
 
     if source:
-        stmt = stmt.join(ValueProvenanceV2).where(ValueProvenanceV2.source == source)
-        count_stmt = count_stmt.join(ValueProvenanceV2).where(
-            ValueProvenanceV2.source == source
+        stmt = stmt.join(ValueProvenance).where(ValueProvenance.source == source)
+        count_stmt = count_stmt.join(ValueProvenance).where(
+            ValueProvenance.source == source
         )
 
     total = (await session.execute(count_stmt)).scalar() or 0

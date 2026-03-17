@@ -8,8 +8,8 @@ from sqlalchemy.orm import Mapped, mapped_column
 from .db import Base
 
 
-class ElementMappingV2(Base):
-    __tablename__ = "element_mapping_v2"
+class ElementMapping(Base):
+    __tablename__ = "element_mapping"
 
     id: Mapped[int] = mapped_column(primary_key=True)
     source_element_uri: Mapped[str] = mapped_column(String(255), nullable=False, index=True)

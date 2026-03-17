@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from ..models.db import get_session
-from ..services.element_v2_service import ElementV2Service
+from ..services.element_service import ElementService
 
 router = APIRouter(prefix="/api/v1/elements", tags=["elements-v2"])
 
@@ -77,7 +77,7 @@ async def create_element(
 
     Returns 201 if new, 200 if merged.
     """
-    svc = ElementV2Service(session)
+    svc = ElementService(session)
     elem, created = await svc.create_or_merge(
         semantic=body.semantic.model_dump(exclude_none=True),
         provenance=body.provenance,
@@ -105,7 +105,7 @@ async def list_elements(
     session: AsyncSession = Depends(get_session),
 ) -> ElementListResponse:
     """List elements with optional filters."""
-    svc = ElementV2Service(session)
+    svc = ElementService(session)
     elements, total = await svc.list_elements(
         source=source,
         data_type=data_type,
@@ -125,7 +125,7 @@ async def get_element(
     session: AsyncSession = Depends(get_session),
 ):
     """Get a single element by URI."""
-    svc = ElementV2Service(session)
+    svc = ElementService(session)
     elem = await svc.get_by_uri(uri)
     if not elem:
         from fastapi import HTTPException
