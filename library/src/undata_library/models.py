@@ -94,6 +94,33 @@ class SchemaRecord(BaseModel):
 
 
 # ---------------------------------------------------------------------------
+# Value Concept (categorical/enum value as semantic entity)
+# ---------------------------------------------------------------------------
+
+
+class ValueSemanticIdentity(BaseModel):
+    """Identity block for a value concept — hashed for content-addressed URI."""
+
+    ontology_term: str | None = None
+    value_type: str = "categorical"
+    label: str
+
+
+class ValueProvenance(BaseModel):
+    """One source's representation of this value."""
+
+    source: str
+    raw_value: str
+
+
+class ValueConcept(BaseModel):
+    """A categorical value with content-addressed identity + provenance."""
+
+    semantic: ValueSemanticIdentity
+    provenance: list[ValueProvenance] = Field(min_length=1)
+
+
+# ---------------------------------------------------------------------------
 # Mapping
 # ---------------------------------------------------------------------------
 

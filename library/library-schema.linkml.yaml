@@ -149,3 +149,41 @@ classes:
       description:
         range: string
         slot_uri: schema:description
+
+  ValueConcept:
+    description: A categorical value with content-addressed identity.
+    class_uri: skos:Concept
+    attributes:
+      semantic:
+        range: ValueSemanticIdentity
+        required: true
+        inlined: true
+      provenance:
+        range: ValueProvenance
+        multivalued: true
+        inlined_as_list: true
+        required: true
+
+  ValueSemanticIdentity:
+    description: Identity block for a value concept.
+    attributes:
+      ontology_term:
+        range: uriorcurie
+      value_type:
+        range: string
+        description: "categorical (default)"
+      label:
+        range: string
+        required: true
+        slot_uri: rdfs:label
+
+  ValueProvenance:
+    description: One source's representation of this value.
+    class_uri: prov:Entity
+    attributes:
+      source:
+        range: string
+        required: true
+      raw_value:
+        range: string
+        required: true
