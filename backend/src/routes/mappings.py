@@ -6,9 +6,11 @@ from sqlalchemy import func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from ..db.session import get_db
+from ..models.db import UserProfile
+from ..services.authz import Role, require_role
 from ..models.mapping import ElementMapping
 
-router = APIRouter(prefix="/api/v1/mappings", tags=["mappings-v2"])
+router = APIRouter(prefix="/api/v1/mappings", tags=["mappings"])
 
 
 class MappingCreateRequest(BaseModel):
@@ -57,6 +59,7 @@ def _mapping_to_response(m: ElementMapping) -> MappingResponse:
 async def create_mapping(
     body: MappingCreateRequest,
     session: AsyncSession = Depends(get_db),
+    current_user: UserProfile = Depends(require_role(Role.CONTRIBUTOR)),
 ):
     mapping = ElementMapping(
         source_element_uri=body.source_element_uri,

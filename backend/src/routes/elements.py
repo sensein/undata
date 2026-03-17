@@ -5,9 +5,11 @@ from pydantic import BaseModel
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from ..db.session import get_db
+from ..models.db import UserProfile
+from ..services.authz import Role, require_role
 from ..services.element_service import ElementService
 
-router = APIRouter(prefix="/api/v1/elements", tags=["elements-v2"])
+router = APIRouter(prefix="/api/v1/elements", tags=["elements"])
 
 
 class SemanticInput(BaseModel):
@@ -72,6 +74,7 @@ def _element_to_response(elem) -> ElementResponse:
 async def create_element(
     body: ElementCreateRequest,
     session: AsyncSession = Depends(get_db),
+    current_user: UserProfile = Depends(require_role(Role.CONTRIBUTOR)),
 ):
     """Create a new element or merge provenance into existing.
 

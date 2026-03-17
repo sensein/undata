@@ -76,7 +76,6 @@ class TestAuthIntegration:
         )
         assert fail_resp.status_code == 401
 
-    @pytest.mark.skip(reason="Auth not yet applied to new content-addressed element routes")
     async def test_viewer_cannot_write_elements(self, client, viewer_token):
         """Viewer role receives 403 on element creation."""
         response = await client.post(
