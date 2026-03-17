@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/coordinate_system_name_12noo6
+  - https://schema.undata.live/elements/end_coordinate_1qaa30
+  - https://schema.undata.live/elements/includes_surrounding_tissue_3jfz4a
+  - https://schema.undata.live/elements/output_specimen_id_wfxkl3
+  - https://schema.undata.live/elements/partial_slice_yvpltv
+  - https://schema.undata.live/elements/start_coordinate_1we42m
+  - https://schema.undata.live/elements/targeted_structure_d48114
+  - https://schema.undata.live/elements/thickness_1ivl4e
+  - https://schema.undata.live/elements/thickness_unit_16hhhm
+  mixins: []
+provenance:
+- source: aind
+  name: Section

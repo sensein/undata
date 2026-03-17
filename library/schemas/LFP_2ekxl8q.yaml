@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/LFP_ijnbjk
+  mixins: []
+provenance:
+- source: nwb
+  name: LFP

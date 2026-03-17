@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/SequentialRecordingsTable_1n83og
+  - https://schema.undata.live/elements/simultaneous_recordings_ezdwmj
+  - https://schema.undata.live/elements/simultaneous_recordings_index_aanoh8
+  - https://schema.undata.live/elements/stimulus_type_1ytf12
+  mixins: []
+provenance:
+- source: nwb
+  name: SequentialRecordingsTable

@@ -1,0 +1,37 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/about_yyusdo
+  - https://schema.undata.live/elements/access_1ca1p2
+  - https://schema.undata.live/elements/acknowledgement_aic7b3
+  - https://schema.undata.live/elements/approach_1x2i1k
+  - https://schema.undata.live/elements/blobDateModified_6h3k9j
+  - https://schema.undata.live/elements/contentSize_a7a1cv
+  - https://schema.undata.live/elements/contributor_vrruh0
+  - https://schema.undata.live/elements/dataType_13byus
+  - https://schema.undata.live/elements/dateModified_z42yyj
+  - https://schema.undata.live/elements/description_1mrtrd
+  - https://schema.undata.live/elements/digest_1hdn73
+  - https://schema.undata.live/elements/encodingFormat_zyyoh0
+  - https://schema.undata.live/elements/ethicsApproval_8ljruu
+  - https://schema.undata.live/elements/id_6m21wn
+  - https://schema.undata.live/elements/keywords_1ml3mo
+  - https://schema.undata.live/elements/license_1qa7oi
+  - https://schema.undata.live/elements/measurementTechnique_2tjwvo
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/path_1gql9g
+  - https://schema.undata.live/elements/protocol_11erb9
+  - https://schema.undata.live/elements/relatedResource_1sfhnl
+  - https://schema.undata.live/elements/repository_l8heev
+  - https://schema.undata.live/elements/sameAs_1w6kfa
+  - https://schema.undata.live/elements/schemaKey_p9zcnm
+  - https://schema.undata.live/elements/schemaVersion_1xlnba
+  - https://schema.undata.live/elements/studyTarget_1kr2z4
+  - https://schema.undata.live/elements/url_e078lo
+  - https://schema.undata.live/elements/variableMeasured_14hpji
+  - https://schema.undata.live/elements/wasAttributedTo_1aipnn
+  - https://schema.undata.live/elements/wasDerivedFrom_1the0n
+  - https://schema.undata.live/elements/wasGeneratedBy_scsjz1
+  mixins: []
+provenance:
+- source: dandi
+  name: BareAsset

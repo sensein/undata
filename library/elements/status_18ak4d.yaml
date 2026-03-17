@@ -1,0 +1,14 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C25688
+  data_type: string
+provenance:
+- source: aind
+  class: QualityControl
+  name: status
+  description: Mapping of tags, modalities, and stages to their evaluated status,
+    automatically computed
+- source: aind
+  class: quality_control
+  name: status
+  description: Mapping of tags, modalities, and stages to their evaluated status,
+    automatically computed

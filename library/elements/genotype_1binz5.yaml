@@ -10,3 +10,7 @@ provenance:
   class: MouseSubject
   name: genotype
   description: Genotype of the animal providing both alleles
+- source: dandi
+  class: Participant
+  name: genotype
+  description: Genotype descriptor of participant or subject if available

@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/atlas_kcesik
+  - https://schema.undata.live/elements/data_acquisition_fr2r7e
+  - https://schema.undata.live/elements/data_type_1nggye
+  - https://schema.undata.live/elements/dataset_1kq1ox
+  - https://schema.undata.live/elements/deprecated_xck3tt
+  - https://schema.undata.live/elements/event_1krr33
+  - https://schema.undata.live/elements/extension_om448k
+  - https://schema.undata.live/elements/index_1m6fn7
+  - https://schema.undata.live/elements/label_zpslp0
+  - https://schema.undata.live/elements/modality_l9j1e7
+  - https://schema.undata.live/elements/run_1q6fa1
+  - https://schema.undata.live/elements/sample_j07f82
+  - https://schema.undata.live/elements/session_190lk5
+  - https://schema.undata.live/elements/space_1tzmh2
+  - https://schema.undata.live/elements/subject_mr7wes
+  - https://schema.undata.live/elements/suffix_1mawt3
+  - https://schema.undata.live/elements/task_36zl8r
+  - https://schema.undata.live/elements/template_vqih9i
+  mixins: []
+provenance:
+- source: bids
+  name: common_principles

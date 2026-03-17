@@ -128,12 +128,17 @@ def ingest_source(
     # Build schema shapes from class groupings
     schema_stats = _build_schemas_from_provenance(source_name, library_path, registry)
 
+    # Generate cross-element mappings for same ontology_term, different type/unit
+    mapping_stats = _generate_element_mappings(library_path, registry)
+    _write_registry(registry_path, registry)
+
     return {
         "created": created,
         "merged": merged,
         "total": len(hash_to_records),
         "schemas_created": schema_stats.get("created", 0),
         "values_created": value_stats.get("created", 0),
+        "mappings_created": mapping_stats.get("created", 0),
     }
 
 
@@ -150,7 +155,12 @@ def _apply_element_mappings(
     pairs: list[tuple[SemanticIdentity, ProvenanceEntry]],
     mappings: dict[str, dict],
 ) -> list[tuple[SemanticIdentity, ProvenanceEntry]]:
-    """Enrich elements with ontology annotations from curated mappings."""
+    """Enrich elements with ontology annotations from curated mappings.
+
+    Supports source_overrides: per-source data_type and unit overrides
+    that produce different hashes (different elements) for the same concept
+    when sources represent it differently.
+    """
     if not mappings:
         return pairs
 
@@ -158,11 +168,20 @@ def _apply_element_mappings(
     for sem, prov in pairs:
         mapping = mappings.get(prov.name)
         if mapping and sem.ontology_term is None:
-            # Apply ontology mapping
+            ontology_term = mapping.get("ontology_term")
+            data_type = mapping.get("data_type") or str(sem.data_type)
+            unit = mapping.get("unit") or sem.unit
+
+            # Check for source-specific overrides
+            overrides = mapping.get("source_overrides", {}).get(prov.source, {})
+            if overrides:
+                data_type = overrides.get("data_type", data_type)
+                unit = overrides.get("unit", unit)
+
             sem = SemanticIdentity(
-                ontology_term=mapping.get("ontology_term"),
-                data_type=sem.data_type,
-                unit=mapping.get("unit") or sem.unit,
+                ontology_term=ontology_term,
+                data_type=data_type,
+                unit=unit,
                 constraints=sem.constraints,
             )
         enriched.append((sem, prov))
@@ -419,5 +438,140 @@ def _build_schemas_from_provenance(
 
     # Re-write registry with schemas
     _write_registry(library_path / "hash-registry.yaml", registry)
+
+    return {"created": created}
+
+
+# Known unit conversion expressions (bidirectional)
+_UNIT_CONVERSIONS: dict[tuple[str, str], dict] = {
+    ("year", "iso8601_duration"): {
+        "expression": "f'P{int(value)}Y'",
+        "expression_type": "python_fstring",
+        "reverse_expression": "int(value[1:-1])",
+        "reverse_expression_type": "python",
+        "function_type": "unit_conversion",
+    },
+    ("gram", None): {
+        "expression": "str(value)",
+        "expression_type": "python",
+        "reverse_expression": "float(value)",
+        "reverse_expression_type": "python",
+        "function_type": "structural",
+    },
+}
+
+
+def _generate_element_mappings(
+    library_path: Path,
+    registry: HashRegistry,
+) -> dict[str, int]:
+    """Generate mapping files between elements sharing an ontology_term but
+    with different data_type or unit.
+
+    For example: age (float, year) ↔ age (string, iso8601_duration)
+    """
+    from collections import defaultdict
+
+    from .models import MappingProvenance, MappingRecord
+
+    elements_dir = library_path / "elements"
+    mappings_dir = library_path / "mappings"
+    mappings_dir.mkdir(parents=True, exist_ok=True)
+
+    # Group elements by ontology_term
+    onto_groups: dict[str, list[tuple[str, dict]]] = defaultdict(list)
+    for f in sorted(elements_dir.glob("*.yaml")):
+        data = yaml.safe_load(f.read_text(encoding="utf-8"))
+        if not data or "semantic" not in data:
+            continue
+        onto = data["semantic"].get("ontology_term")
+        if onto:
+            # Find URI from registry
+            fname = f.stem
+            parts = fname.rsplit("_", 1)
+            if len(parts) == 2:
+                key = parts[1]
+                entry = registry.elements.get(key)
+                if entry:
+                    onto_groups[onto].append((entry.uri, data["semantic"]))
+
+    created = 0
+    existing_mapping_files = {f.stem for f in mappings_dir.glob("*.yaml")}
+
+    for onto, elements in onto_groups.items():
+        if len(elements) < 2:
+            continue
+
+        # Generate pairwise mappings between elements with different type/unit
+        for i, (uri_a, sem_a) in enumerate(elements):
+            for uri_b, sem_b in elements[i + 1 :]:
+                if sem_a == sem_b:
+                    continue  # Same hash — no mapping needed
+
+                unit_a = sem_a.get("unit")
+                unit_b = sem_b.get("unit")
+                dt_a = sem_a.get("data_type")
+                dt_b = sem_b.get("data_type")
+
+                # Determine mapping type and expression
+                conversion = _UNIT_CONVERSIONS.get((unit_a, unit_b))
+                reverse_conversion = _UNIT_CONVERSIONS.get((unit_b, unit_a))
+
+                if not conversion and not reverse_conversion:
+                    # Try structural mapping (type change, no unit)
+                    if dt_a != dt_b:
+                        func_type = "structural"
+                    else:
+                        continue  # No meaningful mapping
+                else:
+                    func_type = "unit_conversion"
+
+                # Forward mapping: A → B
+                mapping_id = f"{uri_a}__to__{uri_b}".replace(
+                    "https://schema.undata.live/elements/", ""
+                )
+                safe_id = mapping_id.replace("/", "_")[:80]
+
+                if safe_id not in existing_mapping_files:
+                    fwd = MappingRecord(
+                        source_element=uri_a,
+                        target_element=uri_b,
+                        function_type=func_type,
+                        expression=conversion["expression"] if conversion else None,
+                        expression_type=(conversion["expression_type"] if conversion else None),
+                        sssom_predicate="skos:closeMatch",
+                        provenance=[MappingProvenance(source="curated")],
+                    )
+                    fwd_data = fwd.model_dump(mode="json", exclude_none=True)
+                    (mappings_dir / f"{safe_id}.yaml").write_text(
+                        yaml.dump(fwd_data, default_flow_style=False, sort_keys=False),
+                        encoding="utf-8",
+                    )
+                    existing_mapping_files.add(safe_id)
+                    created += 1
+
+                # Reverse mapping: B → A
+                rev_id = f"{uri_b}__to__{uri_a}".replace("https://schema.undata.live/elements/", "")
+                safe_rev = rev_id.replace("/", "_")[:80]
+
+                if safe_rev not in existing_mapping_files:
+                    rev_expr = conversion.get("reverse_expression") if conversion else None
+                    rev_type = conversion.get("reverse_expression_type") if conversion else None
+                    rev = MappingRecord(
+                        source_element=uri_b,
+                        target_element=uri_a,
+                        function_type=func_type,
+                        expression=rev_expr,
+                        expression_type=rev_type,
+                        sssom_predicate="skos:closeMatch",
+                        provenance=[MappingProvenance(source="curated")],
+                    )
+                    rev_data = rev.model_dump(mode="json", exclude_none=True)
+                    (mappings_dir / f"{safe_rev}.yaml").write_text(
+                        yaml.dump(rev_data, default_flow_style=False, sort_keys=False),
+                        encoding="utf-8",
+                    )
+                    existing_mapping_files.add(safe_rev)
+                    created += 1
 
     return {"created": created}

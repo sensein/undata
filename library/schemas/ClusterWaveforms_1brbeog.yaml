@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/ClusterWaveforms_zg8l0t
+  - https://schema.undata.live/elements/waveform_filtering_10xb3s
+  - https://schema.undata.live/elements/waveform_mean_lqbbe1
+  - https://schema.undata.live/elements/waveform_sd_1483d6
+  mixins: []
+provenance:
+- source: nwb
+  name: ClusterWaveforms

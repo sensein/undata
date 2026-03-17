@@ -17,3 +17,7 @@ provenance:
 - source: aind
   class: MouseSubject
   name: strain
+- source: dandi
+  class: Participant
+  name: strain
+  description: Identifier for the strain of the participant or subject.

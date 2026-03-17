@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_9ugh26
+  - https://schema.undata.live/elements/magnetic_strength_unit_1j1hpx
+  - https://schema.undata.live/elements/magnetic_strength_x43pk4
+  - https://schema.undata.live/elements/manufacturer_1d47pt
+  - https://schema.undata.live/elements/model_9rn863
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/notes_jk5adh
+  - https://schema.undata.live/elements/serial_number_16grzg
+  mixins: []
+provenance:
+- source: aind
+  name: Scanner

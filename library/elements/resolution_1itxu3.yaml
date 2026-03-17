@@ -6,3 +6,12 @@ provenance:
   class: Image
   name: resolution
   description: Pixel resolution of the image, in pixels per centimeter.
+- source: aind
+  class: Atlas
+  name: resolution
+- source: aind
+  class: MRIScan
+  name: resolution
+- source: aind
+  class: Atlas
+  name: resolution

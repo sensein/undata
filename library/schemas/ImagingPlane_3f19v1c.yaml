@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/ImagingPlane_1rt9fl
+  - https://schema.undata.live/elements/description_1mrtrd
+  - https://schema.undata.live/elements/excitation_lambda_1n8wm7
+  - https://schema.undata.live/elements/grid_spacing_inrms7
+  - https://schema.undata.live/elements/imaging_rate_vcnho8
+  - https://schema.undata.live/elements/indicator_badyl0
+  - https://schema.undata.live/elements/location_q0didw
+  - https://schema.undata.live/elements/manifold_spboa5
+  - https://schema.undata.live/elements/origin_coords_1lgtys
+  - https://schema.undata.live/elements/reference_frame_130u0l
+  mixins: []
+provenance:
+- source: nwb
+  name: ImagingPlane
