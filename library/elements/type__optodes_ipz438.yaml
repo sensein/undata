@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - source
+    - detector
+provenance:
+- source: bids
+  class: columns
+  name: type__optodes
+  description: 'The type of the optode.
+
+    '

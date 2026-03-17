@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: nwb
-  class: FeatureExtraction
-  name: description
-  description: Description of features (eg, ''PC1'') for each of the extracted features.

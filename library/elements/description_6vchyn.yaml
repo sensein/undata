@@ -1,8 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: nwb
-  class: IntracellularRecordingsTable
-  name: description
-  description: Description of the contents of this table. Inherited from AlignedDynamicTable
-    and overwritten here to fix the value of the attribute.

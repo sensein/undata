@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: dcite:ismetadatafor
+provenance:
+- source: dandi
+  raw_value: dcite:IsMetadataFor

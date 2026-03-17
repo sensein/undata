@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: Maintenance
-  name: description
-  description: Description on maintenance procedure

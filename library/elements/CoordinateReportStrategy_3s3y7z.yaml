@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - peak
+    - center_of_mass
+    - other
+provenance:
+- source: bids
+  class: metadata
+  name: CoordinateReportStrategy
+  description: 'Indicate the method of coordinate reporting in statistically significant
+    clusters.
+
+    Could be the "peak" statistical coordinate in the cluster or the
+
+    "center_of_mass" of the cluster.
+
+    '

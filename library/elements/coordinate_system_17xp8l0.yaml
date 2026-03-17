@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: PlanarSectioning
-  name: coordinate_system
-  description: Only required if different from the Procedures.coordinate_system

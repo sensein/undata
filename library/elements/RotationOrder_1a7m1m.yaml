@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - XYZ
+    - XZY
+    - YXZ
+    - YZX
+    - ZXY
+    - ZYX
+    - n/a
+provenance:
+- source: bids
+  class: metadata
+  name: RotationOrder
+  description: 'Specify the sequence in which the elemental 3D extrinsic rotations
+    are applied around the three distinct axes.
+
+    '

@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: nwb
-  class: IntracellularResponsesTable
-  name: description
-  description: Description of what is in this dynamic table.

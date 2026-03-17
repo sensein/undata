@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: AcquisitionSubjectDetails
-  name: mouse_platform_name
-  description: The surface that the mouse is on during the acquisition

@@ -1,7 +1,0 @@
-semantic:
-  data_type: boolean
-provenance:
-- source: aind
-  class: MRIScan
-  name: setup
-  description: Positioning, shim, and other pre-scan adjustments

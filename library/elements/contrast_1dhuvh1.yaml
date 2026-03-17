@@ -1,7 +1,0 @@
-semantic:
-  data_type: integer
-provenance:
-- source: aind
-  class: Monitor
-  name: contrast
-  description: Monitor's contrast setting

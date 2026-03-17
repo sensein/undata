@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: dandi
-  class: Person
-  name: name
-  description: 'Use the format: familyname, given names ...'

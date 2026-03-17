@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/device_name_qsvih8
+  mixins: []
+provenance:
+- source: aind
+  name: DeviceConfig

@@ -1,7 +1,0 @@
-semantic:
-  data_type: object
-provenance:
-- source: aind
-  class: FiberAssemblyConfig
-  name: manipulator
-  description: Configuration of a manipulator

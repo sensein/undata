@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: nwb
-  class: ProcessingModule
-  name: description
-  description: Description of this collection of processed data.

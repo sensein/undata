@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - single-coil
+    - double-coil
+provenance:
+- source: bids
+  class: metadata
+  name: CASLType
+  description: 'Describes if a separate coil is used for labeling.
+
+    '

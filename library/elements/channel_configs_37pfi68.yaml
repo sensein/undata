@@ -1,7 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: aind
-  class: OlfactometerConfig
-  name: channel_configs
-  description: List of channels with their odorant and concentration

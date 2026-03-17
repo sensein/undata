@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: epigenomic
+provenance:
+- source: bids
+  raw_value: Epigenomic

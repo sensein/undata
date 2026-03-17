@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: Disc
-  name: encoder_firmware
-  description: Firmware to read from decoder chip counts

@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
-from ..models import ProvenanceEntry, SemanticIdentity
+import enum
+
+from ..models import Constraints, ProvenanceEntry, SemanticIdentity
 
 
 def extract_dandi() -> list[tuple[SemanticIdentity, ProvenanceEntry]]:
@@ -22,7 +24,19 @@ def extract_dandi() -> list[tuple[SemanticIdentity, ProvenanceEntry]]:
         for field_name, field_info in cls.model_fields.items():
             dt = _pydantic_type(field_info)
             desc = field_info.description or ""
-            sem = SemanticIdentity(data_type=dt)
+
+            # Extract enum values from Pydantic field annotations
+            constraints = None
+            ann = field_info.annotation
+            if ann is not None:
+                # Check if it's an Enum type or Optional[Enum]
+                enum_cls = _extract_enum_class(ann)
+                if enum_cls:
+                    allowed = [str(v.value) for v in enum_cls]
+                    if allowed:
+                        constraints = Constraints(allowed_values=allowed)
+
+            sem = SemanticIdentity(data_type=dt, constraints=constraints)
             prov = ProvenanceEntry(
                 source="dandi",
                 **{"class": cls_name},
@@ -32,6 +46,20 @@ def extract_dandi() -> list[tuple[SemanticIdentity, ProvenanceEntry]]:
             results.append((sem, prov))
 
     return results
+
+
+def _extract_enum_class(annotation) -> type | None:
+    """Extract an Enum class from a type annotation (including Optional, Union)."""
+    import typing
+
+    origin = getattr(annotation, "__origin__", None)
+    if origin is typing.Union:
+        for arg in annotation.__args__:
+            if isinstance(arg, type) and issubclass(arg, enum.Enum):
+                return arg
+    if isinstance(annotation, type) and issubclass(annotation, enum.Enum):
+        return annotation
+    return None
 
 
 def _pydantic_type(field_info) -> str:

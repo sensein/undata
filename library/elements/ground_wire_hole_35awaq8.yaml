@@ -1,7 +1,0 @@
-semantic:
-  data_type: integer
-provenance:
-- source: aind
-  class: GroundWireImplant
-  name: ground_wire_hole
-  description: For SHIELD implants, the hole number for the ground wire

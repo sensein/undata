@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: mni152nlin2009casym
+provenance:
+- source: bids
+  raw_value: MNI152NLin2009cAsym

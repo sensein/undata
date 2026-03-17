@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: Slap2Plane
-  name: specimen_id
-  description: 'Unique index identifying the cell being imaged: <subject_id>_###'

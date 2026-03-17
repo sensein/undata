@@ -1,0 +1,21 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/HP_0002070
+  data_type: string
+provenance:
+- source: bids
+  class: columns
+  name: handedness
+  description: 'String value indicating one of "left", "right", "ambidextrous".
+
+
+    For "left", use one of these values: `left`, `l`, `L`, `LEFT`, `Left`.
+
+
+    For "right", use one of these values: `right`, `r`, `R`, `RIGHT`, `Right`.
+
+
+    For "ambidextrous", use one of these values: `ambidextrous`, `a`, `A`, `AMBIDEXTROUS`,
+
+    `Ambidextrous`.
+
+    '

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - CASL
+    - PCASL
+    - PASL
+provenance:
+- source: bids
+  class: metadata
+  name: ArterialSpinLabelingType
+  description: 'The arterial spin labeling type.
+
+    '

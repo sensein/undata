@@ -1,7 +1,0 @@
-semantic:
-  data_type: object
-provenance:
-- source: aind
-  class: PatchClampEphysAssembly
-  name: manipulator
-  description: Manipulator used on a dome module

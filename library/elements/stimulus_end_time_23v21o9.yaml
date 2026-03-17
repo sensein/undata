@@ -1,8 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: StimulusEpoch
-  name: stimulus_end_time
-  description: When a specific stimulus ends. This might be the same as the acquisition
-    end time.

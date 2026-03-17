@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/awardNumber_17vvdb
+  - https://schema.undata.live/elements/email_1lcybc
+  - https://schema.undata.live/elements/id_6m21wn
+  - https://schema.undata.live/elements/identifier_a6z609
+  - https://schema.undata.live/elements/includeInCitation_khy68k
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/roleName_nbm38b
+  - https://schema.undata.live/elements/schemaKey_17x9km
+  - https://schema.undata.live/elements/url_e078lo
+  mixins: []
+provenance:
+- source: dandi
+  name: Contributor

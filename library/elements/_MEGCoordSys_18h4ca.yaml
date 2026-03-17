@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - CTF
+    - ElektaNeuromag
+    - NeuromagElektaMEGIN
+    - 4DBti
+    - KitYokogawa
+    - ChietiItab
+    - Other
+provenance:
+- source: bids
+  class: enums
+  name: _MEGCoordSys

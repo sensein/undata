@@ -1,7 +1,0 @@
-semantic:
-  data_type: integer
-provenance:
-- source: aind
-  class: VolumeCalibration
-  name: repeats
-  description: If each input was repeated multiple times, provide the number of repeats

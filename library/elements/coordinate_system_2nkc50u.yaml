@@ -1,8 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: Surgery
-  name: coordinate_system
-  description: Only required when the Surgery.coordinate_system is different from
-    the Procedures.coordinate_system

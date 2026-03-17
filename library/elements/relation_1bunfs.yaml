@@ -1,8 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: dandi
-  class: Resource
-  name: relation
-  description: 'Indicates how the resource is related to the dataset. This relation
-    should satisfy: dandiset <relation> resource.'

@@ -1,7 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: aind
-  class: ProbeConfig
-  name: transform
-  description: Entry coordinate, depth, and rotation in the Acquisition.coordinate_system

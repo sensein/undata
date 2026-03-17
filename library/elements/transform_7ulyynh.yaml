@@ -1,8 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: aind
-  class: MISCameraConfig
-  name: transform
-  description: Position and orientation of the device in the instrument coordinate
-    system

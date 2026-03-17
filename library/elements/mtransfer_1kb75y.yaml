@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - 'on'
+    - 'off'
+provenance:
+- source: bids
+  class: entities
+  name: mtransfer
+  description: 'If files belonging to an entity-linked file collection are acquired
+    at different
+
+    magnetization transfer (MT) states, the `_mt-<label>` entity MUST be used to
+
+    distinguish individual files.
+
+
+    This entity represents the `"MTState"` metadata field.
+
+    Therefore, if the `mt-<label>` entity is present in a filename,
+
+    `"MTState"` MUST be defined in the associated metadata.
+
+    Allowed label values for this entity are `on` and `off`,
+
+    for images acquired in presence and absence of an MT pulse, respectively.
+
+    '

@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: icbm452airspace
+provenance:
+- source: bids
+  raw_value: ICBM452AirSpace

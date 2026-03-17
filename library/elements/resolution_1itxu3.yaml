@@ -1,0 +1,8 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C48049
+  data_type: float
+provenance:
+- source: nwb
+  class: Image
+  name: resolution
+  description: Pixel resolution of the image, in pixels per centimeter.

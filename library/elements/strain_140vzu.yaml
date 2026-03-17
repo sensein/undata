@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: nwb
-  class: Subject
-  name: strain
-  description: Strain of subject.

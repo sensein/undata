@@ -1,9 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: bids
-  class: metadata
-  name: Format
-  description: 'Permitted formats for values in the described column.
-
-    '

@@ -1,8 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: dandi
-  class: Participant
-  name: age
-  description: A representation of age using ISO 8601 duration. This should include
-    a valueReference if anything other than date of birth is used.

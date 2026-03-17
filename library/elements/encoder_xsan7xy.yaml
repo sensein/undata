@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: Disc
-  name: encoder
-  description: Encoder hardware type

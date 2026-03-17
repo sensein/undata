@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: nwb
-  class: ImagingPlane
-  name: description
-  description: Description of the imaging plane.

@@ -1,8 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: AcquisitionSubjectDetails
-  name: anaesthesia
-  description: Anaesthesia present during entire acquisition, use Manipulation for
-    partial anaesthesia

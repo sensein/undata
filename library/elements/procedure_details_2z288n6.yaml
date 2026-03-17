@@ -1,7 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: aind
-  class: SpecimenProcedure
-  name: procedure_details
-  description: Details of the procedures, including reagents and sectioning information.

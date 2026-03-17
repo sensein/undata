@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - in vivo
+    - ex vivo
+    - in vitro
+provenance:
+- source: bids
+  class: metadata
+  name: SampleEnvironment
+  description: 'Environment in which the sample was imaged. MUST be one of: `"in vivo"`,
+    `"ex vivo"`
+
+    or `"in vitro"`.
+
+    '

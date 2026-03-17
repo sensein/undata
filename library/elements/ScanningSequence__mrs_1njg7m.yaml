@@ -1,9 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: bids
-  class: metadata
-  name: ScanningSequence__mrs
-  description: 'Description of the type of data acquired.
-
-    '

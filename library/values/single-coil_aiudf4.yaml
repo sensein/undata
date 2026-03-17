@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: single-coil
+provenance:
+- source: bids
+  raw_value: single-coil

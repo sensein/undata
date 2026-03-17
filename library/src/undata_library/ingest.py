@@ -38,6 +38,10 @@ def ingest_source(
     # Load extractor
     pairs = _extract(source_name, schema_path)
 
+    # Apply curated element mappings (ontology annotations)
+    element_mappings = _load_element_mappings(library_path)
+    pairs = _apply_element_mappings(pairs, element_mappings)
+
     # Load existing hash registry
     registry_path = library_path / "hash-registry.yaml"
     registry = _load_registry(registry_path)
@@ -74,9 +78,16 @@ def ingest_source(
             hash_to_records[sha] = (sem, [], prov.name)
         hash_to_records[sha][1].append(prov)
 
+    # Build reverse lookup: sha256 → existing key (for cross-invocation merging)
+    sha_to_key: dict[str, str] = {entry.sha256: key for key, entry in registry.elements.items()}
+
     for sha, (sem, provs, first_name) in hash_to_records.items():
-        key = generate_short_key(sha, existing_keys)
-        existing_keys.add(key)
+        # Check if this hash already exists in registry (from a prior ingest)
+        if sha in sha_to_key:
+            key = sha_to_key[sha]
+        else:
+            key = generate_short_key(sha, existing_keys)
+            existing_keys.add(key)
 
         attr_name = first_name
         filename = f"{attr_name}_{key}.yaml"
@@ -124,6 +135,38 @@ def ingest_source(
         "schemas_created": schema_stats.get("created", 0),
         "values_created": value_stats.get("created", 0),
     }
+
+
+def _load_element_mappings(library_path: Path) -> dict[str, dict]:
+    """Load element-mappings.yaml: attribute_name → {ontology_term, data_type, unit}."""
+    path = library_path / "element-mappings.yaml"
+    if not path.exists():
+        return {}
+    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    return data if isinstance(data, dict) else {}
+
+
+def _apply_element_mappings(
+    pairs: list[tuple[SemanticIdentity, ProvenanceEntry]],
+    mappings: dict[str, dict],
+) -> list[tuple[SemanticIdentity, ProvenanceEntry]]:
+    """Enrich elements with ontology annotations from curated mappings."""
+    if not mappings:
+        return pairs
+
+    enriched = []
+    for sem, prov in pairs:
+        mapping = mappings.get(prov.name)
+        if mapping and sem.ontology_term is None:
+            # Apply ontology mapping
+            sem = SemanticIdentity(
+                ontology_term=mapping.get("ontology_term"),
+                data_type=sem.data_type,
+                unit=mapping.get("unit") or sem.unit,
+                constraints=sem.constraints,
+            )
+        enriched.append((sem, prov))
+    return enriched
 
 
 def _load_value_mappings(library_path: Path) -> dict[str, dict]:

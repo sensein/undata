@@ -1,0 +1,16 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/PATO_0000047
+  data_type: string
+  constraints:
+    allowed_values:
+    - Female
+    - Male
+provenance:
+- source: aind
+  class: HumanSubject
+  name: sex
+  description: Subject sex name
+- source: aind
+  class: MouseSubject
+  name: sex
+  description: Subject sex name

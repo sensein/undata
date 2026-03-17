@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: dandi
-  class: AccessRequirements
-  name: description
-  description: Information about access requirements when embargoed or restricted

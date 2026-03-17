@@ -1,9 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: MouseAnatomyModel
-  name: name
-- source: aind
-  class: MouseAnatomyModel
-  name: name

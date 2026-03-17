@@ -1,7 +1,0 @@
-semantic:
-  data_type: array
-provenance:
-- source: dandi
-  class: Participant
-  name: genotype
-  description: Genotype descriptor of participant or subject if available

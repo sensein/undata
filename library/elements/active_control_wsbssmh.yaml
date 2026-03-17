@@ -1,8 +1,0 @@
-semantic:
-  data_type: boolean
-provenance:
-- source: aind
-  class: MousePlatformConfig
-  name: active_control
-  description: True when movement of the mouse platform is dynamically controlled
-    by the experimenter

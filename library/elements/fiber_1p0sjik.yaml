@@ -1,7 +1,0 @@
-semantic:
-  data_type: object
-provenance:
-- source: aind
-  class: LaserAssembly
-  name: fiber
-  description: Description of a patch cord

@@ -1,7 +1,0 @@
-semantic:
-  data_type: float
-provenance:
-- source: aind
-  class: Craniotomy
-  name: size
-  description: Diameter or side length

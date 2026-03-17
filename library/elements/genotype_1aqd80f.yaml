@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: aind
-  class: MouseSubject
-  name: genotype
-  description: Genotype of the animal providing both alleles

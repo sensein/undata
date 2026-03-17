@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/device_name_7ffcz7
+  - https://schema.undata.live/elements/power_1nq2zv
+  - https://schema.undata.live/elements/power_measured_at_czxw87
+  - https://schema.undata.live/elements/power_unit_2lz3e9
+  - https://schema.undata.live/elements/wavelength_1bhrvx
+  - https://schema.undata.live/elements/wavelength_unit_14a1ej
+  mixins: []
+provenance:
+- source: aind
+  name: LaserConfig

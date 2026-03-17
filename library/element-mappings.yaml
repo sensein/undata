@@ -1,0 +1,69 @@
+# Curated element mappings: attribute name → ontology term
+# When an element has an ontology_term, the _attribute and _class disambiguators
+# drop out of the hash, and cross-source elements with the same ontology merge.
+
+# Format: attribute_name → {ontology_term, data_type, unit (optional)}
+# Applied during ingestion when the attribute name + class match.
+
+# Demographics / subject metadata
+age:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C25150
+  data_type: string
+sex:
+  ontology_term: http://purl.obolibrary.org/obo/PATO_0000047
+  data_type: string
+species:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C45293
+  data_type: string
+strain:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C14419
+  data_type: string
+genotype:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C16631
+  data_type: string
+handedness:
+  ontology_term: http://purl.obolibrary.org/obo/HP_0002070
+  data_type: string
+weight:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C25208
+  data_type: float
+  unit: gram
+
+# Recording / acquisition
+sampling_frequency:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C73600
+  data_type: float
+  unit: hertz
+resolution:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C48049
+  data_type: float
+manufacturer:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C25392
+  data_type: string
+serial_number:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C68828
+  data_type: string
+power:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C48232
+  data_type: float
+  unit: watt
+
+# Metadata
+description:
+  ontology_term: http://purl.obolibrary.org/obo/IAO_0000300
+  data_type: string
+name:
+  ontology_term: http://schema.org/name
+  data_type: string
+status:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C25688
+  data_type: string
+url:
+  ontology_term: http://schema.org/url
+  data_type: string
+id:
+  ontology_term: http://schema.org/identifier
+  data_type: string
+source:
+  ontology_term: http://purl.org/dc/terms/source
+  data_type: string

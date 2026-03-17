@@ -1,0 +1,23 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C48049
+  data_type: string
+provenance:
+- source: bids
+  class: entities
+  name: resolution
+  description: 'Resolution of regularly sampled N-dimensional data.
+
+
+    This entity represents the `"Resolution"` metadata field.
+
+    Therefore, if the `res-<label>` entity is present in a filename,
+
+    `"Resolution"` MUST also be added in the JSON file, to provide interpretation.
+
+
+    This entity is only applicable to derivative data.
+
+    '
+- source: aind
+  class: MRIScan
+  name: resolution

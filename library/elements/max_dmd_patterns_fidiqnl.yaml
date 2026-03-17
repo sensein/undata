@@ -1,6 +1,0 @@
-semantic:
-  data_type: integer
-provenance:
-- source: aind
-  class: DigitalMicromirrorDevice
-  name: max_dmd_patterns

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from ..models import ProvenanceEntry, SemanticIdentity
+from ..models import Constraints, ProvenanceEntry, SemanticIdentity
 
 _TYPE_MAP = {
     "string": "string",
@@ -36,7 +36,16 @@ def extract_bids() -> list[tuple[SemanticIdentity, ProvenanceEntry]]:
                 continue
             dt = _bids_type(field_def)
             desc = str(field_def.get("description", "") or "")
-            sem = SemanticIdentity(data_type=dt)
+
+            # Extract enum values
+            constraints = None
+            enum_vals = field_def.get("enum") if hasattr(field_def, "get") else None
+            if enum_vals and hasattr(enum_vals, "__iter__"):
+                allowed = [str(v) for v in enum_vals if v is not None]
+                if allowed:
+                    constraints = Constraints(allowed_values=allowed)
+
+            sem = SemanticIdentity(data_type=dt, constraints=constraints)
             prov = ProvenanceEntry(
                 source="bids",
                 **{"class": cat_name},

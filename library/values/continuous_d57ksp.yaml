@@ -2,5 +2,7 @@ semantic:
   value_type: categorical
   label: continuous
 provenance:
+- source: bids
+  raw_value: continuous
 - source: aind
   raw_value: Continuous

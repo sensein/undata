@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/curation_history_154svh
+  - https://schema.undata.live/elements/evaluated_assets_1w8oay
+  - https://schema.undata.live/elements/modality_1ub9f3
+  - https://schema.undata.live/elements/reference_8igf0m
+  - https://schema.undata.live/elements/stage_yrkgf2
+  - https://schema.undata.live/elements/status_history_1n7lmc
+  - https://schema.undata.live/elements/tags_111yg2
+  - https://schema.undata.live/elements/type_s1qht6
+  - https://schema.undata.live/elements/value_4svni8
+  mixins: []
+provenance:
+- source: aind
+  name: CurationMetric

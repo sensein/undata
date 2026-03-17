@@ -1,6 +1,0 @@
-semantic:
-  data_type: integer
-provenance:
-- source: aind
-  class: HCRSeries
-  name: number_of_rounds

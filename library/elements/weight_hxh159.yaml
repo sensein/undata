@@ -1,0 +1,10 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C25208
+  data_type: string
+  unit: gram
+provenance:
+- source: nwb
+  class: Subject
+  name: weight
+  description: Weight at time of experiment, at time of surgery and at other important
+    times.

@@ -1,9 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: bids
-  class: metadata
-  name: ArterialSpinLabelingType
-  description: 'The arterial spin labeling type.
-
-    '

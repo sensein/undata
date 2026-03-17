@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: nwb
-  class: Device
-  name: serial_number
-  description: The serial number of the device.

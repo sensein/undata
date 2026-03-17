@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: dcite:image
+provenance:
+- source: dandi
+  raw_value: dcite:Image

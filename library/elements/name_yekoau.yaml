@@ -1,7 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: dandi
-  class: Anatomy
-  name: name
-  description: The name of the item.

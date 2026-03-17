@@ -1,7 +1,0 @@
-semantic:
-  data_type: float
-provenance:
-- source: nwb
-  class: Image
-  name: resolution
-  description: Pixel resolution of the image, in pixels per centimeter.

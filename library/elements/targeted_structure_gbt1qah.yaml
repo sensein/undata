@@ -1,7 +1,0 @@
-semantic:
-  data_type: object
-provenance:
-- source: aind
-  class: CatheterConfig
-  name: targeted_structure
-  description: Use options from MouseBloodVessels

@@ -1,9 +1,0 @@
-semantic:
-  data_type: string
-provenance:
-- source: bids
-  class: metadata
-  name: PCASLType
-  description: 'The type of gradient pulses used in the `control` condition.
-
-    '
