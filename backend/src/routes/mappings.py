@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from sqlalchemy import func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from ..models.db import get_session
+from ..db.session import get_db
 from ..models.mapping import ElementMapping
 
 router = APIRouter(prefix="/api/v1/mappings", tags=["mappings-v2"])
@@ -56,7 +56,7 @@ def _mapping_to_response(m: ElementMapping) -> MappingResponse:
 @router.post("", status_code=201)
 async def create_mapping(
     body: MappingCreateRequest,
-    session: AsyncSession = Depends(get_session),
+    session: AsyncSession = Depends(get_db),
 ):
     mapping = ElementMapping(
         source_element_uri=body.source_element_uri,
@@ -80,7 +80,7 @@ async def list_mappings(
     function_type: str | None = Query(None),
     limit: int = Query(100, le=1000),
     offset: int = Query(0, ge=0),
-    session: AsyncSession = Depends(get_session),
+    session: AsyncSession = Depends(get_db),
 ) -> MappingListResponse:
     stmt = select(ElementMapping)
     count_stmt = select(func.count(ElementMapping.id))

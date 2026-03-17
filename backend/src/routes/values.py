@@ -12,7 +12,7 @@ from undata_library.hashing import (
     generate_short_key,
 )
 
-from ..models.db import get_session
+from ..db.session import get_db
 from ..models.value import ValueConcept, ValueProvenance
 
 router = APIRouter(prefix="/api/v1/values", tags=["values-v2"])
@@ -45,7 +45,7 @@ def _value_to_response(v: ValueConcept) -> ValueResponse:
 @router.post("", status_code=201)
 async def create_value(
     body: ValueCreateRequest,
-    session: AsyncSession = Depends(get_session),
+    session: AsyncSession = Depends(get_db),
 ):
     sem_dict = dict(body.semantic)
     sha = compute_sha256(canonical_json(sem_dict))
@@ -87,7 +87,7 @@ async def list_values(
     source: str | None = Query(None),
     limit: int = Query(100, le=1000),
     offset: int = Query(0, ge=0),
-    session: AsyncSession = Depends(get_session),
+    session: AsyncSession = Depends(get_db),
 ) -> ValueListResponse:
     from sqlalchemy import func
 

@@ -14,7 +14,7 @@
 - [X] T006 Create Alembic migration `0004_v2_tables.py`: add all v2 tables (non-destructive, old tables untouched)
 - [X] T007 Write `backend/src/services/element_service.py`: `create_or_merge(semantic, provenance)` — computes hash via `undata_library.hashing`, checks existence, appends provenance or creates new; returns URI
 - [X] T008 Write tests for element_service: (a) create new element returns URI; (b) same semantic graph returns same URI + appends provenance; (c) different graph returns different URI
-- [ ] T009 Run migration + tests; commit Phase 1
+- [X] T009 Run migration + tests; commit Phase 1
 
 ## Phase 2: Data Migration
 
@@ -30,7 +30,7 @@
 - [X] T016 [P] Create `backend/src/routes/mappings.py`: `POST/GET /api/v2/mappings`
 - [X] T017 Register v2 routes in `backend/src/main.py`
 - [X] T018 Write API tests: (a) POST element → 201 with URI; (b) POST same semantic → 200 with merged provenance; (c) GET elements filters by source; (d) GET element by URI returns full provenance
-- [ ] T019 Run tests; commit Phase 3
+- [X] T019 Run tests; commit Phase 3
 
 ## Phase 4: Library Export/Import via v2 API
 
@@ -50,15 +50,15 @@
 - [X] T030 Update `frontend/components/ElementCard.tsx`: show cross-source badge (provenance count > 1)
 - [X] T031 Update nav in `frontend/app/layout.tsx`: add Values link
 - [X] T032 Write vitest tests for ElementDetailV2, ValueConceptCard, MappingExplorer
-- [ ] T033 Lint + build; commit Phase 5
+- [X] T033 Lint + build; commit Phase 5
 
 ## Phase 6: Deprecate v1 + Polish
 
 - [ ] T034 Create backward-compatible v1 wrappers: `/api/v1/elements` routes to v2 with flat response format
-- [ ] T035 Update all backend tests to use v2 models
+- [X] T035 Update all backend tests to use v2 models
 - [X] T036 Update `README.md` (root + library) with v2 architecture diagram
 - [X] T037 Update CLAUDE.md
-- [ ] T038 Final commit and push
+- [X] T038 Final commit and push
 
 ---
 

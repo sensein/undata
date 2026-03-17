@@ -1,151 +1,107 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { RelationshipGraph } from "@/components/RelationshipGraph";
-import type { DataElementDetail as ElementDetailType } from "@/lib/types";
-import Link from "next/link";
+import type { DataElement } from "@/lib/types";
 
-interface Props {
-  element: ElementDetailType;
+interface ElementDetailProps {
+  element: DataElement;
 }
 
-export function ElementDetail({ element }: Props) {
+export function ElementDetail({ element }: ElementDetailProps) {
+  const { semantic, provenance } = element;
+
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">{element.name}</h1>
-        <div className="mt-2 flex gap-2">
-          <Badge variant="outline">{element.data_type}</Badge>
-          <Badge variant="secondary">{element.source.name}</Badge>
-          {element.required && <Badge>required</Badge>}
-          {element.multivalued && <Badge variant="outline">multi</Badge>}
-        </div>
-      </div>
-
-      {element.description && (
-        <p className="text-muted-foreground">{element.description}</p>
-      )}
-
-      <div className="grid gap-6 md:grid-cols-2">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">Metadata</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2 text-sm">
-            <Row label="Version" value={String(element.version_num)} />
-            <Row label="Created" value={element.created_at} />
-            {element.allowed_values && (
-              <Row
-                label="Allowed values"
-                value={element.allowed_values.join(", ")}
-              />
-            )}
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">
-              Aliases ({element.alias_groups.length})
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            {element.alias_groups.length === 0 ? (
-              <p className="text-sm text-muted-foreground">No aliases</p>
-            ) : (
-              <ul className="space-y-1 text-sm">
-                {element.alias_groups.map((ag) => (
-                  <li key={ag.id}>
-                    <Link
-                      href={`/aliases/${ag.id}`}
-                      className="text-blue-600 hover:underline"
-                    >
-                      {ag.name}
-                    </Link>
-                    <span className="text-muted-foreground">
-                      {" "}
-                      ({ag.member_count} members, {ag.sssom_predicate})
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">
-              Mappings as Input ({element.mappings_as_input.length})
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            {element.mappings_as_input.length === 0 ? (
-              <p className="text-sm text-muted-foreground">None</p>
-            ) : (
-              <ul className="space-y-1 text-sm">
-                {element.mappings_as_input.map((m) => (
-                  <li key={m.id}>
-                    <Badge variant="outline" className="mr-1">
-                      {m.function_type}
-                    </Badge>
-                    {m.output_name && (
-                      <span className="text-muted-foreground">
-                        &rarr; {m.output_name}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">
-              Mappings as Output ({element.mappings_as_output.length})
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            {element.mappings_as_output.length === 0 ? (
-              <p className="text-sm text-muted-foreground">None</p>
-            ) : (
-              <ul className="space-y-1 text-sm">
-                {element.mappings_as_output.map((m) => (
-                  <li key={m.id}>
-                    <Badge variant="outline" className="mr-1">
-                      {m.function_type}
-                    </Badge>
-                    {m.input_names && (
-                      <span className="text-muted-foreground">
-                        &larr; {m.input_names.join(", ")}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </CardContent>
-        </Card>
+        <h1 className="text-2xl font-bold">
+          {provenance[0]?.name || "Unknown"}
+        </h1>
+        <p className="mt-1 font-mono text-sm text-muted-foreground">
+          {element.uri}
+        </p>
+        {provenance.length > 1 && (
+          <Badge variant="secondary" className="mt-2">
+            {provenance.length} sources
+          </Badge>
+        )}
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Relationship Graph</CardTitle>
+          <CardTitle className="text-base">Semantic Identity</CardTitle>
         </CardHeader>
         <CardContent>
-          <RelationshipGraph elementId={element.id} />
+          <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+            <dt className="text-muted-foreground">Data Type</dt>
+            <dd>
+              <Badge variant="outline">{semantic.data_type}</Badge>
+            </dd>
+
+            {semantic.ontology_term && (
+              <>
+                <dt className="text-muted-foreground">Ontology Term</dt>
+                <dd className="break-all font-mono text-xs">
+                  {semantic.ontology_term}
+                </dd>
+              </>
+            )}
+
+            {semantic.unit && (
+              <>
+                <dt className="text-muted-foreground">Unit</dt>
+                <dd>{semantic.unit}</dd>
+              </>
+            )}
+
+            {semantic.constraints && Object.keys(semantic.constraints).length > 0 && (
+              <>
+                <dt className="text-muted-foreground">Constraints</dt>
+                <dd>
+                  <pre className="rounded bg-muted p-2 text-xs">
+                    {JSON.stringify(semantic.constraints, null, 2)}
+                  </pre>
+                </dd>
+              </>
+            )}
+          </dl>
         </CardContent>
       </Card>
-    </div>
-  );
-}
 
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex justify-between">
-      <span className="text-muted-foreground">{label}</span>
-      <span>{value}</span>
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base">
+            Provenance ({provenance.length} source
+            {provenance.length !== 1 ? "s" : ""})
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-3">
+            {provenance.map((p, i) => (
+              <div
+                key={`${p.source}-${p.name}-${i}`}
+                className="rounded border p-3"
+              >
+                <div className="flex items-center gap-2">
+                  <Badge>{p.source}</Badge>
+                  <span className="font-medium">
+                    {p.class}.{p.name}
+                  </span>
+                </div>
+                {p.description && (
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {p.description}
+                  </p>
+                )}
+                <div className="mt-1 flex gap-3 text-xs text-muted-foreground">
+                  {p.required && <span>required</span>}
+                  {p.multivalued && <span>multivalued</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

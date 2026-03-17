@@ -16,7 +16,7 @@ export interface ProvenanceEntry {
   multivalued: boolean | null;
 }
 
-export interface ElementV2 {
+export interface DataElement {
   uri: string;
   semantic: SemanticIdentity;
   provenance: ProvenanceEntry[];

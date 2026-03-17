@@ -12,7 +12,7 @@ from undata_library.hashing import (
     generate_short_key,
 )
 
-from ..models.db import get_session
+from ..db.session import get_db
 from ..models.schema import SchemaProvenance, SchemaShape
 
 router = APIRouter(prefix="/api/v1/schemas", tags=["schemas-v2"])
@@ -48,7 +48,7 @@ def _schema_to_response(s: SchemaShape) -> SchemaResponse:
 @router.post("", status_code=201)
 async def create_schema(
     body: SchemaCreateRequest,
-    session: AsyncSession = Depends(get_session),
+    session: AsyncSession = Depends(get_db),
 ):
     sem_dict = dict(body.semantic)
     sha = compute_sha256(canonical_json(sem_dict))
@@ -100,7 +100,7 @@ async def list_schemas(
     source: str | None = Query(None),
     limit: int = Query(100, le=1000),
     offset: int = Query(0, ge=0),
-    session: AsyncSession = Depends(get_session),
+    session: AsyncSession = Depends(get_db),
 ) -> SchemaListResponse:
     from sqlalchemy import func
 
