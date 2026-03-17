@@ -1,8 +1,0 @@
-semantic:
-  ontology_term: http://purl.obolibrary.org/obo/NCIT_C45293
-  data_type: array
-provenance:
-- source: dandi
-  class: AssetsSummary
-  name: species
-  description: ''

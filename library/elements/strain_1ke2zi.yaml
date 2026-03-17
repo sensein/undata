@@ -10,6 +10,10 @@ provenance:
     the strain of the species, for example: `C57BL/6J`.
 
     '
+- source: dandi
+  class: Participant
+  name: strain
+  description: Identifier for the strain of the participant or subject.
 - source: nwb
   class: Subject
   name: strain
@@ -17,7 +21,3 @@ provenance:
 - source: aind
   class: MouseSubject
   name: strain
-- source: dandi
-  class: Participant
-  name: strain
-  description: Identifier for the strain of the participant or subject.

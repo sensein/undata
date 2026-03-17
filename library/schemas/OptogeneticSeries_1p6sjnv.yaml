@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/OptogeneticSeries_s6bk93
-  - https://schema.undata.live/elements/data_1eor3g
-  mixins: []
-provenance:
-- source: nwb
-  name: OptogeneticSeries

@@ -1,7 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/GrayscaleImage_gwliwm
-  mixins: []
-provenance:
-- source: nwb
-  name: GrayscaleImage

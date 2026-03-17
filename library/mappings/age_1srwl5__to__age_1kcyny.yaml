@@ -1,8 +1,0 @@
-source_element: https://schema.undata.live/elements/age_1srwl5
-target_element: https://schema.undata.live/elements/age_1kcyny
-function_type: unit_conversion
-expression: int(value[1:-1])
-expression_type: python
-sssom_predicate: skos:closeMatch
-provenance:
-- source: curated

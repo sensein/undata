@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/Image_1vj4sq
-  - https://schema.undata.live/elements/resolution_1itxu3
-  mixins: []
-provenance:
-- source: nwb
-  name: Image

@@ -1,8 +1,0 @@
-semantic:
-  ontology_term: http://purl.obolibrary.org/obo/NCIT_C45293
-  data_type: object
-provenance:
-- source: aind
-  class: HumanSubject
-  name: species
-  description: Base model for species

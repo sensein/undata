@@ -10,6 +10,7 @@
 # Age is source-dependent:
 # - BIDS: numeric (years), NWB: ISO 8601 duration string, DANDI: string
 # These produce different hashes → separate elements → linked by mapping
+# Age: BIDS uses numeric years; NWB and DANDI both use ISO 8601 duration
 age:
   ontology_term: http://purl.obolibrary.org/obo/NCIT_C25150
   data_type: float
@@ -20,6 +21,7 @@ age:
       unit: iso8601_duration
     dandi:
       data_type: string
+      unit: iso8601_duration
 
 sex:
   ontology_term: http://purl.obolibrary.org/obo/PATO_0000047

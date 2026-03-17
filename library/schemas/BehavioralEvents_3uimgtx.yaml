@@ -1,7 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/BehavioralEvents_20ymuk
-  mixins: []
-provenance:
-- source: nwb
-  name: BehavioralEvents

@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/device_name_s9m8tz
-  - https://schema.undata.live/elements/volume_me14si
-  - https://schema.undata.live/elements/volume_unit_s9ez7l
-  mixins: []
-provenance:
-- source: aind
-  name: SpeakerConfig

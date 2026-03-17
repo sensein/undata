@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/timestamp_1ndb19
-  - https://schema.undata.live/elements/usage_4w7p6z
-  mixins: []
-provenance:
-- source: aind
-  name: ResourceTimestamped

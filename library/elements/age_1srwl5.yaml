@@ -3,6 +3,11 @@ semantic:
   data_type: string
   unit: iso8601_duration
 provenance:
+- source: dandi
+  class: Participant
+  name: age
+  description: A representation of age using ISO 8601 duration. This should include
+    a valueReference if anything other than date of birth is used.
 - source: nwb
   class: Subject
   name: age

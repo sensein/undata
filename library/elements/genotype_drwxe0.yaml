@@ -1,8 +1,0 @@
-semantic:
-  ontology_term: http://purl.obolibrary.org/obo/NCIT_C16631
-  data_type: array
-provenance:
-- source: dandi
-  class: Participant
-  name: genotype
-  description: Genotype descriptor of participant or subject if available

@@ -1,8 +1,0 @@
-semantic:
-  ontology_term: http://purl.obolibrary.org/obo/NCIT_C14419
-  data_type: integer
-provenance:
-- source: dandi
-  class: Participant
-  name: strain
-  description: Identifier for the strain of the participant or subject.

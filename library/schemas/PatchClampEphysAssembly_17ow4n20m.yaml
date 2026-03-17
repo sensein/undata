@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/headstage_8bl4c6
-  - https://schema.undata.live/elements/manipulator_fi13pp
-  - https://schema.undata.live/elements/name_1c9a6l
-  mixins: []
-provenance:
-- source: aind
-  name: PatchClampEphysAssembly

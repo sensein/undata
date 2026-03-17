@@ -2,6 +2,10 @@ semantic:
   ontology_term: http://purl.obolibrary.org/obo/NCIT_C16631
   data_type: string
 provenance:
+- source: dandi
+  class: Participant
+  name: genotype
+  description: Genotype descriptor of participant or subject if available
 - source: nwb
   class: Subject
   name: genotype
@@ -10,7 +14,3 @@ provenance:
   class: MouseSubject
   name: genotype
   description: Genotype of the animal providing both alleles
-- source: dandi
-  class: Participant
-  name: genotype
-  description: Genotype descriptor of participant or subject if available

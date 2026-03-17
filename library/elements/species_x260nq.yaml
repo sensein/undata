@@ -18,6 +18,10 @@ provenance:
 
     '
 - source: dandi
+  class: AssetsSummary
+  name: species
+  description: ''
+- source: dandi
   class: Participant
   name: species
   description: An identifier indicating the taxonomic classification of the participant
@@ -29,6 +33,10 @@ provenance:
 - source: aind
   class: ProteinProbe
   name: species
+- source: aind
+  class: HumanSubject
+  name: species
+  description: Base model for species
 - source: aind
   class: MouseSubject
   name: species
