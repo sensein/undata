@@ -137,47 +137,79 @@ async def client(db_session: AsyncSession) -> AsyncGenerator[AsyncClient, None]:
 
 @pytest_asyncio.fixture()
 async def mock_admin_user(db_session: AsyncSession) -> UserProfile:
-    """Create an admin UserProfile in the test DB."""
-    user = UserProfile(
-        external_sub="admin-sub",
-        external_iss="https://test.issuer",
-        email="admin@test.local",
-        display_name="Test Admin",
-        is_active=True,
-    )
-    db_session.add(user)
-    await db_session.flush()
+    """Create or retrieve an admin UserProfile in the test DB."""
+    from sqlalchemy import select
 
-    role = UserRole(user_id=user.id, role="admin", granted_by=user.id)
-    db_session.add(role)
-    await db_session.flush()
+    stmt = select(UserProfile).where(
+        UserProfile.external_sub == "admin-sub",
+        UserProfile.external_iss == "https://test.issuer",
+    )
+    result = await db_session.execute(stmt)
+    user = result.scalar_one_or_none()
+
+    if user is None:
+        user = UserProfile(
+            external_sub="admin-sub",
+            external_iss="https://test.issuer",
+            email="admin@test.local",
+            display_name="Test Admin",
+            is_active=True,
+        )
+        db_session.add(user)
+        await db_session.flush()
+
+        role = UserRole(user_id=user.id, role="admin", granted_by=user.id)
+        db_session.add(role)
+        await db_session.flush()
 
     return user
 
 
 @pytest_asyncio.fixture()
 async def mock_curator_user(db_session: AsyncSession) -> UserProfile:
-    """Create a curator UserProfile in the test DB."""
-    user = UserProfile(
-        external_sub="curator-sub",
-        external_iss="https://test.issuer",
-        email="curator@test.local",
-        display_name="Test Curator",
-        is_active=True,
-    )
-    db_session.add(user)
-    await db_session.flush()
+    """Create or retrieve a curator UserProfile in the test DB."""
+    from sqlalchemy import select
 
-    role = UserRole(user_id=user.id, role="curator", granted_by=user.id)
-    db_session.add(role)
-    await db_session.flush()
+    stmt = select(UserProfile).where(
+        UserProfile.external_sub == "curator-sub",
+        UserProfile.external_iss == "https://test.issuer",
+    )
+    result = await db_session.execute(stmt)
+    user = result.scalar_one_or_none()
+
+    if user is None:
+        user = UserProfile(
+            external_sub="curator-sub",
+            external_iss="https://test.issuer",
+            email="curator@test.local",
+            display_name="Test Curator",
+            is_active=True,
+        )
+        db_session.add(user)
+        await db_session.flush()
+
+        role = UserRole(user_id=user.id, role="curator", granted_by=user.id)
+        db_session.add(role)
+        await db_session.flush()
 
     return user
 
 
 @pytest_asyncio.fixture()
 async def mock_viewer_user(db_session: AsyncSession) -> UserProfile:
-    """Create a viewer UserProfile in the test DB."""
+    """Create or retrieve a viewer UserProfile in the test DB."""
+    from sqlalchemy import select
+
+    stmt = select(UserProfile).where(
+        UserProfile.external_sub == "viewer-sub",
+        UserProfile.external_iss == "https://test.issuer",
+    )
+    result = await db_session.execute(stmt)
+    user = result.scalar_one_or_none()
+
+    if user is not None:
+        return user
+
     user = UserProfile(
         external_sub="viewer-sub",
         external_iss="https://test.issuer",
