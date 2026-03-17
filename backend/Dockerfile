@@ -14,22 +14,26 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
     ln -s /root/.local/bin/uv /usr/local/bin/uv && \
     ln -s /root/.local/bin/uvx /usr/local/bin/uvx
 
-# Create venv and install Python dependencies using uv
-COPY pyproject.toml .
+# Copy and install undata-library (backend depends on it)
+COPY library/ /library/
 RUN uv venv /app/.venv && \
-    uv pip install --python /app/.venv -e ".[dev]"
+    uv pip install --python /app/.venv -e /library
+
+# Install backend Python dependencies
+COPY backend/pyproject.toml .
+RUN uv pip install --python /app/.venv -e ".[dev]"
 
 ENV PATH="/app/.venv/bin:$PATH"
 ENV VIRTUAL_ENV="/app/.venv"
 
-COPY src/ ./src/
-COPY tests/ ./tests/
-COPY alembic.ini ./alembic.ini
-COPY pytest.ini ./pytest.ini
-COPY entrypoint.sh ./entrypoint.sh
+COPY backend/src/ ./src/
+COPY backend/tests/ ./tests/
+COPY backend/alembic.ini ./alembic.ini
+COPY backend/pytest.ini ./pytest.ini
+COPY backend/entrypoint.sh ./entrypoint.sh
 
 # Bundle QUDT vocabulary for unit resolution
-COPY data/ ./data/
+COPY backend/data/ ./data/
 
 RUN chmod +x entrypoint.sh
 

@@ -59,7 +59,9 @@ services:
       retries: 10
 
   backend:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     ports:
       - "${BACKEND_PORT:-8002}:8002"
     environment:
