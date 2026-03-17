@@ -81,9 +81,8 @@ class TestAuthIntegration:
             "/api/v1/elements",
             headers={"Authorization": f"Bearer {viewer_token}"},
             json={
-                "name": "test_var",
-                "data_type": "integer",
-                "source_id": str(uuid4()),
+                "semantic": {"data_type": "integer"},
+                "provenance": [{"source": "test", "class": "Test", "name": "test_var"}],
             },
         )
         assert response.status_code == 403, f"Expected 403, got {response.status_code}"
