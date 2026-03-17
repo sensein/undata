@@ -82,6 +82,11 @@ def build_element_uri(attribute: str, key: str) -> str:
     return f"{BASE_URI}/elements/{attribute}_{key}"
 
 
+def build_value_uri(label: str, key: str) -> str:
+    """Build a full value concept URI from label and short key."""
+    return f"{BASE_URI}/values/{label}_{key}"
+
+
 def build_schema_uri(name: str, key: str) -> str:
     """Build a full schema URI from class name and short key."""
     return f"{BASE_URI}/schemas/{name}_{key}"

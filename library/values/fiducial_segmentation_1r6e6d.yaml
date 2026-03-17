@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: fiducial_segmentation
+provenance:
+- source: aind
+  raw_value: Fiducial segmentation

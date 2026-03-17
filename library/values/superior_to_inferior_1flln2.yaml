@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: superior_to_inferior
+provenance:
+- source: aind
+  raw_value: Superior_to_inferior

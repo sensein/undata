@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: digital_object_identifier_(doi)
+provenance:
+- source: aind
+  raw_value: Digital Object Identifier (DOI)

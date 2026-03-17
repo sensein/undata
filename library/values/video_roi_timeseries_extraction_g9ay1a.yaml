@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: video_roi_timeseries_extraction
+provenance:
+- source: aind
+  raw_value: Video ROI timeseries extraction

@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: research_organization_registry_(ror)
+provenance:
+- source: aind
+  raw_value: Research Organization Registry (ROR)

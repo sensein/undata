@@ -1,0 +1,58 @@
+# Curated value mappings: raw strings → ontology terms
+# Used during ingestion to standardize categorical values across sources.
+
+sex:
+  male:
+    ontology_term: http://purl.obolibrary.org/obo/PATO_0000384
+    aliases: ["Male", "M", "m", "MALE", "male"]
+  female:
+    ontology_term: http://purl.obolibrary.org/obo/PATO_0000383
+    aliases: ["Female", "F", "f", "FEMALE", "female"]
+  other:
+    ontology_term: http://purl.obolibrary.org/obo/PATO_0000047
+    aliases: ["Other", "other", "O", "intersex", "Intersex"]
+
+species:
+  mus_musculus:
+    ontology_term: http://purl.obolibrary.org/obo/NCBITaxon_10090
+    aliases: ["Mus musculus", "mouse", "Mouse", "MOUSE", "Mus_musculus"]
+  rattus_norvegicus:
+    ontology_term: http://purl.obolibrary.org/obo/NCBITaxon_10116
+    aliases: ["Rattus norvegicus", "rat", "Rat", "RAT", "Rattus_norvegicus"]
+  homo_sapiens:
+    ontology_term: http://purl.obolibrary.org/obo/NCBITaxon_9606
+    aliases: ["Homo sapiens", "human", "Human", "HUMAN", "Homo_sapiens"]
+  callithrix_jacchus:
+    ontology_term: http://purl.obolibrary.org/obo/NCBITaxon_9483
+    aliases: ["Callithrix jacchus", "marmoset", "Marmoset", "Callithrix_jacchus"]
+
+handedness:
+  left:
+    ontology_term: http://purl.obolibrary.org/obo/HP_0011712
+    aliases: ["Left", "left", "L", "LEFT", "left-handed"]
+  right:
+    ontology_term: http://purl.obolibrary.org/obo/HP_0011710
+    aliases: ["Right", "right", "R", "RIGHT", "right-handed"]
+  ambidextrous:
+    ontology_term: http://purl.obolibrary.org/obo/HP_0011714
+    aliases: ["Ambidextrous", "ambidextrous", "AMBIDEXTROUS", "both"]
+
+modality:
+  mri:
+    ontology_term: http://purl.obolibrary.org/obo/OBI_0003173
+    aliases: ["MRI", "mri", "magnetic resonance imaging"]
+  eeg:
+    ontology_term: http://purl.obolibrary.org/obo/OBI_0001917
+    aliases: ["EEG", "eeg", "electroencephalography"]
+  meg:
+    ontology_term: http://purl.obolibrary.org/obo/OBI_0001934
+    aliases: ["MEG", "meg", "magnetoencephalography"]
+  ieeg:
+    ontology_term: http://purl.obolibrary.org/obo/OBI_0002458
+    aliases: ["iEEG", "ieeg", "intracranial EEG", "ECoG", "ecog"]
+  pet:
+    ontology_term: http://purl.obolibrary.org/obo/OBI_0001834
+    aliases: ["PET", "pet", "positron emission tomography"]
+  nirs:
+    ontology_term: http://purl.obolibrary.org/obo/OBI_0002910
+    aliases: ["NIRS", "nirs", "fNIRS", "fnirs", "near-infrared spectroscopy"]

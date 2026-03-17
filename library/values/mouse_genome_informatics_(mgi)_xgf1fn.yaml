@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: mouse_genome_informatics_(mgi)
+provenance:
+- source: aind
+  raw_value: Mouse Genome Informatics (MGI)

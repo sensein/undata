@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: '%_m/m'
+provenance:
+- source: aind
+  raw_value: '% m/m'

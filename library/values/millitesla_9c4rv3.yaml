@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: millitesla
+provenance:
+- source: aind
+  raw_value: millitesla

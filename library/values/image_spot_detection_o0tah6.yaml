@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: image_spot_detection
+provenance:
+- source: aind
+  raw_value: Image spot detection

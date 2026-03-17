@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: millimeter
+provenance:
+- source: aind
+  raw_value: millimeter

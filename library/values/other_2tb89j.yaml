@@ -1,0 +1,9 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/PATO_0000047
+  value_type: categorical
+  label: other
+provenance:
+- source: aind
+  raw_value: Other
+- source: aind
+  raw_value: other

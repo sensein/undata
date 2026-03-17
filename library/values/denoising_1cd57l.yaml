@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: denoising
+provenance:
+- source: aind
+  raw_value: Denoising

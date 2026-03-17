@@ -103,7 +103,9 @@ def index(path: str, output: str) -> None:
     out = base / output if not Path(output).is_absolute() else Path(output)
     idx = write_index(base, out)
     click.echo(
-        f"Index written to {out}: {idx['element_count']} elements, {idx['schema_count']} schemas."
+        f"Index written to {out}: "
+        f"{idx['element_count']} elements, {idx['schema_count']} schemas, "
+        f"{idx.get('value_count', 0)} values."
     )
 
 

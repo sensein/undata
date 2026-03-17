@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: image_thresholding
+provenance:
+- source: aind
+  raw_value: Image thresholding

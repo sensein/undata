@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: quinine
+provenance:
+- source: aind
+  raw_value: Quinine

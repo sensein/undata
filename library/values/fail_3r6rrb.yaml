@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: fail
+provenance:
+- source: aind
+  raw_value: Fail

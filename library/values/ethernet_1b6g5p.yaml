@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: ethernet
+provenance:
+- source: aind
+  raw_value: Ethernet

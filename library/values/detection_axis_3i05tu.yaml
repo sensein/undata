@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: detection_axis
+provenance:
+- source: aind
+  raw_value: Detection axis

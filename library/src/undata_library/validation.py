@@ -7,7 +7,13 @@ from pathlib import Path
 import yaml
 from pydantic import ValidationError
 
-from .models import ElementRecord, SchemaRecord, ValidationReport, ValidationViolation
+from .models import (
+    ElementRecord,
+    SchemaRecord,
+    ValidationReport,
+    ValidationViolation,
+    ValueConcept,
+)
 
 
 def validate_file(path: Path) -> ValidationReport:
@@ -50,6 +56,8 @@ def validate_file(path: Path) -> ValidationReport:
     semantic = data.get("semantic", {})
     if "properties" in semantic:
         model_cls = SchemaRecord
+    elif "label" in semantic and "value_type" in semantic:
+        model_cls = ValueConcept
     elif "data_type" in semantic or "ontology_term" in semantic:
         model_cls = ElementRecord
     else:

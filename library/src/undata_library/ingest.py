@@ -9,6 +9,7 @@ import yaml
 from .hashing import (
     build_element_uri,
     build_schema_uri,
+    build_value_uri,
     canonical_json,
     compute_sha256,
     generate_short_key,
@@ -19,6 +20,9 @@ from .models import (
     HashRegistryEntry,
     ProvenanceEntry,
     SemanticIdentity,
+    ValueConcept,
+    ValueProvenance,
+    ValueSemanticIdentity,
 )
 
 
@@ -106,17 +110,135 @@ def ingest_source(
     # Write registry
     _write_registry(registry_path, registry)
 
+    # Extract enum values as ValueConcepts
+    value_stats = _extract_values(source_name, pairs, library_path, registry)
+    _write_registry(registry_path, registry)
+
     # Build schema shapes from class groupings
-    schema_stats = _build_schemas_from_provenance(
-        source_name, library_path, registry
-    )
+    schema_stats = _build_schemas_from_provenance(source_name, library_path, registry)
 
     return {
         "created": created,
         "merged": merged,
         "total": len(hash_to_records),
         "schemas_created": schema_stats.get("created", 0),
+        "values_created": value_stats.get("created", 0),
     }
+
+
+def _load_value_mappings(library_path: Path) -> dict[str, dict]:
+    """Load value-mappings.yaml: raw_value → {ontology_term, label}."""
+    mappings_path = library_path / "value-mappings.yaml"
+    if not mappings_path.exists():
+        return {}
+    data = yaml.safe_load(mappings_path.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        return {}
+
+    # Build a flat lookup: raw_value (lowercased) → {ontology_term, label}
+    lookup: dict[str, dict] = {}
+    for _category, values in data.items():
+        if not isinstance(values, dict):
+            continue
+        for label, info in values.items():
+            if not isinstance(info, dict):
+                continue
+            ontology_term = info.get("ontology_term")
+            for alias in info.get("aliases", []):
+                lookup[alias.lower()] = {
+                    "ontology_term": ontology_term,
+                    "label": label,
+                }
+    return lookup
+
+
+def _extract_values(
+    source_name: str,
+    pairs: list[tuple[SemanticIdentity, ProvenanceEntry]],
+    library_path: Path,
+    registry: HashRegistry,
+) -> dict[str, int]:
+    """Extract enum values from element constraints and create ValueConcept files."""
+    values_dir = library_path / "values"
+    values_dir.mkdir(parents=True, exist_ok=True)
+
+    value_mappings = _load_value_mappings(library_path)
+    existing_keys = set(registry.elements.keys()) | set(registry.schemas.keys())
+
+    # Collect all raw enum values with their source
+    raw_values: list[tuple[str, str]] = []  # (raw_value, source_name)
+    for sem, prov in pairs:
+        if sem.constraints and sem.constraints.allowed_values:
+            for val in sem.constraints.allowed_values:
+                raw_values.append((val, source_name))
+
+    # Group by mapped identity
+    value_groups: dict[str, tuple[ValueSemanticIdentity, list[ValueProvenance]]] = {}
+    for raw_val, src in raw_values:
+        mapping = value_mappings.get(raw_val.lower())
+        if mapping:
+            label = mapping["label"]
+            ontology_term = mapping["ontology_term"]
+        else:
+            label = raw_val.lower().replace(" ", "_")
+            ontology_term = None
+
+        sem_id = ValueSemanticIdentity(
+            ontology_term=ontology_term,
+            value_type="categorical",
+            label=label,
+        )
+        sem_dict = sem_id.model_dump(exclude_none=True)
+        sha = compute_sha256(canonical_json(sem_dict))
+
+        prov = ValueProvenance(source=src, raw_value=raw_val)
+
+        if sha not in value_groups:
+            value_groups[sha] = (sem_id, [])
+        # Avoid duplicate provenance
+        existing_raw = {(p.source, p.raw_value) for p in value_groups[sha][1]}
+        if (src, raw_val) not in existing_raw:
+            value_groups[sha][1].append(prov)
+
+    created = 0
+    for sha, (sem_id, provs) in value_groups.items():
+        key = generate_short_key(sha, existing_keys)
+        existing_keys.add(key)
+
+        safe_label = sem_id.label.replace("/", "_").replace("\\", "_").replace(" ", "_")[:50]
+        filename = f"{safe_label}_{key}.yaml"
+        filepath = values_dir / filename
+
+        if filepath.exists():
+            existing_data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
+            existing_record = ValueConcept.model_validate(existing_data)
+            existing_raw = {(p.source, p.raw_value) for p in existing_record.provenance}
+            new_provs = [p for p in provs if (p.source, p.raw_value) not in existing_raw]
+            if new_provs:
+                all_provs = existing_record.provenance + new_provs
+                record = ValueConcept(semantic=sem_id, provenance=all_provs)
+                data = record.model_dump(mode="json", exclude_none=True)
+                filepath.write_text(
+                    yaml.dump(data, default_flow_style=False, sort_keys=False),
+                    encoding="utf-8",
+                )
+        else:
+            record = ValueConcept(semantic=sem_id, provenance=provs)
+            data = record.model_dump(mode="json", exclude_none=True)
+            filepath.write_text(
+                yaml.dump(data, default_flow_style=False, sort_keys=False),
+                encoding="utf-8",
+            )
+            created += 1
+
+        uri = build_value_uri(sem_id.label, key)
+        registry.elements[f"v_{key}"] = HashRegistryEntry(
+            sha256=sha,
+            attribute=sem_id.label,
+            uri=uri,
+        )
+
+    return {"created": created}
 
 
 def _extract(
@@ -171,9 +293,7 @@ def _load_registry(path: Path) -> HashRegistry:
 def _write_registry(path: Path, registry: HashRegistry) -> None:
     """Write hash registry to YAML."""
     data = registry.model_dump()
-    path.write_text(
-        yaml.dump(data, default_flow_style=False, sort_keys=False), encoding="utf-8"
-    )
+    path.write_text(yaml.dump(data, default_flow_style=False, sort_keys=False), encoding="utf-8")
 
 
 def _build_schemas_from_provenance(
@@ -252,9 +372,7 @@ def _build_schemas_from_provenance(
             created += 1
 
         uri = build_schema_uri(class_name, key)
-        registry.schemas[key] = HashRegistryEntry(
-            sha256=sha, name=class_name, uri=uri
-        )
+        registry.schemas[key] = HashRegistryEntry(sha256=sha, name=class_name, uri=uri)
 
     # Re-write registry with schemas
     _write_registry(library_path / "hash-registry.yaml", registry)
