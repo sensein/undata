@@ -7,7 +7,8 @@ provenance:
   class: Participant
   name: age
   description: A representation of age using ISO 8601 duration. This should include
-    a valueReference if anything other than date of birth is used.
+    a valueReference if anything other than date of birth is used. (postnatal age
+    (ISO 8601 duration, valueReference=BirthReference))
 - source: nwb
   class: Subject
   name: age

@@ -10,7 +10,11 @@
 # Age is source-dependent:
 # - BIDS: numeric (years), NWB: ISO 8601 duration string, DANDI: string
 # These produce different hashes → separate elements → linked by mapping
-# Age: BIDS uses numeric years; NWB and DANDI both use ISO 8601 duration
+# Age: split into variants per representation + reference type.
+# BIDS = numeric years (postnatal implied).
+# NWB = ISO 8601 duration string (postnatal implied).
+# DANDI = PropertyValue with valueReference (BirthReference or GestationalReference).
+# Each variant is a separate element; downstream users compose with anyOf.
 age:
   ontology_term: http://purl.obolibrary.org/obo/NCIT_C25150
   data_type: float
@@ -22,6 +26,14 @@ age:
     dandi:
       data_type: string
       unit: iso8601_duration
+
+# Gestational age — separate concept from postnatal age
+gestational_age:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C135383
+  data_type: string
+  unit: iso8601_duration
+  attribute_names: ["age"]
+  # Only applied when DANDI valueReference = GestationalReference
 
 sex:
   ontology_term: http://purl.obolibrary.org/obo/PATO_0000047

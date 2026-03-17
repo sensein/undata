@@ -7324,6 +7324,11 @@ elements:
     attribute: age
     name: null
     uri: https://schema.undata.live/elements/age_1srwl5
+  vq0h4p:
+    sha256: 72548cb9d90b80174ae681abd2c6c5d0867009e4babe08f435cfd0d91767e29e
+    attribute: gestational_age
+    name: null
+    uri: https://schema.undata.live/elements/gestational_age_vq0h4p
   1binz5:
     sha256: ab427fa69b8585b94a4fe09ba59c3ba4d0b3efec9d6bb3848aba2cdfa8c2423c
     attribute: genotype
@@ -18795,11 +18800,11 @@ schemas:
     attribute: null
     name: Person
     uri: https://schema.undata.live/schemas/Person_1v8dw5
-  1j9xsv:
-    sha256: c737f56928fc236244d37060e72bdbbe01c0530cd2ef627ae99bf2733dd7dd2a
+  f2vtox:
+    sha256: 365986119fc1662df580dec06f0fbdedd056a5baf690256eec85a217b51a64c8
     attribute: null
     name: Participant
-    uri: https://schema.undata.live/schemas/Participant_1j9xsv
+    uri: https://schema.undata.live/schemas/Participant_f2vtox
   1wo0if:
     sha256: f77b055f0b1248da230e9e82438cf29c5a50c07dbc20e474ca62ad7dc68a67a6
     attribute: null
