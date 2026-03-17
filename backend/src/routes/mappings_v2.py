@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from ..models.db import get_session
 from ..models.mapping_v2 import ElementMappingV2
 
-router = APIRouter(prefix="/api/v2/mappings", tags=["mappings-v2"])
+router = APIRouter(prefix="/api/v1/mappings", tags=["mappings-v2"])
 
 
 class MappingCreateRequest(BaseModel):

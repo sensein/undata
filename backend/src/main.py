@@ -116,23 +116,25 @@ app.include_router(auth_router, prefix="/api/v1")
 app.include_router(users_router, prefix="/api/v1")
 app.include_router(tokens_router, prefix="/api/v1")
 
-# Phase 4 (US1): Sources, Elements
-from src.api.v1.elements import router as elements_router  # noqa: E402
+# Phase 4 (US1): Sources (retained from v1)
 from src.api.v1.sources import router as sources_router  # noqa: E402
 
 app.include_router(sources_router, prefix="/api/v1")
-app.include_router(elements_router, prefix="/api/v1")
 
-# Phase 5 (US5): Schemas
-from src.api.v1.schemas import router as schemas_router  # noqa: E402
+# 017: Content-addressed elements, values, schemas, mappings
+from src.routes.elements_v2 import router as elements_router  # noqa: E402
+from src.routes.mappings_v2 import router as mappings_router  # noqa: E402
+from src.routes.schemas_v2 import router as schemas_router  # noqa: E402
+from src.routes.values_v2 import router as values_router  # noqa: E402
 
-app.include_router(schemas_router, prefix="/api/v1")
+app.include_router(elements_router)
+app.include_router(values_router)
+app.include_router(schemas_router)
+app.include_router(mappings_router)
 
-# Phase 6 (US2): Mappings, Aliases
+# Phase 6 (US2): Aliases (retained from v1)
 from src.api.v1.aliases import router as aliases_router  # noqa: E402
-from src.api.v1.mappings import router as mappings_router  # noqa: E402
 
-app.include_router(mappings_router, prefix="/api/v1")
 app.include_router(aliases_router, prefix="/api/v1")
 
 # Phase 7 (US3): Audit
@@ -150,13 +152,3 @@ from src.api.v1.pathways import router as pathways_router  # noqa: E402
 
 app.include_router(pathways_router, prefix="/api/v1")
 
-# 017: V2 content-addressed API
-from src.routes.elements_v2 import router as elements_v2_router  # noqa: E402
-from src.routes.mappings_v2 import router as mappings_v2_router  # noqa: E402
-from src.routes.schemas_v2 import router as schemas_v2_router  # noqa: E402
-from src.routes.values_v2 import router as values_v2_router  # noqa: E402
-
-app.include_router(elements_v2_router)
-app.include_router(values_v2_router)
-app.include_router(schemas_v2_router)
-app.include_router(mappings_v2_router)

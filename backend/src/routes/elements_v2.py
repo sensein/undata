@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from ..models.db import get_session
 from ..services.element_v2_service import ElementV2Service
 
-router = APIRouter(prefix="/api/v2/elements", tags=["elements-v2"])
+router = APIRouter(prefix="/api/v1/elements", tags=["elements-v2"])
 
 
 class SemanticInput(BaseModel):

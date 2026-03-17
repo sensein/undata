@@ -15,7 +15,7 @@ from undata_library.hashing import (
 from ..models.db import get_session
 from ..models.value_v2 import ValueConceptV2, ValueProvenanceV2
 
-router = APIRouter(prefix="/api/v2/values", tags=["values-v2"])
+router = APIRouter(prefix="/api/v1/values", tags=["values-v2"])
 
 
 class ValueCreateRequest(BaseModel):

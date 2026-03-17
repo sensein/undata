@@ -15,7 +15,7 @@ from undata_library.hashing import (
 from ..models.db import get_session
 from ..models.schema_v2 import SchemaProvenanceV2, SchemaShapeV2
 
-router = APIRouter(prefix="/api/v2/schemas", tags=["schemas-v2"])
+router = APIRouter(prefix="/api/v1/schemas", tags=["schemas-v2"])
 
 
 class SchemaCreateRequest(BaseModel):
