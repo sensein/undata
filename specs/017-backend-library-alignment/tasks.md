@@ -49,15 +49,15 @@
 - [X] T029 [P] Create `frontend/components/MappingExplorer.tsx`: show bidirectional mappings with transform expressions
 - [X] T030 Update `frontend/components/ElementCard.tsx`: show cross-source badge (provenance count > 1)
 - [X] T031 Update nav in `frontend/app/layout.tsx`: add Values link
-- [ ] T032 Write vitest tests for ElementDetailV2, ValueConceptCard, MappingExplorer
+- [X] T032 Write vitest tests for ElementDetailV2, ValueConceptCard, MappingExplorer
 - [ ] T033 Lint + build; commit Phase 5
 
 ## Phase 6: Deprecate v1 + Polish
 
 - [ ] T034 Create backward-compatible v1 wrappers: `/api/v1/elements` routes to v2 with flat response format
 - [ ] T035 Update all backend tests to use v2 models
-- [ ] T036 Update `README.md` (root + library) with v2 architecture diagram
-- [ ] T037 Update CLAUDE.md
+- [X] T036 Update `README.md` (root + library) with v2 architecture diagram
+- [X] T037 Update CLAUDE.md
 - [ ] T038 Final commit and push
 
 ---
