@@ -1,4 +1,49 @@
-// API Response Types (mirrors 002-schema-backend)
+// Content-addressed element model (017-backend-library-alignment)
+
+export interface SemanticIdentity {
+  ontology_term: string | null;
+  data_type: string;
+  unit: string | null;
+  constraints: Record<string, unknown> | null;
+}
+
+export interface ProvenanceEntry {
+  source: string;
+  class: string;
+  name: string;
+  description: string | null;
+  required: boolean | null;
+  multivalued: boolean | null;
+}
+
+export interface ElementV2 {
+  uri: string;
+  semantic: SemanticIdentity;
+  provenance: ProvenanceEntry[];
+}
+
+export interface ValueConceptResponse {
+  uri: string;
+  semantic: {
+    ontology_term: string | null;
+    value_type: string;
+    label: string;
+  };
+  provenance: Array<{ source: string; raw_value: string }>;
+}
+
+export interface ElementMappingResponse {
+  id: number;
+  source_element_uri: string;
+  target_element_uri: string;
+  function_type: string;
+  expression: string | null;
+  expression_type: string | null;
+  sssom_predicate: string | null;
+  confidence: number | null;
+}
+
+// Legacy API Response Types (retained for backward compatibility)
 
 export interface DataElementSummary {
   id: string;
