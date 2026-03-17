@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_1mrtrd
+  - https://schema.undata.live/elements/device_name_ycwuu0
+  - https://schema.undata.live/elements/maintenance_date_lcpwvz
+  - https://schema.undata.live/elements/notes_37v5yj
+  - https://schema.undata.live/elements/protocol_id_1sp29j
+  - https://schema.undata.live/elements/reagents_1nmi9u
+  mixins: []
+provenance:
+- source: aind
+  name: Maintenance

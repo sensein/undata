@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/ImageReferences_1gtuzo
+  mixins: []
+provenance:
+- source: nwb
+  name: ImageReferences

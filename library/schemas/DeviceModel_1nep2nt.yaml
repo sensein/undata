@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/DeviceModel_yckknh
+  - https://schema.undata.live/elements/description_1mrtrd
+  - https://schema.undata.live/elements/manufacturer_1d47pt
+  - https://schema.undata.live/elements/model_number_1lwxmn
+  mixins: []
+provenance:
+- source: nwb
+  name: DeviceModel

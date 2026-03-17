@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/VoltageClampSeries_1wyqoy
+  - https://schema.undata.live/elements/capacitance_fast_9da1qs
+  - https://schema.undata.live/elements/capacitance_slow_gd2raa
+  - https://schema.undata.live/elements/data_13j7zh
+  - https://schema.undata.live/elements/resistance_comp_bandwidth_1crj9r
+  - https://schema.undata.live/elements/resistance_comp_correction_tve9fi
+  - https://schema.undata.live/elements/resistance_comp_prediction_ktk5nv
+  - https://schema.undata.live/elements/whole_cell_capacitance_comp_1xr9sn
+  - https://schema.undata.live/elements/whole_cell_series_resistance_comp_bouy1p
+  mixins: []
+provenance:
+- source: nwb
+  name: VoltageClampSeries

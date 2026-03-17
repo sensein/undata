@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/RepetitionsTable_dwsqgr
+  - https://schema.undata.live/elements/sequential_recordings_ibhzq5
+  - https://schema.undata.live/elements/sequential_recordings_index_5bbrt5
+  mixins: []
+provenance:
+- source: nwb
+  name: RepetitionsTable

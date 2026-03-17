@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/atlas_coordinate_16021k
+  - https://schema.undata.live/elements/coordinate_system_60z601
+  - https://schema.undata.live/elements/device_name_1ln76c
+  - https://schema.undata.live/elements/dye_kt69kz
+  - https://schema.undata.live/elements/notes_5ezug4
+  - https://schema.undata.live/elements/other_targeted_structure_fss1p1
+  - https://schema.undata.live/elements/primary_targeted_structure_16zghs
+  - https://schema.undata.live/elements/transform_1xm1h9
+  mixins: []
+provenance:
+- source: aind
+  name: ProbeConfig

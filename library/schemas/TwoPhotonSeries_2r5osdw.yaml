@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/TwoPhotonSeries_1nh5pg
+  - https://schema.undata.live/elements/field_of_view_tjnktr
+  - https://schema.undata.live/elements/pmt_gain_1bhvpi
+  - https://schema.undata.live/elements/scan_line_rate_1tzyx3
+  mixins: []
+provenance:
+- source: nwb
+  name: TwoPhotonSeries

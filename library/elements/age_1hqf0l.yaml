@@ -1,0 +1,16 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C25150
+  data_type: float
+  unit: year
+provenance:
+- source: bids
+  class: columns
+  name: age
+  description: 'Numeric value in years (float or integer value).
+
+
+    For privacy purposes, participant ages should be capped at 89.
+
+    Using "89+" for ages above 88 is DEPRECATED.
+
+    '

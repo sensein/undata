@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/expiration_date_1e0gd0
+  - https://schema.undata.live/elements/gene_probes_txkil0
+  - https://schema.undata.live/elements/lot_number_vbqp3z
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/rrid_otoj6g
+  - https://schema.undata.live/elements/source_l0vtfm
+  mixins: []
+provenance:
+- source: aind
+  name: GeneProbeSet

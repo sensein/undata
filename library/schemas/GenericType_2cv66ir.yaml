@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_6m21wn
+  - https://schema.undata.live/elements/identifier_jtb4fv
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/schemaKey_10rbtu
+  mixins: []
+provenance:
+- source: dandi
+  name: GenericType

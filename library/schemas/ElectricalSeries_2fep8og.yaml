@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/ElectricalSeries_1vzd3m
+  - https://schema.undata.live/elements/channel_conversion_8ozo3t
+  - https://schema.undata.live/elements/data_1ja37g
+  - https://schema.undata.live/elements/electrodes_1ug9vv
+  - https://schema.undata.live/elements/filtering_1ql0w2
+  mixins: []
+provenance:
+- source: nwb
+  name: ElectricalSeries

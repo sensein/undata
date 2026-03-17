@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/registry_10wqm5
+  - https://schema.undata.live/elements/registry_identifier_1frcgl
+  mixins: []
+provenance:
+- source: aind
+  name: MouseAnatomyModel

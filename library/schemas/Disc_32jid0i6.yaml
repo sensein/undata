@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_evv1gj
+  - https://schema.undata.live/elements/decoder_jems4z
+  - https://schema.undata.live/elements/encoder_firmware_fdkpan
+  - https://schema.undata.live/elements/encoder_h4g0o0
+  - https://schema.undata.live/elements/manufacturer_1d47pt
+  - https://schema.undata.live/elements/model_1wfz4f
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/notes_vlkehl
+  - https://schema.undata.live/elements/output_1gstz5
+  - https://schema.undata.live/elements/radius_11gxk7
+  - https://schema.undata.live/elements/radius_unit_og4d6r
+  - https://schema.undata.live/elements/serial_number_16grzg
+  - https://schema.undata.live/elements/surface_material_twlize
+  mixins: []
+provenance:
+- source: aind
+  name: Disc

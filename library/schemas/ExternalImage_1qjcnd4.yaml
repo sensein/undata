@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/ExternalImage_zay16d
+  - https://schema.undata.live/elements/image_format_v2qyqy
+  - https://schema.undata.live/elements/image_mode_hszt3i
+  mixins: []
+provenance:
+- source: nwb
+  name: ExternalImage
