@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: cf
+provenance:
+- source: aind
+  raw_value: CF

@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: universal_protein_resource_(uniprot)
+provenance:
+- source: aind
+  raw_value: Universal Protein Resource (UNIPROT)

@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: tamoxifen_induction
+provenance:
+- source: aind
+  raw_value: Tamoxifen induction

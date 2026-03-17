@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: left_to_right
+provenance:
+- source: aind
+  raw_value: Left_to_right

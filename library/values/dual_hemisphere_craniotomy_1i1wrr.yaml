@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: dual_hemisphere_craniotomy
+provenance:
+- source: aind
+  raw_value: Dual hemisphere craniotomy

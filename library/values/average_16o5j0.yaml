@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: average
+provenance:
+- source: aind
+  raw_value: Average

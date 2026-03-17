@@ -17339,6 +17339,1201 @@ elements:
     attribute: registry_identifier
     name: null
     uri: https://schema.undata.live/elements/registry_identifier_12b0wd
+  v_la71ke:
+    sha256: 4cb4c1aea37d4436768b6587fd3ef2d3b96fcb173f72a71311b7da6534cfe564
+    attribute: kilogram
+    name: null
+    uri: https://schema.undata.live/values/kilogram_la71ke
+  v_368snt:
+    sha256: 0b6ff51928a6959e65d93b1a31b9c65fa9da59cc9f9e8e348ee63549b3562257
+    attribute: gram
+    name: null
+    uri: https://schema.undata.live/values/gram_368snt
+  v_tab0p2:
+    sha256: 698cb6468d0afbc739a2771fe5ea3e728c5e635ff5c2509864cc04ba0973bc1b
+    attribute: milligram
+    name: null
+    uri: https://schema.undata.live/values/milligram_tab0p2
+  v_1r0nfy:
+    sha256: e31f0c96431053cfdd9308c9eee3a34bdf192e16168a18c182d1a4100e9aeef9
+    attribute: microgram
+    name: null
+    uri: https://schema.undata.live/values/microgram_1r0nfy
+  v_14ky6w:
+    sha256: 92428b7b29d5116a5cdf2eeeb89f0b3b855f8d633b611bb76de65e00b7c1db2e
+    attribute: nanogram
+    name: null
+    uri: https://schema.undata.live/values/nanogram_14ky6w
+  v_a21u6m:
+    sha256: 243ef90eb1d0d84ce4163c9a95cd8b52118cd266e200afd608495ec9286b69df
+    attribute: positive
+    name: null
+    uri: https://schema.undata.live/values/positive_a21u6m
+  v_vmsr51:
+    sha256: 72022a65bdb2b1e8b83b3f636ed50ca5bd76e6d3c0d25f0a6e140d9ddba07e61
+    attribute: negative
+    name: null
+    uri: https://schema.undata.live/values/negative_vmsr51
+  v_1jl2hd:
+    sha256: c8553584e91fc0301ed71516bee8777703c05770b395731586ca3b5b23399280
+    attribute: neutral
+    name: null
+    uri: https://schema.undata.live/values/neutral_1jl2hd
+  v_1afyk6:
+    sha256: a762819ad11fead27ecaefab3f2204b96ebe4ddd8779500c79ed69af098845a3
+    attribute: unknown
+    name: null
+    uri: https://schema.undata.live/values/unknown_1afyk6
+  v_qxznma:
+    sha256: 611bcb523228f0e6e0256811bdf8ded7387b7d477e4030b37b9ee19ab5bf0fe3
+    attribute: hour
+    name: null
+    uri: https://schema.undata.live/values/hour_qxznma
+  v_qij9ww:
+    sha256: 5f8fb2f00f3b4fcb04f24c89bfdc81df162a3f17236a3d3833ef21477b81291b
+    attribute: minute
+    name: null
+    uri: https://schema.undata.live/values/minute_qij9ww
+  v_t9gbkr:
+    sha256: 6976db9b64a1937b02ee9633689988d2a3815de4747d48d673fbc927824f9742
+    attribute: second
+    name: null
+    uri: https://schema.undata.live/values/second_t9gbkr
+  v_lxwvts:
+    sha256: 4f149e2000905de4131b7e5e2925147e01324225bd1d33a345e394f2d80d56be
+    attribute: millisecond
+    name: null
+    uri: https://schema.undata.live/values/millisecond_lxwvts
+  v_zhyz1n:
+    sha256: 7ff102ebea0b6684d4904b76e983b3d32ffe6a5c13d80989656c06e104a21aa0
+    attribute: microsecond
+    name: null
+    uri: https://schema.undata.live/values/microsecond_zhyz1n
+  v_1tr74v:
+    sha256: ecfcb36543269c163001de914fc8a37bf7ec7185ab31ef9fedcabcc4233661b8
+    attribute: nanosecond
+    name: null
+    uri: https://schema.undata.live/values/nanosecond_1tr74v
+  v_uhyydb:
+    sha256: 6debcb7f9157b37d15b4dca389e3d35c0ae0c426eb83b2ebcdafb154e7ec1b13
+    attribute: ccf
+    name: null
+    uri: https://schema.undata.live/values/ccf_uhyydb
+  v_bvd0k2:
+    sha256: 2ac8cf1211d59c3c0cb6777d9e538d35bf2e6f9eac604daeacd7dc6bd6a62925
+    attribute: custom
+    name: null
+    uri: https://schema.undata.live/values/custom_bvd0k2
+  v_ydafya:
+    sha256: 7bde644228ff2fe4f8c892dbf50801511cc6d13bf20cebe593740980a9b4ef6d
+    attribute: origin
+    name: null
+    uri: https://schema.undata.live/values/origin_ydafya
+  v_epffjc:
+    sha256: 3500ad683b3bc2cc30a5edf88334bf5416dd0d978d16b170bfdf6b702749efa1
+    attribute: bregma
+    name: null
+    uri: https://schema.undata.live/values/bregma_epffjc
+  v_jnn274:
+    sha256: 46d80de0ee2c91e3d29bdba3229914e0b4f74cb68293c7e7fed88ad87d4b9c76
+    attribute: lambda
+    name: null
+    uri: https://schema.undata.live/values/lambda_jnn274
+  v_1ogxr8:
+    sha256: d9f088176f0825cebc74631012d8948b9962b8c30340bdf4dec0c790fe26484f
+    attribute: between_c1-c2
+    name: null
+    uri: https://schema.undata.live/values/between_c1-c2_1ogxr8
+  v_1jhs27:
+    sha256: c800e732ede23c24e7da3e7b954d70260caf40b0622d955ed5c0e1917a463874
+    attribute: between_c2-c3
+    name: null
+    uri: https://schema.undata.live/values/between_c2-c3_1jhs27
+  v_1etru1:
+    sha256: b72f15dc2deb43f7cec9ade74008803f378f106e05544175166cd7f3b44c7366
+    attribute: between_c3-c4
+    name: null
+    uri: https://schema.undata.live/values/between_c3-c4_1etru1
+  v_khkj7a:
+    sha256: 49d71f36730723506ad39b228cd82500c07d102de26a4bdb2cce3cd7c856a607
+    attribute: between_c4-c5
+    name: null
+    uri: https://schema.undata.live/values/between_c4-c5_khkj7a
+  v_13uch8:
+    sha256: 8f98bc3be0f0f9c38517d5f443c46e7f1df03f4f1a8fdaec8778e58dbac30ca6
+    attribute: between_c6-c7
+    name: null
+    uri: https://schema.undata.live/values/between_c6-c7_13uch8
+  v_p08565:
+    sha256: 5a1fd02d747442464328e7addbbaca1b9e382728e88517da119114a19bd5b1d3
+    attribute: between_c7-c8
+    name: null
+    uri: https://schema.undata.live/values/between_c7-c8_p08565
+  v_1bic91:
+    sha256: ab3a26c8eaf86353f472500da5186e07ff1991a97c35ece63c5e989f739d113f
+    attribute: between_c8-t1
+    name: null
+    uri: https://schema.undata.live/values/between_c8-t1_1bic91
+  v_1wkcnr:
+    sha256: f71d274f50f9d2675749867e73d1fbb0e3628d9cf028da33c5c1a16ea8d40dcc
+    attribute: between_t1-t2
+    name: null
+    uri: https://schema.undata.live/values/between_t1-t2_1wkcnr
+  v_1m5wjy:
+    sha256: d1a07a10474a6f6bb3755db52fa597dffab750d80f360ad008675e2a0beea444
+    attribute: tip
+    name: null
+    uri: https://schema.undata.live/values/tip_1m5wjy
+  v_1jv076:
+    sha256: c953df5531f1663180c15d1c1b5c0869d3ce2380fee3c53b10827a21eccd3805
+    attribute: front_center
+    name: null
+    uri: https://schema.undata.live/values/front_center_1jv076
+  v_vi3grb:
+    sha256: 7189a597e9b7df7a0e45fd5c206460e6a85507ae4120162a8315c81444d870bc
+    attribute: arena_center
+    name: null
+    uri: https://schema.undata.live/values/arena_center_vi3grb
+  v_gz5ord:
+    sha256: 3d2f4f999c6b24014c07a1537b7f655d66f25d78dc8d15d2044433e0d8ea4780
+    attribute: arena_front_left
+    name: null
+    uri: https://schema.undata.live/values/arena_front_left_gz5ord
+  v_1ksu0o:
+    sha256: ccb6daf42783f65c1138ac0a6b1316377043c78938dda6313b81054e4c0ca485
+    attribute: arena_front_right
+    name: null
+    uri: https://schema.undata.live/values/arena_front_right_1ksu0o
+  v_nfb0i6:
+    sha256: 546d024ec1cbc2feff605d1d16666a08d47d0ba7ac39ec6151204e6f8bbf289f
+    attribute: arena_back_left
+    name: null
+    uri: https://schema.undata.live/values/arena_back_left_nfb0i6
+  v_83fx78:
+    sha256: 1d2d58d4b012b31a2c2d43ffeac04094db7f93073d8a36460beb26c4dd132d18
+    attribute: arena_back_right
+    name: null
+    uri: https://schema.undata.live/values/arena_back_right_83fx78
+  v_3i331s:
+    sha256: 0c9f70300cb8760b2b3a827bf27f3f2efc61632fd121b38ee0928c8231d15af9
+    attribute: meter
+    name: null
+    uri: https://schema.undata.live/values/meter_3i331s
+  v_1fmgz0:
+    sha256: ba0e973621991a6124b5f94ea4bce5d8396d5750a0a2ad6cb595ab01310ad8e3
+    attribute: centimeter
+    name: null
+    uri: https://schema.undata.live/values/centimeter_1fmgz0
+  v_9ghhqc:
+    sha256: 221648040df328fb339283a693fee1729cc66cd5c89024238f905e4b1dfc9402
+    attribute: millimeter
+    name: null
+    uri: https://schema.undata.live/values/millimeter_9ghhqc
+  v_1h6zrv:
+    sha256: bfb731e04b242cfb303fa7f5e50ebafea13d0c962bcf07e84de4740f1889d787
+    attribute: micrometer
+    name: null
+    uri: https://schema.undata.live/values/micrometer_1h6zrv
+  v_su9f69:
+    sha256: 67f183113c7e67857b9e1f8a2f93ab26fb9e20c66783278a00e93a0acaaad9ec
+    attribute: nanometer
+    name: null
+    uri: https://schema.undata.live/values/nanometer_su9f69
+  v_1jju3y:
+    sha256: c8359e8dc5d4b969434b9420be7e5324128eaf92410a6d6d1affbc46b86f83ee
+    attribute: inch
+    name: null
+    uri: https://schema.undata.live/values/inch_1jju3y
+  v_6ekiux:
+    sha256: 171542792c0a3aec71081ba86f0e946504505420e3664e5d481e0a6d1e192371
+    attribute: pixel
+    name: null
+    uri: https://schema.undata.live/values/pixel_6ekiux
+  v_c233b6:
+    sha256: 2b752582cb987122470651fe5049b04160a0439a47c8c35e50ebba8b0f265244
+    attribute: x
+    name: null
+    uri: https://schema.undata.live/values/x_c233b6
+  v_1puatg:
+    sha256: dee1a5a1509a32686e8fb9755b5f09c70800e4a7c92d2ffece065e470b9cd43e
+    attribute: y
+    name: null
+    uri: https://schema.undata.live/values/y_1puatg
+  v_1u2lj6:
+    sha256: ee20de494f511e430d9603fa2c6f108bad1ca927e6d29022b426cfb56252893a
+    attribute: z
+    name: null
+    uri: https://schema.undata.live/values/z_1u2lj6
+  v_r2uprf:
+    sha256: 61986beb7e78000483d623eff4407926bcb5daaa015db075715f9069893dd7a4
+    attribute: ap
+    name: null
+    uri: https://schema.undata.live/values/ap_r2uprf
+  v_3gfcy2:
+    sha256: 0c74eb4abd4847f3e494a1ca365f0a79d395c6953d5dadf8caa8a5fbdc8534ac
+    attribute: ml
+    name: null
+    uri: https://schema.undata.live/values/ml_3gfcy2
+  v_zfzij1:
+    sha256: 7fbe238d2acbfb4b3dad7bf144e919e691410ad772e307f9a8dffecc4fed4b55
+    attribute: si
+    name: null
+    uri: https://schema.undata.live/values/si_zfzij1
+  v_1gywxc:
+    sha256: bee822cf6a789b1d21eaffb13fda34fd3b11fbb0f4efa52ef216f6ccf3781e5a
+    attribute: depth
+    name: null
+    uri: https://schema.undata.live/values/depth_1gywxc
+  v_f0hdua:
+    sha256: 361bfc52dd4247cf9b0e0ec70aebbead59534f66a811bd10c60d55b9e497a333
+    attribute: left_to_right
+    name: null
+    uri: https://schema.undata.live/values/left_to_right_f0hdua
+  v_8elbor:
+    sha256: 1e4b1c6baf94bf16937411c150bd96baced36db5f3398d3b559e7f44cc251afe
+    attribute: right_to_left
+    name: null
+    uri: https://schema.undata.live/values/right_to_left_8elbor
+  v_93jqef:
+    sha256: 20cab367deaf29106943eb2c7ed28fa1b12cbed04ea28b1b939f3f0e3357959d
+    attribute: anterior_to_posterior
+    name: null
+    uri: https://schema.undata.live/values/anterior_to_posterior_93jqef
+  v_rsffmn:
+    sha256: 6427e4dfaf3caf8dac108f6a136f72c880709026b47784f85b35d960212413dd
+    attribute: posterior_to_anterior
+    name: null
+    uri: https://schema.undata.live/values/posterior_to_anterior_rsffmn
+  v_t39a4c:
+    sha256: 68d8127c503316f950bbdf6ce632914e72b1f8e49fadfbe8a83165f8c02c3527
+    attribute: inferior_to_superior
+    name: null
+    uri: https://schema.undata.live/values/inferior_to_superior_t39a4c
+  v_1flln2:
+    sha256: b9f849091d7bb664685de2f0fc869dba50253903482bd3f08d0acfeda6f2fa9f
+    attribute: superior_to_inferior
+    name: null
+    uri: https://schema.undata.live/values/superior_to_inferior_1flln2
+  v_1qt9l5:
+    sha256: e261c867a9b9353f1470d985cc49506e069dfbc76b0f322f8e4ad926d5d0ad53
+    attribute: front_to_back
+    name: null
+    uri: https://schema.undata.live/values/front_to_back_1qt9l5
+  v_5u4bg0:
+    sha256: 0095965cb1adbce005d6cb2b97b8692fbf504fca7f6d0712405901254fb33deb
+    attribute: back_to_front
+    name: null
+    uri: https://schema.undata.live/values/back_to_front_5u4bg0
+  v_no2x0x:
+    sha256: 554de7b1bea9f0a2eaf0ba967f0d854e3f6f006331a0655d00f61e387056d961
+    attribute: up_to_down
+    name: null
+    uri: https://schema.undata.live/values/up_to_down_no2x0x
+  v_10kbfk:
+    sha256: 83c7c791b851f254ad6897f0bea24ebf1cb0d16006308bb148195121cc7a0d16
+    attribute: down_to_up
+    name: null
+    uri: https://schema.undata.live/values/down_to_up_10kbfk
+  v_2tb89j:
+    sha256: 0a248397cc0a868a1bbcf75c403123c3bc73c98f28b6c3992abdd7408b900dd4
+    attribute: other
+    name: null
+    uri: https://schema.undata.live/values/other_2tb89j
+  v_19qhbj:
+    sha256: a4d582b14fc14481ffc18865101fc04fb6588473c6288501d8aee29d14e340a7
+    attribute: linear_interpolation
+    name: null
+    uri: https://schema.undata.live/values/linear_interpolation_19qhbj
+  v_1ux01k:
+    sha256: f12c10f5d14ec45855e4d23cbe3ba791cb213501934cce546817b4f5cf2f5a33
+    attribute: linear
+    name: null
+    uri: https://schema.undata.live/values/linear_1ux01k
+  v_fubw76:
+    sha256: 3918f1c2e712062a89dacd27c1a1e56a7084c8d638e643fba201748218035538
+    attribute: microwatt
+    name: null
+    uri: https://schema.undata.live/values/microwatt_fubw76
+  v_1n3l7b:
+    sha256: d4ffc7473397964d46ac56a2ee8b861b6a8b43cafdafe737d23cd6d74e0decdb
+    attribute: milliwatt
+    name: null
+    uri: https://schema.undata.live/values/milliwatt_1n3l7b
+  v_onffxo:
+    sha256: 58d7d56c63cb5b2fdbbe3eb762d2dcd58751342cc5a6072a822689811a6ba22c
+    attribute: percent
+    name: null
+    uri: https://schema.undata.live/values/percent_onffxo
+  v_qox8lu:
+    sha256: 603369d2afcce7c8d16cf190698754650993c4fffe4ad3121a2c84873d6708fd
+    attribute: internal
+    name: null
+    uri: https://schema.undata.live/values/internal_qox8lu
+  v_1pqc34:
+    sha256: de7c08d31595c3f1823dd44ae033507416eb5e3d8161b8063e96c56a9c4fefd1
+    attribute: external
+    name: null
+    uri: https://schema.undata.live/values/external_1pqc34
+  v_9unxt0:
+    sha256: 2381ace417da50c64c0af9850a7384bea7baf50bb7a296585f09a92fc017ef46
+    attribute: analog
+    name: null
+    uri: https://schema.undata.live/values/analog_9unxt0
+  v_15p450:
+    sha256: 9647ef5cb3e75486c1fe7cf06c7af399e6b1cd1ae37116c74086b5e1e001fb19
+    attribute: radians
+    name: null
+    uri: https://schema.undata.live/values/radians_15p450
+  v_1pq6e7:
+    sha256: 062dffdf5eb7eb2a19fa4554f80b7f8fc4fd1528b007c0ae15adc123e414c5d4
+    attribute: degrees
+    name: null
+    uri: https://schema.undata.live/values/degrees_1pq6e7
+  v_jg6lu4:
+    sha256: 4618f00c0980d0efe1ad20a12be8000c1aa68335431756237a4fdf2bf76aacd7
+    attribute: air
+    name: null
+    uri: https://schema.undata.live/values/air_jg6lu4
+  v_1l9zl0:
+    sha256: ce6e8222612bb6d3a7cafa895c93182000681ccf2cbf6f113b5362105c2608b6
+    attribute: multi
+    name: null
+    uri: https://schema.undata.live/values/multi_1l9zl0
+  v_7tijhk:
+    sha256: 1c2eec28dab8a2b7a6b4871428b85666688f184f58302f8ef2f3b37ba37103fe
+    attribute: oil
+    name: null
+    uri: https://schema.undata.live/values/oil_7tijhk
+  v_r5po68:
+    sha256: 61e1b7a0d24b218a77b91c426d296b57a47c25beb63fd51a9c7ebc7e189cac02
+    attribute: pbs
+    name: null
+    uri: https://schema.undata.live/values/pbs_r5po68
+  v_1yi50u:
+    sha256: fe19bd800e3144b2c3473dc7f631657ecd1271d511b4a6cc59d9e0031ad39449
+    attribute: water
+    name: null
+    uri: https://schema.undata.live/values/water_1yi50u
+  v_1rx935:
+    sha256: e662952be794d93fd75a6093ba82800af775aaa5ae923e80c229f6b6bece662f
+    attribute: easy_index
+    name: null
+    uri: https://schema.undata.live/values/easy_index_1rx935
+  v_1gmev2:
+    sha256: bda7badbf0fd26bb5a4075baa7dd36d2c9e4de29ee97910acf75e5453757524d
+    attribute: ethyl_cinnimate
+    name: null
+    uri: https://schema.undata.live/values/ethyl_cinnimate_1gmev2
+  v_1f7py8:
+    sha256: b8948c9117bb6f39359088ada90f44e4b9eeb0df3717473b2a4570d92a378933
+    attribute: aqueous_clearing_buffer
+    name: null
+    uri: https://schema.undata.live/values/aqueous_clearing_buffer_1f7py8
+  v_ql0y10:
+    sha256: 5fcf89446b7429b638440bcb67691b47d06c7dbe26e0a2a641cc2375c82d10a0
+    attribute: bolus
+    name: null
+    uri: https://schema.undata.live/values/bolus_ql0y10
+  v_d57ksp:
+    sha256: 2f5fde092829c2c73fbfe2dfc7f5351db03fee960855be1d0ccccc8d664b9d7d
+    attribute: continuous
+    name: null
+    uri: https://schema.undata.live/values/continuous_d57ksp
+  v_o3gjh8:
+    sha256: 56d8099c3b7a8f3c28eeee04b3e24f41d62679fb55cb6f0f38994d1fb544ebb6
+    attribute: pulsed
+    name: null
+    uri: https://schema.undata.live/values/pulsed_o3gjh8
+  v_1rpbpu:
+    sha256: e5976ca6c388e1dc8e4b4620c8f922f98b4a9981a31045de49afe2221f495366
+    attribute: sucrose
+    name: null
+    uri: https://schema.undata.live/values/sucrose_1rpbpu
+  v_1decvc:
+    sha256: b2095bbc10d0b82804c399a85159467d95a5d80d079daacd2dfce1a342d41aa7
+    attribute: quinine
+    name: null
+    uri: https://schema.undata.live/values/quinine_1decvc
+  v_1mgig3:
+    sha256: d2b05a0d57d0f1d517b580bfd7ef534a4c18d87b318ea85796d861518efb2a18
+    attribute: citric_acid
+    name: null
+    uri: https://schema.undata.live/values/citric_acid_1mgig3
+  v_14mhk9:
+    sha256: 9269f6d6e29fe3a18e1c1c6eec5c0bf1d748a073865925daf5f84abbf04ed49c
+    attribute: liter
+    name: null
+    uri: https://schema.undata.live/values/liter_14mhk9
+  v_25vjf6:
+    sha256: 07cbe1124f3e61a62d9995651688c3b043d4391bf4793d39d2c1acb7d2494a41
+    attribute: milliliter
+    name: null
+    uri: https://schema.undata.live/values/milliliter_25vjf6
+  v_f38zj0:
+    sha256: 3662e4dca30b40c39363a1122b4b8c4e468c408f14f9df2f91ddd158cd4dc25e
+    attribute: microliter
+    name: null
+    uri: https://schema.undata.live/values/microliter_f38zj0
+  v_t32y6r:
+    sha256: 68d3909387a919d4e3a61c47eca19b31ff3d30ac34db42b33354e2ec1a1e3c27
+    attribute: nanoliter
+    name: null
+    uri: https://schema.undata.live/values/nanoliter_t32y6r
+  v_arotpm:
+    sha256: 26d00f6adb2b787c43e9413bc582eea03e1faa692974f7a119b2e6b7c5791451
+    attribute: rare
+    name: null
+    uri: https://schema.undata.live/values/rare_arotpm
+  v_1wycn1:
+    sha256: f883f1a61bfb9c4ecf50644422c178f05a119d8e8a7f5555a0e7ed6e516c19ef
+    attribute: flash
+    name: null
+    uri: https://schema.undata.live/values/flash_1wycn1
+  v_12mslb:
+    sha256: 8b3c88fe3304e222b130af04863a4c7310b59cd58a6889a82a49c5f3a0a93097
+    attribute: msme
+    name: null
+    uri: https://schema.undata.live/values/msme_12mslb
+  v_1uafda:
+    sha256: eee983047c19c8168f2cccb4c00cdd7dd718ebf202b9fdf29c3e95bd8ae78f9a
+    attribute: 2d
+    name: null
+    uri: https://schema.undata.live/values/2d_1uafda
+  v_1yaufw:
+    sha256: fd5ece06e06b907b656692a6dd28922eecb1baddd30b76d5fc614888bcdfddcd
+    attribute: 3d
+    name: null
+    uri: https://schema.undata.live/values/3d_1yaufw
+  v_109emx:
+    sha256: 82b024926e99a01452ce2496a2f0d39ec2243cae6c327a10223c9d578be31da8
+    attribute: prone
+    name: null
+    uri: https://schema.undata.live/values/prone_109emx
+  v_hbpyp8:
+    sha256: 3e714aecd8e6d6d877c184f95e3cb654bb664469fd43f7519acb2c4d7473da5e
+    attribute: supine
+    name: null
+    uri: https://schema.undata.live/values/supine_hbpyp8
+  v_1pyj9b:
+    sha256: df4e2bf844daac1aa1858ac01bd9025de97082feadf6ebb95a89dc8766eaec87
+    attribute: addgene_(addgene)
+    name: null
+    uri: https://schema.undata.live/values/addgene_(addgene)_1pyj9b
+  v_1dnrp6:
+    sha256: b2fa93426465344e4ecaea87182a173e837de0ac41acac2896f34d1ef13f49cd
+    attribute: digital_object_identifier_(doi)
+    name: null
+    uri: https://schema.undata.live/values/digital_object_identifier_(doi)_1dnrp6
+  v_1dis6g:
+    sha256: b27ac5a8cd1602965fd2826f0b89f1bc0967116617dc1073dcff93e31a01b479
+    attribute: edinburgh_mouse_atlas_project_(emapa)
+    name: null
+    uri: https://schema.undata.live/values/edinburgh_mouse_atlas_project_(emapa)_1dis6g
+  v_xgf1fn:
+    sha256: 7893e903deb39e23d53b928d2aa7fac5542740a0bdbd5a1eeed4433bb8820308
+    attribute: mouse_genome_informatics_(mgi)
+    name: null
+    uri: https://schema.undata.live/values/mouse_genome_informatics_(mgi)_xgf1fn
+  v_13vdbo:
+    sha256: 8fb2f752c033c5a3bc0e513513c8a5fcd975ca693cb3debd57afbfe43c217c25
+    attribute: ncbi_genbank_(genbank)
+    name: null
+    uri: https://schema.undata.live/values/ncbi_genbank_(genbank)_13vdbo
+  v_nzimbe:
+    sha256: 5673007ac31494d7669d23a5d8b3cd62293137c7f62002fd17733d7a8ffd25b4
+    attribute: national_center_for_biotechnology_information_(ncbi)
+    name: null
+    uri: https://schema.undata.live/values/national_center_for_biotechnology_information_(ncbi)_nzimbe
+  v_13e7pm:
+    sha256: 8dfb477d8bcff4e1f74685b1e3408c19efed1098682e596fccb4b302dad3af3d
+    attribute: open_researcher_and_contributor_id_(orcid)
+    name: null
+    uri: https://schema.undata.live/values/open_researcher_and_contributor_id_(orcid)_13e7pm
+  v_y78nhy:
+    sha256: 7b4357f6e76bf3e8cd051563a154fbd8975ec45ab47b1d22473805626d6b740f
+    attribute: research_organization_registry_(ror)
+    name: null
+    uri: https://schema.undata.live/values/research_organization_registry_(ror)_y78nhy
+  v_4j9syz:
+    sha256: 10587debd04e98f4843d4983ffc96a6405644fb0b2640af06ab47ccc601fd51e
+    attribute: research_resource_identifiers_(rrid)
+    name: null
+    uri: https://schema.undata.live/values/research_resource_identifiers_(rrid)_4j9syz
+  v_1yv1a3:
+    sha256: ff64406d07087d98a0b44d89e3f9f1fe7f7d83c53a5248b612c5cc32fe83127c
+    attribute: universal_protein_resource_(uniprot)
+    name: null
+    uri: https://schema.undata.live/values/universal_protein_resource_(uniprot)_1yv1a3
+  v_tg39h8:
+    sha256: 6a20f6bcd6562a0b16f89842d8509555713d6dfebe3a02ad7dd66d24bce55414
+    attribute: molar
+    name: null
+    uri: https://schema.undata.live/values/molar_tg39h8
+  v_1r9z76:
+    sha256: e40e141ff0be40d4517fa96e7a10197a1ada1baefdbc19c61868b7c7adef5d30
+    attribute: micromolar
+    name: null
+    uri: https://schema.undata.live/values/micromolar_1r9z76
+  v_1ynsqq:
+    sha256: feaac5527c099bda305630975d3e3143bc027ac6cf4c2f5d5e1a01042d6ee8f7
+    attribute: nanomolar
+    name: null
+    uri: https://schema.undata.live/values/nanomolar_1ynsqq
+  v_sd0hvj:
+    sha256: 6637777f1997a58f65e7d8fe882b831f6761e22e590ae32b3096ae3b4fb82785
+    attribute: '%_m/m'
+    name: null
+    uri: https://schema.undata.live/values/%_m/m_sd0hvj
+  v_1xd4do:
+    sha256: f9fe7f5130baed9b7fec371dc48ab7e9695c8e4f4b1eef9d1ece729c5ef40c43
+    attribute: '%_v/v'
+    name: null
+    uri: https://schema.undata.live/values/%_v/v_1xd4do
+  v_1u5gnz:
+    sha256: ee6a4a76abc0c33b9fc1b991ff4668f0f45d4e5729b9498a369a9b914ccc56fa
+    attribute: constant
+    name: null
+    uri: https://schema.undata.live/values/constant_1u5gnz
+  v_9t8dxt:
+    sha256: 235cf991644746e5f15927f43efdbaa6e705b73d88e24e68b0c39f0b982ec126
+    attribute: exponential
+    name: null
+    uri: https://schema.undata.live/values/exponential_9t8dxt
+  v_83qk1h:
+    sha256: 1d34eaf5fc5f946a02a9700034b461f457b2d16670fcb045259ec04747f6c27e
+    attribute: kilohertz
+    name: null
+    uri: https://schema.undata.live/values/kilohertz_83qk1h
+  v_xzgi6y:
+    sha256: 7a7be71aef399a6a5cff6792ec8aece18d8d288fdb0096b4d288652820398dd0
+    attribute: hertz
+    name: null
+    uri: https://schema.undata.live/values/hertz_xzgi6y
+  v_11gx77:
+    sha256: 870b66c71a2e211402fa2fccb273608f656654a8fe9382eff48244ea72b3944c
+    attribute: millihertz
+    name: null
+    uri: https://schema.undata.live/values/millihertz_11gx77
+  v_vobl61:
+    sha256: 722933e95a51f703474eaee8388968915d4f34e20740527f71d002919440d16c
+    attribute: integration
+    name: null
+    uri: https://schema.undata.live/values/integration_vobl61
+  v_1jcua9:
+    sha256: c782577af0c169247696332a9f84f67514d411ccef1fd1f4eace8a4a015e193d
+    attribute: raster
+    name: null
+    uri: https://schema.undata.live/values/raster_1jcua9
+  v_17ur69:
+    sha256: 9e0dc27148e26519a14d385fca69d1ffc99b639eddf48311d770047b9a6c759f
+    attribute: mit
+    name: null
+    uri: https://schema.undata.live/values/mit_17ur69
+  v_1z0z7s:
+    sha256: fffc8e2c202243e352735b90b49e066d3a7345cbf5faf2acc48465082a725731
+    attribute: cc-by-4.0
+    name: null
+    uri: https://schema.undata.live/values/cc-by-4.0_1z0z7s
+  v_1jewvs:
+    sha256: c7b772ff5e90986e68d9e509252cf59803b3a63dd858daf660cf428d37fed2f7
+    attribute: derived
+    name: null
+    uri: https://schema.undata.live/values/derived_1jewvs
+  v_12z6oo:
+    sha256: 8c7a1d76e77e2c1fce920fc3257b300be4d3ccbe532479185fdd188445ef9a42
+    attribute: raw
+    name: null
+    uri: https://schema.undata.live/values/raw_12z6oo
+  v_1is8r9:
+    sha256: c572700709c02a3d357556c64dfda9a5e837839361521b64140055a927ee00fc
+    attribute: simulated
+    name: null
+    uri: https://schema.undata.live/values/simulated_1is8r9
+  v_1x7far:
+    sha256: 06edae336044119d6977c60daac1973144c96ef82ecbece9149ce2a05188d318
+    attribute: beam_expander
+    name: null
+    uri: https://schema.undata.live/values/beam_expander_1x7far
+  v_1m51cf:
+    sha256: d18a422654a3bce4a76ebd107bc6cd73caaa808f199ea91074601f34aab94894
+    attribute: sample_chamber
+    name: null
+    uri: https://schema.undata.live/values/sample_chamber_1m51cf
+  v_ihwgdw:
+    sha256: 42aa53f427046053301938c8de195b8124e9ffa4d833197ab267e4c9daba491c
+    attribute: diffuser
+    name: null
+    uri: https://schema.undata.live/values/diffuser_ihwgdw
+  v_ys6ibd:
+    sha256: 7d5c06398e08fc42d11273d463a47cba36209d63dd80b8eec448786dc96e30fa
+    attribute: galvo
+    name: null
+    uri: https://schema.undata.live/values/galvo_ys6ibd
+  v_y6xat6:
+    sha256: 7b3b42fa61fff2c401a388b0ecc4d968e0fe90d46e4b19d9e721bfd95442f02e
+    attribute: laser_combiner
+    name: null
+    uri: https://schema.undata.live/values/laser_combiner_y6xat6
+  v_utr5ai:
+    sha256: 6f19c88a6e700825aae8d25cd97bd1f1a2863c597a30edf1a8174571862a2a26
+    attribute: laser_coupler
+    name: null
+    uri: https://schema.undata.live/values/laser_coupler_utr5ai
+  v_146fqb:
+    sha256: 90ce9902a3e33940d0bb52363219d368149e639b1c0b5c5b42b63e649f22ae91
+    attribute: prism
+    name: null
+    uri: https://schema.undata.live/values/prism_146fqb
+  v_1vhehe:
+    sha256: f336eca9aaecea5bebd48ff3aedf1bf029f0d57649cc4f49fd2cbbb4604219d5
+    attribute: objective
+    name: null
+    uri: https://schema.undata.live/values/objective_1vhehe
+  v_18ybaq:
+    sha256: a2039d0f83d2e345fced8d278fbaf728b7c4525b5044302fd47c231f2d269d54
+    attribute: rotation_mount
+    name: null
+    uri: https://schema.undata.live/values/rotation_mount_18ybaq
+  v_1y2wlp:
+    sha256: fc934fe6df17cdb9c15fc127c691b28c0cd4bea3abb5d2115000494ba95c4555
+    attribute: slit
+    name: null
+    uri: https://schema.undata.live/values/slit_1y2wlp
+  v_8anep7:
+    sha256: 1de6142b217ec959cbc3e2e353b4101f69da4a4c13b98925c36eddb07b3b3d9c
+    attribute: spatial_light_modulator
+    name: null
+    uri: https://schema.undata.live/values/spatial_light_modulator_8anep7
+  v_4i84i1:
+    sha256: 103daac9e3612c571b6e02c73f069aacb66862d6fd2df0f24ddcf20c4d552927
+    attribute: tunable_lens
+    name: null
+    uri: https://schema.undata.live/values/tunable_lens_4i84i1
+  v_yigwaf:
+    sha256: 7c632177254d5a9bc34587daf14b026dfea82a27237d046903390f35ce52f533
+    attribute: camera
+    name: null
+    uri: https://schema.undata.live/values/camera_yigwaf
+  v_6x9z5b:
+    sha256: 18f4b32f370a86390e4825afe947a6c4808d0bd3efaefe9f972dbc560da96141
+    attribute: photomultiplier_tube
+    name: null
+    uri: https://schema.undata.live/values/photomultiplier_tube_6x9z5b
+  v_1joloa:
+    sha256: c8afc249702821c4996c2a457d02e2c445108258b3bc0fe4b0b1a7c23437d263
+    attribute: silicon_photomultiplier
+    name: null
+    uri: https://schema.undata.live/values/silicon_photomultiplier_1joloa
+  v_8wkb24:
+    sha256: 2017b4fc05d643ac53a5e7f07728a14afeca47352303ab10b0c99aca3c8ed056
+    attribute: cameralink
+    name: null
+    uri: https://schema.undata.live/values/cameralink_8wkb24
+  v_bgdp42:
+    sha256: 2948dc62f8d31d67c579708f95d9ffcd886b273af0b1de889da9a42b71f87c6d
+    attribute: coax
+    name: null
+    uri: https://schema.undata.live/values/coax_bgdp42
+  v_1b6g5p:
+    sha256: aa0962ecc7638877195fd21314c0030c8b4ce080a48548c035e578a0ad977950
+    attribute: ethernet
+    name: null
+    uri: https://schema.undata.live/values/ethernet_1b6g5p
+  v_17nthj:
+    sha256: 9d5c011bd9d2ce2c96076c0d65b4b20fabb69dc56a356d94b6a3e407e76e18fe
+    attribute: pcie
+    name: null
+    uri: https://schema.undata.live/values/pcie_17nthj
+  v_1ons86:
+    sha256: da9fff5bdff2d297fc0d599ccc7bbcb4acd8d5eb1f6895cbc4d10326db96a96f
+    attribute: pxi
+    name: null
+    uri: https://schema.undata.live/values/pxi_1ons86
+  v_13ajga:
+    sha256: 8d9d1f2950c42b60fd815e5f7bab1073f026165bd7209c994eb906671ef2a735
+    attribute: usb
+    name: null
+    uri: https://schema.undata.live/values/usb_13ajga
+  v_6rmmk9:
+    sha256: 1863eeb9f31d3a94feb1cd4df67e0b81969c0bc93bb564c9851c09d68f2eed2f
+    attribute: no_cooling
+    name: null
+    uri: https://schema.undata.live/values/no_cooling_6rmmk9
+  v_1e0v14:
+    sha256: b44a1f6844e1c5da63af0cd8562d02d3137be0e2a4160e0a920bad58389ce1cd
+    attribute: additive
+    name: null
+    uri: https://schema.undata.live/values/additive_1e0v14
+  v_16o5j0:
+    sha256: 99c9ef88994c2dfb515f9b30e950780ec1541774913144b6ea0d5ac65eac2009
+    attribute: average
+    name: null
+    uri: https://schema.undata.live/values/average_16o5j0
+  v_110ryz:
+    sha256: 03b4d29b4cac5f568746465faa32f7c30bd32a727f778be3dd2361b6e61f19a1
+    attribute: no_binning
+    name: null
+    uri: https://schema.undata.live/values/no_binning_110ryz
+  v_1mlneg:
+    sha256: d33405ef128c3a1c9d928bf6e4c03a5bb3007db395cc41118b7dabe8147dde38
+    attribute: body
+    name: null
+    uri: https://schema.undata.live/values/body_1mlneg
+  v_1n4odx:
+    sha256: d51bac79f2bc95f1292a33048fcdb75d60aa7d50eb101fcc809e3a209279cf43
+    attribute: brain
+    name: null
+    uri: https://schema.undata.live/values/brain_1n4odx
+  v_12vx5i:
+    sha256: 8c267120330c048ca23ee5c08ec9606c00e2f561b7e161e1ea4c08c857db0ff3
+    attribute: eye
+    name: null
+    uri: https://schema.undata.live/values/eye_12vx5i
+  v_1yczzx:
+    sha256: fd96049602d09548a3d7f9282eb3072f47a26175ab40bc6befd397f2c026ac04
+    attribute: face
+    name: null
+    uri: https://schema.undata.live/values/face_1yczzx
+  v_8bazxp:
+    sha256: 1df6df6df24e84806510b190c425fcda56a74398fa1e6f68a7bfbdbc657b7846
+    attribute: tongue
+    name: null
+    uri: https://schema.undata.live/values/tongue_8bazxp
+  v_1hk5qk:
+    sha256: c1089dbbbae6cc41acaab4a1bd69f4f4ea8e0906171143b6da3806c2e9fb0eca
+    attribute: analog_input
+    name: null
+    uri: https://schema.undata.live/values/analog_input_1hk5qk
+  v_1lsr0h:
+    sha256: d04f5b28358a52bd17a8ea68b7e12dcf40448ba01184030b7c0fc1a5ed3083c8
+    attribute: analog_output
+    name: null
+    uri: https://schema.undata.live/values/analog_output_1lsr0h
+  v_8x82kb:
+    sha256: 20289ffbdeb0f2d50d173378c33d3fd280642adff89cc7f549f5ce9785e77fcf
+    attribute: digital_input
+    name: null
+    uri: https://schema.undata.live/values/digital_input_8x82kb
+  v_kqj2uf:
+    sha256: 4abcbf2760f21b2ed2ec741dbb9a9b4fb9c19d73c48d46f6ae9d8b6bcbfe5a3f
+    attribute: digital_output
+    name: null
+    uri: https://schema.undata.live/values/digital_output_kqj2uf
+  v_4pr6vo:
+    sha256: 10fea4949621905d205c52774eaab840bf4fee0bd57c95e0403b1316e902a0fd
+    attribute: michigan_uled_probe_(version_1)
+    name: null
+    uri: https://schema.undata.live/values/michigan_uled_probe_(version_1)_4pr6vo
+  v_lb3qo8:
+    sha256: 4ccc08c8de7438e4a1fedb30abc8fc616978235448ac6daef4733a400d0f6b9f
+    attribute: mpi_photonic_probe_(version_1)
+    name: null
+    uri: https://schema.undata.live/values/mpi_photonic_probe_(version_1)_lb3qo8
+  v_ih1qh0:
+    sha256: 01d9750944d23abf6baa2b1a57537e32e08e4c1974cc8d6c5270249438ec3d85
+    attribute: neuropixels_opto_(demonstrator)
+    name: null
+    uri: https://schema.undata.live/values/neuropixels_opto_(demonstrator)_ih1qh0
+  v_21n30x:
+    sha256: 075f5811ebd7814140922b039014b6d0dd98b68f3f28420803081f0bd4701cc7
+    attribute: neuropixels_uhd_(fixed)
+    name: null
+    uri: https://schema.undata.live/values/neuropixels_uhd_(fixed)_21n30x
+  v_hx9g1f:
+    sha256: 40995e734a77fa00a319b3ae313a6895f9e31a304d21e6b974b0eba0a75c3efa
+    attribute: neuropixels_uhd_(switchable)
+    name: null
+    uri: https://schema.undata.live/values/neuropixels_uhd_(switchable)_hx9g1f
+  v_1o889t:
+    sha256: d9115bc3f4ce7615307924dbc1294978408dff1b2123ebb6b6ebc87942f5b6fa
+    attribute: neuropixels_1.0
+    name: null
+    uri: https://schema.undata.live/values/neuropixels_1.0_1o889t
+  v_pz2nkr:
+    sha256: 5d9ceadb9cc43fa7bf399a4cd950474a68cb95d591d8de5c6f94484fdf017060
+    attribute: neuropixels_2.0_(single_shank)
+    name: null
+    uri: https://schema.undata.live/values/neuropixels_2.0_(single_shank)_pz2nkr
+  v_cmwj2m:
+    sha256: 2d8aae8ea79aacc8ce91a2fe08550f5484e6a58cc0b44334cbf96efe1a047644
+    attribute: neuropixels_2.0_(multi_shank)
+    name: null
+    uri: https://schema.undata.live/values/neuropixels_2.0_(multi_shank)_cmwj2m
+  v_nxl1c3:
+    sha256: 564177034d8d67705d8e05576a4a86fc939ffc2fb258c76bf3bd13ab5713a378
+    attribute: neuropixels_2.0_(quad_base)
+    name: null
+    uri: https://schema.undata.live/values/neuropixels_2.0_(quad_base)_nxl1c3
+  v_1m58s3:
+    sha256: d18f8d4793d5c4c42242e1c27cf4accca6ea5259f6d0fdd50ee3b14504204bd8
+    attribute: band_pass
+    name: null
+    uri: https://schema.undata.live/values/band_pass_1m58s3
+  v_1pp7pl:
+    sha256: de5f4a5dbff488d6387496f91f7ac4e089cf4a12c947ca71e62656080b174ebe
+    attribute: dichroic
+    name: null
+    uri: https://schema.undata.live/values/dichroic_1pp7pl
+  v_eu45gj:
+    sha256: 3578caa3f9c4395effcb78080d948f9be58df1928bcce72b8ab41b5192f9be4b
+    attribute: long_pass
+    name: null
+    uri: https://schema.undata.live/values/long_pass_eu45gj
+  v_1ew1oq:
+    sha256: b7695b7429529ccf775d2201ea7060c48eafb8e0a6c33eea46b0b3208833ccc3
+    attribute: multiband
+    name: null
+    uri: https://schema.undata.live/values/multiband_1ew1oq
+  v_1074k9:
+    sha256: 039fb6d990ddfc9d66e9f1ab5c1deca9de2678d79e868fb3656af9b7063e0943
+    attribute: neutral_density
+    name: null
+    uri: https://schema.undata.live/values/neutral_density_1074k9
+  v_7tvznl:
+    sha256: 1c387f41c0e56246abdb476f1cab322f5c06157fecf5a8e624c2155c3bb3a889
+    attribute: notch
+    name: null
+    uri: https://schema.undata.live/values/notch_7tvznl
+  v_eg1e5g:
+    sha256: 341005e48004b932f22074d2a4323b5a30793811e72384ccad98cd5959014f13
+    attribute: multi_notch
+    name: null
+    uri: https://schema.undata.live/values/multi_notch_eg1e5g
+  v_1qamts:
+    sha256: e084424e8ff3d4674bbf9a5194d42a5c4ce4953beeea075ac443236129efc1a6
+    attribute: short_pass
+    name: null
+    uri: https://schema.undata.live/values/short_pass_1qamts
+  v_1hgeuv:
+    sha256: c0a897c824c043d25759dbb6ef19ee09ca7238c276cfcebce108da6a53694156
+    attribute: odor
+    name: null
+    uri: https://schema.undata.live/values/odor_1hgeuv
+  v_1288vp:
+    sha256: 89c7b275d67fbf13ee71b407e29893f4e5f7ee3b6d000b191a8ebc7ffedc6b71
+    attribute: carrier
+    name: null
+    uri: https://schema.undata.live/values/carrier_1288vp
+  v_19gwuw:
+    sha256: a3e048729bd07b89c9a31dc4c0efdf13b49c32db1b0a9cb64ec984f2611d15b6
+    attribute: fraction_of_cycle
+    name: null
+    uri: https://schema.undata.live/values/fraction_of_cycle_19gwuw
+  v_1m6gl1:
+    sha256: d1aebc8b2f33ddfe98ffdbe3c4fbd335849094886afc28b2cb454caf37c3b8f4
+    attribute: rotations_per_minute
+    name: null
+    uri: https://schema.undata.live/values/rotations_per_minute_1m6gl1
+  v_11bn3a:
+    sha256: 86840f6c7f5973d3b723db2f6482ed9028963d90b304cca058e859445b62212c
+    attribute: tesla
+    name: null
+    uri: https://schema.undata.live/values/tesla_11bn3a
+  v_9c4rv3:
+    sha256: 21a6b60f7420c3d7881fbdefec77f18eb4c60688afe3e60826a7da8ce514a924
+    attribute: millitesla
+    name: null
+    uri: https://schema.undata.live/values/millitesla_9c4rv3
+  v_32sdfs:
+    sha256: 0b17610891682540e926a6f700440700c4afd56362a7ad96d6e3bb8423491514
+    attribute: microtesla
+    name: null
+    uri: https://schema.undata.live/values/microtesla_32sdfs
+  v_3i05tu:
+    sha256: 0c9d5b8245d74e600dcc6e45f60767323abf84025d5da1bd9df6f62c918f3ae9
+    attribute: detection_axis
+    name: null
+    uri: https://schema.undata.live/values/detection_axis_3i05tu
+  v_yige4l:
+    sha256: 7c62c5858e3035c1ff0e46799f431d34f9be73a8be583c270d1f50cf8117d4df
+    attribute: illumination_axis
+    name: null
+    uri: https://schema.undata.live/values/illumination_axis_yige4l
+  v_sw4dat:
+    sha256: 68212c55618760240e5bac6f38f46c341915fac2e378519df613fc8765c643a7
+    attribute: perpendicular_axis
+    name: null
+    uri: https://schema.undata.live/values/perpendicular_axis_sw4dat
+  v_1chh6c:
+    sha256: aebeab689d833df6d0dc788ae90d2f16ce6d331229f01ef6df3f75dbe645c7b6
+    attribute: naked
+    name: null
+    uri: https://schema.undata.live/values/naked_1chh6c
+  v_ifh7o5:
+    sha256: 426c3815ad5511fdac30c0f1e53b2e2e0049e2bc4a8669706f28ce9dd2dc0a68
+    attribute: vab_silicone
+    name: null
+    uri: https://schema.undata.live/values/vab_silicone_ifh7o5
+  v_x9y3ib:
+    sha256: 77ee1343630f3aac3eeefa797fd79ee48dcd0cacbba28a371210b4262dc4f9eb
+    attribute: vab_mesh
+    name: null
+    uri: https://schema.undata.live/values/vab_mesh_x9y3ib
+  v_17ue5n:
+    sha256: 9e047e202e52e07303c8cc90543da40c74cb3a7864458af13ff25cb3f7f382d7
+    attribute: magnetic
+    name: null
+    uri: https://schema.undata.live/values/magnetic_17ue5n
+  v_5gbz76:
+    sha256: 13a7caf20a9bf97988b0e916312b1d153341c6cb275eb2bf47978a746a8b0272
+    attribute: non-magnetic
+    name: null
+    uri: https://schema.undata.live/values/non-magnetic_5gbz76
+  v_lehkah:
+    sha256: 4d22c2f91f582f4cf40a31ea579c09d752c7befd49502339f28bfe4e2abf1514
+    attribute: n/a
+    name: null
+    uri: https://schema.undata.live/values/n/a_lehkah
+  v_ox6puy:
+    sha256: 59d1e96ac041ac31a3b4d8a38a81818e8d6f9996d988ff8c180acf65aaad1d7f
+    attribute: single
+    name: null
+    uri: https://schema.undata.live/values/single_ox6puy
+  v_1v02iw:
+    sha256: f17ab83a979d1b5cedb4bf97b67b342ff8aee6fc13986caf423e34d47cf64018
+    attribute: double
+    name: null
+    uri: https://schema.undata.live/values/double_1v02iw
+  v_1i1wrr:
+    sha256: c2cf8d9399b83408a01e68a9bfe9d48722de0972ec76e839b63c61ec7787d7a3
+    attribute: dual_hemisphere_craniotomy
+    name: null
+    uri: https://schema.undata.live/values/dual_hemisphere_craniotomy_1i1wrr
+  v_k96ne2:
+    sha256: 490034ea19fa2e10dcd76dd7f9fa845cc6b38c255d275cd0a012b5750653b38e
+    attribute: whole_hemisphere_craniotomy
+    name: null
+    uri: https://schema.undata.live/values/whole_hemisphere_craniotomy_k96ne2
+  v_15pl1n:
+    sha256: 9653f89ea47a4412ee7b20c466f3d5cd4d849746ab1576e12959056bc3defe41
+    attribute: circle
+    name: null
+    uri: https://schema.undata.live/values/circle_15pl1n
+  v_1l1ke8:
+    sha256: cd96aa111533c11c8725a783ecf901b3ae63a5b3ee6922e7220d248b5787ab38
+    attribute: square
+    name: null
+    uri: https://schema.undata.live/values/square_1l1ke8
+  v_1advxo:
+    sha256: a72d613c2923e3ad78a5360dfda85f270dd1d76da7adfea294f81823a8591c83
+    attribute: cytoskeleton
+    name: null
+    uri: https://schema.undata.live/values/cytoskeleton_1advxo
+  v_pltut2:
+    sha256: 5c497a36943d054511728fd59496879b3e43f2fc6d81407d6ad3c19f9221aac6
+    attribute: fill
+    name: null
+    uri: https://schema.undata.live/values/fill_pltut2
+  v_1wei27:
+    sha256: f68739bf07ea09eba4e9ef7ffd2c553de4a0e5ad23471d7fd26fb2bf9889e206
+    attribute: rna
+    name: null
+    uri: https://schema.undata.live/values/rna_1wei27
+  v_15n5dm:
+    sha256: 96158f313e6e89d4a98978e4b87adc13b2abd394ebc248c1ce86565cdd154d83
+    attribute: protein
+    name: null
+    uri: https://schema.undata.live/values/protein_15n5dm
+  v_1t7x9c:
+    sha256: eb0eb89cc5db5b877c8c98616e54ff0aa6439e948b5697353c677784de5f90e3
+    attribute: nuclear
+    name: null
+    uri: https://schema.undata.live/values/nuclear_1t7x9c
+  v_1ac1zk:
+    sha256: a6fe6e5028e79bf2a1354dc6d3a7595c27e146337f5c1b4a34811656f0a4ac36
+    attribute: vasculature
+    name: null
+    uri: https://schema.undata.live/values/vasculature_1ac1zk
+  v_r5hrjn:
+    sha256: 61dc16b34abd3143e660333df12123e46bd08917ef7e0ae962db5f4a050409c8
+    attribute: alexa_fluor
+    name: null
+    uri: https://schema.undata.live/values/alexa_fluor_r5hrjn
+  v_dshgn0:
+    sha256: 31b45e7c7801fe925f9dde6203ad961e980ce54c98e346ea81abc4dc56c888ba
+    attribute: atto
+    name: null
+    uri: https://schema.undata.live/values/atto_dshgn0
+  v_1gl5tu:
+    sha256: bd87ab55da89949b416ab5ec56128c27a2523a9b7f32111ec490889db99192f0
+    attribute: cf
+    name: null
+    uri: https://schema.undata.live/values/cf_1gl5tu
+  v_oblz8l:
+    sha256: 57a8f0a5dbf412479675543e19be37323259b776ef82a8a9e333a54a3515e5b8
+    attribute: cyanine
+    name: null
+    uri: https://schema.undata.live/values/cyanine_oblz8l
+  v_1jd1o5:
+    sha256: c7879979e2aba6ed8bb235c69a072950a349847378b75e8fa6277e1eca7914bc
+    attribute: dylight
+    name: null
+    uri: https://schema.undata.live/values/dylight_1jd1o5
+  v_1o1mst:
+    sha256: d8684c76ca83d68e84035a84c9e23b7fea0645e537e923875ce0a606ce598f86
+    attribute: injected
+    name: null
+    uri: https://schema.undata.live/values/injected_1o1mst
+  v_wq9nyr:
+    sha256: 75f5bb93cbd0db12b1fbd40327565329b1e2315f2d50e7636b28c22eb2ce01ab
+    attribute: sutured
+    name: null
+    uri: https://schema.undata.live/values/sutured_wq9nyr
+  v_p0j3ax:
+    sha256: 5a279b79d14e31ef5d1cb46774285677dcecd776706465868723c74859f774fe
+    attribute: superior
+    name: null
+    uri: https://schema.undata.live/values/superior_p0j3ax
+  v_vszrbn:
+    sha256: 72a0ed13e17b42e1c51617ac0863a36a2d5bb8f6ba70a60ff7305c6029747763
+    attribute: inferior
+    name: null
+    uri: https://schema.undata.live/values/inferior_vszrbn
+  v_1y7wfg:
+    sha256: fd1355432d1f6f71af8d2225c71d28a660a4a611c328082b4bbd0ca758314506
+    attribute: anterior
+    name: null
+    uri: https://schema.undata.live/values/anterior_1y7wfg
+  v_v42x6g:
+    sha256: 7022747832e2eb4c42ce9c91a632b8c31dc0f5714891bdbbc0b4d2edb28acf88
+    attribute: posterior
+    name: null
+    uri: https://schema.undata.live/values/posterior_v42x6g
+  v_8tvat8:
+    sha256: 1fd2a57c7f06c4ffe21969ba7e66ccd1500c00688b1b05ba8cf39650a2180e84
+    attribute: left
+    name: null
+    uri: https://schema.undata.live/values/left_8tvat8
+  v_yetav7:
+    sha256: 7c05724398640cb6fb77800930481649339385173a654c4869508663e8cef8d4
+    attribute: right
+    name: null
+    uri: https://schema.undata.live/values/right_yetav7
+  v_nxm5az:
+    sha256: 5642415b8e49fd7d04a8056a0dbe66acc0e910a82a745af2442fa3b8afe1769d
+    attribute: medial
+    name: null
+    uri: https://schema.undata.live/values/medial_nxm5az
+  v_1iknmu:
+    sha256: 0576aaa60523ad36912883f55e12026537dbf15e893b534893e7fccb810c0305
+    attribute: lateral
+    name: null
+    uri: https://schema.undata.live/values/lateral_1iknmu
+  v_wnawx8:
+    sha256: 75a9bc2c7caea66c1305d517514c9340680cc99d2a30749f72e95211d693122b
+    attribute: coronal
+    name: null
+    uri: https://schema.undata.live/values/coronal_wnawx8
+  v_1p2km6:
+    sha256: 061d31def769156f856a9fe5e75a79f6d2bd1c72b0da884ce81fc3df3a43db1d
+    attribute: sagittal
+    name: null
+    uri: https://schema.undata.live/values/sagittal_1p2km6
+  v_1cc6cn:
+    sha256: ae36d19d7a515b7360ee1ffc64172a7fb4af1250df85bdeaa8fe570c1645c51f
+    attribute: transverse
+    name: null
+    uri: https://schema.undata.live/values/transverse_1cc6cn
+  v_1m595b:
+    sha256: d18fd034438c6b5dd4f4894baa71d2111fa1454b4ece1225d2b88f5609d5b45e
+    attribute: blood
+    name: null
+    uri: https://schema.undata.live/values/blood_1m595b
+  v_1pljht:
+    sha256: de0129ff039a567ca01316bf9f36666182ce15ca9487fea71d0031118efe63f5
+    attribute: barseq
+    name: null
+    uri: https://schema.undata.live/values/barseq_1pljht
+  v_1ksrqw:
+    sha256: ccb53cf55fb18f42ed127b94a4c116fcf6e8a01bdb44ae31435306ed8ed0b751
+    attribute: clearing
+    name: null
+    uri: https://schema.undata.live/values/clearing_1ksrqw
+  v_13zytt:
+    sha256: 9028ca6d5910df74372d6774d2857fd3b085529b4dc62602cdfc6496bbac53cb
+    attribute: delipidation
+    name: null
+    uri: https://schema.undata.live/values/delipidation_13zytt
+  v_1rc7td:
+    sha256: e4477883595b56a2d7631f3d1f46b19413ddb4a9c603078b2d4104a75d961e46
+    attribute: embedding
+    name: null
+    uri: https://schema.undata.live/values/embedding_1rc7td
+  v_182zkj:
+    sha256: 9ee0c4b83f6260a750b9fbba276fd979adb250f3f16c7cfd3280c7dd8f2c84e6
+    attribute: expansion
+    name: null
+    uri: https://schema.undata.live/values/expansion_182zkj
+  v_1x34kb:
+    sha256: f8fe56e249de76952bf9347fd1ddc612cf7fe816b6aee31bb9a79ba995e0c4e7
+    attribute: fixation
+    name: null
+    uri: https://schema.undata.live/values/fixation_1x34kb
+  v_1m7hkr:
+    sha256: 05d3cebbc2a2c2c57cdf063d17f2027fc951aea08320b483e1b65dcb42e44f73
+    attribute: fixation_and_permeabilization
+    name: null
+    uri: https://schema.undata.live/values/fixation_and_permeabilization_1m7hkr
+  v_1rkkr5:
+    sha256: e51db6770d0b31607b3cc0a9bca796b42bb70abacae68c6c58a45937493df3e9
+    attribute: gelation
+    name: null
+    uri: https://schema.undata.live/values/gelation_1rkkr5
+  v_1nzwon:
+    sha256: d83c13ddd452c12902e3f899822e4820fa8b381691deeca2ed35942f50b64e50
+    attribute: hybridization_chain_reaction
+    name: null
+    uri: https://schema.undata.live/values/hybridization_chain_reaction_1nzwon
+  v_6axwc3:
+    sha256: 16b843f3ad5323450029ba4175ef171532eae1ebd59904cb17cad663ea5c5110
+    attribute: immunolabeling
+    name: null
+    uri: https://schema.undata.live/values/immunolabeling_6axwc3
+  v_177ub4:
+    sha256: 9bc286d08d32ba047d3ba489c24864c8f95b812d1dd2408d7c2980497b2defbd
+    attribute: mounting
+    name: null
+    uri: https://schema.undata.live/values/mounting_177ub4
+  v_1gh8fm:
+    sha256: bd2302091eea661e4801e405a32d4208af1de496d4da4f5027ed2363dbc96868
+    attribute: refractive_index_matching
+    name: null
+    uri: https://schema.undata.live/values/refractive_index_matching_1gh8fm
+  v_pv1rf5:
+    sha256: 5d35c411f3ae240420e1896a56e353a4a446a052763c6916a33f34aa9d714d2c
+    attribute: sectioning
+    name: null
+    uri: https://schema.undata.live/values/sectioning_pv1rf5
+  v_5sxw3x:
+    sha256: 14eaf0cd3e74959241ac608cbda79f3a2c3c5ef3a2f7a960afbe0bd6fdbe53df
+    attribute: soak
+    name: null
+    uri: https://schema.undata.live/values/soak_5sxw3x
+  v_1tis4s:
+    sha256: ec24fd41f82aaa9fa00d89fd9873b407177a43bf1e3ff803d62c03a5212d914e
+    attribute: storage
+    name: null
+    uri: https://schema.undata.live/values/storage_1tis4s
+  v_zv4swh:
+    sha256: 8142565114da6e9611c46416e3d21068585d85b7fd70a0b237943186e9ca3dbe
+    attribute: stripping
+    name: null
+    uri: https://schema.undata.live/values/stripping_zv4swh
+  v_16ksfx:
+    sha256: 9973bbb6f39a8999bfbee626e609e8af2431884ba673bd0579b6d45104f8bac1
+    attribute: tamoxifen_induction
+    name: null
+    uri: https://schema.undata.live/values/tamoxifen_induction_16ksfx
+  v_kg750x:
+    sha256: 49b3f531f5cee60a6c832c3954fe7a48e03cccc3fa3cedcd82163995584053c0
+    attribute: female
+    name: null
+    uri: https://schema.undata.live/values/female_kg750x
+  v_1m86zx:
+    sha256: d1db2b6ce573061b1b0ce80def5609e427789847196cfbed87ef6267ac3e6e96
+    attribute: male
+    name: null
+    uri: https://schema.undata.live/values/male_1m86zx
   10qtg2:
     sha256: 846e60a3e4c2a72d3e8c932ed2da6ec1e4f3f48e7d26be20b7f3fa0917f58d77
     attribute: name
@@ -26724,6 +27919,286 @@ elements:
     attribute: abbreviation
     name: null
     uri: https://schema.undata.live/elements/abbreviation_1pfss1z
+  v_xf4anm:
+    sha256: 7872a1f25cd7598fa36d9cd8d808443ef25844ac59f5a71695f954c0eafb37c6
+    attribute: raw_data
+    name: null
+    uri: https://schema.undata.live/values/raw_data_xf4anm
+  v_1535yf:
+    sha256: 041d09e79095fc11aac9189f94785c29da16a3e6f1cccbf8b6c42cf7f6fc181c
+    attribute: processing
+    name: null
+    uri: https://schema.undata.live/values/processing_1535yf
+  v_1573hy:
+    sha256: 947a28ba6c6378d13fe90ed4cc7356b297d1191a919d6336068fea0e2647167c
+    attribute: analysis
+    name: null
+    uri: https://schema.undata.live/values/analysis_1573hy
+  v_185b6z:
+    sha256: 9f1c4d20aa86b62e4414f32a425e3d77ae4a2ec4f3af346800b4bcf348f8e97a
+    attribute: multi-asset
+    name: null
+    uri: https://schema.undata.live/values/multi-asset_185b6z
+  v_1cxt2q:
+    sha256: b061341ca518670610fb53f3b65c9f2b9f424ecbe5ff86b66ffcf87a27cc147c
+    attribute: compression
+    name: null
+    uri: https://schema.undata.live/values/compression_1cxt2q
+  v_1cd57l:
+    sha256: ae4fa2ae2660710c0723743afe7befba1cad2cbf77f5ebbc6edbfa88f2588c3d
+    attribute: denoising
+    name: null
+    uri: https://schema.undata.live/values/denoising_1cd57l
+  v_8zdu6r:
+    sha256: 205ffd1373a2c3a39e70628f81d8d436ee02594bacb543a912c5035ca9b11560
+    attribute: ephys_curation
+    name: null
+    uri: https://schema.undata.live/values/ephys_curation_8zdu6r
+  v_1oov0f:
+    sha256: dabb9be74b5f6e47948d3ff94dac35363c7b07a3b4598e34c069d7ebab0d512f
+    attribute: ephys_postprocessing
+    name: null
+    uri: https://schema.undata.live/values/ephys_postprocessing_1oov0f
+  v_1j4oq8:
+    sha256: c6b15adad0416ce1f15a34eb118eca451add2bc33b17d7f499c7ef910fb4761c
+    attribute: ephys_preprocessing
+    name: null
+    uri: https://schema.undata.live/values/ephys_preprocessing_1j4oq8
+  v_ivxgv9:
+    sha256: 4411daa5b14efa5428b4b9c8993fb777d7533ef42e682f0e08da1bc38222aaa8
+    attribute: ephys_visualization
+    name: null
+    uri: https://schema.undata.live/values/ephys_visualization_ivxgv9
+  v_1r6e6d:
+    sha256: e3b239b85329ae327498b033b5f940e07ee790ec6447bfb514a85144040be641
+    attribute: fiducial_segmentation
+    name: null
+    uri: https://schema.undata.live/values/fiducial_segmentation_1r6e6d
+  v_1dwa49:
+    sha256: b3d4b8089f43f27f64357a5a5bc5a089dc37500ce46ebce0d63033650eda7632
+    attribute: file_format_conversion
+    name: null
+    uri: https://schema.undata.live/values/file_format_conversion_1dwa49
+  v_iw2mm6:
+    sha256: 441586fe0cbe2e0c6a3dbeea9718e0187317e150b9dcede1f268f0441a854ebb
+    attribute: fluorescence_event_detection
+    name: null
+    uri: https://schema.undata.live/values/fluorescence_event_detection_iw2mm6
+  v_1qaul4:
+    sha256: e089c87ab0090e45b2962cb2450dd4b9aeb0d5f788c42bf0f751e695ec235c7a
+    attribute: image_atlas_alignment
+    name: null
+    uri: https://schema.undata.live/values/image_atlas_alignment_1qaul4
+  v_8l8nb7:
+    sha256: 1ef57d039d5b0545894d0072add382d49fbb396c7ac3efbe918a28bafb4df027
+    attribute: image_background_subtraction
+    name: null
+    uri: https://schema.undata.live/values/image_background_subtraction_8l8nb7
+  v_eylnnx:
+    sha256: 35ebc50dc6b70c3a65c08d7706fa3fb117968beb8802aa9328832c022babdb1d
+    attribute: image_cell_classification
+    name: null
+    uri: https://schema.undata.live/values/image_cell_classification_eylnnx
+  v_8o8xb0:
+    sha256: 00de4b2ff4e04106c2f07bbf9a76d2072eb21060d1cf6a81a29d686c8d5214f3
+    attribute: image_cell_quantification
+    name: null
+    uri: https://schema.undata.live/values/image_cell_quantification_8o8xb0
+  v_7m26t7:
+    sha256: 1b6fe0fb40b3afe5a8d6f27f6b5692389dc3237460578e337fad36bdf6eb240c
+    attribute: image_cell_segmentation
+    name: null
+    uri: https://schema.undata.live/values/image_cell_segmentation_7m26t7
+  v_1si3jc:
+    sha256: e878d6b9256abbe879838e57072e02d751626ae8e18b3ef878ff636f9a499d28
+    attribute: image_cross-image_alignment
+    name: null
+    uri: https://schema.undata.live/values/image_cross-image_alignment_1si3jc
+  v_15nmdp:
+    sha256: 9621a9eed6adb412deda48b568bf7abebc5ca5ab4026389656a21c39ea6b9a04
+    attribute: image_destriping
+    name: null
+    uri: https://schema.undata.live/values/image_destriping_15nmdp
+  v_1c8ihf:
+    sha256: add8f0b6697a3cc2e33b800bf233162b9c93a3424bc1db569ba3165adec152c5
+    attribute: image_flat-field_correction
+    name: null
+    uri: https://schema.undata.live/values/image_flat-field_correction_1c8ihf
+  v_3no7xl:
+    sha256: 0d2ea129c86bdbf7f53f2995b1d73859a8039059bb1cd9c7cc6a124cf3491fdb
+    attribute: image_importing
+    name: null
+    uri: https://schema.undata.live/values/image_importing_3no7xl
+  v_1sek19:
+    sha256: e81e11593cbd490f8bd4bc3bc8dfba35ae3b0b01efb31d02b68a25d6749ca012
+    attribute: image_mip_visualization
+    name: null
+    uri: https://schema.undata.live/values/image_mip_visualization_1sek19
+  v_1lywk8:
+    sha256: d0ed14769cd04a36dc89310d6f979ae80b97765160cc38e64306d6db9e0abe95
+    attribute: image_radial_correction
+    name: null
+    uri: https://schema.undata.live/values/image_radial_correction_1lywk8
+  v_o0tah6:
+    sha256: 56943a4af23b991ff060456069102448c4d4c517caf3699c2a30959bc42d2de2
+    attribute: image_spot_detection
+    name: null
+    uri: https://schema.undata.live/values/image_spot_detection_o0tah6
+  v_1ajvvc:
+    sha256: a7c71b77590fbc1ca7ea8963a1a7b036289629ebae3dd8e5a1bbef46f69dd35a
+    attribute: image_spot_spectral_unmixing
+    name: null
+    uri: https://schema.undata.live/values/image_spot_spectral_unmixing_1ajvvc
+  v_1umey8:
+    sha256: f01cc2e1782d1aa8f09f39a98ab393b745741ab92bcbc0c25622c587415a5850
+    attribute: image_thresholding
+    name: null
+    uri: https://schema.undata.live/values/image_thresholding_1umey8
+  v_17a6lw:
+    sha256: 9bfe8a6d4847905941870d612892df35f5bc0fc13ea9e56ca9a15a3d09da8587
+    attribute: image_tile_alignment
+    name: null
+    uri: https://schema.undata.live/values/image_tile_alignment_17a6lw
+  v_18dpta:
+    sha256: 9ff3bd780aa71c9168b291cf02892827e98ca8f4ca9ce13b249300b16685fb63
+    attribute: image_tile_fusing
+    name: null
+    uri: https://schema.undata.live/values/image_tile_fusing_18dpta
+  v_z147vx:
+    sha256: 7e410dedc0d8e5e1fbd3735a7fa906a6c0e6b87ed15edb0a39794d9c895fe3f8
+    attribute: image_tile_projection
+    name: null
+    uri: https://schema.undata.live/values/image_tile_projection_z147vx
+  v_1gfcw6:
+    sha256: bcf2ecf25cbcf694a3e1651b101e8852371f73c217c6501c9ebeccd62162aaa4
+    attribute: model_evaluation
+    name: null
+    uri: https://schema.undata.live/values/model_evaluation_1gfcw6
+  v_f3y65f:
+    sha256: 3674d2a3a80cf7862dea47159c1f7ccf0f17e3ee0809b89bdc968a87a352a24b
+    attribute: model_training
+    name: null
+    uri: https://schema.undata.live/values/model_training_f3y65f
+  v_1pd4rv:
+    sha256: dd29a72df94fd4e206432ed40795db7706ef560389a9b348af0627dd741c26bc
+    attribute: neuron_skeleton_processing
+    name: null
+    uri: https://schema.undata.live/values/neuron_skeleton_processing_1pd4rv
+  v_1g4pw2:
+    sha256: bbe242a169a59342aebd619619f5f890025c08027c30a5e560a9632d7310890e
+    attribute: neuropil_subtraction
+    name: null
+    uri: https://schema.undata.live/values/neuropil_subtraction_1g4pw2
+  v_1g22im:
+    sha256: bb9e5cbec961bfdab57e01ead5149c818f9a6c9249dc1cc9a20c57556c8edef3
+    attribute: pipeline
+    name: null
+    uri: https://schema.undata.live/values/pipeline_1g22im
+  v_156hc8:
+    sha256: 946a623f969db38e39aec21a422bebd4dcf7cac0db92e94cf0ee5944790e5d51
+    attribute: simulation
+    name: null
+    uri: https://schema.undata.live/values/simulation_156hc8
+  v_8ghje0:
+    sha256: 00d8c4cac0a01a0dffd5dfa7c80623d4b2e46edc58a27d5827249731de83802e
+    attribute: skull_stripping
+    name: null
+    uri: https://schema.undata.live/values/skull_stripping_8ghje0
+  v_xtbqip:
+    sha256: 79debc01c0f2ea4961667f0c16cf32df688482c64e77f36e351f5664ce5a1c8e
+    attribute: spatial_timeseries_demixing
+    name: null
+    uri: https://schema.undata.live/values/spatial_timeseries_demixing_xtbqip
+  v_w9hcb4:
+    sha256: 74478190aa3edc5663507d17cbc3da2c927a32e68038b9f573061dd9f2c707c4
+    attribute: spike_sorting
+    name: null
+    uri: https://schema.undata.live/values/spike_sorting_w9hcb4
+  v_cs9drc:
+    sha256: 2e13f9e87f0b0a0ee22c43ba99c5c10c7e145da83059543a716a12435b8dd215
+    attribute: video_roi_classification
+    name: null
+    uri: https://schema.undata.live/values/video_roi_classification_cs9drc
+  v_1r7jbq:
+    sha256: e3cf8529209b1432bf9e2d7767167aca42483bf720f40c3e04eb023b19ac98eb
+    attribute: video_roi_cross_session_matching
+    name: null
+    uri: https://schema.undata.live/values/video_roi_cross_session_matching_1r7jbq
+  v_1t81mh:
+    sha256: eb11d420933cda7602a329729a27d4fbce7997d8d4b2eeabf2730650e0e6d7ef
+    attribute: video_roi_segmentation
+    name: null
+    uri: https://schema.undata.live/values/video_roi_segmentation_1t81mh
+  v_g9ay1a:
+    sha256: 3a98b3cea8387277695e0073aa8187f9021b5327cc1c200f6468f5793ff0791c
+    attribute: video_roi_timeseries_extraction
+    name: null
+    uri: https://schema.undata.live/values/video_roi_timeseries_extraction_g9ay1a
+  v_1rsf28:
+    sha256: e5e6b1232c4b04213011b0659233c2359662ff24c28c6d713f516827f116d137
+    attribute: video_motion_correction
+    name: null
+    uri: https://schema.undata.live/values/video_motion_correction_1rsf28
+  v_hwdrsn:
+    sha256: 4082d1f750f966cf16f73db44e3794a264e0e6e94f4df2ec938961005292effc
+    attribute: video_plane_decrosstalk
+    name: null
+    uri: https://schema.undata.live/values/video_plane_decrosstalk_hwdrsn
+  v_d8iggd:
+    sha256: 2fb47fcd1c3534cd2603bb518f41e4fd2cf02e5b784a361e48afb0e9875c0c17
+    attribute: df/f_estimation
+    name: null
+    uri: https://schema.undata.live/values/df/f_estimation_d8iggd
+  v_vgzpmr:
+    sha256: 716d58836a7b47472bbdb5590d509a194e1ae728a8069b2ffeffa55073d686e7
+    attribute: alexnet
+    name: null
+    uri: https://schema.undata.live/values/alexnet_vgzpmr
+  v_7dwpie:
+    sha256: 1a9ef22653e08461ab80e912256527ec727e8bf892d5878c94a320fa4c92a342
+    attribute: resnet
+    name: null
+    uri: https://schema.undata.live/values/resnet_7dwpie
+  v_1azvho:
+    sha256: a960e64ecdb252dad46efc15e392c4e9958840922ee27cf0473cc496eea0a469
+    attribute: vggnet
+    name: null
+    uri: https://schema.undata.live/values/vggnet_1azvho
+  v_12t8np:
+    sha256: 8be1bf08e9f8f71f0384e73a727438d4f6921479c28da431e6fdedfb214e2b78
+    attribute: unet
+    name: null
+    uri: https://schema.undata.live/values/unet_12t8np
+  v_1u06b5:
+    sha256: ede2c5eb7725e6294f488c2d2b4ac2878b5092ae945e88528f4612047858b8d2
+    attribute: transformer
+    name: null
+    uri: https://schema.undata.live/values/transformer_1u06b5
+  v_1lp8t4:
+    sha256: cff582702611d6942ebd9166c10c9ded4a624cfcf9b36edd8b83bf67c086698d
+    attribute: random_forest
+    name: null
+    uri: https://schema.undata.live/values/random_forest_1lp8t4
+  v_1yydty:
+    sha256: ffba12e6038ca52d0c85609ba76d43aeaa7a9bc928d7c3625de69cf092b19873
+    attribute: support_vector_machine
+    name: null
+    uri: https://schema.undata.live/values/support_vector_machine_1yydty
+  v_3r6rrb:
+    sha256: 0d88b907cb5a9d02f29dd9ce717e07675366e6d104accd53d46d51d98053981f
+    attribute: fail
+    name: null
+    uri: https://schema.undata.live/values/fail_3r6rrb
+  v_jt5026:
+    sha256: 4764f88e662d7bf0acd04e734b15cc6c309abb133490d9ce38a7bb78476cc724
+    attribute: pass
+    name: null
+    uri: https://schema.undata.live/values/pass_jt5026
+  v_15j94f:
+    sha256: 95b1b5bd67b1ede61847c80555500d36847c4bfdd0e87e63553232b3d0b5ade5
+    attribute: pending
+    name: null
+    uri: https://schema.undata.live/values/pending_15j94f
 schemas:
   pas8hw:
     sha256: 5b2e680461fa8a47fd39f6570bd9e62f6a1f354220d5e2e2acf929017afc6d27

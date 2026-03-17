@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: random_forest
+provenance:
+- source: aind
+  raw_value: Random Forest

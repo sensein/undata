@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: posterior_to_anterior
+provenance:
+- source: aind
+  raw_value: Posterior_to_anterior

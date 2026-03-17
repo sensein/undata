@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: back_to_front
+provenance:
+- source: aind
+  raw_value: Back_to_front

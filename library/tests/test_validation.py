@@ -44,5 +44,7 @@ class TestValidateDirectory:
         reports = validate_directory(FIXTURES)
         valid = [r for r in reports if r.valid]
         invalid = [r for r in reports if not r.valid]
-        assert len(valid) == 5  # valid-element, valid-schema, multi-prov-element, valid-value, multi-prov-value
+        assert (
+            len(valid) == 5
+        )  # valid-element, valid-schema, multi-prov-element, valid-value, multi-prov-value
         assert len(invalid) == 2  # no-datatype, bad-enum

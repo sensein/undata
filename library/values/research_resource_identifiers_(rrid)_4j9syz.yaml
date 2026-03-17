@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: research_resource_identifiers_(rrid)
+provenance:
+- source: aind
+  raw_value: Research Resource Identifiers (RRID)

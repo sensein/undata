@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: refractive_index_matching
+provenance:
+- source: aind
+  raw_value: Refractive index matching

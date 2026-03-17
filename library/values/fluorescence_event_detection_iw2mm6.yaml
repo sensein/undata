@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: fluorescence_event_detection
+provenance:
+- source: aind
+  raw_value: Fluorescence event detection

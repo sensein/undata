@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: ephys_preprocessing
+provenance:
+- source: aind
+  raw_value: Ephys preprocessing

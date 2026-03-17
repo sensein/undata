@@ -8,10 +8,12 @@ Identity ≠ provenance — two sources defining the same concept produce one el
 
 ## Contents
 
-- **136 unique data elements** (deduplicated from 9,629 source attributes across 5 schemas)
-- **859 class schemas** with property membership from BIDS, DANDI, NWB, AIND, openMINDS
+- **5,345 data elements** (content-addressed, class-scoped)
+- **862 class schemas** with property membership from BIDS, DANDI, NWB, AIND, openMINDS
+- **295 value concepts** — categorical/enum values as semantic entities (e.g., `male` → `PATO:0000384`)
 - **Content-addressed filenames**: `{attribute}_{6-char-hash}.yaml`
 - **LinkML meta-schema**: `library-schema.linkml.yaml`
+- **Curated value mappings**: `value-mappings.yaml` (sex, species, handedness, modality)
 
 ## Install
 

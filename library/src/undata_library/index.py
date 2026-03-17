@@ -60,13 +60,35 @@ def build_index(base_path: Path) -> dict[str, Any]:
             except (yaml.YAMLError, OSError):
                 continue
 
+    values: list[dict[str, Any]] = []
+    values_dir = base_path / "values"
+    if values_dir.exists():
+        for f in sorted(values_dir.glob("*.yaml")):
+            try:
+                data = yaml.safe_load(f.read_text(encoding="utf-8"))
+                if not isinstance(data, dict) or "semantic" not in data:
+                    continue
+                prov = data.get("provenance", [])
+                values.append(
+                    {
+                        "file": str(f.relative_to(base_path)),
+                        "label": data["semantic"].get("label", ""),
+                        "ontology_term": data["semantic"].get("ontology_term"),
+                        "provenance_count": len(prov),
+                    }
+                )
+            except (yaml.YAMLError, OSError):
+                continue
+
     return {
         "generated_at": None,
         "element_count": len(elements),
         "schema_count": len(schemas),
+        "value_count": len(values),
         "multi_source_elements": multi_source,
         "elements": elements,
         "schemas": schemas,
+        "values": values,
     }
 
 

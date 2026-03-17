@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: constant
+provenance:
+- source: aind
+  raw_value: Constant

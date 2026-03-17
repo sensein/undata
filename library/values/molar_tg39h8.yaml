@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: molar
+provenance:
+- source: aind
+  raw_value: molar
