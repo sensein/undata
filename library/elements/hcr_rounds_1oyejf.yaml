@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: HCRSeries
   name: hcr_rounds
+  description: Hybridization Chain Reaction rounds

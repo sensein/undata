@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: aind_data_schema_models__harp_types___Behavior
   name: whoami
+  description: Whoami

@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: DetectorConfig
   name: exposure_time
+  description: Exposure time

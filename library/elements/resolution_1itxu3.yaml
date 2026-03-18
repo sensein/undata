@@ -9,9 +9,12 @@ provenance:
 - source: aind
   class: Atlas
   name: resolution
+  description: Resolution
 - source: aind
   class: MRIScan
   name: resolution
+  description: Voxel resolution
 - source: aind
   class: Atlas
   name: resolution
+  description: Resolution

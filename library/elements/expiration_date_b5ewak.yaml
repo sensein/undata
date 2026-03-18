@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: NonViralMaterial
   name: expiration_date
+  description: Lot expiration date
 - source: aind
   class: NonViralMaterial
   name: expiration_date
+  description: Lot expiration date

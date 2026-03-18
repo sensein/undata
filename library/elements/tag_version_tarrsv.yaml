@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Olfactometer
   name: tag_version
+  description: Tag version

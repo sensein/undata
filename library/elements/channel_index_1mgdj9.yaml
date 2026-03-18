@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: OlfactometerChannel
   name: channel_index
+  description: Channel index

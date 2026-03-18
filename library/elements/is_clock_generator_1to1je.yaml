@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Olfactometer
   name: is_clock_generator
+  description: Is Clock Generator

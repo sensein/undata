@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: ProbeConfig
   name: atlas_coordinate
+  description: Target coordinate in Acquisition.atlas
 - source: aind
   class: ProbeConfig
   name: atlas_coordinate
+  description: Target coordinate in Acquisition.atlas

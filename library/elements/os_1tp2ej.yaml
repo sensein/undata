@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: ResourceUsage
   name: os
+  description: Operating system
 - source: aind
   class: ResourceUsage
   name: os
+  description: Operating system
 - source: aind
   class: ResourceUsage
   name: os
+  description: Operating system

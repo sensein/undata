@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: Connection
   name: source_port
+  description: Source device port index/name
 - source: aind
   class: Connection
   name: source_port
+  description: Source device port index/name

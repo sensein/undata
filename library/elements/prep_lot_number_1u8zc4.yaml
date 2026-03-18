@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: TarsVirusIdentifiers
   name: prep_lot_number
+  description: Preparation lot number
 - source: aind
   class: TarsVirusIdentifiers
   name: prep_lot_number
+  description: Preparation lot number

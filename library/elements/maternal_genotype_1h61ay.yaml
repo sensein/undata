@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: BreedingInfo
   name: maternal_genotype
+  description: Maternal genotype

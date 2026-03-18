@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: NeuropixelsBasestation
   name: additional_settings
+  description: Additional parameters

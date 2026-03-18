@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: Injection
   name: injection_materials
+  description: Injection material
 - source: aind
   class: Injection
   name: injection_materials
+  description: Injection material

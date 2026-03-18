@@ -24,129 +24,172 @@ provenance:
 - source: aind
   class: AdditionalImagingDevice
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: AirPuffDevice
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Arena
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Camera
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Computer
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: DAQDevice
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Detector
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Device
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: DigitalMicromirrorDevice
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Disc
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Enclosure
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: EphysProbe
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: FiberPatchCord
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: FiberProbe
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Filter
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: HarpDevice
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Lamp
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Laser
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Lens
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: LickSpout
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: LightEmittingDiode
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Manipulator
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Microscope
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Monitor
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: MotorizedStage
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: NeuropixelsBasestation
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Objective
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Olfactometer
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: OpenEphysAcquisitionBoard
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: PockelsCell
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: PolygonalScanner
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Scanner
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: ScanningStage
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Speaker
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Treadmill
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Tube
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Wheel
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Catheter
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Device
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: EphysProbe
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: FiberProbe
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: MyomatrixArray
   name: manufacturer
+  description: Manufacturer
 - source: aind
   class: Device
   name: manufacturer
+  description: Manufacturer

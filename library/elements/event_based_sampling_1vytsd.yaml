@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: DAQChannel
   name: event_based_sampling
+  description: Set to true if DAQ channel is sampled at irregular intervals

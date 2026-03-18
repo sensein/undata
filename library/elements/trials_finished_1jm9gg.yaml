@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: PerformanceMetrics
   name: trials_finished
+  description: Finished trials

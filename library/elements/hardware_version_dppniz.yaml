@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: OpenEphysAcquisitionBoard
   name: hardware_version
+  description: Hardware version

@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: TrainingProtocol
   name: end_date
+  description: Training protocol end date

@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: Translation
   name: translation
+  description: Translation parameters
 - source: aind
   class: Translation
   name: translation
+  description: Translation parameters
 - source: aind
   class: Translation
   name: translation
+  description: Translation parameters

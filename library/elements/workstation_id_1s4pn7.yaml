@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Surgery
   name: workstation_id
+  description: Workstation ID

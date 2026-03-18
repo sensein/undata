@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: ResourceUsage
   name: ram_usage
+  description: RAM usage
 - source: aind
   class: ResourceUsage
   name: ram_usage
+  description: RAM usage
 - source: aind
   class: ResourceUsage
   name: ram_usage
+  description: RAM usage

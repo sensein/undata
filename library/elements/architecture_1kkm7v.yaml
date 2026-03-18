@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: ResourceUsage
   name: architecture
+  description: Architecture
 - source: aind
   class: ResourceUsage
   name: architecture
+  description: Architecture
 - source: aind
   class: ResourceUsage
   name: architecture
+  description: Architecture

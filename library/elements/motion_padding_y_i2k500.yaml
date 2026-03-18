@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: DigitalMicromirrorDevice
   name: motion_padding_y
+  description: Motion padding Y (pixels)

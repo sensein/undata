@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: ModelTraining
   name: end_date_time
+  description: End date time
 - source: aind
   class: ModelTraining
   name: end_date_time
+  description: End date time

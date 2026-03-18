@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: PerformanceMetric
   name: value
+  description: Metric value
 - source: aind
   class: PerformanceMetric
   name: value
+  description: Metric value

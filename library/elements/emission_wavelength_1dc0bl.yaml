@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Channel
   name: emission_wavelength
+  description: Emission wavelength

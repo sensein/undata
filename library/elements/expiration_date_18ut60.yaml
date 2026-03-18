@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: Reagent
   name: expiration_date
+  description: Lot expiration date
 - source: aind
   class: Reagent
   name: expiration_date
+  description: Lot expiration date

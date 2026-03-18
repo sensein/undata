@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: ModelEvaluation
   name: start_date_time
+  description: Start date time
 - source: aind
   class: ModelEvaluation
   name: start_date_time
+  description: Start date time

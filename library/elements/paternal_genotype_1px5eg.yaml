@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: BreedingInfo
   name: paternal_genotype
+  description: Paternal genotype

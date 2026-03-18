@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: GeneProbeSet
   name: lot_number
+  description: Lot number

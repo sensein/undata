@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: FluorescentStain
   name: expiration_date
+  description: Lot expiration date

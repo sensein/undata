@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: CurationMetric
   name: type
+  description: Curation type
 - source: aind
   class: CurationMetric
   name: type
+  description: Curation type

@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: ResourceTimestamped
   name: timestamp
+  description: Timestamp
 - source: aind
   class: ResourceTimestamped
   name: timestamp
+  description: Timestamp
 - source: aind
   class: ResourceTimestamped
   name: timestamp
+  description: Timestamp

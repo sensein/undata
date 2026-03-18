@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: EphysProbe
   name: headstage
+  description: Headstage for this probe
 - source: aind
   class: EphysProbe
   name: headstage
+  description: Headstage for this probe

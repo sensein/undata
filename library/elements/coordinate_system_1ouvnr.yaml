@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: LickSpoutConfig
   name: coordinate_system
+  description: Device coordinate system

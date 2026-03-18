@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: LickSpout
   name: lick_sensor
+  description: Lick sensor

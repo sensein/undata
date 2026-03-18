@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: OlfactometerChannel
   name: flow_unit
+  description: Flow unit

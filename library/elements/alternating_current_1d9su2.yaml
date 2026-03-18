@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: InjectionDynamics
   name: alternating_current
+  description: Alternating current
 - source: aind
   class: InjectionDynamics
   name: alternating_current
+  description: Alternating current

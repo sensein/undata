@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: NonViralMaterial
   name: lot_number
+  description: Lot number
 - source: aind
   class: NonViralMaterial
   name: lot_number
+  description: Lot number

@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: ModelEvaluation
   name: performance
+  description: Evaluation performance
 - source: aind
   class: ModelEvaluation
   name: performance
+  description: Evaluation performance

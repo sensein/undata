@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: SampleChamberConfig
   name: sample_immersion
+  description: Acquisition sample immersion data

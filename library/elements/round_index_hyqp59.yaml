@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: HybridizationChainReaction
   name: round_index
+  description: Round index

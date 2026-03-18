@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: LightEmittingDiode
   name: model
+  description: Model

@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: ResourceUsage
   name: system_memory_unit
+  description: System memory unit
 - source: aind
   class: ResourceUsage
   name: system_memory_unit
+  description: System memory unit
 - source: aind
   class: ResourceUsage
   name: system_memory_unit
+  description: System memory unit

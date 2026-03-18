@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: ResourceUsage
   name: ram_unit
+  description: Ram unit
 - source: aind
   class: ResourceUsage
   name: ram_unit
+  description: Ram unit
 - source: aind
   class: ResourceUsage
   name: ram_unit
+  description: Ram unit

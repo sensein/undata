@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Monitor
   name: width
+  description: Width (pixels)

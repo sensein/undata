@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: FiberProbe
   name: numerical_aperture
+  description: Numerical aperture
 - source: aind
   class: FiberProbe
   name: numerical_aperture
+  description: Numerical aperture

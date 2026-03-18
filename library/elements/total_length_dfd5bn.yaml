@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: FiberProbe
   name: total_length
+  description: Total length (mm)
 - source: aind
   class: FiberProbe
   name: total_length
+  description: Total length (mm)

@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: PerformanceMetrics
   name: reward_consumed_unit
+  description: Reward consumed unit

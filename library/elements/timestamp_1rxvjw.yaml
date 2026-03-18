@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: CurationHistory
   name: timestamp
+  description: Timestamp
 - source: aind
   class: CurationHistory
   name: timestamp
+  description: Timestamp

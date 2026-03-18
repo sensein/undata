@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: InjectionDynamics
   name: volume
+  description: Injection volume
 - source: aind
   class: InjectionDynamics
   name: volume
+  description: Injection volume

@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: StimulusEpoch
   name: stimulus_name
+  description: Stimulus name

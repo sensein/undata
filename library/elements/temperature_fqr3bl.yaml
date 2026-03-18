@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Lamp
   name: temperature
+  description: Temperature (K)

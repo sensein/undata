@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: AirPuffConfig
   name: pressure
+  description: Pressure

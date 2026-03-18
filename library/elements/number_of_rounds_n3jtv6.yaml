@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: HCRSeries
   name: number_of_rounds
+  description: Number of round

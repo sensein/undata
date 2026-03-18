@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Olfactometer
   name: harp_device_type
+  description: Type of Harp device

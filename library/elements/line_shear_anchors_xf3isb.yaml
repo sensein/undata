@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: DigitalMicromirrorDevice
   name: line_shear_anchors
+  description: Line shear anchors at top and bottom of field of view (pixels)

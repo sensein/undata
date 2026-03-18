@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: PerformanceMetrics
   name: output_parameters
+  description: Additional metrics

@@ -177,6 +177,8 @@ provenance:
 - source: aind
   class: BrainStructureModel
   name: id
+  description: Id
 - source: aind
   class: BrainStructureModel
   name: id
+  description: Id

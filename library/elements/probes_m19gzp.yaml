@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: EphysAssembly
   name: probes
+  description: Probes that are held by this module

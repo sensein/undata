@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: ResourceUsage
   name: ram
+  description: System RAM
 - source: aind
   class: ResourceUsage
   name: ram
+  description: System RAM
 - source: aind
   class: ResourceUsage
   name: ram
+  description: System RAM

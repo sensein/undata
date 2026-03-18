@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: AirPuffConfig
   name: relative_position
+  description: Initial relative position

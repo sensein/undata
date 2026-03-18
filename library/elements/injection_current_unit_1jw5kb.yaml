@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: InjectionDynamics
   name: injection_current_unit
+  description: Injection current unit
 - source: aind
   class: InjectionDynamics
   name: injection_current_unit
+  description: Injection current unit

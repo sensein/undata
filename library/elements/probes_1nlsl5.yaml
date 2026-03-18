@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: FiberAssemblyConfig
   name: probes
+  description: Probe configurations

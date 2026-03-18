@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: Anaesthetic
   name: anaesthetic_type
+  description: Type
 - source: aind
   class: Anaesthetic
   name: anaesthetic_type
+  description: Type

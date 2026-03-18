@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Monitor
   name: refresh_rate
+  description: Refresh rate (Hz)

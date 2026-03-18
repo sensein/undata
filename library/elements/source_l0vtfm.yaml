@@ -11,24 +11,31 @@ provenance:
 - source: aind
   class: NonViralMaterial
   name: source
+  description: Source
 - source: aind
   class: Reagent
   name: source
+  description: Source
 - source: aind
   class: FluorescentStain
   name: source
+  description: Source
 - source: aind
   class: GeneProbeSet
   name: source
+  description: Source
 - source: aind
   class: NonViralMaterial
   name: source
+  description: Source
 - source: aind
   class: ProbeReagent
   name: source
+  description: Source
 - source: aind
   class: Reagent
   name: source
+  description: Source
 - source: aind
   class: HumanSubject
   name: source

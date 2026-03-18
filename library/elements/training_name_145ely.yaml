@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: TrainingProtocol
   name: training_name
+  description: Training protocol name

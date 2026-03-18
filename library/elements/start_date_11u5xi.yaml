@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: WaterRestriction
   name: start_date
+  description: Water restriction start date

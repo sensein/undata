@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: DigitalMicromirrorDevice
   name: invert_pixel_values
+  description: Invert pixel values

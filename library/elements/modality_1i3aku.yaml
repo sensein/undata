@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: QCMetric
   name: modality
+  description: Modality
 - source: aind
   class: QCMetric
   name: modality
+  description: Modality

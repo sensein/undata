@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: ProteinProbe
   name: mass
+  description: Mass of protein probe (ug)

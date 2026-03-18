@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Detector
   name: frame_rate_unit
+  description: Frame rate unit

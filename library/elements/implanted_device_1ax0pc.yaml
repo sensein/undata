@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: ProbeImplant
   name: implanted_device
+  description: Implanted device

@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: PIDName
   name: registry_identifier
+  description: Registry identifier
 - source: aind
   class: PIDName
   name: registry_identifier
+  description: Registry identifier
 - source: aind
   class: PIDName
   name: registry_identifier
+  description: Registry identifier

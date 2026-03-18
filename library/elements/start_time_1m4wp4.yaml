@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: HybridizationChainReaction
   name: start_time
+  description: Round start time

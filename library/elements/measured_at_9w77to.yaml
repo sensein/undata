@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: Calibration
   name: measured_at
+  description: Measurement location
 - source: aind
   class: Calibration
   name: measured_at
+  description: Measurement location

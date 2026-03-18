@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Filter
   name: cut_off_wavelength
+  description: Cut-off wavelength (nm)

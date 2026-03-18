@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: MRIScan
   name: additional_scan_parameters
+  description: Parameters

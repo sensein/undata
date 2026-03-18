@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Scanner
   name: additional_settings
+  description: Additional parameters

@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: ProbeReagent
   name: expiration_date
+  description: Lot expiration date

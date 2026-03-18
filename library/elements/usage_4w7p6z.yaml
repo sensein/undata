@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: ResourceTimestamped
   name: usage
+  description: Usage
 - source: aind
   class: ResourceTimestamped
   name: usage
+  description: Usage
 - source: aind
   class: ResourceTimestamped
   name: usage
+  description: Usage

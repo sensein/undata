@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: LickSpout
   name: spout_diameter
+  description: Spout diameter (mm)

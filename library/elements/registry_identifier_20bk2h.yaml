@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Person
   name: registry_identifier
+  description: ORCID ID

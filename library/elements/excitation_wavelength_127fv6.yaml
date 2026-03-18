@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Fluorophore
   name: excitation_wavelength
+  description: Excitation wavelength (nm)

@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: DAQDevice
   name: hardware_version
+  description: Hardware version

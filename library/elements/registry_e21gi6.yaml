@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: PIDName
   name: registry
+  description: Registry
 - source: aind
   class: PIDName
   name: registry
+  description: Registry
 - source: aind
   class: PIDName
   name: registry
+  description: Registry

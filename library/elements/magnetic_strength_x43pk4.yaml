@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Scanner
   name: magnetic_strength
+  description: Magnetic strength (T)

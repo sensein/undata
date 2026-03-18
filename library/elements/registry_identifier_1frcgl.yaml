@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: MouseAnatomyModel
   name: registry_identifier
+  description: Registry Identifier
 - source: aind
   class: MouseAnatomyModel
   name: registry_identifier
+  description: Registry Identifier

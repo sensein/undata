@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Channel
   name: channel_name
+  description: Channel

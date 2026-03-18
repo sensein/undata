@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: GenericSurgeryProcedure
   name: notes
+  description: Notes

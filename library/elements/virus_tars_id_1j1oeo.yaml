@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: TarsVirusIdentifiers
   name: virus_tars_id
+  description: Virus ID, usually begins 'AiV'
 - source: aind
   class: TarsVirusIdentifiers
   name: virus_tars_id
+  description: Virus ID, usually begins 'AiV'

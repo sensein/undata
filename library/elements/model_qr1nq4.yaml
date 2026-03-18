@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: EphysProbe
   name: model
+  description: Model
 - source: aind
   class: EphysProbe
   name: model
+  description: Model

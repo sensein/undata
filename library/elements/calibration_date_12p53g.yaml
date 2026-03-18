@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: Calibration
   name: calibration_date
+  description: Date and time of calibration
 - source: aind
   class: Calibration
   name: calibration_date
+  description: Date and time of calibration

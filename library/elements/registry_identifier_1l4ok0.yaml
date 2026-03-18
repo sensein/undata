@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: aind_data_schema_models__organizations___Unknown
   name: registry_identifier
+  description: Registry Identifier

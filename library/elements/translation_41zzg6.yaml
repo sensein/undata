@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: AtlasCoordinate
   name: translation
+  description: Translation parameters
 - source: aind
   class: AtlasCoordinate
   name: translation
+  description: Translation parameters

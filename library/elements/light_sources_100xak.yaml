@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Channel
   name: light_sources
+  description: Light source configurations

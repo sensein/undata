@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: ProteinProbe
   name: sequence
+  description: Amino acid sequence of the probe

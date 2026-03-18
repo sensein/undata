@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: ImagingConfig
   name: channels
+  description: Channels

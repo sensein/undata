@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: MotorizedStage
   name: travel
+  description: Travel of device (mm)

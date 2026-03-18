@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Monitor
   name: additional_settings
+  description: Additional parameters

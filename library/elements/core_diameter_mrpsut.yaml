@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: FiberPatchCord
   name: core_diameter
+  description: Core diameter (um)

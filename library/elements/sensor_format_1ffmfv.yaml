@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Camera
   name: sensor_format
+  description: Sensor format

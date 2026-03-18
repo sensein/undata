@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Acquisition
   name: ethics_review_id
+  description: Ethics review ID

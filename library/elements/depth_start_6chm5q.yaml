@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: PlanarImageStack
   name: depth_start
+  description: Starting depth

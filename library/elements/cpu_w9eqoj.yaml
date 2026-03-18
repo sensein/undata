@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: ResourceUsage
   name: cpu
+  description: CPU name
 - source: aind
   class: ResourceUsage
   name: cpu
+  description: CPU name
 - source: aind
   class: ResourceUsage
   name: cpu
+  description: CPU name

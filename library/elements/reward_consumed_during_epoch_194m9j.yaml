@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: PerformanceMetrics
   name: reward_consumed_during_epoch
+  description: Reward consumed during training (uL)

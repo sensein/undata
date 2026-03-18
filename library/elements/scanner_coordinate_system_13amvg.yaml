@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: MRIScan
   name: scanner_coordinate_system
+  description: Scanner coordinate system

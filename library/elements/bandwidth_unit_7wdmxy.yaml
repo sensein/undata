@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: LightEmittingDiode
   name: bandwidth_unit
+  description: Bandwidth unit

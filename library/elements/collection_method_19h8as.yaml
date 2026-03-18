@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: SampleCollection
   name: collection_method
+  description: Collection method for terminal collection

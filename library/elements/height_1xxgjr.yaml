@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Monitor
   name: height
+  description: Height (pixels)

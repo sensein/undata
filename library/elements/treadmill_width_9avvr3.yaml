@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Treadmill
   name: treadmill_width
+  description: Width of treadmill (mm)

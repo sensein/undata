@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: SpeciesModel
   name: registry_identifier
+  description: Registry Identifier

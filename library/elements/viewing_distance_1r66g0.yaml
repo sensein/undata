@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Monitor
   name: viewing_distance
+  description: Viewing distance (cm)

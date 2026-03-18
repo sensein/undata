@@ -33,6 +33,7 @@ provenance:
 - source: aind
   class: ProteinProbe
   name: species
+  description: Species of the probe
 - source: aind
   class: HumanSubject
   name: species
@@ -40,12 +41,16 @@ provenance:
 - source: aind
   class: MouseSubject
   name: species
+  description: Species
 - source: aind
   class: _Balb_C
   name: species
+  description: Species
 - source: aind
   class: _C57Bl_6J
   name: species
+  description: Species
 - source: aind
   class: aind_data_schema_models__species___Unknown
   name: species
+  description: Species

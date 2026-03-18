@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: ProbePort
   name: index
+  description: One-based port index

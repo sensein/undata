@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: NeuropixelsBasestation
   name: slot
+  description: Slot number for this basestation

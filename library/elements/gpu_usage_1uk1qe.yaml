@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: ResourceUsage
   name: gpu_usage
+  description: GPU usage
 - source: aind
   class: ResourceUsage
   name: gpu_usage
+  description: GPU usage
 - source: aind
   class: ResourceUsage
   name: gpu_usage
+  description: GPU usage

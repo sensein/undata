@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: DigitalMicromirrorDevice
   name: pixel_size
+  description: DMD Pixel size (fraction of line scan period)

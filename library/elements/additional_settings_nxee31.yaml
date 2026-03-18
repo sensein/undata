@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: Device
   name: additional_settings
+  description: Additional parameters
 - source: aind
   class: Device
   name: additional_settings
+  description: Additional parameters
 - source: aind
   class: Device
   name: additional_settings
+  description: Additional parameters

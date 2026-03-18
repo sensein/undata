@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: NeuropixelsBasestation
   name: basestation_firmware_version
+  description: Basestation firmware version

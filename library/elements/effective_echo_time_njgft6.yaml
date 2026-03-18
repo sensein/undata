@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: MRIScan
   name: effective_echo_time
+  description: Effective echo time

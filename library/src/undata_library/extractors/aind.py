@@ -63,7 +63,14 @@ def _extract_props(
                 resolved = defs.get(ref[len("#/$defs/") :], prop_def)
 
         dt = _get_type(prop_def, defs)
-        desc = prop_def.get("description") or resolved.get("description") or ""
+        # Use description if available, fall back to title
+        desc = (
+            prop_def.get("description")
+            or resolved.get("description")
+            or prop_def.get("title")
+            or resolved.get("title")
+            or ""
+        )
         if not isinstance(desc, str):
             desc = str(desc) if desc else ""
 

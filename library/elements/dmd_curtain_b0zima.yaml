@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: DigitalMicromirrorDevice
   name: dmd_curtain
+  description: DMD Curtain (fraction of DMD scan period)

@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: ResourceUsage
   name: cpu_usage
+  description: CPU usage
 - source: aind
   class: ResourceUsage
   name: cpu_usage
+  description: CPU usage
 - source: aind
   class: ResourceUsage
   name: cpu_usage
+  description: CPU usage

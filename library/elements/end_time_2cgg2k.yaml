@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: HybridizationChainReaction
   name: end_time
+  description: Round end time

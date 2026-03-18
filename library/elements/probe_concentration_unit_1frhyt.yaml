@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: HybridizationChainReaction
   name: probe_concentration_unit
+  description: Probe concentration unit

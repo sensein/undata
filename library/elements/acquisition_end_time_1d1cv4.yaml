@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Acquisition
   name: acquisition_end_time
+  description: Acquisition end time

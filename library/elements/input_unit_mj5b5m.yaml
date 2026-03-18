@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: Calibration
   name: input_unit
+  description: Input unit
 - source: aind
   class: Calibration
   name: input_unit
+  description: Input unit

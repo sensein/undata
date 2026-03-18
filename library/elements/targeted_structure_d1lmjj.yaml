@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: BrainInjection
   name: targeted_structure
+  description: Injection targeted brain structure
 - source: aind
   class: BrainInjection
   name: targeted_structure
+  description: Injection targeted brain structure

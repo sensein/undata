@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: DAQChannel
   name: sample_rate
+  description: DAQ channel sample rate (Hz)

@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Camera
   name: frame_rate_unit
+  description: Frame rate unit

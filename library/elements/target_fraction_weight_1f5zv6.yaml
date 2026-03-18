@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: WaterRestriction
   name: target_fraction_weight
+  description: Target fraction weight (%)

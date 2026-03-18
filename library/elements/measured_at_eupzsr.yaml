@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: PowerCalibration
   name: measured_at
+  description: Measurement location
 - source: aind
   class: PowerCalibration
   name: measured_at
+  description: Measurement location

@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: Scale
   name: scale
+  description: Scale parameters
 - source: aind
   class: Scale
   name: scale
+  description: Scale parameters
 - source: aind
   class: Scale
   name: scale
+  description: Scale parameters

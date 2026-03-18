@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: CoupledPlane
   name: plane_index
+  description: Plane index

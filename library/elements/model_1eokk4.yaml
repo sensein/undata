@@ -4,9 +4,12 @@ provenance:
 - source: aind
   class: Device
   name: model
+  description: Model
 - source: aind
   class: Device
   name: model
+  description: Model
 - source: aind
   class: Device
   name: model
+  description: Model

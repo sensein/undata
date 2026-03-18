@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: PlanarSection
   name: thickness_unit
+  description: Slice thickness unit

@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: CurationMetric
   name: reference
+  description: Metric reference image URL or plot type
 - source: aind
   class: CurationMetric
   name: reference
+  description: Metric reference image URL or plot type

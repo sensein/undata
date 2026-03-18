@@ -10,15 +10,20 @@ provenance:
 - source: aind
   class: CoupledPlane
   name: power
+  description: Power
 - source: aind
   class: LaserConfig
   name: power
+  description: Excitation power
 - source: aind
   class: LightEmittingDiodeConfig
   name: power
+  description: Excitation power
 - source: aind
   class: Plane
   name: power
+  description: Power
 - source: aind
   class: Slap2Plane
   name: power
+  description: Power

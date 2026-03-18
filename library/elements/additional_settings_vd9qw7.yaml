@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: FiberProbe
   name: additional_settings
+  description: Additional parameters
 - source: aind
   class: FiberProbe
   name: additional_settings
+  description: Additional parameters

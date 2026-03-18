@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: PolygonalScanner
   name: number_faces
+  description: Number of faces

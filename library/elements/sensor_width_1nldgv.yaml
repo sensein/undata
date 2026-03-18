@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Detector
   name: sensor_width
+  description: Width of the sensor (pixels)

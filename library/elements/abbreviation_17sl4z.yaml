@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: aind_data_schema_models__modalities___Behavior
   name: abbreviation
+  description: Abbreviation

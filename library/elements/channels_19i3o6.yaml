@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: NeuropixelsBasestation
   name: channels
+  description: DAQ channels

@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: PerformanceMetrics
   name: trials_rewarded
+  description: Rewarded trials

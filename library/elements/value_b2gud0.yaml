@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: QCMetric
   name: value
+  description: Metric value
 - source: aind
   class: QCMetric
   name: value
+  description: Metric value

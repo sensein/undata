@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: Anaesthetic
   name: duration
+  description: Duration
 - source: aind
   class: Anaesthetic
   name: duration
+  description: Duration

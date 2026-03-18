@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: SpecimenProcedure
   name: specimen_id
+  description: Specimen ID(s)

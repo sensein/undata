@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: Anaesthetic
   name: level
+  description: Level (percent)
 - source: aind
   class: Anaesthetic
   name: level
+  description: Level (percent)

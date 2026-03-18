@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: DAQChannel
   name: channel_index
+  description: DAQ channel index

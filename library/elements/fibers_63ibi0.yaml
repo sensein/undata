@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: FiberAssembly
   name: fibers
+  description: Probes that are held by this module

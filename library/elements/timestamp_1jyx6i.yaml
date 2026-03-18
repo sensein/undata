@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: QCStatus
   name: timestamp
+  description: Status date
 - source: aind
   class: QCStatus
   name: timestamp
+  description: Status date

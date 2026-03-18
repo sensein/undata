@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: MISModuleConfig
   name: rotation_angle
+  description: Rotation Angle (deg)

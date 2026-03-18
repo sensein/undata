@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: GeneProbeSet
   name: expiration_date
+  description: Lot expiration date

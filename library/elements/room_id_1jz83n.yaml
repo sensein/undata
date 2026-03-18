@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Housing
   name: room_id
+  description: Room ID

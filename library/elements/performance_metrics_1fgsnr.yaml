@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: StimulusEpoch
   name: performance_metrics
+  description: Performance metrics

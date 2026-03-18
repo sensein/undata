@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: ScanningStage
   name: travel
+  description: Travel of device (mm)

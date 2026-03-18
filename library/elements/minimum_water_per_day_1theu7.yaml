@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: WaterRestriction
   name: minimum_water_per_day
+  description: Minimum water per day (mL)

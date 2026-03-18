@@ -172,9 +172,11 @@ provenance:
 - source: aind
   class: PowerCalibration
   name: description
+  description: Description
 - source: aind
   class: VolumeCalibration
   name: description
+  description: Description
 - source: aind
   class: Calibration
   name: description
@@ -182,9 +184,11 @@ provenance:
 - source: aind
   class: PowerCalibration
   name: description
+  description: Description
 - source: aind
   class: VolumeCalibration
   name: description
+  description: Description
 - source: aind
   class: CombinedData
   name: description
@@ -192,9 +196,12 @@ provenance:
 - source: aind
   class: GenericSubjectProcedure
   name: description
+  description: Description
 - source: aind
   class: GenericSurgeryProcedure
   name: description
+  description: Description
 - source: aind
   class: CalibrationObject
   name: description
+  description: Description

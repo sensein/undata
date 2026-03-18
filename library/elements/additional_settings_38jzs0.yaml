@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: FiberPatchCord
   name: additional_settings
+  description: Additional parameters

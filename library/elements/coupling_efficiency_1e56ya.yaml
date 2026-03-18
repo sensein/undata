@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Laser
   name: coupling_efficiency
+  description: Coupling efficiency (percent)

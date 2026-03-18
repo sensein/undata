@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: DataProcess
   name: resources
+  description: Process resource usage
 - source: aind
   class: DataProcess
   name: resources
+  description: Process resource usage

@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: QCStatus
   name: evaluator
+  description: Status evaluator full name
 - source: aind
   class: QCStatus
   name: evaluator
+  description: Status evaluator full name

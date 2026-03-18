@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Olfactometer
   name: hardware_version
+  description: Hardware version

@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: LightEmittingDiodeConfig
   name: power_unit
+  description: Excitation power unit

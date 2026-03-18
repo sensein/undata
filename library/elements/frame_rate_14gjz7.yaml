@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: SamplingStrategy
   name: frame_rate
+  description: Frame rate

@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: BrainInjection
   name: coordinates
+  description: Injection coordinate, depth, and rotation
 - source: aind
   class: BrainInjection
   name: coordinates
+  description: Injection coordinate, depth, and rotation

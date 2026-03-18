@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: AirPuffConfig
   name: transform
+  description: Device to acquisition transform

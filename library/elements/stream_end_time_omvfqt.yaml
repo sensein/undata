@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: DataStream
   name: stream_end_time
+  description: Stream stop time

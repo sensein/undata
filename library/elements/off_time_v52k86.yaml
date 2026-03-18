@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: PockelsCell
   name: off_time
+  description: Off time (fraction of cycle)

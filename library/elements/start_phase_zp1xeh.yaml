@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: DigitalMicromirrorDevice
   name: start_phase
+  description: DMD Start phase (fraction of line scan period)

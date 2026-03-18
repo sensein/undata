@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Detector
   name: crop_offset_y
+  description: Crop offset y

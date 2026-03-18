@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: FiberProbe
   name: core_diameter
+  description: Core diameter (um)
 - source: aind
   class: FiberProbe
   name: core_diameter
+  description: Core diameter (um)

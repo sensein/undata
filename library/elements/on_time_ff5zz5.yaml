@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: PockelsCell
   name: on_time
+  description: On time (fraction of cycle)

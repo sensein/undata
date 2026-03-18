@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: SmallMoleculeProbe
   name: mass
+  description: Mass of small molecule probe (ug)

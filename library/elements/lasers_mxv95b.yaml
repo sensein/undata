@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: LaserAssembly
   name: lasers
+  description: Lasers connected to this module

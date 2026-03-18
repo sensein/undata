@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: EphysAssemblyConfig
   name: probes
+  description: Probe configurations

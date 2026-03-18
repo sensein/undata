@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: Objective
   name: numerical_aperture
+  description: Numerical aperture (in air)

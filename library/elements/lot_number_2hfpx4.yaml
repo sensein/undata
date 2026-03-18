@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: Reagent
   name: lot_number
+  description: Lot number
 - source: aind
   class: Reagent
   name: lot_number
+  description: Lot number

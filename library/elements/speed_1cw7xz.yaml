@@ -4,3 +4,4 @@ provenance:
 - source: aind
   class: PolygonalScanner
   name: speed
+  description: Speed (rpm)

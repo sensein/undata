@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: InjectionDynamics
   name: duration_unit
+  description: Injection duration unit
 - source: aind
   class: InjectionDynamics
   name: duration_unit
+  description: Injection duration unit

@@ -4,6 +4,8 @@ provenance:
 - source: aind
   class: ModelTraining
   name: resources
+  description: Process resource usage
 - source: aind
   class: ModelTraining
   name: resources
+  description: Process resource usage
