@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_1mrtrd
+  - https://schema.undata.live/elements/id_6m21wn
+  - https://schema.undata.live/elements/identifier_17jlqk
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/schemakey_1swxl6
+  mixins: []
+provenance:
+- source: dandi
+  name: Equipment

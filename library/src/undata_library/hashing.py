@@ -79,17 +79,17 @@ def generate_short_key(
 
 def build_element_uri(attribute: str, key: str) -> str:
     """Build a full element URI from attribute name and short key."""
-    return f"{BASE_URI}/elements/{attribute}_{key}"
+    return f"{BASE_URI}/elements/{attribute.lower()}_{key}"
 
 
 def build_value_uri(label: str, key: str) -> str:
     """Build a full value concept URI from label and short key."""
-    return f"{BASE_URI}/values/{label}_{key}"
+    return f"{BASE_URI}/values/{label.lower()}_{key}"
 
 
 def build_schema_uri(name: str, key: str) -> str:
     """Build a full schema URI from class name and short key."""
-    return f"{BASE_URI}/schemas/{name}_{key}"
+    return f"{BASE_URI}/schemas/{name.lower()}_{key}"
 
 
 def compute_element_hash(semantic_dict: dict[str, Any]) -> tuple[str, str]:

@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/series_index_fzqhro
+  - https://schema.undata.live/elements/series_vwu0bq
+  - https://schema.undata.live/elements/sweep_number_pd27ac
+  - https://schema.undata.live/elements/sweeptable_1afliw
+  mixins: []
+provenance:
+- source: nwb
+  name: SweepTable

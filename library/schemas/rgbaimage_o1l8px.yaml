@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/rgbaimage_11ty0w
+  mixins: []
+provenance:
+- source: nwb
+  name: RGBAImage

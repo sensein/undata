@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_1mrtrd
+  - https://schema.undata.live/elements/images_nouv3y
+  - https://schema.undata.live/elements/order_of_images_g2btn8
+  mixins: []
+provenance:
+- source: nwb
+  name: Images

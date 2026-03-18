@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/contactpoint_mv6qpk
+  - https://schema.undata.live/elements/description_1mrtrd
+  - https://schema.undata.live/elements/embargoeduntil_9v930y
+  - https://schema.undata.live/elements/id_6m21wn
+  - https://schema.undata.live/elements/schemakey_x1whb9
+  - https://schema.undata.live/elements/status_q5mr4l
+  mixins: []
+provenance:
+- source: dandi
+  name: AccessRequirements

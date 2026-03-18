@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/position_f7lf5s
+  mixins: []
+provenance:
+- source: nwb
+  name: Position

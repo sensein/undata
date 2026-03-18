@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_18lm9o
+  - https://schema.undata.live/elements/indexseries_1swyg0
+  mixins: []
+provenance:
+- source: nwb
+  name: IndexSeries

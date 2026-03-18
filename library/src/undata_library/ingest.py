@@ -89,7 +89,7 @@ def ingest_source(
             key = generate_short_key(sha, existing_keys)
             existing_keys.add(key)
 
-        attr_name = first_name
+        attr_name = first_name.lower()
         filename = f"{attr_name}_{key}.yaml"
         filepath = elements_dir / filename
 
@@ -267,7 +267,7 @@ def _extract_values(
         key = generate_short_key(sha, existing_keys)
         existing_keys.add(key)
 
-        safe_label = sem_id.label.replace("/", "_").replace("\\", "_").replace(" ", "_")[:50]
+        safe_label = sem_id.label.lower().replace("/", "_").replace("\\", "_").replace(" ", "_")[:50]
         filename = f"{safe_label}_{key}.yaml"
         filepath = values_dir / filename
 
@@ -407,7 +407,7 @@ def _build_schemas_from_provenance(
         key = generate_short_key(sha, existing_schema_keys)
         existing_schema_keys.add(key)
 
-        filename = f"{class_name}_{key}.yaml"
+        filename = f"{class_name.lower()}_{key}.yaml"
         filepath = schemas_dir / filename
 
         prov = SchemaProvenance(source=source_name, name=class_name)

@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/notes_1hatqb
+  - https://schema.undata.live/elements/scratchdata_18zpaw
+  mixins: []
+provenance:
+- source: nwb
+  name: ScratchData

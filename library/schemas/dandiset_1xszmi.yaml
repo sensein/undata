@@ -1,0 +1,31 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/about_sdukul
+  - https://schema.undata.live/elements/access_gtdc9t
+  - https://schema.undata.live/elements/acknowledgement_yquoc9
+  - https://schema.undata.live/elements/assetssummary_xu468i
+  - https://schema.undata.live/elements/citation_1dyl8f
+  - https://schema.undata.live/elements/contributor_1izrug
+  - https://schema.undata.live/elements/datecreated_htxr5r
+  - https://schema.undata.live/elements/datemodified_2iua07
+  - https://schema.undata.live/elements/description_1mrtrd
+  - https://schema.undata.live/elements/ethicsapproval_s14bye
+  - https://schema.undata.live/elements/id_6m21wn
+  - https://schema.undata.live/elements/identifier_193ve8
+  - https://schema.undata.live/elements/keywords_1ussll
+  - https://schema.undata.live/elements/license_pc20fu
+  - https://schema.undata.live/elements/manifestlocation_zilnu3
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/protocol_1y3619
+  - https://schema.undata.live/elements/relatedresource_m3znly
+  - https://schema.undata.live/elements/repository_g022y4
+  - https://schema.undata.live/elements/schemakey_gk3zvd
+  - https://schema.undata.live/elements/schemaversion_9mc50k
+  - https://schema.undata.live/elements/studytarget_zoobk5
+  - https://schema.undata.live/elements/url_e078lo
+  - https://schema.undata.live/elements/version_1mk0th
+  - https://schema.undata.live/elements/wasgeneratedby_1bvjfc
+  mixins: []
+provenance:
+- source: dandi
+  name: Dandiset

@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/compassdirection_1c8356
+  mixins: []
+provenance:
+- source: nwb
+  name: CompassDirection

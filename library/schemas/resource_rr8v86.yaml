@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_6m21wn
+  - https://schema.undata.live/elements/identifier_655wmg
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/relation_1cs8gn
+  - https://schema.undata.live/elements/repository_nj44r5
+  - https://schema.undata.live/elements/resourcetype_dvjyv4
+  - https://schema.undata.live/elements/schemakey_13rxzf
+  - https://schema.undata.live/elements/url_e078lo
+  mixins: []
+provenance:
+- source: dandi
+  name: Resource

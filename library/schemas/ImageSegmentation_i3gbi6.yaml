@@ -1,7 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/ImageSegmentation_16gi3v
-  mixins: []
-provenance:
-- source: nwb
-  name: ImageSegmentation

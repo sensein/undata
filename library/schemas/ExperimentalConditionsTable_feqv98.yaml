@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/ExperimentalConditionsTable_1pyda3
-  - https://schema.undata.live/elements/repetitions_g21xwj
-  - https://schema.undata.live/elements/repetitions_index_ifhnp9
-  mixins: []
-provenance:
-- source: nwb
-  name: ExperimentalConditionsTable

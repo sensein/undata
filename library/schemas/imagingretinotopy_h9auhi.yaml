@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/axis_1_phase_map_akcy5p
+  - https://schema.undata.live/elements/axis_1_power_map_1nl7k1
+  - https://schema.undata.live/elements/axis_2_phase_map_1qkh8w
+  - https://schema.undata.live/elements/axis_2_power_map_1541da
+  - https://schema.undata.live/elements/axis_descriptions_q5d28n
+  - https://schema.undata.live/elements/focal_depth_image_cmjy00
+  - https://schema.undata.live/elements/imagingretinotopy_153f9x
+  - https://schema.undata.live/elements/sign_map_h0y8rt
+  - https://schema.undata.live/elements/vasculature_image_uglynw
+  mixins: []
+provenance:
+- source: nwb
+  name: ImagingRetinotopy
