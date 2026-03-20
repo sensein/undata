@@ -347,10 +347,7 @@ def _ingest_extracted_values(
         existing_keys.add(key)
 
         safe_label = (
-            sem_id.label.lower()
-            .replace("/", "_")
-            .replace("\\", "_")
-            .replace(" ", "_")[:50]
+            sem_id.label.lower().replace("/", "_").replace("\\", "_").replace(" ", "_")[:50]
         )
         filename = f"{safe_label}_{key}.yaml"
         filepath = values_dir / filename
