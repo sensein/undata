@@ -23,6 +23,9 @@ class SemanticInput(BaseModel):
     value_domain: str | None = None
     min_value: float | None = None
     max_value: float | None = None
+    # Disambiguators for underspecified elements:
+    source_attribute: str | None = None
+    source_class: str | None = None
 
 
 class ProvenanceInput(BaseModel):
