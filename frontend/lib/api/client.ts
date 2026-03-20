@@ -1,11 +1,11 @@
-// BACKEND_INTERNAL_URL is used for server-side fetches (Docker internal DNS).
-// NEXT_PUBLIC_BACKEND_URL is used for client-side fetches (browser-accessible).
+// Server-side: use internal URL for Docker DNS resolution.
+// Client-side: use empty string — relative paths go through Next.js rewrites proxy.
 const BASE_URL =
   typeof window === "undefined"
     ? process.env.BACKEND_INTERNAL_URL ||
       process.env.NEXT_PUBLIC_BACKEND_URL ||
       ""
-    : process.env.NEXT_PUBLIC_BACKEND_URL || "";
+    : "";
 
 export class ApiError extends Error {
   status: number;

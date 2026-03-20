@@ -12,7 +12,7 @@ const MIGRATION_URL =
     ? process.env.MIGRATION_INTERNAL_URL ||
       process.env.NEXT_PUBLIC_MIGRATION_URL ||
       ""
-    : process.env.NEXT_PUBLIC_MIGRATION_URL || "";
+    : "";
 
 async function migrationFetch<T>(
   path: string,
