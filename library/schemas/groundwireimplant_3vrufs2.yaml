@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/ground_electrode_location_4pxuin
+  - https://schema.undata.live/elements/ground_wire_diameter_9mpk2u
+  - https://schema.undata.live/elements/ground_wire_diameter_unit_qc3jjw
+  - https://schema.undata.live/elements/ground_wire_hole_1lf9u8
+  - https://schema.undata.live/elements/ground_wire_material_1tdiz3
+  mixins: []
+provenance:
+- source: aind
+  name: GroundWireImplant

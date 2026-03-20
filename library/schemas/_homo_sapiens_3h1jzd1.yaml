@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/common_name_270jt1
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/registry_19ifnt
+  - https://schema.undata.live/elements/registry_1s7s30
+  - https://schema.undata.live/elements/registry_identifier_21alyh
+  mixins: []
+provenance:
+- source: aind
+  name: _Homo_Sapiens

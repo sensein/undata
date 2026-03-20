@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - CASL
+    - PCASL
+    - PASL
+  response_options:
+  - value: CASL
+    label: CASL
+    ontology_term: https://schema.undata.live/values/casl_1192hh
+  - value: PCASL
+    label: PCASL
+    ontology_term: https://schema.undata.live/values/pcasl_5b8p1n
+  - value: PASL
+    label: PASL
+    ontology_term: https://schema.undata.live/values/pasl_1skxjm
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: ArterialSpinLabelingType
+  description: 'The arterial spin labeling type.
+
+    '
+  generated_at: '2026-03-20T22:15:23.043717+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

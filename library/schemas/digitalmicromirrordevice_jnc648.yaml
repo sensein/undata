@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1wzv83
+  - https://schema.undata.live/elements/dmd_curtain_b0zima
+  - https://schema.undata.live/elements/invert_pixel_values_1hb8r6
+  - https://schema.undata.live/elements/line_shear_anchors_unit_144kuv
+  - https://schema.undata.live/elements/line_shear_anchors_unit_p9pybo
+  - https://schema.undata.live/elements/line_shear_anchors_xf3isb
+  - https://schema.undata.live/elements/manufacturer_1d47pt
+  - https://schema.undata.live/elements/max_dmd_patterns_7uzvvk
+  - https://schema.undata.live/elements/model_154xu9
+  - https://schema.undata.live/elements/motion_padding_x_fccsu2
+  - https://schema.undata.live/elements/motion_padding_y_i2k500
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/notes_jh45tl
+  - https://schema.undata.live/elements/padding_unit_8uooxa
+  - https://schema.undata.live/elements/padding_unit_iqr9e8
+  - https://schema.undata.live/elements/pixel_size_5ld8n9
+  - https://schema.undata.live/elements/serial_number_16grzg
+  - https://schema.undata.live/elements/start_phase_zp1xeh
+  mixins: []
+provenance:
+- source: aind
+  name: DigitalMicromirrorDevice

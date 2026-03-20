@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/breeding_group_1n7fbc
+  - https://schema.undata.live/elements/maternal_genotype_1h61ay
+  - https://schema.undata.live/elements/maternal_id_ryzncm
+  - https://schema.undata.live/elements/paternal_genotype_1px5eg
+  - https://schema.undata.live/elements/paternal_id_sifdwx
+  mixins: []
+provenance:
+- source: aind
+  name: BreedingInfo

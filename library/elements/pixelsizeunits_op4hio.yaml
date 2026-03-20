@@ -1,0 +1,31 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - mm
+    - um
+    - nm
+  response_options:
+  - value: mm
+    label: mm
+    ontology_term: https://schema.undata.live/values/mm_4720w9
+  - value: um
+    label: um
+    ontology_term: https://schema.undata.live/values/um_ko84vz
+  - value: nm
+    label: nm
+    ontology_term: https://schema.undata.live/values/nm_1riu2m
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: PixelSizeUnits
+  description: 'Unit format of the specified `"PixelSize"`. MUST be one of: `"mm"`
+    (millimeter), `"um"`
+
+    (micrometer) or `"nm"` (nanometer).
+
+    '
+  generated_at: '2026-03-20T22:15:23.043717+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

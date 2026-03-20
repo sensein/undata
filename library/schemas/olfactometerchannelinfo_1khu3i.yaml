@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channel_index_ohd0j7
+  - https://schema.undata.live/elements/dilution_1snp6r
+  - https://schema.undata.live/elements/dilution_unit_iar7uu
+  - https://schema.undata.live/elements/dilution_unit_xo3kvq
+  - https://schema.undata.live/elements/odorant_cpu7ql
+  mixins: []
+provenance:
+- source: aind
+  name: OlfactometerChannelInfo

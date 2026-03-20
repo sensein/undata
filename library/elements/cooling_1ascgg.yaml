@@ -1,0 +1,26 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Air
+    - Water
+    - No cooling
+  response_options:
+  - value: Air
+    label: Air
+    ontology_term: https://schema.undata.live/values/air_jg6lu4
+  - value: Water
+    label: Water
+    ontology_term: https://schema.undata.live/values/water_1yi50u
+  - value: No cooling
+    label: No cooling
+    ontology_term: https://schema.undata.live/values/no_cooling_6rmmk9
+  question_text: Cooling
+provenance:
+- source: aind
+  class: Camera
+  name: cooling
+  description: Cooling medium name
+  generated_at: '2026-03-20T22:15:56.663466+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

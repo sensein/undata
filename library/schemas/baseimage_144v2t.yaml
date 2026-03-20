@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/baseimage_13rm0x
+  - https://schema.undata.live/elements/description_1mrtrd
+  mixins: []
+provenance:
+- source: nwb
+  name: BaseImage

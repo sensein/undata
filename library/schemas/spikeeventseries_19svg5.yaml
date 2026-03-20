@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_1azbtp
+  - https://schema.undata.live/elements/spikeeventseries_779i7v
+  - https://schema.undata.live/elements/timestamps_xl8pmn
+  mixins: []
+provenance:
+- source: nwb
+  name: SpikeEventSeries

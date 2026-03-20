@@ -1,0 +1,150 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - dcite:IsCitedBy
+    - dcite:Cites
+    - dcite:IsSupplementTo
+    - dcite:IsSupplementedBy
+    - dcite:IsContinuedBy
+    - dcite:Continues
+    - dcite:Describes
+    - dcite:IsDescribedBy
+    - dcite:HasMetadata
+    - dcite:IsMetadataFor
+    - dcite:HasVersion
+    - dcite:IsVersionOf
+    - dcite:IsNewVersionOf
+    - dcite:IsPreviousVersionOf
+    - dcite:IsPartOf
+    - dcite:HasPart
+    - dcite:IsReferencedBy
+    - dcite:References
+    - dcite:IsDocumentedBy
+    - dcite:Documents
+    - dcite:IsCompiledBy
+    - dcite:Compiles
+    - dcite:IsVariantFormOf
+    - dcite:IsOriginalFormOf
+    - dcite:IsIdenticalTo
+    - dcite:IsReviewedBy
+    - dcite:Reviews
+    - dcite:IsDerivedFrom
+    - dcite:IsSourceOf
+    - dcite:IsRequiredBy
+    - dcite:Requires
+    - dcite:Obsoletes
+    - dcite:IsObsoletedBy
+    - dcite:IsPublishedIn
+  response_options:
+  - value: dcite:IsCitedBy
+    label: dcite:IsCitedBy
+    ontology_term: https://schema.undata.live/values/dcite:iscitedby_1ihek3
+  - value: dcite:Cites
+    label: dcite:Cites
+    ontology_term: https://schema.undata.live/values/dcite:cites_19utwr
+  - value: dcite:IsSupplementTo
+    label: dcite:IsSupplementTo
+    ontology_term: https://schema.undata.live/values/dcite:issupplementto_uqdwhb
+  - value: dcite:IsSupplementedBy
+    label: dcite:IsSupplementedBy
+    ontology_term: https://schema.undata.live/values/dcite:issupplementedby_13xx92
+  - value: dcite:IsContinuedBy
+    label: dcite:IsContinuedBy
+    ontology_term: https://schema.undata.live/values/dcite:iscontinuedby_18y3f5
+  - value: dcite:Continues
+    label: dcite:Continues
+    ontology_term: https://schema.undata.live/values/dcite:continues_cfa7cp
+  - value: dcite:Describes
+    label: dcite:Describes
+    ontology_term: https://schema.undata.live/values/dcite:describes_a8zm5w
+  - value: dcite:IsDescribedBy
+    label: dcite:IsDescribedBy
+    ontology_term: https://schema.undata.live/values/dcite:isdescribedby_pr8hou
+  - value: dcite:HasMetadata
+    label: dcite:HasMetadata
+    ontology_term: https://schema.undata.live/values/dcite:hasmetadata_hlfkk2
+  - value: dcite:IsMetadataFor
+    label: dcite:IsMetadataFor
+    ontology_term: https://schema.undata.live/values/dcite:ismetadatafor_hf6fo6
+  - value: dcite:HasVersion
+    label: dcite:HasVersion
+    ontology_term: https://schema.undata.live/values/dcite:hasversion_13qajf
+  - value: dcite:IsVersionOf
+    label: dcite:IsVersionOf
+    ontology_term: https://schema.undata.live/values/dcite:isversionof_13xpqu
+  - value: dcite:IsNewVersionOf
+    label: dcite:IsNewVersionOf
+    ontology_term: https://schema.undata.live/values/dcite:isnewversionof_zkcql0
+  - value: dcite:IsPreviousVersionOf
+    label: dcite:IsPreviousVersionOf
+    ontology_term: https://schema.undata.live/values/dcite:ispreviousversionof_j0ccnq
+  - value: dcite:IsPartOf
+    label: dcite:IsPartOf
+    ontology_term: https://schema.undata.live/values/dcite:ispartof_9xadwv
+  - value: dcite:HasPart
+    label: dcite:HasPart
+    ontology_term: https://schema.undata.live/values/dcite:haspart_1uo7ci
+  - value: dcite:IsReferencedBy
+    label: dcite:IsReferencedBy
+    ontology_term: https://schema.undata.live/values/dcite:isreferencedby_1tbdrm
+  - value: dcite:References
+    label: dcite:References
+    ontology_term: https://schema.undata.live/values/dcite:references_1gqbii
+  - value: dcite:IsDocumentedBy
+    label: dcite:IsDocumentedBy
+    ontology_term: https://schema.undata.live/values/dcite:isdocumentedby_moturu
+  - value: dcite:Documents
+    label: dcite:Documents
+    ontology_term: https://schema.undata.live/values/dcite:documents_ojc733
+  - value: dcite:IsCompiledBy
+    label: dcite:IsCompiledBy
+    ontology_term: https://schema.undata.live/values/dcite:iscompiledby_1akybt
+  - value: dcite:Compiles
+    label: dcite:Compiles
+    ontology_term: https://schema.undata.live/values/dcite:compiles_yiy6lb
+  - value: dcite:IsVariantFormOf
+    label: dcite:IsVariantFormOf
+    ontology_term: https://schema.undata.live/values/dcite:isvariantformof_1kaaax
+  - value: dcite:IsOriginalFormOf
+    label: dcite:IsOriginalFormOf
+    ontology_term: https://schema.undata.live/values/dcite:isoriginalformof_1gd4un
+  - value: dcite:IsIdenticalTo
+    label: dcite:IsIdenticalTo
+    ontology_term: https://schema.undata.live/values/dcite:isidenticalto_9zrdps
+  - value: dcite:IsReviewedBy
+    label: dcite:IsReviewedBy
+    ontology_term: https://schema.undata.live/values/dcite:isreviewedby_1jirdg
+  - value: dcite:Reviews
+    label: dcite:Reviews
+    ontology_term: https://schema.undata.live/values/dcite:reviews_18buac
+  - value: dcite:IsDerivedFrom
+    label: dcite:IsDerivedFrom
+    ontology_term: https://schema.undata.live/values/dcite:isderivedfrom_1pxfgr
+  - value: dcite:IsSourceOf
+    label: dcite:IsSourceOf
+    ontology_term: https://schema.undata.live/values/dcite:issourceof_26a416
+  - value: dcite:IsRequiredBy
+    label: dcite:IsRequiredBy
+    ontology_term: https://schema.undata.live/values/dcite:isrequiredby_jab010
+  - value: dcite:Requires
+    label: dcite:Requires
+    ontology_term: https://schema.undata.live/values/dcite:requires_nxl4id
+  - value: dcite:Obsoletes
+    label: dcite:Obsoletes
+    ontology_term: https://schema.undata.live/values/dcite:obsoletes_7j4nee
+  - value: dcite:IsObsoletedBy
+    label: dcite:IsObsoletedBy
+    ontology_term: https://schema.undata.live/values/dcite:isobsoletedby_1l51sk
+  - value: dcite:IsPublishedIn
+    label: dcite:IsPublishedIn
+    ontology_term: https://schema.undata.live/values/dcite:ispublishedin_u56san
+provenance:
+- source: dandi
+  class: Resource
+  name: relation
+  description: 'Indicates how the resource is related to the dataset. This relation
+    should satisfy: dandiset <relation> resource.'
+  generated_at: '2026-03-20T22:15:43.176849+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

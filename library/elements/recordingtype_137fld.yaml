@@ -1,0 +1,33 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - continuous
+    - epoched
+    - discontinuous
+  response_options:
+  - value: continuous
+    label: continuous
+    ontology_term: https://schema.undata.live/values/continuous_d57ksp
+  - value: epoched
+    label: epoched
+    ontology_term: https://schema.undata.live/values/epoched_1z9kod
+  - value: discontinuous
+    label: discontinuous
+    ontology_term: https://schema.undata.live/values/discontinuous_t88lyy
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: RecordingType
+  description: 'Defines whether the recording is `"continuous"`, `"discontinuous"`,
+    or
+
+    `"epoched"`, where `"epoched"` is limited to time windows about events of
+
+    interest (for example, stimulus presentations or subject responses).
+
+    '
+  generated_at: '2026-03-20T22:15:23.043717+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,46 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Band pass
+    - Dichroic
+    - Long pass
+    - Multiband
+    - Neutral density
+    - Notch
+    - Multi notch
+    - Short pass
+  response_options:
+  - value: Band pass
+    label: Band pass
+    ontology_term: https://schema.undata.live/values/band_pass_1m58s3
+  - value: Dichroic
+    label: Dichroic
+    ontology_term: https://schema.undata.live/values/dichroic_1pp7pl
+  - value: Long pass
+    label: Long pass
+    ontology_term: https://schema.undata.live/values/long_pass_eu45gj
+  - value: Multiband
+    label: Multiband
+    ontology_term: https://schema.undata.live/values/multiband_1ew1oq
+  - value: Neutral density
+    label: Neutral density
+    ontology_term: https://schema.undata.live/values/neutral_density_1074k9
+  - value: Notch
+    label: Notch
+    ontology_term: https://schema.undata.live/values/notch_7tvznl
+  - value: Multi notch
+    label: Multi notch
+    ontology_term: https://schema.undata.live/values/multi_notch_eg1e5g
+  - value: Short pass
+    label: Short pass
+    ontology_term: https://schema.undata.live/values/short_pass_1qamts
+  question_text: Type of filter
+provenance:
+- source: aind
+  class: Filter
+  name: filter_type
+  description: Filter type
+  generated_at: '2026-03-20T22:15:56.663466+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

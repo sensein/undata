@@ -1,0 +1,16 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  min_value: 0.0
+provenance:
+- source: bids
+  class: metadata
+  name: NIRSChannelCount
+  description: 'Total number of NIRS channels, including short channels.
+
+    Corresponds to the number of rows in `channels.tsv` with any NIRS type.
+
+    '
+  generated_at: '2026-03-20T22:15:23.043717+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

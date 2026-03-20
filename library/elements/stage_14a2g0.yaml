@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Processing
+    - Analysis
+  response_options:
+  - value: Processing
+    label: Processing
+    ontology_term: https://schema.undata.live/values/processing_1535yf
+  - value: Analysis
+    label: Analysis
+    ontology_term: https://schema.undata.live/values/analysis_1573hy
+  question_text: Processing stage
+provenance:
+- source: aind
+  class: ModelEvaluation
+  name: stage
+  description: Stages of processing
+  generated_at: '2026-03-20T22:16:04.704184+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ModelEvaluation
+  name: stage
+  description: Stages of processing
+  generated_at: '2026-03-20T22:16:04.704184+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

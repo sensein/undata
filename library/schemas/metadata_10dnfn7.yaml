@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/acquisition_xfslvq
+  - https://schema.undata.live/elements/data_description_194az1
+  - https://schema.undata.live/elements/instrument_n7qd6s
+  - https://schema.undata.live/elements/location_a0gwu7
+  - https://schema.undata.live/elements/model_oh12cb
+  - https://schema.undata.live/elements/other_identifiers_1ro44b
+  - https://schema.undata.live/elements/procedures_3o2g96
+  - https://schema.undata.live/elements/processing_mv5i7v
+  - https://schema.undata.live/elements/quality_control_ecy937
+  - https://schema.undata.live/elements/subject_1e0424
+  mixins: []
+provenance:
+- source: aind
+  name: metadata

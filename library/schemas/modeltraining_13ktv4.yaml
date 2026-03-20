@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/code_1icdqc
+  - https://schema.undata.live/elements/end_date_time_1ctv3k
+  - https://schema.undata.live/elements/experimenters_yc61ne
+  - https://schema.undata.live/elements/notes_1hsk8o
+  - https://schema.undata.live/elements/output_parameters_1lew22
+  - https://schema.undata.live/elements/output_path_1iks0v
+  - https://schema.undata.live/elements/pipeline_name_1023ab
+  - https://schema.undata.live/elements/process_type_s3djgg
+  - https://schema.undata.live/elements/process_type_zoomzy
+  - https://schema.undata.live/elements/resources_1t8nqv
+  - https://schema.undata.live/elements/stage_1yi0jp
+  - https://schema.undata.live/elements/stage_v3r1g9
+  - https://schema.undata.live/elements/start_date_time_a4c1fe
+  - https://schema.undata.live/elements/test_evaluation_method_1h5y4k
+  - https://schema.undata.live/elements/test_performance_125hk6
+  - https://schema.undata.live/elements/train_performance_1s9gm4
+  mixins: []
+provenance:
+- source: aind
+  name: ModelTraining

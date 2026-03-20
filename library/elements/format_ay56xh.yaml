@@ -1,0 +1,88 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - string
+    - number
+    - integer
+    - boolean
+    - index
+    - label
+    - date
+    - datetime
+    - time
+    - unit
+    - uri
+    - rrid
+    - bids_uri
+    - dataset_relative
+    - file_relative
+    - participant_relative
+    - stimuli_relative
+    - hed_version
+  response_options:
+  - value: string
+    label: string
+    ontology_term: https://schema.undata.live/values/string_231dvz
+  - value: number
+    label: number
+    ontology_term: https://schema.undata.live/values/number_wqrh7g
+  - value: integer
+    label: integer
+    ontology_term: https://schema.undata.live/values/integer_9zupph
+  - value: boolean
+    label: boolean
+    ontology_term: https://schema.undata.live/values/boolean_1hpzs6
+  - value: index
+    label: index
+    ontology_term: https://schema.undata.live/values/index_uq65iz
+  - value: label
+    label: label
+    ontology_term: https://schema.undata.live/values/label_1f8b4b
+  - value: date
+    label: date
+    ontology_term: https://schema.undata.live/values/date_me0htv
+  - value: datetime
+    label: datetime
+    ontology_term: https://schema.undata.live/values/datetime_tgya9t
+  - value: time
+    label: time
+    ontology_term: https://schema.undata.live/values/time_1hg37s
+  - value: unit
+    label: unit
+    ontology_term: https://schema.undata.live/values/unit_1u6mhi
+  - value: uri
+    label: uri
+    ontology_term: https://schema.undata.live/values/uri_nxe1ec
+  - value: rrid
+    label: rrid
+    ontology_term: https://schema.undata.live/values/rrid_2uu0hw
+  - value: bids_uri
+    label: bids_uri
+    ontology_term: https://schema.undata.live/values/bids_uri_15l8id
+  - value: dataset_relative
+    label: dataset_relative
+    ontology_term: https://schema.undata.live/values/dataset_relative_gvfgox
+  - value: file_relative
+    label: file_relative
+    ontology_term: https://schema.undata.live/values/file_relative_134hkx
+  - value: participant_relative
+    label: participant_relative
+    ontology_term: https://schema.undata.live/values/participant_relative_pbcro3
+  - value: stimuli_relative
+    label: stimuli_relative
+    ontology_term: https://schema.undata.live/values/stimuli_relative_23ybq5
+  - value: hed_version
+    label: hed_version
+    ontology_term: https://schema.undata.live/values/hed_version_5fecst
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: Format
+  description: 'Permitted formats for values in the described column.
+
+    '
+  generated_at: '2026-03-20T22:15:23.043717+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

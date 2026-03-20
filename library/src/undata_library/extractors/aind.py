@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from ..models import Constraints, ProvenanceEntry, SemanticIdentity
+from ..models import Constraints, ProvenanceEntry, ResponseOption, SemanticIdentity
 
 _TYPE_MAP = {
     "string": "string",
@@ -74,13 +74,39 @@ def _extract_props(
         if not isinstance(desc, str):
             desc = str(desc) if desc else ""
 
-        # Build constraints from enum
+        # Build constraints + response_options from enum
         constraints = None
+        response_options = None
         enum_vals = resolved.get("enum") or prop_def.get("enum")
         if enum_vals:
-            constraints = Constraints(allowed_values=[str(v) for v in enum_vals if v is not None])
+            allowed = [str(v) for v in enum_vals if v is not None]
+            constraints = Constraints(allowed_values=allowed)
+            response_options = [ResponseOption(value=v, label=v) for v in allowed]
 
-        sem = SemanticIdentity(data_type=dt, constraints=constraints)
+        # Extract min/max from JSON Schema constraints
+        min_value = None
+        max_value = None
+        for src in (prop_def, resolved):
+            if min_value is None and src.get("minimum") is not None:
+                min_value = float(src["minimum"])
+            if min_value is None and src.get("exclusiveMinimum") is not None:
+                min_value = float(src["exclusiveMinimum"])
+            if max_value is None and src.get("maximum") is not None:
+                max_value = float(src["maximum"])
+            if max_value is None and src.get("exclusiveMaximum") is not None:
+                max_value = float(src["exclusiveMaximum"])
+
+        # Extract question_text from title
+        question_text = prop_def.get("title") or resolved.get("title")
+
+        sem = SemanticIdentity(
+            data_type=dt,
+            constraints=constraints,
+            response_options=response_options,
+            min_value=min_value,
+            max_value=max_value,
+            question_text=question_text,
+        )
         prov = ProvenanceEntry(
             source="aind",
             **{"class": class_name},

@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channel_index_1s5os8
+  - https://schema.undata.live/elements/channel_name_8avfi1
+  - https://schema.undata.live/elements/channel_type_17xxgb
+  - https://schema.undata.live/elements/channel_type_1xoh4b
+  - https://schema.undata.live/elements/event_based_sampling_1vytsd
+  - https://schema.undata.live/elements/port_19hohw
+  - https://schema.undata.live/elements/sample_rate_1q4lv7
+  - https://schema.undata.live/elements/sample_rate_unit_yd2wxs
+  mixins: []
+provenance:
+- source: aind
+  name: DAQChannel

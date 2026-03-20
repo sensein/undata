@@ -1,0 +1,34 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - kilogram
+    - gram
+    - milligram
+    - microgram
+    - nanogram
+  response_options:
+  - value: kilogram
+    label: kilogram
+    ontology_term: https://schema.undata.live/values/kilogram_la71ke
+  - value: gram
+    label: gram
+    ontology_term: https://schema.undata.live/values/gram_368snt
+  - value: milligram
+    label: milligram
+    ontology_term: https://schema.undata.live/values/milligram_tab0p2
+  - value: microgram
+    label: microgram
+    ontology_term: https://schema.undata.live/values/microgram_1r0nfy
+  - value: nanogram
+    label: nanogram
+    ontology_term: https://schema.undata.live/values/nanogram_14ky6w
+  question_text: Weight unit
+provenance:
+- source: aind
+  class: Surgery
+  name: weight_unit
+  description: Enumeration of Mass Measurements
+  generated_at: '2026-03-20T22:15:56.663466+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

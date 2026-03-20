@@ -35,8 +35,20 @@ def ingest_source(
 
     Returns stats: {created, merged, total}.
     """
+    from datetime import datetime, timezone
+
     # Load extractor
     pairs = _extract(source_name, schema_path)
+
+    # Auto-populate PROV-O fields on all provenance entries
+    now_iso = datetime.now(timezone.utc).isoformat()
+    for _sem, prov in pairs:
+        if prov.generated_at is None:
+            prov.generated_at = now_iso
+        if prov.attributed_to is None:
+            prov.attributed_to = "urn:undata:ingestion-pipeline"
+        if prov.activity is None:
+            prov.activity = "ingestion"
 
     # Apply curated element mappings (ontology annotations)
     element_mappings = _load_element_mappings(library_path)
@@ -124,6 +136,9 @@ def ingest_source(
     # Extract enum values as ValueConcepts
     value_stats = _extract_values(source_name, pairs, library_path, registry)
     _write_registry(registry_path, registry)
+
+    # Resolve response_option values to ValueConcept URIs (U1 fix)
+    _resolve_response_option_uris(library_path)
 
     # Build schema shapes from class groupings
     schema_stats = _build_schemas_from_provenance(source_name, library_path, registry)
@@ -303,6 +318,50 @@ def _extract_values(
         )
 
     return {"created": created}
+
+
+def _resolve_response_option_uris(library_path: Path) -> int:
+    """Replace raw response_option values with ValueConcept URIs where a match exists."""
+    elements_dir = library_path / "elements"
+    values_dir = library_path / "values"
+
+    if not values_dir.exists():
+        return 0
+
+    # Build lookup: raw_value (lowercased) → value URI
+    value_lookup: dict[str, str] = {}
+    for f in values_dir.glob("*.yaml"):
+        data = yaml.safe_load(f.read_text(encoding="utf-8"))
+        if not data or "semantic" not in data:
+            continue
+        label = data["semantic"].get("label", "")
+        uri = f"https://schema.undata.live/values/{f.stem}"
+        value_lookup[label.lower()] = uri
+        for p in data.get("provenance", []):
+            value_lookup[p["raw_value"].lower()] = uri
+
+    resolved = 0
+    for f in elements_dir.glob("*.yaml"):
+        data = yaml.safe_load(f.read_text(encoding="utf-8"))
+        if not data or "semantic" not in data:
+            continue
+        opts = data["semantic"].get("response_options")
+        if not opts:
+            continue
+        changed = False
+        for opt in opts:
+            raw = opt.get("value", "")
+            match_uri = value_lookup.get(raw.lower())
+            if match_uri and not opt.get("ontology_term"):
+                opt["ontology_term"] = match_uri
+                changed = True
+        if changed:
+            f.write_text(
+                yaml.dump(data, default_flow_style=False, sort_keys=False),
+                encoding="utf-8",
+            )
+            resolved += 1
+    return resolved
 
 
 def _extract(

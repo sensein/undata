@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_1mrtrd
+  - https://schema.undata.live/elements/enddate_e9dxjc
+  - https://schema.undata.live/elements/id_6m21wn
+  - https://schema.undata.live/elements/identifier_1ivr6w
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/schemakey_w1wl25
+  - https://schema.undata.live/elements/startdate_1tjbyz
+  - https://schema.undata.live/elements/used_1oz26k
+  - https://schema.undata.live/elements/wasassociatedwith_1vpura
+  mixins: []
+provenance:
+- source: dandi
+  name: Session

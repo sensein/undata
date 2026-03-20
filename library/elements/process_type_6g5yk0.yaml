@@ -1,0 +1,197 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Analysis
+    - Compression
+    - Denoising
+    - Ephys curation
+    - Ephys postprocessing
+    - Ephys preprocessing
+    - Ephys visualization
+    - Fiducial segmentation
+    - File format conversion
+    - Fluorescence event detection
+    - Image atlas alignment
+    - Image background subtraction
+    - Image cell classification
+    - Image cell quantification
+    - Image cell segmentation
+    - Image cross-image alignment
+    - Image destriping
+    - Image flat-field correction
+    - Image importing
+    - Image mip visualization
+    - Image radial correction
+    - Image spot detection
+    - Image spot spectral unmixing
+    - Image thresholding
+    - Image tile alignment
+    - Image tile fusing
+    - Image tile projection
+    - Model evaluation
+    - Model training
+    - Neuron skeleton processing
+    - Neuropil subtraction
+    - Other
+    - Pipeline
+    - Simulation
+    - Skull stripping
+    - Spatial timeseries demixing
+    - Spike sorting
+    - Video ROI classification
+    - Video ROI cross session matching
+    - Video ROI segmentation
+    - Video ROI timeseries extraction
+    - Video motion correction
+    - Video plane decrosstalk
+    - dF/F estimation
+  response_options:
+  - value: Analysis
+    label: Analysis
+    ontology_term: https://schema.undata.live/values/analysis_1573hy
+  - value: Compression
+    label: Compression
+    ontology_term: https://schema.undata.live/values/compression_1cxt2q
+  - value: Denoising
+    label: Denoising
+    ontology_term: https://schema.undata.live/values/denoising_1cd57l
+  - value: Ephys curation
+    label: Ephys curation
+    ontology_term: https://schema.undata.live/values/ephys_curation_8zdu6r
+  - value: Ephys postprocessing
+    label: Ephys postprocessing
+    ontology_term: https://schema.undata.live/values/ephys_postprocessing_1oov0f
+  - value: Ephys preprocessing
+    label: Ephys preprocessing
+    ontology_term: https://schema.undata.live/values/ephys_preprocessing_1j4oq8
+  - value: Ephys visualization
+    label: Ephys visualization
+    ontology_term: https://schema.undata.live/values/ephys_visualization_ivxgv9
+  - value: Fiducial segmentation
+    label: Fiducial segmentation
+    ontology_term: https://schema.undata.live/values/fiducial_segmentation_1r6e6d
+  - value: File format conversion
+    label: File format conversion
+    ontology_term: https://schema.undata.live/values/file_format_conversion_1dwa49
+  - value: Fluorescence event detection
+    label: Fluorescence event detection
+    ontology_term: https://schema.undata.live/values/fluorescence_event_detection_iw2mm6
+  - value: Image atlas alignment
+    label: Image atlas alignment
+    ontology_term: https://schema.undata.live/values/image_atlas_alignment_1qaul4
+  - value: Image background subtraction
+    label: Image background subtraction
+    ontology_term: https://schema.undata.live/values/image_background_subtraction_8l8nb7
+  - value: Image cell classification
+    label: Image cell classification
+    ontology_term: https://schema.undata.live/values/image_cell_classification_eylnnx
+  - value: Image cell quantification
+    label: Image cell quantification
+    ontology_term: https://schema.undata.live/values/image_cell_quantification_8o8xb0
+  - value: Image cell segmentation
+    label: Image cell segmentation
+    ontology_term: https://schema.undata.live/values/image_cell_segmentation_7m26t7
+  - value: Image cross-image alignment
+    label: Image cross-image alignment
+    ontology_term: https://schema.undata.live/values/image_cross-image_alignment_1si3jc
+  - value: Image destriping
+    label: Image destriping
+    ontology_term: https://schema.undata.live/values/image_destriping_15nmdp
+  - value: Image flat-field correction
+    label: Image flat-field correction
+    ontology_term: https://schema.undata.live/values/image_flat-field_correction_1c8ihf
+  - value: Image importing
+    label: Image importing
+    ontology_term: https://schema.undata.live/values/image_importing_3no7xl
+  - value: Image mip visualization
+    label: Image mip visualization
+    ontology_term: https://schema.undata.live/values/image_mip_visualization_1sek19
+  - value: Image radial correction
+    label: Image radial correction
+    ontology_term: https://schema.undata.live/values/image_radial_correction_1lywk8
+  - value: Image spot detection
+    label: Image spot detection
+    ontology_term: https://schema.undata.live/values/image_spot_detection_o0tah6
+  - value: Image spot spectral unmixing
+    label: Image spot spectral unmixing
+    ontology_term: https://schema.undata.live/values/image_spot_spectral_unmixing_1ajvvc
+  - value: Image thresholding
+    label: Image thresholding
+    ontology_term: https://schema.undata.live/values/image_thresholding_1umey8
+  - value: Image tile alignment
+    label: Image tile alignment
+    ontology_term: https://schema.undata.live/values/image_tile_alignment_17a6lw
+  - value: Image tile fusing
+    label: Image tile fusing
+    ontology_term: https://schema.undata.live/values/image_tile_fusing_18dpta
+  - value: Image tile projection
+    label: Image tile projection
+    ontology_term: https://schema.undata.live/values/image_tile_projection_z147vx
+  - value: Model evaluation
+    label: Model evaluation
+    ontology_term: https://schema.undata.live/values/model_evaluation_1gfcw6
+  - value: Model training
+    label: Model training
+    ontology_term: https://schema.undata.live/values/model_training_f3y65f
+  - value: Neuron skeleton processing
+    label: Neuron skeleton processing
+    ontology_term: https://schema.undata.live/values/neuron_skeleton_processing_1pd4rv
+  - value: Neuropil subtraction
+    label: Neuropil subtraction
+    ontology_term: https://schema.undata.live/values/neuropil_subtraction_1g4pw2
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/other_2tb89j
+  - value: Pipeline
+    label: Pipeline
+    ontology_term: https://schema.undata.live/values/pipeline_1g22im
+  - value: Simulation
+    label: Simulation
+    ontology_term: https://schema.undata.live/values/simulation_156hc8
+  - value: Skull stripping
+    label: Skull stripping
+    ontology_term: https://schema.undata.live/values/skull_stripping_8ghje0
+  - value: Spatial timeseries demixing
+    label: Spatial timeseries demixing
+    ontology_term: https://schema.undata.live/values/spatial_timeseries_demixing_xtbqip
+  - value: Spike sorting
+    label: Spike sorting
+    ontology_term: https://schema.undata.live/values/spike_sorting_w9hcb4
+  - value: Video ROI classification
+    label: Video ROI classification
+    ontology_term: https://schema.undata.live/values/video_roi_classification_cs9drc
+  - value: Video ROI cross session matching
+    label: Video ROI cross session matching
+    ontology_term: https://schema.undata.live/values/video_roi_cross_session_matching_1r7jbq
+  - value: Video ROI segmentation
+    label: Video ROI segmentation
+    ontology_term: https://schema.undata.live/values/video_roi_segmentation_1t81mh
+  - value: Video ROI timeseries extraction
+    label: Video ROI timeseries extraction
+    ontology_term: https://schema.undata.live/values/video_roi_timeseries_extraction_g9ay1a
+  - value: Video motion correction
+    label: Video motion correction
+    ontology_term: https://schema.undata.live/values/video_motion_correction_1rsf28
+  - value: Video plane decrosstalk
+    label: Video plane decrosstalk
+    ontology_term: https://schema.undata.live/values/video_plane_decrosstalk_hwdrsn
+  - value: dF/F estimation
+    label: dF/F estimation
+    ontology_term: https://schema.undata.live/values/df_f_estimation_d8iggd
+  question_text: Process type
+provenance:
+- source: aind
+  class: DataProcess
+  name: process_type
+  description: Process names
+  generated_at: '2026-03-20T22:16:04.704184+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: DataProcess
+  name: process_type
+  description: Process names
+  generated_at: '2026-03-20T22:16:04.704184+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

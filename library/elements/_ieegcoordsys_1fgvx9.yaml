@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Pixels
+    - ACPC
+    - ScanRAS
+    - Other
+  response_options:
+  - value: Pixels
+    label: Pixels
+    ontology_term: https://schema.undata.live/values/pixels_116vss
+  - value: ACPC
+    label: ACPC
+    ontology_term: https://schema.undata.live/values/acpc_1pfxk0
+  - value: ScanRAS
+    label: ScanRAS
+    ontology_term: https://schema.undata.live/values/scanras_1emiqp
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/other_2tb89j
+  value_domain: categorical
+provenance:
+- source: bids
+  class: enums
+  name: _iEEGCoordSys
+  generated_at: '2026-03-20T22:15:23.043717+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

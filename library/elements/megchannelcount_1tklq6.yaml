@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  min_value: 0.0
+provenance:
+- source: bids
+  class: metadata
+  name: MEGChannelCount
+  description: 'Number of MEG channels (for example, `275`).
+
+    '
+  generated_at: '2026-03-20T22:15:23.043717+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

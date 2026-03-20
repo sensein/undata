@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/anaesthesia_2ubv7u
+  - https://schema.undata.live/elements/animal_weight_post_9degb1
+  - https://schema.undata.live/elements/animal_weight_prior_f1ker0
+  - https://schema.undata.live/elements/coordinate_system_1cfmxy
+  - https://schema.undata.live/elements/ethics_review_id_p9j49b
+  - https://schema.undata.live/elements/experimenters_kxlo97
+  - https://schema.undata.live/elements/measured_coordinates_b3vh1e
+  - https://schema.undata.live/elements/notes_8hf1gt
+  - https://schema.undata.live/elements/procedures_uj9iqp
+  - https://schema.undata.live/elements/protocol_id_1d3w8j
+  - https://schema.undata.live/elements/start_date_pvlxji
+  - https://schema.undata.live/elements/weight_unit_1hca4e
+  - https://schema.undata.live/elements/weight_unit_aabbz5
+  - https://schema.undata.live/elements/workstation_id_1s4pn7
+  mixins: []
+provenance:
+- source: aind
+  name: Surgery

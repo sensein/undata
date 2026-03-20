@@ -1,0 +1,29 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_scan_parameters_7v7o20
+  - https://schema.undata.live/elements/affine_transform_trxr1u
+  - https://schema.undata.live/elements/device_name_1vrbom
+  - https://schema.undata.live/elements/echo_time_10jz7r
+  - https://schema.undata.live/elements/echo_time_unit_1eczot
+  - https://schema.undata.live/elements/echo_time_unit_o7932l
+  - https://schema.undata.live/elements/effective_echo_time_njgft6
+  - https://schema.undata.live/elements/index_1k8bgp
+  - https://schema.undata.live/elements/mr_acquisition_type_131yf1
+  - https://schema.undata.live/elements/mr_acquisition_type_19slqc
+  - https://schema.undata.live/elements/notes_14c9yp
+  - https://schema.undata.live/elements/pulse_sequence_type_1mnrbs
+  - https://schema.undata.live/elements/pulse_sequence_type_ejbmzm
+  - https://schema.undata.live/elements/rare_factor_ucg0u9
+  - https://schema.undata.live/elements/repetition_time_18hcld
+  - https://schema.undata.live/elements/repetition_time_unit_o7n8bq
+  - https://schema.undata.live/elements/repetition_time_unit_tbevae
+  - https://schema.undata.live/elements/resolution_1itxu3
+  - https://schema.undata.live/elements/resolution_unit_rt6pnt
+  - https://schema.undata.live/elements/scanner_coordinate_system_13amvg
+  - https://schema.undata.live/elements/setup_9133k6
+  - https://schema.undata.live/elements/subject_position_6vfynq
+  - https://schema.undata.live/elements/subject_position_frmkcu
+  mixins: []
+provenance:
+- source: aind
+  name: MRIScan

@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_1jwhe2
+  - https://schema.undata.live/elements/distance_147lzk
+  - https://schema.undata.live/elements/field_of_view_12tn50
+  - https://schema.undata.live/elements/opticalseries_1vmtc2
+  - https://schema.undata.live/elements/orientation_fgcjl0
+  mixins: []
+provenance:
+- source: nwb
+  name: OpticalSeries

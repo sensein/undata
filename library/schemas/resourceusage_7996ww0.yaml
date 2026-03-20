@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/architecture_1kkm7v
+  - https://schema.undata.live/elements/cpu_cores_tm0973
+  - https://schema.undata.live/elements/cpu_usage_69p27i
+  - https://schema.undata.live/elements/cpu_w9eqoj
+  - https://schema.undata.live/elements/gpu_jvcsc5
+  - https://schema.undata.live/elements/gpu_usage_1uk1qe
+  - https://schema.undata.live/elements/os_1tp2ej
+  - https://schema.undata.live/elements/ram_ms4mka
+  - https://schema.undata.live/elements/ram_unit_3nin9m
+  - https://schema.undata.live/elements/ram_usage_1itn6f
+  - https://schema.undata.live/elements/system_memory_e63q46
+  - https://schema.undata.live/elements/system_memory_unit_1t7sfj
+  - https://schema.undata.live/elements/usage_unit_124tn5
+  mixins: []
+provenance:
+- source: aind
+  name: ResourceUsage
