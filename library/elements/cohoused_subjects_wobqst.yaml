@@ -1,7 +1,11 @@
 semantic:
   data_type: array
+  question_text: Co-housed subjects
 provenance:
 - source: aind
   class: Housing
   name: cohoused_subjects
   description: List of IDs of other subjects housed in same cage
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

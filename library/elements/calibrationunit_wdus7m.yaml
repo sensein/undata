@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - pixel
+    - mm
+    - cm
+  response_options:
+  - value: pixel
+    label: pixel
+    ontology_term: https://schema.undata.live/values/pixel_6ekiux
+  - value: mm
+    label: mm
+    ontology_term: https://schema.undata.live/values/mm_4720w9
+  - value: cm
+    label: cm
+    ontology_term: https://schema.undata.live/values/cm_m92l4u
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: CalibrationUnit
+  description: 'Unit of `"CalibrationPosition"`.
+
+    '
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

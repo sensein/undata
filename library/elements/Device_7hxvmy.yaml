@@ -7,3 +7,6 @@ provenance:
   description: Metadata about a specific instance of a data acquisition device, e.g.,
     recording system, electrode, microscope. Link to a DeviceModel.model to represent
     information about the model of the device.
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -6,3 +6,6 @@ provenance:
   name: includeInCitation
   description: A flag to indicate whether a contributor should be included when generating
     a citation for the item.
+  generated_at: '2026-03-20T22:38:33.546873+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

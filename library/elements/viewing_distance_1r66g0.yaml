@@ -1,7 +1,11 @@
 semantic:
   data_type: float
+  question_text: Viewing distance (cm)
 provenance:
 - source: aind
   class: Monitor
   name: viewing_distance
   description: Viewing distance (cm)
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

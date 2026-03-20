@@ -1,5 +1,6 @@
 semantic:
   data_type: integer
+  question_text: Acquisition start timezone
 provenance:
 - source: aind
   class: Acquisition
@@ -8,3 +9,6 @@ provenance:
     Will be a TimeZoneName (IANA name) when the datetime uses a ZoneInfo timezone,
     or an integer UTC offset in hours for fixed-offset timezones. Use ZoneInfo (from
     the zoneinfo standard library) to preserve the named timezone.
+  generated_at: '2026-03-20T22:38:46.976908+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

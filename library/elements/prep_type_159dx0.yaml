@@ -1,11 +1,18 @@
 semantic:
   data_type: string
+  question_text: Viral prep type
 provenance:
 - source: aind
   class: TarsVirusIdentifiers
   name: prep_type
   description: Viral prep type
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: TarsVirusIdentifiers
   name: prep_type
   description: Viral prep type
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

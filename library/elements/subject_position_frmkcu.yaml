@@ -1,0 +1,22 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Prone
+    - Supine
+  response_options:
+  - value: Prone
+    label: Prone
+    ontology_term: https://schema.undata.live/values/prone_109emx
+  - value: Supine
+    label: Supine
+    ontology_term: https://schema.undata.live/values/supine_hbpyp8
+  question_text: Subject position
+provenance:
+- source: aind
+  class: MRIScan
+  name: subject_position
+  description: Subject position
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

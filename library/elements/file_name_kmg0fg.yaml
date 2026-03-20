@@ -1,7 +1,11 @@
 semantic:
   data_type: string
+  question_text: File name
 provenance:
 - source: aind
   class: ImageSPIM
   name: file_name
   description: Relative path to a file from the metadata root folder
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

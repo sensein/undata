@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: wear
+provenance:
+- source: aind
+  raw_value: aind.instrument.HarpDevice.harp_device_type.Wear
+- source: aind
+  raw_value: aind.metadata.HarpDevice.harp_device_type.Wear

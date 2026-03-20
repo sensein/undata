@@ -6,3 +6,6 @@ provenance:
   name: anatomy
   description: Identifier for what organ the sample belongs to. Use the most specific
     descriptor from sources such as UBERON.
+  generated_at: '2026-03-20T22:38:33.546873+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

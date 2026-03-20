@@ -1,9 +1,0 @@
-semantic:
-  data_type: integer
-provenance:
-- source: bids
-  class: metadata
-  name: ORNTChannelCount
-  description: 'Number of orientation channels.
-
-    '

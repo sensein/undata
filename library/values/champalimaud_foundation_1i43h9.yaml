@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: champalimaud_foundation
+provenance:
+- source: aind
+  raw_value: aind.acquisition.NonViralMaterial.source.Champalimaud_Foundation
+- source: aind
+  raw_value: aind.metadata.DAQDevice.manufacturer.Champalimaud_Foundation

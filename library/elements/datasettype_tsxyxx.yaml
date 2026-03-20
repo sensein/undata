@@ -1,0 +1,30 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - raw
+    - derivative
+    - study
+  response_options:
+  - value: raw
+    label: raw
+    ontology_term: https://schema.undata.live/values/raw_12z6oo
+  - value: derivative
+    label: derivative
+    ontology_term: https://schema.undata.live/values/derivative_olecqv
+  - value: study
+    label: study
+    ontology_term: https://schema.undata.live/values/study_150zqu
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: DatasetType
+  description: 'The interpretation of the dataset.
+
+    For backwards compatibility, the default value is `"raw"`.
+
+    '
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

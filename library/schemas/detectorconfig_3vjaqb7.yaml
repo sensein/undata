@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/compression_shj7ur
+  - https://schema.undata.live/elements/crop_height_ipxelc
+  - https://schema.undata.live/elements/crop_offset_x_vdkpx1
+  - https://schema.undata.live/elements/crop_offset_y_xbm4wi
+  - https://schema.undata.live/elements/crop_unit_1rt41a
+  - https://schema.undata.live/elements/crop_width_1bf6rd
+  - https://schema.undata.live/elements/device_name_1xjtsi
+  - https://schema.undata.live/elements/exposure_time_1m8p2s
+  - https://schema.undata.live/elements/exposure_time_unit_yvpge2
+  - https://schema.undata.live/elements/trigger_type_22kh1h
+  mixins: []
+provenance:
+- source: aind
+  name: DetectorConfig

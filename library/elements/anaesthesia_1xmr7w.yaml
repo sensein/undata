@@ -1,8 +1,12 @@
 semantic:
   data_type: string
+  question_text: Anaesthesia
 provenance:
 - source: aind
   class: AcquisitionSubjectDetails
   name: anaesthesia
   description: Anaesthesia present during entire acquisition, use Manipulation for
     partial anaesthesia
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

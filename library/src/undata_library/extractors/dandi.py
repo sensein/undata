@@ -9,7 +9,7 @@ from __future__ import annotations
 import enum
 import typing
 
-from ..models import Constraints, ProvenanceEntry, SemanticIdentity
+from ..models import Constraints, ProvenanceEntry, ResponseOption, SemanticIdentity
 
 # Fields wrapped in PropertyValue that should be split into variants.
 # Maps field_name → list of (variant_suffix, description_note, extra_semantic)
@@ -62,16 +62,38 @@ def extract_dandi() -> list[tuple[SemanticIdentity, ProvenanceEntry]]:
 
             dt = _pydantic_type(field_info)
 
-            # Extract enum values
+            # Extract enum values as response_options + constraints
             constraints = None
+            response_options = None
             if ann is not None:
                 enum_cls = _extract_enum_class(ann)
                 if enum_cls:
                     allowed = [str(v.value) for v in enum_cls]
                     if allowed:
                         constraints = Constraints(allowed_values=allowed)
+                        response_options = [ResponseOption(value=v, label=v) for v in allowed]
 
-            sem = SemanticIdentity(data_type=dt, constraints=constraints)
+            # Extract min/max from Pydantic field metadata
+            min_value = None
+            max_value = None
+            if hasattr(field_info, "metadata"):
+                for m in field_info.metadata:
+                    if hasattr(m, "ge") and m.ge is not None:
+                        min_value = float(m.ge)
+                    if hasattr(m, "gt") and m.gt is not None:
+                        min_value = float(m.gt)
+                    if hasattr(m, "le") and m.le is not None:
+                        max_value = float(m.le)
+                    if hasattr(m, "lt") and m.lt is not None:
+                        max_value = float(m.lt)
+
+            sem = SemanticIdentity(
+                data_type=dt,
+                constraints=constraints,
+                response_options=response_options,
+                min_value=min_value,
+                max_value=max_value,
+            )
             prov = ProvenanceEntry(
                 source="dandi",
                 **{"class": cls_name},

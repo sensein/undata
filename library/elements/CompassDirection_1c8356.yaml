@@ -9,3 +9,6 @@ provenance:
     field should indicate what direction corresponds to 0 and which is the direction
     of rotation (this should be clockwise). The si_unit for the SpatialSeries should
     be radians or degrees.
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

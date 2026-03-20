@@ -1,0 +1,38 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Body
+    - Brain
+    - Eye
+    - Face
+    - Tongue
+    - Other
+  response_options:
+  - value: Body
+    label: Body
+    ontology_term: https://schema.undata.live/values/body_1mlneg
+  - value: Brain
+    label: Brain
+    ontology_term: https://schema.undata.live/values/brain_1n4odx
+  - value: Eye
+    label: Eye
+    ontology_term: https://schema.undata.live/values/eye_12vx5i
+  - value: Face
+    label: Face
+    ontology_term: https://schema.undata.live/values/face_1yczzx
+  - value: Tongue
+    label: Tongue
+    ontology_term: https://schema.undata.live/values/tongue_8bazxp
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/other_1idvekpiy
+  question_text: Camera target
+provenance:
+- source: aind
+  class: CameraAssembly
+  name: target
+  description: Target of camera
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

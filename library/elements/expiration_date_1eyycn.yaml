@@ -1,7 +1,11 @@
 semantic:
   data_type: string
+  question_text: Lot expiration date
 provenance:
 - source: aind
   class: FluorescentStain
   name: expiration_date
   description: Lot expiration date
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

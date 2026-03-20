@@ -1,5 +1,6 @@
 semantic:
   data_type: boolean
+  value_domain: boolean
 provenance:
 - source: bids
   class: metadata
@@ -9,3 +10,6 @@ provenance:
     NOTE: not customary for manual samples, and hence should be set to `false`.
 
     '
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

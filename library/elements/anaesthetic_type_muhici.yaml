@@ -1,11 +1,18 @@
 semantic:
   data_type: string
+  question_text: Type
 provenance:
 - source: aind
   class: Anaesthetic
   name: anaesthetic_type
   description: Type
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Anaesthetic
   name: anaesthetic_type
   description: Type
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

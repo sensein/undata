@@ -5,3 +5,6 @@ provenance:
   class: SpatialSeries
   name: reference_frame
   description: Description defining what exactly 'straight-ahead' means.
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,7 +1,11 @@
 semantic:
   data_type: float
+  question_text: Core diameter (um)
 provenance:
 - source: aind
   class: FiberPatchCord
   name: core_diameter
   description: Core diameter (um)
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: allen_institute_for_neural_dynamics
+provenance:
+- source: aind
+  raw_value: aind.data_description.institution.Allen_Institute_For_Neural_Dynamics

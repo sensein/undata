@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - SVS
+    - MRSI
+    - Unlocalized MRS
+  response_options:
+  - value: SVS
+    label: SVS
+    ontology_term: https://schema.undata.live/values/svs_xixutc
+  - value: MRSI
+    label: MRSI
+    ontology_term: https://schema.undata.live/values/mrsi_18b9cq
+  - value: Unlocalized MRS
+    label: Unlocalized MRS
+    ontology_term: https://schema.undata.live/values/unlocalized_mrs_1ks21s
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: ScanningSequence__mrs
+  description: 'Description of the type of data acquired.
+
+    '
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,5 +1,6 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: bids
   class: enums
@@ -16,3 +17,6 @@ provenance:
     source, often with the intent of synchronizing data across multiple devices.
 
     '
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,7 +1,11 @@
 semantic:
   data_type: float
+  question_text: DAQ channel sample rate (Hz)
 provenance:
 - source: aind
   class: DAQChannel
   name: sample_rate
   description: DAQ channel sample rate (Hz)
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

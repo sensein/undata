@@ -1,0 +1,41 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - CTF
+    - ElektaNeuromag
+    - NeuromagElektaMEGIN
+    - 4DBti
+    - KitYokogawa
+    - ChietiItab
+    - Other
+  response_options:
+  - value: CTF
+    label: CTF
+    ontology_term: https://schema.undata.live/values/ctf_162zhm
+  - value: ElektaNeuromag
+    label: ElektaNeuromag
+    ontology_term: https://schema.undata.live/values/elektaneuromag_h7lqe5
+  - value: NeuromagElektaMEGIN
+    label: NeuromagElektaMEGIN
+    ontology_term: https://schema.undata.live/values/neuromagelektamegin_16f6gn
+  - value: 4DBti
+    label: 4DBti
+    ontology_term: https://schema.undata.live/values/4dbti_3xa5q0
+  - value: KitYokogawa
+    label: KitYokogawa
+    ontology_term: https://schema.undata.live/values/kityokogawa_17ayzf
+  - value: ChietiItab
+    label: ChietiItab
+    ontology_term: https://schema.undata.live/values/chietiitab_7ch9x0
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/other_2tb89j
+  value_domain: categorical
+provenance:
+- source: bids
+  class: enums
+  name: _MEGCoordSys
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

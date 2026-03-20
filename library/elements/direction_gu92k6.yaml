@@ -1,0 +1,80 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Left_to_right
+    - Right_to_left
+    - Anterior_to_posterior
+    - Posterior_to_anterior
+    - Inferior_to_superior
+    - Superior_to_inferior
+    - Front_to_back
+    - Back_to_front
+    - Up_to_down
+    - Down_to_up
+    - Other
+    - Positive
+    - Negative
+  response_options:
+  - value: Left_to_right
+    label: Left_to_right
+    ontology_term: https://schema.undata.live/values/left_to_right_f0hdua
+  - value: Right_to_left
+    label: Right_to_left
+    ontology_term: https://schema.undata.live/values/right_to_left_8elbor
+  - value: Anterior_to_posterior
+    label: Anterior_to_posterior
+    ontology_term: https://schema.undata.live/values/anterior_to_posterior_93jqef
+  - value: Posterior_to_anterior
+    label: Posterior_to_anterior
+    ontology_term: https://schema.undata.live/values/posterior_to_anterior_rsffmn
+  - value: Inferior_to_superior
+    label: Inferior_to_superior
+    ontology_term: https://schema.undata.live/values/inferior_to_superior_t39a4c
+  - value: Superior_to_inferior
+    label: Superior_to_inferior
+    ontology_term: https://schema.undata.live/values/superior_to_inferior_1flln2
+  - value: Front_to_back
+    label: Front_to_back
+    ontology_term: https://schema.undata.live/values/front_to_back_1qt9l5
+  - value: Back_to_front
+    label: Back_to_front
+    ontology_term: https://schema.undata.live/values/back_to_front_5u4bg0
+  - value: Up_to_down
+    label: Up_to_down
+    ontology_term: https://schema.undata.live/values/up_to_down_no2x0x
+  - value: Down_to_up
+    label: Down_to_up
+    ontology_term: https://schema.undata.live/values/down_to_up_10kbfk
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/other_1idvekpiy
+  - value: Positive
+    label: Positive
+    ontology_term: https://schema.undata.live/values/positive_a21u6m
+  - value: Negative
+    label: Negative
+    ontology_term: https://schema.undata.live/values/negative_vmsr51
+  question_text: Direction
+provenance:
+- source: aind
+  class: Axis
+  name: direction
+  description: Direction of positive values along the axis
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: Axis
+  name: direction
+  description: Direction of positive values along the axis
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: Axis
+  name: direction
+  description: Direction of positive values along the axis
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

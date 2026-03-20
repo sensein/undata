@@ -1,0 +1,27 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  min_value: 0.0
+provenance:
+- source: bids
+  class: metadata
+  name: NumberOfVolumesDiscardedByUser
+  description: 'Number of volumes ("dummy scans") discarded by the user before including
+    the
+
+    file in the dataset.
+
+    If possible, including all of the volumes is strongly recommended.
+
+    Please note that the onsets recorded in the `events.tsv` file should always
+
+    refer to the beginning of the acquisition of the first volume in the
+
+    corresponding imaging file - independent of the value of
+
+    `"NumberOfVolumesDiscardedByUser"` field.
+
+    '
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

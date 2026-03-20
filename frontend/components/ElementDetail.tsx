@@ -54,6 +54,43 @@ export function ElementDetail({ element }: ElementDetailProps) {
               </>
             )}
 
+            {semantic.min_value != null && (
+              <>
+                <dt className="text-muted-foreground">Range</dt>
+                <dd>
+                  {String(semantic.min_value)} –{" "}
+                  {String(semantic.max_value)}
+                </dd>
+              </>
+            )}
+
+            {semantic.question_text && (
+              <>
+                <dt className="text-muted-foreground">Question</dt>
+                <dd className="italic">
+                  {String(semantic.question_text)}
+                </dd>
+              </>
+            )}
+
+            {Array.isArray(semantic.response_options) &&
+              (semantic.response_options as Array<Record<string, string>>).length > 0 && (
+              <>
+                <dt className="text-muted-foreground">Response Options</dt>
+                <dd>
+                  <div className="flex flex-wrap gap-1">
+                    {(semantic.response_options as Array<Record<string, string>>).map(
+                      (opt, i) => (
+                        <Badge key={i} variant="outline" className="text-xs">
+                          {opt.label || opt.value}
+                        </Badge>
+                      ),
+                    )}
+                  </div>
+                </dd>
+              </>
+            )}
+
             {semantic.constraints && Object.keys(semantic.constraints).length > 0 && (
               <>
                 <dt className="text-muted-foreground">Constraints</dt>
@@ -93,9 +130,18 @@ export function ElementDetail({ element }: ElementDetailProps) {
                     {p.description}
                   </p>
                 )}
-                <div className="mt-1 flex gap-3 text-xs text-muted-foreground">
+                <div className="mt-1 flex flex-wrap gap-3 text-xs text-muted-foreground">
                   {p.required && <span>required</span>}
                   {p.multivalued && <span>multivalued</span>}
+                  {p.activity && (
+                    <span>{String(p.activity)}</span>
+                  )}
+                  {p.generated_at && (
+                    <span>{String(p.generated_at).slice(0, 10)}</span>
+                  )}
+                  {p.attributed_to && (
+                    <span className="font-mono">{String(p.attributed_to)}</span>
+                  )}
                 </div>
               </div>
             ))}

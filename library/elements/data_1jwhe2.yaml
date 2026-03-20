@@ -5,3 +5,6 @@ provenance:
   class: OpticalSeries
   name: data
   description: Images presented to subject, either grayscale or RGB
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

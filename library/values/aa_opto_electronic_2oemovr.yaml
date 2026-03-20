@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: aa_opto_electronic
+provenance:
+- source: aind
+  raw_value: aind.instrument.HarpDevice.manufacturer.Aa_Opto_Electronic

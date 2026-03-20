@@ -1,0 +1,22 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - percent
+    - fraction of cycle
+  response_options:
+  - value: percent
+    label: percent
+    ontology_term: https://schema.undata.live/values/percent_onffxo
+  - value: fraction of cycle
+    label: fraction of cycle
+    ontology_term: https://schema.undata.live/values/fraction_of_cycle_19gwuw
+  question_text: Time setting unit
+provenance:
+- source: aind
+  class: PockelsCell
+  name: time_setting_unit
+  description: Unitless options
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

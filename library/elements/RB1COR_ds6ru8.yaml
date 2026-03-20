@@ -1,5 +1,6 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: bids
   class: suffixes
@@ -13,3 +14,6 @@ provenance:
     [Papp et al. (2016)](https://doi.org/10.1002/mrm.26058).
 
     '
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

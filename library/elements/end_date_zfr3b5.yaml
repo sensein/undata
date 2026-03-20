@@ -1,7 +1,11 @@
 semantic:
   data_type: string
+  question_text: Training protocol end date
 provenance:
 - source: aind
   class: TrainingProtocol
   name: end_date
   description: Training protocol end date
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

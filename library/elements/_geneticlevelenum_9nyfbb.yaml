@@ -1,0 +1,37 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Genetic
+    - Genomic
+    - Epigenomic
+    - Transcriptomic
+    - Metabolomic
+    - Proteomic
+  response_options:
+  - value: Genetic
+    label: Genetic
+    ontology_term: https://schema.undata.live/values/genetic_18fcnk
+  - value: Genomic
+    label: Genomic
+    ontology_term: https://schema.undata.live/values/genomic_os0n5v
+  - value: Epigenomic
+    label: Epigenomic
+    ontology_term: https://schema.undata.live/values/epigenomic_6muvvi
+  - value: Transcriptomic
+    label: Transcriptomic
+    ontology_term: https://schema.undata.live/values/transcriptomic_15jih4
+  - value: Metabolomic
+    label: Metabolomic
+    ontology_term: https://schema.undata.live/values/metabolomic_z6r7nl
+  - value: Proteomic
+    label: Proteomic
+    ontology_term: https://schema.undata.live/values/proteomic_h133e6
+  value_domain: categorical
+provenance:
+- source: bids
+  class: enums
+  name: _GeneticLevelEnum
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

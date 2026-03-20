@@ -1,7 +1,11 @@
 semantic:
   data_type: float
+  question_text: Total reward consumed (mL)
 provenance:
 - source: aind
   class: AcquisitionSubjectDetails
   name: reward_consumed_total
   description: Total reward consumed (mL)
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

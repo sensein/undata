@@ -1,7 +1,11 @@
 semantic:
   data_type: string
+  question_text: Date and time of maintenance
 provenance:
 - source: aind
   class: Maintenance
   name: maintenance_date
   description: Date and time of maintenance
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

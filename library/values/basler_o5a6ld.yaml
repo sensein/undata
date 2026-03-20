@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: basler
+provenance:
+- source: aind
+  raw_value: aind.acquisition.NonViralMaterial.source.Basler
+- source: aind
+  raw_value: aind.metadata.Camera.manufacturer.Basler

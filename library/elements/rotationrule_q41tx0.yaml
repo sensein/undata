@@ -1,0 +1,34 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - left-hand
+    - right-hand
+    - n/a
+  response_options:
+  - value: left-hand
+    label: left-hand
+    ontology_term: https://schema.undata.live/values/left-hand_1wf5zo
+  - value: right-hand
+    label: right-hand
+    ontology_term: https://schema.undata.live/values/right-hand_sqggtu
+  - value: n/a
+    label: n/a
+    ontology_term: https://schema.undata.live/values/n_a_lehkah
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: RotationRule
+  description: 'In case orientation channels are present, indicate whether rotations
+    are applied
+
+    clockwise around an axis when seen from the positive direction (left-hand rule)
+    or
+
+    counter-clockwise (right-hand rule). Must be one of: "left-hand", "right-hand".
+
+    '
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

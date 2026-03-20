@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: macaca_mulatta
+provenance:
+- source: aind
+  raw_value: aind.subject.MouseSubject.species.Macaca_Mulatta

@@ -1,0 +1,30 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Positive
+    - Negative
+    - Neutral
+    - Unknown
+  response_options:
+  - value: Positive
+    label: Positive
+    ontology_term: https://schema.undata.live/values/positive_a21u6m
+  - value: Negative
+    label: Negative
+    ontology_term: https://schema.undata.live/values/negative_vmsr51
+  - value: Neutral
+    label: Neutral
+    ontology_term: https://schema.undata.live/values/neutral_1jl2hd
+  - value: Unknown
+    label: Unknown
+    ontology_term: https://schema.undata.live/values/unknown_2jmwu24l
+  question_text: Valence
+provenance:
+- source: aind
+  class: AirPuffConfig
+  name: valence
+  description: Valence of a stimulus
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

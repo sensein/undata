@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_a1x2ls
+  - https://schema.undata.live/elements/channels_1g6sgk
+  - https://schema.undata.live/elements/core_version_1wst26
+  - https://schema.undata.live/elements/data_interface_e6a0qa
+  - https://schema.undata.live/elements/firmware_version_1hdpte
+  - https://schema.undata.live/elements/hardware_version_koyjmf
+  - https://schema.undata.live/elements/harp_device_type_1szlmv
+  - https://schema.undata.live/elements/is_clock_generator_1to1je
+  - https://schema.undata.live/elements/manufacturer_1d47pt
+  - https://schema.undata.live/elements/model_1qit6y
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/notes_dm05zp
+  - https://schema.undata.live/elements/serial_number_16grzg
+  - https://schema.undata.live/elements/tag_version_tarrsv
+  mixins: []
+provenance:
+- source: aind
+  name: Olfactometer

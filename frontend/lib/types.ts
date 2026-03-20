@@ -5,6 +5,12 @@ export interface SemanticIdentity {
   data_type: string;
   unit: string | null;
   constraints: Record<string, unknown> | null;
+  // reproschema-aligned fields:
+  response_options: Array<{ value: string; label?: string; ontology_term?: string }> | null;
+  question_text: string | null;
+  value_domain: string | null;
+  min_value: number | null;
+  max_value: number | null;
 }
 
 export interface ProvenanceEntry {
@@ -14,6 +20,11 @@ export interface ProvenanceEntry {
   description: string | null;
   required: boolean | null;
   multivalued: boolean | null;
+  // W3C PROV-O fields:
+  generated_at: string | null;
+  attributed_to: string | null;
+  activity: string | null;
+  derived_from: string | null;
 }
 
 export interface DataElement {

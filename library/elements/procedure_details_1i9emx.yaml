@@ -1,7 +1,11 @@
 semantic:
   data_type: array
+  question_text: Procedure details
 provenance:
 - source: aind
   class: SpecimenProcedure
   name: procedure_details
   description: Details of the procedures, including reagents and sectioning information.
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

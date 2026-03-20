@@ -1,9 +1,0 @@
-semantic:
-  data_type: integer
-provenance:
-- source: bids
-  class: metadata
-  name: EEGChannelCount
-  description: 'Number of EEG channels recorded simultaneously (for example, `21`).
-
-    '

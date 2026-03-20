@@ -1,7 +1,11 @@
 semantic:
   data_type: array
+  question_text: Funding source
 provenance:
 - source: aind
   class: data_description
   name: funding_source
   description: Funding source. If internal funding, select 'Allen Institute'
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

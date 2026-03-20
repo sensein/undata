@@ -1,7 +1,11 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: bids
   class: suffixes
   name: nirs
   description: Data associated with a Shared Near Infrared Spectroscopy Format file.
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

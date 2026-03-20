@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: mit_department_of_brain_and_cognitive_sciences
+provenance:
+- source: aind
+  raw_value: aind.data_description.institution.Mit_Department_Of_Brain_And_Cognitive_Sciences

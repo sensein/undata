@@ -1,0 +1,40 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - gray matter
+    - white matter
+    - csf
+    - meninges
+    - macrovascular
+    - microvascular
+  response_options:
+  - value: gray matter
+    label: gray matter
+    ontology_term: https://schema.undata.live/values/gray_matter_stsmjr
+  - value: white matter
+    label: white matter
+    ontology_term: https://schema.undata.live/values/white_matter_1xdcmn
+  - value: csf
+    label: csf
+    ontology_term: https://schema.undata.live/values/csf_a28hsf
+  - value: meninges
+    label: meninges
+    ontology_term: https://schema.undata.live/values/meninges_jwzwr4
+  - value: macrovascular
+    label: macrovascular
+    ontology_term: https://schema.undata.live/values/macrovascular_1qq3no
+  - value: microvascular
+    label: microvascular
+    ontology_term: https://schema.undata.live/values/microvascular_102zzj
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: TissueOrigin
+  description: 'Describes the type of tissue analyzed for `"SampleOrigin"` `brain`.
+
+    '
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

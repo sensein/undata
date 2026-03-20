@@ -24,29 +24,57 @@ class MappingFunctionType(str, Enum):
     unknown = "unknown"
 
 
+class ActivityType(str, Enum):
+    ingestion = "ingestion"
+    curation = "curation"
+    enrichment = "enrichment"
+    migration = "migration"
+
+
 # ---------------------------------------------------------------------------
 # Element (rdf:Property)
 # ---------------------------------------------------------------------------
 
 
+class ResponseOption(BaseModel):
+    """A structured choice/enum value with optional ontology link."""
+
+    value: str
+    label: str | None = None
+    ontology_term: str | None = None
+
+
 class Constraints(BaseModel):
-    minimum: float | None = None
-    maximum: float | None = None
+    """Legacy constraint block. Use min_value/max_value on SemanticIdentity for ranges."""
+
+    minimum: float | None = None  # deprecated — use SemanticIdentity.min_value
+    maximum: float | None = None  # deprecated — use SemanticIdentity.max_value
     pattern: str | None = None
     allowed_values: list[str] | None = None
 
 
 class SemanticIdentity(BaseModel):
-    """Identity block — hashed for content-addressed URI."""
+    """Identity block — hashed for content-addressed URI.
+
+    Fields IN the hash: ontology_term, data_type, unit, constraints (pattern + allowed_values only),
+    min_value, max_value, response_options (sorted by value).
+    Fields NOT in hash: question_text, value_domain.
+    """
 
     ontology_term: str | None = None
     data_type: DataType
     unit: str | None = None
     constraints: Constraints | None = None
+    # reproschema-aligned fields:
+    response_options: list[ResponseOption] | None = None  # IN hash (sorted by value)
+    question_text: str | None = None  # NOT in hash
+    value_domain: str | None = None  # NOT in hash (categorical|numeric|text|date|boolean)
+    min_value: float | None = None  # IN hash — replaces constraints.minimum
+    max_value: float | None = None  # IN hash — replaces constraints.maximum
 
 
 class ProvenanceEntry(BaseModel):
-    """One source's attestation of this property."""
+    """One source's attestation of this property, with W3C PROV-O metadata."""
 
     source: str
     class_: str = Field(alias="class")
@@ -54,6 +82,11 @@ class ProvenanceEntry(BaseModel):
     description: str | None = None
     required: bool | None = None
     multivalued: bool | None = None
+    # W3C PROV-O fields:
+    generated_at: str | None = None  # prov:generatedAtTime (ISO 8601)
+    attributed_to: str | None = None  # prov:wasAttributedTo (agent URI)
+    activity: str | None = None  # prov:wasGeneratedBy (ingestion|curation|enrichment|migration)
+    derived_from: str | None = None  # prov:wasDerivedFrom (element URI)
 
     model_config = {"populate_by_name": True}
 

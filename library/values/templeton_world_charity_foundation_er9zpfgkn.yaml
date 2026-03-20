@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: templeton_world_charity_foundation
+provenance:
+- source: aind
+  raw_value: aind.procedures.FluorescentStain.source.Templeton_World_Charity_Foundation

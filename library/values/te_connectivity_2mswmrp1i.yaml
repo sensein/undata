@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: te_connectivity
+provenance:
+- source: aind
+  raw_value: aind.subject.unknown.Te_Connectivity

@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - RF
+    - GRADIENT
+    - COMBINED
+  response_options:
+  - value: RF
+    label: RF
+    ontology_term: https://schema.undata.live/values/rf_1g74dn
+  - value: GRADIENT
+    label: GRADIENT
+    ontology_term: https://schema.undata.live/values/gradient_1754f8
+  - value: COMBINED
+    label: COMBINED
+    ontology_term: https://schema.undata.live/values/combined_1rvc1c
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: SpoilingType
+  description: 'Specifies which spoiling method(s) are used by a spoiled sequence.
+
+    '
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

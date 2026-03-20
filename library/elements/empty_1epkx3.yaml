@@ -1,7 +1,11 @@
 semantic:
   data_type: boolean
+  question_text: Empty
 provenance:
 - source: aind
   class: CalibrationObject
   name: empty
   description: Set to true if the calibration was performed with no object.
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

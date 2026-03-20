@@ -38,13 +38,13 @@ class TestValidateFile:
 class TestValidateDirectory:
     def test_scans_all_fixtures(self):
         reports = validate_directory(FIXTURES)
-        assert len(reports) == 7  # 3 element + 2 value + 2 invalid
+        assert len(reports) == 8  # 4 element + 2 value + 2 invalid
 
     def test_mixed_valid_invalid(self):
         reports = validate_directory(FIXTURES)
         valid = [r for r in reports if r.valid]
         invalid = [r for r in reports if not r.valid]
         assert (
-            len(valid) == 5
-        )  # valid-element, valid-schema, multi-prov-element, valid-value, multi-prov-value
+            len(valid) == 6
+        )  # valid-element, valid-element-rich, valid-schema, multi-prov-element, valid-value, multi-prov-value
         assert len(invalid) == 2  # no-datatype, bad-enum

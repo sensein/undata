@@ -188,3 +188,104 @@ def import_cmd(backend_url: str, path: str, token: str | None) -> None:
         f"{val_c} values created, {val_m} merged; "
         f"{sch_c} schemas created, {sch_m} merged."
     )
+
+
+@main.command()
+@click.argument("path", type=click.Path(exists=True), default="elements")
+@click.option("--cache-dir", default="ontology-cache", help="Ontology cache directory")
+def verify(path: str, cache_dir: str) -> None:
+    """Verify ontology alignment of elements against offline cache."""
+    from .ontology_cache import OntologyCache
+    from .verify import verify_elements
+
+    cache = OntologyCache(Path(cache_dir))
+    warnings = verify_elements(Path(path), cache)
+
+    if not warnings:
+        click.echo("All ontology terms verified. 0 warnings.")
+        return
+
+    for w in warnings:
+        click.echo(f"  {w['severity']}: {w['file']} — {w['issue']}")
+
+    click.echo(f"\n{len(warnings)} warnings found.")
+    sys.exit(1 if any(w["severity"] == "WARNING" for w in warnings) else 0)
+
+
+@main.group("ontology")
+def ontology_group() -> None:
+    """Manage the ontology term cache."""
+
+
+@ontology_group.command("refresh")
+@click.option(
+    "--ontology",
+    "-o",
+    default=None,
+    help="Specific ontology to refresh (ncit, pato, hp, obi, ncbitaxon)",
+)
+@click.option("--cache-dir", default="ontology-cache", help="Cache directory")
+@click.option("--max-terms", default=5000, help="Max terms per ontology")
+def ontology_refresh(ontology: str | None, cache_dir: str, max_terms: int) -> None:
+    """Fetch/update ontology terms from OLS API."""
+    from .ontology_cache import OntologyCache
+    from .ontology_fetch import SUPPORTED_ONTOLOGIES, fetch_ontology
+
+    cache = OntologyCache(Path(cache_dir))
+    targets = [ontology] if ontology else list(SUPPORTED_ONTOLOGIES.keys())
+
+    for name in targets:
+        click.echo(f"Fetching {name}...")
+        try:
+            data = fetch_ontology(name, max_terms=max_terms)
+            cache.save(name, data)
+            click.echo(f"  {name}: {len(data.get('terms', {}))} terms cached.")
+        except Exception as exc:
+            click.echo(f"  {name}: FAILED — {exc}")
+
+
+@main.command("similarity")
+@click.argument("file_a", type=click.Path(exists=True))
+@click.argument("file_b", type=click.Path(exists=True))
+def similarity_cmd(file_a: str, file_b: str) -> None:
+    """Compute similarity between two element files."""
+    from .similarity import compute_similarity
+
+    data_a = yaml.safe_load(Path(file_a).read_text(encoding="utf-8"))
+    data_b = yaml.safe_load(Path(file_b).read_text(encoding="utf-8"))
+
+    result = compute_similarity(data_a, data_b)
+
+    click.echo(f"Score:    {result['score']}")
+    click.echo(f"Relation: {result['relation']}")
+    click.echo("Components:")
+    for k, v in result["components"].items():
+        click.echo(f"  {k}: {v}")
+
+
+@main.command("detect-aliases")
+@click.argument("path", type=click.Path(exists=True), default="elements")
+@click.option("--threshold", "-t", default=0.5, help="Minimum similarity score")
+@click.option("--limit", "-l", default=50, help="Max candidates to show")
+@click.option("--format", "fmt", type=click.Choice(["text", "yaml"]), default="text")
+def detect_aliases_cmd(path: str, threshold: float, limit: int, fmt: str) -> None:
+    """Detect alias candidates by semantic similarity."""
+    from .alias_detection import detect_aliases
+
+    click.echo(f"Scanning {path} for alias candidates (threshold={threshold})...")
+    candidates = detect_aliases(Path(path), threshold=threshold)
+
+    if not candidates:
+        click.echo("No alias candidates found.")
+        return
+
+    shown = candidates[:limit]
+    if fmt == "yaml":
+        click.echo(yaml.dump(shown, default_flow_style=False))
+    else:
+        for c in shown:
+            click.echo(
+                f"  {c['score']:.3f} {c['relation']:20s} {c['element_a']} ↔ {c['element_b']}"
+            )
+
+    click.echo(f"\n{len(candidates)} candidates (showing top {len(shown)}).")

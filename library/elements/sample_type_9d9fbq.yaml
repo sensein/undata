@@ -1,0 +1,22 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Blood
+    - Other
+  response_options:
+  - value: Blood
+    label: Blood
+    ontology_term: https://schema.undata.live/values/blood_1m595b
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/other_1idvekpiy
+  question_text: Sample type
+provenance:
+- source: aind
+  class: SampleCollection
+  name: sample_type
+  description: Sample type
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

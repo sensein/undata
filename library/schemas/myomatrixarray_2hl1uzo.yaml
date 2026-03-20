@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_19i7rr
+  - https://schema.undata.live/elements/array_type_skg7pe
+  - https://schema.undata.live/elements/manufacturer_1d47pt
+  - https://schema.undata.live/elements/model_9zoi3g
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/notes_y64d0i
+  - https://schema.undata.live/elements/serial_number_16grzg
+  - https://schema.undata.live/elements/threads_h3con2
+  mixins: []
+provenance:
+- source: aind
+  name: MyomatrixArray

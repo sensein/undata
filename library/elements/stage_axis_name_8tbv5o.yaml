@@ -1,0 +1,42 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - X
+    - Y
+    - Z
+    - AP
+    - ML
+    - SI
+    - Depth
+  response_options:
+  - value: X
+    label: X
+    ontology_term: https://schema.undata.live/values/x_c233b6
+  - value: Y
+    label: Y
+    ontology_term: https://schema.undata.live/values/y_1puatg
+  - value: Z
+    label: Z
+    ontology_term: https://schema.undata.live/values/z_1u2lj6
+  - value: AP
+    label: AP
+    ontology_term: https://schema.undata.live/values/ap_r2uprf
+  - value: ML
+    label: ML
+    ontology_term: https://schema.undata.live/values/ml_3gfcy2
+  - value: SI
+    label: SI
+    ontology_term: https://schema.undata.live/values/si_zfzij1
+  - value: Depth
+    label: Depth
+    ontology_term: https://schema.undata.live/values/depth_1gywxc
+  question_text: Name of stage axis
+provenance:
+- source: aind
+  class: ScanningStage
+  name: stage_axis_name
+  description: Axis name
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

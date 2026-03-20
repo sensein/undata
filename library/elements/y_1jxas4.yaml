@@ -1,5 +1,6 @@
 semantic:
   data_type: float
+  value_domain: numeric
 provenance:
 - source: bids
   class: columns
@@ -7,3 +8,6 @@ provenance:
   description: 'Recorded position along the y-axis.
 
     '
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

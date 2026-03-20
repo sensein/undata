@@ -1,11 +1,18 @@
 semantic:
   data_type: array
+  question_text: Data assets
 provenance:
 - source: aind
   class: CombinedData
   name: assets
   description: Data assets
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: CombinedData
   name: assets
   description: Data assets
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: spim
+provenance:
+- source: aind
+  raw_value: aind.instrument.modalities.Spim

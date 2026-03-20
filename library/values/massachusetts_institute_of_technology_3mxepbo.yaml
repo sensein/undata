@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: massachusetts_institute_of_technology
+provenance:
+- source: aind
+  raw_value: aind.data_description.institution.Massachusetts_Institute_Of_Technology

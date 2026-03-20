@@ -1,0 +1,30 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Constant
+    - Linear
+    - Exponential
+    - Other
+  response_options:
+  - value: Constant
+    label: Constant
+    ontology_term: https://schema.undata.live/values/constant_1u5gnz
+  - value: Linear
+    label: Linear
+    ontology_term: https://schema.undata.live/values/linear_1ux01k
+  - value: Exponential
+    label: Exponential
+    ontology_term: https://schema.undata.live/values/exponential_9t8dxt
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/other_1idvekpiy
+  question_text: Power function
+provenance:
+- source: aind
+  class: PlanarImageStack
+  name: power_function
+  description: Power functions
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -13,3 +13,6 @@ provenance:
     data, the 0,0 point might be the top-left corner of an enclosure, as viewed from
     the tracking camera. The unit of data will indicate how to interpret SpatialSeries
     values.'
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

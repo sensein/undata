@@ -1,15 +1,25 @@
 semantic:
   data_type: array
+  question_text: RAM usage
 provenance:
 - source: aind
   class: ResourceUsage
   name: ram_usage
   description: RAM usage
+  generated_at: '2026-03-20T22:38:46.976908+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: ResourceUsage
   name: ram_usage
   description: RAM usage
+  generated_at: '2026-03-20T22:38:46.976908+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: ResourceUsage
   name: ram_usage
   description: RAM usage
+  generated_at: '2026-03-20T22:38:46.976908+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

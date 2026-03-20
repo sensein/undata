@@ -6,3 +6,6 @@ provenance:
   name: data
   description: Binary data representing images across frames. If data are stored in
     an external file, this should be an empty 3D array.
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

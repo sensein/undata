@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: oxxius
+provenance:
+- source: aind
+  raw_value: aind.acquisition.NonViralMaterial.source.Oxxius
+- source: aind
+  raw_value: aind.metadata.FluorescentStain.source.Oxxius

@@ -6,3 +6,6 @@ provenance:
   name: data
   description: 1-D or 2-D array storing position or direction relative to some reference
     frame.
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

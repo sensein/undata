@@ -1,7 +1,11 @@
 semantic:
   data_type: integer
+  question_text: Target fraction weight (%)
 provenance:
 - source: aind
   class: WaterRestriction
   name: target_fraction_weight
   description: Target fraction weight (%)
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

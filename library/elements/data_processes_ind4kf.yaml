@@ -1,7 +1,11 @@
 semantic:
   data_type: array
+  question_text: Data processing
 provenance:
 - source: aind
   class: Processing
   name: data_processes
   description: Data processing
+  generated_at: '2026-03-20T22:38:46.976908+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
