@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/currentclampstimulusseries_gdph2z
-  - https://schema.undata.live/elements/data_1pj1i7
-  mixins: []
-provenance:
-- source: nwb
-  name: CurrentClampStimulusSeries

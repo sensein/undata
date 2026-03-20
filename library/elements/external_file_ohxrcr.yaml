@@ -8,3 +8,6 @@ provenance:
     format='external'. This is only relevant if the image series is stored in the
     file system as one or more image file(s). This field should NOT be used if the
     image is stored in another NWB file and that file is linked to this file.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

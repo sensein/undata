@@ -29,6 +29,6 @@ provenance:
   name: propertyID
   description: A commonly used identifier for the characteristic represented by the
     property. For example, a known prefix like DOI or a full URL.
-  generated_at: '2026-03-20T22:15:43.176849+00:00'
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

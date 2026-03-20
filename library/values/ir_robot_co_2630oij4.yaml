@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: ir_robot_co
+provenance:
+- source: aind
+  raw_value: aind.procedures.FluorescentStain.source.Ir_Robot_Co

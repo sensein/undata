@@ -6,3 +6,6 @@ provenance:
   name: NWBFile
   description: An NWB file storing cellular-based neurophysiology data from a single
     experimental session.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

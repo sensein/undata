@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_jc4cit
+  - https://schema.undata.live/elements/bandwidth_1qzrjs
+  - https://schema.undata.live/elements/bandwidth_unit_7wdmxy
+  - https://schema.undata.live/elements/manufacturer_1d47pt
+  - https://schema.undata.live/elements/model_fytdo6
+  - https://schema.undata.live/elements/name_1c9a6l
+  - https://schema.undata.live/elements/notes_avdufv
+  - https://schema.undata.live/elements/serial_number_16grzg
+  - https://schema.undata.live/elements/wavelength_1b6jbn
+  - https://schema.undata.live/elements/wavelength_unit_13zalp
+  mixins: []
+provenance:
+- source: aind
+  name: LightEmittingDiode

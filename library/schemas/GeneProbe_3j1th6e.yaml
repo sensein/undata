@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/gene_1poty8
-  - https://schema.undata.live/elements/probes_1v6s83
-  mixins: []
-provenance:
-- source: aind
-  name: GeneProbe

@@ -1,5 +1,6 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: bids
   class: enums
@@ -8,3 +9,6 @@ provenance:
     mua in SNIRF.
 
     '
+  generated_at: '2026-03-20T22:21:17.800680+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: thermo_fisher_scientific
+provenance:
+- source: aind
+  raw_value: aind.subject.unknown.Thermo_Fisher_Scientific

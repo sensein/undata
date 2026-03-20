@@ -135,6 +135,15 @@ def ingest_source(
 
     # Extract enum values as ValueConcepts
     value_stats = _extract_values(source_name, pairs, library_path, registry)
+
+    # Extract underscore-prefixed AIND $defs as ValueConcepts (FR-008)
+    if source_name == "aind" and schema_path is not None:
+        from .extractors.aind import extract_aind_values
+
+        aind_values = extract_aind_values(schema_path)
+        aind_val_count = _ingest_extracted_values(aind_values, library_path, registry)
+        value_stats["created"] = value_stats.get("created", 0) + aind_val_count
+
     _write_registry(registry_path, registry)
 
     # Resolve response_option values to ValueConcept URIs (U1 fix)
@@ -318,6 +327,63 @@ def _extract_values(
         )
 
     return {"created": created}
+
+
+def _ingest_extracted_values(
+    value_pairs: list[tuple[ValueSemanticIdentity, ValueProvenance]],
+    library_path: Path,
+    registry: HashRegistry,
+) -> int:
+    """Write ValueConcept files from extracted value pairs."""
+    values_dir = library_path / "values"
+    values_dir.mkdir(parents=True, exist_ok=True)
+    existing_keys = set(registry.elements.keys()) | set(registry.schemas.keys())
+
+    created = 0
+    for sem_id, prov in value_pairs:
+        sem_dict = sem_id.model_dump(exclude_none=True)
+        sha = compute_sha256(canonical_json(sem_dict))
+        key = generate_short_key(sha, existing_keys)
+        existing_keys.add(key)
+
+        safe_label = (
+            sem_id.label.lower()
+            .replace("/", "_")
+            .replace("\\", "_")
+            .replace(" ", "_")[:50]
+        )
+        filename = f"{safe_label}_{key}.yaml"
+        filepath = values_dir / filename
+
+        if filepath.exists():
+            existing_data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
+            existing_record = ValueConcept.model_validate(existing_data)
+            existing_raw = {(p.source, p.raw_value) for p in existing_record.provenance}
+            if (prov.source, prov.raw_value) not in existing_raw:
+                all_provs = existing_record.provenance + [prov]
+                record = ValueConcept(semantic=sem_id, provenance=all_provs)
+                data = record.model_dump(mode="json", exclude_none=True)
+                filepath.write_text(
+                    yaml.dump(data, default_flow_style=False, sort_keys=False),
+                    encoding="utf-8",
+                )
+        else:
+            record = ValueConcept(semantic=sem_id, provenance=[prov])
+            data = record.model_dump(mode="json", exclude_none=True)
+            filepath.write_text(
+                yaml.dump(data, default_flow_style=False, sort_keys=False),
+                encoding="utf-8",
+            )
+            created += 1
+
+        uri = build_value_uri(sem_id.label, key)
+        registry.elements[f"v_{key}"] = HashRegistryEntry(
+            sha256=sha,
+            attribute=sem_id.label,
+            uri=uri,
+        )
+
+    return created
 
 
 def _resolve_response_option_uris(library_path: Path) -> int:

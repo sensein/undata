@@ -5,3 +5,6 @@ provenance:
   class: OnePhotonSeries
   name: exposure_time
   description: Exposure time of the sample; often the inverse of the frequency.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

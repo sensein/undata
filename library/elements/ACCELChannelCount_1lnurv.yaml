@@ -1,9 +1,0 @@
-semantic:
-  data_type: integer
-provenance:
-- source: bids
-  class: metadata
-  name: ACCELChannelCount
-  description: 'Number of acceleration channels.
-
-    '

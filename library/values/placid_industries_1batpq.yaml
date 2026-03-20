@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: placid_industries
+provenance:
+- source: aind
+  raw_value: aind.acquisition.NonViralMaterial.source.Placid_Industries
+- source: aind
+  raw_value: aind.metadata.FluorescentStain.source.Placid_Industries

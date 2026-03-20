@@ -30,13 +30,13 @@ semantic:
     ontology_term: https://schema.undata.live/values/usb_13ajga
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_2tb89j
+    ontology_term: https://schema.undata.live/values/other_1idvekpiy
   question_text: DataInterface
 provenance:
 - source: aind
   class: NeuropixelsBasestation
   name: data_interface
   description: Connection between a device and a PC
-  generated_at: '2026-03-20T22:15:56.663466+00:00'
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

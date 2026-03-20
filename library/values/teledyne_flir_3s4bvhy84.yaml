@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: teledyne_flir
+provenance:
+- source: aind
+  raw_value: aind.subject.unknown.Teledyne_Flir

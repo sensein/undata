@@ -1,9 +1,0 @@
-semantic:
-  data_type: string
-  constraints:
-    allowed_values:
-    - Other
-provenance:
-- source: bids
-  class: enums
-  name: _EMGCoordSys

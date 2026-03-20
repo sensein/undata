@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: teledyne_vision_solutions
+provenance:
+- source: aind
+  raw_value: aind.instrument.Camera.manufacturer.Teledyne_Vision_Solutions

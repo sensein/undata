@@ -10,186 +10,324 @@ provenance:
     Can be used if electrodes were manufactured by more than one company.
 
     '
+  generated_at: '2026-03-20T22:21:17.800680+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: Device
   name: manufacturer
   description: DEPRECATED. The name of the manufacturer of the device, e.g., Imec,
     Plexon, Thorlabs. Instead of using this field, store the value in DeviceModel.manufacturer
     and link to that DeviceModel from this Device.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: DeviceModel
   name: manufacturer
   description: The name of the manufacturer of the device model, e.g., Imec, Plexon,
     Thorlabs.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: AdditionalImagingDevice
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: AirPuffDevice
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Arena
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Camera
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Computer
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: DAQDevice
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Detector
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Device
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: DigitalMicromirrorDevice
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Disc
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Enclosure
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: EphysProbe
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: FiberPatchCord
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: FiberProbe
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Filter
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: HarpDevice
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Lamp
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Laser
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Lens
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: LickSpout
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: LightEmittingDiode
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Manipulator
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Microscope
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Monitor
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: MotorizedStage
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: NeuropixelsBasestation
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Objective
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Olfactometer
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: OpenEphysAcquisitionBoard
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: PockelsCell
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: PolygonalScanner
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Scanner
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: ScanningStage
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Speaker
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Treadmill
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Tube
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Wheel
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Catheter
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Device
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: EphysProbe
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: FiberProbe
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: MyomatrixArray
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Device
   name: manufacturer
   description: Manufacturer
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

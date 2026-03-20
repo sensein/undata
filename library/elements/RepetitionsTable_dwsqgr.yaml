@@ -8,3 +8,6 @@ provenance:
     together. With each SequentialRecording typically representing a particular type
     of stimulus, the RepetitionsTable table is typically used to group sets of stimuli
     applied in sequence.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

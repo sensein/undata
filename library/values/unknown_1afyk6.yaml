@@ -6,3 +6,5 @@ provenance:
   raw_value: UNKNOWN
 - source: aind
   raw_value: Unknown
+- source: aind
+  raw_value: aind.acquisition.NonViralMaterial.source.Unknown

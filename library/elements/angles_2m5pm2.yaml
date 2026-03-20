@@ -1,15 +1,25 @@
 semantic:
   data_type: array
+  question_text: Angles and axes in 3D space
 provenance:
 - source: aind
   class: Rotation
   name: angles
   description: Right-hand rule, positive angles rotate CCW
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Rotation
   name: angles
   description: Right-hand rule, positive angles rotate CCW
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Rotation
   name: angles
   description: Right-hand rule, positive angles rotate CCW
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

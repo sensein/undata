@@ -7,8 +7,14 @@ provenance:
   name: status
   description: Mapping of tags, modalities, and stages to their evaluated status,
     automatically computed
+  generated_at: '2026-03-20T22:21:34.089633+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: quality_control
   name: status
   description: Mapping of tags, modalities, and stages to their evaluated status,
     automatically computed
+  generated_at: '2026-03-20T22:21:34.089633+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

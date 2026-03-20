@@ -6,3 +6,6 @@ provenance:
   name: axis_2_power_map
   description: Power response on the second measured axis. Response is scaled so 0.0
     is no power in the response and 1.0 is maximum relative power.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -5,3 +5,6 @@ provenance:
   class: RepetitionsTable
   name: sequential_recordings_index
   description: Index dataset for the sequential_recordings column.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

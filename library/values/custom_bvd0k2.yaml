@@ -8,3 +8,7 @@ provenance:
   raw_value: CUSTOM
 - source: aind
   raw_value: Custom
+- source: aind
+  raw_value: aind.acquisition.NonViralMaterial.source.Custom
+- source: aind
+  raw_value: aind.metadata.FluorescentStain.source.Custom

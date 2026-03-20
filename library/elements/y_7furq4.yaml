@@ -6,3 +6,6 @@ provenance:
   name: y
   description: y coordinate of the channel location in the brain (+y is inferior).
     Units should be specified in microns.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -9,6 +9,9 @@ provenance:
     interest.
 
     '
+  generated_at: '2026-03-20T22:21:17.800680+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: bids
   class: entities
   name: description
@@ -21,6 +24,9 @@ provenance:
     This entity is only applicable to derivative data.
 
     '
+  generated_at: '2026-03-20T22:21:17.800680+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: bids
   class: suffixes
   name: description
@@ -33,175 +39,304 @@ provenance:
     This file MUST be located at the root of the dataset.
 
     '
+  generated_at: '2026-03-20T22:21:17.800680+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: dandi
   class: AccessRequirements
   name: description
   description: Information about access requirements when embargoed or restricted
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: dandi
   class: Activity
   name: description
   description: The description of the activity.
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: dandi
   class: Asset
   name: description
   description: A description of the item.
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: dandi
   class: BareAsset
   name: description
   description: A description of the item.
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: dandi
   class: CommonModel
   name: description
   description: A description of the item.
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: dandi
   class: Dandiset
   name: description
   description: A description of the Dandiset
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: dandi
   class: Equipment
   name: description
   description: The description of the equipment.
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: dandi
   class: Project
   name: description
   description: A brief description of the project.
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: dandi
   class: PublishActivity
   name: description
   description: The description of the activity.
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: dandi
   class: PublishedAsset
   name: description
   description: A description of the item.
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: dandi
   class: PublishedDandiset
   name: description
   description: A description of the Dandiset
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: dandi
   class: Session
   name: description
   description: A brief description of the session.
+  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: BaseImage
   name: description
   description: Description of the image.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: TimeSeries
   name: description
   description: Description of the time series.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: ProcessingModule
   name: description
   description: Description of this collection of processed data.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: Images
   name: description
   description: Description of this collection of images.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: Device
   name: description
   description: Description of the device as free-form text. If there is any software/firmware
     associated with the device, the names and versions of those can be added to NWBFile.was_generated_by.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: DeviceModel
   name: description
   description: Description of the device model as free-form text.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: FeatureExtraction
   name: description
   description: Description of features (eg, ''PC1'') for each of the extracted features.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: ElectrodeGroup
   name: description
   description: Description of this electrode group.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: Clustering
   name: description
   description: Description of clusters or clustering, (e.g. cluster 0 is noise, clusters
     curated using Klusters, etc)
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: Subject
   name: description
   description: Description of subject and where subject came from (e.g., breeder,
     if animal).
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: IntracellularElectrode
   name: description
   description: Description of electrode (e.g.,  whole-cell, sharp, etc.).
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: IntracellularElectrodesTable
   name: description
   description: Description of what is in this dynamic table.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: IntracellularStimuliTable
   name: description
   description: Description of what is in this dynamic table.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: IntracellularResponsesTable
   name: description
   description: Description of what is in this dynamic table.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: IntracellularRecordingsTable
   name: description
   description: Description of the contents of this table. Inherited from AlignedDynamicTable
     and overwritten here to fix the value of the attribute.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: OptogeneticStimulusSite
   name: description
   description: Description of stimulation site.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: ImagingPlane
   name: description
   description: Description of the imaging plane.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: nwb
   class: OpticalChannel
   name: description
   description: Description or other notes about the channel.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Calibration
   name: description
   description: Brief description of what is being calibrated
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: CombinedData
   name: description
   description: Intention or approach used to select group of assets
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Maintenance
   name: description
   description: Description on maintenance procedure
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: PowerCalibration
   name: description
   description: Description
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: VolumeCalibration
   name: description
   description: Description
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: Calibration
   name: description
   description: Brief description of what is being calibrated
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: PowerCalibration
   name: description
   description: Description
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: VolumeCalibration
   name: description
   description: Description
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: CombinedData
   name: description
   description: Intention or approach used to select group of assets
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: GenericSubjectProcedure
   name: description
   description: Description
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: GenericSurgeryProcedure
   name: description
   description: Description
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: CalibrationObject
   name: description
   description: Description
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

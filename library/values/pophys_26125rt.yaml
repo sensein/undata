@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: pophys
+provenance:
+- source: aind
+  raw_value: aind.data_description.modalities.Pophys
+- source: aind
+  raw_value: aind.quality_control.CurationMetric.modality.Pophys

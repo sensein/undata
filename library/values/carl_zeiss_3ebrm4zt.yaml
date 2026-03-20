@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: carl_zeiss
+provenance:
+- source: aind
+  raw_value: aind.procedures.FluorescentStain.source.Carl_Zeiss

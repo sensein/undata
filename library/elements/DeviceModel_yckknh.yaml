@@ -9,3 +9,6 @@ provenance:
     to include additional attributes specific to each type. The name of the DeviceModel
     should be the most common representation of the model name, e.g., Neuropixels
     1.0, V-Probe, Bergamo III.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

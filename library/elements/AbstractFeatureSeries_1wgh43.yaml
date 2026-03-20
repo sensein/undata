@@ -13,3 +13,6 @@ provenance:
     to persist until the next set of features is defined. The final set of features
     stored should be the null set. This is useful when storing the raw stimulus is
     impractical.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

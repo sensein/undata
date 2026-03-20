@@ -48,7 +48,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/down_to_up_10kbfk
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_2tb89j
+    ontology_term: https://schema.undata.live/values/other_1idvekpiy
   - value: Positive
     label: Positive
     ontology_term: https://schema.undata.live/values/positive_a21u6m
@@ -61,20 +61,20 @@ provenance:
   class: Axis
   name: direction
   description: Direction of positive values along the axis
-  generated_at: '2026-03-20T22:15:56.663466+00:00'
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: Axis
   name: direction
   description: Direction of positive values along the axis
-  generated_at: '2026-03-20T22:15:56.663466+00:00'
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: Axis
   name: direction
   description: Direction of positive values along the axis
-  generated_at: '2026-03-20T22:15:56.663466+00:00'
+  generated_at: '2026-03-20T22:21:27.398551+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

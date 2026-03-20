@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: applied_scientific_instrumentation
+provenance:
+- source: aind
+  raw_value: aind.subject.unknown.Applied_Scientific_Instrumentation

@@ -5,3 +5,6 @@ provenance:
   class: ElectrodesTable
   name: group
   description: Reference to the ElectrodeGroup this electrode is a part of.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

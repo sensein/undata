@@ -1,8 +1,12 @@
 semantic:
   data_type: string
+  question_text: Acquisition type
 provenance:
 - source: aind
   class: Acquisition
   name: acquisition_type
   description: Descriptive string detailing the type of acquisition, should be consistent
     across similar acquisitions for the same experiment.
+  generated_at: '2026-03-20T22:21:34.089633+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

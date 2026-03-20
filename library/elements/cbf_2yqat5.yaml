@@ -1,5 +1,6 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: bids
   class: enums
@@ -12,3 +13,6 @@ provenance:
     quantified into `mL/100g/min` (See also [doi:10.1002/mrm.25197](https://doi.org/10.1002/mrm.25197)).
 
     '
+  generated_at: '2026-03-20T22:21:17.800680+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

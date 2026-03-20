@@ -142,7 +142,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/neuropil_subtraction_1g4pw2
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_2tb89j
+    ontology_term: https://schema.undata.live/values/other_1idvekpiy
   - value: Pipeline
     label: Pipeline
     ontology_term: https://schema.undata.live/values/pipeline_1g22im
@@ -185,13 +185,13 @@ provenance:
   class: ModelTraining
   name: process_type
   description: Process names
-  generated_at: '2026-03-20T22:16:04.704184+00:00'
+  generated_at: '2026-03-20T22:21:34.089633+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: ModelTraining
   name: process_type
   description: Process names
-  generated_at: '2026-03-20T22:16:04.704184+00:00'
+  generated_at: '2026-03-20T22:21:34.089633+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

@@ -6,3 +6,6 @@ provenance:
   name: sign_map
   description: Sine of the angle between the direction of the gradient in axis_1 and
     axis_2.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

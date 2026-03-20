@@ -1,9 +1,0 @@
-semantic:
-  data_type: integer
-provenance:
-- source: bids
-  class: metadata
-  name: ShortChannelCount
-  description: 'The number of short channels. 0 indicates no short channels.
-
-    '

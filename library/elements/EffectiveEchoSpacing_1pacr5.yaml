@@ -1,5 +1,6 @@
 semantic:
   data_type: float
+  value_domain: numeric
 provenance:
 - source: bids
   class: metadata
@@ -25,3 +26,6 @@ provenance:
     phase resolution, phase field-of-view and interpolation.
 
     '
+  generated_at: '2026-03-20T22:21:17.800680+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

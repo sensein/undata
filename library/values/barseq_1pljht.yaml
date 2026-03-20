@@ -4,3 +4,7 @@ semantic:
 provenance:
 - source: aind
   raw_value: BARSeq
+- source: aind
+  raw_value: aind.acquisition.DataStream.modalities.Barseq
+- source: aind
+  raw_value: aind.metadata.CurationMetric.modality.Barseq

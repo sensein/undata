@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: raspberry_pi
+provenance:
+- source: aind
+  raw_value: aind.instrument.HarpDevice.manufacturer.Raspberry_Pi

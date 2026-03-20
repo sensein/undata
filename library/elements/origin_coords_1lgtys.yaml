@@ -7,3 +7,6 @@ provenance:
   description: Physical location of the first element of the imaging plane (0, 0)
     for 2-D data or (0, 0, 0) for 3-D data. See also reference_frame for what the
     physical location is relative to (e.g., bregma).
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

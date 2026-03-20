@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: sigma_aldrich
+provenance:
+- source: aind
+  raw_value: aind.procedures.FluorescentStain.source.Sigma_Aldrich

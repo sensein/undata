@@ -1,15 +1,25 @@
 semantic:
   data_type: float
+  question_text: Usage
 provenance:
 - source: aind
   class: ResourceTimestamped
   name: usage
   description: Usage
+  generated_at: '2026-03-20T22:21:34.089633+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: ResourceTimestamped
   name: usage
   description: Usage
+  generated_at: '2026-03-20T22:21:34.089633+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
 - source: aind
   class: ResourceTimestamped
   name: usage
   description: Usage
+  generated_at: '2026-03-20T22:21:34.089633+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

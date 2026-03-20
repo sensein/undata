@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: huazhong_university_of_science_and_technology
+provenance:
+- source: aind
+  raw_value: aind.acquisition.NonViralMaterial.source.Huazhong_University_Of_Science_And_Technology
+- source: aind
+  raw_value: aind.metadata.DataDescription.institution.Huazhong_University_Of_Science_And_Technology

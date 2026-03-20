@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: euresys
+provenance:
+- source: aind
+  raw_value: aind.subject.unknown.Euresys

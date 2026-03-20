@@ -1,5 +1,6 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: bids
   class: metadata
@@ -23,3 +24,6 @@ provenance:
     [`echo` entity](SPEC_ROOT/appendices/entities.md#echo).
 
     '
+  generated_at: '2026-03-20T22:21:17.800680+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

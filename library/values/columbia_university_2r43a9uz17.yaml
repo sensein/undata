@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: columbia_university
+provenance:
+- source: aind
+  raw_value: aind.subject.HumanSubject.source.Columbia_University

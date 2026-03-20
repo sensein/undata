@@ -1,8 +1,12 @@
 semantic:
   data_type: string
+  question_text: Architecture parameters
 provenance:
 - source: aind
   class: Model
   name: architecture_parameters
   description: Parameters of model architecture, such as input signature or number
     of layers.
+  generated_at: '2026-03-20T22:21:34.089633+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

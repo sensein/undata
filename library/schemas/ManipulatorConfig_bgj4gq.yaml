@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/coordinate_system_8u9ity
-  - https://schema.undata.live/elements/device_name_1sawp2
-  - https://schema.undata.live/elements/local_axis_positions_79jmvy
-  mixins: []
-provenance:
-- source: aind
-  name: ManipulatorConfig

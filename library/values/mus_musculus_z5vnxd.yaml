@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: mus_musculus
+provenance:
+- source: aind
+  raw_value: aind.procedures.unknown.Mus_Musculus
+- source: aind
+  raw_value: aind.metadata.MouseSubject.species.Mus_Musculus

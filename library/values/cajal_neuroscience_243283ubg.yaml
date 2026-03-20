@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: cajal_neuroscience
+provenance:
+- source: aind
+  raw_value: aind.subject.unknown.Cajal_Neuroscience

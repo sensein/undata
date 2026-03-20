@@ -7,3 +7,6 @@ provenance:
   description: Location of the electrode (channel). Specify the area, layer, comments
     on estimation of area/layer, stereotaxic coordinates if in vivo, etc. Use standard
     atlas names for anatomical regions when possible.
+  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

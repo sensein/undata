@@ -1,9 +1,0 @@
-semantic:
-  data_type: float
-provenance:
-- source: bids
-  class: columns
-  name: metabolite_parent_fraction
-  description: 'Parent fraction of the radiotracer (0-1).
-
-    '

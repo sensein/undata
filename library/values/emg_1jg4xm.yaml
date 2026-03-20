@@ -4,3 +4,7 @@ semantic:
 provenance:
 - source: bids
   raw_value: EMG
+- source: aind
+  raw_value: aind.acquisition.DataStream.modalities.Emg
+- source: aind
+  raw_value: aind.metadata.CurationMetric.modality.Emg
