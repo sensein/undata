@@ -12,23 +12,50 @@ MAX_KEY_LENGTH = 10
 BASE36_CHARS = "0123456789abcdefghijklmnopqrstuvwxyz"
 
 
+# Fields excluded from identity hash (descriptive metadata, varies by source)
+_EXCLUDED_FROM_HASH = {"question_text", "value_domain"}
+
+# Deprecated constraint fields (replaced by top-level min_value/max_value)
+_DEPRECATED_CONSTRAINT_FIELDS = {"minimum", "maximum"}
+
+
 def canonical_json(semantic: dict[str, Any]) -> str:
     """Produce a canonical JSON string from a semantic identity dict.
 
     - Keys sorted alphabetically
     - None/null values omitted
-    - Nested dicts also sorted and pruned
+    - question_text and value_domain excluded (not part of identity)
+    - constraints.minimum/maximum excluded (use min_value/max_value)
+    - response_options sorted by 'value' field for determinism
     - Compact (no whitespace)
     """
 
-    def _prune(obj: Any) -> Any:
+    def _prune(obj: Any, parent_key: str = "") -> Any:
         if isinstance(obj, dict):
-            return {k: _prune(v) for k, v in sorted(obj.items()) if v is not None}
+            result = {}
+            for k, v in sorted(obj.items()):
+                if v is None:
+                    continue
+                if k in _EXCLUDED_FROM_HASH:
+                    continue
+                if parent_key == "constraints" and k in _DEPRECATED_CONSTRAINT_FIELDS:
+                    continue
+                pruned_v = _prune(v, parent_key=k)
+                if pruned_v is not None:
+                    result[k] = pruned_v
+            return result if result else None
         if isinstance(obj, list):
-            return [_prune(v) for v in obj if v is not None]
+            pruned = [_prune(v) for v in obj if v is not None]
+            # Sort response_options by 'value' field for determinism
+            if parent_key == "response_options" and pruned:
+                if isinstance(pruned[0], dict) and "value" in pruned[0]:
+                    pruned = sorted(pruned, key=lambda x: x.get("value", ""))
+            return pruned if pruned else None
         return obj
 
     pruned = _prune(semantic)
+    if pruned is None:
+        pruned = {}
     return json.dumps(pruned, sort_keys=True, separators=(",", ":"))
 
 
