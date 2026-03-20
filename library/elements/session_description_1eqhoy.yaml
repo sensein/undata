@@ -5,6 +5,6 @@ provenance:
   class: NWBFile
   name: session_description
   description: A description of the experimental session and data in the file.
-  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

@@ -7,41 +7,41 @@ provenance:
   class: OnePhotonSeries
   name: power
   description: Power of the excitation in mW, if known.
-  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: CoupledPlane
   name: power
   description: Power
-  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: LaserConfig
   name: power
   description: Excitation power
-  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: LightEmittingDiodeConfig
   name: power
   description: Excitation power
-  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: Plane
   name: power
   description: Power
-  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: Slap2Plane
   name: power
   description: Power
-  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

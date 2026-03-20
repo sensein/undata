@@ -18,7 +18,7 @@ provenance:
     For "other", use one of these values: `other`, `o`, `O`, `OTHER`, `Other`.
 
     '
-  generated_at: '2026-03-20T22:21:17.800680+00:00'
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: dandi
@@ -26,13 +26,13 @@ provenance:
   name: sex
   description: Identifier for sex of the participant or subject if available. (e.g.
     from OBI)
-  generated_at: '2026-03-20T22:21:20.688952+00:00'
+  generated_at: '2026-03-20T22:38:33.546873+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: nwb
   class: Subject
   name: sex
   description: Gender of subject.
-  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

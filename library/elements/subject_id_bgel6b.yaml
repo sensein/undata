@@ -5,13 +5,13 @@ provenance:
   class: Subject
   name: subject_id
   description: ID of animal/person used/participating in experiment (lab convention).
-  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: Subject
   name: subject_id
   description: Unique identifier for the subject of data acquisition
-  generated_at: '2026-03-20T22:21:34.089633+00:00'
+  generated_at: '2026-03-20T22:38:46.976908+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

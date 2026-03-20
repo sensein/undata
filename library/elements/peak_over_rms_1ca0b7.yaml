@@ -6,6 +6,6 @@ provenance:
   name: peak_over_rms
   description: Maximum ratio of waveform peak to RMS on any channel in the cluster
     (provides a basic clustering metric).
-  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

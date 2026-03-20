@@ -8,6 +8,6 @@ provenance:
   description: "Position of the dewar during the MEG scan:\n`\"upright\"`, `\"supine\"\
     ` or `\"degrees\"` of angle from vertical:\nfor example on CTF systems, `\"upright=15\xB0\
     , supine=90\xB0\"`.\n"
-  generated_at: '2026-03-20T22:21:17.800680+00:00'
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

@@ -17,6 +17,12 @@ class SemanticInput(BaseModel):
     data_type: str
     unit: str | None = None
     constraints: dict | None = None
+    # reproschema-aligned fields:
+    response_options: list[dict] | None = None
+    question_text: str | None = None
+    value_domain: str | None = None
+    min_value: float | None = None
+    max_value: float | None = None
 
 
 class ProvenanceInput(BaseModel):

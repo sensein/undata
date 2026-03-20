@@ -6,13 +6,13 @@ provenance:
   class: BrainInjection
   name: coordinates
   description: Injection coordinate, depth, and rotation
-  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: BrainInjection
   name: coordinates
   description: Injection coordinate, depth, and rotation
-  generated_at: '2026-03-20T22:21:27.398551+00:00'
+  generated_at: '2026-03-20T22:38:40.270129+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

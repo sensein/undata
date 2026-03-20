@@ -6,6 +6,6 @@ provenance:
   name: PlaneSegmentation
   description: Results from image segmentation of a specific imaging plane. At least
     one of `image_mask`, `pixel_mask`, or `voxel_mask` is required.
-  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

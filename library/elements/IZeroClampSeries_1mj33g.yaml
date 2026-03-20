@@ -8,6 +8,6 @@ provenance:
     settings are off (i.e., CurrentClampSeries fields will be zero). There is no CurrentClampStimulusSeries
     associated with an IZero series because the amplifier is disconnected and no stimulus
     can reach the cell.
-  generated_at: '2026-03-20T22:21:23.867161+00:00'
+  generated_at: '2026-03-20T22:38:36.731646+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

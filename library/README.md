@@ -8,12 +8,13 @@ Identity ≠ provenance — two sources defining the same concept produce one el
 
 ## Contents
 
-- **5,345 data elements** (content-addressed, class-scoped)
-- **862 class schemas** with property membership from BIDS, DANDI, NWB, AIND, openMINDS
-- **295 value concepts** — categorical/enum values as semantic entities (e.g., `male` → `PATO:0000384`)
+- **2,697 data elements** (content-addressed, reproschema-aligned)
+- **482 class schemas** with property membership from BIDS, DANDI, NWB, AIND, openMINDS
+- **1,207 value concepts** — categorical/enum values as semantic entities
+- **Enriched model**: response_options, min/max ranges, question_text, W3C PROV-O provenance
+- **Ontology verification**: offline cache + OLS refresh for NCIT, PATO, HP, OBI, NCBITaxon
+- **Alias detection**: semantic similarity with SKOS mapping relations
 - **Content-addressed filenames**: `{attribute}_{6-char-hash}.yaml`
-- **LinkML meta-schema**: `library-schema.linkml.yaml`
-- **Curated value mappings**: `value-mappings.yaml` (sex, species, handedness, modality)
 
 ## Install
 

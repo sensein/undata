@@ -36,6 +36,6 @@ provenance:
 - source: bids
   class: enums
   name: _MEGCoordSys
-  generated_at: '2026-03-20T22:21:17.800680+00:00'
+  generated_at: '2026-03-20T22:38:30.639874+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
