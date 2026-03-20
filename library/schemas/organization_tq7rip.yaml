@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/awardnumber_1l9fhi
+  - https://schema.undata.live/elements/contactpoint_hfrdu9
+  - https://schema.undata.live/elements/email_1wcsyr
+  - https://schema.undata.live/elements/id_1gu92b
+  - https://schema.undata.live/elements/identifier_numez9
+  - https://schema.undata.live/elements/includeincitation_1oqakg
+  - https://schema.undata.live/elements/name_1n8u2i
+  - https://schema.undata.live/elements/rolename_tzgp9n
+  - https://schema.undata.live/elements/schemakey_1b752k
+  - https://schema.undata.live/elements/url_1ogmsn
+  mixins: []
+provenance:
+- source: dandi
+  name: Organization

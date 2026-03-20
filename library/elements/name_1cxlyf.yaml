@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  question_text: Metric name
+provenance:
+- source: aind
+  class: QCMetric
+  name: name
+  description: Metric name
+  generated_at: '2026-03-20T22:59:57.090383+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: QCMetric
+  name: name
+  description: Metric name
+  generated_at: '2026-03-20T22:59:57.090383+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

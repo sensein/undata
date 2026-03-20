@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_18dkco
+  - https://schema.undata.live/elements/firmware_1sowoc
+  - https://schema.undata.live/elements/manufacturer_mc8z6g
+  - https://schema.undata.live/elements/model_1o0qsr
+  - https://schema.undata.live/elements/name_1tu27w
+  - https://schema.undata.live/elements/notes_azzpxa
+  - https://schema.undata.live/elements/serial_number_g5msul
+  - https://schema.undata.live/elements/stage_axis_direction_9krevz
+  - https://schema.undata.live/elements/stage_axis_name_8tbv5o
+  - https://schema.undata.live/elements/travel_g5jp90
+  - https://schema.undata.live/elements/travel_unit_1t3ke1
+  mixins: []
+provenance:
+- source: aind
+  name: ScanningStage

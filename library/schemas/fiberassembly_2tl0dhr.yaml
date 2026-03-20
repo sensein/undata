@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/fibers_63ibi0
-  - https://schema.undata.live/elements/manipulator_1bxzpr
-  - https://schema.undata.live/elements/name_1c9a6l
-  mixins: []
-provenance:
-- source: aind
-  name: FiberAssembly

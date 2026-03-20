@@ -289,3 +289,49 @@ def detect_aliases_cmd(path: str, threshold: float, limit: int, fmt: str) -> Non
             )
 
     click.echo(f"\n{len(candidates)} candidates (showing top {len(shown)}).")
+
+
+@main.command("annotate")
+@click.argument("elements_path", type=click.Path(exists=True), default="elements")
+@click.option(
+    "--mapping",
+    "-m",
+    default="element-mappings.yaml",
+    help="Annotation mapping file (attribute → ontology_term)",
+)
+@click.option(
+    "--annotator",
+    default="urn:undata:annotation-pipeline",
+    help="Agent URI for PROV-O attribution",
+)
+def annotate_cmd(elements_path: str, mapping: str, annotator: str) -> None:
+    """Apply ontology annotations to elements as curation events."""
+    from .annotate import annotate_elements, load_annotation_mappings
+
+    mappings = load_annotation_mappings(Path(mapping))
+    if not mappings:
+        click.echo(f"No mappings found in {mapping}.")
+        sys.exit(1)
+
+    stats = annotate_elements(Path(elements_path), mappings, annotator=annotator)
+    click.echo(
+        f"Annotated: {stats['annotated']} elements, "
+        f"{stats['already_annotated']} already annotated, "
+        f"{stats['skipped']} skipped (no matching mapping)."
+    )
+
+
+@main.command("ontology-index")
+@click.argument("elements_path", type=click.Path(exists=True), default="elements")
+@click.option("--output", "-o", default="ontology-index.yaml", help="Output file")
+def ontology_index_cmd(elements_path: str, output: str) -> None:
+    """Build a reverse index: ontology_term → element URIs."""
+    from .annotate import build_ontology_index
+
+    idx = build_ontology_index(Path(elements_path))
+    out_path = Path(output)
+    out_path.write_text(yaml.dump(idx, default_flow_style=False, sort_keys=False), encoding="utf-8")
+    click.echo(
+        f"Ontology index written to {out_path}: "
+        f"{idx['ontology_term_count']} terms, {idx['element_count']} elements."
+    )

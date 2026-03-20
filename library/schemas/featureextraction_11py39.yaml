@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_jbkssl
+  - https://schema.undata.live/elements/electrodes_1626ja
+  - https://schema.undata.live/elements/featureextraction_1h9vw7
+  - https://schema.undata.live/elements/features_1fmq4n
+  - https://schema.undata.live/elements/times_1v1ddr
+  mixins: []
+provenance:
+- source: nwb
+  name: FeatureExtraction

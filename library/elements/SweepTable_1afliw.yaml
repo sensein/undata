@@ -8,6 +8,6 @@ provenance:
     is being replaced by IntracellularRecordingsTable and SimultaneousRecordingsTable
     tables. Additional SequentialRecordingsTable, RepetitionsTable, and ExperimentalConditions
     tables provide enhanced support for experiment metadata.'
-  generated_at: '2026-03-20T22:38:36.731646+00:00'
+  generated_at: '2026-03-20T22:59:46.487626+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_84d63i
+  - https://schema.undata.live/elements/maxvalue_gldkuy
+  - https://schema.undata.live/elements/minvalue_oc28hg
+  - https://schema.undata.live/elements/propertyid_18slju
+  - https://schema.undata.live/elements/schemakey_1oqehr
+  - https://schema.undata.live/elements/unittext_wjmq8l
+  - https://schema.undata.live/elements/value_13g6nb
+  - https://schema.undata.live/elements/valuereference_v7dfew
+  mixins: []
+provenance:
+- source: dandi
+  name: PropertyValue

@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_38jzs0
+  - https://schema.undata.live/elements/core_diameter_mrpsut
+  - https://schema.undata.live/elements/manufacturer_11p1bh
+  - https://schema.undata.live/elements/model_1oc0tj
+  - https://schema.undata.live/elements/name_1l6z69
+  - https://schema.undata.live/elements/notes_iqo8ru
+  - https://schema.undata.live/elements/numerical_aperture_m0wn0g
+  - https://schema.undata.live/elements/photobleaching_date_1eq3cw
+  - https://schema.undata.live/elements/serial_number_1hjitx
+  mixins: []
+provenance:
+- source: aind
+  name: FiberPatchCord

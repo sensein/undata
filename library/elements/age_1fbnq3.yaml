@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: columns
+  name: age
+  description: 'Numeric value in years (float or integer value).
+
+
+    For privacy purposes, participant ages should be capped at 89.
+
+    Using "89+" for ages above 88 is DEPRECATED.
+
+    '
+  generated_at: '2026-03-20T22:59:40.235149+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/approach_1en4ow
+  - https://schema.undata.live/elements/datastandard_ubtk5c
+  - https://schema.undata.live/elements/id_iou2vr
+  - https://schema.undata.live/elements/measurementtechnique_1lsid0
+  - https://schema.undata.live/elements/numberofbytes_1rn3cd
+  - https://schema.undata.live/elements/numberofcells_ik97ok
+  - https://schema.undata.live/elements/numberoffiles_18b3b4
+  - https://schema.undata.live/elements/numberofsamples_12afo0
+  - https://schema.undata.live/elements/numberofsubjects_1mvqup
+  - https://schema.undata.live/elements/schemakey_jd2le0
+  - https://schema.undata.live/elements/species_1g26nn
+  - https://schema.undata.live/elements/variablemeasured_1kocch
+  mixins: []
+provenance:
+- source: dandi
+  name: AssetsSummary

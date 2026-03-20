@@ -1,0 +1,21 @@
+semantic:
+  data_type: object
+  question_text: Status mapping
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C25688
+provenance:
+- source: aind
+  class: quality_control
+  name: status
+  description: Mapping of tags, modalities, and stages to their evaluated status,
+    automatically computed
+  generated_at: '2026-03-20T22:59:57.090383+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: curation
+  class: annotation
+  name: status
+  description: 'Ontology annotation: http://purl.obolibrary.org/obo/NCIT_C25688'
+  generated_at: '2026-03-20T23:00:18.265810+00:00'
+  attributed_to: urn:undata:annotation-pipeline
+  activity: curation
+  derived_from: https://schema.undata.live/elements/status_120f31

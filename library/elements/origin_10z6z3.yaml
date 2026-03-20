@@ -81,20 +81,20 @@ provenance:
   class: CoordinateSystem
   name: origin
   description: Defines the position of (0,0,0) in the coordinate system
-  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  generated_at: '2026-03-20T22:59:50.223209+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: CoordinateSystem
   name: origin
   description: Defines the position of (0,0,0) in the coordinate system
-  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  generated_at: '2026-03-20T22:59:50.223209+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: CoordinateSystem
   name: origin
   description: Defines the position of (0,0,0) in the coordinate system
-  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  generated_at: '2026-03-20T22:59:50.223209+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

@@ -50,9 +50,10 @@ def ingest_source(
         if prov.activity is None:
             prov.activity = "ingestion"
 
-    # Apply curated element mappings (ontology annotations)
-    element_mappings = _load_element_mappings(library_path)
-    pairs = _apply_element_mappings(pairs, element_mappings)
+    # Note: ontology annotations are now applied post-ingestion via
+    # `undata-library annotate` CLI command, not during ingestion.
+    # This keeps ingestion pure (source data only) and tracks annotations
+    # as separate PROV-O curation events.
 
     # Load existing hash registry
     registry_path = library_path / "hash-registry.yaml"
@@ -165,51 +166,9 @@ def ingest_source(
         "mappings_created": mapping_stats.get("created", 0),
     }
 
-
-def _load_element_mappings(library_path: Path) -> dict[str, dict]:
-    """Load element-mappings.yaml: attribute_name → {ontology_term, data_type, unit}."""
-    path = library_path / "element-mappings.yaml"
-    if not path.exists():
-        return {}
-    data = yaml.safe_load(path.read_text(encoding="utf-8"))
-    return data if isinstance(data, dict) else {}
-
-
-def _apply_element_mappings(
-    pairs: list[tuple[SemanticIdentity, ProvenanceEntry]],
-    mappings: dict[str, dict],
-) -> list[tuple[SemanticIdentity, ProvenanceEntry]]:
-    """Enrich elements with ontology annotations from curated mappings.
-
-    Supports source_overrides: per-source data_type and unit overrides
-    that produce different hashes (different elements) for the same concept
-    when sources represent it differently.
-    """
-    if not mappings:
-        return pairs
-
-    enriched = []
-    for sem, prov in pairs:
-        mapping = mappings.get(prov.name)
-        if mapping and sem.ontology_term is None:
-            ontology_term = mapping.get("ontology_term")
-            data_type = mapping.get("data_type") or str(sem.data_type)
-            unit = mapping.get("unit") or sem.unit
-
-            # Check for source-specific overrides
-            overrides = mapping.get("source_overrides", {}).get(prov.source, {})
-            if overrides:
-                data_type = overrides.get("data_type", data_type)
-                unit = overrides.get("unit", unit)
-
-            sem = SemanticIdentity(
-                ontology_term=ontology_term,
-                data_type=data_type,
-                unit=unit,
-                constraints=sem.constraints,
-            )
-        enriched.append((sem, prov))
-    return enriched
+    # _load_element_mappings and _apply_element_mappings removed.
+    # Ontology annotations are now applied post-ingestion via
+    # `undata-library annotate` — see annotate.py
 
 
 def _load_value_mappings(library_path: Path) -> dict[str, dict]:

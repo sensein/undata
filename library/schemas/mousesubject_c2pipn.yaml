@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/alleles_11yx2v
+  - https://schema.undata.live/elements/breeding_info_55pfpq
+  - https://schema.undata.live/elements/date_of_birth_1sxono
+  - https://schema.undata.live/elements/genotype_nonrje
+  - https://schema.undata.live/elements/housing_16hdzu
+  - https://schema.undata.live/elements/restrictions_1woi2i
+  - https://schema.undata.live/elements/rrid_19quei
+  - https://schema.undata.live/elements/sex_kni2md
+  - https://schema.undata.live/elements/source_2iweo5
+  - https://schema.undata.live/elements/species_16u7a6
+  - https://schema.undata.live/elements/strain_gc4ggy
+  - https://schema.undata.live/elements/wellness_reports_1l6hnb
+  mixins: []
+provenance:
+- source: aind
+  name: MouseSubject

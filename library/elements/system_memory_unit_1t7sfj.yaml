@@ -6,20 +6,20 @@ provenance:
   class: ResourceUsage
   name: system_memory_unit
   description: System memory unit
-  generated_at: '2026-03-20T22:38:46.976908+00:00'
+  generated_at: '2026-03-20T22:59:57.090383+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: ResourceUsage
   name: system_memory_unit
   description: System memory unit
-  generated_at: '2026-03-20T22:38:46.976908+00:00'
+  generated_at: '2026-03-20T22:59:57.090383+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: ResourceUsage
   name: system_memory_unit
   description: System memory unit
-  generated_at: '2026-03-20T22:38:46.976908+00:00'
+  generated_at: '2026-03-20T22:59:57.090383+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

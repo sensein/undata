@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  value_domain: text
+  ontology_term: http://purl.obolibrary.org/obo/IAO_0000300
+provenance:
+- source: bids
+  class: entities
+  name: description
+  description: 'When necessary to distinguish two files that do not otherwise have
+    a
+
+    distinguishing entity, the `desc-<label>` entity SHOULD be used.
+
+
+    This entity is only applicable to derivative data.
+
+    '
+  generated_at: '2026-03-20T22:59:40.235149+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: curation
+  class: annotation
+  name: description
+  description: 'Ontology annotation: http://purl.obolibrary.org/obo/IAO_0000300'
+  generated_at: '2026-03-20T23:00:18.265810+00:00'
+  attributed_to: urn:undata:annotation-pipeline
+  activity: curation
+  derived_from: https://schema.undata.live/elements/description_zt91lb

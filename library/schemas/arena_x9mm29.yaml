@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_10zlri
+  - https://schema.undata.live/elements/manufacturer_1qrf44
+  - https://schema.undata.live/elements/model_g9ad4d
+  - https://schema.undata.live/elements/name_pmnfjv
+  - https://schema.undata.live/elements/notes_1k8dd0
+  - https://schema.undata.live/elements/objects_in_arena_1dnb29
+  - https://schema.undata.live/elements/serial_number_3vhme2
+  - https://schema.undata.live/elements/size_gtz4mc
+  - https://schema.undata.live/elements/size_unit_1oku8k
+  mixins: []
+provenance:
+- source: aind
+  name: Arena

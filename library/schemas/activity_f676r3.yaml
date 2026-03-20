@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_gyvykl
+  - https://schema.undata.live/elements/enddate_1cmoyt
+  - https://schema.undata.live/elements/id_hsdoc5
+  - https://schema.undata.live/elements/identifier_sq3vju
+  - https://schema.undata.live/elements/name_1inj8y
+  - https://schema.undata.live/elements/schemakey_o3kjrp
+  - https://schema.undata.live/elements/startdate_yz568q
+  - https://schema.undata.live/elements/used_iqi0ue
+  - https://schema.undata.live/elements/wasassociatedwith_5fof9j
+  mixins: []
+provenance:
+- source: dandi
+  name: Activity

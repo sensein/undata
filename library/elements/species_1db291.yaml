@@ -1,0 +1,19 @@
+semantic:
+  data_type: array
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C45293
+provenance:
+- source: dandi
+  class: AssetsSummary
+  name: species
+  description: ''
+  generated_at: '2026-03-20T22:59:43.194896+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: curation
+  class: annotation
+  name: species
+  description: 'Ontology annotation: http://purl.obolibrary.org/obo/NCIT_C45293'
+  generated_at: '2026-03-20T23:00:18.265810+00:00'
+  attributed_to: urn:undata:annotation-pipeline
+  activity: curation
+  derived_from: https://schema.undata.live/elements/species_1g26nn

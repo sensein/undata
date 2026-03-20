@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_1pdodl
+  - https://schema.undata.live/elements/identifier_1beog1
+  - https://schema.undata.live/elements/name_1waj59
+  - https://schema.undata.live/elements/schemakey_yb1p25
+  mixins: []
+provenance:
+- source: dandi
+  name: SexType

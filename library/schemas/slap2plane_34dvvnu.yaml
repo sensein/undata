@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/depth_2gtg4t
+  - https://schema.undata.live/elements/depth_unit_1wqnwn
+  - https://schema.undata.live/elements/fov_index_1r8m7r
+  - https://schema.undata.live/elements/frame_rates_1mf6qp
+  - https://schema.undata.live/elements/frame_rates_unit_167pug
+  - https://schema.undata.live/elements/power_unit_1e5bc1
+  - https://schema.undata.live/elements/power_vb9nxg
+  - https://schema.undata.live/elements/slap2_acquisition_type_tna1mt
+  - https://schema.undata.live/elements/specimen_id_149koq
+  - https://schema.undata.live/elements/structure_types_rpty73
+  - https://schema.undata.live/elements/targeted_structure_k7sf6y
+  - https://schema.undata.live/elements/y_dilations_24txej
+  - https://schema.undata.live/elements/y_dilations_unit_1ex8fc
+  mixins: []
+provenance:
+- source: aind
+  name: Slap2Plane

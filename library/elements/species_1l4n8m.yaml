@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+  question_text: Species of the probe
+provenance:
+- source: aind
+  class: ProteinProbe
+  name: species
+  description: Species of the probe
+  generated_at: '2026-03-20T22:59:50.223209+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

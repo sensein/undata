@@ -6,13 +6,13 @@ provenance:
   class: Reagent
   name: lot_number
   description: Lot number
-  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  generated_at: '2026-03-20T22:59:50.223209+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 - source: aind
   class: Reagent
   name: lot_number
   description: Lot number
-  generated_at: '2026-03-20T22:38:40.270129+00:00'
+  generated_at: '2026-03-20T22:59:50.223209+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

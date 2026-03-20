@@ -19,6 +19,6 @@ provenance:
     of images with the appropriate timestamps. While IndexSeries can also reference
     frames from an ImageSeries through the 'indexed_timeseries' link, this usage is
     discouraged and will be deprecated in favor of using Images containers with 'order_of_images'.
-  generated_at: '2026-03-20T22:38:36.731646+00:00'
+  generated_at: '2026-03-20T22:59:46.487626+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

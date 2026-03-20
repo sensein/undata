@@ -7,6 +7,6 @@ provenance:
   description: A type for storing image data directly. Shape can be 2-D (x, y), or
     3-D where the third dimension can have three or four elements, e.g. (x, y, (r,
     g, b)) or (x, y, (r, g, b, a)).
-  generated_at: '2026-03-20T22:38:36.731646+00:00'
+  generated_at: '2026-03-20T22:59:46.487626+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

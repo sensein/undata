@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_2co8fw
+  - https://schema.undata.live/elements/enddate_knslb3
+  - https://schema.undata.live/elements/id_9xd6ot
+  - https://schema.undata.live/elements/identifier_1qon1x
+  - https://schema.undata.live/elements/name_1e37bk
+  - https://schema.undata.live/elements/schemakey_r3v37s
+  - https://schema.undata.live/elements/startdate_hj6twz
+  - https://schema.undata.live/elements/used_1is3bc
+  - https://schema.undata.live/elements/wasassociatedwith_giag7z
+  mixins: []
+provenance:
+- source: dandi
+  name: PublishActivity

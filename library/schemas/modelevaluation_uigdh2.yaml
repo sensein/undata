@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/code_14eywf
+  - https://schema.undata.live/elements/end_date_time_c67l5a
+  - https://schema.undata.live/elements/experimenters_jlfyc8
+  - https://schema.undata.live/elements/name_8pym60
+  - https://schema.undata.live/elements/notes_1e6boi
+  - https://schema.undata.live/elements/output_parameters_zgpzje
+  - https://schema.undata.live/elements/output_path_1l0kxv
+  - https://schema.undata.live/elements/performance_1haok0
+  - https://schema.undata.live/elements/pipeline_name_fzqjc6
+  - https://schema.undata.live/elements/process_type_ypzop0
+  - https://schema.undata.live/elements/resources_18ah43
+  - https://schema.undata.live/elements/stage_14a2g0
+  - https://schema.undata.live/elements/start_date_time_3jbwuc
+  mixins: []
+provenance:
+- source: aind
+  name: ModelEvaluation

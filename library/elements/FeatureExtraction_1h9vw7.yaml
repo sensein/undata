@@ -6,6 +6,6 @@ provenance:
   name: FeatureExtraction
   description: Features, such as PC1 and PC2, that are extracted from signals stored
     in a SpikeEventSeries or other source.
-  generated_at: '2026-03-20T22:38:36.731646+00:00'
+  generated_at: '2026-03-20T22:59:46.487626+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion

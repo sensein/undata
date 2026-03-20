@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/affiliation_1tel5s
+  - https://schema.undata.live/elements/awardnumber_1gfc8d
+  - https://schema.undata.live/elements/email_107wlf
+  - https://schema.undata.live/elements/id_nps3hk
+  - https://schema.undata.live/elements/identifier_1clvuo
+  - https://schema.undata.live/elements/includeincitation_kupwyy
+  - https://schema.undata.live/elements/name_1prqz2
+  - https://schema.undata.live/elements/rolename_txrhhn
+  - https://schema.undata.live/elements/schemakey_8lexn0
+  - https://schema.undata.live/elements/url_pc1yyd
+  mixins: []
+provenance:
+- source: dandi
+  name: Person
