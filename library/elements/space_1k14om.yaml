@@ -1,0 +1,40 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: space
+  source_class: entities
+provenance:
+- source: bids
+  class: entities
+  name: space
+  description: 'The `space-<label>` entity indicates the coordinate system for interpreting
+
+    spatial coordinates.
+
+    For sensor-based modalities, such as EEG/MEG/iEEG,
+
+    the space indicates how sensor positions are reported;
+
+    for imaging modalities,
+
+    the space indicates a reference image to which a file has been aligned.
+
+    A list of common spaces is defined in the
+
+    [Coordinate Systems Appendix](SPEC_ROOT/appendices/coordinate-systems.md),
+
+    and these SHOULD be used as `<label>` values for data reported in those
+
+    spaces.
+
+
+    Note that the space entity is broadly applicable to derivative data,
+
+    but is only defined for a subset of raw data types.
+
+    For particular use cases, `<label>` may be restricted to a set of enumerated values.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,13 @@
+semantic:
+  data_type: object
+  source_attribute: FrequencyBandsTable
+  source_class: FrequencyBandsTable
+provenance:
+- source: nwb
+  class: FrequencyBandsTable
+  name: FrequencyBandsTable
+  description: Table for describing the bands that DecompositionSeries was generated
+    from. There should be one row in this table for each band.
+  generated_at: '2026-03-20T23:37:18.087571+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

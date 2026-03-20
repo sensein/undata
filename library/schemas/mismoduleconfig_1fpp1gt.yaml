@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/angle_unit_1seray
+  - https://schema.undata.live/elements/arc_angle_h863bg
+  - https://schema.undata.live/elements/module_angle_19ht6e
+  - https://schema.undata.live/elements/notes_snbhp7
+  - https://schema.undata.live/elements/rotation_angle_1fs7g2
+  mixins: []
+provenance:
+- source: aind
+  name: MISModuleConfig

@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: AcquisitionMode
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: AcquisitionMode
+  description: 'Type of acquisition of the PET data (for example, `"list mode"`).
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

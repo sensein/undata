@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: license
+  source_class: PublishedDandiset
+provenance:
+- source: dandi
+  class: PublishedDandiset
+  name: license
+  description: Licenses associated with the item. DANDI only supports a subset of
+    Creative Commons Licenses (creativecommons.org) applicable to datasets.
+  generated_at: '2026-03-20T23:37:14.631580+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

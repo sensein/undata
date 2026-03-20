@@ -1,0 +1,16 @@
+semantic:
+  data_type: boolean
+  value_domain: boolean
+  source_attribute: SkullStripped
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SkullStripped
+  description: 'Whether the volume was skull stripped (non-brain voxels set to zero)
+    or not.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

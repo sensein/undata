@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/electrode_group_7b6ftb
+  - https://schema.undata.live/elements/electrodes_6hcgs2
+  - https://schema.undata.live/elements/electrodes_index_1q7bsf
+  - https://schema.undata.live/elements/obs_intervals_index_twumvz
+  - https://schema.undata.live/elements/obs_intervals_qynoun
+  - https://schema.undata.live/elements/spike_times_19qit9
+  - https://schema.undata.live/elements/spike_times_index_33hlfl
+  - https://schema.undata.live/elements/units_1ovmbn
+  - https://schema.undata.live/elements/waveform_mean_fahpom
+  - https://schema.undata.live/elements/waveform_sd_jbv7rd
+  - https://schema.undata.live/elements/waveforms_fbzywo
+  - https://schema.undata.live/elements/waveforms_index_index_evb62s
+  - https://schema.undata.live/elements/waveforms_index_iz0zjg
+  mixins: []
+provenance:
+- source: nwb
+  name: Units

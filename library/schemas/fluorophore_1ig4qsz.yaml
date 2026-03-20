@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/excitation_wavelength_k05rol
+  - https://schema.undata.live/elements/excitation_wavelength_unit_8tix19
+  - https://schema.undata.live/elements/fluorophore_type_8m88fc
+  mixins: []
+provenance:
+- source: aind
+  name: Fluorophore

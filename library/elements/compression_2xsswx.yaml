@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  question_text: Compression
+  source_attribute: compression
+  source_class: DetectorConfig
+provenance:
+- source: aind
+  class: DetectorConfig
+  name: compression
+  description: Compression algorithm used during acquisition
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

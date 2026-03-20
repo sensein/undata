@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_hp033t
+  - https://schema.undata.live/elements/identifier_184d0d
+  - https://schema.undata.live/elements/name_1xus4l
+  - https://schema.undata.live/elements/schemakey_1fpk4s
+  mixins: []
+provenance:
+- source: dandi
+  name: MeasurementTechniqueType

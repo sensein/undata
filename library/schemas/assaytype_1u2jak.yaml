@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_r0vuo3
+  - https://schema.undata.live/elements/identifier_12uxo0
+  - https://schema.undata.live/elements/name_1guzyy
+  - https://schema.undata.live/elements/schemakey_1ksj3u
+  mixins: []
+provenance:
+- source: dandi
+  name: AssayType

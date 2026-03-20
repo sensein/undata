@@ -1,0 +1,25 @@
+semantic:
+  data_type: array
+  source_attribute: SourceDatasets
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SourceDatasets
+  description: 'Used to specify the locations and relevant attributes of all source
+    datasets (BIDS or not).
+
+    Valid keys in each object include `"URL"`, `"DOI"` (see
+
+    [URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator)), and
+
+    `"Version"` with
+
+    [string](https://www.w3schools.com/js/js_json_datatypes.asp)
+
+    values.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

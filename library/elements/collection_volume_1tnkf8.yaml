@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+  question_text: Collection volume
+  source_attribute: collection_volume
+  source_class: SampleCollection
+provenance:
+- source: aind
+  class: SampleCollection
+  name: collection_volume
+  description: Collection volume
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

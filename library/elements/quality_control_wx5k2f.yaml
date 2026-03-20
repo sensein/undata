@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  question_text: Quality Control
+  source_attribute: quality_control
+  source_class: metadata
+provenance:
+- source: aind
+  class: metadata
+  name: quality_control
+  description: Description of quality metrics for a data asset
+  generated_at: '2026-03-20T23:37:29.472044+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

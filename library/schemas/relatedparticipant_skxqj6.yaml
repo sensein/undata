@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_1d7y03
+  - https://schema.undata.live/elements/identifier_1meli7
+  - https://schema.undata.live/elements/name_129e7l
+  - https://schema.undata.live/elements/relation_xwxtqe
+  - https://schema.undata.live/elements/schemakey_wk2nfo
+  - https://schema.undata.live/elements/url_ezyo9y
+  mixins: []
+provenance:
+- source: dandi
+  name: RelatedParticipant

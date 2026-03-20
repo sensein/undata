@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: keywords
+  source_class: PublishedAsset
+provenance:
+- source: dandi
+  class: PublishedAsset
+  name: keywords
+  description: Keywords used to describe this content.
+  generated_at: '2026-03-20T23:37:14.631580+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

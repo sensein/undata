@@ -1,0 +1,12 @@
+semantic:
+  data_type: object
+  source_attribute: EventDetection
+  source_class: EventDetection
+provenance:
+- source: nwb
+  class: EventDetection
+  name: EventDetection
+  description: Detected spike events from voltage trace(s).
+  generated_at: '2026-03-20T23:37:18.087571+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

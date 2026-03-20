@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/datepublished_1w5plx
+  - https://schema.undata.live/elements/id_w6cve0
+  - https://schema.undata.live/elements/publishedby_odgbe7
+  - https://schema.undata.live/elements/schemakey_un07z4
+  mixins: []
+provenance:
+- source: dandi
+  name: Publishable

@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/email_1s8pdh
+  - https://schema.undata.live/elements/id_11gngr
+  - https://schema.undata.live/elements/schemakey_tqk697
+  - https://schema.undata.live/elements/url_c9cq5c
+  mixins: []
+provenance:
+- source: dandi
+  name: ContactPoint

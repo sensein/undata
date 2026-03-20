@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/eyetracking_m7lah9
+  mixins: []
+provenance:
+- source: nwb
+  name: EyeTracking

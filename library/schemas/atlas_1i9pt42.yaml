@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/axes_aeatdy
+  - https://schema.undata.live/elements/axis_unit_ebvqs6
+  - https://schema.undata.live/elements/name_1daqbl
+  - https://schema.undata.live/elements/origin_vjjrfb
+  - https://schema.undata.live/elements/resolution_a2qfvr
+  - https://schema.undata.live/elements/resolution_unit_gtrvp3
+  - https://schema.undata.live/elements/size_87jasy
+  - https://schema.undata.live/elements/size_unit_fhpv6h
+  - https://schema.undata.live/elements/version_18i5fc
+  mixins: []
+provenance:
+- source: aind
+  name: Atlas

@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_cd92eo
+  - https://schema.undata.live/elements/manufacturer_12e9yd
+  - https://schema.undata.live/elements/model_5iyu2u
+  - https://schema.undata.live/elements/name_9c86e4
+  - https://schema.undata.live/elements/notes_1ts5um
+  - https://schema.undata.live/elements/number_faces_w27zv9
+  - https://schema.undata.live/elements/serial_number_1a2id0
+  - https://schema.undata.live/elements/speed_1huhw3
+  - https://schema.undata.live/elements/speed_unit_1j8o5m
+  mixins: []
+provenance:
+- source: aind
+  name: PolygonalScanner

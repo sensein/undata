@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+  question_text: Pressure
+  source_attribute: pressure
+  source_class: AirPuffConfig
+provenance:
+- source: aind
+  class: AirPuffConfig
+  name: pressure
+  description: Pressure
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

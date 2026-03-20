@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_17evyg
+  - https://schema.undata.live/elements/manufacturer_10yvyb
+  - https://schema.undata.live/elements/model_16r3i8
+  - https://schema.undata.live/elements/name_17msp3
+  - https://schema.undata.live/elements/notes_4sipx9
+  - https://schema.undata.live/elements/serial_number_lz50r2
+  mixins: []
+provenance:
+- source: aind
+  name: Microscope

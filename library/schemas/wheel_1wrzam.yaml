@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_ztyx1j
+  - https://schema.undata.live/elements/encoder_1rntqk
+  - https://schema.undata.live/elements/magnetic_brake_1u5bju
+  - https://schema.undata.live/elements/manufacturer_1iqol1
+  - https://schema.undata.live/elements/model_17bo73
+  - https://schema.undata.live/elements/name_1b5m7r
+  - https://schema.undata.live/elements/notes_1p7aky
+  - https://schema.undata.live/elements/pulse_per_revolution_1931fu
+  - https://schema.undata.live/elements/radius_1axmob
+  - https://schema.undata.live/elements/serial_number_i3vt30
+  - https://schema.undata.live/elements/size_unit_1ky2p5
+  - https://schema.undata.live/elements/torque_sensor_2hp9n5
+  - https://schema.undata.live/elements/width_16r5ev
+  mixins: []
+provenance:
+- source: aind
+  name: Wheel

@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: InfusionStart
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: InfusionStart
+  description: 'Time of start of infusion with respect to `"TimeZero"` in the default
+    unit
+
+    seconds.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

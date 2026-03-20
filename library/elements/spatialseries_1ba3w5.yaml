@@ -1,0 +1,20 @@
+semantic:
+  data_type: object
+  source_attribute: SpatialSeries
+  source_class: SpatialSeries
+provenance:
+- source: nwb
+  class: SpatialSeries
+  name: SpatialSeries
+  description: 'Direction, e.g., of gaze or travel, or position. The TimeSeries::data
+    field is a 2D array storing position or direction relative to some reference frame.
+    Array structure: [num measurements] [num dimensions]. Each SpatialSeries has a
+    text dataset reference_frame that indicates the zero-position, or the zero-axes
+    for direction. For example, if representing gaze direction, ''straight-ahead''
+    might be a specific pixel on the monitor, or some other point in space. For position
+    data, the 0,0 point might be the top-left corner of an enclosure, as viewed from
+    the tracking camera. The unit of data will indicate how to interpret SpatialSeries
+    values.'
+  generated_at: '2026-03-20T23:37:18.087571+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

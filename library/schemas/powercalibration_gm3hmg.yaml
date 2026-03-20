@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/calibration_date_vzfcjo
+  - https://schema.undata.live/elements/description_bcz6y7
+  - https://schema.undata.live/elements/device_name_12ujur
+  - https://schema.undata.live/elements/fit_1gg8uo
+  - https://schema.undata.live/elements/input_1hdnps
+  - https://schema.undata.live/elements/input_unit_1vp0es
+  - https://schema.undata.live/elements/measured_at_b8q28i
+  - https://schema.undata.live/elements/notes_d30vub
+  - https://schema.undata.live/elements/output_py789c
+  - https://schema.undata.live/elements/output_unit_c36gxd
+  - https://schema.undata.live/elements/protocol_id_fb5zb5
+  - https://schema.undata.live/elements/repeats_1qnfcm
+  mixins: []
+provenance:
+- source: aind
+  name: PowerCalibration

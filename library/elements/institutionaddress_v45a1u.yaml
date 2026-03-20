@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: InstitutionAddress
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: InstitutionAddress
+  description: 'The address of the institution in charge of the equipment that produced
+    the
+
+    measurements.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

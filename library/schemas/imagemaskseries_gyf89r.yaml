@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/imagemaskseries_19j5rh
+  mixins: []
+provenance:
+- source: nwb
+  name: ImageMaskSeries

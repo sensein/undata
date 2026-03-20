@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/anatomy_2y0jzz
+  - https://schema.undata.live/elements/assaytype_idcc2v
+  - https://schema.undata.live/elements/hasmember_fqoyqs
+  - https://schema.undata.live/elements/id_szwvl0
+  - https://schema.undata.live/elements/identifier_cyl3nv
+  - https://schema.undata.live/elements/sameas_1v47if
+  - https://schema.undata.live/elements/sampletype_1xle29
+  - https://schema.undata.live/elements/schemakey_pfwr9r
+  - https://schema.undata.live/elements/wasattributedto_1vabv8
+  - https://schema.undata.live/elements/wasderivedfrom_vsehqn
+  mixins: []
+provenance:
+- source: dandi
+  name: BioSample

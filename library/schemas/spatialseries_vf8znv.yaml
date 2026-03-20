@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_1ugjp2
+  - https://schema.undata.live/elements/reference_frame_1cxuv2
+  - https://schema.undata.live/elements/spatialseries_1ba3w5
+  mixins: []
+provenance:
+- source: nwb
+  name: SpatialSeries

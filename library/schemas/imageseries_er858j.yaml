@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_1vkpoh
+  - https://schema.undata.live/elements/dimension_376lqj
+  - https://schema.undata.live/elements/external_file_49lwvp
+  - https://schema.undata.live/elements/format_118icr
+  - https://schema.undata.live/elements/imageseries_14h4xv
+  mixins: []
+provenance:
+- source: nwb
+  name: ImageSeries

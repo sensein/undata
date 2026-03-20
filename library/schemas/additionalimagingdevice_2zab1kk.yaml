@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1nb8vl
+  - https://schema.undata.live/elements/imaging_device_type_1xa1ph
+  - https://schema.undata.live/elements/manufacturer_1h1xwg
+  - https://schema.undata.live/elements/model_17h1o6
+  - https://schema.undata.live/elements/name_10uqwy
+  - https://schema.undata.live/elements/notes_1ef7o0
+  - https://schema.undata.live/elements/serial_number_3qx9at
+  mixins: []
+provenance:
+- source: aind
+  name: AdditionalImagingDevice

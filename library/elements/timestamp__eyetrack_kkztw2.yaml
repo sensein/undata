@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: timestamp__eyetrack
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: timestamp__eyetrack
+  description: 'Timestamp issued by the eye-tracker indexing the continuous recordings
+    corresponding to
+
+    the sampled eye.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

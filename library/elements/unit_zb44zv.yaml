@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: unit
+  source_class: formats
+provenance:
+- source: bids
+  class: formats
+  name: unit
+  description: 'A unit.
+
+    SI units in CMIXF formatting are RECOMMENDED
+
+    (see [Units](SPEC_ROOT/common-principles.md#units)).
+
+
+    Currently this matches any string.
+
+
+    TODO: Somehow reference the actual unit options in the Units appendix.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

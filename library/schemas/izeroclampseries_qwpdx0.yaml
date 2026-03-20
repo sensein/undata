@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/bias_current_1w5idz
+  - https://schema.undata.live/elements/bridge_balance_n35u68
+  - https://schema.undata.live/elements/capacitance_compensation_123p60
+  - https://schema.undata.live/elements/izeroclampseries_15vd8i
+  - https://schema.undata.live/elements/stimulus_description_eioeg5
+  mixins: []
+provenance:
+- source: nwb
+  name: IZeroClampSeries

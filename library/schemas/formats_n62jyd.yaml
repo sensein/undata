@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/bids_uri_n5w43l
+  - https://schema.undata.live/elements/boolean_zitr9u
+  - https://schema.undata.live/elements/dataset_relative_d7jwv6
+  - https://schema.undata.live/elements/date_13xyw0
+  - https://schema.undata.live/elements/datetime_1pff8x
+  - https://schema.undata.live/elements/file_relative_1tl9wf
+  - https://schema.undata.live/elements/hed_version_3ot04w
+  - https://schema.undata.live/elements/index_18i4k2
+  - https://schema.undata.live/elements/integer_1p2lx8
+  - https://schema.undata.live/elements/label_260vye
+  - https://schema.undata.live/elements/number_1eia74
+  - https://schema.undata.live/elements/participant_relative_1058qf
+  - https://schema.undata.live/elements/rrid_1jf56q
+  - https://schema.undata.live/elements/stimuli_relative_zpy7rw
+  - https://schema.undata.live/elements/string_17si7t
+  - https://schema.undata.live/elements/time_xf8rc8
+  - https://schema.undata.live/elements/unit_zb44zv
+  - https://schema.undata.live/elements/uri_8oqi7t
+  mixins: []
+provenance:
+- source: bids
+  name: formats

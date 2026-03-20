@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/end_date_1ptirt
+  - https://schema.undata.live/elements/experimenters_19in67
+  - https://schema.undata.live/elements/notes_15atlu
+  - https://schema.undata.live/elements/procedure_details_1skv8d
+  - https://schema.undata.live/elements/procedure_name_1pzij4
+  - https://schema.undata.live/elements/procedure_type_3bkfgc
+  - https://schema.undata.live/elements/protocol_id_1l3dbf
+  - https://schema.undata.live/elements/protocol_parameters_5drskb
+  - https://schema.undata.live/elements/specimen_id_1yxeqj
+  - https://schema.undata.live/elements/start_date_sn5lta
+  mixins: []
+provenance:
+- source: aind
+  name: SpecimenProcedure

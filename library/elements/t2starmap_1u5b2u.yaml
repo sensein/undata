@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: T2starmap
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: T2starmap
+  description: 'In seconds (s).
+
+    T2-star maps are REQUIRED to use this suffix regardless of the method used to
+
+    generate them.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

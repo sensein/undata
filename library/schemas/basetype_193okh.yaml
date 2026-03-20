@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_8fwkor
+  - https://schema.undata.live/elements/identifier_1r4bd4
+  - https://schema.undata.live/elements/name_13bhlq
+  - https://schema.undata.live/elements/schemakey_12mupe
+  mixins: []
+provenance:
+- source: dandi
+  name: BaseType

@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abstractfeatureseries_lfyxo7
+  - https://schema.undata.live/elements/data_10t8qr
+  - https://schema.undata.live/elements/feature_units_1g4m8x
+  - https://schema.undata.live/elements/features_kn4xw2
+  mixins: []
+provenance:
+- source: nwb
+  name: AbstractFeatureSeries

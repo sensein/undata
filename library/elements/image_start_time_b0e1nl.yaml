@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  question_text: Image acquisition start time
+  source_attribute: image_start_time
+  source_class: ImageSPIM
+provenance:
+- source: aind
+  class: ImageSPIM
+  name: image_start_time
+  description: Image acquisition start time
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

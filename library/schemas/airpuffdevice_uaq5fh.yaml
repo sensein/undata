@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1gss1n
+  - https://schema.undata.live/elements/diameter_1nbp6u
+  - https://schema.undata.live/elements/diameter_unit_606gjd
+  - https://schema.undata.live/elements/manufacturer_jywy9h
+  - https://schema.undata.live/elements/model_fv8wgo
+  - https://schema.undata.live/elements/name_1w02qd
+  - https://schema.undata.live/elements/notes_1yfebb
+  - https://schema.undata.live/elements/serial_number_u4t5s6
+  mixins: []
+provenance:
+- source: aind
+  name: AirPuffDevice

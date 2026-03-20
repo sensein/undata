@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  question_text: Training protocol ID
+  source_attribute: protocol_id
+  source_class: TrainingProtocol
+provenance:
+- source: aind
+  class: TrainingProtocol
+  name: protocol_id
+  description: Training protocol ID
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

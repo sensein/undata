@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/fit_parameters_f0whwp
+  - https://schema.undata.live/elements/fit_type_1tj8u7
+  mixins: []
+provenance:
+- source: aind
+  name: CalibrationFit

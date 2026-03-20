@@ -1,0 +1,13 @@
+semantic:
+  data_type: integer
+  question_text: DAQ port
+  source_attribute: port
+  source_class: DAQChannel
+provenance:
+- source: aind
+  class: DAQChannel
+  name: port
+  description: DAQ port
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

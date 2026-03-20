@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_2fs26y
+  - https://schema.undata.live/elements/manufacturer_1xvjel
+  - https://schema.undata.live/elements/model_11sejr
+  - https://schema.undata.live/elements/name_piy6rs
+  - https://schema.undata.live/elements/notes_v1bhgv
+  - https://schema.undata.live/elements/serial_number_1g7ojy
+  mixins: []
+provenance:
+- source: aind
+  name: Manipulator

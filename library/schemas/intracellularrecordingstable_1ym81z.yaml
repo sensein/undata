@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/description_6vchyn
-  - https://schema.undata.live/elements/intracellularrecordingstable_1nluya
-  mixins: []
-provenance:
-- source: nwb
-  name: IntracellularRecordingsTable

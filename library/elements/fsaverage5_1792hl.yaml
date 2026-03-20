@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: fsaverage5
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: fsaverage5
+  description: 'Images were sampled to the FreeSurfer surface reconstructed from the
+    subject''s T1w image,
+
+    and registered to an fsaverage template.
+
+    For new datasets, the recommended alternative is fsaverage.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

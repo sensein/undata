@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+  source_attribute: timestamps
+  source_class: TimeSeries
+provenance:
+- source: nwb
+  class: TimeSeries
+  name: timestamps
+  description: Timestamps for samples stored in data, in seconds, relative to the
+    common experiment master-clock stored in NWBFile.timestamps_reference_time.
+  generated_at: '2026-03-20T23:37:18.087571+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

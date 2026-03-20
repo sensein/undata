@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channel_name_e1l06r
+  - https://schema.undata.live/elements/depth_end_1hlqpz
+  - https://schema.undata.live/elements/depth_start_1uozyu
+  - https://schema.undata.live/elements/depth_step_340dnh
+  - https://schema.undata.live/elements/depth_unit_1gm7xw
+  - https://schema.undata.live/elements/dimensions_1tn9mk
+  - https://schema.undata.live/elements/dimensions_unit_1u5862
+  - https://schema.undata.live/elements/image_to_acquisition_transform_1hmuiy
+  - https://schema.undata.live/elements/planes_1pk86s
+  - https://schema.undata.live/elements/power_function_gyd8um
+  mixins: []
+provenance:
+- source: aind
+  name: PlanarImageStack

@@ -30,6 +30,12 @@ def extract_bids() -> list[tuple[SemanticIdentity, ProvenanceEntry]]:
         if not hasattr(category, "__iter__"):
             continue
         for field_name in category:
+            # Skip underscore-prefixed entries — these are enum/valueset
+            # collections (e.g., _EEGCoordSys), not data elements.
+            # Their individual values are extracted as ValueConcepts
+            # via response_options.
+            if field_name.startswith("_"):
+                continue
             field_def = category[field_name]
             if not hasattr(field_def, "get"):
                 continue

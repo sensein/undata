@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_1cdxey
+  - https://schema.undata.live/elements/emission_lambda_giq9u5
+  - https://schema.undata.live/elements/opticalchannel_ecgfpy
+  mixins: []
+provenance:
+- source: nwb
+  name: OpticalChannel

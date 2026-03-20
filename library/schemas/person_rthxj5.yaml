@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/name_1iqzdi
+  - https://schema.undata.live/elements/registry_15br6w
+  - https://schema.undata.live/elements/registry_identifier_1omhaj
+  mixins: []
+provenance:
+- source: aind
+  name: Person

@@ -1,0 +1,31 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: scanner
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: scanner
+  description: 'The intrinsic coordinate system of the original image (the first entry
+    of `RawSources`)
+
+    after reconstruction and conversion to NIfTI or equivalent for the case of surfaces
+    and dual volume/surface
+
+    files.
+
+
+    The `scanner` coordinate system is implicit and assumed by default if the derivative
+    filename does not
+
+    define **any** `space-<label>`.
+
+    Please note that `space-scanner` SHOULD NOT be used,
+
+    it is mentioned in this specification to make its existence explicit.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

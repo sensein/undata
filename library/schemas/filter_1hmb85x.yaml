@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1bnvfq
+  - https://schema.undata.live/elements/center_wavelength_hjmby2
+  - https://schema.undata.live/elements/cut_off_wavelength_9q3i3b
+  - https://schema.undata.live/elements/cut_on_wavelength_48n4yp
+  - https://schema.undata.live/elements/filter_type_1pnvy5
+  - https://schema.undata.live/elements/manufacturer_1mw0h7
+  - https://schema.undata.live/elements/model_88xmbg
+  - https://schema.undata.live/elements/name_36kfnv
+  - https://schema.undata.live/elements/notes_1ay21q
+  - https://schema.undata.live/elements/serial_number_15r7ly
+  - https://schema.undata.live/elements/wavelength_unit_w9cvr3
+  mixins: []
+provenance:
+- source: aind
+  name: Filter

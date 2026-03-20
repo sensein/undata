@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Stimulus end time
+  source_attribute: stimulus_end_time
+  source_class: StimulusEpoch
+provenance:
+- source: aind
+  class: StimulusEpoch
+  name: stimulus_end_time
+  description: When a specific stimulus ends. This might be the same as the acquisition
+    end time.
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

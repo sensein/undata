@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_137abl
+  - https://schema.undata.live/elements/gain_wbkfqs
+  - https://schema.undata.live/elements/patchclampseries_1yrap8
+  - https://schema.undata.live/elements/stimulus_description_1cg3r1
+  - https://schema.undata.live/elements/sweep_number_ttkccv
+  mixins: []
+provenance:
+- source: nwb
+  name: PatchClampSeries

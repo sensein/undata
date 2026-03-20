@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_11hbgp
+  - https://schema.undata.live/elements/manufacturer_16idk5
+  - https://schema.undata.live/elements/model_1sr9yw
+  - https://schema.undata.live/elements/name_ejdp92
+  - https://schema.undata.live/elements/notes_zcc202
+  - https://schema.undata.live/elements/serial_number_kep2vd
+  mixins: []
+provenance:
+- source: aind
+  name: Lens

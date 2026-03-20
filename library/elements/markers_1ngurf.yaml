@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: markers
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: markers
+  description: 'Another manufacturer-specific detail pertains to the KIT/Yokogawa/Ricoh
+
+    system, which saves the MEG sensor coil positions in a separate file with two
+
+    possible filename extensions  (`.sqd`, `.mrk`).
+
+    For these files, the `markers` suffix MUST be used.
+
+    For example: `sub-01_task-nback_markers.sqd`
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

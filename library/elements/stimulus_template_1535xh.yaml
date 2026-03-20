@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: stimulus_template
+  source_class: IntracellularStimuliTable
+provenance:
+- source: nwb
+  class: IntracellularStimuliTable
+  name: stimulus_template
+  description: Column storing the reference to the stimulus template for the recording
+    (rows).
+  generated_at: '2026-03-20T23:37:18.087571+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

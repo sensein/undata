@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: name
+  source_class: SampleType
+provenance:
+- source: dandi
+  class: SampleType
+  name: name
+  description: The name of the item.
+  generated_at: '2026-03-20T23:37:14.631580+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,25 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_8axl30
+  - https://schema.undata.live/elements/brightness_1ftcq7
+  - https://schema.undata.live/elements/brightness_unit_31hgvk
+  - https://schema.undata.live/elements/contrast_1rh4et
+  - https://schema.undata.live/elements/contrast_unit_1lgetn
+  - https://schema.undata.live/elements/coordinate_system_bbndca
+  - https://schema.undata.live/elements/height_1okvcy
+  - https://schema.undata.live/elements/manufacturer_1rhw1y
+  - https://schema.undata.live/elements/model_1f209d
+  - https://schema.undata.live/elements/name_1wrs15
+  - https://schema.undata.live/elements/notes_12i81d
+  - https://schema.undata.live/elements/refresh_rate_387jak
+  - https://schema.undata.live/elements/relative_position_158cfi
+  - https://schema.undata.live/elements/serial_number_pmm1um
+  - https://schema.undata.live/elements/size_unit_bc0zqu
+  - https://schema.undata.live/elements/transform_1namer
+  - https://schema.undata.live/elements/viewing_distance_gx312v
+  - https://schema.undata.live/elements/viewing_distance_unit_16n2v1
+  - https://schema.undata.live/elements/width_dyr3gb
+  mixins: []
+provenance:
+- source: aind
+  name: Monitor

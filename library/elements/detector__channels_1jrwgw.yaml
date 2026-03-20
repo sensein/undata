@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: detector__channels
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: detector__channels
+  description: 'Name of the detector as specified in the `*_optodes.tsv` file.
+
+    `n/a` for channels that do not contain NIRS signals (for example, acceleration).
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

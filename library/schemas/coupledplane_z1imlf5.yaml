@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/coupled_plane_index_1p99s2
+  - https://schema.undata.live/elements/depth_73ymev
+  - https://schema.undata.live/elements/depth_unit_r9eb1d
+  - https://schema.undata.live/elements/plane_index_1dp9o8
+  - https://schema.undata.live/elements/power_ak5lr2
+  - https://schema.undata.live/elements/power_ratio_tc5x3b
+  - https://schema.undata.live/elements/power_unit_1985ry
+  - https://schema.undata.live/elements/targeted_structure_1obr1i
+  mixins: []
+provenance:
+- source: aind
+  name: CoupledPlane

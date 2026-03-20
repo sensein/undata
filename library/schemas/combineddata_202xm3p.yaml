@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/assets_b56zu3
+  - https://schema.undata.live/elements/database_identifier_vs69pw
+  - https://schema.undata.live/elements/description_d7wjwq
+  - https://schema.undata.live/elements/name_1xlxts
+  mixins: []
+provenance:
+- source: aind
+  name: CombinedData

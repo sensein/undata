@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: Units
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: Units
+  description: 'Measurement units for the associated variable.
+
+    SI units in CMIXF formatting are RECOMMENDED
+
+    (see [Units](SPEC_ROOT/common-principles.md#units)).
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

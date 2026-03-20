@@ -1,0 +1,31 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: UNIT1
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: UNIT1
+  description: 'In arbitrary units (arbitrary).
+
+    UNIT1 images are REQUIRED to use this suffix regardless of the method used to
+
+    generate them.
+
+    Note that although this image is T1-weighted, regions without MR signal will
+
+    contain white salt-and-pepper noise that most segmentation algorithms will
+
+    fail on.
+
+    Therefore, it is important to dissociate it from `T1w`.
+
+    Please see [`MP2RAGE` specific notes](SPEC_ROOT/appendices/qmri.md#unit1-images)
+
+    in the qMRI appendix for further information.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

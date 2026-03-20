@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_8wt8y6
+  - https://schema.undata.live/elements/identifier_187621
+  - https://schema.undata.live/elements/name_wu5m54
+  - https://schema.undata.live/elements/schemakey_v1mbzt
+  mixins: []
+provenance:
+- source: dandi
+  name: SampleType

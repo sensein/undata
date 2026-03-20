@@ -1,0 +1,22 @@
+semantic:
+  data_type: string
+  question_text: Metric description
+  source_attribute: description
+  source_class: QCMetric
+provenance:
+- source: aind
+  class: QCMetric
+  name: description
+  description: Describes the measured value and the rule that links the value and
+    status.
+  generated_at: '2026-03-20T23:37:29.472044+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: QCMetric
+  name: description
+  description: Describes the measured value and the rule that links the value and
+    status.
+  generated_at: '2026-03-20T23:37:29.472044+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

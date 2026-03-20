@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: orig
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: orig
+  description: 'A (potentially unique) per-image space.
+
+    Useful for describing the source of transforms from an input image to a target
+    space.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_pxjrwf
+  - https://schema.undata.live/elements/intervalseries_180wlp
+  mixins: []
+provenance:
+- source: nwb
+  name: IntervalSeries

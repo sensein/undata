@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_csen5h
+  - https://schema.undata.live/elements/intracellularstimulitable_wmujir
+  - https://schema.undata.live/elements/stimulus_template_1535xh
+  - https://schema.undata.live/elements/stimulus_z18yu2
+  mixins: []
+provenance:
+- source: nwb
+  name: IntracellularStimuliTable

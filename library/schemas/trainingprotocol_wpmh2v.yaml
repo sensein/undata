@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/curriculum_code_1xr3k8
+  - https://schema.undata.live/elements/end_date_10ima1
+  - https://schema.undata.live/elements/notes_w7as8x
+  - https://schema.undata.live/elements/protocol_id_wvebms
+  - https://schema.undata.live/elements/start_date_1emfn3
+  - https://schema.undata.live/elements/training_name_p1d3w5
+  mixins: []
+provenance:
+- source: aind
+  name: TrainingProtocol

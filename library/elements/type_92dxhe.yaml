@@ -1,0 +1,42 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Brain
+    - Lesion
+    - Face
+    - ROI
+  response_options:
+  - value: Brain
+    label: Brain
+    ontology_term: https://schema.undata.live/values/brain_1n4odx
+  - value: Lesion
+    label: Lesion
+    ontology_term: https://schema.undata.live/values/lesion_1i8gbe
+  - value: Face
+    label: Face
+    ontology_term: https://schema.undata.live/values/face_1yczzx
+  - value: ROI
+    label: ROI
+    ontology_term: https://schema.undata.live/values/roi_mixize
+  value_domain: categorical
+  source_attribute: Type
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: Type
+  description: 'Short identifier of the mask.
+
+    The value `"Brain"` refers to a brain mask.
+
+    The value `"Lesion"` refers to a lesion mask.
+
+    The value `"Face"` refers to a face mask.
+
+    The value `"ROI"` refers to a region of interest mask.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SampleFixation
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SampleFixation
+  description: 'Description of the tissue sample fixation
+
+    (for example: `"4% paraformaldehyde, 2% glutaraldehyde"`).
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

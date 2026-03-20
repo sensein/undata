@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: IRT1
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: IRT1
+  description: 'The IRT1 method involves multiple inversion recovery spin-echo images
+
+    acquired at different inversion times
+
+    ([Barral et al. 2010](https://doi.org/10.1002/mrm.22497)).
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

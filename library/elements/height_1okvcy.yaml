@@ -1,0 +1,13 @@
+semantic:
+  data_type: integer
+  question_text: Height (pixels)
+  source_attribute: height
+  source_class: Monitor
+provenance:
+- source: aind
+  class: Monitor
+  name: height
+  description: Height (pixels)
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

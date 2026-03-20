@@ -1,0 +1,22 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  min_value: 0.0
+  source_attribute: duration
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: duration
+  description: 'Duration of the event (measured from onset) in seconds.
+
+    Must always be either zero or positive (or `n/a` if unavailable).
+
+    A "duration" value of zero implies that the delta function or event is so
+
+    short as to be effectively modeled as an impulse.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

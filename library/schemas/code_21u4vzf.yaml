@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/container_14juuq
+  - https://schema.undata.live/elements/core_dependency_1xhujx
+  - https://schema.undata.live/elements/input_data_azw5ga
+  - https://schema.undata.live/elements/language_1s0di8
+  - https://schema.undata.live/elements/language_version_106yhj
+  - https://schema.undata.live/elements/name_1039ww
+  - https://schema.undata.live/elements/parameters_13pcx5
+  - https://schema.undata.live/elements/run_script_vrva5u
+  - https://schema.undata.live/elements/url_5hpu8y
+  - https://schema.undata.live/elements/version_1k96w9
+  mixins: []
+provenance:
+- source: aind
+  name: Code

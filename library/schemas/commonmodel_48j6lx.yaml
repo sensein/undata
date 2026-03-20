@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/about_1rbvuw
+  - https://schema.undata.live/elements/access_1mqmdc
+  - https://schema.undata.live/elements/acknowledgement_mv29k6
+  - https://schema.undata.live/elements/contributor_1rih06
+  - https://schema.undata.live/elements/description_7zwsjm
+  - https://schema.undata.live/elements/ethicsapproval_9dz64c
+  - https://schema.undata.live/elements/id_f5erhe
+  - https://schema.undata.live/elements/keywords_1bw4pj
+  - https://schema.undata.live/elements/license_to2m9s
+  - https://schema.undata.live/elements/name_1hb04p
+  - https://schema.undata.live/elements/protocol_1ctf8j
+  - https://schema.undata.live/elements/relatedresource_mhidvn
+  - https://schema.undata.live/elements/repository_tlp47g
+  - https://schema.undata.live/elements/schemakey_9tvt0c
+  - https://schema.undata.live/elements/schemaversion_1wtt06
+  - https://schema.undata.live/elements/studytarget_12a7rd
+  - https://schema.undata.live/elements/url_16mhia
+  - https://schema.undata.live/elements/wasgeneratedby_9msz12
+  mixins: []
+provenance:
+- source: dandi
+  name: CommonModel

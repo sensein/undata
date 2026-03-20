@@ -1,7 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/eventwaveform_nvqjid
-  mixins: []
-provenance:
-- source: nwb
-  name: EventWaveform

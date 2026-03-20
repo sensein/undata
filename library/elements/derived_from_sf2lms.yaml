@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: derived_from
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: derived_from
+  description: '`sample-<label>` entity from which a sample is derived,
+
+    for example a slice of tissue (`sample-02`) derived from a block of tissue (`sample-01`).
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

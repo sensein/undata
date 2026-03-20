@@ -1,0 +1,19 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: response_time
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: response_time
+  description: 'Response time measured in seconds.
+
+    A negative response time can be used to represent preemptive responses and
+
+    `n/a` denotes a missed response.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

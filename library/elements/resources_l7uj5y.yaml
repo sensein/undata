@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  question_text: Process resource usage
+  source_attribute: resources
+  source_class: DataProcess
+provenance:
+- source: aind
+  class: DataProcess
+  name: resources
+  description: Process resource usage
+  generated_at: '2026-03-20T23:37:29.472044+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: DataProcess
+  name: resources
+  description: Process resource usage
+  generated_at: '2026-03-20T23:37:29.472044+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

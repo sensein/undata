@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/active_control_1vpwov
+  - https://schema.undata.live/elements/device_name_tqsup4
+  - https://schema.undata.live/elements/objects_in_arena_1l6vgo
+  mixins: []
+provenance:
+- source: aind
+  name: MousePlatformConfig

@@ -1,0 +1,13 @@
+semantic:
+  data_type: boolean
+  question_text: Setup
+  source_attribute: setup
+  source_class: MRIScan
+provenance:
+- source: aind
+  class: MRIScan
+  name: setup
+  description: Positioning, shim, and other pre-scan adjustments
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/fundee_1qr9xg
+  - https://schema.undata.live/elements/funder_1rik90
+  - https://schema.undata.live/elements/grant_number_6l2qf9
+  mixins: []
+provenance:
+- source: aind
+  name: Funding

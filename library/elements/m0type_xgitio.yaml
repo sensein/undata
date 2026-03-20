@@ -1,0 +1,44 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Separate
+    - Included
+    - Estimate
+    - Absent
+  response_options:
+  - value: Separate
+    label: Separate
+    ontology_term: https://schema.undata.live/values/separate_1fbrv3
+  - value: Included
+    label: Included
+    ontology_term: https://schema.undata.live/values/included_1xlx3m
+  - value: Estimate
+    label: Estimate
+    ontology_term: https://schema.undata.live/values/estimate_8x6jx0
+  - value: Absent
+    label: Absent
+    ontology_term: https://schema.undata.live/values/absent_3v2a85
+  value_domain: categorical
+  source_attribute: M0Type
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: M0Type
+  description: 'Describes the presence of M0 information.
+
+    `"Separate"` means that a separate `*_m0scan.nii[.gz]` is present.
+
+    `"Included"` means that an m0scan volume is contained within the current
+
+    `*_asl.nii[.gz]`.
+
+    `"Estimate"` means that a single whole-brain M0 value is provided.
+
+    `"Absent"` means that no specific M0 information is present.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

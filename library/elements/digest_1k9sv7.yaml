@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: digest
+  source_class: PublishedAsset
+provenance:
+- source: dandi
+  class: PublishedAsset
+  name: digest
+  description: ''
+  generated_at: '2026-03-20T23:37:14.631580+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

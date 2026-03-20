@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: sequential_recordings_index
+  source_class: RepetitionsTable
+provenance:
+- source: nwb
+  class: RepetitionsTable
+  name: sequential_recordings_index
+  description: Index dataset for the sequential_recordings column.
+  generated_at: '2026-03-20T23:37:18.087571+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

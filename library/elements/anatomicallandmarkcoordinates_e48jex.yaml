@@ -1,0 +1,25 @@
+semantic:
+  data_type: object
+  source_attribute: AnatomicalLandmarkCoordinates
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: AnatomicalLandmarkCoordinates
+  description: 'Key-value pairs of the labels and 3-D digitized locations of anatomical
+    landmarks,
+
+    interpreted following the `"AnatomicalLandmarkCoordinateSystem"`
+
+    (for example, `{"NAS": [12.7,21.3,13.9], "LPA": [5.2,11.3,9.6],
+
+    "RPA": [20.2,11.3,9.1]}`.
+
+    Each array MUST contain three numeric values corresponding to x, y, and z
+
+    axis of the coordinate system in that exact order.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

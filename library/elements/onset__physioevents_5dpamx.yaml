@@ -1,0 +1,20 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: onset__physioevents
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: onset__physioevents
+  description: 'Onset of the event relative to the timeline defined by the corresponding
+
+    physiological recording file.
+
+
+    Typically, it will correspond to a timestamp issued by the recording device.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

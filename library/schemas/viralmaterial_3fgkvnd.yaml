@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/addgene_id_gzn3qc
+  - https://schema.undata.live/elements/name_ix8apq
+  - https://schema.undata.live/elements/tars_identifiers_be4vf4
+  - https://schema.undata.live/elements/titer_unit_pvz2y6
+  - https://schema.undata.live/elements/titer_w1l2u8
+  mixins: []
+provenance:
+- source: aind
+  name: ViralMaterial

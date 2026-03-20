@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/send_and_receive_eox2a8
+  - https://schema.undata.live/elements/source_device_1s9yv7
+  - https://schema.undata.live/elements/source_port_mh3739
+  - https://schema.undata.live/elements/target_device_1j1ycp
+  - https://schema.undata.live/elements/target_port_z629rx
+  mixins: []
+provenance:
+- source: aind
+  name: Connection

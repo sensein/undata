@@ -1,0 +1,38 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_sca9r1
+  - https://schema.undata.live/elements/bin_height_1nekyq
+  - https://schema.undata.live/elements/bin_mode_10evx1
+  - https://schema.undata.live/elements/bin_unit_e3azh5
+  - https://schema.undata.live/elements/bin_width_i2p7xa
+  - https://schema.undata.live/elements/bit_depth_1mb30v
+  - https://schema.undata.live/elements/chroma_q4g12w
+  - https://schema.undata.live/elements/cooling_1rdf70
+  - https://schema.undata.live/elements/crop_height_9pj5gq
+  - https://schema.undata.live/elements/crop_offset_x_o2t210
+  - https://schema.undata.live/elements/crop_offset_y_52g0id
+  - https://schema.undata.live/elements/crop_unit_jh4tfa
+  - https://schema.undata.live/elements/crop_width_1t1emm
+  - https://schema.undata.live/elements/data_interface_10uxqh
+  - https://schema.undata.live/elements/detector_type_ubzdw8
+  - https://schema.undata.live/elements/driver_9643wj
+  - https://schema.undata.live/elements/driver_version_bqou5l
+  - https://schema.undata.live/elements/frame_rate_1fn68o
+  - https://schema.undata.live/elements/frame_rate_unit_wy9d9p
+  - https://schema.undata.live/elements/gain_1n70fy
+  - https://schema.undata.live/elements/immersion_1vklef
+  - https://schema.undata.live/elements/manufacturer_1nj7yh
+  - https://schema.undata.live/elements/model_xzefgw
+  - https://schema.undata.live/elements/name_1l0i0l
+  - https://schema.undata.live/elements/notes_1q0qdf
+  - https://schema.undata.live/elements/recording_software_1a347m
+  - https://schema.undata.live/elements/sensor_format_1d8bpa
+  - https://schema.undata.live/elements/sensor_format_unit_akeiaj
+  - https://schema.undata.live/elements/sensor_height_5z904r
+  - https://schema.undata.live/elements/sensor_width_193u50
+  - https://schema.undata.live/elements/serial_number_h3j3z6
+  - https://schema.undata.live/elements/size_unit_1dbunu
+  mixins: []
+provenance:
+- source: aind
+  name: Detector

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  question_text: Driver
+  source_attribute: driver
+  source_class: Camera
+provenance:
+- source: aind
+  class: Camera
+  name: driver
+  description: Driver
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

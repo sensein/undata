@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_plty98
+  - https://schema.undata.live/elements/intracellularresponsestable_1ksi3w
+  - https://schema.undata.live/elements/response_qbtuj0
+  mixins: []
+provenance:
+- source: nwb
+  name: IntracellularResponsesTable

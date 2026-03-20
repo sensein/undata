@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/cage_id_1jpub4
+  - https://schema.undata.live/elements/cohoused_subjects_11sm3f
+  - https://schema.undata.live/elements/home_cage_enrichment_du2uea
+  - https://schema.undata.live/elements/light_cycle_1d7j29
+  - https://schema.undata.live/elements/room_id_v9ff7c
+  mixins: []
+provenance:
+- source: aind
+  name: Housing

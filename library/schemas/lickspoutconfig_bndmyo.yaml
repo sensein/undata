@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/coordinate_system_11swgp
+  - https://schema.undata.live/elements/device_name_152med
+  - https://schema.undata.live/elements/notes_13fg11
+  - https://schema.undata.live/elements/relative_position_15el2k
+  - https://schema.undata.live/elements/solution_r38q9v
+  - https://schema.undata.live/elements/solution_valence_rjpkv9
+  - https://schema.undata.live/elements/transform_h02vd5
+  - https://schema.undata.live/elements/volume_1yp15x
+  - https://schema.undata.live/elements/volume_unit_4lbtpm
+  mixins: []
+provenance:
+- source: aind
+  name: LickSpoutConfig

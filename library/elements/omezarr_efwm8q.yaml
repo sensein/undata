@@ -1,0 +1,24 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: OMEZARR
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: OMEZARR
+  description: 'An OME-NGFF file.
+
+
+    OME-NGFF is a [Zarr](https://zarr.readthedocs.io/en/stable/)-based format,
+
+    organizing data arrays in nested directories.
+
+    This format was developed by the Open Microscopy Environment
+
+    to provide data stream access to very large data.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

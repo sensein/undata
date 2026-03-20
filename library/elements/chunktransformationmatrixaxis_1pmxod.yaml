@@ -1,0 +1,16 @@
+semantic:
+  data_type: array
+  source_attribute: ChunkTransformationMatrixAxis
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: ChunkTransformationMatrixAxis
+  description: 'Describe the axis of the ChunkTransformationMatrix
+
+    (for examples: `["X", "Y"]` or `["Z", "Y", "X"]`).
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

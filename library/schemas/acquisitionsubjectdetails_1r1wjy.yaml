@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/anaesthesia_1bjifj
+  - https://schema.undata.live/elements/animal_weight_post_95gbvm
+  - https://schema.undata.live/elements/animal_weight_prior_1wrujv
+  - https://schema.undata.live/elements/mouse_platform_name_zc5vxd
+  - https://schema.undata.live/elements/reward_consumed_total_1158dm
+  - https://schema.undata.live/elements/reward_consumed_unit_y9wfmj
+  - https://schema.undata.live/elements/weight_unit_1bw1nq
+  mixins: []
+provenance:
+- source: aind
+  name: AcquisitionSubjectDetails

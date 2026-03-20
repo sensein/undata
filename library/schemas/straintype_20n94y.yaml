@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_15pzwq
+  - https://schema.undata.live/elements/identifier_is6lit
+  - https://schema.undata.live/elements/name_1m0sl9
+  - https://schema.undata.live/elements/schemakey_ugci4e
+  mixins: []
+provenance:
+- source: dandi
+  name: StrainType

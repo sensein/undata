@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  question_text: RRID
+  source_attribute: rrid
+  source_class: MouseSubject
+provenance:
+- source: aind
+  class: MouseSubject
+  name: rrid
+  description: RRID of mouse if acquired from supplier
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

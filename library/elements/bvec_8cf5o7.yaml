@@ -1,0 +1,56 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: bvec
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: bvec
+  description: 'A space-delimited file containing diffusion-encoding gradients (b-vectors).
+
+
+    The `bvec` file contains 3 rows with *N* space-delimited floating-point numbers,
+
+    corresponding to the *N* volumes in the corresponding NIfTI file.
+
+
+    Across these three rows,
+
+    each column encodes three elements of a 3-vector for the corresponding image volume;
+
+    each vector MUST be either of unit norm,
+
+    or optionally the vector `[0.0,0.0,0.0]`
+
+    for *non-diffusion-weighted* (also called *b*=0 or *low-b*) volumes.
+
+    These values are to be interpreted as cosine values with respect to the image
+    axis orientations
+
+    as defined by the corresponding NIfTI image header transformation;
+
+    *unless* the image axes defined in the corresponding NIfTI image header
+
+    form a right-handed coordinate system
+
+    (that is, the 3x3 matrix of direction cosines has a positive determinant),
+
+    in which case the sign of the first element of each 3-vector must be inverted
+
+    for this interpretation to be valid.
+
+
+    Note that this definition of orientations with respect to the NIfTI image axes
+
+    is *not* equivalent to the DICOM convention,
+
+    where orientations are instead defined with respect to the scanner device''s coordinate
+    system
+
+    (see [Coordinate systems](SPEC_ROOT/appendices/coordinate-systems.md)).
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

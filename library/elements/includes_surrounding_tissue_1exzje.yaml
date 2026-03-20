@@ -1,0 +1,14 @@
+semantic:
+  data_type: boolean
+  question_text: Includes surrounding tissue
+  source_attribute: includes_surrounding_tissue
+  source_class: PlanarSection
+provenance:
+- source: aind
+  class: PlanarSection
+  name: includes_surrounding_tissue
+  description: Whether the section includes additional tissue surrounding the targeted
+    structure.
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,20 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: DoseCalibrationFactor
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: DoseCalibrationFactor
+  description: 'Multiplication factor used to transform raw data (in counts/sec) to
+    meaningful unit (Bq/ml).
+
+    Corresponds to [DICOM Tag 0054, 1322](http://www.dicomlookup.com/dicomtags/(0054,1322))
+
+    `Dose Calibration Factor`.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

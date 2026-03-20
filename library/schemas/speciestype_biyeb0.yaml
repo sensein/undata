@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_caseou
+  - https://schema.undata.live/elements/identifier_1e812q
+  - https://schema.undata.live/elements/name_v6vl8u
+  - https://schema.undata.live/elements/schemakey_1qblal
+  mixins: []
+provenance:
+- source: dandi
+  name: SpeciesType

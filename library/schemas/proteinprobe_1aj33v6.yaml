@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/mass_qi3865
+  - https://schema.undata.live/elements/mass_unit_eod2mx
+  - https://schema.undata.live/elements/protein_jt1h8i
+  - https://schema.undata.live/elements/sequence_1tnspe
+  - https://schema.undata.live/elements/species_1f171o
+  mixins: []
+provenance:
+- source: aind
+  name: ProteinProbe

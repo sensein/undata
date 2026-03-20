@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/expiration_date_tba0ro
+  - https://schema.undata.live/elements/lot_number_cdrdel
+  - https://schema.undata.live/elements/name_jeofd1
+  - https://schema.undata.live/elements/rrid_3gnfdw
+  - https://schema.undata.live/elements/source_3ungow
+  mixins: []
+provenance:
+- source: aind
+  name: Reagent

@@ -1,0 +1,13 @@
+semantic:
+  data_type: integer
+  question_text: Round index
+  source_attribute: round_index
+  source_class: HybridizationChainReaction
+provenance:
+- source: aind
+  class: HybridizationChainReaction
+  name: round_index
+  description: Round index
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_1ojskv
+  - https://schema.undata.live/elements/identifier_vczv0k
+  - https://schema.undata.live/elements/locustype_1f50fh
+  - https://schema.undata.live/elements/schemakey_1x1kfw
+  mixins: []
+provenance:
+- source: dandi
+  name: Locus

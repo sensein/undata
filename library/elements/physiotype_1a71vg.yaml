@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - generic
+    - eyetrack
+  response_options:
+  - value: generic
+    label: generic
+    ontology_term: https://schema.undata.live/values/generic_1m8upj
+  - value: eyetrack
+    label: eyetrack
+    ontology_term: https://schema.undata.live/values/eyetrack_xu3ir8
+  value_domain: categorical
+  source_attribute: PhysioType
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: PhysioType
+  description: 'Defines the specific type of physiological recording.
+
+    For backwards compatibility, the default value is `"generic"`.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

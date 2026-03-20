@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/container_type_qz3t5c
+  - https://schema.undata.live/elements/tag_1x8poi
+  - https://schema.undata.live/elements/uri_1tp1ef
+  mixins: []
+provenance:
+- source: aind
+  name: Container

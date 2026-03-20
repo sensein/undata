@@ -71,6 +71,10 @@ class SemanticIdentity(BaseModel):
     value_domain: str | None = None  # NOT in hash (categorical|numeric|text|date|boolean)
     min_value: float | None = None  # IN hash — replaces constraints.minimum
     max_value: float | None = None  # IN hash — replaces constraints.maximum
+    # Disambiguators for underspecified elements (no ontology_term/unit).
+    # Stored in the semantic block so the backend can reproduce the same hash.
+    source_attribute: str | None = None  # IN hash when present
+    source_class: str | None = None  # IN hash when present
 
 
 class ProvenanceEntry(BaseModel):

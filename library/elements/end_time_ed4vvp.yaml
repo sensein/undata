@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  question_text: Manipulation end time
+  source_attribute: end_time
+  source_class: Manipulation
+provenance:
+- source: aind
+  class: Manipulation
+  name: end_time
+  description: Must be between the acquisition start and end times
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

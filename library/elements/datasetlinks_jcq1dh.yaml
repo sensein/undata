@@ -1,0 +1,21 @@
+semantic:
+  data_type: object
+  source_attribute: DatasetLinks
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: DatasetLinks
+  description: 'Used to map a given `<dataset-name>` from a [BIDS URI](SPEC_ROOT/common-principles.md#bids-uri)
+
+    of the form `bids:<dataset-name>:path/within/dataset` to a local or remote location.
+
+    The `<dataset-name>`: `""` (an empty string) is a reserved keyword that MUST NOT
+    be a key in
+
+    `DatasetLinks` (example: `bids::path/within/dataset`).
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

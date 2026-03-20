@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  question_text: Notes
+  source_attribute: notes
+  source_class: MISModuleConfig
+provenance:
+- source: aind
+  class: MISModuleConfig
+  name: notes
+  description: Notes
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

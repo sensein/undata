@@ -1,0 +1,17 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  min_value: 0.0
+  max_value: 100.0
+  source_attribute: Purity
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: Purity
+  description: 'Purity of the radiolabeled compound (between 0 and 100%).
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

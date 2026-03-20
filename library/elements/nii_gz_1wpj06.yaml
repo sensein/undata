@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: nii_gz
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: nii_gz
+  description: 'A compressed Neuroimaging Informatics Technology Initiative (NIfTI)
+    data file.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,40 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: scale
+  source_class: entities
+provenance:
+- source: bids
+  class: entities
+  name: scale
+  description: 'The `scale-<label>` key/value pair corresponds to a custom label the
+    user
+
+    MAY use to distinguish segmentations that entail different levels of
+
+    *regional resolution* (scales), often indicated by the number of ROIs.
+
+    See ([Bijsterbosch et al., 2020](https://doi.org/10.1038/s41593-020-00726-z))
+
+    for further details on *regional resolution* or, as defined by the authors of
+
+    the manuscript, the *brain units*.
+
+
+    For example, the [Schaefer 2018 atlas](https://doi.org/10.1093/cercor/bhx179)
+
+    is distributed within *FreeSurfer* with ten different scales
+
+    (100, 200, 300, 400, 500, 600, 700, 800, 900, and 1000 regions) for each of
+
+    its three different parcellations (*7 networks*, *17 networks*, and
+
+    *Kong''s variation of 17 networks*).
+
+
+    This entity is only applicable to derivative data.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

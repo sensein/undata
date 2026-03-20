@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+  source_attribute: band_mean
+  source_class: FrequencyBandsTable
+provenance:
+- source: nwb
+  class: FrequencyBandsTable
+  name: band_mean
+  description: The mean Gaussian filters, in Hz.
+  generated_at: '2026-03-20T23:37:18.087571+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

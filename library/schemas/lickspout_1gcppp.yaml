@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1qofe8
+  - https://schema.undata.live/elements/lick_sensor_type_z430x0
+  - https://schema.undata.live/elements/lick_sensor_vqcrqw
+  - https://schema.undata.live/elements/manufacturer_yfsx64
+  - https://schema.undata.live/elements/model_1506us
+  - https://schema.undata.live/elements/name_2e2wcg
+  - https://schema.undata.live/elements/notes_rj3d1d
+  - https://schema.undata.live/elements/serial_number_1l490l
+  - https://schema.undata.live/elements/solenoid_valve_1yiklt
+  - https://schema.undata.live/elements/spout_diameter_8zfni9
+  - https://schema.undata.live/elements/spout_diameter_unit_gik499
+  mixins: []
+provenance:
+- source: aind
+  name: LickSpout

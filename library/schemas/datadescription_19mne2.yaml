@@ -1,0 +1,21 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/creation_time_8icpf0
+  - https://schema.undata.live/elements/data_level_1rtcct
+  - https://schema.undata.live/elements/data_summary_1vqesy
+  - https://schema.undata.live/elements/funding_source_zdu0lj
+  - https://schema.undata.live/elements/group_1hbzba
+  - https://schema.undata.live/elements/institution_mdqif2
+  - https://schema.undata.live/elements/investigators_1lkf1c
+  - https://schema.undata.live/elements/license_pslqp1
+  - https://schema.undata.live/elements/modalities_xqfjc5
+  - https://schema.undata.live/elements/name_1gjqeb
+  - https://schema.undata.live/elements/project_name_hmrdgq
+  - https://schema.undata.live/elements/restrictions_1odhpc
+  - https://schema.undata.live/elements/source_data_33bdc1
+  - https://schema.undata.live/elements/subject_id_1erxzw
+  - https://schema.undata.live/elements/tags_q4e7dp
+  mixins: []
+provenance:
+- source: aind
+  name: DataDescription

@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_fev142
+  - https://schema.undata.live/elements/optogeneticseries_1t41mg
+  mixins: []
+provenance:
+- source: nwb
+  name: OptogeneticSeries

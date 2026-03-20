@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: iMinus
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: iMinus
+  description: 'The encoding direction is along the first axis of the data in the
+    NIFTI file,
+
+    and the encoding value decreases from the zero index to the maximum index.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

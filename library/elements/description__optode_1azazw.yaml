@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: description__optode
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: description__optode
+  description: 'Free-form text description of the optode, or other information of
+    interest.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

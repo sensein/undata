@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  question_text: Run script
+  source_attribute: run_script
+  source_class: Code
+provenance:
+- source: aind
+  class: Code
+  name: run_script
+  description: Path to run script
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: Code
+  name: run_script
+  description: Path to run script
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

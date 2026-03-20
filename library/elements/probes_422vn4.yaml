@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  question_text: Probes
+  source_attribute: probes
+  source_class: GeneProbe
+provenance:
+- source: aind
+  class: GeneProbe
+  name: probes
+  description: Probes
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

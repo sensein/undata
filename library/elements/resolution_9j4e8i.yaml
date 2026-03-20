@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: resolution
+  source_class: entities
+provenance:
+- source: bids
+  class: entities
+  name: resolution
+  description: 'Resolution of regularly sampled N-dimensional data.
+
+
+    This entity represents the `"Resolution"` metadata field.
+
+    Therefore, if the `res-<label>` entity is present in a filename,
+
+    `"Resolution"` MUST also be added in the JSON file, to provide interpretation.
+
+
+    This entity is only applicable to derivative data.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/calibrations_p3eyln
+  - https://schema.undata.live/elements/components_ijh7ij
+  - https://schema.undata.live/elements/connections_1ayu9s
+  - https://schema.undata.live/elements/coordinate_system_1lpuqg
+  - https://schema.undata.live/elements/instrument_id_1o6zjt
+  - https://schema.undata.live/elements/location_2q1fvw
+  - https://schema.undata.live/elements/modalities_3q6p06
+  - https://schema.undata.live/elements/modification_date_gz9qnt
+  - https://schema.undata.live/elements/notes_xu7qhl
+  - https://schema.undata.live/elements/temperature_control_83vuoi
+  mixins: []
+provenance:
+- source: aind
+  name: instrument

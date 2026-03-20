@@ -1,0 +1,13 @@
+semantic:
+  data_type: object
+  question_text: Manipulator
+  source_attribute: manipulator
+  source_class: LaserAssembly
+provenance:
+- source: aind
+  class: LaserAssembly
+  name: manipulator
+  description: Manipulator used on a dome module
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

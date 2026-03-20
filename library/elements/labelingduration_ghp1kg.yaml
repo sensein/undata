@@ -1,0 +1,39 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: LabelingDuration
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: LabelingDuration
+  description: 'Total duration of the labeling pulse train, in seconds,
+
+    corresponding to the temporal width of the labeling bolus for
+
+    `"PCASL"` or `"CASL"`.
+
+    In case all control-label volumes (or deltam or CBF) have the same
+
+    `LabelingDuration`, a scalar must be specified.
+
+    In case the control-label volumes (or deltam or cbf) have a different
+
+    `"LabelingDuration"`, an array of numbers must be specified,
+
+    for which any `m0scan` in the timeseries has a `"LabelingDuration"` of zero.
+
+    In case an array of numbers is provided,
+
+    its length should be equal to the number of volumes specified in
+
+    `*_aslcontext.tsv`.
+
+    Corresponds to [DICOM Tag 0018, 9258](http://www.dicomlookup.com/dicomtags/(0018,9258))
+
+    `ASL Pulse Train Duration`.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

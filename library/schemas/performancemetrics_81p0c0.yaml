@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/output_parameters_1183ba
+  - https://schema.undata.live/elements/reward_consumed_during_epoch_1mps0c
+  - https://schema.undata.live/elements/reward_consumed_unit_16t4h0
+  - https://schema.undata.live/elements/trials_finished_1pd9qh
+  - https://schema.undata.live/elements/trials_rewarded_hmcbpx
+  - https://schema.undata.live/elements/trials_total_1130jf
+  mixins: []
+provenance:
+- source: aind
+  name: PerformanceMetrics

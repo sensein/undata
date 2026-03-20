@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: TrackingSystemName
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: TrackingSystemName
+  description: 'A human-readable name of the tracking system to complement `"tracksys"`
+    label
+
+    of the corresponding *_motion.tsv filename.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

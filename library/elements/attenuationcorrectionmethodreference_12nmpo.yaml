@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: AttenuationCorrectionMethodReference
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: AttenuationCorrectionMethodReference
+  description: 'Reference paper for the attenuation correction method used.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

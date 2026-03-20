@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: location
+  source_class: ElectrodesTable
+provenance:
+- source: nwb
+  class: ElectrodesTable
+  name: location
+  description: Location of the electrode (channel). Specify the area, layer, comments
+    on estimation of area/layer, stereotaxic coordinates if in vivo, etc. Use standard
+    atlas names for anatomical regions when possible.
+  generated_at: '2026-03-20T23:37:18.087571+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

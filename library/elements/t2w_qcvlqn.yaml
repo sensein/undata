@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: T2w
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: T2w
+  description: 'In arbitrary units (arbitrary).
+
+    The contrast of these images is mainly determined by spatial variations in
+
+    the (true) transverse relaxation time of the imaged specimen.
+
+    In spin-echo sequences this contrast is achieved at relatively long
+
+    repetition and echo times.
+
+    Generally, gradient echo sequences are not the most suitable option for
+
+    achieving T2 weighting, as their contrast natively depends on T2-star rather
+
+    than on T2.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

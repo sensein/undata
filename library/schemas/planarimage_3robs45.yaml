@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channel_name_154jxr
+  - https://schema.undata.live/elements/dimensions_1rym9w
+  - https://schema.undata.live/elements/dimensions_unit_14vi7z
+  - https://schema.undata.live/elements/image_to_acquisition_transform_cmb4jp
+  - https://schema.undata.live/elements/planes_4amhy0
+  mixins: []
+provenance:
+- source: aind
+  name: PlanarImage

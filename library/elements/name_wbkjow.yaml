@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: name
+  source_class: Session
+provenance:
+- source: dandi
+  class: Session
+  name: name
+  description: The name of the logical session associated with the asset.
+  generated_at: '2026-03-20T23:37:14.631580+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

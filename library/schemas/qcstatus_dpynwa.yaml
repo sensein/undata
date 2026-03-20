@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/evaluator_jx1ngy
+  - https://schema.undata.live/elements/status_m35yhk
+  - https://schema.undata.live/elements/timestamp_eam627
+  mixins: []
+provenance:
+- source: aind
+  name: QCStatus

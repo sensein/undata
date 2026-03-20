@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  question_text: Structure type
+  source_attribute: structure_types
+  source_class: Slap2Plane
+provenance:
+- source: aind
+  class: Slap2Plane
+  name: structure_types
+  description: Structure type
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

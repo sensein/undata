@@ -1,0 +1,18 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  source_attribute: NumberOfSpectralPoints
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: NumberOfSpectralPoints
+  description: 'The number of complex data points in each recorded transient of the
+    detected time-domain MR
+
+    signal, equivalent to the number of points in a single spectrum.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: bids_uri
+  source_class: formats
+provenance:
+- source: bids
+  class: formats
+  name: bids_uri
+  description: 'A BIDS uniform resource indicator.
+
+
+    The validation for this format is minimal.
+
+    It simply ensures that the value is a string with any characters that may appear
+    in a valid URI,
+
+    starting with "bids:".
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

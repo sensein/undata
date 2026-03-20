@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_device_names_jnnq87
+  - https://schema.undata.live/elements/channel_name_1l0asz
+  - https://schema.undata.live/elements/detector_6tdx9u
+  - https://schema.undata.live/elements/emission_filters_qhrgcn
+  - https://schema.undata.live/elements/emission_wavelength_1qva9y
+  - https://schema.undata.live/elements/emission_wavelength_unit_vblidp
+  - https://schema.undata.live/elements/excitation_filters_eour5c
+  - https://schema.undata.live/elements/intended_measurement_w36jz8
+  - https://schema.undata.live/elements/light_sources_tbvx67
+  - https://schema.undata.live/elements/variable_power_80d9es
+  mixins: []
+provenance:
+- source: aind
+  name: Channel

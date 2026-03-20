@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_6g6s3s
+  - https://schema.undata.live/elements/coordinate_system_1xadp5
+  - https://schema.undata.live/elements/manufacturer_1ydb87
+  - https://schema.undata.live/elements/model_17n6zk
+  - https://schema.undata.live/elements/name_f4huk9
+  - https://schema.undata.live/elements/notes_uua7p7
+  - https://schema.undata.live/elements/relative_position_1bg7vs
+  - https://schema.undata.live/elements/serial_number_xbuovf
+  - https://schema.undata.live/elements/transform_wciw50
+  mixins: []
+provenance:
+- source: aind
+  name: Speaker

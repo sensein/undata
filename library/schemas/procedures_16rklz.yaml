@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/coordinate_system_7pe5tj
+  - https://schema.undata.live/elements/notes_16cgtc
+  - https://schema.undata.live/elements/specimen_procedures_u2y5aj
+  - https://schema.undata.live/elements/subject_id_1fzyah
+  - https://schema.undata.live/elements/subject_procedures_1krisq
+  mixins: []
+provenance:
+- source: aind
+  name: Procedures

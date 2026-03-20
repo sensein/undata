@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+  source_attribute: pmt_gain
+  source_class: TwoPhotonSeries
+provenance:
+- source: nwb
+  class: TwoPhotonSeries
+  name: pmt_gain
+  description: Photomultiplier gain.
+  generated_at: '2026-03-20T23:37:18.087571+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/filteredephys_8ff8lh
+  mixins: []
+provenance:
+- source: nwb
+  name: FilteredEphys

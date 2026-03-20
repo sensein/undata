@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: tags
+  source_class: TimeIntervals
+provenance:
+- source: nwb
+  class: TimeIntervals
+  name: tags
+  description: User-defined tags that identify or categorize events.
+  generated_at: '2026-03-20T23:37:18.087571+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

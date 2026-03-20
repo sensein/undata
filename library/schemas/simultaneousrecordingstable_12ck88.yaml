@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/recordings_1gnq4d
+  - https://schema.undata.live/elements/recordings_index_v1dcps
+  - https://schema.undata.live/elements/simultaneousrecordingstable_1pzp6h
+  mixins: []
+provenance:
+- source: nwb
+  name: SimultaneousRecordingsTable

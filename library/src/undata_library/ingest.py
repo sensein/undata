@@ -81,9 +81,13 @@ def ingest_source(
         has_rich_semantics = sem.ontology_term is not None or sem.unit is not None
         if not has_rich_semantics:
             # Include attribute name + class as disambiguators when
-            # the semantic graph is underspecified
-            sem_dict["_attribute"] = prov.name
-            sem_dict["_class"] = prov.class_
+            # the semantic graph is underspecified. These are persisted
+            # in the semantic block so the backend can reproduce the hash.
+            sem_dict["source_attribute"] = prov.name
+            sem_dict["source_class"] = prov.class_
+            sem = sem.model_copy(
+                update={"source_attribute": prov.name, "source_class": prov.class_}
+            )
 
         sha = compute_sha256(canonical_json(sem_dict))
 
@@ -102,7 +106,7 @@ def ingest_source(
             key = generate_short_key(sha, existing_keys)
             existing_keys.add(key)
 
-        attr_name = first_name.lower()
+        attr_name = first_name.lower().lstrip("_")
         filename = f"{attr_name}_{key}.yaml"
         filepath = elements_dir / filename
 

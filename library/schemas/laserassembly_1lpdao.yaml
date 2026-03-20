@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/collimator_10o6v3
+  - https://schema.undata.live/elements/fiber_lkfw8o
+  - https://schema.undata.live/elements/lasers_kxtvei
+  - https://schema.undata.live/elements/manipulator_pjxpz6
+  - https://schema.undata.live/elements/name_1q0m4n
+  mixins: []
+provenance:
+- source: aind
+  name: LaserAssembly

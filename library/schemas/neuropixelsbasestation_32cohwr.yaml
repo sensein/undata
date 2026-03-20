@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1valz6
+  - https://schema.undata.live/elements/basestation_firmware_version_1m8vot
+  - https://schema.undata.live/elements/bsc_firmware_version_3tghhe
+  - https://schema.undata.live/elements/channels_2ivqn3
+  - https://schema.undata.live/elements/data_interface_1tzu0p
+  - https://schema.undata.live/elements/firmware_version_nvelyf
+  - https://schema.undata.live/elements/hardware_version_uwxpuh
+  - https://schema.undata.live/elements/manufacturer_12bxvo
+  - https://schema.undata.live/elements/model_1k3kor
+  - https://schema.undata.live/elements/name_ew2nmx
+  - https://schema.undata.live/elements/notes_1w22bv
+  - https://schema.undata.live/elements/ports_1rrroj
+  - https://schema.undata.live/elements/serial_number_1dj0g9
+  - https://schema.undata.live/elements/slot_1lzqd9
+  mixins: []
+provenance:
+- source: aind
+  name: NeuropixelsBasestation

@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_11c2ty
+  - https://schema.undata.live/elements/enddate_16quri
+  - https://schema.undata.live/elements/id_1feg7l
+  - https://schema.undata.live/elements/identifier_r8xu5e
+  - https://schema.undata.live/elements/name_1fgfal
+  - https://schema.undata.live/elements/schemakey_hedf4k
+  - https://schema.undata.live/elements/startdate_1g1510
+  - https://schema.undata.live/elements/used_1ckk4d
+  - https://schema.undata.live/elements/wasassociatedwith_13e2o4
+  mixins: []
+provenance:
+- source: dandi
+  name: Project

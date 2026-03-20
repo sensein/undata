@@ -1,0 +1,13 @@
+semantic:
+  data_type: object
+  source_attribute: PatchClampSeries
+  source_class: PatchClampSeries
+provenance:
+- source: nwb
+  class: PatchClampSeries
+  name: PatchClampSeries
+  description: An abstract base class for patch-clamp data - stimulus or response,
+    current or voltage.
+  generated_at: '2026-03-20T23:37:18.087571+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/sex_atssav
+  - https://schema.undata.live/elements/source_1px7zn
+  - https://schema.undata.live/elements/species_11i6gx
+  - https://schema.undata.live/elements/year_of_birth_1tfft3
+  mixins: []
+provenance:
+- source: aind
+  name: HumanSubject

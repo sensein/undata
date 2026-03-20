@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_ml5u9w
+  - https://schema.undata.live/elements/decompositionseries_1uaxp0
+  - https://schema.undata.live/elements/metric_1rfutx
+  - https://schema.undata.live/elements/source_channels_12xb6v
+  mixins: []
+provenance:
+- source: nwb
+  name: DecompositionSeries

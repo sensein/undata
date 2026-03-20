@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  question_text: Surface material
+  source_attribute: surface_material
+  source_class: Disc
+provenance:
+- source: aind
+  class: Disc
+  name: surface_material
+  description: Surface material
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Internal
+    - External
+    - Analog
+  response_options:
+  - value: Internal
+    label: Internal
+    ontology_term: https://schema.undata.live/values/internal_qox8lu
+  - value: External
+    label: External
+    ontology_term: https://schema.undata.live/values/external_1pqc34
+  - value: Analog
+    label: Analog
+    ontology_term: https://schema.undata.live/values/analog_9unxt0
+  question_text: Trigger type
+  source_attribute: trigger_type
+  source_class: DetectorConfig
+provenance:
+- source: aind
+  class: DetectorConfig
+  name: trigger_type
+  description: Types of detector triggers
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

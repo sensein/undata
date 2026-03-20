@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: dat
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: dat
+  description: 'A fine-calibration file used for Neuromag/Elekta/MEGIN MEG recording
+    hardware.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

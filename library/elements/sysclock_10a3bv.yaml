@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SYSCLOCK
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: SYSCLOCK
+  description: 'Elapsed time since trial/recording start, as provided by the recording
+    device.
+
+    For device-external timestamp signals, use `LATENCY`.
+
+    For TTL-based synchronization signals, use `TRIG`.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

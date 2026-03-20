@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  question_text: Motorized stage
+  source_attribute: motorized_stage
+  source_class: LickSpoutAssembly
+provenance:
+- source: aind
+  class: LickSpoutAssembly
+  name: motorized_stage
+  description: Motorized stage
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

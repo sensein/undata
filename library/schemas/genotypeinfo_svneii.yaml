@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/alleles_9lqv1l
+  - https://schema.undata.live/elements/id_1g5k0a
+  - https://schema.undata.live/elements/locus_1p6v44
+  - https://schema.undata.live/elements/schemakey_1ptxa1
+  - https://schema.undata.live/elements/wasgeneratedby_1avio6
+  mixins: []
+provenance:
+- source: dandi
+  name: GenotypeInfo

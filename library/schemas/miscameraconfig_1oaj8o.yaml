@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/coordinate_system_1t3rqu
+  - https://schema.undata.live/elements/detector_config_1l4z6y
+  - https://schema.undata.live/elements/device_name_viw3uw
+  - https://schema.undata.live/elements/module_k5gfip
+  - https://schema.undata.live/elements/relative_position_zyuyd2
+  - https://schema.undata.live/elements/transform_1pfhpg
+  mixins: []
+provenance:
+- source: aind
+  name: MISCameraConfig

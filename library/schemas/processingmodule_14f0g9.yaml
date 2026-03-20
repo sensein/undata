@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_gtt9nm
+  - https://schema.undata.live/elements/processingmodule_1b1bog
+  mixins: []
+provenance:
+- source: nwb
+  name: ProcessingModule

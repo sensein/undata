@@ -1,0 +1,41 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/about_1w2ea1
+  - https://schema.undata.live/elements/access_rgfew1
+  - https://schema.undata.live/elements/acknowledgement_rl03l0
+  - https://schema.undata.live/elements/approach_1f1n8e
+  - https://schema.undata.live/elements/blobdatemodified_1oel04
+  - https://schema.undata.live/elements/contentsize_1x1kps
+  - https://schema.undata.live/elements/contenturl_1gukzf
+  - https://schema.undata.live/elements/contributor_drwm4c
+  - https://schema.undata.live/elements/datatype_u4ryci
+  - https://schema.undata.live/elements/datemodified_9bxb5c
+  - https://schema.undata.live/elements/datepublished_ge9479
+  - https://schema.undata.live/elements/description_1gobxd
+  - https://schema.undata.live/elements/digest_1k9sv7
+  - https://schema.undata.live/elements/encodingformat_1jn088
+  - https://schema.undata.live/elements/ethicsapproval_gxpz58
+  - https://schema.undata.live/elements/id_e4mz30
+  - https://schema.undata.live/elements/identifier_19tcwl
+  - https://schema.undata.live/elements/keywords_1h2zb8
+  - https://schema.undata.live/elements/license_3qzeci
+  - https://schema.undata.live/elements/measurementtechnique_13870m
+  - https://schema.undata.live/elements/name_1yr29u
+  - https://schema.undata.live/elements/path_2ta8cj
+  - https://schema.undata.live/elements/protocol_18ll22
+  - https://schema.undata.live/elements/publishedby_r4k3kr
+  - https://schema.undata.live/elements/relatedresource_6tis16
+  - https://schema.undata.live/elements/repository_6gd1qa
+  - https://schema.undata.live/elements/sameas_qdxsd7
+  - https://schema.undata.live/elements/schemakey_14ajrq
+  - https://schema.undata.live/elements/schemaversion_ged5wh
+  - https://schema.undata.live/elements/studytarget_6cloul
+  - https://schema.undata.live/elements/url_1ltl8c
+  - https://schema.undata.live/elements/variablemeasured_au92vw
+  - https://schema.undata.live/elements/wasattributedto_1lt85q
+  - https://schema.undata.live/elements/wasderivedfrom_136yp8
+  - https://schema.undata.live/elements/wasgeneratedby_1in1py
+  mixins: []
+provenance:
+- source: dandi
+  name: PublishedAsset

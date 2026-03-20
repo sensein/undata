@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  question_text: Target device name
+  source_attribute: target_device
+  source_class: Connection
+provenance:
+- source: aind
+  class: Connection
+  name: target_device
+  description: Target device name
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: Connection
+  name: target_device
+  description: Target device name
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

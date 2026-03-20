@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  question_text: Addgene id
+  source_attribute: addgene_id
+  source_class: ViralMaterial
+provenance:
+- source: aind
+  class: ViralMaterial
+  name: addgene_id
+  description: Registry must be Addgene
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ViralMaterial
+  name: addgene_id
+  description: Registry must be Addgene
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: B0FieldSource
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: B0FieldSource
+  description: 'At least one existing `"B0FieldIdentifier"` defined by images in the
+
+    participant''s tree.
+
+    This field states the *B<sub>0</sub> field* estimation designated by the
+
+    `"B0FieldIdentifier"` that may be used to correct the dataset for distortions
+
+    caused by B<sub>0</sub> inhomogeneities.
+
+    `"B0FieldSource"` and `"B0FieldIdentifier"` MAY both be present for images that
+
+    are used to estimate their own B<sub>0</sub> field, for example, in "pepolar"
+
+    acquisitions.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

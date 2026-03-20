@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: FLAIR
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: FLAIR
+  description: 'In arbitrary units (arbitrary).
+
+    Structural images with predominant T2 contribution (also known as T2-FLAIR),
+
+    in which signal from fluids (for example, CSF) is nulled out by adjusting
+
+    inversion time, coupled with notably long repetition and echo times.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,13 @@
+semantic:
+  data_type: integer
+  question_text: Total trials
+  source_attribute: trials_total
+  source_class: PerformanceMetrics
+provenance:
+- source: aind
+  class: PerformanceMetrics
+  name: trials_total
+  description: Total trials
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

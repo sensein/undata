@@ -1,7 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/timeseriesreferencevectordata_a6oeo8
-  mixins: []
-provenance:
-- source: nwb
-  name: TimeSeriesReferenceVectorData

@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/allow_tag_failures_1kfskm
+  - https://schema.undata.live/elements/default_grouping_x4zgx5
+  - https://schema.undata.live/elements/key_experimenters_cb6s8n
+  - https://schema.undata.live/elements/metrics_nnjj3u
+  - https://schema.undata.live/elements/notes_y9ffc6
+  - https://schema.undata.live/elements/status_itfa2k
+  mixins: []
+provenance:
+- source: aind
+  name: QualityControl

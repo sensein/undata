@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  question_text: Initiator for HCR probes
+  source_attribute: initiator_name
+  source_class: FluorescentStain
+provenance:
+- source: aind
+  class: FluorescentStain
+  name: initiator_name
+  description: Initiator for HCR probes
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abbreviation_62p7n4
+  - https://schema.undata.live/elements/name_26ryks
+  - https://schema.undata.live/elements/registry_identifier_1wyjxa
+  - https://schema.undata.live/elements/registry_zxm7rq
+  mixins: []
+provenance:
+- source: aind
+  name: aind_data_schema_models__organizations___Unknown

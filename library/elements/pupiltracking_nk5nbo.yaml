@@ -1,0 +1,12 @@
+semantic:
+  data_type: object
+  source_attribute: PupilTracking
+  source_class: PupilTracking
+provenance:
+- source: nwb
+  class: PupilTracking
+  name: PupilTracking
+  description: Eye-tracking data, representing pupil size.
+  generated_at: '2026-03-20T23:37:18.087571+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

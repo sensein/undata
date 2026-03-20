@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_18y0cj
+  - https://schema.undata.live/elements/diameter_p4vlj1
+  - https://schema.undata.live/elements/diameter_unit_1gli0v
+  - https://schema.undata.live/elements/manufacturer_1g85rv
+  - https://schema.undata.live/elements/model_1h5qdh
+  - https://schema.undata.live/elements/name_1aki82
+  - https://schema.undata.live/elements/notes_ftsc3j
+  - https://schema.undata.live/elements/serial_number_1x6ix3
+  mixins: []
+provenance:
+- source: aind
+  name: Tube

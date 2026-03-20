@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  question_text: Workstation ID
+  source_attribute: workstation_id
+  source_class: Surgery
+provenance:
+- source: aind
+  class: Surgery
+  name: workstation_id
+  description: Workstation ID
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

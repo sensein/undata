@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/frame_rate_1j45wv
+  - https://schema.undata.live/elements/frame_rate_unit_b84mvj
+  mixins: []
+provenance:
+- source: aind
+  name: SamplingStrategy

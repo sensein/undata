@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+  question_text: Effective echo time
+  source_attribute: effective_echo_time
+  source_class: MRIScan
+provenance:
+- source: aind
+  class: MRIScan
+  name: effective_echo_time
+  description: Effective echo time
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

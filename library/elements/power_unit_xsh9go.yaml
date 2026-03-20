@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - microwatt
+    - milliwatt
+    - percent
+  response_options:
+  - value: microwatt
+    label: microwatt
+    ontology_term: https://schema.undata.live/values/microwatt_fubw76
+  - value: milliwatt
+    label: milliwatt
+    ontology_term: https://schema.undata.live/values/milliwatt_1n3l7b
+  - value: percent
+    label: percent
+    ontology_term: https://schema.undata.live/values/percent_onffxo
+  question_text: Power unit
+  source_attribute: power_unit
+  source_class: Plane
+provenance:
+- source: aind
+  class: Plane
+  name: power_unit
+  description: Unit for power, set or measured
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

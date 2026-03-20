@@ -1,0 +1,28 @@
+semantic:
+  data_type: array
+  source_attribute: PixelSize
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: PixelSize
+  description: 'A 2- or 3-number array of the physical size of a pixel, either `[PixelSizeX,
+    PixelSizeY]`
+
+    or `[PixelSizeX, PixelSizeY, PixelSizeZ]`, where X is the width, Y the height
+    and Z the
+
+    depth.
+
+    If the file format is OME-TIFF, these values need to be consistent with `PhysicalSizeX`,
+
+    `PhysicalSizeY` and `PhysicalSizeZ` OME metadata fields, after converting in
+
+    `PixelSizeUnits` according to `PhysicalSizeXunit`, `PhysicalSizeYunit` and
+
+    `PhysicalSizeZunit` OME fields.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

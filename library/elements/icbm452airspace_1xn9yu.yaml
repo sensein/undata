@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: ICBM452AirSpace
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: ICBM452AirSpace
+  description: 'Reference space defined by the "average of 452 T1-weighted MRIs of
+    normal young adult brains"
+
+    with "linear transforms of the subjects into the atlas space using a 12-parameter
+    affine
+
+    transformation".
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

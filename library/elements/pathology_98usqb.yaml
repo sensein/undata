@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: pathology
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: pathology
+  description: 'String value describing the pathology of the sample or type of control.
+
+    When different from `healthy`, pathology SHOULD be specified.
+
+    The pathology may be specified in either `samples.tsv` or
+
+    `sessions.tsv`, depending on whether the pathology changes over time.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

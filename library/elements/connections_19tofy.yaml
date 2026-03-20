@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  question_text: Connections
+  source_attribute: connections
+  source_class: Instrument
+provenance:
+- source: aind
+  class: Instrument
+  name: connections
+  description: List of all connections between devices in the instrument
+  generated_at: '2026-03-20T23:37:29.472044+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

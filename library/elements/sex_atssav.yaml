@@ -1,0 +1,24 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Female
+    - Male
+  response_options:
+  - value: Female
+    label: Female
+    ontology_term: https://schema.undata.live/values/female_kg750x
+  - value: Male
+    label: Male
+    ontology_term: https://schema.undata.live/values/male_1m86zx
+  question_text: Sex
+  source_attribute: sex
+  source_class: HumanSubject
+provenance:
+- source: aind
+  class: HumanSubject
+  name: sex
+  description: Subject sex name
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

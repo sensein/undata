@@ -1,0 +1,17 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: whole_blood_radioactivity
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: whole_blood_radioactivity
+  description: 'Radioactivity in whole blood samples,
+
+    in unit of radioactivity measurements in whole blood samples (for example, `kBq/mL`).
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

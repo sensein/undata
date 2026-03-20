@@ -1,0 +1,39 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/about_3m1jio
+  - https://schema.undata.live/elements/access_13havz
+  - https://schema.undata.live/elements/acknowledgement_n5bbnf
+  - https://schema.undata.live/elements/approach_1g1587
+  - https://schema.undata.live/elements/blobdatemodified_1leq4g
+  - https://schema.undata.live/elements/contentsize_2d2i2m
+  - https://schema.undata.live/elements/contenturl_9g9qw2
+  - https://schema.undata.live/elements/contributor_aazvlr
+  - https://schema.undata.live/elements/datatype_1colmh
+  - https://schema.undata.live/elements/datemodified_1s2aie
+  - https://schema.undata.live/elements/description_1mgl7v
+  - https://schema.undata.live/elements/digest_107teh
+  - https://schema.undata.live/elements/encodingformat_6zgbg0
+  - https://schema.undata.live/elements/ethicsapproval_be0vxo
+  - https://schema.undata.live/elements/id_lkspgb
+  - https://schema.undata.live/elements/identifier_17iv1c
+  - https://schema.undata.live/elements/keywords_1wz650
+  - https://schema.undata.live/elements/license_ffknc5
+  - https://schema.undata.live/elements/measurementtechnique_smm93k
+  - https://schema.undata.live/elements/name_1etr3f
+  - https://schema.undata.live/elements/path_1ui7hd
+  - https://schema.undata.live/elements/protocol_19kb4j
+  - https://schema.undata.live/elements/relatedresource_1y0jdc
+  - https://schema.undata.live/elements/repository_10nx0l
+  - https://schema.undata.live/elements/sameas_sn4t2a
+  - https://schema.undata.live/elements/schemakey_19ntdo
+  - https://schema.undata.live/elements/schemaversion_wyfyvv
+  - https://schema.undata.live/elements/studytarget_ixwsng
+  - https://schema.undata.live/elements/url_1tp1j0
+  - https://schema.undata.live/elements/variablemeasured_t52a6n
+  - https://schema.undata.live/elements/wasattributedto_a3f27a
+  - https://schema.undata.live/elements/wasderivedfrom_of00zu
+  - https://schema.undata.live/elements/wasgeneratedby_tgciu9
+  mixins: []
+provenance:
+- source: dandi
+  name: Asset

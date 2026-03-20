@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_processes_1cv6za
+  - https://schema.undata.live/elements/dependency_graph_1ql6xn
+  - https://schema.undata.live/elements/notes_13jmt7
+  - https://schema.undata.live/elements/pipelines_1d7f9p
+  mixins: []
+provenance:
+- source: aind
+  name: processing

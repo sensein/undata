@@ -1,0 +1,7 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/nwbcontainer_11u7or
+  mixins: []
+provenance:
+- source: nwb
+  name: NWBContainer

@@ -1,0 +1,6 @@
+source_element: https://schema.undata.live/elements/species_1db291
+target_element: https://schema.undata.live/elements/species_1kmov4lkba
+function_type: structural
+sssom_predicate: skos:closeMatch
+provenance:
+- source: curated

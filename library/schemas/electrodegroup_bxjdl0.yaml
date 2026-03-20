@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_1mqbz0
+  - https://schema.undata.live/elements/electrodegroup_1axeb3
+  - https://schema.undata.live/elements/location_h5etoh
+  - https://schema.undata.live/elements/position_1tkeez
+  mixins: []
+provenance:
+- source: nwb
+  name: ElectrodeGroup

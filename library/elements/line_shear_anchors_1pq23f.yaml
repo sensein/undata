@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  question_text: Line shear anchors at top and bottom of field of view (pixels)
+  source_attribute: line_shear_anchors
+  source_class: DigitalMicromirrorDevice
+provenance:
+- source: aind
+  class: DigitalMicromirrorDevice
+  name: line_shear_anchors
+  description: Line shear anchors at top and bottom of field of view (pixels)
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/band_limits_wchq7w
+  - https://schema.undata.live/elements/band_mean_wddo1a
+  - https://schema.undata.live/elements/band_name_4eeozd
+  - https://schema.undata.live/elements/band_stdev_q963us
+  - https://schema.undata.live/elements/frequencybandstable_1xplq9
+  mixins: []
+provenance:
+- source: nwb
+  name: FrequencyBandsTable

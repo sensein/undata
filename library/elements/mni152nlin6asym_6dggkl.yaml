@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: MNI152NLin6Asym
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: MNI152NLin6Asym
+  description: 'A variation of `MNI152NLin6Sym` built by A. Janke that is released
+    as the _MNI template_ of FSL.
+
+    Volumetric templates included with
+
+    [HCP-Pipelines](https://github.com/Washington-University/HCPpipelines/tree/master/global/templates)
+
+    correspond to this template too.
+
+
+    Used by FSL and HPC-Pipelines.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

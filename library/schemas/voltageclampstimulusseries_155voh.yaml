@@ -1,0 +1,8 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_1txg03
+  - https://schema.undata.live/elements/voltageclampstimulusseries_1lzbas
+  mixins: []
+provenance:
+- source: nwb
+  name: VoltageClampStimulusSeries

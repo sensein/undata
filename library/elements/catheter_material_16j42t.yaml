@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Naked
+    - VAB silicone
+    - VAB mesh
+  response_options:
+  - value: Naked
+    label: Naked
+    ontology_term: https://schema.undata.live/values/naked_1chh6c
+  - value: VAB silicone
+    label: VAB silicone
+    ontology_term: https://schema.undata.live/values/vab_silicone_ifh7o5
+  - value: VAB mesh
+    label: VAB mesh
+    ontology_term: https://schema.undata.live/values/vab_mesh_x9y3ib
+  question_text: Catheter material
+  source_attribute: catheter_material
+  source_class: Catheter
+provenance:
+- source: aind
+  class: Catheter
+  name: catheter_material
+  description: Type of catheter material
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

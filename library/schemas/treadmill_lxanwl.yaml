@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1azaoa
+  - https://schema.undata.live/elements/encoder_pcq134
+  - https://schema.undata.live/elements/manufacturer_112ai7
+  - https://schema.undata.live/elements/model_123ktw
+  - https://schema.undata.live/elements/name_15gac7
+  - https://schema.undata.live/elements/notes_qq4oaj
+  - https://schema.undata.live/elements/pulse_per_revolution_5b6tof
+  - https://schema.undata.live/elements/serial_number_1lt24g
+  - https://schema.undata.live/elements/treadmill_width_1upwdt
+  - https://schema.undata.live/elements/width_unit_1nykaf
+  mixins: []
+provenance:
+- source: aind
+  name: Treadmill

@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: descriptions
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: descriptions
+  description: 'A TSV file describing labels found for the `desc` entity in a Derivatives
+    dataset.
+
+
+    This file MAY be located at the root of the derivative dataset,
+
+    or at the subject or session level.
+
+
+    The use of `descriptions.tsv` files together with the desc entity are helpful
+    to
+
+    document how files are generated,
+
+    even if their use may not be sufficient to provide full computational reproducibility.
+
+    '
+  generated_at: '2026-03-20T23:37:11.657139+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

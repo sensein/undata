@@ -1,0 +1,32 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Camera
+    - Photomultiplier Tube
+    - Silicon Photomultiplier
+    - Other
+  response_options:
+  - value: Camera
+    label: Camera
+    ontology_term: https://schema.undata.live/values/camera_yigwaf
+  - value: Photomultiplier Tube
+    label: Photomultiplier Tube
+    ontology_term: https://schema.undata.live/values/photomultiplier_tube_6x9z5b
+  - value: Silicon Photomultiplier
+    label: Silicon Photomultiplier
+    ontology_term: https://schema.undata.live/values/silicon_photomultiplier_1joloa
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/other_1idvekpiy
+  question_text: Detector Type
+  source_attribute: detector_type
+  source_class: Detector
+provenance:
+- source: aind
+  class: Detector
+  name: detector_type
+  description: Detector type name
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

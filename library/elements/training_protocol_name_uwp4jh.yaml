@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Training protocol name
+  source_attribute: training_protocol_name
+  source_class: StimulusEpoch
+provenance:
+- source: aind
+  class: StimulusEpoch
+  name: training_protocol_name
+  description: Name of the training protocol used during the acquisition, must match
+    a protocol in the Procedures
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

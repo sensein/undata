@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/depth_cvvno6
+  - https://schema.undata.live/elements/depth_unit_1g9s3t
+  - https://schema.undata.live/elements/power_unit_xsh9go
+  - https://schema.undata.live/elements/power_viuhxw
+  - https://schema.undata.live/elements/targeted_structure_cn17fu
+  mixins: []
+provenance:
+- source: aind
+  name: Plane

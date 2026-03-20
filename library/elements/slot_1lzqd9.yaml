@@ -1,0 +1,13 @@
+semantic:
+  data_type: integer
+  question_text: Slot number for this basestation
+  source_attribute: slot
+  source_class: NeuropixelsBasestation
+provenance:
+- source: aind
+  class: NeuropixelsBasestation
+  name: slot
+  description: Slot number for this basestation
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

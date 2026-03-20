@@ -1,0 +1,13 @@
+semantic:
+  data_type: object
+  question_text: Detector configuration
+  source_attribute: detector_config
+  source_class: MISCameraConfig
+provenance:
+- source: aind
+  class: MISCameraConfig
+  name: detector_config
+  description: Configuration of detector settings
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

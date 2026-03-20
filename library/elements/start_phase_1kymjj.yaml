@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+  question_text: DMD Start phase (fraction of line scan period)
+  source_attribute: start_phase
+  source_class: DigitalMicromirrorDevice
+provenance:
+- source: aind
+  class: DigitalMicromirrorDevice
+  name: start_phase
+  description: DMD Start phase (fraction of line scan period)
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion

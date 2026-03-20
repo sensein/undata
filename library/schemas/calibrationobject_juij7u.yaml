@@ -1,0 +1,9 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_x3oihe
+  - https://schema.undata.live/elements/empty_ebq2vz
+  - https://schema.undata.live/elements/objects_ty5sj9
+  mixins: []
+provenance:
+- source: aind
+  name: CalibrationObject

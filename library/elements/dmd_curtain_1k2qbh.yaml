@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  question_text: DMD Curtain (fraction of DMD scan period)
+  source_attribute: dmd_curtain
+  source_class: DigitalMicromirrorDevice
+provenance:
+- source: aind
+  class: DigitalMicromirrorDevice
+  name: dmd_curtain
+  description: DMD Curtain (fraction of DMD scan period)
+  generated_at: '2026-03-20T23:37:21.971055+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
