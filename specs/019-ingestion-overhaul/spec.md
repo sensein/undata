@@ -5,6 +5,14 @@
 **Status**: Draft
 **Input**: Overhaul the ingestion pipeline for rigorous schema classification (class vs attribute vs enum vs valueset), LLM-assisted extraction, docker-based code inspection, extensible source support (JSON Schema, LinkML, CSV+data dictionary, code repos), parameterizable workflow, and output validation.
 
+## Clarifications
+
+### Session 2026-03-20
+
+- Q: How precisely should source provenance track the origin of ingested data? → A: Every provenance entry must include `source_ref` with repo URL, git committish, file path within repo, and SHA-256 checksum of source file. Non-git sources include file path + checksum. Docker sources add package_version.
+
+---
+
 ## User Scenarios & Testing
 
 ### User Story 1 — Rigorous Schema Classification (Priority: P1)
@@ -159,14 +167,26 @@ The SchemaRecord model is updated to match the ElementRecord provenance model: e
 - **FR-024**: Validation results MUST be written to `ingestion-report.yaml` with per-file pass/fail status and violation details.
 - **FR-025**: `--strict` mode MUST cause ingestion to fail (exit 1) if any validation violation is found.
 
+**Precise Source Tracking**
+
+- **FR-026**: Every provenance entry MUST include a `source_ref` block with precise origin metadata:
+  - `repo`: GitHub repository URL or local path (e.g., `https://github.com/bids-standard/bids-specification`)
+  - `committish`: Git commit SHA, tag, or branch at time of ingestion (e.g., `v1.9.0` or `abc123def`)
+  - `file`: Relative path to the specific file within the repo (e.g., `src/schema/objects/entities.yaml`)
+  - `checksum`: SHA-256 of the source file content at ingestion time
+- **FR-027**: For non-git sources (CSV files, standalone JSON Schemas), `source_ref` MUST include `file` (absolute or relative path) and `checksum` (SHA-256 of file content). `repo` and `committish` are null.
+- **FR-028**: For Docker-based code inspection, `source_ref` MUST additionally include `package_version` (installed package version string from pip/npm).
+- **FR-029**: `source_ref` is NOT part of the identity hash — it is provenance metadata only. Same semantic content from different commits produces the same element URI.
+- **FR-030**: Adapters MUST populate `source_ref` automatically. The `BaseAdapter.extract()` return type (`ClassifiedEntity`) MUST include `source_ref` as a required field.
+
 **Schema Provenance Alignment**
 
-- **FR-026**: `SchemaProvenance` MUST be extended to match `ProvenanceEntry`: add `generated_at`, `attributed_to`, `activity`, `derived_from` fields.
-- **FR-027**: SchemaRecord MUST store `sha256` in the YAML file, matching the ElementRecord pattern.
+- **FR-031**: `SchemaProvenance` MUST be extended to match `ProvenanceEntry`: add `generated_at`, `attributed_to`, `activity`, `derived_from`, `source_ref` fields.
+- **FR-032**: SchemaRecord MUST store `sha256` in the YAML file, matching the ElementRecord pattern.
 
 ### Key Entities
 
-- **ClassifiedEntity**: The output of an adapter — contains the raw entity data, its classification (class/attribute/enum/valueset), confidence score, and source metadata.
+- **ClassifiedEntity**: The output of an adapter — contains the raw entity data, its classification (class/attribute/enum/valueset), confidence score, source_ref (repo, committish, file, checksum), and source metadata.
 - **ValueSet**: A new entity type — a named, content-addressed collection of ValueConcept URIs. Examples: "units" (collection of unit values), "modalities" (collection of modality values). Has semantic identity (hashed set of member URIs + name) and provenance.
 - **BaseAdapter**: Abstract interface for source adapters. `extract(source) → list[ClassifiedEntity]`. Concrete implementations: JSONSchemaAdapter, LinkMLAdapter, CSVDictionaryAdapter, CodeRepoAdapter, BIDSAdapter, NWBAdapter, etc.
 - **WorkflowSpec**: YAML-defined ingestion workflow with sources, classification overrides, enrichment steps, and validation rules.

@@ -41,6 +41,16 @@ URI pattern: `https://schema.undata.live/valuesets/{name}_{12-hex-key}`
 | `enum_value` | ValueConcept | `values/` |
 | `valueset` | ValueSetRecord | `valuesets/` |
 
+### SourceRef (precise origin tracking)
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| repo | string or null | git sources | GitHub repository URL (e.g., `https://github.com/bids-standard/bids-specification`) |
+| committish | string or null | git sources | Git commit SHA, tag, or branch (e.g., `v1.9.0`, `abc123def`) |
+| file | string | always | Relative path to source file within repo, or absolute path for non-git |
+| checksum | string | always | SHA-256 hex digest of source file content at ingestion time |
+| package_version | string or null | Docker sources | Installed package version (pip/npm) |
+
 ### ClassifiedEntity (adapter output)
 
 | Field | Type | Description |
@@ -49,6 +59,7 @@ URI pattern: `https://schema.undata.live/valuesets/{name}_{12-hex-key}`
 | semantic | dict | Raw semantic identity for the entity |
 | provenance | dict | Raw provenance data (source, name, description, etc.) |
 | confidence | float | Classification confidence 0.0–1.0 |
+| source_ref | SourceRef | Precise origin: repo, committish, file, checksum |
 | source_context | dict or null | Adapter-specific metadata (parent class, siblings, etc.) |
 
 ### WorkflowSpec
@@ -114,6 +125,25 @@ Add PROV-O fields to match ProvenanceEntry:
 | **attributed_to** | **NEW** | string (agent URI) |
 | **activity** | **NEW** | string (ingestion/curation/enrichment/migration) |
 | **derived_from** | **NEW** | string (schema URI) or null |
+| **source_ref** | **NEW** | SourceRef (repo, committish, file, checksum) |
+
+### ProvenanceEntry (extended — applies to all record types)
+
+All provenance entries (ElementRecord, SchemaRecord, ValueSetRecord, ValueConcept) gain `source_ref`:
+
+```yaml
+provenance:
+  - source: bids
+    name: age
+    source_ref:
+      repo: https://github.com/bids-standard/bids-specification
+      committish: v1.9.0
+      file: src/schema/objects/entities.yaml
+      checksum: a1b2c3d4e5f6...
+    generated_at: "2026-03-20T..."
+    attributed_to: urn:undata:ingestion-pipeline
+    activity: ingestion
+```
 
 ### SemanticIdentity (extended)
 

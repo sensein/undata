@@ -30,7 +30,7 @@
 - [ ] T007 [P] Extend `SchemaProvenance` with `generated_at`, `attributed_to`, `activity`, `derived_from` fields in `library/src/undata_library/models.py`
 - [ ] T008 Add `build_valueset_uri(name, key)` to `library/src/undata_library/hashing.py`; include `type_ref` in `canonical_json` when present
 - [ ] T009 Add `IngestionReport` and `WorkflowSpec` Pydantic models to `library/src/undata_library/models.py`
-- [ ] T010 Create `library/src/undata_library/adapters/base.py`: `BaseAdapter` ABC with `extract(source_path, **options) -> list[ClassifiedEntity]`, `name` property, `supported_formats` property; `ClassifiedEntity` dataclass
+- [ ] T010 Create `library/src/undata_library/adapters/base.py`: `BaseAdapter` ABC with `extract(source_path, **options) -> list[ClassifiedEntity]`, `name` property, `supported_formats` property; `ClassifiedEntity` dataclass with `source_ref: SourceRef` (repo, committish, file, checksum, package_version); `SourceRef` dataclass
 - [ ] T011 Create `library/src/undata_library/adapters/classifier.py`: `classify_entity(name, type_info, parent, siblings) -> tuple[EntityType, float]` — rule-based classification with structural signal detection (properties/slots → class; leaf type → attribute; enum/oneOf → enum_value; named enum collection → valueset)
 - [ ] T012 Write tests in `library/tests/test_classifier.py`: (a) JSON Schema with properties → class; (b) leaf string field → attribute; (c) enum with literals → enum_value; (d) named enum collection → valueset; (e) attribute referencing class → attribute with type_ref; (f) confidence scores in expected ranges
 - [ ] T013 Lint + run all tests; commit Phase 2

@@ -62,11 +62,20 @@ class BaseAdapter(ABC):
 
 ```python
 @dataclass
+class SourceRef:
+    repo: str | None               # GitHub URL or null for non-git
+    committish: str | None          # git SHA/tag/branch or null
+    file: str                       # path to source file
+    checksum: str                   # SHA-256 of source file content
+    package_version: str | None     # installed version (Docker only)
+
+@dataclass
 class ClassifiedEntity:
     entity_type: EntityType        # class | attribute | enum_value | valueset
     semantic: dict                 # raw semantic identity
     provenance: dict               # raw provenance
     confidence: float              # 0.0–1.0
+    source_ref: SourceRef          # precise origin tracking
     source_context: dict | None    # adapter metadata
 ```
 
@@ -81,6 +90,13 @@ Docker inspection scripts write `result.json` containing a list of ClassifiedEnt
     "semantic": {"data_type": "string", "ontology_term": null},
     "provenance": {"source": "aind", "class": "Subject", "name": "age", "description": "Age"},
     "confidence": 0.95,
+    "source_ref": {
+      "repo": "https://github.com/AllenNeuralDynamics/aind-data-schema",
+      "committish": "v0.38.0",
+      "file": "src/aind_data_schema/core/subject.py",
+      "checksum": "a1b2c3d4e5f6789012345678abcdef0123456789abcdef0123456789abcdef01",
+      "package_version": "0.38.0"
+    },
     "source_context": {"parent_class": "Subject", "field_type": "str"}
   }
 ]
