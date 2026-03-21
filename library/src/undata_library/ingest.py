@@ -157,8 +157,9 @@ def ingest_source(
     # Build schema shapes from class groupings
     schema_stats = _build_schemas_from_provenance(source_name, library_path, registry)
 
-    # Generate cross-element mappings for same ontology_term, different type/unit
-    mapping_stats = _generate_element_mappings(library_path, registry)
+    # Generate cross-element transform mappings (bidirectional) for elements
+    # sharing an ontology_term but with different data_type/unit
+    mapping_stats = _generate_transform_mappings(library_path, registry)
     _write_registry(registry_path, registry)
 
     return {
@@ -169,9 +170,6 @@ def ingest_source(
         "values_created": value_stats.get("created", 0),
         "mappings_created": mapping_stats.get("created", 0),
     }
-
-    # _load_element_mappings and _apply_element_mappings removed.
-    # Ontology annotations are now applied post-ingestion via
     # `undata-library annotate` — see annotate.py
 
 
@@ -548,7 +546,7 @@ _UNIT_CONVERSIONS: dict[tuple[str, str], dict] = {
 }
 
 
-def _generate_element_mappings(
+def _generate_transform_mappings(
     library_path: Path,
     registry: HashRegistry,
 ) -> dict[str, int]:

@@ -98,3 +98,42 @@ def write_index(base_path: Path, output: Path) -> dict[str, Any]:
     idx["generated_at"] = datetime.now(timezone.utc).isoformat()
     output.write_text(yaml.dump(idx, default_flow_style=False, sort_keys=False), encoding="utf-8")
     return idx
+
+
+def build_ontology_index(elements_dir: Path) -> dict:
+    """Build a reverse index: ontology_term → list of element URIs + metadata.
+
+    This is a derived view — regenerated from element files on demand.
+    """
+    index: dict[str, list[dict[str, Any]]] = {}
+
+    for f in sorted(elements_dir.glob("*.yaml")):
+        data = yaml.safe_load(f.read_text(encoding="utf-8"))
+        if not data or "semantic" not in data:
+            continue
+
+        onto = data["semantic"].get("ontology_term")
+        if not onto:
+            continue
+
+        uri = f"https://schema.undata.live/elements/{f.stem}"
+        sources = sorted({p.get("source", "") for p in data.get("provenance", [])})
+        names = sorted({p.get("name", "") for p in data.get("provenance", [])})
+
+        entry = {
+            "uri": uri,
+            "file": f.name,
+            "data_type": data["semantic"].get("data_type"),
+            "unit": data["semantic"].get("unit"),
+            "sources": sources,
+            "names": names,
+        }
+
+        index.setdefault(onto, []).append(entry)
+
+    return {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "ontology_term_count": len(index),
+        "element_count": sum(len(v) for v in index.values()),
+        "terms": index,
+    }
