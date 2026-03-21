@@ -2,6 +2,6 @@ name: aind
 repo: https://github.com/AllenNeuralDynamics/aind-data-schema
 default_version: latest
 acquisition: git_clone
-schema_path: "src/**/*.json"
+schema_path: "schemas/*.json"
 adapter: aind
 isolation: none

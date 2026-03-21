@@ -404,15 +404,76 @@ def _extract(
     registry = get_default_registry()
     adapter = registry.get(source_name)
 
-    # Determine source path
-    if source_name in ("bids", "dandi"):
-        path = schema_path or Path(".")
-    elif schema_path is None:
-        raise ValueError(f"{source_name} requires --path to schema files")
-    else:
+    # Determine source path — auto-acquire if not provided
+    if schema_path is not None:
         path = schema_path
+    else:
+        try:
+            from .acquisition import IsolatedEnv, SourceCache, load_source_def
 
-    entities = adapter.extract(path)
+            source_def = load_source_def(source_name)
+            cache = SourceCache()
+            cache_path = cache.acquire(source_def)
+
+            if source_def.acquisition == "pip_install":
+                # Install in isolated venv and introspect
+                iso = IsolatedEnv()
+                env_path = iso.create_venv(source_def)
+                try:
+                    introspected = iso.install_and_introspect(
+                        env_path, source_def.package or source_def.name, source_def.adapter
+                    )
+                    # Convert JSON dicts to ClassifiedEntity objects
+                    from .adapters.base import ClassifiedEntity
+                    from .models import EntityType, SourceRef
+
+                    ref = SourceRef(repo=source_def.repo, committish=None, file="", checksum="")
+                    resolved_file = cache_path / "_resolved_committish"
+                    if resolved_file.exists():
+                        ref = SourceRef(
+                            repo=source_def.repo,
+                            committish=resolved_file.read_text().strip(),
+                            file="",
+                            checksum="",
+                        )
+
+                    pip_entities = []
+                    for item in introspected:
+                        pip_entities.append(
+                            ClassifiedEntity(
+                                entity_type=EntityType(item["entity_type"]),
+                                semantic=item["semantic"],
+                                provenance=item["provenance"],
+                                confidence=float(item.get("confidence", 0.8)),
+                                source_ref=ref,
+                            )
+                        )
+                    entities = pip_entities
+                    # Skip adapter.extract() — we already have entities
+                    path = None
+                finally:
+                    iso.cleanup(env_path)
+            else:
+                # git_clone or download_file
+                repo_path = cache_path / "_repo" if (cache_path / "_repo").exists() else cache_path
+                if source_def.schema_path:
+                    schema_dir = source_def.schema_path.split("/")[0]
+                    candidate = repo_path / schema_dir
+                    path = candidate if candidate.exists() else repo_path
+                else:
+                    path = repo_path
+        except ImportError:
+            # Acquisition module not available — try direct import (legacy)
+            if source_name in ("bids", "dandi"):
+                path = Path(".")
+            else:
+                raise ValueError(f"{source_name} requires --path to schema files")
+        except Exception as exc:
+            raise ValueError(f"{source_name}: auto-acquire failed: {exc}") from exc
+
+    # For pip_install sources, entities are already extracted via isolated venv
+    if path is not None:
+        entities = adapter.extract(path)
 
     from .models import EntityType
 

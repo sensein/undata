@@ -17,8 +17,6 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-bids = ["bidsschematools"]
-dandi = ["dandischema"]
 similarity = ["sentence-transformers>=3.0"]
 embeddings = ["sentence-transformers>=3.0"]
 llm = ["litellm>=1.40"]
@@ -29,8 +27,6 @@ dev = [
     "pytest>=8.0",
     "ruff>=0.15",
     "numpy>=1.26",
-    "bidsschematools",
-    "dandischema",
 ]
 
 [project.scripts]

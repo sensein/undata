@@ -15,6 +15,7 @@ def test_cache_miss_triggers_clone(tmp_path):
     with patch("subprocess.run") as mock_run:
         mock_run.return_value.returncode = 0
         mock_run.return_value.stderr = ""
+        mock_run.return_value.stdout = "abc123def456\n"
         path = cache.acquire(sd, version="v2.7.0")
 
     assert "nwb" in str(path)
@@ -46,6 +47,7 @@ def test_refresh_forces_redownload(tmp_path):
     with patch("subprocess.run") as mock_run:
         mock_run.return_value.returncode = 0
         mock_run.return_value.stderr = ""
+        mock_run.return_value.stdout = "abc123\n"
         cache.acquire(load_source_def("nwb"), version="v2.7.0", refresh=True)
 
     mock_run.assert_called()  # git clone was invoked despite cache
@@ -81,6 +83,7 @@ def test_source_meta_written(tmp_path):
     with patch("subprocess.run") as mock_run:
         mock_run.return_value.returncode = 0
         mock_run.return_value.stderr = ""
+        mock_run.return_value.stdout = "abc123\n"
         path = cache.acquire(sd, version="v2.7.0")
 
     meta_file = path / "source-meta.yaml"

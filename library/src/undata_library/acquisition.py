@@ -103,31 +103,41 @@ class SourceCache:
         return dest
 
     def _git_clone(self, repo: str, version: str, dest: Path) -> None:
-        """Clone a git repo at a specific version."""
+        """Clone a git repo at a specific version. Resolves HEAD SHA for provenance."""
         logger.info("Cloning %s at %s", repo, version)
 
-        # Try shallow clone with branch/tag
+        repo_dir = dest / "_repo"
         args = ["git", "clone", "--depth", "1"]
         if version != "latest":
             args += ["--branch", version]
-        args += [repo, str(dest / "_repo")]
+        args += [repo, str(repo_dir)]
 
         result = subprocess.run(args, capture_output=True, text=True, timeout=300)
 
         if result.returncode != 0:
-            # Fallback: full clone + checkout
             logger.warning("Shallow clone failed, trying full clone: %s", result.stderr[:200])
-            full_args = ["git", "clone", repo, str(dest / "_repo")]
+            full_args = ["git", "clone", repo, str(repo_dir)]
             result = subprocess.run(full_args, capture_output=True, text=True, timeout=600)
             if result.returncode != 0:
                 raise RuntimeError(f"Git clone failed: {result.stderr[:500]}")
             if version != "latest":
                 subprocess.run(
-                    ["git", "-C", str(dest / "_repo"), "checkout", version],
+                    ["git", "-C", str(repo_dir), "checkout", version],
                     capture_output=True,
                     text=True,
                     check=True,
                 )
+
+        # Resolve actual committish (HEAD SHA) for precise provenance
+        sha_result = subprocess.run(
+            ["git", "-C", str(repo_dir), "rev-parse", "HEAD"],
+            capture_output=True,
+            text=True,
+        )
+        if sha_result.returncode == 0:
+            resolved_sha = sha_result.stdout.strip()
+            # Write resolved committish to meta
+            (dest / "_resolved_committish").write_text(resolved_sha)
 
     def _download_file(self, url: str, dest: Path) -> None:
         """Download a file from URL."""
@@ -340,12 +350,18 @@ def acquire_source(
 
 
 def build_source_ref_from_cache(source_def: SourceDefinition, cache_path: Path) -> SourceRef:
-    """Build SourceRef from cache metadata."""
-    meta_file = cache_path / "source-meta.yaml"
-    committish = None
-    if meta_file.exists():
-        meta = yaml.safe_load(meta_file.read_text()) or {}
-        committish = meta.get("version")
+    """Build SourceRef from cache metadata. Uses resolved git SHA, not 'latest'."""
+    # Prefer resolved committish (actual SHA) over version label
+    resolved_file = cache_path / "_resolved_committish"
+    if resolved_file.exists():
+        committish = resolved_file.read_text().strip()
+    else:
+        meta_file = cache_path / "source-meta.yaml"
+        if meta_file.exists():
+            meta = yaml.safe_load(meta_file.read_text()) or {}
+            committish = meta.get("version")
+        else:
+            committish = None
 
     return SourceRef(
         repo=source_def.repo,
