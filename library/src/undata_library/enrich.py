@@ -314,7 +314,10 @@ def _create_enriched_element(
 
     # Write new file
     elements_dir = library_path / "elements"
-    filename = f"{name.lower()}_{key}.yaml"
+    safe_name = name.lower().replace("/", "_").replace(":", "_").replace("\\", "_")
+    if len(safe_name) > 60:
+        safe_name = safe_name[:60]
+    filename = f"{safe_name}_{key}.yaml"
     new_path = elements_dir / filename
     new_path.write_text(
         yaml.dump(new_data, default_flow_style=False, sort_keys=False),

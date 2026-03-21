@@ -39,8 +39,8 @@ def ingest_source(
     """
     from datetime import datetime, timezone
 
-    # Load extractor
-    pairs = _extract(source_name, schema_path)
+    # Load extractor — returns (attribute_pairs, all_entities)
+    pairs, all_entities = _extract(source_name, schema_path)
 
     # Auto-populate PROV-O fields on all provenance entries
     now_iso = datetime.now(timezone.utc).isoformat()
@@ -156,6 +156,9 @@ def ingest_source(
     # Build schema shapes from class groupings
     schema_stats = _build_schemas_from_provenance(source_name, library_path, registry)
 
+    # Process non-ATTRIBUTE classified entities (valuesets, enum values)
+    classified_stats = _process_classified_entities(all_entities, library_path, source_name)
+
     # Generate cross-element transform mappings (bidirectional) for elements
     # sharing an ontology_term but with different data_type/unit
     mapping_stats = _generate_transform_mappings(library_path, registry)
@@ -166,10 +169,10 @@ def ingest_source(
         "merged": merged,
         "total": len(hash_to_records),
         "schemas_created": schema_stats.get("created", 0),
-        "values_created": value_stats.get("created", 0),
+        "values_created": value_stats.get("created", 0) + classified_stats.get("values_created", 0),
+        "valuesets_created": classified_stats.get("valuesets_created", 0),
         "mappings_created": mapping_stats.get("created", 0),
     }
-    # `undata-library annotate` — see annotate.py
 
 
 def _load_value_mappings(library_path: Path) -> dict[str, dict]:
@@ -389,8 +392,13 @@ def _resolve_response_option_uris(library_path: Path) -> int:
 
 def _extract(
     source_name: str, schema_path: Path | None
-) -> list[tuple[SemanticIdentity, ProvenanceEntry]]:
-    """Dispatch to adapter-based extraction, converting ClassifiedEntity → legacy tuple format."""
+) -> tuple[list[tuple[SemanticIdentity, ProvenanceEntry]], list]:
+    """Dispatch to adapter-based extraction.
+
+    Returns (attribute_pairs, all_classified_entities).
+    attribute_pairs: legacy tuple format for element pipeline.
+    all_classified_entities: full list for valueset/enum routing.
+    """
     from .adapters.registry import get_default_registry
 
     registry = get_default_registry()
@@ -398,7 +406,6 @@ def _extract(
 
     # Determine source path
     if source_name in ("bids", "dandi"):
-        # These use code introspection, path is optional
         path = schema_path or Path(".")
     elif schema_path is None:
         raise ValueError(f"{source_name} requires --path to schema files")
@@ -407,13 +414,12 @@ def _extract(
 
     entities = adapter.extract(path)
 
-    # Convert ClassifiedEntity → (SemanticIdentity, ProvenanceEntry) for backward compat
     from .models import EntityType
 
     results: list[tuple[SemanticIdentity, ProvenanceEntry]] = []
     for entity in entities:
         if entity.entity_type != EntityType.ATTRIBUTE:
-            continue  # Only attribute entities map to the legacy element pipeline
+            continue
 
         sem_dict = entity.semantic
         dt = sem_dict.get("data_type", "string")
@@ -452,7 +458,96 @@ def _extract(
         )
         results.append((sem, prov))
 
-    return results
+    return results, entities
+
+
+def _process_classified_entities(
+    entities: list, library_path: Path, source_name: str
+) -> dict[str, int]:
+    """Route non-ATTRIBUTE classified entities to valuesets/ and values/ directories."""
+    from .models import EntityType
+
+    valuesets_dir = library_path / "valuesets"
+    valuesets_dir.mkdir(parents=True, exist_ok=True)
+    values_dir = library_path / "values"
+    values_dir.mkdir(parents=True, exist_ok=True)
+
+    stats = {"valuesets_created": 0, "values_created": 0}
+
+    for entity in entities:
+        if entity.entity_type == EntityType.VALUESET:
+            sem = entity.semantic
+            name = sem.get("name", "unknown")
+            members = sem.get("members", [])
+
+            sem_dict = {"name": name, "members": sorted(members)}
+            canonical = canonical_json(sem_dict)
+            sha = compute_sha256(canonical)
+            key = generate_short_key(sha)
+
+            safe_name = name.lower().replace("/", "_").replace(":", "_")[:60]
+            filename = f"{safe_name}_{key}.yaml"
+            filepath = valuesets_dir / filename
+
+            if not filepath.exists():
+                data = {
+                    "sha256": sha,
+                    "semantic": sem_dict,
+                    "provenance": [entity.provenance],
+                }
+                filepath.write_text(
+                    yaml.dump(data, default_flow_style=False, sort_keys=False),
+                    encoding="utf-8",
+                )
+                stats["valuesets_created"] += 1
+
+        elif entity.entity_type == EntityType.ENUM_VALUE:
+            sem = entity.semantic
+            label = sem.get("label", "")
+            if not label:
+                continue
+
+            sem_dict = {
+                "label": label,
+                "value_type": sem.get("value_type", "categorical"),
+            }
+            if sem.get("ontology_term"):
+                sem_dict["ontology_term"] = sem["ontology_term"]
+
+            canonical = canonical_json(sem_dict)
+            sha = compute_sha256(canonical)
+            key = generate_short_key(sha)
+
+            safe_label = label.lower().replace("/", "_").replace(":", "_").replace(" ", "_")[:60]
+            filename = f"{safe_label}_{key}.yaml"
+            filepath = values_dir / filename
+
+            if filepath.exists():
+                # Merge provenance
+                existing = yaml.safe_load(filepath.read_text(encoding="utf-8"))
+                existing_sources = {
+                    (p.get("source"), p.get("raw_value")) for p in existing.get("provenance", [])
+                }
+                new_prov = entity.provenance
+                if (new_prov.get("source"), new_prov.get("raw_value")) not in existing_sources:
+                    existing["provenance"].append(new_prov)
+                    filepath.write_text(
+                        yaml.dump(existing, default_flow_style=False, sort_keys=False),
+                        encoding="utf-8",
+                    )
+            else:
+                data = {
+                    "sha256": sha,
+                    "semantic": sem_dict,
+                    "provenance": [entity.provenance],
+                }
+                filepath.write_text(
+                    yaml.dump(data, default_flow_style=False, sort_keys=False),
+                    encoding="utf-8",
+                )
+                stats["values_created"] += 1
+
+    return stats
 
 
 def _write_element(path: Path, record: ElementRecord, sha256: str | None = None) -> None:
