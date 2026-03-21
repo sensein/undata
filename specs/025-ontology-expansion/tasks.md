@@ -35,7 +35,7 @@
 **Goal**: Add 7 new ontologies with download URLs and format specs.
 
 - [ ] T009 [US1] Update `library/src/undata_library/source_defs/ontologies.yaml`: add UBERON (`uberon.obo`), CL (`cl.obo`), EDAM (`EDAM.obo`), ATOM, TMN, BGO, HOMBA with URLs and formats
-- [ ] T010 [US1] Update `library/src/undata_library/ontology_fetch.py`: add URL entries for new ontologies in `SUPPORTED_ONTOLOGIES`; handle non-OBO formats: JSON-LD for HOMBA (parse with pyoxigraph load_rdf), YAML for TMN (custom parser)
+- [ ] T010 [US1] Update `library/src/undata_library/ontology_fetch.py`: add URL entries for new ontologies in `SUPPORTED_ONTOLOGIES`; handle non-OBO formats: OWL for ATOM (load via `OntologyStore.load_rdf()`), JSON-LD for HOMBA (parse with pyoxigraph load_rdf), YAML for TMN (custom parser)
 - [ ] T011 [P] [US1] Add `_parse_yaml_ontology(path) -> dict` to `ontology_fetch.py`: parse TMN-style YAML ontologies into cache-format dict (term_uri, label, synonyms, parents)
 - [ ] T012 [P] [US1] Add `_parse_jsonld_ontology(path) -> dict` to `ontology_fetch.py`: parse HOMBA JSON-LD into terms via pyoxigraph or json parsing
 - [ ] T013 [US1] Write tests in `library/tests/test_extended_ontologies.py`: (a) ontologies.yaml has ≥12 entries; (b) UBERON/CL URLs resolve (mock); (c) YAML parser produces valid terms; (d) JSON-LD parser produces valid terms
@@ -60,7 +60,7 @@
 **Goal**: Assign multiple OntologyAnnotations per entity with heuristic selection.
 
 - [ ] T020 [US3] Rewrite `_assign_ontology_term()` → `_assign_ontology_annotations()` in `library/src/undata_library/enrich.py`: query top-20 nearest terms from vector index; apply heuristic (threshold + gap cutoff + max 10); create OntologyAnnotation per match
-- [ ] T021 [US3] Implement SKOS relation assignment in `enrich.py`: score ≥0.95 → exactMatch, 0.8-0.95 → closeMatch, 0.5-0.8 → relatedMatch; check rdfs:subClassOf chain in OntologyStore for broadMatch/narrowMatch
+- [ ] T021 [US3] Implement SKOS relation assignment in `enrich.py`: score ≥0.95 → exactMatch, 0.8-0.95 → closeMatch, 0.5-0.8 → relatedMatch; check rdfs:subClassOf chain in OntologyStore for broadMatch/narrowMatch (limit hierarchy traversal to 3 levels for performance in 3M+ term store)
 - [ ] T022 [US3] Implement match_level assignment in `enrich.py`: `element_match` if entity is ValueConcept AND score ≥ 0.9; otherwise `concept_match`
 - [ ] T023 [US3] Implement gap-based cutoff in `enrich.py`: if score[i] - score[i+1] > 0.15, stop at i; cap at 10 annotations; mark highest as primary
 - [ ] T024 [US3] Update `_create_enriched_element()` in `enrich.py`: when annotations change identity (adding ontology_term from primary), create new element with derived_from; store full ontology_annotations list in semantic block (excluded from hash)
@@ -95,7 +95,7 @@
 
 ## Phase 8: Full Load + Re-enrichment
 
-- [ ] T037 Load all 12+ ontologies: `undata-library ontology refresh --output-dir /tmp/undata-registry` (skip ATOM/TMN/BGO/HOMBA if URLs unresolvable — log warning)
+- [ ] T037 Load all 12+ ontologies: `undata-library ontology refresh --output-dir /tmp/undata-registry` (skip ATOM/TMN/BGO/HOMBA if URLs unresolvable — log warning); time the full refresh and assert < 30 minutes (SC-006)
 - [ ] T038 Rebuild deduplicated vector index from full store
 - [ ] T039 Re-enrich all entities: elements, values, valuesets with multi-term annotations
 - [ ] T040 [P] Verify value "male" has PATO:0000384 annotation with element_match
