@@ -15,11 +15,11 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Lint ingestion
-        working-directory: ingestion
+      - name: Lint library
+        working-directory: library
         run: |
-          uvx ruff check .
-          uvx ruff format --check .
+          uvx ruff check src/ tests/
+          uvx ruff format --check src/ tests/
 
       - name: Lint tutorials
         working-directory: tutorials
