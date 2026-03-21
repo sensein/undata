@@ -5,6 +5,18 @@
 **Status**: Draft
 **Input**: All registry entities (elements, schemas, valuesets, values — collectively "registry entities") should be staged, enriched, and then committed to the registry. Enriching should not create new entities. Ontology annotations, value_domain, and other enrichment metadata are NOT part of the identity hash — they are provenance/metadata that gets added in-place to staged entities before committing.
 
+## Clarifications
+
+### Session 2026-03-21
+
+- Q: Should (subject, age) and (participant, age) merge or link? → A: Merge if structurally + semantically identical (same data_type + unit + response_options + ontology URI). Link via transform if same concept but different representation (float/year vs string/ISO8601).
+- Q: What determines structural identity? → A: Post-enrichment hash = `data_type + unit + response_options + primary_ontology_uri` (when high-precision match exists). Fallback: `data_type + unit + response_options + class + attribute + description` (when no ontology match). Hashing only at commit time, not at extraction.
+- Q: Should primary ontology annotation be part of identity hash? → A: Yes — always include primary_ontology_uri, but restricted to high-precision matches (skos:exactMatch / element_match). Low-confidence annotations are metadata only, not in hash.
+- Q: How to handle (device, name) vs (device, name, "MRI device")? → A: Ontology annotation differentiates them (different concepts → different ontology URIs → different hashes). Fallback: hash includes class + attribute + description when no ontology match.
+- Q: Should undata adopt reproschema structure? → A: No — undata stays independent. The identity model is rooted in RDF triple relationships (class-property-data_shape), not reproschema's Activity-Item-ResponseOption hierarchy. reproschema is one ingestion source among many.
+
+---
+
 ## User Scenarios & Testing
 
 ### User Story 1 — Staged Pipeline: Extract → Enrich → Commit (Priority: P1)
@@ -82,8 +94,13 @@ After enrichment, the commit stage computes the final content-addressed hash of 
 
 **Identity Hash Changes**
 
-- **FR-001**: `ontology_term` MUST be removed from `SemanticIdentity` and `ValueSemanticIdentity` entirely (no service has launched — no deprecation needed). The canonical enrichment output is `ontology_annotations: list[OntologyAnnotation]` (as defined in 025) — a list of multi-term annotations each with: `term_uri`, `term_label`, `ontology`, `mapping_relation` (SKOS), `match_level` (concept_match/element_match), `score`, `model`, `primary`. `ontology_annotations` MUST be excluded from the identity hash.
-- **FR-002**: The identity hash MUST be determined solely by: `data_type`, `unit`, `constraints` (pattern + allowed_values only), `min_value`, `max_value`, `response_options` (sorted by value), `source_attribute`, `source_class`, `type_ref`. The excluded set is: `question_text`, `value_domain`, `ontology_annotations`.
+- **FR-001**: `ontology_term` MUST be removed from `SemanticIdentity` and `ValueSemanticIdentity` (no service launched — just remove, no deprecation). Ontology alignment is stored exclusively in `ontology_annotations: list[OntologyAnnotation]` (as defined in 025).
+- **FR-002**: The identity hash MUST be computed **post-enrichment at commit time** using two modes:
+  - **Ontology-anchored** (preferred, when high-precision match exists): `data_type + unit + response_options + primary_ontology_uri` where primary_ontology_uri comes from the highest-scoring annotation with `skos:exactMatch` or `element_match`.
+  - **Structural fallback** (when no high-precision ontology match): `data_type + unit + response_options + class + attribute + description`.
+  - The excluded set is: `question_text`, `value_domain`, `ontology_annotations` (the full list — only the primary URI enters the hash when ontology-anchored).
+  - `source_attribute` and `source_class` are removed from the hash (replaced by `class + attribute + description` in fallback mode).
+- **FR-002b**: Hashing MUST NOT happen at extraction time. Staged entities use UUIDs. Hashing happens only at commit, after enrichment + alignment have determined what the element represents.
 - **FR-003**: Existing elements MUST be rehashed after the change. Elements that become duplicates (same hash after ontology_term exclusion) MUST be merged — provenance entries combined, one file retained.
 
 **Staged Pipeline**
