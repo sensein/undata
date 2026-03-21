@@ -100,15 +100,50 @@ def write_index(base_path: Path, output: Path) -> dict[str, Any]:
     return idx
 
 
-def build_ontology_index(elements_dir: Path) -> dict:
-    """Build a reverse index: ontology_term → list of element URIs + metadata.
+def build_ontology_index(elements_dir: Path, library_path: Path | None = None) -> dict:
+    """Build a reverse index: ontology_term → list of entity URIs + metadata.
 
-    This is a derived view — regenerated from element files on demand.
+    Scans elements/, schemas/, and valuesets/ directories.
+    This is a derived view — regenerated from files on demand.
     """
+    base = library_path or elements_dir.parent
     index: dict[str, list[dict[str, Any]]] = {}
 
-    for f in sorted(elements_dir.glob("*.yaml")):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
+    # Scan elements
+    _scan_dir_for_ontology(elements_dir, "element", "https://schema.undata.live/elements", index)
+
+    # Scan schemas
+    schemas_dir = base / "schemas"
+    if schemas_dir.exists():
+        _scan_dir_for_ontology(schemas_dir, "schema", "https://schema.undata.live/schemas", index)
+
+    # Scan valuesets
+    valuesets_dir = base / "valuesets"
+    if valuesets_dir.exists():
+        _scan_dir_for_ontology(
+            valuesets_dir, "valueset", "https://schema.undata.live/valuesets", index
+        )
+
+    return {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "ontology_term_count": len(index),
+        "entity_count": sum(len(v) for v in index.values()),
+        "terms": index,
+    }
+
+
+def _scan_dir_for_ontology(
+    directory: Path,
+    entity_type: str,
+    uri_base: str,
+    index: dict[str, list[dict[str, Any]]],
+) -> None:
+    """Scan a directory for entities with ontology_term and add to index."""
+    for f in sorted(directory.glob("*.yaml")):
+        try:
+            data = yaml.safe_load(f.read_text(encoding="utf-8"))
+        except (yaml.YAMLError, OSError):
+            continue
         if not data or "semantic" not in data:
             continue
 
@@ -116,24 +151,20 @@ def build_ontology_index(elements_dir: Path) -> dict:
         if not onto:
             continue
 
-        uri = f"https://schema.undata.live/elements/{f.stem}"
+        uri = f"{uri_base}/{f.stem}"
         sources = sorted({p.get("source", "") for p in data.get("provenance", [])})
-        names = sorted({p.get("name", "") for p in data.get("provenance", [])})
 
-        entry = {
+        entry: dict[str, Any] = {
             "uri": uri,
+            "entity_type": entity_type,
             "file": f.name,
-            "data_type": data["semantic"].get("data_type"),
-            "unit": data["semantic"].get("unit"),
             "sources": sources,
-            "names": names,
         }
 
-        index.setdefault(onto, []).append(entry)
+        # Add type-specific fields
+        if entity_type == "element":
+            entry["data_type"] = data["semantic"].get("data_type")
+            entry["unit"] = data["semantic"].get("unit")
+            entry["names"] = sorted({p.get("name", "") for p in data.get("provenance", [])})
 
-    return {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "ontology_term_count": len(index),
-        "element_count": sum(len(v) for v in index.values()),
-        "terms": index,
-    }
+        index.setdefault(onto, []).append(entry)

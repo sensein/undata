@@ -397,12 +397,14 @@ def ontology_index_cmd(elements_path: str, output: str) -> None:
     """Build a reverse index: ontology_term → element URIs."""
     from .index import build_ontology_index
 
-    idx = build_ontology_index(Path(elements_path))
+    elem_path = Path(elements_path)
+    lib_path = elem_path.parent if elem_path.name == "elements" else elem_path
+    idx = build_ontology_index(elem_path, library_path=lib_path)
     out_path = Path(output)
     out_path.write_text(yaml.dump(idx, default_flow_style=False, sort_keys=False), encoding="utf-8")
     click.echo(
         f"Ontology index written to {out_path}: "
-        f"{idx['ontology_term_count']} terms, {idx['element_count']} elements."
+        f"{idx['ontology_term_count']} terms, {idx.get('entity_count', idx.get('element_count', 0))} entities."
     )
 
 
@@ -481,7 +483,25 @@ def pipeline(
             f"in {timings['align']:.1f}s"
         )
     else:
-        click.echo("[3/3] Alignment skipped.")
+        click.echo("[3/4] Alignment skipped.")
+
+    # Step 4: Transform
+    if not skip_align:  # transforms depend on alignment
+        click.echo("[4/4] Generating transforms...")
+        t0 = time.time()
+        from .transform import generate_transforms
+
+        transform_stats = generate_transforms(
+            elements_dir=elements_dir,
+            library_path=lib,
+        )
+        timings["transform"] = time.time() - t0
+        click.echo(
+            f"  {transform_stats.get('transforms_created', 0)} transforms "
+            f"in {timings['transform']:.1f}s"
+        )
+    else:
+        click.echo("[4/4] Transforms skipped (requires alignment).")
 
     total_time = sum(timings.values())
     click.echo(f"\nPipeline complete in {total_time:.1f}s.")
@@ -516,6 +536,30 @@ def align(path: str, threshold: float, output: str | None, dry_run: bool) -> Non
         f"({stats['new_groups']} new, {stats['unchanged_groups']} unchanged, "
         f"{stats['dissolved_groups']} dissolved)."
     )
+
+
+@main.command("transform")
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option("--threshold", "-t", default=0.5, help="Minimum pattern confidence")
+@click.option(
+    "--output-dir", default=None, help="Output directory for transforms (default: transforms/)"
+)
+def transform_cmd(path: str, threshold: float, output_dir: str | None) -> None:
+    """Generate transforms between overlapping elements."""
+    from .transform import generate_transforms
+
+    base = Path(path)
+    elements_dir = base / "elements" if (base / "elements").exists() else base
+    lib_path = base if (base / "elements").exists() else base.parent
+
+    stats = generate_transforms(elements_dir, lib_path, threshold=threshold)
+    click.echo(
+        f"Transforms: {stats['pairs_evaluated']} pairs evaluated, "
+        f"{stats['transforms_created']} created."
+    )
+    for pattern, count in stats.get("patterns", {}).items():
+        if count > 0:
+            click.echo(f"  {pattern}: {count}")
 
 
 @main.command()
