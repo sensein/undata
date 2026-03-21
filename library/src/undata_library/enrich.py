@@ -122,10 +122,12 @@ def enrich_elements(
 
 def _load_ontology_embeddings(cache_dir: Path, model_name: str) -> EmbeddingStore | None:
     """Load ontology embeddings from vector index (024) or legacy cache."""
-    # Canonical location: {output_dir}/ontology-vectors.parquet
-    # cache_dir IS the output_dir in the new convention
-    onto_parquet = cache_dir / "ontology-vectors.parquet"
-    for candidate in [onto_parquet]:
+    # Ontology vectors in cache dir (~/.cache/undata/ontology-vectors.parquet)
+    cache_base = Path.home() / ".cache" / "undata"
+    for candidate in [
+        cache_base / "ontology-vectors.parquet",
+        cache_dir / "ontology-vectors.parquet",  # fallback
+    ]:
         if candidate.exists():
             try:
                 store = EmbeddingStore(uri_col="term_uri").load(

@@ -25,6 +25,15 @@ def get_output_dir(cli_value: str | None) -> Path:
     return RegistryConfig.resolve(cli_value)
 
 
+_ONTOLOGY_STORE_DIR = Path.home() / ".cache" / "undata" / "ontology-store"
+
+
+def get_ontology_store_path() -> Path:
+    """Ontology store lives in cache (rebuildable), not output dir."""
+    _ONTOLOGY_STORE_DIR.mkdir(parents=True, exist_ok=True)
+    return _ONTOLOGY_STORE_DIR
+
+
 @click.group()
 def main() -> None:
     """undata-library: content-addressed neuroscience data element registry."""
@@ -307,8 +316,7 @@ def verify(path: str, cache_dir: str) -> None:
     from .verify import verify_elements
 
     # Try OntologyStore first, fall back to legacy cache
-    resolved = get_output_dir(None)
-    store_path = resolved / "ontology-store"
+    store_path = get_ontology_store_path()
     store = None
     cache = None
     if store_path.exists():
@@ -352,8 +360,7 @@ def ontology_refresh(ontology: str | None, output_dir: str | None, exclude: tupl
     from .ontology_fetch import _download_obo
     from .ontology_store import OntologyStore, build_vector_index, load_ontology_config
 
-    resolved = get_output_dir(output_dir)
-    store = OntologyStore(resolved / "ontology-store")
+    store = OntologyStore(get_ontology_store_path())
     configs = load_ontology_config()
 
     if ontology:
@@ -382,7 +389,7 @@ def ontology_refresh(ontology: str | None, output_dir: str | None, exclude: tupl
 
     # Build vector index
     try:
-        vectors_path = resolved / "ontology-vectors.parquet"
+        vectors_path = get_ontology_store_path().parent / "ontology-vectors.parquet"
         count = build_vector_index(store, vectors_path)
         click.echo(f"Vector index: {count} terms embedded.")
     except ImportError:
@@ -400,8 +407,7 @@ def ontology_search(query: str, ontology: str | None, limit: int, output_dir: st
     """Search ontology terms by label or synonym."""
     from .ontology_store import OntologyStore
 
-    resolved = get_output_dir(output_dir)
-    store = OntologyStore(resolved / "ontology-store")
+    store = OntologyStore(get_ontology_store_path())
     results = store.search_terms(query, ontology=ontology, limit=limit)
 
     if not results:
@@ -419,8 +425,7 @@ def ontology_info(output_dir: str | None) -> None:
     """Show loaded ontologies, term counts, and store status."""
     from .ontology_store import OntologyStore
 
-    resolved = get_output_dir(output_dir)
-    store_path = resolved / "ontology-store"
+    store_path = get_ontology_store_path()
     if not store_path.exists():
         click.echo("No ontology store found. Run `ontology refresh` first.")
         return
@@ -439,7 +444,7 @@ def ontology_info(output_dir: str | None) -> None:
         )
     click.echo(f"\nTotal: {total} terms across {len(loaded)} ontologies.")
 
-    vectors = resolved / "ontology-vectors.parquet"
+    vectors = get_ontology_store_path().parent / "ontology-vectors.parquet"
     if vectors.exists():
         size_mb = vectors.stat().st_size / 1024 / 1024
         click.echo(f"Vector index: {size_mb:.1f} MB")
