@@ -224,6 +224,30 @@ reviewed or reverted atomically, and are at risk of being lost. Committing per
 task creates an auditable, recoverable history that mirrors the speckit lifecycle
 and supports parallel work across branches.
 
+### Evaluation Record
+
+Pipeline runs, extraction results, and quality metrics MUST be recorded in
+`eval-record.md` at the repository root. The following rules apply:
+
+- **Record after extraction**: Every significant re-extraction or pipeline run
+  MUST append a dated section to `eval-record.md` with: source counts, entity
+  counts, ontology term counts, transform counts, enrichment rates, known
+  issues, and performance timings.
+- **Record from any source**: Results from chat outputs, CLI runs, CI pipelines,
+  or manual testing MUST all be captured in `eval-record.md` — not only in
+  commit messages or conversation context.
+- **Quantitative and qualitative**: Each record MUST include both numbers
+  (element count, ontology assignment rate) and qualitative notes (known issues,
+  what changed from previous run, what to investigate).
+- **Baseline comparison**: When recording new results, note significant changes
+  from the previous record (e.g., "element count increased from 7,756 to 14,114
+  due to enrichment creating new elements with ontology_term").
+
+**Rationale**: Extraction results are the primary evidence that the pipeline is
+working correctly. Without a persistent record, regressions go undetected and
+progress is invisible. Commit messages capture intent; `eval-record.md` captures
+outcomes.
+
 ### Bash Task Hygiene
 
 Every bash command the agent runs MUST be verified for completion and its result
@@ -295,4 +319,4 @@ All PRs and implementation plans MUST include a Constitution Check section
 confirming compliance with active principles. Violations require documented
 justification or the work is blocked.
 
-**Version**: 1.3.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-12
+**Version**: 1.4.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-21
