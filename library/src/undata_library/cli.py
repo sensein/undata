@@ -243,6 +243,17 @@ def ontology_refresh(ontology: str | None, cache_dir: str, max_terms: int) -> No
         except Exception as exc:
             click.echo(f"  {name}: FAILED — {exc}")
 
+    # Regenerate ontology embeddings after cache update
+    try:
+        from .embeddings import build_ontology_embeddings
+
+        click.echo("Regenerating ontology embeddings...")
+        store = build_ontology_embeddings(Path(cache_dir))
+        store.save(Path(cache_dir) / "embeddings.parquet")
+        click.echo(f"  Ontology embeddings: {store.size} terms.")
+    except ImportError:
+        click.echo("  (skipping embeddings — sentence-transformers not installed)")
+
 
 @main.command("similarity")
 @click.argument("file_a", type=click.Path(exists=True))
@@ -309,3 +320,32 @@ def ontology_index_cmd(elements_path: str, output: str) -> None:
         f"Ontology index written to {out_path}: "
         f"{idx['ontology_term_count']} terms, {idx['element_count']} elements."
     )
+
+
+@main.command("embed")
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option("--model", "-m", default="all-MiniLM-L6-v2", help="Embedding model name")
+@click.option("--include-ontology", is_flag=True, help="Also build ontology embeddings")
+def embed_cmd(path: str, model: str, include_ontology: bool) -> None:
+    """Build precomputed embeddings for elements (and optionally ontology terms)."""
+    from .embeddings import build_element_embeddings, build_ontology_embeddings
+
+    base = Path(path)
+    elements_dir = base / "elements" if (base / "elements").exists() else base
+
+    click.echo(f"Building element embeddings (model={model})...")
+    store = build_element_embeddings(elements_dir, model_name=model)
+    out = base / "embeddings.parquet"
+    store.save(out, model_name=model)
+    click.echo(f"  {store.size} elements → {out}")
+
+    if include_ontology:
+        cache_dir = base / "ontology-cache"
+        if cache_dir.exists():
+            click.echo("Building ontology embeddings...")
+            onto_store = build_ontology_embeddings(cache_dir, model_name=model)
+            onto_out = cache_dir / "embeddings.parquet"
+            onto_store.save(onto_out, model_name=model)
+            click.echo(f"  {onto_store.size} terms → {onto_out}")
+        else:
+            click.echo("  No ontology-cache/ found — skipping ontology embeddings.")

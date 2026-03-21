@@ -3,14 +3,42 @@
 from __future__ import annotations
 
 import difflib
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .embeddings import EmbeddingStore
+
+
+def semantic_embedding_similarity(
+    uri_a: str,
+    uri_b: str,
+    store: EmbeddingStore | None,
+    elem_a: dict | None = None,
+    elem_b: dict | None = None,
+) -> float:
+    """Compute semantic similarity using precomputed embeddings.
+
+    Falls back to difflib name similarity if store is unavailable or URIs not found.
+    """
+    if store is not None:
+        from .embeddings import cosine_similarity
+
+        vec_a = store.get_vector(uri_a)
+        vec_b = store.get_vector(uri_b)
+        if vec_a is not None and vec_b is not None:
+            return max(0.0, min(1.0, cosine_similarity(vec_a, vec_b)))
+
+    # Fallback: difflib on element names
+    name_a = _extract_name(elem_a) if elem_a else ""
+    name_b = _extract_name(elem_b) if elem_b else ""
+    if name_a and name_b:
+        return _difflib_similarity(name_a, name_b)
+    return 0.0
 
 
 def name_similarity(name_a: str, name_b: str) -> float:
-    """Compute name similarity using embeddings (if available) or difflib fallback."""
-    try:
-        return _embedding_similarity(name_a, name_b)
-    except (ImportError, Exception):
-        return _difflib_similarity(name_a, name_b)
+    """Compute name similarity using difflib (legacy, kept for backward compat)."""
+    return _difflib_similarity(name_a, name_b)
 
 
 def _difflib_similarity(a: str, b: str) -> float:
@@ -20,26 +48,15 @@ def _difflib_similarity(a: str, b: str) -> float:
     return difflib.SequenceMatcher(None, a_clean, b_clean).ratio()
 
 
-_EMBEDDING_MODEL = None
-
-
-def _embedding_similarity(a: str, b: str) -> float:
-    """Compute cosine similarity using sentence-transformers."""
-    global _EMBEDDING_MODEL
-    if _EMBEDDING_MODEL is None:
-        from sentence_transformers import SentenceTransformer
-
-        _EMBEDDING_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
-
-    embeddings = _EMBEDDING_MODEL.encode([a, b])
-    # Cosine similarity
-    import numpy as np
-
-    cos_sim = float(
-        np.dot(embeddings[0], embeddings[1])
-        / (np.linalg.norm(embeddings[0]) * np.linalg.norm(embeddings[1]))
-    )
-    return max(0.0, min(1.0, cos_sim))
+def _extract_name(elem: dict | None) -> str:
+    """Extract first provenance name from element dict."""
+    if not elem:
+        return ""
+    for p in elem.get("provenance", []):
+        name = p.get("name", "")
+        if name:
+            return name
+    return ""
 
 
 def range_overlap_score(
@@ -78,33 +95,32 @@ def valueset_jaccard(choices_a: list[str], choices_b: list[str]) -> float:
     return intersection / union if union > 0 else 0.0
 
 
-def compute_similarity(elem_a: dict, elem_b: dict) -> dict:
-    """Compute overall similarity between two element semantic dicts.
+def compute_similarity(
+    elem_a: dict,
+    elem_b: dict,
+    embedding_store: EmbeddingStore | None = None,
+    uri_a: str | None = None,
+    uri_b: str | None = None,
+) -> dict:
+    """Compute overall similarity between two element dicts.
 
-    Returns: {score, relation, components: {name_sim, ontology_match, range_overlap, valueset_jaccard}}
+    Returns: {score, relation, components: {semantic_embedding, ontology_match,
+              range_overlap, valueset_jaccard}}
     """
     sem_a = elem_a.get("semantic", elem_a)
     sem_b = elem_b.get("semantic", elem_b)
 
-    # Component 1: ontology match
+    # Component 1: ontology match (weight 0.4)
     onto_a = sem_a.get("ontology_term")
     onto_b = sem_b.get("ontology_term")
     ontology_match = 1.0 if (onto_a and onto_b and onto_a == onto_b) else 0.0
 
-    # Component 2: name similarity
-    name_a = ""
-    name_b = ""
-    for p in elem_a.get("provenance", []):
-        name_a = p.get("name", "")
-        if name_a:
-            break
-    for p in elem_b.get("provenance", []):
-        name_b = p.get("name", "")
-        if name_b:
-            break
-    name_sim = name_similarity(name_a, name_b) if name_a and name_b else 0.0
+    # Component 2: semantic embedding similarity (weight 0.3)
+    embedding_sim = semantic_embedding_similarity(
+        uri_a or "", uri_b or "", embedding_store, elem_a, elem_b
+    )
 
-    # Component 3: range overlap
+    # Component 3: range overlap (weight 0.15)
     r_overlap = range_overlap_score(
         sem_a.get("min_value"),
         sem_a.get("max_value"),
@@ -112,19 +128,13 @@ def compute_similarity(elem_a: dict, elem_b: dict) -> dict:
         sem_b.get("max_value"),
     )
 
-    # Component 4: valueset Jaccard
+    # Component 4: valueset Jaccard (weight 0.15)
     choices_a = _extract_choices(sem_a)
     choices_b = _extract_choices(sem_b)
     vs_jaccard = valueset_jaccard(choices_a, choices_b)
 
     # Weighted score
-    weights = {"ontology": 0.4, "name": 0.3, "range": 0.15, "valueset": 0.15}
-    score = (
-        weights["ontology"] * ontology_match
-        + weights["name"] * name_sim
-        + weights["range"] * r_overlap
-        + weights["valueset"] * vs_jaccard
-    )
+    score = 0.4 * ontology_match + 0.3 * embedding_sim + 0.15 * r_overlap + 0.15 * vs_jaccard
 
     # Determine SKOS relation
     relation = map_to_skos(score, sem_a, sem_b)
@@ -133,7 +143,7 @@ def compute_similarity(elem_a: dict, elem_b: dict) -> dict:
         "score": round(score, 4),
         "relation": relation,
         "components": {
-            "name_sim": round(name_sim, 4),
+            "semantic_embedding": round(embedding_sim, 4),
             "ontology_match": ontology_match,
             "range_overlap": round(r_overlap, 4),
             "valueset_jaccard": round(vs_jaccard, 4),

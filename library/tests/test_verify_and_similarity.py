@@ -48,10 +48,10 @@ class TestComputeSimilarity:
             "provenance": [{"name": "field_x", "source": "a"}],
         }
         result = compute_similarity(elem, elem)
-        # ontology_match=1.0 (0.4) + name_sim=1.0 (0.3) = 0.7 without ranges/valuesets
+        # ontology_match=1.0 (0.4) + semantic_embedding=1.0 (0.3) = 0.7 without ranges/valuesets
         assert result["score"] >= 0.7
         assert result["components"]["ontology_match"] == 1.0
-        assert result["components"]["name_sim"] >= 0.99
+        assert result["components"]["semantic_embedding"] >= 0.99
 
     def test_same_name_different_type(self):
         elem_a = {
@@ -63,7 +63,7 @@ class TestComputeSimilarity:
             "provenance": [{"name": "age", "source": "b"}],
         }
         result = compute_similarity(elem_a, elem_b)
-        assert result["components"]["name_sim"] > 0.9
+        assert result["components"]["semantic_embedding"] > 0.9
         assert result["components"]["ontology_match"] == 0.0
 
     def test_shared_valueset_boosts_score(self):

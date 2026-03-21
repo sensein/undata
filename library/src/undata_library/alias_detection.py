@@ -3,15 +3,20 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import yaml
 
 from .similarity import compute_similarity
 
+if TYPE_CHECKING:
+    from .embeddings import EmbeddingStore
+
 
 def detect_aliases(
     elements_dir: Path,
     threshold: float = 0.5,
+    embedding_store: EmbeddingStore | None = None,
 ) -> list[dict]:
     """Scan all elements and compute pairwise similarity for alias detection.
 
@@ -19,24 +24,31 @@ def detect_aliases(
     Optimized: skip pairs with different data_type (can't be aliases).
     """
     # Load all elements grouped by data_type for optimization
-    by_type: dict[str, list[tuple[str, dict]]] = {}
+    by_type: dict[str, list[tuple[str, str, dict]]] = {}
     for f in sorted(elements_dir.glob("*.yaml")):
         data = yaml.safe_load(f.read_text(encoding="utf-8"))
         if not data or "semantic" not in data:
             continue
         dt = data["semantic"].get("data_type", "")
-        by_type.setdefault(dt, []).append((f.name, data))
+        uri = f"https://schema.undata.live/elements/{f.stem}"
+        by_type.setdefault(dt, []).append((f.name, uri, data))
 
     candidates: list[dict] = []
 
     for dt, elements in by_type.items():
         n = len(elements)
         for i in range(n):
-            fname_a, data_a = elements[i]
+            fname_a, uri_a, data_a = elements[i]
             for j in range(i + 1, n):
-                fname_b, data_b = elements[j]
+                fname_b, uri_b, data_b = elements[j]
 
-                result = compute_similarity(data_a, data_b)
+                result = compute_similarity(
+                    data_a,
+                    data_b,
+                    embedding_store=embedding_store,
+                    uri_a=uri_a,
+                    uri_b=uri_b,
+                )
                 if result["score"] >= threshold:
                     candidates.append(
                         {
