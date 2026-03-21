@@ -16,7 +16,13 @@ from .hashing import (
     compute_sha256,
     generate_short_key,
 )
+from .models import RegistryConfig
 from .validation import validate_directory, validate_file
+
+
+def get_output_dir(cli_value: str | None) -> Path:
+    """Resolve output directory from CLI flag, env var, or XDG default."""
+    return RegistryConfig.resolve(cli_value)
 
 
 @click.group()
@@ -143,7 +149,12 @@ def diff(file: str, fmt: str) -> None:
     help="Source name (bids, nwb, dandi, aind, openminds, json-schema, linkml, csv, code-repo)",
 )
 @click.option("--path", "-p", default=None, help="Path to raw schema files")
-@click.option("--library-path", "-l", default=".", help="Path to library root")
+@click.option(
+    "--output-dir",
+    "-o",
+    default=None,
+    help="Output directory (default: ~/.local/share/undata/registry/)",
+)
 @click.option(
     "--adapter", default=None, help="Force adapter name (overrides --source for adapter selection)"
 )
@@ -174,7 +185,7 @@ def diff(file: str, fmt: str) -> None:
 def ingest(
     source: str,
     path: str | None,
-    library_path: str,
+    output_dir: str | None,
     adapter: str | None,
     adapter_module: str | None,
     workflow_path: str | None,
@@ -192,11 +203,13 @@ def ingest(
     source_def_path: str | None,
 ) -> None:
     """Ingest elements from raw schema files into the library."""
+    resolved_dir = get_output_dir(output_dir)
+
     if workflow_path:
         from .workflow import load_workflow, run_workflow
 
         spec = load_workflow(Path(workflow_path))
-        report = run_workflow(spec, Path(library_path))
+        report = run_workflow(spec, resolved_dir)
         click.echo(
             f"Workflow complete: {report.sources_processed} sources, "
             f"{len(report.violations)} violations."
@@ -209,7 +222,7 @@ def ingest(
 
     schema_path = Path(path) if path else None
     adapter_name = adapter or source
-    stats = ingest_source(adapter_name, schema_path, Path(library_path))
+    stats = ingest_source(adapter_name, schema_path, resolved_dir)
     click.echo(
         f"Ingested {source}: {stats['total']} unique elements "
         f"({stats['created']} created, {stats['merged']} merged)."
@@ -218,7 +231,7 @@ def ingest(
     if not skip_validation:
         from .validation import validate_ingestion_output
 
-        violations = validate_ingestion_output(Path(library_path))
+        violations = validate_ingestion_output(resolved_dir)
         if violations:
             click.echo(f"Validation: {len(violations)} violations found.")
             for v in violations[:10]:
@@ -321,9 +334,8 @@ def ontology_group() -> None:
     help="Specific ontology to refresh (ncit, pato, hp, obi, ncbitaxon)",
 )
 @click.option("--cache-dir", default="ontology-cache", help="Cache directory")
-@click.option("--max-terms", default=5000, help="Max terms per ontology")
-def ontology_refresh(ontology: str | None, cache_dir: str, max_terms: int) -> None:
-    """Fetch/update ontology terms from OLS API."""
+def ontology_refresh(ontology: str | None, cache_dir: str) -> None:
+    """Fetch ontology terms via bulk OBO download from OBO Foundry."""
     from .ontology_cache import OntologyCache
     from .ontology_fetch import SUPPORTED_ONTOLOGIES, fetch_ontology
 
@@ -333,7 +345,7 @@ def ontology_refresh(ontology: str | None, cache_dir: str, max_terms: int) -> No
     for name in targets:
         click.echo(f"Fetching {name}...")
         try:
-            data = fetch_ontology(name, max_terms=max_terms)
+            data = fetch_ontology(name)
             cache.save(name, data)
             click.echo(f"  {name}: {len(data.get('terms', {}))} terms cached.")
         except Exception as exc:
@@ -423,26 +435,31 @@ def ontology_index_cmd(elements_path: str, output: str) -> None:
 @main.command()
 @click.option("--source", required=True, help="Source name (bids, nwb, dandi, aind, openminds)")
 @click.option("--path", "-p", default=None, help="Path to raw schema files")
-@click.option("--library-path", "-l", default=".", help="Path to library root")
+@click.option(
+    "--output-dir",
+    "-o",
+    default=None,
+    help="Output directory (default: ~/.local/share/undata/registry/)",
+)
 @click.option("--model", "-m", default="all-MiniLM-L6-v2", help="Embedding model name")
 @click.option("--skip-enrich", is_flag=True, help="Skip enrichment step")
 @click.option("--skip-align", is_flag=True, help="Skip alignment step")
 def pipeline(
     source: str,
     path: str | None,
-    library_path: str,
+    output_dir: str | None,
     model: str,
     skip_enrich: bool,
     skip_align: bool,
 ) -> None:
-    """Run ingest → enrich → align pipeline."""
+    """Run ingest → enrich → align → transform pipeline."""
     import time
 
     from .align import align_elements
     from .enrich import enrich_elements
     from .ingest import ingest_source
 
-    lib = Path(library_path)
+    lib = get_output_dir(output_dir)
     schema_path = Path(path) if path else None
     elements_dir = lib / "elements"
     cache_dir = lib / "ontology-cache"

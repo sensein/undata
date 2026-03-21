@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from enum import Enum
+from pathlib import Path
 
 from pydantic import BaseModel, Field
 
@@ -260,6 +261,29 @@ class SourceDefinition(BaseModel):
     schema_path: str | None = None  # glob pattern for schema files
     isolation: str = "none"  # none | venv | docker
     python_version: str | None = None  # e.g., "3.12" for bridge venvs
+
+
+class RegistryConfig:
+    """Resolve the output directory for library registry data.
+
+    Resolution order: CLI flag > $UNDATA_REGISTRY_DIR env var > XDG default.
+    """
+
+    _XDG_DEFAULT = Path.home() / ".local" / "share" / "undata" / "registry"
+
+    @classmethod
+    def resolve(cls, cli_output_dir: str | None = None) -> Path:
+        """Resolve the output directory."""
+        import os
+
+        if cli_output_dir:
+            p = Path(cli_output_dir)
+        elif os.environ.get("UNDATA_REGISTRY_DIR"):
+            p = Path(os.environ["UNDATA_REGISTRY_DIR"])
+        else:
+            p = cls._XDG_DEFAULT
+        p.mkdir(parents=True, exist_ok=True)
+        return p
 
 
 class IngestionViolation(BaseModel):
