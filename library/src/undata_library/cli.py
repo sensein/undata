@@ -322,6 +322,38 @@ def ontology_index_cmd(elements_path: str, output: str) -> None:
     )
 
 
+@main.command()
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option("--cache-dir", default="ontology-cache", help="Ontology cache directory")
+@click.option("--threshold", "-t", default=0.7, help="Ontology assignment threshold")
+@click.option("--model", "-m", default="all-MiniLM-L6-v2", help="Embedding model name")
+@click.option("--dry-run", is_flag=True, help="Preview changes without writing")
+def enrich(path: str, cache_dir: str, threshold: float, model: str, dry_run: bool) -> None:
+    """Enrich elements: auto-assign ontology_term, resolve values, populate value_domain."""
+    from .enrich import enrich_elements
+
+    base = Path(path)
+    elements_dir = base / "elements" if (base / "elements").exists() else base
+
+    stats = enrich_elements(
+        elements_dir=elements_dir,
+        cache_dir=Path(cache_dir),
+        library_path=base,
+        model_name=model,
+        threshold=threshold,
+        dry_run=dry_run,
+    )
+
+    prefix = "[DRY RUN] " if dry_run else ""
+    click.echo(
+        f"{prefix}Enriched: {stats['total']} elements — "
+        f"{stats['enriched_new']} new, {stats['enriched_unchanged']} unchanged, "
+        f"{stats['ontology_assigned']} ontology assigned, "
+        f"{stats['values_resolved']} values resolved, "
+        f"{stats['value_domain_set']} value_domain set."
+    )
+
+
 @main.command("embed")
 @click.argument("path", type=click.Path(exists=True), default=".")
 @click.option("--model", "-m", default="all-MiniLM-L6-v2", help="Embedding model name")
