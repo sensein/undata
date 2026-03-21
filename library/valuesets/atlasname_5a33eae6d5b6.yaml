@@ -1,0 +1,10 @@
+sha256: 5a33eae6d5b677d349cac3c81e238edc7c0ea1107b5ce1ca81bdc2f17731d95d
+semantic:
+  name: AtlasName
+  members:
+  - CCF
+  - CUSTOM
+provenance:
+- source: aind
+  class: metadata
+  name: AtlasName

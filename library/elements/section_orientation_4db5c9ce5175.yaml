@@ -18,6 +18,7 @@ semantic:
   question_text: Sectioning orientation
   source_attribute: section_orientation
   source_class: PlanarSectioning
+  value_domain: categorical
 provenance:
 - source: aind
   class: PlanarSectioning

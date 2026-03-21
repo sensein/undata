@@ -3,6 +3,7 @@ semantic:
   question_text: Where performed
   source_attribute: where_performed
   source_class: CatheterImplant
+  value_domain: text
 provenance:
 - source: aind
   class: CatheterImplant

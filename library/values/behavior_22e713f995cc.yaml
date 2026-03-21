@@ -4,3 +4,5 @@ semantic:
 provenance:
 - source: aind
   raw_value: aind.quality_control.CurationMetric.modality.Behavior
+- source: aind
+  raw_value: behavior

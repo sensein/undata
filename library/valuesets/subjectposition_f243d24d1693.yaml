@@ -1,0 +1,10 @@
+sha256: f243d24d169337985e6f4c1298385ba98c6a2ab1d4910d4dfd415ac45b6e7a2e
+semantic:
+  name: SubjectPosition
+  members:
+  - Prone
+  - Supine
+provenance:
+- source: aind
+  class: metadata
+  name: SubjectPosition

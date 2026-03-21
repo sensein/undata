@@ -3,6 +3,7 @@ semantic:
   question_text: Creation Time
   source_attribute: creation_time
   source_class: DataDescription
+  value_domain: text
 provenance:
 - source: aind
   class: DataDescription

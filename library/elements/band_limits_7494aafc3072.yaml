@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: band_limits
   source_class: FrequencyBandsTable
+  value_domain: numeric
 provenance:
 - source: nwb
   class: FrequencyBandsTable

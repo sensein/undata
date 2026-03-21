@@ -3,6 +3,7 @@ semantic:
   question_text: Housing
   source_attribute: housing
   source_class: MouseSubject
+  value_domain: text
 provenance:
 - source: aind
   class: MouseSubject

@@ -3,6 +3,7 @@ semantic:
   question_text: Scanner coordinate system
   source_attribute: scanner_coordinate_system
   source_class: MRIScan
+  value_domain: text
 provenance:
 - source: aind
   class: MRIScan

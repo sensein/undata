@@ -10,10 +10,10 @@ semantic:
   response_options:
   - value: Dual hemisphere craniotomy
     label: Dual hemisphere craniotomy
-    ontology_term: https://schema.undata.live/values/dual_hemisphere_craniotomy_c2cf8d9399b8
+    ontology_term: https://schema.undata.live/values/dual_hemisphere_craniotomy_e4d13e19b9f5
   - value: Whole hemisphere craniotomy
     label: Whole hemisphere craniotomy
-    ontology_term: https://schema.undata.live/values/whole_hemisphere_craniotomy_490034ea19fa
+    ontology_term: https://schema.undata.live/values/whole_hemisphere_craniotomy_f16d88f56534
   - value: Circle
     label: Circle
     ontology_term: https://schema.undata.live/values/circle_9653f89ea47a
@@ -22,10 +22,11 @@ semantic:
     ontology_term: https://schema.undata.live/values/square_cd96aa111533
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   question_text: Craniotomy type
   source_attribute: craniotomy_type
   source_class: Craniotomy
+  value_domain: categorical
 provenance:
 - source: aind
   class: Craniotomy

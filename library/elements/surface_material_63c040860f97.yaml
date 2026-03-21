@@ -3,6 +3,7 @@ semantic:
   question_text: Surface material
   source_attribute: surface_material
   source_class: Disc
+  value_domain: text
 provenance:
 - source: aind
   class: Disc

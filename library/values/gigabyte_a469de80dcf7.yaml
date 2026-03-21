@@ -1,0 +1,7 @@
+sha256: a469de80dcf704d63caf701e656176940fc3dd1bff4d7351b4a116b4e4b35286
+semantic:
+  label: gigabyte
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Gigabyte

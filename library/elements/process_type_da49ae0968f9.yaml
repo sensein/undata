@@ -58,7 +58,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/denoising_ae4fa2ae2660
   - value: Ephys curation
     label: Ephys curation
-    ontology_term: https://schema.undata.live/values/ephys_curation_205ffd1373a2
+    ontology_term: https://schema.undata.live/values/ephys_curation_64b53af4dee2
   - value: Ephys postprocessing
     label: Ephys postprocessing
     ontology_term: https://schema.undata.live/values/ephys_postprocessing_dabb9be74b5f
@@ -67,13 +67,13 @@ semantic:
     ontology_term: https://schema.undata.live/values/ephys_preprocessing_c6b15adad041
   - value: Ephys visualization
     label: Ephys visualization
-    ontology_term: https://schema.undata.live/values/ephys_visualization_4411daa5b14e
+    ontology_term: https://schema.undata.live/values/ephys_visualization_ae804751d6e2
   - value: Fiducial segmentation
     label: Fiducial segmentation
     ontology_term: https://schema.undata.live/values/fiducial_segmentation_e3b239b85329
   - value: File format conversion
     label: File format conversion
-    ontology_term: https://schema.undata.live/values/file_format_conversion_b3d4b8089f43
+    ontology_term: https://schema.undata.live/values/file_format_conversion_ded29eb40ace
   - value: Fluorescence event detection
     label: Fluorescence event detection
     ontology_term: https://schema.undata.live/values/fluorescence_event_detection_441586fe0cbe
@@ -82,13 +82,13 @@ semantic:
     ontology_term: https://schema.undata.live/values/image_atlas_alignment_e089c87ab009
   - value: Image background subtraction
     label: Image background subtraction
-    ontology_term: https://schema.undata.live/values/image_background_subtraction_1ef57d039d5b
+    ontology_term: https://schema.undata.live/values/image_background_subtraction_3d9ff0ca8c1f
   - value: Image cell classification
     label: Image cell classification
-    ontology_term: https://schema.undata.live/values/image_cell_classification_35ebc50dc6b7
+    ontology_term: https://schema.undata.live/values/image_cell_classification_9fe1e1991ac3
   - value: Image cell quantification
     label: Image cell quantification
-    ontology_term: https://schema.undata.live/values/image_cell_quantification_00de4b2ff4e0
+    ontology_term: https://schema.undata.live/values/image_cell_quantification_907c582c6305
   - value: Image cell segmentation
     label: Image cell segmentation
     ontology_term: https://schema.undata.live/values/image_cell_segmentation_1b6fe0fb40b3
@@ -97,13 +97,13 @@ semantic:
     ontology_term: https://schema.undata.live/values/image_cross-image_alignment_e878d6b9256a
   - value: Image destriping
     label: Image destriping
-    ontology_term: https://schema.undata.live/values/image_destriping_9621a9eed6ad
+    ontology_term: https://schema.undata.live/values/image_destriping_a7568bacf562
   - value: Image flat-field correction
     label: Image flat-field correction
     ontology_term: https://schema.undata.live/values/image_flat-field_correction_add8f0b6697a
   - value: Image importing
     label: Image importing
-    ontology_term: https://schema.undata.live/values/image_importing_0d2ea129c86b
+    ontology_term: https://schema.undata.live/values/image_importing_11754f46617c
   - value: Image mip visualization
     label: Image mip visualization
     ontology_term: https://schema.undata.live/values/image_mip_visualization_e81e11593cbd
@@ -112,7 +112,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/image_radial_correction_d0ed14769cd0
   - value: Image spot detection
     label: Image spot detection
-    ontology_term: https://schema.undata.live/values/image_spot_detection_56943a4af23b
+    ontology_term: https://schema.undata.live/values/image_spot_detection_c4eb0f655913
   - value: Image spot spectral unmixing
     label: Image spot spectral unmixing
     ontology_term: https://schema.undata.live/values/image_spot_spectral_unmixing_a7c71b77590f
@@ -121,7 +121,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/image_thresholding_f01cc2e1782d
   - value: Image tile alignment
     label: Image tile alignment
-    ontology_term: https://schema.undata.live/values/image_tile_alignment_9bfe8a6d4847
+    ontology_term: https://schema.undata.live/values/image_tile_alignment_f2cf9fce06be
   - value: Image tile fusing
     label: Image tile fusing
     ontology_term: https://schema.undata.live/values/image_tile_fusing_9ff3bd780aa7
@@ -130,10 +130,10 @@ semantic:
     ontology_term: https://schema.undata.live/values/image_tile_projection_7e410dedc0d8
   - value: Model evaluation
     label: Model evaluation
-    ontology_term: https://schema.undata.live/values/model_evaluation_bcf2ecf25cbc
+    ontology_term: https://schema.undata.live/values/model_evaluation_edaf62db4c43
   - value: Model training
     label: Model training
-    ontology_term: https://schema.undata.live/values/model_training_3674d2a3a80c
+    ontology_term: https://schema.undata.live/values/model_training_b28925367044
   - value: Neuron skeleton processing
     label: Neuron skeleton processing
     ontology_term: https://schema.undata.live/values/neuron_skeleton_processing_dd29a72df94f
@@ -142,7 +142,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/neuropil_subtraction_bbe242a169a5
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   - value: Pipeline
     label: Pipeline
     ontology_term: https://schema.undata.live/values/pipeline_bb9e5cbec961
@@ -151,25 +151,25 @@ semantic:
     ontology_term: https://schema.undata.live/values/simulation_946a623f969d
   - value: Skull stripping
     label: Skull stripping
-    ontology_term: https://schema.undata.live/values/skull_stripping_00d8c4cac0a0
+    ontology_term: https://schema.undata.live/values/skull_stripping_90eb5c22f17d
   - value: Spatial timeseries demixing
     label: Spatial timeseries demixing
     ontology_term: https://schema.undata.live/values/spatial_timeseries_demixing_79debc01c0f2
   - value: Spike sorting
     label: Spike sorting
-    ontology_term: https://schema.undata.live/values/spike_sorting_74478190aa3e
+    ontology_term: https://schema.undata.live/values/spike_sorting_d36b3c3a458e
   - value: Video ROI classification
     label: Video ROI classification
-    ontology_term: https://schema.undata.live/values/video_roi_classification_2e13f9e87f0b
+    ontology_term: https://schema.undata.live/values/video_roi_classification_c3133013f8b4
   - value: Video ROI cross session matching
     label: Video ROI cross session matching
     ontology_term: https://schema.undata.live/values/video_roi_cross_session_matching_e3cf8529209b
   - value: Video ROI segmentation
     label: Video ROI segmentation
-    ontology_term: https://schema.undata.live/values/video_roi_segmentation_eb11d420933c
+    ontology_term: https://schema.undata.live/values/video_roi_segmentation_f492cc25cd28
   - value: Video ROI timeseries extraction
     label: Video ROI timeseries extraction
-    ontology_term: https://schema.undata.live/values/video_roi_timeseries_extraction_3a98b3cea838
+    ontology_term: https://schema.undata.live/values/video_roi_timeseries_extraction_4115217a793b
   - value: Video motion correction
     label: Video motion correction
     ontology_term: https://schema.undata.live/values/video_motion_correction_e5e6b1232c4b
@@ -178,10 +178,11 @@ semantic:
     ontology_term: https://schema.undata.live/values/video_plane_decrosstalk_4082d1f750f9
   - value: dF/F estimation
     label: dF/F estimation
-    ontology_term: https://schema.undata.live/values/df_f_estimation_2fb47fcd1c35
+    ontology_term: https://schema.undata.live/values/df_f_estimation_7f095faf7fdf
   question_text: ProcessName
   source_attribute: process_type
   source_class: ModelTraining
+  value_domain: categorical
 provenance:
 - source: aind
   class: ModelTraining

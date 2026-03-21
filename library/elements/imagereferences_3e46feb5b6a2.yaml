@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: ImageReferences
   source_class: ImageReferences
+  value_domain: text
 provenance:
 - source: nwb
   class: ImageReferences

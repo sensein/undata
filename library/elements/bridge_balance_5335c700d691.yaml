@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: bridge_balance
   source_class: IZeroClampSeries
+  value_domain: numeric
 provenance:
 - source: nwb
   class: IZeroClampSeries

@@ -3,6 +3,7 @@ semantic:
   question_text: CPU name
   source_attribute: cpu
   source_class: ResourceUsage
+  value_domain: text
 provenance:
 - source: aind
   class: ResourceUsage

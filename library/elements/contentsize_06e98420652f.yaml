@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: contentSize
   source_class: PublishedAsset
+  value_domain: text
 provenance:
 - source: dandi
   class: PublishedAsset

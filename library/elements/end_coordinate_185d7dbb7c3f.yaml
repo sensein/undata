@@ -3,6 +3,7 @@ semantic:
   question_text: End coordinate
   source_attribute: end_coordinate
   source_class: PlanarSection
+  value_domain: text
 provenance:
 - source: aind
   class: PlanarSection

@@ -3,6 +3,7 @@ semantic:
   question_text: Cell ID
   source_attribute: cell_id
   source_class: HCRSeries
+  value_domain: text
 provenance:
 - source: aind
   class: HCRSeries

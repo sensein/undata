@@ -1,0 +1,14 @@
+sha256: f95e714f9e8c3739fe9bd8f597c61f32233ac499f88203d735160380c3f17251
+semantic:
+  name: CameraTarget
+  members:
+  - Body
+  - Brain
+  - Eye
+  - Face
+  - Other
+  - Tongue
+provenance:
+- source: aind
+  class: metadata
+  name: CameraTarget

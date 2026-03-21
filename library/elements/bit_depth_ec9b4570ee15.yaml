@@ -3,6 +3,7 @@ semantic:
   question_text: Bit depth
   source_attribute: bit_depth
   source_class: Camera
+  value_domain: numeric
 provenance:
 - source: aind
   class: Camera

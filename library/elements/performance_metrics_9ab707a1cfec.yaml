@@ -3,6 +3,7 @@ semantic:
   question_text: Performance metrics
   source_attribute: performance_metrics
   source_class: StimulusEpoch
+  value_domain: text
 provenance:
 - source: aind
   class: StimulusEpoch

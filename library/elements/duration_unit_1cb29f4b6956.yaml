@@ -3,6 +3,7 @@ semantic:
   question_text: Injection duration unit
   source_attribute: duration_unit
   source_class: InjectionDynamics
+  value_domain: text
 provenance:
 - source: aind
   class: InjectionDynamics

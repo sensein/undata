@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: citation
   source_class: PublishedDandiset
+  value_domain: text
 provenance:
 - source: dandi
   class: PublishedDandiset

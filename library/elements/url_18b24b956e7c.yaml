@@ -3,6 +3,7 @@ semantic:
   question_text: Asset location
   source_attribute: url
   source_class: DataAsset
+  value_domain: text
 provenance:
 - source: aind
   class: DataAsset

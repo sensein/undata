@@ -3,6 +3,7 @@ semantic:
   question_text: Collection volume
   source_attribute: collection_volume
   source_class: SampleCollection
+  value_domain: numeric
 provenance:
 - source: aind
   class: SampleCollection

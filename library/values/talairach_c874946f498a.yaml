@@ -1,0 +1,7 @@
+sha256: c874946f498a83303fd01993d211eb76a052b45e2deb6c1a430881325700fcef
+semantic:
+  label: Talairach
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: Talairach

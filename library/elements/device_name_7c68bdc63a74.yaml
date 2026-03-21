@@ -3,6 +3,7 @@ semantic:
   question_text: Device name
   source_attribute: device_name
   source_class: OlfactometerConfig
+  value_domain: text
 provenance:
 - source: aind
   class: OlfactometerConfig

@@ -3,6 +3,7 @@ semantic:
   question_text: Notes
   source_attribute: notes
   source_class: FiberPatchCord
+  value_domain: text
 provenance:
 - source: aind
   class: FiberPatchCord

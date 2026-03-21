@@ -3,6 +3,7 @@ semantic:
   question_text: Fiber assembly name
   source_attribute: name
   source_class: FiberAssembly
+  value_domain: text
 provenance:
 - source: aind
   class: FiberAssembly

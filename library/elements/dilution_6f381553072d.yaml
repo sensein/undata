@@ -3,6 +3,7 @@ semantic:
   question_text: Odorant dilution
   source_attribute: dilution
   source_class: OlfactometerChannelInfo
+  value_domain: numeric
 provenance:
 - source: aind
   class: OlfactometerChannelInfo

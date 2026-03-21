@@ -1,0 +1,10 @@
+sha256: 02394735e1386c0c65d634f5b0ee28412d69e0464a1dd0b0a2596967075e73f5
+semantic:
+  name: ProcessStage
+  members:
+  - Analysis
+  - Processing
+provenance:
+- source: aind
+  class: metadata
+  name: ProcessStage

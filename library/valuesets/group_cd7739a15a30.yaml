@@ -1,0 +1,13 @@
+sha256: cd7739a15a307a4a89e31e0684012b2dade5d2133f363eef08c1a70531d69f32
+semantic:
+  name: Group
+  members:
+  - MSMA
+  - NBA
+  - behavior
+  - ephys
+  - ophys
+provenance:
+- source: aind
+  class: metadata
+  name: Group

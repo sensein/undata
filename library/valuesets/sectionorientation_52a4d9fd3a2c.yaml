@@ -1,0 +1,11 @@
+sha256: 52a4d9fd3a2c123f4eb36aa1ed144c05de2cb605f1ba745b52fdf359fb445fad
+semantic:
+  name: SectionOrientation
+  members:
+  - Coronal
+  - Sagittal
+  - Transverse
+provenance:
+- source: aind
+  class: metadata
+  name: SectionOrientation

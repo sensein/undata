@@ -3,6 +3,7 @@ semantic:
   question_text: Timestamp
   source_attribute: timestamp
   source_class: ResourceTimestamped
+  value_domain: text
 provenance:
 - source: aind
   class: ResourceTimestamped

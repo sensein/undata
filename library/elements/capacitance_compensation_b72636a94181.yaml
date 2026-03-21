@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: capacitance_compensation
   source_class: CurrentClampSeries
+  value_domain: numeric
 provenance:
 - source: nwb
   class: CurrentClampSeries

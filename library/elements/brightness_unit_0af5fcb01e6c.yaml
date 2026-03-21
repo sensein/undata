@@ -3,6 +3,7 @@ semantic:
   question_text: Brightness unit
   source_attribute: brightness_unit
   source_class: Monitor
+  value_domain: text
 provenance:
 - source: aind
   class: Monitor

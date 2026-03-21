@@ -19,25 +19,26 @@ semantic:
     ontology_term: https://schema.undata.live/values/dichroic_de5f4a5dbff4
   - value: Long pass
     label: Long pass
-    ontology_term: https://schema.undata.live/values/long_pass_3578caa3f9c4
+    ontology_term: https://schema.undata.live/values/long_pass_d73fe1a4ecbe
   - value: Multiband
     label: Multiband
     ontology_term: https://schema.undata.live/values/multiband_b7695b742952
   - value: Neutral density
     label: Neutral density
-    ontology_term: https://schema.undata.live/values/neutral_density_039fb6d990dd
+    ontology_term: https://schema.undata.live/values/neutral_density_946d381af783
   - value: Notch
     label: Notch
     ontology_term: https://schema.undata.live/values/notch_1c387f41c0e5
   - value: Multi notch
     label: Multi notch
-    ontology_term: https://schema.undata.live/values/multi_notch_341005e48004
+    ontology_term: https://schema.undata.live/values/multi_notch_3b6370a18cc2
   - value: Short pass
     label: Short pass
-    ontology_term: https://schema.undata.live/values/short_pass_e084424e8ff3
+    ontology_term: https://schema.undata.live/values/short_pass_e83a0d2aad15
   question_text: Type of filter
   source_attribute: filter_type
   source_class: Filter
+  value_domain: categorical
 provenance:
 - source: aind
   class: Filter

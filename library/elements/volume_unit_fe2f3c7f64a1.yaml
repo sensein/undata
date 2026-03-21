@@ -3,6 +3,7 @@ semantic:
   question_text: Volume unit
   source_attribute: volume_unit
   source_class: SpeakerConfig
+  value_domain: text
 provenance:
 - source: aind
   class: SpeakerConfig

@@ -3,6 +3,7 @@ semantic:
   question_text: Species of the probe
   source_attribute: species
   source_class: ProteinProbe
+  value_domain: text
 provenance:
 - source: aind
   class: ProteinProbe

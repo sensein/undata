@@ -1,0 +1,7 @@
+sha256: 3767843f849565f1ea40deca0d78aa40ebf375ecd37312873de2d6989b3a4beb
+semantic:
+  label: ACPC
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: ACPC

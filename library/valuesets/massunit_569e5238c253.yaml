@@ -1,0 +1,13 @@
+sha256: 569e5238c2530f2b56a04bad11802ebe8a1722b784c2e3ae6e1d91114e14570c
+semantic:
+  name: MassUnit
+  members:
+  - gram
+  - kilogram
+  - microgram
+  - milligram
+  - nanogram
+provenance:
+- source: aind
+  class: metadata
+  name: MassUnit

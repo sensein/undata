@@ -3,6 +3,7 @@ semantic:
   question_text: Ethics review ID
   source_attribute: ethics_review_id
   source_class: WaterRestriction
+  value_domain: text
 provenance:
 - source: aind
   class: WaterRestriction

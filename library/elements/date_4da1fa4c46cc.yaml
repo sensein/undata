@@ -3,6 +3,7 @@ semantic:
   question_text: Date
   source_attribute: date
   source_class: WellnessReport
+  value_domain: text
 provenance:
 - source: aind
   class: WellnessReport

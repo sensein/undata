@@ -3,6 +3,7 @@ semantic:
   question_text: Reward consumed unit
   source_attribute: reward_consumed_unit
   source_class: PerformanceMetrics
+  value_domain: text
 provenance:
 - source: aind
   class: PerformanceMetrics

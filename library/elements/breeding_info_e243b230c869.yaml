@@ -3,6 +3,7 @@ semantic:
   question_text: Breeding Info
   source_attribute: breeding_info
   source_class: MouseSubject
+  value_domain: text
 provenance:
 - source: aind
   class: MouseSubject

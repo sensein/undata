@@ -3,6 +3,7 @@ semantic:
   question_text: Power measurement location
   source_attribute: power_measured_at
   source_class: LaserConfig
+  value_domain: text
 provenance:
 - source: aind
   class: LaserConfig

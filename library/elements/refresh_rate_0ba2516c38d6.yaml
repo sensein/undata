@@ -4,6 +4,7 @@ semantic:
   min_value: 60.0
   source_attribute: refresh_rate
   source_class: Monitor
+  value_domain: numeric
 provenance:
 - source: aind
   class: Monitor

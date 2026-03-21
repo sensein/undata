@@ -1,0 +1,22 @@
+sha256: 7abd8802ff5860607f8f8bea254d4b174632624983ae9a73d946f4d6da070518
+semantic:
+  data_type: string
+  source_attribute: electrode
+  source_class: IntracellularElectrodesTable
+  value_domain: text
+  ontology_term: http://purl.obolibrary.org/obo/OBI_0000447
+provenance:
+- source: nwb
+  class: IntracellularElectrodesTable
+  name: electrode
+  description: Column for storing the reference to the intracellular electrode.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: enrichment
+  class: IntracellularElectrodesTable
+  name: electrode
+  generated_at: '2026-03-21T05:17:40.646959+00:00'
+  attributed_to: urn:undata:enrichment-pipeline
+  activity: enrichment
+  derived_from: https://schema.undata.live/elements/electrode_84f7953b184b

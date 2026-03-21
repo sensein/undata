@@ -1,0 +1,7 @@
+sha256: d36b3c3a458ef058c5588f2b95984935b83ecc3b5c46fecbd856c4e86a5b38a0
+semantic:
+  label: spike sorting
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Spike sorting

@@ -3,6 +3,7 @@ semantic:
   question_text: Voxel resolution
   source_attribute: resolution
   source_class: MRIScan
+  value_domain: text
 provenance:
 - source: aind
   class: MRIScan

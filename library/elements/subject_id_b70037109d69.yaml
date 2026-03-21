@@ -3,6 +3,7 @@ semantic:
   question_text: Subject ID
   source_attribute: subject_id
   source_class: DataDescription
+  value_domain: text
 provenance:
 - source: aind
   class: DataDescription

@@ -1,0 +1,10 @@
+sha256: 2cf57265ae3047eba0a84dfc3d27bb0e5e3c800b62fbb127d559566016c2fb84
+semantic:
+  name: CameraChroma
+  members:
+  - Color
+  - Monochrome
+provenance:
+- source: aind
+  class: metadata
+  name: CameraChroma

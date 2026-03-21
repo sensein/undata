@@ -3,6 +3,7 @@ semantic:
   question_text: Center wavelength (nm)
   source_attribute: center_wavelength
   source_class: Filter
+  value_domain: numeric
 provenance:
 - source: aind
   class: Filter

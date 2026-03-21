@@ -3,6 +3,7 @@ semantic:
   question_text: Includes surrounding tissue
   source_attribute: includes_surrounding_tissue
   source_class: Section
+  value_domain: boolean
 provenance:
 - source: aind
   class: Section

@@ -3,6 +3,7 @@ semantic:
   question_text: Manipulation start time
   source_attribute: start_time
   source_class: Manipulation
+  value_domain: text
 provenance:
 - source: aind
   class: Manipulation

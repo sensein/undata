@@ -18,6 +18,7 @@ semantic:
   question_text: Injection profile
   source_attribute: profile
   source_class: InjectionDynamics
+  value_domain: categorical
 provenance:
 - source: aind
   class: InjectionDynamics

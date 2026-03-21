@@ -3,6 +3,7 @@ semantic:
   question_text: Ground wire diameter unit
   source_attribute: ground_wire_diameter_unit
   source_class: GroundWireImplant
+  value_domain: text
 provenance:
 - source: aind
   class: GroundWireImplant

@@ -3,6 +3,7 @@ semantic:
   question_text: Plane index
   source_attribute: plane_index
   source_class: CoupledPlane
+  value_domain: numeric
 provenance:
 - source: aind
   class: CoupledPlane

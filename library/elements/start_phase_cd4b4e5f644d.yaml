@@ -3,6 +3,7 @@ semantic:
   question_text: DMD Start phase (fraction of line scan period)
   source_attribute: start_phase
   source_class: DigitalMicromirrorDevice
+  value_domain: numeric
 provenance:
 - source: aind
   class: DigitalMicromirrorDevice

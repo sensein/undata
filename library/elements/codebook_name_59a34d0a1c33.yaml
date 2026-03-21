@@ -3,6 +3,7 @@ semantic:
   question_text: Codebook name
   source_attribute: codebook_name
   source_class: HCRSeries
+  value_domain: text
 provenance:
 - source: aind
   class: HCRSeries

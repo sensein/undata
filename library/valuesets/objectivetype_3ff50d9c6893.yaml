@@ -1,0 +1,10 @@
+sha256: 3ff50d9c6893f7e16e71687d04ba7aff6263df5aac4dc082cfb3f2f2238c8998
+semantic:
+  name: ObjectiveType
+  members:
+  - Primary
+  - Remote
+provenance:
+- source: aind
+  class: metadata
+  name: ObjectiveType

@@ -1,0 +1,10 @@
+sha256: 2044b377612b0ec7f440bee3e79267fb7c4f0295783b75adf70b84b24b40ada5
+semantic:
+  name: AccessType
+  members:
+  - dandi:EmbargoedAccess
+  - dandi:OpenAccess
+provenance:
+- source: dandi
+  class: AccessRequirements
+  name: AccessType

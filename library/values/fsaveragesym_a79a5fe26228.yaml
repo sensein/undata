@@ -1,0 +1,7 @@
+sha256: a79a5fe262280d7ec80b85e5341c52d05538e402336875f8168b899288a2b4b0
+semantic:
+  label: fsaverageSym
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: fsaverageSym

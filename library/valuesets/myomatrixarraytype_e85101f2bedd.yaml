@@ -1,0 +1,10 @@
+sha256: e85101f2bedd7b590a3adc08c3919aaf71abcb7c18cbb0065afb30b16cb55c87
+semantic:
+  name: MyomatrixArrayType
+  members:
+  - Injected
+  - Sutured
+provenance:
+- source: aind
+  class: metadata
+  name: MyomatrixArrayType

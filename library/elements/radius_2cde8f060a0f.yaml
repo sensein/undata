@@ -3,6 +3,7 @@ semantic:
   question_text: Radius (cm)
   source_attribute: radius
   source_class: Disc
+  value_domain: numeric
 provenance:
 - source: aind
   class: Disc

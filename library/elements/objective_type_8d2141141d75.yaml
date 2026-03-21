@@ -3,6 +3,7 @@ semantic:
   question_text: Objective type
   source_attribute: objective_type
   source_class: Objective
+  value_domain: text
 provenance:
 - source: aind
   class: Objective

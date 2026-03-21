@@ -1,0 +1,7 @@
+sha256: bd48fbcadb1534f923b11b2fdc76fe631bb04428b62eae25e0f22a3ed53a4e5f
+semantic:
+  label: megabyte
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Megabyte

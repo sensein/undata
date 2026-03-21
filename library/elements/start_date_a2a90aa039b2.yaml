@@ -3,6 +3,7 @@ semantic:
   question_text: Start date
   source_attribute: start_date
   source_class: GenericSubjectProcedure
+  value_domain: text
 provenance:
 - source: aind
   class: GenericSubjectProcedure

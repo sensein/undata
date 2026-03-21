@@ -18,6 +18,7 @@ semantic:
   question_text: Data Level
   source_attribute: data_level
   source_class: DataDescription
+  value_domain: categorical
 provenance:
 - source: aind
   class: DataDescription

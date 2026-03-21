@@ -1,0 +1,7 @@
+sha256: 9fe1e1991ac3f9cf5a6346f4e4f7742c00a81a3ae904f88ea7300865a99e58cc
+semantic:
+  label: image cell classification
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Image cell classification

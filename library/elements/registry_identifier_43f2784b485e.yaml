@@ -3,6 +3,7 @@ semantic:
   question_text: Registry Identifier
   source_attribute: registry_identifier
   source_class: MouseAnatomyModel
+  value_domain: text
 provenance:
 - source: aind
   class: MouseAnatomyModel

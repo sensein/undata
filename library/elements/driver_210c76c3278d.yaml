@@ -3,6 +3,7 @@ semantic:
   question_text: Driver
   source_attribute: driver
   source_class: Detector
+  value_domain: text
 provenance:
 - source: aind
   class: Detector

@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: timeseries
   source_class: TimeIntervals
+  value_domain: text
 provenance:
 - source: nwb
   class: TimeIntervals

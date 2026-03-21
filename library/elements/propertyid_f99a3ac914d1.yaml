@@ -25,6 +25,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/dandi:rrid_25add7b198fe
   source_attribute: propertyID
   source_class: PropertyValue
+  value_domain: categorical
 provenance:
 - source: dandi
   class: PropertyValue

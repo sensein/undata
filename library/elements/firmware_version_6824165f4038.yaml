@@ -3,6 +3,7 @@ semantic:
   question_text: Firmware version
   source_attribute: firmware_version
   source_class: HarpDevice
+  value_domain: text
 provenance:
 - source: aind
   class: HarpDevice

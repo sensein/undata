@@ -3,6 +3,7 @@ semantic:
   question_text: Anaesthesia
   source_attribute: anaesthesia
   source_class: AcquisitionSubjectDetails
+  value_domain: text
 provenance:
 - source: aind
   class: AcquisitionSubjectDetails

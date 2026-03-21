@@ -3,6 +3,7 @@ semantic:
   question_text: Strain
   source_attribute: strain
   source_class: MouseSubject
+  value_domain: text
 provenance:
 - source: aind
   class: MouseSubject

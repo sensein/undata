@@ -34,6 +34,7 @@ semantic:
   question_text: Dimensions unit
   source_attribute: dimensions_unit
   source_class: ImageSPIM
+  value_domain: categorical
 provenance:
 - source: aind
   class: ImageSPIM

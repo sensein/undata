@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: field_of_view
   source_class: TwoPhotonSeries
+  value_domain: numeric
 provenance:
 - source: nwb
   class: TwoPhotonSeries

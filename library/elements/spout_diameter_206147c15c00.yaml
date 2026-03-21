@@ -3,6 +3,7 @@ semantic:
   question_text: Spout diameter (mm)
   source_attribute: spout_diameter
   source_class: LickSpout
+  value_domain: numeric
 provenance:
 - source: aind
   class: LickSpout

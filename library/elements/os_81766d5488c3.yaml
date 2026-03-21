@@ -3,6 +3,7 @@ semantic:
   question_text: Operating system
   source_attribute: os
   source_class: ResourceUsage
+  value_domain: text
 provenance:
 - source: aind
   class: ResourceUsage

@@ -1,0 +1,7 @@
+sha256: 133ec7a87c4494d69b07a7f447d768178481c04a89137b472b46f97b96b1b968
+semantic:
+  label: no binning
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: No binning

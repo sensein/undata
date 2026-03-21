@@ -3,6 +3,7 @@ semantic:
   question_text: Name
   source_attribute: name
   source_class: GeneProbeSet
+  value_domain: text
 provenance:
 - source: aind
   class: GeneProbeSet

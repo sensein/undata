@@ -3,6 +3,7 @@ semantic:
   question_text: Curator
   source_attribute: curator
   source_class: CurationHistory
+  value_domain: text
 provenance:
 - source: aind
   class: CurationHistory

@@ -1,0 +1,16 @@
+sha256: 3bcf58951384ae657e6a1b2dead641f7e1767f0a5a7a972b5deed8f57972eeab
+semantic:
+  name: StimulusModality
+  members:
+  - Auditory
+  - Free moving
+  - No stimulus
+  - Olfactory
+  - Optogenetics
+  - Virtual reality
+  - Visual
+  - Wheel friction
+provenance:
+- source: aind
+  class: metadata
+  name: StimulusModality

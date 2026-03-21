@@ -3,6 +3,7 @@ semantic:
   question_text: Core version
   source_attribute: core_version
   source_class: Olfactometer
+  value_domain: text
 provenance:
 - source: aind
   class: Olfactometer

@@ -3,6 +3,7 @@ semantic:
   question_text: Breeding Group
   source_attribute: breeding_group
   source_class: BreedingInfo
+  value_domain: text
 provenance:
 - source: aind
   class: BreedingInfo

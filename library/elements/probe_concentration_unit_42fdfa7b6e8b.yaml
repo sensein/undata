@@ -3,6 +3,7 @@ semantic:
   question_text: Probe concentration unit
   source_attribute: probe_concentration_unit
   source_class: HybridizationChainReaction
+  value_domain: text
 provenance:
 - source: aind
   class: HybridizationChainReaction

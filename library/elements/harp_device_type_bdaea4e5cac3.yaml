@@ -3,6 +3,7 @@ semantic:
   question_text: Type of Harp device
   source_attribute: harp_device_type
   source_class: Olfactometer
+  value_domain: text
 provenance:
 - source: aind
   class: Olfactometer

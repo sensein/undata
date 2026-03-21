@@ -3,6 +3,7 @@ semantic:
   question_text: Sensor format unit
   source_attribute: sensor_format_unit
   source_class: Detector
+  value_domain: text
 provenance:
 - source: aind
   class: Detector

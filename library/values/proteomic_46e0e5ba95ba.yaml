@@ -1,0 +1,7 @@
+sha256: 46e0e5ba95ba31bed3e5e3092ac8571d5dfcaed28cab6d8c4ba0ba9ae26dfd0f
+semantic:
+  label: Proteomic
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: Proteomic

@@ -1,0 +1,7 @@
+sha256: 7bf54eedef90c4698a342acda84463d048f759f62f53a81fc1cc83b82021316b
+semantic:
+  label: ElektaNeuromag
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: ElektaNeuromag

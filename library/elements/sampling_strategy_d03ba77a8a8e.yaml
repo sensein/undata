@@ -3,6 +3,7 @@ semantic:
   question_text: Sampling strategy
   source_attribute: sampling_strategy
   source_class: ImagingConfig
+  value_domain: text
 provenance:
 - source: aind
   class: ImagingConfig

@@ -3,6 +3,7 @@ semantic:
   question_text: Curation type
   source_attribute: type
   source_class: CurationMetric
+  value_domain: text
 provenance:
 - source: aind
   class: CurationMetric

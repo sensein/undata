@@ -2,6 +2,7 @@ semantic:
   data_type: integer
   source_attribute: source_idx
   source_class: EventDetection
+  value_domain: numeric
 provenance:
 - source: nwb
   class: EventDetection

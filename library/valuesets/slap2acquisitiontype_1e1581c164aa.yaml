@@ -1,0 +1,10 @@
+sha256: 1e1581c164aa7063bbc419a79a7b2241c99d8081ba8b47452bd71920246b04b6
+semantic:
+  name: Slap2AcquisitionType
+  members:
+  - integration
+  - raster
+provenance:
+- source: aind
+  class: metadata
+  name: Slap2AcquisitionType

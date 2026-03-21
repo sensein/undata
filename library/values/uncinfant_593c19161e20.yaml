@@ -1,0 +1,7 @@
+sha256: 593c19161e203bb9227fdaa035f7775a231a4b5c46d1b98b079ca665670411e5
+semantic:
+  label: UNCInfant
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: UNCInfant

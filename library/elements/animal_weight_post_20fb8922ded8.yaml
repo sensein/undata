@@ -3,6 +3,7 @@ semantic:
   question_text: Animal weight (g)
   source_attribute: animal_weight_post
   source_class: AcquisitionSubjectDetails
+  value_domain: numeric
 provenance:
 - source: aind
   class: AcquisitionSubjectDetails

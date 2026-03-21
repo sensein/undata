@@ -3,6 +3,7 @@ semantic:
   question_text: Architecture
   source_attribute: architecture
   source_class: ResourceUsage
+  value_domain: text
 provenance:
 - source: aind
   class: ResourceUsage

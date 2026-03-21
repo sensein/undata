@@ -25,6 +25,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/dandi:isdizygotictwinof_536b3eb287dc
   source_attribute: relation
   source_class: RelatedParticipant
+  value_domain: categorical
 provenance:
 - source: dandi
   class: RelatedParticipant

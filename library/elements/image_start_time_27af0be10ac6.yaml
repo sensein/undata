@@ -3,6 +3,7 @@ semantic:
   question_text: Image acquisition start time
   source_attribute: image_start_time
   source_class: ImageSPIM
+  value_domain: text
 provenance:
 - source: aind
   class: ImageSPIM

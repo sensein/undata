@@ -34,6 +34,7 @@ semantic:
   question_text: Diameter unit
   source_attribute: diameter_unit
   source_class: Tube
+  value_domain: categorical
 provenance:
 - source: aind
   class: Tube

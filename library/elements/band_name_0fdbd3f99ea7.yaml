@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: band_name
   source_class: FrequencyBandsTable
+  value_domain: text
 provenance:
 - source: nwb
   class: FrequencyBandsTable

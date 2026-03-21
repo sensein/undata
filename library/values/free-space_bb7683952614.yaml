@@ -1,0 +1,7 @@
+sha256: bb7683952614834488e660961f769026872367032cc9b01ff0f6c0dfb66baf4a
+semantic:
+  label: free-space
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Free-space

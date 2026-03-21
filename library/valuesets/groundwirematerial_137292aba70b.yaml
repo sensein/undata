@@ -1,0 +1,10 @@
+sha256: 137292aba70bfdd774c62f62405b8ceb75184eb1d1132828a96787ca3b89b541
+semantic:
+  name: GroundWireMaterial
+  members:
+  - Platinum iridium
+  - Silver
+provenance:
+- source: aind
+  class: metadata
+  name: GroundWireMaterial

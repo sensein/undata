@@ -3,6 +3,7 @@ semantic:
   question_text: System memory
   source_attribute: system_memory
   source_class: ResourceUsage
+  value_domain: numeric
 provenance:
 - source: aind
   class: ResourceUsage

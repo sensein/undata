@@ -9,7 +9,7 @@ semantic:
   response_options:
   - value: Raw data
     label: Raw data
-    ontology_term: https://schema.undata.live/values/raw_data_7872a1f25cd7
+    ontology_term: https://schema.undata.live/values/raw_data_fd08061bbaa0
   - value: Processing
     label: Processing
     ontology_term: https://schema.undata.live/values/processing_041d09e79095
@@ -22,6 +22,7 @@ semantic:
   question_text: Evaluation stage
   source_attribute: stage
   source_class: CurationMetric
+  value_domain: categorical
 provenance:
 - source: aind
   class: CurationMetric

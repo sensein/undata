@@ -3,6 +3,7 @@ semantic:
   question_text: Ephys assembly name
   source_attribute: name
   source_class: EphysAssembly
+  value_domain: text
 provenance:
 - source: aind
   class: EphysAssembly

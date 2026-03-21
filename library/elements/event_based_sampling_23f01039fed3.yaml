@@ -3,6 +3,7 @@ semantic:
   question_text: Set to true if DAQ channel is sampled at irregular intervals
   source_attribute: event_based_sampling
   source_class: DAQChannel
+  value_domain: boolean
 provenance:
 - source: aind
   class: DAQChannel

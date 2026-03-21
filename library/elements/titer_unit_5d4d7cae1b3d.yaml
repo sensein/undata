@@ -3,6 +3,7 @@ semantic:
   question_text: Titer unit
   source_attribute: titer_unit
   source_class: ViralMaterial
+  value_domain: text
 provenance:
 - source: aind
   class: ViralMaterial

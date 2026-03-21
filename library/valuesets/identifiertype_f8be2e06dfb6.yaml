@@ -1,0 +1,13 @@
+sha256: f8be2e06dfb6b0ccdfe29c556555dd70fcb637754d37e6cb64ee4e8e806fa150
+semantic:
+  name: IdentifierType
+  members:
+  - dandi:dandi
+  - dandi:doi
+  - dandi:orcid
+  - dandi:ror
+  - dandi:rrid
+provenance:
+- source: dandi
+  class: PropertyValue
+  name: IdentifierType

@@ -1,0 +1,7 @@
+sha256: 26daf0d4a71e991e2c6d014510ab9aa3588eff071f457ca7face189634e5e107
+semantic:
+  label: color
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Color

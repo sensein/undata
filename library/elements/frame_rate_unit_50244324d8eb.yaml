@@ -3,6 +3,7 @@ semantic:
   question_text: Frame rate unit
   source_attribute: frame_rate_unit
   source_class: Camera
+  value_domain: text
 provenance:
 - source: aind
   class: Camera

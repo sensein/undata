@@ -18,6 +18,7 @@ semantic:
   question_text: Power unit
   source_attribute: power_unit
   source_class: Plane
+  value_domain: categorical
 provenance:
 - source: aind
   class: Plane

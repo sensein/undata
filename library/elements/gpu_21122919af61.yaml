@@ -3,6 +3,7 @@ semantic:
   question_text: GPU name
   source_attribute: gpu
   source_class: ResourceUsage
+  value_domain: text
 provenance:
 - source: aind
   class: ResourceUsage

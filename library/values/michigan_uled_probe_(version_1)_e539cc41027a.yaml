@@ -1,0 +1,7 @@
+sha256: e539cc41027a1d6ba78cc9f17f7175ed27a10731c92d406c7b4d3fce7d61b601
+semantic:
+  label: michigan uled probe (version 1)
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Michigan uLED Probe (Version 1)

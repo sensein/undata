@@ -3,6 +3,7 @@ semantic:
   question_text: Implanted device
   source_attribute: implanted_device
   source_class: ProbeImplant
+  value_domain: text
 provenance:
 - source: aind
   class: ProbeImplant

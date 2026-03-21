@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: axis_descriptions
   source_class: ImagingRetinotopy
+  value_domain: text
 provenance:
 - source: nwb
   class: ImagingRetinotopy

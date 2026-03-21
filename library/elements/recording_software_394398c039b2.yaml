@@ -3,6 +3,7 @@ semantic:
   question_text: Recording software
   source_attribute: recording_software
   source_class: Camera
+  value_domain: text
 provenance:
 - source: aind
   class: Camera

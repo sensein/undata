@@ -3,6 +3,7 @@ semantic:
   question_text: Frame rate (Hz)
   source_attribute: frame_rate
   source_class: Camera
+  value_domain: numeric
 provenance:
 - source: aind
   class: Camera

@@ -3,6 +3,7 @@ semantic:
   question_text: File name
   source_attribute: file_name
   source_class: ImageSPIM
+  value_domain: text
 provenance:
 - source: aind
   class: ImageSPIM

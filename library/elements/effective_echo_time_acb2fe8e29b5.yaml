@@ -3,6 +3,7 @@ semantic:
   question_text: Effective echo time
   source_attribute: effective_echo_time
   source_class: MRIScan
+  value_domain: numeric
 provenance:
 - source: aind
   class: MRIScan

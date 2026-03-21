@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: minValue
   source_class: PropertyValue
+  value_domain: numeric
 provenance:
 - source: dandi
   class: PropertyValue

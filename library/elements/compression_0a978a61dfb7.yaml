@@ -3,6 +3,7 @@ semantic:
   question_text: Compression
   source_attribute: compression
   source_class: DetectorConfig
+  value_domain: text
 provenance:
 - source: aind
   class: DetectorConfig

@@ -3,6 +3,7 @@ semantic:
   question_text: Round start time
   source_attribute: start_time
   source_class: HybridizationChainReaction
+  value_domain: text
 provenance:
 - source: aind
   class: HybridizationChainReaction

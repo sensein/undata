@@ -3,6 +3,7 @@ semantic:
   question_text: Fit parameters
   source_attribute: fit_parameters
   source_class: CalibrationFit
+  value_domain: text
 provenance:
 - source: aind
   class: CalibrationFit

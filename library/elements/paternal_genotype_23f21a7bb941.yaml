@@ -3,6 +3,7 @@ semantic:
   question_text: Paternal genotype
   source_attribute: paternal_genotype
   source_class: BreedingInfo
+  value_domain: text
 provenance:
 - source: aind
   class: BreedingInfo

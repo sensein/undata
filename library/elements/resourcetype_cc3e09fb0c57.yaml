@@ -125,6 +125,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/dcite:other_de3e4ab78d32
   source_attribute: resourceType
   source_class: Resource
+  value_domain: categorical
 provenance:
 - source: dandi
   class: Resource

@@ -3,6 +3,7 @@ semantic:
   question_text: Pulse per revolution
   source_attribute: pulse_per_revolution
   source_class: Wheel
+  value_domain: numeric
 provenance:
 - source: aind
   class: Wheel

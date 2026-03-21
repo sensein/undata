@@ -13,6 +13,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/dandi:embargoedaccess_c8cdd43ae847
   source_attribute: status
   source_class: AccessRequirements
+  value_domain: categorical
 provenance:
 - source: dandi
   class: AccessRequirements

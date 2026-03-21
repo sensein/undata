@@ -3,6 +3,7 @@ semantic:
   question_text: Repetition time (s)
   source_attribute: repetition_time
   source_class: MRIScan
+  value_domain: numeric
 provenance:
 - source: aind
   class: MRIScan

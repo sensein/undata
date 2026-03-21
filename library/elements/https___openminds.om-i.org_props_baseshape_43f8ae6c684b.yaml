@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/baseShape
   source_class: rightCone.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: rightCone.schema.omi

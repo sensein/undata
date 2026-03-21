@@ -1,0 +1,11 @@
+sha256: 604209d3244808eaa723d75e29b3ada27b2db945e9b7e7b52dcf5bd06138abc1
+semantic:
+  name: HeadframeMaterial
+  members:
+  - Steel
+  - Titanium
+  - White Zirconia
+provenance:
+- source: aind
+  class: metadata
+  name: HeadframeMaterial

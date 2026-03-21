@@ -1,0 +1,10 @@
+sha256: 166d993061418c8dff2cbf3f01079b4982a7902b41aa81422589f47cb7aa2364
+semantic:
+  name: License
+  members:
+  - CC-BY-4.0
+  - MIT
+provenance:
+- source: aind
+  class: metadata
+  name: License

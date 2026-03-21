@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: electrode_group
   source_class: Units
+  value_domain: text
 provenance:
 - source: nwb
   class: Units

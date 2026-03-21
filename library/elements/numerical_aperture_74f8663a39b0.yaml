@@ -3,6 +3,7 @@ semantic:
   question_text: Numerical aperture
   source_attribute: numerical_aperture
   source_class: FiberProbe
+  value_domain: numeric
 provenance:
 - source: aind
   class: FiberProbe

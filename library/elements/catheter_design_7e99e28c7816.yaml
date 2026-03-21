@@ -18,6 +18,7 @@ semantic:
   question_text: Catheter design
   source_attribute: catheter_design
   source_class: Catheter
+  value_domain: categorical
 provenance:
 - source: aind
   class: Catheter

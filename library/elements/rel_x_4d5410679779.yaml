@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: rel_x
   source_class: ElectrodesTable
+  value_domain: numeric
 provenance:
 - source: nwb
   class: ElectrodesTable

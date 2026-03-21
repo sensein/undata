@@ -30,6 +30,7 @@ semantic:
   question_text: Repetition time unit
   source_attribute: repetition_time_unit
   source_class: MRIScan
+  value_domain: categorical
 provenance:
 - source: aind
   class: MRIScan

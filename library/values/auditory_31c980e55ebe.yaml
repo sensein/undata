@@ -1,0 +1,7 @@
+sha256: 31c980e55ebec5b752188e1ffbab772ee8f2a9f3dceff155676d58cf7e8dfaa1
+semantic:
+  label: auditory
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Auditory

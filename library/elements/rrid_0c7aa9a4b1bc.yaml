@@ -3,6 +3,7 @@ semantic:
   question_text: Research Resource ID
   source_attribute: rrid
   source_class: Reagent
+  value_domain: text
 provenance:
 - source: aind
   class: Reagent

@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: simultaneous_recordings_index
   source_class: SequentialRecordingsTable
+  value_domain: text
 provenance:
 - source: nwb
   class: SequentialRecordingsTable

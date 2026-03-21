@@ -1,0 +1,10 @@
+sha256: af2ae299872e55903be39deecf3e0065e75290ece4bb7491af5dc87180bc040f
+semantic:
+  name: OlfactometerChannelType
+  members:
+  - Carrier
+  - Odor
+provenance:
+- source: aind
+  class: metadata
+  name: OlfactometerChannelType

@@ -34,6 +34,7 @@ semantic:
   question_text: Length unit
   source_attribute: length_unit
   source_class: FiberProbe
+  value_domain: categorical
 provenance:
 - source: aind
   class: FiberProbe

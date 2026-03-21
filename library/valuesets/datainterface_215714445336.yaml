@@ -1,0 +1,15 @@
+sha256: 2157144453363a6e48414decf0f20d6e3716c863f13aa55d1244468efb6616da
+semantic:
+  name: DataInterface
+  members:
+  - CameraLink
+  - Coax
+  - Ethernet
+  - Other
+  - PCIe
+  - PXI
+  - USB
+provenance:
+- source: aind
+  class: metadata
+  name: DataInterface

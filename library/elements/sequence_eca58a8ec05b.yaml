@@ -3,6 +3,7 @@ semantic:
   question_text: Amino acid sequence of the probe
   source_attribute: sequence
   source_class: ProteinProbe
+  value_domain: text
 provenance:
 - source: aind
   class: ProteinProbe

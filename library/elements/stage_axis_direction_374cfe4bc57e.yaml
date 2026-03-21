@@ -8,16 +8,17 @@ semantic:
   response_options:
   - value: Detection axis
     label: Detection axis
-    ontology_term: https://schema.undata.live/values/detection_axis_0c9d5b8245d7
+    ontology_term: https://schema.undata.live/values/detection_axis_42e50038dd36
   - value: Illumination axis
     label: Illumination axis
-    ontology_term: https://schema.undata.live/values/illumination_axis_7c62c5858e30
+    ontology_term: https://schema.undata.live/values/illumination_axis_c928c8a9a29f
   - value: Perpendicular axis
     label: Perpendicular axis
-    ontology_term: https://schema.undata.live/values/perpendicular_axis_68212c556187
+    ontology_term: https://schema.undata.live/values/perpendicular_axis_d9d24e44ed62
   question_text: Direction of stage axis
   source_attribute: stage_axis_direction
   source_class: ScanningStage
+  value_domain: categorical
 provenance:
 - source: aind
   class: ScanningStage

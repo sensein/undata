@@ -3,6 +3,7 @@ semantic:
   question_text: Coordinate system name
   source_attribute: coordinate_system_name
   source_class: BrainInjection
+  value_domain: text
 provenance:
 - source: aind
   class: BrainInjection

@@ -3,6 +3,7 @@ semantic:
   question_text: Bandwidth unit
   source_attribute: bandwidth_unit
   source_class: LightEmittingDiode
+  value_domain: text
 provenance:
 - source: aind
   class: LightEmittingDiode

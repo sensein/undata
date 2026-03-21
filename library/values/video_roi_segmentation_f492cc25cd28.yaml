@@ -1,0 +1,7 @@
+sha256: f492cc25cd284ef35681ccdbf3fdacf47558e788b3cae03f570e00711c358e27
+semantic:
+  label: video roi segmentation
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Video ROI segmentation

@@ -11,13 +11,14 @@ semantic:
     ontology_term: https://schema.undata.live/values/naked_aebeab689d83
   - value: VAB silicone
     label: VAB silicone
-    ontology_term: https://schema.undata.live/values/vab_silicone_426c3815ad55
+    ontology_term: https://schema.undata.live/values/vab_silicone_6aece61c2eb7
   - value: VAB mesh
     label: VAB mesh
-    ontology_term: https://schema.undata.live/values/vab_mesh_77ee1343630f
+    ontology_term: https://schema.undata.live/values/vab_mesh_adf012f74f40
   question_text: Catheter material
   source_attribute: catheter_material
   source_class: Catheter
+  value_domain: categorical
 provenance:
 - source: aind
   class: Catheter

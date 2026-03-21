@@ -3,6 +3,7 @@ semantic:
   question_text: Crop size unit
   source_attribute: crop_unit
   source_class: DetectorConfig
+  value_domain: text
 provenance:
 - source: aind
   class: DetectorConfig

@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: emission_lambda
   source_class: OpticalChannel
+  value_domain: numeric
 provenance:
 - source: nwb
   class: OpticalChannel

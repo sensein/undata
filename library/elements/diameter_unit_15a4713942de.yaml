@@ -34,6 +34,7 @@ semantic:
   question_text: Size unit
   source_attribute: diameter_unit
   source_class: AirPuffDevice
+  value_domain: categorical
 provenance:
 - source: aind
   class: AirPuffDevice

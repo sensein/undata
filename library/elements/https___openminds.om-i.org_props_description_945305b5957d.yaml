@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/description
   source_class: organSystemStructure.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: organSystemStructure.schema.omi

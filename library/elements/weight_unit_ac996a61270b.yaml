@@ -26,6 +26,7 @@ semantic:
   question_text: Weight unit
   source_attribute: weight_unit
   source_class: AcquisitionSubjectDetails
+  value_domain: categorical
 provenance:
 - source: aind
   class: AcquisitionSubjectDetails

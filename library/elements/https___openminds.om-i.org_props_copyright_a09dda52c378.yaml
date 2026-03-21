@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/copyright
   source_class: commonCoordinateFrameworkVersion.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: commonCoordinateFrameworkVersion.schema.omi

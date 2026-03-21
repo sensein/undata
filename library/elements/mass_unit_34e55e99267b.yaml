@@ -26,6 +26,7 @@ semantic:
   question_text: Mass unit
   source_attribute: mass_unit
   source_class: ProteinProbe
+  value_domain: categorical
 provenance:
 - source: aind
   class: ProteinProbe

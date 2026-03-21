@@ -3,6 +3,7 @@ semantic:
   question_text: Metric reference image URL or plot type
   source_attribute: reference
   source_class: QCMetric
+  value_domain: text
 provenance:
 - source: aind
   class: QCMetric

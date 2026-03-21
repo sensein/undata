@@ -1,0 +1,7 @@
+sha256: 6ec3d8d32eac1178379cb372debb1b654583d7144e1d255e8c0914ff3fdd7120
+semantic:
+  label: Other
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: Other

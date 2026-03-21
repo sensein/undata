@@ -3,6 +3,7 @@ semantic:
   question_text: Code or script
   source_attribute: code
   source_class: StimulusEpoch
+  value_domain: text
 provenance:
 - source: aind
   class: StimulusEpoch

@@ -1,0 +1,13 @@
+sha256: 1c37ae3a4b556d66f2c8bf2e0a368cdedd7c9264125aa038a5ec925fe2ef453c
+semantic:
+  name: Liquid
+  members:
+  - Citric acid
+  - Other
+  - Quinine
+  - Sucrose
+  - Water
+provenance:
+- source: aind
+  class: metadata
+  name: Liquid

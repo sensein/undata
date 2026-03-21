@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: recordings
   source_class: SimultaneousRecordingsTable
+  value_domain: text
 provenance:
 - source: nwb
   class: SimultaneousRecordingsTable

@@ -3,6 +3,7 @@ semantic:
   question_text: Lick spout assembly name
   source_attribute: name
   source_class: LickSpoutAssembly
+  value_domain: text
 provenance:
 - source: aind
   class: LickSpoutAssembly

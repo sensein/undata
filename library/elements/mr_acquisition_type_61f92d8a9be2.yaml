@@ -14,6 +14,7 @@ semantic:
   question_text: MR acquisition type
   source_attribute: mr_acquisition_type
   source_class: MRIScan
+  value_domain: categorical
 provenance:
 - source: aind
   class: MRIScan

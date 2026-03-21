@@ -3,6 +3,7 @@ semantic:
   question_text: Viral prep type
   source_attribute: prep_type
   source_class: TarsVirusIdentifiers
+  value_domain: text
 provenance:
 - source: aind
   class: TarsVirusIdentifiers

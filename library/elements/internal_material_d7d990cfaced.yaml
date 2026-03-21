@@ -3,6 +3,7 @@ semantic:
   question_text: Internal material
   source_attribute: internal_material
   source_class: Enclosure
+  value_domain: text
 provenance:
 - source: aind
   class: Enclosure

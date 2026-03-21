@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: external_file
   source_class: ImageSeries
+  value_domain: text
 provenance:
 - source: nwb
   class: ImageSeries

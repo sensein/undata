@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/preferredCrossReference
   source_class: communicationProtocol.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: communicationProtocol.schema.omi

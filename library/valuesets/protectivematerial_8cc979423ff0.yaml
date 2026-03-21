@@ -1,0 +1,13 @@
+sha256: 8cc979423ff0f7cdf940d4539eac70e22348e37f5540d9fcff2836d4073da3a9
+semantic:
+  name: ProtectiveMaterial
+  members:
+  - Agarose
+  - Duragel
+  - Kwik-Cast
+  - Other - see notes
+  - SORTA-clear
+provenance:
+- source: aind
+  class: metadata
+  name: ProtectiveMaterial

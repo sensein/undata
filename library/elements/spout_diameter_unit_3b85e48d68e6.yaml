@@ -34,6 +34,7 @@ semantic:
   question_text: Spout diameter unit
   source_attribute: spout_diameter_unit
   source_class: LickSpout
+  value_domain: categorical
 provenance:
 - source: aind
   class: LickSpout

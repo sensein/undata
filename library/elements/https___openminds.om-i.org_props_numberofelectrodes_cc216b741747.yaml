@@ -2,6 +2,7 @@ semantic:
   data_type: integer
   source_attribute: https://openminds.om-i.org/props/numberOfElectrodes
   source_class: electrodeArray.schema.omi
+  value_domain: numeric
 provenance:
 - source: openminds
   class: electrodeArray.schema.omi

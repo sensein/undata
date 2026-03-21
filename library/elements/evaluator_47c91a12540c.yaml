@@ -3,6 +3,7 @@ semantic:
   question_text: Status evaluator full name
   source_attribute: evaluator
   source_class: QCStatus
+  value_domain: text
 provenance:
 - source: aind
   class: QCStatus

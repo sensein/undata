@@ -3,6 +3,7 @@ semantic:
   question_text: Year of birth
   source_attribute: year_of_birth
   source_class: HumanSubject
+  value_domain: numeric
 provenance:
 - source: aind
   class: HumanSubject

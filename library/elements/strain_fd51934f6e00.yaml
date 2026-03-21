@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: strain
   source_class: Subject
+  value_domain: text
 provenance:
 - source: nwb
   class: Subject

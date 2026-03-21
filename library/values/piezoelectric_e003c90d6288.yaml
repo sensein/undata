@@ -1,0 +1,7 @@
+sha256: e003c90d62889f267191b68a6313cf180774e18bb7b37868be8d5362ec0ad0f7
+semantic:
+  label: piezoelectric
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Piezoelectric

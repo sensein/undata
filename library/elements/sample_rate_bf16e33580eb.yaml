@@ -3,6 +3,7 @@ semantic:
   question_text: DAQ channel sample rate (Hz)
   source_attribute: sample_rate
   source_class: DAQChannel
+  value_domain: numeric
 provenance:
 - source: aind
   class: DAQChannel

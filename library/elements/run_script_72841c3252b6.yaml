@@ -3,6 +3,7 @@ semantic:
   question_text: Run script
   source_attribute: run_script
   source_class: Code
+  value_domain: text
 provenance:
 - source: aind
   class: Code

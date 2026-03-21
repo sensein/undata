@@ -3,6 +3,7 @@ semantic:
   question_text: Programming language version
   source_attribute: language_version
   source_class: Code
+  value_domain: text
 provenance:
 - source: aind
   class: Code

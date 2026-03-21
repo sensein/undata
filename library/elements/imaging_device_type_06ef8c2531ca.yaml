@@ -18,7 +18,7 @@ semantic:
   response_options:
   - value: Beam expander
     label: Beam expander
-    ontology_term: https://schema.undata.live/values/beam_expander_06edae336044
+    ontology_term: https://schema.undata.live/values/beam_expander_150015a1712d
   - value: Sample Chamber
     label: Sample Chamber
     ontology_term: https://schema.undata.live/values/sample_chamber_d18a422654a3
@@ -30,10 +30,10 @@ semantic:
     ontology_term: https://schema.undata.live/values/galvo_7d5c06398e08
   - value: Laser combiner
     label: Laser combiner
-    ontology_term: https://schema.undata.live/values/laser_combiner_7b3b42fa61ff
+    ontology_term: https://schema.undata.live/values/laser_combiner_d5e469278bd8
   - value: Laser coupler
     label: Laser coupler
-    ontology_term: https://schema.undata.live/values/laser_coupler_6f19c88a6e70
+    ontology_term: https://schema.undata.live/values/laser_coupler_a3bdd3eac3c6
   - value: Prism
     label: Prism
     ontology_term: https://schema.undata.live/values/prism_90ce9902a3e3
@@ -42,22 +42,23 @@ semantic:
     ontology_term: https://schema.undata.live/values/objective_f336eca9aaec
   - value: Rotation mount
     label: Rotation mount
-    ontology_term: https://schema.undata.live/values/rotation_mount_a2039d0f83d2
+    ontology_term: https://schema.undata.live/values/rotation_mount_b4d0d13c8171
   - value: Slit
     label: Slit
     ontology_term: https://schema.undata.live/values/slit_fc934fe6df17
   - value: Spatial light modulator
     label: Spatial light modulator
-    ontology_term: https://schema.undata.live/values/spatial_light_modulator_1de6142b217e
+    ontology_term: https://schema.undata.live/values/spatial_light_modulator_e0f841e74240
   - value: Tunable lens
     label: Tunable lens
-    ontology_term: https://schema.undata.live/values/tunable_lens_103daac9e361
+    ontology_term: https://schema.undata.live/values/tunable_lens_49a207e6f150
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   question_text: Device type
   source_attribute: imaging_device_type
   source_class: AdditionalImagingDevice
+  value_domain: categorical
 provenance:
 - source: aind
   class: AdditionalImagingDevice

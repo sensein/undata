@@ -1,0 +1,7 @@
+sha256: a89c612e51876e883ec9d540d04e34944c872232d508e46a4cff2a4c9a12e165
+semantic:
+  label: female
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Female

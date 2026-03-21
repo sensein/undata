@@ -3,6 +3,7 @@ semantic:
   question_text: Patch clamp Assembly Name
   source_attribute: name
   source_class: PatchClampEphysAssembly
+  value_domain: text
 provenance:
 - source: aind
   class: PatchClampEphysAssembly

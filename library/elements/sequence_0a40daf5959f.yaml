@@ -3,6 +3,7 @@ semantic:
   question_text: Sequence
   source_attribute: sequence
   source_class: OligoProbe
+  value_domain: text
 provenance:
 - source: aind
   class: OligoProbe

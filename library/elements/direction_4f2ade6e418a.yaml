@@ -48,7 +48,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/down_to_up_83c7c791b851
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   - value: Positive
     label: Positive
     ontology_term: https://schema.undata.live/values/positive_243ef90eb1d0
@@ -58,6 +58,7 @@ semantic:
   question_text: Direction
   source_attribute: direction
   source_class: Axis
+  value_domain: categorical
 provenance:
 - source: aind
   class: Axis

@@ -6,7 +6,7 @@ semantic:
   response_options:
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   value_domain: categorical
   source_attribute: EMGCoordinateSystem
   source_class: metadata

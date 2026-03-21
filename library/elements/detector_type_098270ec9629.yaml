@@ -12,16 +12,17 @@ semantic:
     ontology_term: https://schema.undata.live/values/camera_7c632177254d
   - value: Photomultiplier Tube
     label: Photomultiplier Tube
-    ontology_term: https://schema.undata.live/values/photomultiplier_tube_18f4b32f370a
+    ontology_term: https://schema.undata.live/values/photomultiplier_tube_83a8c1e09278
   - value: Silicon Photomultiplier
     label: Silicon Photomultiplier
     ontology_term: https://schema.undata.live/values/silicon_photomultiplier_c8afc2497028
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   question_text: DetectorType
   source_attribute: detector_type
   source_class: Camera
+  value_domain: categorical
 provenance:
 - source: aind
   class: Camera

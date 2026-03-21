@@ -41,7 +41,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/fixation_f8fe56e249de
   - value: Fixation and permeabilization
     label: Fixation and permeabilization
-    ontology_term: https://schema.undata.live/values/fixation_and_permeabilization_05d3cebbc2a2
+    ontology_term: https://schema.undata.live/values/fixation_and_permeabilization_e04c2a672f5f
   - value: Gelation
     label: Gelation
     ontology_term: https://schema.undata.live/values/gelation_e51db6770d0b
@@ -56,7 +56,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/mounting_9bc286d08d32
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   - value: Refractive index matching
     label: Refractive index matching
     ontology_term: https://schema.undata.live/values/refractive_index_matching_bd2302091eea
@@ -78,6 +78,7 @@ semantic:
   question_text: Procedure type
   source_attribute: procedure_type
   source_class: SpecimenProcedure
+  value_domain: categorical
 provenance:
 - source: aind
   class: SpecimenProcedure

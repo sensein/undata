@@ -3,6 +3,7 @@ semantic:
   question_text: Sensor format
   source_attribute: sensor_format
   source_class: Camera
+  value_domain: text
 provenance:
 - source: aind
   class: Camera

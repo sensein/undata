@@ -1,0 +1,21 @@
+sha256: 7047d8e2063adce482fc2509e4795bd47b5910fac758be50d23ce0c9d7703bfe
+semantic:
+  name: ImagingDeviceType
+  members:
+  - Beam expander
+  - Diffuser
+  - Galvo
+  - Laser combiner
+  - Laser coupler
+  - Objective
+  - Other
+  - Prism
+  - Rotation mount
+  - Sample Chamber
+  - Slit
+  - Spatial light modulator
+  - Tunable lens
+provenance:
+- source: aind
+  class: metadata
+  name: ImagingDeviceType

@@ -3,6 +3,7 @@ semantic:
   question_text: Grant number
   source_attribute: grant_number
   source_class: Funding
+  value_domain: text
 provenance:
 - source: aind
   class: Funding

@@ -1,0 +1,30 @@
+sha256: edc65f5a68165457aade0b154ebd9b576809948dd9c4293cc81704756ea0e47f
+semantic:
+  name: StandardTemplateCoordSys
+  members:
+  - ICBM452AirSpace
+  - ICBM452Warp5Space
+  - IXI549Space
+  - MNI152Lin
+  - MNI152NLin2009aAsym
+  - MNI152NLin2009aSym
+  - MNI152NLin2009bAsym
+  - MNI152NLin2009bSym
+  - MNI152NLin2009cAsym
+  - MNI152NLin2009cSym
+  - MNI152NLin6Asym
+  - MNI152NLin6Sym
+  - MNI305
+  - MNIColin27
+  - NIHPD
+  - OASIS30AntsOASISAnts
+  - OASIS30Atropos
+  - Talairach
+  - UNCInfant
+  - fsLR
+  - fsaverage
+  - fsaverageSym
+provenance:
+- source: bids
+  class: enums
+  name: _StandardTemplateCoordSys

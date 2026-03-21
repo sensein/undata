@@ -3,6 +3,7 @@ semantic:
   question_text: Slice thickness unit
   source_attribute: thickness_unit
   source_class: Section
+  value_domain: text
 provenance:
 - source: aind
   class: Section

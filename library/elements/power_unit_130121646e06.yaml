@@ -18,6 +18,7 @@ semantic:
   question_text: Power unit
   source_attribute: power_unit
   source_class: Slap2Plane
+  value_domain: categorical
 provenance:
 - source: aind
   class: Slap2Plane

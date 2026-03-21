@@ -3,6 +3,7 @@ semantic:
   question_text: Contrast unit
   source_attribute: contrast_unit
   source_class: Monitor
+  value_domain: text
 provenance:
 - source: aind
   class: Monitor

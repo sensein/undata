@@ -3,6 +3,7 @@ semantic:
   question_text: Polygonal scanner
   source_attribute: polygonal_scanner
   source_class: PockelsCell
+  value_domain: text
 provenance:
 - source: aind
   class: PockelsCell

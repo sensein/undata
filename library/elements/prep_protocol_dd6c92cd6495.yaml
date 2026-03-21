@@ -3,6 +3,7 @@ semantic:
   question_text: Prep protocol
   source_attribute: prep_protocol
   source_class: TarsVirusIdentifiers
+  value_domain: text
 provenance:
 - source: aind
   class: TarsVirusIdentifiers

@@ -3,6 +3,7 @@ semantic:
   question_text: Dye
   source_attribute: dye
   source_class: ProbeConfig
+  value_domain: text
 provenance:
 - source: aind
   class: ProbeConfig

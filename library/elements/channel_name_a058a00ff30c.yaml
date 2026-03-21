@@ -3,6 +3,7 @@ semantic:
   question_text: DAQ channel name
   source_attribute: channel_name
   source_class: DAQChannel
+  value_domain: text
 provenance:
 - source: aind
   class: DAQChannel

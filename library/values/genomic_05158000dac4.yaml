@@ -1,0 +1,7 @@
+sha256: 05158000dac4331fd6900b6a38eca7fc595deff708e1353eaa191da200b1a794
+semantic:
+  label: Genomic
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: Genomic

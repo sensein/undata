@@ -3,6 +3,7 @@ semantic:
   question_text: Pretrained source URL
   source_attribute: source_url
   source_class: ModelPretraining
+  value_domain: text
 provenance:
 - source: aind
   class: ModelPretraining

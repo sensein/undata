@@ -3,6 +3,7 @@ semantic:
   question_text: Training protocol end date
   source_attribute: end_date
   source_class: TrainingProtocol
+  value_domain: text
 provenance:
 - source: aind
   class: TrainingProtocol

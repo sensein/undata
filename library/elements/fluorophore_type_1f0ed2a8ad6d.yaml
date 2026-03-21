@@ -10,7 +10,7 @@ semantic:
   response_options:
   - value: Alexa Fluor
     label: Alexa Fluor
-    ontology_term: https://schema.undata.live/values/alexa_fluor_61dc16b34abd
+    ontology_term: https://schema.undata.live/values/alexa_fluor_a5d1b320f86c
   - value: Atto
     label: Atto
     ontology_term: https://schema.undata.live/values/atto_31b45e7c7801
@@ -26,6 +26,7 @@ semantic:
   question_text: Fluorophore type
   source_attribute: fluorophore_type
   source_class: Fluorophore
+  value_domain: categorical
 provenance:
 - source: aind
   class: Fluorophore

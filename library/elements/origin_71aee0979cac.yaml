@@ -78,6 +78,7 @@ semantic:
   question_text: Origin
   source_attribute: origin
   source_class: Atlas
+  value_domain: categorical
 provenance:
 - source: aind
   class: Atlas

@@ -3,6 +3,7 @@ semantic:
   question_text: Preparation lot date
   source_attribute: prep_date
   source_class: TarsVirusIdentifiers
+  value_domain: text
 provenance:
 - source: aind
   class: TarsVirusIdentifiers

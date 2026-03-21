@@ -3,6 +3,7 @@ semantic:
   question_text: Craniotomy size unit
   source_attribute: size_unit
   source_class: Craniotomy
+  value_domain: text
 provenance:
 - source: aind
   class: Craniotomy

@@ -3,6 +3,7 @@ semantic:
   question_text: Camera assembly name
   source_attribute: name
   source_class: CameraAssembly
+  value_domain: text
 provenance:
 - source: aind
   class: CameraAssembly

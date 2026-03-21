@@ -30,6 +30,7 @@ semantic:
   question_text: Input unit
   source_attribute: input_unit
   source_class: VolumeCalibration
+  value_domain: categorical
 provenance:
 - source: aind
   class: VolumeCalibration

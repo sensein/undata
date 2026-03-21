@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/hardware
   source_class: environment.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: environment.schema.omi

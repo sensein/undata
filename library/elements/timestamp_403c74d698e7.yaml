@@ -3,6 +3,7 @@ semantic:
   question_text: Timestamp
   source_attribute: timestamp
   source_class: CurationHistory
+  value_domain: text
 provenance:
 - source: aind
   class: CurationHistory

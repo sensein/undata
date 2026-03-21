@@ -1,0 +1,17 @@
+sha256: a529793b0b69fca2ee8239ceb75afda5b5254fb057ccab023eb6ab786ea8bbf5
+semantic:
+  name: ImmersionMedium
+  members:
+  - PBS
+  - air
+  - aqueous clearing buffer
+  - easy index
+  - ethyl cinnimate
+  - multi
+  - oil
+  - other
+  - water
+provenance:
+- source: aind
+  class: metadata
+  name: ImmersionMedium

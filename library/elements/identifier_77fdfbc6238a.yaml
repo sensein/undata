@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: identifier
   source_class: Person
+  value_domain: text
 provenance:
 - source: dandi
   class: Person

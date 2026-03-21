@@ -3,6 +3,7 @@ semantic:
   question_text: Model limitations
   source_attribute: limitations
   source_class: model
+  value_domain: text
 provenance:
 - source: aind
   class: model

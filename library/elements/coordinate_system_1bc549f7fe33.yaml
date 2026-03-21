@@ -3,6 +3,7 @@ semantic:
   question_text: Coordinate System
   source_attribute: coordinate_system
   source_class: Procedures
+  value_domain: text
 provenance:
 - source: aind
   class: Procedures

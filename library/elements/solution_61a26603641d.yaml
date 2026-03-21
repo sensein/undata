@@ -22,10 +22,11 @@ semantic:
     ontology_term: https://schema.undata.live/values/citric_acid_d2b05a0d57d0
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   question_text: Solution
   source_attribute: solution
   source_class: LickSpoutConfig
+  value_domain: categorical
 provenance:
 - source: aind
   class: LickSpoutConfig

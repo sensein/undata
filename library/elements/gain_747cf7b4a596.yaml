@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: gain
   source_class: PatchClampSeries
+  value_domain: numeric
 provenance:
 - source: nwb
   class: PatchClampSeries

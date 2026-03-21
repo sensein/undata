@@ -3,6 +3,7 @@ semantic:
   question_text: Lights on time
   source_attribute: lights_on_time
   source_class: LightCycle
+  value_domain: text
 provenance:
 - source: aind
   class: LightCycle

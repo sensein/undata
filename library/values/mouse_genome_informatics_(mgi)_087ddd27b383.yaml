@@ -1,0 +1,7 @@
+sha256: 087ddd27b38384691a6125d19ed2d9cc282b22a9e524a017a3cbe46dbd2b842b
+semantic:
+  label: mouse genome informatics (mgi)
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Mouse Genome Informatics (MGI)

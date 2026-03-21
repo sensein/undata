@@ -14,6 +14,7 @@ semantic:
   question_text: License
   source_attribute: license
   source_class: DataDescription
+  value_domain: categorical
 provenance:
 - source: aind
   class: DataDescription

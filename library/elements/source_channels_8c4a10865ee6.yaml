@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: source_channels
   source_class: DecompositionSeries
+  value_domain: text
 provenance:
 - source: nwb
   class: DecompositionSeries

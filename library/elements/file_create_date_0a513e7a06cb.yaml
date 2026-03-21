@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: file_create_date
   source_class: NWBFile
+  value_domain: text
 provenance:
 - source: nwb
   class: NWBFile

@@ -2,6 +2,7 @@ semantic:
   data_type: integer
   source_attribute: https://openminds.om-i.org/props/order
   source_class: livePaperSection.schema.omi
+  value_domain: numeric
 provenance:
 - source: openminds
   class: livePaperSection.schema.omi

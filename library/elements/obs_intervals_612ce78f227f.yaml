@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: obs_intervals
   source_class: Units
+  value_domain: numeric
 provenance:
 - source: nwb
   class: Units

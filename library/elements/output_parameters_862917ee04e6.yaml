@@ -3,6 +3,7 @@ semantic:
   question_text: Additional metrics
   source_attribute: output_parameters
   source_class: PerformanceMetrics
+  value_domain: text
 provenance:
 - source: aind
   class: PerformanceMetrics

@@ -3,6 +3,7 @@ semantic:
   question_text: Device coordinate system
   source_attribute: coordinate_system
   source_class: AirPuffConfig
+  value_domain: text
 provenance:
 - source: aind
   class: AirPuffConfig

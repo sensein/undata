@@ -2,6 +2,7 @@ semantic:
   data_type: integer
   source_attribute: num
   source_class: Clustering
+  value_domain: numeric
 provenance:
 - source: nwb
   class: Clustering

@@ -1,0 +1,11 @@
+sha256: 6b6ff6fa8e43633acbfe2eb420e345b0c49bd4015be58f0a14f43105bf5037eb
+semantic:
+  name: InjectionProfile
+  members:
+  - Bolus
+  - Continuous
+  - Pulsed
+provenance:
+- source: aind
+  class: metadata
+  name: InjectionProfile

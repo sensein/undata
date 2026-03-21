@@ -3,6 +3,7 @@ semantic:
   question_text: Type
   source_attribute: anaesthetic_type
   source_class: Anaesthetic
+  value_domain: text
 provenance:
 - source: aind
   class: Anaesthetic

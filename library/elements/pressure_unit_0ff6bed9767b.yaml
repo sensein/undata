@@ -3,6 +3,7 @@ semantic:
   question_text: Pressure unit
   source_attribute: pressure_unit
   source_class: AirPuffConfig
+  value_domain: text
 provenance:
 - source: aind
   class: AirPuffConfig

@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: scan_line_rate
   source_class: OnePhotonSeries
+  value_domain: numeric
 provenance:
 - source: nwb
   class: OnePhotonSeries

@@ -12,16 +12,17 @@ semantic:
     ontology_term: https://schema.undata.live/values/analog_input_c1089dbbbae6
   - value: Analog Output
     label: Analog Output
-    ontology_term: https://schema.undata.live/values/analog_output_d04f5b28358a
+    ontology_term: https://schema.undata.live/values/analog_output_f07711d723a0
   - value: Digital Input
     label: Digital Input
-    ontology_term: https://schema.undata.live/values/digital_input_20289ffbdeb0
+    ontology_term: https://schema.undata.live/values/digital_input_f553c3540b42
   - value: Digital Output
     label: Digital Output
     ontology_term: https://schema.undata.live/values/digital_output_4abcbf2760f2
   question_text: DAQ channel type
   source_attribute: channel_type
   source_class: DAQChannel
+  value_domain: categorical
 provenance:
 - source: aind
   class: DAQChannel

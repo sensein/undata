@@ -3,6 +3,7 @@ semantic:
   question_text: Project Name
   source_attribute: project_name
   source_class: DataDescription
+  value_domain: text
 provenance:
 - source: aind
   class: DataDescription

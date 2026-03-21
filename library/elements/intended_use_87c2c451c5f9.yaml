@@ -3,6 +3,7 @@ semantic:
   question_text: Intended model use
   source_attribute: intended_use
   source_class: model
+  value_domain: text
 provenance:
 - source: aind
   class: model

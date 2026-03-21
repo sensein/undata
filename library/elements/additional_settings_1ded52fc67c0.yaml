@@ -3,6 +3,7 @@ semantic:
   question_text: Additional parameters
   source_attribute: additional_settings
   source_class: Monitor
+  value_domain: text
 provenance:
 - source: aind
   class: Monitor

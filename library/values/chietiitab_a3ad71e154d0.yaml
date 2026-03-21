@@ -1,0 +1,7 @@
+sha256: a3ad71e154d06eccd6970d3153b45eb5bde66e53ea93ba892d049099a74ddc7b
+semantic:
+  label: ChietiItab
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: ChietiItab

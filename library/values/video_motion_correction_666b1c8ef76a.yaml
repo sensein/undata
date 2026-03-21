@@ -1,0 +1,7 @@
+sha256: 666b1c8ef76a2d432af48e36a45605cc27093af5e911f4a560b99a8dd609f05d
+semantic:
+  label: video motion correction
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Video motion correction

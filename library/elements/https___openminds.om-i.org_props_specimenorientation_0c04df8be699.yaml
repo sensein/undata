@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/specimenOrientation
   source_class: dynamicMRIAcquisition.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: dynamicMRIAcquisition.schema.omi

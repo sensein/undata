@@ -3,6 +3,7 @@ semantic:
   question_text: Description
   source_attribute: description
   source_class: VolumeCalibration
+  value_domain: text
 provenance:
 - source: aind
   class: VolumeCalibration

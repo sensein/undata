@@ -3,6 +3,7 @@ semantic:
   question_text: Serial number
   source_attribute: serial_number
   source_class: Disc
+  value_domain: text
 provenance:
 - source: aind
   class: Disc

@@ -3,6 +3,7 @@ semantic:
   question_text: Instrument ID
   source_attribute: instrument_id
   source_class: Acquisition
+  value_domain: text
 provenance:
 - source: aind
   class: Acquisition

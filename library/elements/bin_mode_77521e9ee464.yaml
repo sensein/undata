@@ -14,10 +14,11 @@ semantic:
     ontology_term: https://schema.undata.live/values/average_99c9ef88994c
   - value: No binning
     label: No binning
-    ontology_term: https://schema.undata.live/values/no_binning_03b4d29b4cac
+    ontology_term: https://schema.undata.live/values/no_binning_133ec7a87c44
   question_text: Detector binning mode
   source_attribute: bin_mode
   source_class: Camera
+  value_domain: categorical
 provenance:
 - source: aind
   class: Camera

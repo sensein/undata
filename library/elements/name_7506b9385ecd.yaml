@@ -34,6 +34,7 @@ semantic:
   question_text: Axis
   source_attribute: name
   source_class: Axis
+  value_domain: categorical
 provenance:
 - source: aind
   class: Axis

@@ -3,6 +3,7 @@ semantic:
   question_text: Injection target
   source_attribute: targeted_structure
   source_class: Injection
+  value_domain: text
 provenance:
 - source: aind
   class: Injection

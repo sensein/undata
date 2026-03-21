@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: start_time
   source_class: TimeIntervals
+  value_domain: numeric
 provenance:
 - source: nwb
   class: TimeIntervals

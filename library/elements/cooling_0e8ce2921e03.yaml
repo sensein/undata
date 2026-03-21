@@ -14,10 +14,11 @@ semantic:
     ontology_term: https://schema.undata.live/values/water_fe19bd800e31
   - value: No cooling
     label: No cooling
-    ontology_term: https://schema.undata.live/values/no_cooling_1863eeb9f31d
+    ontology_term: https://schema.undata.live/values/no_cooling_39854584bea0
   question_text: Cooling
   source_attribute: cooling
   source_class: Camera
+  value_domain: categorical
 provenance:
 - source: aind
   class: Camera

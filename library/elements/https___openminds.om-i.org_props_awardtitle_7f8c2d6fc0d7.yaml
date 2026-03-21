@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/awardTitle
   source_class: funding.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: funding.schema.omi

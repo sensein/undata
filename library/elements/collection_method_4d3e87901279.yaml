@@ -3,6 +3,7 @@ semantic:
   question_text: Collection method for terminal collection
   source_attribute: collection_method
   source_class: SampleCollection
+  value_domain: text
 provenance:
 - source: aind
   class: SampleCollection

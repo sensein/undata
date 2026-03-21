@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/versionIdentifier
   source_class: parcellationEntityVersion.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: parcellationEntityVersion.schema.omi

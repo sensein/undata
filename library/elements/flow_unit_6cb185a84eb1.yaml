@@ -3,6 +3,7 @@ semantic:
   question_text: Flow unit
   source_attribute: flow_unit
   source_class: OlfactometerChannel
+  value_domain: text
 provenance:
 - source: aind
   class: OlfactometerChannel

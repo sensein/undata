@@ -3,6 +3,7 @@ semantic:
   question_text: Pulse per revolution
   source_attribute: pulse_per_revolution
   source_class: Treadmill
+  value_domain: numeric
 provenance:
 - source: aind
   class: Treadmill

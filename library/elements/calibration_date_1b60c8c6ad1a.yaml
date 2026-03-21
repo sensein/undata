@@ -3,6 +3,7 @@ semantic:
   question_text: Date and time of calibration
   source_attribute: calibration_date
   source_class: VolumeCalibration
+  value_domain: text
 provenance:
 - source: aind
   class: VolumeCalibration

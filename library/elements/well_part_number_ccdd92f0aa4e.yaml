@@ -3,6 +3,7 @@ semantic:
   question_text: Well part number
   source_attribute: well_part_number
   source_class: Headframe
+  value_domain: text
 provenance:
 - source: aind
   class: Headframe

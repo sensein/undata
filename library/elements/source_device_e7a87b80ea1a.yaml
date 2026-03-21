@@ -3,6 +3,7 @@ semantic:
   question_text: Source device name
   source_attribute: source_device
   source_class: Connection
+  value_domain: text
 provenance:
 - source: aind
   class: Connection

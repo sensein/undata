@@ -3,6 +3,7 @@ semantic:
   question_text: Common Name
   source_attribute: common_name
   source_class: SpeciesModel
+  value_domain: text
 provenance:
 - source: aind
   class: SpeciesModel

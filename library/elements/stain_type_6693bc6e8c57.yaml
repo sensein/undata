@@ -30,6 +30,7 @@ semantic:
   question_text: Stain type
   source_attribute: stain_type
   source_class: FluorescentStain
+  value_domain: categorical
 provenance:
 - source: aind
   class: FluorescentStain

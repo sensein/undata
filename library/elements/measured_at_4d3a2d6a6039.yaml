@@ -3,6 +3,7 @@ semantic:
   question_text: Measurement location
   source_attribute: measured_at
   source_class: Calibration
+  value_domain: text
 provenance:
 - source: aind
   class: Calibration

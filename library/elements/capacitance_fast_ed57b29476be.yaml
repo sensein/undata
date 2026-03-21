@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: capacitance_fast
   source_class: VoltageClampSeries
+  value_domain: numeric
 provenance:
 - source: nwb
   class: VoltageClampSeries

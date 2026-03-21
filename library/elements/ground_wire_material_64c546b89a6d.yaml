@@ -3,6 +3,7 @@ semantic:
   question_text: Ground wire material
   source_attribute: ground_wire_material
   source_class: GroundWireImplant
+  value_domain: text
 provenance:
 - source: aind
   class: GroundWireImplant

@@ -1,0 +1,7 @@
+sha256: d9a886d6bec01eb30ee42825dd512a99b2fd0e491d66801ff0b645abf4ad6958
+semantic:
+  label: running wheel
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Running wheel

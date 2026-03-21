@@ -3,6 +3,7 @@ semantic:
   question_text: Stream stop time
   source_attribute: stream_end_time
   source_class: DataStream
+  value_domain: text
 provenance:
 - source: aind
   class: DataStream

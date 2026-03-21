@@ -3,6 +3,7 @@ semantic:
   question_text: Curriculum code
   source_attribute: curriculum_code
   source_class: TrainingProtocol
+  value_domain: text
 provenance:
 - source: aind
   class: TrainingProtocol

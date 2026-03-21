@@ -18,6 +18,7 @@ semantic:
   question_text: Output unit
   source_attribute: output_unit
   source_class: PowerCalibration
+  value_domain: categorical
 provenance:
 - source: aind
   class: PowerCalibration

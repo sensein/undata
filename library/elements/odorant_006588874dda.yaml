@@ -3,6 +3,7 @@ semantic:
   question_text: Odorant
   source_attribute: odorant
   source_class: OlfactometerChannelInfo
+  value_domain: text
 provenance:
 - source: aind
   class: OlfactometerChannelInfo

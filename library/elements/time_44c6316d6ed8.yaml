@@ -3,6 +3,7 @@ semantic:
   question_text: Collection time
   source_attribute: time
   source_class: SampleCollection
+  value_domain: text
 provenance:
 - source: aind
   class: SampleCollection

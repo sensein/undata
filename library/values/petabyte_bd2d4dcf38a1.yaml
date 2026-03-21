@@ -1,0 +1,7 @@
+sha256: bd2d4dcf38a15dc692024b716f65e251f8ef3bd2f4eae1419b292fdceafe2efe
+semantic:
+  label: petabyte
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Petabyte

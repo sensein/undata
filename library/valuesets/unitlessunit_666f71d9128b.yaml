@@ -1,0 +1,10 @@
+sha256: 666f71d9128b37a75233ed84a0dd1856e7dc41407375992d7a5183408546acb2
+semantic:
+  name: UnitlessUnit
+  members:
+  - fraction of cycle
+  - percent
+provenance:
+- source: aind
+  class: metadata
+  name: UnitlessUnit

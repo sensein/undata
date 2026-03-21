@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: times
   source_class: Clustering
+  value_domain: numeric
 provenance:
 - source: nwb
   class: Clustering

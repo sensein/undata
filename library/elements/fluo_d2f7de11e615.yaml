@@ -1,0 +1,24 @@
+sha256: d2f7de11e615730ac7d12746a24b1eb12493531d6d4141c4be15d9adfc646ed2
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: FLUO
+  source_class: suffixes
+  ontology_term: http://purl.obolibrary.org/obo/CHMO_0000089
+provenance:
+- source: bids
+  class: suffixes
+  name: FLUO
+  description: 'Fluorescence microscopy imaging data
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: enrichment
+  class: suffixes
+  name: FLUO
+  generated_at: '2026-03-21T05:17:40.918144+00:00'
+  attributed_to: urn:undata:enrichment-pipeline
+  activity: enrichment
+  derived_from: https://schema.undata.live/elements/fluo_2317efc0b8a9

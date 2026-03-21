@@ -1,0 +1,7 @@
+sha256: 57388301c4fa0ace7b5db98ee2172170282d43f5d7b540e7c1fbcbf20e2a5579
+semantic:
+  label: Transcriptomic
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: Transcriptomic

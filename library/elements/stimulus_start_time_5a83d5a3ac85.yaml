@@ -3,6 +3,7 @@ semantic:
   question_text: Stimulus start time
   source_attribute: stimulus_start_time
   source_class: StimulusEpoch
+  value_domain: text
 provenance:
 - source: aind
   class: StimulusEpoch

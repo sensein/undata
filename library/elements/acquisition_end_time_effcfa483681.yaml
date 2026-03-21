@@ -3,6 +3,7 @@ semantic:
   question_text: Acquisition end time
   source_attribute: acquisition_end_time
   source_class: Acquisition
+  value_domain: text
 provenance:
 - source: aind
   class: Acquisition

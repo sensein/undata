@@ -30,6 +30,7 @@ semantic:
   question_text: Exposure time unit
   source_attribute: exposure_time_unit
   source_class: DetectorConfig
+  value_domain: categorical
 provenance:
 - source: aind
   class: DetectorConfig

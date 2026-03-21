@@ -2,6 +2,7 @@ semantic:
   data_type: integer
   source_attribute: https://openminds.om-i.org/props/accelerationFactor
   source_class: MRIScannerUsage.schema.omi
+  value_domain: numeric
 provenance:
 - source: openminds
   class: MRIScannerUsage.schema.omi

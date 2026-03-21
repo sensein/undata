@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: resistance_comp_prediction
   source_class: VoltageClampSeries
+  value_domain: numeric
 provenance:
 - source: nwb
   class: VoltageClampSeries

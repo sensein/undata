@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: encodingFormat
   source_class: BareAsset
+  value_domain: text
 provenance:
 - source: dandi
   class: BareAsset

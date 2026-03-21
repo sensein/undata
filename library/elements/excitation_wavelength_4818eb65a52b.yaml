@@ -3,6 +3,7 @@ semantic:
   question_text: Excitation wavelength (nm)
   source_attribute: excitation_wavelength
   source_class: Fluorophore
+  value_domain: numeric
 provenance:
 - source: aind
   class: Fluorophore

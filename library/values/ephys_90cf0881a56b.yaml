@@ -1,0 +1,7 @@
+sha256: 90cf0881a56ba4e315f36094683b3d57db48ffcbada6935014a655d1f43df3fe
+semantic:
+  label: ephys
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: ephys

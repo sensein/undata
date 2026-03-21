@@ -1,0 +1,10 @@
+sha256: b75b468c1d13c3987f0f1d3382b3029b070b5d59483550c9de8f8a1fdcce00ce
+semantic:
+  name: VirusPrepType
+  members:
+  - Crude
+  - Purified
+provenance:
+- source: aind
+  class: metadata
+  name: VirusPrepType

@@ -34,6 +34,7 @@ semantic:
   question_text: Core diameter unit
   source_attribute: core_diameter_unit
   source_class: FiberProbe
+  value_domain: categorical
 provenance:
 - source: aind
   class: FiberProbe

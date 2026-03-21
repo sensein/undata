@@ -3,6 +3,7 @@ semantic:
   question_text: Acquisition start timezone
   source_attribute: acquisition_start_tz
   source_class: Acquisition
+  value_domain: numeric
 provenance:
 - source: aind
   class: Acquisition

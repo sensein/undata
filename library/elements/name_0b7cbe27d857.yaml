@@ -3,6 +3,7 @@ semantic:
   question_text: Name
   source_attribute: name
   source_class: aind_data_schema_models__harp_types___Behavior
+  value_domain: text
 provenance:
 - source: aind
   class: aind_data_schema_models__harp_types___Behavior

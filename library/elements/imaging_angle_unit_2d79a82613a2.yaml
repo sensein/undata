@@ -14,6 +14,7 @@ semantic:
   question_text: Imaging angle unit
   source_attribute: imaging_angle_unit
   source_class: ImageSPIM
+  value_domain: categorical
 provenance:
 - source: aind
   class: ImageSPIM

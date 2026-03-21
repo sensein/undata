@@ -3,6 +3,7 @@ semantic:
   question_text: Target of the stain
   source_attribute: probe
   source_class: FluorescentStain
+  value_domain: text
 provenance:
 - source: aind
   class: FluorescentStain

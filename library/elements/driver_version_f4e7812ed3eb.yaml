@@ -3,6 +3,7 @@ semantic:
   question_text: Driver version
   source_attribute: driver_version
   source_class: Camera
+  value_domain: text
 provenance:
 - source: aind
   class: Camera

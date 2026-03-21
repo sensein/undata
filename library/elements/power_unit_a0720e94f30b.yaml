@@ -3,6 +3,7 @@ semantic:
   question_text: Excitation power unit
   source_attribute: power_unit
   source_class: LightEmittingDiodeConfig
+  value_domain: text
 provenance:
 - source: aind
   class: LightEmittingDiodeConfig

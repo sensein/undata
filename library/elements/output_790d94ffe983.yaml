@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: output
   source_class: Disc
+  value_domain: text
 provenance:
 - source: aind
   class: Disc

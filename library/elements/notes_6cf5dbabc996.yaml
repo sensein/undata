@@ -3,6 +3,7 @@ semantic:
   question_text: Notes
   source_attribute: notes
   source_class: ModelTraining
+  value_domain: text
 provenance:
 - source: aind
   class: ModelTraining

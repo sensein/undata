@@ -3,6 +3,7 @@ semantic:
   question_text: Filter
   source_attribute: filter
   source_class: CameraAssembly
+  value_domain: text
 provenance:
 - source: aind
   class: CameraAssembly

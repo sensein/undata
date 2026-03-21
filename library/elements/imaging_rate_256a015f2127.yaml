@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: imaging_rate
   source_class: ImagingPlane
+  value_domain: numeric
 provenance:
 - source: nwb
   class: ImagingPlane

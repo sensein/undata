@@ -3,6 +3,7 @@ semantic:
   question_text: Date of modification
   source_attribute: modification_date
   source_class: Instrument
+  value_domain: text
 provenance:
 - source: aind
   class: Instrument

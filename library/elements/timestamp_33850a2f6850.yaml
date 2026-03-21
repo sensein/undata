@@ -3,6 +3,7 @@ semantic:
   question_text: Status date
   source_attribute: timestamp
   source_class: QCStatus
+  value_domain: text
 provenance:
 - source: aind
   class: QCStatus

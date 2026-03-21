@@ -1,0 +1,7 @@
+sha256: 872c8cd8e056bee530b7edd7427fd78104b6818070747afcabe3f94dfc300467
+semantic:
+  label: fsaverage6
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: fsaverage6

@@ -1,0 +1,28 @@
+sha256: c631f7affa2761d0687e452d5157dbd5edc1a06481794935731666e6f325a33f
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: EncodingTechnique
+  source_class: metadata
+  ontology_term: http://purl.obolibrary.org/obo/OBI_0000227
+provenance:
+- source: bids
+  class: metadata
+  name: EncodingTechnique
+  description: 'The encoding technique used during readout.
+
+    For example, `"Cartesian"`, `"EPSI"`, `"Spiral"`,
+
+    or `"Density-weighted concentric ring trajectory"`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: enrichment
+  class: metadata
+  name: EncodingTechnique
+  generated_at: '2026-03-21T05:17:40.714489+00:00'
+  attributed_to: urn:undata:enrichment-pipeline
+  activity: enrichment
+  derived_from: https://schema.undata.live/elements/encodingtechnique_c9849d35350a

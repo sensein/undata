@@ -3,6 +3,7 @@ semantic:
   question_text: Firmware version
   source_attribute: firmware_version
   source_class: NeuropixelsBasestation
+  value_domain: text
 provenance:
 - source: aind
   class: NeuropixelsBasestation

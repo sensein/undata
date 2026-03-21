@@ -3,6 +3,7 @@ semantic:
   question_text: Bin width
   source_attribute: bin_width
   source_class: Detector
+  value_domain: numeric
 provenance:
 - source: aind
   class: Detector

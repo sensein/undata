@@ -3,6 +3,7 @@ semantic:
   question_text: Input unit
   source_attribute: input_unit
   source_class: PowerCalibration
+  value_domain: text
 provenance:
 - source: aind
   class: PowerCalibration

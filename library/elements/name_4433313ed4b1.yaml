@@ -3,6 +3,7 @@ semantic:
   question_text: Full genome name
   source_attribute: name
   source_class: ViralMaterial
+  value_domain: text
 provenance:
 - source: aind
   class: ViralMaterial

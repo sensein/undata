@@ -29,7 +29,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/left_1fd2a57c7f06
   - value: Right
     label: Right
-    ontology_term: https://schema.undata.live/values/right_7c0572439864
+    ontology_term: https://schema.undata.live/values/right_da64e323a384
   - value: Medial
     label: Medial
     ontology_term: https://schema.undata.live/values/medial_5642415b8e49
@@ -42,6 +42,7 @@ semantic:
   question_text: Relative position
   source_attribute: relative_position
   source_class: MyomatrixContact
+  value_domain: categorical
 provenance:
 - source: aind
   class: MyomatrixContact

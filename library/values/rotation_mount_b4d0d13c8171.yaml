@@ -1,0 +1,7 @@
+sha256: b4d0d13c81712cca3fb247c0bbc7fb4a210a166407c3d783030be7b0bc084efd
+semantic:
+  label: rotation mount
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Rotation mount

@@ -19,13 +19,14 @@ semantic:
     ontology_term: https://schema.undata.live/values/nanomolar_feaac5527c09
   - value: '% m/m'
     label: '% m/m'
-    ontology_term: https://schema.undata.live/values/%_m_m_6637777f1997
+    ontology_term: https://schema.undata.live/values/%_m_m_add100787ad5
   - value: '% v/v'
     label: '% v/v'
     ontology_term: https://schema.undata.live/values/%_v_v_f9fe7f5130ba
   question_text: Dilution unit
   source_attribute: dilution_unit
   source_class: OlfactometerChannelInfo
+  value_domain: categorical
 provenance:
 - source: aind
   class: OlfactometerChannelInfo

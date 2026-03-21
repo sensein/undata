@@ -3,6 +3,7 @@ semantic:
   question_text: Device name
   source_attribute: name
   source_class: FiberPatchCord
+  value_domain: text
 provenance:
 - source: aind
   class: FiberPatchCord

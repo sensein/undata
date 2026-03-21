@@ -3,6 +3,7 @@ semantic:
   question_text: Model
   source_attribute: model
   source_class: LickSpout
+  value_domain: text
 provenance:
 - source: aind
   class: LickSpout

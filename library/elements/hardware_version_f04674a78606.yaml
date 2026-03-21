@@ -3,6 +3,7 @@ semantic:
   question_text: Hardware version
   source_attribute: hardware_version
   source_class: OpenEphysAcquisitionBoard
+  value_domain: text
 provenance:
 - source: aind
   class: OpenEphysAcquisitionBoard

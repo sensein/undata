@@ -3,6 +3,7 @@ semantic:
   question_text: Temperature unit
   source_attribute: temperature_unit
   source_class: Lamp
+  value_domain: text
 provenance:
 - source: aind
   class: Lamp

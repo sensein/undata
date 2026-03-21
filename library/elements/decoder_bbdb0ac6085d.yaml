@@ -3,6 +3,7 @@ semantic:
   question_text: Decoder
   source_attribute: decoder
   source_class: Disc
+  value_domain: text
 provenance:
 - source: aind
   class: Disc

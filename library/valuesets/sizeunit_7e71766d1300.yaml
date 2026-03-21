@@ -1,0 +1,15 @@
+sha256: 7e71766d13002bcea50aa9bc2494063814cdc60eabc585a0a9db860d02215dc7
+semantic:
+  name: SizeUnit
+  members:
+  - centimeter
+  - inch
+  - meter
+  - micrometer
+  - millimeter
+  - nanometer
+  - pixel
+provenance:
+- source: aind
+  class: metadata
+  name: SizeUnit

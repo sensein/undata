@@ -1,0 +1,7 @@
+sha256: 73dd3feb992f7f3ba8264f58a191fc7ec54f7093a454fb362cc2adfd99086965
+semantic:
+  label: monochrome
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Monochrome

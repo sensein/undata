@@ -34,6 +34,7 @@ semantic:
   question_text: Depth unit
   source_attribute: depth_unit
   source_class: CoupledPlane
+  value_domain: categorical
 provenance:
 - source: aind
   class: CoupledPlane

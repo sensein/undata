@@ -1,0 +1,7 @@
+sha256: 64b2cb614ae6d34b5a1e50c6f70c1028f79718cb8589c1bb6e2282c65315bdd1
+semantic:
+  label: image thresholding
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Image thresholding

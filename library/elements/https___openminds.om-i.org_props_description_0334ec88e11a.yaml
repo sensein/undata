@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/description
   source_class: slicingDevice.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: slicingDevice.schema.omi

@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/minorDiameter
   source_class: ellipsoid.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: ellipsoid.schema.omi

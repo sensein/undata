@@ -34,6 +34,7 @@ semantic:
   question_text: Dilation unit
   source_attribute: y_dilations_unit
   source_class: Slap2Plane
+  value_domain: categorical
 provenance:
 - source: aind
   class: Slap2Plane

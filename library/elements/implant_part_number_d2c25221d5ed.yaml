@@ -3,6 +3,7 @@ semantic:
   question_text: Implant part number
   source_attribute: implant_part_number
   source_class: Craniotomy
+  value_domain: text
 provenance:
 - source: aind
   class: Craniotomy

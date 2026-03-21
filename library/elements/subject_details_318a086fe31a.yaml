@@ -3,6 +3,7 @@ semantic:
   question_text: Subject details
   source_attribute: subject_details
   source_class: Acquisition
+  value_domain: text
 provenance:
 - source: aind
   class: Acquisition

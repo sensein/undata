@@ -3,6 +3,7 @@ semantic:
   question_text: Architecture parameters
   source_attribute: architecture_parameters
   source_class: Model
+  value_domain: text
 provenance:
 - source: aind
   class: Model

@@ -3,6 +3,7 @@ semantic:
   question_text: Software framework
   source_attribute: software_framework
   source_class: model
+  value_domain: text
 provenance:
 - source: aind
   class: model

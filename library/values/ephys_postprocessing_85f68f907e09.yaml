@@ -1,0 +1,7 @@
+sha256: 85f68f907e093227cf068d0f9e5e5d089a7fa47684894f748e0839cfcd59cc1c
+semantic:
+  label: ephys postprocessing
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Ephys postprocessing

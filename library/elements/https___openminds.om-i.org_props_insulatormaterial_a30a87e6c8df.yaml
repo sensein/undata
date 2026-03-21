@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/insulatorMaterial
   source_class: electrodeArray.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: electrodeArray.schema.omi

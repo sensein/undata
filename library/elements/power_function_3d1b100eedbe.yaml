@@ -18,10 +18,11 @@ semantic:
     ontology_term: https://schema.undata.live/values/exponential_235cf9916447
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   question_text: Power function
   source_attribute: power_function
   source_class: PlanarImageStack
+  value_domain: categorical
 provenance:
 - source: aind
   class: PlanarImageStack

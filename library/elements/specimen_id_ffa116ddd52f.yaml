@@ -3,6 +3,7 @@ semantic:
   question_text: Specimen ID(s)
   source_attribute: specimen_id
   source_class: SpecimenProcedure
+  value_domain: text
 provenance:
 - source: aind
   class: SpecimenProcedure

@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: feature_units
   source_class: AbstractFeatureSeries
+  value_domain: text
 provenance:
 - source: nwb
   class: AbstractFeatureSeries

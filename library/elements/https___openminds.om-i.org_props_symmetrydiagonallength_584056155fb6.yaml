@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/symmetryDiagonalLength
   source_class: kite.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: kite.schema.omi

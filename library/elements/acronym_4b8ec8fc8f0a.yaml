@@ -3,6 +3,7 @@ semantic:
   question_text: Acronym
   source_attribute: acronym
   source_class: BrainStructureModel
+  value_domain: text
 provenance:
 - source: aind
   class: BrainStructureModel

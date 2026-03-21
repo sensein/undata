@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: registry
   source_class: aind_data_schema_models__species___Unknown
+  value_domain: text
 provenance:
 - source: aind
   class: aind_data_schema_models__species___Unknown

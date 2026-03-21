@@ -1,0 +1,17 @@
+sha256: d7e074f892d991dcc9c06f6cd365e69fc4571e4befea5d1ab3540d293d2bcdf9
+semantic:
+  name: AnatomicalRelative
+  members:
+  - Anterior
+  - Inferior
+  - Lateral
+  - Left
+  - Medial
+  - Origin
+  - Posterior
+  - Right
+  - Superior
+provenance:
+- source: aind
+  class: metadata
+  name: AnatomicalRelative

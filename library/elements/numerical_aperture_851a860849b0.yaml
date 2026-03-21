@@ -3,6 +3,7 @@ semantic:
   question_text: Numerical aperture (in air)
   source_attribute: numerical_aperture
   source_class: Objective
+  value_domain: numeric
 provenance:
 - source: aind
   class: Objective

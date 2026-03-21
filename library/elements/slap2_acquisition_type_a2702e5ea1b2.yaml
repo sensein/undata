@@ -14,6 +14,7 @@ semantic:
   question_text: SLAP2 ROI acquisition type
   source_attribute: slap2_acquisition_type
   source_class: Slap2Plane
+  value_domain: categorical
 provenance:
 - source: aind
   class: Slap2Plane

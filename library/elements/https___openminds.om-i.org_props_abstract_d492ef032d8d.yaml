@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/abstract
   source_class: chapter.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: chapter.schema.omi

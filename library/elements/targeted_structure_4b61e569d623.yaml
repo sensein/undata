@@ -3,6 +3,7 @@ semantic:
   question_text: Injection targeted brain structure
   source_attribute: targeted_structure
   source_class: BrainInjection
+  value_domain: text
 provenance:
 - source: aind
   class: BrainInjection

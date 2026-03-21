@@ -3,6 +3,7 @@ semantic:
   question_text: Number of repeats
   source_attribute: repeats
   source_class: VolumeCalibration
+  value_domain: numeric
 provenance:
 - source: aind
   class: VolumeCalibration

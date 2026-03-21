@@ -3,6 +3,7 @@ semantic:
   question_text: Ram unit
   source_attribute: ram_unit
   source_class: ResourceUsage
+  value_domain: text
 provenance:
 - source: aind
   class: ResourceUsage

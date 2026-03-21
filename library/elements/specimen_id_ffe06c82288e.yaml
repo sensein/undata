@@ -3,6 +3,7 @@ semantic:
   question_text: Specimen ID
   source_attribute: specimen_id
   source_class: Slap2Plane
+  value_domain: text
 provenance:
 - source: aind
   class: Slap2Plane

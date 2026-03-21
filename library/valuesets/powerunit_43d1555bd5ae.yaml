@@ -1,0 +1,11 @@
+sha256: 43d1555bd5ae98ead64b9ad7b8eabb6d6eaedfd2a709d1b22c89c6bfeb7a0957
+semantic:
+  name: PowerUnit
+  members:
+  - microwatt
+  - milliwatt
+  - percent
+provenance:
+- source: aind
+  class: metadata
+  name: PowerUnit

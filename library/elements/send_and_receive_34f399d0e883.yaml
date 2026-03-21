@@ -3,6 +3,7 @@ semantic:
   question_text: Send and receive
   source_attribute: send_and_receive
   source_class: Connection
+  value_domain: boolean
 provenance:
 - source: aind
   class: Connection

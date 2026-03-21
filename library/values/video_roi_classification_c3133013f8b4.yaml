@@ -1,0 +1,7 @@
+sha256: c3133013f8b4fb6ab086485bbd3180a2f41f63c58645ff8816957d5bb9e2d2cf
+semantic:
+  label: video roi classification
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Video ROI classification

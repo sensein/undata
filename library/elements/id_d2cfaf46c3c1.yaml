@@ -3,6 +3,7 @@ semantic:
   question_text: Id
   source_attribute: id
   source_class: BrainStructureModel
+  value_domain: text
 provenance:
 - source: aind
   class: BrainStructureModel

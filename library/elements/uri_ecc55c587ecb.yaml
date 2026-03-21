@@ -3,6 +3,7 @@ semantic:
   question_text: URI
   source_attribute: uri
   source_class: Container
+  value_domain: text
 provenance:
 - source: aind
   class: Container

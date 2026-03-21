@@ -3,6 +3,7 @@ semantic:
   question_text: Power ratio
   source_attribute: power_ratio
   source_class: CoupledPlane
+  value_domain: numeric
 provenance:
 - source: aind
   class: CoupledPlane

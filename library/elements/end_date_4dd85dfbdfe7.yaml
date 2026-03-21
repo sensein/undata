@@ -3,6 +3,7 @@ semantic:
   question_text: Water restriction end date
   source_attribute: end_date
   source_class: WaterRestriction
+  value_domain: text
 provenance:
 - source: aind
   class: WaterRestriction

@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: sequential_recordings_index
   source_class: RepetitionsTable
+  value_domain: text
 provenance:
 - source: nwb
   class: RepetitionsTable

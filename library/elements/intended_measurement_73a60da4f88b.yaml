@@ -3,6 +3,7 @@ semantic:
   question_text: Intended measurement
   source_attribute: intended_measurement
   source_class: Channel
+  value_domain: text
 provenance:
 - source: aind
   class: Channel

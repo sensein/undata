@@ -1,0 +1,7 @@
+sha256: 217909be00468216282dab93979a962a4cc17f17b158cacd8b8999e22eac9723
+semantic:
+  label: spatial timeseries demixing
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Spatial timeseries demixing

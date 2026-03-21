@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: detection_method
   source_class: EventDetection
+  value_domain: text
 provenance:
 - source: nwb
   class: EventDetection

@@ -1,0 +1,7 @@
+sha256: 36a509ff1b553acf881b0bcac4c6cb5aad2b7fd3f9b0173379c62e4c8ae172ed
+semantic:
+  label: ScanRAS
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: ScanRAS

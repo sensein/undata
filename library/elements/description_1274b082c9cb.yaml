@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: description
   source_class: IntracellularElectrode
+  value_domain: text
 provenance:
 - source: nwb
   class: IntracellularElectrode

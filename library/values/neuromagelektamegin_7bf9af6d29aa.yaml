@@ -1,0 +1,7 @@
+sha256: 7bf9af6d29aa142f8f8ba68a375dad22717de2535a92ff36a55714039e166df1
+semantic:
+  label: NeuromagElektaMEGIN
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: NeuromagElektaMEGIN

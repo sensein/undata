@@ -14,10 +14,11 @@ semantic:
     ontology_term: https://schema.undata.live/values/linear_f12c10f5d14e
   - value: other
     label: other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   question_text: Fit type
   source_attribute: fit_type
   source_class: CalibrationFit
+  value_domain: categorical
 provenance:
 - source: aind
   class: CalibrationFit

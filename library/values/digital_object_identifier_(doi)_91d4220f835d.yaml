@@ -1,0 +1,7 @@
+sha256: 91d4220f835dcb88173ca597fd9862daa6193c0ddce72295805a04b98173c55e
+semantic:
+  label: digital object identifier (doi)
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Digital Object Identifier (DOI)

@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/regex
   source_class: filePathPattern.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: filePathPattern.schema.omi

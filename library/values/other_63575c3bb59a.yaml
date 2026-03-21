@@ -4,3 +4,7 @@ semantic:
 provenance:
 - source: aind
   raw_value: aind.metadata.Camera.manufacturer.Other
+- source: aind
+  raw_value: Other
+- source: aind
+  raw_value: other

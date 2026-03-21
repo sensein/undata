@@ -1,0 +1,7 @@
+sha256: 146117942d1443a899b66b4a839b02e9f4812ac2b016a5cb0365583c5c4c2969
+semantic:
+  label: fluorescence event detection
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Fluorescence event detection

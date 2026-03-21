@@ -1,0 +1,12 @@
+sha256: e4eb70acc0c44f34bf97cc9a726e145dfffb4769441cf3452d473b5d11bbe19c
+semantic:
+  name: NeuronStructure
+  members:
+  - Axon
+  - Dendrite
+  - Other
+  - Soma
+provenance:
+- source: aind
+  class: metadata
+  name: NeuronStructure

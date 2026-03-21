@@ -3,6 +3,7 @@ semantic:
   question_text: Emission wavelength unit
   source_attribute: emission_wavelength_unit
   source_class: Channel
+  value_domain: text
 provenance:
 - source: aind
   class: Channel

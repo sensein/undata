@@ -1,0 +1,16 @@
+sha256: 3f49e0b5959b0755cf0cb2b43817d34f0c61e3a7e7142b975d431c2c659aec76
+semantic:
+  name: ModelArchitecture
+  members:
+  - AlexNet
+  - Custom
+  - Random Forest
+  - ResNet
+  - Support Vector Machine
+  - Transformer
+  - UNet
+  - VGGNet
+provenance:
+- source: aind
+  class: metadata
+  name: ModelArchitecture

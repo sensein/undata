@@ -3,6 +3,7 @@ semantic:
   question_text: Output path
   source_attribute: output_path
   source_class: DataProcess
+  value_domain: text
 provenance:
 - source: aind
   class: DataProcess

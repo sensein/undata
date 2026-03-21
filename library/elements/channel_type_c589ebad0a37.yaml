@@ -14,6 +14,7 @@ semantic:
   question_text: Channel type
   source_attribute: channel_type
   source_class: OlfactometerChannel
+  value_domain: categorical
 provenance:
 - source: aind
   class: OlfactometerChannel

@@ -3,6 +3,7 @@ semantic:
   question_text: Total trials
   source_attribute: trials_total
   source_class: PerformanceMetrics
+  value_domain: numeric
 provenance:
 - source: aind
   class: PerformanceMetrics

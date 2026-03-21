@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/isPartOf
   source_class: cellPatching.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: cellPatching.schema.omi

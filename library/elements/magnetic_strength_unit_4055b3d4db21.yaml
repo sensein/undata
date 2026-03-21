@@ -18,6 +18,7 @@ semantic:
   question_text: Magnetic strength unit
   source_attribute: magnetic_strength_unit
   source_class: Scanner
+  value_domain: categorical
 provenance:
 - source: aind
   class: Scanner

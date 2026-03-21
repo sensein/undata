@@ -3,6 +3,7 @@ semantic:
   question_text: Injection current (uA)
   source_attribute: injection_current
   source_class: InjectionDynamics
+  value_domain: numeric
 provenance:
 - source: aind
   class: InjectionDynamics

@@ -3,6 +3,7 @@ semantic:
   question_text: Temperature control
   source_attribute: temperature_control
   source_class: Instrument
+  value_domain: boolean
 provenance:
 - source: aind
   class: Instrument

@@ -3,6 +3,7 @@ semantic:
   question_text: Device name
   source_attribute: name
   source_class: FiberProbe
+  value_domain: text
 provenance:
 - source: aind
   class: FiberProbe

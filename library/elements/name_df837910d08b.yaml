@@ -3,6 +3,7 @@ semantic:
   question_text: Laser assembly name
   source_attribute: name
   source_class: LaserAssembly
+  value_domain: text
 provenance:
 - source: aind
   class: LaserAssembly

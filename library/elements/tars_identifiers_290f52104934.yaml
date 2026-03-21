@@ -3,6 +3,7 @@ semantic:
   question_text: TARS IDs
   source_attribute: tars_identifiers
   source_class: ViralMaterial
+  value_domain: text
 provenance:
 - source: aind
   class: ViralMaterial

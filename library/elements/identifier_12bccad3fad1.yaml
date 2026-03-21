@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: identifier
   source_class: EthicsApproval
+  value_domain: text
 provenance:
 - source: dandi
   class: EthicsApproval

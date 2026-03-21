@@ -1,0 +1,7 @@
+sha256: baaf2395aeb3a8bb8c49e03b9d736c215457641eb559b793c86b741c688f8cd7
+semantic:
+  label: analog input
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Analog Input

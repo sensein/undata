@@ -3,6 +3,7 @@ semantic:
   question_text: Headstage for this probe
   source_attribute: headstage
   source_class: EphysProbe
+  value_domain: text
 provenance:
 - source: aind
   class: EphysProbe

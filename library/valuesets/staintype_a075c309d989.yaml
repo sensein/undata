@@ -1,0 +1,14 @@
+sha256: a075c309d989363cf86b0e44e6dd8bb149cde323b57c7365e36638860ab3219c
+semantic:
+  name: StainType
+  members:
+  - Cytoskeleton
+  - Fill
+  - Nuclear
+  - Protein
+  - RNA
+  - Vasculature
+provenance:
+- source: aind
+  class: metadata
+  name: StainType

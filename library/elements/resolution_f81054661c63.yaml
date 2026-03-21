@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: resolution
   source_class: Image
+  value_domain: numeric
 provenance:
 - source: nwb
   class: Image

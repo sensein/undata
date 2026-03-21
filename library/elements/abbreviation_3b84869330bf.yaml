@@ -3,6 +3,7 @@ semantic:
   question_text: Abbreviation
   source_attribute: abbreviation
   source_class: PIDName
+  value_domain: text
 provenance:
 - source: aind
   class: PIDName

@@ -3,6 +3,7 @@ semantic:
   question_text: Whoami
   source_attribute: whoami
   source_class: aind_data_schema_models__harp_types___Behavior
+  value_domain: numeric
 provenance:
 - source: aind
   class: aind_data_schema_models__harp_types___Behavior

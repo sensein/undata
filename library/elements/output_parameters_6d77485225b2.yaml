@@ -3,6 +3,7 @@ semantic:
   question_text: Outputs
   source_attribute: output_parameters
   source_class: ModelEvaluation
+  value_domain: text
 provenance:
 - source: aind
   class: ModelEvaluation

@@ -4,6 +4,7 @@ semantic:
   min_value: 0.0
   source_attribute: flow_capacity
   source_class: OlfactometerChannel
+  value_domain: numeric
 provenance:
 - source: aind
   class: OlfactometerChannel

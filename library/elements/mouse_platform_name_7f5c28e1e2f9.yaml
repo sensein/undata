@@ -3,6 +3,7 @@ semantic:
   question_text: Mouse platform
   source_attribute: mouse_platform_name
   source_class: AcquisitionSubjectDetails
+  value_domain: text
 provenance:
 - source: aind
   class: AcquisitionSubjectDetails

@@ -3,6 +3,7 @@ semantic:
   question_text: Metric value
   source_attribute: value
   source_class: PerformanceMetric
+  value_domain: text
 provenance:
 - source: aind
   class: PerformanceMetric

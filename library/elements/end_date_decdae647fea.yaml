@@ -3,6 +3,7 @@ semantic:
   question_text: End date
   source_attribute: end_date
   source_class: SpecimenProcedure
+  value_domain: text
 provenance:
 - source: aind
   class: SpecimenProcedure

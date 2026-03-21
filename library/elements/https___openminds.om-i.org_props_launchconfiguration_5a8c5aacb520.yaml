@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/launchConfiguration
   source_class: optimization.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: optimization.schema.omi

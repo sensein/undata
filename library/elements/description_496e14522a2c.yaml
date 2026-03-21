@@ -1,0 +1,22 @@
+sha256: 496e14522a2c14218ee33915c641bcf8325ff4360c080aa9b2c7196c83f173b4
+semantic:
+  data_type: string
+  source_attribute: description
+  source_class: DeviceModel
+  value_domain: text
+  ontology_term: http://purl.obolibrary.org/obo/COB_0001300
+provenance:
+- source: nwb
+  class: DeviceModel
+  name: description
+  description: Description of the device model as free-form text.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: enrichment
+  class: DeviceModel
+  name: description
+  generated_at: '2026-03-21T05:17:40.366281+00:00'
+  attributed_to: urn:undata:enrichment-pipeline
+  activity: enrichment
+  derived_from: https://schema.undata.live/elements/description_3639c0fecf90

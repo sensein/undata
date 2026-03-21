@@ -1,0 +1,14 @@
+sha256: 6b35d78e33e965e246de66fe792e1c563e2e924c740f70a74a0fc117a93ca6d2
+semantic:
+  name: GeneticLevelEnum
+  members:
+  - Epigenomic
+  - Genetic
+  - Genomic
+  - Metabolomic
+  - Proteomic
+  - Transcriptomic
+provenance:
+- source: bids
+  class: enums
+  name: _GeneticLevelEnum

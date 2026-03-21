@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/lookupLabel
   source_class: visualization.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: visualization.schema.omi

@@ -1,0 +1,35 @@
+sha256: c9ab6d877137592088d9450e709c936d9248a74a55120640602c404e2ef7042b
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: cohort
+  source_class: entities
+  ontology_term: http://purl.obolibrary.org/obo/OBI_0000252
+provenance:
+- source: bids
+  class: entities
+  name: cohort
+  description: 'A set of subjects sharing one or more common characteristics.
+
+
+    In the context of a template, the `cohort-<label>` entity identifies a subset
+    of
+
+    subjects or sessions that were used to construct template variations.
+
+    For example, a developmental template may use scans from participants of different
+    ages,
+
+    longitudinal sessions of the same participants, or a combination of the two.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: enrichment
+  class: entities
+  name: cohort
+  generated_at: '2026-03-21T05:17:39.967249+00:00'
+  attributed_to: urn:undata:enrichment-pipeline
+  activity: enrichment
+  derived_from: https://schema.undata.live/elements/cohort_6ad79f0754d8

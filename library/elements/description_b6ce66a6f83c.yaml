@@ -1,0 +1,23 @@
+sha256: b6ce66a6f83c87757797c86fcfc0f213522b6301be8a469270a1367133570237
+semantic:
+  data_type: string
+  question_text: Description
+  source_attribute: description
+  source_class: Calibration
+  value_domain: text
+  ontology_term: http://purl.obolibrary.org/obo/OBI_0000129
+provenance:
+- source: aind
+  class: Calibration
+  name: description
+  description: Brief description of what is being calibrated
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: enrichment
+  class: Calibration
+  name: description
+  generated_at: '2026-03-21T05:17:40.392034+00:00'
+  attributed_to: urn:undata:enrichment-pipeline
+  activity: enrichment
+  derived_from: https://schema.undata.live/elements/description_797591f32601

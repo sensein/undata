@@ -3,6 +3,7 @@ semantic:
   question_text: Date of birth
   source_attribute: date_of_birth
   source_class: MouseSubject
+  value_domain: text
 provenance:
 - source: aind
   class: MouseSubject

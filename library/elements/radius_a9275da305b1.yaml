@@ -3,6 +3,7 @@ semantic:
   question_text: Radius (mm)
   source_attribute: radius
   source_class: Wheel
+  value_domain: numeric
 provenance:
 - source: aind
   class: Wheel

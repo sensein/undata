@@ -1,0 +1,7 @@
+sha256: 03e78b6a27a9f7d830eb94517d73b5a06e1e551ea7df0ca7fa1d53d7064d3f93
+semantic:
+  label: MNI152NLin6Asym
+  value_type: categorical
+provenance:
+- source: bids
+  raw_value: MNI152NLin6Asym

@@ -1,0 +1,7 @@
+sha256: 4115217a793bfff6b3cb3aa6e59d7ba424ef9973720a6b4f1d8259bfb95cc7a1
+semantic:
+  label: video roi timeseries extraction
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Video ROI timeseries extraction

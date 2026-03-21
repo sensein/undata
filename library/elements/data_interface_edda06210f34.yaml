@@ -30,10 +30,11 @@ semantic:
     ontology_term: https://schema.undata.live/values/usb_8d9d1f2950c4
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   question_text: DataInterface
   source_attribute: data_interface
   source_class: NeuropixelsBasestation
+  value_domain: categorical
 provenance:
 - source: aind
   class: NeuropixelsBasestation

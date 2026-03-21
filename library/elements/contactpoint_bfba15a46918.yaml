@@ -2,6 +2,7 @@ semantic:
   data_type: integer
   source_attribute: contactPoint
   source_class: EthicsApproval
+  value_domain: numeric
 provenance:
 - source: dandi
   class: EthicsApproval

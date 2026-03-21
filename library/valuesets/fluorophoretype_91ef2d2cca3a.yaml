@@ -1,0 +1,13 @@
+sha256: 91ef2d2cca3af1438cba12655495b79cb77e4758880927d680849e23e129ca5a
+semantic:
+  name: FluorophoreType
+  members:
+  - Alexa Fluor
+  - Atto
+  - CF
+  - Cyanine
+  - DyLight
+provenance:
+- source: aind
+  class: metadata
+  name: FluorophoreType

@@ -30,6 +30,7 @@ semantic:
   question_text: Duration unit
   source_attribute: duration_unit
   source_class: Anaesthetic
+  value_domain: categorical
 provenance:
 - source: aind
   class: Anaesthetic

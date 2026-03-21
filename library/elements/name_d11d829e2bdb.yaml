@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: name
   source_class: StrainType
+  value_domain: text
 provenance:
 - source: dandi
   class: StrainType

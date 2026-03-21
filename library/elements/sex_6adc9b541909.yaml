@@ -7,13 +7,14 @@ semantic:
   response_options:
   - value: Female
     label: Female
-    ontology_term: https://schema.undata.live/values/female_49b3f531f5ce
+    ontology_term: https://schema.undata.live/values/female_a89c612e5187
   - value: Male
     label: Male
     ontology_term: https://schema.undata.live/values/male_d1db2b6ce573
   question_text: Sex
   source_attribute: sex
   source_class: MouseSubject
+  value_domain: categorical
 provenance:
 - source: aind
   class: MouseSubject

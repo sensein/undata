@@ -3,6 +3,7 @@ semantic:
   question_text: Initiator for HCR probes
   source_attribute: initiator_name
   source_class: FluorescentStain
+  value_domain: text
 provenance:
 - source: aind
   class: FluorescentStain

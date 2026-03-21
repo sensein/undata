@@ -1,0 +1,7 @@
+sha256: ad7d27ad1f64f8d603531944055b118de58266a2c87c1b299bd61c07a9b52960
+semantic:
+  label: support vector machine
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Support Vector Machine

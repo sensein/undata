@@ -3,6 +3,7 @@ semantic:
   question_text: Training protocol ID
   source_attribute: protocol_id
   source_class: TrainingProtocol
+  value_domain: text
 provenance:
 - source: aind
   class: TrainingProtocol

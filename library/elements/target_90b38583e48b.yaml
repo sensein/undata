@@ -26,10 +26,11 @@ semantic:
     ontology_term: https://schema.undata.live/values/tongue_1df6df6df24e
   - value: Other
     label: Other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   question_text: Camera target
   source_attribute: target
   source_class: CameraAssembly
+  value_domain: categorical
 provenance:
 - source: aind
   class: CameraAssembly

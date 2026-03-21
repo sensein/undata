@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: GrayscaleImage
   source_class: GrayscaleImage
+  value_domain: text
 provenance:
 - source: nwb
   class: GrayscaleImage

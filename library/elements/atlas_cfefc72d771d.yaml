@@ -3,6 +3,7 @@ semantic:
   question_text: Atlas
   source_attribute: atlas
   source_class: BrainStructureModel
+  value_domain: text
 provenance:
 - source: aind
   class: BrainStructureModel

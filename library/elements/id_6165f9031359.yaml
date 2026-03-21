@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: id
   source_class: AssayType
+  value_domain: text
 provenance:
 - source: dandi
   class: AssayType

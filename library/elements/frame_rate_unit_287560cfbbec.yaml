@@ -18,6 +18,7 @@ semantic:
   question_text: Frame rate unit
   source_attribute: frame_rate_unit
   source_class: SamplingStrategy
+  value_domain: categorical
 provenance:
 - source: aind
   class: SamplingStrategy

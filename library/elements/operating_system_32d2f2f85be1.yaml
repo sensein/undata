@@ -3,6 +3,7 @@ semantic:
   question_text: Operating system
   source_attribute: operating_system
   source_class: Computer
+  value_domain: text
 provenance:
 - source: aind
   class: Computer

@@ -3,6 +3,7 @@ semantic:
   question_text: Motion padding X (pixels)
   source_attribute: motion_padding_x
   source_class: DigitalMicromirrorDevice
+  value_domain: numeric
 provenance:
 - source: aind
   class: DigitalMicromirrorDevice

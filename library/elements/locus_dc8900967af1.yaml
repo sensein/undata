@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: locus
   source_class: GenotypeInfo
+  value_domain: text
 provenance:
 - source: dandi
   class: GenotypeInfo

@@ -3,6 +3,7 @@ semantic:
   question_text: Encoder firmware
   source_attribute: encoder_firmware
   source_class: Disc
+  value_domain: text
 provenance:
 - source: aind
   class: Disc

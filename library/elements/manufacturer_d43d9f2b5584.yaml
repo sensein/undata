@@ -3,6 +3,7 @@ semantic:
   question_text: Manufacturer
   source_attribute: manufacturer
   source_class: Filter
+  value_domain: text
 provenance:
 - source: aind
   class: Filter

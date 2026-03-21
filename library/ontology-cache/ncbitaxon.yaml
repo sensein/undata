@@ -1,0 +1,5162 @@
+ontology: NCBITAXON
+version: fetched
+fetched_at: '2026-03-21T05:16:40.776781+00:00'
+terms:
+  http://purl.obolibrary.org/obo/NCBITaxon#_species_group:
+    label: obsolete species group
+    synonyms: []
+    parents: []
+    deprecated: true
+  http://purl.obolibrary.org/obo/NCBITaxon#_species_subgroup:
+    label: obsolete species subgroup
+    synonyms: []
+    parents: []
+    deprecated: true
+  http://purl.obolibrary.org/obo/NCBITaxon#_taxonomic_rank:
+    label: obsolete taxonomic rank
+    synonyms: []
+    parents: []
+    deprecated: true
+  http://purl.obolibrary.org/obo/NCBITaxon_1:
+    label: root
+    synonyms:
+    - all
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_10:
+    label: Cellvibrio
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100:
+    label: Ancylobacter aquaticus
+    synonyms:
+    - Microcyclus aquaticus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100000:
+    label: Herbaspirillum sp. BA12
+    synonyms:
+    - Herbispirillum sp. BA12
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000000:
+    label: Microbacterium sp. 6.11-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000001:
+    label: Mycobacterium sp. 1.1-VEs
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000002:
+    label: Mycobacterium sp. 1.12-VEs
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000003:
+    label: Nocardia sp. 3.2-VPr
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000004:
+    label: Polaromonas sp. 7.23-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000005:
+    label: Promicromonospora sp. 10.25-Bb
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000006:
+    label: Promicromonospora sp. 3.1- VPr
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000007:
+    label: Pseudomonas sp. 10S-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000008:
+    label: Pseudomonas sp. 5B-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000009:
+    label: Pseudomonas sp. 5K-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100001:
+    label: Herbaspirillum sp. BA14
+    synonyms:
+    - Herbispirillum sp. BA14
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000010:
+    label: Pseudomonas sp. 5KS-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000011:
+    label: Pseudomonas sp. 5KW-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000012:
+    label: Pseudomonas sp. 5S-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000013:
+    label: Pseudomonas sp. 5T-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000014:
+    label: Pseudomonas sp. 6S-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000015:
+    label: Rhodococcus sp. 1.15-VEs
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000016:
+    label: Rhodococcus sp. 1.3-VEs
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000017:
+    label: Rhodococcus sp. 3.3-VPr
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000018:
+    label: Rhodococcus sp. 4.20-VOd
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000019:
+    label: Rhodococcus sp. 4.20ST-VOd
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100002:
+    label: Herbaspirillum sp. BA15
+    synonyms:
+    - Herbispirillum sp. BA15
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000020:
+    label: Sanguibacter sp. 1.16-VEs
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000021:
+    label: Sanguibacter sp. 1.23-VEs
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000022:
+    label: Sanguibacter sp. 1.23S-VEs
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000023:
+    label: Comamonadaceae bacterium 12S-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000024:
+    label: Intrasporangiaceae bacterium 7.31-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000025:
+    label: Intrasporangiaceae bacterium 7.4-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000026:
+    label: Micrococcineae bacterium 9.2-BP
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000027:
+    label: alpha proteobacterium 6.6-VPa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000028:
+    label: Bacillus sp. enrichment culture clone w-181
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000029:
+    label: Pseudomonas sp. MBYD-1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100003:
+    label: Herbaspirillum sp. BA16
+    synonyms:
+    - Herbispirillum sp. BA16
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000030:
+    label: Agrobacterium sp. G21-07
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000031:
+    label: Agrobacterium sp. G21-09
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000032:
+    label: Enterobacter sp. P19-19
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000033:
+    label: Flavobacterium sp. G23-27
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000034:
+    label: Erwinia sp. Koakin
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100004:
+    label: Herbaspirillum sp. BA134
+    synonyms:
+    - Herbispirillum sp. BA134
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100005:
+    label: Herbaspirillum sp. BA161
+    synonyms:
+    - Herbispirillum sp. BA161
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100006:
+    label: Azospirillum sp. Ala
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100007:
+    label: Mycobacterium sp. C2-3
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100008:
+    label: Dangeardiella
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100009:
+    label: Dangeardiella macrospora
+    synonyms:
+    - Monographos macrosporus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_10001:
+    label: Sciurus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100010:
+    label: Leptospora
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100011:
+    label: Leptospora rubella
+    synonyms:
+    - Sphaeria rubella
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100012:
+    label: Bartonella sp. RR13863PO
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100013:
+    label: Bartonella sp. MM5136CA
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100014:
+    label: diazotroph str. AB48
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100015:
+    label: diazotroph str. AB71
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100016:
+    label: diazotroph str. AB117
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100017:
+    label: diazotroph str. BA22
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100018:
+    label: diazotroph str. BA23
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100019:
+    label: Didymella exigua
+    synonyms:
+    - Cercidospora exigua
+    - Didymosphaeria exigua
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_10002:
+    label: Sciurus aberti aberti
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100020:
+    label: diazotroph str. BA27
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100021:
+    label: diazotroph str. BA123
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100022:
+    label: diazotroph str. BA126
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100023:
+    label: diazotroph str. BA136
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100024:
+    label: diazotroph str. O1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100025:
+    label: Hysteriaceae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100026:
+    label: Hysterium
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100027:
+    label: Hysterium pulicare
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000273:
+    label: Klebsiella sp. NCCP 232
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000274:
+    label: Acinetobacter sp. NCCP-233
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000275:
+    label: Psychrobacter sp. NCCP 234
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000276:
+    label: Psychrobacter sp. NCCP 235
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000277:
+    label: Staphylococcus sp. NCCP 255
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000278:
+    label: Acheilognathus tabira tohokuensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000279:
+    label: Enterobacter sp. AUBT-sd
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100028:
+    label: Hysteropatella
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000280:
+    label: Klebsiella sp. AUBT-bd
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000281:
+    label: Bacillus sp. VLSH08
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000282:
+    label: Lysobacter sp. P28
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000283:
+    label: Arcanobacterium sp. 1181-06
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000284:
+    label: Arcanobacterium sp. 3656-05
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000285:
+    label: Arcanobacterium sp. 5773-06
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000286:
+    label: Arcanobacterium sp. 6462-07
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000287:
+    label: Grateloupia dalianensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000288:
+    label: Influenza A virus (A/canine/Zhejiang/1/2010(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000289:
+    label: Influenza A virus (A/Korea/NAP-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100029:
+    label: Hysteropatella clavispora
+    synonyms:
+    - Coryneum clavisporum
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000290:
+    label: Influenza A virus (A/SW/MB/5-5/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000291:
+    label: Influenza A virus (A/SW/SK/11-16/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000292:
+    label: Influenza A virus (A/SW/SK/11-35/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000293:
+    label: Influenza A virus (A/SW/SK/12-71/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000294:
+    label: Influenza A virus (A/SW/SK/59-6/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000295:
+    label: Influenza A virus (A/swine/MB/10422/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000296:
+    label: Influenza A virus (A/swine/MB/22/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000297:
+    label: Influenza A virus (A/swine/MB/25-3/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000298:
+    label: Influenza A virus (A/swine/MB/31/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000299:
+    label: Influenza A virus (A/swine/MB/32-2/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_10003:
+    label: Sciurus aberti barberi
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100030:
+    label: Massarina australiensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000300:
+    label: Influenza A virus (A/swine/MB/33/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000301:
+    label: Influenza A virus (A/swine/MB/35-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000302:
+    label: Influenza A virus (A/swine/MB/36/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000303:
+    label: Influenza A virus (A/swine/MB/46/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000304:
+    label: Influenza A virus (A/swine/MB/54/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000305:
+    label: Influenza A virus (A/swine/QC/1014-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000306:
+    label: Influenza A virus (A/swine/QC/1014-2/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000307:
+    label: Influenza A virus (A/swine/QC/1036/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000308:
+    label: Influenza A virus (A/swine/QC/1196903-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000309:
+    label: Influenza A virus (A/swine/QC/1488-2/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000310:
+    label: Influenza A virus (A/swine/QC/1488-3/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000311:
+    label: Influenza A virus (A/swine/QC/1488-4/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000312:
+    label: Influenza A virus (A/swine/QC/1488-5/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000313:
+    label: Influenza A virus (A/swine/QC/1500/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000314:
+    label: Influenza A virus (A/swine/QC/1531-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000315:
+    label: Influenza A virus (A/swine/QC/1531-2/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000316:
+    label: Influenza A virus (A/swine/QC/1531-3/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000317:
+    label: Influenza A virus (A/swine/QC/1533-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000318:
+    label: Influenza A virus (A/swine/QC/1533-5/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000319:
+    label: Influenza A virus (A/swine/QC/1588/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100032:
+    label: Keissleriella
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000320:
+    label: Influenza A virus (A/swine/QC/1695-3/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000321:
+    label: Influenza A virus (A/swine/QC/1697-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000322:
+    label: Influenza A virus (A/swine/QC/1697-2/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000323:
+    label: Influenza A virus (A/swine/QC/1697-3/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000324:
+    label: Influenza A virus (A/swine/QC/1697-4/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000325:
+    label: Influenza A virus (A/swine/QC/1697-5/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000326:
+    label: Influenza A virus (A/swine/QC/1792-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000327:
+    label: Influenza A virus (A/swine/QC/1792-2/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000328:
+    label: Influenza A virus (A/swine/QC/1805-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000329:
+    label: Influenza A virus (A/swine/QC/1805-2/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100033:
+    label: Keissleriella cladophila
+    synonyms:
+    - Didymosphaeria cladophila
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000330:
+    label: Influenza A virus (A/swine/QC/1805-3/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000331:
+    label: Influenza A virus (A/swine/QC/1805-4/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000332:
+    label: Influenza A virus (A/swine/QC/1805-5/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000333:
+    label: Influenza A virus (A/swine/QC/1814-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000334:
+    label: Influenza A virus (A/swine/QC/1814-3/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000335:
+    label: Influenza A virus (A/swine/QC/1814-5/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000336:
+    label: Influenza A virus (A/swine/QC/3193/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000337:
+    label: Influenza A virus (A/swine/QC/3399-3/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000338:
+    label: Influenza A virus (A/swine/QC/3399-6/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000339:
+    label: Influenza A virus (A/swine/QC/3453/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100034:
+    label: Massariosphaeria
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000340:
+    label: Influenza A virus (A/swine/QC/3639-3/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000341:
+    label: Influenza A virus (A/swine/QC/3639-4/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000342:
+    label: Influenza A virus (A/swine/QC/368/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000343:
+    label: Influenza A virus (A/swine/QC/370/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000344:
+    label: Influenza A virus (A/swine/QC/3777/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000345:
+    label: Influenza A virus (A/swine/QC/3845/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000346:
+    label: Influenza A virus (A/swine/QC/3868/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000347:
+    label: Influenza A virus (A/swine/QC/3973-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000348:
+    label: Influenza A virus (A/swine/QC/3974-5/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000349:
+    label: Influenza A virus (A/swine/QC/398/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100035:
+    label: Massariosphaeria phaeospora
+    synonyms:
+    - Leptosphaeria phaeospora
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000350:
+    label: Influenza A virus (A/swine/QC/4015-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000351:
+    label: Influenza A virus (A/swine/QC/4015-2/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000352:
+    label: Influenza A virus (A/swine/QC/4036-5/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000353:
+    label: Influenza A virus (A/swine/QC/4040-2/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000354:
+    label: Influenza A virus (A/swine/QC/410-A/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000355:
+    label: Influenza A virus (A/swine/QC/410-B/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000356:
+    label: Influenza A virus (A/swine/QC/4110/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000357:
+    label: Influenza A virus (A/swine/QC/4112/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000358:
+    label: Influenza A virus (A/swine/QC/4113/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000359:
+    label: Influenza A virus (A/swine/QC/4150/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100036:
+    label: Splanchnonema platani
+    synonyms:
+    - Massaria platani
+    - Sphaeria platani
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000360:
+    label: Influenza A virus (A/swine/QC/4362-1/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000361:
+    label: Influenza A virus (A/swine/QC/4362-2/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000362:
+    label: Influenza A virus (A/swine/QC/4362-3/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000363:
+    label: Influenza A virus (A/swine/QC/438-B/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000364:
+    label: Influenza A virus (A/swine/QC/705-A/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000365:
+    label: Influenza A virus (A/swine/QC/705-B/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000366:
+    label: Influenza A virus (A/swine/QC/729-B/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000367:
+    label: Influenza A virus (A/swine/QC/7692/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000368:
+    label: Influenza A virus (A/swine/QC/7780-PO/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000369:
+    label: Influenza A virus (A/swine/QC/7780/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100037:
+    label: Montagnula
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000370:
+    label: Influenza A virus (A/swine/QC/7918-E/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000371:
+    label: Influenza A virus (A/swine/QC/F8037/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000372:
+    label: Influenza A virus (A/swine/QC/F8154/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000373:
+    label: Rosellinia necatrix quadrivirus 1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100038:
+    label: Montagnula opulenta
+    synonyms:
+    - Sphaeria opulenta
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100039:
+    label: Phaeodothis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_10004:
+    label: Sciurus aberti chuscensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100040:
+    label: Phaeodothis winteri
+    synonyms:
+    - Didymosphaeria winteri
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000400:
+    label: Influenza A virus (A/swine/Saraburi/NIAH100761-22/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000401:
+    label: Influenza A virus (A/swine/Saraburi/NIAH100761-23/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000402:
+    label: Influenza A virus (A/swine/Saraburi/NIAH100761-26/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000403:
+    label: Influenza A virus (A/swine/Saraburi/NIAH116625-11/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000404:
+    label: Influenza A virus (A/swine/Saraburi/NIAH116625-12/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000405:
+    label: Influenza A virus (A/swine/Saraburi/NIAH116625-13/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000406:
+    label: Influenza A virus (A/swine/Saraburi/NIAH116625-16/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000407:
+    label: Influenza A virus (A/swine/Saraburi/NIAH116625-17/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000408:
+    label: Influenza A virus (A/swine/Saraburi/NIAH107725-28/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000409:
+    label: Influenza A virus (A/swine/Saraburi/NIAH109713-36/2009(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100041:
+    label: Entodesmium
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000410:
+    label: Influenza A virus (A/swine/Saraburi/NIAH116627-24/2009(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000411:
+    label: Jacunda virus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000412:
+    label: Paphiopedilum spicerianum x Paphiopedilum venustum
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000413:
+    label: Acer yangbiense
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000414:
+    label: Nephelaphyllum tenuiflorum
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000415:
+    label: Amelanchier ovalis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000416:
+    label: Calamagrostis varia
+    synonyms:
+    - Arundo varia
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000417:
+    label: Centaurea uniflora
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000418:
+    label: Galeopsis tetrahit
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000419:
+    label: Leucanthemum adustum
+    synonyms:
+    - Chrysanthemum montanum var. adustum
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100042:
+    label: Entodesmium rude
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000420:
+    label: Linum alpinum
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000421:
+    label: Nepeta nepetella
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000422:
+    label: Oxytropis jacquinii
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000423:
+    label: Pedicularis ascendens
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000425:
+    label: Pimpinella major
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000426:
+    label: Ranunculus tuberosus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000428:
+    label: Hedlundia mougeotii
+    synonyms:
+    - Sorbus mougeotii
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000429:
+    label: Stachys pradica
+    synonyms:
+    - Betonica pradica
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100043:
+    label: Pleomassaria
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000430:
+    label: Teucrium montanum
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000432:
+    label: Trinia glauca
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000433:
+    label: Verbascum lychnitis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000434:
+    label: Penicillium sp. PSR2
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000435:
+    label: Phomopsis sp. DCS01
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000436:
+    label: fungal sp. NT-01
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000437:
+    label: uncultured Penidiella
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000438:
+    label: Rhodococcus sp. LIN
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000439:
+    label: Rhodococcus sp. LIN-1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100044:
+    label: Pleomassaria siparia
+    synonyms:
+    - Sphaeria siparia
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000440:
+    label: Rhodococcus sp. LIN-2
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000441:
+    label: Rhodococcus sp. LIN-3
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000442:
+    label: Flavobacterium sp. S20
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000443:
+    label: Dissoconium sp. GS-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000444:
+    label: environmental samples <ascomycete fungi,Capnodiales incertae sedis>
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000445:
+    label: Fomitopsis ramentacea
+    synonyms:
+    - Bjerkandera ramentacea
+    - Coriolellus ramentaceus
+    - Daedalea ramentacea
+    - Polyporus ramentaceus
+    - Poria ramentacea
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000446:
+    label: Amyloporia
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000447:
+    label: Amyloporia nothofaginea
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000448:
+    label: Austroporia stratosa
+    synonyms:
+    - Amyloporia stratosa
+    - Poria stratosa
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000449:
+    label: Bacillus sp. H1576
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100045:
+    label: Pseudotrichia <ascomycete fungi>
+    synonyms:
+    - Pseudotrichia
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000450:
+    label: Bacillus sp. H1582
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000451:
+    label: Bacillus sp. H1595
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000452:
+    label: Bacillus sp. H1662
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000453:
+    label: Bacillus sp. H1696
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000454:
+    label: Bacillus sp. H183
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000455:
+    label: Brachybacterium sp. H164
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000456:
+    label: Exiguobacterium sp. H1632
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000457:
+    label: Marinomonas sp. H1575
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000458:
+    label: Marinomonas sp. H1594
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000459:
+    label: Grateloupia yangjiangensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100046:
+    label: Pseudotrichia aurata
+    synonyms:
+    - Thyridaria aurata
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000460:
+    label: Influenza A virus (A/chicken/Anhui/GQY/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000461:
+    label: Influenza A virus (A/chicken/Anhui/LJT/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000462:
+    label: Influenza A virus (A/chicken/Anhui/SXQ/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000463:
+    label: Influenza A virus (A/chicken/Anhui/WANG/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000464:
+    label: Influenza A virus (A/chicken/Anhui/WBQ/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000465:
+    label: Influenza A virus (A/chicken/Anhui/XMS/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000466:
+    label: Influenza A virus (A/chicken/Anhui/YZZ/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000467:
+    label: Influenza A virus (A/chicken/Anhui/ZTL/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000468:
+    label: Influenza A virus (A/chicken/Fujian/G9/2009(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000469:
+    label: Influenza A virus (A/chicken/Fujian/SL4/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100047:
+    label: Melanomma pulvis-pyrius
+    synonyms:
+    - Sphaeria pulvis-pyrius
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000470:
+    label: Influenza A virus (A/chicken/Fujian/SL6/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000471:
+    label: Influenza A virus (A/chicken/Guangdong/CJZ/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000472:
+    label: Influenza A virus (A/chicken/Guangdong/FLS/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000473:
+    label: Influenza A virus (A/chicken/Guangdong/FZH/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000474:
+    label: Influenza A virus (A/chicken/Guangdong/HBQ/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000475:
+    label: Influenza A virus (A/chicken/Guangdong/HXK/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000476:
+    label: Influenza A virus (A/chicken/Guangdong/HYF/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000477:
+    label: Influenza A virus (A/chicken/Guangdong/LHY/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000478:
+    label: Influenza A virus (A/chicken/Guangdong/LJD/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000479:
+    label: Influenza A virus (A/chicken/Guangdong/LJH/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100048:
+    label: Trematosphaeria
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000480:
+    label: Influenza A virus (A/chicken/Guangdong/LMQ/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000481:
+    label: Influenza A virus (A/chicken/Guangdong/LSD/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000482:
+    label: Influenza A virus (A/chicken/Guangdong/LWQ/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000483:
+    label: Influenza A virus (A/chicken/Guangdong/LYL/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000484:
+    label: Influenza A virus (A/chicken/Guangdong/LYQ/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000485:
+    label: Influenza A virus (A/chicken/Guangdong/LZQ/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000486:
+    label: Influenza A virus (A/chicken/Guangdong/MYS/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000487:
+    label: Influenza A virus (A/chicken/Guangdong/Q6/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000488:
+    label: Influenza A virus (A/chicken/Guangdong/QZL/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000489:
+    label: Influenza A virus (A/chicken/Guangdong/SK/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100049:
+    label: Trematosphaeria hydrela
+    synonyms:
+    - Melanomma hydrelum
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000490:
+    label: Influenza A virus (A/chicken/Guangdong/U4/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000491:
+    label: Influenza A virus (A/chicken/Guangdong/U5/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000492:
+    label: Influenza A virus (A/chicken/Guangdong/WGH/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000493:
+    label: Influenza A virus (A/chicken/Guangdong/YJX/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000494:
+    label: Influenza A virus (A/chicken/Guangdong/ZDR/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000495:
+    label: Influenza A virus (A/chicken/Guangdong/ZPY/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000496:
+    label: Influenza A virus (A/chicken/Guangxi/MFX/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000497:
+    label: Influenza A virus (A/chicken/Guangxi/WSL/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000498:
+    label: Influenza A virus (A/chicken/Hainan/Q4/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000499:
+    label: Influenza A virus (A/chicken/Hubei/GYC/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_10005:
+    label: Sciurus aberti ferreus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100050:
+    label: Botryosphaeria quercuum
+    synonyms:
+    - Botryosphaeria quercus
+    - Sphaeria quercuum
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000500:
+    label: Influenza A virus (A/chicken/Hubei/HWC/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000501:
+    label: Influenza A virus (A/chicken/Hubei/ZWC/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000502:
+    label: Influenza A virus (A/chicken/Hunan/U6/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000503:
+    label: Influenza A virus (A/chicken/Jiangsu/LWC/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000504:
+    label: Influenza A virus (A/chicken/Jiangsu/Q3/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000505:
+    label: Influenza A virus (A/chicken/Jiangsu/Q7/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000506:
+    label: Influenza A virus (A/chicken/Jiangsu/U1/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000507:
+    label: Influenza A virus (A/chicken/Jiangsu/U2/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000508:
+    label: Influenza A virus (A/chicken/Jiangsu/U3/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000509:
+    label: Influenza A virus (A/chicken/Jiangsu/WXY/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100051:
+    label: Delitschia
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000510:
+    label: Influenza A virus (A/chicken/Jiangsu/ZHM/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000511:
+    label: Influenza A virus (A/chicken/Zhejiang/FSQ/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000512:
+    label: Influenza A virus (A/chicken/Zhejiang/LAC/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000513:
+    label: Influenza A virus (A/chicken/Zhejiang/Q1D4/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000514:
+    label: Influenza A virus (A/chicken/Zhejiang/SJL/2009(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000515:
+    label: Influenza A virus (A/chicken/Zhejiang/SYX/2010(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000516:
+    label: Influenza A virus (A/chicken/Zhejiang/ZLB/2011(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000517:
+    label: Acanthamoeba sp. CHI0405
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000518:
+    label: Acanthamoeba sp. CHI1003
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000519:
+    label: Acanthamoeba sp. CHI1106
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100052:
+    label: Delitschia winteri
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000520:
+    label: Acanthamoeba sp. CHI1203
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000521:
+    label: Acanthamoeba sp. CHI1306
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000522:
+    label: Acanthamoeba sp. CHI1503
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000523:
+    label: Acanthamoeba sp. CHI1706
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000524:
+    label: Acanthamoeba sp. CHI1803
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000525:
+    label: Acanthamoeba sp. CHI1905
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000526:
+    label: Acanthamoeba sp. CHI2405
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000527:
+    label: Acanthamoeba sp. CHI2504
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000528:
+    label: Acanthamoeba sp. CHI2705
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000529:
+    label: Acanthamoeba sp. CHI2806
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100053:
+    label: Leptospira alexanderi
+    synonyms:
+    - Leptospira genomosp. 2
+    - Leptospira genomospecies 2
+    - Leptospira genospecies 2
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000530:
+    label: Acanthamoeba sp. CHI3005
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000531:
+    label: Acanthamoeba sp. CHI3105
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000532:
+    label: Acanthamoeba sp. CHI3205
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000533:
+    label: Acanthamoeba sp. CHI3206
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000534:
+    label: Acanthamoeba sp. CHI3405
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000535:
+    label: Acanthamoeba sp. CHI3505
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000536:
+    label: Acanthamoeba sp. CHI3703
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000537:
+    label: Acanthamoeba sp. CHI3705
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000538:
+    label: Acanthamoeba sp. CHI3804
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000539:
+    label: Acanthamoeba sp. CHI4003
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000540:
+    label: Acanthamoeba sp. CHI4103
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000541:
+    label: Acanthamoeba sp. CHI4503
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000542:
+    label: Acanthamoeba sp. CHI4703
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000543:
+    label: Acanthamoeba sp. CHI4706
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000544:
+    label: Acanthamoeba sp. CHI4905
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000545:
+    label: Acanthamoeba sp. CHI5403
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000546:
+    label: Acanthamoeba sp. CHI5504
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000547:
+    label: Acanthamoeba sp. CHI5603
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000548:
+    label: Acanthamoeba sp. CHI5604
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000549:
+    label: Acanthamoeba sp. CHI5904
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100055:
+    label: uncultured marine eubacterium HstpL2
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000550:
+    label: Acanthamoeba sp. CHI6406A
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000551:
+    label: Acanthamoeba sp. CHI6406B
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000552:
+    label: Acanthamoeba sp. CHI6806
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000553:
+    label: Acanthamoeba sp. CHI7204
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000554:
+    label: Acanthamoeba sp. CHI7506
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000555:
+    label: Acanthamoeba sp. CHI8404
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000556:
+    label: Acanthamoeba sp. CHI9004
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000557:
+    label: Acanthamoeba sp. CHI9006
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000558:
+    label: Acanthamoeba sp. CHI9304
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000559:
+    label: Acanthamoeba sp. CHI9306
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100056:
+    label: uncultured marine eubacterium HstpL46
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000560:
+    label: Escherichia coli VDP
+    synonyms:
+    - Escherichia coli str. VDP
+    - Escherichia coli strain VDP
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000561:
+    label: Pseudomonas aeruginosa AES-1R
+    synonyms:
+    - Pseudomonas aeruginosa str. AES-1R
+    - Pseudomonas aeruginosa strain AES-1R
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000562:
+    label: Streptococcus phocae subsp. salmonis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000564:
+    label: Mesophyllum lichenoides
+    synonyms:
+    - Corallium lichenoides
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000565:
+    label: Methyloversatilis universalis FAM5
+    synonyms:
+    - Methyloversatilis universalis str. FAM5
+    - Methyloversatilis universalis strain FAM5
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000566:
+    label: Halosaccharopolyspora lacisalsi
+    synonyms:
+    - Saccharopolyspora lacisalsi Guan et al. 2013
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000567:
+    label: Bifidobacterium longum 3_1_37DFAAB
+    synonyms:
+    - Bifidobacterium longum str. 3_1_37DFAAB
+    - Bifidobacterium longum strain 3_1_37DFAAB
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000568:
+    label: Megasphaera lornae
+    synonyms:
+    - Megasphaera genomosp. type_1
+    - Megasphaera sp. type 1
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000569:
+    label: Megasphaera sp. UPII 135-E
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100057:
+    label: uncultured marine eubacterium HstpL48
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000570:
+    label: Streptococcus anginosus SK52 = DSM 20563
+    synonyms:
+    - Streptococcus anginosus ATCC 12395
+    - Streptococcus anginosus ATCC 33397
+    - Streptococcus anginosus CCUG 27298
+    - Streptococcus anginosus CIP 102921
+    - Streptococcus anginosus DSM 20563 = SK52
+    - Streptococcus anginosus DSM 20563
+    - Streptococcus anginosus LMG 14502
+    - Streptococcus anginosus SK52
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000571:
+    label: unclassified Pseudoperonospora
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000572:
+    label: Pseudoperonospora sp. 21226
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000573:
+    label: Pseudoperonospora sp. 22238
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000574:
+    label: Pseudoperonospora sp. 23231
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000575:
+    label: Pseudoperonospora sp. 24230
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000576:
+    label: Pseudoperonospora sp. D149
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000577:
+    label: Pseudoperonospora sp. D190
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000578:
+    label: Pseudoperonospora sp. D232
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000579:
+    label: Pseudoperonospora sp. D265
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100058:
+    label: uncultured marine eubacterium HstpL51
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000580:
+    label: Pseudoperonospora sp. NY425
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000581:
+    label: Pseudoperonospora sp. NY440
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000582:
+    label: Pseudoperonospora sp. NY461
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000583:
+    label: Pseudoperonospora sp. U196
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000584:
+    label: Pseudoperonospora sp. U201
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000586:
+    label: Carrizal virus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000587:
+    label: Huitzilac virus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000588:
+    label: Streptococcus mitis bv. 2 str. SK95
+    synonyms:
+    - Streptococcus mitis bv. 2 strain SK95
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000589:
+    label: Streptococcus dysgalactiae subsp. equisimilis SK1249
+    synonyms:
+    - Streptococcus dysgalactiae subsp. equisimilis str. SK1249
+    - Streptococcus dysgalactiae subsp. equisimilis strain SK1249
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100059:
+    label: uncultured marine eubacterium HstpL78
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000590:
+    label: Staphylococcus epidermidis 14.1.R1.SE
+    synonyms:
+    - Staphylococcus epidermidis str. 14.1.R1.SE
+    - Staphylococcus epidermidis strain 14.1.R1.SE
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000591:
+    label: Acropsilus niger
+    synonyms:
+    - Chrysotus niger
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000592:
+    label: Aphrosylus celtiber
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000593:
+    label: Diaphorus oculatus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000594:
+    label: Empis bicuspidata
+    synonyms:
+    - Empis (Empis) bicuspidata
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000595:
+    label: Hemerodromia baetica
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000596:
+    label: Medetera abstrusa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000597:
+    label: Medetera feminina
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000599:
+    label: Nematoproctus distendens
+    synonyms:
+    - Chrysotus distendens
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_10006:
+    label: Sciurus aberti kaibabensis
+    synonyms:
+    - Kaibab squirrel
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100060:
+    label: uncultured marine eubacterium HstpL95
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000600:
+    label: Neurigona lineata
+    synonyms:
+    - Saucropus lineata
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000601:
+    label: Neurigona pallida
+    synonyms:
+    - Dolichopus pallidus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000602:
+    label: Oedalea hybotina
+    synonyms:
+    - Empis hybotina
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000603:
+    label: Sciapus zonatulus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000604:
+    label: Sympycnus aeneicoxa
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000605:
+    label: Sympycnus cirripes
+    synonyms:
+    - Porphyrops cirripes
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000606:
+    label: Syntormon denticulatum
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000607:
+    label: Tachypeza nubila
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000608:
+    label: Teuchophorus clavigerellus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000609:
+    label: Teuchophorus simplex
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100061:
+    label: uncultured marine eubacterium HstpL100
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000610:
+    label: Teuchophorus spinigerellus
+    synonyms:
+    - Dolichopus spinigerellus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000611:
+    label: Chrysotimus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000612:
+    label: Chrysotimus flaviventris
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000613:
+    label: Chrysotimus molliculus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000614:
+    label: Achalcus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000615:
+    label: Achalcus cinereus
+    synonyms:
+    - Rhaphium cinereum
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000616:
+    label: Achalcus flavicollis
+    synonyms:
+    - Porphyrops flavicollis
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000617:
+    label: Achalcus phragmitidis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000618:
+    label: Achalcus vaillanti
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000619:
+    label: Dolichophorus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100062:
+    label: uncultured marine eubacterium HstpL102
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000620:
+    label: Dolichophorus kerteszi
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000621:
+    label: Eucoryphus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000622:
+    label: Eucoryphus brunneri
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000623:
+    label: Eucoryphus coeruleus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000624:
+    label: Harmstonia
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000626:
+    label: Lamprochromus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000627:
+    label: Lamprochromus bifasciatus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000628:
+    label: Lamprochromus strobli
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000629:
+    label: Micromorphus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100063:
+    label: uncultured marine eubacterium HstpL11
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000630:
+    label: Micromorphus albipes
+    synonyms:
+    - Hydrophorus albipes
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000631:
+    label: Oncopygius
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000632:
+    label: Oncopygius distans
+    synonyms:
+    - Sybistroma distans
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000633:
+    label: Sphyrotarsus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000634:
+    label: Sphyrotarsus argyrostomus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000635:
+    label: Symbolia
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000636:
+    label: Symbolia costaricensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000637:
+    label: Systenus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000638:
+    label: Systenus leucurus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000639:
+    label: Thrypticus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100064:
+    label: uncultured marine eubacterium HstpL15
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000640:
+    label: Thrypticus smaragdinus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000641:
+    label: Thrypticus tarsalis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000642:
+    label: Xanthochlorus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000643:
+    label: Xanthochlorus ornatus
+    synonyms:
+    - Medeterus ornatus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000644:
+    label: Achalcinae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000645:
+    label: Ariquemes virus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000646:
+    label: Echarate virus
+    synonyms:
+    - Echarte virus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000647:
+    label: Morumbi virus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000648:
+    label: Mucura virus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000649:
+    label: Serra Norte virus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100065:
+    label: uncultured marine eubacterium HstpL17
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000650:
+    label: Arvicola amphibius gammaherpesvirus 1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000651:
+    label: Elephas maximus gammaherpesvirus 2
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000652:
+    label: Procavia capensis gammaherpesvirus 2
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000653:
+    label: Sorex araneus betaherpesvirus 1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000654:
+    label: Sorex araneus betaherpesvirus 2
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000655:
+    label: Sorex araneus betaherpesvirus 3
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000656:
+    label: Sorex araneus betaherpesvirus 4
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000657:
+    label: Sorex araneus betaherpesvirus 5
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000658:
+    label: Sorex minutus betaherpesvirus 1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000659:
+    label: Sorex minutus betaherpesvirus 2
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100066:
+    label: uncultured marine eubacterium HstpL18
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000660:
+    label: Grapefruit phytoplasma
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000661:
+    label: Aleurocanthus camelliae
+    synonyms:
+    - camellia spiny whitefly
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000662:
+    label: Streptomyces sp. fj3
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000663:
+    label: Chilli leaf curl Salem virus-India [India/Salem/2008]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000664:
+    label: Chilli leaf curl Vellanad virus [India/Vellanad/2008]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000665:
+    label: Chilli leaf curl Kanpur virus [India/Kanpur/2008]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000666:
+    label: Chilli leaf curl Multan virus-India [India/Guntur/2009]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000667:
+    label: Chilli leaf curl virus-India [India/Jodhpur/2009]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000668:
+    label: Chilli leaf curl virus-India [India/Noida/2007]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000669:
+    label: Chilli leaf curl virus-India [India/Pataudi/2007]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100067:
+    label: uncultured marine eubacterium HstpL20
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000670:
+    label: Pepper leaf curl Bangladesh virus-India
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000671:
+    label: Pepper leaf curl Bangladesh virus-India [India/Coimbatore/2008]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000672:
+    label: Pepper leaf curl Bangladesh virus-India [India/Ghazipur/2007]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000673:
+    label: Pepper leaf curl Bangladesh virus-India [India/Jabalpur/2008]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000674:
+    label: Pepper leaf curl Bangladesh virus-India [India/Mograhat/2007]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000675:
+    label: Tomato leaf curl Joydebpur virus-India
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000676:
+    label: Tomato leaf curl Joydebpur virus-India [India/Ghazipur/Chilli/2007]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000677:
+    label: Tomato leaf curl Joydebpur virus-India [India/Jaunpur/Chilli/2007]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000678:
+    label: Tomato leaf curl Joydebpur virus-India [India/Kolkata/Chilli/2007]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000679:
+    label: Tomato leaf curl Joydebpur virus-India [India/Patna/Chilli/2008]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100068:
+    label: uncultured marine eubacterium HstpL21
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000680:
+    label: Tomato leaf curl Joydebpur virus-India [India/Baruipur/Chilli/2007]
+    synonyms:
+    - Tomato leaf curl Joydebpur virus-India[India/Baruipur/Chilli/2007]
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000681:
+    label: Tomato leaf curl Karnataka virus-India [India/Banglore/Chilli/2008]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000682:
+    label: Tomato leaf curl New Delhi virus-India
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000683:
+    label: Tomato leaf curl New Delhi virus-India [India/New Delhi/Chilli/2009]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000684:
+    label: Tomato leaf curl New Delhi virus-India [India/Tumkur/Chilli/2008]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000685:
+    label: Tomato leaf curl Bangladesh betasatellite [India/Ghazipur/Chilli/2007]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000686:
+    label: Tomato leaf curl Bangladesh betasatellite [India/Jodhpur/Chilli/2009]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000687:
+    label: Tomato leaf curl Bangladesh betasatellite [India/Kanpur/Chilli/2008]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000688:
+    label: Tomato leaf curl Bangladesh betasatellite [India/Noida/Chilli/2007]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000689:
+    label: Tomato leaf curl Bangladesh betasatellite [India/Patna/Chilli/2008]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100069:
+    label: uncultured marine eubacterium HstpL23
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000690:
+    label: Tomato leaf curl Joydebpur betasatellite [India/Jaunpur/Chilli/2007]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000691:
+    label: Tomato leaf curl Joydebpur betasatellite [India/Kolkata/Chilli/2007]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000692:
+    label: Tomato leaf curl Joydebpur betasatellite [India/Mograhat/Chilli/2007]
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000693:
+    label: Alfonsiella fimbriata
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000694:
+    label: Crossogaster inusitata
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000695:
+    label: Crossogaster odorans
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000696:
+    label: Crossogaster quadrata
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000697:
+    label: Crossogaster robertsoni
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000698:
+    label: Philocaenus barbarus
+    synonyms:
+    - Phagoblastus barbarus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000699:
+    label: Philocaenus hippopotomus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_10007:
+    label: Sciurus aberti
+    synonyms:
+    - Abert's squirrel
+    - Hesperosciurus aberti
+    - tassel-eared squirrel
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100070:
+    label: uncultured marine eubacterium HstpL24
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000700:
+    label: Philocaenus liodontus
+    synonyms:
+    - Phagoblastus liodontus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000701:
+    label: Philocaenus medius
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000702:
+    label: Philocaenus quatuordentatus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000703:
+    label: Philocaenus silvestrii
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000704:
+    label: Platyscapa desertorum
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000705:
+    label: Influenza A virus (A/England/122/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000706:
+    label: Influenza A virus (A/England/123/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000707:
+    label: Influenza A virus (A/England/168/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000708:
+    label: Influenza A virus (A/England/174/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000709:
+    label: Influenza A virus (A/England/184/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100071:
+    label: uncultured marine eubacterium HstpL26
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000710:
+    label: Influenza A virus (A/England/191/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000711:
+    label: Influenza A virus (A/England/195/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000712:
+    label: Influenza A virus (A/England/197/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000713:
+    label: Influenza A virus (A/England/22/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000714:
+    label: Influenza A virus (A/England/264/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000715:
+    label: Influenza A virus (A/England/2710/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000716:
+    label: Influenza A virus (A/England/293/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000717:
+    label: Influenza A virus (A/England/294/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000718:
+    label: Influenza A virus (A/England/296/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000719:
+    label: Influenza A virus (A/England/297/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100072:
+    label: uncultured marine eubacterium HstpL28
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000720:
+    label: Influenza A virus (A/England/298/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000721:
+    label: Influenza A virus (A/England/350/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000722:
+    label: Influenza A virus (A/England/359/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000723:
+    label: Influenza A virus (A/England/36/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000724:
+    label: Influenza A virus (A/England/369/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000725:
+    label: Influenza A virus (A/England/392/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000726:
+    label: Influenza A virus (A/England/394/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000727:
+    label: Influenza A virus (A/England/4/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000728:
+    label: Influenza A virus (A/England/4024313/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000729:
+    label: Influenza A virus (A/England/422/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100073:
+    label: uncultured marine eubacterium HstpL29
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000730:
+    label: Influenza A virus (A/England/438/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000731:
+    label: Influenza A virus (A/England/4414681/2004(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000732:
+    label: Influenza A virus (A/England/442/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000733:
+    label: Influenza A virus (A/England/445/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000734:
+    label: Influenza A virus (A/England/446/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000735:
+    label: Influenza A virus (A/England/446040/2004(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000736:
+    label: Influenza A virus (A/England/448/2002(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000737:
+    label: Influenza A virus (A/England/449/2002(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000738:
+    label: Influenza A virus (A/England/45/2004(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000739:
+    label: Influenza A virus (A/England/455/2002(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100074:
+    label: uncultured marine eubacterium HstpL30
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000740:
+    label: Influenza A virus (A/England/455/2005(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000741:
+    label: Influenza A virus (A/England/459/2002(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000742:
+    label: Influenza A virus (A/England/46/2004(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000743:
+    label: Influenza A virus (A/England/460/2002(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000744:
+    label: Influenza A virus (A/England/460/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000745:
+    label: Influenza A virus (A/England/467/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000746:
+    label: Influenza A virus (A/England/469/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000747:
+    label: Influenza A virus (A/England/47/2004(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000748:
+    label: Influenza A virus (A/England/470/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000749:
+    label: Influenza A virus (A/England/472/2005(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100075:
+    label: uncultured marine eubacterium HstpL31
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000750:
+    label: Influenza A virus (A/England/475/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000751:
+    label: Influenza A virus (A/England/487/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000752:
+    label: Influenza A virus (A/England/49/2004(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000754:
+    label: Influenza A virus (A/England/502689/2005(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000755:
+    label: Influenza A virus (A/England/5070214/2005(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000756:
+    label: Influenza A virus (A/England/51/2004(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000757:
+    label: Influenza A virus (A/England/512060/2005(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000758:
+    label: Influenza A virus (A/England/5134761/2005(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000759:
+    label: Influenza A virus (A/England/518/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100076:
+    label: uncultured marine eubacterium HstpL32
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000760:
+    label: Influenza A virus (A/England/522/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000761:
+    label: Influenza A virus (A/England/525/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000762:
+    label: Influenza A virus (A/England/53/2004(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000763:
+    label: Influenza A virus (A/England/543/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000764:
+    label: Influenza A virus (A/England/544/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000765:
+    label: Influenza A virus (A/England/547/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000767:
+    label: Influenza A virus (A/England/552/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100077:
+    label: uncultured marine eubacterium HstpL33
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000770:
+    label: Influenza A virus (A/England/556/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000771:
+    label: Influenza A virus (A/England/557/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000772:
+    label: Influenza A virus (A/England/558/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000773:
+    label: Influenza A virus (A/England/567/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000774:
+    label: Influenza A virus (A/England/587/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000775:
+    label: Influenza A virus (A/England/592/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000776:
+    label: Influenza A virus (A/England/593/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000777:
+    label: Influenza A virus (A/England/602/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000778:
+    label: Influenza A virus (A/England/602213/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000779:
+    label: Influenza A virus (A/England/60384/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100078:
+    label: uncultured marine eubacterium HstpL35
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000780:
+    label: Influenza A virus (A/England/60385/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000781:
+    label: Influenza A virus (A/England/608/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000782:
+    label: Influenza A virus (A/England/61007/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000783:
+    label: Influenza A virus (A/England/61084/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000784:
+    label: Influenza A virus (A/England/611/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000785:
+    label: Influenza A virus (A/England/613446/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000786:
+    label: Influenza A virus (A/England/617/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000787:
+    label: Influenza A virus (A/England/61762/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000788:
+    label: Influenza A virus (A/England/621/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000789:
+    label: Influenza A virus (A/England/6230537/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100079:
+    label: uncultured marine eubacterium HstpL36
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000791:
+    label: Influenza A virus (A/England/626/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000792:
+    label: Influenza A virus (A/England/63201/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000793:
+    label: Influenza A virus (A/England/642/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000794:
+    label: Influenza A virus (A/England/646836/2006(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000796:
+    label: Influenza A virus (A/England/70/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000797:
+    label: Influenza A virus (A/England/7048689/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000798:
+    label: Influenza A virus (A/England/705417/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000799:
+    label: Influenza A virus (A/England/705622/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_10008:
+    label: Tamiasciurus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100080:
+    label: uncultured marine eubacterium HstpL37
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000800:
+    label: Influenza A virus (A/England/706649/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000801:
+    label: Influenza A virus (A/England/70701/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000802:
+    label: Influenza A virus (A/England/707060/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000805:
+    label: Influenza A virus (A/England/79/2007(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000807:
+    label: Influenza A virus (A/England/8036384/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000808:
+    label: Influenza A virus (A/England/818672/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000809:
+    label: Influenza A virus (A/England/909/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100081:
+    label: uncultured marine eubacterium HstpL38
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000810:
+    label: Influenza A virus (A/England/917/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000811:
+    label: Influenza A virus (A/England/944/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000812:
+    label: Influenza A virus (A/England/957/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000813:
+    label: Influenza A virus (A/Scotland/52/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000814:
+    label: Influenza A virus (A/Scotland/61/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000815:
+    label: Influenza A virus (A/Scotland/72/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000816:
+    label: Influenza A virus (A/Scotland/78/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000817:
+    label: Influenza A virus (A/Scotland/81/2003(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000818:
+    label: Influenza A virus (A/Uganda/MUWRP-052/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000819:
+    label: Influenza A virus (A/Uganda/MUWRP-049/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100082:
+    label: uncultured marine eubacterium HstpL41
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000820:
+    label: Influenza A virus (A/Uganda/MUWRP-023/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000821:
+    label: Influenza A virus (A/Uganda/MUWRP-032/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000822:
+    label: Influenza A virus (A/Uganda/MUWRP-075/2009(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000823:
+    label: Influenza A virus (A/Uganda/MUWRP-026/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000824:
+    label: Influenza A virus (A/Uganda/MUWRP-015/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000825:
+    label: Influenza A virus (A/Uganda/MUWRP-025/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000826:
+    label: Influenza A virus (A/Uganda/MUWRP-033/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000827:
+    label: Influenza A virus (A/Uganda/MUWRP-050/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000828:
+    label: Influenza A virus (A/Uganda/MUWRP-024/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000829:
+    label: Influenza A virus (A/Uganda/MUWRP-035/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100083:
+    label: uncultured marine eubacterium HstpL43
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000830:
+    label: Influenza A virus (A/Uganda/MUWRP-008/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000831:
+    label: Influenza A virus (A/Uganda/MUWRP-028/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000832:
+    label: Influenza A virus (A/Uganda/MUWRP-007/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000833:
+    label: Influenza A virus (A/Uganda/MUWRP-044/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000834:
+    label: Influenza A virus (A/Uganda/MUWRP-048/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000835:
+    label: Influenza A virus (A/Uganda/MUWRP-016/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000836:
+    label: Influenza A virus (A/Uganda/MUWRP-086/2009(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000837:
+    label: Influenza A virus (A/Uganda/MUWRP-074/2009(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000838:
+    label: Influenza A virus (A/Uganda/MUWRP-070/2009(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000839:
+    label: Influenza A virus (A/Uganda/MUWRP-012/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100084:
+    label: uncultured marine eubacterium HstpL49
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000840:
+    label: Influenza A virus (A/Uganda/MUWRP-047/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000841:
+    label: Influenza A virus (A/Uganda/MUWRP-036/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000842:
+    label: Influenza A virus (A/Uganda/MUWRP-043/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000843:
+    label: Influenza A virus (A/Uganda/MUWRP-040/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000844:
+    label: Influenza A virus (A/Uganda/MUWRP-019/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000845:
+    label: Influenza A virus (A/Uganda/MUWRP-011/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000846:
+    label: Influenza A virus (A/Uganda/MUWRP-018/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000847:
+    label: Influenza A virus (A/Uganda/MUWRP-020/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000848:
+    label: Influenza A virus (A/Uganda/MUWRP-039/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000849:
+    label: Influenza A virus (A/Uganda/MUWRP-003/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100085:
+    label: uncultured marine eubacterium HstpL53
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000850:
+    label: Influenza A virus (A/Uganda/MUWRP-046/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000851:
+    label: Influenza A virus (A/Uganda/MUWRP-002/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000852:
+    label: Influenza A virus (A/Uganda/MUWRP-031/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000853:
+    label: Influenza A virus (A/Uganda/MUWRP-017/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000854:
+    label: Influenza A virus (A/Uganda/MUWRP-037/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000855:
+    label: Influenza A virus (A/Uganda/MUWRP-009/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000856:
+    label: Influenza A virus (A/Uganda/MUWRP-022/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000857:
+    label: Influenza A virus (A/Uganda/MUWRP-021/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000858:
+    label: Influenza A virus (A/Uganda/MUWRP-027/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000859:
+    label: Influenza A virus (A/Uganda/MUWRP-034/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100086:
+    label: uncultured marine eubacterium HstpL56
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000860:
+    label: Influenza A virus (A/Uganda/MUWRP-079/2009(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000861:
+    label: Influenza A virus (A/Uganda/MUWRP-065/2009(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000862:
+    label: Influenza A virus (A/Uganda/MUWRP-001/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000863:
+    label: Influenza A virus (A/Uganda/MUWRP-051/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000864:
+    label: Influenza A virus (A/Uganda/MUWRP-062/2009(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000865:
+    label: Influenza A virus (A/Uganda/MUWRP-013/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000866:
+    label: Influenza A virus (A/Uganda/MUWRP-010/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000867:
+    label: Influenza A virus (A/Uganda/MUWRP-029/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000868:
+    label: Influenza A virus (A/Uganda/MUWRP-005/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000869:
+    label: Influenza A virus (A/Uganda/MUWRP-042/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100087:
+    label: uncultured marine eubacterium HstpL58
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000870:
+    label: Influenza A virus (A/Uganda/MUWRP-014/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000871:
+    label: Influenza A virus (A/Uganda/MUWRP-041/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000872:
+    label: Influenza A virus (A/Uganda/MUWRP-045/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000873:
+    label: Influenza A virus (A/Uganda/MUWRP-058/2009(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000874:
+    label: Influenza A virus (A/Uganda/MUWRP-061/2009(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000875:
+    label: Influenza A virus (A/Uganda/MUWRP-006/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000876:
+    label: Influenza A virus (A/Uganda/MUWRP-038/2008(H3N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000877:
+    label: Apocrypta sp. 3 ex Ficus sycomorus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000878:
+    label: Arachonia sp. 3 ex Ficus bizanae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000879:
+    label: Courtella sp. ex Ficus bizanae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100088:
+    label: uncultured marine eubacterium HstpL59
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000880:
+    label: Courtella sp. ex Ficus bubu
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000881:
+    label: Crossogaster sp. ex Ficus bizanae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000882:
+    label: Crossogaster sp. ex Ficus bubu
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000883:
+    label: Crossogaster sp. ex Ficus petersii
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000884:
+    label: Ormyrus sp. 1 ex Ficus natalensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000885:
+    label: Otitesella sp. 1 ex Ficus ilicina
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000886:
+    label: Otitesella sp. 2 ex Ficus tettensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000887:
+    label: Philocaenus sp. 1 ex Ficus usambarensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000888:
+    label: Philotrypesis sp. 1 ex Ficus thonningii
+    synonyms:
+    - Philotrypesis sp. 1 ex Ficus burkei
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000889:
+    label: Philotrypesis sp. 1 ex Ficus natalensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100089:
+    label: uncultured marine eubacterium HstpL60
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000890:
+    label: Philotrypesis sp. 1 ex Ficus stuhlmannii
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000891:
+    label: Philotrypesis sp. 5 ex Ficus natalensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000892:
+    label: Seres sp. 3 ex Ficus sansibarica subsp. macrosperma
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000893:
+    label: Sycophaga sp. ex Ficus sur
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000894:
+    label: Sycoryctes sp. 1 ex Ficus ottoniifolia
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000895:
+    label: Sycoryctes sp. 2 ex Ficus ottoniifolia
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000896:
+    label: Sycoryctes sp. 4 ex Ficus ottoniifolia
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000897:
+    label: Sycoscapter sp. 1 ex Ficus bizanae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000898:
+    label: Sycoscapter sp. 1 ex Ficus lutea
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000899:
+    label: Sycoscapter sp. 1 ex Ficus sansibarica subsp. sansibarica
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_10009:
+    label: Tamiasciurus hudsonicus
+    synonyms:
+    - American red squirrel
+    - red squirrel
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100090:
+    label: uncultured marine eubacterium HstpL64
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000900:
+    label: Sycoscapter sp. 2 ex Ficus lutea
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000901:
+    label: Sycoscapter sp. 5 ex Ficus bizanae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000902:
+    label: Sycoscapter sp. 7 ex Ficus bizanae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000903:
+    label: Watshamiella sp. 1 ex Ficus craterostoma
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000904:
+    label: Watshamiella sp. 3 ex Ficus ottoniifolia lucanda
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000905:
+    label: Watshamiella sp. 3 ex Ficus sycomorus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100091:
+    label: uncultured marine eubacterium HstpL65
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100092:
+    label: uncultured marine eubacterium HstpL66
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100093:
+    label: uncultured marine eubacterium HstpL68
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000934:
+    label: Agama doriae benueensis
+    synonyms:
+    - Agama agama benueensis
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000935:
+    label: Anaplasma marginale str. Florida Relapse
+    synonyms:
+    - Anaplasma marginale strain Florida Relapse
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000936:
+    label: Anaplasma marginale str. Okeechobee
+    synonyms:
+    - Anaplasma marginale strain Okeechobee
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000937:
+    label: Anaplasma marginale str. Washington Okanogan
+    synonyms:
+    - Anaplasma marginale strain Washington Okanogan
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000938:
+    label: Anaplasma marginale str. Oklahoma
+    synonyms:
+    - Anaplasma marginale strain Oklahoma
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000939:
+    label: Anaplasma marginale str. South Idaho
+    synonyms:
+    - Anaplasma marginale strain South Idaho
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100094:
+    label: uncultured marine eubacterium HstpL69
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000946:
+    label: Otitesella uluzi complex
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000947:
+    label: Agama cf. impalearis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000948:
+    label: Agama cf. paragama
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000949:
+    label: Agama parafricana
+    synonyms:
+    - Agama sp. OOM-2011
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100095:
+    label: uncultured marine eubacterium HstpL7
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000950:
+    label: Vibrio cholerae HC-55C1
+    synonyms:
+    - Vibrio cholerae str. HC-55C1
+    - Vibrio cholerae strain HC-55C1
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000951:
+    label: Vibrio cholerae HC-81A2
+    synonyms:
+    - Vibrio cholerae str. HC-81A2
+    - Vibrio cholerae strain HC-81A2
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000952:
+    label: Vibrio cholerae HC-17A2
+    synonyms:
+    - Vibrio cholerae str. HC-17A2
+    - Vibrio cholerae strain HC-17A2
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000953:
+    label: Vibrio cholerae HC-72A2
+    synonyms:
+    - Vibrio cholerae str. HC-72A2
+    - Vibrio cholerae strain HC-72A2
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000954:
+    label: Agama boensis
+    synonyms:
+    - Agama agama boensis
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000955:
+    label: Otitesella sesquianellata complex
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000956:
+    label: Otitesella sesquianellata complex sp. 1 ex Ficus thonningii
+    synonyms:
+    - Otitesella sesquianellata complex sp. 1 ex Ficus burkei
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000957:
+    label: Otitesella sesquianellata complex sp. 1 ex Ficus burtt-davyi
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000958:
+    label: Otitesella sesquianellata complex sp. 1 ex Ficus craterostoma
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000959:
+    label: Otitesella sesquianellata complex sp. 1 ex Ficus fischeri
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100096:
+    label: uncultured marine eubacterium HstpL70
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000960:
+    label: Otitesella sesquianellata complex sp. 1 ex Ficus natalensis subsp. graniticola
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000961:
+    label: Otitesella sesquianellata complex sp. 1 ex Ficus natalensis subsp. natalensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000962:
+    label: Otitesella sesquianellata complex sp. 1 ex Ficus ottoniifolia subsp. lucanda
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000963:
+    label: Otitesella sesquianellata complex sp. 1 ex Ficus tettensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000964:
+    label: Otitesella sesquianellata complex sp. 2 ex Ficus craterostoma
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000965:
+    label: Otitesella sesquianellata complex sp. 3 ex Ficus craterostoma
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000966:
+    label: Otitesella uluzi complex sp. 1 ex Ficus bizanae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000967:
+    label: Otitesella uluzi complex sp. 1 ex Ficus burtt-davyi
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000968:
+    label: Otitesella uluzi complex sp. 1 ex Ficus craterostoma
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000969:
+    label: Otitesella uluzi complex sp. 1 ex Ficus cyathistipula
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100097:
+    label: uncultured marine eubacterium HstpL71
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000970:
+    label: Otitesella uluzi complex sp. 1 ex Ficus fischeri
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000971:
+    label: Otitesella uluzi complex sp. 1 ex Ficus ingens
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000972:
+    label: Otitesella uluzi complex sp. 1 ex Ficus lingua
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000973:
+    label: Otitesella uluzi complex sp. 1 ex Ficus lutea
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000974:
+    label: Otitesella uluzi complex sp. 1 ex Ficus nervosa
+    synonyms:
+    - Otitesella uluzi complex sp. 1 ex Ficus modesta
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000975:
+    label: Otitesella uluzi complex sp. 1 ex Ficus natalensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000976:
+    label: Otitesella uluzi complex sp. 1 ex Ficus sansibarica subsp. macrosperma
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000977:
+    label: Otitesella uluzi complex sp. 1 ex Ficus sp. samfya ag.
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000978:
+    label: Otitesella uluzi complex sp. 1 ex Ficus trichopoda
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000979:
+    label: Otitesella uluzi complex sp. 1 ex Ficus usambarensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100098:
+    label: uncultured marine eubacterium HstpL75
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000980:
+    label: Otitesella uluzi complex sp. 2 ex Ficus bizanae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000981:
+    label: Otitesella uluzi complex sp. 2 ex Ficus craterostoma
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000982:
+    label: Steindachneridion melanodermatum
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000983:
+    label: Pavlova granifera
+    synonyms:
+    - Chrysocapsa granifera
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000984:
+    label: Pavlova sp. AC19
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000985:
+    label: Pavlova sp. AC248
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000986:
+    label: Pavlova sp. AC250
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000987:
+    label: Pavlova sp. AC251
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000988:
+    label: Pavlova sp. AC33
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000989:
+    label: Rebecca sp. AC537
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100099:
+    label: uncultured marine eubacterium HstpL77
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000990:
+    label: Exanthemachrysis sp. AC245
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000991:
+    label: Exanthemachrysis sp. AC246
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000992:
+    label: Exanthemachrysis sp. AC249
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000993:
+    label: Exanthemachrysis sp. AC35
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000994:
+    label: Exanthemachrysis sp. AC37
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000995:
+    label: Diacronema ennorea
+    synonyms:
+    - Pavlova ennorea
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000997:
+    label: Diacronema sp. AC247
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000998:
+    label: Diacronema sp. AC54
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1000999:
+    label: Acidipila
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001:
+    label: Garritya polymorpha
+    synonyms:
+    - Flexibacter polymorphus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_10010:
+    label: Geomyidae
+    synonyms:
+    - pocket gophers
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100100:
+    label: uncultured marine eubacterium HstpL8
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001000:
+    label: Sebastes chrysomelas x Sebastes carnatus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001001:
+    label: bacterium AhBYK2010RS-1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001002:
+    label: Hemerophila sp. 1 JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001003:
+    label: Hemerophila sp. 2 JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001004:
+    label: Hemerophila sp. 3 JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001005:
+    label: Hemerophila sp. 4 JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001006:
+    label: unclassified Sesiidae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001007:
+    label: Sesiidae sp. 1 JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001008:
+    label: Sesiidae sp. 2 JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001009:
+    label: Limacodidae sp. 1 JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100101:
+    label: uncultured marine eubacterium HstpL81
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001010:
+    label: Limacodidae sp. 2 JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001011:
+    label: Oecophoridae sp. 1 JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001012:
+    label: Oecophoridae sp. 2 JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001013:
+    label: Oecophoridae sp. 3 JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001014:
+    label: Oecophoridae sp. 4 JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001015:
+    label: unclassified Oecophoridae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001016:
+    label: unclassified Limacodidae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001017:
+    label: Argyrotaenia sp. JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001018:
+    label: Brenthia sp. JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001019:
+    label: Hemerophila nr. gradella JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100102:
+    label: uncultured marine eubacterium HstpL82
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001020:
+    label: Megalota sp. JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001021:
+    label: Tortyra nr. malacozona JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001022:
+    label: unclassified Yponomeutidae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001023:
+    label: Yponomeutidae sp. JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001024:
+    label: Mictopsichia
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001025:
+    label: Mictopsichia sp. JR-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001026:
+    label: Aspidoscopulia australia
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001027:
+    label: Agaricus aff. kivuensis Rammeloo5756
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001028:
+    label: Agaricus cf. goossensiae ADK2171
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001029:
+    label: Agaricus goossensiae
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100103:
+    label: uncultured marine eubacterium HstpL83
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001030:
+    label: Agaricus microvolvatulus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001031:
+    label: Agaricus sp. ADK2564
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001032:
+    label: Agaricus sp. ADK2905
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001034:
+    label: Agaricus sp. NTF26
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001035:
+    label: Agaricus sp. NTF58
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001036:
+    label: Agaricus sp. NTF61
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001037:
+    label: Agaricus sp. NTF67
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001038:
+    label: Agaricus sp. NTS05
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001039:
+    label: Agaricus sp. NTS07
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100104:
+    label: uncultured marine eubacterium HstpL86
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001042:
+    label: Agaricus sp. NTT117
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001043:
+    label: Agaricus sp. NTT33
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001044:
+    label: Agaricus sp. NTT34
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001045:
+    label: Agaricus sp. NTT37
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001046:
+    label: Agaricus sp. NTT42
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001047:
+    label: Agaricus sp. NTT72
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001048:
+    label: Agaricus sp. NYS122
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001049:
+    label: Agaricus sp. Thoen7297
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100105:
+    label: uncultured marine eubacterium HstpL89
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001050:
+    label: Agaricus sp. ZRL10.072
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001051:
+    label: Agaricus viridopurpurascens
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001052:
+    label: Agaricus xanthosarcus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001054:
+    label: Amanita solaniolens
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001056:
+    label: Human parechovirus strain T82-0169
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001057:
+    label: Human parechovirus strain T83-2051
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001058:
+    label: Human parechovirus strain T82-659
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001059:
+    label: Human parechovirus 14
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100106:
+    label: uncultured marine eubacterium HstpL93
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001061:
+    label: parechovirus B1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001062:
+    label: Ljungan virus 2
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001063:
+    label: Hygrocybe flavescens x Hygrocybe chlorophana
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001064:
+    label: Rhodotorula toruloides ATCC 204091
+    synonyms:
+    - Rhodosporidium toruloides ATCC 204091
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001068:
+    label: Echinomastus intertextus
+    synonyms:
+    - Echinocactus intertextus
+    - Sclerocactus intertextus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001069:
+    label: Miqueliopuntia
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100107:
+    label: uncultured marine eubacterium HstpL94
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001070:
+    label: Miqueliopuntia miquelii
+    synonyms:
+    - Opuntia miquelii
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001071:
+    label: Pygmaeocereus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001072:
+    label: Pygmaeocereus bylesianus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001073:
+    label: Weberbauerocereus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001074:
+    label: Weberbauerocereus johnsonii
+    synonyms:
+    - Haageocereus johnsonii
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001075:
+    label: Mitrocereus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001077:
+    label: Notocactus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001078:
+    label: Parodia concinna
+    synonyms:
+    - Notocactus concinnus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100108:
+    label: uncultured marine eubacterium HstpL96
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001080:
+    label: Rockport virus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001081:
+    label: Azagny virus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001083:
+    label: Cereus spegazzinii
+    synonyms:
+    - Cereus spegazzinii F.A.C.Weber, 1899
+    - Monvillea spegazzinii
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001084:
+    label: Echinopsis spiniflora
+    synonyms:
+    - Acanthocalycium spiniflorum
+    - Echinocactus spiniflorus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001085:
+    label: Armatocereus procerus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001086:
+    label: Borzicactus icosagonus
+    synonyms:
+    - Cactus icosagonus
+    - Cleistocactus icosagonus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001087:
+    label: Cleistocactus parviflorus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001088:
+    label: Cleistocactus tupizensis
+    synonyms:
+    - Cereus tupizensis
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100109:
+    label: uncultured marine eubacterium HstpL97
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001090:
+    label: Copiapoa cinerascens
+    synonyms:
+    - Echinocactus cinerascens
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001091:
+    label: Copiapoa humilis
+    synonyms:
+    - Echinocactus humilis
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001092:
+    label: Corryocactus aureus
+    synonyms:
+    - Cactus aureus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001093:
+    label: Coryphantha aff. salinensis THH-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001094:
+    label: Sclerocactus unguispinus
+    synonyms:
+    - Echinocactus unguispinus
+    - Echinomastus unguispinus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001099:
+    label: Echinopsis sucrensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_10011:
+    label: Thomomys
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100110:
+    label: Bartonella sp. RN10149MD
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001100:
+    label: Eriosyce taltalensis
+    synonyms:
+    - Neoporteria taltalensis
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001101:
+    label: Espostoa nana
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001102:
+    label: Frailea pumila
+    synonyms:
+    - Echinocactus pumilus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001103:
+    label: Haageocereus decumbens
+    synonyms:
+    - Cereus decumbens
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001104:
+    label: Haageocereus limensis
+    synonyms:
+    - Cereus limensis
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001105:
+    label: Harrisia martinii
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001106:
+    label: Maihueniopsis atacamensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001107:
+    label: Matucana madisoniorum
+    synonyms:
+    - Anhaloniopsis madisoniorum
+    - Borzicactus madisoniorum
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001108:
+    label: Melocactus curvispinus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001109:
+    label: Melocactus intortus
+    synonyms:
+    - Cactus intortus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100111:
+    label: Bartonella sp. RN10616LA
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001110:
+    label: Opuntia dejecta
+    synonyms:
+    - Nopalea dejecta
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001111:
+    label: Opuntia gaumeri
+    synonyms:
+    - Nopalea gaumeri
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001112:
+    label: Opuntia karwinskiana
+    synonyms:
+    - Nopalea karwinskiana
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001113:
+    label: Opuntia lutea
+    synonyms:
+    - Nopalea guatemalensis
+    - Nopalea lutea
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001114:
+    label: Opuntia sp. THH-2011
+    synonyms:
+    - Nopalea sp. THH-2011
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001115:
+    label: Opuntia helleri
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001116:
+    label: Opuntia macbridei
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001117:
+    label: Opuntia megasperma
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001118:
+    label: Tacinga palmadora
+    synonyms:
+    - Opuntia palmadora
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001119:
+    label: Pachycereus sp. THH-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100112:
+    label: Bartonella sp. RN10617LA
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001120:
+    label: Pereskiopsis sp. THH-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001121:
+    label: Pterocactus gonjianii
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001122:
+    label: Pterocereus
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001123:
+    label: Pterocereus gaumeri subsp. foetidus
+    synonyms:
+    - Pterocereus foetidus
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001124:
+    label: Quiabentia chacoensis
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001125:
+    label: Rauhocereus sp. THH-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001127:
+    label: Selenicereus donkelaarii
+    synonyms:
+    - Cereus donkelaarii
+    - Selenicereus grandiflorus subsp. donkelaarii
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001128:
+    label: Selenicereus sp. THH-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001129:
+    label: Stenocactus sp. THH-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100113:
+    label: Bartonella sp. RN10623LA
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001130:
+    label: Weingartia candiae
+    synonyms:
+    - Rebutia candiae
+    - Sulcorebutia arenacea var. candiae
+    - Sulcorebutia candiae
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001131:
+    label: Tephrocactus alexanderi
+    synonyms:
+    - Opuntia alexanderi
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001132:
+    label: Echinopsis tacaquirensis subsp. taquimbalensis
+    synonyms:
+    - Trichocereus taquimbalensis
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001133:
+    label: Airampoa corrugata
+    synonyms:
+    - Opuntia corrugata
+    - Tunilla corrugata
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001134:
+    label: Melothria crassifolia
+    synonyms:
+    - Melothria pendula var. crassifolia
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001135:
+    label: Populus nigra x Populus x canadensis
+    synonyms:
+    - Populus nigra x (Populus deltoides x Populus nigra)
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001136:
+    label: fossil Triticum durum/aestivum
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001137:
+    label: Mucor sp. KD-2011
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001138:
+    label: Acaulospora punctata
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001139:
+    label: Apokeronopsis ovalis
+    synonyms:
+    - Apokeronopsis sp. WWS-2008
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100114:
+    label: Bartonella sp. RN10627LA
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001140:
+    label: Influenza A virus (A/duck/Vietnam/OIE-2322/2009(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001141:
+    label: Influenza A virus (A/duck/Vietnam/OIE-2325/2009(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001142:
+    label: Influenza A virus (A/duck/Vietnam/OIE-2326/2009(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001143:
+    label: Influenza A virus (A/duck/Vietnam/OIE-2448/2009(H9N2))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001144:
+    label: Influenza A virus (A/duck/Hokkaido/1/2011(H5N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001145:
+    label: Influenza A virus (A/whooper swan/Hokkaido/6/2011(H5N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001146:
+    label: Influenza A virus (A/duck/Hokkaido/2/2011(H5N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001147:
+    label: Actinoalloteichus sp. QAII6
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001148:
+    label: Kribbella sp. QA72
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001149:
+    label: Microbacterium sp. FXJ8.035
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100115:
+    label: Bartonella sp. RN10631LA
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001150:
+    label: Microbacterium sp. FXJ8.038
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001151:
+    label: Nocardia sp. CD5
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001152:
+    label: Nocardia sp. QA30
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001153:
+    label: Rhodococcus sp. CY17
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001154:
+    label: Streptomyces sp. 126-7
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001155:
+    label: Streptomyces sp. CY23
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001156:
+    label: Streptomyces sp. ED4
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001157:
+    label: Streptomyces sp. QA47
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001158:
+    label: Streptomyces sp. QA79II
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001159:
+    label: Streptosporangium sp. QA40
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100116:
+    label: Bartonella sp. RR11755TX
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001160:
+    label: Influenza A virus (A/tree sparrow/Indonesia/D10013/2010(H5N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001161:
+    label: Influenza A virus (A/chicken/Indonesia/D10014/2010(H5N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001162:
+    label: Influenza A virus (A/chicken/Indonesia/D10015/2010(H5N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001163:
+    label: Acinetobacter sp. EU18
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001164:
+    label: Acinetobacter sp. EU60
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001165:
+    label: Enterobacter sp. EU73
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001166:
+    label: Pseudomonas sp. EU102
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001167:
+    label: Pseudomonas sp. EU63
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001168:
+    label: bacterium EU103
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001169:
+    label: Influenza A virus (A/Fuzhou/02/2010(H1N1))
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100117:
+    label: Picea breweriana
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001170:
+    label: Hypericum silenoides
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001172:
+    label: Symbiodinium sp. C17.1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001173:
+    label: Symbiodinium sp. C21.1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001174:
+    label: Symbiodinium sp. C21.10
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001175:
+    label: Symbiodinium sp. C21.2
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001176:
+    label: Symbiodinium sp. C21.3
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001177:
+    label: Symbiodinium sp. C21.4
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001178:
+    label: Symbiodinium sp. C21.5
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001179:
+    label: Symbiodinium sp. C21.7
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100118:
+    label: bacterium EF
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001180:
+    label: Symbiodinium sp. C21.8
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001181:
+    label: Symbiodinium sp. C21.9
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001182:
+    label: Symbiodinium sp. C3.1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001183:
+    label: Symbiodinium sp. C31.2
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001184:
+    label: Symbiodinium sp. C31.3
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001185:
+    label: Symbiodinium sp. C31.4
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001186:
+    label: Symbiodinium sp. C32.1
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001187:
+    label: Symbiodinium sp. C32.2
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001188:
+    label: Symbiodinium sp. D1.3
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001189:
+    label: Symbiodinium sp. D1a.2
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_100119:
+    label: bacterium VSDW
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001190:
+    label: Stenotrophomonas sp. CERAR5
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001191:
+    label: Streptomyces sp. D19(2011)
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001192:
+    label: Streptomyces sp. B5(2011)
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001193:
+    label: Amitus hesperidum
+    synonyms:
+    - Amitus variipes
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001194:
+    label: Wolbachia endosymbiont of Encarsia sophia
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001195:
+    label: Wolbachia endosymbiont of Amitus hesperidum
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001196:
+    label: Wolbachia endosymbiont of Encarsia lutea
+    synonyms: []
+    parents: []
+    deprecated: false
+  http://purl.obolibrary.org/obo/NCBITaxon_1001197:
+    label: Wolbachia endosymbiont of Eretmocerus nr. furuhashii
+    synonyms: []
+    parents: []
+    deprecated: false

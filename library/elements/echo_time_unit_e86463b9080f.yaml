@@ -30,6 +30,7 @@ semantic:
   question_text: Echo time unit
   source_attribute: echo_time_unit
   source_class: MRIScan
+  value_domain: categorical
 provenance:
 - source: aind
   class: MRIScan

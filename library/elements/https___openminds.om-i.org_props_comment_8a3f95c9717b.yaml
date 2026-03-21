@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: https://openminds.om-i.org/props/comment
   source_class: comment.schema.omi
+  value_domain: text
 provenance:
 - source: openminds
   class: comment.schema.omi

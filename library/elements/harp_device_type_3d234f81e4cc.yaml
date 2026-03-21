@@ -3,6 +3,7 @@ semantic:
   question_text: Type of Harp device
   source_attribute: harp_device_type
   source_class: HarpDevice
+  value_domain: text
 provenance:
 - source: aind
   class: HarpDevice

@@ -3,6 +3,7 @@ semantic:
   question_text: Photobleaching date
   source_attribute: photobleaching_date
   source_class: FiberPatchCord
+  value_domain: text
 provenance:
 - source: aind
   class: FiberPatchCord

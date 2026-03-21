@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: description
   source_class: Activity
+  value_domain: text
 provenance:
 - source: dandi
   class: Activity

@@ -3,6 +3,7 @@ semantic:
   question_text: Max DMD patterns
   source_attribute: max_dmd_patterns
   source_class: DigitalMicromirrorDevice
+  value_domain: numeric
 provenance:
 - source: aind
   class: DigitalMicromirrorDevice

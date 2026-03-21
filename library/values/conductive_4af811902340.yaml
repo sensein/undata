@@ -1,0 +1,7 @@
+sha256: 4af81190234005559d6376aca180b0c6f5fc0252d69f7f6d633aa4675c356add
+semantic:
+  label: conductive
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Conductive

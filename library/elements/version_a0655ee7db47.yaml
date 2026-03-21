@@ -3,6 +3,7 @@ semantic:
   question_text: Atlas version
   source_attribute: version
   source_class: Atlas
+  value_domain: text
 provenance:
 - source: aind
   class: Atlas

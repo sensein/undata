@@ -2,6 +2,7 @@ semantic:
   data_type: integer
   source_attribute: dimension
   source_class: ImageSeries
+  value_domain: numeric
 provenance:
 - source: nwb
   class: ImageSeries

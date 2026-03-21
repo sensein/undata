@@ -3,6 +3,7 @@ semantic:
   question_text: Room ID
   source_attribute: room_id
   source_class: Housing
+  value_domain: text
 provenance:
 - source: aind
   class: Housing

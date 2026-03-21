@@ -3,6 +3,7 @@ semantic:
   question_text: Setup
   source_attribute: setup
   source_class: MRIScan
+  value_domain: boolean
 provenance:
 - source: aind
   class: MRIScan

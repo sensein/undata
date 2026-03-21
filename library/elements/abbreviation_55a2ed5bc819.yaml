@@ -3,6 +3,7 @@ semantic:
   question_text: Abbreviation
   source_attribute: abbreviation
   source_class: aind_data_schema_models__modalities___Behavior
+  value_domain: text
 provenance:
 - source: aind
   class: aind_data_schema_models__modalities___Behavior

@@ -3,6 +3,7 @@ semantic:
   question_text: Protocol ID
   source_attribute: protocol_id
   source_class: MyomatrixInsertion
+  value_domain: text
 provenance:
 - source: aind
   class: MyomatrixInsertion

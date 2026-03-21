@@ -3,6 +3,7 @@ semantic:
   question_text: Virus ID, usually begins 'AiV'
   source_attribute: virus_tars_id
   source_class: TarsVirusIdentifiers
+  value_domain: text
 provenance:
 - source: aind
   class: TarsVirusIdentifiers

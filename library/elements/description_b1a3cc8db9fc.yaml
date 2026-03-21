@@ -3,6 +3,7 @@ semantic:
   question_text: Description
   source_attribute: description
   source_class: GenericSurgeryProcedure
+  value_domain: text
 provenance:
 - source: aind
   class: GenericSurgeryProcedure

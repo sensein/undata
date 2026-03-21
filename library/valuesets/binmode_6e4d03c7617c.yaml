@@ -1,0 +1,11 @@
+sha256: 6e4d03c7617c41e55a5b871f17b26970839958d05095fa18ec0f67dddad22a64
+semantic:
+  name: BinMode
+  members:
+  - Additive
+  - Average
+  - No binning
+provenance:
+- source: aind
+  class: metadata
+  name: BinMode

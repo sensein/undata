@@ -3,6 +3,7 @@ semantic:
   question_text: Imaging angle
   source_attribute: imaging_angle
   source_class: ImageSPIM
+  value_domain: numeric
 provenance:
 - source: aind
   class: ImageSPIM

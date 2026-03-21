@@ -3,6 +3,7 @@ semantic:
   question_text: Coupling efficiency (percent)
   source_attribute: coupling_efficiency
   source_class: Laser
+  value_domain: numeric
 provenance:
 - source: aind
   class: Laser

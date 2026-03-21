@@ -18,6 +18,7 @@ semantic:
   question_text: Trigger type
   source_attribute: trigger_type
   source_class: DetectorConfig
+  value_domain: categorical
 provenance:
 - source: aind
   class: DetectorConfig

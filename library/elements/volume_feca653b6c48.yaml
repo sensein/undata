@@ -3,6 +3,7 @@ semantic:
   question_text: Volume
   source_attribute: volume
   source_class: LickSpoutConfig
+  value_domain: numeric
 provenance:
 - source: aind
   class: LickSpoutConfig

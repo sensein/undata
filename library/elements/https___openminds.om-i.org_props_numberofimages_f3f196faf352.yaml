@@ -2,6 +2,7 @@ semantic:
   data_type: integer
   source_attribute: https://openminds.om-i.org/props/numberOfImages
   source_class: gridImageStack.schema.omi
+  value_domain: numeric
 provenance:
 - source: openminds
   class: gridImageStack.schema.omi

@@ -3,6 +3,7 @@ semantic:
   question_text: Coupling
   source_attribute: coupling
   source_class: Laser
+  value_domain: text
 provenance:
 - source: aind
   class: Laser

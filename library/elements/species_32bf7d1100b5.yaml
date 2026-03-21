@@ -3,6 +3,7 @@ semantic:
   question_text: Species
   source_attribute: species
   source_class: MouseSubject
+  value_domain: text
 provenance:
 - source: aind
   class: MouseSubject

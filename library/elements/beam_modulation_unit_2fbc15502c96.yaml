@@ -3,6 +3,7 @@ semantic:
   question_text: Beam modulation unit
   source_attribute: beam_modulation_unit
   source_class: PockelsCell
+  value_domain: text
 provenance:
 - source: aind
   class: PockelsCell

@@ -3,6 +3,7 @@ semantic:
   question_text: Camera chroma
   source_attribute: chroma
   source_class: Camera
+  value_domain: text
 provenance:
 - source: aind
   class: Camera

@@ -1,0 +1,11 @@
+sha256: eaa3707b2561a2dc81d02b9464fc983f5478ab8924c10b092b658c177538fd1e
+semantic:
+  name: MagneticFieldUnit
+  members:
+  - microtesla
+  - millitesla
+  - tesla
+provenance:
+- source: aind
+  class: metadata
+  name: MagneticFieldUnit

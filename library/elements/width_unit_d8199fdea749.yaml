@@ -34,6 +34,7 @@ semantic:
   question_text: Width unit
   source_attribute: width_unit
   source_class: Treadmill
+  value_domain: categorical
 provenance:
 - source: aind
   class: Treadmill

@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: locusType
   source_class: Locus
+  value_domain: text
 provenance:
 - source: dandi
   class: Locus

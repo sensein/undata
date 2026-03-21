@@ -14,6 +14,7 @@ semantic:
   question_text: Time setting unit
   source_attribute: time_setting_unit
   source_class: PockelsCell
+  value_domain: categorical
 provenance:
 - source: aind
   class: PockelsCell

@@ -3,6 +3,7 @@ semantic:
   question_text: Crop offset x
   source_attribute: crop_offset_x
   source_class: Camera
+  value_domain: numeric
 provenance:
 - source: aind
   class: Camera

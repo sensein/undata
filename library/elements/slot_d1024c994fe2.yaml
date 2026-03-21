@@ -3,6 +3,7 @@ semantic:
   question_text: Slot number for this basestation
   source_attribute: slot
   source_class: NeuropixelsBasestation
+  value_domain: numeric
 provenance:
 - source: aind
   class: NeuropixelsBasestation

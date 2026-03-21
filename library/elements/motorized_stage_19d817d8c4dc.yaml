@@ -3,6 +3,7 @@ semantic:
   question_text: Motorized stage
   source_attribute: motorized_stage
   source_class: LickSpoutAssembly
+  value_domain: text
 provenance:
 - source: aind
   class: LickSpoutAssembly

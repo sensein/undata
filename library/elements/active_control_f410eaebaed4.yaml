@@ -3,6 +3,7 @@ semantic:
   question_text: Active control
   source_attribute: active_control
   source_class: MousePlatformConfig
+  value_domain: boolean
 provenance:
 - source: aind
   class: MousePlatformConfig

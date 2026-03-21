@@ -3,6 +3,7 @@ semantic:
   question_text: Headframe material
   source_attribute: headframe_material
   source_class: Headframe
+  value_domain: text
 provenance:
 - source: aind
   class: Headframe

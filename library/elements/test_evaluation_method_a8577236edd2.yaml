@@ -3,6 +3,7 @@ semantic:
   question_text: Test evaluation method
   source_attribute: test_evaluation_method
   source_class: ModelTraining
+  value_domain: text
 provenance:
 - source: aind
   class: ModelTraining

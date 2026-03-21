@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: axis_1_phase_map
   source_class: ImagingRetinotopy
+  value_domain: numeric
 provenance:
 - source: nwb
   class: ImagingRetinotopy

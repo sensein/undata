@@ -1,0 +1,7 @@
+sha256: 2b05e6e83c3851ab9ac8a44f321bdae46e8c9475a4c3397c90f874c6e1fa98ed
+semantic:
+  label: fraction of cycle
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: fraction of cycle

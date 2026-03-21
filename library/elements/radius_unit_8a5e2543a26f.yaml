@@ -34,6 +34,7 @@ semantic:
   question_text: radius unit
   source_attribute: radius_unit
   source_class: Disc
+  value_domain: categorical
 provenance:
 - source: aind
   class: Disc

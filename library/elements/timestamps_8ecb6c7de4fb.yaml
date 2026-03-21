@@ -2,6 +2,7 @@ semantic:
   data_type: float
   source_attribute: timestamps
   source_class: TimeSeries
+  value_domain: numeric
 provenance:
 - source: nwb
   class: TimeSeries

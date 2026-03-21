@@ -3,6 +3,7 @@ semantic:
   question_text: Maternal specimen ID
   source_attribute: maternal_id
   source_class: BreedingInfo
+  value_domain: text
 provenance:
 - source: aind
   class: BreedingInfo

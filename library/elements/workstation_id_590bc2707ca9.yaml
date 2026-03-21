@@ -3,6 +3,7 @@ semantic:
   question_text: Workstation ID
   source_attribute: workstation_id
   source_class: Surgery
+  value_domain: text
 provenance:
 - source: aind
   class: Surgery

@@ -1,0 +1,7 @@
+sha256: 150015a1712d4699b2b0b0a8b797a4a7aa08d9a72f8460920e249f3ed49e5c54
+semantic:
+  label: beam expander
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Beam expander

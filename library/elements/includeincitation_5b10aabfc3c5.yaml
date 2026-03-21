@@ -2,6 +2,7 @@ semantic:
   data_type: boolean
   source_attribute: includeInCitation
   source_class: Person
+  value_domain: boolean
 provenance:
 - source: dandi
   class: Person

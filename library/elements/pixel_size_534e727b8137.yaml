@@ -3,6 +3,7 @@ semantic:
   question_text: DMD Pixel size (fraction of line scan period)
   source_attribute: pixel_size
   source_class: DigitalMicromirrorDevice
+  value_domain: numeric
 provenance:
 - source: aind
   class: DigitalMicromirrorDevice

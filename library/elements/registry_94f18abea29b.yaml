@@ -21,7 +21,7 @@ semantic:
     ontology_term: https://schema.undata.live/values/digital_object_identifier_(doi)_b2fa93426465
   - value: Edinburgh Mouse Atlas Project (EMAPA)
     label: Edinburgh Mouse Atlas Project (EMAPA)
-    ontology_term: https://schema.undata.live/values/edinburgh_mouse_atlas_project_(emapa)_b27ac5a8cd16
+    ontology_term: https://schema.undata.live/values/edinburgh_mouse_atlas_project_(emapa)_f8c408c482c2
   - value: Mouse Genome Informatics (MGI)
     label: Mouse Genome Informatics (MGI)
     ontology_term: https://schema.undata.live/values/mouse_genome_informatics_(mgi)_7893e903deb3
@@ -30,22 +30,23 @@ semantic:
     ontology_term: https://schema.undata.live/values/ncbi_genbank_(genbank)_8fb2f752c033
   - value: National Center for Biotechnology Information (NCBI)
     label: National Center for Biotechnology Information (NCBI)
-    ontology_term: https://schema.undata.live/values/national_center_for_biotechnology_information_(ncb_5673007ac314
+    ontology_term: https://schema.undata.live/values/national_center_for_biotechnology_information_(ncbi)_268481e7c8b5
   - value: Open Researcher and Contributor ID (ORCID)
     label: Open Researcher and Contributor ID (ORCID)
-    ontology_term: https://schema.undata.live/values/open_researcher_and_contributor_id_(orcid)_8dfb477d8bcf
+    ontology_term: https://schema.undata.live/values/open_researcher_and_contributor_id_(orcid)_da9ba0ae98bb
   - value: Research Organization Registry (ROR)
     label: Research Organization Registry (ROR)
-    ontology_term: https://schema.undata.live/values/research_organization_registry_(ror)_7b4357f6e76b
+    ontology_term: https://schema.undata.live/values/research_organization_registry_(ror)_8db80afe3545
   - value: Research Resource Identifiers (RRID)
     label: Research Resource Identifiers (RRID)
-    ontology_term: https://schema.undata.live/values/research_resource_identifiers_(rrid)_10587debd04e
+    ontology_term: https://schema.undata.live/values/research_resource_identifiers_(rrid)_a2a303abdcfb
   - value: Universal Protein Resource (UNIPROT)
     label: Universal Protein Resource (UNIPROT)
     ontology_term: https://schema.undata.live/values/universal_protein_resource_(uniprot)_ff64406d0708
   question_text: Registry
   source_attribute: registry
   source_class: Person
+  value_domain: categorical
 provenance:
 - source: aind
   class: Person

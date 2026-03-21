@@ -2,6 +2,7 @@ semantic:
   data_type: integer
   source_attribute: sweep_number
   source_class: PatchClampSeries
+  value_domain: numeric
 provenance:
 - source: nwb
   class: PatchClampSeries

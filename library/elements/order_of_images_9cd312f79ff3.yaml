@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: order_of_images
   source_class: Images
+  value_domain: text
 provenance:
 - source: nwb
   class: Images

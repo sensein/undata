@@ -3,6 +3,7 @@ semantic:
   question_text: Metric description
   source_attribute: description
   source_class: QCMetric
+  value_domain: text
 provenance:
 - source: aind
   class: QCMetric

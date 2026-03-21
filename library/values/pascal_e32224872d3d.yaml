@@ -1,0 +1,7 @@
+sha256: e32224872d3d6bcddd3bdf8b7bcdbfb0fdb67fd578c962d256668173e8c06e9d
+semantic:
+  label: pascal
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: pascal

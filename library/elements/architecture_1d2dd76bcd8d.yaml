@@ -38,6 +38,7 @@ semantic:
   question_text: architecture
   source_attribute: architecture
   source_class: Model
+  value_domain: categorical
 provenance:
 - source: aind
   class: Model

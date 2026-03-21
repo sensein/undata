@@ -34,6 +34,7 @@ semantic:
   question_text: Size unit
   source_attribute: size_unit
   source_class: Arena
+  value_domain: categorical
 provenance:
 - source: aind
   class: Arena

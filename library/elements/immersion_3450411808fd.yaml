@@ -29,10 +29,10 @@ semantic:
     ontology_term: https://schema.undata.live/values/water_fe19bd800e31
   - value: other
     label: other
-    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+    ontology_term: https://schema.undata.live/values/other_6ec3d8d32eac
   - value: easy index
     label: easy index
-    ontology_term: https://schema.undata.live/values/easy_index_e662952be794
+    ontology_term: https://schema.undata.live/values/easy_index_f88d3687ad95
   - value: ethyl cinnimate
     label: ethyl cinnimate
     ontology_term: https://schema.undata.live/values/ethyl_cinnimate_bda7badbf0fd
@@ -42,6 +42,7 @@ semantic:
   question_text: Immersion
   source_attribute: immersion
   source_class: Objective
+  value_domain: categorical
 provenance:
 - source: aind
   class: Objective

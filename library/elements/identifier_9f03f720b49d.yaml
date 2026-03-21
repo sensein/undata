@@ -2,6 +2,7 @@ semantic:
   data_type: integer
   source_attribute: identifier
   source_class: MeasurementTechniqueType
+  value_domain: numeric
 provenance:
 - source: dandi
   class: MeasurementTechniqueType

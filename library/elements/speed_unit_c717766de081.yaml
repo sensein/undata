@@ -10,6 +10,7 @@ semantic:
   question_text: Speed unit
   source_attribute: speed_unit
   source_class: PolygonalScanner
+  value_domain: categorical
 provenance:
 - source: aind
   class: PolygonalScanner

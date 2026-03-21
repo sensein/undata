@@ -3,6 +3,7 @@ semantic:
   question_text: Quality Control
   source_attribute: quality_control
   source_class: metadata
+  value_domain: text
 provenance:
 - source: aind
   class: metadata

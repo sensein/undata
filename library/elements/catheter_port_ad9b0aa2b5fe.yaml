@@ -14,6 +14,7 @@ semantic:
   question_text: Catheter port
   source_attribute: catheter_port
   source_class: Catheter
+  value_domain: categorical
 provenance:
 - source: aind
   class: Catheter

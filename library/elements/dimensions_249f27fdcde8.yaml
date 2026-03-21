@@ -3,6 +3,7 @@ semantic:
   question_text: Dimensions
   source_attribute: dimensions
   source_class: ImageSPIM
+  value_domain: text
 provenance:
 - source: aind
   class: ImageSPIM

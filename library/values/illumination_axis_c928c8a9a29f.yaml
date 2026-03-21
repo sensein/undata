@@ -1,0 +1,7 @@
+sha256: c928c8a9a29f12332a9c66e5a59ca52fba8db43b67f330af4f0feec9b548b4cd
+semantic:
+  label: illumination axis
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Illumination axis

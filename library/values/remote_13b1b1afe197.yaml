@@ -1,0 +1,7 @@
+sha256: 13b1b1afe19740fba2a92b71060c39f56d9916b96858d91405ed5262ec96df97
+semantic:
+  label: remote
+  value_type: categorical
+provenance:
+- source: aind
+  raw_value: Remote

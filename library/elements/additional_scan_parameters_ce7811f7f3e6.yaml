@@ -3,6 +3,7 @@ semantic:
   question_text: Parameters
   source_attribute: additional_scan_parameters
   source_class: MRIScan
+  value_domain: text
 provenance:
 - source: aind
   class: MRIScan

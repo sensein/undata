@@ -3,6 +3,7 @@ semantic:
   question_text: Target coordinate in Acquisition.atlas
   source_attribute: atlas_coordinate
   source_class: ProbeConfig
+  value_domain: text
 provenance:
 - source: aind
   class: ProbeConfig

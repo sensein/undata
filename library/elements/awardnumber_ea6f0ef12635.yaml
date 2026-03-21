@@ -2,6 +2,7 @@ semantic:
   data_type: string
   source_attribute: awardNumber
   source_class: Organization
+  value_domain: text
 provenance:
 - source: dandi
   class: Organization

@@ -3,6 +3,7 @@ semantic:
   question_text: Power
   source_attribute: power
   source_class: Plane
+  value_domain: numeric
 provenance:
 - source: aind
   class: Plane
