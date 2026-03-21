@@ -523,7 +523,17 @@ def _build_schemas_from_provenance(
         filename = f"{class_name.lower()}_{key}.yaml"
         filepath = schemas_dir / filename
 
-        prov = SchemaProvenance(source=source_name, name=class_name)
+        from datetime import datetime as dt_mod
+        from datetime import timezone
+
+        now_iso = dt_mod.now(timezone.utc).isoformat()
+        prov = SchemaProvenance(
+            source=source_name,
+            name=class_name,
+            generated_at=now_iso,
+            attributed_to="urn:undata:ingestion-pipeline",
+            activity="ingestion",
+        )
 
         if filepath.exists():
             existing = yaml.safe_load(filepath.read_text(encoding="utf-8"))
@@ -533,6 +543,7 @@ def _build_schemas_from_provenance(
                 all_provs = existing_record.provenance + [prov]
                 record = SchemaRecord(semantic=schema_id, provenance=all_provs)
                 data = record.model_dump(mode="json", exclude_none=True)
+                data["sha256"] = sha
                 filepath.write_text(
                     yaml.dump(data, default_flow_style=False, sort_keys=False),
                     encoding="utf-8",
@@ -540,6 +551,7 @@ def _build_schemas_from_provenance(
         else:
             record = SchemaRecord(semantic=schema_id, provenance=[prov])
             data = record.model_dump(mode="json", exclude_none=True)
+            data["sha256"] = sha
             filepath.write_text(
                 yaml.dump(data, default_flow_style=False, sort_keys=False),
                 encoding="utf-8",

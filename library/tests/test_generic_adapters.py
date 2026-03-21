@@ -164,7 +164,9 @@ def test_csv_no_type_column(tmp_path):
 
 def test_csv_with_choices(tmp_path):
     """CSV with select_choices → response_options."""
-    csv_content = 'variable_name,field_type,select_choices\nsex,dropdown,"1, Male | 2, Female | 3, Other"\n'
+    csv_content = (
+        'variable_name,field_type,select_choices\nsex,dropdown,"1, Male | 2, Female | 3, Other"\n'
+    )
     f = tmp_path / "dd.csv"
     f.write_text(csv_content)
 

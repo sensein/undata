@@ -3,7 +3,6 @@
 import sys
 from unittest.mock import MagicMock, patch
 
-import pytest
 
 from undata_library.adapters.classifier import classify_entity
 from undata_library.models import EntityType
