@@ -8,7 +8,8 @@
 - US3 — LLM-Assisted Classification (P2, FR-010 to FR-014)
 - US4 — Docker-Based Code Inspection (P2, FR-015 to FR-019)
 - US5 — Parameterizable Workflow + Output Validation (P2, FR-020 to FR-025)
-- US6 — Schema Provenance Alignment (P3, FR-026 to FR-027)
+- US6 — Precise Source Tracking (P1, FR-026 to FR-030)
+- US7 — Schema Provenance Alignment (P3, FR-031 to FR-032)
 
 ---
 
@@ -27,7 +28,7 @@
 - [ ] T004 Add `ValueSetIdentity` and `ValueSetRecord` models to `library/src/undata_library/models.py` with `semantic: ValueSetIdentity` + `provenance: list[ProvenanceEntry]`
 - [ ] T005 [P] Add `EntityType` enum (class, attribute, enum_value, valueset) to `library/src/undata_library/models.py`
 - [ ] T006 [P] Add `type_ref: str | None` field to `SemanticIdentity` in `library/src/undata_library/models.py`; update `_EXCLUDED_FROM_HASH` — type_ref IS in hash
-- [ ] T007 [P] Extend `SchemaProvenance` with `generated_at`, `attributed_to`, `activity`, `derived_from` fields in `library/src/undata_library/models.py`
+- [ ] T007 [P] Extend `SchemaProvenance` with `generated_at`, `attributed_to`, `activity`, `derived_from`, `source_ref` fields in `library/src/undata_library/models.py`
 - [ ] T008 Add `build_valueset_uri(name, key)` to `library/src/undata_library/hashing.py`; include `type_ref` in `canonical_json` when present
 - [ ] T009 Add `IngestionReport` and `WorkflowSpec` Pydantic models to `library/src/undata_library/models.py`
 - [ ] T010 Create `library/src/undata_library/adapters/base.py`: `BaseAdapter` ABC with `extract(source_path, **options) -> list[ClassifiedEntity]`, `name` property, `supported_formats` property; `ClassifiedEntity` dataclass with `source_ref: SourceRef` (repo, committish, file, checksum, package_version); `SourceRef` dataclass
@@ -41,17 +42,17 @@
 
 **Goal**: Rewrite 5 existing extractors as BaseAdapter subclasses with 4-way classification.
 
-- [ ] T014 [US1] [US2] Create `library/src/undata_library/adapters/bids.py`: `BIDSAdapter(BaseAdapter)` — rewrite `extractors/bids.py` logic; classify classes vs attributes vs enums vs valuesets; emit `ClassifiedEntity` with confidence scores
-- [ ] T015 [P] [US1] [US2] Create `library/src/undata_library/adapters/nwb.py`: `NWBAdapter(BaseAdapter)` — rewrite `extractors/nwb.py`; classify NWB namespace entities
-- [ ] T016 [P] [US1] [US2] Create `library/src/undata_library/adapters/dandi.py`: `DANDIAdapter(BaseAdapter)` — rewrite `extractors/dandi.py`; classify Pydantic models and PropertyValue variants
-- [ ] T017 [P] [US1] [US2] Create `library/src/undata_library/adapters/openminds.py`: `OpenMINDSAdapter(BaseAdapter)` — rewrite `extractors/openminds.py`; classify linked-data entities
-- [ ] T018 [P] [US1] [US2] Create `library/src/undata_library/adapters/aind.py`: `AINDAdapter(BaseAdapter)` — rewrite `extractors/aind.py`; classify JSON Schema $defs; underscore entries → ValueConcept; named enum collections → ValueSet
+- [ ] T014 [US1] [US2] [US6] Create `library/src/undata_library/adapters/bids.py`: `BIDSAdapter(BaseAdapter)` — rewrite `extractors/bids.py` logic; classify classes vs attributes vs enums vs valuesets; emit `ClassifiedEntity` with confidence scores and `source_ref` (repo URL, committish from git, file path, SHA-256 checksum of source file)
+- [ ] T015 [P] [US1] [US2] [US6] Create `library/src/undata_library/adapters/nwb.py`: `NWBAdapter(BaseAdapter)` — rewrite `extractors/nwb.py`; classify NWB namespace entities; populate `source_ref` with repo/committish/file/checksum
+- [ ] T016 [P] [US1] [US2] [US6] Create `library/src/undata_library/adapters/dandi.py`: `DANDIAdapter(BaseAdapter)` — rewrite `extractors/dandi.py`; classify Pydantic models and PropertyValue variants; populate `source_ref`
+- [ ] T017 [P] [US1] [US2] [US6] Create `library/src/undata_library/adapters/openminds.py`: `OpenMINDSAdapter(BaseAdapter)` — rewrite `extractors/openminds.py`; classify linked-data entities; populate `source_ref`
+- [ ] T018 [P] [US1] [US2] [US6] Create `library/src/undata_library/adapters/aind.py`: `AINDAdapter(BaseAdapter)` — rewrite `extractors/aind.py`; classify JSON Schema $defs; underscore entries → ValueConcept; named enum collections → ValueSet; populate `source_ref`
 - [ ] T019 [US1] [US2] Delete `library/src/undata_library/extractors/` directory entirely
 - [ ] T020 [US1] [US2] Refactor `library/src/undata_library/ingest.py`: replace `_extract()` dispatcher with adapter registry lookup; consume `list[ClassifiedEntity]`; route by `EntityType` to elements/, schemas/, values/, valuesets/ directories; write sha256 to all output files
 - [ ] T020b [US1] Add `classification_confidence` field to provenance entries in `library/src/undata_library/ingest.py`: for each ClassifiedEntity, store `confidence` in the provenance dict; verify every output YAML contains a numeric confidence value
 - [ ] T021 [US1] [US2] Create `library/src/undata_library/adapters/registry.py`: `AdapterRegistry` with `register(adapter_class)`, `get(name) -> BaseAdapter`, `auto_detect(path) -> BaseAdapter`; auto-detect by file extension; discover entry points via `importlib.metadata.entry_points(group="undata.adapters")`
 - [ ] T022 [US1] Write tests in `library/tests/test_classification.py`: (a) BIDS "units" classified as valueset not schema; (b) BIDS participant fields classified as attributes; (c) AIND underscore entries classified as enum_value; (d) class with properties classified as class; (e) all 5 sources produce 0 misclassification violations; (f) every output provenance entry contains classification_confidence
-- [ ] T023 [US2] Write tests in `library/tests/test_adapters.py`: (a) adapter registry discovers built-in adapters; (b) auto-detect returns correct adapter for .json/.yaml/.csv; (c) BaseAdapter.extract returns list[ClassifiedEntity]; (d) all ClassifiedEntity have valid EntityType + confidence; (e) mock entry point adapter discovered via importlib.metadata
+- [ ] T023 [US2] [US6] Write tests in `library/tests/test_adapters.py`: (a) adapter registry discovers built-in adapters; (b) auto-detect returns correct adapter for .json/.yaml/.csv; (c) BaseAdapter.extract returns list[ClassifiedEntity]; (d) all ClassifiedEntity have valid EntityType + confidence; (e) mock entry point adapter discovered via importlib.metadata; (f) every ClassifiedEntity has non-null source_ref with file + checksum; (g) git-sourced adapters populate repo + committish; (h) non-git adapters have null repo/committish
 - [ ] T024 Update `library/src/undata_library/cli.py`: add `--adapter` and `--adapter-module` flags to `ingest` command; use adapter registry for dispatch
 - [ ] T025 Lint + run all tests; commit Phase 3
 
@@ -61,9 +62,9 @@
 
 **Goal**: JSONSchemaAdapter, LinkMLAdapter, CSVDictionaryAdapter for arbitrary sources.
 
-- [ ] T026 [US2] Create `library/src/undata_library/adapters/json_schema.py`: `JSONSchemaAdapter(BaseAdapter)` — generic JSON Schema (draft-07/2019/2020-12) parser; detect $defs, properties, enums, anyOf; classify each; handle circular $ref with visited set
-- [ ] T027 [P] [US2] Create `library/src/undata_library/adapters/linkml.py`: `LinkMLAdapter(BaseAdapter)` — parse LinkML YAML; classes → CLASS, slots → ATTRIBUTE, enums → VALUESET with member ValueConcepts
-- [ ] T028 [P] [US2] Create `library/src/undata_library/adapters/csv_dictionary.py`: `CSVDictionaryAdapter(BaseAdapter)` — parse CSV/TSV data dictionaries; configurable column names (name_column, type_column, description_column, values_column); one row → one ElementRecord; allowed_values → response_options or ValueSet
+- [ ] T026 [US2] [US6] Create `library/src/undata_library/adapters/json_schema.py`: `JSONSchemaAdapter(BaseAdapter)` — generic JSON Schema (draft-07/2019/2020-12) parser; detect $defs, properties, enums, anyOf; classify each; handle circular $ref with visited set; populate `source_ref` with file path + SHA-256 checksum (repo/committish null for standalone files)
+- [ ] T027 [P] [US2] [US6] Create `library/src/undata_library/adapters/linkml.py`: `LinkMLAdapter(BaseAdapter)` — parse LinkML YAML; classes → CLASS, slots → ATTRIBUTE, enums → VALUESET with member ValueConcepts; populate `source_ref`
+- [ ] T028 [P] [US2] [US6] Create `library/src/undata_library/adapters/csv_dictionary.py`: `CSVDictionaryAdapter(BaseAdapter)` — parse CSV/TSV data dictionaries; configurable column names (name_column, type_column, description_column, values_column); one row → one ElementRecord; allowed_values → response_options or ValueSet; populate `source_ref` with file path + SHA-256 checksum
 - [ ] T029 [US2] Write tests in `library/tests/test_generic_adapters.py`: (a) JSON Schema with mixed defs → correct classification; (b) circular $ref → warning + partial extraction; (c) LinkML with classes/slots/enums → correct types; (d) CSV with 10 rows → 10 elements with correct data_type; (e) CSV without type column → defaults to string
 - [ ] T030 Register all generic adapters in `library/src/undata_library/adapters/registry.py`; update auto-detection logic
 - [ ] T031 Lint + run all tests; commit Phase 4
@@ -88,7 +89,7 @@
 
 - [ ] T037 [US4] Create `library/src/undata_library/adapters/docker_scripts/python_inspect.py`: standalone script that imports a Python package, introspects Pydantic/dataclass models, and writes `result.json` (list of ClassifiedEntity JSON) to stdout
 - [ ] T038 [P] [US4] Create `library/src/undata_library/adapters/docker_scripts/ts_inspect.js`: standalone script that parses TypeScript AST for interfaces/types and writes ClassifiedEntity JSON to stdout
-- [ ] T039 [US4] Create `library/src/undata_library/adapters/code_repo.py`: `CodeRepoAdapter(BaseAdapter)` — detect language from pyproject.toml/package.json; build Docker run command; mount repo read-only; copy inspection script; execute with timeout; parse JSON output into list[ClassifiedEntity]; fallback to file-based extraction on failure
+- [ ] T039 [US4] [US6] Create `library/src/undata_library/adapters/code_repo.py`: `CodeRepoAdapter(BaseAdapter)` — detect language from pyproject.toml/package.json; build Docker run command; mount repo read-only; copy inspection script; execute with timeout; parse JSON output into list[ClassifiedEntity]; populate `source_ref` with repo URL, committish, file, checksum, and `package_version` from pip/npm; fallback to file-based extraction on failure
 - [ ] T040 [US4] Update `library/src/undata_library/cli.py`: add `--docker`, `--docker-image IMAGE`, `--docker-timeout SECONDS` flags to `ingest` and `pipeline` commands
 - [ ] T041 [US4] Write tests in `library/tests/test_code_repo.py`: (a) language detection from pyproject.toml → python; (b) language detection from package.json → typescript; (c) Docker command construction includes correct image, mounts, timeout; (d) JSON output parsing into ClassifiedEntity; (e) timeout/failure → fallback logged
 - [ ] T042 Lint + run all tests; commit Phase 6
@@ -99,7 +100,7 @@
 
 **Goal**: YAML workflow spec + ingestion-report.yaml validation.
 
-- [ ] T043 [US5] Create `library/src/undata_library/workflow.py`: `WorkflowSpec` Pydantic model; `run_workflow(spec, library_path) -> IngestionReport`; orchestrate: load spec → resolve adapters → run extraction → route entities → validate output → write report
+- [ ] T043 [US5] Create `library/src/undata_library/workflow.py`: `WorkflowSpec` Pydantic model (including docker sub-block); `run_workflow(spec, library_path) -> IngestionReport`; orchestrate: load spec → resolve adapters → run extraction → route entities → validate output → write report; record each step's start_time and end_time in provenance (FR-022)
 - [ ] T044 [US5] Add `validate_ingestion_output(library_path) -> list[dict]` to `library/src/undata_library/validation.py`: checks — (a) data_type valid on all elements; (b) sha256 matches recomputed hash; (c) no duplicate URIs across elements/schemas/values/valuesets; (d) schema property URIs resolve; (e) response_options ValueConcept URIs resolve; (f) ValueSet member URIs resolve (warn only); (g) every schema has ≥1 property
 - [ ] T045 [US5] Update `library/src/undata_library/cli.py`: add `--workflow YAML`, `--strict`, `--skip-validation` flags to `ingest`/`pipeline`; add `validate-ingestion` standalone command
 - [ ] T046 [US5] Update `library/src/undata_library/ingest.py`: after ingestion, run `validate_ingestion_output()` unless `--skip-validation`; write `ingestion-report.yaml`; exit 1 if `--strict` and violations found
@@ -108,13 +109,13 @@
 
 ---
 
-## Phase 8: US6 — Schema Provenance Alignment
+## Phase 8: US7 — Schema Provenance Alignment
 
-**Goal**: SchemaRecord gets full PROV-O provenance + sha256.
+**Goal**: SchemaRecord gets full PROV-O provenance + source_ref + sha256 (FR-031, FR-032).
 
-- [ ] T049 [US6] Update schema writing in `library/src/undata_library/ingest.py`: populate `generated_at`, `attributed_to`, `activity` on SchemaProvenance entries; write sha256 to schema YAML files
-- [ ] T050 [US6] Update `library/src/undata_library/adapters/bids.py` (and other adapters as needed): emit SchemaRecord ClassifiedEntity with full PROV-O provenance fields
-- [ ] T051 [US6] Write tests in `library/tests/test_schema_provenance.py`: (a) schema YAML has generated_at, attributed_to, activity fields; (b) schema YAML has sha256 field; (c) sha256 matches recomputed hash; (d) same schema from two sources has same URI with two provenance entries
+- [ ] T049 [US7] Update schema writing in `library/src/undata_library/ingest.py`: populate `generated_at`, `attributed_to`, `activity`, `source_ref` on SchemaProvenance entries; write sha256 to schema YAML files
+- [ ] T050 [US7] Update `library/src/undata_library/adapters/bids.py` (and other adapters as needed): emit SchemaRecord ClassifiedEntity with full PROV-O provenance fields + source_ref
+- [ ] T051 [US7] Write tests in `library/tests/test_schema_provenance.py`: (a) schema YAML has generated_at, attributed_to, activity, source_ref fields; (b) schema YAML has sha256 field; (c) sha256 matches recomputed hash; (d) same schema from two sources has same URI with two provenance entries; (e) source_ref contains repo, committish, file, checksum
 - [ ] T052 Lint + run all tests; commit Phase 8
 
 ---
