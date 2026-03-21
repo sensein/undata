@@ -1,4 +1,6 @@
+# Domain ontologies
 ontologies:
+  # -- Initial 5 --
   - name: ncit
     url: http://purl.obolibrary.org/obo/ncit.obo
     format: obo
@@ -14,3 +16,24 @@ ontologies:
   - name: ncbitaxon
     url: http://purl.obolibrary.org/obo/ncbitaxon.obo
     format: obo
+
+  # -- Extended neuroscience --
+  - name: uberon
+    url: http://purl.obolibrary.org/obo/uberon.obo
+    format: obo
+  - name: cl
+    url: http://purl.obolibrary.org/obo/cl.obo
+    format: obo
+  - name: edam
+    url: http://edamontology.org/EDAM.obo
+    format: obo
+
+  # -- Vocabulary/mapping standards (loaded into store for term validation) --
+  - name: skos
+    url: https://www.w3.org/2009/08/skos-reference/skos.rdf
+    format: owl
+    notes: "SKOS vocabulary — validates mapping_relation terms"
+  - name: prov-o
+    url: https://www.w3.org/ns/prov-o
+    format: owl
+    notes: "W3C PROV-O — validates provenance terms"

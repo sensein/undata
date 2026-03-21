@@ -8,6 +8,26 @@ from pathlib import Path
 from pydantic import BaseModel, Field
 
 
+class MatchLevel(str, Enum):
+    """Whether an ontology alignment is a concept-level or data-element-level match."""
+
+    concept_match = "concept_match"  # ontology term = concept (no type/unit info)
+    element_match = "element_match"  # ontology term = exact data value
+
+
+class OntologyAnnotation(BaseModel):
+    """A single ontology alignment for an entity — qualitative + quantitative."""
+
+    term_uri: str
+    term_label: str
+    ontology: str  # e.g., "ncit", "pato", "uberon"
+    mapping_relation: str  # skos:exactMatch, closeMatch, broadMatch, narrowMatch, relatedMatch
+    match_level: MatchLevel
+    score: float  # cosine similarity 0.0–1.0
+    model: str  # embedding model name (e.g., "all-MiniLM-L6-v2")
+    primary: bool = False  # True for the best match
+
+
 class EntityType(str, Enum):
     """Classification of a schema entity."""
 
@@ -88,6 +108,9 @@ class SemanticIdentity(BaseModel):
     source_attribute: str | None = None  # IN hash when present
     source_class: str | None = None  # IN hash when present
     type_ref: str | None = None  # IN hash — URI of referenced SchemaRecord when data_type=object
+    ontology_annotations: list[OntologyAnnotation] | None = (
+        None  # NOT in hash — enrichment metadata
+    )
 
 
 class ProvenanceEntry(BaseModel):
@@ -169,6 +192,7 @@ class ValueSemanticIdentity(BaseModel):
     ontology_term: str | None = None
     value_type: str = "categorical"
     label: str
+    ontology_annotations: list[OntologyAnnotation] | None = None  # NOT in hash
 
 
 class ValueProvenance(BaseModel):

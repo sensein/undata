@@ -128,9 +128,13 @@ def _load_ontology_embeddings(cache_dir: Path, model_name: str) -> EmbeddingStor
     for candidate in [onto_parquet]:
         if candidate.exists():
             try:
-                store = EmbeddingStore(uri_col="term_uri").load(candidate, expected_model=model_name)
+                store = EmbeddingStore(uri_col="term_uri").load(
+                    candidate, expected_model=model_name
+                )
                 if store.size > 0:
-                    logger.info("Loaded ontology embeddings from %s: %d terms", candidate, store.size)
+                    logger.info(
+                        "Loaded ontology embeddings from %s: %d terms", candidate, store.size
+                    )
                     return store
             except Exception:
                 pass
