@@ -76,7 +76,7 @@
 ## Phase 6: Polish + Verify
 
 - [ ] T031 Run full pipeline to default output dir: `undata-library pipeline --source bids --output-dir /tmp/test-registry` (repeat for all 5 sources)
-- [ ] T032 [P] Run `undata-library ontology refresh --output-dir /tmp/test-registry` — verify bulk download produces >2000 terms for PATO
+- [ ] T032 [P] Run `undata-library ontology refresh --output-dir /tmp/test-registry` — verify bulk download produces >2000 terms for PATO; time the full refresh and assert < 5 minutes (SC-005)
 - [ ] T033 [P] Verify `git status` shows clean tree (no output files tracked)
 - [ ] T034 [P] Verify `ls library/elements/` returns empty or doesn't exist (output is in output-dir)
 - [ ] T035 Run all library tests: `uv run pytest tests/ -v`
