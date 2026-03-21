@@ -28,17 +28,18 @@ Remove `ontology_term` from identity hash. Enrich all 4 registry entity types
 | VI. Environment Isolation | PASS | No changes |
 | Evaluation Record | PASS | Re-extraction results recorded in eval-record.md |
 
-## Phase 1: Identity Hash Change
+## Phase 1: Remove ontology_term Field
 
-**Goal**: Remove `ontology_term` from hash; add to `_EXCLUDED_FROM_HASH`.
+**Goal**: Delete `ontology_term` from `SemanticIdentity` and `ValueSemanticIdentity`. No deprecation — no service launched.
 
 | File | Change |
 |------|--------|
-| `hashing.py` | ADD `"ontology_term"` to `_EXCLUDED_FROM_HASH` |
-| `models.py` | Document that `ontology_term` is enrichment metadata, not identity |
+| `models.py` | REMOVE `ontology_term` field from `SemanticIdentity` and `ValueSemanticIdentity` |
+| `hashing.py` | Remove `"ontology_term"` from `_EXCLUDED_FROM_HASH` (field no longer exists) |
+| All files referencing `ontology_term` | grep + update (extractors, enrich, ingest, tests) |
 
-**Impact**: Two elements differing only in `ontology_term` now produce the same hash.
-This is the desired behavior — ontology alignment is metadata, not identity.
+**Impact**: `ontology_term` no longer exists on any model. Ontology alignment is stored
+exclusively in `ontology_annotations: list[OntologyAnnotation]` (excluded from hash).
 
 ## Phase 2: Staging Directory + Pipeline Refactor
 

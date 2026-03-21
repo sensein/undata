@@ -82,8 +82,8 @@ After enrichment, the commit stage computes the final content-addressed hash of 
 
 **Identity Hash Changes**
 
-- **FR-001**: `ontology_term` MUST be deprecated. The canonical enrichment output is `ontology_annotations: list[OntologyAnnotation]` (as defined in 025) — a list of multi-term annotations each with: `term_uri`, `term_label`, `ontology`, `mapping_relation` (SKOS), `match_level` (concept_match/element_match), `score`, `model`, `primary`. Both `ontology_term` and `ontology_annotations` MUST be excluded from the identity hash.
-- **FR-002**: The identity hash MUST be determined solely by: `data_type`, `unit`, `constraints` (pattern + allowed_values only), `min_value`, `max_value`, `response_options` (sorted by value), `source_attribute`, `source_class`, `type_ref`. All ontology alignment metadata is excluded.
+- **FR-001**: `ontology_term` MUST be removed from `SemanticIdentity` and `ValueSemanticIdentity` entirely (no service has launched — no deprecation needed). The canonical enrichment output is `ontology_annotations: list[OntologyAnnotation]` (as defined in 025) — a list of multi-term annotations each with: `term_uri`, `term_label`, `ontology`, `mapping_relation` (SKOS), `match_level` (concept_match/element_match), `score`, `model`, `primary`. `ontology_annotations` MUST be excluded from the identity hash.
+- **FR-002**: The identity hash MUST be determined solely by: `data_type`, `unit`, `constraints` (pattern + allowed_values only), `min_value`, `max_value`, `response_options` (sorted by value), `source_attribute`, `source_class`, `type_ref`. The excluded set is: `question_text`, `value_domain`, `ontology_annotations`.
 - **FR-003**: Existing elements MUST be rehashed after the change. Elements that become duplicates (same hash after ontology_term exclusion) MUST be merged — provenance entries combined, one file retained.
 
 **Staged Pipeline**

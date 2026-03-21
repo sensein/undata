@@ -14,9 +14,9 @@
 
 **Goal**: Remove ontology_term from hash. This unblocks all other phases.
 
-- [ ] T001 Add `"ontology_term"` to `_EXCLUDED_FROM_HASH` in `library/src/undata_library/hashing.py`
-- [ ] T002 Write test in `library/tests/test_hashing.py`: two elements differing only in ontology_term produce the same sha256 hash
-- [ ] T003 Update existing tests that assert ontology_term affects the hash (if any)
+- [ ] T001 Remove `ontology_term` field from `SemanticIdentity` and `ValueSemanticIdentity` in `library/src/undata_library/models.py` (field deleted, not deprecated — no service launched)
+- [ ] T002 Write test in `library/tests/test_hashing.py`: verify `ontology_annotations` is excluded from hash; verify identity hash is unchanged when annotations differ
+- [ ] T003 Update existing tests and code that reference `ontology_term` on SemanticIdentity (grep + fix all usages — extractors, enrich, ingest, etc.)
 - [ ] T004 Lint + run all tests; commit Phase 1
 
 ---
@@ -69,7 +69,7 @@
 
 **Goal**: Rehash existing registry elements (ontology_term no longer in hash). Merge duplicates.
 
-- [ ] T028 [US2] Add `migrate_registry(output_dir) -> dict` to `library/src/undata_library/commit.py`: read all elements, recompute sha256 (excl ontology_term), rename files to new hash, merge duplicates, return stats (migrated, merged, unchanged)
+- [ ] T028 [US2] Add `migrate_registry(output_dir) -> dict` to `library/src/undata_library/commit.py`: read all registry entities, strip `ontology_term` field from semantic blocks, recompute sha256, rename files to new hash, merge duplicates (combine provenance), return stats (migrated, merged, unchanged)
 - [ ] T029 [US2] Write tests in `library/tests/test_migration.py`: (a) element with ontology_term rehashes to same hash as element without; (b) two elements differing only in ontology_term merge into one; (c) provenance combined on merge
 - [ ] T030 Lint + run all tests; commit Phase 5
 
