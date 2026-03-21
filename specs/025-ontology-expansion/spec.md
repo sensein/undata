@@ -9,7 +9,8 @@
 
 ### Session 2026-03-21
 
-- Q: How should ontology-to-element matching distinguish concepts from data elements? → A: Ontology terms are concepts (e.g., NCIT:C25150 = "Age" as a concept, without type/unit). Data elements are concrete (type=float, unit=years). Every alignment must record a `match_level`: `concept_match` (ontology term represents the concept but not the data specifics) or `element_match` (ontology term exactly describes the data element including type/unit/enum values). Values/enums are more likely to be element_match (e.g., "male" = PATO:0000384 exactly). Properties are typically concept_match (e.g., "age" ≈ NCIT:C25150 conceptually).
+- Q: How should ontology-to-element matching distinguish concepts from data elements? → A: Ontology terms are concepts (e.g., NCIT:C25150 = "Age" as a concept, without type/unit). Data elements are concrete (type=float, unit=years). Every alignment must record a `match_level`: `concept_match` or `element_match`.
+- Q: Can entities match multiple ontology terms? → A: Yes. Each entity (element, schema, valueset, value) can have multiple ontology annotations from different ontologies. Each annotation records both qualitative (SKOS relation + match_level) and quantitative (embedding distance + model name) metadata. The number of annotations is determined by a heuristic: include all terms above a score threshold (e.g., 0.5 for elements, 0.8 for values), with a gap-based cutoff (if there's a significant drop in similarity between top-N and N+1, stop at N).
 
 ---
 
@@ -107,33 +108,53 @@ Individual values (ValueConcepts like "male", "female", "EEG") and valuesets (co
 - **FR-005**: When building the vector index, if a term URI has labels/synonyms from multiple ontologies, the system MUST merge them into a single embedding text (richer context = better embedding).
 - **FR-006**: `lookup_term(uri)` MUST return merged results: labels from all ontologies, all synonyms, all parent URIs.
 
-**SKOS Precision Matching**
+**Multi-Term Ontology Annotation**
 
-- **FR-007**: Each ontology_term assignment in enrichment MUST include a `mapping_relation` field with a SKOS value: `skos:exactMatch`, `skos:closeMatch`, `skos:broadMatch`, `skos:narrowMatch`, or `skos:relatedMatch`.
-- **FR-008**: Mapping relation MUST be determined by: cosine distance (≥ 0.95 = exactMatch, 0.8–0.95 = closeMatch, 0.5–0.8 = relatedMatch) AND ontology hierarchy (if assigned term is a parent of a better-matching child = broadMatch).
-- **FR-009**: The enrichment provenance MUST record: term URI, term label, similarity score, mapping_relation, and `match_level`.
+- **FR-007**: Each entity (element, schema, valueset, value) MUST support multiple ontology annotations — not just a single `ontology_term`. The annotations are stored as a list: `ontology_annotations: list[OntologyAnnotation]`.
+- **FR-008**: Each `OntologyAnnotation` MUST include both qualitative and quantitative metadata:
+  - `term_uri`: the ontology term URI
+  - `term_label`: human-readable label from the ontology
+  - `ontology`: which ontology the term comes from (e.g., "ncit", "pato", "uberon")
+  - `mapping_relation`: SKOS value — `skos:exactMatch`, `skos:closeMatch`, `skos:broadMatch`, `skos:narrowMatch`, or `skos:relatedMatch`
+  - `match_level`: `concept_match` or `element_match`
+  - `score`: cosine similarity (0.0–1.0)
+  - `model`: embedding model used (e.g., "all-MiniLM-L6-v2")
+- **FR-009**: The number of annotations per entity MUST be determined by a heuristic:
+  - Include all terms with score above a threshold (elements: 0.5, values: 0.8)
+  - Apply a gap-based cutoff: if the score drops by > 0.15 between rank N and N+1, stop at N
+  - Cap at a maximum of 10 annotations per entity to prevent noise
+  - The best match (highest score) is designated as the `primary` annotation
+
+**SKOS Relation Assignment**
+
+- **FR-010**: Mapping relation MUST be determined by cosine distance AND ontology hierarchy:
+  - ≥ 0.95 → `skos:exactMatch`
+  - 0.8–0.95 → `skos:closeMatch`
+  - If assigned term is a parent of a better-matching child → `skos:broadMatch`
+  - If assigned term is a child of a matching parent → `skos:narrowMatch`
+  - 0.5–0.8 → `skos:relatedMatch`
 
 **Concept vs Data-Element Match Level**
 
-- **FR-014**: Every ontology alignment MUST include a `match_level` field distinguishing:
-  - `concept_match`: The ontology term represents the same concept as the data element but does not specify data type, unit, or constraints. Example: NCIT:C25150 (Age) aligns with element "age" (float/years) — the concept matches but the ontology term says nothing about the float type or year unit.
-  - `element_match`: The ontology term exactly describes the data element including its value space. Example: PATO:0000384 (male) aligns with value "male" — the term IS the value. Enum values and categorical constants are the primary candidates for element_match.
-- **FR-015**: `match_level` MUST be determined by: if the entity is a ValueConcept or enum value AND the cosine distance ≥ 0.9 → `element_match`; otherwise → `concept_match`.
-- **FR-016**: The `match_level` distinction MUST be surfaced in the enrichment provenance, the ontology-index, and any downstream transform generation (concept_match elements sharing the same ontology_term may still need transforms because they differ in data representation).
+- **FR-014**: Every ontology annotation MUST include `match_level`:
+  - `concept_match`: Ontology term represents the same concept but does not specify data type, unit, or constraints. Example: NCIT:C25150 (Age) ≈ element "age" (float/years).
+  - `element_match`: Ontology term exactly describes the data value. Example: PATO:0000384 (male) = value "male".
+- **FR-015**: `match_level` MUST be: `element_match` if the entity is a ValueConcept/enum AND score ≥ 0.9; otherwise `concept_match`.
+- **FR-016**: Two elements sharing a `concept_match` ontology annotation may still need transforms (they share the concept but differ in data representation). Two values sharing an `element_match` are equivalent.
 
 **Value and Valueset Enrichment**
 
 - **FR-010**: The `enrich` command MUST process values (ValueConcepts) in addition to elements. Values use a higher confidence threshold (default 0.8) than elements (default 0.5).
 - **FR-011**: Value embedding text MUST be: `"{label}"` (just the label, no class/description context — values are specific terms).
 - **FR-012**: Valuesets MUST be annotated with `ontology_namespace` based on the most common ontology prefix of their enriched member values.
-- **FR-013**: Each enriched value MUST record `ontology_term`, `mapping_relation`, and `confidence` in provenance.
+- **FR-013**: Each enriched value MUST have `ontology_annotations` (same structure as elements) with `mapping_relation`, `match_level`, `score`, and `model` per annotation.
 
 ### Key Entities
 
 - **OntologyConfig** (extended): Add 7 new ontologies to `ontologies.yaml` with URLs and formats.
-- **MappingRelation**: SKOS relation type on every ontology_term assignment (exactMatch, closeMatch, broadMatch, narrowMatch, relatedMatch).
-- **MatchLevel**: `concept_match` (ontology term = concept, no data specifics) or `element_match` (ontology term = exact data value). Recorded on every alignment.
-- **ValueEnrichment**: Ontology_term + mapping_relation + match_level on ValueConcept entities.
+- **OntologyAnnotation**: Per-entity annotation with: term_uri, term_label, ontology, mapping_relation (SKOS), match_level (concept/element), score (cosine), model (embedding model name). Multiple annotations per entity.
+- **MatchLevel**: `concept_match` or `element_match`. Recorded on every annotation.
+- **ValueEnrichment**: Multiple ontology annotations on ValueConcept entities with high threshold (0.8).
 
 ## Success Criteria
 
