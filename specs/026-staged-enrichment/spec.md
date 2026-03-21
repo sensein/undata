@@ -3,7 +3,7 @@
 **Feature Branch**: `026-staged-enrichment`
 **Created**: 2026-03-21
 **Status**: Draft
-**Input**: New elements should be staged, enriched, and then committed to the registry. Enriching should not create new elements. Ontology annotations, value_domain, and other enrichment metadata are NOT part of the identity hash — they are provenance/metadata that gets added in-place to staged elements before committing.
+**Input**: All registry entities (elements, schemas, valuesets, values — collectively "registry entities") should be staged, enriched, and then committed to the registry. Enriching should not create new entities. Ontology annotations, value_domain, and other enrichment metadata are NOT part of the identity hash — they are provenance/metadata that gets added in-place to staged entities before committing.
 
 ## User Scenarios & Testing
 
@@ -108,9 +108,19 @@ After enrichment, the commit stage computes the final content-addressed hash of 
 - **FR-015**: No provenance for intermediate pipeline stages. The committed element's provenance reflects the source extraction + enrichment attribution, not the staging mechanics.
 - **FR-016**: If the pipeline is interrupted before commit, the staging directory MUST be cleaned up on the next run (stale staging dirs detected by run ID age).
 
+**All Registry Entity Types**
+
+- **FR-017**: The staged pipeline (extract → enrich → commit) MUST apply uniformly to all four registry entity types: elements, schemas, valuesets, and values. "Registry entity" is the collective term.
+- **FR-018**: Enrichment MUST process all registry entity types:
+  - **Elements**: ontology_annotations (concept_match), value_domain, enrichment provenance
+  - **Schemas**: ontology_annotations for the class concept (e.g., a "Subject" schema → NCIT concept)
+  - **Values**: ontology_annotations (element_match with high threshold ≥ 0.8), e.g., "male" → PATO:0000384
+  - **Valuesets**: ontology_namespace derived from member value annotations; ontology_annotations for the collection concept
+- **FR-019**: `ontology_annotations` MUST be supported on all four entity types' semantic identity blocks (excluded from hash in all cases).
+
 **Curation Exception**
 
-- **FR-017**: Manual curation (`activity: curation`) MAY create new elements with `derived_from` links in the future. This is explicitly out of scope for enrichment but the architecture MUST support it.
+- **FR-020**: Manual curation (`activity: curation`) MAY create new registry entities with `derived_from` links in the future. This is explicitly out of scope for enrichment but the architecture MUST support it.
 
 ### Key Entities
 
