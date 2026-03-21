@@ -47,10 +47,11 @@
 - [ ] T017 [P] [US1] [US2] Create `library/src/undata_library/adapters/openminds.py`: `OpenMINDSAdapter(BaseAdapter)` — rewrite `extractors/openminds.py`; classify linked-data entities
 - [ ] T018 [P] [US1] [US2] Create `library/src/undata_library/adapters/aind.py`: `AINDAdapter(BaseAdapter)` — rewrite `extractors/aind.py`; classify JSON Schema $defs; underscore entries → ValueConcept; named enum collections → ValueSet
 - [ ] T019 [US1] [US2] Delete `library/src/undata_library/extractors/` directory entirely
-- [ ] T020 [US1] [US2] Refactor `library/src/undata_library/ingest.py`: replace `_extract()` dispatcher with adapter registry lookup; consume `list[ClassifiedEntity]`; route by `EntityType` to elements/, schemas/, values/, valuesets/ directories; populate `classification_confidence` in provenance; write sha256 to all output files
+- [ ] T020 [US1] [US2] Refactor `library/src/undata_library/ingest.py`: replace `_extract()` dispatcher with adapter registry lookup; consume `list[ClassifiedEntity]`; route by `EntityType` to elements/, schemas/, values/, valuesets/ directories; write sha256 to all output files
+- [ ] T020b [US1] Add `classification_confidence` field to provenance entries in `library/src/undata_library/ingest.py`: for each ClassifiedEntity, store `confidence` in the provenance dict; verify every output YAML contains a numeric confidence value
 - [ ] T021 [US1] [US2] Create `library/src/undata_library/adapters/registry.py`: `AdapterRegistry` with `register(adapter_class)`, `get(name) -> BaseAdapter`, `auto_detect(path) -> BaseAdapter`; auto-detect by file extension; discover entry points via `importlib.metadata.entry_points(group="undata.adapters")`
-- [ ] T022 [US1] Write tests in `library/tests/test_classification.py`: (a) BIDS "units" classified as valueset not schema; (b) BIDS participant fields classified as attributes; (c) AIND underscore entries classified as enum_value; (d) class with properties classified as class; (e) all 5 sources produce 0 misclassification violations
-- [ ] T023 [US2] Write tests in `library/tests/test_adapters.py`: (a) adapter registry discovers built-in adapters; (b) auto-detect returns correct adapter for .json/.yaml/.csv; (c) BaseAdapter.extract returns list[ClassifiedEntity]; (d) all ClassifiedEntity have valid EntityType + confidence
+- [ ] T022 [US1] Write tests in `library/tests/test_classification.py`: (a) BIDS "units" classified as valueset not schema; (b) BIDS participant fields classified as attributes; (c) AIND underscore entries classified as enum_value; (d) class with properties classified as class; (e) all 5 sources produce 0 misclassification violations; (f) every output provenance entry contains classification_confidence
+- [ ] T023 [US2] Write tests in `library/tests/test_adapters.py`: (a) adapter registry discovers built-in adapters; (b) auto-detect returns correct adapter for .json/.yaml/.csv; (c) BaseAdapter.extract returns list[ClassifiedEntity]; (d) all ClassifiedEntity have valid EntityType + confidence; (e) mock entry point adapter discovered via importlib.metadata
 - [ ] T024 Update `library/src/undata_library/cli.py`: add `--adapter` and `--adapter-module` flags to `ingest` command; use adapter registry for dispatch
 - [ ] T025 Lint + run all tests; commit Phase 3
 
@@ -61,7 +62,7 @@
 **Goal**: JSONSchemaAdapter, LinkMLAdapter, CSVDictionaryAdapter for arbitrary sources.
 
 - [ ] T026 [US2] Create `library/src/undata_library/adapters/json_schema.py`: `JSONSchemaAdapter(BaseAdapter)` — generic JSON Schema (draft-07/2019/2020-12) parser; detect $defs, properties, enums, anyOf; classify each; handle circular $ref with visited set
-- [ ] T027 [P] [US2] Create `library/src/undata_library/adapters/linkml_adapter.py`: `LinkMLAdapter(BaseAdapter)` — parse LinkML YAML; classes → CLASS, slots → ATTRIBUTE, enums → VALUESET with member ValueConcepts
+- [ ] T027 [P] [US2] Create `library/src/undata_library/adapters/linkml.py`: `LinkMLAdapter(BaseAdapter)` — parse LinkML YAML; classes → CLASS, slots → ATTRIBUTE, enums → VALUESET with member ValueConcepts
 - [ ] T028 [P] [US2] Create `library/src/undata_library/adapters/csv_dictionary.py`: `CSVDictionaryAdapter(BaseAdapter)` — parse CSV/TSV data dictionaries; configurable column names (name_column, type_column, description_column, values_column); one row → one ElementRecord; allowed_values → response_options or ValueSet
 - [ ] T029 [US2] Write tests in `library/tests/test_generic_adapters.py`: (a) JSON Schema with mixed defs → correct classification; (b) circular $ref → warning + partial extraction; (c) LinkML with classes/slots/enums → correct types; (d) CSV with 10 rows → 10 elements with correct data_type; (e) CSV without type column → defaults to string
 - [ ] T030 Register all generic adapters in `library/src/undata_library/adapters/registry.py`; update auto-detection logic
@@ -121,6 +122,7 @@
 ## Phase 9: Polish + Re-ingest
 
 - [ ] T053 Re-ingest all 5 sources with new adapter framework: `undata-library ingest --source bids` (repeat for nwb, dandi, aind, openminds)
+- [ ] T053b Time the BIDS pipeline run (`undata-library ingest --source bids`); assert < 60 seconds (SC-008)
 - [ ] T054 [P] Verify 0 misclassification violations: no enum collections (units, modalities) as schemas
 - [ ] T055 [P] Verify `valuesets/` directory created with correct ValueSetRecord files
 - [ ] T056 [P] Verify `ingestion-report.yaml` produced with validation passed

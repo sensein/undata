@@ -43,9 +43,9 @@ workflows, output validation, and schema provenance alignment with PROV-O.
 - **No output validation**: No post-ingestion self-check
 - **No workflow spec**: Ingestion is imperative CLI calls, not declarative
 
-## Phase 1: Schema Provenance Alignment + ValueSet Model
+## Phases 1–2: Setup + Foundational Models
 
-**Goal**: Align SchemaProvenance with ProvenanceEntry (PROV-O fields), add ValueSet entity, add sha256 to schemas.
+**Goal**: Project setup, align SchemaProvenance with ProvenanceEntry (PROV-O fields), add ValueSet entity, BaseAdapter ABC, rule-based classifier.
 
 **File Changes**:
 
@@ -68,9 +68,9 @@ ValueSetRecord:
   sha256: str                         # stored in YAML
 ```
 
-## Phase 2: BaseAdapter Interface + ClassifiedEntity
+## Phase 3: Adapter Refactoring + Classification Rigor (US1+US2)
 
-**Goal**: Define the adapter contract; refactor existing extractors to conform.
+**Goal**: Rewrite 5 existing extractors as BaseAdapter subclasses with 4-way classification.
 
 **Design**:
 
@@ -120,7 +120,7 @@ class BaseAdapter(ABC):
 | `adapters/aind.py` | NEW (from extractors/aind.py) — extends BaseAdapter |
 | `ingest.py` | Refactor to consume `list[ClassifiedEntity]` from adapters; route by EntityType |
 
-## Phase 3: Generic Source Adapters
+## Phase 4: Generic Source Adapters (US2 cont.)
 
 **Goal**: JSONSchemaAdapter, LinkMLAdapter, CSVDictionaryAdapter — handle any schema source, not just the 5 known ones.
 
@@ -137,7 +137,7 @@ class BaseAdapter(ABC):
 - `.csv`/`.tsv` → CSVDictionaryAdapter
 - Directory with `pyproject.toml`/`package.json` → CodeRepoAdapter (Phase 5)
 
-## Phase 4: LLM-Assisted Classification
+## Phase 5: LLM-Assisted Classification (US3)
 
 **Goal**: Optional LLM fallback when rule-based confidence < threshold.
 
@@ -160,7 +160,7 @@ Sibling entities: {sibling_names}
 Respond with JSON: {"classification": "...", "confidence": 0.0-1.0, "reasoning": "..."}
 ```
 
-## Phase 5: Docker-Based Code Inspection
+## Phase 6: Docker-Based Code Inspection (US4)
 
 **Goal**: Launch containers to install and introspect code-defined schemas.
 
@@ -180,7 +180,7 @@ Respond with JSON: {"classification": "...", "confidence": 0.0-1.0, "reasoning":
 6. Read `/output/result.json` → parse into `list[ClassifiedEntity]`
 7. Timeout after `--docker-timeout` seconds (default 300)
 
-## Phase 6: Parameterizable Workflow + Output Validation
+## Phase 7: Parameterizable Workflow + Output Validation (US5)
 
 **Goal**: YAML workflow spec + ingestion-report.yaml validation.
 
@@ -221,7 +221,7 @@ validation:
     - schema_has_properties
 ```
 
-## Phase 7: Polish + Re-ingest
+## Phase 8: Schema Provenance Alignment (US6) + Phase 9: Polish + Re-ingest
 
 - Re-ingest all 5 sources with new adapter framework
 - Verify 0 misclassification violations (units/modalities as ValueSets)
@@ -269,13 +269,14 @@ library/src/undata_library/
 ## Dependency Graph
 
 ```
-Phase 1 (models)     depends on: nothing (foundational)
-Phase 2 (BaseAdapter) depends on: Phase 1 (ClassifiedEntity uses new EntityType)
-Phase 3 (generic)    depends on: Phase 2 (extends BaseAdapter)
-Phase 4 (LLM)        depends on: Phase 2 (integrates with classifier)
-Phase 5 (Docker)     depends on: Phase 2 (extends BaseAdapter)
-Phase 6 (workflow)   depends on: Phase 2 + Phase 3 (orchestrates adapters)
-Phase 7 (polish)     depends on: all phases
+Phases 1-2 (setup + models) depends on: nothing (foundational)
+Phase 3 (adapter refactor)  depends on: Phases 1-2
+Phase 4 (generic adapters)  depends on: Phases 1-2 (can parallel with Phase 3)
+Phase 5 (LLM)               depends on: Phases 1-2 (can parallel with Phase 3)
+Phase 6 (Docker)             depends on: Phases 1-2 (can parallel with Phase 3)
+Phase 7 (workflow)           depends on: Phase 3 (orchestrates adapters)
+Phase 8 (schema provenance)  depends on: Phase 3
+Phase 9 (polish)             depends on: all phases
 ```
 
 ## Complexity Tracking
