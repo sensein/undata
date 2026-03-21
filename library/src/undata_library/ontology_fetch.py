@@ -64,7 +64,12 @@ def _download_obo(name: str, url: str) -> Path:
     tmp_path = Path(tmp.name)
     tmp.close()
 
-    with httpx.stream("GET", url, follow_redirects=True, timeout=600) as resp:
+    # Content negotiation for RDF resources
+    headers = {}
+    if url.endswith("#") or "w3.org/ns/" in url:
+        headers["Accept"] = "text/turtle, application/rdf+xml;q=0.9, */*;q=0.1"
+
+    with httpx.stream("GET", url, follow_redirects=True, timeout=600, headers=headers) as resp:
         resp.raise_for_status()
         with open(tmp_path, "wb") as f:
             for chunk in resp.iter_bytes(chunk_size=65536):

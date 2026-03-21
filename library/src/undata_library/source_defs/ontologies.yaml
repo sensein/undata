@@ -1,6 +1,6 @@
 # Domain ontologies
 ontologies:
-  # -- Initial 5 --
+  # -- Core biomedical --
   - name: ncit
     url: http://purl.obolibrary.org/obo/ncit.obo
     format: obo
@@ -17,18 +17,38 @@ ontologies:
     url: http://purl.obolibrary.org/obo/ncbitaxon.obo
     format: obo
 
-  # -- Extended neuroscience --
+  # -- Anatomy & cell types --
   - name: uberon
     url: http://purl.obolibrary.org/obo/uberon.owl
     format: owl
   - name: cl
     url: http://purl.obolibrary.org/obo/cl.owl
     format: owl
+
+  # -- Neuroscience-specific --
+  - name: atom
+    url: https://raw.githubusercontent.com/SciCrunch/NIF-Ontology/atlas/ttl/atom.ttl
+    format: ttl
+    notes: "Atlas Ontology Model — brain atlas elements, coordinate systems"
+  - name: tmn
+    url: https://raw.githubusercontent.com/BICCN/TMN/main/tmn-base.owl
+    format: owl
+    notes: "Techniques & Methods for Neuroscience — base only (no imports, ~53 native terms)"
+  - name: bgo
+    url: https://raw.githubusercontent.com/Cellular-Semantics/hmba_basal_ganglia_ontology/main/bgo-base.owl
+    format: owl
+    notes: "Basal Ganglia Ontology — base only (no imports, ~336 native terms)"
+  - name: hbao
+    url: https://raw.githubusercontent.com/brain-bican/human_brain_atlas_ontology/main/hbao.owl
+    format: owl
+    notes: "Human Brain Atlas Ontology (HOMBA) — 2341 brain/spinal cord structures"
+
+  # -- Bioinformatics --
   - name: edam
     url: http://edamontology.org/EDAM.obo
     format: obo
 
-  # -- Vocabulary/mapping standards (loaded into store for term validation) --
+  # -- Vocabulary standards --
   - name: skos
     url: https://www.w3.org/2009/08/skos-reference/skos.rdf
     format: owl
@@ -37,4 +57,3 @@ ontologies:
     url: https://www.w3.org/ns/prov-o#
     format: ttl
     notes: "W3C PROV-O — validates provenance terms"
-    enabled: false  # Content negotiation needed; skip for now
