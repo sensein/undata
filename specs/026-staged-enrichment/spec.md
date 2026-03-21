@@ -38,7 +38,7 @@ A data curator runs the pipeline and elements flow through three stages: (1) ext
 
 ### User Story 2 — ontology_term Removed from Identity Hash (Priority: P1)
 
-The `ontology_term` field is moved out of the identity hash. An element's identity is determined solely by its structural properties (data_type, unit, constraints, min_value, max_value, response_options, source_attribute, source_class, type_ref). Ontology alignment is enrichment metadata, not identity.
+The `ontology_term` field is removed entirely (not just moved — no service launched). Identity is computed post-enrichment via two modes: ontology-anchored (`data_type + unit + pattern + response_options + primary_ontology_uri`) or structural fallback (`data_type + unit + pattern + response_options + class + attribute + description`).
 
 **Why this priority**: This is the root cause of enrichment creating new elements. When ontology_term is in the hash, assigning it changes the identity → new element. Moving it out means enrichment is purely additive metadata, never identity-changing.
 
@@ -46,7 +46,7 @@ The `ontology_term` field is moved out of the identity hash. An element's identi
 
 **Acceptance Scenarios**:
 
-1. **Given** element A has `ontology_term: null` and element B has `ontology_term: NCIT:C25150`, **When** both have the same data_type/unit/constraints, **Then** they produce the same sha256 hash (ontology_term excluded).
+1. **Given** element A and element B have the same data_type/unit/response_options and the same primary ontology annotation URI, **Then** they produce the same sha256 hash (merged).
 2. **Given** the existing registry has elements with ontology_term in the hash, **When** migration runs, **Then** elements are rehashed without ontology_term and duplicates are merged.
 
 ---
@@ -97,11 +97,12 @@ After enrichment, the commit stage computes the final content-addressed hash of 
 - **FR-001**: `ontology_term` MUST be removed from `SemanticIdentity` and `ValueSemanticIdentity` (no service launched — just remove, no deprecation). Ontology alignment is stored exclusively in `ontology_annotations: list[OntologyAnnotation]` (as defined in 025).
 - **FR-002**: The identity hash MUST be computed **post-enrichment at commit time** using two modes:
   - **Ontology-anchored** (preferred, when high-precision match exists): `data_type + unit + response_options + primary_ontology_uri` where primary_ontology_uri comes from the highest-scoring annotation with `skos:exactMatch` or `element_match`.
-  - **Structural fallback** (when no high-precision ontology match): `data_type + unit + response_options + class + attribute + description`.
-  - The excluded set is: `question_text`, `value_domain`, `ontology_annotations` (the full list — only the primary URI enters the hash when ontology-anchored).
-  - `source_attribute` and `source_class` are removed from the hash (replaced by `class + attribute + description` in fallback mode).
+  - **Structural fallback** (when no high-precision ontology match): `data_type + unit + response_options + class + attribute + description` where class/attribute/description come from the **first provenance entry** (the original ingestion source).
+  - The excluded set is: `question_text`, `value_domain`, `ontology_annotations` (the full annotation list — only the primary URI enters the hash when ontology-anchored; all other annotations are metadata only).
+  - `source_attribute` and `source_class` are removed from SemanticIdentity (replaced by class + attribute + description from provenance in fallback mode).
+  - `constraints` field is removed; `pattern` moves directly to SemanticIdentity.
 - **FR-002b**: Hashing MUST NOT happen at extraction time. Staged entities use UUIDs. Hashing happens only at commit, after enrichment + alignment have determined what the element represents.
-- **FR-003**: Existing elements MUST be rehashed after the change. Elements that become duplicates (same hash after ontology_term exclusion) MUST be merged — provenance entries combined, one file retained.
+- **FR-003**: Since no service has launched, existing registry output is simply deleted and re-extracted with the new identity model. No migration of existing files needed — a clean re-extraction replaces the registry entirely.
 
 **Staged Pipeline**
 

@@ -33,7 +33,7 @@
 
 - [ ] T011 [US2] Add `compute_identity_hash(semantic: dict, provenance: list[dict], ontology_anchored: bool) -> str` to `library/src/undata_library/hashing.py`
 - [ ] T012 [US2] Implement ontology-anchored mode: hash from `data_type + unit + pattern + response_options (sorted) + min_value + max_value + type_ref + primary_ontology_uri`
-- [ ] T013 [US2] Implement structural fallback mode: hash from `data_type + unit + pattern + response_options (sorted) + min_value + max_value + type_ref + class + attribute + description` (class/attribute/description from first provenance entry)
+- [ ] T013 [US2] Implement structural fallback mode: hash from `data_type + unit + pattern + response_options (sorted) + min_value + max_value + type_ref + class + attribute + description` — class/attribute/description taken from the **first provenance entry** (original ingestion source, by insertion order)
 - [ ] T014 [US2] Add `determine_hash_mode(ontology_annotations) -> tuple[bool, str | None]`: returns `(True, primary_uri)` if primary annotation has skos:exactMatch or element_match with high score; else `(False, None)`
 - [ ] T015 [US2] Write tests in `library/tests/test_two_mode_hash.py`: (a) ontology-anchored: two elements with same data_type+unit+ontology_uri produce same hash regardless of class/attribute; (b) fallback: two elements with same data_type but different class+attribute produce different hashes; (c) PHQ-9 scenario: same response_options + different description → different hashes; (d) sex scenario: same response_options + same ontology → same hash (merge)
 - [ ] T016 Lint + run all tests; commit Phase 2
@@ -45,7 +45,7 @@
 **Goal**: Extract writes to `.staging/{run_id}/` with UUIDs.
 
 - [ ] T017 [US1] Add `generate_run_id() -> str` and `create_staging_dir(output_dir, run_id) -> Path` to `library/src/undata_library/ingest.py`
-- [ ] T018 [US1] Modify `ingest_source()` in `ingest.py`: accept `staging_dir` parameter; write entities with UUID filenames (no hashing at extraction time); store raw provenance (class, name, description from source)
+- [ ] T018 [US1] Modify `ingest_source()` in `ingest.py`: accept `staging_dir` parameter; write entities with per-entity UUID filenames (`{uuid4()}.yaml`); no hashing at extraction time; store raw provenance (class, name, description from source)
 - [ ] T019 [US1] Add `cleanup_stale_staging(output_dir, max_age_hours=24)` to `ingest.py`
 - [ ] T020 [US1] Write tests in `library/tests/test_staging.py`: (a) staged entities have UUID filenames; (b) no sha256 computed at extraction; (c) staging dir has correct structure; (d) stale cleanup works
 - [ ] T021 Lint + run all tests; commit Phase 3

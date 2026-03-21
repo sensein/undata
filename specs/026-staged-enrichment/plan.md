@@ -129,16 +129,22 @@ hash_input = {
 |------|--------|
 | `commit.py` | NEW — `commit_staged(staging_dir, output_dir)`: for each entity, determine hash mode (ontology-anchored or fallback), compute hash, write to registry, merge duplicates, delete staging |
 
+**Multi-annotation → single hash relationship**:
+- Enrichment produces `ontology_annotations: list[OntologyAnnotation]` (multiple terms, 025 heuristic)
+- Only the **primary** annotation (highest score with exactMatch/element_match) enters the hash
+- All other annotations are metadata (for discovery, not identity)
+- Fallback uses first provenance entry's class + attribute + description
+
 **Commit logic**:
 ```
 for each staged entity:
-    annotations = entity.semantic.ontology_annotations
+    annotations = entity.semantic.ontology_annotations  # list from 025 heuristic
     primary = find primary annotation with exactMatch/element_match
     if primary and primary.score >= threshold:
-        mode = "ontology_anchored"
+        mode = "ontology_anchored"  # primary URI in hash
         hash = compute_identity_hash(semantic, provenance, ontology_anchored=True)
     else:
-        mode = "structural_fallback"
+        mode = "structural_fallback"  # class+attribute+description in hash
         hash = compute_identity_hash(semantic, provenance, ontology_anchored=False)
 
     filename = f"{name}_{hash[:12]}.yaml"
