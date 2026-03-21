@@ -5,6 +5,14 @@
 **Status**: Draft
 **Input**: Extend the ontology set beyond the 5 initial ontologies to cover broader neuroscience and neuroinformatics domains. Deduplicate across shared ontology bases. Use SKOS/LinkML mapping properties for precise match types. Enrich values and valuesets with ontology alignment.
 
+## Clarifications
+
+### Session 2026-03-21
+
+- Q: How should ontology-to-element matching distinguish concepts from data elements? → A: Ontology terms are concepts (e.g., NCIT:C25150 = "Age" as a concept, without type/unit). Data elements are concrete (type=float, unit=years). Every alignment must record a `match_level`: `concept_match` (ontology term represents the concept but not the data specifics) or `element_match` (ontology term exactly describes the data element including type/unit/enum values). Values/enums are more likely to be element_match (e.g., "male" = PATO:0000384 exactly). Properties are typically concept_match (e.g., "age" ≈ NCIT:C25150 conceptually).
+
+---
+
 ## User Scenarios & Testing
 
 ### User Story 1 — Extended Neuroscience Ontology Coverage (Priority: P1)
@@ -103,7 +111,15 @@ Individual values (ValueConcepts like "male", "female", "EEG") and valuesets (co
 
 - **FR-007**: Each ontology_term assignment in enrichment MUST include a `mapping_relation` field with a SKOS value: `skos:exactMatch`, `skos:closeMatch`, `skos:broadMatch`, `skos:narrowMatch`, or `skos:relatedMatch`.
 - **FR-008**: Mapping relation MUST be determined by: cosine distance (≥ 0.95 = exactMatch, 0.8–0.95 = closeMatch, 0.5–0.8 = relatedMatch) AND ontology hierarchy (if assigned term is a parent of a better-matching child = broadMatch).
-- **FR-009**: The enrichment provenance MUST record: term URI, term label, similarity score, and mapping_relation.
+- **FR-009**: The enrichment provenance MUST record: term URI, term label, similarity score, mapping_relation, and `match_level`.
+
+**Concept vs Data-Element Match Level**
+
+- **FR-014**: Every ontology alignment MUST include a `match_level` field distinguishing:
+  - `concept_match`: The ontology term represents the same concept as the data element but does not specify data type, unit, or constraints. Example: NCIT:C25150 (Age) aligns with element "age" (float/years) — the concept matches but the ontology term says nothing about the float type or year unit.
+  - `element_match`: The ontology term exactly describes the data element including its value space. Example: PATO:0000384 (male) aligns with value "male" — the term IS the value. Enum values and categorical constants are the primary candidates for element_match.
+- **FR-015**: `match_level` MUST be determined by: if the entity is a ValueConcept or enum value AND the cosine distance ≥ 0.9 → `element_match`; otherwise → `concept_match`.
+- **FR-016**: The `match_level` distinction MUST be surfaced in the enrichment provenance, the ontology-index, and any downstream transform generation (concept_match elements sharing the same ontology_term may still need transforms because they differ in data representation).
 
 **Value and Valueset Enrichment**
 
@@ -116,7 +132,8 @@ Individual values (ValueConcepts like "male", "female", "EEG") and valuesets (co
 
 - **OntologyConfig** (extended): Add 7 new ontologies to `ontologies.yaml` with URLs and formats.
 - **MappingRelation**: SKOS relation type on every ontology_term assignment (exactMatch, closeMatch, broadMatch, narrowMatch, relatedMatch).
-- **ValueEnrichment**: Ontology_term + mapping_relation on ValueConcept entities.
+- **MatchLevel**: `concept_match` (ontology term = concept, no data specifics) or `element_match` (ontology term = exact data value). Recorded on every alignment.
+- **ValueEnrichment**: Ontology_term + mapping_relation + match_level on ValueConcept entities.
 
 ## Success Criteria
 
@@ -127,6 +144,7 @@ Individual values (ValueConcepts like "male", "female", "EEG") and valuesets (co
 - **SC-003**: ≥ 80% of enriched elements have a `mapping_relation` field in provenance.
 - **SC-004**: Values like "male", "female", "Homo sapiens" are correctly mapped to their canonical ontology terms with ≥ 0.8 confidence.
 - **SC-005**: UBERON anatomical terms are found when searching for neuroscience anatomy concepts.
+- **SC-007**: Value "male" enriched with match_level=element_match; element "age" enriched with match_level=concept_match.
 - **SC-006**: Full ontology refresh for all 12+ ontologies completes in under 30 minutes.
 
 ### Assumptions
