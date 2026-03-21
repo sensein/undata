@@ -82,7 +82,21 @@ def test_same_hash_no_transform(tmp_path):
     elements_dir = tmp_path / "elements"
     elements_dir.mkdir()
 
-    sem = {"data_type": "string", "ontology_term": "http://example.org/X"}
+    sem = {
+        "data_type": "string",
+        "ontology_annotations": [
+            {
+                "term_uri": "http://example.org/X",
+                "term_label": "X",
+                "ontology": "test",
+                "mapping_relation": "skos:exactMatch",
+                "match_level": "concept_match",
+                "score": 0.97,
+                "model": "test",
+                "primary": True,
+            }
+        ],
+    }
     for name in ("a_abc123456789", "b_def123456789"):
         elem = {"semantic": sem, "provenance": [{"source": "test", "class": "X", "name": "x"}]}
         (elements_dir / f"{name}.yaml").write_text(yaml.dump(elem))
@@ -96,11 +110,23 @@ def test_bidirectional_transforms(tmp_path):
     elements_dir = tmp_path / "elements"
     elements_dir.mkdir()
 
+    onto_ann = [
+        {
+            "term_uri": "http://example.org/age",
+            "term_label": "Age",
+            "ontology": "test",
+            "mapping_relation": "skos:exactMatch",
+            "match_level": "concept_match",
+            "score": 0.97,
+            "model": "test",
+            "primary": True,
+        }
+    ]
     elem_a = {
         "semantic": {
             "data_type": "float",
             "unit": "year",
-            "ontology_term": "http://example.org/age",
+            "ontology_annotations": onto_ann,
         },
         "provenance": [{"source": "bids", "class": "Subject", "name": "age"}],
     }
@@ -108,7 +134,7 @@ def test_bidirectional_transforms(tmp_path):
         "semantic": {
             "data_type": "float",
             "unit": "month",
-            "ontology_term": "http://example.org/age",
+            "ontology_annotations": onto_ann,
         },
         "provenance": [{"source": "custom", "class": "Subject", "name": "age_months"}],
     }
@@ -131,7 +157,21 @@ def test_transform_has_sha256(tmp_path):
         (elements_dir / f"{name}.yaml").write_text(
             yaml.dump(
                 {
-                    "semantic": {"data_type": dt, "ontology_term": "http://example.org/X"},
+                    "semantic": {
+                        "data_type": dt,
+                        "ontology_annotations": [
+                            {
+                                "term_uri": "http://example.org/X",
+                                "term_label": "X",
+                                "ontology": "test",
+                                "mapping_relation": "skos:exactMatch",
+                                "match_level": "concept_match",
+                                "score": 0.97,
+                                "model": "test",
+                                "primary": True,
+                            }
+                        ],
+                    },
                     "provenance": [{"source": "test", "class": "C", "name": "x"}],
                 }
             )

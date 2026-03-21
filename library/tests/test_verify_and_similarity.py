@@ -44,7 +44,10 @@ class TestValuesetJaccard:
 class TestComputeSimilarity:
     def test_identical_elements(self):
         elem = {
-            "semantic": {"data_type": "string", "ontology_term": "http://example.org/X"},
+            "semantic": {
+                "data_type": "string",
+                "ontology_annotations": [{"term_uri": "http://example.org/X", "primary": True}],
+            },
             "provenance": [{"name": "field_x", "source": "a"}],
         }
         result = compute_similarity(elem, elem)

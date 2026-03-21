@@ -39,7 +39,7 @@ def generate_transforms(
     transforms_dir = library_path / "transforms"
     transforms_dir.mkdir(parents=True, exist_ok=True)
 
-    # Group elements by ontology_term
+    # Group elements by primary ontology annotation URI
     by_onto: dict[str, list[tuple[str, dict]]] = {}
     for f in sorted(elements_dir.glob("*.yaml")):
         try:
@@ -49,7 +49,16 @@ def generate_transforms(
         except (yaml.YAMLError, OSError):
             continue
 
-        onto = data["semantic"].get("ontology_term")
+        # Get primary annotation URI
+        annotations = data["semantic"].get("ontology_annotations", [])
+        onto = None
+        if annotations:
+            for ann in annotations:
+                if isinstance(ann, dict) and ann.get("primary"):
+                    onto = ann.get("term_uri")
+                    break
+            if not onto and annotations and isinstance(annotations[0], dict):
+                onto = annotations[0].get("term_uri")
         if not onto:
             continue
 

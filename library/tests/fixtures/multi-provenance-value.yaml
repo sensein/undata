@@ -1,12 +1,14 @@
 semantic:
-  ontology_term: http://purl.obolibrary.org/obo/PATO_0000384
   value_type: categorical
   label: male
 
 provenance:
   - source: bids
-    raw_value: "male"
+    class: participant
+    name: male
   - source: aind
-    raw_value: "Male"
+    class: subject
+    name: Male
   - source: nwb
-    raw_value: "M"
+    class: Subject
+    name: M

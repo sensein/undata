@@ -8,8 +8,10 @@ semantic:
 
 provenance:
   - source: bids
+    class: BIDS
     name: Participant
     description: "A participant in a study"
   - source: dandi
+    class: DANDI
     name: DandiModel
     description: "Subject metadata"

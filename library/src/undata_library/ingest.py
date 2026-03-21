@@ -15,7 +15,6 @@ from .hashing import (
     generate_short_key,
 )
 from .models import (
-    Constraints,
     ElementRecord,
     HashRegistry,
     HashRegistryEntry,
@@ -23,7 +22,6 @@ from .models import (
     ResponseOption,
     SemanticIdentity,
     ValueConcept,
-    ValueProvenance,
     ValueSemanticIdentity,
 )
 
@@ -79,16 +77,9 @@ def ingest_source(
         if "data_type" in sem_dict:
             sem_dict["data_type"] = str(sem_dict["data_type"])
 
-        has_rich_semantics = sem.ontology_term is not None or sem.unit is not None
-        if not has_rich_semantics:
-            # Include attribute name + class as disambiguators when
-            # the semantic graph is underspecified. These are persisted
-            # in the semantic block so the backend can reproduce the hash.
-            sem_dict["source_attribute"] = prov.name
-            sem_dict["source_class"] = prov.class_
-            sem = sem.model_copy(
-                update={"source_attribute": prov.name, "source_class": prov.class_}
-            )
+        # Description from provenance (used in structural fallback hash)
+        if prov.description:
+            sem_dict["description"] = prov.description
 
         sha = compute_sha256(canonical_json(sem_dict))
 
@@ -217,12 +208,13 @@ def _extract_values(
     # Collect all raw enum values with their source
     raw_values: list[tuple[str, str]] = []  # (raw_value, source_name)
     for sem, prov in pairs:
-        if sem.constraints and sem.constraints.allowed_values:
-            for val in sem.constraints.allowed_values:
-                raw_values.append((val, source_name))
+        # Extract enum values from response_options
+        if sem.response_options:
+            for opt in sem.response_options:
+                raw_values.append((opt.value, source_name))
 
     # Group by mapped identity
-    value_groups: dict[str, tuple[ValueSemanticIdentity, list[ValueProvenance]]] = {}
+    value_groups: dict[str, tuple[ValueSemanticIdentity, list[ProvenanceEntry]]] = {}
     for raw_val, src in raw_values:
         mapping = value_mappings.get(raw_val.lower())
         if mapping:
@@ -240,7 +232,7 @@ def _extract_values(
         sem_dict = sem_id.model_dump(exclude_none=True)
         sha = compute_sha256(canonical_json(sem_dict))
 
-        prov = ValueProvenance(source=src, raw_value=raw_val)
+        prov = ProvenanceEntry(source=src, **{"class": ""}, name=raw_val)
 
         if sha not in value_groups:
             value_groups[sha] = (sem_id, [])
@@ -293,7 +285,7 @@ def _extract_values(
 
 
 def _ingest_extracted_values(
-    value_pairs: list[tuple[ValueSemanticIdentity, ValueProvenance]],
+    value_pairs: list[tuple[ValueSemanticIdentity, ProvenanceEntry]],
     library_path: Path,
     registry: HashRegistry,
 ) -> int:
@@ -485,15 +477,14 @@ def _extract(
 
         sem_dict = entity.semantic
         dt = sem_dict.get("data_type", "string")
-        constraints = None
         response_options = None
+        pattern = None
 
         if sem_dict.get("constraints"):
             c = sem_dict["constraints"]
-            constraints = Constraints(
-                allowed_values=c.get("allowed_values"),
-                pattern=c.get("pattern"),
-            )
+            pattern = c.get("pattern")
+        if sem_dict.get("pattern"):
+            pattern = sem_dict["pattern"]
         if sem_dict.get("response_options"):
             response_options = [
                 ResponseOption(**opt) if isinstance(opt, dict) else opt
@@ -502,7 +493,7 @@ def _extract(
 
         sem = SemanticIdentity(
             data_type=dt,
-            constraints=constraints,
+            pattern=pattern,
             response_options=response_options,
             min_value=sem_dict.get("min_value"),
             max_value=sem_dict.get("max_value"),

@@ -11,7 +11,7 @@ SHORT_KEY_LENGTH = 12  # 12 hex chars = 6 bytes = 2^48 key space (~16.7M collisi
 
 
 # Fields excluded from identity hash (descriptive metadata, varies by source)
-_EXCLUDED_FROM_HASH = {"question_text", "value_domain", "ontology_annotations"}
+_EXCLUDED_FROM_HASH = {"question_text", "value_domain", "ontology_annotations", "description"}
 
 # Deprecated constraint fields (replaced by top-level min_value/max_value)
 _DEPRECATED_CONSTRAINT_FIELDS = {"minimum", "maximum"}
