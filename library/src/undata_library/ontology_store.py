@@ -181,19 +181,23 @@ class OntologyStore:
             f"}} }}"
         )
         # Deduplicate by URI; merge labels from all ontology graphs
-        terms: dict[str, set[str]] = {}  # uri → set of labels
-        for row in self.store.query(sparql):
-            uri = _val(row[0])
-            label = _val(row[1])
-            terms.setdefault(uri, set()).add(label)
+        terms: dict[str, set[str]] = {}
+        try:
+            for row in self.store.query(sparql):
+                uri = _val(row[0])
+                label = _val(row[1])
+                if uri and uri.startswith("http"):
+                    terms.setdefault(uri, set()).add(label)
+        except Exception as exc:
+            logger.warning("SPARQL all_terms query error: %s", exc)
 
         for uri, labels in terms.items():
-            # Use longest label as primary (most descriptive)
             primary_label = max(labels, key=len) if labels else ""
-            # Fetch all synonyms across all graphs
-            syn_q = f"SELECT DISTINCT ?s WHERE {{ GRAPH ?g {{ <{uri}> <{_OBO_SYNONYM}> ?s }} }}"
-            synonyms = [_val(row[0]) for row in self.store.query(syn_q)]
-            # Add non-primary labels as extra synonyms
+            try:
+                syn_q = f"SELECT DISTINCT ?s WHERE {{ GRAPH ?g {{ <{uri}> <{_OBO_SYNONYM}> ?s }} }}"
+                synonyms = [_val(row[0]) for row in self.store.query(syn_q)]
+            except Exception:
+                synonyms = []
             extra = [lbl for lbl in labels if lbl != primary_label]
             all_synonyms = list(set(synonyms + extra))
             yield uri, primary_label, all_synonyms
@@ -327,4 +331,5 @@ def load_ontology_config(path: Path | None = None) -> list[dict]:
     """Load ontology config from YAML."""
     config_path = path or _BUNDLED_CONFIG
     data = yaml.safe_load(config_path.read_text(encoding="utf-8"))
-    return data.get("ontologies", [])
+    all_onts = data.get("ontologies", [])
+    return [o for o in all_onts if o.get("enabled", True) is not False]
