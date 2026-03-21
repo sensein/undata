@@ -176,17 +176,23 @@ class OntologyStore:
             f'FILTER NOT EXISTS {{ ?s <{_OWL_DEPRECATED}> "true" }} '
             f"}} }}"
         )
-        # Batch: collect URIs first, then fetch synonyms
-        terms: dict[str, str] = {}
+        # Deduplicate by URI; merge labels from all ontology graphs
+        terms: dict[str, set[str]] = {}  # uri → set of labels
         for row in self.store.query(sparql):
             uri = _val(row[0])
             label = _val(row[1])
-            terms[uri] = label
+            terms.setdefault(uri, set()).add(label)
 
-        for uri, label in terms.items():
-            syn_q = f"SELECT ?s WHERE {{ GRAPH ?g {{ <{uri}> <{_OBO_SYNONYM}> ?s }} }}"
+        for uri, labels in terms.items():
+            # Use longest label as primary (most descriptive)
+            primary_label = max(labels, key=len) if labels else ""
+            # Fetch all synonyms across all graphs
+            syn_q = f"SELECT DISTINCT ?s WHERE {{ GRAPH ?g {{ <{uri}> <{_OBO_SYNONYM}> ?s }} }}"
             synonyms = [_val(row[0]) for row in self.store.query(syn_q)]
-            yield uri, label, synonyms
+            # Add non-primary labels as extra synonyms
+            extra = [lbl for lbl in labels if lbl != primary_label]
+            all_synonyms = list(set(synonyms + extra))
+            yield uri, primary_label, all_synonyms
 
     def term_count(self, ontology: str | None = None) -> int:
         """Count terms in store."""

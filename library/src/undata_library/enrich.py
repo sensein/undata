@@ -192,6 +192,76 @@ def _load_ontology_cache(cache_dir: Path) -> dict[str, dict]:
     return cache
 
 
+def _assign_ontology_annotations(
+    element_uri: str,
+    elem_store: EmbeddingStore,
+    onto_store: EmbeddingStore,
+    onto_cache: dict[str, dict],
+    threshold: float,
+    is_value: bool = False,
+    model_name: str = "all-MiniLM-L6-v2",
+    max_annotations: int = 10,
+    gap_threshold: float = 0.15,
+) -> list[dict]:
+    """Assign multiple ontology annotations via embedding similarity.
+
+    Returns list of OntologyAnnotation-compatible dicts.
+    Heuristic: threshold + gap cutoff + max cap.
+    """
+    from .models import MatchLevel
+
+    vec = elem_store.get_vector(element_uri)
+    if vec is None:
+        return []
+
+    results = onto_store.nearest(vec, top_k=20)
+    if not results:
+        return []
+
+    annotations = []
+    prev_score = None
+
+    for uri, score in results:
+        if score < threshold:
+            break
+        # Gap cutoff
+        if prev_score is not None and (prev_score - score) > gap_threshold:
+            break
+        if len(annotations) >= max_annotations:
+            break
+
+        # Skip deprecated terms
+        term_info = onto_cache.get(uri, {})
+        if term_info.get("deprecated", False):
+            continue
+
+        label = term_info.get("label", "")
+        # Determine ontology from URI
+        ontology = _ontology_from_uri(uri)
+        # SKOS relation from score
+        mapping_relation = _score_to_skos(score)
+        # Match level
+        match_level = (
+            MatchLevel.element_match if is_value and score >= 0.9 else MatchLevel.concept_match
+        )
+
+        annotations.append(
+            {
+                "term_uri": uri,
+                "term_label": label,
+                "ontology": ontology,
+                "mapping_relation": mapping_relation,
+                "match_level": match_level.value,
+                "score": round(score, 4),
+                "model": model_name,
+                "primary": len(annotations) == 0,  # first = primary
+            }
+        )
+        prev_score = score
+
+    return annotations
+
+
 def _assign_ontology_term(
     element_uri: str,
     elem_store: EmbeddingStore,
@@ -199,25 +269,34 @@ def _assign_ontology_term(
     onto_cache: dict[str, dict],
     threshold: float,
 ) -> str | None:
-    """Assign best-matching ontology term via embedding cosine distance."""
-    vec = elem_store.get_vector(element_uri)
-    if vec is None:
+    """Legacy single-term assignment. Returns primary term URI or None."""
+    annotations = _assign_ontology_annotations(
+        element_uri, elem_store, onto_store, onto_cache, threshold
+    )
+    if not annotations:
         return None
+    return annotations[0]["term_uri"]
 
-    results = onto_store.nearest(vec, top_k=1)
-    if not results:
-        return None
 
-    best_uri, best_score = results[0]
-    if best_score < threshold:
-        return None
+def _score_to_skos(score: float) -> str:
+    """Map cosine similarity to SKOS mapping relation."""
+    if score >= 0.95:
+        return "skos:exactMatch"
+    if score >= 0.8:
+        return "skos:closeMatch"
+    if score >= 0.5:
+        return "skos:relatedMatch"
+    return "skos:noMatch"  # Below threshold — should not be used (filtered earlier)
 
-    # Verify term is not deprecated
-    term_info = onto_cache.get(best_uri, {})
-    if term_info.get("deprecated", False):
-        return None
 
-    return best_uri
+def _ontology_from_uri(uri: str) -> str:
+    """Extract ontology prefix from term URI."""
+    # http://purl.obolibrary.org/obo/NCIT_C25150 → ncit
+    if "/obo/" in uri:
+        part = uri.rsplit("/obo/", 1)[-1]
+        prefix = part.split("_")[0]
+        return prefix.lower()
+    return "unknown"
 
 
 def _resolve_response_options(sem: dict, value_lookup: dict[str, str]) -> int:
