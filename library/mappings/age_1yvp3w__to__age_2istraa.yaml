@@ -1,8 +1,0 @@
-source_element: https://schema.undata.live/elements/age_1yvp3w
-target_element: https://schema.undata.live/elements/age_2istraa
-function_type: unit_conversion
-expression: f'P{int(value)}Y'
-expression_type: python_fstring
-sssom_predicate: skos:closeMatch
-provenance:
-- source: curated

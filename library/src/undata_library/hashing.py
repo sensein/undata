@@ -83,6 +83,11 @@ def build_value_uri(label: str, key: str) -> str:
     return f"{BASE_URI}/values/{label.lower()}_{key}"
 
 
+def build_transform_uri(source_name: str, target_name: str, key: str) -> str:
+    """Build a full transform URI from source/target names and short key."""
+    return f"{BASE_URI}/transforms/{source_name.lower()}_to_{target_name.lower()}_{key}"
+
+
 def build_valueset_uri(name: str, key: str) -> str:
     """Build a full valueset URI from name and short key."""
     return f"{BASE_URI}/valuesets/{name.lower()}_{key}"

@@ -28,8 +28,10 @@ class DataType(str, Enum):
 class MappingFunctionType(str, Enum):
     identity = "identity"
     unit_conversion = "unit_conversion"
+    type_conversion = "type_conversion"
     scaling = "scaling"
     structural = "structural"
+    value_mapping = "value_mapping"
     unknown = "unknown"
 
 
@@ -286,6 +288,28 @@ class MappingRecord(BaseModel):
     confidence: float | None = None
     sssom_predicate: str | None = None
     provenance: list[MappingProvenance] = Field(default_factory=list)
+
+
+class FunctionSpec(BaseModel):
+    """Typed function specification for a transform."""
+
+    function_type: MappingFunctionType
+    input_type: str  # data_type of source element
+    output_type: str  # data_type of target element
+    expression: str | None = None  # formula, named function, or template
+    expression_type: str = "none"  # arithmetic|named_function|template|lookup_table|none
+    parameters: dict | None = None  # e.g., {factor: 12, unit_from: "year"}
+
+
+class TransformRecord(BaseModel):
+    """Content-addressed bidirectional transform between two elements."""
+
+    source_element: str  # element URI
+    target_element: str  # element URI
+    function: FunctionSpec
+    confidence: float | None = None
+    sssom_predicate: str | None = None
+    provenance: list[ProvenanceEntry] = Field(default_factory=list)
 
 
 # ---------------------------------------------------------------------------
