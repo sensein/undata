@@ -58,7 +58,6 @@ def ingest_source(
     # Load existing hash registry
     registry_path = library_path / "hash-registry.yaml"
     registry = _load_registry(registry_path)
-    existing_keys = set(registry.elements.keys())
 
     elements_dir = library_path / "elements"
     elements_dir.mkdir(parents=True, exist_ok=True)
@@ -95,16 +94,9 @@ def ingest_source(
             hash_to_records[sha] = (sem, [], prov.name)
         hash_to_records[sha][1].append(prov)
 
-    # Build reverse lookup: sha256 → existing key (for cross-invocation merging)
-    sha_to_key: dict[str, str] = {entry.sha256: key for key, entry in registry.elements.items()}
-
     for sha, (sem, provs, first_name) in hash_to_records.items():
-        # Check if this hash already exists in registry (from a prior ingest)
-        if sha in sha_to_key:
-            key = sha_to_key[sha]
-        else:
-            key = generate_short_key(sha, existing_keys)
-            existing_keys.add(key)
+        # Deterministic 12-hex-char key from SHA-256 (no collision detection needed)
+        key = generate_short_key(sha)
 
         attr_name = first_name.lower().lstrip("_")
         filename = f"{attr_name}_{key}.yaml"
@@ -120,11 +112,11 @@ def ingest_source(
             if new_provs:
                 all_provs = existing_record.provenance + new_provs
                 record = ElementRecord(semantic=existing_record.semantic, provenance=all_provs)
-                _write_element(filepath, record)
+                _write_element(filepath, record, sha256=sha)
                 merged += len(new_provs)
         else:
             record = ElementRecord(semantic=sem, provenance=provs)
-            _write_element(filepath, record)
+            _write_element(filepath, record, sha256=sha)
             created += 1
 
         # Update registry
@@ -249,7 +241,7 @@ def _extract_values(
 
     created = 0
     for sha, (sem_id, provs) in value_groups.items():
-        key = generate_short_key(sha, existing_keys)
+        key = generate_short_key(sha)
         existing_keys.add(key)
 
         safe_label = (
@@ -304,7 +296,7 @@ def _ingest_extracted_values(
     for sem_id, prov in value_pairs:
         sem_dict = sem_id.model_dump(exclude_none=True)
         sha = compute_sha256(canonical_json(sem_dict))
-        key = generate_short_key(sha, existing_keys)
+        key = generate_short_key(sha)
         existing_keys.add(key)
 
         safe_label = (
@@ -422,9 +414,11 @@ def _extract(
         raise ValueError(f"Unknown source: {source_name}")
 
 
-def _write_element(path: Path, record: ElementRecord) -> None:
-    """Write an element record to YAML."""
+def _write_element(path: Path, record: ElementRecord, sha256: str | None = None) -> None:
+    """Write an element record to YAML, with full SHA-256 for verification."""
     data = record.model_dump(mode="json", exclude_none=True, by_alias=True)
+    if sha256:
+        data["sha256"] = sha256
     path.write_text(yaml.dump(data, default_flow_style=False, sort_keys=False), encoding="utf-8")
 
 
@@ -489,8 +483,7 @@ def _build_schemas_from_provenance(
         schema_dict = schema_id.model_dump(mode="json", exclude_none=True)
         canonical = canonical_json(schema_dict)
         sha = compute_sha256(canonical)
-        key = generate_short_key(sha, existing_schema_keys)
-        existing_schema_keys.add(key)
+        key = generate_short_key(sha)
 
         filename = f"{class_name.lower()}_{key}.yaml"
         filepath = schemas_dir / filename

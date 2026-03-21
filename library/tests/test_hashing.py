@@ -49,24 +49,24 @@ class TestComputeSha256:
 
 
 class TestGenerateShortKey:
-    def test_length_is_6(self):
+    def test_length_is_12(self):
         key = generate_short_key("a" * 64)
-        assert len(key) == 6
+        assert len(key) == 12
 
-    def test_alphanumeric(self):
+    def test_hex_chars(self):
         key = generate_short_key("b" * 64)
-        assert key.isalnum()
+        assert all(c in "0123456789abcdef" for c in key)
 
-    def test_collision_extends_key(self):
+    def test_deterministic_no_state(self):
+        """Same hash always produces same key — no existing_keys needed."""
         h1 = compute_sha256("test1")
         h2 = compute_sha256("test2")
         k1 = generate_short_key(h1)
-        # Force collision by pre-registering k1
-        k2 = generate_short_key(h2, existing_keys={k1})
-        # k2 should be different from k1 (may be same length if no collision,
-        # or longer if there was one)
-        # Just verify keys are generated without error
-        assert k2.isalnum()
+        k2 = generate_short_key(h2)
+        assert k1 != k2  # different hashes → different keys
+        # Re-compute — must be identical
+        assert generate_short_key(h1) == k1
+        assert generate_short_key(h2) == k2
 
     def test_same_hash_same_key(self):
         h = compute_sha256("consistent")

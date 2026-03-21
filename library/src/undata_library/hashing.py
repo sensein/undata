@@ -7,9 +7,7 @@ import json
 from typing import Any
 
 BASE_URI = "https://schema.undata.live"
-SHORT_KEY_LENGTH = 6
-MAX_KEY_LENGTH = 10
-BASE36_CHARS = "0123456789abcdefghijklmnopqrstuvwxyz"
+SHORT_KEY_LENGTH = 12  # 12 hex chars = 6 bytes = 2^48 key space (~16.7M collision threshold)
 
 
 # Fields excluded from identity hash (descriptive metadata, varies by source)
@@ -64,44 +62,15 @@ def compute_sha256(canonical: str) -> str:
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
 
-def _bytes_to_base36(data: bytes) -> str:
-    """Convert bytes to base36 string."""
-    num = int.from_bytes(data, "big")
-    if num == 0:
-        return "0"
-    result = []
-    while num:
-        num, remainder = divmod(num, 36)
-        result.append(BASE36_CHARS[remainder])
-    return "".join(reversed(result))
+def generate_short_key(sha256_hex: str, **_kwargs) -> str:
+    """Generate a deterministic 12-hex-char key from SHA-256.
 
-
-def generate_short_key(
-    sha256_hex: str,
-    existing_keys: set[str] | None = None,
-) -> str:
-    """Generate a 6-char base36 key from SHA-256, with collision detection.
-
-    If the generated key collides with an existing key (for a different hash),
-    extend by 1 char until unique, up to MAX_KEY_LENGTH.
+    Uses the first 12 hex characters (6 bytes) of the SHA-256 digest.
+    Key space: 2^48 ≈ 281 trillion — collision threshold ~16.7M elements.
+    Fully deterministic: same SHA-256 always produces the same key,
+    regardless of which system computes it.
     """
-    raw_bytes = bytes.fromhex(sha256_hex[:8])  # first 4 bytes
-    base36 = _bytes_to_base36(raw_bytes)
-
-    # Pad or truncate to SHORT_KEY_LENGTH
-    key = base36[:SHORT_KEY_LENGTH].ljust(SHORT_KEY_LENGTH, "0")
-
-    if existing_keys is None:
-        return key
-
-    # Collision resolution: extend key length
-    length = SHORT_KEY_LENGTH
-    full_base36 = _bytes_to_base36(bytes.fromhex(sha256_hex[:16]))
-    while key in existing_keys and length < MAX_KEY_LENGTH:
-        length += 1
-        key = full_base36[:length].ljust(length, "0")
-
-    return key
+    return sha256_hex[:SHORT_KEY_LENGTH]
 
 
 def build_element_uri(attribute: str, key: str) -> str:

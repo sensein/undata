@@ -307,6 +307,7 @@ def _create_enriched_element(
 
     # New element data with enriched semantic + original provenance + enrichment entry
     new_data = {
+        "sha256": sha,
         "semantic": new_semantic,
         "provenance": list(original_data.get("provenance", [])) + [enrichment_prov],
     }
