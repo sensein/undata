@@ -1,0 +1,7 @@
+name: bids
+repo: https://github.com/bids-standard/bids-specification
+default_version: latest
+acquisition: pip_install
+package: bidsschematools
+adapter: bids
+isolation: venv

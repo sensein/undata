@@ -164,6 +164,13 @@ def diff(file: str, fmt: str) -> None:
 @click.option("--docker-timeout", default=300, help="Container timeout in seconds")
 @click.option("--strict", is_flag=True, help="Exit 1 on any validation violation")
 @click.option("--skip-validation", is_flag=True, help="Skip post-ingestion validation")
+@click.option(
+    "--version", "source_version", default=None, help="Pin source version (git tag/branch/SHA)"
+)
+@click.option("--refresh", is_flag=True, help="Force re-download even if cached")
+@click.option("--offline", is_flag=True, help="Use only cached sources (no network)")
+@click.option("--keep-envs", is_flag=True, help="Keep temporary venvs after extraction")
+@click.option("--source-def", "source_def_path", default=None, help="Custom source definition YAML")
 def ingest(
     source: str,
     path: str | None,
@@ -178,6 +185,11 @@ def ingest(
     docker_timeout: int,
     strict: bool,
     skip_validation: bool,
+    source_version: str | None,
+    refresh: bool,
+    offline: bool,
+    keep_envs: bool,
+    source_def_path: str | None,
 ) -> None:
     """Ingest elements from raw schema files into the library."""
     if workflow_path:
@@ -621,3 +633,34 @@ def embed_cmd(path: str, model: str, include_ontology: bool) -> None:
             click.echo(f"  {onto_store.size} terms → {onto_out}")
         else:
             click.echo("  No ontology-cache/ found — skipping ontology embeddings.")
+
+
+@main.group("cache")
+def cache_group() -> None:
+    """Manage the source cache."""
+
+
+@cache_group.command("list")
+def cache_list() -> None:
+    """Show all cached sources."""
+    from .acquisition import SourceCache
+
+    cache = SourceCache()
+    entries = cache.list_cached()
+    if not entries:
+        click.echo("No cached sources.")
+        return
+    for e in entries:
+        click.echo(f"  {e['source']}/{e['version']}  {e['size_mb']}MB  {e['downloaded_at']}")
+    click.echo(f"\n{len(entries)} cached sources.")
+
+
+@cache_group.command("clean")
+@click.option("--older-than", default=None, type=int, help="Remove sources older than N days")
+def cache_clean(older_than: int | None) -> None:
+    """Remove cached sources."""
+    from .acquisition import SourceCache
+
+    cache = SourceCache()
+    removed = cache.clean(older_than_days=older_than)
+    click.echo(f"Removed {removed} cached source(s).")

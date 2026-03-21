@@ -248,6 +248,20 @@ class WorkflowSpec(BaseModel):
     validation: WorkflowValidation = Field(default_factory=WorkflowValidation)
 
 
+class SourceDefinition(BaseModel):
+    """Declarative specification for a schema source."""
+
+    name: str
+    repo: str
+    default_version: str = "latest"
+    acquisition: str  # git_clone | pip_install | download_file
+    package: str | None = None  # Python package name (for pip_install)
+    adapter: str  # adapter name from registry
+    schema_path: str | None = None  # glob pattern for schema files
+    isolation: str = "none"  # none | venv | docker
+    python_version: str | None = None  # e.g., "3.12" for bridge venvs
+
+
 class IngestionViolation(BaseModel):
     """A single validation violation in an ingestion report."""
 

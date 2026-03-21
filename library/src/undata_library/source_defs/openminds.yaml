@@ -1,0 +1,7 @@
+name: openminds
+repo: https://github.com/openMetadataInitiative/openMINDS
+default_version: latest
+acquisition: git_clone
+schema_path: "**/*.jsonld"
+adapter: openminds
+isolation: none
