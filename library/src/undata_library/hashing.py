@@ -83,6 +83,11 @@ def build_value_uri(label: str, key: str) -> str:
     return f"{BASE_URI}/values/{label.lower()}_{key}"
 
 
+def build_valueset_uri(name: str, key: str) -> str:
+    """Build a full valueset URI from name and short key."""
+    return f"{BASE_URI}/valuesets/{name.lower()}_{key}"
+
+
 def build_schema_uri(name: str, key: str) -> str:
     """Build a full schema URI from class name and short key."""
     return f"{BASE_URI}/schemas/{name.lower()}_{key}"

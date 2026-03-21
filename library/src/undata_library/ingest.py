@@ -475,7 +475,6 @@ def _build_schemas_from_provenance(
                         class_elements[p["class"]].append(entry.uri)
 
     created = 0
-    existing_schema_keys = set(registry.schemas.keys())
 
     for class_name, element_uris in class_elements.items():
         sorted_uris = sorted(set(element_uris))

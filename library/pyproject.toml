@@ -20,6 +20,8 @@ bids = ["bidsschematools"]
 dandi = ["dandischema"]
 similarity = ["sentence-transformers>=3.0"]
 embeddings = ["sentence-transformers>=3.0"]
+llm = ["litellm>=1.40"]
+docker = ["docker>=7.0"]
 
 [dependency-groups]
 dev = [
