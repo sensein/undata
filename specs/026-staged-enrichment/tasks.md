@@ -40,12 +40,12 @@
 **Goal**: Enrich modifies staged entity files in-place. No new entities created.
 
 - [ ] T012 [US3] Remove `_create_enriched_element()` from `library/src/undata_library/enrich.py`
-- [ ] T013 [US3] Add `_update_entity_in_place(filepath, ontology_annotations, value_domain, provenance_entry)` to `enrich.py`: reads YAML, adds/replaces ontology_annotations + value_domain in semantic block, appends enrichment provenance, writes back to same file
-- [ ] T014 [US3] Refactor `enrich_elements()` in `enrich.py`: iterate staged element files, call `_update_entity_in_place()` instead of creating new elements; remove all `enriched_new` / `derived_from` logic
+- [ ] T013 [US3] Add `_update_entity_in_place(filepath, ontology_annotations: list[OntologyAnnotation], value_domain, provenance_entry)` to `enrich.py`: reads YAML, writes `ontology_annotations` list (multi-term with SKOS relation + match_level + score + model per 025 model), adds/replaces value_domain in semantic block, appends enrichment provenance, writes back to same file
+- [ ] T014 [US3] Refactor `enrich_elements()` in `enrich.py`: use `_assign_ontology_annotations()` from 025 (multi-term heuristic: threshold + gap cutoff + max 10); call `_update_entity_in_place()` instead of `_create_enriched_element()`; remove all `enriched_new` / `derived_from` logic
 - [ ] T015 [US3] Implement enrichment dependency order in `enrich.py`: `enrich_all(staging_dir)` calls: (1) `enrich_elements()` + `enrich_values()` in parallel, (2) `enrich_valuesets()`, (3) `enrich_schemas()`
-- [ ] T016 [P] [US3] Add `enrich_values(staging_dir, onto_store, threshold=0.8)` to `enrich.py`: embed value labels, assign ontology_annotations with element_match for score ≥ 0.9
-- [ ] T017 [P] [US3] Add `enrich_valuesets(staging_dir)` to `enrich.py`: derive ontology_namespace from enriched member value annotations
-- [ ] T018 [US3] Add `enrich_schemas(staging_dir, onto_store)` to `enrich.py`: assign ontology_annotations for schema class concepts
+- [ ] T016 [P] [US3] Add `enrich_values(staging_dir, onto_store, threshold=0.8)` to `enrich.py`: embed value labels, assign `ontology_annotations: list[OntologyAnnotation]` with `match_level: element_match` for score ≥ 0.9, SKOS relation from score
+- [ ] T017 [P] [US3] Add `enrich_valuesets(staging_dir)` to `enrich.py`: derive `ontology_namespace` from enriched member value annotations; assign own `ontology_annotations` for collection concept
+- [ ] T018 [US3] Add `enrich_schemas(staging_dir, onto_store)` to `enrich.py`: assign `ontology_annotations: list[OntologyAnnotation]` with `match_level: concept_match` for class concepts, SKOS relation from score
 - [ ] T019 [US3] Write tests in `library/tests/test_staged_enrich.py`: (a) enrichment does NOT create new files; (b) sha256 unchanged after enrichment; (c) ontology_annotations present after enrichment; (d) value_domain set; (e) enrichment provenance appended; (f) idempotent on re-run; (g) dependency order: values before valuesets before schemas
 - [ ] T020 Lint + run all tests; commit Phase 3
 

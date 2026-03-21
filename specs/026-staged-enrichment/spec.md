@@ -82,8 +82,8 @@ After enrichment, the commit stage computes the final content-addressed hash of 
 
 **Identity Hash Changes**
 
-- **FR-001**: `ontology_term` MUST be removed from the identity hash. It MUST be added to `_EXCLUDED_FROM_HASH` alongside `question_text`, `value_domain`, and `ontology_annotations`.
-- **FR-002**: The identity hash MUST be determined solely by: `data_type`, `unit`, `constraints` (pattern + allowed_values only), `min_value`, `max_value`, `response_options` (sorted by value), `source_attribute`, `source_class`, `type_ref`.
+- **FR-001**: `ontology_term` MUST be deprecated. The canonical enrichment output is `ontology_annotations: list[OntologyAnnotation]` (as defined in 025) — a list of multi-term annotations each with: `term_uri`, `term_label`, `ontology`, `mapping_relation` (SKOS), `match_level` (concept_match/element_match), `score`, `model`, `primary`. Both `ontology_term` and `ontology_annotations` MUST be excluded from the identity hash.
+- **FR-002**: The identity hash MUST be determined solely by: `data_type`, `unit`, `constraints` (pattern + allowed_values only), `min_value`, `max_value`, `response_options` (sorted by value), `source_attribute`, `source_class`, `type_ref`. All ontology alignment metadata is excluded.
 - **FR-003**: Existing elements MUST be rehashed after the change. Elements that become duplicates (same hash after ontology_term exclusion) MUST be merged — provenance entries combined, one file retained.
 
 **Staged Pipeline**
@@ -92,35 +92,37 @@ After enrichment, the commit stage computes the final content-addressed hash of 
 - **FR-005**: Enrichment MUST only modify non-hash fields: `ontology_annotations`, `value_domain`, `question_text`, and provenance entries. It MUST NOT modify any field in `_EXCLUDED_FROM_HASH`'s complement (the hashed fields).
 - **FR-006**: After enrichment, the sha256 of every element MUST match its pre-enrichment sha256 (identity unchanged).
 
-**In-Place Enrichment**
+**In-Place Enrichment (Multi-Annotation Model from 025)**
 
-- **FR-007**: `enrich` command MUST update element files in-place — adding `ontology_annotations`, `value_domain`, and enrichment provenance to existing files. No new files created.
-- **FR-008**: Enrichment provenance MUST be appended to the existing provenance list with `activity: enrichment`.
-- **FR-009**: Re-running enrichment MUST be idempotent when ontology state hasn't changed.
-- **FR-010**: The `_create_enriched_element()` function (which creates new elements with derived_from) MUST be removed or disabled. Enrichment uses `_update_element_in_place()` instead.
+- **FR-007**: `enrich` command MUST update registry entity files in-place — writing `ontology_annotations: list[OntologyAnnotation]` (multiple terms per entity with SKOS relation + match_level + score + model), `value_domain`, and enrichment provenance. No new files created.
+- **FR-008**: Each `OntologyAnnotation` in the list MUST include: `term_uri`, `term_label`, `ontology`, `mapping_relation` (skos:exactMatch/closeMatch/broadMatch/narrowMatch/relatedMatch), `match_level` (concept_match or element_match), `score` (cosine similarity), `model` (embedding model name), `primary` (bool — highest score marked True).
+- **FR-009**: The number of annotations per entity MUST be determined by the 025 heuristic: threshold (elements 0.5, values 0.8) + gap cutoff (>0.15 drop) + max 10.
+- **FR-010**: Enrichment provenance MUST be appended to the existing provenance list with `activity: enrichment`.
+- **FR-011**: Re-running enrichment MUST be idempotent when ontology state hasn't changed.
+- **FR-012**: The `_create_enriched_element()` function (which creates new elements with derived_from) MUST be removed. Enrichment uses `_update_entity_in_place()` instead, calling `_assign_ontology_annotations()` from 025.
 
 **Commit Stage**
 
-- **FR-011**: The commit stage MUST rehash each enriched element from its final semantic content and write it to the registry under the content-addressed filename `{name}_{hash}.yaml`.
-- **FR-012**: Staged elements MUST be stored in a temporary staging directory (e.g., `{output_dir}/.staging/{run_id}/`), separate from the registry. They carry a pipeline run ID.
-- **FR-013**: After commit, staged elements MUST be deleted. Only the final content-addressed element in the registry persists.
-- **FR-014**: If two staged elements produce the same final hash at commit time, they MUST be merged — provenance entries combined into a single registry file.
-- **FR-015**: No provenance for intermediate pipeline stages. The committed element's provenance reflects the source extraction + enrichment attribution, not the staging mechanics.
-- **FR-016**: If the pipeline is interrupted before commit, the staging directory MUST be cleaned up on the next run (stale staging dirs detected by run ID age).
+- **FR-013**: The commit stage MUST rehash each enriched entity from its final semantic content (excl ontology_annotations + other excluded fields) and write to the registry under the content-addressed filename `{name}_{hash}.yaml`.
+- **FR-014**: Staged entities MUST be stored in a temporary staging directory (`{output_dir}/.staging/{run_id}/`), separate from the registry.
+- **FR-015**: After commit, staged entities MUST be deleted. Only the final content-addressed entity in the registry persists.
+- **FR-016**: If two staged entities produce the same final hash at commit time, they MUST be merged — provenance entries combined into a single registry file.
+- **FR-017**: No provenance for intermediate pipeline stages.
+- **FR-018**: If the pipeline is interrupted before commit, the staging directory MUST be cleaned up on the next run.
 
 **All Registry Entity Types**
 
-- **FR-017**: The staged pipeline (extract → enrich → commit) MUST apply uniformly to all four registry entity types: elements, schemas, valuesets, and values. "Registry entity" is the collective term.
-- **FR-018**: Enrichment MUST process registry entities in dependency order:
-  1. **Elements + Values** (parallel — no dependency on each other): elements get ontology_annotations (concept_match) + value_domain; values get ontology_annotations (element_match, threshold ≥ 0.8)
-  2. **Valuesets** (depends on values): ontology_namespace derived from enriched member value annotations; own ontology_annotations for the collection concept
-  3. **Schemas** (depends on elements): ontology_annotations for the class concept informed by enriched element properties; property URIs reference finalized element hashes
-- **FR-019**: `ontology_annotations` MUST be supported on all four entity types' semantic identity blocks (excluded from hash in all cases).
-- **FR-021**: The enrichment order (elements+values → valuesets → schemas) MUST be enforced by the pipeline. Running enrichment on schemas before their elements are enriched MUST produce a warning.
+- **FR-019**: The staged pipeline (extract → enrich → commit) MUST apply uniformly to all four registry entity types: elements, schemas, valuesets, and values. "Registry entity" is the collective term.
+- **FR-020**: Enrichment MUST process registry entities in dependency order:
+  1. **Elements + Values** (parallel): elements get `ontology_annotations` with `match_level: concept_match` + SKOS relation from score + `value_domain`; values get `ontology_annotations` with `match_level: element_match` for score ≥ 0.9, threshold 0.8
+  2. **Valuesets** (depends on values): `ontology_namespace` derived from enriched member value annotations; own `ontology_annotations` for the collection concept
+  3. **Schemas** (depends on elements): `ontology_annotations` with `match_level: concept_match` for class concepts, informed by enriched element properties
+- **FR-021**: `ontology_annotations` MUST be supported on all four entity types' semantic identity blocks (excluded from hash in all cases).
+- **FR-022**: The enrichment order (elements+values → valuesets → schemas) MUST be enforced by the pipeline.
 
 **Curation Exception**
 
-- **FR-020**: Manual curation (`activity: curation`) MAY create new registry entities with `derived_from` links in the future. This is explicitly out of scope for enrichment but the architecture MUST support it.
+- **FR-023**: Manual curation (`activity: curation`) MAY create new registry entities with `derived_from` links in the future. This is explicitly out of scope for enrichment but the architecture MUST support it.
 
 ### Key Entities
 
