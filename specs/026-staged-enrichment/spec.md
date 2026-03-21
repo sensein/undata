@@ -111,12 +111,12 @@ After enrichment, the commit stage computes the final content-addressed hash of 
 **All Registry Entity Types**
 
 - **FR-017**: The staged pipeline (extract → enrich → commit) MUST apply uniformly to all four registry entity types: elements, schemas, valuesets, and values. "Registry entity" is the collective term.
-- **FR-018**: Enrichment MUST process all registry entity types:
-  - **Elements**: ontology_annotations (concept_match), value_domain, enrichment provenance
-  - **Schemas**: ontology_annotations for the class concept (e.g., a "Subject" schema → NCIT concept)
-  - **Values**: ontology_annotations (element_match with high threshold ≥ 0.8), e.g., "male" → PATO:0000384
-  - **Valuesets**: ontology_namespace derived from member value annotations; ontology_annotations for the collection concept
+- **FR-018**: Enrichment MUST process registry entities in dependency order:
+  1. **Elements + Values** (parallel — no dependency on each other): elements get ontology_annotations (concept_match) + value_domain; values get ontology_annotations (element_match, threshold ≥ 0.8)
+  2. **Valuesets** (depends on values): ontology_namespace derived from enriched member value annotations; own ontology_annotations for the collection concept
+  3. **Schemas** (depends on elements): ontology_annotations for the class concept informed by enriched element properties; property URIs reference finalized element hashes
 - **FR-019**: `ontology_annotations` MUST be supported on all four entity types' semantic identity blocks (excluded from hash in all cases).
+- **FR-021**: The enrichment order (elements+values → valuesets → schemas) MUST be enforced by the pipeline. Running enrichment on schemas before their elements are enriched MUST produce a warning.
 
 **Curation Exception**
 
