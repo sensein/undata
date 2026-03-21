@@ -364,14 +364,19 @@ def ontology_refresh(ontology: str | None, output_dir: str | None, exclude: tupl
     for cfg in configs:
         name = cfg["name"]
         url = cfg["url"]
-        click.echo(f"Fetching {name}...")
+        fmt = cfg.get("format", "obo")
+        click.echo(f"Fetching {name} ({fmt})...")
         try:
-            obo_path = _download_obo(name, url)
+            dl_path = _download_obo(name, url)
             try:
-                count = store.load_obo(name, obo_path)
+                if fmt == "obo":
+                    count = store.load_obo(name, dl_path)
+                else:
+                    # OWL/TTL/RDF-XML → load directly into pyoxigraph
+                    count = store.load_rdf(name, dl_path, fmt)
                 click.echo(f"  {name}: {count} terms loaded into store.")
             finally:
-                obo_path.unlink(missing_ok=True)
+                dl_path.unlink(missing_ok=True)
         except Exception as exc:
             click.echo(f"  {name}: FAILED — {exc}")
 

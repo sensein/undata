@@ -72,22 +72,26 @@ class OntologyStore:
                 if not in_term:
                     continue
 
-                if line.startswith("id: "):
-                    current_id = _obo_id_to_uri(line[4:].strip())
-                    count += 1
-                elif current_id and line.startswith("name: "):
-                    self._add_triple(current_id, _RDFS_LABEL, line[6:].strip(), graph)
-                elif current_id and line.startswith("synonym: "):
-                    m = re.match(r'^synonym:\s+"([^"]*)"', line)
-                    if m:
-                        self._add_triple(current_id, _OBO_SYNONYM, m.group(1), graph)
-                elif current_id and line.startswith("is_a: "):
-                    parent = _obo_id_to_uri(line[6:].strip().split("!")[0].strip())
-                    self._add_triple_uri(current_id, _RDFS_SUBCLASS, parent, graph)
-                elif current_id and line.startswith("is_obsolete: true"):
-                    self._add_triple(current_id, _OWL_DEPRECATED, "true", graph)
-                elif current_id and line.startswith("namespace: "):
-                    self._add_triple(current_id, _OBO_NAMESPACE, line[11:].strip(), graph)
+                try:
+                    if line.startswith("id: "):
+                        current_id = _obo_id_to_uri(line[4:].strip())
+                        count += 1
+                    elif current_id and line.startswith("name: "):
+                        self._add_triple(current_id, _RDFS_LABEL, line[6:].strip(), graph)
+                    elif current_id and line.startswith("synonym: "):
+                        m = re.match(r'^synonym:\s+"([^"]*)"', line)
+                        if m:
+                            self._add_triple(current_id, _OBO_SYNONYM, m.group(1), graph)
+                    elif current_id and line.startswith("is_a: "):
+                        parent = _obo_id_to_uri(line[6:].strip().split("!")[0].strip())
+                        if parent.startswith("http"):
+                            self._add_triple_uri(current_id, _RDFS_SUBCLASS, parent, graph)
+                    elif current_id and line.startswith("is_obsolete: true"):
+                        self._add_triple(current_id, _OWL_DEPRECATED, "true", graph)
+                    elif current_id and line.startswith("namespace: "):
+                        self._add_triple(current_id, _OBO_NAMESPACE, line[11:].strip(), graph)
+                except Exception:
+                    pass  # Skip malformed triples
 
         # Record metadata
         now = datetime.now(timezone.utc).isoformat()
