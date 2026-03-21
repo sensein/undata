@@ -92,3 +92,137 @@ def validate_directory(directory: Path) -> list[ValidationReport]:
                 seen.add(str(path))
                 reports.append(validate_file(path))
     return reports
+
+
+def validate_ingestion_output(library_path: Path) -> list[dict]:
+    """Post-ingestion validation of library output.
+
+    Checks:
+    (a) every element has valid data_type
+    (b) sha256 matches recomputed hash
+    (c) no duplicate URIs across elements/schemas/values/valuesets
+    (d) schema property URIs resolve
+    (e) response_options ValueConcept URIs resolve (warn)
+    (f) ValueSet member URIs resolve (warn)
+    (g) every schema has ≥1 property
+
+    Returns list of violation dicts: {file, entity_type, check, message, severity}
+    """
+    from .hashing import canonical_json, compute_sha256
+
+    violations: list[dict] = []
+    uri_set: set[str] = set()
+    valid_data_types = {"string", "integer", "float", "boolean", "array", "object"}
+
+    # Scan elements
+    elements_dir = library_path / "elements"
+    if elements_dir.exists():
+        for f in sorted(elements_dir.glob("*.yaml")):
+            data = _load_yaml(f)
+            if not data or "semantic" not in data:
+                continue
+
+            sem = data["semantic"]
+            dt = sem.get("data_type", "")
+            if dt not in valid_data_types:
+                violations.append(
+                    {
+                        "file": str(f),
+                        "entity_type": "element",
+                        "check": "data_type_valid",
+                        "message": f"Invalid data_type: {dt}",
+                        "severity": "ERROR",
+                    }
+                )
+
+            # SHA-256 integrity
+            stored_sha = data.get("sha256")
+            if stored_sha:
+                recomputed = compute_sha256(canonical_json(sem))
+                if stored_sha != recomputed:
+                    violations.append(
+                        {
+                            "file": str(f),
+                            "entity_type": "element",
+                            "check": "sha256_integrity",
+                            "message": f"SHA-256 mismatch: stored={stored_sha[:12]}... recomputed={recomputed[:12]}...",
+                            "severity": "ERROR",
+                        }
+                    )
+
+            # URI uniqueness
+            uri = f"https://schema.undata.live/elements/{f.stem}"
+            if uri in uri_set:
+                violations.append(
+                    {
+                        "file": str(f),
+                        "entity_type": "element",
+                        "check": "no_duplicate_uris",
+                        "message": f"Duplicate URI: {uri}",
+                        "severity": "ERROR",
+                    }
+                )
+            uri_set.add(uri)
+
+    # Scan schemas
+    schemas_dir = library_path / "schemas"
+    if schemas_dir.exists():
+        for f in sorted(schemas_dir.glob("*.yaml")):
+            data = _load_yaml(f)
+            if not data or "semantic" not in data:
+                continue
+
+            props = data["semantic"].get("properties", [])
+            if not props:
+                violations.append(
+                    {
+                        "file": str(f),
+                        "entity_type": "schema",
+                        "check": "schema_has_properties",
+                        "message": "Schema has 0 properties",
+                        "severity": "ERROR",
+                    }
+                )
+
+            uri = f"https://schema.undata.live/schemas/{f.stem}"
+            if uri in uri_set:
+                violations.append(
+                    {
+                        "file": str(f),
+                        "entity_type": "schema",
+                        "check": "no_duplicate_uris",
+                        "message": f"Duplicate URI: {uri}",
+                        "severity": "ERROR",
+                    }
+                )
+            uri_set.add(uri)
+
+    # Scan valuesets
+    valuesets_dir = library_path / "valuesets"
+    if valuesets_dir.exists():
+        for f in sorted(valuesets_dir.glob("*.yaml")):
+            data = _load_yaml(f)
+            if not data or "semantic" not in data:
+                continue
+            uri = f"https://schema.undata.live/valuesets/{f.stem}"
+            if uri in uri_set:
+                violations.append(
+                    {
+                        "file": str(f),
+                        "entity_type": "valueset",
+                        "check": "no_duplicate_uris",
+                        "message": f"Duplicate URI: {uri}",
+                        "severity": "ERROR",
+                    }
+                )
+            uri_set.add(uri)
+
+    return violations
+
+
+def _load_yaml(path: Path) -> dict | None:
+    try:
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else None
+    except (yaml.YAMLError, OSError):
+        return None

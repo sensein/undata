@@ -16,6 +16,10 @@ _BUILTIN_ADAPTERS: dict[str, str] = {
     "dandi": "undata_library.adapters.dandi:DANDIAdapter",
     "openminds": "undata_library.adapters.openminds:OpenMINDSAdapter",
     "aind": "undata_library.adapters.aind:AINDAdapter",
+    "json-schema": "undata_library.adapters.json_schema:JSONSchemaAdapter",
+    "linkml": "undata_library.adapters.linkml:LinkMLAdapter",
+    "csv": "undata_library.adapters.csv_dictionary:CSVDictionaryAdapter",
+    "code-repo": "undata_library.adapters.code_repo:CodeRepoAdapter",
 }
 
 # File extension → adapter name for auto-detection

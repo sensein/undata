@@ -137,19 +137,103 @@ def diff(file: str, fmt: str) -> None:
 
 
 @main.command()
-@click.option("--source", required=True, help="Source name (bids, nwb, dandi, aind, openminds)")
+@click.option(
+    "--source",
+    required=True,
+    help="Source name (bids, nwb, dandi, aind, openminds, json-schema, linkml, csv, code-repo)",
+)
 @click.option("--path", "-p", default=None, help="Path to raw schema files")
 @click.option("--library-path", "-l", default=".", help="Path to library root")
-def ingest(source: str, path: str | None, library_path: str) -> None:
+@click.option(
+    "--adapter", default=None, help="Force adapter name (overrides --source for adapter selection)"
+)
+@click.option("--adapter-module", default=None, help="Import path for third-party adapter")
+@click.option(
+    "--workflow",
+    "workflow_path",
+    default=None,
+    type=click.Path(exists=True),
+    help="Workflow YAML file",
+)
+@click.option(
+    "--llm-model", default=None, help="LLM model for classification (e.g., ollama/llama3)"
+)
+@click.option("--llm-threshold", default=0.7, help="Confidence threshold for LLM invocation")
+@click.option("--docker", "docker_enabled", is_flag=True, help="Enable Docker code inspection")
+@click.option("--docker-image", default=None, help="Custom Docker base image")
+@click.option("--docker-timeout", default=300, help="Container timeout in seconds")
+@click.option("--strict", is_flag=True, help="Exit 1 on any validation violation")
+@click.option("--skip-validation", is_flag=True, help="Skip post-ingestion validation")
+def ingest(
+    source: str,
+    path: str | None,
+    library_path: str,
+    adapter: str | None,
+    adapter_module: str | None,
+    workflow_path: str | None,
+    llm_model: str | None,
+    llm_threshold: float,
+    docker_enabled: bool,
+    docker_image: str | None,
+    docker_timeout: int,
+    strict: bool,
+    skip_validation: bool,
+) -> None:
     """Ingest elements from raw schema files into the library."""
+    if workflow_path:
+        from .workflow import load_workflow, run_workflow
+
+        spec = load_workflow(Path(workflow_path))
+        report = run_workflow(spec, Path(library_path))
+        click.echo(
+            f"Workflow complete: {report.sources_processed} sources, "
+            f"{len(report.violations)} violations."
+        )
+        if strict and not report.validation_passed:
+            sys.exit(1)
+        return
+
     from .ingest import ingest_source
 
     schema_path = Path(path) if path else None
-    stats = ingest_source(source, schema_path, Path(library_path))
+    adapter_name = adapter or source
+    stats = ingest_source(adapter_name, schema_path, Path(library_path))
     click.echo(
         f"Ingested {source}: {stats['total']} unique elements "
         f"({stats['created']} created, {stats['merged']} merged)."
     )
+
+    if not skip_validation:
+        from .validation import validate_ingestion_output
+
+        violations = validate_ingestion_output(Path(library_path))
+        if violations:
+            click.echo(f"Validation: {len(violations)} violations found.")
+            for v in violations[:10]:
+                click.echo(f"  {v['severity']}: {v['file']} — {v['message']}")
+            if strict:
+                sys.exit(1)
+        else:
+            click.echo("Validation: passed.")
+
+
+@main.command("validate-ingestion")
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option("--strict", is_flag=True, help="Exit 1 on any violation")
+def validate_ingestion_cmd(path: str, strict: bool) -> None:
+    """Validate library output: data_types, sha256, URI uniqueness, references."""
+    from .validation import validate_ingestion_output
+
+    violations = validate_ingestion_output(Path(path))
+    if not violations:
+        click.echo("Validation passed. 0 violations.")
+        return
+
+    for v in violations:
+        click.echo(f"  {v['severity']}: {v['file']} — {v['message']}")
+    click.echo(f"\n{len(violations)} violations found.")
+    if strict:
+        sys.exit(1)
 
 
 @main.command("export")

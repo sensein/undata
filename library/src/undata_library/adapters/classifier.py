@@ -12,6 +12,8 @@ def classify_entity(
     type_info: dict[str, Any],
     parent: str | None = None,
     siblings: list[str] | None = None,
+    llm_model: str | None = None,
+    llm_threshold: float = 0.7,
 ) -> tuple[EntityType, float]:
     """Classify a schema entity using structural signals.
 
@@ -37,7 +39,22 @@ def classify_entity(
         return EntityType.CLASS, _class_confidence(type_info)
 
     # Default: attribute (rdf:Property)
-    return EntityType.ATTRIBUTE, _attribute_confidence(type_info)
+    etype, conf = EntityType.ATTRIBUTE, _attribute_confidence(type_info)
+
+    # LLM fallback when confidence is low
+    if conf < llm_threshold and llm_model:
+        try:
+            from .llm_classifier import LLMClassifier
+
+            llm = LLMClassifier(llm_model)
+            llm_type, llm_conf, _reasoning = llm.classify(
+                name, type_info, parent=parent, siblings=siblings
+            )
+            return llm_type, llm_conf
+        except Exception:
+            pass  # Fall through to rule-based result
+
+    return etype, conf
 
 
 def _is_valueset(name: str, type_info: dict) -> bool:
