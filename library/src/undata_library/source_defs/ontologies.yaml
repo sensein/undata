@@ -1,0 +1,16 @@
+ontologies:
+  - name: ncit
+    url: http://purl.obolibrary.org/obo/ncit.obo
+    format: obo
+  - name: pato
+    url: http://purl.obolibrary.org/obo/pato.obo
+    format: obo
+  - name: hp
+    url: http://purl.obolibrary.org/obo/hp.obo
+    format: obo
+  - name: obi
+    url: http://purl.obolibrary.org/obo/obi.obo
+    format: obo
+  - name: ncbitaxon
+    url: http://purl.obolibrary.org/obo/ncbitaxon.obo
+    format: obo
