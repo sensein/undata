@@ -2,6 +2,36 @@
 
 A unified neuroscience data element registry that harmonizes schemas across BIDS, NWB, DANDI, openMINDS, and AIND into a searchable, version-tracked system with provenance, mappings, and LinkML interoperability.
 
+## Why undata Exists
+
+### The Problem
+
+Neuroscience data lives in five major schema ecosystems — BIDS, NWB, DANDI, openMINDS, and AIND — each with its own vocabulary, types, units, and constraints. The same real-world concept (e.g., "subject age") appears differently in each:
+
+| Source | Name | Type | Unit | Representation |
+|--------|------|------|------|----------------|
+| BIDS | `age` | float | years | bare numeric field |
+| NWB | `age` | string | ISO 8601 | duration string |
+| DANDI | `age` | PropertyValue | — | structured object with BirthReference/GestationalReference |
+| AIND | `subject.age` | number | — | nested JSON Schema property |
+
+This fragmentation means:
+- **No shared vocabulary** — researchers who combine data from multiple sources must build ad-hoc mappings manually, with no systematic way to discover what exists across all sources.
+- **Identity conflation** — existing systems conflate *what a data element is* (type, unit, constraints) with *where it came from* (source name, description). The same concept from two sources looks like two different things; two different concepts with the same name look identical.
+- **Invisible transformations** — when data moves between formats, there is no record of what changed, who decided it, or whether it's reversible.
+
+### The Solution
+
+undata solves these problems with three architectural innovations:
+
+1. **Content-addressed identity** — Each data element's identity is the SHA-256 hash of its semantic graph (ontology term + data type + unit + constraints). Same concept from any source = same hash = automatic deduplication. Different type or unit = different hash = distinct element. Identity is stable, dereferenceable, and independent of any source's naming.
+
+2. **Identity ≠ Provenance separation** — Each element has one semantic identity block (hashed) and N provenance entries (not hashed). Cross-source elements naturally merge when semantically identical, while preserving full lineage via W3C PROV-O metadata (who ingested it, when, from where, derived from what).
+
+3. **Ingest → Enrich → Align pipeline** — Automated extraction from all 5 sources, followed by embedding-based ontology alignment (`"{class} {name}: {description}"` → precomputed vectors in parquet) and alias detection with SKOS mapping relations — all tracked with provenance.
+
+The result is a canonical registry where every neuroscience data concept has a single stable URI, full cross-source provenance, and semantic relationships (exact match, close match, broad/narrow match) to related concepts — making neuroscience data FAIR (Findable, Accessible, Interoperable, Reusable).
+
 ## Architecture
 
 ```
@@ -134,7 +164,7 @@ open _build/html/index.html     # View locally
 
 ## Features
 
-15 features implemented across the system:
+18 features implemented across the system:
 
 1. **Neuro Schema Integration** — 5 adapters (BIDS, NWB, DANDI, openMINDS, AIND)
 2. **Schema Backend** — REST API with auth, versioning, unit standardization
@@ -150,7 +180,10 @@ open _build/html/index.html     # View locally
 12. **Full-Stack Compose** — Single-command local development
 13. **Migration UI** — Pathway browsing, job execution, schema diff
 14. **Deployment Pipeline** — GHCR images, GitHub Pages, backend CI
-15. **undata-library** — Standalone LinkML YAML library with CLI
+15. **undata-library** — Standalone flat-file library with CLI
+16. **Value Concepts** — Categorical values as content-addressed semantic entities
+17. **Backend–Library Alignment** — Content-addressed element model in backend
+18. **Rich Data Model** — reproschema alignment, semantic embeddings, ingest→enrich→align pipeline
 
 ## License
 
