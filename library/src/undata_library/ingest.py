@@ -101,7 +101,12 @@ def ingest_source(
         key = generate_short_key(sha)
 
         attr_name = first_name.lower().lstrip("_")
-        filename = f"{attr_name}_{key}.yaml"
+        # Sanitize: replace slashes, colons, and other filesystem-unsafe chars
+        safe_name = attr_name.replace("/", "_").replace(":", "_").replace("\\", "_")
+        # Truncate long names (URI-based names can be very long)
+        if len(safe_name) > 60:
+            safe_name = safe_name[:60]
+        filename = f"{safe_name}_{key}.yaml"
         filepath = elements_dir / filename
 
         if filepath.exists():
