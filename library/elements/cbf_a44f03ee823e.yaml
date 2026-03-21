@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: cbf
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: cbf
+  description: 'An ASL volume type: cbf.
+
+    The cerebral blood flow (CBF) image is produced by dividing the deltaM by the
+    M0,
+
+    quantified into `mL/100g/min` (See also [doi:10.1002/mrm.25197](https://doi.org/10.1002/mrm.25197)).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a44f03ee823eb5ee09f13b2379bfddc940afdc3b13d618ba82adf1d328d97a72

@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channels_d037f333f7e7
+  - https://schema.undata.live/elements/coordinate_system_295481eb766f
+  - https://schema.undata.live/elements/device_name_2fc51782babb
+  - https://schema.undata.live/elements/images_24c65c7cc718
+  - https://schema.undata.live/elements/sampling_strategy_d03ba77a8a8e
+  mixins: []
+provenance:
+- source: aind
+  name: ImagingConfig
+  generated_at: '2026-03-21T05:07:50.847404+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c9bbd6603bbd2cf05389a6ad04fae94ae6c21d5e8dea2a31d2489cb9ed66ead4

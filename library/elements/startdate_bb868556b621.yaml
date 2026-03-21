@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: startDate
+  source_class: Project
+provenance:
+- source: dandi
+  class: Project
+  name: startDate
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bb868556b621613194f98779c0aa84bb66ef93b34176e8b19a81eebb4bfb33f6

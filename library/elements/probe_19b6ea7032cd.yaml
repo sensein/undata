@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Target of the stain
+  source_attribute: probe
+  source_class: FluorescentStain
+provenance:
+- source: aind
+  class: FluorescentStain
+  name: probe
+  description: Target of the stain
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 19b6ea7032cd0bf3a4fe8be8a1716a3f806647ea73b5a21228536c01bcc468ec

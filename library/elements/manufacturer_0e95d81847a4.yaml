@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Manufacturer
+  source_attribute: manufacturer
+  source_class: DAQDevice
+provenance:
+- source: aind
+  class: DAQDevice
+  name: manufacturer
+  description: Manufacturer
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0e95d81847a4b59641abec4801243048f3fd9d5fff49a6735108c72f623533af

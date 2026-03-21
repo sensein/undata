@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Stream stop time
+  source_attribute: stream_end_time
+  source_class: DataStream
+provenance:
+- source: aind
+  class: DataStream
+  name: stream_end_time
+  description: Stream stop time
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 06dc1ff7bf9061d93b43d845790504b81592acb15e39466f1cd5de3a39c214c7

@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Wavelength maximum (nm)
+  source_attribute: wavelength_max
+  source_class: Lamp
+provenance:
+- source: aind
+  class: Lamp
+  name: wavelength_max
+  description: Wavelength maximum (nm)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b0c499d9e00f6a080f20edd4f5d566453b054ed873e421e42921fe8c280d61ee

@@ -1,0 +1,16 @@
+semantic:
+  data_type: object
+  source_attribute: SweepTable
+  source_class: SweepTable
+provenance:
+- source: nwb
+  class: SweepTable
+  name: SweepTable
+  description: '[DEPRECATED] Table used to group different PatchClampSeries. SweepTable
+    is being replaced by IntracellularRecordingsTable and SimultaneousRecordingsTable
+    tables. Additional SequentialRecordingsTable, RepetitionsTable, and ExperimentalConditions
+    tables provide enhanced support for experiment metadata.'
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 68ec82add2157f98efbf025c95a015cd069a93f34522b848c6faa0c452bc59b7

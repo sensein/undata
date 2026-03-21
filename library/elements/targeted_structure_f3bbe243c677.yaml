@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Targeted structure
+  source_attribute: targeted_structure
+  source_class: Section
+provenance:
+- source: aind
+  class: Section
+  name: targeted_structure
+  description: Targeted structure
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f3bbe243c67772b84a1786a8a74dd2d8830d31186ddff75198f54e5db44f61d0

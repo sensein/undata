@@ -1,0 +1,26 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: individual
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: individual
+  description: 'Participant specific anatomical space (for example derived from T1w
+    and/or T2w images).
+
+    This coordinate system requires specifying an additional, participant-specific
+    file to be fully defined.
+
+    In context of surfaces this space has been referred to as `fsnative`.
+
+
+    In order for this space to be interpretable, `SpatialReference` metadata MUST
+    be provided.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a472d1045da352d4c96f99cea1a81df1761df2ffd688d2be9fd3055751a1d6fe

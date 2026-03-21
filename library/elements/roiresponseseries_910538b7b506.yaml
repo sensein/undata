@@ -1,0 +1,14 @@
+semantic:
+  data_type: object
+  source_attribute: RoiResponseSeries
+  source_class: RoiResponseSeries
+provenance:
+- source: nwb
+  class: RoiResponseSeries
+  name: RoiResponseSeries
+  description: ROI responses over an imaging plane. The first dimension represents
+    time. The second dimension, if present, represents ROIs.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 910538b7b50694b27973fcc768d7abc3b68d4fceb6043f235dcd0384cd2390e7

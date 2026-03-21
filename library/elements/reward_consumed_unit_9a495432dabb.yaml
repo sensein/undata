@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Reward consumed unit
+  source_attribute: reward_consumed_unit
+  source_class: PerformanceMetrics
+provenance:
+- source: aind
+  class: PerformanceMetrics
+  name: reward_consumed_unit
+  description: Reward consumed unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9a495432dabb3ca2de6832647d608b7ace6a4eef78b342b44a6c1e4986650f79

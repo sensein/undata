@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_e6164205ca5f
+  - https://schema.undata.live/elements/identifier_b99e80c0815a
+  - https://schema.undata.live/elements/name_c76b54ab368b
+  - https://schema.undata.live/elements/schemakey_9b00046aab26
+  mixins: []
+provenance:
+- source: dandi
+  name: StandardsType
+  generated_at: '2026-03-21T05:07:14.185509+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fcdc17e5dead3409406b9a4154d1ee5f92bd93ed5f776bf9f00f0786fb67a37b

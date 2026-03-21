@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/contribution_26b569a2ee08
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/copyright_0df32c7748be
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_04c1732c87d7
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/digitalidentifier_3d02ad52cc10
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/keyword_c2e00b17ee80
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_5ea1589888a4
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/scope_adc4d0259510
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/specification_60b0020af796
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/type_71dde3d4b42f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/usagecondition_93549c993c36
+  mixins: []
+provenance:
+- source: openminds
+  name: hardwareProduct.schema.omi
+  generated_at: '2026-03-21T05:08:25.258123+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ace213c07700a7ed0920187811dc0e8d65db2f26d48348c77331625b5734b503

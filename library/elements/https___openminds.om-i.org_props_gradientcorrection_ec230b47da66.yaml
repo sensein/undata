@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/gradientCorrection
+  source_class: MRIScannerUsage.schema.omi
+provenance:
+- source: openminds
+  class: MRIScannerUsage.schema.omi
+  name: https://openminds.om-i.org/props/gradientCorrection
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ec230b47da665ec284b3f763e8c8f5e1b886bb2dbdc58e2f145c248aea99feaf

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: ADC
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: ADC
+  description: 'Analog to Digital input.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8c3f51bdaf667e08b615a6b08725e83f7b44f9d7fabe17ccb6481fb3712463cc

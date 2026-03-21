@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Decoder
+  source_attribute: decoder
+  source_class: Disc
+provenance:
+- source: aind
+  class: Disc
+  name: decoder
+  description: Decoder chip type
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bbdb0ac6085d7a62332f3f5b2d051de0e02ba88f36abd2736da580b0df764358

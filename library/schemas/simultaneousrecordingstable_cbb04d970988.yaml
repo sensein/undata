@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/recordings_bdc95fb18b63
+  - https://schema.undata.live/elements/recordings_index_6fdcfea08174
+  - https://schema.undata.live/elements/simultaneousrecordingstable_df6c0410d54d
+  mixins: []
+provenance:
+- source: nwb
+  name: SimultaneousRecordingsTable
+  generated_at: '2026-03-21T05:07:31.302974+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cbb04d970988450c4ef9a824fd22484cd2dd5de370d5ed774622e757b2525c70

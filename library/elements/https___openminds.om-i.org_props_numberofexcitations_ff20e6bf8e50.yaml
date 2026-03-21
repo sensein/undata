@@ -1,0 +1,12 @@
+semantic:
+  data_type: integer
+  source_attribute: https://openminds.om-i.org/props/numberOfExcitations
+  source_class: MRIScannerUsage.schema.omi
+provenance:
+- source: openminds
+  class: MRIScannerUsage.schema.omi
+  name: https://openminds.om-i.org/props/numberOfExcitations
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ff20e6bf8e50f0aaffd0bf0f99ebf2ec5522af8ab6d5a8670478036da24e9a59

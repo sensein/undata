@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Core version
+  source_attribute: core_version
+  source_class: HarpDevice
+provenance:
+- source: aind
+  class: HarpDevice
+  name: core_version
+  description: Core version
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c9bf5d6e4d3965aa85421a4cd393fd613c25a410fed0a1217be53a1a759b3ae5

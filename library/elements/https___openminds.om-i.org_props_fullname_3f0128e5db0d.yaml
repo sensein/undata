@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/fullName
+  source_class: anatomicalAtlas.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalAtlas.schema.omi
+  name: https://openminds.om-i.org/props/fullName
+  description: Whole, non-abbreviated name of something or somebody.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3f0128e5db0dd42faa15c8f95e13059276964c8470ae7ed996329004aa249d17

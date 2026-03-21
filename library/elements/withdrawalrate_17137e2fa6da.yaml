@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: WithdrawalRate
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: WithdrawalRate
+  description: 'The rate at which the blood was withdrawn from the subject.
+
+    The unit of the specified withdrawal rate should be in `"mL/s"`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 17137e2fa6daee3fd1b494bb436decff46aa616e3fb6dbb96c5f228f1baa5b05

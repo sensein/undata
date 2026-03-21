@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/endTime
+  source_class: tissueCulturePreparation.schema.omi
+provenance:
+- source: openminds
+  class: tissueCulturePreparation.schema.omi
+  name: https://openminds.om-i.org/props/endTime
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c60975a1380eb7fbcb5063ce18bf5322fec0351de5d4afaae2f8077aff21e503

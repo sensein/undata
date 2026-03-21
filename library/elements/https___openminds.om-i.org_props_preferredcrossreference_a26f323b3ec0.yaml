@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredCrossReference
+  source_class: pulseShape.schema.omi
+provenance:
+- source: openminds
+  class: pulseShape.schema.omi
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a26f323b3ec025666a8ba0755c5f0aa43fbb67bcd3653409267ea1f33d0a966c

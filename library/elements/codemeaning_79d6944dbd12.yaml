@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: CodeMeaning
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: CodeMeaning
+  description: 'Text that has meaning to a human and conveys the meaning of the term
+
+    Corresponds to [DICOM Tag 0008, 0104](http://www.dicomlookup.com/dicomtags/(0008,0104))
+
+    `Code Meaning`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 79d6944dbd128a04543278f72cf23566ac20cce2ed8cfac01dcdd6320c15e90a

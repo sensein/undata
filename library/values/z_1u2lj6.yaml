@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: z
-provenance:
-- source: bids
-  raw_value: z
-- source: aind
-  raw_value: Z

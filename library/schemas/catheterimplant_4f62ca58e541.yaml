@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/device_config_4c05bc6055ae
+  - https://schema.undata.live/elements/implanted_device_c5e593eb10ed
+  - https://schema.undata.live/elements/where_performed_644d795d8428
+  mixins: []
+provenance:
+- source: aind
+  name: CatheterImplant
+  generated_at: '2026-03-21T05:07:50.865791+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4f62ca58e5412beb8a284a71fafeb61013cb6f0239fd954a6aa1563cad6f0355

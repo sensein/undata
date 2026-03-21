@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/identifier_f9372ea512bf
+  mixins: []
+provenance:
+- source: openminds
+  name: RRID.schema.omi
+  generated_at: '2026-03-21T05:08:25.363053+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9900d30473348b5a43993d77048f4247aa495527e1fe138c6b2cb8ddc58bdbbe

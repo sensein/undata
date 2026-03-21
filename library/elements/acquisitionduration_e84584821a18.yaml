@@ -1,0 +1,21 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: AcquisitionDuration
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: AcquisitionDuration
+  description: 'Duration (in seconds) of scan acquisition, including all volumes for
+    multi-volume scans.
+
+    Corresponds to [DICOM Tag 0018, 9073](http://www.dicomlookup.com/dicomtags/(0018,9073))
+
+    `Acquisition Duration`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e84584821a18520e6744305ae505d3b9f37f0cb5b24d4a47f3bc41bb446b43e3

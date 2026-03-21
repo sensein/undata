@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: MTVmap
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: MTVmap
+  description: 'In arbitrary units (arbitrary).
+
+    MTV maps are REQUIRED to use this suffix regardless of the method used to
+
+    generate them.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ba7938e33681383b21e3ae4ced8c3f069c7a46dfa65dfef9d0e8d0d3a28e2b12

@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_9c771a21882f
+  - https://schema.undata.live/elements/manufacturer_853d317c005a
+  - https://schema.undata.live/elements/model_9a156202b1a8
+  - https://schema.undata.live/elements/name_9d41d018d94d
+  - https://schema.undata.live/elements/notes_11457fbde833
+  - https://schema.undata.live/elements/serial_number_4f340a0e6f58
+  mixins: []
+provenance:
+- source: aind
+  name: Microscope
+  generated_at: '2026-03-21T05:07:50.820723+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b18b8fd6761cc3f1156c1bad66ac3d533c5c7c1361e812583713ec34e01a624d

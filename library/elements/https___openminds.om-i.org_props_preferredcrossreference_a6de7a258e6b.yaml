@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredCrossReference
+  source_class: anatomicalCavity.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalCavity.schema.omi
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a6de7a258e6b60356ac4f4e237d86a97529635bd702743b87de5f4ccf428cb00

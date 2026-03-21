@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Data Asset Name
+  source_attribute: name
+  source_class: metadata
+provenance:
+- source: aind
+  class: metadata
+  name: name
+  description: Name of the data asset.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4a1dd4fb13760c636881e48ea9dfdddb9ca21db701a19d05e790473053e98c3c

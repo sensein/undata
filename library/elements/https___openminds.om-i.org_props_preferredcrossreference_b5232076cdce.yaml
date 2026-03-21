@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredCrossReference
+  source_class: auditoryStimulusType.schema.omi
+provenance:
+- source: openminds
+  class: auditoryStimulusType.schema.omi
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b5232076cdce2eb48f34f497a594e8f2b78c795b4208a8fd19d2582b6feafbb9

@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/fundee_e22ec4aa245d
+  - https://schema.undata.live/elements/funder_e4ea189b7b53
+  - https://schema.undata.live/elements/grant_number_17bbff458e5b
+  mixins: []
+provenance:
+- source: aind
+  name: Funding
+  generated_at: '2026-03-21T05:07:50.874563+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 631a6b2536febe9df9a7d546122e1e3db8366bcadc6cf7beebb2ec3aa057c195

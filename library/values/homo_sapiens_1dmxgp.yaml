@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: homo_sapiens
-provenance:
-- source: aind
-  raw_value: aind.procedures.unknown.Homo_Sapiens
-- source: aind
-  raw_value: aind.metadata.MouseSubject.species.Homo_Sapiens

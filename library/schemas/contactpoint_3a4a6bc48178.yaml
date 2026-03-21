@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/email_e788188e29fe
+  - https://schema.undata.live/elements/id_8704788d600c
+  - https://schema.undata.live/elements/schemakey_6b2d4aabd2b6
+  - https://schema.undata.live/elements/url_2c2f6860c18b
+  mixins: []
+provenance:
+- source: dandi
+  name: ContactPoint
+  generated_at: '2026-03-21T05:07:14.177977+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3a4a6bc481780ba6f0849d54839cfe991bbb2934d3b425c6bb7e39c40963bb92

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/handedness
+  source_class: subjectState.schema.omi
+provenance:
+- source: openminds
+  class: subjectState.schema.omi
+  name: https://openminds.om-i.org/props/handedness
+  description: Degree to which an organism prefers one hand or foot over the other
+    hand or foot during the performance of a task.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 57114d9f92b4e65897a95c700afa0c8406d5b55a9115ed3151415580093900ed

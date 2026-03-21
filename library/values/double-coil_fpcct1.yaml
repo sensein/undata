@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: double-coil
-provenance:
-- source: bids
-  raw_value: double-coil

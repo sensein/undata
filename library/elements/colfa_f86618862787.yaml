@@ -1,0 +1,26 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: colFA
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: colFA
+  description: 'Scanner-derived parametric map encoding both the anisotropy and principal
+    direction of the diffusion tensor.
+
+    Image intensity is proportional to the Fractional Anisotropy (FA) measure;
+
+    image color is determined by the principal eigenvector of the diffusion tensor,
+
+    where red encodes the magnitude of the left-right component of that orientation,
+
+    with green and blue similarly encoding the anterior-posterior and inferior-superior
+    components respectively.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f866188627876e539770e9c6e96cbb3b734818af1d9cebe24c75166b66bea3d2

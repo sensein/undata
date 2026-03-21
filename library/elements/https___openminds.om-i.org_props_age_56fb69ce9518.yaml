@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/age
+  source_class: specimenAge.schema.omi
+provenance:
+- source: openminds
+  class: specimenAge.schema.omi
+  name: https://openminds.om-i.org/props/age
+  description: Time of life or existence at which some particular qualification, capacity
+    or event arises.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 56fb69ce95186ab3ee555f49ab609c0ea1a84d27d00d0c0ee315418b7fa8120d

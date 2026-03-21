@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/about_0657150895ee
+  - https://schema.undata.live/elements/access_d3b36f0cb1a8
+  - https://schema.undata.live/elements/acknowledgement_526633e62ac7
+  - https://schema.undata.live/elements/contributor_e4e7c921e3d7
+  - https://schema.undata.live/elements/description_1cd2d7829bad
+  - https://schema.undata.live/elements/ethicsapproval_21d5fabcee57
+  - https://schema.undata.live/elements/id_369a43a2226f
+  - https://schema.undata.live/elements/keywords_ac9b964a7f22
+  - https://schema.undata.live/elements/license_6aed894029e4
+  - https://schema.undata.live/elements/name_c01df6c915d0
+  - https://schema.undata.live/elements/protocol_aff0d6062dc6
+  - https://schema.undata.live/elements/relatedresource_510adfc337f5
+  - https://schema.undata.live/elements/repository_6ab0aa8c7303
+  - https://schema.undata.live/elements/schemakey_236da59c8f92
+  - https://schema.undata.live/elements/schemaversion_f80f7337742c
+  - https://schema.undata.live/elements/studytarget_89fa284bdea0
+  - https://schema.undata.live/elements/url_999f34c9f6e1
+  - https://schema.undata.live/elements/wasgeneratedby_22b83a56c28a
+  mixins: []
+provenance:
+- source: dandi
+  name: CommonModel
+  generated_at: '2026-03-21T05:07:14.163522+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 49d439d953a73816796cd4e4630519698e0ecd940b62d4d83500681fb049afe2

@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/coordinate_system_ilkwde
-  - https://schema.undata.live/elements/translation_18jlj5
-  mixins: []
-provenance:
-- source: aind
-  name: AtlasCoordinate

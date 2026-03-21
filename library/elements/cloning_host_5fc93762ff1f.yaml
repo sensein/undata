@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: cloning_host
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: cloning_host
+  description: 'A biosample type (`sample_type`): cloning host
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5fc93762ff1fb8ef88c4ce592ecb2a1a1e89c257a3defe50002e7306399138fd

@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/nwbcontainer_88600b2be09d
+  mixins: []
+provenance:
+- source: nwb
+  name: NWBContainer
+  generated_at: '2026-03-21T05:07:31.301365+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d7b7c8d99cb420412ca894f90eab2093594e2641d9430890cc6d55ecbb5d64de

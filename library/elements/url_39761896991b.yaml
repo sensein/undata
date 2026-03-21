@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: url
+  source_class: BareAsset
+provenance:
+- source: dandi
+  class: BareAsset
+  name: url
+  description: permalink to the item
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 39761896991beea5468275e40d1e6711c0d1d2e10c53d83fe394b76fdf067bf2

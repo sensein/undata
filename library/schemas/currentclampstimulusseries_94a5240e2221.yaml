@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/currentclampstimulusseries_9bcbfeb645ae
+  - https://schema.undata.live/elements/data_edbc73405de9
+  mixins: []
+provenance:
+- source: nwb
+  name: CurrentClampStimulusSeries
+  generated_at: '2026-03-21T05:07:31.282781+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 94a5240e2221df6ad4023decd23a3856e193d2d579b413d3050f56ceb2da7bbd

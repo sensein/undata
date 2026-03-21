@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/manipulator_bnhgmx
-  - https://schema.undata.live/elements/name_l7pjl6
-  - https://schema.undata.live/elements/probes_17irv2
-  mixins: []
-provenance:
-- source: aind
-  name: EphysAssembly

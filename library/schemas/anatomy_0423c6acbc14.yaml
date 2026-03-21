@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_a41bb939949b
+  - https://schema.undata.live/elements/identifier_a6c24f0d399a
+  - https://schema.undata.live/elements/name_61125ef69d3c
+  - https://schema.undata.live/elements/schemakey_ce6b72985e5d
+  mixins: []
+provenance:
+- source: dandi
+  name: Anatomy
+  generated_at: '2026-03-21T05:07:14.183457+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0423c6acbc14e1fcc01c48cf72e93496b466487beee6a68b61e5f981a50fb144

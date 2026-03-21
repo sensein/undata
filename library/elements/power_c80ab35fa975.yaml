@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Excitation power
+  source_attribute: power
+  source_class: LightEmittingDiodeConfig
+provenance:
+- source: aind
+  class: LightEmittingDiodeConfig
+  name: power
+  description: Excitation power
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c80ab35fa97595fab30f61ac71795b9962a2c805df9a591af0af8749c414bc6a

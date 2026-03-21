@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Name
+  source_attribute: name
+  source_class: SpeciesModel
+provenance:
+- source: aind
+  class: SpeciesModel
+  name: name
+  description: Name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c7796b6f6f86400b8a9ccae230d61508b30b5af29d28c4ec32bf762444f7c8ce

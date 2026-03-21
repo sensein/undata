@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/intendedMountingLocation
+  source_class: MRICoil.schema.omi
+provenance:
+- source: openminds
+  class: MRICoil.schema.omi
+  name: https://openminds.om-i.org/props/intendedMountingLocation
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: faa6adb8daf73a5662cbaf1b26e6470bee141e06c126a935151de8e05f5a5a94

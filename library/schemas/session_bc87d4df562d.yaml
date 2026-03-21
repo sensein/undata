@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_8cebe2bd0acb
+  - https://schema.undata.live/elements/enddate_35f6c601f862
+  - https://schema.undata.live/elements/id_870cad1f5c2d
+  - https://schema.undata.live/elements/identifier_f86076fd0fe1
+  - https://schema.undata.live/elements/name_747d0bb0bf54
+  - https://schema.undata.live/elements/schemakey_bb2c9ae45d0a
+  - https://schema.undata.live/elements/startdate_8e19c2f0f95a
+  - https://schema.undata.live/elements/used_6851ecb8e92e
+  - https://schema.undata.live/elements/wasassociatedwith_48dc924b8b01
+  mixins: []
+provenance:
+- source: dandi
+  name: Session
+  generated_at: '2026-03-21T05:07:14.176075+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bc87d4df562dc101b05622c39f53c360281ce6da5735b592bc5657df2879f887

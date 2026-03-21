@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/isPartOf
+  source_class: fileBundle.schema.omi
+provenance:
+- source: openminds
+  class: fileBundle.schema.omi
+  name: https://openminds.om-i.org/props/isPartOf
+  description: Reference to the ensemble of multiple things or beings.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7835834747d7ee82f07d218c9c1b3fd2c6e0a5340b0a54c89207883af436ef64

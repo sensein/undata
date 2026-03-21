@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SoftwareVersions
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SoftwareVersions
+  description: 'Manufacturer''s designation of software version of the equipment that
+    produced
+
+    the measurements.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b9e7d0e08035ec87979dc1c58266eecdef0eaf4fed5ac97f23f4660808d88e23

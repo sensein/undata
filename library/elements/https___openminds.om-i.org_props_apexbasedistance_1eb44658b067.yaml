@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/apexBaseDistance
+  source_class: centroidalPyramid.schema.omi
+provenance:
+- source: openminds
+  class: centroidalPyramid.schema.omi
+  name: https://openminds.om-i.org/props/apexBaseDistance
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1eb44658b067762367564071f753f56ba607d43bdc1fa76894eb187d37aca80a

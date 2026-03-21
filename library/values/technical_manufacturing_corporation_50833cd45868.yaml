@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: technical_manufacturing_corporation
+provenance:
+- source: aind
+  raw_value: aind.metadata.FluorescentStain.source.Technical_Manufacturing_Corporation

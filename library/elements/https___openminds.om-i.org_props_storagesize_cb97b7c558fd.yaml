@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/storageSize
+  source_class: localFile.schema.omi
+provenance:
+- source: openminds
+  class: localFile.schema.omi
+  name: https://openminds.om-i.org/props/storageSize
+  description: Quantitative value defining how much disk space is used by an object
+    on a computer system.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cb97b7c558fd5e7c731261003839e0da4d9f4296bc674f787cc8a4d14746a9fa

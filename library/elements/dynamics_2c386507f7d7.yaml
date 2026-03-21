@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Injection dynamics
+  source_attribute: dynamics
+  source_class: BrainInjection
+provenance:
+- source: aind
+  class: BrainInjection
+  name: dynamics
+  description: List of injection events, one per location/depth
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2c386507f7d7e1b90635f50df9ecd5c5637830adde6c5aeafc4114460a1fe164

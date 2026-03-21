@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_ba34b63b2610
+  - https://schema.undata.live/elements/array_type_e19770eb5ef3
+  - https://schema.undata.live/elements/manufacturer_e9e0dc275414
+  - https://schema.undata.live/elements/model_c12c2efc8ad3
+  - https://schema.undata.live/elements/name_1f4045966525
+  - https://schema.undata.live/elements/notes_51bdc456eb8c
+  - https://schema.undata.live/elements/serial_number_e539df580d87
+  - https://schema.undata.live/elements/threads_afca3f7fd80a
+  mixins: []
+provenance:
+- source: aind
+  name: MyomatrixArray
+  generated_at: '2026-03-21T05:07:50.822791+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a6fd11b21628890e48eebecea34e82392e064f8ef1c9871e8b3d7d67126771fe

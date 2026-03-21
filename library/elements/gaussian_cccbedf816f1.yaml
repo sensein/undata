@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: GAUSSIAN
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: GAUSSIAN
+  description: 'A Gaussian pulse.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cccbedf816f1c0db392d5eb7bd7549bbfed2e8424922094e1886c68927a48f85

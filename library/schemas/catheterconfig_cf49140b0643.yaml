@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/device_name_aa4ea4248213
+  - https://schema.undata.live/elements/targeted_structure_d0d636d9ab8f
+  mixins: []
+provenance:
+- source: aind
+  name: CatheterConfig
+  generated_at: '2026-03-21T05:07:50.868520+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cf49140b0643d2d1886da438e0ee4727642f0ce92d3382423b053495b8ea5ebd

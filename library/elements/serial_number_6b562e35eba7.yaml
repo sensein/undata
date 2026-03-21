@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Serial number
+  source_attribute: serial_number
+  source_class: Olfactometer
+provenance:
+- source: aind
+  class: Olfactometer
+  name: serial_number
+  description: Serial number
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6b562e35eba7183773d6b8b9b286973454385b68f2df528b55510cf8a9a66e8e

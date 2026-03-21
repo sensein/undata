@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: ImageAcquisitionProtocol
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: ImageAcquisitionProtocol
+  description: 'Description of the image acquisition protocol or
+
+    [URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator)
+
+    (for example from [protocols.io](https://www.protocols.io/)).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 409e30d324f7fe7f19d11f4249553a26e0712757c2b77a0d90263689824ff06f

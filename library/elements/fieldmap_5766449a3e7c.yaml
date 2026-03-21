@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: fieldmap
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: fieldmap
+  description: 'Some MR schemes such as spiral-echo imaging (SEI) sequences are able
+    to
+
+    directly provide maps of the *B<sub>0</sub>* field inhomogeneity.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5766449a3e7ca4834c3dfd35e66d2f85dd2d237e12df4c6057883b276a1d303f

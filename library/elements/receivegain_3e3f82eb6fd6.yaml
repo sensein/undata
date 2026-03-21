@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: ReceiveGain
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: ReceiveGain
+  description: 'The gain of the receive coil.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3e3f82eb6fd6a98a7f42a483c638de07f15820d3beed156d3aa2e2c10072fcd9

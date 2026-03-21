@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Device name
+  source_attribute: device_name
+  source_class: MousePlatformConfig
+provenance:
+- source: aind
+  class: MousePlatformConfig
+  name: device_name
+  description: Must match a device defined in the instrument.json
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6b3378680cf6fc0286126629da3d9f1c00d9d28089b2fa20a067343d3370bd03

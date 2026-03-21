@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: CONF
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: CONF
+  description: 'Confocal microscopy imaging data
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 853aada569213ac92c666d592013d1845da9d2739e47c5a8651e3c15ac1da8c2

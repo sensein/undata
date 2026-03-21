@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Coupling
+  source_attribute: coupling
+  source_class: Laser
+provenance:
+- source: aind
+  class: Laser
+  name: coupling
+  description: Coupling
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f42208fb8e81178a472b4ebad4fc79d19554e356d25ec1a9508330d0efdc063e

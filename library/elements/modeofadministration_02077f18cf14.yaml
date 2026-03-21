@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: ModeOfAdministration
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: ModeOfAdministration
+  description: 'Mode of administration of the injection
+
+    (for example, `"bolus"`, `"infusion"`, or `"bolus-infusion"`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 02077f18cf145bff13aef5f6193547c0613c5073d2f8e28d8f612169bef85d96

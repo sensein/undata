@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: tissue
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: tissue
+  description: 'A biosample type (`sample_type`): tissue
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 680f17e68d1274d6ccdc93006c5f09001e8601385bbbdd63fbea92c1ef677f64

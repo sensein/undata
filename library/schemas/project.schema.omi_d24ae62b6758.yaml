@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/contribution_d6f27679e287
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_063f79f32e0c
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/fullname_f9a28f196ddb
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/haspart_67e5d91cb3f9
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/homepage_8c62ce455cd6
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/shortname_a7d4ba6dae28
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/type_2556e8670796
+  mixins: []
+provenance:
+- source: openminds
+  name: project.schema.omi
+  generated_at: '2026-03-21T05:08:25.266210+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d24ae62b67580075fbb4655b7099c19b3e42d53d80d9a55ec86c93e8d46ab6ca

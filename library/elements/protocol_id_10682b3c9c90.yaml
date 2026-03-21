@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Protocol ID
+  source_attribute: protocol_id
+  source_class: GenericSurgeryProcedure
+provenance:
+- source: aind
+  class: GenericSurgeryProcedure
+  name: protocol_id
+  description: DOI for protocols.io
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 10682b3c9c90569b5a5dfcf028685459b022a7c1ca76e449a210d5e4926d00d5

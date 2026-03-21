@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/digitalIdentifier
+  source_class: anatomicalAtlas.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalAtlas.schema.omi
+  name: https://openminds.om-i.org/props/digitalIdentifier
+  description: Digital handle to identify objects or legal persons.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c3df7c18aabda510fa7b5f1ac15eeb1cbbbd0b273eb11f399d4c8df91450ebc4

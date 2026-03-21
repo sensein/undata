@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/mass_5f84461d56d0
+  - https://schema.undata.live/elements/mass_unit_34e55e99267b
+  - https://schema.undata.live/elements/protein_1ab94ad10509
+  - https://schema.undata.live/elements/sequence_eca58a8ec05b
+  - https://schema.undata.live/elements/species_b7ed514556ab
+  mixins: []
+provenance:
+- source: aind
+  name: ProteinProbe
+  generated_at: '2026-03-21T05:07:50.878286+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f850742f78e0ac6f6be0c5bf7903b350f1a4ab4d728d7dcc731409b780775d4d

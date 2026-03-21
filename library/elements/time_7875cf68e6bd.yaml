@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: time
+  source_class: formats
+provenance:
+- source: bids
+  class: formats
+  name: time
+  description: 'A time in the form `"hh:mm:ss"`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7875cf68e6bded1a894900baeaca6749498ae94eaeb9170daa32bdc4407b36af

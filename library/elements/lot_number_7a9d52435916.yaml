@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Lot number
+  source_attribute: lot_number
+  source_class: FluorescentStain
+provenance:
+- source: aind
+  class: FluorescentStain
+  name: lot_number
+  description: Lot number
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7a9d524359161e41196f9410e29dfa93a97747b2120ef2db7f93789b2bf97be5

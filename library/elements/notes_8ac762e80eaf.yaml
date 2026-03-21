@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Notes
+  source_attribute: notes
+  source_class: Monitor
+provenance:
+- source: aind
+  class: Monitor
+  name: notes
+  description: Notes
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8ac762e80eaffbadedbf45cffd21b888b9c6fb93300e66d5a1c47dd6e42c7c2e

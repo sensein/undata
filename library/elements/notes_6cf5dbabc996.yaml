@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  question_text: Notes
+  source_attribute: notes
+  source_class: ModelTraining
+provenance:
+- source: aind
+  class: ModelTraining
+  name: notes
+  description: Notes
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ModelTraining
+  name: notes
+  description: Notes
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6cf5dbabc996a11658aac9ced03f1dc8a0e47ad814886af0a15962eebf032902

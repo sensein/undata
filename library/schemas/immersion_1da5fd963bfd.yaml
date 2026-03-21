@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/medium_52980aad522a
+  - https://schema.undata.live/elements/refractive_index_f9fbc2be5958
+  mixins: []
+provenance:
+- source: aind
+  name: Immersion
+  generated_at: '2026-03-21T05:07:50.879052+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1da5fd963bfdbf6d7068565046760dfc64b2cc869678cb9786c9bb8b0293d3aa

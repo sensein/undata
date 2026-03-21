@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: gallus_gallus
-provenance:
-- source: aind
-  raw_value: aind.subject.MouseSubject.species.Gallus_Gallus

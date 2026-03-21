@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/anchorPoint
+  source_class: viewerSpecification.schema.omi
+provenance:
+- source: openminds
+  class: viewerSpecification.schema.omi
+  name: https://openminds.om-i.org/props/anchorPoint
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 080a19ead77a3f1700aba42f4cc4d39a07b02457e5a3526392993784240cff30

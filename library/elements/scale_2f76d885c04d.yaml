@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Scale parameters
+  source_attribute: scale
+  source_class: Scale
+provenance:
+- source: aind
+  class: Scale
+  name: scale
+  description: Scale parameters
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2f76d885c04d6a62f23feed3695ba535020c3b6b06e5f4ba9f575739c7c82a72

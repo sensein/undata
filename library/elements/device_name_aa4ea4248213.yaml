@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Device name
+  source_attribute: device_name
+  source_class: CatheterConfig
+provenance:
+- source: aind
+  class: CatheterConfig
+  name: device_name
+  description: Must match a device defined in the instrument.json
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: aa4ea42482137b6a49cdd1f8796d0eab04462c2d2ef222ecd0044f10321335ea

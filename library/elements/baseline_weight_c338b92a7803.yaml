@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Baseline weight (g)
+  source_attribute: baseline_weight
+  source_class: WaterRestriction
+provenance:
+- source: aind
+  class: WaterRestriction
+  name: baseline_weight
+  description: Weight at start of water restriction
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c338b92a780343134d337553dc39ea73670aaa53681f45dbfdf16eb28ecc13f8

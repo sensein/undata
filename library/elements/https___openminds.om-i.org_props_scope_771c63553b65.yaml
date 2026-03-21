@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/scope
+  source_class: service.schema.omi
+provenance:
+- source: openminds
+  class: service.schema.omi
+  name: https://openminds.om-i.org/props/scope
+  description: Extent of something.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 771c63553b6579ff7f182549cb3a5247da1d89a021ad2ffb3e753e25f8651feb

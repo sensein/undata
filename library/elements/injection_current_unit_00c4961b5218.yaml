@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Injection current unit
+  source_attribute: injection_current_unit
+  source_class: InjectionDynamics
+provenance:
+- source: aind
+  class: InjectionDynamics
+  name: injection_current_unit
+  description: Injection current unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 00c4961b5218903d5e810a0ec493f7aeb905cd5a6af48d171a660fde3dfcc25e

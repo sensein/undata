@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/type
+  source_class: electrode.schema.omi
+provenance:
+- source: openminds
+  class: electrode.schema.omi
+  name: https://openminds.om-i.org/props/type
+  description: Distinct class to which a group of entities or concepts with similar
+    characteristics or attributes belong to.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9d004d2aa8fc24533b9c8618c656976dcc2d2dc7d1a3c6013529f642d4a91081

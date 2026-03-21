@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: StationName
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: StationName
+  description: 'Institution defined name of the machine that produced the measurements.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b33bb009c9356d76f099108cc727836e9940dcbe3e585896e9a450e157e224d3

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/name
+  source_class: terminology.schema.omi
+provenance:
+- source: openminds
+  class: terminology.schema.omi
+  name: https://openminds.om-i.org/props/name
+  description: Word or phrase that constitutes the distinctive designation of a being
+    or thing.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 623aee19d2b6870f6d565382fa8b645a3e1c3040820261b3c5b9f229acc0c425

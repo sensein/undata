@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/referenceDataAcquisition
+  source_class: validationTest.schema.omi
+provenance:
+- source: openminds
+  class: validationTest.schema.omi
+  name: https://openminds.om-i.org/props/referenceDataAcquisition
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 78c796b936dcb3a7c4c7b5817d1e88fad9978840ecb34b30bd28e2082ec8a4e6

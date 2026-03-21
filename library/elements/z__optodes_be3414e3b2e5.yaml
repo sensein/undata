@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: z__optodes
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: z__optodes
+  description: 'Recorded position along the z-axis.
+
+    `"n/a"` if not available.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: be3414e3b2e5b9e61eb25298f10515f1dfdd24f2c3ba0bb8db002b706c14158e

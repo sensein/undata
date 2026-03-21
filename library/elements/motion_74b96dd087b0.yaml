@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: motion
+  source_class: modalities
+provenance:
+- source: bids
+  class: modalities
+  name: motion
+  description: 'Data acquired with Motion-Capture systems.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 74b96dd087b09d2f6d931cf2a2f395e840964f9de16528411ba4180e11f222f8

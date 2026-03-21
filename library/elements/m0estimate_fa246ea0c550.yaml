@@ -1,0 +1,20 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: M0Estimate
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: M0Estimate
+  description: 'A single numerical whole-brain M0 value (referring to the M0 of blood),
+
+    only if obtained externally
+
+    (for example retrieved from CSF in a separate measurement).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fa246ea0c5506f720545796532f47e986cc290168b9e597f3d9886a1cebc9f30

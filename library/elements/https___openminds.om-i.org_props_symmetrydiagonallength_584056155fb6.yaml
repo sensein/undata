@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/symmetryDiagonalLength
+  source_class: kite.schema.omi
+provenance:
+- source: openminds
+  class: kite.schema.omi
+  name: https://openminds.om-i.org/props/symmetryDiagonalLength
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 584056155fb63f39eb8db6ebdd89d28c22b4cd120f7c5258f0f76c6c1a28fc09

@@ -1,0 +1,23 @@
+semantic:
+  data_type: array
+  question_text: List of asset names that this metric depends on
+  source_attribute: evaluated_assets
+  source_class: QCMetric
+provenance:
+- source: aind
+  class: QCMetric
+  name: evaluated_assets
+  description: Set to None except when a metric's calculation required data coming
+    from a different data asset.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: QCMetric
+  name: evaluated_assets
+  description: Set to None except when a metric's calculation required data coming
+    from a different data asset.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 18ae8d354790feb49e1e3e6e1c44c0939ef0fdf3fd9ff6739a64d6f865a8961e

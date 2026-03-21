@@ -1,0 +1,16 @@
+semantic:
+  data_type: object
+  question_text: Coordinate system
+  source_attribute: coordinate_system
+  source_class: Instrument
+  type_ref: CoordinateSystem
+provenance:
+- source: aind
+  class: Instrument
+  name: coordinate_system
+  description: Origin and axis definitions for determining the position of the instrument's
+    components
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c24a08ad13a83e3c2e96c40533c48515fe1a042b1351bbf82fa197cbef59f08e

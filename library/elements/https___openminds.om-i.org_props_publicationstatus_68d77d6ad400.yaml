@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/publicationStatus
+  source_class: commonCoordinateFrameworkVersion.schema.omi
+provenance:
+- source: openminds
+  class: commonCoordinateFrameworkVersion.schema.omi
+  name: https://openminds.om-i.org/props/publicationStatus
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 68d77d6ad400736c71d2450db6272a973c3bcc4bcbcd2c23e709661ef052ee28

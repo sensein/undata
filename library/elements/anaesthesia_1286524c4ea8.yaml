@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: Anaesthesia
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: Anaesthesia
+  description: 'Details of anaesthesia used, if any.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1286524c4ea857ad34f41d6afa39f699d7a99b54616daead1e91bab1dc52c6d3

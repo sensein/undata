@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/custompropertyset_11044af07072
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_4d00ec32d061
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/endtime_85fc1c051f05
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/environment_f9430a93e467
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/input_84c17a10e106
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/launchconfiguration_729347ec0081
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/lookuplabel_49b4b4d974c5
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/output_0c53008a58a0
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/performedby_f7070e9e7887
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/recipe_608ff66700be
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/resourceusage_dc6bcb094e31
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/startedby_90b1b4885f47
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/starttime_8c74ff0a4ba3
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/status_2ce8d7930194
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/studytarget_0eb43da15baa
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/tag_25d63bea7122
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/technique_c1cb0ae321e5
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/wasinformedby_8bb90dc73a64
+  mixins: []
+provenance:
+- source: openminds
+  name: dataAnalysis.schema.omi
+  generated_at: '2026-03-21T05:08:25.272036+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 81b585e24bd9e6a90cd55894b293e5f5e04f2adc2ba5b404fdb2a1778c2fce1f

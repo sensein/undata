@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: new_york_university
-provenance:
-- source: aind
-  raw_value: aind.data_description.institution.New_York_University

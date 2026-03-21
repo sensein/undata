@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/id_o8u8yi
-  - https://schema.undata.live/elements/schemakey_bp5fn6
-  mixins: []
-provenance:
-- source: dandi
-  name: DandiBaseModel

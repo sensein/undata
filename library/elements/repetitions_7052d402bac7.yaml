@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: repetitions
+  source_class: ExperimentalConditionsTable
+provenance:
+- source: nwb
+  class: ExperimentalConditionsTable
+  name: repetitions
+  description: A reference to one or more rows in the RepetitionsTable table.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7052d402bac7bc6bb0c8852452d772ea13d70b98491dbaab069f493ba79d1943

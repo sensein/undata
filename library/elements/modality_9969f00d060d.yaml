@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: modality
+  source_class: entities
+provenance:
+- source: bids
+  class: entities
+  name: modality
+  description: 'The `mod-<label>` entity corresponds to modality label for defacing
+
+    masks, for example, T1w, inplaneT1, referenced by a defacemask image.
+
+    For example, `sub-01_mod-T1w_defacemask.nii.gz`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9969f00d060d455c96bfbdf36312bc5ef7169d2268bedcfd64800abb148497a6

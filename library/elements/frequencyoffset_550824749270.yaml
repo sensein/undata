@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: FrequencyOffset
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: FrequencyOffset
+  description: 'List or value for frequency offset for spectral editing in ppm. See
+    EditPulse
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 550824749270eed868fae228f259ed1c47bee548dbbc567ffe89cd5dd0063c4e

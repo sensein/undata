@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/axesOrigin
+  source_class: customCoordinateFramework.schema.omi
+provenance:
+- source: openminds
+  class: customCoordinateFramework.schema.omi
+  name: https://openminds.om-i.org/props/axesOrigin
+  description: Special point in a coordinate system used as a fixed point of reference
+    for the geometry of the surrounding space.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bcac884cad3cebf31faad273f6e1c15f41309395332ec6f954ce62e15d75017b

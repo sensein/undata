@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: hlu
-provenance:
-- source: bids
-  raw_value: HLU

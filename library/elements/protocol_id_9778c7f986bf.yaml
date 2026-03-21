@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Protocol ID
+  source_attribute: protocol_id
+  source_class: Headframe
+provenance:
+- source: aind
+  class: Headframe
+  name: protocol_id
+  description: DOI for protocols.io
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9778c7f986bf636b0c56716ad3c97b1081ccc82f01248959316bcd441ff258b6

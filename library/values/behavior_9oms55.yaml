@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: behavior
-provenance:
-- source: aind
-  raw_value: aind.acquisition.DataStream.modalities.Behavior
-- source: aind
-  raw_value: aind.quality_control.CurationMetric.modality.Behavior

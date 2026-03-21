@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: arecont_vision_costar
-provenance:
-- source: aind
-  raw_value: aind.acquisition.NonViralMaterial.source.Arecont_Vision_Costar
-- source: aind
-  raw_value: aind.metadata.FluorescentStain.source.Arecont_Vision_Costar

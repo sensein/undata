@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/description
+  source_class: communicationInterfaceType.schema.omi
+provenance:
+- source: openminds
+  class: communicationInterfaceType.schema.omi
+  name: https://openminds.om-i.org/props/description
+  description: Longer statement or account giving the characteristics of someone or
+    something.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1636592860d5b4b7d06d03cbba3c1e2b96fb92d78504eeaf1985d8c7bd211844

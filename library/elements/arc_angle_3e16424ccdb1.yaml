@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Arc Angle (deg)
+  source_attribute: arc_angle
+  source_class: MISModuleConfig
+provenance:
+- source: aind
+  class: MISModuleConfig
+  name: arc_angle
+  description: Arc Angle (deg)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3e16424ccdb1a82c853a199157beb2ab11c2135d959616adf7b8966a75128942

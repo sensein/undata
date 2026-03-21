@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/axis_1_phase_map_ab6eaa841f00
+  - https://schema.undata.live/elements/axis_1_power_map_c6ac02106148
+  - https://schema.undata.live/elements/axis_2_phase_map_fba98996982c
+  - https://schema.undata.live/elements/axis_2_power_map_fd2372bd42ed
+  - https://schema.undata.live/elements/axis_descriptions_6b3c82c49487
+  - https://schema.undata.live/elements/focal_depth_image_7c002cab9017
+  - https://schema.undata.live/elements/imagingretinotopy_79a7ed45f5ba
+  - https://schema.undata.live/elements/sign_map_1e5adc75eeeb
+  - https://schema.undata.live/elements/vasculature_image_abfe4062d8a5
+  mixins: []
+provenance:
+- source: nwb
+  name: ImagingRetinotopy
+  generated_at: '2026-03-21T05:07:31.275817+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6ce33b2e041ad0124aa99ec46a0c8f8d8130cbdbde3f3492fb29d5d1f43f5ff1

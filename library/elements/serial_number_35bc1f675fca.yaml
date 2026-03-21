@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Serial number
+  source_attribute: serial_number
+  source_class: FiberPatchCord
+provenance:
+- source: aind
+  class: FiberPatchCord
+  name: serial_number
+  description: Serial number
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 35bc1f675fca4262df018ef908cf0d0c13409aa7acaad59cf1e76d7c3b116cf8

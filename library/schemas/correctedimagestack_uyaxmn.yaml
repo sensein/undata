@@ -1,7 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/correctedimagestack_1xm8q1
-  mixins: []
-provenance:
-- source: nwb
-  name: CorrectedImageStack

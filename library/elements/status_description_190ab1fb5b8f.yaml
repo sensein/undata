@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: status_description
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: status_description
+  description: 'Freeform text description of noise or artifact affecting data quality
+    on the channel.
+
+    It is meant to explain why the channel was declared bad in the `status` column.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 190ab1fb5b8f0a70807a00123d447d8f2cdcc8ed49d49077737f662f17b388fb

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: pet
+  source_class: datatypes
+provenance:
+- source: bids
+  class: datatypes
+  name: pet
+  description: 'Positron emission tomography data
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6f870e7e6f55bd7f9e764a937a2bccef1607da9e3060ad79b920d3948dd31864

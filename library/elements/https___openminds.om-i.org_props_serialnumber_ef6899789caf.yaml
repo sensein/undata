@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/serialNumber
+  source_class: pipette.schema.omi
+provenance:
+- source: openminds
+  class: pipette.schema.omi
+  name: https://openminds.om-i.org/props/serialNumber
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ef6899789caf2fdba30aff3cafd00e622bb9fe31de0271b2336967813311d056

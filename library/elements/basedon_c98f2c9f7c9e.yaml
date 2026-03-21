@@ -1,0 +1,24 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: BasedOn
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: BasedOn
+  description: 'List of files in a file collection to generate the map.
+
+    Fieldmaps are also listed, if involved in the processing.
+
+    This field is DEPRECATED, and this metadata SHOULD be recorded in the
+
+    `Sources` field using [BIDS URIs](SPEC_ROOT/common-principles.md#bids-uri)
+
+    to distinguish sources from different datasets.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c98f2c9f7c9ea59af7643e6bf882fc19d847845dec17020e5204928296559bf2

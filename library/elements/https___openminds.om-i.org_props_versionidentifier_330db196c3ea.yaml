@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/versionIdentifier
+  source_class: interfaceVersion.schema.omi
+provenance:
+- source: openminds
+  class: interfaceVersion.schema.omi
+  name: https://openminds.om-i.org/props/versionIdentifier
+  description: Term or code used to identify the version of something.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 330db196c3ea673e33d968e05af4f1740434ab82ac5bb0a45f548b1d945998f6

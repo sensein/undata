@@ -1,0 +1,37 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: run
+  source_class: common_principles
+provenance:
+- source: bids
+  class: common_principles
+  name: run
+  description: 'An uninterrupted repetition of data acquisition that has the same
+    acquisition parameters and task
+
+    (however events can change from run to run due to different subject response
+
+    or randomized nature of the stimuli).
+
+    Run is a synonym of a data acquisition.
+
+    Note that "uninterrupted" may look different by modality due to the nature of
+    the recording.
+
+    For example, in [MRI](SPEC_ROOT/modality-specific-files/magnetic-resonance-imaging-data.md)
+
+    or [MEG](SPEC_ROOT/modality-specific-files/magnetoencephalography.md),
+
+    if a subject leaves the scanner, the acquisition must be restarted.
+
+    For some types of [PET](SPEC_ROOT/modality-specific-files/positron-emission-tomography.md)
+    acquisitions,
+
+    a subject may leave and re-enter the scanner without interrupting the scan.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 339771ca83e45b55e42a0dc06b5eb1f9f16c1fac10537ad237142a431a2b5338

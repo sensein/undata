@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: id
+  source_class: AccessRequirements
+provenance:
+- source: dandi
+  class: AccessRequirements
+  name: id
+  description: Uniform resource identifier
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a8af7338c9d65d47bc17001404bda3af2823ec18e69c9693d8779ac224dd2c0b

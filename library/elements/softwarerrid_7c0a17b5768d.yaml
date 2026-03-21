@@ -1,0 +1,22 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SoftwareRRID
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SoftwareRRID
+  description: '[Research Resource Identifier](https://rrid.site) of the
+
+    software that was used to present the stimuli.
+
+    Examples: The RRID for Psychtoolbox is ''SCR_002881'',
+
+    and that of PsychoPy is ''SCR_006571''.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7c0a17b5768ddcdfce3c7ef9c62d330766c156cb8d04aa52ccab2972e1772298

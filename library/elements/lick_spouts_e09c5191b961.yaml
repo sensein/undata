@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Water spouts
+  source_attribute: lick_spouts
+  source_class: LickSpoutAssembly
+provenance:
+- source: aind
+  class: LickSpoutAssembly
+  name: lick_spouts
+  description: Water spouts
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e09c5191b961c92f35dfce0926231bd5198b845515135a6cf2824fa5ef9be895

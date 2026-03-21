@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: iEEGCoordinateSystemDescription
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: iEEGCoordinateSystemDescription
+  description: 'Free-form text description of the coordinate system.
+
+    May also include a link to a documentation page or paper describing the
+
+    system in greater detail.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 042de7ca118cc7cfb355360153454fb5fcd275d2a0359ccc8bbedf8ea665799a

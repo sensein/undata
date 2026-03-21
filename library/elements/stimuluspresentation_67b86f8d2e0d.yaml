@@ -1,0 +1,18 @@
+semantic:
+  data_type: object
+  source_attribute: StimulusPresentation
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: StimulusPresentation
+  description: 'Object containing key-value pairs related to the software used to
+    present
+
+    the stimuli during the experiment.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 67b86f8d2e0d013ebf5119f5a4a9cc18c52104a018a66925a334cb6c65e3df52

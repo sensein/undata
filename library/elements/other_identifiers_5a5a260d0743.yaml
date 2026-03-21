@@ -1,0 +1,14 @@
+semantic:
+  data_type: object
+  question_text: Other identifiers
+  source_attribute: other_identifiers
+  source_class: metadata
+provenance:
+- source: aind
+  class: metadata
+  name: other_identifiers
+  description: Links to the data asset on secondary platforms.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5a5a260d0743ca553eed5c5aba7d86d52890bd2858a4caad27716f02da5183c2

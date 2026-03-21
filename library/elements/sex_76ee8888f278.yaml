@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: sex
+  source_class: Participant
+provenance:
+- source: dandi
+  class: Participant
+  name: sex
+  description: Identifier for sex of the participant or subject if available. (e.g.
+    from OBI)
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 76ee8888f278c36768723cb8f8788d5faf925e15c3743ca959cd92b5efabdc77

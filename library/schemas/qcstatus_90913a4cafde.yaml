@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/evaluator_47c91a12540c
+  - https://schema.undata.live/elements/status_4f9b38d8b478
+  - https://schema.undata.live/elements/timestamp_33850a2f6850
+  mixins: []
+provenance:
+- source: aind
+  name: QCStatus
+  generated_at: '2026-03-21T05:07:50.870975+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 90913a4cafdecac3e8bb68c70575db1251ae865c0439694270d4d46636daf203

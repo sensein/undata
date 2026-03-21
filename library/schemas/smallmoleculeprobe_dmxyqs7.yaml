@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/mass_unit_1td59o
-  - https://schema.undata.live/elements/mass_vfnjh3
-  - https://schema.undata.live/elements/molecule_1rucck
-  mixins: []
-provenance:
-- source: aind
-  name: SmallMoleculeProbe

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/customPropertySet
+  source_class: stimulationActivity.schema.omi
+provenance:
+- source: openminds
+  class: stimulationActivity.schema.omi
+  name: https://openminds.om-i.org/props/customPropertySet
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9d094d79a9bd65151dd008630c82c00a936bc7e3abf028681aa3e38bd4e3b9a0

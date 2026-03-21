@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: nirs
+  source_class: datatypes
+provenance:
+- source: bids
+  class: datatypes
+  name: nirs
+  description: Near-Infrared Spectroscopy data organized around the SNIRF format
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5f92d0a8a53be6904eb009fd757fa73c395eabf336700722c70ee6a91e7b9bde

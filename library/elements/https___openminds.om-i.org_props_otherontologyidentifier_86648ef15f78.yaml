@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/otherOntologyIdentifier
+  source_class: MRIParallelAcquisitionTechnique.schema.omi
+provenance:
+- source: openminds
+  class: MRIParallelAcquisitionTechnique.schema.omi
+  name: https://openminds.om-i.org/props/otherOntologyIdentifier
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 86648ef15f78ef6b998bf7b33ace07b8b1290f8a89a5769bdbb315840af7a0d7

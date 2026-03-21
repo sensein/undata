@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Additional parameters
+  source_attribute: additional_settings
+  source_class: OpenEphysAcquisitionBoard
+provenance:
+- source: aind
+  class: OpenEphysAcquisitionBoard
+  name: additional_settings
+  description: Additional parameters
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c7f573e5be93439b2874ad27fc8bb4d0de5c17794bc0e36bc0bf351ac2bf694b

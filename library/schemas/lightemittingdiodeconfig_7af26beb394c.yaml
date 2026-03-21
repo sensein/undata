@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/device_name_0a148fd428f5
+  - https://schema.undata.live/elements/power_c80ab35fa975
+  - https://schema.undata.live/elements/power_measured_at_865b2d40bd49
+  - https://schema.undata.live/elements/power_unit_a0720e94f30b
+  mixins: []
+provenance:
+- source: aind
+  name: LightEmittingDiodeConfig
+  generated_at: '2026-03-21T05:07:50.866538+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7af26beb394cad3b9798d15c7b4dc6a31206e1bacc8ae2f5d9ff0fc8a893f965

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/otherOntologyIdentifier
+  source_class: anatomicalAxesOrientation.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalAxesOrientation.schema.omi
+  name: https://openminds.om-i.org/props/otherOntologyIdentifier
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d6227056c186e8a8e9773642cb4ef42c1c962f50f31a63d4cfc8d1ba534a5fab

@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: Status mapping
+  source_attribute: status
+  source_class: QualityControl
+provenance:
+- source: aind
+  class: QualityControl
+  name: status
+  description: Mapping of tags, modalities, and stages to their evaluated status,
+    automatically computed
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 43d1a5bcac1ce0332afbc95e2394a82991078a1237b6ff23f72666f095643198

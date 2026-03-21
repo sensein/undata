@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/serializationFormat
+  source_class: metaDataModelVersion.schema.omi
+provenance:
+- source: openminds
+  class: metaDataModelVersion.schema.omi
+  name: https://openminds.om-i.org/props/serializationFormat
+  description: Form in which a particular data structure or object state is translated
+    to for storage.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ac6f8a78288c367bed31abbcfe4fc7146c93fa02aad03237f4d5f329ccffa633

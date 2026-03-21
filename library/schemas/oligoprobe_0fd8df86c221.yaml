@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/name_45b94ed0b13a
+  - https://schema.undata.live/elements/sequence_0a40daf5959f
+  mixins: []
+provenance:
+- source: aind
+  name: OligoProbe
+  generated_at: '2026-03-21T05:07:50.879745+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0fd8df86c221f0cb4b9011078315afcd89254301cea241534b8b881c804b7dc9

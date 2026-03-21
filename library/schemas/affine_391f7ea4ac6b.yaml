@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/affine_transform_cbe69d95a3ea
+  mixins: []
+provenance:
+- source: aind
+  name: Affine
+  generated_at: '2026-03-21T05:07:50.829975+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 391f7ea4ac6bef63f4760f45db49ac7b4dc83472115e89a4e3d59442d91f6485

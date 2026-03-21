@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  source_attribute: axis_2_power_map
+  source_class: ImagingRetinotopy
+provenance:
+- source: nwb
+  class: ImagingRetinotopy
+  name: axis_2_power_map
+  description: Power response on the second measured axis. Response is scaled so 0.0
+    is no power in the response and 1.0 is maximum relative power.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fd2372bd42ed69856492fc9e9e7931e66e44087d0ae37f6f3f0fbeaa3ccca579

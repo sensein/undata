@@ -1,0 +1,15 @@
+semantic:
+  data_type: array
+  question_text: Default grouping
+  source_attribute: default_grouping
+  source_class: quality_control
+provenance:
+- source: aind
+  class: quality_control
+  name: default_grouping
+  description: Tag *keys* that should be used to group metrics hierarchically for
+    visualization
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f684e0c6459c5f23a62879bb5595a35496f9fb1b0c542c7f0da151e330ff5f7e

@@ -1,0 +1,33 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: FLASH
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: FLASH
+  description: 'FLASH (Fast-Low-Angle-Shot) is a vendor-specific implementation for
+    spoiled
+
+    gradient echo acquisition.
+
+    It is commonly used for rapid anatomical imaging and also for many different
+
+    qMRI applications.
+
+    When used for a single file, it does not convey any information about the
+
+    image contrast.
+
+    When used in a file collection, it may result in conflicts across filenames of
+
+    different applications.
+
+    **Change:** Removed from suffixes.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6c8cf71a779cb12996a9da62a155596e0fe3672c6f1709c3591647fbabdb8820

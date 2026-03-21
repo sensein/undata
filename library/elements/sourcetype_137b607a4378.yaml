@@ -1,0 +1,24 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SourceType
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SourceType
+  description: 'Type of source. Preferably a specific model/part number is supplied.
+
+    This is a freeform description, but the following keywords are suggested:
+
+    `"LED"`, `"LASER"`, `"VCSEL"`. If individual channels have different SourceType,
+
+    then the field here should be specified as "mixed"
+
+    and this column should be included in optodes.tsv.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 137b607a43788b6cd1c426225c6a921ff51abf546b48a62f38f9a9565675f0cc

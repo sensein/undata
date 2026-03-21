@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredOntologyIdentifier
+  source_class: cellCultureType.schema.omi
+provenance:
+- source: openminds
+  class: cellCultureType.schema.omi
+  name: https://openminds.om-i.org/props/preferredOntologyIdentifier
+  description: Persistent identifier of a preferred ontological term.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2599965291193cc3099fb4b1d2b0e509b9d871db7c2e2f14f6bebd7bc7f86102

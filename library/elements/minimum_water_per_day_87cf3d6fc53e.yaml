@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Minimum water per day (mL)
+  source_attribute: minimum_water_per_day
+  source_class: WaterRestriction
+provenance:
+- source: aind
+  class: WaterRestriction
+  name: minimum_water_per_day
+  description: Minimum water per day (mL)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 87cf3d6fc53ebcc291e5e8b60ee33b536e58cd57754bb11109aa907fc3400c34

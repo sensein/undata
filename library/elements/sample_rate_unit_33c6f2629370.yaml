@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Sample rate unit
+  source_attribute: sample_rate_unit
+  source_class: DAQChannel
+provenance:
+- source: aind
+  class: DAQChannel
+  name: sample_rate_unit
+  description: Sample rate unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 33c6f2629370686e14ef6789aa720fcb4da6f4c8f84c3d692fc4068181ac9f7e

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: AtlasName
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: AtlasName
+  description: 'Name of the atlas.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 111e7574be2c78a58b6e0cd5bc5d16043ace9eb8fbad74035776d08299210db0

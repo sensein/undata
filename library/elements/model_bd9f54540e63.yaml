@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Model
+  source_attribute: model
+  source_class: HarpDevice
+provenance:
+- source: aind
+  class: HarpDevice
+  name: model
+  description: Model
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bd9f54540e639d3e2120d91e042c7800c7435275bb6de23c8bbb9404af9405ef

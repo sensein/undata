@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/relevantFor
+  source_class: customPropertySet.schema.omi
+provenance:
+- source: openminds
+  class: customPropertySet.schema.omi
+  name: https://openminds.om-i.org/props/relevantFor
+  description: Reference to what or whom something or someone bears significance.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f5d38724033ab7c97c9eb92878b5193e869c50e7b78e018922cb9b5ab481fcb6

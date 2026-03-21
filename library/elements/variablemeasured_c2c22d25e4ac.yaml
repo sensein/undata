@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: variableMeasured
+  source_class: AssetsSummary
+provenance:
+- source: dandi
+  class: AssetsSummary
+  name: variableMeasured
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c2c22d25e4acc8932d451d43083cc84b173d4f3061787f70b9db41bf5efb58d8

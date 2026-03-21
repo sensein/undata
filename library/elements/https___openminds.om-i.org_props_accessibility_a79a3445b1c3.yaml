@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/accessibility
+  source_class: workflowRecipeVersion.schema.omi
+provenance:
+- source: openminds
+  class: workflowRecipeVersion.schema.omi
+  name: https://openminds.om-i.org/props/accessibility
+  description: Level to which something is accessible to someone or something.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a79a3445b1c3809ce901e18d2a7a5450255babbde57894c67398d76f8943c57c

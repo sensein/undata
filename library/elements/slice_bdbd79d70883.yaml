@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: slice
+  source_class: IntracellularElectrode
+provenance:
+- source: nwb
+  class: IntracellularElectrode
+  name: slice
+  description: Information about slice used for recording.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bdbd79d70883094df4388f1f770aecc7eefd96f1955597a7b01fef9a0b9f752d

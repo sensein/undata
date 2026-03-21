@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/lookupLabel
+  source_class: tissueSampleState.schema.omi
+provenance:
+- source: openminds
+  class: tissueSampleState.schema.omi
+  name: https://openminds.om-i.org/props/lookupLabel
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c1c86f00e7bad1644328824433efc6ac7b4b039de5b2e2cdcab8679655e8282b

@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/capacitance_fast_ed57b29476be
+  - https://schema.undata.live/elements/capacitance_slow_0a9ae3174edd
+  - https://schema.undata.live/elements/data_2190c63439b9
+  - https://schema.undata.live/elements/resistance_comp_bandwidth_150890851322
+  - https://schema.undata.live/elements/resistance_comp_correction_adaf8d245411
+  - https://schema.undata.live/elements/resistance_comp_prediction_a1bc2ddf7596
+  - https://schema.undata.live/elements/voltageclampseries_ff788b8c7642
+  - https://schema.undata.live/elements/whole_cell_capacitance_comp_fc2d6bf0a783
+  - https://schema.undata.live/elements/whole_cell_series_resistance_comp_b3be2dc250fc
+  mixins: []
+provenance:
+- source: nwb
+  name: VoltageClampSeries
+  generated_at: '2026-03-21T05:07:31.279429+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 80694f0f321059ffb4b6db979cd7c1c2c7ff271c53335a8217b4cf6adebc3cff

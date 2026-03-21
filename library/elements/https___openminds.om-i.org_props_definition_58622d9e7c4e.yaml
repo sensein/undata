@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/definition
+  source_class: anatomicalAxesOrientation.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalAxesOrientation.schema.omi
+  name: https://openminds.om-i.org/props/definition
+  description: Short, but precise statement of the meaning of a word, word group,
+    sign or a symbol.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 58622d9e7c4ef183ad04c1f061e9bec45b0831e8b9323fb8aa5ffb59408b36e5

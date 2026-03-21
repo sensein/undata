@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/entryPoint
+  source_class: modelVersion.schema.omi
+provenance:
+- source: openminds
+  class: modelVersion.schema.omi
+  name: https://openminds.om-i.org/props/entryPoint
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 576362b95686e0a085dc53e02b473bcc36a754c80633f7386c57762032c9d9fb

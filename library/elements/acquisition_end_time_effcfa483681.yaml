@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Acquisition end time
+  source_attribute: acquisition_end_time
+  source_class: Acquisition
+provenance:
+- source: aind
+  class: Acquisition
+  name: acquisition_end_time
+  description: Acquisition end time
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: effcfa483681081d1b7c8ec10ad3b0595688df6bf1580d2fb64be5426000a9ae

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Manufacturer
+  source_attribute: manufacturer
+  source_class: Tube
+provenance:
+- source: aind
+  class: Tube
+  name: manufacturer
+  description: Manufacturer
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bc3a7456dc26c7e4d10b391511f2128f5938640312948e8dfee38d356dc03b8a

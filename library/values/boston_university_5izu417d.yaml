@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: boston_university
-provenance:
-- source: aind
-  raw_value: aind.instrument.HarpDevice.manufacturer.Boston_University

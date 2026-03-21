@@ -1,0 +1,16 @@
+semantic:
+  data_type: boolean
+  value_domain: boolean
+  source_attribute: BackgroundSuppression
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: BackgroundSuppression
+  description: 'Boolean indicating if background suppression is used.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 507698aec5d77839c436ff32dbe88b3d5e825b3a0c56ac39f81e9e295fc43db0

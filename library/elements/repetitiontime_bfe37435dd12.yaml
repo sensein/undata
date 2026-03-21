@@ -1,0 +1,47 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: RepetitionTime
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: RepetitionTime
+  description: 'The time in seconds between the beginning of an acquisition of one
+    volume
+
+    and the beginning of acquisition of the volume following it (TR).
+
+    When used in the context of functional acquisitions this parameter best
+
+    corresponds to
+
+    [DICOM Tag 0020, 0110](http://www.dicomlookup.com/dicomtags/(0020,0110)):
+
+    the "time delta between images in a
+
+    dynamic of functional set of images" but may also be found in
+
+    [DICOM Tag 0018, 0080](http://www.dicomlookup.com/dicomtags/(0018,0080)):
+
+    "the period of time in msec between the beginning
+
+    of a pulse sequence and the beginning of the succeeding
+
+    (essentially identical) pulse sequence".
+
+    This definition includes time between scans (when no data has been acquired)
+
+    in case of sparse acquisition schemes.
+
+    This value MUST be consistent with the ''pixdim[4]'' field (after accounting
+
+    for units stored in ''xyzt_units'' field) in the NIfTI header.
+
+    This field is mutually exclusive with VolumeTiming.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bfe37435dd123d269829a64c96ff28c53466d405427a0f72c0ae720bd8d52b6b

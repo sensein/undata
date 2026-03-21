@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Measurement location
+  source_attribute: measured_at
+  source_class: Calibration
+provenance:
+- source: aind
+  class: Calibration
+  name: measured_at
+  description: Measurement location
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4d3a2d6a6039de3dfe89e06606eb39da13847f6503168f4885a20004a91d82cd

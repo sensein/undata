@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_32303190d196
+  - https://schema.undata.live/elements/electrode_84f7953b184b
+  - https://schema.undata.live/elements/intracellularelectrodestable_57affd7717cd
+  mixins: []
+provenance:
+- source: nwb
+  name: IntracellularElectrodesTable
+  generated_at: '2026-03-21T05:07:31.288603+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6b99b4b3185d828840a399170f2ade2c81c59498eaffe90f5bdea20c09b2ec8c

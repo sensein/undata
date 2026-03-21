@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Brightness unit
+  source_attribute: brightness_unit
+  source_class: Monitor
+provenance:
+- source: aind
+  class: Monitor
+  name: brightness_unit
+  description: Brightness unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0af5fcb01e6c38985573887e7063b95a911d1e69518cd13bbe236fc8f5e7278a

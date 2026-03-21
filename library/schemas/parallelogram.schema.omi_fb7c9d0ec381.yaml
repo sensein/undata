@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/basedistance_63a4b1854d89
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/baselength_4e70b99a58c0
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/interiorangle_1d335e1ac0d2
+  mixins: []
+provenance:
+- source: openminds
+  name: parallelogram.schema.omi
+  generated_at: '2026-03-21T05:08:25.242393+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fb7c9d0ec381943526fa32274156ab3e4c0ce5532586642c29d262b8f30d5238

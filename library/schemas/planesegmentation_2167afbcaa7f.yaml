@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/image_mask_92afad5d8cfa
+  - https://schema.undata.live/elements/pixel_mask_29d8115901e7
+  - https://schema.undata.live/elements/pixel_mask_index_c6d47943185e
+  - https://schema.undata.live/elements/planesegmentation_9787f2e1def2
+  - https://schema.undata.live/elements/voxel_mask_2300ad47bf88
+  - https://schema.undata.live/elements/voxel_mask_index_a2bfb0c5ca93
+  mixins: []
+provenance:
+- source: nwb
+  name: PlaneSegmentation
+  generated_at: '2026-03-21T05:07:31.298649+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2167afbcaa7f1332c3e2c8dc68d67b6a4759a5a9cbaf473cdb9b8410a8e567eb

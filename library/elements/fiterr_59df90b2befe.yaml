@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: FITERR
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: FITERR
+  description: 'Fit error signal from each head localization coil.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 59df90b2befe27752bfeaddbb8787be5c4034bf5f8fb1eea9a1081e6a4d31e17

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Model
+  source_attribute: model
+  source_class: NeuropixelsBasestation
+provenance:
+- source: aind
+  class: NeuropixelsBasestation
+  name: model
+  description: Model
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ca2f7d57969cd18a32bc1fe4320a6ffe2e6971e2562da74657b92da2ed42efaa

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/failureImpact
+  source_class: dependency.schema.omi
+provenance:
+- source: openminds
+  class: dependency.schema.omi
+  name: https://openminds.om-i.org/props/failureImpact
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: de0119777c2cb4fc0cc6f55f485c8b405964ec22302701e99664cdbd6c130cec

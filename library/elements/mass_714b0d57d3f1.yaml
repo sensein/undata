@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Mass of small molecule probe (ug)
+  source_attribute: mass
+  source_class: SmallMoleculeProbe
+provenance:
+- source: aind
+  class: SmallMoleculeProbe
+  name: mass
+  description: Mass of small molecule probe (ug)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 714b0d57d3f1206a6f2174324f660d13e39f0162a06f16a5524e1da5b617b28a

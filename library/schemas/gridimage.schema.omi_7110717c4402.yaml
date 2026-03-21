@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/additionalremarks_d3f00744564b
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/coordinateframework_305789a18987
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/datalocation_28e5e432d917
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/dimension_fea48f5ea701
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_43d213f25644
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/obtainedwith_5d33ef789e19
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/pixelsize_46468a0ffbec
+  mixins: []
+provenance:
+- source: openminds
+  name: gridImage.schema.omi
+  generated_at: '2026-03-21T05:08:25.230656+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7110717c4402077be2b63c8f6f0d60497f85372b7bd6ad34c46d4bca39f00166

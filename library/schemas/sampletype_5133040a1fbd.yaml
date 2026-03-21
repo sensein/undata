@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_201e128e42d1
+  - https://schema.undata.live/elements/identifier_9f4be6d0ae30
+  - https://schema.undata.live/elements/name_76595d5833c2
+  - https://schema.undata.live/elements/schemakey_6fe36339136a
+  mixins: []
+provenance:
+- source: dandi
+  name: SampleType
+  generated_at: '2026-03-21T05:07:14.178750+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5133040a1fbde107ca3b250147ebd62dafb7dae9f9638d5596c563f3f286738c

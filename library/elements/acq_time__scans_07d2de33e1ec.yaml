@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: acq_time__scans
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: acq_time__scans
+  description: 'Acquisition time refers to when the first data point in each run was
+    acquired.
+
+    Furthermore, if this header is provided, the acquisition times of all files
+
+    from the same recording MUST be identical.
+
+    Datetime format and their deidentification are described in
+
+    [Units](SPEC_ROOT/common-principles.md#units).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 07d2de33e1ec761531518d91c0a02c7014e968fb6b8d23199c24ea7b8900dfc9

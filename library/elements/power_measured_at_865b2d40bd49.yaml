@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Power measurement location
+  source_attribute: power_measured_at
+  source_class: LightEmittingDiodeConfig
+provenance:
+- source: aind
+  class: LightEmittingDiodeConfig
+  name: power_measured_at
+  description: 'For example: objective, patch cable, etc'
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 865b2d40bd49a33ccacd12a6f1a0ee9c1e295efdffbdd4ec5080f6bb53114307

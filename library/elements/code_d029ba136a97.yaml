@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Acquisition code
+  source_attribute: code
+  source_class: DataStream
+provenance:
+- source: aind
+  class: DataStream
+  name: code
+  description: Acquisition code
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d029ba136a973c34218fbc85f80efc71370e2a9a21c8bd2bafd5d7c01ac1c2e7

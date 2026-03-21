@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Data Description
+  source_attribute: data_description
+  source_class: metadata
+provenance:
+- source: aind
+  class: metadata
+  name: data_description
+  description: A logical collection of data files.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2da8b04497c08a947a3227613e6cfffa4a6b6b3c52d4b4bb9adaca5da77bad65

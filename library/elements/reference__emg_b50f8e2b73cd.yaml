@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: reference__emg
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: reference__emg
+  description: 'The reference for the given channel.
+
+    When the reference is an electrode in `*_electrodes.tsv`, use the name of that
+    electrode.
+
+    For channels originating from bipolar devices, use `"bipolar"`.
+
+    For non-EMG channels (for example, trigger channels, microphones) use `"n/a"`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b50f8e2b73cd3f973ad70e7aaaf125ccd7bd6e54897411d18f59e7315affd40d

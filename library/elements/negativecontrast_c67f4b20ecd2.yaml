@@ -1,0 +1,26 @@
+semantic:
+  data_type: boolean
+  value_domain: boolean
+  source_attribute: NegativeContrast
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: NegativeContrast
+  description: '`true` or `false` value specifying whether increasing voxel intensity
+
+    (within sample voxels) denotes a decreased value with respect to the
+
+    contrast suffix.
+
+    This is commonly the case when Cerebral Blood Volume is estimated via
+
+    usage of a contrast agent in conjunction with a T2\* weighted acquisition
+
+    protocol.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c67f4b20ecd2fba718c9ea384ef0f2259ed82b141472bd03d3161595612da13c

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/descendedFrom
+  source_class: subjectGroupState.schema.omi
+provenance:
+- source: openminds
+  class: subjectGroupState.schema.omi
+  name: https://openminds.om-i.org/props/descendedFrom
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 85d8ea8403733d161f3c2bd62d7afe2ab91346a091d10384cc104822e7dea2e0

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/endTime
+  source_class: electrodePlacement.schema.omi
+provenance:
+- source: openminds
+  class: electrodePlacement.schema.omi
+  name: https://openminds.om-i.org/props/endTime
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a0e6cf2a1ff1b5c6b13af5cb5ea10bad08c97a69c0306cfff06ac0a5b2e551dd

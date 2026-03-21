@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: DetectorType
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: DetectorType
+  description: 'Type of detector. This is a free form description with the following
+    suggested terms:
+
+    `"SiPD"`, `"APD"`. Preferably a specific model/part number is supplied.
+
+    If individual channels have different `DetectorType`,
+
+    then the field here should be specified as `"mixed"`
+
+    and this column should be included in `optodes.tsv`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4714fdf0fce7b41578ab6c14aeca7472d6f3d390750c0579241aa685c108a365

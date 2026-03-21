@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: fiterr
-provenance:
-- source: bids
-  raw_value: FITERR

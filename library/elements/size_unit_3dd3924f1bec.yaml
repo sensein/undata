@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Craniotomy size unit
+  source_attribute: size_unit
+  source_class: Craniotomy
+provenance:
+- source: aind
+  class: Craniotomy
+  name: size_unit
+  description: Craniotomy size unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3dd3924f1bec84954fddc6c0ef5ff211fcb2ba3f121c90baa2a6d7e752b5e07c

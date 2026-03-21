@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: PulseSequenceDetails
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: PulseSequenceDetails
+  description: 'Information beyond pulse sequence type that identifies the specific
+    pulse
+
+    sequence used (for example,
+
+    `"Standard Siemens Sequence distributed with the VB17 software"`,
+
+    `"Siemens WIP ### version #.##,"` or
+
+    `"Sequence written by X using a version compiled on MM/DD/YYYY"`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d5d03761d7d39f4d26dc8ad5433b2c06e58e354a059c8f3eafb8b3654d6cd458

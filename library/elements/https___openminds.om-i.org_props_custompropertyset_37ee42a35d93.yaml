@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/customPropertySet
+  source_class: cellPatching.schema.omi
+provenance:
+- source: openminds
+  class: cellPatching.schema.omi
+  name: https://openminds.om-i.org/props/customPropertySet
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 37ee42a35d9304605495af822a5e85df7740eff2e70e40897c878a592995656d

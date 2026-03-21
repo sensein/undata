@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/device_name_92b04f1f332b
+  - https://schema.undata.live/elements/manipulator_858afb0e0874
+  - https://schema.undata.live/elements/patch_cords_90e381e32988
+  - https://schema.undata.live/elements/probes_8cb8b89010fb
+  mixins: []
+provenance:
+- source: aind
+  name: FiberAssemblyConfig
+  generated_at: '2026-03-21T05:07:50.867731+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 85e1917dc3a419009b81b27c4d2baeb1a425853faf4bc93a37b0c666c7f6433f

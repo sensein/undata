@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/custompropertyset_55abfe37d655
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_766954b9f5c7
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/endtime_b841af3d15c2
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/environment_8ec2307b0379
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/input_98ff779b6235
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/launchconfiguration_0b7c68f44eb7
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/lookuplabel_e22d278f598c
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/output_9cdeb0f1abc1
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/performedby_0ec91b836a1b
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/recipe_904aa5bca4e7
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/resourceusage_27b6284dcfca
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/startedby_6149ecfb9769
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/starttime_cb89e9d4c382
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/status_1655711f3b5f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/studytarget_ef914e02a03e
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/tag_7fdc187558bd
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/technique_9cdc63a1339e
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/wasinformedby_645c6b87a75b
+  mixins: []
+provenance:
+- source: openminds
+  name: visualization.schema.omi
+  generated_at: '2026-03-21T05:08:25.274614+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 02166d2c30376f250588a322a05554557066ddbdfdd27dd3d5749a12a5cdff54

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/deliveredBy
+  source_class: ephysStimulus.schema.omi
+provenance:
+- source: openminds
+  class: ephysStimulus.schema.omi
+  name: https://openminds.om-i.org/props/deliveredBy
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9e0a3e47c2d68d458c6cb93d7927662853e28beda9df288a1b71dbddab323f1f

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Protocol ID
+  source_attribute: protocol_id
+  source_class: Calibration
+provenance:
+- source: aind
+  class: Calibration
+  name: protocol_id
+  description: DOI for protocols.io
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2038924153d45c260523e24020d9ff5b3ec6193f2d96c499ec8b404e1f71421c

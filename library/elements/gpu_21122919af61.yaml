@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  question_text: GPU name
+  source_attribute: gpu
+  source_class: ResourceUsage
+provenance:
+- source: aind
+  class: ResourceUsage
+  name: gpu
+  description: GPU name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ResourceUsage
+  name: gpu
+  description: GPU name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ResourceUsage
+  name: gpu
+  description: GPU name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 21122919af61225bd18657c81e095ccc852c7f3f1d34508c22275a2d3f48e10a

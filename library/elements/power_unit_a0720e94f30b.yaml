@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Excitation power unit
+  source_attribute: power_unit
+  source_class: LightEmittingDiodeConfig
+provenance:
+- source: aind
+  class: LightEmittingDiodeConfig
+  name: power_unit
+  description: Excitation power unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a0720e94f30b0ef015ba4f309afed58093ecd854ef23e6b894e12e8680b95dc4

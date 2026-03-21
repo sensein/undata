@@ -1,0 +1,21 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1de909c1499d
+  - https://schema.undata.live/elements/coupling_efficiency_290999a48158
+  - https://schema.undata.live/elements/coupling_efficiency_unit_4077a83e9e02
+  - https://schema.undata.live/elements/coupling_f42208fb8e81
+  - https://schema.undata.live/elements/manufacturer_ddbf6ea6453f
+  - https://schema.undata.live/elements/model_bfb67d8c68d8
+  - https://schema.undata.live/elements/name_2cdbf528457e
+  - https://schema.undata.live/elements/notes_46ad4eb356ef
+  - https://schema.undata.live/elements/serial_number_41a1cba4e2a2
+  - https://schema.undata.live/elements/wavelength_80dd0b3c56a6
+  - https://schema.undata.live/elements/wavelength_unit_a601f7de65b4
+  mixins: []
+provenance:
+- source: aind
+  name: Laser
+  generated_at: '2026-03-21T05:07:50.812422+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8ad5e65e0c43b316ac26f8aa1ec7da6f06568547a0014c8073995368a95c9288

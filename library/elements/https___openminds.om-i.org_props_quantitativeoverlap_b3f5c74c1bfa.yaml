@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/quantitativeOverlap
+  source_class: quantitativeRelationAssessment.schema.omi
+provenance:
+- source: openminds
+  class: quantitativeRelationAssessment.schema.omi
+  name: https://openminds.om-i.org/props/quantitativeOverlap
+  description: Numerical characterization of how much two things occupy the same space.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b3f5c74c1bfa9e8a813d8ff4fca9e0b70ebd93f40e4ee24dec6f48c0b0b2792b

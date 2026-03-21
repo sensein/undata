@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/alternatename_3c10e50b497c
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/associatedaccount_ac7bda5dc153
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/contactinformation_85dab178ea36
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/digitalidentifier_d397b0c0bf5e
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/familyname_ef34f925dfe9
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/givenname_e72681b1467f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preferredname_529b6e04f109
+  mixins: []
+provenance:
+- source: openminds
+  name: person.schema.omi
+  generated_at: '2026-03-21T05:08:25.234835+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bc2c6fb99ccf7f6786a106e34b29a366ad56a36a8b16b84a68136a391721d13d

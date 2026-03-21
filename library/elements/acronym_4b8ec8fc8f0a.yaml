@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Acronym
+  source_attribute: acronym
+  source_class: BrainStructureModel
+provenance:
+- source: aind
+  class: BrainStructureModel
+  name: acronym
+  description: Acronym
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4b8ec8fc8f0ae50d4af96f7eb62bcef5da00db2c84677cbb9fed3faae9572c42

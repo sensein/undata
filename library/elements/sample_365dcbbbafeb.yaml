@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: sample
+  source_class: common_principles
+provenance:
+- source: bids
+  class: common_principles
+  name: sample
+  description: 'A sample pertaining to a subject such as tissue, primary cell or cell-free
+    sample.
+
+    Sample labels MUST be unique within a subject and it is RECOMMENDED
+
+    that they be unique throughout the dataset.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 365dcbbbafeb998a5ed736d893ade23e88f794b842edf60945a15bbe929fc525

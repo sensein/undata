@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/band_limits_7494aafc3072
+  - https://schema.undata.live/elements/band_mean_74ab67eed0ab
+  - https://schema.undata.live/elements/band_name_0fdbd3f99ea7
+  - https://schema.undata.live/elements/band_stdev_5e9faa043dd3
+  - https://schema.undata.live/elements/frequencybandstable_fb3e652e58ff
+  mixins: []
+provenance:
+- source: nwb
+  name: FrequencyBandsTable
+  generated_at: '2026-03-21T05:07:31.276351+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7bcf80d5228915e84adf2a05ba5fd4fd5d04d97ddcef08c232c1df79dc01964d

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/internalIdentifier
+  source_class: recordingActivity.schema.omi
+provenance:
+- source: openminds
+  class: recordingActivity.schema.omi
+  name: https://openminds.om-i.org/props/internalIdentifier
+  description: Term or code that identifies someone or something within a particular
+    product.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 92a7bd263cef5cf2555a4521b8413dd5812cc7f1d84c6a3b69219c4438f0eb4c

@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/matches_1i0ued
-  - https://schema.undata.live/elements/source-entities_1x5wd6
-  mixins: []
-provenance:
-- source: bids
-  name: metaentities

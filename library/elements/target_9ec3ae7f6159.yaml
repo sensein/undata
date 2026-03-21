@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Target
+  source_attribute: target
+  source_class: ProbeReagent
+provenance:
+- source: aind
+  class: ProbeReagent
+  name: target
+  description: Target
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9ec3ae7f6159e8e73238baf160dce30b83606da0198c8083f69165866b49cfd1

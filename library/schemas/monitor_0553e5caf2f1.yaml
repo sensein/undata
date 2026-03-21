@@ -1,0 +1,29 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_1ded52fc67c0
+  - https://schema.undata.live/elements/brightness_babef8b8f327
+  - https://schema.undata.live/elements/brightness_unit_0af5fcb01e6c
+  - https://schema.undata.live/elements/contrast_e4c5310c91ad
+  - https://schema.undata.live/elements/contrast_unit_cf1321a9873f
+  - https://schema.undata.live/elements/coordinate_system_28cf9a4a9eb5
+  - https://schema.undata.live/elements/height_da55576943b2
+  - https://schema.undata.live/elements/manufacturer_e4d8defb2ece
+  - https://schema.undata.live/elements/model_b8021d7847cb
+  - https://schema.undata.live/elements/name_f7db7fe7cd64
+  - https://schema.undata.live/elements/notes_8ac762e80eaf
+  - https://schema.undata.live/elements/refresh_rate_0ba2516c38d6
+  - https://schema.undata.live/elements/relative_position_949a257dbddc
+  - https://schema.undata.live/elements/serial_number_5c5d8cde503b
+  - https://schema.undata.live/elements/size_unit_28d94cf6cbea
+  - https://schema.undata.live/elements/transform_d5b40a4c7a72
+  - https://schema.undata.live/elements/viewing_distance_3cfa2937fae0
+  - https://schema.undata.live/elements/viewing_distance_unit_99ae68aa22db
+  - https://schema.undata.live/elements/width_3255003bc37f
+  mixins: []
+provenance:
+- source: aind
+  name: Monitor
+  generated_at: '2026-03-21T05:07:50.813003+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0553e5caf2f183337d71d1d1cad6aa164b6fd6a189cc2aaf5b78af6ba9cc3e63

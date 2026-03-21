@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Registry
+  source_attribute: registry
+  source_class: PIDName
+provenance:
+- source: aind
+  class: PIDName
+  name: registry
+  description: Registry
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: deeaa834c9fd36b544ca513259f16608b40d61efe745ce44f3497dcb8e57dcab

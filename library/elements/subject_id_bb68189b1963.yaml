@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Subject ID
+  source_attribute: subject_id
+  source_class: Procedures
+provenance:
+- source: aind
+  class: Procedures
+  name: subject_id
+  description: Unique identifier for the subject of data acquisition
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bb68189b19638a177524edc489e96445f47c9ecb33d7e70900b86cde7a5d6af5

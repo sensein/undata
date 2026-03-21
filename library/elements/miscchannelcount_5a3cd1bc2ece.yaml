@@ -1,0 +1,17 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  min_value: 0.0
+  source_attribute: MISCChannelCount
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: MISCChannelCount
+  description: 'Number of miscellaneous channels not covered otherwise.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5a3cd1bc2ece85ff315dd22bbce8b2b91c08252f573edfaede883e16d4a9f189

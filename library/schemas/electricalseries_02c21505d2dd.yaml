@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channel_conversion_345243dd7b11
+  - https://schema.undata.live/elements/data_5c09778053a0
+  - https://schema.undata.live/elements/electricalseries_3fc00b19cd47
+  - https://schema.undata.live/elements/electrodes_efeac17fab6d
+  - https://schema.undata.live/elements/filtering_388498867e8a
+  mixins: []
+provenance:
+- source: nwb
+  name: ElectricalSeries
+  generated_at: '2026-03-21T05:07:31.280481+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 02c21505d2dde0b0da297209ab76b5f18278a6c955242736f9174757493f7b66

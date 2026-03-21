@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Model
+  source_attribute: model
+  source_class: Computer
+provenance:
+- source: aind
+  class: Computer
+  name: model
+  description: Model
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1749faf52cc7a5a9e1b7f627fc8e4c9f726059be245d64ac8cc90a9372cc2db1

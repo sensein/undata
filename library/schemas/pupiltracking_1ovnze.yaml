@@ -1,7 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/pupiltracking_nk5nbo
-  mixins: []
-provenance:
-- source: nwb
-  name: PupilTracking

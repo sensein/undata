@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: OASIS30Atropos
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: OASIS30Atropos
+  description: 'OASIS30Atropos
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 73de3a33fade55bcb2ea9a30d1aa6a2a4b74c724cf5c525417cafd0041e9cc4d

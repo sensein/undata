@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/end_time_25a0d1c5aa4c
+  - https://schema.undata.live/elements/probe_concentration_6c5ca6719066
+  - https://schema.undata.live/elements/probe_concentration_unit_42fdfa7b6e8b
+  - https://schema.undata.live/elements/round_index_f855d7794970
+  - https://schema.undata.live/elements/stains_d17aa8a69e03
+  - https://schema.undata.live/elements/start_time_a8b9041380a1
+  mixins: []
+provenance:
+- source: aind
+  name: HybridizationChainReaction
+  generated_at: '2026-03-21T05:07:50.870518+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9d0c97851af17968d2d7975d96d618169ff833d0d39758ba69a714f3ee348fdf

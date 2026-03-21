@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/centralangle_6b3797d488c0
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/radius_49319bbf9eab
+  mixins: []
+provenance:
+- source: openminds
+  name: circularSector.schema.omi
+  generated_at: '2026-03-21T05:08:25.247210+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0a4608514e165405185bfd5d9d32f7665155fe60585608a67f9ca3d8bdade7fb

@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: right_hand
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: right_hand
+  description: 'A rotation rule: rotations are applied counter-clockwise around
+
+    an axis when seen from the positive direction
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b559c30e4fcf25dafbfa6dfb0ec743635b5eca084cfccf52495dd8d534cd1575

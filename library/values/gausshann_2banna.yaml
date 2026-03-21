@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: gausshann
-provenance:
-- source: bids
-  raw_value: GAUSSHANN

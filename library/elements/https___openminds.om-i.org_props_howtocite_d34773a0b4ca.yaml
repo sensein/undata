@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/howToCite
+  source_class: validationTest.schema.omi
+provenance:
+- source: openminds
+  class: validationTest.schema.omi
+  name: https://openminds.om-i.org/props/howToCite
+  description: Preferred format for citing a particular object or legal person.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d34773a0b4caf85528cc1ee571bd647f88f0432969ac469068f2f912add2cc9a

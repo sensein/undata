@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/contribution_cf4536f4c8b5
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_00946250764a
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/internalidentifier_e6aa9a80ea0e
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/magneticfieldstrength_d6f61641dd2a
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_b7ca2c4bf422
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/serialnumber_1f55fbad7923
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/type_2a6a685ee3fd
+  mixins: []
+provenance:
+- source: openminds
+  name: MRIScanner.schema.omi
+  generated_at: '2026-03-21T05:08:25.264965+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 536a9592aacd043fdf6918c0ccef5f306287c8ed7006169a0878b87c6328b927

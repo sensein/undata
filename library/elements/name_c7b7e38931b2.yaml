@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: name
+  source_class: BareAsset
+provenance:
+- source: dandi
+  class: BareAsset
+  name: name
+  description: The name of the item.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c7b7e38931b25f1cdbfc09cb2c0f81ceb88a4c8dcaf27bbf0d79653d6467deea

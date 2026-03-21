@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: relatedParticipant
+  source_class: Participant
+provenance:
+- source: dandi
+  class: Participant
+  name: relatedParticipant
+  description: Information about related participants or subjects in a study or across
+    studies.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8563bae8d414ddc98291ded44a13365163fd2ee1f85a0037e3a591262ace4154

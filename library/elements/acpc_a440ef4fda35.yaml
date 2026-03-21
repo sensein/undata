@@ -1,0 +1,30 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: ACPC
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: ACPC
+  description: 'The origin of the coordinate system is at the Anterior Commissure
+
+    and the negative y-axis is passing through the Posterior Commissure. The
+
+    positive z-axis is passing through a mid-hemispheric point in the superior
+
+    direction. The anatomical landmarks are determined in the individual''s
+
+    anatomical scan and no scaling or deformations have been applied to the
+
+    individual''s anatomical scan. For more information, see the
+
+    [ACPC site](https://www.fieldtriptoolbox.org/faq/acpc/) on the FieldTrip
+
+    toolbox wiki.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a440ef4fda35b9d63d2ddb2278ad594ad637cbb7ca1f9bc0cf1227270d85d99b

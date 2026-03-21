@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/device_config_p71aoi
-  - https://schema.undata.live/elements/implanted_device_1co512
-  - https://schema.undata.live/elements/protocol_id_isegu0
-  mixins: []
-provenance:
-- source: aind
-  name: ProbeImplant

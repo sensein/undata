@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/rgbimage_a8c87503f02a
+  mixins: []
+provenance:
+- source: nwb
+  name: RGBImage
+  generated_at: '2026-03-21T05:07:31.304061+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: aee0b88b4ca7b1276f92db5f2be77e24cb2050fe75e7514c6c459e326cdc4a02

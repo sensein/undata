@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Firmware
+  source_attribute: firmware
+  source_class: ScanningStage
+provenance:
+- source: aind
+  class: ScanningStage
+  name: firmware
+  description: Firmware
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 80544d1114c0356a459a29d99c3bc2697079f421db69a143a0700147f2b8acc2

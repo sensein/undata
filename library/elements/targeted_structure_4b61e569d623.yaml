@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Injection targeted brain structure
+  source_attribute: targeted_structure
+  source_class: BrainInjection
+provenance:
+- source: aind
+  class: BrainInjection
+  name: targeted_structure
+  description: Injection targeted brain structure
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4b61e569d6235a8593610d0affdde370112fa96ceb5bf755f2f38aeb98e57abd

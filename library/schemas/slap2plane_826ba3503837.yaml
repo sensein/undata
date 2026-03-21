@@ -1,0 +1,23 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/depth_31cc1e28cabc
+  - https://schema.undata.live/elements/depth_unit_70a614bc2279
+  - https://schema.undata.live/elements/fov_index_e6c25e70d545
+  - https://schema.undata.live/elements/frame_rates_75216ee71657
+  - https://schema.undata.live/elements/frame_rates_unit_fd974f5ba083
+  - https://schema.undata.live/elements/power_fc488dcbce19
+  - https://schema.undata.live/elements/power_unit_130121646e06
+  - https://schema.undata.live/elements/slap2_acquisition_type_a2702e5ea1b2
+  - https://schema.undata.live/elements/specimen_id_ffe06c82288e
+  - https://schema.undata.live/elements/structure_types_56364be0ccc0
+  - https://schema.undata.live/elements/targeted_structure_a67313c54760
+  - https://schema.undata.live/elements/y_dilations_49497b93dafc
+  - https://schema.undata.live/elements/y_dilations_unit_4e2f90727c75
+  mixins: []
+provenance:
+- source: aind
+  name: Slap2Plane
+  generated_at: '2026-03-21T05:07:50.862991+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 826ba3503837d862133ef869da3a11fd75462c1a0649a85028c0ed4fc1b1e70a

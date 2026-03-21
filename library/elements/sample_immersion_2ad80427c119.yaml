@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Acquisition sample immersion data
+  source_attribute: sample_immersion
+  source_class: SampleChamberConfig
+provenance:
+- source: aind
+  class: SampleChamberConfig
+  name: sample_immersion
+  description: Acquisition sample immersion data
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2ad80427c11936cbddc15a2ce235c58afc8338fe30b1f365c09a2f1bebaad787

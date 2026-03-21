@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: repository
+  source_class: Dandiset
+provenance:
+- source: dandi
+  class: Dandiset
+  name: repository
+  description: location of the item
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 89af6bbc5a4d2420adb77db0e5034293bac34c1b0b99e7fb64ec9550799d6ae9

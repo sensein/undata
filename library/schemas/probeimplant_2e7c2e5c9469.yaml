@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/device_config_fc7800a02e4b
+  - https://schema.undata.live/elements/implanted_device_af696cb2bb6a
+  - https://schema.undata.live/elements/protocol_id_43b770b88fae
+  mixins: []
+provenance:
+- source: aind
+  name: ProbeImplant
+  generated_at: '2026-03-21T05:07:50.866172+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2e7c2e5c9469b948f5855212e9223dd5b0d892870d926d01e0b77b0327c3832c

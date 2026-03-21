@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: XENON
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: XENON
+  description: 'A Contrast Bolus Ingredient: Xenon
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 746f1cceca5f8c277349848797a1aa3bee897a94ebb06d0c0456037398a2b323

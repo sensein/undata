@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: defacemask
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: defacemask
+  description: 'A binary mask that was used to remove facial features from an anatomical
+    MRI
+
+    image.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 29de3dc64039120ba9f71aea8624a3d3ca8ed9963822fe7be428614e825f1b4e

@@ -1,0 +1,19 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: DispersionConstant
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: DispersionConstant
+  description: 'External dispersion time constant resulting from tubing in default
+    unit
+
+    seconds.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 05dfc9e5fda7146d398fca20ac5b32cf6d573137415afb71db433d9c6fbeb237

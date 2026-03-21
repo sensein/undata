@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Lights on time
+  source_attribute: lights_on_time
+  source_class: LightCycle
+provenance:
+- source: aind
+  class: LightCycle
+  name: lights_on_time
+  description: Time in UTC that lights were turned on
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9511b18834137131c67f9caf1efd4e63efb66fb4a80bf915119534af4885d580

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/digest
+  source_class: hash.schema.omi
+provenance:
+- source: openminds
+  class: hash.schema.omi
+  name: https://openminds.om-i.org/props/digest
+  description: Summation or condensation of a body of information.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ff168d144abba685ceb854a0cd28ced9364749c61b9855ac649618e2130acb11

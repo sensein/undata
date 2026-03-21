@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredCrossReference
+  source_class: molecularEntity.schema.omi
+provenance:
+- source: openminds
+  class: molecularEntity.schema.omi
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 225c1d656e57a07abf150aa27d8a3bcf8834be1e28ddb338cd3af9c6ed6a7de9

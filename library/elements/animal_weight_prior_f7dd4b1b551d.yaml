@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Animal weight (g)
+  source_attribute: animal_weight_prior
+  source_class: AcquisitionSubjectDetails
+provenance:
+- source: aind
+  class: AcquisitionSubjectDetails
+  name: animal_weight_prior
+  description: Animal weight before procedure
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f7dd4b1b551d3fe1dc930e9dafc757a4e2bcae7c67890ac61ff80e7411e792b8

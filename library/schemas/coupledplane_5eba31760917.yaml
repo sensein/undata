@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/coupled_plane_index_dcc6b3680666
+  - https://schema.undata.live/elements/depth_19a004f7e9bd
+  - https://schema.undata.live/elements/depth_unit_624024612d69
+  - https://schema.undata.live/elements/plane_index_b320ffede3f5
+  - https://schema.undata.live/elements/power_260ef95efcda
+  - https://schema.undata.live/elements/power_ratio_69bc56c7b84a
+  - https://schema.undata.live/elements/power_unit_a2fff8d6c0e0
+  - https://schema.undata.live/elements/targeted_structure_82b4cecdc9c4
+  mixins: []
+provenance:
+- source: aind
+  name: CoupledPlane
+  generated_at: '2026-03-21T05:07:50.858810+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5eba3176091792d3da72d6c6713a3bb467b63f8eccb735016062ca4c8c90dbba

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Serial number
+  source_attribute: serial_number
+  source_class: LightEmittingDiode
+provenance:
+- source: aind
+  class: LightEmittingDiode
+  name: serial_number
+  description: Serial number
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 141ae9e4b730504fd60ebade1f55f0b96c78d5b20cf20931661f84ef3db3382b

@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/calibration_date_7345cc44991d
+  - https://schema.undata.live/elements/description_28f1a5ef3747
+  - https://schema.undata.live/elements/device_name_8c03586dd2e1
+  - https://schema.undata.live/elements/fit_bd09ad46a76c
+  - https://schema.undata.live/elements/input_c06203513b04
+  - https://schema.undata.live/elements/input_unit_f3f9efd02825
+  - https://schema.undata.live/elements/measured_at_2884a1d2596f
+  - https://schema.undata.live/elements/notes_2f27d833c293
+  - https://schema.undata.live/elements/output_5d868b90515c
+  - https://schema.undata.live/elements/output_unit_2b912e316817
+  - https://schema.undata.live/elements/protocol_id_372dc901b7ba
+  - https://schema.undata.live/elements/repeats_e1cc1cb684c0
+  mixins: []
+provenance:
+- source: aind
+  name: PowerCalibration
+  generated_at: '2026-03-21T05:07:50.841423+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 927bc8b4dfa74022087a45431cf17ab798059d8b62bfd2c8502d49d23e74e55b

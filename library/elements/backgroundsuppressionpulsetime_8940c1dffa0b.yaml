@@ -1,0 +1,23 @@
+semantic:
+  data_type: array
+  source_attribute: BackgroundSuppressionPulseTime
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: BackgroundSuppressionPulseTime
+  description: 'Array of numbers containing timing, in seconds,
+
+    of the background suppression pulses with respect to the start of the
+
+    labeling.
+
+    In case of multi-PLD with different background suppression pulse times,
+
+    only the pulse time of the first PLD should be defined.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8940c1dffa0bcd29a6a3754046c9f18c7a911812a0e00db959054bd78a7524c2

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: id
+  source_class: ContactPoint
+provenance:
+- source: dandi
+  class: ContactPoint
+  name: id
+  description: Uniform resource identifier
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8704788d600cf68cf3ca1ce24d17487d4b2f59790e76f7e8461ce089b6a75c41

@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/anatomicallocation_e443dff4f22c
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/biologicalsex_945515001d42
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/internalidentifier_348d52e968f3
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/ispartof_0513f73cdf71
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/laterality_6a33f9a878ef
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/lookuplabel_44fc4da6535e
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/origin_77cbe3a1a34a
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/species_27018dcecc2f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/studiedstate_dedd11804447
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/type_d44232c866c8
+  mixins: []
+provenance:
+- source: openminds
+  name: tissueSample.schema.omi
+  generated_at: '2026-03-21T05:08:25.238133+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7320297afec7544cc6b317ad520ce30346db05d4af067121e743235ab336ebd1

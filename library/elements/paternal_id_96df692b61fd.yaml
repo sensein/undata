@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Paternal specimen ID
+  source_attribute: paternal_id
+  source_class: BreedingInfo
+provenance:
+- source: aind
+  class: BreedingInfo
+  name: paternal_id
+  description: Paternal specimen ID
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 96df692b61fd037f7570ef283088a276ef316b5a3394edb6555c7890f53c09e1

@@ -1,0 +1,23 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/electrodestable_3aa60e13994e
+  - https://schema.undata.live/elements/filtering_0373fca05859
+  - https://schema.undata.live/elements/group_2168bfc071c7
+  - https://schema.undata.live/elements/group_name_8e693ff8a1e6
+  - https://schema.undata.live/elements/imp_a9e73b114a76
+  - https://schema.undata.live/elements/location_eca0f9f022a8
+  - https://schema.undata.live/elements/reference_22d8696665de
+  - https://schema.undata.live/elements/rel_x_4d5410679779
+  - https://schema.undata.live/elements/rel_y_2ee275632f37
+  - https://schema.undata.live/elements/rel_z_074f887873a8
+  - https://schema.undata.live/elements/x_2b0a14e94d81
+  - https://schema.undata.live/elements/y_f327cd9ece30
+  - https://schema.undata.live/elements/z_55f6477c55e4
+  mixins: []
+provenance:
+- source: nwb
+  name: ElectrodesTable
+  generated_at: '2026-03-21T05:07:31.294485+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f1682cde606304926f9386d39d3795a281fca1e7cefaa075c845639b55e67ffc

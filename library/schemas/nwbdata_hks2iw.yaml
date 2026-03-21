@@ -1,7 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/nwbdata_a8e8lm
-  mixins: []
-provenance:
-- source: nwb
-  name: NWBData

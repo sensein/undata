@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Emission wavelength
+  source_attribute: emission_wavelength
+  source_class: Channel
+provenance:
+- source: aind
+  class: Channel
+  name: emission_wavelength
+  description: Emission wavelength
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e29587dca5643b7c772c71224d8e2fbd87c2ec944dc15b368d7b7571f90c06c0

@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/abbreviation_0683d91635cc
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/digitalidentifier_2e269a3d0af7
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_c180f6a78e31
+  mixins: []
+provenance:
+- source: openminds
+  name: periodical.schema.omi
+  generated_at: '2026-03-21T05:08:25.197803+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d3a4eeb4bd23a3a4cb1ee421ce236a59e6fd3eb4da816f7031fccdfa4e316e81

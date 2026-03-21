@@ -1,0 +1,28 @@
+semantic:
+  data_type: array
+  question_text: RAM usage
+  source_attribute: ram_usage
+  source_class: ResourceUsage
+provenance:
+- source: aind
+  class: ResourceUsage
+  name: ram_usage
+  description: RAM usage
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ResourceUsage
+  name: ram_usage
+  description: RAM usage
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ResourceUsage
+  name: ram_usage
+  description: RAM usage
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6698f8fbc66c5c2e54d8353a1f3c61bd247dec53f9f88f433e4110ebf81fcc97

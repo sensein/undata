@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Training
+  source_attribute: training
+  source_class: Model
+provenance:
+- source: aind
+  class: Model
+  name: training
+  description: Training
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 84258e3e07239be2e2025517834a10e6a1150d56149114d741fe616313414c50

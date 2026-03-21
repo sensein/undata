@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/legLength
+  source_class: isoscelesTriangle.schema.omi
+provenance:
+- source: openminds
+  class: isoscelesTriangle.schema.omi
+  name: https://openminds.om-i.org/props/legLength
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 68e3919f367e3e898f976809222a28c36d1d63fd96d14a8cdbbaf57c5832329c

@@ -1,0 +1,21 @@
+semantic:
+  data_type: array
+  question_text: Metric status history
+  source_attribute: status_history
+  source_class: QCMetric
+provenance:
+- source: aind
+  class: QCMetric
+  name: status_history
+  description: Metric status history
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: QCMetric
+  name: status_history
+  description: Metric status history
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 01be87e752a16d16f3a490908767b8091509f67292270bdbf340f153cc7fad8a

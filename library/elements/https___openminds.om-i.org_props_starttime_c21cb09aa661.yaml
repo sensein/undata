@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/startTime
+  source_class: staticMRIAcquisition.schema.omi
+provenance:
+- source: openminds
+  class: staticMRIAcquisition.schema.omi
+  name: https://openminds.om-i.org/props/startTime
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c21cb09aa66173975b9da5566f06f22e3bcca6195f24c56ceecf1a7a518addf4

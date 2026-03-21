@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: MEGOTHER
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: MEGOTHER
+  description: 'Any other type of MEG sensor.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 25c23366b48fb19a484a94b5e62b88c726fa45f4caec2fd8ba2c4c961d9e25f2

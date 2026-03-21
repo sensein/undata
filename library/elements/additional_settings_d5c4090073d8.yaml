@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Additional parameters
+  source_attribute: additional_settings
+  source_class: AdditionalImagingDevice
+provenance:
+- source: aind
+  class: AdditionalImagingDevice
+  name: additional_settings
+  description: Additional parameters
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d5c4090073d8bff493a0c2aee48f5a76d55691f918516c7d5c23151f291bbeb2

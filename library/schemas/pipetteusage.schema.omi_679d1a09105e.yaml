@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/anatomicallocation_5a6b96be645d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/chloridereversalpotential_8d956c7a0831
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/compensationcurrent_bdc538d5f9d6
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/device_9e698fd82c03
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/endmembranepotential_ee0ff53e44ec
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/holdingpotential_e65f205a8069
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/inputresistance_23480dcbe29d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/labelingcompound_3f790efbc9e3
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/liquidjunctionpotential_87dd9cd1a37c
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/lookuplabel_37df88a22e55
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/metadatalocation_6d41e04a0571
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/pipetteresistance_8fded591671a
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/pipettesolution_4fdb6eff950f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/sealresistance_2c8922f3a688
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/seriesresistance_1a3fc689630e
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/spatiallocation_200926990c5d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/startmembranepotential_778da81fc527
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/usedspecimen_c7ccaf961cb2
+  mixins: []
+provenance:
+- source: openminds
+  name: pipetteUsage.schema.omi
+  generated_at: '2026-03-21T05:08:25.236484+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 679d1a09105e3fb3e74b8454b422eb5059ba2a3a3b86c4c906ab32e872e72af7

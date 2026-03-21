@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: startDate
+  source_class: PublishActivity
+provenance:
+- source: dandi
+  class: PublishActivity
+  name: startDate
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dd5da3d23ba10994a676879404fad7bd869df83cf5cbf368e1813092348b0763

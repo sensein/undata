@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/diameters
+  source_class: ellipse.schema.omi
+provenance:
+- source: openminds
+  class: ellipse.schema.omi
+  name: https://openminds.om-i.org/props/diameters
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9640d0abf45a3d628d460fd3d2ce34cf8ad917b3e556bad69f336042413fac91

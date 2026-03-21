@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: ROI
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: ROI
+  description: 'A region of interest mask.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 025cbff69572a30ddc75dd5d590c8c71cacd76a20dadb817ab0a4e6f591ed311

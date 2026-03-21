@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: OASIS30AntsOASISAnts
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: OASIS30AntsOASISAnts
+  description: 'OASIS30AntsOASISAnts
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6b590ce14bb838d89e0874db9cd07f8da0e7724de617996550774c31cf61441d

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: Lesion
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: Lesion
+  description: 'A lesion mask.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 949b8b986f7aab6e0efc11d9e801bc7ebcdd66da74053ed4a6100c2f0eec46b2

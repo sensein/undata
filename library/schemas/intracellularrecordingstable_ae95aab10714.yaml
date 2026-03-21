@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_3970214dbe48
+  - https://schema.undata.live/elements/intracellularrecordingstable_480e016226b5
+  mixins: []
+provenance:
+- source: nwb
+  name: IntracellularRecordingsTable
+  generated_at: '2026-03-21T05:07:31.289395+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ae95aab107142981dd253c24483a0572fddf6ed960ac5e3ce9530d0f86df6bee

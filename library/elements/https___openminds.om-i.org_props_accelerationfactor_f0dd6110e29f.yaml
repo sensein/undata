@@ -1,0 +1,12 @@
+semantic:
+  data_type: integer
+  source_attribute: https://openminds.om-i.org/props/accelerationFactor
+  source_class: MRIScannerUsage.schema.omi
+provenance:
+- source: openminds
+  class: MRIScannerUsage.schema.omi
+  name: https://openminds.om-i.org/props/accelerationFactor
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f0dd6110e29fa3e8529f51e566f20ce5e1485a75f8e90f480e954e5cff3928a1

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Water restriction end date
+  source_attribute: end_date
+  source_class: WaterRestriction
+provenance:
+- source: aind
+  class: WaterRestriction
+  name: end_date
+  description: Water restriction end date
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4dd85dfbdfe7fc450650ebc6051f9397c8aeca13e13f1914a7a1900be5392690

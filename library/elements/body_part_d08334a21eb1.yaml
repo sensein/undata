@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: Body part of contact insertion
+  source_attribute: body_part
+  source_class: MyomatrixContact
+  type_ref: MouseAnatomyModel
+provenance:
+- source: aind
+  class: MyomatrixContact
+  name: body_part
+  description: Use MouseBodyParts
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d08334a21eb105d9483c23259051afb1f16d358b60d01181e8cbbe093684a1b9

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Notes
+  source_attribute: notes
+  source_class: Calibration
+provenance:
+- source: aind
+  class: Calibration
+  name: notes
+  description: Notes
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b244a4b7556015c602fb36c138f4a46fcaca490d50451629af8f73195a946c30

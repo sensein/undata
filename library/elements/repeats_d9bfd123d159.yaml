@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Number of repeats
+  source_attribute: repeats
+  source_class: Calibration
+provenance:
+- source: aind
+  class: Calibration
+  name: repeats
+  description: If each input was repeated multiple times, provide the number of repeats
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d9bfd123d1591329c030a133182f650e9be28945c21876ee85fa9bf381681b46

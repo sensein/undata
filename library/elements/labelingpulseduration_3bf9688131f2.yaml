@@ -1,0 +1,16 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: LabelingPulseDuration
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: LabelingPulseDuration
+  description: 'Duration of the individual labeling pulses, in milliseconds.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3bf9688131f2c5489acb2ba366a1b07a6be97848057b4ede5ccd8afcca725b18

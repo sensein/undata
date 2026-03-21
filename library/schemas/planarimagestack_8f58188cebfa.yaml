@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channel_name_329d8d33dc0e
+  - https://schema.undata.live/elements/depth_end_c1312f054131
+  - https://schema.undata.live/elements/depth_start_f05efb2196ef
+  - https://schema.undata.live/elements/depth_step_0b36b51d09b2
+  - https://schema.undata.live/elements/depth_unit_bda2cd5d03ab
+  - https://schema.undata.live/elements/dimensions_ec97f57dc8dc
+  - https://schema.undata.live/elements/dimensions_unit_ee643da8b223
+  - https://schema.undata.live/elements/image_to_acquisition_transform_c14d8586a77e
+  - https://schema.undata.live/elements/planes_dddf7c68c375
+  - https://schema.undata.live/elements/power_function_3d1b100eedbe
+  mixins: []
+provenance:
+- source: aind
+  name: PlanarImageStack
+  generated_at: '2026-03-21T05:07:50.845899+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8f58188cebfa00cc86fddb88416a88bb22e32f5fea31aabae7b27d6414099ab6

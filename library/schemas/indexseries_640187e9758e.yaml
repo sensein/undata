@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_ab347e554e80
+  - https://schema.undata.live/elements/indexseries_d92750d8f9ee
+  mixins: []
+provenance:
+- source: nwb
+  name: IndexSeries
+  generated_at: '2026-03-21T05:07:31.285352+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 640187e9758e04d5efb6b6466cde6399b445bcf83ed99b930023995cd427c172

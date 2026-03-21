@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/howToCite
+  source_class: workflowRecipe.schema.omi
+provenance:
+- source: openminds
+  class: workflowRecipe.schema.omi
+  name: https://openminds.om-i.org/props/howToCite
+  description: Preferred format for citing a particular object or legal person.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 54d5a0577ac102c8cf8a01dedd7f99a8f75d2b1f294a9310a26427e6de30f4a7

@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: water
-provenance:
-- source: aind
-  raw_value: water
-- source: aind
-  raw_value: Water

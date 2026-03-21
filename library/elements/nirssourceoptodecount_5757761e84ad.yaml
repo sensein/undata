@@ -1,0 +1,19 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  min_value: 1.0
+  source_attribute: NIRSSourceOptodeCount
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: NIRSSourceOptodeCount
+  description: 'Number of NIRS sources.
+
+    Corresponds to the number of rows in `optodes.tsv` with type `"source"`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5757761e84ad16ebb7f93dbdc9bb4df5e8cfcf9db7a61784ccecca0b92169868

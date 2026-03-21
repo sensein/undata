@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: leica
-provenance:
-- source: aind
-  raw_value: aind.instrument.HarpDevice.manufacturer.Leica

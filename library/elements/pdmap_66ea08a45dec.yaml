@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: PDmap
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: PDmap
+  description: 'In arbitrary units (arbitrary).
+
+    PD maps are REQUIRED to use this suffix regardless of the method used to
+
+    generate them.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 66ea08a45dec486de02fb5af570af18d071b1b59cd3f0ba91d17ab09a8182dae

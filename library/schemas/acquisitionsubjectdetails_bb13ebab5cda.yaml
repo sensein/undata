@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/anaesthesia_ab582e22ea29
+  - https://schema.undata.live/elements/animal_weight_post_20fb8922ded8
+  - https://schema.undata.live/elements/animal_weight_prior_f7dd4b1b551d
+  - https://schema.undata.live/elements/mouse_platform_name_7f5c28e1e2f9
+  - https://schema.undata.live/elements/reward_consumed_total_85dfcff1d585
+  - https://schema.undata.live/elements/reward_consumed_unit_7b87881b86ca
+  - https://schema.undata.live/elements/weight_unit_ac996a61270b
+  mixins: []
+provenance:
+- source: aind
+  name: AcquisitionSubjectDetails
+  generated_at: '2026-03-21T05:07:50.833296+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bb13ebab5cda80ca7616fe35d8fcfe2466f081b8088086c4aea13a6942176d75

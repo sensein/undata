@@ -1,0 +1,15 @@
+semantic:
+  data_type: array
+  question_text: Stimulus
+  source_attribute: stimulus_epochs
+  source_class: Acquisition
+provenance:
+- source: aind
+  class: Acquisition
+  name: stimulus_epochs
+  description: A stimulus epoch captures all stimuli being presented during an acquisition.
+    Epochs should be split when the purpose of the stimulus changes.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bb3fbfdc7b1bbeda8a6860b2859457876ea580ea9fab8a81d2d02bb7e8e487a3

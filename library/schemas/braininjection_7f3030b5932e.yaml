@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/coordinate_system_name_f9ec174b9566
+  - https://schema.undata.live/elements/coordinates_edb3d5578929
+  - https://schema.undata.live/elements/dynamics_2c386507f7d7
+  - https://schema.undata.live/elements/injection_materials_9296e0cda093
+  - https://schema.undata.live/elements/protocol_id_4fa7a03362f8
+  - https://schema.undata.live/elements/relative_position_d32e7230f927
+  - https://schema.undata.live/elements/targeted_structure_4b61e569d623
+  mixins: []
+provenance:
+- source: aind
+  name: BrainInjection
+  generated_at: '2026-03-21T05:07:50.858312+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7f3030b5932ecbf22611d3cefc752ea6f84d2f52108eca20ab10ef6d3eed3ef1

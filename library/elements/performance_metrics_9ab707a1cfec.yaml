@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Performance metrics
+  source_attribute: performance_metrics
+  source_class: StimulusEpoch
+provenance:
+- source: aind
+  class: StimulusEpoch
+  name: performance_metrics
+  description: Performance metrics
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9ab707a1cfec072a1ae1b6f166d7169b8b7f218260f2c0151d8b6c141a284395

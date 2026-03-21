@@ -1,0 +1,14 @@
+semantic:
+  data_type: boolean
+  question_text: In muscle
+  source_attribute: in_muscle
+  source_class: MyomatrixContact
+provenance:
+- source: aind
+  class: MyomatrixContact
+  name: in_muscle
+  description: In muscle
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6e60a26253511804c8716416b945e4c92ecdb2ceb8ddfd5c4e2fdd906b15f831

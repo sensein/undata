@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Type of Harp device
+  source_attribute: harp_device_type
+  source_class: Olfactometer
+provenance:
+- source: aind
+  class: Olfactometer
+  name: harp_device_type
+  description: Type of Harp device
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bdaea4e5cac3138de961019946e059b3e655ecc5ad611a61b864f1c8c040fb2b

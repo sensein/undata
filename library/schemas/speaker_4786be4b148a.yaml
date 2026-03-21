@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_173ebbc83f59
+  - https://schema.undata.live/elements/coordinate_system_f9b83e9f6f74
+  - https://schema.undata.live/elements/manufacturer_fd9e035667bc
+  - https://schema.undata.live/elements/model_9d4bfca23beb
+  - https://schema.undata.live/elements/name_3682d4f971f2
+  - https://schema.undata.live/elements/notes_6f275b7b594d
+  - https://schema.undata.live/elements/relative_position_ab03c8bd2483
+  - https://schema.undata.live/elements/serial_number_781ee86b9675
+  - https://schema.undata.live/elements/transform_033d0aa5a1a1
+  mixins: []
+provenance:
+- source: aind
+  name: Speaker
+  generated_at: '2026-03-21T05:07:50.811289+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4786be4b148adfa91cd3006f5a58bc0c65a932d67e329142162545bbd3e46133

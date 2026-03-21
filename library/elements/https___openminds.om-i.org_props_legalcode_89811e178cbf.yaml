@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/legalCode
+  source_class: license.schema.omi
+provenance:
+- source: openminds
+  class: license.schema.omi
+  name: https://openminds.om-i.org/props/legalCode
+  description: Type of legislation that claims to cover the law system (complete or
+    parts) as it existed at the time the code was enacted.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 89811e178cbf401622a561207b3e999aa1580b76009feeebbd9d3332c798c884

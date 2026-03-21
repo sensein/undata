@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: mni152lin
-provenance:
-- source: bids
-  raw_value: MNI152Lin

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: TracerRadLex
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: TracerRadLex
+  description: 'ID of the tracer compound from the RadLex Ontology.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 45e0015e77658817b13dca0f5c6002f9c6debd8651617da71823147b6e2b4cb2

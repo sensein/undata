@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/lookupLabel
+  source_class: chemicalSubstance.schema.omi
+provenance:
+- source: openminds
+  class: chemicalSubstance.schema.omi
+  name: https://openminds.om-i.org/props/lookupLabel
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1ced9727996cf65c4bbf9e21eeab05122cbeb74155db026039b6102b1b2bf175

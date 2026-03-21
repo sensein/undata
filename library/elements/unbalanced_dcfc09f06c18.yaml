@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: unbalanced
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: unbalanced
+  description: 'PCASL Type: when unbalanced gradient pulses are used.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dcfc09f06c18f87fe4acd7e69b5d896e32843cb3f6c999915ac45d100b7b56a3

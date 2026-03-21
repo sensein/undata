@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/chamber_immersion_qmfvbb
-  - https://schema.undata.live/elements/device_name_16mdt2
-  - https://schema.undata.live/elements/sample_immersion_bvydk7
-  mixins: []
-provenance:
-- source: aind
-  name: SampleChamberConfig

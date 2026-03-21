@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Software framework
+  source_attribute: software_framework
+  source_class: model
+provenance:
+- source: aind
+  class: model
+  name: software_framework
+  description: Software framework
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c79035931388fbe51a7e5a66a78f8882d7b79ebc55e3b54979e15a4445d31281

@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/supportChannel
+  source_class: anatomicalAtlas.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalAtlas.schema.omi
+  name: https://openminds.om-i.org/props/supportChannel
+  description: Way of communication used to interact with users or customers.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 113092a6524f62fa089367ca1a71dba8fb2e71bb3adc9f9d5adc37043bbe5c7e

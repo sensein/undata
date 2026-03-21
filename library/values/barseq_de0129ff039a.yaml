@@ -1,0 +1,10 @@
+semantic:
+  value_type: categorical
+  label: barseq
+provenance:
+- source: aind
+  raw_value: BARSeq
+- source: aind
+  raw_value: aind.metadata.CurationMetric.modality.Barseq
+- source: aind
+  raw_value: aind.quality_control.CurationMetric.modality.Barseq

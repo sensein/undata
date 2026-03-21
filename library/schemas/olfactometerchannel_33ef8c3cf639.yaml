@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channel_index_9cf6287d44a9
+  - https://schema.undata.live/elements/channel_type_c589ebad0a37
+  - https://schema.undata.live/elements/flow_capacity_16facb393145
+  - https://schema.undata.live/elements/flow_unit_6cb185a84eb1
+  mixins: []
+provenance:
+- source: aind
+  name: OlfactometerChannel
+  generated_at: '2026-03-21T05:07:50.845003+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 33ef8c3cf639d893889d84d0529222d6e2e6e1aef97095a6828c9aa4a29a8f3e

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Excitation power unit
+  source_attribute: power_unit
+  source_class: LaserConfig
+provenance:
+- source: aind
+  class: LaserConfig
+  name: power_unit
+  description: Excitation power unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4eb2c209e76aaa18f1d496e7181cd3f02e74f336b1df17f2d0106c39771e7b89

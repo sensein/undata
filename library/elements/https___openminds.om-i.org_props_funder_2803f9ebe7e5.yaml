@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/funder
+  source_class: funding.schema.omi
+provenance:
+- source: openminds
+  class: funding.schema.omi
+  name: https://openminds.om-i.org/props/funder
+  description: Legal person that provides money for a particular purpose.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2803f9ebe7e5fdb4aef39d8e6b644e7d6031a7829cf7d8efea6f7fbeb3b048ae

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Device name
+  source_attribute: name
+  source_class: Enclosure
+provenance:
+- source: aind
+  class: Enclosure
+  name: name
+  description: Device name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6fee9815801665ef3f6fb140bebf1281690bd15b6b218c6c997218b81465fd15

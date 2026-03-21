@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Dye
+  source_attribute: dye
+  source_class: ProbeConfig
+provenance:
+- source: aind
+  class: ProbeConfig
+  name: dye
+  description: Dye
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bfb5b6e0ea746117dd28cbbcc622a8222ec37e1fbb5097cf0bf6d2c75b152bfd

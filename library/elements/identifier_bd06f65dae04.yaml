@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: identifier
+  source_class: Equipment
+provenance:
+- source: dandi
+  class: Equipment
+  name: identifier
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bd06f65dae04d6ea0cbad75b7a5e033b9493dedea44663a5c1200baea257b069

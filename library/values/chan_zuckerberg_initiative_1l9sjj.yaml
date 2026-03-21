@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: chan_zuckerberg_initiative
-provenance:
-- source: aind
-  raw_value: aind.acquisition.NonViralMaterial.source.Chan_Zuckerberg_Initiative
-- source: aind
-  raw_value: aind.metadata.FluorescentStain.source.Chan_Zuckerberg_Initiative

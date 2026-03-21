@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_74f49e66402b
+  - https://schema.undata.live/elements/roiresponseseries_910538b7b506
+  - https://schema.undata.live/elements/rois_499b15d1b5d9
+  mixins: []
+provenance:
+- source: nwb
+  name: RoiResponseSeries
+  generated_at: '2026-03-21T05:07:31.284231+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 76b44b60f3975f1f4b943163cfce5b0faf5718d42101607a55f9b902900f9ea0

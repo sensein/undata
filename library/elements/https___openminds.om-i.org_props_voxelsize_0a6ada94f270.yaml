@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/voxelSize
+  source_class: MRIScannerUsage.schema.omi
+provenance:
+- source: openminds
+  class: MRIScannerUsage.schema.omi
+  name: https://openminds.om-i.org/props/voxelSize
+  description: Extent of the discrete elements comprising a three-dimensional entity.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0a6ada94f27019d6a1bc752c5c4c39d93c2f829ea66c2e58c1ceb8b333b8dd5e

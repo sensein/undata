@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: BodyPartDetails
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: BodyPartDetails
+  description: 'Additional details about body part or location (for example: `"corpus
+    callosum"`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a54defd603c374122ba6a0a461b2dbfbbfe6dde1d781dc571fa1c5e4ebe5d56a

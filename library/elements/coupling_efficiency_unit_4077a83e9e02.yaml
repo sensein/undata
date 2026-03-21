@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Coupling efficiency unit
+  source_attribute: coupling_efficiency_unit
+  source_class: Laser
+provenance:
+- source: aind
+  class: Laser
+  name: coupling_efficiency_unit
+  description: Coupling efficiency unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4077a83e9e02d2edbce46a3949290069a837ccf5e1c28e4798c0e4bd7e15c192

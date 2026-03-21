@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Probes that are held by this module
+  source_attribute: fibers
+  source_class: FiberAssembly
+provenance:
+- source: aind
+  class: FiberAssembly
+  name: fibers
+  description: Probes that are held by this module
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 671ee2a7087688d3ece4f3966fc2da6fab9fa159ceed5adf59968d57354b5536

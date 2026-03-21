@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SoftwareFilters
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SoftwareFilters
+  description: '[Object](https://www.json.org/json-en.html)
+
+    of temporal software filters applied, or `"n/a"` if the data is
+
+    not available.
+
+    Each key-value pair in the JSON object is a name of the filter and an object
+
+    in which its parameters are defined as key-value pairs
+
+    (for example, `{"Anti-aliasing filter":
+
+    {"half-amplitude cutoff (Hz)": 500, "Roll-off": "6dB/Octave"}}`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: de93ccd1c52036101db08804a92f1542baaaa137c8314b3ba912b816a3c69efd

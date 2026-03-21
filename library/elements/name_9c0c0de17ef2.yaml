@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Name
+  source_attribute: name
+  source_class: MouseAnatomyModel
+provenance:
+- source: aind
+  class: MouseAnatomyModel
+  name: name
+  description: Name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9c0c0de17ef2b7cd120288944f1ee64da2f93a074dc1e2f6854693d99deb6478

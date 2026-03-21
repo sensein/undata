@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: access
+  source_class: BareAsset
+provenance:
+- source: dandi
+  class: BareAsset
+  name: access
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3dc6280f49622f6a235fda8287d77cac53a8df048d3974c92e367ef135b78860

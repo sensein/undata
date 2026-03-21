@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/person
+  source_class: affiliation.schema.omi
+provenance:
+- source: openminds
+  class: affiliation.schema.omi
+  name: https://openminds.om-i.org/props/person
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 697807e8149beb3b914d53dc0aa5e82f7dfbccce03632fda65f45d293bcc76af

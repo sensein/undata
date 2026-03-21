@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/frame_rate_c6a3f5b43fde
+  - https://schema.undata.live/elements/frame_rate_unit_287560cfbbec
+  mixins: []
+provenance:
+- source: aind
+  name: SamplingStrategy
+  generated_at: '2026-03-21T05:07:50.874213+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1d94ac6f485e424c6a06bfc58976ddd34f8a36fafce99dc5a28f728b573f818c

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/studiedSpecimen
+  source_class: datasetVersion.schema.omi
+provenance:
+- source: openminds
+  class: datasetVersion.schema.omi
+  name: https://openminds.om-i.org/props/studiedSpecimen
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 979ea31064a6dd7aaee6d6b248e526b86e8e3ec6f3603096bd6bedc8399a3a91

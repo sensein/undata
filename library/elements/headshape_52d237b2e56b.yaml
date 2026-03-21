@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: headshape
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: headshape
+  description: 'The 3-D locations of points that describe the head shape and/or electrode
+
+    locations can be digitized and stored in separate files.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 52d237b2e56b78f827db1e00812cb3f893bd4e69cba240372b1a6321651ee3c3

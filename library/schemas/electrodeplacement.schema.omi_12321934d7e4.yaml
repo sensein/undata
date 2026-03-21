@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/custompropertyset_0276105969b6
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_c0b0e1a56b47
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/device_7954ec7b4aa7
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/endtime_a0e6cf2a1ff1
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/input_14f1b969e6a1
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/ispartof_01ffc1dbe613
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/lookuplabel_817d7cda24f2
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/output_3184e23f2019
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/performedby_6861499461af
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preparationdesign_5aee8b1b4dab
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/protocol_8cc7d5b25ba9
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/starttime_bd5b1257fdbe
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/studytarget_68422cbaa800
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/targetposition_389b86b10012
+  mixins: []
+provenance:
+- source: openminds
+  name: electrodePlacement.schema.omi
+  generated_at: '2026-03-21T05:08:25.270355+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 12321934d7e4c25301f251ea088deae6cfea728dcbd74d636e0cbcd6441379c8

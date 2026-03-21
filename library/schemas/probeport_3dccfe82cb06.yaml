@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/index_4fd6f5cbd6ea
+  - https://schema.undata.live/elements/probes_5536d2320327
+  mixins: []
+provenance:
+- source: aind
+  name: ProbePort
+  generated_at: '2026-03-21T05:07:50.876893+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3dccfe82cb064d6566711db2c41e03c4bf50fc7430f91ce3f6c91963c32e0100

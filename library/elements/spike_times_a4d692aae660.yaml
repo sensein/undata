@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+  source_attribute: spike_times
+  source_class: Units
+provenance:
+- source: nwb
+  class: Units
+  name: spike_times
+  description: Spike times for each unit in seconds.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a4d692aae660b30d19f7a325e20c617dd29983f108bf6fce92565a5857475b38

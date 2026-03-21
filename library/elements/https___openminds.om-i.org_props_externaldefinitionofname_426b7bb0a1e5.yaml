@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/externalDefinitionOfName
+  source_class: stringProperty.schema.omi
+provenance:
+- source: openminds
+  class: stringProperty.schema.omi
+  name: https://openminds.om-i.org/props/externalDefinitionOfName
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 426b7bb0a1e52eade68b1844b650a8668f2bbdca2087a2ffeba4dbc5b5637c3c

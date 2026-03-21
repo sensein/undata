@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredOntologyIdentifier
+  source_class: sovereignState.schema.omi
+provenance:
+- source: openminds
+  class: sovereignState.schema.omi
+  name: https://openminds.om-i.org/props/preferredOntologyIdentifier
+  description: Persistent identifier of a preferred ontological term.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8958c936e317bf78df1d85dc9417c7d643436c57b9e3fb598f56fc77f133cc12

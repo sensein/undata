@@ -1,0 +1,33 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - liter
+    - milliliter
+    - microliter
+    - nanoliter
+  response_options:
+  - value: liter
+    label: liter
+    ontology_term: https://schema.undata.live/values/liter_9269f6d6e29f
+  - value: milliliter
+    label: milliliter
+    ontology_term: https://schema.undata.live/values/milliliter_07cbe1124f3e
+  - value: microliter
+    label: microliter
+    ontology_term: https://schema.undata.live/values/microliter_3662e4dca30b
+  - value: nanoliter
+    label: nanoliter
+    ontology_term: https://schema.undata.live/values/nanoliter_68d3909387a9
+  question_text: Collection volume unit
+  source_attribute: collection_volume_unit
+  source_class: SampleCollection
+provenance:
+- source: aind
+  class: SampleCollection
+  name: collection_volume_unit
+  description: Enumeration of Volume Measurements
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cc66600edc769c6eb5839330c89bd9b09e82e92e349e316970c96b72d07c9a2a

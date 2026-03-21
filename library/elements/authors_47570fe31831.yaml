@@ -1,0 +1,16 @@
+semantic:
+  data_type: array
+  source_attribute: Authors
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: Authors
+  description: 'List of individuals who contributed to the creation/curation of the
+    dataset.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 47570fe3183174a51ab435d1b0a787523c960d8ace6cb5a3c2dedeb3dcbc7fd4

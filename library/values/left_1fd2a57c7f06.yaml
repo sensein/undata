@@ -1,0 +1,7 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/HP_0011712
+  value_type: categorical
+  label: left
+provenance:
+- source: aind
+  raw_value: Left

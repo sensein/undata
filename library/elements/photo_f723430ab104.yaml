@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: photo
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: photo
+  description: 'Photos of the anatomical landmarks, head localization coils or tissue
+    sample.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f723430ab104b26ffc229a82fc7e63220091f4b6eaded1c213e220a9ea9602aa

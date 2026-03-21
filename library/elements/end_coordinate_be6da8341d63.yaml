@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: End coordinate
+  source_attribute: end_coordinate
+  source_class: Section
+provenance:
+- source: aind
+  class: Section
+  name: end_coordinate
+  description: End coordinate
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: be6da8341d63e2431b4df84b2f77b682e5390bbe6f545c58128de867f3b5796b

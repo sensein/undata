@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: registry
+  source_class: aind_data_schema_models__species___Unknown
+provenance:
+- source: aind
+  class: aind_data_schema_models__species___Unknown
+  name: registry
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: efd5626338b6426131e8c2163ed2e477a9f1c2fa7c287fa8385bc2d301581003

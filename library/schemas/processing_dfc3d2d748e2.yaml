@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_processes_b01e3737fe74
+  - https://schema.undata.live/elements/dependency_graph_e192dcdff5c8
+  - https://schema.undata.live/elements/notes_8e862c5dba2c
+  - https://schema.undata.live/elements/pipelines_b157a9d94d1a
+  mixins: []
+provenance:
+- source: aind
+  name: processing
+  generated_at: '2026-03-21T05:07:50.861368+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dfc3d2d748e28704ca6da307e381725b0c1b8cff2aed7808c9320b58637efed1

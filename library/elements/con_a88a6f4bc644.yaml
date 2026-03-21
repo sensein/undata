@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: con
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: con
+  description: 'Raw continuous data from a KIT/Yokogawa/Ricoh MEG system.
+
+
+    Successor to the `.sqd` extension for raw continuous data.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a88a6f4bc644d83903e37e7632a3ff3330889336226ae86d9d12b91ad6869909

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredCrossReference
+  source_class: modificationForm.schema.omi
+provenance:
+- source: openminds
+  class: modificationForm.schema.omi
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ede856e3d1113bcac54107f4c0e4bc8222e5eaaecd29ff4d7b0fb1f6aaa60a0d

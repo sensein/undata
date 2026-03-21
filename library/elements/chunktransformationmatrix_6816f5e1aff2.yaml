@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: ChunkTransformationMatrix
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: ChunkTransformationMatrix
+  description: '3x3 or 4x4 affine transformation matrix describing spatial chunk transformation,
+
+    for 2D and 3D respectively (for examples: `[[2, 0, 0], [0, 3, 0], [0, 0, 1]]`
+
+    in 2D for 2x and 3x scaling along the first and second axis respectively; or
+
+    `[[1, 0, 0, 0], [0, 2, 0, 0], [0, 0, 3, 0], [0, 0, 0, 1]]` in 3D for 2x and 3x
+
+    scaling along the second and third axis respectively).
+
+    Note that non-spatial dimensions like time and channel are not included in the
+
+    transformation matrix.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6816f5e1aff295ab91b0459edbbb22350a8bab30c0fac70d4724f4833bbec487

@@ -1,0 +1,27 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/abstract_d492ef032d8d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/citedpublication_8b63541f15d4
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/contribution_38abfce0a9b4
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/contributoraffiliation_24872e7cd926
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/copyright_76f9682239c0
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/creationdate_da18eeaea589
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/digitalidentifier_32d98adc226f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/funding_ff5df8377e78
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/iri_ca013f9b16e6
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/ispartof_9872245dc622
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/keyword_8c0c8acb66c2
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/modificationdate_3ec0cf09417d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_bbc992baa097
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/pagination_267aa7d3f1db
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/publicationdate_c0eaeb416759
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/usagecondition_cd1dc61c062b
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/versionidentifier_ae9b68d47026
+  mixins: []
+provenance:
+- source: openminds
+  name: chapter.schema.omi
+  generated_at: '2026-03-21T05:08:25.209182+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5a83fd0dfedc50cc3dd4bf1fca3a61e21dac4f7f7b6cdecd5bc37872121ad97e

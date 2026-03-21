@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: Fiber patch
+  source_attribute: fiber
+  source_class: LaserAssembly
+  type_ref: FiberPatchCord
+provenance:
+- source: aind
+  class: LaserAssembly
+  name: fiber
+  description: Description of a patch cord
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 060397c2b169e468f7e3e983d5dcacc53516606061e03d46baaefa937db67c32

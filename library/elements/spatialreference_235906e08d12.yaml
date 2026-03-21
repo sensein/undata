@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SpatialReference
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SpatialReference
+  description: 'String or object describing the reference image to which the current
+    image is aligned.
+
+    For images with a single reference, the value MUST be a single string.
+
+    For images with multiple references, such as surface and volume references,
+
+    a JSON object MUST be used.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 235906e08d1217524ac452f29b40814ec7bd3b3d9859bc1d88642b87149f2099

@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: measured
-provenance:
-- source: bids
-  raw_value: measured
-- source: bids
-  raw_value: Measured

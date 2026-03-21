@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/deliveredby_9e0a3e47c2d6
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_6552cddc2c69
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/epoch_06631a609d89
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/generatedby_ae841d418cb9
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/internalidentifier_29def4f464aa
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/lookuplabel_09ce6c7d8ed4
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/specification_492e0b110238
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/type_cd55a5706dca
+  mixins: []
+provenance:
+- source: openminds
+  name: ephysStimulus.schema.omi
+  generated_at: '2026-03-21T05:08:25.348307+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a840137968e2674c0116f754bf13e980c506797ac1513cdf24d6066a894d6d55

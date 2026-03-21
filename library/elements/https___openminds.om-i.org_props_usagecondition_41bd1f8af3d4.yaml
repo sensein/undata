@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/usageCondition
+  source_class: metaDataModelVersion.schema.omi
+provenance:
+- source: openminds
+  class: metaDataModelVersion.schema.omi
+  name: https://openminds.om-i.org/props/usageCondition
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 41bd1f8af3d4fa8a270b2c74210676249ddca288bf81ffa1f7eee4471a691d89

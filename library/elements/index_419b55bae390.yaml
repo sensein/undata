@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: index
+  source_class: common_principles
+provenance:
+- source: bids
+  class: common_principles
+  name: index
+  description: 'A nonnegative integer, possibly prefixed with arbitrary number of
+    0s for consistent indentation,
+
+    for example, it is `01` in `run-01` following `run-<index>` specification.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 419b55bae390d13a2062e89f47f8026529a82e638af29d9bd78016546ec2c000

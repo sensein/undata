@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: EEGGround
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: EEGGround
+  description: 'Description of the location of the ground electrode
+
+    (for example, `"placed on right mastoid (M2)"`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8dd87423d29e67106fa46f728b5cc68804e611920cf4f824d5fcbd2fe3f2b62e

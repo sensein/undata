@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Objective type
+  source_attribute: objective_type
+  source_class: Objective
+provenance:
+- source: aind
+  class: Objective
+  name: objective_type
+  description: Objective type
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8d2141141d75c4c91279262051dc32ddc8ffcf0889d58e5d9804012a5fd3ce6a

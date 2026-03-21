@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: NIRSCWAMPLITUDE
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: NIRSCWAMPLITUDE
+  description: 'Continuous wave amplitude measurements. Equivalent to dataType 001
+    in SNIRF.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8926111a7493266d0d38dcfe9afd8b959054d19f21b411555010ba4a142ea71c

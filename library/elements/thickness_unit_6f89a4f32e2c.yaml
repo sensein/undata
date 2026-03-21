@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Slice thickness unit
+  source_attribute: thickness_unit
+  source_class: PlanarSection
+provenance:
+- source: aind
+  class: PlanarSection
+  name: thickness_unit
+  description: Slice thickness unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6f89a4f32e2cc61ac77b94b2bb29ad01099139cd561390c02e2b7bb6a80b4a8c

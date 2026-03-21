@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: description
+  source_class: Asset
+provenance:
+- source: dandi
+  class: Asset
+  name: description
+  description: A description of the item.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d2b2531288cc54b3581977b7766d842f6f034108a7390bda92a6469f8bfaa08f

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/howToCite
+  source_class: metaDataModelVersion.schema.omi
+provenance:
+- source: openminds
+  class: metaDataModelVersion.schema.omi
+  name: https://openminds.om-i.org/props/howToCite
+  description: Preferred format for citing a particular object or legal person.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f05c1004adbd4290f2aafdf76d919f7fbc43322752e1acd960b88468522fc253

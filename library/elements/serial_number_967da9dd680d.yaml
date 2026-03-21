@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Serial number
+  source_attribute: serial_number
+  source_class: Filter
+provenance:
+- source: aind
+  class: Filter
+  name: serial_number
+  description: Serial number
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 967da9dd680d13f57a42c2d8f08f078cbbdcef6e16f4ffa6a2a156a4968c3ff4

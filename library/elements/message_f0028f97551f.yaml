@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: message
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: message
+  description: 'Brief free-text description of a message (for example in a log generated
+
+    by a device), or other information of interest.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f0028f97551f4959c0afcd77b580fe863a15c6a9daddd910073cd1ef89953d1a

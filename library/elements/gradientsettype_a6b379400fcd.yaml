@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: GradientSetType
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: GradientSetType
+  description: 'It should be possible to infer the gradient coil from the scanner
+    model.
+
+    If not, for example because of a custom upgrade or use of a gradient
+
+    insert set, then the specifications of the actual gradient coil should be
+
+    reported independently.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a6b379400fcded473ec31fa6567dae7d8e1afa9a213f9fc2af0417b4582c7179

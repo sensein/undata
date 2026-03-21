@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: identifier
+  source_class: Affiliation
+provenance:
+- source: dandi
+  class: Affiliation
+  name: identifier
+  description: Use an ror.org identifier for institutions.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3c5032868ee55bb18d2a2362b00d878eef3d1b545b9e910e6c199fe1ade224c7

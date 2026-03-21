@@ -1,0 +1,17 @@
+semantic:
+  data_type: object
+  question_text: Gene name
+  source_attribute: gene
+  source_class: GeneProbe
+  type_ref: PIDName
+provenance:
+- source: aind
+  class: GeneProbe
+  name: gene
+  description: 'Model for associate a name with a persistent identifier (PID),
+
+    the registry for that PID, and abbreviation for that registry'
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 77043c2e90320e9bf1e64704e2fed077c46f15f9cf627586a1054068ee88469d

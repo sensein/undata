@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Odorant dilution
+  source_attribute: dilution
+  source_class: OlfactometerChannelInfo
+provenance:
+- source: aind
+  class: OlfactometerChannelInfo
+  name: dilution
+  description: Odorant dilution
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6f381553072dfd15ce9fc08fe7820df0d1089efdb193ad61acec86a6697d2693

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/usageCondition
+  source_class: hardwareProduct.schema.omi
+provenance:
+- source: openminds
+  class: hardwareProduct.schema.omi
+  name: https://openminds.om-i.org/props/usageCondition
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 93549c993c363b06b0a1816a94237a526511acc9302c218977ab89b8051d4562

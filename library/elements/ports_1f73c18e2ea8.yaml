@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Acquisition board ports
+  source_attribute: ports
+  source_class: OpenEphysAcquisitionBoard
+provenance:
+- source: aind
+  class: OpenEphysAcquisitionBoard
+  name: ports
+  description: Acquisition board ports
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1f73c18e2ea831eb3fba63ead915ccc6718c4239aca71e48bd1774ee4032ba6d

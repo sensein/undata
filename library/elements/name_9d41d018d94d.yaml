@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Device name
+  source_attribute: name
+  source_class: Microscope
+provenance:
+- source: aind
+  class: Microscope
+  name: name
+  description: Device name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9d41d018d94d1bf5cb8011c77d90ec6645025725bf6003223924062c204f7166

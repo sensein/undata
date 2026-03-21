@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: One-based port index
+  source_attribute: index
+  source_class: ProbePort
+provenance:
+- source: aind
+  class: ProbePort
+  name: index
+  description: One-based port index
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4fd6f5cbd6ea85fcc2fd11defb6bf64626bd05873d59fa7936e480ee1d3d9d7e

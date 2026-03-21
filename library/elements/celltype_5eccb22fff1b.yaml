@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: CellType
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: CellType
+  description: 'Describes the type of cell analyzed.
+
+    Values SHOULD come from the
+
+    [cell ontology](https://obofoundry.org/ontology/cl.html).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5eccb22fff1b767cf092fbbb597d0bb3f7099d0a56595ce7b9f69c4732c29ccd

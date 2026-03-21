@@ -1,0 +1,24 @@
+semantic:
+  data_type: array
+  source_attribute: RawSources
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: RawSources
+  description: 'A list of paths relative to dataset root pointing to the BIDS-Raw
+    file(s)
+
+    that were used in the creation of this derivative.
+
+    This field is DEPRECATED, and this metadata SHOULD be recorded in the
+
+    `Sources` field using [BIDS URIs](SPEC_ROOT/common-principles.md#bids-uri)
+
+    to distinguish sources from different datasets.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 661e9c055f01f7d993e871e77c1271a99b56975e147bcc80eefa0fbfe46f80bb

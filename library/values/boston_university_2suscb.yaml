@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: boston_university
-provenance:
-- source: aind
-  raw_value: aind.acquisition.NonViralMaterial.source.Boston_University
-- source: aind
-  raw_value: aind.metadata.DataDescription.institution.Boston_University

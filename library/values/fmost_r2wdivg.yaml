@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: fmost
-provenance:
-- source: aind
-  raw_value: aind.data_description.modalities.Fmost
-- source: aind
-  raw_value: aind.quality_control.CurationMetric.modality.Fmost

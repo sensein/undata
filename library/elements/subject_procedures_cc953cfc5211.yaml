@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Subject Procedures
+  source_attribute: subject_procedures
+  source_class: Procedures
+provenance:
+- source: aind
+  class: Procedures
+  name: subject_procedures
+  description: Procedures performed on a live subject
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cc953cfc5211c6cd117dc14b89477a51b2cdf8b67b308e4f53b4f9c63c88e59f

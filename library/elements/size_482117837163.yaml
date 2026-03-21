@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: 3D Size
+  source_attribute: size
+  source_class: Arena
+  type_ref: Scale
+provenance:
+- source: aind
+  class: Arena
+  name: size
+  description: Scale
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4821178371636b0647dfd7b1f1b199c3758770abf30652717c8b8a509a92998a

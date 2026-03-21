@@ -1,0 +1,33 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - RARE
+    - FLASH
+    - MSME
+    - Other
+  response_options:
+  - value: RARE
+    label: RARE
+    ontology_term: https://schema.undata.live/values/rare_26d00f6adb2b
+  - value: FLASH
+    label: FLASH
+    ontology_term: https://schema.undata.live/values/flash_f883f1a61bfb
+  - value: MSME
+    label: MSME
+    ontology_term: https://schema.undata.live/values/msme_8b3c88fe3304
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+  question_text: Scan sequence
+  source_attribute: pulse_sequence_type
+  source_class: MRIScan
+provenance:
+- source: aind
+  class: MRIScan
+  name: pulse_sequence_type
+  description: BIDS PulseSequenceType
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6efabe92a88e3e3e5e3d988d677bf3677279cf1145ff732b460fb96670560647

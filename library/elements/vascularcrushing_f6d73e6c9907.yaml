@@ -1,0 +1,20 @@
+semantic:
+  data_type: boolean
+  value_domain: boolean
+  source_attribute: VascularCrushing
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: VascularCrushing
+  description: 'Boolean indicating if Vascular Crushing is used.
+
+    Corresponds to [DICOM Tag 0018, 9259](http://www.dicomlookup.com/dicomtags/(0018,9259))
+
+    `ASL Crusher Flag`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f6d73e6c990763f8cd2a8f2bf0f4549cccb73d15b08e0bccf4aa765274f8a25e

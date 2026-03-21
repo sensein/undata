@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Sampling strategy
+  source_attribute: sampling_strategy
+  source_class: ImagingConfig
+provenance:
+- source: aind
+  class: ImagingConfig
+  name: sampling_strategy
+  description: Sampling strategy
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d03ba77a8a8e9e5f280c0e3fb0b599ca5d2eece433502d85652579be103bea83

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: schemaVersion
+  source_class: PublishedAsset
+provenance:
+- source: dandi
+  class: PublishedAsset
+  name: schemaVersion
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3b1a6d21890c31c03594a840ef160593353626c0b2e5973d1c77dc5ec8284663

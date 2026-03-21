@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Report
+  source_attribute: report
+  source_class: WellnessReport
+provenance:
+- source: aind
+  class: WellnessReport
+  name: report
+  description: Report
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0cc1be0e570547ef5c276cf99f50c045be40fd3aa3500b14cc3bd2b2f097e17a

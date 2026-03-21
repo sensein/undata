@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/status
+  source_class: visualization.schema.omi
+provenance:
+- source: openminds
+  class: visualization.schema.omi
+  name: https://openminds.om-i.org/props/status
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1655711f3b5f7b86f5fbd50b927e4a0af0a4ad8fccf09d3ba0071f3f57445451

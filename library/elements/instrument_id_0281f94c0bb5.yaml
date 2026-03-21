@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Instrument ID
+  source_attribute: instrument_id
+  source_class: Instrument
+provenance:
+- source: aind
+  class: Instrument
+  name: instrument_id
+  description: Unique instrument identifier
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0281f94c0bb57d2a009fd90910b1503f127372bc48e2b7531daf81c2b4d1df1b

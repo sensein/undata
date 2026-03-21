@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: MEGCoordinateSystemDescription
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: MEGCoordinateSystemDescription
+  description: 'Free-form text description of the coordinate system.
+
+    May also include a link to a documentation page or paper describing the
+
+    system in greater detail.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 241e4cea91993d6cf708cc8ee4fb9ec33834b17c4d34fddb18246d16944285ea

@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: integrated_dna_technologies
+provenance:
+- source: aind
+  raw_value: aind.metadata.FluorescentStain.source.Integrated_Dna_Technologies

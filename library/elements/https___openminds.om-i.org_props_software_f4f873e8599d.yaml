@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/software
+  source_class: softwareAgent.schema.omi
+provenance:
+- source: openminds
+  class: softwareAgent.schema.omi
+  name: https://openminds.om-i.org/props/software
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f4f873e8599db8ab6a745cc8fbc6c56109b661a23ed30250622f290a65390028

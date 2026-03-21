@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/releaseDate
+  source_class: interfaceVersion.schema.omi
+provenance:
+- source: openminds
+  class: interfaceVersion.schema.omi
+  name: https://openminds.om-i.org/props/releaseDate
+  description: Fixed date on which a product is due to become or was made available
+    for the general public to see or buy
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e0edbde70306c3dfca6bc85670db364b22970b54c5937fe2e1bdb712c1679ed2

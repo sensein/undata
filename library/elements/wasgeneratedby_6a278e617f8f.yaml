@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: wasGeneratedBy
+  source_class: Asset
+provenance:
+- source: dandi
+  class: Asset
+  name: wasGeneratedBy
+  description: Describe the session, project or activity that generated this asset.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6a278e617f8f836d37ed33f380c45bc3dd8f4811fba2590192714d22db80e974

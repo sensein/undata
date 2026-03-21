@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Cut-off wavelength (nm)
+  source_attribute: cut_off_wavelength
+  source_class: Filter
+provenance:
+- source: aind
+  class: Filter
+  name: cut_off_wavelength
+  description: Cut-off wavelength (nm)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 230c9c57b9704bd49d35a58846203f326d77bb62e0e9e0528bafa5cd48854611

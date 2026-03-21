@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/description_dxbe6o
-  - https://schema.undata.live/elements/electrode_10w669
-  - https://schema.undata.live/elements/intracellularelectrodestable_obvvqv
-  mixins: []
-provenance:
-- source: nwb
-  name: IntracellularElectrodesTable

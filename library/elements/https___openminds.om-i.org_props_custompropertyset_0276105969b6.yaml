@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/customPropertySet
+  source_class: electrodePlacement.schema.omi
+provenance:
+- source: openminds
+  class: electrodePlacement.schema.omi
+  name: https://openminds.om-i.org/props/customPropertySet
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0276105969b614e9e576f22a46f3a5f4f1f5767a9729a5f9ca9ac0a3b60767ca

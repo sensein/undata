@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: PASLType
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: PASLType
+  description: 'Type of the labeling pulse of the `PASL` labeling,
+
+    for example `"FAIR"`, `"EPISTAR"`, or `"PICORE"`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9a48151fde83f375af9df02beafb2039abfa1e4daa691e24b6095075511d9a02

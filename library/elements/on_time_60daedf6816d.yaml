@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: On time (fraction of cycle)
+  source_attribute: on_time
+  source_class: PockelsCell
+provenance:
+- source: aind
+  class: PockelsCell
+  name: on_time
+  description: On time (fraction of cycle)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 60daedf6816dd81b4a9ed42ef5f0e552268c1cd097f091948b15bfa35441e686

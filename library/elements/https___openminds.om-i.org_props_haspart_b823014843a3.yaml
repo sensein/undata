@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/hasPart
+  source_class: chemicalMixture.schema.omi
+provenance:
+- source: openminds
+  class: chemicalMixture.schema.omi
+  name: https://openminds.om-i.org/props/hasPart
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b823014843a3b6ae8b692cb11fcf362c2debbe9dbd98124476e4f27e64daeddc

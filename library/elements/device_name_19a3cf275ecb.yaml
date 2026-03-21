@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Device name
+  source_attribute: device_name
+  source_class: SpeakerConfig
+provenance:
+- source: aind
+  class: SpeakerConfig
+  name: device_name
+  description: Must match a device defined in the instrument.json
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 19a3cf275ecbfbcf6e83edac000b46f15a8ca8bdafa10393fdc00d549aafc077

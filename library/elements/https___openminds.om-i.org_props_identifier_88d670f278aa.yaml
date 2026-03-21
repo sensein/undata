@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/identifier
+  source_class: RORID.schema.omi
+provenance:
+- source: openminds
+  class: RORID.schema.omi
+  name: https://openminds.om-i.org/props/identifier
+  description: Term or code used to identify something or someone.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 88d670f278aa2b1bafe661c27afbf14432a97d0601fa26fd946e1e789a50b11f

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/accessibility
+  source_class: modelVersion.schema.omi
+provenance:
+- source: openminds
+  class: modelVersion.schema.omi
+  name: https://openminds.om-i.org/props/accessibility
+  description: Level to which something is accessible to someone or something.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0b35f2454223b60b2ec49152ca20d87e2807ffa11a5736b82bb109b9eb0b8773

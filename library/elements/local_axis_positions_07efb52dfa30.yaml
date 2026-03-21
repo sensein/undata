@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: Local axis positions
+  source_attribute: local_axis_positions
+  source_class: ManipulatorConfig
+  type_ref: Translation
+provenance:
+- source: aind
+  class: ManipulatorConfig
+  name: local_axis_positions
+  description: Translation
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 07efb52dfa30a0a537afd9331d05d5a1c60c046f6f29fe176284fccaeb30e023

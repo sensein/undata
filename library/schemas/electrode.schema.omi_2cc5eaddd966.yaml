@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/conductormaterial_d71aeb7eefdb
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/contribution_388b732d36ca
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_2467d1e750b3
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/insulatormaterial_12efa0cfcd7a
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/internalidentifier_1abaa3a1a092
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/intrinsicresistance_ca6ee526a38f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_7c0b52440d39
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/serialnumber_677d37a965d5
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/type_9d004d2aa8fc
+  mixins: []
+provenance:
+- source: openminds
+  name: electrode.schema.omi
+  generated_at: '2026-03-21T05:08:25.249187+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2cc5eaddd966a77743899b3bf82ec7aa0488eecba4c8aba5167e165ce2d4972e

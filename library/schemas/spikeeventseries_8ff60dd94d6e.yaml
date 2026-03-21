@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_cd731a748784
+  - https://schema.undata.live/elements/spikeeventseries_fc5c0397bc80
+  - https://schema.undata.live/elements/timestamps_728eb1a33b80
+  mixins: []
+provenance:
+- source: nwb
+  name: SpikeEventSeries
+  generated_at: '2026-03-21T05:07:31.285737+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8ff60dd94d6e16178bbba90736a828dde22a8e4d06ab6ddc7fdb79f136ce9206

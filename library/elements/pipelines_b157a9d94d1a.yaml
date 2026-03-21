@@ -1,0 +1,15 @@
+semantic:
+  data_type: array
+  question_text: Pipelines
+  source_attribute: pipelines
+  source_class: processing
+provenance:
+- source: aind
+  class: processing
+  name: pipelines
+  description: For processing done with pipelines, list the repositories here. Pipelines
+    must use the name field ,and be referenced in the pipeline_name field of a DataProcess.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b157a9d94d1aaf5867d7a44c9aa7df8a389f08d93f45daa574a5285cae0f4bd9

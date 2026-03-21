@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/description
+  source_class: tissueStructure.schema.omi
+provenance:
+- source: openminds
+  class: tissueStructure.schema.omi
+  name: https://openminds.om-i.org/props/description
+  description: Longer statement or account giving the characteristics of someone or
+    something.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b5587691c1850c0b4c5ef6488d1653a080429d1cb952c0d726d41a58cd82eb43

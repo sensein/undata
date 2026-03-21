@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/allow_tag_failures_b5e706f5fd4c
+  - https://schema.undata.live/elements/default_grouping_f684e0c6459c
+  - https://schema.undata.live/elements/key_experimenters_eb5206de9149
+  - https://schema.undata.live/elements/metrics_0545f4f85228
+  - https://schema.undata.live/elements/notes_f19d915d14e3
+  - https://schema.undata.live/elements/status_e75f5a60feab
+  mixins: []
+provenance:
+- source: aind
+  name: quality_control
+  generated_at: '2026-03-21T05:07:50.830875+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 84f0f556658cdd7a47af828099a74dc8e5a6454806906f2a5564c527b79fa4e9

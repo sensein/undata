@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredVisualization
+  source_class: atlasAnnotation.schema.omi
+provenance:
+- source: openminds
+  class: atlasAnnotation.schema.omi
+  name: https://openminds.om-i.org/props/preferredVisualization
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9d7531087d1b307600ae4709e9303503ea75583b3583d2eeffddc1fb09cc70f3

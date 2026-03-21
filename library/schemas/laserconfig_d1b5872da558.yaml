@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/device_name_8a96bf7a4021
+  - https://schema.undata.live/elements/power_335a2bc36788
+  - https://schema.undata.live/elements/power_measured_at_b61ed3bb6feb
+  - https://schema.undata.live/elements/power_unit_4eb2c209e76a
+  - https://schema.undata.live/elements/wavelength_143bbf2b1c59
+  - https://schema.undata.live/elements/wavelength_unit_bc1a82943db2
+  mixins: []
+provenance:
+- source: aind
+  name: LaserConfig
+  generated_at: '2026-03-21T05:07:50.867300+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d1b5872da5584b3517d94867c01a1215538ce08ec8f22dcfbc545e881947d0a0

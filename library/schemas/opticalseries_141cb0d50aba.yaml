@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_e6382a22d33c
+  - https://schema.undata.live/elements/distance_b32605dd6daa
+  - https://schema.undata.live/elements/field_of_view_eccceba55b98
+  - https://schema.undata.live/elements/opticalseries_187c045103f6
+  - https://schema.undata.live/elements/orientation_c100479b85b6
+  mixins: []
+provenance:
+- source: nwb
+  name: OpticalSeries
+  generated_at: '2026-03-21T05:07:31.286136+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 141cb0d50abaf22281142dc0427012f50755f72c8aea08cb8b6b9b3341692818

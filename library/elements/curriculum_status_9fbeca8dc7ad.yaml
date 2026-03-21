@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Curriculum status
+  source_attribute: curriculum_status
+  source_class: StimulusEpoch
+provenance:
+- source: aind
+  class: StimulusEpoch
+  name: curriculum_status
+  description: Status within the training protocol curriculum
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9fbeca8dc7adb217bea4c53cc91d693f8af4faff899894015849ded545f58156

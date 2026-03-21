@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/homepage
+  source_class: interface.schema.omi
+provenance:
+- source: openminds
+  class: interface.schema.omi
+  name: https://openminds.om-i.org/props/homepage
+  description: Main website of something or someone.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 32a06fcd664c761324783ae98f6a7dc3da11d7f1a37de21c0229f580af9444d4

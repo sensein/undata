@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/sealResistance
+  source_class: pipetteUsage.schema.omi
+provenance:
+- source: openminds
+  class: pipetteUsage.schema.omi
+  name: https://openminds.om-i.org/props/sealResistance
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2c8922f3a688637148afc1e78a816040b154a71ef1727edc7ed5ffea57d61df8

@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/channel_name_9438f9b79da8
+  - https://schema.undata.live/elements/dimensions_06674444a15d
+  - https://schema.undata.live/elements/dimensions_unit_935117e45e8b
+  - https://schema.undata.live/elements/image_to_acquisition_transform_2d7b71c5578a
+  - https://schema.undata.live/elements/planes_0f7ade58658f
+  mixins: []
+provenance:
+- source: aind
+  name: PlanarImage
+  generated_at: '2026-03-21T05:07:50.846977+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bc4614f6a886052e652ca63071d16db0eab9cf28429a47a3dd49c1b6dc3850df

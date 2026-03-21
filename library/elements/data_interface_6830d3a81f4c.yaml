@@ -1,0 +1,45 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - CameraLink
+    - Coax
+    - Ethernet
+    - PCIe
+    - PXI
+    - USB
+    - Other
+  response_options:
+  - value: CameraLink
+    label: CameraLink
+    ontology_term: https://schema.undata.live/values/cameralink_2017b4fc05d6
+  - value: Coax
+    label: Coax
+    ontology_term: https://schema.undata.live/values/coax_2948dc62f8d3
+  - value: Ethernet
+    label: Ethernet
+    ontology_term: https://schema.undata.live/values/ethernet_aa0962ecc763
+  - value: PCIe
+    label: PCIe
+    ontology_term: https://schema.undata.live/values/pcie_9d5c011bd9d2
+  - value: PXI
+    label: PXI
+    ontology_term: https://schema.undata.live/values/pxi_da9fff5bdff2
+  - value: USB
+    label: USB
+    ontology_term: https://schema.undata.live/values/usb_8d9d1f2950c4
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+  question_text: Data interface
+  source_attribute: data_interface
+  source_class: HarpDevice
+provenance:
+- source: aind
+  class: HarpDevice
+  name: data_interface
+  description: Connection between a device and a PC
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6830d3a81f4c615d55b2d91d7dc4f8b71297eba4358fbd714beb26b7ab1578cf

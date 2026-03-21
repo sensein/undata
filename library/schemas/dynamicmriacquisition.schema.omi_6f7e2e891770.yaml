@@ -1,0 +1,34 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/behavioralprotocol_7b8032d1f7a2
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/contrastagent_cd85ed7df190
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/custompropertyset_0c89de551271
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/delaytime_36c8b40b265b
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_85b3d3b2133d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/device_24ea047a8214
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/distortioncorrection_2041cdf8fd1d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/endtime_d19a167a1ac8
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/input_aeab5948f5f3
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/ispartof_cc20f9cdb23b
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/lookuplabel_a80fa6e305f2
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/motioncorrection_3b10ddf864f3
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/numberofdiscardedvolumes_bb07e3c1b1cc
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/output_97d45a75b8f2
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/performedby_61d899974a62
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preparationdesign_90e0d7bf935a
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/protocol_3a4dbae7052f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/registrationdata_f3aaa35b3ec5
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/specimenorientation_0c04df8be699
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/starttime_97cf3338e81e
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/studytarget_d68c678383d5
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/targetanatomy_a792740b7984
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/volumeacquisitiontime_384341e27566
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/volumetiming_d56a29900483
+  mixins: []
+provenance:
+- source: openminds
+  name: dynamicMRIAcquisition.schema.omi
+  generated_at: '2026-03-21T05:08:25.244836+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6f7e2e891770388c87f22df70ea118ccc70e9fc877f4c1026d1f7cef55903e1f

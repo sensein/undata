@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: startDate
+  source_class: Session
+provenance:
+- source: dandi
+  class: Session
+  name: startDate
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8e19c2f0f95af5bdcc1461cde88cd27e552503e963d84a213624521cc60077c9

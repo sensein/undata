@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: WaterSuppressionTechnique
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: WaterSuppressionTechnique
+  description: 'The name of the pulse sequence used for water suppression (for example,
+    `"CHESS"`, `"VAPOR"`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 522dffd0a9676e6eb399cb7ec51ed916e6b8a2627f7587d17e4fab64177cca25

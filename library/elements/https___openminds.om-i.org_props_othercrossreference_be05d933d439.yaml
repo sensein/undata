@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/otherCrossReference
+  source_class: educationalLevel.schema.omi
+provenance:
+- source: openminds
+  class: educationalLevel.schema.omi
+  name: https://openminds.om-i.org/props/otherCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: be05d933d4397d06b08f1f2afdc4c2bcb110255b6d42c99bca8ce26a96b32cac

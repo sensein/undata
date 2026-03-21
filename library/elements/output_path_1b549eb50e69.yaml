@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  question_text: Output path
+  source_attribute: output_path
+  source_class: ModelEvaluation
+provenance:
+- source: aind
+  class: ModelEvaluation
+  name: output_path
+  description: Path to processing outputs, if stored.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ModelEvaluation
+  name: output_path
+  description: Path to processing outputs, if stored.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1b549eb50e695184c49443b65950d0b91c12809e4e6e69145b92c0494bf859ec

@@ -1,0 +1,19 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: Haematocrit
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: Haematocrit
+  description: 'Measured haematocrit, meaning the volume of erythrocytes divided by
+    the
+
+    volume of whole blood.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ae1ef5525b645f469ce9c187d44180a0c07a8a24f03ce0dc3b1f0892ff3fc65b

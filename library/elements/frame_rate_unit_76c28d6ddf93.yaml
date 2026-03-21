@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Frame rate unit
+  source_attribute: frame_rate_unit
+  source_class: Detector
+provenance:
+- source: aind
+  class: Detector
+  name: frame_rate_unit
+  description: Frame rate unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 76c28d6ddf938ef013a45eb018945c79c26239b09f2668b56a5d9bd27cb8a295

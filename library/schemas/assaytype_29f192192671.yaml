@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_6165f9031359
+  - https://schema.undata.live/elements/identifier_8c0d2dcb53d6
+  - https://schema.undata.live/elements/name_be83c9c81b88
+  - https://schema.undata.live/elements/schemakey_ccaf163f9ea4
+  mixins: []
+provenance:
+- source: dandi
+  name: AssayType
+  generated_at: '2026-03-21T05:07:14.181839+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 29f19219267154a02c2d9ebc7de37e5fc97eec0ec1af11c68fbabe885c40d05a

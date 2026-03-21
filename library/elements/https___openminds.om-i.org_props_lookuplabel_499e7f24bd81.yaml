@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/lookupLabel
+  source_class: optimization.schema.omi
+provenance:
+- source: openminds
+  class: optimization.schema.omi
+  name: https://openminds.om-i.org/props/lookupLabel
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 499e7f24bd81bee14b83f476408dd96cd43c36ecf4f9a4cd49e12034c068786b

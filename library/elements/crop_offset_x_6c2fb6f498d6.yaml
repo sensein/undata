@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Crop offset x
+  source_attribute: crop_offset_x
+  source_class: DetectorConfig
+provenance:
+- source: aind
+  class: DetectorConfig
+  name: crop_offset_x
+  description: Overrides any value set in the Instrument metadata
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6c2fb6f498d6de3cc3efc4f2b514a5ad34e468f9077859e1b37a9305bfae463d

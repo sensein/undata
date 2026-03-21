@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/endTime
+  source_class: stimulationActivity.schema.omi
+provenance:
+- source: openminds
+  class: stimulationActivity.schema.omi
+  name: https://openminds.om-i.org/props/endTime
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 066fe732678f1c1d042c59d28b821098331621f003035b6873e1c4127466ec3f

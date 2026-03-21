@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/tag
+  source_class: simulation.schema.omi
+provenance:
+- source: openminds
+  class: simulation.schema.omi
+  name: https://openminds.om-i.org/props/tag
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0437735b7a015fe64048387c9435590670a483178c0391a7bd8b1d0665f6704a

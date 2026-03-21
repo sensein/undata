@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Motion padding X (pixels)
+  source_attribute: motion_padding_x
+  source_class: DigitalMicromirrorDevice
+provenance:
+- source: aind
+  class: DigitalMicromirrorDevice
+  name: motion_padding_x
+  description: Motion padding X (pixels)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 371834d131455d2ca6f3c86f0949a5f4cb5903085117170a2db21e222f00d0ec

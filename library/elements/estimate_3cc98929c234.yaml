@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: Estimate
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: Estimate
+  description: 'A single whole-brain M0 value is provided in the metadata.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3cc98929c234dd2a35bc2ee95c0cbfe0bbc25b84c44ea863910247ae646e9d7c

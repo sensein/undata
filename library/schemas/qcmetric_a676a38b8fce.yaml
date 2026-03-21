@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_66449e64768d
+  - https://schema.undata.live/elements/evaluated_assets_18ae8d354790
+  - https://schema.undata.live/elements/modality_acd59634fb84
+  - https://schema.undata.live/elements/name_e80ec7840071
+  - https://schema.undata.live/elements/reference_648cec37fbd9
+  - https://schema.undata.live/elements/stage_3abc54b6d088
+  - https://schema.undata.live/elements/status_history_01be87e752a1
+  - https://schema.undata.live/elements/tags_e5f4fe4d8c7f
+  - https://schema.undata.live/elements/value_04597c6eba53
+  mixins: []
+provenance:
+- source: aind
+  name: QCMetric
+  generated_at: '2026-03-21T05:07:50.863631+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a676a38b8fced1fc72adc7840431f28a753d7f2548322c57659e81e71d83cc56

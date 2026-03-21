@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  source_attribute: vasculature_image
+  source_class: ImagingRetinotopy
+provenance:
+- source: nwb
+  class: ImagingRetinotopy
+  name: vasculature_image
+  description: 'Gray-scale anatomical image of cortical surface. Array structure:
+    [rows][columns]'
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: abfe4062d8a5ab267b3c8b5884d5def15bc5b2964e835e49e2d98368a4737e3a

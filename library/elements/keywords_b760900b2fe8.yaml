@@ -1,0 +1,18 @@
+semantic:
+  data_type: array
+  source_attribute: Keywords
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: Keywords
+  description: 'A list of keywords that describe the content or subject matter of
+    the dataset.
+
+    These may be used to enhance the findability of the dataset on public archives.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b760900b2fe81976a5a9e1a6c8be503300b5e06212af2d883d44df6ba60738f6

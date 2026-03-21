@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/approach_26f8b6e4c18a
+  - https://schema.undata.live/elements/datastandard_799aa6147c2f
+  - https://schema.undata.live/elements/id_344d7d72c9e9
+  - https://schema.undata.live/elements/measurementtechnique_5133055f56be
+  - https://schema.undata.live/elements/numberofbytes_4d4243fdf59f
+  - https://schema.undata.live/elements/numberofcells_e812b22b7c70
+  - https://schema.undata.live/elements/numberoffiles_1c7ec461cdb0
+  - https://schema.undata.live/elements/numberofsamples_b40edc3ef8a1
+  - https://schema.undata.live/elements/numberofsubjects_9f330d96c2d8
+  - https://schema.undata.live/elements/schemakey_6978b1522b02
+  - https://schema.undata.live/elements/species_4f72bd416a21
+  - https://schema.undata.live/elements/variablemeasured_c2c22d25e4ac
+  mixins: []
+provenance:
+- source: dandi
+  name: AssetsSummary
+  generated_at: '2026-03-21T05:07:14.172283+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 517754d53045f050f46386d995f220bc90d71985a84da33e2d5364a17e9fde4d

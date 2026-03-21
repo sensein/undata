@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/ground_electrode_location_b8a179632e43
+  - https://schema.undata.live/elements/ground_wire_diameter_4d75a741aabf
+  - https://schema.undata.live/elements/ground_wire_diameter_unit_e89567efa350
+  - https://schema.undata.live/elements/ground_wire_hole_99bd420bb895
+  - https://schema.undata.live/elements/ground_wire_material_64c546b89a6d
+  mixins: []
+provenance:
+- source: aind
+  name: GroundWireImplant
+  generated_at: '2026-03-21T05:07:50.875634+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b5a62d1f6e149274fff7510f10418fb5c63804006fd064af6b373a7e686332a4

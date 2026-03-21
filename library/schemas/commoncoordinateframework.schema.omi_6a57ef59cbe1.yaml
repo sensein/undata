@@ -1,0 +1,25 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/abbreviation_7963fe31ac9d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/contribution_a4bb75aa3194
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/contributoraffiliation_3b8d26f7fbc6
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_b254cfbbe0e3
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/digitalidentifier_bf0de3461deb
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/documentation_598073a9dda6
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/fullname_02ab405dc593
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/homepage_b9037dcf8b40
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/howtocite_394314c31910
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/keyword_e25506d906ac
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/ontologyidentifier_84e9ad24bbbf
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/relatedpublication_33c059b004b6
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/shortname_6fa7ea7ed9ee
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/supportchannel_b3bbfe7720f9
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/usedtaxon_28e41c0c74d6
+  mixins: []
+provenance:
+- source: openminds
+  name: commonCoordinateFramework.schema.omi
+  generated_at: '2026-03-21T05:08:25.201867+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6a57ef59cbe195cced99903b9477d5db0b3f5ba005c60f0a4dae28781f325ec7

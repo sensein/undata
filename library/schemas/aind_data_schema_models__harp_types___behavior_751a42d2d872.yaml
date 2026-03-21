@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/name_0b7cbe27d857
+  - https://schema.undata.live/elements/whoami_962180e7f627
+  mixins: []
+provenance:
+- source: aind
+  name: aind_data_schema_models__harp_types___Behavior
+  generated_at: '2026-03-21T05:07:50.879386+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 751a42d2d872402a0d0f0e856ecd03a58389a7a02c9555aa34d89ff210225e63

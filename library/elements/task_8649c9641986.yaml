@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: task
+  source_class: common_principles
+provenance:
+- source: bids
+  class: common_principles
+  name: task
+  description: 'A set of structured activities performed by the participant.
+
+    Tasks are usually accompanied by stimuli and responses, and can greatly vary in
+    complexity.
+
+    For the purpose of this specification we consider the so-called "resting state"
+    a task.
+
+    In the context of brain scanning, a task is always tied to one data acquisition.
+
+    Therefore, even if during one acquisition the subject performed multiple conceptually
+    different behaviors
+
+    (with different sets of instructions) they will be considered one (combined) task.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8649c964198625a3959866bd4d197c2b4f495e177e5cc84aeff14615dc7caf0c

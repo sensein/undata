@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  question_text: Curator
+  source_attribute: curator
+  source_class: CurationHistory
+provenance:
+- source: aind
+  class: CurationHistory
+  name: curator
+  description: Curator
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: CurationHistory
+  name: curator
+  description: Curator
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3990056149d2ecd1b95e38b49278776caca70fab890a6084cf2b14c736fedf26

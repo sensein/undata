@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Research Resource ID
+  source_attribute: rrid
+  source_class: NonViralMaterial
+provenance:
+- source: aind
+  class: NonViralMaterial
+  name: rrid
+  description: Research Resource ID
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9ad76f8aa7cc40e8f36f14e0b037af95fa8800cf4cb02fed491b56889ae802f0

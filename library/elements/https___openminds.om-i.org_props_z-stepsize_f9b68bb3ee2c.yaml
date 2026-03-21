@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/z-stepSize
+  source_class: gridImageStack.schema.omi
+provenance:
+- source: openminds
+  class: gridImageStack.schema.omi
+  name: https://openminds.om-i.org/props/z-stepSize
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f9b68bb3ee2cdab76f7da60e5b25d1940c7666aa37f7751ba995d5d6768ab8fa

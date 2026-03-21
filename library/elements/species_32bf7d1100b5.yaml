@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Species
+  source_attribute: species
+  source_class: MouseSubject
+provenance:
+- source: aind
+  class: MouseSubject
+  name: species
+  description: Species
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 32bf7d1100b533c9816868cb108d35b89c764dc4b2269e60669f02ebbc6ef557

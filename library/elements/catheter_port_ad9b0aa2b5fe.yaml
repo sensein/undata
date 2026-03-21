@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Single
+    - Double
+  response_options:
+  - value: Single
+    label: Single
+    ontology_term: https://schema.undata.live/values/single_59d1e96ac041
+  - value: Double
+    label: Double
+    ontology_term: https://schema.undata.live/values/double_f17ab83a979d
+  question_text: Catheter port
+  source_attribute: catheter_port
+  source_class: Catheter
+provenance:
+- source: aind
+  class: Catheter
+  name: catheter_port
+  description: Type of catheter port
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ad9b0aa2b5fe84a11276b4d70ecfb799971b79b47c720a889816b96a459adfa1

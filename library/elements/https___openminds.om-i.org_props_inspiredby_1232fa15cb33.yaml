@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/inspiredBy
+  source_class: customAnnotation.schema.omi
+provenance:
+- source: openminds
+  class: customAnnotation.schema.omi
+  name: https://openminds.om-i.org/props/inspiredBy
+  description: Reference to an inspiring element.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1232fa15cb33b4e075cc0c3d06e374cc2fa49816997408520dfb9527a09af339

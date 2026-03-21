@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/channel_configs_1wetzb
-  - https://schema.undata.live/elements/device_name_yios06
-  mixins: []
-provenance:
-- source: aind
-  name: OlfactometerConfig

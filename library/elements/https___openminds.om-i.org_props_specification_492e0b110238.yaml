@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/specification
+  source_class: ephysStimulus.schema.omi
+provenance:
+- source: openminds
+  class: ephysStimulus.schema.omi
+  name: https://openminds.om-i.org/props/specification
+  description: Detailed and precise presentation of, or proposal for something.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 492e0b110238da978c971a39bc1c3789c9cf0662528d94ef0760d0df4a17bc90

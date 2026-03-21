@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/usedCoils
+  source_class: MRIScannerUsage.schema.omi
+provenance:
+- source: openminds
+  class: MRIScannerUsage.schema.omi
+  name: https://openminds.om-i.org/props/usedCoils
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6ba4a0a1c9ea62be3b51109fc255850f7b0d480e66bfc4e4f9772db757d656ce

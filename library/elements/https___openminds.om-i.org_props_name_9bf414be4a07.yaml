@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/name
+  source_class: muscularStructure.schema.omi
+provenance:
+- source: openminds
+  class: muscularStructure.schema.omi
+  name: https://openminds.om-i.org/props/name
+  description: Word or phrase that constitutes the distinctive designation of a being
+    or thing.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9bf414be4a073f5bdf138f15a63fd85bdd88110a075ba18231f5328176f85070

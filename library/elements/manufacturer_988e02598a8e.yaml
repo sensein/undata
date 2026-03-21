@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: Manufacturer
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: Manufacturer
+  description: 'Manufacturer of the equipment that produced the measurements.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 988e02598a8e82f2ded87b36886fe03d68ef4bf463ba40ce1c3e3c939d37134d

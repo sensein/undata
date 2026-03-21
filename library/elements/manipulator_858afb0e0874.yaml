@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: Manipulator configuration
+  source_attribute: manipulator
+  source_class: FiberAssemblyConfig
+  type_ref: ManipulatorConfig
+provenance:
+- source: aind
+  class: FiberAssemblyConfig
+  name: manipulator
+  description: Configuration of a manipulator
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 858afb0e0874635b3a84e484bea6c5c0a3c3137d8e62f233e4b63379aafe0444

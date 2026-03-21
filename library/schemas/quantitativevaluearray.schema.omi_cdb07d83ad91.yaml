@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/negativeuncertainties_ca746a254b8b
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/positiveuncertainties_14364ae50753
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/typeofuncertainty_b0260bdb68ff
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/unit_85913c7b8cb7
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/values_d156c893043c
+  mixins: []
+provenance:
+- source: openminds
+  name: quantitativeValueArray.schema.omi
+  generated_at: '2026-03-21T05:08:25.366241+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cdb07d83ad91dc210e7ff627ec9335da0ec974b2a53a5886c1eeede5c1948368

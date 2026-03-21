@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: schemaKey
+  source_class: Disorder
+provenance:
+- source: dandi
+  class: Disorder
+  name: schemaKey
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f5e0e6fe45b2c10059da543804e9d64edbc78272285817ddf3252b1f22f6ad2a

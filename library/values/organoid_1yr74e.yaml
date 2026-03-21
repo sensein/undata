@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: organoid
-provenance:
-- source: bids
-  raw_value: organoid

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: DAC
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: DAC
+  description: 'Digital to Analog output.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 27eb246b521a495e06de5b5c469ed7b9afe69a4b9dbf54ed775df6e3c2ce82b9

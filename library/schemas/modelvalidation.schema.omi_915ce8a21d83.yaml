@@ -1,0 +1,29 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/custompropertyset_f39bd3829064
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_a742ae0b8eec
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/endtime_254c41d5685c
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/environment_60b66f6ffb1c
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/input_efebfeef804d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/launchconfiguration_e6561323dbbd
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/lookuplabel_7d5446bacbc1
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/output_b456daea00b0
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/performedby_f24b8c7a2c7d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/recipe_d6f2eb5df696
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/resourceusage_7909e931442b
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/score_1bc49da0059b
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/startedby_eba62f32d564
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/starttime_9bfd7200a8eb
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/status_9c9b5031f6b7
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/studytarget_9e0e0edfd854
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/tag_e840f29fbd7a
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/technique_d33cd7532965
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/wasinformedby_a019cce2188e
+  mixins: []
+provenance:
+- source: openminds
+  name: modelValidation.schema.omi
+  generated_at: '2026-03-21T05:08:25.279031+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 915ce8a21d83f794a27424dcf9bfc99c218ec7e84e88d58cd0f46dade2d91452

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: in_vivo
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: in_vivo
+  description: 'The environment of a sample: in vivo
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e6cf43297ac4b94512884d0bc8f7bd0816b2dc88a271720c4271a5b504d082e4

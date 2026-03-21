@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: FLUO
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: FLUO
+  description: 'Fluorescence microscopy imaging data
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2317efc0b8a9b8ef4c9d348aae066c63db6b8a212733bf43e206d71c129ccfc9

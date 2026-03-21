@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  question_text: Pipeline name
+  source_attribute: pipeline_name
+  source_class: ModelEvaluation
+provenance:
+- source: aind
+  class: ModelEvaluation
+  name: pipeline_name
+  description: Pipeline names must exist in Processing.pipelines
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ModelEvaluation
+  name: pipeline_name
+  description: Pipeline names must exist in Processing.pipelines
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 08bdde34020cf1fad82a657db598433b89957ae53e89e4a5101e735c2be78dad

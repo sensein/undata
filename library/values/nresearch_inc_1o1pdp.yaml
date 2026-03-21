@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: nresearch_inc
-provenance:
-- source: aind
-  raw_value: aind.acquisition.NonViralMaterial.source.Nresearch_Inc
-- source: aind
-  raw_value: aind.metadata.FluorescentStain.source.Nresearch_Inc

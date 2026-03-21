@@ -1,0 +1,41 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - hour
+    - minute
+    - second
+    - millisecond
+    - microsecond
+    - nanosecond
+  response_options:
+  - value: hour
+    label: hour
+    ontology_term: https://schema.undata.live/values/hour_611bcb523228
+  - value: minute
+    label: minute
+    ontology_term: https://schema.undata.live/values/minute_5f8fb2f00f3b
+  - value: second
+    label: second
+    ontology_term: https://schema.undata.live/values/second_6976db9b64a1
+  - value: millisecond
+    label: millisecond
+    ontology_term: https://schema.undata.live/values/millisecond_4f149e200090
+  - value: microsecond
+    label: microsecond
+    ontology_term: https://schema.undata.live/values/microsecond_7ff102ebea0b
+  - value: nanosecond
+    label: nanosecond
+    ontology_term: https://schema.undata.live/values/nanosecond_ecfcb3654326
+  question_text: Exposure time unit
+  source_attribute: exposure_time_unit
+  source_class: DetectorConfig
+provenance:
+- source: aind
+  class: DetectorConfig
+  name: exposure_time_unit
+  description: Enumeration of Time Measurements
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3a8c1ea4d02592682186941fd47d6a99ad7abd8ae5167cae9a6ec1fbbfd1ce93

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/metadataLocation
+  source_class: slicingDeviceUsage.schema.omi
+provenance:
+- source: openminds
+  class: slicingDeviceUsage.schema.omi
+  name: https://openminds.om-i.org/props/metadataLocation
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c6e3fea6f4f306b49167a3daf4edcbebb2a3d0404790c13eac3f25682e70291d

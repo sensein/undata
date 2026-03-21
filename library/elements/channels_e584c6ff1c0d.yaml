@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Channels
+  source_attribute: channels
+  source_class: PatchCordConfig
+provenance:
+- source: aind
+  class: PatchCordConfig
+  name: channels
+  description: Channels
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e584c6ff1c0db5bd61e175e4061afb3a2062f632a2ce9a61ddfe127ec7a8c9a5

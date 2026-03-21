@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/tissueBathSolution
+  source_class: cellPatching.schema.omi
+provenance:
+- source: openminds
+  class: cellPatching.schema.omi
+  name: https://openminds.om-i.org/props/tissueBathSolution
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bb9cbf8df6f20f72691c76f32b3ba594f0fa4ddaa6da4ba339b010714ee8e762

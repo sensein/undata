@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/alleles_229d18a9ba27
+  - https://schema.undata.live/elements/id_bbf7b36ef938
+  - https://schema.undata.live/elements/locus_dc8900967af1
+  - https://schema.undata.live/elements/schemakey_ded8021fc331
+  - https://schema.undata.live/elements/wasgeneratedby_a8f141ea6923
+  mixins: []
+provenance:
+- source: dandi
+  name: GenotypeInfo
+  generated_at: '2026-03-21T05:07:14.170929+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b4d50ba4dd5465f576927cc3f6fbb71a268d68fd43414819f06c39c44435af39

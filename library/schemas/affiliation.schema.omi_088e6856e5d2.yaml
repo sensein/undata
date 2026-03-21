@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/organization_c500927de220
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/person_697807e8149b
+  mixins: []
+provenance:
+- source: openminds
+  name: affiliation.schema.omi
+  generated_at: '2026-03-21T05:08:25.366757+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 088e6856e5d2b15a07d1a8ce2b26d0e2e46ce4247537cf84f6026754674df282

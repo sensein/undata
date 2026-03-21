@@ -1,7 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/motioncorrection_1evm0o
-  mixins: []
-provenance:
-- source: nwb
-  name: MotionCorrection

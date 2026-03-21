@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: bile
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: bile
+  description: 'The origin of a sample: bile
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cf5822a91ca5c98e13009cea9ec5e8fe7e48b83866ce05b7ca2c0bbc0f1574d0

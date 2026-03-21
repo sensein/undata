@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  question_text: Status evaluator full name
+  source_attribute: evaluator
+  source_class: QCStatus
+provenance:
+- source: aind
+  class: QCStatus
+  name: evaluator
+  description: Status evaluator full name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: QCStatus
+  name: evaluator
+  description: Status evaluator full name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 47c91a12540c605bd96bccc2d55b90215e4aff3d944b8dd4688ab88d3177854e

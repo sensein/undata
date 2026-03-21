@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: emg
+  source_class: datatypes
+provenance:
+- source: bids
+  class: datatypes
+  name: emg
+  description: Measurements of muscular activity.
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c254fd6907e59cb52ed85be24b7321a0fb399b8eecfd715e52003f3a40f46583

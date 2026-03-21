@@ -1,0 +1,18 @@
+semantic:
+  data_type: boolean
+  value_domain: boolean
+  source_attribute: DigitizedLandmarks
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: DigitizedLandmarks
+  description: '`true` or `false` value indicating whether anatomical landmark points
+
+    (fiducials) are contained within this recording.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 13a06f70bea36814093648b7c0f4c03a4cce236c3a723fd32e0ba815c24a377a

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/otherOntologyIdentifier
+  source_class: anatomicalCavity.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalCavity.schema.omi
+  name: https://openminds.om-i.org/props/otherOntologyIdentifier
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a22e1eaff518bca51666c01462f8dfebec26122217c1b9561e3c7498eb365818

@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: wasAssociatedWith
+  source_class: PublishActivity
+provenance:
+- source: dandi
+  class: PublishActivity
+  name: wasAssociatedWith
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1e5aaa72eb3fa7b6ac0fef5335b99951c24f6fe59e688879052db72dbb9094ca

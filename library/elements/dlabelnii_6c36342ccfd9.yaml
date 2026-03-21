@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: dlabelnii
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: dlabelnii
+  description: 'A CIFTI-2 dense label file.
+
+
+    This extension may only be used in derivative datasets.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6c36342ccfd948f088d9d3987d0f87540c4e1ce5e60a0d6e249461bf6c83ec4e

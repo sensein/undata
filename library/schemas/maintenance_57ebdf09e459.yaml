@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_66c41819bdf7
+  - https://schema.undata.live/elements/device_name_89a07a02398b
+  - https://schema.undata.live/elements/maintenance_date_ff0cf6437844
+  - https://schema.undata.live/elements/notes_a6ca21b415ed
+  - https://schema.undata.live/elements/protocol_id_2ffc6961fd0f
+  - https://schema.undata.live/elements/reagents_c96d6b312fe6
+  mixins: []
+provenance:
+- source: aind
+  name: Maintenance
+  generated_at: '2026-03-21T05:07:50.864140+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 57ebdf09e459e46386f2ae4cffa64408a0c7ae8494b4892f914e9d84b3bae359

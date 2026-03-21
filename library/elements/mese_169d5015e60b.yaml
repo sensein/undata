@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: MESE
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: MESE
+  description: 'The MESE method involves multiple spin echo images acquired at different
+    echo
+
+    times and is primarily used for T2 mapping.
+
+    Please note that this suffix is not intended for the logical grouping of
+
+    images acquired using an Echo Planar Imaging (EPI) readout.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 169d5015e60baf1268a93a4738c19795d048448cb3bc900a91186005f65e5ac8

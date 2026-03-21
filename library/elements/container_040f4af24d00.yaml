@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  question_text: Container
+  source_attribute: container
+  source_class: Code
+provenance:
+- source: aind
+  class: Code
+  name: container
+  description: Container
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: Code
+  name: container
+  description: Container
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: Code
+  name: container
+  description: Container
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 040f4af24d00395ecb9c443b0b92f3dc6078846ec3fe1fc146550da060fb8b9a

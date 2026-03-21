@@ -1,0 +1,21 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: SpectralWidth
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SpectralWidth
+  description: 'The spectral bandwidth of the MR signal that is sampled, specified
+    in Hz.
+
+    Corresponds to [DICOM Tag 0018, 9052](http://www.dicomlookup.com/dicomtags/(0018,9052))
+
+    `Spectral Width`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8ce3ab8419a953cc542d91e5efd75720e5855fa5d176d4ce4c7ef6f597006c54

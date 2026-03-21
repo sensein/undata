@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_868f442ace19
+  - https://schema.undata.live/elements/enddate_9a0f28c2c473
+  - https://schema.undata.live/elements/id_b941047db0d8
+  - https://schema.undata.live/elements/identifier_62346ae2691f
+  - https://schema.undata.live/elements/name_b9739f7708d8
+  - https://schema.undata.live/elements/schemakey_3eb53fd494b3
+  - https://schema.undata.live/elements/startdate_bb868556b621
+  - https://schema.undata.live/elements/used_af0da735bbfe
+  - https://schema.undata.live/elements/wasassociatedwith_8df7b0aabe4e
+  mixins: []
+provenance:
+- source: dandi
+  name: Project
+  generated_at: '2026-03-21T05:07:14.175560+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1446a6a0389349f4eeb5a965227238845f9c917316e7389c3a896e5bc279baa6

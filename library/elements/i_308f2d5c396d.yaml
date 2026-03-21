@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: i
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: i
+  description: 'The encoding direction is along the first axis of the data in the
+    NIFTI file,
+
+    and the encoding value increases from the zero index to the maximum index.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 308f2d5c396d78cbe26e6b6ad44ef52bf765080c2f9ec73372c1abfdfc824fac

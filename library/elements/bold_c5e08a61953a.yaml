@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: bold
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: bold
+  description: 'Blood-Oxygen-Level Dependent contrast (specialized T2\* weighting)
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c5e08a61953ae1caab18a263a3fde06451a3c2efc602cce372db87cf41ec8283

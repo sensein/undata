@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/active_devices_c6cd66301454
+  - https://schema.undata.live/elements/code_d029ba136a97
+  - https://schema.undata.live/elements/configurations_209b77816ab5
+  - https://schema.undata.live/elements/connections_7f3afbc31f1d
+  - https://schema.undata.live/elements/modalities_c0afde969cae
+  - https://schema.undata.live/elements/notes_a3bc5883cd77
+  - https://schema.undata.live/elements/stream_end_time_06dc1ff7bf90
+  - https://schema.undata.live/elements/stream_start_time_a7e12a52bc52
+  mixins: []
+provenance:
+- source: aind
+  name: DataStream
+  generated_at: '2026-03-21T05:07:50.804203+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7c5749df47535fb26cc3f1047fa49f8bf7c2d08e4d1e0c28f3b8dccc2f139136

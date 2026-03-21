@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: OMETiff
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: OMETiff
+  description: 'An [OME-TIFF](https://docs.openmicroscopy.org/ome-model/6.1.2/ome-tiff/specification.html#)
+    image file.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 03e714a793e268a3163757f8c0756dbee8544e2844a48c2ba54fd3c802f16390

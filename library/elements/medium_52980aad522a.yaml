@@ -1,0 +1,53 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - air
+    - multi
+    - oil
+    - PBS
+    - water
+    - other
+    - easy index
+    - ethyl cinnimate
+    - aqueous clearing buffer
+  response_options:
+  - value: air
+    label: air
+    ontology_term: https://schema.undata.live/values/air_4618f00c0980
+  - value: multi
+    label: multi
+    ontology_term: https://schema.undata.live/values/multi_ce6e8222612b
+  - value: oil
+    label: oil
+    ontology_term: https://schema.undata.live/values/oil_1c2eec28dab8
+  - value: PBS
+    label: PBS
+    ontology_term: https://schema.undata.live/values/pbs_61e1b7a0d24b
+  - value: water
+    label: water
+    ontology_term: https://schema.undata.live/values/water_fe19bd800e31
+  - value: other
+    label: other
+    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+  - value: easy index
+    label: easy index
+    ontology_term: https://schema.undata.live/values/easy_index_e662952be794
+  - value: ethyl cinnimate
+    label: ethyl cinnimate
+    ontology_term: https://schema.undata.live/values/ethyl_cinnimate_bda7badbf0fd
+  - value: aqueous clearing buffer
+    label: aqueous clearing buffer
+    ontology_term: https://schema.undata.live/values/aqueous_clearing_buffer_b8948c9117bb
+  question_text: Immersion medium
+  source_attribute: medium
+  source_class: Immersion
+provenance:
+- source: aind
+  class: Immersion
+  name: medium
+  description: Immersion medium name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 52980aad522a2cfffde47f6a9da3d18729c489edc066fbd001a1c6d81382c9ac

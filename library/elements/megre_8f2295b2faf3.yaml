@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: MEGRE
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: MEGRE
+  description: 'Anatomical gradient echo images acquired at different echo times.
+
+    Please note that this suffix is not intended for the logical grouping of
+
+    images acquired using an Echo Planar Imaging (EPI) readout.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8f2295b2faf3350fd8b8030c3fe16554df12177481b905dfb267c3dea84d77a5

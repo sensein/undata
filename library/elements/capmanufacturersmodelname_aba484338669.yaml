@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: CapManufacturersModelName
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: CapManufacturersModelName
+  description: 'Manufacturer''s designation of the cap model
+
+    (for example, `"actiCAP 64 Ch Standard-2"`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: aba4843386694614235b617ed6d135b79af8703960c3ede5afd7e9ae637899c4

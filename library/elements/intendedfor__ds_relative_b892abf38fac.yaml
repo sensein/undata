@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: IntendedFor__ds_relative
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: IntendedFor__ds_relative
+  description: 'The paths to files for which the associated file is intended to be
+    used.
+
+    Contains one or more [BIDS URIs](SPEC_ROOT/common-principles.md#bids-uri).
+
+    Using forward-slash separated paths relative to the dataset root is
+
+    [DEPRECATED](SPEC_ROOT/common-principles.md#definitions).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b892abf38fac08afd3a0eda7f692a34660924cd3806e6f53951e63d9a70b86ee

@@ -1,0 +1,15 @@
+semantic:
+  data_type: integer
+  question_text: Center wavelength (nm)
+  source_attribute: center_wavelength
+  source_class: Filter
+provenance:
+- source: aind
+  class: Filter
+  name: center_wavelength
+  description: Single wavelength or list of wavelengths for MULTIBAND or MULTI_NOTCH
+    filters
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3f3bbcfa05f43293200aeb95d4abf9fec68195d3cc15990644658966afd9b562

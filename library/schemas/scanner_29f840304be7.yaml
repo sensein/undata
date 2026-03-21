@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_0faf53d16ae9
+  - https://schema.undata.live/elements/magnetic_strength_09e542d35e28
+  - https://schema.undata.live/elements/magnetic_strength_unit_4055b3d4db21
+  - https://schema.undata.live/elements/manufacturer_3b1e0f6d2093
+  - https://schema.undata.live/elements/model_3eb9037de99d
+  - https://schema.undata.live/elements/name_af934f6d5d3e
+  - https://schema.undata.live/elements/notes_bb7edc037ced
+  - https://schema.undata.live/elements/serial_number_f08ec2c5f508
+  mixins: []
+provenance:
+- source: aind
+  name: Scanner
+  generated_at: '2026-03-21T05:07:50.810772+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 29f840304be79b812d6932a5a3db9bbcbbb38d3e6f1e1d05640d54afd77a348e

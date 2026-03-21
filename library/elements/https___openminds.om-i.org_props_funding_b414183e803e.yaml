@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/funding
+  source_class: validationTestVersion.schema.omi
+provenance:
+- source: openminds
+  class: validationTestVersion.schema.omi
+  name: https://openminds.om-i.org/props/funding
+  description: Money provided by a legal person for a particular purpose.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b414183e803ebe0a301ab1289ccb91ed5980b456727a4d5ea0dbbb8053302a2e

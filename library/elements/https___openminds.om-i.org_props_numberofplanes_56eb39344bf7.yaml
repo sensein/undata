@@ -1,0 +1,12 @@
+semantic:
+  data_type: integer
+  source_attribute: https://openminds.om-i.org/props/numberOfPlanes
+  source_class: gridVolume.schema.omi
+provenance:
+- source: openminds
+  class: gridVolume.schema.omi
+  name: https://openminds.om-i.org/props/numberOfPlanes
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 56eb39344bf708c343c477725bde396a774f725af400a424383a9f228c5c7c29

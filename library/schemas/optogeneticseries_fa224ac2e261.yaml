@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_378c81623381
+  - https://schema.undata.live/elements/optogeneticseries_eaab4fe3f9f1
+  mixins: []
+provenance:
+- source: nwb
+  name: OptogeneticSeries
+  generated_at: '2026-03-21T05:07:31.283122+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fa224ac2e26127d05a37a8fc6015a94aced673e855ceba70e6aa94140a4c6631

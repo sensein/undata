@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_08c9b11a0948
+  - https://schema.undata.live/elements/manufacturer_fbd683a04caf
+  - https://schema.undata.live/elements/model_03c87da77da8
+  - https://schema.undata.live/elements/name_5bffacc8d49b
+  - https://schema.undata.live/elements/notes_6fdbaa2f7aeb
+  - https://schema.undata.live/elements/serial_number_bc2e320f4f53
+  mixins: []
+provenance:
+- source: aind
+  name: Manipulator
+  generated_at: '2026-03-21T05:07:50.809105+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7bb1e08a8ba51b30765259d98d368c290cff83fa06e9444cbb20b2b3fc64d125

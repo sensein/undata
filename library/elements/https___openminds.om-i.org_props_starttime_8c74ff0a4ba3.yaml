@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/startTime
+  source_class: dataAnalysis.schema.omi
+provenance:
+- source: openminds
+  class: dataAnalysis.schema.omi
+  name: https://openminds.om-i.org/props/startTime
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8c74ff0a4ba3285001b5bb4719a9c8c122dcbf408c0dbb12a161ee709db1afa0

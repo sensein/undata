@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/unit
+  source_class: quantitativeValueArray.schema.omi
+provenance:
+- source: openminds
+  class: quantitativeValueArray.schema.omi
+  name: https://openminds.om-i.org/props/unit
+  description: Determinate quantity adopted as a standard of measurement.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 85913c7b8cb707f8e46328665f1044033907a337a729d589a70eb8337ebe8c1e

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/definition
+  source_class: organ.schema.omi
+provenance:
+- source: openminds
+  class: organ.schema.omi
+  name: https://openminds.om-i.org/props/definition
+  description: Short, but precise statement of the meaning of a word, word group,
+    sign or a symbol.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e77b13a3a1bbe1ac18cb2a5a337cfe47c06461e54f80ccd6c5bf4acea701cc64

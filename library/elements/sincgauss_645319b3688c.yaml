@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SINCGAUSS
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: SINCGAUSS
+  description: 'A sinc-shaped pulse with a Gaussian window.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 645319b3688c157bfbd5a5f7a7758c649b0ee52995fce51a8d3378643cfce4dc

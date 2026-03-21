@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: angaccel
-provenance:
-- source: bids
-  raw_value: ANGACCEL

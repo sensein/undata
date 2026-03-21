@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Temperature (K)
+  source_attribute: temperature
+  source_class: Lamp
+provenance:
+- source: aind
+  class: Lamp
+  name: temperature
+  description: Temperature (K)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ab922e5aa147438976c6fc4746cf8995cc370a6a08016fc0c947eb3c26f4c9df

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Subject details
+  source_attribute: subject_details
+  source_class: Acquisition
+provenance:
+- source: aind
+  class: Acquisition
+  name: subject_details
+  description: Subject details
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 318a086fe31a7f99742c7dd0201a8045fbcb36b7dd05a726c1c89bd2d146d808

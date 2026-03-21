@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/startTime
+  source_class: tissueSampleSlicing.schema.omi
+provenance:
+- source: openminds
+  class: tissueSampleSlicing.schema.omi
+  name: https://openminds.om-i.org/props/startTime
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7dd3b77823f16f523c915b611c38a746ae1375c919aefc30cc66f4f7c22a76cf

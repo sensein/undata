@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_b1a3cc8db9fc
+  - https://schema.undata.live/elements/notes_bee794835351
+  - https://schema.undata.live/elements/protocol_id_10682b3c9c90
+  mixins: []
+provenance:
+- source: aind
+  name: GenericSurgeryProcedure
+  generated_at: '2026-03-21T05:07:50.865416+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dc8c94b71d2b98d593837b9c722782152515cf363b43d2f4e5073e77f58b732d

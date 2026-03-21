@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Type of Harp device
+  source_attribute: harp_device_type
+  source_class: HarpDevice
+provenance:
+- source: aind
+  class: HarpDevice
+  name: harp_device_type
+  description: Type of Harp device
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3d234f81e4cc008e5989891fab4265034213092389b1f57e9b68afc7ebe72451

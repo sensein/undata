@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Notes
+  source_attribute: notes
+  source_class: LickSpout
+provenance:
+- source: aind
+  class: LickSpout
+  name: notes
+  description: Notes
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6338a3c1458a1a07636cf87131e38ebbaf7e4d4e8d86859f0afa01718e16b1aa

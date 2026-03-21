@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Firmware version
+  source_attribute: firmware_version
+  source_class: Olfactometer
+provenance:
+- source: aind
+  class: Olfactometer
+  name: firmware_version
+  description: Firmware version
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e95d15c75abaaba703f29fb821a90b537c402a01aa65f0075e7a180febe2927a

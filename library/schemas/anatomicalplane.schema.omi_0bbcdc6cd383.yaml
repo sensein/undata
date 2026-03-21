@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/definition_c6fffc7c405a
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_834c75bebad4
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_77b9c10ab797
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/othercrossreference_7f464fa1c331
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/otherontologyidentifier_3bb7a4fc41fc
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preferredcrossreference_744699d85f21
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preferredontologyidentifier_a9798a43be38
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/synonym_d92f137a95e5
+  mixins: []
+provenance:
+- source: openminds
+  name: anatomicalPlane.schema.omi
+  generated_at: '2026-03-21T05:08:25.332936+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0bbcdc6cd3831b726475aae4e8d977698c6d91a5713842c40908930870821d74

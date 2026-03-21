@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/otherCrossReference
+  source_class: handedness.schema.omi
+provenance:
+- source: openminds
+  class: handedness.schema.omi
+  name: https://openminds.om-i.org/props/otherCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 791c015748c3d9698c713df8e940c8aa0a6289de4f89a91f7b4c781184e80d4b

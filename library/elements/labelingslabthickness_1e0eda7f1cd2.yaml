@@ -1,0 +1,22 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: LabelingSlabThickness
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: LabelingSlabThickness
+  description: 'Thickness of the labeling slab in millimeters.
+
+    For non-selective FAIR a zero is entered.
+
+    Corresponds to [DICOM Tag 0018, 9254](http://www.dicomlookup.com/dicomtags/(0018,9254))
+
+    `ASL Slab Thickness`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1e0eda7f1cd22bdb2ac1207d23955b1017a881849c58b28a501694174b6f7cf8

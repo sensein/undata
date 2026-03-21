@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Creation Time
+  source_attribute: creation_time
+  source_class: DataDescription
+provenance:
+- source: aind
+  class: DataDescription
+  name: creation_time
+  description: Time that data files were created, used to uniquely identify the data
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 00da18d31b465f06fa20ebcebfe53943f23148097c4866c3d84fdea1086b50bd

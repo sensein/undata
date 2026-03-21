@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/digitalIdentifier
+  source_class: workflowRecipeVersion.schema.omi
+provenance:
+- source: openminds
+  class: workflowRecipeVersion.schema.omi
+  name: https://openminds.om-i.org/props/digitalIdentifier
+  description: Digital handle to identify objects or legal persons.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1bec2baaf80c3de1099db27acb49fbb1184f2ba0820c4feede4d323da7f1d5dd

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Pressure unit
+  source_attribute: pressure_unit
+  source_class: AirPuffConfig
+provenance:
+- source: aind
+  class: AirPuffConfig
+  name: pressure_unit
+  description: Pressure unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0ff6bed9767becef275a237611ad83e0ad45f580a0b30af40161bb8d9c3e2200

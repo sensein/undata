@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/shortName
+  source_class: anatomicalAtlas.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalAtlas.schema.omi
+  name: https://openminds.om-i.org/props/shortName
+  description: Shortened or fully abbreviated name of something or somebody.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 85ee863e64d27fae5fc06347c46210834cf9435f20f7c2f5659e2005e0f01ac8

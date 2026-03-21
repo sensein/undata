@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: macrovascular
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: macrovascular
+  description: 'The origin of a tissue: macrovascular
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7914cbc9b3d53508beded13ab460d6df99e4dbdf70eea336e0b23d9393c2636c

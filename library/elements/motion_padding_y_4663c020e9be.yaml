@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Motion padding Y (pixels)
+  source_attribute: motion_padding_y
+  source_class: DigitalMicromirrorDevice
+provenance:
+- source: aind
+  class: DigitalMicromirrorDevice
+  name: motion_padding_y
+  description: Motion padding Y (pixels)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4663c020e9be87c66dc8198df25ce9fe896844e07ce49f17466f306d23a778bd

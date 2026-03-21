@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Travel of device (mm)
+  source_attribute: travel
+  source_class: ScanningStage
+provenance:
+- source: aind
+  class: ScanningStage
+  name: travel
+  description: Travel of device (mm)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 966d90e49df938cc27c4c4305104f2e3a7a994ffc90a58711419b8af346df0ed

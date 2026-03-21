@@ -1,0 +1,21 @@
+semantic:
+  data_type: array
+  question_text: Curation history
+  source_attribute: curation_history
+  source_class: CurationMetric
+provenance:
+- source: aind
+  class: CurationMetric
+  name: curation_history
+  description: Curation history
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: CurationMetric
+  name: curation_history
+  description: Curation history
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ea7adc8390289d6974610fe05116c976a7b3020bceec1dc3ba93979064291116

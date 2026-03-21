@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: probseg
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: probseg
+  description: 'A probabilistic segmentation.
+
+
+    This suffix may only be used in derivative datasets.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 28f3f2892ea18737bed44a8f902888f877f2a13718af38c608ba9b2bb5d013f4

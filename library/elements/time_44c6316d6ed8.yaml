@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Collection time
+  source_attribute: time
+  source_class: SampleCollection
+provenance:
+- source: aind
+  class: SampleCollection
+  name: time
+  description: Collection time
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 44c6316d6ed8de25bce51a39bd5fe506f07ec097c7fe24355ee9ad507fe15e30

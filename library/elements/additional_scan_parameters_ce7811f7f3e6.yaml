@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Parameters
+  source_attribute: additional_scan_parameters
+  source_class: MRIScan
+provenance:
+- source: aind
+  class: MRIScan
+  name: additional_scan_parameters
+  description: Parameters
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ce7811f7f3e635696c2749b5739d43b0e02b63b8bc919a9f75296d94eb6977e9

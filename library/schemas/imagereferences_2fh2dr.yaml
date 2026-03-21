@@ -1,7 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/imagereferences_ha2jsl
-  mixins: []
-provenance:
-- source: nwb
-  name: ImageReferences

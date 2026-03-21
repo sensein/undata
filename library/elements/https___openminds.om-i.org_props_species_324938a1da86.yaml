@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/species
+  source_class: strain.schema.omi
+provenance:
+- source: openminds
+  class: strain.schema.omi
+  name: https://openminds.om-i.org/props/species
+  description: Category of biological classification comprising related organisms
+    or populations potentially capable of interbreeding, and being designated by a
+    binomial that consists of the name of a genus followed by a Latin or latinized
+    uncapitalized noun or adjective.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 324938a1da8675f25c5a7b62a257c6886fb70fd0dde93f006f87e5670c8d4693

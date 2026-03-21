@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: isl_products_international
+provenance:
+- source: aind
+  raw_value: aind.metadata.FluorescentStain.source.Isl_Products_International

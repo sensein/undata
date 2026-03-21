@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/coordinate_system_1uujar
-  - https://schema.undata.live/elements/section_orientation_lk834e
-  - https://schema.undata.live/elements/sections_d4icgm
-  mixins: []
-provenance:
-- source: aind
-  name: PlanarSectioning

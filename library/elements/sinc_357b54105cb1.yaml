@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SINC
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: SINC
+  description: 'A sinc-shaped pulse.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 357b54105cb1f9c181c9752338027cfb25ec058592dba0b9ff933a896aab12ac

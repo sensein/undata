@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Reward consumed during training (uL)
+  source_attribute: reward_consumed_during_epoch
+  source_class: PerformanceMetrics
+provenance:
+- source: aind
+  class: PerformanceMetrics
+  name: reward_consumed_during_epoch
+  description: Reward consumed during training (uL)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d39dd1bccf9e2fdfbe7b12fa209b9bdc1a0a401cc786a547c540abcfce6cea81

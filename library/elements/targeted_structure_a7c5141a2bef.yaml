@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: Targeted structure
+  source_attribute: targeted_structure
+  source_class: Plane
+  type_ref: BrainStructureModel
+provenance:
+- source: aind
+  class: Plane
+  name: targeted_structure
+  description: Base model for brain strutures
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a7c5141a2befb76cefcce045902cc59152415dba0f6d020e722e21b1db647c6c

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/otherOntologyIdentifier
+  source_class: setupType.schema.omi
+provenance:
+- source: openminds
+  class: setupType.schema.omi
+  name: https://openminds.om-i.org/props/otherOntologyIdentifier
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5d89fca1f63d465fb1c493329601996116ff0fafd3c21eccbaa433fbf99a6059

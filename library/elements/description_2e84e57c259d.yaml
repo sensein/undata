@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: description
+  source_class: Subject
+provenance:
+- source: nwb
+  class: Subject
+  name: description
+  description: Description of subject and where subject came from (e.g., breeder,
+    if animal).
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2e84e57c259d7c5733bb9164416663c52fccd9a40ce89473d826f4f48261056e

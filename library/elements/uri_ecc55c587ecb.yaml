@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  question_text: URI
+  source_attribute: uri
+  source_class: Container
+provenance:
+- source: aind
+  class: Container
+  name: uri
+  description: URI of the container, e.g. Docker Hub URL
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: Container
+  name: uri
+  description: URI of the container, e.g. Docker Hub URL
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: Container
+  name: uri
+  description: URI of the container, e.g. Docker Hub URL
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ecc55c587ecb7f716a686186a4be89749e933d5621e92ef294bafb8dd96d9cdb

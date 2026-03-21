@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/device_name_d2e94516a95d
+  mixins: []
+provenance:
+- source: aind
+  name: DeviceConfig
+  generated_at: '2026-03-21T05:07:50.868863+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7b0483b17ff91d1adff14ba700f7c8f531d77e8d051b732211add134b9b23b3a

@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+  source_attribute: start_time
+  source_class: TimeIntervals
+provenance:
+- source: nwb
+  class: TimeIntervals
+  name: start_time
+  description: Start time of epoch, in seconds.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b944ff9cd174fd5f27c685c58dd04ac7018e3e80b52859fede2355a5418711a3

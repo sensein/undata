@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Device name
+  source_attribute: name
+  source_class: Wheel
+provenance:
+- source: aind
+  class: Wheel
+  name: name
+  description: Device name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a9f411c03bb488f3a7cf4e0c7bde4cf5791c51647689c106c5e72bf6cfc02c0c

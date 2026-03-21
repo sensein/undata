@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: snirf
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: snirf
+  description: 'HDF5 file organized according to the [SNIRF specification](https://github.com/fNIRS/snirf)
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9b6dfb09c332b27ec34f2b1d82960d4b5246cd260b3fd93fdf7ae3393ec0a466

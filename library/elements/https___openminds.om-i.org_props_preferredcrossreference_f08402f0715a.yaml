@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredCrossReference
+  source_class: MRIPulseSequence.schema.omi
+provenance:
+- source: openminds
+  class: MRIPulseSequence.schema.omi
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f08402f0715ad0726c52bf981a3d37db2d41c575e40d3aa407fd81c81705e840

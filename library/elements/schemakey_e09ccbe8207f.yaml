@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: schemaKey
+  source_class: SpeciesType
+provenance:
+- source: dandi
+  class: SpeciesType
+  name: schemaKey
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e09ccbe8207f8e751904ed4fd0c1c42d1da6f5415a32efb7df1f3ca04f4c961c

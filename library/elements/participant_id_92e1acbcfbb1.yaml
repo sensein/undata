@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: participant_id
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: participant_id
+  description: 'A participant identifier of the form `sub-<label>`,
+
+    matching a participant entity found in the dataset.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 92e1acbcfbb123ef556e4637875627cf74882c34f5470cfd375508ccdee67971

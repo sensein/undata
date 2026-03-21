@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: mrsref
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: mrsref
+  description: 'An MRS acquisition collected to serve as a concentration reference
+    for absolute quantification
+
+    or as a calibration reference for preprocessing (for example, eddy-current correction).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4768346ff98b1fdd1bca443d239f18583f6244f8b3ce53c78c56a11470aefece

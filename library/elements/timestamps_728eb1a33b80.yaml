@@ -1,0 +1,16 @@
+semantic:
+  data_type: float
+  source_attribute: timestamps
+  source_class: SpikeEventSeries
+provenance:
+- source: nwb
+  class: SpikeEventSeries
+  name: timestamps
+  description: Timestamps for samples stored in data, in seconds, relative to the
+    common experiment master-clock stored in NWBFile.timestamps_reference_time. Timestamps
+    are required for the events. Unlike for TimeSeries, timestamps are required for
+    SpikeEventSeries and are thus re-specified here.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 728eb1a33b80a16fc95022781e68e3112a1cd61439f1a6dc328d1a18410d1f38

@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  question_text: Outputs
+  source_attribute: output_parameters
+  source_class: ModelTraining
+provenance:
+- source: aind
+  class: ModelTraining
+  name: output_parameters
+  description: Output parameters
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ModelTraining
+  name: output_parameters
+  description: Output parameters
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 039e5997b95e2c451ae458b9b6ba1580e304ebcfab0fe725c3ebb8f189ab1bb9

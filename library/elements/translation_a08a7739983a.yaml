@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Translation parameters
+  source_attribute: translation
+  source_class: AtlasCoordinate
+provenance:
+- source: aind
+  class: AtlasCoordinate
+  name: translation
+  description: Translation parameters
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a08a7739983a22b0d7f098b4075c8d7628e2d5e5ca78d642d6fd19c145ae5b57

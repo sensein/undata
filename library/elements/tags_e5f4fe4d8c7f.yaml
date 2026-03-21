@@ -1,0 +1,23 @@
+semantic:
+  data_type: object
+  question_text: Tags
+  source_attribute: tags
+  source_class: QCMetric
+provenance:
+- source: aind
+  class: QCMetric
+  name: tags
+  description: 'Tags group QCMetric objects. Unique keys define groups of tags, for
+    example {''probe'': ''probeA''}.'
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: QCMetric
+  name: tags
+  description: 'Tags group QCMetric objects. Unique keys define groups of tags, for
+    example {''probe'': ''probeA''}.'
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e5f4fe4d8c7f7daf820d64946ea7c3e5db6bc762369a7cae752a5034d998fa13

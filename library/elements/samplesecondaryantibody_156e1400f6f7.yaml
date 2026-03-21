@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SampleSecondaryAntibody
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SampleSecondaryAntibody
+  description: 'Description(s) of the secondary antibody used for immunostaining.
+
+    Either an [RRID](https://rrid.site) or the name, supplier and catalog
+
+    number of a commercial antibody.
+
+    For non-commercial antibodies either an [RRID](https://rrid.site) or the
+
+    host-animal and immunogen used (for examples: `"RRID:AB_228322"` or
+
+    `"Goat anti-Mouse IgM Secondary Antibody, Invitrogen, Catalog # 31172"`).
+
+    MAY be an array of strings if different antibodies are used in each channel of
+    the file.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 156e1400f6f7a353c9170254ab60b0f69d81e8dec0ac083aa177aca1b512e6f7

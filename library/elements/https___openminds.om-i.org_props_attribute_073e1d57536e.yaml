@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/attribute
+  source_class: tissueSampleState.schema.omi
+provenance:
+- source: openminds
+  class: tissueSampleState.schema.omi
+  name: https://openminds.om-i.org/props/attribute
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 073e1d57536e24de10e12ec8c7528566932fb371dbae859bacd81e10d15eab09

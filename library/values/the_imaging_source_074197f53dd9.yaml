@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: the_imaging_source
+provenance:
+- source: aind
+  raw_value: aind.metadata.Camera.manufacturer.The_Imaging_Source

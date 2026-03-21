@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/concentration_f89166fc78ac
+  - https://schema.undata.live/elements/concentration_unit_7a6c79b6d8a0
+  - https://schema.undata.live/elements/expiration_date_a844ad70b2a8
+  - https://schema.undata.live/elements/lot_number_6ac0d4e974d5
+  - https://schema.undata.live/elements/name_607ac67ebd23
+  - https://schema.undata.live/elements/rrid_9ad76f8aa7cc
+  - https://schema.undata.live/elements/source_ca971bc4ebbc
+  mixins: []
+provenance:
+- source: aind
+  name: NonViralMaterial
+  generated_at: '2026-03-21T05:07:50.851975+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5dbb62c095fe586d0ac8e59691e293ea03e4aed1a7cbda75e58de4d153abb9d6

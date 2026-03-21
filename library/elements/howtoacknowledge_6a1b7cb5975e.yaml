@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: HowToAcknowledge
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: HowToAcknowledge
+  description: 'Text containing instructions on how researchers using this dataset
+    should
+
+    acknowledge the original authors.
+
+    This field can also be used to define a publication that should be cited in
+
+    publications that use the dataset.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6a1b7cb5975ec9a7e5f7211205b97c07685dc7f70bbc0409c5d5529640ef51d2

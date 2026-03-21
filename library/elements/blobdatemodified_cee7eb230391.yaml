@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: blobDateModified
+  source_class: Asset
+provenance:
+- source: dandi
+  class: Asset
+  name: blobDateModified
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cee7eb2303911cffd0da8b44d32d38dd67efbbb0db58b61e0c338c2af23375e9

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: id
+  source_class: BioSample
+provenance:
+- source: dandi
+  class: BioSample
+  name: id
+  description: Uniform resource identifier
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 68825ae46227cd5de7625a36fb3c93e56c3aa918895bb9bee68e49ece2028a7c

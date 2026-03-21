@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SampleStaining
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SampleStaining
+  description: 'Description(s) of the tissue sample staining (for example: `"Osmium"`).
+
+    MAY be an array of strings if different stains are used in each channel of the
+    file
+
+    (for example: `["LFB", "PLP"]`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a2507417fb202b340a2f5b6e93d8be8d3549bf1f85cf14851b58f1bc6e6ef26c

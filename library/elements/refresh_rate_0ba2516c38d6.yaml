@@ -1,0 +1,15 @@
+semantic:
+  data_type: integer
+  question_text: Refresh rate (Hz)
+  min_value: 60.0
+  source_attribute: refresh_rate
+  source_class: Monitor
+provenance:
+- source: aind
+  class: Monitor
+  name: refresh_rate
+  description: Refresh rate (Hz)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0ba2516c38d658607a137697a305ec68320b0014e6f197025e4514176abaa5e2

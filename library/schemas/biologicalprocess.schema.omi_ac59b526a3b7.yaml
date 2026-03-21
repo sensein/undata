@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/definition_3aaa2f068175
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_1927524a7a87
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_19a377194b8e
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/othercrossreference_c412334afc79
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/otherontologyidentifier_f45f31e6a1fe
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preferredcrossreference_8930e66efaf1
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preferredontologyidentifier_331d94720502
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/synonym_33f5e4a8a1d8
+  mixins: []
+provenance:
+- source: openminds
+  name: biologicalProcess.schema.omi
+  generated_at: '2026-03-21T05:08:25.298820+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ac59b526a3b77274147571cbd008ea97df7fc4501b58105ae25a714d8c5a6f73

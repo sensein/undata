@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: y__optodes
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: y__optodes
+  description: 'Recorded position along the y-axis.
+
+    `"n/a"` if not available.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 43509a5bd65ed1f296b065ef3710e4f979f1f21a8f742ab00f2add546710ff0a

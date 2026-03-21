@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Model
+  source_attribute: model
+  source_class: Laser
+provenance:
+- source: aind
+  class: Laser
+  name: model
+  description: Model
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bfb67d8c68d8160a02d1c2b923157857e5f186b42fdacb271844fb48d1a58e65

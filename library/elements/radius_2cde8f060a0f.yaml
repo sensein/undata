@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Radius (cm)
+  source_attribute: radius
+  source_class: Disc
+provenance:
+- source: aind
+  class: Disc
+  name: radius
+  description: Radius (cm)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2cde8f060a0f92d3710ebcac3578bda1275f0ac80571d3cc36c6945e8dec6f8a

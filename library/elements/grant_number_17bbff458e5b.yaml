@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Grant number
+  source_attribute: grant_number
+  source_class: Funding
+provenance:
+- source: aind
+  class: Funding
+  name: grant_number
+  description: Grant number
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 17bbff458e5bc17266ea3e93d8428bb6867e4ec48c43f6ac498858ca930b2270

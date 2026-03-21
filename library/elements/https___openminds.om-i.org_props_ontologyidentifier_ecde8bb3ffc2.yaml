@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/ontologyIdentifier
+  source_class: anatomicalAtlas.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalAtlas.schema.omi
+  name: https://openminds.om-i.org/props/ontologyIdentifier
+  description: Term or code used to identify something or someone registered within
+    a particular ontology.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ecde8bb3ffc29665ce78a0f8a2a29f650a8d7ec7af341bdf074f59000482b4d4

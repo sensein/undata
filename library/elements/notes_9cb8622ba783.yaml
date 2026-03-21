@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Notes
+  source_attribute: notes
+  source_class: Surgery
+provenance:
+- source: aind
+  class: Surgery
+  name: notes
+  description: Notes
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9cb8622ba7839fcabee97f101cd8ca2985cfd5a198eac4b14e32d6d81932b322

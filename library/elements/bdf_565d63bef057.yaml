@@ -1,0 +1,24 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: bdf
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: bdf
+  description: 'A [Biosemi](https://www.biosemi.com/) Data Format file.
+
+
+    Each recording consists of a single `.bdf` file.
+
+    [`bdf+`](https://www.teuniz.net/edfbrowser/bdfplus%20format%20description.html)
+    files are permitted.
+
+    The capital `.BDF` extension MUST NOT be used.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 565d63bef05787bd2a23051477fd80a700d1f250899e33d3922cad665644cd56

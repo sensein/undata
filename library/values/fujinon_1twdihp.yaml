@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: fujinon
-provenance:
-- source: aind
-  raw_value: aind.instrument.HarpDevice.manufacturer.Fujinon

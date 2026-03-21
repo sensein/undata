@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/sections_45018dcd6208
+  mixins: []
+provenance:
+- source: aind
+  name: Sectioning
+  generated_at: '2026-03-21T05:07:50.883811+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ccc6af77e3dc8b87db4a96032a1690fbdae4fbdd330d1b180e5ecf0d3a081978

@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: Species
+  source_attribute: species
+  source_class: HumanSubject
+  type_ref: SpeciesModel
+provenance:
+- source: aind
+  class: HumanSubject
+  name: species
+  description: Base model for species
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 69df2670f1cf0a73b24d934dc0db0e93926eb88ef801ad5d9edcc79860e49ead

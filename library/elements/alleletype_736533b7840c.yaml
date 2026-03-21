@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: alleleType
+  source_class: Allele
+provenance:
+- source: dandi
+  class: Allele
+  name: alleleType
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 736533b7840ce39a47e77f7a36e42b78ebdfa028e2508088835e6dcd69a6195d

@@ -1,0 +1,27 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: handedness
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: handedness
+  description: 'String value indicating one of "left", "right", "ambidextrous".
+
+
+    For "left", use one of these values: `left`, `l`, `L`, `LEFT`, `Left`.
+
+
+    For "right", use one of these values: `right`, `r`, `R`, `RIGHT`, `Right`.
+
+
+    For "ambidextrous", use one of these values: `ambidextrous`, `a`, `A`, `AMBIDEXTROUS`,
+
+    `Ambidextrous`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c9c24a32a276fe7c4f1514e01a13751d7d81f9946a22d11cfcbabc4b33c2934d

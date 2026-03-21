@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: schemaKey
+  source_class: CommonModel
+provenance:
+- source: dandi
+  class: CommonModel
+  name: schemaKey
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 236da59c8f921b8f0a6344002746340fa463416d7d6c3b78d1c4497bd46a5b7e

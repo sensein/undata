@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Relative position
+  source_attribute: relative_position
+  source_class: Monitor
+provenance:
+- source: aind
+  class: Monitor
+  name: relative_position
+  description: Relative position
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 949a257dbddcbe157bee83834b456c5dbf3233f96046044b1badab1c5c7df9a6

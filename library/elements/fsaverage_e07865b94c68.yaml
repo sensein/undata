@@ -1,0 +1,33 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: fsaverage
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: fsaverage
+  description: 'The `fsaverage` is a surface reference system
+
+    (formerly described as fsaverage\[3\|4\|5\|6\|sym\]).
+
+    Additionally, by convention,
+
+    `fsaverage` is used as shorthand for a **dual template** providing both volumetric
+    and
+
+    surface coordinates references,
+
+    where the surface template is `fsaverage` and the volumetric template corresponds
+    to a
+
+    FreeSurfer variant of `MNI305` space.
+
+
+    Used by Freesurfer.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e07865b94c684cc842370a434390abb9693b3a8e77ec3ada0c84372e236cdb42

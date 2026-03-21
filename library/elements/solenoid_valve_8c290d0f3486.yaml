@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: Solenoid valve
+  source_attribute: solenoid_valve
+  source_class: LickSpout
+  type_ref: Device
+provenance:
+- source: aind
+  class: LickSpout
+  name: solenoid_valve
+  description: Generic device
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8c290d0f3486520a80dde243d6ef6c5ef6083aadf43486460fced73bb538c87e

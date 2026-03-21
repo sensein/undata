@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/repository
+  source_class: validationTestVersion.schema.omi
+provenance:
+- source: openminds
+  class: validationTestVersion.schema.omi
+  name: https://openminds.om-i.org/props/repository
+  description: Place, room, or container where something is deposited or stored.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4d35cb6733012fd2ff3b62dc53d6d2698e75b38216aec479be768cb95fec2c87

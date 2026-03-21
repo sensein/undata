@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/contactInformation
+  source_class: consortium.schema.omi
+provenance:
+- source: openminds
+  class: consortium.schema.omi
+  name: https://openminds.om-i.org/props/contactInformation
+  description: Any available way used to contact a person or business (e.g., address,
+    phone number, email address, etc.).
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2753869654861a070044a13b194e1cac1700b0c853b364b2c207ab566b81edcc

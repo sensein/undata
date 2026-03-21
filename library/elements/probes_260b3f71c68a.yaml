@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Probe configurations
+  source_attribute: probes
+  source_class: EphysAssemblyConfig
+provenance:
+- source: aind
+  class: EphysAssemblyConfig
+  name: probes
+  description: Probe configurations
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 260b3f71c68a575250caeb0d7578476f569cd3e0420ebbcb23d4645008df2ee2

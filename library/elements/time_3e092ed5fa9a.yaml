@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: time
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: time
+  description: 'Time, in seconds, relative to `TimeZero` defined by the `*_pet.json`.
+
+    For example, 5.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3e092ed5fa9a593f07e420e071b6444d71d427493c51d8bbd36dcbeacd911b38

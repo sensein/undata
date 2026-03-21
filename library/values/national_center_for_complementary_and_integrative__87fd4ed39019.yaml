@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: national_center_for_complementary_and_integrative_health
+provenance:
+- source: aind
+  raw_value: aind.metadata.FluorescentStain.source.National_Center_For_Complementary_And_Integrative_Health

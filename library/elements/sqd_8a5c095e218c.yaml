@@ -1,0 +1,24 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: sqd
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: sqd
+  description: 'A file containing either raw MEG data or MEG sensor coil positions.
+
+    While this extension is still valid, it has been succeeded by `.con` for raw MEG
+    data and `.mrk` for
+
+    marker information.
+
+
+    Used by KIT, Yokogawa, and Ricoh MEG systems.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8a5c095e218c91f3c9e3b5b6215f27745268fc007d95215b3cf6e37857b0f9f0

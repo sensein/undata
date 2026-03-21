@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/resourceUsage
+  source_class: dataAnalysis.schema.omi
+provenance:
+- source: openminds
+  class: dataAnalysis.schema.omi
+  name: https://openminds.om-i.org/props/resourceUsage
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dc6bcb094e318f739661ab9aac09d3d5308778c328dd111b2fe5961daaf5078a

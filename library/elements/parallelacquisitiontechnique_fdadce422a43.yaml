@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: ParallelAcquisitionTechnique
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: ParallelAcquisitionTechnique
+  description: 'The type of parallel imaging used (for example `"GRAPPA"`, `"SENSE"`).
+
+    Corresponds to [DICOM Tag 0018, 9078](http://www.dicomlookup.com/dicomtags/(0018,9078))
+
+    `Parallel Acquisition Technique`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fdadce422a437755811e061e02c40a65bef24575d5d414db2035293ebe58ccb4

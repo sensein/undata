@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Affine transform matrix
+  source_attribute: affine_transform
+  source_class: Affine
+provenance:
+- source: aind
+  class: Affine
+  name: affine_transform
+  description: Affine transform matrix
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cbe69d95a3ea82c16351861390d8ccbcc1735814eab7afc1a7a5e243c57a97f8

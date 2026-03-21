@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/insulatorMaterial
+  source_class: electrode.schema.omi
+provenance:
+- source: openminds
+  class: electrode.schema.omi
+  name: https://openminds.om-i.org/props/insulatorMaterial
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 12efa0cfcd7a62694f452398f7c0ccd36025999f23246975b4b823a2399bd12f

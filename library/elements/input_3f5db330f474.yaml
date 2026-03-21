@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Input times
+  source_attribute: input
+  source_class: VolumeCalibration
+provenance:
+- source: aind
+  class: VolumeCalibration
+  name: input
+  description: Length of time solenoid/valve is open
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3f5db330f474738c82bae2b58024ee44567726e2f434bcc41f4872c734d42d02

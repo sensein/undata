@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Bit depth
+  source_attribute: bit_depth
+  source_class: Detector
+provenance:
+- source: aind
+  class: Detector
+  name: bit_depth
+  description: Bit depth
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d2253a3dd6d5e1565919a2db11a7863418e7b659da32554a11c5abd86d287f81

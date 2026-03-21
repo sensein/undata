@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Additional parameters
+  source_attribute: additional_settings
+  source_class: Objective
+provenance:
+- source: aind
+  class: Objective
+  name: additional_settings
+  description: Additional parameters
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e3b31b65b5ac8fdde2d6eb71afd1f830737c49c817afd8d77a9acdd54643d5bf

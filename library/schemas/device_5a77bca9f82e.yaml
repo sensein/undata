@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_fc5c138c81fb
+  - https://schema.undata.live/elements/device_2fcc0d9d96f4
+  - https://schema.undata.live/elements/manufacturer_7e7b42d4e9ff
+  - https://schema.undata.live/elements/model_name_a79aa684a7d6
+  - https://schema.undata.live/elements/model_number_699f104eefd4
+  - https://schema.undata.live/elements/serial_number_746d8ab34787
+  mixins: []
+provenance:
+- source: nwb
+  name: Device
+  generated_at: '2026-03-21T05:07:31.292679+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5a77bca9f82e62a13413f5701b12394d3cf510c8c1585c30676aeb393decc637

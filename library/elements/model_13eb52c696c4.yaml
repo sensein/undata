@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Model
+  source_attribute: model
+  source_class: PolygonalScanner
+provenance:
+- source: aind
+  class: PolygonalScanner
+  name: model
+  description: Model
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 13eb52c696c4508eeeec8a34e78a84a699e7f4ba12db40d6a047f23614fb18d8

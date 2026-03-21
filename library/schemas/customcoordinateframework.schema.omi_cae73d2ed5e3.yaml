@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/anatomicalaxesorientation_39e7e35215de
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/axesorigin_bcac884cad3c
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/defaultimage_8d8ae1023dc2
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_a12a8c0bb42b
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/nativeunit_0a8da8201b2a
+  mixins: []
+provenance:
+- source: openminds
+  name: customCoordinateFramework.schema.omi
+  generated_at: '2026-03-21T05:08:25.235957+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cae73d2ed5e3fddeb288622cb62c7590490dd897a3ac8056636645cbeb6e5ec7

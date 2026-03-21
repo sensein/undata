@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Additional parameters
+  source_attribute: additional_settings
+  source_class: Microscope
+provenance:
+- source: aind
+  class: Microscope
+  name: additional_settings
+  description: Additional parameters
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9c771a21882fc07056d302c09d22649505bef3979bc3e19eb8d39eb5e0b64f70

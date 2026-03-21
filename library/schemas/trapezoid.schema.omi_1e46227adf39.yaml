@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/basedistance_454df2089f54
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/baselengths_ff56ff6be0c6
+  mixins: []
+provenance:
+- source: openminds
+  name: trapezoid.schema.omi
+  generated_at: '2026-03-21T05:08:25.242019+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1e46227adf3927d4724af841791a869b16a11d1fcd92182c7dff8b0a65ddfdd6

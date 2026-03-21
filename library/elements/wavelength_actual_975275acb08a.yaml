@@ -1,0 +1,20 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: wavelength_actual
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: wavelength_actual
+  description: 'Measured wavelength of light in nm.
+
+    `n/a` for channels that do not contain raw NIRS signals (acceleration).
+
+    This field is equivalent to `measurementList.wavelengthActual` in the SNIRF specification.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 975275acb08a6d33ac4bb62ea0cdb7171603cc8b0e9c0817b654f23cf4b65558

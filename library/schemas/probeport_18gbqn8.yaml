@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/index_m5hvbf
-  - https://schema.undata.live/elements/probes_nn6hpu
-  mixins: []
-provenance:
-- source: aind
-  name: ProbePort

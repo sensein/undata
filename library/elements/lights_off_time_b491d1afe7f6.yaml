@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Lights off time
+  source_attribute: lights_off_time
+  source_class: LightCycle
+provenance:
+- source: aind
+  class: LightCycle
+  name: lights_off_time
+  description: Time in UTC that lights were turned off
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b491d1afe7f67be3dd8211e06d1b6dc870e018c0a9dae4111c31107a9dbc0405

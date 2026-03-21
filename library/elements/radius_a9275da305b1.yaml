@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Radius (mm)
+  source_attribute: radius
+  source_class: Wheel
+provenance:
+- source: aind
+  class: Wheel
+  name: radius
+  description: Radius (mm)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a9275da305b19e26dc28093b4b80ccd51488fbea1b7aed3e58110e66f2bb3b95

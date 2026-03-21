@@ -1,0 +1,24 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: DelayAfterTrigger
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: DelayAfterTrigger
+  description: 'Duration (in seconds) from trigger delivery to scan onset.
+
+    This delay is commonly caused by adjustments and loading times.
+
+    This specification is entirely independent of
+
+    `"NumberOfVolumesDiscardedByScanner"` or `"NumberOfVolumesDiscardedByUser"`,
+
+    as the delay precedes the acquisition.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bcefaa411ec2012254050e54f7333c5ebce23825d3a0c8c91a204f14ce8eb54e

@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: ams_osram
-provenance:
-- source: aind
-  raw_value: aind.acquisition.NonViralMaterial.source.Ams_Osram
-- source: aind
-  raw_value: aind.metadata.FluorescentStain.source.Ams_Osram

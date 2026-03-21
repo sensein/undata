@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Output
+  source_attribute: output
+  source_class: PowerCalibration
+provenance:
+- source: aind
+  class: PowerCalibration
+  name: output
+  description: Power output (provide the average if repeated)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5d868b90515c7931e8f7a7c4b0d10a080ba663c482599db1a2c47a769e8ce207

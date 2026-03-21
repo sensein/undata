@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: other_biospecimen
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: other_biospecimen
+  description: 'The origin of a sample: other biospecimen
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 26eac907ae2f554637c9413696eeddfa4376fc8b5c69e571a0fe47ab83abeef5

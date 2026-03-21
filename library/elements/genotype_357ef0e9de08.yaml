@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Genotype
+  source_attribute: genotype
+  source_class: MouseSubject
+provenance:
+- source: aind
+  class: MouseSubject
+  name: genotype
+  description: Genotype of the animal providing both alleles
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 357ef0e9de08c9209ff63c9b162a8ef219131322d8bfce970c3037b29be573bb

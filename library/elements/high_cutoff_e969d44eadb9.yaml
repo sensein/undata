@@ -1,0 +1,24 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  min_value: 0.0
+  source_attribute: high_cutoff
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: high_cutoff
+  description: 'Frequencies used for the low-pass filter applied to the channel in
+    Hz.
+
+    If no low-pass filter applied, use `n/a`.
+
+    Note that hardware anti-aliasing in A/D conversion of all MEG/EEG/EMG electronics
+
+    applies a low-pass filter; specify its frequency here if applicable.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e969d44eadb97f5de2baa1725267afc7fc11721901325cdace096551198f012f

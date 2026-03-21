@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/culturemedium_e70fdc304390
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/culturetype_f046bf7299b9
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/custompropertyset_b0168b2d86a3
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_4e10eaaea90f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/endtime_c60975a1380e
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/input_c441d3a6ec34
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/ispartof_918133702852
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/lookuplabel_6a4d65bbbb53
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/output_150906ba9594
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/performedby_9f1d42e26505
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preparationdesign_89efff5a4778
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/protocol_24248257e9a1
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/starttime_d3a785c8d704
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/studytarget_242d2e242fc3
+  mixins: []
+provenance:
+- source: openminds
+  name: tissueCulturePreparation.schema.omi
+  generated_at: '2026-03-21T05:08:25.269580+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f8d68b9daf6f5ba0bf3831698e31851c8a31f4372d6899c9b66819d475932b8d

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/digitalIdentifier
+  source_class: dataset.schema.omi
+provenance:
+- source: openminds
+  class: dataset.schema.omi
+  name: https://openminds.om-i.org/props/digitalIdentifier
+  description: Digital handle to identify objects or legal persons.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f85f759c67cfe9e924019e728f7e55b216f34f18e452c4002fe821b226f3e9c3

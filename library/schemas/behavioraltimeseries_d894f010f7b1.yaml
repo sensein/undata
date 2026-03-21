@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/behavioraltimeseries_6add5934078c
+  mixins: []
+provenance:
+- source: nwb
+  name: BehavioralTimeSeries
+  generated_at: '2026-03-21T05:07:31.277785+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d894f010f7b188f478c746eefee584ae3632e5d46eb70685ff759f5ccc67d7c0

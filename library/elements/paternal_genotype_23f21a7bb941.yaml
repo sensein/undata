@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Paternal genotype
+  source_attribute: paternal_genotype
+  source_class: BreedingInfo
+provenance:
+- source: aind
+  class: BreedingInfo
+  name: paternal_genotype
+  description: Paternal genotype
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 23f21a7bb941f57898c79c6af57d8e5628c8588697f8545f646c9baec8358762

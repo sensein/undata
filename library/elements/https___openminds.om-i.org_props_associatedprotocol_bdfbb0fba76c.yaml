@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/associatedProtocol
+  source_class: subjectState.schema.omi
+provenance:
+- source: openminds
+  class: subjectState.schema.omi
+  name: https://openminds.om-i.org/props/associatedProtocol
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bdfbb0fba76c1d8ac30e24e1e04e1e5dc6322308c56aa0cdad98db3aee434523

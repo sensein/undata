@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: on__mtransfer
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: on__mtransfer
+  description: 'The image acquired in the presence of the magnetization transfer pulse,
+
+    also known as the off-resonance pulse.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7d25477502f922028fbb87c18ed7b605cf1ff7d19ddc7a4372d4178ccbf128a9

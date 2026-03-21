@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Device name
+  source_attribute: device_name
+  source_class: PatchCordConfig
+provenance:
+- source: aind
+  class: PatchCordConfig
+  name: device_name
+  description: Must match a device defined in the instrument.json
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 753eb5f195b2c07a782b32576006a74f9ec621410836b46025bd560dad25f62a

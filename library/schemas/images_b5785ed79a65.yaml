@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_71319f62f56b
+  - https://schema.undata.live/elements/images_0a94639acd4f
+  - https://schema.undata.live/elements/order_of_images_9cd312f79ff3
+  mixins: []
+provenance:
+- source: nwb
+  name: Images
+  generated_at: '2026-03-21T05:07:31.290912+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b5785ed79a6587f3a14946c3a50e2791a22e1e566fbaaf9335109a62bc52d7f9

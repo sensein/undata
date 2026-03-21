@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Source
+  source_attribute: source
+  source_class: MouseSubject
+provenance:
+- source: aind
+  class: MouseSubject
+  name: source
+  description: Where the subject was acquired from. If bred in-house, use Allen Institute.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 103b7d98bc06f1ad94c2b8bcd67950962c167c27094cf54992d45adb10581dfd

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: tsv
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: tsv
+  description: 'A tab-delimited file.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4bc6b0cb70a96ebac57bee9fd21f0a24e33ecdb8046a2a4e4e57a48a5a1100bf

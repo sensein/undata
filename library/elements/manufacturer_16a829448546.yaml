@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Manufacturer
+  source_attribute: manufacturer
+  source_class: HarpDevice
+provenance:
+- source: aind
+  class: HarpDevice
+  name: manufacturer
+  description: Manufacturer
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 16a829448546087d0e527604049d9e0b7dfa742cf18e44ce0f83df71bfbdd418

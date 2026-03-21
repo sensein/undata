@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Start date
+  source_attribute: start_date
+  source_class: SpecimenProcedure
+provenance:
+- source: aind
+  class: SpecimenProcedure
+  name: start_date
+  description: Start date
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 673b64ae059390f84d6256b363105f3d33a5c11bf9df62e71fecfd6e26b77c35

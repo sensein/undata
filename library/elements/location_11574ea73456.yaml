@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Location
+  source_attribute: location
+  source_class: Instrument
+provenance:
+- source: aind
+  class: Instrument
+  name: location
+  description: Location of the instrument
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 11574ea73456a00cb1c87e49233c9e68524989cef0dedad62b8ee4b05508e1cd

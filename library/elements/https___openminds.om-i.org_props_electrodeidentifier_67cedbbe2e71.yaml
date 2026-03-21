@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/electrodeIdentifier
+  source_class: electrodeArray.schema.omi
+provenance:
+- source: openminds
+  class: electrodeArray.schema.omi
+  name: https://openminds.om-i.org/props/electrodeIdentifier
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 67cedbbe2e7118ab7d1746c2ca91ea1856c8fb5498b961fc4b24f36af008a685

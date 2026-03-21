@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: name
+  source_class: Agent
+provenance:
+- source: dandi
+  class: Agent
+  name: name
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ca563a1f72f7056a3ed0759666b670f6c993617730f4ace8854f0a6962d5a160

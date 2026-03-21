@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: deltam
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: deltam
+  description: 'An ASL volume type: deltam.
+
+    The deltaM image is a perfusion-weighted image, obtained by the subtraction of
+    `control` - `label`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d68fbd5708fdaf9cff0da7175854242a00cfcf5246248cddf9dc9c9eb196313e

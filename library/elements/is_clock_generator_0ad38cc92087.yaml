@@ -1,0 +1,14 @@
+semantic:
+  data_type: boolean
+  question_text: Is Clock Generator
+  source_attribute: is_clock_generator
+  source_class: Olfactometer
+provenance:
+- source: aind
+  class: Olfactometer
+  name: is_clock_generator
+  description: Is Clock Generator
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0ad38cc9208716f2c223983662916d8e8443f4f3f73525f0bd85d2c26afb354d

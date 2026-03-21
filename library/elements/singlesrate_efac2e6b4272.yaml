@@ -1,0 +1,15 @@
+semantic:
+  data_type: array
+  source_attribute: SinglesRate
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SinglesRate
+  description: 'Singles rate for each frame (same units as `Units`, for example, `"Bq/mL"`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: efac2e6b42720e3f4f06190e7dcd8b7752ed90c57642a2ab873e8dcf87149c68

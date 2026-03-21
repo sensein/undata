@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/mountingType
+  source_class: MRICoil.schema.omi
+provenance:
+- source: openminds
+  class: MRICoil.schema.omi
+  name: https://openminds.om-i.org/props/mountingType
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3bd38fa440bccc3bf89e60ad8298bee60311a4cca8a4d59db9e8cdd4c55fc6b0

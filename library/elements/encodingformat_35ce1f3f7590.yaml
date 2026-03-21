@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: encodingFormat
+  source_class: BareAsset
+provenance:
+- source: dandi
+  class: BareAsset
+  name: encodingFormat
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 35ce1f3f7590784dc46381dac875eefabd41228271f3efe44cce24cc5d51e6b5

@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: national_instruments
-provenance:
-- source: aind
-  raw_value: aind.instrument.DAQDevice.manufacturer.National_Instruments

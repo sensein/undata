@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_d5c4090073d8
+  - https://schema.undata.live/elements/imaging_device_type_06ef8c2531ca
+  - https://schema.undata.live/elements/manufacturer_bf35b789452e
+  - https://schema.undata.live/elements/model_9cae6db2d8bb
+  - https://schema.undata.live/elements/name_84d317616ecc
+  - https://schema.undata.live/elements/notes_b5b9ec57b058
+  - https://schema.undata.live/elements/serial_number_0d81f355199a
+  mixins: []
+provenance:
+- source: aind
+  name: AdditionalImagingDevice
+  generated_at: '2026-03-21T05:07:50.825044+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 35a64f6befe459b72be32fc9fefcdf7dfdfb374b7ef678f74ea3df33389bfcc2

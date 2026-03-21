@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/studiedState
+  source_class: tissueSampleCollection.schema.omi
+provenance:
+- source: openminds
+  class: tissueSampleCollection.schema.omi
+  name: https://openminds.om-i.org/props/studiedState
+  description: Reference to a point in time at which something or someone was studied
+    in a particular mode or condition.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9f06f632125dd710e3b773ed8b6c666b9450ae8dac80bd40d22f170eeae67087

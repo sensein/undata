@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/definition
+  source_class: paymentModelType.schema.omi
+provenance:
+- source: openminds
+  class: paymentModelType.schema.omi
+  name: https://openminds.om-i.org/props/definition
+  description: Short, but precise statement of the meaning of a word, word group,
+    sign or a symbol.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bd2c016d7a875e280d8fdc84a43426762e129ea579a7720da47a49499c9315ef

@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_2df65082ec4e
+  - https://schema.undata.live/elements/identifier_3c5032868ee5
+  - https://schema.undata.live/elements/name_9ba6016e3d4c
+  - https://schema.undata.live/elements/schemakey_41139ed80572
+  mixins: []
+provenance:
+- source: dandi
+  name: Affiliation
+  generated_at: '2026-03-21T05:07:14.179966+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 59abd2a21c59387fb06ba2d5ea857c8fa36e47fc1769c6543434dd62d1a7b243

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Model
+  source_attribute: model
+  source_class: Olfactometer
+provenance:
+- source: aind
+  class: Olfactometer
+  name: model
+  description: Model
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0b92d127490939fe6b2b816e845e3c4fdfb2a339988330180f523e534fe456fa

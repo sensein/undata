@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/fileRepository
+  source_class: file.schema.omi
+provenance:
+- source: openminds
+  class: file.schema.omi
+  name: https://openminds.om-i.org/props/fileRepository
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dcd0a06ce0fed256532b63b082340bf579645da22fc5283710e8dff079db7a6b

@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/maxvalue_44d6c9578707
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/maxvalueunit_605b3c4d4dc5
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/minvalue_1aedb8f07f4e
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/minvalueunit_1ea0180474cd
+  mixins: []
+provenance:
+- source: openminds
+  name: quantitativeValueRange.schema.omi
+  generated_at: '2026-03-21T05:08:25.365765+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 754b561367f769374c3833f7d757e16573d1553edd77245831fabf54c53b782d

@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredCrossReference
+  source_class: spatialEncoding.schema.omi
+provenance:
+- source: openminds
+  class: spatialEncoding.schema.omi
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 647889ccb031a549c7212b4712849fcface3dc8e1ce0d4351db8dbc2f96fe4d7

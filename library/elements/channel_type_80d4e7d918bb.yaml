@@ -1,0 +1,33 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Analog Input
+    - Analog Output
+    - Digital Input
+    - Digital Output
+  response_options:
+  - value: Analog Input
+    label: Analog Input
+    ontology_term: https://schema.undata.live/values/analog_input_c1089dbbbae6
+  - value: Analog Output
+    label: Analog Output
+    ontology_term: https://schema.undata.live/values/analog_output_d04f5b28358a
+  - value: Digital Input
+    label: Digital Input
+    ontology_term: https://schema.undata.live/values/digital_input_20289ffbdeb0
+  - value: Digital Output
+    label: Digital Output
+    ontology_term: https://schema.undata.live/values/digital_output_4abcbf2760f2
+  question_text: DAQ channel type
+  source_attribute: channel_type
+  source_class: DAQChannel
+provenance:
+- source: aind
+  class: DAQChannel
+  name: channel_type
+  description: DAQ Channel type
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 80d4e7d918bb08426b39233b03881f25fef6a8c4865125bc9df775c0f09e3619

@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_48e59c3e8af1
+  - https://schema.undata.live/elements/headstage_031a9596138d
+  - https://schema.undata.live/elements/manufacturer_3d207c072048
+  - https://schema.undata.live/elements/model_d788a315daa7
+  - https://schema.undata.live/elements/name_785ea407f34e
+  - https://schema.undata.live/elements/notes_a746befa8558
+  - https://schema.undata.live/elements/probe_model_54049ce3e5af
+  - https://schema.undata.live/elements/serial_number_c05e0526fd66
+  mixins: []
+provenance:
+- source: aind
+  name: EphysProbe
+  generated_at: '2026-03-21T05:07:50.817059+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 838be3d8548330e7371ed548ba28938143081e1114f951235091b5dd039970e5

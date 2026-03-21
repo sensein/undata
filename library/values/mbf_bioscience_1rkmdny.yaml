@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: mbf_bioscience
-provenance:
-- source: aind
-  raw_value: aind.data_description.Funding.funder.Mbf_Bioscience

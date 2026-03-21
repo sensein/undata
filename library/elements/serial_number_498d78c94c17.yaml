@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Serial number
+  source_attribute: serial_number
+  source_class: Lens
+provenance:
+- source: aind
+  class: Lens
+  name: serial_number
+  description: Serial number
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 498d78c94c177a2d9d24a226c534d6654b4ca1bdb74e4fdbb0c691283969584b

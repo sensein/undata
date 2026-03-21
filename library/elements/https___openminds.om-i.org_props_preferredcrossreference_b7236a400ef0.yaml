@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredCrossReference
+  source_class: paymentModelType.schema.omi
+provenance:
+- source: openminds
+  class: paymentModelType.schema.omi
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b7236a400ef08c41db090ece6cb7ced35a2817e7f12f45d546d4a01074532593

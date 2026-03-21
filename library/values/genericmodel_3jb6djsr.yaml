@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: genericmodel
-provenance:
-- source: aind
-  raw_value: aind.procedures.Catheter.additional_settings.GenericModel
-- source: aind
-  raw_value: aind.processing.Code.parameters.GenericModel

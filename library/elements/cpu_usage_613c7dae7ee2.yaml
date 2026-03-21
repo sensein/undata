@@ -1,0 +1,28 @@
+semantic:
+  data_type: array
+  question_text: CPU usage
+  source_attribute: cpu_usage
+  source_class: ResourceUsage
+provenance:
+- source: aind
+  class: ResourceUsage
+  name: cpu_usage
+  description: CPU usage
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ResourceUsage
+  name: cpu_usage
+  description: CPU usage
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ResourceUsage
+  name: cpu_usage
+  description: CPU usage
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 613c7dae7ee28ed71b828e4cc5711c5f5fdb93d9caba0af3837a66f14182daf0

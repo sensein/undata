@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/conductorMaterial
+  source_class: electrode.schema.omi
+provenance:
+- source: openminds
+  class: electrode.schema.omi
+  name: https://openminds.om-i.org/props/conductorMaterial
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d71aeb7eefdbb1343b6fbae0e44723923376d3e4f39974c233609ba6e443cb53

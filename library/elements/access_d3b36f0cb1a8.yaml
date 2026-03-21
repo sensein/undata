@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: access
+  source_class: CommonModel
+provenance:
+- source: dandi
+  class: CommonModel
+  name: access
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d3b36f0cb1a8178a3d59a8633fc9581566799cd5c8afc8b18f1ae8552a6ad5c9

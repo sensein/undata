@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: endDate
+  source_class: Activity
+provenance:
+- source: dandi
+  class: Activity
+  name: endDate
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 38487c95770129994866b43374c83361f227ba3a382bc8488fe56e4500738d73

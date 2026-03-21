@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: bad
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: bad
+  description: 'A bad status (for example the status of a recording channel).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0451b78e900e59f10c9aab3c4e3363264b1900f1438106a7f21b2fce4ea5f31a

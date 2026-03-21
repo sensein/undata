@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Starting depth
+  source_attribute: depth_start
+  source_class: PlanarImageStack
+provenance:
+- source: aind
+  class: PlanarImageStack
+  name: depth_start
+  description: Starting depth
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f05efb2196efd1c3e69451fb55456d086de2530394a994e865ddccb1138798ef

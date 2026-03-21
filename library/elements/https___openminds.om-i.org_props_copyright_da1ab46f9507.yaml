@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/copyright
+  source_class: interfaceVersion.schema.omi
+provenance:
+- source: openminds
+  class: interfaceVersion.schema.omi
+  name: https://openminds.om-i.org/props/copyright
+  description: Exclusive and assignable legal right of an originator to reproduce,
+    publish, sell, or distribute the matter and form of a creative work for a defined
+    time period.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: da1ab46f95075c5a99b45e0b2a244e47a9ed74ffd736e9f8e18543cf2da44e48

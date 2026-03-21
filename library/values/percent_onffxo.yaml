@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: percent
-provenance:
-- source: bids
-  raw_value: percent
-- source: aind
-  raw_value: percent

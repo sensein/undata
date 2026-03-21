@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/externalDiameter
+  source_class: pipette.schema.omi
+provenance:
+- source: openminds
+  class: pipette.schema.omi
+  name: https://openminds.om-i.org/props/externalDiameter
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4456e29e60775055b0c9adc11edbee88d7ff1feec272596c59dc9d1f4116ffde

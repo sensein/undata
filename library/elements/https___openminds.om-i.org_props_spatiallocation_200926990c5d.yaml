@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/spatialLocation
+  source_class: pipetteUsage.schema.omi
+provenance:
+- source: openminds
+  class: pipetteUsage.schema.omi
+  name: https://openminds.om-i.org/props/spatialLocation
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 200926990c5d094dd8043bee9d8c70690b27c1b3b179a3621e846efe311e1f3c

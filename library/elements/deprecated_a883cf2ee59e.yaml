@@ -1,0 +1,24 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: deprecated
+  source_class: common_principles
+provenance:
+- source: bids
+  class: common_principles
+  name: deprecated
+  description: 'A "deprecated" entity or metadata field SHOULD NOT be used in the
+    generation of new datasets.
+
+    It remains in the standard in order to preserve the interpretability of existing
+    datasets.
+
+    Validating software SHOULD warn when deprecated practices are detected
+
+    and provide a suggestion for updating the dataset to preserve the curator''s intent.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a883cf2ee59e35758324b5d88b7808c35d6882f9d1a8878328207c1299b31835

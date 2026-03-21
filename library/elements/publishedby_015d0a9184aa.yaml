@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: publishedBy
+  source_class: PublishedDandiset
+provenance:
+- source: dandi
+  class: PublishedDandiset
+  name: publishedBy
+  description: The URL should contain the provenance of the publishing process.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 015d0a9184aaa155b50a107bace8d95f02277235f191af3c7dce8fe88e191d3d

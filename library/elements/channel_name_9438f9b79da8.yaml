@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Channel name
+  source_attribute: channel_name
+  source_class: PlanarImage
+provenance:
+- source: aind
+  class: PlanarImage
+  name: channel_name
+  description: Channel name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9438f9b79da8dc9426cf52c3edcede4d73dc9df94f99d9252e09cae48bcbcc7a

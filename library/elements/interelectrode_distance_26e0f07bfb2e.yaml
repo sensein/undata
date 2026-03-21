@@ -1,0 +1,21 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: interelectrode_distance
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: interelectrode_distance
+  description: 'Distance between adjacent electrodes (in a pair or grid) that are
+    rigidly attached to
+
+    the same sensor device, or between the `signal_electrode` and its `reference`
+
+    when each is independently placed.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 26e0f07bfb2e35f8cb604ccb84adde9900e514d040acb8142433ffbc5477971a

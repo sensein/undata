@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/targetPosition
+  source_class: cellPatching.schema.omi
+provenance:
+- source: openminds
+  class: cellPatching.schema.omi
+  name: https://openminds.om-i.org/props/targetPosition
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ace6686e2861f9e8ad9bf0d40850f14acb23e8fb1ad2de9bc62510abf5a4818c

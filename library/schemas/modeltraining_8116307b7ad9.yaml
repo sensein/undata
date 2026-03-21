@@ -1,0 +1,25 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/code_824ffd939666
+  - https://schema.undata.live/elements/end_date_time_9e18a69438bc
+  - https://schema.undata.live/elements/experimenters_178d62871da8
+  - https://schema.undata.live/elements/name_a82c10417b05
+  - https://schema.undata.live/elements/notes_6cf5dbabc996
+  - https://schema.undata.live/elements/output_parameters_039e5997b95e
+  - https://schema.undata.live/elements/output_path_4d30ca34637c
+  - https://schema.undata.live/elements/pipeline_name_dc89118134f0
+  - https://schema.undata.live/elements/process_type_da49ae0968f9
+  - https://schema.undata.live/elements/resources_50e9a520e622
+  - https://schema.undata.live/elements/stage_4e8c0f42da2d
+  - https://schema.undata.live/elements/start_date_time_9d65980ffa05
+  - https://schema.undata.live/elements/test_evaluation_method_a8577236edd2
+  - https://schema.undata.live/elements/test_performance_885d6c18f21c
+  - https://schema.undata.live/elements/train_performance_a309ae50b79d
+  mixins: []
+provenance:
+- source: aind
+  name: ModelTraining
+  generated_at: '2026-03-21T05:07:50.849437+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8116307b7ad93c8d8bc144a30dbd9b343962b97ea5f8099a6ab1fcc90a7c37ba

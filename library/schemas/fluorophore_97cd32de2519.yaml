@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/excitation_wavelength_4818eb65a52b
+  - https://schema.undata.live/elements/excitation_wavelength_unit_1fc9d4bdc42c
+  - https://schema.undata.live/elements/fluorophore_type_1f0ed2a8ad6d
+  mixins: []
+provenance:
+- source: aind
+  name: Fluorophore
+  generated_at: '2026-03-21T05:07:50.871332+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 97cd32de251980cd112bfaf3cce8e606264f77e2147437c24f21111086299ad9

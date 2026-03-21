@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/spatialLocation
+  source_class: electrodeUsage.schema.omi
+provenance:
+- source: openminds
+  class: electrodeUsage.schema.omi
+  name: https://openminds.om-i.org/props/spatialLocation
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5348b6f1bd424fb4b88aa6ae7f20b92114b25cba71c6858d780bcae550a01392

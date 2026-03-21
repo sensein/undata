@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: participant_relative
+  source_class: formats
+provenance:
+- source: bids
+  class: formats
+  name: participant_relative
+  description: 'A path to a file, relative to the participant''s directory in the
+    dataset.
+
+
+    The validation for this format is minimal.
+
+    It simply ensures that the value is a string with any characters that may appear
+    in a valid path,
+
+    without starting with "/" (an absolute path) or "sub/"
+
+    (a relative path starting with the participant directory, rather than relative
+    to that directory).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 039e5f77f131d53ea9591fc326f4bcd8b70aadea95db2347903d45834493deee

@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Unique frame rates
+  source_attribute: frame_rates
+  source_class: Slap2Plane
+provenance:
+- source: aind
+  class: Slap2Plane
+  name: frame_rates
+  description: Unique frame rates
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 75216ee716579bb05a09f61b8b7181d6fc7dfcfd500b8912112f6cec4047664a

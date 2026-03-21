@@ -1,0 +1,37 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - molar
+    - micromolar
+    - nanomolar
+    - '% m/m'
+    - '% v/v'
+  response_options:
+  - value: molar
+    label: molar
+    ontology_term: https://schema.undata.live/values/molar_6a20f6bcd656
+  - value: micromolar
+    label: micromolar
+    ontology_term: https://schema.undata.live/values/micromolar_e40e141ff0be
+  - value: nanomolar
+    label: nanomolar
+    ontology_term: https://schema.undata.live/values/nanomolar_feaac5527c09
+  - value: '% m/m'
+    label: '% m/m'
+    ontology_term: https://schema.undata.live/values/%_m_m_6637777f1997
+  - value: '% v/v'
+    label: '% v/v'
+    ontology_term: https://schema.undata.live/values/%_v_v_f9fe7f5130ba
+  question_text: Dilution unit
+  source_attribute: dilution_unit
+  source_class: OlfactometerChannelInfo
+provenance:
+- source: aind
+  class: OlfactometerChannelInfo
+  name: dilution_unit
+  description: Concentraion units
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cec168b925f9a529b49f600441e9d1a6d9fbdb57950518ab5c9f3f05b96738a1

@@ -1,0 +1,38 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - dandi:isChildOf
+    - dandi:isParentOf
+    - dandi:isSiblingOf
+    - dandi:isMonozygoticTwinOf
+    - dandi:isDizygoticTwinOf
+  response_options:
+  - value: dandi:isChildOf
+    label: dandi:isChildOf
+    ontology_term: https://schema.undata.live/values/dandi:ischildof_f083ce85d585
+  - value: dandi:isParentOf
+    label: dandi:isParentOf
+    ontology_term: https://schema.undata.live/values/dandi:isparentof_57f1e93a7352
+  - value: dandi:isSiblingOf
+    label: dandi:isSiblingOf
+    ontology_term: https://schema.undata.live/values/dandi:issiblingof_de358bfa748a
+  - value: dandi:isMonozygoticTwinOf
+    label: dandi:isMonozygoticTwinOf
+    ontology_term: https://schema.undata.live/values/dandi:ismonozygotictwinof_b5ad4918a070
+  - value: dandi:isDizygoticTwinOf
+    label: dandi:isDizygoticTwinOf
+    ontology_term: https://schema.undata.live/values/dandi:isdizygotictwinof_536b3eb287dc
+  source_attribute: relation
+  source_class: RelatedParticipant
+provenance:
+- source: dandi
+  class: RelatedParticipant
+  name: relation
+  description: 'Indicates how the current participant or subject is related to the
+    other participant or subject. This relation should satisfy: Participant/Subject
+    <relation> relatedParticipant/Subject.'
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7a3b58c6b8e143874e929d6da187b051fdd061c7ca7c252fa354df006b54e970

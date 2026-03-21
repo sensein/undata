@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/contribution_98d6da537daa
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_eb56145abeb5
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/elementcount_815b10283caf
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/intendedmountinglocation_faa6adb8daf7
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/internalidentifier_7d19c03c1541
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/mountingtype_3bd38fa440bc
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_3cb3fc26e434
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/serialnumber_f40b919cf8cf
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/type_c4cf17979e61
+  mixins: []
+provenance:
+- source: openminds
+  name: MRICoil.schema.omi
+  generated_at: '2026-03-21T05:08:25.263237+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cdfe614b927209e49e3daa9c86bfef79dfc0198a01e073a111402838e38d2065

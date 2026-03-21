@@ -1,0 +1,57 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Michigan uLED Probe (Version 1)
+    - MPI Photonic Probe (Version 1)
+    - Neuropixels Opto (Demonstrator)
+    - Neuropixels UHD (Fixed)
+    - Neuropixels UHD (Switchable)
+    - Neuropixels 1.0
+    - Neuropixels 2.0 (Single Shank)
+    - Neuropixels 2.0 (Multi Shank)
+    - Neuropixels 2.0 (Quad Base)
+    - Custom
+  response_options:
+  - value: Michigan uLED Probe (Version 1)
+    label: Michigan uLED Probe (Version 1)
+    ontology_term: https://schema.undata.live/values/michigan_uled_probe_(version_1)_10fea4949621
+  - value: MPI Photonic Probe (Version 1)
+    label: MPI Photonic Probe (Version 1)
+    ontology_term: https://schema.undata.live/values/mpi_photonic_probe_(version_1)_4ccc08c8de74
+  - value: Neuropixels Opto (Demonstrator)
+    label: Neuropixels Opto (Demonstrator)
+    ontology_term: https://schema.undata.live/values/neuropixels_opto_(demonstrator)_01d9750944d2
+  - value: Neuropixels UHD (Fixed)
+    label: Neuropixels UHD (Fixed)
+    ontology_term: https://schema.undata.live/values/neuropixels_uhd_(fixed)_075f5811ebd7
+  - value: Neuropixels UHD (Switchable)
+    label: Neuropixels UHD (Switchable)
+    ontology_term: https://schema.undata.live/values/neuropixels_uhd_(switchable)_40995e734a77
+  - value: Neuropixels 1.0
+    label: Neuropixels 1.0
+    ontology_term: https://schema.undata.live/values/neuropixels_1.0_d9115bc3f4ce
+  - value: Neuropixels 2.0 (Single Shank)
+    label: Neuropixels 2.0 (Single Shank)
+    ontology_term: https://schema.undata.live/values/neuropixels_2.0_(single_shank)_5d9ceadb9cc4
+  - value: Neuropixels 2.0 (Multi Shank)
+    label: Neuropixels 2.0 (Multi Shank)
+    ontology_term: https://schema.undata.live/values/neuropixels_2.0_(multi_shank)_2d8aae8ea79a
+  - value: Neuropixels 2.0 (Quad Base)
+    label: Neuropixels 2.0 (Quad Base)
+    ontology_term: https://schema.undata.live/values/neuropixels_2.0_(quad_base)_564177034d8d
+  - value: Custom
+    label: Custom
+    ontology_term: https://schema.undata.live/values/custom_2ac8cf1211d5
+  question_text: Probe model
+  source_attribute: probe_model
+  source_class: EphysProbe
+provenance:
+- source: aind
+  class: EphysProbe
+  name: probe_model
+  description: Probe model name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 54049ce3e5afc88873caa3babd8834e0862ca450e32aa4d5425feeab27eb854f

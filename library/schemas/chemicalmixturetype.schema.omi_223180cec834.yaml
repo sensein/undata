@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/definition_2781cf66a11f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_6c75fac43892
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_eba314f5036f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/othercrossreference_0b53081a1f6c
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/otherontologyidentifier_8f8605af7e51
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preferredcrossreference_395f5b704034
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preferredontologyidentifier_73e936f989ff
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/synonym_24260d713e57
+  mixins: []
+provenance:
+- source: openminds
+  name: chemicalMixtureType.schema.omi
+  generated_at: '2026-03-21T05:08:25.289319+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 223180cec8342a9c825077e0ff9478f2cbc4f3b66c6ac0475371491b70530a82

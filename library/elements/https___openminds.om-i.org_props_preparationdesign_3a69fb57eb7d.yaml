@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preparationDesign
+  source_class: recordingActivity.schema.omi
+provenance:
+- source: openminds
+  class: recordingActivity.schema.omi
+  name: https://openminds.om-i.org/props/preparationDesign
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3a69fb57eb7d7ae581a0b603b7ef28eaeef01ad007b0b9136f13feea2c397f69

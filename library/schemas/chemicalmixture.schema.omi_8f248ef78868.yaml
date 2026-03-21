@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/additionalremarks_0884a585500d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/haspart_b823014843a3
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_d7ee3ae49f83
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/productsource_a1d6b6a2dab2
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/type_dce6ae195da5
+  mixins: []
+provenance:
+- source: openminds
+  name: chemicalMixture.schema.omi
+  generated_at: '2026-03-21T05:08:25.224153+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8f248ef78868678c869e66445f14cd66e70f2aa82011890bc52f43e2ef6183bb

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/device
+  source_class: MRICoilUsage.schema.omi
+provenance:
+- source: openminds
+  class: MRICoilUsage.schema.omi
+  name: https://openminds.om-i.org/props/device
+  description: Piece of equipment or mechanism (hardware) designed to serve a special
+    purpose or perform a special function.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3fd65c9877a5b78e9c1fd050bd7f4c669d5afd8c5ccc76dca5ec3eb3a7604ebb

@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/studyTarget
+  source_class: cranialWindowPreparation.schema.omi
+provenance:
+- source: openminds
+  class: cranialWindowPreparation.schema.omi
+  name: https://openminds.om-i.org/props/studyTarget
+  description: Structure or function that was targeted within a study.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3a5dc0dca0941b6ec9d3edf02b27bf70d92960a10b34c166e686ae565a729d22

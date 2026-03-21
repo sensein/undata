@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  source_attribute: identifier
+  source_class: StrainType
+provenance:
+- source: dandi
+  class: StrainType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 43b1d675bf0c0f96d1105d6bb38bd25785c712581a1a2219570dc03adc4d3394

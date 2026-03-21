@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/specialUsageRole
+  source_class: file.schema.omi
+provenance:
+- source: openminds
+  class: file.schema.omi
+  name: https://openminds.om-i.org/props/specialUsageRole
+  description: Particular function of something when it is used.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 97c5cf9d8325d34190568b61159025eed36a84923b8fb6fc7267cb2325589766

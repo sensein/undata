@@ -1,0 +1,15 @@
+semantic:
+  data_type: integer
+  question_text: Field of view index
+  source_attribute: fov_index
+  source_class: Slap2Plane
+provenance:
+- source: aind
+  class: Slap2Plane
+  name: fov_index
+  description: For FOVs that are imaged multiple times, assign a shared index to each
+    instance of the FOV
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e6c25e70d5454ae416e3326a6e8a852fda58506bd5cbf36c0ef1882df3d5b4cb

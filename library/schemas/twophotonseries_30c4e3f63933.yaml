@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/field_of_view_8b44c17e711e
+  - https://schema.undata.live/elements/pmt_gain_047bdd8923f7
+  - https://schema.undata.live/elements/scan_line_rate_fb6fd2661ab1
+  - https://schema.undata.live/elements/twophotonseries_9228b66e0372
+  mixins: []
+provenance:
+- source: nwb
+  name: TwoPhotonSeries
+  generated_at: '2026-03-21T05:07:31.296466+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 30c4e3f63933be142731d676cc6d9c8dde21a242d0852b4bcb9db0af01948083

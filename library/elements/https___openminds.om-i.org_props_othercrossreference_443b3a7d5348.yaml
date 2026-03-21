@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/otherCrossReference
+  source_class: anatomicalAxesOrientation.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalAxesOrientation.schema.omi
+  name: https://openminds.om-i.org/props/otherCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 443b3a7d53488584fed47738aacd3436f116b2577f89bb43cdc4a36b325f90bc

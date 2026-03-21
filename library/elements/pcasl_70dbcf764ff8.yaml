@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: PCASL
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: PCASL
+  description: 'Pseudo-continuous arterial spin labeling was employed.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 70dbcf764ff879f2f15c883308a9b9a1778b8adbe0be11ac151111a9b9237109

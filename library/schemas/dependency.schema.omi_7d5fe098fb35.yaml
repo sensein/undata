@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/failureimpact_de0119777c2c
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/fulfilledby_48c2c7406d40
+  mixins: []
+provenance:
+- source: openminds
+  name: dependency.schema.omi
+  generated_at: '2026-03-21T05:08:25.356718+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7d5fe098fb352e833cb450185dba2043614d1044066ddc7f3221568946d8627e

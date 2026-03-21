@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Device name
+  source_attribute: device_name
+  source_class: MISCameraConfig
+provenance:
+- source: aind
+  class: MISCameraConfig
+  name: device_name
+  description: Must match a device defined in the instrument.json
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 719e0988314fbb18ec49c05bc974ef5bfce416d3b0c0baeaa1e34ad0b4f3810d

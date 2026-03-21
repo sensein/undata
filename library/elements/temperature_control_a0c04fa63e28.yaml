@@ -1,0 +1,14 @@
+semantic:
+  data_type: boolean
+  question_text: Temperature control
+  source_attribute: temperature_control
+  source_class: Instrument
+provenance:
+- source: aind
+  class: Instrument
+  name: temperature_control
+  description: Does the instrument maintain a constant temperature?
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a0c04fa63e28db97286cb77c5a83fe80f82756fb10a103389c91d46457aec3bb

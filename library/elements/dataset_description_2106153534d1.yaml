@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: dataset_description
+  source_class: files
+provenance:
+- source: bids
+  class: files
+  name: dataset_description
+  description: 'The file `dataset_description.json` is a JSON file describing the
+    dataset.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2106153534d199e029e12bca5e72db808a94fb1a5b686d6627cf322843989a66

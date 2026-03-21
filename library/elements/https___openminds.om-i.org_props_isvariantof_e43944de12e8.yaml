@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/isVariantOf
+  source_class: workflowRecipeVersion.schema.omi
+provenance:
+- source: openminds
+  class: workflowRecipeVersion.schema.omi
+  name: https://openminds.om-i.org/props/isVariantOf
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e43944de12e829a3bf32b28137d3dc7ee671cc7ffceca9bae8d394b1deb3c3f6

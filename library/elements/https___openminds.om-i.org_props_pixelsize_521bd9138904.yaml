@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/pixelSize
+  source_class: gridImageStack.schema.omi
+provenance:
+- source: openminds
+  class: gridImageStack.schema.omi
+  name: https://openminds.om-i.org/props/pixelSize
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 521bd9138904350934f340638760fd0d6494e37541a51ccbfce7e090c9c911a3

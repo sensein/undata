@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Unique Y dilations
+  source_attribute: y_dilations
+  source_class: Slap2Plane
+provenance:
+- source: aind
+  class: Slap2Plane
+  name: y_dilations
+  description: Unique Y dilations
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 49497b93dafca1d1e1bc1aaade374bf617d9ff0419c2d424af12921c13dcde9c

@@ -1,0 +1,19 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: MTOffsetFrequency
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: MTOffsetFrequency
+  description: 'The frequency offset of the magnetization transfer pulse with respect
+    to the
+
+    central H1 Larmor frequency in Hertz (Hz).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c4dc55ca47f6b4b34c08d7cbf7c022ebffa9f19ab4b61681b71c7e79ec5b0fb7

@@ -1,0 +1,25 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: InjectedRadioactivity
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: InjectedRadioactivity
+  description: 'Total amount of radioactivity injected into the patient (for example,
+    `400`).
+
+    For bolus-infusion experiments, this value should be the sum of all injected
+
+    radioactivity originating from both bolus and infusion.
+
+    Corresponds to [DICOM Tag 0018, 1074](http://www.dicomlookup.com/dicomtags/(0018,1074))
+
+    `Radionuclide Total Dose`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2516c23558dfe2e90fe639f10441a426b8a65e6ffd1c816eac80151242504248

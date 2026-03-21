@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/majorDiameter
+  source_class: ellipsoid.schema.omi
+provenance:
+- source: openminds
+  class: ellipsoid.schema.omi
+  name: https://openminds.om-i.org/props/majorDiameter
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9eacb942a90534d148a92f9a08415b266a789d005dbf8126c0062a3065366f19

@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/data_5d75d8ffef0e
+  - https://schema.undata.live/elements/intervalseries_9eab65d48376
+  mixins: []
+provenance:
+- source: nwb
+  name: IntervalSeries
+  generated_at: '2026-03-21T05:07:31.283837+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: eb9c78859e9a4057e034ebff189c471b715ad0a20b51d6792c926e7b23c3fd07

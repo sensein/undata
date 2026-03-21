@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: id
+  source_class: Disorder
+provenance:
+- source: dandi
+  class: Disorder
+  name: id
+  description: Uniform resource identifier
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3bb8c705ebc851fb8016d820b9953753017acae5e51c4ddd1ca4d922d5dbae8b

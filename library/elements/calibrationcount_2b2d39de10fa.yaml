@@ -1,0 +1,17 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  min_value: 0.0
+  source_attribute: CalibrationCount
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: CalibrationCount
+  description: 'The number of calibrations corresponding to this run.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2b2d39de10fafdbc5d5ca2c4986307c9f0089beea9c60e990eca6bb9911d48e3

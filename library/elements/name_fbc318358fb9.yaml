@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: name
+  source_class: MeasurementTechniqueType
+provenance:
+- source: dandi
+  class: MeasurementTechniqueType
+  name: name
+  description: The name of the item.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fbc318358fb94815a2c062b56280b1e2e36ec99f32831495b835c6220e712307

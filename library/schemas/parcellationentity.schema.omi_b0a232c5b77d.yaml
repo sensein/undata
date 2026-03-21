@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/abbreviation_f608793aea66
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/alternatename_f48d216d294b
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/definition_610891de9d3f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/hasparent_35afd85c3c77
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/lookuplabel_9bc1dd00083c
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_b0bbc3185721
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/ontologyidentifier_bbba23b5bdf4
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/relatedinterspeciesanatomy_6487d26c5c3f
+  mixins: []
+provenance:
+- source: openminds
+  name: parcellationEntity.schema.omi
+  generated_at: '2026-03-21T05:08:25.204108+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b0a232c5b77d1548d0610c3911dc8b81d19f2858a3dc7f6fe32a5a0e53d7dec9

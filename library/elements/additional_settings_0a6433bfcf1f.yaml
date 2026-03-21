@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Additional parameters
+  source_attribute: additional_settings
+  source_class: PockelsCell
+provenance:
+- source: aind
+  class: PockelsCell
+  name: additional_settings
+  description: Additional parameters
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0a6433bfcf1f4e99a813986b6324e93dc555f649d217a12c44fa8e4a43a04b45

@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/studyTarget
+  source_class: simulation.schema.omi
+provenance:
+- source: openminds
+  class: simulation.schema.omi
+  name: https://openminds.om-i.org/props/studyTarget
+  description: Structure or function that was targeted within a study.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8476aeb705b0b99e7ea1816af6efe22a86307f02e0f40beda7cc3a14f885e594

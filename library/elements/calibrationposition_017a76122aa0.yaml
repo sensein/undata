@@ -1,0 +1,19 @@
+semantic:
+  data_type: array
+  source_attribute: CalibrationPosition
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: CalibrationPosition
+  description: 'A list of `[x, y]` coordinates in the `CalibrationUnit`.
+
+    For example, using 5 positions calibration presented on an HD screen,
+
+    it could be `[[960,50],[960,540],[960,1030],[50,540],[1870,540]]`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 017a76122aa0b57968a813dc8b50b9ec78f085e39920f370cf25359d85cd4b1a

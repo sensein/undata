@@ -1,0 +1,24 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SpectrometerFrequency
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SpectrometerFrequency
+  description: 'The frequency of the spectrometer, specified in MHz.
+
+    For example, this could be `127.764` for a 3T scanner tuned
+
+    to the resonant frequency of <sup>1</sup>H.
+
+    For multi-nuclei experiments such as <sup>1</sup>H-[<sup>13</sup>C] MR at 3T,
+
+    an array can be used: `[127.731, 32.125]`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 26e3f1c04a7c8495f0d671bed836e04ffccc4eea63f7d0b663e7c37d3cafa3e3

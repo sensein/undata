@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/contributor
+  source_class: contribution.schema.omi
+provenance:
+- source: openminds
+  class: contribution.schema.omi
+  name: https://openminds.om-i.org/props/contributor
+  description: Legal person that gave or supplied something as a part or share.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 37f203022903d55de9b519cded0b2fcb59413ab5379b69c53fd33cf2f4b2eeb0

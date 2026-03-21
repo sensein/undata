@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: m0scan
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: m0scan
+  description: 'The M0 image is a calibration image, used to estimate the equilibrium
+
+    magnetization of blood.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 47af0760e9e486ef4c0563291df4ca0a7872163b7f64cabf3581c59ec050ef27

@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: DAQ channels
+  source_attribute: channels
+  source_class: HarpDevice
+provenance:
+- source: aind
+  class: HarpDevice
+  name: channels
+  description: DAQ channels
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 133f4c707c4a89f93776e86d4a0b70438e1b93f0da05c56269dea0a754d0bcbf

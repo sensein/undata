@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/stockNumber
+  source_class: strain.schema.omi
+provenance:
+- source: openminds
+  class: strain.schema.omi
+  name: https://openminds.om-i.org/props/stockNumber
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8c0d7e67b4839a7f2eb5ac23f1473eefc323b887a7b77e45f0bc84575d2fdf6e

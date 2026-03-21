@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/container_type_613861500058
+  - https://schema.undata.live/elements/tag_f98d844fdd30
+  - https://schema.undata.live/elements/uri_ecc55c587ecb
+  mixins: []
+provenance:
+- source: aind
+  name: Container
+  generated_at: '2026-03-21T05:07:50.853344+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 274c008f56e27ccc396b9021eb75f38bc25f29d7f0f3b222f5049fb21560dffd

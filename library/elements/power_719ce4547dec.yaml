@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Power
+  source_attribute: power
+  source_class: Plane
+provenance:
+- source: aind
+  class: Plane
+  name: power
+  description: Power
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 719ce4547dec785d47f9af66e885a7ff8545fd6bb2a4c0a278202e40155223c3

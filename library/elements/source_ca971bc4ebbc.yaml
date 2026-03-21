@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Source
+  source_attribute: source
+  source_class: NonViralMaterial
+provenance:
+- source: aind
+  class: NonViralMaterial
+  name: source
+  description: Source
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ca971bc4ebbc53e6dc3b132a14f5031a7d75a7b08885e64daa3e04f3157f0561

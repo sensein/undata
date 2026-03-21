@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: HARD
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: HARD
+  description: 'A very brief, strong, rectangular pulse.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6244f674e708a39b45fe18368d22817c22fb2c3252c7db8808c556d397114c12

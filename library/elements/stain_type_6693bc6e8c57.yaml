@@ -1,0 +1,41 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Cytoskeleton
+    - Fill
+    - RNA
+    - Protein
+    - Nuclear
+    - Vasculature
+  response_options:
+  - value: Cytoskeleton
+    label: Cytoskeleton
+    ontology_term: https://schema.undata.live/values/cytoskeleton_a72d613c2923
+  - value: Fill
+    label: Fill
+    ontology_term: https://schema.undata.live/values/fill_5c497a36943d
+  - value: RNA
+    label: RNA
+    ontology_term: https://schema.undata.live/values/rna_f68739bf07ea
+  - value: Protein
+    label: Protein
+    ontology_term: https://schema.undata.live/values/protein_96158f313e6e
+  - value: Nuclear
+    label: Nuclear
+    ontology_term: https://schema.undata.live/values/nuclear_eb0eb89cc5db
+  - value: Vasculature
+    label: Vasculature
+    ontology_term: https://schema.undata.live/values/vasculature_a6fe6e5028e7
+  question_text: Stain type
+  source_attribute: stain_type
+  source_class: FluorescentStain
+provenance:
+- source: aind
+  class: FluorescentStain
+  name: stain_type
+  description: Stain types for probes describing what is being labeled
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6693bc6e8c57ce1bca6e79b339447782e96195f69d7f1448c719a7a4baddaec8

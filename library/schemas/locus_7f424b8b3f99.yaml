@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_da39bbabbe68
+  - https://schema.undata.live/elements/identifier_7106efc412af
+  - https://schema.undata.live/elements/locustype_b84f1f570282
+  - https://schema.undata.live/elements/schemakey_f8d6628eda09
+  mixins: []
+provenance:
+- source: dandi
+  name: Locus
+  generated_at: '2026-03-21T05:07:14.185120+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7f424b8b3f995a61d04d0f27c00b1bba2c189cf95bbd04e19d0c25d440dad89d

@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: raw
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: raw
+  description: 'When produced by a KIT / Yokogawa / Ricoh MEG system, this file contains
+    trial-based evoked fields.
+
+
+    When produced by an ITAB-ARGOS153 system, this file contains raw data and is generated
+    along with
+
+    an associated binary header file  with the `.mhd` extension.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e7626e4586d3bd1147dbbcc5e64e0b7b5421ef4e0ad0397e334a269c40cdea6c

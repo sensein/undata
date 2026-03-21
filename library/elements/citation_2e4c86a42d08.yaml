@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: CITATION
+  source_class: files
+provenance:
+- source: bids
+  class: files
+  name: CITATION
+  description: 'A description of the citation information for the dataset, following
+    the
+
+    [Citation File Format](https://citation-file-format.github.io/) specification.
+
+    This file permits more detailed and structured descriptions than
+
+    [dataset_description.json](SPEC_ROOT/glossary.md#dataset_description-files).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2e4c86a42d08b5cf39a0cd24e19e0ccb2aba913af72c982c262544e63bae3c7a

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/activeElement
+  source_class: MRICoilUsage.schema.omi
+provenance:
+- source: openminds
+  class: MRICoilUsage.schema.omi
+  name: https://openminds.om-i.org/props/activeElement
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4a36ed6881de68357608407cc351bb817e37bc6a4ebbd5b4fccf651ccc4ae042

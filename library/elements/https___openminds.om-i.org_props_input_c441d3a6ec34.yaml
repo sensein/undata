@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/input
+  source_class: tissueCulturePreparation.schema.omi
+provenance:
+- source: openminds
+  class: tissueCulturePreparation.schema.omi
+  name: https://openminds.om-i.org/props/input
+  description: Something or someone that is put into or participates in a process
+    or machine.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c441d3a6ec34ab2b0bdc62071645dcb53da4eb8f58292ce3c0a9a7060ad154c8

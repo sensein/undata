@@ -1,0 +1,26 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: InversionTime
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: InversionTime
+  description: 'The inversion time (TI) for the acquisition, specified in seconds.
+
+    Inversion time is the time after the middle of inverting RF pulse to middle
+
+    of excitation pulse to detect the amount of longitudinal magnetization.
+
+    Corresponds to [DICOM Tag 0018, 0082](http://www.dicomlookup.com/dicomtags/(0018,0082))
+
+    `Inversion Time`
+
+    (please note that the DICOM term is in milliseconds not seconds).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0cd2de7a355948980905591b15b86338760991f03c5f670f20a96ba376ce44c8

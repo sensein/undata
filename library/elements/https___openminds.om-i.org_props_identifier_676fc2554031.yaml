@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/identifier
+  source_class: stockNumber.schema.omi
+provenance:
+- source: openminds
+  class: stockNumber.schema.omi
+  name: https://openminds.om-i.org/props/identifier
+  description: Term or code used to identify something or someone.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 676fc2554031c1698352a1a73e883cc4cd5f9899fc1f6763dd0d435873a176c9

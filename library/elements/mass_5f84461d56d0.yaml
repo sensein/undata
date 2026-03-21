@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Mass of protein probe (ug)
+  source_attribute: mass
+  source_class: ProteinProbe
+provenance:
+- source: aind
+  class: ProteinProbe
+  name: mass
+  description: Mass of protein probe (ug)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5f84461d56d0b93c2c462aabc19fd11bc50dcf6541492b9a938a1b78596a67ee

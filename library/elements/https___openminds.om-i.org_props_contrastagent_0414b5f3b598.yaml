@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/contrastAgent
+  source_class: staticMRIAcquisition.schema.omi
+provenance:
+- source: openminds
+  class: staticMRIAcquisition.schema.omi
+  name: https://openminds.om-i.org/props/contrastAgent
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0414b5f3b5986281fb29941e3ddcac44d597970eafd8c36b98a690c30fba3c7f

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/spatialLocation
+  source_class: anatomicalTargetPosition.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalTargetPosition.schema.omi
+  name: https://openminds.om-i.org/props/spatialLocation
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9f71271864b724e01310d2c749765a9749ceb63042e6108acd0add97f63766ab

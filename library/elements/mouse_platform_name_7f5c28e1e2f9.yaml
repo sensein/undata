@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Mouse platform
+  source_attribute: mouse_platform_name
+  source_class: AcquisitionSubjectDetails
+provenance:
+- source: aind
+  class: AcquisitionSubjectDetails
+  name: mouse_platform_name
+  description: The surface that the mouse is on during the acquisition
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7f5c28e1e2f9e76e214c2f8f41d9e76922e9457b8f6db9a9c2bbedaab7013314

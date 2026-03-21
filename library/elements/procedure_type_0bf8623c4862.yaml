@@ -1,0 +1,89 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - BARSeq
+    - Clearing
+    - Delipidation
+    - Embedding
+    - Expansion
+    - Fixation
+    - Fixation and permeabilization
+    - Gelation
+    - Hybridization Chain Reaction
+    - Immunolabeling
+    - Mounting
+    - Other
+    - Refractive index matching
+    - Sectioning
+    - Soak
+    - Storage
+    - Stripping
+    - Tamoxifen induction
+  response_options:
+  - value: BARSeq
+    label: BARSeq
+    ontology_term: https://schema.undata.live/values/barseq_de0129ff039a
+  - value: Clearing
+    label: Clearing
+    ontology_term: https://schema.undata.live/values/clearing_ccb53cf55fb1
+  - value: Delipidation
+    label: Delipidation
+    ontology_term: https://schema.undata.live/values/delipidation_9028ca6d5910
+  - value: Embedding
+    label: Embedding
+    ontology_term: https://schema.undata.live/values/embedding_e4477883595b
+  - value: Expansion
+    label: Expansion
+    ontology_term: https://schema.undata.live/values/expansion_9ee0c4b83f62
+  - value: Fixation
+    label: Fixation
+    ontology_term: https://schema.undata.live/values/fixation_f8fe56e249de
+  - value: Fixation and permeabilization
+    label: Fixation and permeabilization
+    ontology_term: https://schema.undata.live/values/fixation_and_permeabilization_05d3cebbc2a2
+  - value: Gelation
+    label: Gelation
+    ontology_term: https://schema.undata.live/values/gelation_e51db6770d0b
+  - value: Hybridization Chain Reaction
+    label: Hybridization Chain Reaction
+    ontology_term: https://schema.undata.live/values/hybridization_chain_reaction_d83c13ddd452
+  - value: Immunolabeling
+    label: Immunolabeling
+    ontology_term: https://schema.undata.live/values/immunolabeling_16b843f3ad53
+  - value: Mounting
+    label: Mounting
+    ontology_term: https://schema.undata.live/values/mounting_9bc286d08d32
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/other_0a248397cc0a
+  - value: Refractive index matching
+    label: Refractive index matching
+    ontology_term: https://schema.undata.live/values/refractive_index_matching_bd2302091eea
+  - value: Sectioning
+    label: Sectioning
+    ontology_term: https://schema.undata.live/values/sectioning_5d35c411f3ae
+  - value: Soak
+    label: Soak
+    ontology_term: https://schema.undata.live/values/soak_14eaf0cd3e74
+  - value: Storage
+    label: Storage
+    ontology_term: https://schema.undata.live/values/storage_ec24fd41f82a
+  - value: Stripping
+    label: Stripping
+    ontology_term: https://schema.undata.live/values/stripping_8142565114da
+  - value: Tamoxifen induction
+    label: Tamoxifen induction
+    ontology_term: https://schema.undata.live/values/tamoxifen_induction_9973bbb6f39a
+  question_text: Procedure type
+  source_attribute: procedure_type
+  source_class: SpecimenProcedure
+provenance:
+- source: aind
+  class: SpecimenProcedure
+  name: procedure_type
+  description: Specimen procedures
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0bf8623c4862611feab30ac9dc2b1fcf711342315012ec6737df38625e372b92

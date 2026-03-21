@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/axes_4d5f6e317416
+  - https://schema.undata.live/elements/axis_unit_607490cee37b
+  - https://schema.undata.live/elements/name_5d99ac106f17
+  - https://schema.undata.live/elements/origin_18c668184305
+  mixins: []
+provenance:
+- source: aind
+  name: CoordinateSystem
+  generated_at: '2026-03-21T05:07:50.838097+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 878a73009d37c23012052977c7a5e5b04d43996008a197d54a1b4ff049f0ec71

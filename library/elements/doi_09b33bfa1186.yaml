@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: doi
+  source_class: PublishedDandiset
+provenance:
+- source: dandi
+  class: PublishedDandiset
+  name: doi
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 09b33bfa11863076fe2cd4c211e60245be4409001652c0c75c8546fc2d03dd8a

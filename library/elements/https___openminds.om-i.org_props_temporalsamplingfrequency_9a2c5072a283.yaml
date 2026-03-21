@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/temporalSamplingFrequency
+  source_class: gridVolumeSequence.schema.omi
+provenance:
+- source: openminds
+  class: gridVolumeSequence.schema.omi
+  name: https://openminds.om-i.org/props/temporalSamplingFrequency
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9a2c5072a28332cd0c99fc3547a9e0291ffc0b34afe2e3aa1b15bd32b4c2b60d

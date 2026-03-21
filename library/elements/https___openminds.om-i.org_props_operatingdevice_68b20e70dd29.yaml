@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/operatingDevice
+  source_class: softwareVersion.schema.omi
+provenance:
+- source: openminds
+  class: softwareVersion.schema.omi
+  name: https://openminds.om-i.org/props/operatingDevice
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 68b20e70dd294feea62a7e6f3f5e01ae3af76244fe0d2c05066ac8695f0c672b

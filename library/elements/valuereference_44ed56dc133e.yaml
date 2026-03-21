@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: valueReference
+  source_class: PropertyValue
+provenance:
+- source: dandi
+  class: PropertyValue
+  name: valueReference
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 44ed56dc133e3643c4886cd9aa498d7ae0bb6546953f988e51bf7bcf888b999e

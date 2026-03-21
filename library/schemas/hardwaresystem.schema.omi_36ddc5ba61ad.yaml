@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_2794cb3ad7b5
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_dc0f92838437
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/versionidentifier_9b098bdc4ca4
+  mixins: []
+provenance:
+- source: openminds
+  name: hardwareSystem.schema.omi
+  generated_at: '2026-03-21T05:08:25.350502+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 36ddc5ba61ad695073372c6c17fa270a65d5dc113e392017f36d26be848b7435

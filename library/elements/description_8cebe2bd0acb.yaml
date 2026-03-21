@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: description
+  source_class: Session
+provenance:
+- source: dandi
+  class: Session
+  name: description
+  description: A brief description of the session.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8cebe2bd0acbce7671d53380adfbd0be03a95bdda0486d1cc240795eb608e103

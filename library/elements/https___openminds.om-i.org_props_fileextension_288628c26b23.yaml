@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/fileExtension
+  source_class: contentType.schema.omi
+provenance:
+- source: openminds
+  class: contentType.schema.omi
+  name: https://openminds.om-i.org/props/fileExtension
+  description: String of characters attached as suffix to the names of files of a
+    particular format.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 288628c26b232c59cf7d23943ecdd19c6a00c7cd694cbcdd9694a2163707c093

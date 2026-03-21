@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Maternal genotype
+  source_attribute: maternal_genotype
+  source_class: BreedingInfo
+provenance:
+- source: aind
+  class: BreedingInfo
+  name: maternal_genotype
+  description: Maternal genotype
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4f495244919075c9fa5dd28ddbbe39fe03acd0736f53385208fc8349e40ed0b4

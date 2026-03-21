@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  question_text: Metric value
+  source_attribute: value
+  source_class: QCMetric
+provenance:
+- source: aind
+  class: QCMetric
+  name: value
+  description: Metric value
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: QCMetric
+  name: value
+  description: Metric value
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 04597c6eba53d2cf4a8b910a1d0a830873e9d97ca4ebf898e5e4d19d0e85e89f

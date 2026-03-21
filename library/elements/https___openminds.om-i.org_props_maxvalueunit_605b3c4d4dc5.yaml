@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/maxValueUnit
+  source_class: quantitativeValueRange.schema.omi
+provenance:
+- source: openminds
+  class: quantitativeValueRange.schema.omi
+  name: https://openminds.om-i.org/props/maxValueUnit
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 605b3c4d4dc5c10a82a0391103902690b9844a8ed7c5c594774d26d2d4b9c3e4

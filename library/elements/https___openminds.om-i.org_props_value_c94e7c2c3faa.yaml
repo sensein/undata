@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/value
+  source_class: singleColor.schema.omi
+provenance:
+- source: openminds
+  class: singleColor.schema.omi
+  name: https://openminds.om-i.org/props/value
+  description: Entry for a property.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c94e7c2c3faad9616b41e97f597d8d7c4b968957ee4f726aa8fa90c0c17bf9e2

@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/keyword
+  source_class: livePaper.schema.omi
+provenance:
+- source: openminds
+  class: livePaper.schema.omi
+  name: https://openminds.om-i.org/props/keyword
+  description: Significant word or concept that are representative of something or
+    someone.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9ff436323abd98b434d539c5eea2ba70f0e9964b137d2a1a0733f0f9f4fa7cdb

@@ -1,0 +1,25 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/age_092b836beb30
+  - https://schema.undata.live/elements/altname_eb1a5cd43ed0
+  - https://schema.undata.live/elements/cellline_914c355bf0a1
+  - https://schema.undata.live/elements/disorder_573cb9dd4e8b
+  - https://schema.undata.live/elements/genotype_a3a7251709d6
+  - https://schema.undata.live/elements/gestational_age_655a36c6c523
+  - https://schema.undata.live/elements/id_a49ce6a517ae
+  - https://schema.undata.live/elements/identifier_27932d5607a9
+  - https://schema.undata.live/elements/relatedparticipant_8563bae8d414
+  - https://schema.undata.live/elements/sameas_a4b29be366fb
+  - https://schema.undata.live/elements/schemakey_9ebcdceed696
+  - https://schema.undata.live/elements/sex_76ee8888f278
+  - https://schema.undata.live/elements/species_2e96e3afc8f9
+  - https://schema.undata.live/elements/strain_132d183f9eb4
+  - https://schema.undata.live/elements/vendor_1330b37229f8
+  mixins: []
+provenance:
+- source: dandi
+  name: Participant
+  generated_at: '2026-03-21T05:07:14.170278+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3b3dd06daeeaa1473d1f4a751d389e9f35b12192891592a0690c3cf7dbf106b7

@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  question_text: Ram unit
+  source_attribute: ram_unit
+  source_class: ResourceUsage
+provenance:
+- source: aind
+  class: ResourceUsage
+  name: ram_unit
+  description: Ram unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ResourceUsage
+  name: ram_unit
+  description: Ram unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ResourceUsage
+  name: ram_unit
+  description: Ram unit
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 37369429cad4b1ecde27b4eaf32c9e65ad602fe9cb3c50014acd16a9df88a2dc

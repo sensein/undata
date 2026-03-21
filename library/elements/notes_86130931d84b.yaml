@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Notes
+  source_attribute: notes
+  source_class: VolumeCalibration
+provenance:
+- source: aind
+  class: VolumeCalibration
+  name: notes
+  description: Notes
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 86130931d84bac4143f798643ed231d37aba52618cd29cc5092e2525016600ee

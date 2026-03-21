@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/obtainedWith
+  source_class: gridVolume.schema.omi
+provenance:
+- source: openminds
+  class: gridVolume.schema.omi
+  name: https://openminds.om-i.org/props/obtainedWith
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d63b779edbdb5d6828b83e352a013fe501cf3dbd5ee7cb7cfdef495259cfcd87

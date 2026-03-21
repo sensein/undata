@@ -1,0 +1,27 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: EEGReference
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: EEGReference
+  description: 'General description of the reference scheme used and (when applicable)
+    of
+
+    location of the reference electrode in the raw recordings
+
+    (for example, `"left mastoid"`, `"Cz"`, `"CMS"`).
+
+    If different channels have a different reference,
+
+    this field should have a general description and the channel specific
+
+    reference should be defined in the `channels.tsv` file.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 158f1c3700c4c7d535c01aaaa54ea83a64d035774e288a41bdb64775e61c9ad8

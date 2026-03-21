@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: variableMeasured
+  source_class: BareAsset
+provenance:
+- source: dandi
+  class: BareAsset
+  name: variableMeasured
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dcd2f1d7bc67484d1d283bd4087e9aa1edc708871ce98e5bdb179c58b3b313d7

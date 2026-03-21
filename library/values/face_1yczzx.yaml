@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: face
-provenance:
-- source: bids
-  raw_value: Face
-- source: aind
-  raw_value: Face

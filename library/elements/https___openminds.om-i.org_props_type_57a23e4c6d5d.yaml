@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/type
+  source_class: tissueSampleCollection.schema.omi
+provenance:
+- source: openminds
+  class: tissueSampleCollection.schema.omi
+  name: https://openminds.om-i.org/props/type
+  description: Distinct class to which a group of entities or concepts with similar
+    characteristics or attributes belong to.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 57a23e4c6d5d28a6367b9b18c8ff78740fe4944b9fb9723dfe10d2f6b453cc1a

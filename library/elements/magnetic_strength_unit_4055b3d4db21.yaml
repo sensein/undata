@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - tesla
+    - millitesla
+    - microtesla
+  response_options:
+  - value: tesla
+    label: tesla
+    ontology_term: https://schema.undata.live/values/tesla_86840f6c7f59
+  - value: millitesla
+    label: millitesla
+    ontology_term: https://schema.undata.live/values/millitesla_21a6b60f7420
+  - value: microtesla
+    label: microtesla
+    ontology_term: https://schema.undata.live/values/microtesla_0b1761089168
+  question_text: Magnetic strength unit
+  source_attribute: magnetic_strength_unit
+  source_class: Scanner
+provenance:
+- source: aind
+  class: Scanner
+  name: magnetic_strength_unit
+  description: Magnetic field units
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4055b3d4db2102d9104015bb870f008cdaf6a33579af56838e028d81d790f367

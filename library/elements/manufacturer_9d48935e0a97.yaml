@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Manufacturer
+  source_attribute: manufacturer
+  source_class: MotorizedStage
+provenance:
+- source: aind
+  class: MotorizedStage
+  name: manufacturer
+  description: Manufacturer
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9d48935e0a97243d0c6e2dc9607bc0193e8fc570d194004430be3f8e639e00ce

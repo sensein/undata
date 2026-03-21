@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/apexbasedistance_6f509bc94c21
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/baseshape_43f8ae6c684b
+  mixins: []
+provenance:
+- source: openminds
+  name: rightCone.schema.omi
+  generated_at: '2026-03-21T05:08:25.240597+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d5e8e15aaf87800a0b07b07d21c6ae70d91f62d853ef763796b3a3a89ed31780

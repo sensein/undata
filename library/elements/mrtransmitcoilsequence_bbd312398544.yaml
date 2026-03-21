@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: MRTransmitCoilSequence
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: MRTransmitCoilSequence
+  description: 'This is a relevant field if a non-standard transmit coil is used.
+
+    Corresponds to [DICOM Tag 0018, 9049](http://www.dicomlookup.com/dicomtags/(0018,9049))
+
+    `MR Transmit Coil Sequence`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bbd312398544ed6589166a5e404cfd055aca97f3d3ee91b30c787530b7d2ff28

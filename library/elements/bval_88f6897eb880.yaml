@@ -1,0 +1,22 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: bval
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: bval
+  description: 'A space-delimited file containing diffusion-encoding weightings (b-values).
+
+
+    The `bval` file contains the *b*-values (in s/mm<sup>2</sup>) corresponding to
+    the
+
+    volumes in the relevant NIfTI file, with 0 designating *b*=0 volumes.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 88f6897eb88052f84544f67061b9adb54926d1ee319522c156edd5c934a89d90

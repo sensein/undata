@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: participant_relative
-provenance:
-- source: bids
-  raw_value: participant_relative

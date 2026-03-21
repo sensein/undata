@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Depth
+  source_attribute: depth
+  source_class: Plane
+provenance:
+- source: aind
+  class: Plane
+  name: depth
+  description: Depth
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2e70b8968ccbefc79053dd18cbab24409ab5019b243bdbbfc722d0a8976f1f18

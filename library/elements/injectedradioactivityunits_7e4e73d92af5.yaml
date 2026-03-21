@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: InjectedRadioactivityUnits
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: InjectedRadioactivityUnits
+  description: 'Unit format of the specified injected radioactivity (for example,
+    `"MBq"`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7e4e73d92af5626279bb33b9600bc521b3b1081bb01a3a8a7631864232bc1491

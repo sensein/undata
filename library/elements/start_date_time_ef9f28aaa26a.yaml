@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  question_text: Start date time
+  source_attribute: start_date_time
+  source_class: DataProcess
+provenance:
+- source: aind
+  class: DataProcess
+  name: start_date_time
+  description: Start date time
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: DataProcess
+  name: start_date_time
+  description: Start date time
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ef9f28aaa26a4b6d44dc00479444b9da80aa409fd5c210fbe94e78da4cb6d797

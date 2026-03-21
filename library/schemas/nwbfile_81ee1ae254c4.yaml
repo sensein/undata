@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/file_create_date_0a513e7a06cb
+  - https://schema.undata.live/elements/identifier_d2c533f3806e
+  - https://schema.undata.live/elements/nwb_version_d29c09173796
+  - https://schema.undata.live/elements/nwbfile_55d3d5f20ad5
+  - https://schema.undata.live/elements/session_description_b47eaa46e1b5
+  - https://schema.undata.live/elements/session_start_time_d9e422819782
+  - https://schema.undata.live/elements/timestamps_reference_time_113ef2e9b104
+  mixins: []
+provenance:
+- source: nwb
+  name: NWBFile
+  generated_at: '2026-03-21T05:07:31.296863+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 81ee1ae254c4e7f311ff33b85dfd6f7c2ca29be4d8ca2aac1b182b6d4350a81d

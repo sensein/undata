@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: extension
+  source_class: common_principles
+provenance:
+- source: bids
+  class: common_principles
+  name: extension
+  description: 'A portion of the filename after the left-most period (`.`) preceded
+    by any other alphanumeric.
+
+    For example, `.gitignore` does not have a file extension,
+
+    but the file extension of `test.nii.gz` is `.nii.gz`.
+
+    Note that the left-most period is included in the file extension.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: af018736963f3c0077290664fafbf6d230fc90f8e8589c806a7319d6beef4ad0

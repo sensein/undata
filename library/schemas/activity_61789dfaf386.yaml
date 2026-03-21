@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_ed90f3f2afcb
+  - https://schema.undata.live/elements/enddate_38487c957701
+  - https://schema.undata.live/elements/id_80511ca263bd
+  - https://schema.undata.live/elements/identifier_283865843b7f
+  - https://schema.undata.live/elements/name_9f38b4801924
+  - https://schema.undata.live/elements/schemakey_787046946691
+  - https://schema.undata.live/elements/startdate_93ec6d28ee5d
+  - https://schema.undata.live/elements/used_46a38ad556cc
+  - https://schema.undata.live/elements/wasassociatedwith_90a909065c76
+  mixins: []
+provenance:
+- source: dandi
+  name: Activity
+  generated_at: '2026-03-21T05:07:14.176564+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 61789dfaf3862e3367777a4b9ce4eba27735f3e72290a76a90b8f4752916cbf8

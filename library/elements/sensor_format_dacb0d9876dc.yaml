@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Sensor format
+  source_attribute: sensor_format
+  source_class: Camera
+provenance:
+- source: aind
+  class: Camera
+  name: sensor_format
+  description: Sensor format
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dacb0d9876dcdfcc1f02ab0f0ea624bc972dca7d6328995251d38896bda6475b

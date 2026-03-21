@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: url
+  source_class: Person
+provenance:
+- source: dandi
+  class: Person
+  name: url
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6950035991245af027556bad235c9db316914851b76039a1ed3983b40a060cc7

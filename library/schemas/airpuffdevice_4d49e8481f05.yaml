@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_be4ae3577b54
+  - https://schema.undata.live/elements/diameter_d5cfa5ee316a
+  - https://schema.undata.live/elements/diameter_unit_15a4713942de
+  - https://schema.undata.live/elements/manufacturer_47f903754356
+  - https://schema.undata.live/elements/model_39307158aa34
+  - https://schema.undata.live/elements/name_f515820df8f5
+  - https://schema.undata.live/elements/notes_fdd377cbb4d8
+  - https://schema.undata.live/elements/serial_number_6c9a7e86284c
+  mixins: []
+provenance:
+- source: aind
+  name: AirPuffDevice
+  generated_at: '2026-03-21T05:07:50.823286+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4d49e8481f0586ccf8db1ee388f7010176cbebfd5043770fc1894ee8959da6ca

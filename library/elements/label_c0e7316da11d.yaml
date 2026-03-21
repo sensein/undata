@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: label
+  source_class: common_principles
+provenance:
+- source: bids
+  class: common_principles
+  name: label
+  description: 'An alphanumeric (and possibly including `+` character(s)) value, possibly
+    prefixed with arbitrary
+
+    number of 0s for consistent indentation,
+
+    for example, it is `rest` in `task-rest` following `task-<label>` specification.
+
+    Note that labels MUST not collide when casing is ignored
+
+    (see [Case collision intolerance](SPEC_ROOT/common-principles.md#case-collision-intolerance)).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c0e7316da11d24703bebaef0ebab5c80cc054b0ac017573cb41156a5b0fe7ca9

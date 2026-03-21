@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: NIRSCoordinateProcessingDescription
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: NIRSCoordinateProcessingDescription
+  description: 'Has any post-processing (such as projection) been done on the optode
+
+    positions (for example, `"surface_projection"`, `"n/a"`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 36df3f5a7f0d8d7ada5b9d4e0588656e24055e2dc2240087b7e2445b38e89dcc

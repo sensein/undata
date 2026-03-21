@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Protocol ID
+  source_attribute: protocol_id
+  source_class: Surgery
+provenance:
+- source: aind
+  class: Surgery
+  name: protocol_id
+  description: DOI for protocols.io
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f4e6a50d71cb2f090846018bba149a410d1f7b59ebbd12bbba0af35d337485d0

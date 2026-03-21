@@ -1,0 +1,15 @@
+semantic:
+  data_type: array
+  source_attribute: PromptRate
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: PromptRate
+  description: 'Prompt rate for each frame (same units as `Units`, for example, `"Bq/mL"`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8aed6e221aa1b865bfaee52cedc318cb849cdfa58289b2c84511fad746a6ef48

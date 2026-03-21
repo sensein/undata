@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/dataLocation
+  source_class: parcellationTerminology.schema.omi
+provenance:
+- source: openminds
+  class: parcellationTerminology.schema.omi
+  name: https://openminds.om-i.org/props/dataLocation
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b21511f000d5ef7ce32fd0bcffb1043d49e682d95110333dd69ccd208e2190f3

@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/copyright
+  source_class: workflowRecipeVersion.schema.omi
+provenance:
+- source: openminds
+  class: workflowRecipeVersion.schema.omi
+  name: https://openminds.om-i.org/props/copyright
+  description: Exclusive and assignable legal right of an originator to reproduce,
+    publish, sell, or distribute the matter and form of a creative work for a defined
+    time period.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 50c59ccacb8ba3d443f8ed1702bc80963bebfe3375a1df34d7ad017e0a8e7a19

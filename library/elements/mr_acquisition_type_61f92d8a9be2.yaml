@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - 2D
+    - 3D
+  response_options:
+  - value: 2D
+    label: 2D
+    ontology_term: https://schema.undata.live/values/2d_eee983047c19
+  - value: 3D
+    label: 3D
+    ontology_term: https://schema.undata.live/values/3d_fd5ece06e06b
+  question_text: MR acquisition type
+  source_attribute: mr_acquisition_type
+  source_class: MRIScan
+provenance:
+- source: aind
+  class: MRIScan
+  name: mr_acquisition_type
+  description: BIDS MRAcquisitionType / DICOM Tag 0018,0023
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 61f92d8a9be26f42a5ba15642ddec435faa3135dc9a880550b38ff1de161a10a

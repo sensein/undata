@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/sidelength_80cc2fd5890d
+  mixins: []
+provenance:
+- source: openminds
+  name: equilateralTriangle.schema.omi
+  generated_at: '2026-03-21T05:08:25.368488+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a17b16434de44fd2819a9ce206ca5eb0e720104a7b03ad7a7ee19e004b7d3b48

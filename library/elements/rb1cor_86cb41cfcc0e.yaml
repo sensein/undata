@@ -1,0 +1,22 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: RB1COR
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: RB1COR
+  description: 'Low resolution images acquired by the body coil
+
+    (in the gantry of the scanner) and the head coil using identical acquisition
+
+    parameters to generate a combined sensitivity map as described in
+
+    [Papp et al. (2016)](https://doi.org/10.1002/mrm.26058).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 86cb41cfcc0ebe66294e4a040552d52f5c2e8423066d7255cb3ae24b35f64af8

@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/supportChannel
+  source_class: validationTestVersion.schema.omi
+provenance:
+- source: openminds
+  class: validationTestVersion.schema.omi
+  name: https://openminds.om-i.org/props/supportChannel
+  description: Way of communication used to interact with users or customers.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 62b43a74260404ba7ee06d6381b247c7db77fd3cd73a672af25de3b7604a0bc1

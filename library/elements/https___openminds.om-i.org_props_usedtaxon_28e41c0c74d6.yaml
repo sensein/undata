@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/usedTaxon
+  source_class: commonCoordinateFramework.schema.omi
+provenance:
+- source: openminds
+  class: commonCoordinateFramework.schema.omi
+  name: https://openminds.om-i.org/props/usedTaxon
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 28e41c0c74d6e3a887a01d64f8de924b1a2ec2297ad8c0d95bba94c53e30dbfb

@@ -1,9 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/ground_electrode_hrocf3
-  - https://schema.undata.live/elements/implanted_device_nqlsf7
-  - https://schema.undata.live/elements/protocol_id_fu651k
-  mixins: []
-provenance:
-- source: aind
-  name: MyomatrixInsertion

@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/baseline_weight_c338b92a7803
+  - https://schema.undata.live/elements/end_date_4dd85dfbdfe7
+  - https://schema.undata.live/elements/ethics_review_id_53c0a5e8af56
+  - https://schema.undata.live/elements/minimum_water_per_day_87cf3d6fc53e
+  - https://schema.undata.live/elements/minimum_water_per_day_unit_f55e7f49d8b8
+  - https://schema.undata.live/elements/start_date_e8302bc23457
+  - https://schema.undata.live/elements/target_fraction_weight_28b28fbf5bb7
+  - https://schema.undata.live/elements/target_fraction_weight_unit_16f7d182a4e1
+  - https://schema.undata.live/elements/weight_unit_6798a33f0e8c
+  mixins: []
+provenance:
+- source: aind
+  name: WaterRestriction
+  generated_at: '2026-03-21T05:07:50.838484+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9732665ee373f22ede9ad1d66af09cd9d13a8553b63fab09ea8be8cf9e44ba3d

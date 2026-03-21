@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Magnetic strength (T)
+  source_attribute: magnetic_strength
+  source_class: Scanner
+provenance:
+- source: aind
+  class: Scanner
+  name: magnetic_strength
+  description: Magnetic strength (T)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 09e542d35e28e1a6fe71e9dce74d49e35495a53cd3664651af0d51c813ef1230

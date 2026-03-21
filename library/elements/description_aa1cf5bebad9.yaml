@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Description
+  source_attribute: description
+  source_class: GenericSubjectProcedure
+provenance:
+- source: aind
+  class: GenericSubjectProcedure
+  name: description
+  description: Description
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: aa1cf5bebad994d0f65b9ce8880d8cf867cbd38c2ae923fa11e5c0023227c025

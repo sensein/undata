@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/protocol
+  source_class: protocolExecution.schema.omi
+provenance:
+- source: openminds
+  class: protocolExecution.schema.omi
+  name: https://openminds.om-i.org/props/protocol
+  description: Plan that describes the process of a scientific or medical experiment,
+    treatment, or procedure.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: db1390b803d47de40be8b8cb59aeb24c5182caa87af41476b2e3c3b84ef17162

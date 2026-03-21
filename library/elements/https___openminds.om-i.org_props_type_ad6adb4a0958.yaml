@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/type
+  source_class: metaDataModelVersion.schema.omi
+provenance:
+- source: openminds
+  class: metaDataModelVersion.schema.omi
+  name: https://openminds.om-i.org/props/type
+  description: Distinct class to which a group of entities or concepts with similar
+    characteristics or attributes belong to.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ad6adb4a0958f46d1f46e45d06404cde99b3a5dfde7ab3b34a99d0e2420e7092

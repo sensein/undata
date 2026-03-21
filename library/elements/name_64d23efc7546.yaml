@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: name
+  source_class: SexType
+provenance:
+- source: dandi
+  class: SexType
+  name: name
+  description: The name of the item.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 64d23efc75463c378f84af85c7830323a1384f0f995926486cdcd72cb76355ab

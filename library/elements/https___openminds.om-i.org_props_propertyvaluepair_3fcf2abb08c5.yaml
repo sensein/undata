@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/propertyValuePair
+  source_class: propertyValueList.schema.omi
+provenance:
+- source: openminds
+  class: propertyValueList.schema.omi
+  name: https://openminds.om-i.org/props/propertyValuePair
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3fcf2abb08c51c9f7d2bd2234e811f04651841ea8db5f09929751c3ccc23d536

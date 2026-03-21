@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/shortName
+  source_class: workflowRecipe.schema.omi
+provenance:
+- source: openminds
+  class: workflowRecipe.schema.omi
+  name: https://openminds.om-i.org/props/shortName
+  description: Shortened or fully abbreviated name of something or somebody.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7dce079ece1499f4d1419c2955a7546e5332f359c99d1a208efa16e198b3e682

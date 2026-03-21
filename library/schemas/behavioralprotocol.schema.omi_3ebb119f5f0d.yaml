@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/describedin_15e845f936aa
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_796064137cf3
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/internalidentifier_92a7f8d46f3f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_a91dbaa78c53
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/stimulation_804b8581bb10
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/stimulustype_8beb8c9e1eee
+  mixins: []
+provenance:
+- source: openminds
+  name: behavioralProtocol.schema.omi
+  generated_at: '2026-03-21T05:08:25.349530+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3ebb119f5f0d662c1a391c1b65c04fb6e171623baaae1fab6141cbea426aafc5

@@ -1,0 +1,48 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: S0map
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: S0map
+  description: 'In arbitrary units (arbitrary).
+
+    This represents a model-based estimate of signal intensity
+
+    in the absence of the contrast under investigation.
+
+    For a multi-echo sequence
+
+    (for example, multi-echo spin echo T2 relaxometry or multi-echo fMRI),
+
+    S0 maps index the baseline signal at a hypothetical echo time of zero
+
+    (that is, in the absence of any T2 or T2-star decay).
+
+    In other words: the exponential of the intercept for a linear decay model
+
+    across log-transformed echos. For more information, please see, for example,
+
+    [the tedana documentation](https://tedana.readthedocs.io/en/latest/\
+
+    approach.html#monoexponential-decay-model-fit).
+
+    S0 maps are RECOMMENDED to use this suffix if derived from an ME-FMRI dataset.
+
+    For a diffusion-weighted sequence,
+
+    S0 maps represent the model-based estimate of the signal intensity
+
+    in the absence of any diffusion weighting;
+
+    in other words, the image intensity at *b*=0
+
+    as estimated by a diffusion model fit.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5322aecca50bbc182d63081da5e8f6714f4b44e28d4e5a598b7c495b629e2da7

@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: sameAs
+  source_class: BioSample
+provenance:
+- source: dandi
+  class: BioSample
+  name: sameAs
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f1e4c901de2f4b376e7cb081c8dfafa24e75385ba5ef17c26b1abd73f2a42424

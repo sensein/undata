@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: hed_version
+  source_class: formats
+provenance:
+- source: bids
+  class: formats
+  name: hed_version
+  description: 'The version string of the used HED schema.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0d4ba9f0d5d4e5556fec7fdc9665e2265fe42908aaa2c1fb6cbd63970b54792d

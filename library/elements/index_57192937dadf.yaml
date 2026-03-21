@@ -1,0 +1,16 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  source_attribute: index
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: index
+  description: 'The label integer index.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 57192937dadf9d96dc7ff65bd9b0f74e4dc20e26ad1ce549ecedc1f9bd595e21

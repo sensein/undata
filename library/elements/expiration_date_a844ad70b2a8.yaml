@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Lot expiration date
+  source_attribute: expiration_date
+  source_class: NonViralMaterial
+provenance:
+- source: aind
+  class: NonViralMaterial
+  name: expiration_date
+  description: Lot expiration date
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a844ad70b2a890297ddf7fd8bfcf70cf39e5da7097a2324140a3a42e4df52fff

@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/output_specimen_ids_aa13f864bf99
+  - https://schema.undata.live/elements/protocol_id_516b72af9fa0
+  mixins: []
+provenance:
+- source: aind
+  name: Perfusion
+  generated_at: '2026-03-21T05:07:50.882710+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5fe30f3e97a1aaa2617000be5e199785dafe03f805bad1c80c22e22bd07c5703

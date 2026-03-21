@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/origin
+  source_class: tissueSampleCollection.schema.omi
+provenance:
+- source: openminds
+  class: tissueSampleCollection.schema.omi
+  name: https://openminds.om-i.org/props/origin
+  description: Source at which something begins or rises, or from which something
+    derives.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 415202a9d4859921e0f68e492817d88e631d71c64e8e737b86a7e1999bcd330d

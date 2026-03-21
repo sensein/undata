@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Alleles
+  source_attribute: alleles
+  source_class: MouseSubject
+provenance:
+- source: aind
+  class: MouseSubject
+  name: alleles
+  description: Allele names and persistent IDs
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5a6a614c8d315c263cb6cbd295ab8dc0c07be27951478bbbc161c9769ebb815d

@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Wavelength (nm)
+  source_attribute: wavelength
+  source_class: LightEmittingDiode
+provenance:
+- source: aind
+  class: LightEmittingDiode
+  name: wavelength
+  description: Wavelength (nm)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 81e4fba53e1fb7ee6ee6abbde76be82129c91abb84809cb020d78585035cbf65

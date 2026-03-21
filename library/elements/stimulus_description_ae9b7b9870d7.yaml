@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: stimulus_description
+  source_class: PatchClampSeries
+provenance:
+- source: nwb
+  class: PatchClampSeries
+  name: stimulus_description
+  description: Protocol/stimulus name for this patch-clamp dataset.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ae9b7b9870d7d5fefe4de7038240ba997e2009434af22d08b5e1f839ae7f7e96

@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: relatedResource
+  source_class: BareAsset
+provenance:
+- source: dandi
+  class: BareAsset
+  name: relatedResource
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e319a6b07e9a6b18ff94265b597da5dce25bd83c88a1eb5e638932119f1c1adf

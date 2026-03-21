@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: InfusionSpeedUnits
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: InfusionSpeedUnits
+  description: 'Unit of infusion speed (for example, `"mL/s"`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dc80d41428aa68976e6776cee6bcd8ec204eaabe55342b057144124f2859d362

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: TracerRadionuclide
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: TracerRadionuclide
+  description: 'Radioisotope labeling tracer (for example, `"C11"`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e489bcd4e9548628cd70ecb8ac8c47114426e02559e2aed7c444ff05c7854e12

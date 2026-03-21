@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: unlocalized_mrs
-provenance:
-- source: bids
-  raw_value: Unlocalized MRS

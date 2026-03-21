@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Magnification
+  source_attribute: magnification
+  source_class: Objective
+provenance:
+- source: aind
+  class: Objective
+  name: magnification
+  description: Magnification
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3c98eb637d395cf3e46e1b227c80c874cf1a92fd965613b3ab2f0f0f1b8aa297

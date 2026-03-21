@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Cell ID
+  source_attribute: cell_id
+  source_class: HCRSeries
+provenance:
+- source: aind
+  class: HCRSeries
+  name: cell_id
+  description: Cell ID
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 36728aa8bd4bcd0e74c51123a30b13e8ffcf9ab224b4872b8aa4fa60f7f1a940

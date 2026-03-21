@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Air
+    - Water
+    - No cooling
+  response_options:
+  - value: Air
+    label: Air
+    ontology_term: https://schema.undata.live/values/air_4618f00c0980
+  - value: Water
+    label: Water
+    ontology_term: https://schema.undata.live/values/water_fe19bd800e31
+  - value: No cooling
+    label: No cooling
+    ontology_term: https://schema.undata.live/values/no_cooling_1863eeb9f31d
+  question_text: Cooling
+  source_attribute: cooling
+  source_class: Detector
+provenance:
+- source: aind
+  class: Detector
+  name: cooling
+  description: Cooling medium name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e4665a5358d4e8c85733d41e8be8cb447310d7a33cd2901918393a50a404c84b

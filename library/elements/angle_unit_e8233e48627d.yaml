@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - radians
+    - degrees
+  response_options:
+  - value: radians
+    label: radians
+    ontology_term: https://schema.undata.live/values/radians_9647ef5cb3e7
+  - value: degrees
+    label: degrees
+    ontology_term: https://schema.undata.live/values/degrees_062dffdf5eb7
+  question_text: Angle unit
+  source_attribute: angle_unit
+  source_class: MISModuleConfig
+provenance:
+- source: aind
+  class: MISModuleConfig
+  name: angle_unit
+  description: Enumeration of Angle Measurements
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e8233e48627d0025f7ea864edca51bde97ef249846c36c09cd4bd8718dd40d94

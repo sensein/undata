@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: inplaneT2
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: inplaneT2
+  description: 'In arbitrary units (arbitrary).
+
+    T2 weighted structural image matched to a functional (task) image.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 158b769e974e643dcea55528859660af4780287332937c5227cbd231bc16b395

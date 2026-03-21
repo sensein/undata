@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/additionalRemarks
+  source_class: measurement.schema.omi
+provenance:
+- source: openminds
+  class: measurement.schema.omi
+  name: https://openminds.om-i.org/props/additionalRemarks
+  description: Mention of what deserves additional attention or notice.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b37809f6d4d158dc86e31b55ba98ad97fbec5d59c095fcae1a01a9e818d02ab4

@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  source_attribute: identifier
+  source_class: StandardsType
+provenance:
+- source: dandi
+  class: StandardsType
+  name: identifier
+  description: The identifier can be any url or a compact URI, preferably supported
+    by identifiers.org.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b99e80c0815a0f84a21ee3cc31011f9c8cd070c3e4f233b531b84e3fe5243d69

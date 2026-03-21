@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Magnetic
+    - Non-magnetic
+    - N/A
+  response_options:
+  - value: Magnetic
+    label: Magnetic
+    ontology_term: https://schema.undata.live/values/magnetic_9e047e202e52
+  - value: Non-magnetic
+    label: Non-magnetic
+    ontology_term: https://schema.undata.live/values/non-magnetic_13a7caf20a9b
+  - value: N/A
+    label: N/A
+    ontology_term: https://schema.undata.live/values/n_a_4d22c2f91f58
+  question_text: Catheter design
+  source_attribute: catheter_design
+  source_class: Catheter
+provenance:
+- source: aind
+  class: Catheter
+  name: catheter_design
+  description: Type of catheter design
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7e99e28c781676625e7830e23e3c17de2f12c94fa77062e405ffd9c6df9ed088

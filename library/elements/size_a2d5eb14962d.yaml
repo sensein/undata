@@ -1,0 +1,16 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: size
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: size
+  description: 'Surface area of the electrode, units MUST be in `mm^2`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a2d5eb14962de25d8057a4486a783b5bff9b537bd1f9bcaaaedb050277a2e375

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: abbreviation
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: abbreviation
+  description: 'The unique label abbreviation
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7f1b809704b680e7f6fd40d7d8b97600a677a907a3d5d310bb9d60f8d478569f

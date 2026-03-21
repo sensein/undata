@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Odorant
+  source_attribute: odorant
+  source_class: OlfactometerChannelInfo
+provenance:
+- source: aind
+  class: OlfactometerChannelInfo
+  name: odorant
+  description: Odorant
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 006588874ddae794d3d8781c526f7c05c69e2563e4e2d19587ae3866b49c9242

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Hardware version
+  source_attribute: hardware_version
+  source_class: HarpDevice
+provenance:
+- source: aind
+  class: HarpDevice
+  name: hardware_version
+  description: Hardware version
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9e7b6bfcb507112b86690f48af9de79d03763298a2ab002106533c981bcfa18a

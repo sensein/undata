@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SampleExtractionInstitution
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SampleExtractionInstitution
+  description: 'The name of the institution in charge of the extraction of the sample,
+
+    if different from the institution in charge of the equipment that produced the
+    image.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 85f52ccbefa2279a968927afc26b7d2e3f65a0d892223e0b9bb70865e516ec8a

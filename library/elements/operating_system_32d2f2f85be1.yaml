@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Operating system
+  source_attribute: operating_system
+  source_class: Computer
+provenance:
+- source: aind
+  class: Computer
+  name: operating_system
+  description: Operating system
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 32d2f2f85be136b64d0c02def955d4e57176a20a06924609370eed34e386b034

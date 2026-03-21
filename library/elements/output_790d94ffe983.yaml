@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: output
+  source_class: Disc
+provenance:
+- source: aind
+  class: Disc
+  name: output
+  description: analog or digital electronics
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 790d94ffe983320e42b21a98797e8280dd7328038a2c5adc83e691c7a5db62b8

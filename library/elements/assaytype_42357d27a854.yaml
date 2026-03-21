@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: assayType
+  source_class: BioSample
+provenance:
+- source: dandi
+  class: BioSample
+  name: assayType
+  description: Identifier for the assay(s) used (e.g., OBI).
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 42357d27a854c8da6a76fb267a77694d187d60f0a900e77618e7d1e9d70c290d

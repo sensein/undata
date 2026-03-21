@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: AnchorElectrode
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: AnchorElectrode
+  description: 'Name of the electrode in the child (device) coordinate system whose
+    coordinates in
+
+    the parent (anatomical) coordinate system are given in `AnchorCoordinates`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e3717c8d7c56f4b1600621ac261ba9d1f9e4b2a4be94ba19653252f498a1e18a

@@ -1,0 +1,28 @@
+semantic:
+  data_type: array
+  question_text: GPU usage
+  source_attribute: gpu_usage
+  source_class: ResourceUsage
+provenance:
+- source: aind
+  class: ResourceUsage
+  name: gpu_usage
+  description: GPU usage
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ResourceUsage
+  name: gpu_usage
+  description: GPU usage
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ResourceUsage
+  name: gpu_usage
+  description: GPU usage
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 993534be366dbc95b9fe4837875b2159b2a49ae07cadb619bb00c6f213fd21fd

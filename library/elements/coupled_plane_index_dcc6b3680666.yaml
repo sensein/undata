@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Coupled plane index
+  source_attribute: coupled_plane_index
+  source_class: CoupledPlane
+provenance:
+- source: aind
+  class: CoupledPlane
+  name: coupled_plane_index
+  description: Plane index of the coupled plane
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dcc6b3680666c207465b0c101700a75c00c3cc653a51951ad82231fd610b2669

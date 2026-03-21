@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/description
+  source_class: electricalStimulusType.schema.omi
+provenance:
+- source: openminds
+  class: electricalStimulusType.schema.omi
+  name: https://openminds.om-i.org/props/description
+  description: Longer statement or account giving the characteristics of someone or
+    something.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d5cbd3d208610e49d3bb83f656b8ead1888871a3ddfbc3edca09a1609e36dfe1

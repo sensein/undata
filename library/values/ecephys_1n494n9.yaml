@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: ecephys
-provenance:
-- source: aind
-  raw_value: aind.data_description.modalities.Ecephys
-- source: aind
-  raw_value: aind.quality_control.CurationMetric.modality.Ecephys

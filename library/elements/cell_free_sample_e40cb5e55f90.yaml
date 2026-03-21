@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: cell_free_sample
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: cell_free_sample
+  description: 'A biosample type (`sample_type`): cell-free sample
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e40cb5e55f9036da78579551c4d1e0abdb2a438d6395730b2f10c04ecb11da10

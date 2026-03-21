@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/copyright
+  source_class: anatomicalAtlasVersion.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalAtlasVersion.schema.omi
+  name: https://openminds.om-i.org/props/copyright
+  description: Exclusive and assignable legal right of an originator to reproduce,
+    publish, sell, or distribute the matter and form of a creative work for a defined
+    time period.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e13f86290a9dcd7dd317ec81ec3b2ebf7bc326c6d0c1288bd5f9623131809df4

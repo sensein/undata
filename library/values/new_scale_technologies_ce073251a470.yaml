@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: new_scale_technologies
+provenance:
+- source: aind
+  raw_value: aind.metadata.FluorescentStain.source.New_Scale_Technologies

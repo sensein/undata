@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: wasDerivedFrom
+  source_class: BioSample
+provenance:
+- source: dandi
+  class: BioSample
+  name: wasDerivedFrom
+  description: Describes the hierarchy of sample derivation or aggregation.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7291c94f8ee0fc0b92d9f37d57e382c893673629c83f0b6219d34940a1345cdb

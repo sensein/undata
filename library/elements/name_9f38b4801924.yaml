@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: name
+  source_class: Activity
+provenance:
+- source: dandi
+  class: Activity
+  name: name
+  description: The name of the activity.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9f38b4801924f83f0c21a99267afe3b7045debbd60b39837f4db3739a7cebb9c

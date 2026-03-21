@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/compassdirection_ac67dad4a8ed
+  mixins: []
+provenance:
+- source: nwb
+  name: CompassDirection
+  generated_at: '2026-03-21T05:07:31.282155+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6c4ed2f728588b82aff1a39b6e42ae61d917a6622d1e7b64eb32e0ef220016e6

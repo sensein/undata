@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredCrossReference
+  source_class: tissueSampleAttribute.schema.omi
+provenance:
+- source: openminds
+  class: tissueSampleAttribute.schema.omi
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8dbb8943a8e7f5fd9883122ccd5e3dd0c0e93c6ea8677376e140c92e1e15dec3

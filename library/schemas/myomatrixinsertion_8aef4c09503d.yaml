@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/ground_electrode_4b1ac236de60
+  - https://schema.undata.live/elements/implanted_device_ef3b4f08fe89
+  - https://schema.undata.live/elements/protocol_id_3914d908d7c6
+  mixins: []
+provenance:
+- source: aind
+  name: MyomatrixInsertion
+  generated_at: '2026-03-21T05:07:50.875265+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8aef4c09503d67ef088d9e985f937548a48a380103a31b7f3ac9d49790c32544

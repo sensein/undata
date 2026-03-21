@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: data_acquisition
+  source_class: common_principles
+provenance:
+- source: bids
+  class: common_principles
+  name: data_acquisition
+  description: 'A continuous uninterrupted block of time during which a brain scanning
+    instrument
+
+    or an electromyography recording device was acquiring data
+
+    according to a particular scanning sequence/protocol.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f6a3963fbd5a431f6eb06972cd96a5d0eeadb4809a7c911d593bccd9f0395523

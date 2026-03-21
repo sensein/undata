@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: trial_type
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: trial_type
+  description: 'Primary categorisation of each trial to identify them as instances
+    of the
+
+    experimental conditions.
+
+    For example: for a response inhibition task, it could take on values `go` and
+
+    `no-go` to refer to response initiation and response inhibition experimental
+
+    conditions.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a403ab5afca78226a1ec39b219a7114f3bf7ebd9a33e18165edd4e62ae457cb7

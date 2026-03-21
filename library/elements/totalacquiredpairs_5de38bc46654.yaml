@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: TotalAcquiredPairs
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: TotalAcquiredPairs
+  description: 'The total number of acquired `control`-`label` pairs.
+
+    A single pair consists of a single `control` and a single `label` image.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5de38bc46654e0b3da69af6e543c87e63ab4bff73e2a41b55de239aa9aa1fb45

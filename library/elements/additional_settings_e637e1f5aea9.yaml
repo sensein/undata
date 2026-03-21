@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Additional parameters
+  source_attribute: additional_settings
+  source_class: HarpDevice
+provenance:
+- source: aind
+  class: HarpDevice
+  name: additional_settings
+  description: Additional parameters
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e637e1f5aea94f852768796d9b90a2997cc8d405fee0b8752032dbdd3c254296

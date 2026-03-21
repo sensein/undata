@@ -1,0 +1,16 @@
+semantic:
+  data_type: array
+  question_text: Data streams
+  source_attribute: data_streams
+  source_class: Acquisition
+provenance:
+- source: aind
+  class: Acquisition
+  name: data_streams
+  description: A data stream is a collection of devices that are acquiring data simultaneously.
+    Each acquisition can include multiple streams. Streams should be split when configurations
+    are changed.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a82eeb2cabd6f3c3fe5c38923ea98d5a980425bd98032199468a6bccf3d526a1

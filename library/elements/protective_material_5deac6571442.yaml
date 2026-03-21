@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Protective material
+  source_attribute: protective_material
+  source_class: Craniotomy
+provenance:
+- source: aind
+  class: Craniotomy
+  name: protective_material
+  description: Protective material
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5deac65714420b0741822d1d605bcafa2b5b276d58a86f66bc825c776965c8db

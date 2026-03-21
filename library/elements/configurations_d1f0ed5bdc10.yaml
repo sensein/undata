@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Device configurations
+  source_attribute: configurations
+  source_class: StimulusEpoch
+provenance:
+- source: aind
+  class: StimulusEpoch
+  name: configurations
+  description: Device configurations
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d1f0ed5bdc10541fc4666f3007e5d00680d35c724382a09d7c4cd1821093428a

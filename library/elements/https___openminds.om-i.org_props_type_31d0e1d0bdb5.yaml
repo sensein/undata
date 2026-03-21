@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/type
+  source_class: genericIdentifier.schema.omi
+provenance:
+- source: openminds
+  class: genericIdentifier.schema.omi
+  name: https://openminds.om-i.org/props/type
+  description: Distinct class to which a group of entities or concepts with similar
+    characteristics or attributes belong to.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 31d0e1d0bdb5c7cf7366d7daa642c32c79de15b7ad4cc9ca23e8c97e6c7059b0

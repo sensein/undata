@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: beh
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: beh
+  description: 'Behavioral recordings from tasks.
+
+    These files are similar to events files, but do not include the `"onset"` and
+
+    `"duration"` columns that are mandatory for events files.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9cf67e6a19c6dc363cf694874afd25ecf9712d2f998c651dd466ddcc28764f35

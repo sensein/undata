@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Stream start time
+  source_attribute: stream_start_time
+  source_class: DataStream
+provenance:
+- source: aind
+  class: DataStream
+  name: stream_start_time
+  description: Stream start time
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a7e12a52bc527cd6633134dcac8061e3da5bc79c7e4b9d7257b812a87b7ddbd6

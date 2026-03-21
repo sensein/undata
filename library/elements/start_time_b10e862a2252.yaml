@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Manipulation start time
+  source_attribute: start_time
+  source_class: Manipulation
+provenance:
+- source: aind
+  class: Manipulation
+  name: start_time
+  description: Must be between the acquisition start and end times
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b10e862a22527b4b5abdb7fa95c26a3a0488c3a1c1007b9d4719bedaf668b1c5

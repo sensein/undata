@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: assetsSummary
+  source_class: Dandiset
+provenance:
+- source: dandi
+  class: Dandiset
+  name: assetsSummary
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0ff05321f1e1339f1bada59c43e747ceaa75bcf5d27cd414971ea9647074de48

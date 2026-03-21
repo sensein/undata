@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Crop width
+  source_attribute: crop_width
+  source_class: DetectorConfig
+provenance:
+- source: aind
+  class: DetectorConfig
+  name: crop_width
+  description: Overrides any value set in the Instrument metadata
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e8648721e7eda688895a54d14e0001725f0bbd047193f6030f1a31a97e3e2443

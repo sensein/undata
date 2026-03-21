@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Injection coordinate, depth, and rotation
+  source_attribute: coordinates
+  source_class: BrainInjection
+provenance:
+- source: aind
+  class: BrainInjection
+  name: coordinates
+  description: Injection coordinate, depth, and rotation
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: edb3d55789290fff56600d365ea6ba2f88b072f019616e5d05c8e1a4543906e6

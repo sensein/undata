@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: Manipulator
+  source_attribute: manipulator
+  source_class: PatchClampEphysAssembly
+  type_ref: Manipulator
+provenance:
+- source: aind
+  class: PatchClampEphysAssembly
+  name: manipulator
+  description: Manipulator used on a dome module
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9f5f240f5711fbcbb89fe869912870c626372063b72754ae75e251e91a8f1e5d

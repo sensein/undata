@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Intended model use
+  source_attribute: intended_use
+  source_class: Model
+provenance:
+- source: aind
+  class: Model
+  name: intended_use
+  description: Semantic description of intended use
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 44e6b47cf8b89465a32d8e01b394893b7ffdb96f5197c17cf91101286021eb7b

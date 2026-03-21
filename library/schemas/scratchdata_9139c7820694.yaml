@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/notes_0f6b922dc85a
+  - https://schema.undata.live/elements/scratchdata_122e59462f0b
+  mixins: []
+provenance:
+- source: nwb
+  name: ScratchData
+  generated_at: '2026-03-21T05:07:31.301019+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9139c782069418a256634258ee092939b73846dd823b1e85178b1db5ea9b8907

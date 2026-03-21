@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Crop height
+  source_attribute: crop_height
+  source_class: DetectorConfig
+provenance:
+- source: aind
+  class: DetectorConfig
+  name: crop_height
+  description: Overrides any value set in the Instrument metadata
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c383fbca3ae16aff29053f235719ec4a63d638acb1dc9a81dca47ebecc8ba2f0

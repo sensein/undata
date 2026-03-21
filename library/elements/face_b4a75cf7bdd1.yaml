@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: Face
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: Face
+  description: 'A face mask.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b4a75cf7bdd18d66b003f42cd455c48a561cd9964c1bee087c2b3456f3424ea0

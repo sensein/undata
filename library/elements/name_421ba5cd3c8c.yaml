@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Device name
+  source_attribute: name
+  source_class: DAQDevice
+provenance:
+- source: aind
+  class: DAQDevice
+  name: name
+  description: Device name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 421ba5cd3c8c320e2f7b9e68af583ba1678043f254639c60c1ab9c7d9b769737

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/otherOntologyIdentifier
+  source_class: stimulationTechnique.schema.omi
+provenance:
+- source: openminds
+  class: stimulationTechnique.schema.omi
+  name: https://openminds.om-i.org/props/otherOntologyIdentifier
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 97c36804e22c8d40e92c16ed07c539f4cc9033ea43b5fb31ab8dd6b34609690e

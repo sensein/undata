@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/lookupLabel
+  source_class: electrodeArrayUsage.schema.omi
+provenance:
+- source: openminds
+  class: electrodeArrayUsage.schema.omi
+  name: https://openminds.om-i.org/props/lookupLabel
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 26bd013b884865fe69a8ca402f30836120a1e2e5e5aa6ef1857c3f2b5091acff

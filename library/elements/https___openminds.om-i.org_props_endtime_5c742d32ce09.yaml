@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/endTime
+  source_class: serviceDeployment.schema.omi
+provenance:
+- source: openminds
+  class: serviceDeployment.schema.omi
+  name: https://openminds.om-i.org/props/endTime
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5c742d32ce09afc03f8a800c0513140801892e1790cef309b52da512e5fffcd6

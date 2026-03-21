@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Device name
+  source_attribute: name
+  source_class: FiberProbe
+provenance:
+- source: aind
+  class: FiberProbe
+  name: name
+  description: Device name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ee44f2fdc49455e213db51cfd953cc274fe9a59115109af1f935e1528d1fbe78

@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/bias_current_28b33bc940ad
+  - https://schema.undata.live/elements/bridge_balance_8ab3e638ffa3
+  - https://schema.undata.live/elements/capacitance_compensation_b72636a94181
+  - https://schema.undata.live/elements/currentclampseries_428986485e9a
+  - https://schema.undata.live/elements/data_da6d548eab2f
+  mixins: []
+provenance:
+- source: nwb
+  name: CurrentClampSeries
+  generated_at: '2026-03-21T05:07:31.278115+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3fb270941f419e3ccf085cc91a40950859a4a425db62e5c002a357f04ba1da95

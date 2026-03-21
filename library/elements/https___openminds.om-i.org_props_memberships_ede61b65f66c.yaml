@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/memberships
+  source_class: consortium.schema.omi
+provenance:
+- source: openminds
+  class: consortium.schema.omi
+  name: https://openminds.om-i.org/props/memberships
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ede61b65f66c0cfbacd6d013bf3a95b935710f74792821a9abc31a4eeb61880a

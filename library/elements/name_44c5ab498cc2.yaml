@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Device name
+  source_attribute: name
+  source_class: Disc
+provenance:
+- source: aind
+  class: Disc
+  name: name
+  description: Device name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 44c5ab498cc29a6effe3e36e6aa4796d869a3b98577f136cb3560849387f5f23

@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Notes
+  source_attribute: notes
+  source_class: TrainingProtocol
+provenance:
+- source: aind
+  class: TrainingProtocol
+  name: notes
+  description: Notes
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 740f9481d19c4d7b881f34d725fbca12b1af26da4ef5e376f920ed47fc08d29f

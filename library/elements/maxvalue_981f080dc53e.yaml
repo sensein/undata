@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+  source_attribute: maxValue
+  source_class: PropertyValue
+provenance:
+- source: dandi
+  class: PropertyValue
+  name: maxValue
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 981f080dc53ea7da147cdaf02410d1d5c19fb89580f23d303e1993aaa10ac64d

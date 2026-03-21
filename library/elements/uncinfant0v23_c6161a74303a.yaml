@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: UNCInfant0V23
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: UNCInfant0V23
+  description: 'Infant Brain Atlases from Neonates to 1- and 2-year-olds. See https://www.nitrc.org/projects/pediatricatlas.
+
+    For new datasets, the recommended alternative is UNCInfant.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c6161a74303af48532877f9d17886d8caac0b20bf814bd8360948e749dc84708

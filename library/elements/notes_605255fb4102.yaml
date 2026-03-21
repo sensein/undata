@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Notes
+  source_attribute: notes
+  source_class: Treadmill
+provenance:
+- source: aind
+  class: Treadmill
+  name: notes
+  description: Notes
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 605255fb4102b8787f4c8da3d9cc931336dae4bf56612f2cd193a57261b3fd36

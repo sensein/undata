@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/oscillationAmplitude
+  source_class: slicingDeviceUsage.schema.omi
+provenance:
+- source: openminds
+  class: slicingDeviceUsage.schema.omi
+  name: https://openminds.om-i.org/props/oscillationAmplitude
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f3b009b78e7ea1b7ff1025af85e251e0c0c1cb3597946cc11f2de85336002c8a

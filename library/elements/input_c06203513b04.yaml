@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Input
+  source_attribute: input
+  source_class: PowerCalibration
+provenance:
+- source: aind
+  class: PowerCalibration
+  name: input
+  description: Power, voltage, or percentage input strength
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c06203513b04cf2786745f87f7eea61913e8667663f26bf225b48cb05daf6d8b

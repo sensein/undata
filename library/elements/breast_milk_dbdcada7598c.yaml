@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: breast_milk
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: breast_milk
+  description: 'The origin of a sample: breast milk
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dbdcada7598c242af5e033df03cbf35a6e8c69b1ac075139f44fafe799c3db9c

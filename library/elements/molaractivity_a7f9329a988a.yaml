@@ -1,0 +1,20 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: MolarActivity
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: MolarActivity
+  description: 'Molar activity of compound injected.
+
+    Corresponds to [DICOM Tag 0018, 1077](http://www.dicomlookup.com/dicomtags/(0018,1077))
+
+    `Radiopharmaceutical Specific Activity`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a7f9329a988ac54de4de2d252450c93705fcf4444b0b0442d2b7ef62ef77d8fc

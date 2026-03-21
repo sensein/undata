@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: EMG
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: EMG
+  description: 'Electromyogram (muscle).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c7244121aa746f8848baa212db0a0fc9edf3703914ea4aadd531b57e3fff86bf

@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Injection material
+  source_attribute: injection_materials
+  source_class: BrainInjection
+provenance:
+- source: aind
+  class: BrainInjection
+  name: injection_materials
+  description: Injection material
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9296e0cda09326edecb51956bdd6ab318082d61f321587d028fd76bf810f4f0f

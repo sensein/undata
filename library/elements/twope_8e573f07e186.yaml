@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: TwoPE
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: TwoPE
+  description: '2-photon excitation microscopy imaging data
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8e573f07e186addd612a9f98d7f94528656f67dbedfdc62bb44523a91f76056e

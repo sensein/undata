@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/technique
+  source_class: simulation.schema.omi
+provenance:
+- source: openminds
+  class: simulation.schema.omi
+  name: https://openminds.om-i.org/props/technique
+  description: Method of accomplishing a desired aim.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 16bf5b50e810023aa8abd9d6bd58dd0e3de5e30e29eaf90b60b6eac6396e4e35

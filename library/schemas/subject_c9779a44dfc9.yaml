@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/age_b7012d239bd7
+  - https://schema.undata.live/elements/date_of_birth_b50a78f405fd
+  - https://schema.undata.live/elements/description_2e84e57c259d
+  - https://schema.undata.live/elements/genotype_b732b8d23b52
+  - https://schema.undata.live/elements/sex_0022d70f67cb
+  - https://schema.undata.live/elements/species_1c18bc015a11
+  - https://schema.undata.live/elements/strain_fd51934f6e00
+  - https://schema.undata.live/elements/subject_f4ceae967fb0
+  - https://schema.undata.live/elements/subject_id_c2f9c9d64fdc
+  - https://schema.undata.live/elements/weight_cca6bf205e71
+  mixins: []
+provenance:
+- source: nwb
+  name: Subject
+  generated_at: '2026-03-21T05:07:31.274894+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c9779a44dfc9a916d87246f30d2b50aab90fabf428dd2b2d3028243c43e7faea

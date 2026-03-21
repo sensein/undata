@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/howToCite
+  source_class: livePaper.schema.omi
+provenance:
+- source: openminds
+  class: livePaper.schema.omi
+  name: https://openminds.om-i.org/props/howToCite
+  description: Preferred format for citing a particular object or legal person.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f747bdc83166845e6b4c2f56d6330affa3c2f2a75311323f993346a9f86902b6

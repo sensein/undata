@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: estimate
-provenance:
-- source: bids
-  raw_value: Estimate

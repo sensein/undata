@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: email
+  source_class: Contributor
+provenance:
+- source: dandi
+  class: Contributor
+  name: email
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c681e3ce57e6b061ff064e168fac6adb2264520e38a5cd83ae0dc55e90bb5d81

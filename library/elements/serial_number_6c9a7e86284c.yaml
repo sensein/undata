@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Serial number
+  source_attribute: serial_number
+  source_class: AirPuffDevice
+provenance:
+- source: aind
+  class: AirPuffDevice
+  name: serial_number
+  description: Serial number
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6c9a7e86284c71322c15d1863ca0103fdeddfeb1ff74ec56bf8dc1f3b5fe655a

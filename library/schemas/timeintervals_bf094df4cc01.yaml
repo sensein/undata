@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/start_time_b944ff9cd174
+  - https://schema.undata.live/elements/stop_time_895e28355696
+  - https://schema.undata.live/elements/tags_a2e0d7eff2c5
+  - https://schema.undata.live/elements/tags_index_01641e6aeefd
+  - https://schema.undata.live/elements/timeintervals_1146319654c1
+  - https://schema.undata.live/elements/timeseries_81cc349543d5
+  - https://schema.undata.live/elements/timeseries_index_ef231de66c21
+  mixins: []
+provenance:
+- source: nwb
+  name: TimeIntervals
+  generated_at: '2026-03-21T05:07:31.305186+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bf094df4cc01e977f84cc94036e59208ea9589ffa6f06a63157bd177600100a6

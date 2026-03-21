@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/description_3dc0a624238c
+  - https://schema.undata.live/elements/excitation_lambda_b5d3999227a0
+  - https://schema.undata.live/elements/location_3dd1a444a00a
+  - https://schema.undata.live/elements/optogeneticstimulussite_c977098ccb74
+  mixins: []
+provenance:
+- source: nwb
+  name: OptogeneticStimulusSite
+  generated_at: '2026-03-21T05:07:31.290127+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9bef8d130edd5669d7914ec6dd80f04a1c38963b962c9a7a1a8ef4704b145e85

@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  question_text: Name
+  source_attribute: name
+  source_class: ModelEvaluation
+provenance:
+- source: aind
+  class: ModelEvaluation
+  name: name
+  description: '[''Unique name of the processing step.'', '' If not provided, the
+    type will be used as the name.'']'
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ModelEvaluation
+  name: name
+  description: '[''Unique name of the processing step.'', '' If not provided, the
+    type will be used as the name.'']'
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 25d20b13648b6d4191ffd95bcac35d22ae93a47d6e5cc413402e839e290b1939

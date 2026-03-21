@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Injection dynamics
+  source_attribute: dynamics
+  source_class: Injection
+provenance:
+- source: aind
+  class: Injection
+  name: dynamics
+  description: List of injection events, one per location/depth
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e1ab2405d5193a8d5847cc362e97e3f6dbd29c32483520d95578ee21aa79ea83

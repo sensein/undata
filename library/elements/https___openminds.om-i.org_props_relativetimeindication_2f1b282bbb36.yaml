@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/relativeTimeIndication
+  source_class: tissueSampleCollectionState.schema.omi
+provenance:
+- source: openminds
+  class: tissueSampleCollectionState.schema.omi
+  name: https://openminds.om-i.org/props/relativeTimeIndication
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2f1b282bbb36429a896abcfc291f876c65cb09f4a07d132bf5843730bbbaebf3

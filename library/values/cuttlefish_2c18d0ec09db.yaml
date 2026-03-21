@@ -1,0 +1,6 @@
+semantic:
+  value_type: categorical
+  label: cuttlefish
+provenance:
+- source: aind
+  raw_value: aind.metadata.HarpDevice.harp_device_type.Cuttlefish

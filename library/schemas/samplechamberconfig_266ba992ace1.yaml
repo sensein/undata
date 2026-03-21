@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/chamber_immersion_420edbbff05f
+  - https://schema.undata.live/elements/device_name_999c9278ddd4
+  - https://schema.undata.live/elements/sample_immersion_2ad80427c119
+  mixins: []
+provenance:
+- source: aind
+  name: SampleChamberConfig
+  generated_at: '2026-03-21T05:07:50.843801+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 266ba992ace16619e90939fd09fdd442cab9e22e9f9e23de209fd6367b2f097b

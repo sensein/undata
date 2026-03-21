@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: LabelingEfficiency
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: LabelingEfficiency
+  description: 'Labeling efficiency, specified as a number between zero and one,
+
+    only if obtained externally (for example phase-contrast based).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a52460cd8f03236ec716ca0cf57c13570972ed8ff42baa61182d189c66541e2f

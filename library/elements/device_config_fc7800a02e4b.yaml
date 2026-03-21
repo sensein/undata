@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: Device configuration
+  source_attribute: device_config
+  source_class: ProbeImplant
+  type_ref: ProbeConfig
+provenance:
+- source: aind
+  class: ProbeImplant
+  name: device_config
+  description: Configuration for a device inserted into a brain
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fc7800a02e4b49720ae3e6bd6a7cc7f10b250d144da109fd9810b6d09137ee4b

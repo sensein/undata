@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: Dependency graph
+  source_attribute: dependency_graph
+  source_class: processing
+provenance:
+- source: aind
+  class: processing
+  name: dependency_graph
+  description: Directed graph of processing step dependencies. Each key is a process
+    name, and the value is a list of process names that are inputs to that process.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e192dcdff5c812866bb907b61ed5f6274e0a5f5e6062e3cff2db59d799bcb58b

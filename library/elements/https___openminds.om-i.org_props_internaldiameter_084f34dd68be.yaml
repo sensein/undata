@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/internalDiameter
+  source_class: pipette.schema.omi
+provenance:
+- source: openminds
+  class: pipette.schema.omi
+  name: https://openminds.om-i.org/props/internalDiameter
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 084f34dd68beecf28ae9321c2d0df5c56bfc57beda6e035c4182b59463b0999f

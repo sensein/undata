@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: derivative
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: derivative
+  description: 'A derived BIDS dataset.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ce697729eb04cec2a958cdf30eef763916e17e0fb8e04a210e1bd8dfda7864ea

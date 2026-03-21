@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: mrsi
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: mrsi
+  description: 'MRS acquisitions where additional imaging gradients are used
+
+    to detect the MR signal from 1, 2, or 3 spatial dimensions.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fa5652e3977ff266bd476e133b93a223c0b63209dfa73559cf1ecf0b8925659b

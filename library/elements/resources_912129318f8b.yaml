@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  question_text: Process resource usage
+  source_attribute: resources
+  source_class: ModelEvaluation
+provenance:
+- source: aind
+  class: ModelEvaluation
+  name: resources
+  description: Process resource usage
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ModelEvaluation
+  name: resources
+  description: Process resource usage
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 912129318f8b9f0dd2894c754d7407151aaca760c2974f0424119bb08e960590

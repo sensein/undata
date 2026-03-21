@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: boolean
+  source_class: formats
+provenance:
+- source: bids
+  class: formats
+  name: boolean
+  description: 'A boolean.
+
+    Must be either "true" or "false".
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8006ed5242ebf82c42267f9f4dfa888dffa2ff3f0a38dfb22e154bbd2341eaba

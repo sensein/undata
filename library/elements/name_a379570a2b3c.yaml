@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Device name
+  source_attribute: name
+  source_class: MotorizedStage
+provenance:
+- source: aind
+  class: MotorizedStage
+  name: name
+  description: Device name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a379570a2b3c53b3219476a594b1bf83beb360449871f21871b622926a63a092

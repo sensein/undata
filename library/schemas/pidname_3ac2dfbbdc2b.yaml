@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/abbreviation_3b84869330bf
+  - https://schema.undata.live/elements/name_ab5a2554cd2f
+  - https://schema.undata.live/elements/registry_deeaa834c9fd
+  - https://schema.undata.live/elements/registry_identifier_a4645a332857
+  mixins: []
+provenance:
+- source: aind
+  name: PIDName
+  generated_at: '2026-03-21T05:07:50.801200+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3ac2dfbbdc2bb42b081ae45915b2a5c609b88618b39d518cb618eea09b0a6250

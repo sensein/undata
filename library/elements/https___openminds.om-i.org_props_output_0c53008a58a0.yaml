@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/output
+  source_class: dataAnalysis.schema.omi
+provenance:
+- source: openminds
+  class: dataAnalysis.schema.omi
+  name: https://openminds.om-i.org/props/output
+  description: Something or someone that comes out of, is delivered or produced by
+    a process or machine.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0c53008a58a0737ae46564fe30a29aa20d0b7ea3463a22f26413b088057eaa5d

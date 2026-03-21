@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: reference__eeg
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: reference__eeg
+  description: 'Name of the reference electrode(s).
+
+    This column is not needed when it is common to all channels.
+
+    In that case the reference electrode(s) can be specified in `*_eeg.json` as `EEGReference`).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d460f3dd2b43c7e224394ee9f1b39fd3b441e7f74aadc3573e3e9f763ecf97b2

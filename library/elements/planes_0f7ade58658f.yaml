@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Imaging planes
+  source_attribute: planes
+  source_class: PlanarImage
+provenance:
+- source: aind
+  class: PlanarImage
+  name: planes
+  description: Imaging planes
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0f7ade58658f5bdc67d99bab9d2d10c7d129265e5932f87cdccb185c9f29e5de

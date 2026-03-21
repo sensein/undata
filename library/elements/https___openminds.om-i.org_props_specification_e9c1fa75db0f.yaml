@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/specification
+  source_class: atlasAnnotation.schema.omi
+provenance:
+- source: openminds
+  class: atlasAnnotation.schema.omi
+  name: https://openminds.om-i.org/props/specification
+  description: Detailed and precise presentation of, or proposal for something.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e9c1fa75db0fa67800c2264fb0d4d0778e328e05520088bea3676f1c85f1e53a

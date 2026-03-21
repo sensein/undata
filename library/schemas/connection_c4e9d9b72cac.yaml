@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/send_and_receive_34f399d0e883
+  - https://schema.undata.live/elements/source_device_e7a87b80ea1a
+  - https://schema.undata.live/elements/source_port_51000fa5fe8a
+  - https://schema.undata.live/elements/target_device_c66b51e1a95a
+  - https://schema.undata.live/elements/target_port_7ebfcffd2c16
+  mixins: []
+provenance:
+- source: aind
+  name: Connection
+  generated_at: '2026-03-21T05:07:50.884133+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c4e9d9b72cac464c01d257f0e4d451c5c50fd9f74cbfb0e1c0d666c049d122ef

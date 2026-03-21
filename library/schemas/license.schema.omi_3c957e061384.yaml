@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/fullname_84a6de3aea8d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/legalcode_89811e178cbf
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/shortname_fe8e94f8ec32
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/webpage_3ef6b2583f5b
+  mixins: []
+provenance:
+- source: openminds
+  name: license.schema.omi
+  generated_at: '2026-03-21T05:08:25.357820+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3c957e0613847c452646049260dd0f0d5fea861262db19274939a7e8b465eb92

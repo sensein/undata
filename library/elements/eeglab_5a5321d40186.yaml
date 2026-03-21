@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: EEGLAB
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: EEGLAB
+  description: 'ALS orientation and the origin exactly between LPA and RPA.
+
+    For more information, see the
+
+    [EEGLAB wiki page](https://eeglab.org/tutorials/ConceptsGuide/coordinateSystem.html#eeglab-coordinate-system).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5a5321d4018631f95bd6d6cb8874d31d92ad219e32911da14a513a9d932520d4

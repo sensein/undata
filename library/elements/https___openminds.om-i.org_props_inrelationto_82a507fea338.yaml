@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/inRelationTo
+  source_class: qualitativeRelationAssessment.schema.omi
+provenance:
+- source: openminds
+  class: qualitativeRelationAssessment.schema.omi
+  name: https://openminds.om-i.org/props/inRelationTo
+  description: Reference to a related element.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 82a507fea3381bb43685ede7d0312b2dad8a97fd0536e68bda6c84e187b87af7

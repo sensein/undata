@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/versionInnovation
+  source_class: parcellationEntityVersion.schema.omi
+provenance:
+- source: openminds
+  class: parcellationEntityVersion.schema.omi
+  name: https://openminds.om-i.org/props/versionInnovation
+  description: Documentation on what changed in comparison to a previously published
+    form of something.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0fe42a27b9558c8486bfae1221e9d8982a0ce1f1b1975022b3c4d36ef2ca4af8

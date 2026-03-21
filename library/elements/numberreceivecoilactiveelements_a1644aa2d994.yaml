@@ -1,0 +1,16 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  source_attribute: NumberReceiveCoilActiveElements
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: NumberReceiveCoilActiveElements
+  description: 'The number of active RF elements used by the receive coil.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a1644aa2d9944fa1999aae8ed94f3fe02f888fd08faea5dae88b4f856d3475f6

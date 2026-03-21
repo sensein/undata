@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  question_text: Metric name
+  source_attribute: name
+  source_class: CurationMetric
+provenance:
+- source: aind
+  class: CurationMetric
+  name: name
+  description: Metric name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: CurationMetric
+  name: name
+  description: Metric name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ac8433d918146677daa9d4aa6d5252c17052011ccf1b2a04eff2e35b76043831

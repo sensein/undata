@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_e3b31b65b5ac
+  - https://schema.undata.live/elements/immersion_3450411808fd
+  - https://schema.undata.live/elements/magnification_3c98eb637d39
+  - https://schema.undata.live/elements/manufacturer_b8d0520c2033
+  - https://schema.undata.live/elements/model_647b49a3bb94
+  - https://schema.undata.live/elements/name_d73a7a8ce679
+  - https://schema.undata.live/elements/notes_77370f84be5c
+  - https://schema.undata.live/elements/numerical_aperture_851a860849b0
+  - https://schema.undata.live/elements/objective_type_8d2141141d75
+  - https://schema.undata.live/elements/serial_number_0c89eb496f69
+  mixins: []
+provenance:
+- source: aind
+  name: Objective
+  generated_at: '2026-03-21T05:07:50.826643+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0a1162044465e945a33470ff6f90e09b8a53ece4cde6840c8114b1394f97d708

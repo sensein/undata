@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  question_text: Reagents
+  source_attribute: reagents
+  source_class: Maintenance
+provenance:
+- source: aind
+  class: Maintenance
+  name: reagents
+  description: Reagents
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c96d6b312fe68752ae06bbcc4c59c36d7b275e665b622bda22be083136b6c03d

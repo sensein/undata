@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: k
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: k
+  description: 'The encoding direction is along the third axis of the data in the
+    NIFTI file,
+
+    and the encoding value increases from the zero index to the maximum index.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 812a744a3e313122ed54156cc38c384ced90152f41a06b586ee0a3efb8bdf284

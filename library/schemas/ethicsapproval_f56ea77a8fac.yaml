@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/contactpoint_bfba15a46918
+  - https://schema.undata.live/elements/id_5add3d3d73d7
+  - https://schema.undata.live/elements/identifier_12bccad3fad1
+  - https://schema.undata.live/elements/schemakey_173703b2a80b
+  mixins: []
+provenance:
+- source: dandi
+  name: EthicsApproval
+  generated_at: '2026-03-21T05:07:14.173936+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f56ea77a8fac8cc8486a35f8bce58f0b976c7011b16ab96acaa05d0d7136cf32

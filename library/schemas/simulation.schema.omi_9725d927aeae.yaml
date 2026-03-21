@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/custompropertyset_10ae0f894472
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_6248bc983e4f
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/endtime_c5b4346266e5
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/environment_e4d320f42354
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/input_f2dd89bb4799
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/launchconfiguration_a78926080e66
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/lookuplabel_9b912c61d998
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/output_2b0b1d2e98ba
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/performedby_e4ebc203bb15
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/recipe_019c8d3d2dcd
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/resourceusage_138fa9620e95
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/startedby_363752cd9738
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/starttime_83a2f61fd660
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/status_250abe9adc58
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/studytarget_8476aeb705b0
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/tag_0437735b7a01
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/technique_16bf5b50e810
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/wasinformedby_096396297911
+  mixins: []
+provenance:
+- source: openminds
+  name: simulation.schema.omi
+  generated_at: '2026-03-21T05:08:25.271130+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9725d927aeaeef00305a15940a13e40f44d641bdc739fa49a99f247cb72800bb

@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/relatedPublication
+  source_class: metaDataModel.schema.omi
+provenance:
+- source: openminds
+  class: metaDataModel.schema.omi
+  name: https://openminds.om-i.org/props/relatedPublication
+  description: Reference to something that was made available for the general public
+    to see or buy.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 471f6cbaa6d9df1c793bdab3da7dfa2bf91586382f16bfb79683a7cc0233edd6

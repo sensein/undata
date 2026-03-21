@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/performedBy
+  source_class: dynamicMRIAcquisition.schema.omi
+provenance:
+- source: openminds
+  class: dynamicMRIAcquisition.schema.omi
+  name: https://openminds.om-i.org/props/performedBy
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 61d899974a627c1c2d480f0de60fc4f019afdebc7b3351f62476b915322ea4f3

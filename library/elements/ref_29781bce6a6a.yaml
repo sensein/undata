@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: REF
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: REF
+  description: 'Reference channel.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 29781bce6a6a78cf8634e233cb8dc9460c1421dc3f2c44014cd15d29ada05fad

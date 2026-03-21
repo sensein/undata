@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/detection_method_f37699e4d0b3
+  - https://schema.undata.live/elements/eventdetection_fdf2b2119c98
+  - https://schema.undata.live/elements/source_idx_8845347e4298
+  - https://schema.undata.live/elements/times_d6f167ca9327
+  mixins: []
+provenance:
+- source: nwb
+  name: EventDetection
+  generated_at: '2026-03-21T05:07:31.293131+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0776cdc03ca590b993c9343d9594e678cd9f418d565d37d56d5d8a07411229c0

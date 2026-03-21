@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/abstractionLevel
+  source_class: model.schema.omi
+provenance:
+- source: openminds
+  class: model.schema.omi
+  name: https://openminds.om-i.org/props/abstractionLevel
+  description: Extent of simplification of physical, spatial, or temporal details
+    or attributes in the study of objects or systems.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: efcaddddf660d5f43f4c74076c6f9e1c2fd9ebc0eefb53ceadca695ccffbfe88

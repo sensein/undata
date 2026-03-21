@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredCrossReference
+  source_class: stimulationApproach.schema.omi
+provenance:
+- source: openminds
+  class: stimulationApproach.schema.omi
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 375778a0dc04c642b8f331a65590e5e70f11cc33d91de13938931b5a6afdf2c9

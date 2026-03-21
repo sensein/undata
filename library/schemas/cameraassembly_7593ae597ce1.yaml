@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/camera_6c94e4f80d90
+  - https://schema.undata.live/elements/coordinate_system_a352f65656c9
+  - https://schema.undata.live/elements/filter_aa2c8f3bb442
+  - https://schema.undata.live/elements/lens_02b36198e6fa
+  - https://schema.undata.live/elements/name_90891d093f27
+  - https://schema.undata.live/elements/relative_position_cf31483aae09
+  - https://schema.undata.live/elements/target_90b38583e48b
+  - https://schema.undata.live/elements/transform_2a21e2e8f6a5
+  mixins: []
+provenance:
+- source: aind
+  name: CameraAssembly
+  generated_at: '2026-03-21T05:07:50.842709+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7593ae597ce1d6b7248eff723fbe89f53b3f0b9a8ba6c3054944d0c3d5938424

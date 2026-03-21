@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: blood
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: blood
+  description: 'Blood measurements of radioactivity stored in
+
+    [tabular files](SPEC_ROOT/common-principles.md#tabular-files)
+
+    and located in the `pet/` directory along with the corresponding PET data.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 958905509593cec2afcc5c21ce99c527215edc147cf23f7f2b21cc09352736d5

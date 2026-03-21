@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+  source_attribute: https://openminds.om-i.org/props/elevation
+  source_class: geoCoordinates.schema.omi
+provenance:
+- source: openminds
+  class: geoCoordinates.schema.omi
+  name: https://openminds.om-i.org/props/elevation
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 80fa345637247722771bae448d896fbdb73b3b133952a1f9714e4aedb16c5eb6

@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  source_attribute: x
+  source_class: ElectrodesTable
+provenance:
+- source: nwb
+  class: ElectrodesTable
+  name: x
+  description: x coordinate of the channel location in the brain (+x is posterior).
+    Units should be specified in microns.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2b0a14e94d81b6dfc5a1c2a2677f5584fbe09e8852b38bb6612fada53bd15296

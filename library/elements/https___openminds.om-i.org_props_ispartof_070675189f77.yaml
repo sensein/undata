@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/isPartOf
+  source_class: tissueSampleCollection.schema.omi
+provenance:
+- source: openminds
+  class: tissueSampleCollection.schema.omi
+  name: https://openminds.om-i.org/props/isPartOf
+  description: Reference to the ensemble of multiple things or beings.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 070675189f7747e8fe1a5a7a9efddc2511eb963af9803ce3552a261e3757d2b5

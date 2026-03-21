@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/pathology
+  source_class: subjectState.schema.omi
+provenance:
+- source: openminds
+  class: subjectState.schema.omi
+  name: https://openminds.om-i.org/props/pathology
+  description: Structural and functional deviation from the normal that constitutes
+    a disease or characterizes a particular disease.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 69c917fb5940a8a2ce44a1942fd5d3085b6b4770f0f8739ac6c4d49a9e302a87

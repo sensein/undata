@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  source_attribute: axis_descriptions
+  source_class: ImagingRetinotopy
+provenance:
+- source: nwb
+  class: ImagingRetinotopy
+  name: axis_descriptions
+  description: Two-element array describing the contents of the two response axis
+    fields. Description should be something like ['altitude', 'azimuth'] or '['radius',
+    'theta'].
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6b3c82c49487a63f41b1fe6cf78239bcc2da6671a43880d025d620666012504e

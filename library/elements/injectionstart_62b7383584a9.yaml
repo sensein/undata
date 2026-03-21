@@ -1,0 +1,23 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: InjectionStart
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: InjectionStart
+  description: 'Time of start of injection with respect to `"TimeZero"` in the default
+    unit
+
+    seconds.
+
+    This corresponds to [DICOM Tag 0018, 1072](http://www.dicomlookup.com/dicomtags/(0018,1072))
+
+    `Contrast/Bolus Start Time` converted to seconds relative to `"TimeZero"`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 62b7383584a9ca88ee0d9d15c8eb068f059043bc16aa26c4f8c91b78d3b9e9c6

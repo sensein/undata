@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/otherOntologyIdentifier
+  source_class: biologicalSex.schema.omi
+provenance:
+- source: openminds
+  class: biologicalSex.schema.omi
+  name: https://openminds.om-i.org/props/otherOntologyIdentifier
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 630132cc00171d8ef17098b6908f3843d02b9ba2345843b687ee2cfe0344336a

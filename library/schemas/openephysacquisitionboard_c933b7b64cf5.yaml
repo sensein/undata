@@ -1,0 +1,21 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_c7f573e5be93
+  - https://schema.undata.live/elements/channels_4326f4cc1db6
+  - https://schema.undata.live/elements/data_interface_5b8169aeb7b4
+  - https://schema.undata.live/elements/firmware_version_672c928930f9
+  - https://schema.undata.live/elements/hardware_version_f04674a78606
+  - https://schema.undata.live/elements/manufacturer_cabe61ef8a7c
+  - https://schema.undata.live/elements/model_b503a692781a
+  - https://schema.undata.live/elements/name_36417853cae5
+  - https://schema.undata.live/elements/notes_0c93b774b3a9
+  - https://schema.undata.live/elements/ports_1f73c18e2ea8
+  - https://schema.undata.live/elements/serial_number_cb928266b480
+  mixins: []
+provenance:
+- source: aind
+  name: OpenEphysAcquisitionBoard
+  generated_at: '2026-03-21T05:07:50.824473+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c933b7b64cf53e19799e5f2e08e630f5006e051872ccac17e55035a5d5ac3b54

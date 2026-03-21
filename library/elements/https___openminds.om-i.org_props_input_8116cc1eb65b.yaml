@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/input
+  source_class: cellPatching.schema.omi
+provenance:
+- source: openminds
+  class: cellPatching.schema.omi
+  name: https://openminds.om-i.org/props/input
+  description: Something or someone that is put into or participates in a process
+    or machine.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8116cc1eb65bb56fd0f01ff0277092f4291bd0bd6487694b0a71b04d5435f266

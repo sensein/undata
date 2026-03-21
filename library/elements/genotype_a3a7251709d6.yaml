@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: genotype
+  source_class: Participant
+provenance:
+- source: dandi
+  class: Participant
+  name: genotype
+  description: Genotype descriptor of participant or subject if available
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a3a7251709d66e468bdb4a66791f43454d53a81c511aa93757d5daa026269ca1

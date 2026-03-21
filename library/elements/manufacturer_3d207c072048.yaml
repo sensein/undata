@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Manufacturer
+  source_attribute: manufacturer
+  source_class: EphysProbe
+provenance:
+- source: aind
+  class: EphysProbe
+  name: manufacturer
+  description: Manufacturer
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3d207c07204817fc6c40bf9fbf4b15156522051914b909f4dffa55921a090f13

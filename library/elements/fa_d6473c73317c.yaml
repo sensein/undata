@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: FA
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: FA
+  description: 'Scanner-generated derivative parametric map
+
+    reflecting the anisotropy of the diffusion tensor
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d6473c73317cf8ceabbd22e56a4801dc63baeb5c84f9ba0d548d49a80f68ac0a

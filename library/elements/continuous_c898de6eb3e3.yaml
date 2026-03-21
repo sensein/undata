@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: continuous
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: continuous
+  description: 'Continuous recording.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c898de6eb3e34bd150e203e86c2116b02497423e424d5d6560bca15a879fb876

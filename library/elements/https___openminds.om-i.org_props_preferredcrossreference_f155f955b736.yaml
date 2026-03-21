@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredCrossReference
+  source_class: differenceMeasure.schema.omi
+provenance:
+- source: openminds
+  class: differenceMeasure.schema.omi
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f155f955b736493663cc5a8425d2d4cf8290e4d36d2ca9a1ffdebc3f37e13be9

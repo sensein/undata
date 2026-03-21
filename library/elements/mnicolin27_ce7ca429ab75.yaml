@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: MNIColin27
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: MNIColin27
+  description: 'Average of 27 T1 scans of a single subject.
+
+
+    Used by SPM96.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ce7ca429ab755ed9a492fcc4a2d65e1830bd13adf31ecdf24bb1449f3eeb5174

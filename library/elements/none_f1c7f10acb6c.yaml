@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: None
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: None
+  description: 'A file with no extension.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f1c7f10acb6c60ea14d36e43f8dbe07a05deb49159316b1644f91731e83a8834

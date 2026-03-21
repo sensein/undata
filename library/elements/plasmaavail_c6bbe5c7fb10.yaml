@@ -1,0 +1,16 @@
+semantic:
+  data_type: boolean
+  value_domain: boolean
+  source_attribute: PlasmaAvail
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: PlasmaAvail
+  description: 'Boolean that specifies if plasma measurements are available.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c6bbe5c7fb101acc136bf6154404a384cbe767b93359248a5fac220a4d1775f7

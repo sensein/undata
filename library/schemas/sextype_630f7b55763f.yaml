@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/id_609ed47b0796
+  - https://schema.undata.live/elements/identifier_84f7495ffaa9
+  - https://schema.undata.live/elements/name_64d23efc7546
+  - https://schema.undata.live/elements/schemakey_39ee46bf4176
+  mixins: []
+provenance:
+- source: dandi
+  name: SexType
+  generated_at: '2026-03-21T05:07:14.181465+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 630f7b55763f5c1acb11f4c80566b199c80add22065caeeef2875cd0a2eeff81

@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  question_text: Asset location
+  source_attribute: url
+  source_class: DataAsset
+provenance:
+- source: aind
+  class: DataAsset
+  name: url
+  description: URL pointing to the data asset
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: DataAsset
+  name: url
+  description: URL pointing to the data asset
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: DataAsset
+  name: url
+  description: URL pointing to the data asset
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 18b24b956e7c6389ede8d7a9ca20fe85d54bbfff9bd7138c5683bca236626f7f

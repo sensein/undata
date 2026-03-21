@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: session_id
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: session_id
+  description: 'A session identifier of the form `ses-<label>`,
+
+    matching a session found in the dataset.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 84fa7f508797f56c02727005e29dab16e9ead22c4fe2b1b87225337cdb9fb79e

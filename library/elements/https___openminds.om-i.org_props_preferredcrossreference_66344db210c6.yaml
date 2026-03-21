@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredCrossReference
+  source_class: vascularStructure.schema.omi
+provenance:
+- source: openminds
+  class: vascularStructure.schema.omi
+  name: https://openminds.om-i.org/props/preferredCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 66344db210c6b4f3ff70f6b7af643cf5f6b334a71cbd334528693a0e9cedc737

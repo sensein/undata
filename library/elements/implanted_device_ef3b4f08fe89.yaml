@@ -1,0 +1,15 @@
+semantic:
+  data_type: object
+  question_text: Implanted device
+  source_attribute: implanted_device
+  source_class: MyomatrixInsertion
+  type_ref: MyomatrixArray
+provenance:
+- source: aind
+  class: MyomatrixInsertion
+  name: implanted_device
+  description: Description of a Myomatrix array
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ef3b4f08fe89fef58249f083e93ffb7a9f5889f72056be870b54f94198b7e22a

@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_scan_parameters_ce7811f7f3e6
+  - https://schema.undata.live/elements/affine_transform_2455875cb5aa
+  - https://schema.undata.live/elements/device_name_9f40b15f47b1
+  - https://schema.undata.live/elements/echo_time_acee162916e2
+  - https://schema.undata.live/elements/echo_time_unit_e86463b9080f
+  - https://schema.undata.live/elements/effective_echo_time_acb2fe8e29b5
+  - https://schema.undata.live/elements/index_cf0a59576d50
+  - https://schema.undata.live/elements/mr_acquisition_type_61f92d8a9be2
+  - https://schema.undata.live/elements/notes_f97989688cd4
+  - https://schema.undata.live/elements/pulse_sequence_type_6efabe92a88e
+  - https://schema.undata.live/elements/rare_factor_1ce2f8c8b894
+  - https://schema.undata.live/elements/repetition_time_f616cf03d98b
+  - https://schema.undata.live/elements/repetition_time_unit_9931e43d6ed1
+  - https://schema.undata.live/elements/resolution_6ec3add43a71
+  - https://schema.undata.live/elements/resolution_unit_1be718bf4351
+  - https://schema.undata.live/elements/scanner_coordinate_system_a3d4b52a6e02
+  - https://schema.undata.live/elements/setup_66f8e445e889
+  - https://schema.undata.live/elements/subject_position_15b268688445
+  mixins: []
+provenance:
+- source: aind
+  name: MRIScan
+  generated_at: '2026-03-21T05:07:50.807037+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6e5907a29868dee11705e5ab0e09562333c30991b9b053d454ffdba9d610ec8f

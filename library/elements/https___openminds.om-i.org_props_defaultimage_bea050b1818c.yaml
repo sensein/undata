@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/defaultImage
+  source_class: commonCoordinateFrameworkVersion.schema.omi
+provenance:
+- source: openminds
+  class: commonCoordinateFrameworkVersion.schema.omi
+  name: https://openminds.om-i.org/props/defaultImage
+  description: Two or three dimensional image that particluarly represents a specific
+    coordinate space.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bea050b1818cb72d038f77885426746b83307e86842c26f4f5fe7bec3456ee7d

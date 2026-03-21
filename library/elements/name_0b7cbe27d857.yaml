@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Name
+  source_attribute: name
+  source_class: aind_data_schema_models__harp_types___Behavior
+provenance:
+- source: aind
+  class: aind_data_schema_models__harp_types___Behavior
+  name: name
+  description: Name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0b7cbe27d8571656251f5885b35cd97a3b66aa08d62a3bb813ba1b6ce8b049ab

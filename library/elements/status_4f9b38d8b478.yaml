@@ -1,0 +1,36 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Fail
+    - Pass
+    - Pending
+  response_options:
+  - value: Fail
+    label: Fail
+    ontology_term: https://schema.undata.live/values/fail_0d88b907cb5a
+  - value: Pass
+    label: Pass
+    ontology_term: https://schema.undata.live/values/pass_4764f88e662d
+  - value: Pending
+    label: Pending
+    ontology_term: https://schema.undata.live/values/pending_95b1b5bd67b1
+  question_text: Status
+  source_attribute: status
+  source_class: QCStatus
+provenance:
+- source: aind
+  class: QCStatus
+  name: status
+  description: QC Status
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: QCStatus
+  name: status
+  description: QC Status
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4f9b38d8b478d65882bcbfb68983bb815871901663ec75c064be363f167a5522

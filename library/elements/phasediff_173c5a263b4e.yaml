@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: phasediff
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: phasediff
+  description: 'Some scanners subtract the `phase1` from the `phase2` map and generate
+    a
+
+    unique `phasediff` file.
+
+    For instance, this is a common output for the built-in fieldmap sequence of
+
+    Siemens scanners.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 173c5a263b4e674444a9c1d858a225417c4c3d071aeddd99c4640e8e559af647

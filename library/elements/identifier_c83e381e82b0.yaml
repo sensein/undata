@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: identifier
+  source_class: Software
+provenance:
+- source: dandi
+  class: Software
+  name: identifier
+  description: RRID of the software from scicrunch.org.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c83e381e82b0aa19be99e117ea5d6ce502b10f8444bd44c6b6b03181a1042d09

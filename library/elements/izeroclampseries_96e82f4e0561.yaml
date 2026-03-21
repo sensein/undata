@@ -1,0 +1,16 @@
+semantic:
+  data_type: object
+  source_attribute: IZeroClampSeries
+  source_class: IZeroClampSeries
+provenance:
+- source: nwb
+  class: IZeroClampSeries
+  name: IZeroClampSeries
+  description: Voltage data from an intracellular recording when all current and amplifier
+    settings are off (i.e., CurrentClampSeries fields will be zero). There is no CurrentClampStimulusSeries
+    associated with an IZero series because the amplifier is disconnected and no stimulus
+    can reach the cell.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 96e82f4e0561b3ee0c1192425d02ee455d64f9e2f509bf074839bf41dfed185a

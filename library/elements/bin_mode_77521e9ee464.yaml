@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Additive
+    - Average
+    - No binning
+  response_options:
+  - value: Additive
+    label: Additive
+    ontology_term: https://schema.undata.live/values/additive_b44a1f6844e1
+  - value: Average
+    label: Average
+    ontology_term: https://schema.undata.live/values/average_99c9ef88994c
+  - value: No binning
+    label: No binning
+    ontology_term: https://schema.undata.live/values/no_binning_03b4d29b4cac
+  question_text: Detector binning mode
+  source_attribute: bin_mode
+  source_class: Camera
+provenance:
+- source: aind
+  class: Camera
+  name: bin_mode
+  description: Detector binning mode
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 77521e9ee4649e6780c684d740632bf9f2b085e42fad514beda9b7dcc03b6e72

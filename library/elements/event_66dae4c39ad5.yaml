@@ -1,0 +1,41 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: event
+  source_class: common_principles
+provenance:
+- source: bids
+  class: common_principles
+  name: event
+  description: 'Something that happens or may be perceived by a test subject as happening
+
+    at a particular instant during the recording.
+
+    Events are most commonly associated with on- or offset of stimulus presentations,
+
+    or with the distinct marker of on- or offset of a subject''s response or motor
+    action.
+
+    Other events may include unplanned incidents
+
+    (for example, sudden onset of noise and vibrations due to construction work,
+
+    laboratory device malfunction),
+
+    changes in task instructions (for example, switching the response hand),
+
+    or experiment control parameters (for example, changing the stimulus presentation
+    rate over experimental blocks),
+
+    and noted data feature occurrences (for example, a recording electrode producing
+    noise).
+
+    In BIDS, each event has an onset time and duration.
+
+    Note that not all tasks will have recorded events (for example, "resting state").
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 66dae4c39ad50023368b7f46837e8d8b4ed1e04544e468e452a54c219e0894f5

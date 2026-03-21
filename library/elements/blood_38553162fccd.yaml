@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: blood
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: blood
+  description: 'The origin of a sample: blood
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 38553162fccd1a433cbef85a31750ff14bba6e945306ebe492be35591371b5b6

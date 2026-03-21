@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Serial number
+  source_attribute: serial_number
+  source_class: HarpDevice
+provenance:
+- source: aind
+  class: HarpDevice
+  name: serial_number
+  description: Serial number
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1e127f5e34623da215f3ae2d9d1b3007236352e6c8df312794a5377287927545

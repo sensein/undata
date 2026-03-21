@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: multipwmgenerator
-provenance:
-- source: aind
-  raw_value: aind.instrument.HarpDevice.harp_device_type.Multipwmgenerator
-- source: aind
-  raw_value: aind.metadata.HarpDevice.harp_device_type.Multipwmgenerator

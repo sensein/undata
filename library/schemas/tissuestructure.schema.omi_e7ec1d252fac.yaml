@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/definition_9df13dfa427a
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_b5587691c185
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_13189cd49ed9
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/othercrossreference_3488c05ec1c7
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/otherontologyidentifier_cb2041944646
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preferredcrossreference_4b4367c98d4c
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preferredontologyidentifier_2611ece998a0
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/synonym_ba54ae3dfb09
+  mixins: []
+provenance:
+- source: openminds
+  name: tissueStructure.schema.omi
+  generated_at: '2026-03-21T05:08:25.323476+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e7ec1d252fac9b2e81a86c9d3bc5b933661422ec5ceb74da3a54d8734813c50d

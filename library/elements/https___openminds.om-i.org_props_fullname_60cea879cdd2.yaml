@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/fullName
+  source_class: software.schema.omi
+provenance:
+- source: openminds
+  class: software.schema.omi
+  name: https://openminds.om-i.org/props/fullName
+  description: Whole, non-abbreviated name of something or somebody.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 60cea879cdd2bda10520e36cbe5ba744ca0915497a5ac14158632d5b44d39188

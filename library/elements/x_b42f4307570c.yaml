@@ -1,0 +1,16 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: x
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: x
+  description: 'Recorded position along the x-axis.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b42f4307570cd2df8afc704e0443deabba887f5405d4d1638c5829114e94cf46

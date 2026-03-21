@@ -1,0 +1,28 @@
+semantic:
+  data_type: integer
+  question_text: CPU cores
+  source_attribute: cpu_cores
+  source_class: ResourceUsage
+provenance:
+- source: aind
+  class: ResourceUsage
+  name: cpu_cores
+  description: CPU cores
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ResourceUsage
+  name: cpu_cores
+  description: CPU cores
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: ResourceUsage
+  name: cpu_cores
+  description: CPU cores
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f7213f925b08e96cebe879814a1e939232a8d430bc1c44cf413a856ff757dc47

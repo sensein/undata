@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: contributor
+  source_class: Dandiset
+provenance:
+- source: dandi
+  class: Dandiset
+  name: contributor
+  description: People or Organizations that have contributed to this Dandiset.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a4130aa52f22863bbb718bafb4ae645d0bead20089685932ab3a6fb741993c7e

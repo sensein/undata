@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/hasAnnotation
+  source_class: parcellationEntityVersion.schema.omi
+provenance:
+- source: openminds
+  class: parcellationEntityVersion.schema.omi
+  name: https://openminds.om-i.org/props/hasAnnotation
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bc8abad526f04bf8f6950e30fa04ecc7c9adfa6394ef5bd0b068a1a55e0005ca

@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: mefd
+  source_class: extensions
+provenance:
+- source: bids
+  class: extensions
+  name: mefd
+  description: 'A directory in the [MEF3](https://osf.io/e3sf9/) format.
+
+
+    Each recording consists of a `.mefd` directory.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 71a74b55afac08fb9058190d1938a6262d46cb70e14c84d64e08d402776045dd

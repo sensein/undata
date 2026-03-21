@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  source_attribute: protocol
+  source_class: CommonModel
+provenance:
+- source: dandi
+  class: CommonModel
+  name: protocol
+  description: A list of persistent URLs describing the protocol (e.g. protocols.io,
+    or other DOIs).
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: aff0d6062dc63b72e91ff7100f13e1185955ff439a65f9cd7ec64e05f3148263

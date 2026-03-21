@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: y
-provenance:
-- source: bids
-  raw_value: y
-- source: aind
-  raw_value: Y

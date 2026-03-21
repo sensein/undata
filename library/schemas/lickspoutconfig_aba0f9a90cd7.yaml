@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/coordinate_system_03c8d85932f1
+  - https://schema.undata.live/elements/device_name_940778514e6e
+  - https://schema.undata.live/elements/notes_8e1ad43c7a1c
+  - https://schema.undata.live/elements/relative_position_953a1239eb37
+  - https://schema.undata.live/elements/solution_61a26603641d
+  - https://schema.undata.live/elements/solution_valence_634874e5ff01
+  - https://schema.undata.live/elements/transform_3d46ef49a6f0
+  - https://schema.undata.live/elements/volume_feca653b6c48
+  - https://schema.undata.live/elements/volume_unit_108d302a5c90
+  mixins: []
+provenance:
+- source: aind
+  name: LickSpoutConfig
+  generated_at: '2026-03-21T05:07:50.853705+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: aba0f9a90cd7629d5d94b888ae346696533b6e3c77864be2a46435375b0191ae

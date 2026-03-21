@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Training protocol start date
+  source_attribute: start_date
+  source_class: TrainingProtocol
+provenance:
+- source: aind
+  class: TrainingProtocol
+  name: start_date
+  description: Training protocol start date
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b673009c583cbd40b891df4608370055c98a2c079ef68ec24c60f5a3c36e7193

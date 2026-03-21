@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/startTime
+  source_class: genericComputation.schema.omi
+provenance:
+- source: openminds
+  class: genericComputation.schema.omi
+  name: https://openminds.om-i.org/props/startTime
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cf9a7215fec1ca79203e596fe8f1269d73e4a00f15734cfd7489273cb1b65a61

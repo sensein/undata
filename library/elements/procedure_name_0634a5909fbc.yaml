@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Procedure name
+  source_attribute: procedure_name
+  source_class: SpecimenProcedure
+provenance:
+- source: aind
+  class: SpecimenProcedure
+  name: procedure_name
+  description: Procedure name
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0634a5909fbc13db93c759a09b963d4f8b8fc62e1c1eee923e8082c3537659e0

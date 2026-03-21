@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+  source_attribute: axis_1_phase_map
+  source_class: ImagingRetinotopy
+provenance:
+- source: nwb
+  class: ImagingRetinotopy
+  name: axis_1_phase_map
+  description: Phase response to stimulus on the first measured axis.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ab6eaa841f00460295347789a6264bedc6ba6fd2ee24ab839845b71b38f37a3d

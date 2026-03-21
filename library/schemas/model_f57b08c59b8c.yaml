@@ -1,0 +1,21 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/architecture_398b4f0dc05f
+  - https://schema.undata.live/elements/architecture_parameters_6433bf928c2a
+  - https://schema.undata.live/elements/evaluations_f4a24d03aefd
+  - https://schema.undata.live/elements/example_run_code_9c1071b3d822
+  - https://schema.undata.live/elements/intended_use_87c2c451c5f9
+  - https://schema.undata.live/elements/limitations_6d350a08bfbb
+  - https://schema.undata.live/elements/name_e1dd1a3c90e4
+  - https://schema.undata.live/elements/notes_6f8d9676910a
+  - https://schema.undata.live/elements/software_framework_c79035931388
+  - https://schema.undata.live/elements/training_8c37d221fec7
+  - https://schema.undata.live/elements/version_182a293ccf54
+  mixins: []
+provenance:
+- source: aind
+  name: model
+  generated_at: '2026-03-21T05:07:50.835532+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f57b08c59b8c17682d1d0e549cd3456c24c7cad27aa41c8ff058cdc43fb318ff

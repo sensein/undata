@@ -1,0 +1,15 @@
+semantic:
+  data_type: integer
+  question_text: Flow capacity
+  min_value: 0.0
+  source_attribute: flow_capacity
+  source_class: OlfactometerChannel
+provenance:
+- source: aind
+  class: OlfactometerChannel
+  name: flow_capacity
+  description: Flow capacity
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 16facb393145e3b478ec3f4e0988f1ab74dc285f4e52b16b2fc16674919b78e0

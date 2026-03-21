@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/definition_34fd36e70bfb
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/description_6b26f22191b8
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/name_3b8f0e92dc83
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/othercrossreference_3f9f3042f3eb
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/otherontologyidentifier_d4b92870dca5
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preferredcrossreference_30ced279d6f3
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/preferredontologyidentifier_f3ae06ebed0d
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/synonym_f01e73c68c6e
+  mixins: []
+provenance:
+- source: openminds
+  name: signalDirectionality.schema.omi
+  generated_at: '2026-03-21T05:08:25.296445+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6bf9c5a5e0b626d163635ccd59966caa878471b69fe2492e438991b64b6b9084

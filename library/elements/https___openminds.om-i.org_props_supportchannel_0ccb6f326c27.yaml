@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/supportChannel
+  source_class: workflowRecipeVersion.schema.omi
+provenance:
+- source: openminds
+  class: workflowRecipeVersion.schema.omi
+  name: https://openminds.om-i.org/props/supportChannel
+  description: Way of communication used to interact with users or customers.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0ccb6f326c27a35d8d2417c8db755fe848165916f9c0f4812e4720d07c3ffdba

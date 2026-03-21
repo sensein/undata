@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/correctedimagestack_fae83fd2ed52
+  mixins: []
+provenance:
+- source: nwb
+  name: CorrectedImageStack
+  generated_at: '2026-03-21T05:07:31.282470+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9133eae66634a77c0cabd4a775e5473e8f1e687c5abe07f1c5e2af27436c3f6e

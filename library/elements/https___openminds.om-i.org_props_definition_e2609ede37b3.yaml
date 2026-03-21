@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/definition
+  source_class: handedness.schema.omi
+provenance:
+- source: openminds
+  class: handedness.schema.omi
+  name: https://openminds.om-i.org/props/definition
+  description: Short, but precise statement of the meaning of a word, word group,
+    sign or a symbol.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e2609ede37b3f17f24616a0216efad13efe23b432c43759b5a563304ad3126cd

@@ -1,0 +1,22 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: pet
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: pet
+  description: 'PET imaging data SHOULD be stored in 4D
+
+    (or 3D, if only one volume was acquired) NIfTI files with the `_pet` suffix.
+
+    Volumes MUST be stored in chronological order
+
+    (the order they were acquired in).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a41399b703414141d25b7495f5b1d6bd9609f8ccfec5b44983cbd6907047612c

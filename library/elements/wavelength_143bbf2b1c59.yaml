@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Wavelength (nm)
+  source_attribute: wavelength
+  source_class: LaserConfig
+provenance:
+- source: aind
+  class: LaserConfig
+  name: wavelength
+  description: Wavelength (nm)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 143bbf2b1c594b8ad527fc0e2013f25673d73c11fa3dfb1116a266eccd9ae8c4

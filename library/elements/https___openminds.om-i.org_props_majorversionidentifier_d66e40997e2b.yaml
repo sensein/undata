@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/majorVersionIdentifier
+  source_class: anatomicalAtlasVersion.schema.omi
+provenance:
+- source: openminds
+  class: anatomicalAtlasVersion.schema.omi
+  name: https://openminds.om-i.org/props/majorVersionIdentifier
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d66e40997e2b6643f21ec36735371c9690e6c42565a3712be2dcd780063e8891

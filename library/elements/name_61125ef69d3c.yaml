@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: name
+  source_class: Anatomy
+provenance:
+- source: dandi
+  class: Anatomy
+  name: name
+  description: The name of the item.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 61125ef69d3c4e46622ae751dfd403fe7565d221106f86fdb874dc864531d62a

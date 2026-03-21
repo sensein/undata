@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  min_value: 0.0
+  max_value: 1.0
+  source_attribute: metabolite_polar_fraction
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: metabolite_polar_fraction
+  description: 'Polar metabolite fraction of the radiotracer (0-1).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7d56dac3459e3d81e85cc0eab64a736d60ea5f87f2879ab9fed579b60aa148eb

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/otherCrossReference
+  source_class: biologicalOrder.schema.omi
+provenance:
+- source: openminds
+  class: biologicalOrder.schema.omi
+  name: https://openminds.om-i.org/props/otherCrossReference
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 23dbb2308a5b339fd2c01b5c0ef392bedcfdb2c2fdd9fdbd9e8c387de4101521

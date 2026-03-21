@@ -1,0 +1,21 @@
+semantic:
+  data_type: object
+  source_attribute: ImagingRetinotopy
+  source_class: ImagingRetinotopy
+provenance:
+- source: nwb
+  class: ImagingRetinotopy
+  name: ImagingRetinotopy
+  description: 'DEPRECATED. Intrinsic signal optical imaging or widefield imaging
+    for measuring retinotopy. Stores orthogonal maps (e.g., altitude/azimuth; radius/theta)
+    of responses to specific stimuli and a combined polarity map from which to identify
+    visual areas. This group does not store the raw responses imaged during retinotopic
+    mapping or the stimuli presented, but rather the resulting phase and power maps
+    after applying a Fourier transform on the averaged responses. Note: for data consistency,
+    all images and arrays are stored in the format [row][column] and [row, col], which
+    equates to [y][x]. Field of view and dimension arrays may appear backward (i.e.,
+    y before x).'
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 79a7ed45f5bace13daa26a5e4399f08b45e37043548e577d457246d253486c93

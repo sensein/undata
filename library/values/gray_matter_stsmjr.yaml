@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: gray_matter
-provenance:
-- source: bids
-  raw_value: gray matter

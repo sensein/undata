@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Model limitations
+  source_attribute: limitations
+  source_class: model
+provenance:
+- source: aind
+  class: model
+  name: limitations
+  description: Model limitations
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6d350a08bfbb7581567c8b1f707cca65ac7f882f22b400664dc5c7660f765406

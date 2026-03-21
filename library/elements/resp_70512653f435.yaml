@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: RESP
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: RESP
+  description: 'Respiration.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 70512653f435ac808342b29b58d7653111a7d8aec44b80a3b51df3aa49ec6452

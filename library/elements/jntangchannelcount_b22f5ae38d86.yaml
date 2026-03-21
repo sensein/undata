@@ -1,0 +1,17 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  min_value: 0.0
+  source_attribute: JNTANGChannelCount
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: JNTANGChannelCount
+  description: 'Number of joint angle channels.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b22f5ae38d8602440a139de0872441a0c0c6fac81ef0f965f3d6a2b7bf5847fb

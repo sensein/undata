@@ -1,0 +1,21 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/additional_settings_e1e5c5c9f0b8
+  - https://schema.undata.live/elements/lick_sensor_725d4d78acc9
+  - https://schema.undata.live/elements/lick_sensor_type_0383eb513a07
+  - https://schema.undata.live/elements/manufacturer_7c1ecdec22b2
+  - https://schema.undata.live/elements/model_93c92569041b
+  - https://schema.undata.live/elements/name_089e26408f2c
+  - https://schema.undata.live/elements/notes_6338a3c1458a
+  - https://schema.undata.live/elements/serial_number_05b7dfa5ba62
+  - https://schema.undata.live/elements/solenoid_valve_8c290d0f3486
+  - https://schema.undata.live/elements/spout_diameter_206147c15c00
+  - https://schema.undata.live/elements/spout_diameter_unit_3b85e48d68e6
+  mixins: []
+provenance:
+- source: aind
+  name: LickSpout
+  generated_at: '2026-03-21T05:07:50.826084+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b92b284c7ef6f60c677a098c638e49232c3cd02220070218af222a91aaf1b690

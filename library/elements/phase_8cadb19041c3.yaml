@@ -1,0 +1,26 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: phase
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: phase
+  description: '[DEPRECATED](SPEC_ROOT/common-principles.md#definitions).
+
+    Phase information associated with magnitude information stored in BOLD
+
+    contrast.
+
+    This suffix should be replaced by the
+
+    [`part-phase`](SPEC_ROOT/appendices/entities.md#part)
+
+    in conjunction with the `bold` suffix.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8cadb19041c3189cef7f93c95626a9121ef19851b438bab205f6c264a0504c78

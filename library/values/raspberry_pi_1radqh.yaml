@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: raspberry_pi
-provenance:
-- source: aind
-  raw_value: aind.acquisition.NonViralMaterial.source.Raspberry_Pi
-- source: aind
-  raw_value: aind.metadata.FluorescentStain.source.Raspberry_Pi

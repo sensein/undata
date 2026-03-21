@@ -1,0 +1,13 @@
+semantic:
+  data_type: object
+  source_attribute: Position
+  source_class: Position
+provenance:
+- source: nwb
+  class: Position
+  name: Position
+  description: Position data, whether along the x, x/y or x/y/z axis.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7ce494d8800f157f10a83e6fbef67d1a80a6bee83c91d7dc0716e4b318febb72

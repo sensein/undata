@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/gene_47pgx2
-  - https://schema.undata.live/elements/probes_422vn4
-  mixins: []
-provenance:
-- source: aind
-  name: GeneProbe

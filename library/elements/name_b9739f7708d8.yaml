@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  source_attribute: name
+  source_class: Project
+provenance:
+- source: dandi
+  class: Project
+  name: name
+  description: The name of the project that generated this Dandiset or asset.
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b9739f7708d8e79a8d878ca7ca9d155b864dfcae5a63231e82da232e81d39110

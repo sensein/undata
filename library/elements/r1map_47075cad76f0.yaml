@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: R1map
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: R1map
+  description: 'In seconds<sup>-1</sup> (1/s).
+
+    R1 maps (R1 = 1/T1) are REQUIRED to use this suffix regardless of the method
+
+    used to generate them.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 47075cad76f088d73a1b63f64b64164485e63f4510068938fb063195b63ddb94

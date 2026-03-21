@@ -1,0 +1,89 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Origin
+    - Bregma
+    - Lambda
+    - Between_C1-C2
+    - Between_C2-C3
+    - Between_C3-C4
+    - Between_C4-C5
+    - Between_C6-C7
+    - Between_C7-C8
+    - Between_C8-T1
+    - Between_T1-T2
+    - Tip
+    - Front_center
+    - Arena_center
+    - Arena_front_left
+    - Arena_front_right
+    - Arena_back_left
+    - Arena_back_right
+  response_options:
+  - value: Origin
+    label: Origin
+    ontology_term: https://schema.undata.live/values/origin_7bde644228ff
+  - value: Bregma
+    label: Bregma
+    ontology_term: https://schema.undata.live/values/bregma_3500ad683b3b
+  - value: Lambda
+    label: Lambda
+    ontology_term: https://schema.undata.live/values/lambda_46d80de0ee2c
+  - value: Between_C1-C2
+    label: Between_C1-C2
+    ontology_term: https://schema.undata.live/values/between_c1-c2_d9f088176f08
+  - value: Between_C2-C3
+    label: Between_C2-C3
+    ontology_term: https://schema.undata.live/values/between_c2-c3_c800e732ede2
+  - value: Between_C3-C4
+    label: Between_C3-C4
+    ontology_term: https://schema.undata.live/values/between_c3-c4_b72f15dc2deb
+  - value: Between_C4-C5
+    label: Between_C4-C5
+    ontology_term: https://schema.undata.live/values/between_c4-c5_49d71f367307
+  - value: Between_C6-C7
+    label: Between_C6-C7
+    ontology_term: https://schema.undata.live/values/between_c6-c7_8f98bc3be0f0
+  - value: Between_C7-C8
+    label: Between_C7-C8
+    ontology_term: https://schema.undata.live/values/between_c7-c8_5a1fd02d7474
+  - value: Between_C8-T1
+    label: Between_C8-T1
+    ontology_term: https://schema.undata.live/values/between_c8-t1_ab3a26c8eaf8
+  - value: Between_T1-T2
+    label: Between_T1-T2
+    ontology_term: https://schema.undata.live/values/between_t1-t2_f71d274f50f9
+  - value: Tip
+    label: Tip
+    ontology_term: https://schema.undata.live/values/tip_d1a07a10474a
+  - value: Front_center
+    label: Front_center
+    ontology_term: https://schema.undata.live/values/front_center_c953df5531f1
+  - value: Arena_center
+    label: Arena_center
+    ontology_term: https://schema.undata.live/values/arena_center_7189a597e9b7
+  - value: Arena_front_left
+    label: Arena_front_left
+    ontology_term: https://schema.undata.live/values/arena_front_left_3d2f4f999c6b
+  - value: Arena_front_right
+    label: Arena_front_right
+    ontology_term: https://schema.undata.live/values/arena_front_right_ccb6daf42783
+  - value: Arena_back_left
+    label: Arena_back_left
+    ontology_term: https://schema.undata.live/values/arena_back_left_546d024ec1cb
+  - value: Arena_back_right
+    label: Arena_back_right
+    ontology_term: https://schema.undata.live/values/arena_back_right_1d2d58d4b012
+  question_text: Origin
+  source_attribute: origin
+  source_class: Atlas
+provenance:
+- source: aind
+  class: Atlas
+  name: origin
+  description: Defines the position of (0,0,0) in the coordinate system
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 71aee0979cacb57e4f91aa0831f29f1661803cae6a2e66d360a435211e18a452

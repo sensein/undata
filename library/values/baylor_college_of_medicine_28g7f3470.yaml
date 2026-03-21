@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: baylor_college_of_medicine
-provenance:
-- source: aind
-  raw_value: aind.subject.HumanSubject.source.Baylor_College_Of_Medicine

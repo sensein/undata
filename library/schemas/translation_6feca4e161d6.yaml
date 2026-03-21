@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/translation_159ca966d5f4
+  mixins: []
+provenance:
+- source: aind
+  name: Translation
+  generated_at: '2026-03-21T05:07:50.885593+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6feca4e161d6c083f23033ea2310e695a3670b8a6ace5d13f12bdf4d7bbc4865

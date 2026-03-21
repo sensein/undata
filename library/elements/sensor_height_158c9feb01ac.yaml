@@ -1,0 +1,14 @@
+semantic:
+  data_type: integer
+  question_text: Height of the sensor (pixels)
+  source_attribute: sensor_height
+  source_class: Detector
+provenance:
+- source: aind
+  class: Detector
+  name: sensor_height
+  description: Height of the sensor (pixels)
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 158c9feb01ace71079d4cd6aa4abbba3058303dafa56840a21fc06990e8b00d7

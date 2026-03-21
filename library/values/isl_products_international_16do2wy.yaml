@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: isl_products_international
-provenance:
-- source: aind
-  raw_value: aind.instrument.HarpDevice.manufacturer.Isl_Products_International

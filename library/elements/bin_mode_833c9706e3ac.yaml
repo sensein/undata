@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  constraints:
+    allowed_values:
+    - Additive
+    - Average
+    - No binning
+  response_options:
+  - value: Additive
+    label: Additive
+    ontology_term: https://schema.undata.live/values/additive_b44a1f6844e1
+  - value: Average
+    label: Average
+    ontology_term: https://schema.undata.live/values/average_99c9ef88994c
+  - value: No binning
+    label: No binning
+    ontology_term: https://schema.undata.live/values/no_binning_03b4d29b4cac
+  question_text: Detector binning mode
+  source_attribute: bin_mode
+  source_class: Detector
+provenance:
+- source: aind
+  class: Detector
+  name: bin_mode
+  description: Detector binning mode
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 833c9706e3acc0ccc06e88dd5a0e38c5b7b51bb03b9ad78599c395501e75a1be

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: technical_sample
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: technical_sample
+  description: 'A biosample type (`sample_type`): technical sample
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6fa281a4507e0c525e49bbeb5beeb0e8512abec5cb7a52aa2f7ffa374eb895c2

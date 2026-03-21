@@ -1,0 +1,20 @@
+semantic:
+  data_type: array
+  source_attribute: ReferencesAndLinks
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: ReferencesAndLinks
+  description: 'List of references to publications that contain information on the
+    dataset.
+
+    A reference may be textual or a
+
+    [URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator).
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f9f5dcfa92034f7e4592bf73ac458be05cb7679dfdbb16e7365296eec704f6b9

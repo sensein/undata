@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: MNI152Lin
+  source_class: enums
+provenance:
+- source: bids
+  class: enums
+  name: MNI152Lin
+  description: 'Also known as ICBM (version with linear coregistration).
+
+
+    Used by SPM99 to SPM8.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 41d05b83c79852502b5312edcf1d0ecdfd0fc3d7be4e1ded8f0e78044425263d

@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/diameters_9640d0abf45a
+  mixins: []
+provenance:
+- source: openminds
+  name: ellipse.schema.omi
+  generated_at: '2026-03-21T05:08:25.352882+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c04c68a6fefcf1b6a4e24d2f80ca67d892929582f3996c19e8d5f1706a6ae8c1

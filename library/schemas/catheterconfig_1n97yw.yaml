@@ -1,8 +1,0 @@
-semantic:
-  properties:
-  - https://schema.undata.live/elements/device_name_1b95fs
-  - https://schema.undata.live/elements/targeted_structure_5zpfym
-  mixins: []
-provenance:
-- source: aind
-  name: CatheterConfig

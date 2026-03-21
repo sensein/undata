@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/comments_e06acba2a212
+  - https://schema.undata.live/elements/control_description_1d68d690e9ae
+  - https://schema.undata.live/elements/control_e9ea71677edc
+  - https://schema.undata.live/elements/data_3a35570313f8
+  - https://schema.undata.live/elements/description_17a6c1a3d951
+  - https://schema.undata.live/elements/starting_time_73114c800dff
+  - https://schema.undata.live/elements/timeseries_aa1c355dcfb6
+  - https://schema.undata.live/elements/timestamps_8ecb6c7de4fb
+  mixins: []
+provenance:
+- source: nwb
+  name: TimeSeries
+  generated_at: '2026-03-21T05:07:31.281675+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8712f483b4e5bcc3a2b8fa8d13393f01c828690471300a693fe6f2dc60314d41

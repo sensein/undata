@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: perf
+  source_class: datatypes
+provenance:
+- source: bids
+  class: datatypes
+  name: perf
+  description: 'Blood perfusion imaging data, including arterial spin labeling (ASL)
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9314854657b68ae658b0200a0156c13f2d3c675bd965c093cd442da6a0df228d

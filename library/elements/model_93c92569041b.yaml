@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Model
+  source_attribute: model
+  source_class: LickSpout
+provenance:
+- source: aind
+  class: LickSpout
+  name: model
+  description: Model
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 93c92569041bce12caa784badde10c7e5532421766802ba3bb3b02069cd5595e

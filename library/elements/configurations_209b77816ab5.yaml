@@ -1,0 +1,15 @@
+semantic:
+  data_type: array
+  question_text: Device configurations
+  source_attribute: configurations
+  source_class: DataStream
+provenance:
+- source: aind
+  class: DataStream
+  name: configurations
+  description: Configurations are parameters controlling active devices during this
+    stream
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 209b77816ab556b01450968ed45b95032bb7d7a713a5e0f88d51d96eaaf5486c

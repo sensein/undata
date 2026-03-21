@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/holder
+  source_class: copyright.schema.omi
+provenance:
+- source: openminds
+  class: copyright.schema.omi
+  name: https://openminds.om-i.org/props/holder
+  description: Legal person in possession of something.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fb33209abba9b586504b2f0e8422acdd0271732864bd68494fefac10ec8b6a9b

@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  question_text: Core dependency
+  source_attribute: core_dependency
+  source_class: Code
+provenance:
+- source: aind
+  class: Code
+  name: core_dependency
+  description: For code with a core software package dependency, e.g. Bonsai
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: Code
+  name: core_dependency
+  description: For code with a core software package dependency, e.g. Bonsai
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+- source: aind
+  class: Code
+  name: core_dependency
+  description: For code with a core software package dependency, e.g. Bonsai
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fa77a564be3ce8437aa5fa9cda07b33171a4ff0c918be9dec9ad01b6ac048254

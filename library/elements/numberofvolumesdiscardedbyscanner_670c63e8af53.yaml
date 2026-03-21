@@ -1,0 +1,35 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  min_value: 0.0
+  source_attribute: NumberOfVolumesDiscardedByScanner
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: NumberOfVolumesDiscardedByScanner
+  description: 'Number of volumes ("dummy scans") discarded by the scanner
+
+    (as opposed to those discarded by the user post hoc)
+
+    before saving the imaging file.
+
+    For example, a sequence that automatically discards the first 4 volumes
+
+    before saving would have this field as 4.
+
+    A sequence that does not discard dummy scans would have this set to 0.
+
+    Please note that the onsets recorded in the `events.tsv` file should always
+
+    refer to the beginning of the acquisition of the first volume in the
+
+    corresponding imaging file - independent of the value of
+
+    `"NumberOfVolumesDiscardedByScanner"` field.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 670c63e8af531e1f68f0595979684036134e87958b75aab74fa713e96fb5d42a

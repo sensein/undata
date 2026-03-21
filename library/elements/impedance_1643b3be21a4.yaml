@@ -1,0 +1,16 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  source_attribute: impedance
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: impedance
+  description: 'Impedance of the electrode, units MUST be in `kOhm`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1643b3be21a42c3b9f092a3684bbb9a821c9b173e199fdc67e2af5fc9a5b5437

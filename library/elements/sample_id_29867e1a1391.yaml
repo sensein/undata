@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: sample_id
+  source_class: columns
+provenance:
+- source: bids
+  class: columns
+  name: sample_id
+  description: 'A sample identifier of the form `sample-<label>`,
+
+    matching a sample entity found in the dataset.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 29867e1a13911ca2c7845b2c45b57264bb84fc63f3e1ff5c80bcf1e484826b2b

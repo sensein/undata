@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Protocol ID
+  source_attribute: protocol_id
+  source_class: Injection
+provenance:
+- source: aind
+  class: Injection
+  name: protocol_id
+  description: DOI for protocols.io
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 716fa520d20147ff45d6ace5ab44d4a1b4bfa35085c8fcbb05ce83fb6c62cf53

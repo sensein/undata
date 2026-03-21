@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Notes
+  source_attribute: notes
+  source_class: HarpDevice
+provenance:
+- source: aind
+  class: HarpDevice
+  name: notes
+  description: Notes
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 43908370471ced95ddabf73b3e2bc6002d215e49af42f26b89b138cc4f240e2e

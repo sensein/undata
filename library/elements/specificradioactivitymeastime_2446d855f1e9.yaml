@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: SpecificRadioactivityMeasTime
+  source_class: metadata
+provenance:
+- source: bids
+  class: metadata
+  name: SpecificRadioactivityMeasTime
+  description: 'Time to which specific radioactivity measurement above applies in
+    the default
+
+    unit `"hh:mm:ss"`.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2446d855f1e952b0450ff4ef3d94d58f16c33da579a30624e17d69dd0a42e069

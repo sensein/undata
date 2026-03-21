@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  question_text: Acquisition start time
+  source_attribute: acquisition_start_time
+  source_class: Acquisition
+provenance:
+- source: aind
+  class: Acquisition
+  name: acquisition_start_time
+  description: During validation, timezone information will be moved into the acquisition_start_tz
+    field.
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1a3b17cac45729e80fb92f6364e6dddea5f4c4dcf44b2d666d634391c041b126

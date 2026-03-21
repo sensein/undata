@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Model
+  source_attribute: model
+  source_class: Scanner
+provenance:
+- source: aind
+  class: Scanner
+  name: model
+  description: Model
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3eb9037de99da2cc05399c22d7e37e3ebd53a9e5673f0bdf0e515476addc5883

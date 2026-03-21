@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  question_text: Model
+  source_attribute: model
+  source_class: OpenEphysAcquisitionBoard
+provenance:
+- source: aind
+  class: OpenEphysAcquisitionBoard
+  name: model
+  description: Model
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b503a692781a3ffcb4fa3ce807df7a74572a1cfe368a530f29666be66b29ebe9

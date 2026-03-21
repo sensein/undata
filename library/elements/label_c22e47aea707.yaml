@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: label
+  source_class: entities
+provenance:
+- source: bids
+  class: entities
+  name: label
+  description: 'Tissue-type label, following a prescribed vocabulary.
+
+    Applies to binary masks and probabilistic/partial volume segmentations
+
+    that describe a single tissue type.
+
+
+    This entity is only applicable to derivative data.
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c22e47aea7071524b9dc43e07ba31c32f1dfda454b138c7a59d63dcb24551f6a

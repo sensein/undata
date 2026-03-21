@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Ground wire diameter
+  source_attribute: ground_wire_diameter
+  source_class: GroundWireImplant
+provenance:
+- source: aind
+  class: GroundWireImplant
+  name: ground_wire_diameter
+  description: Ground wire diameter
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4d75a741aabfd650f1eec3a846c434e14237da7a8c4ff21e1fc76ac4e4dd93ba

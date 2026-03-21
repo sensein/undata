@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  question_text: Active length (mm)
+  source_attribute: active_length
+  source_class: FiberProbe
+provenance:
+- source: aind
+  class: FiberProbe
+  name: active_length
+  description: Length of taper
+  generated_at: '2026-03-21T05:07:45.964026+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 29878efbd387bd8227fad219131a7ebbea14283654b59735689dfe30ac53c654

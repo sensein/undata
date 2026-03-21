@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+  source_attribute: distance
+  source_class: OpticalSeries
+provenance:
+- source: nwb
+  class: OpticalSeries
+  name: distance
+  description: Distance from camera/monitor to target/eye.
+  generated_at: '2026-03-21T05:07:29.029963+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b32605dd6daa1df9a7016a1d4b8495bbca5b15fe03a01338f551f0c33cbc504e

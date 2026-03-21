@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  source_attribute: https://openminds.om-i.org/props/preferredDisplayColor
+  source_class: viewerSpecification.schema.omi
+provenance:
+- source: openminds
+  class: viewerSpecification.schema.omi
+  name: https://openminds.om-i.org/props/preferredDisplayColor
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 940677ec46cf339b44b22f97d8c83afd34be901a26a6107ac4dcdd5856d59615

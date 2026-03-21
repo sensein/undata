@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/https://openminds.om-i.org/props/identifier_8af957bacf2d
+  mixins: []
+provenance:
+- source: openminds
+  name: ISNI.schema.omi
+  generated_at: '2026-03-21T05:08:25.361466+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ce889fbe3fa37bb93631a89dc5ced74dcf1d2064495a177d35e6a4d8c847406b

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/otherOntologyIdentifier
+  source_class: softwareApplicationCategory.schema.omi
+provenance:
+- source: openminds
+  class: softwareApplicationCategory.schema.omi
+  name: https://openminds.om-i.org/props/otherOntologyIdentifier
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 83b5916150d6ccfb5a56d3bc71718a00b49ba73e31182d04209424bc9a6c8e1d

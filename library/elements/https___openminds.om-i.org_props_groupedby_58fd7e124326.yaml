@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: https://openminds.om-i.org/props/groupedBy
+  source_class: fileBundle.schema.omi
+provenance:
+- source: openminds
+  class: fileBundle.schema.omi
+  name: https://openminds.om-i.org/props/groupedBy
+  description: Reference to the aspect used to group something.
+  generated_at: '2026-03-21T05:08:17.135430+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 58fd7e124326fad2dbc110ee918f1eb57268aa752d5d298bfb45f981419b3bef

@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - https://schema.undata.live/elements/series_509f913351f3
+  - https://schema.undata.live/elements/series_index_82b4006918df
+  - https://schema.undata.live/elements/sweep_number_3e07284ed40b
+  - https://schema.undata.live/elements/sweeptable_68ec82add215
+  mixins: []
+provenance:
+- source: nwb
+  name: SweepTable
+  generated_at: '2026-03-21T05:07:31.304791+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3128998900652f20660d732776aa3043581e2bf46b20ebb1b394055d0df1876c

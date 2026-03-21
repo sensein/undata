@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  source_attribute: OCT
+  source_class: suffixes
+provenance:
+- source: bids
+  class: suffixes
+  name: OCT
+  description: 'Optical coherence tomography imaging data
+
+    '
+  generated_at: '2026-03-21T05:07:01.868333+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d23791563867ae70fa2b15663d75a4da14fe0eca099842a29e332f33ccabcf5f

@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  source_attribute: approach
+  source_class: Asset
+provenance:
+- source: dandi
+  class: Asset
+  name: approach
+  description: ''
+  generated_at: '2026-03-21T05:07:12.277443+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bb86a9bfbc1b83bd5625d9f244adcf8b985c0c053edf531e3e335aa045aa7e1b
