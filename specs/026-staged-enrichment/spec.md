@@ -55,11 +55,26 @@ Enrichment modifies elements in-place (adding ontology_annotations, value_domain
 
 ---
 
+### User Story 4 — Commit Stage Rehashes and Finalizes (Priority: P1)
+
+After enrichment, the commit stage computes the final content-addressed hash of each element, writes it to the registry under its final filename, and deletes the staged version. Staged elements carry a pipeline run ID and are ephemeral — only the final committed element persists. No provenance for intermediate pipeline stages.
+
+**Why this priority**: Staged elements are working copies. The registry should only contain finalized, content-addressed entities. Keeping staged intermediates would pollute the registry with temporary files.
+
+**Acceptance Scenarios**:
+
+1. **Given** a staged element with pipeline run ID, **When** commit runs, **Then** the element is rehashed from its final semantic content, written to `elements/{name}_{hash}.yaml`, and the staged copy is deleted.
+2. **Given** two staged elements that produce the same final hash, **When** committed, **Then** they merge (provenance combined) into a single registry file.
+3. **Given** the pipeline is interrupted before commit, **When** restarted, **Then** staged elements from the incomplete run are cleaned up.
+
+---
+
 ### Edge Cases
 
 - What if an element already has ontology_annotations from a prior enrichment? Replace with the new annotations (enrichment is not cumulative across runs — it's a snapshot of the current ontology alignment).
 - What if ontology_term was previously in the identity hash and existing elements have different hashes because of it? Migration rehashes all elements without ontology_term; duplicates (same structural identity) are merged with combined provenance.
 - What about future curation that intentionally changes identity? Curation is a separate activity type that CAN create new elements (with derived_from). Enrichment never does.
+- What if the pipeline crashes between enrich and commit? Staged elements are in a separate staging directory; the registry is untouched until commit.
 
 ## Requirements
 
@@ -84,9 +99,18 @@ Enrichment modifies elements in-place (adding ontology_annotations, value_domain
 - **FR-009**: Re-running enrichment MUST be idempotent when ontology state hasn't changed.
 - **FR-010**: The `_create_enriched_element()` function (which creates new elements with derived_from) MUST be removed or disabled. Enrichment uses `_update_element_in_place()` instead.
 
+**Commit Stage**
+
+- **FR-011**: The commit stage MUST rehash each enriched element from its final semantic content and write it to the registry under the content-addressed filename `{name}_{hash}.yaml`.
+- **FR-012**: Staged elements MUST be stored in a temporary staging directory (e.g., `{output_dir}/.staging/{run_id}/`), separate from the registry. They carry a pipeline run ID.
+- **FR-013**: After commit, staged elements MUST be deleted. Only the final content-addressed element in the registry persists.
+- **FR-014**: If two staged elements produce the same final hash at commit time, they MUST be merged — provenance entries combined into a single registry file.
+- **FR-015**: No provenance for intermediate pipeline stages. The committed element's provenance reflects the source extraction + enrichment attribution, not the staging mechanics.
+- **FR-016**: If the pipeline is interrupted before commit, the staging directory MUST be cleaned up on the next run (stale staging dirs detected by run ID age).
+
 **Curation Exception**
 
-- **FR-011**: Manual curation (`activity: curation`) MAY create new elements with `derived_from` links in the future. This is explicitly out of scope for enrichment but the architecture MUST support it.
+- **FR-017**: Manual curation (`activity: curation`) MAY create new elements with `derived_from` links in the future. This is explicitly out of scope for enrichment but the architecture MUST support it.
 
 ### Key Entities
 
