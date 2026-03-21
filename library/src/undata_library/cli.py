@@ -323,6 +323,87 @@ def ontology_index_cmd(elements_path: str, output: str) -> None:
 
 
 @main.command()
+@click.option("--source", required=True, help="Source name (bids, nwb, dandi, aind, openminds)")
+@click.option("--path", "-p", default=None, help="Path to raw schema files")
+@click.option("--library-path", "-l", default=".", help="Path to library root")
+@click.option("--model", "-m", default="all-MiniLM-L6-v2", help="Embedding model name")
+@click.option("--skip-enrich", is_flag=True, help="Skip enrichment step")
+@click.option("--skip-align", is_flag=True, help="Skip alignment step")
+def pipeline(
+    source: str,
+    path: str | None,
+    library_path: str,
+    model: str,
+    skip_enrich: bool,
+    skip_align: bool,
+) -> None:
+    """Run ingest → enrich → align pipeline."""
+    import time
+
+    from .align import align_elements
+    from .enrich import enrich_elements
+    from .ingest import ingest_source
+
+    lib = Path(library_path)
+    schema_path = Path(path) if path else None
+    elements_dir = lib / "elements"
+    cache_dir = lib / "ontology-cache"
+    timings: dict[str, float] = {}
+
+    # Step 1: Ingest
+    click.echo(f"[1/3] Ingesting {source}...")
+    t0 = time.time()
+    ingest_stats = ingest_source(source, schema_path, lib)
+    timings["ingest"] = time.time() - t0
+    click.echo(
+        f"  {ingest_stats['total']} elements "
+        f"({ingest_stats['created']} created, {ingest_stats['merged']} merged) "
+        f"in {timings['ingest']:.1f}s"
+    )
+
+    # Step 2: Enrich
+    enrich_stats: dict = {}
+    if not skip_enrich:
+        click.echo("[2/3] Enriching elements...")
+        t0 = time.time()
+        enrich_stats = enrich_elements(
+            elements_dir=elements_dir,
+            cache_dir=cache_dir,
+            library_path=lib,
+            model_name=model,
+        )
+        timings["enrich"] = time.time() - t0
+        click.echo(
+            f"  {enrich_stats.get('enriched_new', 0)} new, "
+            f"{enrich_stats.get('enriched_unchanged', 0)} unchanged "
+            f"in {timings['enrich']:.1f}s"
+        )
+    else:
+        click.echo("[2/3] Enrichment skipped.")
+
+    # Step 3: Align
+    align_stats: dict = {}
+    if not skip_align:
+        click.echo("[3/3] Aligning elements...")
+        t0 = time.time()
+        align_stats = align_elements(
+            elements_dir=elements_dir,
+            library_path=lib,
+        )
+        timings["align"] = time.time() - t0
+        click.echo(
+            f"  {align_stats.get('total_pairs_evaluated', 0)} pairs, "
+            f"{align_stats.get('exact_match_groups', 0)} exact groups "
+            f"in {timings['align']:.1f}s"
+        )
+    else:
+        click.echo("[3/3] Alignment skipped.")
+
+    total_time = sum(timings.values())
+    click.echo(f"\nPipeline complete in {total_time:.1f}s.")
+
+
+@main.command()
 @click.argument("path", type=click.Path(exists=True), default=".")
 @click.option("--threshold", "-t", default=0.5, help="Alias detection threshold")
 @click.option("--output", "-o", default=None, help="Output report file path")
