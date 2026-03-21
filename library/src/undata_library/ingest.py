@@ -15,10 +15,12 @@ from .hashing import (
     generate_short_key,
 )
 from .models import (
+    Constraints,
     ElementRecord,
     HashRegistry,
     HashRegistryEntry,
     ProvenanceEntry,
+    ResponseOption,
     SemanticIdentity,
     ValueConcept,
     ValueProvenance,
@@ -383,35 +385,69 @@ def _resolve_response_option_uris(library_path: Path) -> int:
 def _extract(
     source_name: str, schema_path: Path | None
 ) -> list[tuple[SemanticIdentity, ProvenanceEntry]]:
-    """Dispatch to source-specific extractor."""
-    if source_name == "bids":
-        from .extractors.bids import extract_bids
+    """Dispatch to adapter-based extraction, converting ClassifiedEntity → legacy tuple format."""
+    from .adapters.registry import get_default_registry
 
-        return extract_bids()
-    elif source_name == "dandi":
-        from .extractors.dandi import extract_dandi
+    registry = get_default_registry()
+    adapter = registry.get(source_name)
 
-        return extract_dandi()
-    elif source_name == "nwb":
-        if schema_path is None:
-            raise ValueError("NWB requires --path to schema YAML files")
-        from .extractors.nwb import extract_nwb
-
-        return extract_nwb(schema_path)
-    elif source_name == "aind":
-        if schema_path is None:
-            raise ValueError("AIND requires --path to JSON Schema files")
-        from .extractors.aind import extract_aind
-
-        return extract_aind(schema_path)
-    elif source_name == "openminds":
-        if schema_path is None:
-            raise ValueError("openMINDS requires --path to schema files")
-        from .extractors.openminds import extract_openminds
-
-        return extract_openminds(schema_path)
+    # Determine source path
+    if source_name in ("bids", "dandi"):
+        # These use code introspection, path is optional
+        path = schema_path or Path(".")
+    elif schema_path is None:
+        raise ValueError(f"{source_name} requires --path to schema files")
     else:
-        raise ValueError(f"Unknown source: {source_name}")
+        path = schema_path
+
+    entities = adapter.extract(path)
+
+    # Convert ClassifiedEntity → (SemanticIdentity, ProvenanceEntry) for backward compat
+    from .models import EntityType
+
+    results: list[tuple[SemanticIdentity, ProvenanceEntry]] = []
+    for entity in entities:
+        if entity.entity_type != EntityType.ATTRIBUTE:
+            continue  # Only attribute entities map to the legacy element pipeline
+
+        sem_dict = entity.semantic
+        dt = sem_dict.get("data_type", "string")
+        constraints = None
+        response_options = None
+
+        if sem_dict.get("constraints"):
+            c = sem_dict["constraints"]
+            constraints = Constraints(
+                allowed_values=c.get("allowed_values"),
+                pattern=c.get("pattern"),
+            )
+        if sem_dict.get("response_options"):
+            response_options = [
+                ResponseOption(**opt) if isinstance(opt, dict) else opt
+                for opt in sem_dict["response_options"]
+            ]
+
+        sem = SemanticIdentity(
+            data_type=dt,
+            constraints=constraints,
+            response_options=response_options,
+            min_value=sem_dict.get("min_value"),
+            max_value=sem_dict.get("max_value"),
+            question_text=sem_dict.get("question_text"),
+            value_domain=sem_dict.get("value_domain"),
+            type_ref=sem_dict.get("type_ref"),
+        )
+
+        prov_dict = entity.provenance
+        prov = ProvenanceEntry(
+            source=prov_dict.get("source", source_name),
+            **{"class": prov_dict.get("class", "")},
+            name=prov_dict.get("name", ""),
+            description=prov_dict.get("description"),
+        )
+        results.append((sem, prov))
+
+    return results
 
 
 def _write_element(path: Path, record: ElementRecord, sha256: str | None = None) -> None:

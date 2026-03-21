@@ -23,7 +23,13 @@ class ClassifiedEntity:
 
 
 class BaseAdapter(ABC):
-    """Abstract interface for schema source adapters."""
+    """Abstract interface for schema source adapters.
+
+    Common options accepted by all adapters:
+    - repo: str — upstream repository URL (e.g., GitHub)
+    - committish: str — git commit SHA, tag, or branch
+    These populate source_ref on every ClassifiedEntity.
+    """
 
     @abstractmethod
     def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
