@@ -1,7 +1,0 @@
-sha256: 63f9beb31b41177f11b21ca23c27e4a157f8d483a7cb6d356dd658a3250c4618
-semantic:
-  label: video roi cross session matching
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: Video ROI cross session matching

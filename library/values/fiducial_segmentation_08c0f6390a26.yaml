@@ -1,7 +1,0 @@
-sha256: 08c0f6390a26b587651b6e36ef0c2437b3fe4a4e825366abf6d8533559bbb0db
-semantic:
-  label: fiducial segmentation
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: Fiducial segmentation

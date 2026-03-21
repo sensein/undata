@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: semrock
-provenance:
-- source: aind
-  raw_value: aind.metadata.Filter.manufacturer.Semrock

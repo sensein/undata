@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: air
-provenance:
-- source: aind
-  raw_value: Air
-- source: aind
-  raw_value: air

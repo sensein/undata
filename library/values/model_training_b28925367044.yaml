@@ -1,7 +1,0 @@
-sha256: b28925367044a26fb332605372589f0b30fccb7301a9d9cde47f8a2412951bc4
-semantic:
-  label: model training
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: Model training

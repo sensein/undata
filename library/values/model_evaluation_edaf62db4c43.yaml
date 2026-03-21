@@ -1,7 +1,0 @@
-sha256: edaf62db4c43f7ac911daa82c0a9e5f59afe01b1a4fb9dec7fdff9ff97196fb4
-semantic:
-  label: model evaluation
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: Model evaluation

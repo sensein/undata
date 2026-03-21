@@ -1,7 +1,0 @@
-sha256: 3d9ff0ca8c1fe508534229d503c4112f95d90d39656b079d05c78dd5d9a5ffd2
-semantic:
-  label: image background subtraction
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: Image background subtraction

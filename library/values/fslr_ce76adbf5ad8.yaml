@@ -1,7 +1,0 @@
-sha256: ce76adbf5ad85d7f88e198c2585e18b267425d0d51986b4ab8a415f6d7dbd92b
-semantic:
-  label: fsLR
-  value_type: categorical
-provenance:
-- source: bids
-  raw_value: fsLR

@@ -1,7 +1,0 @@
-sha256: 3476e628df2771eb67ee73e1d359edcddd709400198552357a2cb1f87c44f39d
-semantic:
-  label: byte
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: Byte

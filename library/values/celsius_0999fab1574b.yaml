@@ -1,7 +1,0 @@
-sha256: 0999fab1574bb9880461d5e99e030e821e8d64ad01de860121cfad94b8fd38aa
-semantic:
-  label: celsius
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: Celsius

@@ -1,7 +1,0 @@
-sha256: 42e50038dd36c5f55933beaf4918267d75089aa17963ce20d65c8bb529e0d4a3
-semantic:
-  label: detection axis
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: Detection axis

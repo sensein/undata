@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: dandi:doi
-provenance:
-- source: dandi
-  raw_value: dandi:doi

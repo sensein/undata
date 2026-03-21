@@ -1,7 +1,0 @@
-sha256: ccd7073d2345a4710950e69c5c6b9e30b820a089bd0314102b7963edfce36d77
-semantic:
-  label: Genetic
-  value_type: categorical
-provenance:
-- source: bids
-  raw_value: Genetic

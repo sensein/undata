@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: dandi:ismonozygotictwinof
-provenance:
-- source: dandi
-  raw_value: dandi:isMonozygoticTwinOf

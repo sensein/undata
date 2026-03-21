@@ -1,7 +1,0 @@
-sha256: 5ed2562277509538b365f93f32983f546c0b66cb69985d75578f68fa13dc22c2
-semantic:
-  label: ncbi genbank (genbank)
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: NCBI GenBank (GENBANK)

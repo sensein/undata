@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: dcite:isderivedfrom
-provenance:
-- source: dandi
-  raw_value: dcite:IsDerivedFrom

@@ -1,7 +1,0 @@
-sha256: d042ec37d1e74e01c5761bcd53134bf46cf89373ec7da23070878b820d0fab08
-semantic:
-  label: Pixels
-  value_type: categorical
-provenance:
-- source: bids
-  raw_value: Pixels

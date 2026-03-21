@@ -17,7 +17,6 @@ Auto-generated from all feature plans. Last updated: 2026-03-09
 ```text
 undata/
 ├── backend/          # 002: Schema backend REST API (Python/FastAPI/PostgreSQL)
-├── ingestion/        # 001: Schema ingestion + LinkML generation (Python CLI)
 ├── migration-api/    # 004: Migration API (Python/FastAPI/Celery)
 ├── frontend/         # 003: Schema Explorer (SvelteKit/TypeScript)
 ├── specs/            # Feature specifications and plans
@@ -48,11 +47,9 @@ docker compose up -d
 # Backend tests
 cd backend && pytest tests/ -v
 
-# Ingestion tool
-cd ingestion && undata ingest bids dandi openminds nwb
-
-# Generate LinkML schema
-cd ingestion && undata generate-schema --output unified.yaml
+# Library ingestion pipeline (replaces old ingestion/ folder)
+cd library && uv run undata-library pipeline --source bids
+cd library && uv run undata-library ontology refresh
 
 # Migration API tests
 cd migration-api && pytest tests/ -v

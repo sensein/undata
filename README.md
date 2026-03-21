@@ -84,10 +84,9 @@ open http://localhost:3000
 ```
 undata/
 ├── backend/          # Schema backend REST API (Python 3.14 / FastAPI / SQLAlchemy)
-├── ingestion/        # Schema ingestion CLI (BIDS, NWB, DANDI, openMINDS, AIND adapters)
 ├── migration-api/    # Migration execution API (Python 3.12 / FastAPI / Celery / Redis)
 ├── frontend/         # Schema Explorer UI (TypeScript / Next.js 15 / React / Cytoscape.js)
-├── library/          # Flat-file schema library (LinkML YAML with versioning + validation CLI)
+├── library/          # Schema library CLI + adapters (Python package — no data files in git)
 ├── tutorials/        # 7 Jupyter notebooks + JupyterBook site
 ├── docs/             # Meta-model documentation (LinkML + MkDocs)
 ├── specs/            # Feature specifications (001-015)
@@ -120,25 +119,18 @@ pnpm lint         # ESLint
 pnpm build        # Production build
 ```
 
-### Ingestion
-
-```bash
-cd ingestion
-uv sync
-uv run undata ingest bids dandi openminds nwb aind   # Ingest all schemas
-uv run undata generate-schema --output unified.yaml   # Generate unified LinkML
-uv run undata roundtrip unified.yaml                  # Validate roundtrip fidelity
-```
-
 ### Library
+
+The library CLI handles all ingestion, enrichment, and alignment. Registry output (elements, schemas, transforms) is written to `~/.local/share/undata/registry/` by default (configurable via `--output-dir` or `$UNDATA_REGISTRY_DIR`). Output is **not** committed to git — it's generated data.
 
 ```bash
 cd library
 uv sync
-uv run undata-library validate elements/     # Validate YAML files
-uv run undata-library diff elements/el.yaml  # Diff element versions
-uv run undata-library export --backend-url http://localhost:8002 --output .
-uv run undata-library index                  # Build index.yaml
+uv run undata-library pipeline --source bids   # Full pipeline: ingest → enrich → align → transform
+uv run undata-library pipeline --source nwb     # Each source auto-downloads from its upstream repo
+uv run undata-library ontology refresh          # Bulk download ontologies from OBO Foundry
+uv run undata-library validate-ingestion        # Validate all output
+uv run undata-library cache list                # Show cached source downloads
 ```
 
 ### Tutorials

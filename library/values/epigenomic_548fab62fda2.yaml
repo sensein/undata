@@ -1,7 +1,0 @@
-sha256: 548fab62fda2779bd4ba6fa075900023650d07ac03220404ad613b926d5e6503
-semantic:
-  label: Epigenomic
-  value_type: categorical
-provenance:
-- source: bids
-  raw_value: Epigenomic

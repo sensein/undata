@@ -1,7 +1,0 @@
-sha256: f058b04b78e3ee3ec9560dbc0e89b5c051746708c9bac6aa6e09ceda2b09f99f
-semantic:
-  label: nba
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: NBA

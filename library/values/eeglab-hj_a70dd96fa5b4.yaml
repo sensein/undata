@@ -1,7 +1,0 @@
-sha256: a70dd96fa5b4fe6a4d0b0e1b6699f3cd40c556babf0ef08476f152b1854eb1cc
-semantic:
-  label: EEGLAB-HJ
-  value_type: categorical
-provenance:
-- source: bids
-  raw_value: EEGLAB-HJ

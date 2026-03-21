@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: video_roi_classification
-provenance:
-- source: aind
-  raw_value: Video ROI classification

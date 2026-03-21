@@ -1,7 +1,0 @@
-sha256: 140e92a060c6c329185171ebbbbcad74ab88df6c2b59f4608bde8655d64012b9
-semantic:
-  label: opengl
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: OpenGL

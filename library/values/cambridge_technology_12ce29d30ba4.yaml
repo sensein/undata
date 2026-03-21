@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: cambridge_technology
-provenance:
-- source: aind
-  raw_value: aind.metadata.FluorescentStain.source.Cambridge_Technology

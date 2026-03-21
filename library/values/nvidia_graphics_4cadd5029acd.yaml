@@ -1,7 +1,0 @@
-sha256: 4cadd5029acdf55c65ce990cede02475f078c6bc13fed5502c0bc6e3fb0abaf4
-semantic:
-  label: nvidia graphics
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: Nvidia Graphics

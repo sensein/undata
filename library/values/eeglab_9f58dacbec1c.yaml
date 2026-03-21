@@ -1,7 +1,0 @@
-sha256: 9f58dacbec1cb2066d99e246a957a60278d6e05fffe0bab305d9da9e5f129690
-semantic:
-  label: EEGLAB
-  value_type: categorical
-provenance:
-- source: bids
-  raw_value: EEGLAB

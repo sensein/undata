@@ -1,7 +1,0 @@
-sha256: f49257f45fda42c65836cd909a9855f835cf8790e72f42879dc8d8d982fd8059
-semantic:
-  label: MNI305
-  value_type: categorical
-provenance:
-- source: bids
-  raw_value: MNI305

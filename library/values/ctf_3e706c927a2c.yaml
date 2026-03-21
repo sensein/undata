@@ -1,7 +1,0 @@
-sha256: 3e706c927a2cb19ee5ee1492a1bec1cdecce57758d730f78b936bfdfcde109f5
-semantic:
-  label: CTF
-  value_type: categorical
-provenance:
-- source: bids
-  raw_value: CTF

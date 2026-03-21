@@ -1,7 +1,0 @@
-sha256: beb613ef2fb8ae22e9dbd83fb12f811a6541ba23ec618d703d2aa4e5a1a0b341
-semantic:
-  label: fsaveragesym
-  value_type: categorical
-provenance:
-- source: bids
-  raw_value: fsaveragesym

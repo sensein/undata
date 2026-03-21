@@ -1,7 +1,0 @@
-sha256: f07711d723a053c3d247fa4b76919884a0cb88c520bbc61938873279375b407f
-semantic:
-  label: analog output
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: Analog Output

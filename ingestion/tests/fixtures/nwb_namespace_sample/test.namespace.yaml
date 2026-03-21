@@ -1,5 +1,0 @@
-namespaces:
-  - name: test_ns
-    version: 0.1.0
-    doc:
-      - source: test.types.yaml

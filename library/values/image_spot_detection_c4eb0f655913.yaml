@@ -1,7 +1,0 @@
-sha256: c4eb0f6559139e9899522b028f78693f51994e6eb09b264a81267d30131ca2b3
-semantic:
-  label: image spot detection
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: Image spot detection

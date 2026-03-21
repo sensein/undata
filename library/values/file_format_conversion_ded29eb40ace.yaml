@@ -1,7 +1,0 @@
-sha256: ded29eb40ace424b8adeffcc94a35d192310a79a4e72c778b359d6aaafd8b94a
-semantic:
-  label: file format conversion
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: File format conversion

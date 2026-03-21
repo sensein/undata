@@ -1,7 +1,0 @@
-sha256: 01e766914883061cdba14c555762e58bffcd9a4ffc25e04babbe22d3dcbdb94f
-semantic:
-  label: image cell segmentation
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: Image cell segmentation

@@ -1,7 +1,0 @@
-sha256: e670b0c392dd1026e6f0d5ace32a20c823b7d34d1293f94bc79a1ae50ed6c5aa
-semantic:
-  label: NIHPD
-  value_type: categorical
-provenance:
-- source: bids
-  raw_value: NIHPD

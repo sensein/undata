@@ -1,6 +1,0 @@
-semantic:
-  value_type: categorical
-  label: image_cell_classification
-provenance:
-- source: aind
-  raw_value: Image cell classification

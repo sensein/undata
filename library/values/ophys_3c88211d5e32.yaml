@@ -1,7 +1,0 @@
-sha256: 3c88211d5e32bbdb28b7c64d1eefc9c2b543d1030a8e121d1f662456a55e856f
-semantic:
-  label: ophys
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: ophys

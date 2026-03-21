@@ -1,7 +1,0 @@
-sha256: fb6c88679d20f540a5d41d0b2e551532aa43189e99116e2ef729addc763284e6
-semantic:
-  label: national_institute_of_neurological_disorders_and_stroke
-  value_type: categorical
-provenance:
-- source: aind
-  raw_value: aind.metadata.FluorescentStain.source.National_Institute_Of_Neurological_Disorders_And_Stroke

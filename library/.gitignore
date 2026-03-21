@@ -1,0 +1,22 @@
+# Generated registry output — NOT version-controlled
+# Run `undata-library pipeline` to generate; output goes to --output-dir
+elements/
+schemas/
+values/
+valuesets/
+transforms/
+ontology-cache/*.yaml
+ontology-cache/*.obo
+ontology-cache/embeddings.parquet
+embeddings.parquet
+hash-registry.yaml
+ontology-index.yaml
+alignment-report.yaml
+ingestion-report.yaml
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+dist/

@@ -1,7 +1,0 @@
-semantic:
-  ontology_term: http://purl.obolibrary.org/obo/PATO_0000383
-  value_type: categorical
-  label: female
-provenance:
-- source: aind
-  raw_value: Female
