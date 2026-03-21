@@ -131,7 +131,7 @@ class TestVerify:
         )
 
         cache = OntologyCache(cache_dir)
-        warnings = verify_elements(elements_dir, cache)
+        warnings = verify_elements(elements_dir, cache=cache)
         assert len(warnings) == 0
 
     def test_missing_term_warns(self, tmp_path):
@@ -154,7 +154,7 @@ class TestVerify:
         )
 
         cache = OntologyCache(cache_dir)
-        warnings = verify_elements(elements_dir, cache)
+        warnings = verify_elements(elements_dir, cache=cache)
         assert len(warnings) == 1
         assert "not found" in warnings[0]["issue"]
 
@@ -189,5 +189,5 @@ class TestVerify:
         )
 
         cache = OntologyCache(cache_dir)
-        warnings = verify_elements(elements_dir, cache)
+        warnings = verify_elements(elements_dir, cache=cache)
         assert any("deprecated" in w["issue"] for w in warnings)

@@ -250,6 +250,69 @@ class OntologyStore:
         )
 
 
+def build_vector_index(
+    store: OntologyStore,
+    output_path: Path,
+    model_name: str = "all-MiniLM-L6-v2",
+    batch_size: int = 1000,
+) -> int:
+    """Build vector index over all ontology terms. Returns term count embedded."""
+    from .embeddings import EmbeddingStore, _build_ontology_text, _encode_texts
+
+    logger.info("Building ontology vector index (model=%s)", model_name)
+
+    uris: list[str] = []
+    texts: list[str] = []
+
+    for uri, label, synonyms in store.all_terms():
+        text = _build_ontology_text(label, synonyms if synonyms else None)
+        if not text:
+            continue
+        uris.append(uri)
+        texts.append(text)
+
+    if not texts:
+        logger.warning("No terms to embed")
+        return 0
+
+    # Encode in batches
+    import numpy as np
+
+    all_vectors = []
+    for i in range(0, len(texts), batch_size):
+        batch = texts[i : i + batch_size]
+        vectors = _encode_texts(batch, model_name)
+        all_vectors.append(vectors)
+        logger.info("Embedded %d/%d terms", min(i + batch_size, len(texts)), len(texts))
+
+    vectors_array = np.vstack(all_vectors)
+
+    # Save using EmbeddingStore
+    es = EmbeddingStore(uri_col="term_uri")
+    es._uris = uris
+    es._texts = texts
+    es._vectors = vectors_array
+    es._model = model_name
+    es._uri_to_idx = {uri: i for i, uri in enumerate(uris)}
+    es.save(output_path, model_name=model_name)
+
+    logger.info("Vector index: %d terms embedded → %s", len(uris), output_path)
+    return len(uris)
+
+
+def nearest_terms(
+    query_vector,
+    vectors_path: Path,
+    top_k: int = 5,
+) -> list[dict]:
+    """Find nearest ontology terms by cosine distance."""
+    from .embeddings import EmbeddingStore
+
+    store = EmbeddingStore(uri_col="term_uri").load(vectors_path)
+    results = store.nearest(query_vector, top_k=top_k)
+    return [{"uri": uri, "score": score} for uri, score in results]
+
+
 def load_ontology_config(path: Path | None = None) -> list[dict]:
     """Load ontology config from YAML."""
     config_path = path or _BUNDLED_CONFIG

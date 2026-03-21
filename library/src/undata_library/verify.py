@@ -1,4 +1,4 @@
-"""Verify ontology alignment of elements against the offline cache."""
+"""Verify ontology alignment of elements against the ontology store."""
 
 from __future__ import annotations
 
@@ -7,19 +7,18 @@ from pathlib import Path
 
 import yaml
 
-from .ontology_cache import OntologyCache
-
 
 def verify_elements(
     elements_dir: Path,
-    cache: OntologyCache,
+    store=None,
+    cache=None,
 ) -> list[dict]:
-    """Verify each element's ontology_term against the cache.
+    """Verify each element's ontology_term.
 
+    Accepts either an OntologyStore (preferred) or legacy OntologyCache.
     Returns a list of warning dicts: {file, term, issue, severity}.
     """
     warnings: list[dict] = []
-    all_terms = cache.load_all()
 
     for f in sorted(elements_dir.glob("*.yaml")):
         data = yaml.safe_load(f.read_text(encoding="utf-8"))
@@ -30,21 +29,25 @@ def verify_elements(
         if not onto:
             continue
 
-        term_info = all_terms.get(onto)
+        # Lookup term via store or cache
+        term_info = None
+        if store is not None:
+            term_info = store.lookup_term(onto)
+        elif cache is not None:
+            all_terms = cache.load_all()
+            term_info = all_terms.get(onto)
 
-        # Check 1: term exists in cache
         if term_info is None:
             warnings.append(
                 {
                     "file": f.name,
                     "term": onto,
-                    "issue": "term not found in ontology cache",
+                    "issue": "term not found in ontology store",
                     "severity": "WARNING",
                 }
             )
             continue
 
-        # Check 2: term not deprecated
         if term_info.get("deprecated", False):
             warnings.append(
                 {
@@ -55,7 +58,6 @@ def verify_elements(
                 }
             )
 
-        # Check 3: label similarity to element name
         element_name = ""
         for p in data.get("provenance", []):
             element_name = p.get("name", "")
@@ -65,13 +67,10 @@ def verify_elements(
         if element_name and term_info.get("label"):
             term_label = term_info["label"].lower()
             elem_lower = element_name.lower().replace("_", " ")
-
-            # Check exact match or synonym match first
             synonyms = [s.lower() for s in term_info.get("synonyms", [])]
             if term_label == elem_lower or elem_lower in synonyms:
-                continue  # Perfect match
+                continue
 
-            # Fuzzy match
             similarity = difflib.SequenceMatcher(None, elem_lower, term_label).ratio()
             if similarity < 0.5:
                 warnings.append(

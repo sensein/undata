@@ -303,12 +303,24 @@ def import_cmd(backend_url: str, path: str, token: str | None) -> None:
 @click.argument("path", type=click.Path(exists=True), default="elements")
 @click.option("--cache-dir", default="ontology-cache", help="Ontology cache directory")
 def verify(path: str, cache_dir: str) -> None:
-    """Verify ontology alignment of elements against offline cache."""
-    from .ontology_cache import OntologyCache
+    """Verify ontology alignment of elements against ontology store."""
     from .verify import verify_elements
 
-    cache = OntologyCache(Path(cache_dir))
-    warnings = verify_elements(Path(path), cache)
+    # Try OntologyStore first, fall back to legacy cache
+    resolved = get_output_dir(None)
+    store_path = resolved / "ontology-store"
+    store = None
+    cache = None
+    if store_path.exists():
+        from .ontology_store import OntologyStore
+
+        store = OntologyStore(store_path)
+    else:
+        from .ontology_cache import OntologyCache
+
+        cache = OntologyCache(Path(cache_dir))
+
+    warnings = verify_elements(Path(path), store=store, cache=cache)
 
     if not warnings:
         click.echo("All ontology terms verified. 0 warnings.")
@@ -333,34 +345,101 @@ def ontology_group() -> None:
     default=None,
     help="Specific ontology to refresh (ncit, pato, hp, obi, ncbitaxon)",
 )
-@click.option("--cache-dir", default="ontology-cache", help="Cache directory")
-def ontology_refresh(ontology: str | None, cache_dir: str) -> None:
-    """Fetch ontology terms via bulk OBO download from OBO Foundry."""
-    from .ontology_cache import OntologyCache
-    from .ontology_fetch import SUPPORTED_ONTOLOGIES, fetch_ontology
+@click.option("--output-dir", default=None, help="Output directory")
+@click.option("--exclude", multiple=True, help="Ontologies to skip (e.g., --exclude ncbitaxon)")
+def ontology_refresh(ontology: str | None, output_dir: str | None, exclude: tuple) -> None:
+    """Download ontologies from OBO Foundry and load into local store."""
+    from .ontology_fetch import _download_obo
+    from .ontology_store import OntologyStore, build_vector_index, load_ontology_config
 
-    cache = OntologyCache(Path(cache_dir))
-    targets = [ontology] if ontology else list(SUPPORTED_ONTOLOGIES.keys())
+    resolved = get_output_dir(output_dir)
+    store = OntologyStore(resolved / "ontology-store")
+    configs = load_ontology_config()
 
-    for name in targets:
+    if ontology:
+        configs = [c for c in configs if c["name"] == ontology]
+    if exclude:
+        configs = [c for c in configs if c["name"] not in exclude]
+
+    for cfg in configs:
+        name = cfg["name"]
+        url = cfg["url"]
         click.echo(f"Fetching {name}...")
         try:
-            data = fetch_ontology(name)
-            cache.save(name, data)
-            click.echo(f"  {name}: {len(data.get('terms', {}))} terms cached.")
+            obo_path = _download_obo(name, url)
+            try:
+                count = store.load_obo(name, obo_path)
+                click.echo(f"  {name}: {count} terms loaded into store.")
+            finally:
+                obo_path.unlink(missing_ok=True)
         except Exception as exc:
             click.echo(f"  {name}: FAILED — {exc}")
 
-    # Regenerate ontology embeddings after cache update
+    # Build vector index
     try:
-        from .embeddings import build_ontology_embeddings
-
-        click.echo("Regenerating ontology embeddings...")
-        store = build_ontology_embeddings(Path(cache_dir))
-        store.save(Path(cache_dir) / "embeddings.parquet")
-        click.echo(f"  Ontology embeddings: {store.size} terms.")
+        vectors_path = resolved / "ontology-vectors.parquet"
+        count = build_vector_index(store, vectors_path)
+        click.echo(f"Vector index: {count} terms embedded.")
     except ImportError:
-        click.echo("  (skipping embeddings — sentence-transformers not installed)")
+        click.echo("  (skipping vector index — sentence-transformers not installed)")
+    except Exception as exc:
+        click.echo(f"  Vector index failed: {exc}")
+
+
+@ontology_group.command("search")
+@click.argument("query")
+@click.option("--ontology", "-o", default=None, help="Filter by ontology")
+@click.option("--limit", "-l", default=20, help="Max results")
+@click.option("--output-dir", default=None, help="Output directory")
+def ontology_search(query: str, ontology: str | None, limit: int, output_dir: str | None) -> None:
+    """Search ontology terms by label or synonym."""
+    from .ontology_store import OntologyStore
+
+    resolved = get_output_dir(output_dir)
+    store = OntologyStore(resolved / "ontology-store")
+    results = store.search_terms(query, ontology=ontology, limit=limit)
+
+    if not results:
+        click.echo("No matching terms found.")
+        return
+
+    for r in results:
+        click.echo(f"  {r['uri']}  {r['label']}")
+    click.echo(f"\n{len(results)} results.")
+
+
+@ontology_group.command("info")
+@click.option("--output-dir", default=None, help="Output directory")
+def ontology_info(output_dir: str | None) -> None:
+    """Show loaded ontologies, term counts, and store status."""
+    from .ontology_store import OntologyStore
+
+    resolved = get_output_dir(output_dir)
+    store_path = resolved / "ontology-store"
+    if not store_path.exists():
+        click.echo("No ontology store found. Run `ontology refresh` first.")
+        return
+
+    store = OntologyStore(store_path)
+    loaded = store.list_loaded()
+    total = store.term_count()
+
+    if not loaded:
+        click.echo("No ontologies loaded.")
+        return
+
+    for ont in loaded:
+        click.echo(
+            f"  {ont['name']}: {ont['term_count']} terms (loaded {ont.get('loaded_at', '?')})"
+        )
+    click.echo(f"\nTotal: {total} terms across {len(loaded)} ontologies.")
+
+    vectors = resolved / "ontology-vectors.parquet"
+    if vectors.exists():
+        size_mb = vectors.stat().st_size / 1024 / 1024
+        click.echo(f"Vector index: {size_mb:.1f} MB")
+    else:
+        click.echo("Vector index: not built")
 
 
 @main.command("similarity")

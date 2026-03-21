@@ -50,9 +50,7 @@ def load_source_def(name_or_path: str) -> SourceDefinition:
 
 def list_bundled_sources() -> list[str]:
     """List names of all bundled source definitions (excludes ontologies.yaml)."""
-    return sorted(
-        f.stem for f in _BUNDLED_DEFS_DIR.glob("*.yaml") if f.stem != "ontologies"
-    )
+    return sorted(f.stem for f in _BUNDLED_DEFS_DIR.glob("*.yaml") if f.stem != "ontologies")
 
 
 # ---------------------------------------------------------------------------
