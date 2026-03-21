@@ -416,14 +416,16 @@ def _extract(
             cache_path = cache.acquire(source_def)
 
             if source_def.acquisition == "pip_install":
-                # Install in isolated venv and introspect
+                # Install source package + undata-library in isolated venv,
+                # then run the actual adapter extraction via subprocess
                 iso = IsolatedEnv()
                 env_path = iso.create_venv(source_def)
                 try:
-                    introspected = iso.install_and_introspect(
-                        env_path, source_def.package or source_def.name, source_def.adapter
+                    introspected = iso.install_and_run_adapter(
+                        env_path,
+                        source_def.package or source_def.name,
+                        source_def.adapter,
                     )
-                    # Convert JSON dicts to ClassifiedEntity objects
                     from .adapters.base import ClassifiedEntity
                     from .models import EntityType, SourceRef
 
@@ -449,7 +451,6 @@ def _extract(
                             )
                         )
                     entities = pip_entities
-                    # Skip adapter.extract() — we already have entities
                     path = None
                 finally:
                     iso.cleanup(env_path)

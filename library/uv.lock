@@ -2353,6 +2353,7 @@ dev = [
     { name = "numpy" },
     { name = "pytest" },
     { name = "ruff" },
+    { name = "sentence-transformers" },
 ]
 
 [package.metadata]
@@ -2378,6 +2379,7 @@ dev = [
     { name = "numpy", specifier = ">=1.26" },
     { name = "pytest", specifier = ">=8.0" },
     { name = "ruff", specifier = ">=0.15" },
+    { name = "sentence-transformers", specifier = ">=3.0" },
 ]
 
 [[package]]

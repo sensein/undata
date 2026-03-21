@@ -291,6 +291,43 @@ class IsolatedEnv:
 
         return json.loads(result.stdout)
 
+    def install_and_run_adapter(
+        self, env_path: Path, package: str, adapter_name: str
+    ) -> list[dict]:
+        """Install source package in venv, run standalone extraction script.
+
+        Uses adapter-specific standalone scripts (bids_extract.py, dandi_extract.py)
+        that only depend on the source package + stdlib. Does NOT install
+        undata-library in the isolated venv (avoids dependency clashes).
+        Output is JSON parseable by undata-library.
+        """
+        import json
+
+        venv_path = env_path / ".venv"
+        python = venv_path / "bin" / "python"
+
+        # Install source package only
+        install_cmd = ["uv", "pip", "install", "--python", str(python), package]
+        result = subprocess.run(install_cmd, capture_output=True, text=True, timeout=300)
+        if result.returncode != 0:
+            raise RuntimeError(f"Failed to install {package}: {result.stderr[:500]}")
+
+        # Find standalone extraction script for this adapter
+        scripts_dir = Path(__file__).parent / "adapters" / "docker_scripts"
+        script = scripts_dir / f"{adapter_name}_extract.py"
+        if not script.exists():
+            # Fall back to generic introspection
+            script = scripts_dir / "python_inspect.py"
+            args = [str(python), str(script), package.replace("-", "_")]
+        else:
+            args = [str(python), str(script)]
+
+        result = subprocess.run(args, capture_output=True, text=True, timeout=300)
+        if result.returncode != 0:
+            raise RuntimeError(f"Extraction failed for {adapter_name}: {result.stderr[:500]}")
+
+        return json.loads(result.stdout)
+
     def cleanup(self, env_path: Path) -> None:
         """Remove an isolated environment."""
         if env_path.exists():
