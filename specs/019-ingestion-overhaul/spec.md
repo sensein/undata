@@ -119,8 +119,8 @@ The SchemaRecord model is updated to match the ElementRecord provenance model: e
 **Schema Classification**
 
 - **FR-001**: The ingestion system MUST classify every schema entity into exactly one of: `class` (sh:NodeShape → SchemaRecord), `attribute` (rdf:Property → ElementRecord), `enum_value` (→ ValueConcept), or `valueset` (→ ValueSet, a named collection of ValueConcepts).
-- **FR-002**: ValueSet MUST be added as a new entity type — a named, content-addressed collection of ValueConcept URIs with its own provenance. Enums like "units", "modalities", "species" are ValueSets, not schemas.
-- **FR-003**: Attributes whose type is another class MUST be emitted as ElementRecord with `data_type: object` and a `type_ref` field pointing to the referenced SchemaRecord URI.
+- **FR-002**: ValueSet MUST be added as a new entity type — a named, content-addressed collection of ValueConcept URIs with its own provenance. Enums like "units", "modalities", "species" are ValueSets, not schemas. ValueSet members are URIs; output validation warns on unresolved member URIs but does not block ingestion (members may be ingested in a later run).
+- **FR-003**: Attributes whose type is another class MUST be emitted as ElementRecord with `data_type: object` and a `type_ref` field pointing to the referenced SchemaRecord URI. `type_ref` is part of the identity hash (different referenced class = different element).
 - **FR-004**: Classification MUST inspect structural signals: presence of `properties`/`slots` → class; leaf type + constraints → attribute; `enum`/`oneOf` with literal values → enum; named collection of enum values → valueset.
 - **FR-005**: Each classification decision MUST include a `classification_confidence` score (0.0–1.0) recorded in provenance.
 
@@ -128,8 +128,8 @@ The SchemaRecord model is updated to match the ElementRecord provenance model: e
 
 - **FR-006**: The system MUST support a pluggable adapter interface: `BaseAdapter.extract(source_path) → list[ClassifiedEntity]` where `ClassifiedEntity` includes the entity, its classification, and confidence.
 - **FR-007**: Built-in adapters MUST include: `JSONSchemaAdapter` (draft-07/2019/2020-12), `LinkMLAdapter`, `CSVDictionaryAdapter`, `CodeRepoAdapter` (Python + TypeScript via Docker).
-- **FR-008**: The existing 5 source adapters (BIDS, NWB, DANDI, openMINDS, AIND) MUST be refactored to extend `BaseAdapter`, preserving current behavior while gaining classification rigor.
-- **FR-009**: Third-party adapters MUST be registerable via entry points (`undata.adapters` group) or a `--adapter-module` CLI flag.
+- **FR-008**: The existing 5 source adapters (BIDS, NWB, DANDI, openMINDS, AIND) MUST be refactored to extend `BaseAdapter` with classification rigor. The old `extractors/` directory is deleted — no backward compatibility shims.
+- **FR-009**: Third-party adapters MUST be registerable via entry points (`undata.adapters` group in `pyproject.toml`) or a `--adapter-module` CLI flag. The adapter registry MUST discover entry point adapters at startup.
 
 **LLM-Assisted Classification**
 
@@ -191,4 +191,4 @@ The SchemaRecord model is updated to match the ElementRecord provenance model: e
 - LLM access is optional and not required for core functionality.
 - litellm is used as the LLM abstraction layer, supporting Ollama (local) and any OpenAI-compatible API (remote).
 - CSV data dictionaries follow a common pattern: one row per variable, columns for name, type, description, allowed_values.
-- The existing 5 adapters will be refactored but must produce identical output for existing test fixtures (backward compatibility).
+- The existing 5 adapters will be rewritten as BaseAdapter subclasses. No backward compatibility — `extractors/` is deleted. Output may differ (improved classification), validated by new test suite.

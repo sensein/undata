@@ -112,11 +112,12 @@ class BaseAdapter(ABC):
 | `adapters/__init__.py` | NEW — `BaseAdapter`, `ClassifiedEntity`, `EntityType`, adapter registry |
 | `adapters/base.py` | NEW — ABC + dataclasses |
 | `adapters/classifier.py` | NEW — Rule-based `classify_entity()` with structural signal detection |
-| `extractors/bids.py` | REFACTOR → `adapters/bids.py` extending BaseAdapter |
-| `extractors/nwb.py` | REFACTOR → `adapters/nwb.py` extending BaseAdapter |
-| `extractors/dandi.py` | REFACTOR → `adapters/dandi.py` extending BaseAdapter |
-| `extractors/openminds.py` | REFACTOR → `adapters/openminds.py` extending BaseAdapter |
-| `extractors/aind.py` | REFACTOR → `adapters/aind.py` extending BaseAdapter |
+| `extractors/` | DELETE — replaced entirely by `adapters/` |
+| `adapters/bids.py` | NEW (from extractors/bids.py) — extends BaseAdapter |
+| `adapters/nwb.py` | NEW (from extractors/nwb.py) — extends BaseAdapter |
+| `adapters/dandi.py` | NEW (from extractors/dandi.py) — extends BaseAdapter |
+| `adapters/openminds.py` | NEW (from extractors/openminds.py) — extends BaseAdapter |
+| `adapters/aind.py` | NEW (from extractors/aind.py) — extends BaseAdapter |
 | `ingest.py` | Refactor to consume `list[ClassifiedEntity]` from adapters; route by EntityType |
 
 ## Phase 3: Generic Source Adapters
@@ -128,7 +129,7 @@ class BaseAdapter(ABC):
 | `adapters/json_schema.py` | NEW — Generic JSON Schema (draft-07/2019/2020-12) → ClassifiedEntity |
 | `adapters/linkml.py` | NEW — LinkML YAML → ClassifiedEntity (classes → CLASS, slots → ATTRIBUTE, enums → VALUESET) |
 | `adapters/csv_dictionary.py` | NEW — CSV data dictionary → ClassifiedEntity (one row per element) |
-| `adapters/registry.py` | NEW — Adapter registry with auto-detection by file extension + entry point loading |
+| `adapters/registry.py` | NEW — Adapter registry with auto-detection by file extension + entry point loading (`undata.adapters` group via `importlib.metadata`) |
 
 **Adapter auto-detection**:
 - `.json` → JSONSchemaAdapter
@@ -281,7 +282,7 @@ Phase 7 (polish)     depends on: all phases
 
 | Area | Complexity | Justification |
 |------|-----------|---------------|
-| BaseAdapter refactoring | High | 5 existing extractors must produce identical output post-refactor; backward compat is critical |
+| BaseAdapter refactoring | High | 5 existing extractors rewritten as BaseAdapter subclasses; no backward compat — extractors/ deleted |
 | Rule-based classifier | Medium | Structural signal detection for 4 entity types; edge cases in nested/polymorphic schemas |
 | ValueSet model | Low | Simple collection entity with content-addressed identity |
 | LLM classification | Medium | Prompt engineering + litellm integration + response validation |

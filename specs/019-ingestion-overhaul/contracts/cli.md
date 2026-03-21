@@ -70,6 +70,22 @@ class ClassifiedEntity:
     source_context: dict | None    # adapter metadata
 ```
 
+### ClassifiedEntity JSON (Docker output format)
+
+Docker inspection scripts write `result.json` containing a list of ClassifiedEntity:
+
+```json
+[
+  {
+    "entity_type": "attribute",
+    "semantic": {"data_type": "string", "ontology_term": null},
+    "provenance": {"source": "aind", "class": "Subject", "name": "age", "description": "Age"},
+    "confidence": 0.95,
+    "source_context": {"parent_class": "Subject", "field_type": "str"}
+  }
+]
+```
+
 ## Workflow YAML Contract
 
 See data-model.md WorkflowSpec for full schema.
