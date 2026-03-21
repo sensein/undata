@@ -324,6 +324,37 @@ def ontology_index_cmd(elements_path: str, output: str) -> None:
 
 @main.command()
 @click.argument("path", type=click.Path(exists=True), default=".")
+@click.option("--threshold", "-t", default=0.5, help="Alias detection threshold")
+@click.option("--output", "-o", default=None, help="Output report file path")
+@click.option("--dry-run", is_flag=True, help="Preview changes without writing")
+def align(path: str, threshold: float, output: str | None, dry_run: bool) -> None:
+    """Run alias detection, form groups, update provenance, produce alignment report."""
+    from .align import align_elements
+
+    base = Path(path)
+    elements_dir = base / "elements" if (base / "elements").exists() else base
+    output_path = Path(output) if output else None
+
+    stats = align_elements(
+        elements_dir=elements_dir,
+        library_path=base,
+        threshold=threshold,
+        output_path=output_path,
+        dry_run=dry_run,
+    )
+
+    prefix = "[DRY RUN] " if dry_run else ""
+    click.echo(
+        f"{prefix}Alignment: {stats['total_pairs_evaluated']} pairs evaluated, "
+        f"{stats['exact_match_groups']} exact groups, "
+        f"{stats['close_match_groups']} close groups "
+        f"({stats['new_groups']} new, {stats['unchanged_groups']} unchanged, "
+        f"{stats['dissolved_groups']} dissolved)."
+    )
+
+
+@main.command()
+@click.argument("path", type=click.Path(exists=True), default=".")
 @click.option("--cache-dir", default="ontology-cache", help="Ontology cache directory")
 @click.option("--threshold", "-t", default=0.7, help="Ontology assignment threshold")
 @click.option("--model", "-m", default="all-MiniLM-L6-v2", help="Embedding model name")
