@@ -1,156 +1,220 @@
 # Implementation Plan: Staged Enrichment Pipeline
 
-**Branch**: `026-staged-enrichment` | **Date**: 2026-03-21 | **Spec**: spec.md
+**Branch**: `026-staged-enrichment` | **Date**: 2026-03-21 (revised) | **Spec**: spec.md
+**Examples**: examples.md (identity model walkthrough + consistency review)
 
 ## Summary
 
-Refactor the pipeline from identity-changing enrichment (creates duplicate elements)
-to a staged model: extract → stage → enrich in-place → commit (rehash → registry).
-Remove `ontology_term` from identity hash. Enrich all 4 registry entity types
-(elements, schemas, valuesets, values) in dependency order. Re-extract and evaluate.
+Fundamental refactor of the identity model and pipeline flow:
+1. Remove `ontology_term` field entirely
+2. Post-enrichment hashing (two modes: ontology-anchored vs structural fallback)
+3. Staged pipeline: extract (UUIDs) → enrich (in-place) → commit (hash + merge)
+4. Unify provenance model across all 4 registry entity types
+5. Add missing fields for consistency (description, ontology_annotations on all types)
+6. Remove legacy Constraints model
+7. Re-extract + evaluate
 
 ## Technical Context
 
-**Language/Version**: Python 3.14
-**Dependencies**: No new deps — refactoring existing code
-**Breaking change**: `ontology_term` removed from identity hash → all elements rehashed
-**Scale**: 7,756 elements → should stay ~7,756 after enrichment (not 14,114)
+**Breaking changes**: Identity hash model completely changed. All existing elements rehashed.
+**No new dependencies**.
+**See**: examples.md for concrete walkthrough of merge vs link scenarios.
 
 ## Constitution Check
 
 | Principle | Status | Notes |
 |-----------|--------|-------|
-| I. Simplicity First | PASS | Simpler model: one entity = one file, no derived copies |
+| I. Simplicity First | PASS | Unified provenance; removed legacy Constraints; cleaner identity |
 | II. TDD | PASS | Test-alongside |
-| III. API-First Design | PASS | Same CLI interface, behavior change documented |
-| IV. Observability | PASS | Enrichment provenance on each entity |
-| V. Versioning & Stability | PASS | Breaking hash change; not released |
+| III. API-First Design | PASS | Identity model documented before implementation |
+| IV. Observability | PASS | Enrichment provenance on every entity |
+| V. Versioning & Stability | PASS | Breaking; not released |
 | VI. Environment Isolation | PASS | No changes |
-| Evaluation Record | PASS | Re-extraction results recorded in eval-record.md |
+| Evaluation Record | PASS | Phase 8 records results in eval-record.md |
 
-## Phase 1: Remove ontology_term Field
+## Phase 1: Unify Registry Entity Model
 
-**Goal**: Delete `ontology_term` from `SemanticIdentity` and `ValueSemanticIdentity`. No deprecation — no service launched.
-
-| File | Change |
-|------|--------|
-| `models.py` | REMOVE `ontology_term` field from `SemanticIdentity` and `ValueSemanticIdentity` |
-| `hashing.py` | Remove `"ontology_term"` from `_EXCLUDED_FROM_HASH` (field no longer exists) |
-| All files referencing `ontology_term` | grep + update (extractors, enrich, ingest, tests) |
-
-**Impact**: `ontology_term` no longer exists on any model. Ontology alignment is stored
-exclusively in `ontology_annotations: list[OntologyAnnotation]` (excluded from hash).
-
-## Phase 2: Staging Directory + Pipeline Refactor
-
-**Goal**: Extract writes to `.staging/{run_id}/`, not directly to registry.
+**Goal**: All 4 entity types share a consistent structure. Fix gaps from examples.md review.
 
 | File | Change |
 |------|--------|
-| `ingest.py` | MODIFY — write extracted entities to staging dir, not output dir |
-| `cli.py` | MODIFY — pipeline generates run_id (UUID), creates staging dir, passes to ingest/enrich/commit |
+| `models.py` | REMOVE `ontology_term` from SemanticIdentity |
+| `models.py` | REMOVE `Constraints` model entirely; move `pattern: str \| None` to SemanticIdentity |
+| `models.py` | ADD `description: str \| None` to SemanticIdentity, ValueSemanticIdentity, SchemaIdentity, ValueSetIdentity (NOT in hash for ontology-anchored; IN hash for structural fallback) |
+| `models.py` | ADD `ontology_annotations: list[OntologyAnnotation] \| None` to SchemaIdentity and ValueSetIdentity |
+| `models.py` | REMOVE `SchemaProvenance` and `ValueProvenance` — use `ProvenanceEntry` for all entity types |
+| `models.py` | UPDATE SchemaRecord: `provenance: list[ProvenanceEntry]` |
+| `models.py` | UPDATE ValueConcept: `provenance: list[ProvenanceEntry]` |
+| `models.py` | REMOVE `source_attribute` and `source_class` from SemanticIdentity (replaced by class + attribute + description in fallback hash) |
+| `hashing.py` | UPDATE `_EXCLUDED_FROM_HASH`: add `description`, `ontology_annotations`; remove `ontology_term` (gone), `source_attribute`, `source_class` |
+| `hashing.py` | ADD `compute_identity_hash(semantic, provenance, ontology_anchored: bool) -> str` — two-mode hash function |
 
-**Staging layout**:
+**Unified registry entity structure** (all 4 types):
 ```
-{output_dir}/.staging/{run_id}/
-├── elements/      # staged element YAMLs (temporary names)
-├── schemas/
-├── values/
-└── valuesets/
+semantic:
+  <type-specific fields>        # IN hash
+  description: str | None       # IN hash (fallback only)
+  ontology_annotations: [...]   # NOT in hash (except primary URI when anchored)
+provenance:
+  - source: str
+    class: str                  # IN hash (fallback only)
+    name: str                   # IN hash (fallback only)
+    description: str | None
+    generated_at: str | None
+    attributed_to: str | None
+    activity: str | None
+    source_ref: SourceRef | None
 ```
 
-## Phase 3: In-Place Enrichment (No New Entities)
+## Phase 2: Two-Mode Hash Function
 
-**Goal**: Enrich modifies staged files in-place. No `_create_enriched_element()`.
-
-| File | Change |
-|------|--------|
-| `enrich.py` | MAJOR REFACTOR — remove `_create_enriched_element()`; replace with `_update_entity_in_place()`; enrichment adds `ontology_annotations` + `value_domain` to existing YAML files; append enrichment provenance entry |
-
-**Enrichment order** (dependency-driven):
-1. Elements + Values (parallel)
-2. Valuesets (needs enriched member values)
-3. Schemas (needs enriched element context)
-
-## Phase 4: Commit Stage (Rehash → Registry)
-
-**Goal**: Rehash each staged entity, write to registry under content-addressed name, delete staging.
+**Goal**: `compute_identity_hash()` with ontology-anchored and structural fallback modes.
 
 | File | Change |
 |------|--------|
-| `ingest.py` or new `commit.py` | ADD `commit_staged(staging_dir, output_dir)` — for each staged entity: compute sha256 from semantic (excl annotations), generate filename `{name}_{hash}.yaml`, write to registry dir, merge provenance if duplicate hash, delete staging dir |
+| `hashing.py` | REWRITE `canonical_json()` to accept mode parameter |
+
+**Ontology-anchored mode** (when primary annotation has skos:exactMatch or element_match):
+```python
+hash_input = {
+    "data_type": ...,
+    "unit": ...,
+    "response_options": [...],  # sorted by value
+    "min_value": ...,
+    "max_value": ...,
+    "pattern": ...,
+    "type_ref": ...,
+    "primary_ontology_uri": "http://purl.obolibrary.org/obo/NCIT_C25150",
+}
+```
+
+**Structural fallback mode** (no high-precision ontology match):
+```python
+hash_input = {
+    "data_type": ...,
+    "unit": ...,
+    "response_options": [...],
+    "min_value": ...,
+    "max_value": ...,
+    "pattern": ...,
+    "type_ref": ...,
+    "class": "participant",          # from provenance
+    "attribute": "age",              # from provenance
+    "description": "Age in years",   # canonical description
+}
+```
+
+## Phase 3: Staging Directory
+
+**Goal**: Extract writes to `.staging/{run_id}/` with UUIDs, not content-addressed names.
+
+| File | Change |
+|------|--------|
+| `ingest.py` | REWRITE — extract to staging dir with UUID filenames; no hashing at extraction time |
+| `cli.py` | Pipeline generates run_id, creates staging dir |
+
+## Phase 4: In-Place Enrichment
+
+**Goal**: Enrich staged entities in-place. No new entities. Dependency-ordered.
+
+| File | Change |
+|------|--------|
+| `enrich.py` | REWRITE — `enrich_all(staging_dir)`: (1) elements + values parallel, (2) valuesets, (3) schemas. Uses `_assign_ontology_annotations()` from 025. Updates files in-place. |
+
+## Phase 5: Commit Stage
+
+**Goal**: Rehash enriched entities → content-addressed filenames → registry.
+
+| File | Change |
+|------|--------|
+| `commit.py` | NEW — `commit_staged(staging_dir, output_dir)`: for each entity, determine hash mode (ontology-anchored or fallback), compute hash, write to registry, merge duplicates, delete staging |
 
 **Commit logic**:
 ```
-for each entity in staging_dir:
-    semantic = entity['semantic']
-    sha256 = compute_sha256(canonical_json(semantic))  # excludes ontology_annotations etc.
-    key = sha256[:12]
-    filename = f"{name}_{key}.yaml"
-    if registry/filename exists:
+for each staged entity:
+    annotations = entity.semantic.ontology_annotations
+    primary = find primary annotation with exactMatch/element_match
+    if primary and primary.score >= threshold:
+        mode = "ontology_anchored"
+        hash = compute_identity_hash(semantic, provenance, ontology_anchored=True)
+    else:
+        mode = "structural_fallback"
+        hash = compute_identity_hash(semantic, provenance, ontology_anchored=False)
+
+    filename = f"{name}_{hash[:12]}.yaml"
+    if filename exists in registry:
         merge provenance
     else:
-        write new file with sha256 field
-delete staging_dir
+        write new file
+    delete staged file
 ```
 
-## Phase 5: All Entity Types Enrichment
+## Phase 6: Update Downstream (Transforms, Index, Similarity)
 
-**Goal**: Enrich schemas, values, valuesets (not just elements).
+**Goal**: All downstream code uses new identity model.
 
 | File | Change |
 |------|--------|
-| `enrich.py` | ADD `enrich_values()` — embed value labels, assign ontology_annotations with threshold 0.8 |
-| `enrich.py` | ADD `enrich_valuesets()` — derive ontology_namespace from enriched member values |
-| `enrich.py` | ADD `enrich_schemas()` — assign ontology_annotations for class concepts |
+| `transform.py` | Use primary ontology annotation URI for grouping (not removed ontology_term) |
+| `similarity.py` | Use primary annotation for ontology match scoring |
+| `index.py` | Build ontology index from ontology_annotations (not ontology_term) |
+| `verify.py` | Use OntologyStore for verification (already done in 024) |
+| `validation.py` | Update hash verification for two-mode hashing |
 
-## Phase 6: Re-extraction + Evaluation
+## Phase 7: Update All Extractors
 
-**Goal**: Full pipeline run with new staged model. Verify no element proliferation. Record in eval-record.md.
+**Goal**: Extractors produce entities without hashing (UUID staged).
+
+| File | Change |
+|------|--------|
+| All adapters in `adapters/` | Remove any hash computation; output raw semantic + provenance |
+| `adapters/docker_scripts/bids_extract.py` | Remove hash references |
+| `adapters/docker_scripts/dandi_extract.py` | Remove hash references |
+
+## Phase 8: Re-extraction + Evaluation
+
+**Goal**: Full pipeline with new model. Verify against baseline.
 
 | Step | Verification |
 |------|-------------|
-| Extract all 5 sources | Element count matches pre-enrichment baseline (~7,756) |
-| Enrich all entity types | ontology_annotations present, sha256 unchanged |
-| Commit to registry | Final element count = pre-enrichment count (no proliferation) |
-| Transforms | Generated from committed elements (correct hashes) |
-| eval-record.md | Updated with new extraction results + comparison to 2026-03-21 baseline |
+| Ontology refresh | Reuse cached store (13 ontologies, 2.99M terms) |
+| Extract all 5 sources to staging | All entities have UUIDs, no hashes |
+| Enrich (elements+values → valuesets → schemas) | Ontology annotations present; no new entities |
+| Commit to registry | Content-addressed filenames; duplicates merged |
+| **Element count** | Should be < 7,756 (cross-source merges expected where identical) |
+| **Transform count** | Should be proportional to unique ontology concept pairs |
+| eval-record.md | Full comparison table vs 2026-03-21 baseline |
 
-**Expected eval metrics**:
-- Element count: ~7,756 (not 14,114)
-- Schemas: ~642
-- Values: ~987
-- Valuesets: ~86
-- Ontology assignment rate: ≥ 70% (annotations on entities, not new entities)
-- Transforms: should decrease (fewer duplicate elements = fewer pairings)
+**Expected improvements**:
+- Fewer elements (cross-source merge where structurally + semantically identical)
+- Cleaner transforms (no identity transforms between elements that should have merged)
+- Consistent provenance model across all entity types
+- No legacy Constraints cruft
 
 ## Dependency Graph
 
 ```
-Phase 1 (hash change)    → foundational
-Phase 2 (staging)        → depends on Phase 1
-Phase 3 (in-place enrich)→ depends on Phase 2
-Phase 4 (commit)         → depends on Phase 3
-Phase 5 (all types)      → depends on Phase 3
-Phase 6 (re-extract+eval)→ depends on all
+Phase 1 (model unification)  → foundational
+Phase 2 (two-mode hash)      → depends on Phase 1
+Phase 3 (staging)            → depends on Phase 1
+Phase 4 (enrichment)         → depends on Phase 3
+Phase 5 (commit)             → depends on Phase 2 + Phase 4
+Phase 6 (downstream)         → depends on Phase 2
+Phase 7 (extractors)         → depends on Phase 3
+Phase 8 (re-extract + eval)  → depends on all
+
+Parallelizable: Phase 2 ‖ Phase 3; Phase 6 ‖ Phase 7
 ```
 
 ## Complexity Tracking
 
 | Area | Complexity | Justification |
 |------|-----------|---------------|
-| Hash exclusion | Low | Add one string to set |
-| Staging directory | Medium | Pipeline needs run_id, staging path plumbing |
-| In-place enrichment | Medium | Remove _create_enriched_element, replace with update pattern |
-| Commit rehash | Medium | Rehash + merge logic + cleanup |
-| Schema/value enrichment | Medium | New enrichment passes for 3 entity types |
-| Re-extraction eval | Low | Run pipeline, check counts, update eval-record.md |
-
-## Risks
-
-| Risk | Mitigation |
-|------|-----------|
-| Existing tests expect ontology_term in hash | Update tests; ontology_term now excluded |
-| Existing tests expect enrichment to create new elements | Remove/update those tests |
-| Pipeline interruption leaves stale staging dir | Cleanup on next run; staging dir has run_id + timestamp |
-| Schema enrichment quality (class concept matching) | Start with basic label matching; improve later |
+| Model unification | High | Touch all 4 entity models; remove legacy; unify provenance |
+| Two-mode hash | Medium | New hash function with mode selection |
+| Staging directory | Medium | Pipeline plumbing; UUID generation |
+| In-place enrichment | Medium | Remove _create_enriched_element; 3-pass dependency order |
+| Commit stage | High | Hash mode selection; merge logic; registry write |
+| Downstream updates | Medium | 5 files reference old ontology_term field |
+| Extractor updates | Low | Remove hash calls |
+| Re-extraction | Low | Run pipeline, check counts |
