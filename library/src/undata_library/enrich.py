@@ -121,21 +121,25 @@ def enrich_elements(
 
 
 def _load_ontology_embeddings(cache_dir: Path, model_name: str) -> EmbeddingStore | None:
-    """Load or build ontology embeddings."""
-    onto_parquet = cache_dir / "embeddings.parquet"
-    if onto_parquet.exists():
-        try:
-            store = EmbeddingStore(uri_col="term_uri").load(onto_parquet, expected_model=model_name)
-            if store.size > 0:
-                return store
-        except Exception:
-            pass
+    """Load ontology embeddings from vector index (024) or legacy cache."""
+    # Canonical location: {output_dir}/ontology-vectors.parquet
+    # cache_dir IS the output_dir in the new convention
+    onto_parquet = cache_dir / "ontology-vectors.parquet"
+    for candidate in [onto_parquet]:
+        if candidate.exists():
+            try:
+                store = EmbeddingStore(uri_col="term_uri").load(candidate, expected_model=model_name)
+                if store.size > 0:
+                    logger.info("Loaded ontology embeddings from %s: %d terms", candidate, store.size)
+                    return store
+            except Exception:
+                pass
 
-    # Try to build from cache files
+    # Try to build from legacy cache files
     try:
         store = build_ontology_embeddings(cache_dir, model_name=model_name)
         if store.size > 0:
-            store.save(onto_parquet, model_name=model_name)
+            store.save(cache_dir / "embeddings.parquet", model_name=model_name)
             return store
     except ImportError:
         logger.warning(
