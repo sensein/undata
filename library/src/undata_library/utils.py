@@ -37,7 +37,7 @@ def safe_load_yaml(path: Path) -> dict | None:
         if not isinstance(data, dict):
             return None
         return data
-    except (yaml.YAMLError, OSError) as exc:
+    except (yaml.YAMLError, OSError, UnicodeDecodeError) as exc:
         logger.debug("Failed to load YAML %s: %s", path, exc)
         return None
 

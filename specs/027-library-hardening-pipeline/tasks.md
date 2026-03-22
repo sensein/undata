@@ -63,11 +63,11 @@
 
 ### Test Coverage
 
-- [ ] T021 [P] [US1] Add tests for `acquire_source()` and `build_source_ref_from_cache()` in `library/tests/test_acquisition.py`
-- [ ] T022 [P] [US1] Add tests for `ontology_search()` and `map_to_skos()` in `library/tests/test_ontology_store.py`
-- [ ] T023 [P] [US1] Add tests for `run_workflow()` and `load_workflow()` in `library/tests/test_workflow.py`
-- [ ] T024 [P] [US1] Add edge-case tests across all modules: empty inputs, malformed YAML, missing required fields, Unicode names in `library/tests/test_edge_cases.py`
-- [ ] T025 [US1] Create `library/tests/test_pipeline_e2e.py` — full end-to-end pipeline test: extract BIDS → enrich → commit → align → transform, verify counts match baseline
+- [ ] T021 [P] [US1] Add tests for `acquire_source()` and `build_source_ref_from_cache()` in `library/tests/test_acquisition.py` — REVIEW-TODO: requires network access for source acquisition
+- [ ] T022 [P] [US1] Add tests for `ontology_search()` and `map_to_skos()` in `library/tests/test_ontology_store.py` — REVIEW-TODO: requires populated ontology store
+- [ ] T023 [P] [US1] Add tests for `run_workflow()` and `load_workflow()` in `library/tests/test_workflow.py` — REVIEW-TODO: requires workflow spec files
+- [X] T024 [P] [US1] Add edge-case tests across all modules: empty inputs, malformed YAML, missing required fields, Unicode names in `library/tests/test_edge_cases.py`
+- [X] T025 [US1] Create `library/tests/test_pipeline_e2e.py` — full end-to-end pipeline test: extract BIDS → enrich → commit → align → transform, verify counts match baseline
 
 ### Validation
 

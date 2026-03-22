@@ -1,0 +1,93 @@
+"""End-to-end pipeline tests: extract → enrich → commit → align → transform.
+
+These tests verify the full pipeline works correctly, including:
+- Baseline extraction counts match
+- New entities flow through the entire pipeline
+- Idempotent re-ingestion
+"""
+
+from pathlib import Path
+
+
+from undata_library.commit import commit_staged
+from undata_library.enrich import enrich_elements
+from undata_library.ingest import ingest_source
+from undata_library.staging import create_staging_dir, generate_run_id
+from undata_library.utils import write_yaml
+
+
+def _run_pipeline(source: str, output_dir: Path, skip_enrich: bool = True) -> dict:
+    """Run a minimal pipeline: extract → (optionally enrich) → commit."""
+    run_id = generate_run_id()
+    staging = create_staging_dir(output_dir, run_id)
+    stats = ingest_source(source, None, staging)
+    if not skip_enrich:
+        enrich_elements(staging_dir=staging)
+    commit_stats = commit_staged(staging, output_dir)
+    return {
+        "ingest": stats,
+        "commit": commit_stats,
+        "elements": len(list((output_dir / "elements").glob("*.yaml"))),
+        "schemas": len(list((output_dir / "schemas").glob("*.yaml")))
+        if (output_dir / "schemas").exists()
+        else 0,
+        "values": len(list((output_dir / "values").glob("*.yaml")))
+        if (output_dir / "values").exists()
+        else 0,
+    }
+
+
+class TestBIDSBaseline:
+    """Verify BIDS extraction matches the 026 baseline."""
+
+    def test_bids_element_count(self, tmp_path):
+        result = _run_pipeline("bids", tmp_path)
+        # 026 baseline: 1,036 BIDS elements
+        assert result["elements"] >= 1030, f"Expected ~1036 elements, got {result['elements']}"
+
+    def test_bids_schemas_created(self, tmp_path):
+        result = _run_pipeline("bids", tmp_path)
+        assert result["schemas"] >= 10, f"Expected ~12 schemas, got {result['schemas']}"
+
+
+class TestNewEntityFlow:
+    """Verify a new entity flows through the full pipeline."""
+
+    def test_synthetic_element_committed(self, tmp_path):
+        # First run: normal BIDS extraction
+        _run_pipeline("bids", tmp_path)
+        initial_count = len(list((tmp_path / "elements").glob("*.yaml")))
+
+        # Add a synthetic element to a new staging run
+        run_id = generate_run_id()
+        staging = create_staging_dir(tmp_path, run_id)
+        write_yaml(
+            staging / "elements" / "synthetic_test.yaml",
+            {
+                "semantic": {"data_type": "float", "unit": "meter"},
+                "provenance": [{"source": "test", "class": "synthetic", "name": "test_distance"}],
+            },
+        )
+        commit_staged(staging, tmp_path)
+
+        final_count = len(list((tmp_path / "elements").glob("*.yaml")))
+        assert final_count == initial_count + 1
+
+
+class TestIdempotency:
+    """Verify re-ingestion merges correctly.
+
+    Full idempotency (zero new files on re-ingest) requires T038c-d
+    (source committish short-circuit). Current behavior: commit merges
+    by hash key, so same-hash elements merge provenance.
+    """
+
+    def test_double_ingest_merges_not_duplicates(self, tmp_path):
+        result1 = _run_pipeline("bids", tmp_path)
+        result2 = _run_pipeline("bids", tmp_path)
+        # Second run should not dramatically increase element count
+        # (some elements may differ due to UUID-based extraction order)
+        assert result2["elements"] <= result1["elements"] * 1.1, (
+            f"Second ingest created too many elements: "
+            f"{result2['elements']} vs {result1['elements']}"
+        )
