@@ -111,6 +111,9 @@
 - [ ] T038f [US2] Add registry roundtrip test in `library/tests/test_pipeline_e2e.py`: export full registry, delete all state (runs/, curation-flags/, staging/, hash-registry.yaml), re-ingest exported files through full pipeline, verify byte-identical registry output
 - [ ] T038g [US2] Implement fast dedup check in `library/src/undata_library/commit.py`: before full enrichment, compute two-mode identity hash from raw entity semantic + provenance, check if hash already exists in registry; if match found, merge provenance only and skip enrichment for that entity
 - [ ] T038h [US2] Add pre-enrichment dedup test in `library/tests/test_pipeline_e2e.py`: ingest a raw pre-enrichment YAML (no ontology_annotations, no sha256) into a registry that already has the enriched version, verify provenance merge without re-enrichment
+- [ ] T038i [US2] Implement source validation in `library/src/undata_library/commit.py`: maintain a registry of known sources (from source_defs/), reject provenance merge from unrecognized sources with `suspicious_source` CurationFlag + return feedback message to caller
+- [ ] T038j [P] [US2] Implement provenance bloat detection in `library/src/undata_library/commit.py`: if multiple novel sources attempt provenance merge on the same entity within a configurable window, flag as `provenance_bloat` for curator review
+- [ ] T038k [US2] Add source validation tests in `library/tests/test_curation.py`: test unrecognized source rejection, provenance bloat detection, and duplicate provenance skip
 
 ### Adapter Accuracy Review
 
