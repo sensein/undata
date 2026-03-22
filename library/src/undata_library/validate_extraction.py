@@ -136,20 +136,17 @@ def validate_extraction(
     field_issues = _check_semantic_fields(entities, spec.get("required_fields", {}))
 
     # Compute quality score
-    total_entities = len(entities)
-    issue_count = len(classification_issues) + len(missing_entities) + len(field_issues)
-    score = max(0.0, 1.0 - (issue_count / max(total_entities, 1)))
-
     return {
         "source": source_name,
         "entity_counts": dict(type_counts),
-        "total_entities": total_entities,
+        "total_entities": len(entities),
         "classification_issues": classification_issues,
+        "classification_issue_count": len(classification_issues),
         "missing_entities": missing_entities,
+        "missing_entity_count": len(missing_entities),
         "unexpected_entities": unexpected_entities,
         "field_issues": field_issues,
-        "issue_count": issue_count,
-        "score": round(score, 3),
+        "field_issue_count": len(field_issues),
     }
 
 
@@ -306,7 +303,15 @@ def print_validation_report(report: dict) -> None:
     print(f"Extraction Validation: {report['source']}")
     print(f"{'=' * 60}")
     print(f"Total entities: {report['total_entities']}")
-    print(f"Quality score: {report['score']:.1%}")
+    total_issues = (
+        report.get("classification_issue_count", 0)
+        + report.get("missing_entity_count", 0)
+        + report.get("field_issue_count", 0)
+    )
+    print(
+        f"Issues: {total_issues} ({report.get('classification_issue_count', 0)} classification, "
+        f"{report.get('missing_entity_count', 0)} missing, {report.get('field_issue_count', 0)} field)"
+    )
     print("\nEntity counts:")
     for etype, count in sorted(report["entity_counts"].items()):
         print(f"  {etype}: {count}")
