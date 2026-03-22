@@ -102,7 +102,9 @@
 
 - [ ] T036 [US2] Integrate `run_summary.py` into pipeline CLI: generate and save `RunSummary` after each pipeline run to `{output_dir}/runs/{timestamp}-{source}.yaml`
 - [ ] T037 [US2] Implement delta detection: compare current run entity counts/hashes against previous run, report added/removed/modified per entity type
+- [ ] T037b [US2] Implement per-entity change detection in `library/src/undata_library/run_summary.py`: compare sha256 hashes of individual entity files between current and previous run, classify each as added/modified/unchanged/removed, include in RunSummary delta
 - [ ] T038 [P] [US2] Add source version tracking: compare `_resolved_committish` files between runs to detect source schema changes
+- [ ] T038b [US2] Report source version changes in pipeline extraction output: when `_resolved_committish` differs from previous run, log a warning and include version change details (old → new committish) in RunSummary
 
 ### Adapter Accuracy Review
 
