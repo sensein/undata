@@ -66,8 +66,8 @@ def ingest_source(
     merged = 0
 
     # Group by semantic hash.
-    # When the semantic graph is underspecified (no ontology_term, no unit,
-    # no constraints), include the attribute name in the hash to prevent
+    # When the semantic graph is underspecified (no ontology_annotations, no unit,
+    # no response_options), include the attribute name in the hash to prevent
     # unrelated properties from collapsing. The attribute name IS semantic
     # when no richer annotation exists.
     hash_to_records: dict[str, tuple[SemanticIdentity, list[ProvenanceEntry], str]] = {}
@@ -151,7 +151,7 @@ def ingest_source(
     classified_stats = _process_classified_entities(all_entities, library_path, source_name)
 
     # Generate cross-element transform mappings (bidirectional) for elements
-    # sharing an ontology_term but with different data_type/unit
+    # sharing a primary ontology annotation but with different data_type/unit
     mapping_stats = _generate_transform_mappings(library_path, registry)
     _write_registry(registry_path, registry)
 
@@ -167,7 +167,7 @@ def ingest_source(
 
 
 def _load_value_mappings(library_path: Path) -> dict[str, dict]:
-    """Load value-mappings.yaml: raw_value → {ontology_term, label}."""
+    """Load value-mappings.yaml: raw_value → {label}."""
     mappings_path = library_path / "value-mappings.yaml"
     if not mappings_path.exists():
         return {}
@@ -175,7 +175,7 @@ def _load_value_mappings(library_path: Path) -> dict[str, dict]:
     if not isinstance(data, dict):
         return {}
 
-    # Build a flat lookup: raw_value (lowercased) → {ontology_term, label}
+    # Build a flat lookup: raw_value (lowercased) → {label}
     lookup: dict[str, dict] = {}
     for _category, values in data.items():
         if not isinstance(values, dict):
@@ -183,12 +183,8 @@ def _load_value_mappings(library_path: Path) -> dict[str, dict]:
         for label, info in values.items():
             if not isinstance(info, dict):
                 continue
-            ontology_term = info.get("ontology_term")
             for alias in info.get("aliases", []):
-                lookup[alias.lower()] = {
-                    "ontology_term": ontology_term,
-                    "label": label,
-                }
+                lookup[alias.lower()] = {"label": label}
     return lookup
 
 
@@ -219,13 +215,10 @@ def _extract_values(
         mapping = value_mappings.get(raw_val.lower())
         if mapping:
             label = mapping["label"]
-            ontology_term = mapping["ontology_term"]
         else:
             label = raw_val.lower().replace(" ", "_")
-            ontology_term = None
 
         sem_id = ValueSemanticIdentity(
-            ontology_term=ontology_term,
             value_type="categorical",
             label=label,
         )
@@ -237,7 +230,7 @@ def _extract_values(
         if sha not in value_groups:
             value_groups[sha] = (sem_id, [])
         # Avoid duplicate provenance
-        existing_raw = {(p.source, p.raw_value) for p in value_groups[sha][1]}
+        existing_raw = {(p.source, p.name) for p in value_groups[sha][1]}
         if (src, raw_val) not in existing_raw:
             value_groups[sha][1].append(prov)
 
@@ -255,8 +248,8 @@ def _extract_values(
         if filepath.exists():
             existing_data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
             existing_record = ValueConcept.model_validate(existing_data)
-            existing_raw = {(p.source, p.raw_value) for p in existing_record.provenance}
-            new_provs = [p for p in provs if (p.source, p.raw_value) not in existing_raw]
+            existing_raw = {(p.source, p.name) for p in existing_record.provenance}
+            new_provs = [p for p in provs if (p.source, p.name) not in existing_raw]
             if new_provs:
                 all_provs = existing_record.provenance + new_provs
                 record = ValueConcept(semantic=sem_id, provenance=all_provs)
@@ -310,8 +303,8 @@ def _ingest_extracted_values(
         if filepath.exists():
             existing_data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
             existing_record = ValueConcept.model_validate(existing_data)
-            existing_raw = {(p.source, p.raw_value) for p in existing_record.provenance}
-            if (prov.source, prov.raw_value) not in existing_raw:
+            existing_raw = {(p.source, p.name) for p in existing_record.provenance}
+            if (prov.source, prov.name) not in existing_raw:
                 all_provs = existing_record.provenance + [prov]
                 record = ValueConcept(semantic=sem_id, provenance=all_provs)
                 data = record.model_dump(mode="json", exclude_none=True)
@@ -356,7 +349,7 @@ def _resolve_response_option_uris(library_path: Path) -> int:
         uri = f"https://schema.undata.live/values/{f.stem}"
         value_lookup[label.lower()] = uri
         for p in data.get("provenance", []):
-            value_lookup[p["raw_value"].lower()] = uri
+            value_lookup[p.get("name", "").lower()] = uri
 
     resolved = 0
     for f in elements_dir.glob("*.yaml"):
@@ -564,8 +557,8 @@ def _process_classified_entities(
                 "label": label,
                 "value_type": sem.get("value_type", "categorical"),
             }
-            if sem.get("ontology_term"):
-                sem_dict["ontology_term"] = sem["ontology_term"]
+            if sem.get("description"):
+                sem_dict["description"] = sem["description"]
 
             canonical = canonical_json(sem_dict)
             sha = compute_sha256(canonical)
@@ -579,10 +572,10 @@ def _process_classified_entities(
                 # Merge provenance
                 existing = yaml.safe_load(filepath.read_text(encoding="utf-8"))
                 existing_sources = {
-                    (p.get("source"), p.get("raw_value")) for p in existing.get("provenance", [])
+                    (p.get("source"), p.get("name", "")) for p in existing.get("provenance", [])
                 }
                 new_prov = entity.provenance
-                if (new_prov.get("source"), new_prov.get("raw_value")) not in existing_sources:
+                if (new_prov.get("source"), new_prov.get("name", "")) not in existing_sources:
                     existing["provenance"].append(new_prov)
                     filepath.write_text(
                         yaml.dump(existing, default_flow_style=False, sort_keys=False),
@@ -636,8 +629,8 @@ def _build_schemas_from_provenance(
 
     from .models import (
         HashRegistryEntry,
+        ProvenanceEntry,
         SchemaIdentity,
-        SchemaProvenance,
         SchemaRecord,
     )
 
@@ -680,8 +673,9 @@ def _build_schemas_from_provenance(
         from datetime import timezone
 
         now_iso = dt_mod.now(timezone.utc).isoformat()
-        prov = SchemaProvenance(
+        prov = ProvenanceEntry(
             source=source_name,
+            **{"class": class_name},
             name=class_name,
             generated_at=now_iso,
             attributed_to="urn:undata:ingestion-pipeline",
@@ -743,8 +737,8 @@ def _generate_transform_mappings(
     library_path: Path,
     registry: HashRegistry,
 ) -> dict[str, int]:
-    """Generate mapping files between elements sharing an ontology_term but
-    with different data_type or unit.
+    """Generate mapping files between elements sharing a primary ontology annotation
+    but with different data_type or unit.
 
     For example: age (float, year) ↔ age (string, iso8601_duration)
     """
@@ -756,13 +750,19 @@ def _generate_transform_mappings(
     mappings_dir = library_path / "mappings"
     mappings_dir.mkdir(parents=True, exist_ok=True)
 
-    # Group elements by ontology_term
+    # Group elements by primary ontology annotation URI
     onto_groups: dict[str, list[tuple[str, dict]]] = defaultdict(list)
     for f in sorted(elements_dir.glob("*.yaml")):
         data = yaml.safe_load(f.read_text(encoding="utf-8"))
         if not data or "semantic" not in data:
             continue
-        onto = data["semantic"].get("ontology_term")
+        # Extract primary ontology URI from annotations
+        annotations = data["semantic"].get("ontology_annotations", [])
+        onto = None
+        for ann in annotations:
+            if ann.get("primary"):
+                onto = ann.get("term_uri")
+                break
         if onto:
             # Find URI from registry
             fname = f.stem
