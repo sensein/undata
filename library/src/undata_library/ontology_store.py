@@ -9,7 +9,8 @@ from pathlib import Path
 from typing import Iterator
 
 import pyoxigraph
-import yaml
+
+from .utils import safe_load_yaml
 
 logger = logging.getLogger(__name__)
 
@@ -330,6 +331,8 @@ def nearest_terms(
 def load_ontology_config(path: Path | None = None) -> list[dict]:
     """Load ontology config from YAML."""
     config_path = path or _BUNDLED_CONFIG
-    data = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+    data = safe_load_yaml(config_path)
+    if data is None:
+        return []
     all_onts = data.get("ontologies", [])
     return [o for o in all_onts if o.get("enabled", True) is not False]

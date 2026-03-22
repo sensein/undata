@@ -6,14 +6,15 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-import yaml
-
 from .models import IngestionReport, IngestionViolation, WorkflowSpec
+from .utils import safe_load_yaml
 
 
 def load_workflow(path: Path) -> WorkflowSpec:
     """Load workflow spec from YAML file."""
-    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    data = safe_load_yaml(path)
+    if data is None:
+        raise ValueError(f"Invalid or missing workflow file: {path}")
     return WorkflowSpec.model_validate(data)
 
 

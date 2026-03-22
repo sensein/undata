@@ -6,9 +6,8 @@ import hashlib
 from pathlib import Path
 from typing import Any
 
-import yaml
-
 from ..models import EntityType, SourceRef
+from ..utils import safe_load_yaml
 from .base import BaseAdapter, ClassifiedEntity
 
 _NWB_TYPE_MAP = {
@@ -49,8 +48,8 @@ class NWBAdapter(BaseAdapter):
         results: list[ClassifiedEntity] = []
 
         for f in sorted(source_path.glob("*.yaml")):
-            data = yaml.safe_load(f.read_text())
-            if not isinstance(data, dict):
+            data = safe_load_yaml(f)
+            if data is None:
                 continue
 
             file_ref = self._file_ref(f)

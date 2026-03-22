@@ -10,6 +10,8 @@ import click
 import yaml
 from dotenv import load_dotenv
 
+from .utils import safe_load_yaml
+
 from .hashing import (
     build_element_uri,
     build_schema_uri,
@@ -79,9 +81,9 @@ def validate(path: str, strict: bool) -> None:
 @click.argument("file", type=click.Path(exists=True))
 def hash_cmd(file: str) -> None:
     """Compute and display the content hash for a YAML file."""
-    data = yaml.safe_load(Path(file).read_text(encoding="utf-8"))
+    data = safe_load_yaml(Path(file))
 
-    if not isinstance(data, dict) or "semantic" not in data:
+    if data is None or "semantic" not in data:
         click.echo("Error: file must contain a 'semantic' block.", err=True)
         sys.exit(1)
 
@@ -361,7 +363,7 @@ def ontology_group() -> None:
 @click.option("--exclude", multiple=True, help="Ontologies to skip (e.g., --exclude ncbitaxon)")
 def ontology_refresh(ontology: str | None, output_dir: str | None, exclude: tuple) -> None:
     """Download ontologies from OBO Foundry and load into local store."""
-    from .ontology_fetch import _download_obo
+    from .ontology_fetch import download_obo
     from .ontology_store import OntologyStore, build_vector_index, load_ontology_config
 
     store = OntologyStore(get_ontology_store_path())
@@ -378,7 +380,7 @@ def ontology_refresh(ontology: str | None, output_dir: str | None, exclude: tupl
         fmt = cfg.get("format", "obo")
         click.echo(f"Fetching {name} ({fmt})...")
         try:
-            dl_path = _download_obo(name, url)
+            dl_path = download_obo(name, url)
             try:
                 if fmt == "obo":
                     count = store.load_obo(name, dl_path)
@@ -463,8 +465,8 @@ def similarity_cmd(file_a: str, file_b: str) -> None:
     """Compute similarity between two element files."""
     from .similarity import compute_similarity
 
-    data_a = yaml.safe_load(Path(file_a).read_text(encoding="utf-8"))
-    data_b = yaml.safe_load(Path(file_b).read_text(encoding="utf-8"))
+    data_a = safe_load_yaml(Path(file_a))
+    data_b = safe_load_yaml(Path(file_b))
 
     result = compute_similarity(data_a, data_b)
 

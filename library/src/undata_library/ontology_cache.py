@@ -6,6 +6,8 @@ from pathlib import Path
 
 import yaml
 
+from .utils import safe_load_yaml
+
 
 class OntologyCache:
     """Manages a local cache of ontology terms for offline verification."""
@@ -23,8 +25,8 @@ class OntologyCache:
         if not path.exists():
             return {}
 
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
-        terms = data.get("terms", {}) if isinstance(data, dict) else {}
+        data = safe_load_yaml(path)
+        terms = data.get("terms", {}) if data is not None else {}
         self._loaded[ontology_name] = terms
         return terms
 

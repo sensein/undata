@@ -8,6 +8,8 @@ from typing import Any
 
 import yaml
 
+from .utils import BASE_URI
+
 
 def build_index(base_path: Path) -> dict[str, Any]:
     """Scan elements/ and schemas/ directories, build registry."""
@@ -113,19 +115,17 @@ def build_ontology_index(elements_dir: Path, library_path: Path | None = None) -
     index: dict[str, list[dict[str, Any]]] = {}
 
     # Scan elements
-    _scan_dir_for_ontology(elements_dir, "element", "https://schema.undata.live/elements", index)
+    _scan_dir_for_ontology(elements_dir, "element", f"{BASE_URI}/elements", index)
 
     # Scan schemas
     schemas_dir = base / "schemas"
     if schemas_dir.exists():
-        _scan_dir_for_ontology(schemas_dir, "schema", "https://schema.undata.live/schemas", index)
+        _scan_dir_for_ontology(schemas_dir, "schema", f"{BASE_URI}/schemas", index)
 
     # Scan valuesets
     valuesets_dir = base / "valuesets"
     if valuesets_dir.exists():
-        _scan_dir_for_ontology(
-            valuesets_dir, "valueset", "https://schema.undata.live/valuesets", index
-        )
+        _scan_dir_for_ontology(valuesets_dir, "valueset", f"{BASE_URI}/valuesets", index)
 
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),

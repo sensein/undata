@@ -5,9 +5,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-import yaml
-
 from .similarity import compute_similarity
+from .utils import BASE_URI, safe_load_yaml
 
 if TYPE_CHECKING:
     from .embeddings import EmbeddingStore
@@ -26,11 +25,11 @@ def detect_aliases(
     # Load all elements grouped by data_type for optimization
     by_type: dict[str, list[tuple[str, str, dict]]] = {}
     for f in sorted(elements_dir.glob("*.yaml")):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        if not data or "semantic" not in data:
+        data = safe_load_yaml(f)
+        if data is None or "semantic" not in data:
             continue
         dt = data["semantic"].get("data_type", "")
-        uri = f"https://schema.undata.live/elements/{f.stem}"
+        uri = f"{BASE_URI}/elements/{f.stem}"
         by_type.setdefault(dt, []).append((f.name, uri, data))
 
     candidates: list[dict] = []

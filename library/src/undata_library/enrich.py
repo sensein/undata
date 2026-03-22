@@ -14,6 +14,7 @@ from pathlib import Path
 import yaml
 
 from .embeddings import EmbeddingStore, build_element_embeddings, build_ontology_embeddings
+from .utils import BASE_URI, safe_load_yaml
 
 logger = logging.getLogger(__name__)
 
@@ -34,8 +35,8 @@ def _update_entity_in_place(
     Only writes fields that are provided and non-None.
     Returns True if any change was made.
     """
-    data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
-    if not isinstance(data, dict) or "semantic" not in data:
+    data = safe_load_yaml(filepath)
+    if data is None or "semantic" not in data:
         return False
 
     sem = data["semantic"]
@@ -133,7 +134,7 @@ def enrich_elements(
             and onto_store is not None
             and elem_store is not None
         ):
-            uri = f"https://schema.undata.live/elements/{f.stem}"
+            uri = f"{BASE_URI}/elements/{f.stem}"
             annotations = _assign_ontology_annotations(
                 uri,
                 elem_store,
@@ -224,7 +225,7 @@ def enrich_values(
             stats["unchanged"] += 1
             continue
 
-        uri = f"https://schema.undata.live/elements/{f.stem}"
+        uri = f"{BASE_URI}/elements/{f.stem}"
         annotations = _assign_ontology_annotations(
             uri,
             elem_store,
@@ -295,7 +296,7 @@ def enrich_schemas(
             stats["unchanged"] += 1
             continue
 
-        uri = f"https://schema.undata.live/elements/{f.stem}"
+        uri = f"{BASE_URI}/elements/{f.stem}"
         # Schemas always get concept_match (not element_match)
         annotations = _assign_ontology_annotations(
             uri,
@@ -407,7 +408,7 @@ def _build_value_ontology_map(values_dir: Path) -> dict[str, list[dict]]:
             anns = data["semantic"].get("ontology_annotations", [])
             if anns:
                 # Use both stem-based URI and any label-based keys
-                uri = f"https://schema.undata.live/elements/{f.stem}"
+                uri = f"{BASE_URI}/elements/{f.stem}"
                 mapping[uri] = anns
                 label = data["semantic"].get("label", "")
                 if label:
@@ -693,7 +694,7 @@ def _build_value_lookup(values_dir: Path) -> dict[str, str]:
                 continue
             sem = data["semantic"]
             label = sem.get("label", "")
-            uri = f"https://schema.undata.live/values/{f.stem}"
+            uri = f"{BASE_URI}/values/{f.stem}"
             if label:
                 lookup[label.lower()] = uri
             for p in data.get("provenance", []):

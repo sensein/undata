@@ -5,7 +5,7 @@ from __future__ import annotations
 import difflib
 from pathlib import Path
 
-import yaml
+from .utils import safe_load_yaml
 
 
 def verify_elements(
@@ -21,8 +21,8 @@ def verify_elements(
     warnings: list[dict] = []
 
     for f in sorted(elements_dir.glob("*.yaml")):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        if not data or "semantic" not in data:
+        data = safe_load_yaml(f)
+        if data is None or "semantic" not in data:
             continue
 
         onto = data["semantic"].get("ontology_term")

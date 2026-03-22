@@ -5,9 +5,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-import yaml
-
 from .models import ElementRecord
+from .utils import safe_load_yaml
 
 
 def diff_provenance(path: Path) -> list[dict[str, Any]]:
@@ -15,7 +14,9 @@ def diff_provenance(path: Path) -> list[dict[str, Any]]:
 
     Returns a list of field-level differences between the first two provenance entries.
     """
-    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    data = safe_load_yaml(path)
+    if data is None:
+        return []
     record = ElementRecord.model_validate(data)
 
     if len(record.provenance) < 2:

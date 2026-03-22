@@ -8,6 +8,7 @@ from pathlib import Path
 import yaml
 
 from .hashing import compute_identity_hash, determine_hash_mode, generate_short_key
+from .utils import safe_load_yaml, sanitize_filename
 
 
 def commit_staged(staging_dir: Path, output_dir: Path) -> dict[str, int]:
@@ -65,9 +66,7 @@ def commit_staged(staging_dir: Path, output_dir: Path) -> dict[str, int]:
                 target = existing_with_hash[0]
             else:
                 name = _derive_name(data, entity_type)
-                safe_name = name.lower().replace("/", "_").replace(":", "_").replace("\\", "_")
-                if len(safe_name) > 60:
-                    safe_name = safe_name[:60]
+                safe_name = sanitize_filename(name)
                 target = out_dir / f"{safe_name}_{key}.yaml"
 
             if target.exists():
@@ -114,8 +113,8 @@ def _derive_name(data: dict, entity_type: str) -> str:
 
 def _merge_provenance(target: Path, new_data: dict) -> None:
     """Merge provenance from new_data into existing target file."""
-    existing = yaml.safe_load(target.read_text(encoding="utf-8"))
-    if not isinstance(existing, dict):
+    existing = safe_load_yaml(target)
+    if existing is None:
         return
 
     existing_prov = existing.get("provenance", [])

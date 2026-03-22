@@ -14,6 +14,7 @@ from .models import (
     ValidationViolation,
     ValueConcept,
 )
+from .utils import BASE_URI
 
 
 def validate_file(path: Path) -> ValidationReport:
@@ -162,7 +163,7 @@ def validate_ingestion_output(library_path: Path) -> list[dict]:
                     )
 
             # URI uniqueness
-            uri = f"https://schema.undata.live/elements/{f.stem}"
+            uri = f"{BASE_URI}/elements/{f.stem}"
             if uri in uri_set:
                 violations.append(
                     {
@@ -195,7 +196,7 @@ def validate_ingestion_output(library_path: Path) -> list[dict]:
                     }
                 )
 
-            uri = f"https://schema.undata.live/schemas/{f.stem}"
+            uri = f"{BASE_URI}/schemas/{f.stem}"
             if uri in uri_set:
                 violations.append(
                     {
@@ -215,7 +216,7 @@ def validate_ingestion_output(library_path: Path) -> list[dict]:
             data = _load_yaml(f)
             if not data or "semantic" not in data:
                 continue
-            uri = f"https://schema.undata.live/valuesets/{f.stem}"
+            uri = f"{BASE_URI}/valuesets/{f.stem}"
             if uri in uri_set:
                 violations.append(
                     {

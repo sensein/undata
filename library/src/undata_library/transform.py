@@ -9,6 +9,8 @@ from pathlib import Path
 
 import yaml
 
+from .utils import BASE_URI
+
 from .hashing import canonical_json, compute_sha256, generate_short_key
 from .models import FunctionSpec, MappingFunctionType, ProvenanceEntry, TransformRecord
 
@@ -62,7 +64,7 @@ def generate_transforms(
         if not onto:
             continue
 
-        uri = f"https://schema.undata.live/elements/{f.stem}"
+        uri = f"{BASE_URI}/elements/{f.stem}"
         by_onto.setdefault(onto, []).append((uri, data))
 
     stats = {

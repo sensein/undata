@@ -6,6 +6,8 @@ from pathlib import Path
 
 import yaml
 
+from .utils import BASE_URI, safe_load_yaml, sanitize_filename
+
 from .hashing import (
     build_element_uri,
     build_value_uri,
@@ -85,8 +87,8 @@ def ingest_source(
 
     # Build a temporary registry for URI generation (needed by schema builder)
     for f in sorted(elements_dir.glob("*.yaml")):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        if not data or "provenance" not in data:
+        data = safe_load_yaml(f)
+        if data is None or "provenance" not in data:
             continue
         prov_list = data.get("provenance", [])
         if not prov_list:
@@ -148,8 +150,8 @@ def _load_value_mappings(library_path: Path) -> dict[str, dict]:
     mappings_path = library_path / "value-mappings.yaml"
     if not mappings_path.exists():
         return {}
-    data = yaml.safe_load(mappings_path.read_text(encoding="utf-8"))
-    if not isinstance(data, dict):
+    data = safe_load_yaml(mappings_path)
+    if data is None:
         return {}
 
     # Build a flat lookup: raw_value (lowercased) → {label}
@@ -277,19 +279,19 @@ def _resolve_response_option_uris(library_path: Path) -> int:
     # Build lookup: raw_value (lowercased) → value URI
     value_lookup: dict[str, str] = {}
     for f in values_dir.glob("*.yaml"):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        if not data or "semantic" not in data:
+        data = safe_load_yaml(f)
+        if data is None or "semantic" not in data:
             continue
         label = data["semantic"].get("label", "")
-        uri = f"https://schema.undata.live/values/{f.stem}"
+        uri = f"{BASE_URI}/values/{f.stem}"
         value_lookup[label.lower()] = uri
         for p in data.get("provenance", []):
             value_lookup[p.get("name", "").lower()] = uri
 
     resolved = 0
     for f in elements_dir.glob("*.yaml"):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        if not data or "semantic" not in data:
+        data = safe_load_yaml(f)
+        if data is None or "semantic" not in data:
             continue
         opts = data["semantic"].get("response_options")
         if not opts:
@@ -466,7 +468,7 @@ def _process_classified_entities(
             sha = compute_sha256(canonical)
             key = generate_short_key(sha)
 
-            safe_name = name.lower().replace("/", "_").replace(":", "_")[:60]
+            safe_name = sanitize_filename(name)
             filename = f"{safe_name}_{key}.yaml"
             filepath = valuesets_dir / filename
 
@@ -499,13 +501,15 @@ def _process_classified_entities(
             sha = compute_sha256(canonical)
             key = generate_short_key(sha)
 
-            safe_label = label.lower().replace("/", "_").replace(":", "_").replace(" ", "_")[:60]
+            safe_label = sanitize_filename(label)
             filename = f"{safe_label}_{key}.yaml"
             filepath = values_dir / filename
 
             if filepath.exists():
                 # Merge provenance
-                existing = yaml.safe_load(filepath.read_text(encoding="utf-8"))
+                existing = safe_load_yaml(filepath)
+                if existing is None:
+                    continue
                 existing_sources = {
                     (p.get("source"), p.get("name", "")) for p in existing.get("provenance", [])
                 }
@@ -542,8 +546,8 @@ def _write_element(path: Path, record: ElementRecord, sha256: str | None = None)
 def _load_registry(path: Path) -> HashRegistry:
     """Load hash registry from YAML, or return empty."""
     if path.exists():
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if isinstance(data, dict):
+        data = safe_load_yaml(path)
+        if data is not None:
             return HashRegistry.model_validate(data)
     return HashRegistry()
 
@@ -578,8 +582,8 @@ def _build_schemas_from_provenance(
     class_elements: dict[str, list[str]] = defaultdict(list)
 
     for f in sorted(elements_dir.glob("*.yaml")):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        if not data or "provenance" not in data:
+        data = safe_load_yaml(f)
+        if data is None or "provenance" not in data:
             continue
         for p in data["provenance"]:
             if p.get("source") == source_name:
@@ -659,8 +663,8 @@ def _generate_transform_mappings(
     # Group elements by primary ontology annotation URI
     onto_groups: dict[str, list[tuple[str, dict]]] = defaultdict(list)
     for f in sorted(elements_dir.glob("*.yaml")):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        if not data or "semantic" not in data:
+        data = safe_load_yaml(f)
+        if data is None or "semantic" not in data:
             continue
         # Extract primary ontology URI from annotations
         annotations = data["semantic"].get("ontology_annotations", [])
@@ -711,9 +715,7 @@ def _generate_transform_mappings(
                     func_type = "unit_conversion"
 
                 # Forward mapping: A → B
-                mapping_id = f"{uri_a}__to__{uri_b}".replace(
-                    "https://schema.undata.live/elements/", ""
-                )
+                mapping_id = f"{uri_a}__to__{uri_b}".replace(f"{BASE_URI}/elements/", "")
                 safe_id = mapping_id.replace("/", "_")[:80]
 
                 if safe_id not in existing_mapping_files:
@@ -735,7 +737,7 @@ def _generate_transform_mappings(
                     created += 1
 
                 # Reverse mapping: B → A
-                rev_id = f"{uri_b}__to__{uri_a}".replace("https://schema.undata.live/elements/", "")
+                rev_id = f"{uri_b}__to__{uri_a}".replace(f"{BASE_URI}/elements/", "")
                 safe_rev = rev_id.replace("/", "_")[:80]
 
                 if safe_rev not in existing_mapping_files:

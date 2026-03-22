@@ -13,6 +13,7 @@ from typing import Any
 import yaml
 
 from .models import SourceDefinition, SourceRef
+from .utils import safe_load_yaml
 
 logger = logging.getLogger(__name__)
 
@@ -31,13 +32,17 @@ def load_source_def(name_or_path: str) -> SourceDefinition:
     # Try as file path first
     p = Path(name_or_path)
     if p.exists() and p.suffix in (".yaml", ".yml"):
-        data = yaml.safe_load(p.read_text(encoding="utf-8"))
+        data = safe_load_yaml(p)
+        if data is None:
+            raise ValueError(f"Invalid or empty source definition: {p}")
         return SourceDefinition.model_validate(data)
 
     # Try bundled definitions
     bundled = _BUNDLED_DEFS_DIR / f"{name_or_path}.yaml"
     if bundled.exists():
-        data = yaml.safe_load(bundled.read_text(encoding="utf-8"))
+        data = safe_load_yaml(bundled)
+        if data is None:
+            raise ValueError(f"Invalid or empty bundled source definition: {bundled}")
         return SourceDefinition.model_validate(data)
 
     available = [f.stem for f in _BUNDLED_DEFS_DIR.glob("*.yaml")]
@@ -186,7 +191,7 @@ class SourceCache:
                 meta_file = ver_dir / "source-meta.yaml"
                 meta = {}
                 if meta_file.exists():
-                    meta = yaml.safe_load(meta_file.read_text()) or {}
+                    meta = safe_load_yaml(meta_file) or {}
                 # Calculate size
                 size = sum(f.stat().st_size for f in ver_dir.rglob("*") if f.is_file())
                 results.append(
@@ -215,7 +220,7 @@ class SourceCache:
                 if older_than_days is not None:
                     meta_file = ver_dir / "source-meta.yaml"
                     if meta_file.exists():
-                        meta = yaml.safe_load(meta_file.read_text()) or {}
+                        meta = safe_load_yaml(meta_file) or {}
                         dl_at = meta.get("downloaded_at")
                         if dl_at:
                             from datetime import datetime as dt_cls
@@ -395,7 +400,7 @@ def build_source_ref_from_cache(source_def: SourceDefinition, cache_path: Path) 
     else:
         meta_file = cache_path / "source-meta.yaml"
         if meta_file.exists():
-            meta = yaml.safe_load(meta_file.read_text()) or {}
+            meta = safe_load_yaml(meta_file) or {}
             committish = meta.get("version")
         else:
             committish = None
