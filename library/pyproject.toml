@@ -15,6 +15,7 @@ dependencies = [
     "pyarrow>=15.0",
     "pronto>=2.5",
     "pyoxigraph>=0.4",
+    "python-dotenv>=1.0",
 ]
 
 [project.optional-dependencies]

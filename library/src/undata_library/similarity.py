@@ -110,9 +110,9 @@ def compute_similarity(
     sem_a = elem_a.get("semantic", elem_a)
     sem_b = elem_b.get("semantic", elem_b)
 
-    # Component 1: ontology match (weight 0.4)
-    onto_a = sem_a.get("ontology_term")
-    onto_b = sem_b.get("ontology_term")
+    # Component 1: ontology match (weight 0.4) — uses primary annotation
+    onto_a = _get_primary_ontology_uri(sem_a)
+    onto_b = _get_primary_ontology_uri(sem_b)
     ontology_match = 1.0 if (onto_a and onto_b and onto_a == onto_b) else 0.0
 
     # Component 2: semantic embedding similarity (weight 0.3)
@@ -171,6 +171,19 @@ def map_to_skos(score: float, sem_a: dict, sem_b: dict) -> str:
         return "skos:relatedMatch"
 
     return "none"
+
+
+def _get_primary_ontology_uri(sem: dict) -> str | None:
+    """Get the primary ontology annotation URI from semantic dict."""
+    annotations = sem.get("ontology_annotations", [])
+    if annotations:
+        for ann in annotations:
+            if isinstance(ann, dict) and ann.get("primary"):
+                return ann.get("term_uri")
+        # Fallback: first annotation
+        if isinstance(annotations[0], dict):
+            return annotations[0].get("term_uri")
+    return None
 
 
 def _extract_choices(sem: dict) -> list[str]:

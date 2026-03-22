@@ -94,17 +94,19 @@ def test_validation_catches_schema_no_properties(tmp_path):
 
 
 def test_validation_passes_clean_library(tmp_path):
-    from undata_library.hashing import canonical_json, compute_sha256
+    from undata_library.hashing import compute_identity_hash
 
     sem = {"data_type": "string"}
-    sha = compute_sha256(canonical_json(sem))
+    prov = [{"source": "test", "class": "X", "name": "age"}]
+    # Structural fallback (no ontology annotations)
+    sha, _ = compute_identity_hash(sem, prov, ontology_anchored=False)
     _make_library(
         tmp_path,
         elements={
             "age_abc123456789.yaml": {
                 "sha256": sha,
                 "semantic": sem,
-                "provenance": [{"source": "test", "class": "X", "name": "age"}],
+                "provenance": prov,
             },
         },
     )

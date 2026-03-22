@@ -69,11 +69,13 @@ def build_index(base_path: Path) -> dict[str, Any]:
                 if not isinstance(data, dict) or "semantic" not in data:
                     continue
                 prov = data.get("provenance", [])
+                # Extract primary ontology annotation if present
+                primary_uri = _get_primary_uri(data["semantic"].get("ontology_annotations"))
                 values.append(
                     {
                         "file": str(f.relative_to(base_path)),
                         "label": data["semantic"].get("label", ""),
-                        "ontology_term": data["semantic"].get("ontology_term"),
+                        "primary_ontology_uri": primary_uri,
                         "provenance_count": len(prov),
                     }
                 )
@@ -101,9 +103,10 @@ def write_index(base_path: Path, output: Path) -> dict[str, Any]:
 
 
 def build_ontology_index(elements_dir: Path, library_path: Path | None = None) -> dict:
-    """Build a reverse index: ontology_term → list of entity URIs + metadata.
+    """Build a reverse index: primary ontology URI → list of entity URIs + metadata.
 
     Scans elements/, schemas/, and valuesets/ directories.
+    Uses ontology_annotations (primary annotation) instead of legacy ontology_term.
     This is a derived view — regenerated from files on demand.
     """
     base = library_path or elements_dir.parent
@@ -138,7 +141,7 @@ def _scan_dir_for_ontology(
     uri_base: str,
     index: dict[str, list[dict[str, Any]]],
 ) -> None:
-    """Scan a directory for entities with ontology_term and add to index."""
+    """Scan a directory for entities with ontology_annotations and add to index."""
     for f in sorted(directory.glob("*.yaml")):
         try:
             data = yaml.safe_load(f.read_text(encoding="utf-8"))
@@ -147,18 +150,27 @@ def _scan_dir_for_ontology(
         if not data or "semantic" not in data:
             continue
 
-        onto = data["semantic"].get("ontology_term")
-        if not onto:
+        annotations = data["semantic"].get("ontology_annotations", [])
+        primary_uri = _get_primary_uri(annotations)
+        if not primary_uri:
             continue
 
         uri = f"{uri_base}/{f.stem}"
         sources = sorted({p.get("source", "") for p in data.get("provenance", [])})
+
+        # Get match_level from primary annotation
+        match_level = None
+        for ann in annotations:
+            if ann.get("primary"):
+                match_level = ann.get("match_level")
+                break
 
         entry: dict[str, Any] = {
             "uri": uri,
             "entity_type": entity_type,
             "file": f.name,
             "sources": sources,
+            "match_level": match_level,
         }
 
         # Add type-specific fields
@@ -167,4 +179,15 @@ def _scan_dir_for_ontology(
             entry["unit"] = data["semantic"].get("unit")
             entry["names"] = sorted({p.get("name", "") for p in data.get("provenance", [])})
 
-        index.setdefault(onto, []).append(entry)
+        index.setdefault(primary_uri, []).append(entry)
+
+
+def _get_primary_uri(annotations: list[dict] | None) -> str | None:
+    """Extract the primary ontology URI from an annotations list."""
+    if not annotations:
+        return None
+    for ann in annotations:
+        if ann.get("primary"):
+            return ann.get("term_uri")
+    # Fallback: first annotation
+    return annotations[0].get("term_uri") if annotations else None

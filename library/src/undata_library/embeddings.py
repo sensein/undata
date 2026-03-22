@@ -170,15 +170,29 @@ class EmbeddingStore:
 
 
 def _build_element_text(element_data: dict) -> str:
-    """Build embedding text from element: '{class} {name}: {description}'."""
+    """Build embedding text from element or value.
+
+    Elements: '{class} {name}: {description}'
+    Values: '{label}: {description}' (uses semantic.label)
+    """
+    semantic = element_data.get("semantic", {})
     prov = element_data.get("provenance", [])
+
+    # For values, use semantic label as primary text
+    label = semantic.get("label", "")
+    if label and semantic.get("value_type"):
+        # This is a value concept — use label + optional description
+        desc = semantic.get("description", "")
+        return f"{label}: {desc}".strip(": ") if desc else label
+
     if not prov:
         return ""
 
     first = prov[0] if isinstance(prov[0], dict) else {}
-    class_ = first.get("class", "")
+    # Handle both "class" (alias) and "class_" (field name) keys
+    class_ = first.get("class", "") or first.get("class_", "")
     name = first.get("name", "")
-    description = first.get("description", "")
+    description = first.get("description", "") or semantic.get("description", "")
 
     parts = []
     if class_:

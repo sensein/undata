@@ -11,7 +11,7 @@ SHORT_KEY_LENGTH = 12  # 12 hex chars = 6 bytes = 2^48 key space (~16.7M collisi
 
 
 # Fields excluded from identity hash (descriptive metadata, varies by source)
-_EXCLUDED_FROM_HASH = {"question_text", "value_domain", "ontology_annotations"}
+_EXCLUDED_FROM_HASH = {"question_text", "value_domain", "ontology_annotations", "description"}
 
 # Deprecated constraint fields (replaced by top-level min_value/max_value)
 _DEPRECATED_CONSTRAINT_FIELDS = {"minimum", "maximum"}
@@ -104,5 +104,80 @@ def compute_element_hash(semantic_dict: dict[str, Any]) -> tuple[str, str]:
     Returns (sha256_hex, canonical_json_str).
     """
     canonical = canonical_json(semantic_dict)
+    sha256_hex = compute_sha256(canonical)
+    return sha256_hex, canonical
+
+
+def determine_hash_mode(
+    ontology_annotations: list[dict] | None,
+) -> tuple[bool, str | None]:
+    """Determine whether to use ontology-anchored or structural fallback hash.
+
+    Returns (ontology_anchored: bool, primary_uri: str | None).
+    Ontology-anchored when primary annotation has exactMatch or element_match.
+    """
+    if not ontology_annotations:
+        return False, None
+
+    for ann in ontology_annotations:
+        if not isinstance(ann, dict):
+            continue
+        if ann.get("primary"):
+            relation = ann.get("mapping_relation", "")
+            match_level = ann.get("match_level", "")
+            if relation == "skos:exactMatch" or match_level == "element_match":
+                return True, ann.get("term_uri")
+            return False, None
+
+    # No primary found — check first annotation
+    if ontology_annotations and isinstance(ontology_annotations[0], dict):
+        ann = ontology_annotations[0]
+        relation = ann.get("mapping_relation", "")
+        match_level = ann.get("match_level", "")
+        if relation == "skos:exactMatch" or match_level == "element_match":
+            return True, ann.get("term_uri")
+
+    return False, None
+
+
+def compute_identity_hash(
+    semantic: dict[str, Any],
+    provenance: list[dict] | None = None,
+    ontology_anchored: bool = False,
+    primary_ontology_uri: str | None = None,
+) -> tuple[str, str]:
+    """Compute post-enrichment identity hash in two modes.
+
+    Ontology-anchored: data_type + unit + pattern + response_options + min/max + type_ref + primary_ontology_uri
+    Structural fallback: data_type + unit + pattern + response_options + min/max + type_ref + class + attribute + description
+
+    Returns (sha256_hex, canonical_json_str).
+    """
+    # Start with the standard canonical (excludes description, ontology_annotations, etc.)
+    base = canonical_json(semantic)
+    base_dict = json.loads(base) if base else {}
+
+    if ontology_anchored and primary_ontology_uri:
+        base_dict["_primary_ontology_uri"] = primary_ontology_uri
+    else:
+        # Structural fallback: include class + attribute + description from first provenance
+        if provenance and len(provenance) > 0:
+            first_prov = provenance[0]
+            if isinstance(first_prov, dict):
+                prov_class = first_prov.get("class", first_prov.get("class_", ""))
+                prov_name = first_prov.get("name", "")
+                prov_desc = first_prov.get("description", "")
+                if prov_class:
+                    base_dict["_class"] = prov_class
+                if prov_name:
+                    base_dict["_attribute"] = prov_name
+                if prov_desc:
+                    base_dict["_description"] = prov_desc
+        # Also include description from semantic block if available
+        desc = semantic.get("description")
+        if desc and "_description" not in base_dict:
+            base_dict["_description"] = desc
+
+    canonical = json.dumps(base_dict, sort_keys=True, separators=(",", ":"))
     sha256_hex = compute_sha256(canonical)
     return sha256_hex, canonical

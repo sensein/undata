@@ -16,22 +16,21 @@ class TestValueConcept:
         data = yaml.safe_load((FIXTURES / "valid-value.yaml").read_text())
         v = ValueConcept.model_validate(data)
         assert v.semantic.label == "male"
-        assert v.semantic.ontology_term == "http://purl.obolibrary.org/obo/PATO_0000384"
         assert len(v.provenance) == 1
 
     def test_multi_provenance_accepted(self):
         data = yaml.safe_load((FIXTURES / "multi-provenance-value.yaml").read_text())
         v = ValueConcept.model_validate(data)
         assert len(v.provenance) == 3
-        raw_values = {p.raw_value for p in v.provenance}
-        assert raw_values == {"male", "Male", "M"}
+        names = {p.name for p in v.provenance}
+        assert names == {"male", "Male", "M"}
 
     def test_missing_label_fails(self):
         with pytest.raises(ValidationError):
             ValueConcept.model_validate(
                 {
                     "semantic": {"value_type": "categorical"},
-                    "provenance": [{"source": "test", "raw_value": "x"}],
+                    "provenance": [{"source": "test", "class": "", "name": "x"}],
                 }
             )
 
@@ -44,12 +43,12 @@ class TestValueConcept:
                 }
             )
 
-    def test_no_ontology_term_ok(self):
+    def test_no_ontology_annotations_ok(self):
         v = ValueConcept.model_validate(
             {
                 "semantic": {"label": "unknown_value", "value_type": "categorical"},
-                "provenance": [{"source": "test", "raw_value": "unknown_value"}],
+                "provenance": [{"source": "test", "class": "", "name": "unknown_value"}],
             }
         )
-        assert v.semantic.ontology_term is None
+        assert v.semantic.ontology_annotations is None
         assert v.semantic.label == "unknown_value"

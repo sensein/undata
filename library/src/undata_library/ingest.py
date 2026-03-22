@@ -8,14 +8,12 @@ import yaml
 
 from .hashing import (
     build_element_uri,
-    build_schema_uri,
     build_value_uri,
     canonical_json,
     compute_sha256,
     generate_short_key,
 )
 from .models import (
-    Constraints,
     ElementRecord,
     HashRegistry,
     HashRegistryEntry,
@@ -23,7 +21,6 @@ from .models import (
     ResponseOption,
     SemanticIdentity,
     ValueConcept,
-    ValueProvenance,
     ValueSemanticIdentity,
 )
 
@@ -57,79 +54,50 @@ def ingest_source(
     # This keeps ingestion pure (source data only) and tracks annotations
     # as separate PROV-O curation events.
 
-    # Load existing hash registry
-    registry_path = library_path / "hash-registry.yaml"
-    registry = _load_registry(registry_path)
+    # Write each element to staging with UUID filename (no hashing at extraction)
+    import uuid
 
     elements_dir = library_path / "elements"
     elements_dir.mkdir(parents=True, exist_ok=True)
 
+    # Dedup by (source, class, name) within this extraction to avoid writing
+    # the same element twice from the same source
+    seen_keys: set[tuple[str, str, str]] = set()
     created = 0
     merged = 0
 
-    # Group by semantic hash.
-    # When the semantic graph is underspecified (no ontology_term, no unit,
-    # no constraints), include the attribute name in the hash to prevent
-    # unrelated properties from collapsing. The attribute name IS semantic
-    # when no richer annotation exists.
-    hash_to_records: dict[str, tuple[SemanticIdentity, list[ProvenanceEntry], str]] = {}
-
     for sem, prov in pairs:
-        sem_dict = sem.model_dump(exclude_none=True)
-        if "data_type" in sem_dict:
-            sem_dict["data_type"] = str(sem_dict["data_type"])
+        dedup_key = (prov.source, prov.class_, prov.name)
+        if dedup_key in seen_keys:
+            merged += 1
+            continue
+        seen_keys.add(dedup_key)
 
-        has_rich_semantics = sem.ontology_term is not None or sem.unit is not None
-        if not has_rich_semantics:
-            # Include attribute name + class as disambiguators when
-            # the semantic graph is underspecified. These are persisted
-            # in the semantic block so the backend can reproduce the hash.
-            sem_dict["source_attribute"] = prov.name
-            sem_dict["source_class"] = prov.class_
-            sem = sem.model_copy(
-                update={"source_attribute": prov.name, "source_class": prov.class_}
-            )
+        record = ElementRecord(semantic=sem, provenance=[prov])
+        entity_id = str(uuid.uuid4())
+        filepath = elements_dir / f"{entity_id}.yaml"
+        _write_element(filepath, record)
+        created += 1
 
-        sha = compute_sha256(canonical_json(sem_dict))
+    # Load hash registry for downstream compatibility (schemas, values, mappings)
+    registry_path = library_path / "hash-registry.yaml"
+    registry = _load_registry(registry_path)
 
-        if sha not in hash_to_records:
-            hash_to_records[sha] = (sem, [], prov.name)
-        hash_to_records[sha][1].append(prov)
-
-    for sha, (sem, provs, first_name) in hash_to_records.items():
-        # Deterministic 12-hex-char key from SHA-256 (no collision detection needed)
-        key = generate_short_key(sha)
-
-        attr_name = first_name.lower().lstrip("_")
-        # Sanitize: replace slashes, colons, and other filesystem-unsafe chars
-        safe_name = attr_name.replace("/", "_").replace(":", "_").replace("\\", "_")
-        # Truncate long names (URI-based names can be very long)
-        if len(safe_name) > 60:
-            safe_name = safe_name[:60]
-        filename = f"{safe_name}_{key}.yaml"
-        filepath = elements_dir / filename
-
-        if filepath.exists():
-            # Merge provenance into existing file
-            existing_data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
-            existing_record = ElementRecord.model_validate(existing_data)
-            existing_sources = {(p.source, p.name) for p in existing_record.provenance}
-
-            new_provs = [p for p in provs if (p.source, p.name) not in existing_sources]
-            if new_provs:
-                all_provs = existing_record.provenance + new_provs
-                record = ElementRecord(semantic=existing_record.semantic, provenance=all_provs)
-                _write_element(filepath, record, sha256=sha)
-                merged += len(new_provs)
-        else:
-            record = ElementRecord(semantic=sem, provenance=provs)
-            _write_element(filepath, record, sha256=sha)
-            created += 1
-
-        # Update registry
+    # Build a temporary registry for URI generation (needed by schema builder)
+    for f in sorted(elements_dir.glob("*.yaml")):
+        data = yaml.safe_load(f.read_text(encoding="utf-8"))
+        if not data or "provenance" not in data:
+            continue
+        prov_list = data.get("provenance", [])
+        if not prov_list:
+            continue
+        first_prov = prov_list[0]
+        attr_name = first_prov.get("name", "unknown")
+        # Use filename stem as key for registry
+        key = f.stem
         uri = build_element_uri(attr_name, key)
         registry.elements[key] = HashRegistryEntry(
-            sha256=sha,
+            sha256="",  # Hash computed at commit time, not extraction
             attribute=attr_name,
             uri=uri,
         )
@@ -160,14 +128,14 @@ def ingest_source(
     classified_stats = _process_classified_entities(all_entities, library_path, source_name)
 
     # Generate cross-element transform mappings (bidirectional) for elements
-    # sharing an ontology_term but with different data_type/unit
+    # sharing a primary ontology annotation but with different data_type/unit
     mapping_stats = _generate_transform_mappings(library_path, registry)
     _write_registry(registry_path, registry)
 
     return {
         "created": created,
         "merged": merged,
-        "total": len(hash_to_records),
+        "total": created + merged,
         "schemas_created": schema_stats.get("created", 0),
         "values_created": value_stats.get("created", 0) + classified_stats.get("values_created", 0),
         "valuesets_created": classified_stats.get("valuesets_created", 0),
@@ -176,7 +144,7 @@ def ingest_source(
 
 
 def _load_value_mappings(library_path: Path) -> dict[str, dict]:
-    """Load value-mappings.yaml: raw_value → {ontology_term, label}."""
+    """Load value-mappings.yaml: raw_value → {label}."""
     mappings_path = library_path / "value-mappings.yaml"
     if not mappings_path.exists():
         return {}
@@ -184,7 +152,7 @@ def _load_value_mappings(library_path: Path) -> dict[str, dict]:
     if not isinstance(data, dict):
         return {}
 
-    # Build a flat lookup: raw_value (lowercased) → {ontology_term, label}
+    # Build a flat lookup: raw_value (lowercased) → {label}
     lookup: dict[str, dict] = {}
     for _category, values in data.items():
         if not isinstance(values, dict):
@@ -192,12 +160,8 @@ def _load_value_mappings(library_path: Path) -> dict[str, dict]:
         for label, info in values.items():
             if not isinstance(info, dict):
                 continue
-            ontology_term = info.get("ontology_term")
             for alias in info.get("aliases", []):
-                lookup[alias.lower()] = {
-                    "ontology_term": ontology_term,
-                    "label": label,
-                }
+                lookup[alias.lower()] = {"label": label}
     return lookup
 
 
@@ -212,79 +176,57 @@ def _extract_values(
     values_dir.mkdir(parents=True, exist_ok=True)
 
     value_mappings = _load_value_mappings(library_path)
-    existing_keys = set(registry.elements.keys()) | set(registry.schemas.keys())
 
     # Collect all raw enum values with their source
     raw_values: list[tuple[str, str]] = []  # (raw_value, source_name)
     for sem, prov in pairs:
-        if sem.constraints and sem.constraints.allowed_values:
-            for val in sem.constraints.allowed_values:
-                raw_values.append((val, source_name))
+        # Extract enum values from response_options
+        if sem.response_options:
+            for opt in sem.response_options:
+                raw_values.append((opt.value, source_name))
 
     # Group by mapped identity
-    value_groups: dict[str, tuple[ValueSemanticIdentity, list[ValueProvenance]]] = {}
+    value_groups: dict[str, tuple[ValueSemanticIdentity, list[ProvenanceEntry]]] = {}
     for raw_val, src in raw_values:
         mapping = value_mappings.get(raw_val.lower())
         if mapping:
             label = mapping["label"]
-            ontology_term = mapping["ontology_term"]
         else:
             label = raw_val.lower().replace(" ", "_")
-            ontology_term = None
 
         sem_id = ValueSemanticIdentity(
-            ontology_term=ontology_term,
             value_type="categorical",
             label=label,
         )
         sem_dict = sem_id.model_dump(exclude_none=True)
         sha = compute_sha256(canonical_json(sem_dict))
 
-        prov = ValueProvenance(source=src, raw_value=raw_val)
+        prov = ProvenanceEntry(source=src, **{"class": ""}, name=raw_val)
 
         if sha not in value_groups:
             value_groups[sha] = (sem_id, [])
         # Avoid duplicate provenance
-        existing_raw = {(p.source, p.raw_value) for p in value_groups[sha][1]}
+        existing_raw = {(p.source, p.name) for p in value_groups[sha][1]}
         if (src, raw_val) not in existing_raw:
             value_groups[sha][1].append(prov)
 
+    import uuid as _uuid
+
     created = 0
-    for sha, (sem_id, provs) in value_groups.items():
-        key = generate_short_key(sha)
-        existing_keys.add(key)
-
-        safe_label = (
-            sem_id.label.lower().replace("/", "_").replace("\\", "_").replace(" ", "_")[:50]
+    for _sha, (sem_id, provs) in value_groups.items():
+        # UUID filename (no hashing at extraction time — hash at commit)
+        filepath = values_dir / f"{_uuid.uuid4()}.yaml"
+        record = ValueConcept(semantic=sem_id, provenance=provs)
+        data = record.model_dump(mode="json", exclude_none=True)
+        filepath.write_text(
+            yaml.dump(data, default_flow_style=False, sort_keys=False),
+            encoding="utf-8",
         )
-        filename = f"{safe_label}_{key}.yaml"
-        filepath = values_dir / filename
+        created += 1
 
-        if filepath.exists():
-            existing_data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
-            existing_record = ValueConcept.model_validate(existing_data)
-            existing_raw = {(p.source, p.raw_value) for p in existing_record.provenance}
-            new_provs = [p for p in provs if (p.source, p.raw_value) not in existing_raw]
-            if new_provs:
-                all_provs = existing_record.provenance + new_provs
-                record = ValueConcept(semantic=sem_id, provenance=all_provs)
-                data = record.model_dump(mode="json", exclude_none=True)
-                filepath.write_text(
-                    yaml.dump(data, default_flow_style=False, sort_keys=False),
-                    encoding="utf-8",
-                )
-        else:
-            record = ValueConcept(semantic=sem_id, provenance=provs)
-            data = record.model_dump(mode="json", exclude_none=True)
-            filepath.write_text(
-                yaml.dump(data, default_flow_style=False, sort_keys=False),
-                encoding="utf-8",
-            )
-            created += 1
-
-        uri = build_value_uri(sem_id.label, key)
-        registry.elements[f"v_{key}"] = HashRegistryEntry(
-            sha256=sha,
+        uri = build_value_uri(sem_id.label, filepath.stem)
+        registry.elements[f"v_{filepath.stem}"] = HashRegistryEntry(
+            sha256="",  # Hash computed at commit time
             attribute=sem_id.label,
             uri=uri,
         )
@@ -293,55 +235,33 @@ def _extract_values(
 
 
 def _ingest_extracted_values(
-    value_pairs: list[tuple[ValueSemanticIdentity, ValueProvenance]],
+    value_pairs: list[tuple[ValueSemanticIdentity, ProvenanceEntry]],
     library_path: Path,
     registry: HashRegistry,
 ) -> int:
-    """Write ValueConcept files from extracted value pairs."""
+    """Write ValueConcept files from extracted value pairs (UUID filenames)."""
+    import uuid as _uuid
+
     values_dir = library_path / "values"
     values_dir.mkdir(parents=True, exist_ok=True)
-    existing_keys = set(registry.elements.keys()) | set(registry.schemas.keys())
 
+    # Dedup by (source, name) to avoid duplicate value files
+    seen: set[tuple[str, str]] = set()
     created = 0
     for sem_id, prov in value_pairs:
-        sem_dict = sem_id.model_dump(exclude_none=True)
-        sha = compute_sha256(canonical_json(sem_dict))
-        key = generate_short_key(sha)
-        existing_keys.add(key)
+        key = (prov.source, prov.name)
+        if key in seen:
+            continue
+        seen.add(key)
 
-        safe_label = (
-            sem_id.label.lower().replace("/", "_").replace("\\", "_").replace(" ", "_")[:50]
+        filepath = values_dir / f"{_uuid.uuid4()}.yaml"
+        record = ValueConcept(semantic=sem_id, provenance=[prov])
+        data = record.model_dump(mode="json", exclude_none=True)
+        filepath.write_text(
+            yaml.dump(data, default_flow_style=False, sort_keys=False),
+            encoding="utf-8",
         )
-        filename = f"{safe_label}_{key}.yaml"
-        filepath = values_dir / filename
-
-        if filepath.exists():
-            existing_data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
-            existing_record = ValueConcept.model_validate(existing_data)
-            existing_raw = {(p.source, p.raw_value) for p in existing_record.provenance}
-            if (prov.source, prov.raw_value) not in existing_raw:
-                all_provs = existing_record.provenance + [prov]
-                record = ValueConcept(semantic=sem_id, provenance=all_provs)
-                data = record.model_dump(mode="json", exclude_none=True)
-                filepath.write_text(
-                    yaml.dump(data, default_flow_style=False, sort_keys=False),
-                    encoding="utf-8",
-                )
-        else:
-            record = ValueConcept(semantic=sem_id, provenance=[prov])
-            data = record.model_dump(mode="json", exclude_none=True)
-            filepath.write_text(
-                yaml.dump(data, default_flow_style=False, sort_keys=False),
-                encoding="utf-8",
-            )
-            created += 1
-
-        uri = build_value_uri(sem_id.label, key)
-        registry.elements[f"v_{key}"] = HashRegistryEntry(
-            sha256=sha,
-            attribute=sem_id.label,
-            uri=uri,
-        )
+        created += 1
 
     return created
 
@@ -364,7 +284,7 @@ def _resolve_response_option_uris(library_path: Path) -> int:
         uri = f"https://schema.undata.live/values/{f.stem}"
         value_lookup[label.lower()] = uri
         for p in data.get("provenance", []):
-            value_lookup[p["raw_value"].lower()] = uri
+            value_lookup[p.get("name", "").lower()] = uri
 
     resolved = 0
     for f in elements_dir.glob("*.yaml"):
@@ -485,15 +405,14 @@ def _extract(
 
         sem_dict = entity.semantic
         dt = sem_dict.get("data_type", "string")
-        constraints = None
         response_options = None
+        pattern = None
 
         if sem_dict.get("constraints"):
             c = sem_dict["constraints"]
-            constraints = Constraints(
-                allowed_values=c.get("allowed_values"),
-                pattern=c.get("pattern"),
-            )
+            pattern = c.get("pattern")
+        if sem_dict.get("pattern"):
+            pattern = sem_dict["pattern"]
         if sem_dict.get("response_options"):
             response_options = [
                 ResponseOption(**opt) if isinstance(opt, dict) else opt
@@ -502,7 +421,7 @@ def _extract(
 
         sem = SemanticIdentity(
             data_type=dt,
-            constraints=constraints,
+            pattern=pattern,
             response_options=response_options,
             min_value=sem_dict.get("min_value"),
             max_value=sem_dict.get("max_value"),
@@ -573,8 +492,8 @@ def _process_classified_entities(
                 "label": label,
                 "value_type": sem.get("value_type", "categorical"),
             }
-            if sem.get("ontology_term"):
-                sem_dict["ontology_term"] = sem["ontology_term"]
+            if sem.get("description"):
+                sem_dict["description"] = sem["description"]
 
             canonical = canonical_json(sem_dict)
             sha = compute_sha256(canonical)
@@ -588,10 +507,10 @@ def _process_classified_entities(
                 # Merge provenance
                 existing = yaml.safe_load(filepath.read_text(encoding="utf-8"))
                 existing_sources = {
-                    (p.get("source"), p.get("raw_value")) for p in existing.get("provenance", [])
+                    (p.get("source"), p.get("name", "")) for p in existing.get("provenance", [])
                 }
                 new_prov = entity.provenance
-                if (new_prov.get("source"), new_prov.get("raw_value")) not in existing_sources:
+                if (new_prov.get("source"), new_prov.get("name", "")) not in existing_sources:
                     existing["provenance"].append(new_prov)
                     filepath.write_text(
                         yaml.dump(existing, default_flow_style=False, sort_keys=False),
@@ -644,9 +563,8 @@ def _build_schemas_from_provenance(
     from collections import defaultdict
 
     from .models import (
-        HashRegistryEntry,
+        ProvenanceEntry,
         SchemaIdentity,
-        SchemaProvenance,
         SchemaRecord,
     )
 
@@ -654,7 +572,9 @@ def _build_schemas_from_provenance(
     schemas_dir = library_path / "schemas"
     schemas_dir.mkdir(parents=True, exist_ok=True)
 
-    # Group element URIs by (source, class)
+    # Group element file references by (source, class)
+    # During staging, element filenames are UUIDs — use file stem as reference.
+    # These will be resolved to content-addressed URIs at commit time.
     class_elements: dict[str, list[str]] = defaultdict(list)
 
     for f in sorted(elements_dir.glob("*.yaml")):
@@ -663,68 +583,39 @@ def _build_schemas_from_provenance(
             continue
         for p in data["provenance"]:
             if p.get("source") == source_name:
-                # Find URI from registry by filename
-                fname = f.stem  # e.g., "age_3c1gtm"
-                parts = fname.rsplit("_", 1)
-                if len(parts) == 2:
-                    key = parts[1]
-                    entry = registry.elements.get(key)
-                    if entry:
-                        class_elements[p["class"]].append(entry.uri)
+                # Use element name as property reference
+                name = p.get("name", f.stem)
+                class_elements[p["class"]].append(name)
 
     created = 0
 
-    for class_name, element_uris in class_elements.items():
-        sorted_uris = sorted(set(element_uris))
-        schema_id = SchemaIdentity(properties=sorted_uris)
-        schema_dict = schema_id.model_dump(mode="json", exclude_none=True)
-        canonical = canonical_json(schema_dict)
-        sha = compute_sha256(canonical)
-        key = generate_short_key(sha)
+    import uuid as _uuid
+    from datetime import datetime as dt_mod
+    from datetime import timezone
 
-        filename = f"{class_name.lower()}_{key}.yaml"
-        filepath = schemas_dir / filename
-
-        from datetime import datetime as dt_mod
-        from datetime import timezone
+    for class_name, element_names in class_elements.items():
+        sorted_names = sorted(set(element_names))
+        schema_id = SchemaIdentity(properties=sorted_names)
 
         now_iso = dt_mod.now(timezone.utc).isoformat()
-        prov = SchemaProvenance(
+        prov = ProvenanceEntry(
             source=source_name,
+            **{"class": class_name},
             name=class_name,
             generated_at=now_iso,
             attributed_to="urn:undata:ingestion-pipeline",
             activity="ingestion",
         )
 
-        if filepath.exists():
-            existing = yaml.safe_load(filepath.read_text(encoding="utf-8"))
-            existing_record = SchemaRecord.model_validate(existing)
-            existing_sources = {p.source for p in existing_record.provenance}
-            if source_name not in existing_sources:
-                all_provs = existing_record.provenance + [prov]
-                record = SchemaRecord(semantic=schema_id, provenance=all_provs)
-                data = record.model_dump(mode="json", exclude_none=True)
-                data["sha256"] = sha
-                filepath.write_text(
-                    yaml.dump(data, default_flow_style=False, sort_keys=False),
-                    encoding="utf-8",
-                )
-        else:
-            record = SchemaRecord(semantic=schema_id, provenance=[prov])
-            data = record.model_dump(mode="json", exclude_none=True)
-            data["sha256"] = sha
-            filepath.write_text(
-                yaml.dump(data, default_flow_style=False, sort_keys=False),
-                encoding="utf-8",
-            )
-            created += 1
-
-        uri = build_schema_uri(class_name, key)
-        registry.schemas[key] = HashRegistryEntry(sha256=sha, name=class_name, uri=uri)
-
-    # Re-write registry with schemas
-    _write_registry(library_path / "hash-registry.yaml", registry)
+        # UUID filename (no hashing at extraction time)
+        filepath = schemas_dir / f"{_uuid.uuid4()}.yaml"
+        record = SchemaRecord(semantic=schema_id, provenance=[prov])
+        data = record.model_dump(mode="json", exclude_none=True)
+        filepath.write_text(
+            yaml.dump(data, default_flow_style=False, sort_keys=False),
+            encoding="utf-8",
+        )
+        created += 1
 
     return {"created": created}
 
@@ -752,8 +643,8 @@ def _generate_transform_mappings(
     library_path: Path,
     registry: HashRegistry,
 ) -> dict[str, int]:
-    """Generate mapping files between elements sharing an ontology_term but
-    with different data_type or unit.
+    """Generate mapping files between elements sharing a primary ontology annotation
+    but with different data_type or unit.
 
     For example: age (float, year) ↔ age (string, iso8601_duration)
     """
@@ -765,13 +656,19 @@ def _generate_transform_mappings(
     mappings_dir = library_path / "mappings"
     mappings_dir.mkdir(parents=True, exist_ok=True)
 
-    # Group elements by ontology_term
+    # Group elements by primary ontology annotation URI
     onto_groups: dict[str, list[tuple[str, dict]]] = defaultdict(list)
     for f in sorted(elements_dir.glob("*.yaml")):
         data = yaml.safe_load(f.read_text(encoding="utf-8"))
         if not data or "semantic" not in data:
             continue
-        onto = data["semantic"].get("ontology_term")
+        # Extract primary ontology URI from annotations
+        annotations = data["semantic"].get("ontology_annotations", [])
+        onto = None
+        for ann in annotations:
+            if ann.get("primary"):
+                onto = ann.get("term_uri")
+                break
         if onto:
             # Find URI from registry
             fname = f.stem

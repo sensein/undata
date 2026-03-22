@@ -84,7 +84,6 @@ class CSVDictionaryAdapter(BaseAdapter):
                 if raw_values:
                     choices = _parse_choices(raw_values)
                     if choices:
-                        semantic["constraints"] = {"allowed_values": choices}
                         semantic["response_options"] = [{"value": v, "label": v} for v in choices]
                         semantic["value_domain"] = "categorical"
                 elif dt in ("integer", "float"):

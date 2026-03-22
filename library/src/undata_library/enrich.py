@@ -1,57 +1,113 @@
-"""Enrichment pipeline: post-ingestion enrichment of elements."""
+"""Enrichment pipeline: in-place enrichment of staged registry entities.
+
+Enrichment adds metadata (ontology_annotations, value_domain) to staged entities
+WITHOUT creating new entities. All updates are in-place.
+
+Dependency order: elements + values → valuesets → schemas.
+"""
 
 from __future__ import annotations
 
 import logging
-from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
 
 from .embeddings import EmbeddingStore, build_element_embeddings, build_ontology_embeddings
-from .hashing import canonical_json, compute_sha256, generate_short_key
 
 logger = logging.getLogger(__name__)
 
 
+# ---------------------------------------------------------------------------
+# In-place update (T023)
+# ---------------------------------------------------------------------------
+
+
+def _update_entity_in_place(
+    filepath: Path,
+    ontology_annotations: list[dict] | None = None,
+    value_domain: str | None = None,
+    description: str | None = None,
+) -> bool:
+    """Update a staged entity file in-place with enrichment metadata.
+
+    Only writes fields that are provided and non-None.
+    Returns True if any change was made.
+    """
+    data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
+    if not isinstance(data, dict) or "semantic" not in data:
+        return False
+
+    sem = data["semantic"]
+    changed = False
+
+    if ontology_annotations is not None and ontology_annotations:
+        sem["ontology_annotations"] = ontology_annotations
+        changed = True
+
+    if value_domain is not None and not sem.get("value_domain"):
+        sem["value_domain"] = value_domain
+        changed = True
+
+    if description is not None and not sem.get("description"):
+        sem["description"] = description
+        changed = True
+
+    if changed:
+        filepath.write_text(
+            yaml.dump(data, default_flow_style=False, sort_keys=False),
+            encoding="utf-8",
+        )
+
+    return changed
+
+
+# ---------------------------------------------------------------------------
+# Element enrichment (T024)
+# ---------------------------------------------------------------------------
+
+
 def enrich_elements(
-    elements_dir: Path,
-    cache_dir: Path,
-    library_path: Path | None = None,
+    staging_dir: Path,
+    cache_dir: Path | None = None,
+    onto_store: EmbeddingStore | None = None,
+    onto_cache: dict[str, dict] | None = None,
     model_name: str = "all-MiniLM-L6-v2",
     threshold: float = 0.7,
     dry_run: bool = False,
 ) -> dict[str, int]:
-    """Enrich elements: auto-assign ontology_term, resolve response_options, populate value_domain.
+    """Enrich staged elements in-place: assign ontology_annotations, populate value_domain.
 
-    Returns stats: {enriched_new, enriched_unchanged, ontology_assigned, values_resolved,
-                    value_domain_set, total}
+    Works on staging_dir/elements/. No new files are created.
+
+    Returns stats: {ontology_assigned, value_domain_set, values_resolved, unchanged, total}
     """
-    lib_path = library_path or elements_dir.parent
+    elements_dir = staging_dir / "elements"
+    if not elements_dir.exists():
+        return {"ontology_assigned": 0, "value_domain_set": 0, "values_resolved": 0,
+                "unchanged": 0, "total": 0}
 
-    # Load ontology embeddings for ontology_term assignment
-    onto_store = _load_ontology_embeddings(cache_dir, model_name)
+    # Load ontology embeddings if not provided
+    if onto_store is None and cache_dir is not None:
+        onto_store = _load_ontology_embeddings(cache_dir, model_name)
+    if onto_cache is None and cache_dir is not None:
+        onto_cache = _load_ontology_cache(cache_dir)
+    onto_cache = onto_cache or {}
 
-    # Load element embeddings for matching
+    # Build element embeddings for matching
     elem_store = _load_or_build_element_embeddings(elements_dir, model_name)
 
-    # Load ontology cache for metadata
-    onto_cache = _load_ontology_cache(cache_dir)
-
     # Load value concepts for response_option resolution
-    values_dir = lib_path / "values"
+    values_dir = staging_dir / "values"
     value_lookup = _build_value_lookup(values_dir) if values_dir.exists() else {}
 
     stats = {
-        "enriched_new": 0,
-        "enriched_unchanged": 0,
         "ontology_assigned": 0,
-        "values_resolved": 0,
         "value_domain_set": 0,
+        "values_resolved": 0,
+        "unchanged": 0,
         "total": 0,
     }
-
-    new_elements: list[Path] = []
 
     for f in sorted(elements_dir.glob("*.yaml")):
         try:
@@ -63,16 +119,17 @@ def enrich_elements(
 
         stats["total"] += 1
         sem = data["semantic"]
-        changed_identity = False
-        changed_metadata = False
+        annotations = None
+        domain = None
 
-        # 1. Auto-assign ontology_term via embedding distance
-        if not sem.get("ontology_term") and onto_store is not None and elem_store is not None:
+        # 1. Assign ontology_annotations via embedding distance
+        if not sem.get("ontology_annotations") and onto_store is not None and elem_store is not None:
             uri = f"https://schema.undata.live/elements/{f.stem}"
-            assigned = _assign_ontology_term(uri, elem_store, onto_store, onto_cache, threshold)
-            if assigned:
-                sem["ontology_term"] = assigned
-                changed_identity = True
+            annotations = _assign_ontology_annotations(
+                uri, elem_store, onto_store, onto_cache, threshold,
+                model_name=model_name,
+            )
+            if annotations:
                 stats["ontology_assigned"] += 1
 
         # 2. Resolve response_options to ValueConcept URIs
@@ -80,53 +137,327 @@ def enrich_elements(
             resolved_count = _resolve_response_options(sem, value_lookup)
             if resolved_count > 0:
                 stats["values_resolved"] += resolved_count
-                changed_metadata = True
+                # Write the resolved options back
+                if not dry_run:
+                    data["semantic"] = sem
+                    f.write_text(
+                        yaml.dump(data, default_flow_style=False, sort_keys=False),
+                        encoding="utf-8",
+                    )
 
         # 3. Auto-populate value_domain
         if not sem.get("value_domain"):
             domain = _populate_value_domain(sem)
             if domain:
-                sem["value_domain"] = domain
-                changed_metadata = True
                 stats["value_domain_set"] += 1
 
-        if not changed_identity and not changed_metadata:
-            stats["enriched_unchanged"] += 1
-            continue
-
-        if changed_identity:
-            # Identity changed → create new element with new URI
+        if annotations or domain:
             if not dry_run:
-                new_path = _create_enriched_element(data, sem, f, lib_path)
-                new_elements.append(new_path)
-            stats["enriched_new"] += 1
-        else:
-            # Only metadata changed → update in place
-            if not dry_run:
-                data["semantic"] = sem
-                f.write_text(
-                    yaml.dump(data, default_flow_style=False, sort_keys=False),
-                    encoding="utf-8",
-                )
-
-    # Regenerate embeddings if new elements were created
-    if new_elements and not dry_run:
-        try:
-            store = build_element_embeddings(elements_dir, model_name=model_name)
-            store.save(lib_path / "embeddings.parquet", model_name=model_name)
-        except ImportError:
-            logger.warning("sentence-transformers not installed; skipping embedding regeneration")
+                _update_entity_in_place(f, ontology_annotations=annotations, value_domain=domain)
+        elif stats["values_resolved"] == 0 or dry_run:
+            stats["unchanged"] += 1
 
     return stats
 
 
+# ---------------------------------------------------------------------------
+# Value enrichment (T025)
+# ---------------------------------------------------------------------------
+
+
+def enrich_values(
+    staging_dir: Path,
+    cache_dir: Path | None = None,
+    onto_store: EmbeddingStore | None = None,
+    onto_cache: dict[str, dict] | None = None,
+    model_name: str = "all-MiniLM-L6-v2",
+    threshold: float = 0.8,
+) -> dict[str, int]:
+    """Enrich staged values in-place: assign ontology_annotations with element_match for high scores.
+
+    Returns stats: {ontology_assigned, unchanged, total}
+    """
+    values_dir = staging_dir / "values"
+    if not values_dir.exists():
+        return {"ontology_assigned": 0, "unchanged": 0, "total": 0}
+
+    if onto_store is None and cache_dir is not None:
+        onto_store = _load_ontology_embeddings(cache_dir, model_name)
+    if onto_cache is None and cache_dir is not None:
+        onto_cache = _load_ontology_cache(cache_dir)
+    onto_cache = onto_cache or {}
+
+    # Build value embeddings
+    elem_store = _load_or_build_element_embeddings(values_dir, model_name)
+
+    stats = {"ontology_assigned": 0, "unchanged": 0, "total": 0}
+
+    for f in sorted(values_dir.glob("*.yaml")):
+        try:
+            data = yaml.safe_load(f.read_text(encoding="utf-8"))
+            if not isinstance(data, dict) or "semantic" not in data:
+                continue
+        except (yaml.YAMLError, OSError):
+            continue
+
+        stats["total"] += 1
+        sem = data["semantic"]
+
+        if sem.get("ontology_annotations"):
+            stats["unchanged"] += 1
+            continue
+
+        if onto_store is None or elem_store is None:
+            stats["unchanged"] += 1
+            continue
+
+        uri = f"https://schema.undata.live/elements/{f.stem}"
+        annotations = _assign_ontology_annotations(
+            uri, elem_store, onto_store, onto_cache, threshold,
+            is_value=True, model_name=model_name,
+        )
+
+        if annotations:
+            _update_entity_in_place(f, ontology_annotations=annotations)
+            stats["ontology_assigned"] += 1
+        else:
+            stats["unchanged"] += 1
+
+    return stats
+
+
+# ---------------------------------------------------------------------------
+# Schema enrichment (T026)
+# ---------------------------------------------------------------------------
+
+
+def enrich_schemas(
+    staging_dir: Path,
+    cache_dir: Path | None = None,
+    onto_store: EmbeddingStore | None = None,
+    onto_cache: dict[str, dict] | None = None,
+    model_name: str = "all-MiniLM-L6-v2",
+    threshold: float = 0.7,
+) -> dict[str, int]:
+    """Enrich staged schemas in-place: assign ontology_annotations (concept_match).
+
+    Returns stats: {ontology_assigned, unchanged, total}
+    """
+    schemas_dir = staging_dir / "schemas"
+    if not schemas_dir.exists():
+        return {"ontology_assigned": 0, "unchanged": 0, "total": 0}
+
+    if onto_store is None and cache_dir is not None:
+        onto_store = _load_ontology_embeddings(cache_dir, model_name)
+    if onto_cache is None and cache_dir is not None:
+        onto_cache = _load_ontology_cache(cache_dir)
+    onto_cache = onto_cache or {}
+
+    # Build schema embeddings
+    elem_store = _load_or_build_element_embeddings(schemas_dir, model_name)
+
+    stats = {"ontology_assigned": 0, "unchanged": 0, "total": 0}
+
+    for f in sorted(schemas_dir.glob("*.yaml")):
+        try:
+            data = yaml.safe_load(f.read_text(encoding="utf-8"))
+            if not isinstance(data, dict) or "semantic" not in data:
+                continue
+        except (yaml.YAMLError, OSError):
+            continue
+
+        stats["total"] += 1
+        sem = data["semantic"]
+
+        if sem.get("ontology_annotations"):
+            stats["unchanged"] += 1
+            continue
+
+        if onto_store is None or elem_store is None:
+            stats["unchanged"] += 1
+            continue
+
+        uri = f"https://schema.undata.live/elements/{f.stem}"
+        # Schemas always get concept_match (not element_match)
+        annotations = _assign_ontology_annotations(
+            uri, elem_store, onto_store, onto_cache, threshold,
+            is_value=False, model_name=model_name,
+        )
+
+        if annotations:
+            _update_entity_in_place(f, ontology_annotations=annotations)
+            stats["ontology_assigned"] += 1
+        else:
+            stats["unchanged"] += 1
+
+    return stats
+
+
+# ---------------------------------------------------------------------------
+# Valueset enrichment (T027)
+# ---------------------------------------------------------------------------
+
+
+def enrich_valuesets(
+    staging_dir: Path,
+) -> dict[str, int]:
+    """Enrich staged valuesets in-place: derive ontology_annotations from enriched member values.
+
+    This runs AFTER enrich_values(), so member values already have ontology_annotations.
+    Valuesets inherit the most common ontology namespace from their members.
+
+    Returns stats: {enriched, unchanged, total}
+    """
+    valuesets_dir = staging_dir / "valuesets"
+    if not valuesets_dir.exists():
+        return {"enriched": 0, "unchanged": 0, "total": 0}
+
+    # Build a lookup of value labels → ontology info from enriched values
+    values_dir = staging_dir / "values"
+    value_ontology_map = _build_value_ontology_map(values_dir) if values_dir.exists() else {}
+
+    stats = {"enriched": 0, "unchanged": 0, "total": 0}
+
+    for f in sorted(valuesets_dir.glob("*.yaml")):
+        try:
+            data = yaml.safe_load(f.read_text(encoding="utf-8"))
+            if not isinstance(data, dict) or "semantic" not in data:
+                continue
+        except (yaml.YAMLError, OSError):
+            continue
+
+        stats["total"] += 1
+        sem = data["semantic"]
+
+        if sem.get("ontology_annotations"):
+            stats["unchanged"] += 1
+            continue
+
+        # Derive ontology namespace from members
+        members = sem.get("members", [])
+        if not members and not value_ontology_map:
+            stats["unchanged"] += 1
+            continue
+
+        # Collect ontology annotations from member values
+        ontology_counts: dict[str, int] = {}
+        best_annotation = None
+        best_score = 0.0
+
+        for member_uri in members:
+            member_anns = value_ontology_map.get(member_uri, [])
+            for ann in member_anns:
+                onto = ann.get("ontology", "unknown")
+                ontology_counts[onto] = ontology_counts.get(onto, 0) + 1
+                if ann.get("score", 0) > best_score:
+                    best_score = ann["score"]
+                    best_annotation = ann
+
+        if best_annotation:
+            # Create a valueset-level annotation from the dominant ontology
+            vs_annotation = {
+                "term_uri": best_annotation["term_uri"],
+                "term_label": best_annotation.get("term_label", ""),
+                "ontology": best_annotation.get("ontology", "unknown"),
+                "mapping_relation": "skos:relatedMatch",
+                "match_level": "concept_match",
+                "score": round(best_score, 4),
+                "model": best_annotation.get("model", ""),
+                "primary": True,
+            }
+            _update_entity_in_place(f, ontology_annotations=[vs_annotation])
+            stats["enriched"] += 1
+        else:
+            stats["unchanged"] += 1
+
+    return stats
+
+
+def _build_value_ontology_map(values_dir: Path) -> dict[str, list[dict]]:
+    """Build a lookup: value URI → ontology_annotations from enriched value files."""
+    mapping: dict[str, list[dict]] = {}
+    for f in sorted(values_dir.glob("*.yaml")):
+        try:
+            data = yaml.safe_load(f.read_text(encoding="utf-8"))
+            if not isinstance(data, dict) or "semantic" not in data:
+                continue
+            anns = data["semantic"].get("ontology_annotations", [])
+            if anns:
+                # Use both stem-based URI and any label-based keys
+                uri = f"https://schema.undata.live/elements/{f.stem}"
+                mapping[uri] = anns
+                label = data["semantic"].get("label", "")
+                if label:
+                    mapping[label.lower()] = anns
+        except (yaml.YAMLError, OSError):
+            continue
+    return mapping
+
+
+# ---------------------------------------------------------------------------
+# Orchestrator (T028)
+# ---------------------------------------------------------------------------
+
+
+def enrich_all(
+    staging_dir: Path,
+    cache_dir: Path | None = None,
+    onto_store: EmbeddingStore | None = None,
+    onto_cache: dict[str, dict] | None = None,
+    model_name: str = "all-MiniLM-L6-v2",
+    threshold: float = 0.7,
+) -> dict[str, dict]:
+    """Orchestrate enrichment of all entity types in dependency order.
+
+    Order: (1) elements + values  (2) valuesets  (3) schemas
+
+    Returns: {elements: {...}, values: {...}, valuesets: {...}, schemas: {...}}
+    """
+    # Load shared resources once
+    if onto_store is None and cache_dir is not None:
+        onto_store = _load_ontology_embeddings(cache_dir, model_name)
+    if onto_cache is None and cache_dir is not None:
+        onto_cache = _load_ontology_cache(cache_dir)
+
+    results: dict[str, dict] = {}
+
+    # Phase 1: elements + values (independent of each other)
+    logger.info("Enriching elements...")
+    results["elements"] = enrich_elements(
+        staging_dir, cache_dir=None, onto_store=onto_store, onto_cache=onto_cache,
+        model_name=model_name, threshold=threshold,
+    )
+    logger.info("Enriching values...")
+    results["values"] = enrich_values(
+        staging_dir, cache_dir=None, onto_store=onto_store, onto_cache=onto_cache,
+        model_name=model_name, threshold=0.8,
+    )
+
+    # Phase 2: valuesets (depends on enriched values)
+    logger.info("Enriching valuesets...")
+    results["valuesets"] = enrich_valuesets(staging_dir)
+
+    # Phase 3: schemas (last — may reference enriched elements/valuesets)
+    logger.info("Enriching schemas...")
+    results["schemas"] = enrich_schemas(
+        staging_dir, cache_dir=None, onto_store=onto_store, onto_cache=onto_cache,
+        model_name=model_name, threshold=threshold,
+    )
+
+    return results
+
+
+# ---------------------------------------------------------------------------
+# Shared helpers
+# ---------------------------------------------------------------------------
+
+
 def _load_ontology_embeddings(cache_dir: Path, model_name: str) -> EmbeddingStore | None:
     """Load ontology embeddings from vector index (024) or legacy cache."""
-    # Ontology vectors in cache dir (~/.cache/undata/ontology-vectors.parquet)
     cache_base = Path.home() / ".cache" / "undata"
     for candidate in [
         cache_base / "ontology-vectors.parquet",
-        cache_dir / "ontology-vectors.parquet",  # fallback
+        cache_dir / "ontology-vectors.parquet",
     ]:
         if candidate.exists():
             try:
@@ -156,7 +487,8 @@ def _load_ontology_embeddings(cache_dir: Path, model_name: str) -> EmbeddingStor
 
 def _load_or_build_element_embeddings(elements_dir: Path, model_name: str) -> EmbeddingStore | None:
     """Load or build element embeddings."""
-    parquet_path = elements_dir.parent / "embeddings.parquet"
+    # Use entity-type-specific parquet to avoid collision between elements/values/schemas
+    parquet_path = elements_dir / "embeddings.parquet"
     if parquet_path.exists():
         try:
             store = EmbeddingStore(uri_col="uri").load(parquet_path, expected_model=model_name)
@@ -238,11 +570,8 @@ def _assign_ontology_annotations(
             continue
 
         label = term_info.get("label", "")
-        # Determine ontology from URI
         ontology = _ontology_from_uri(uri)
-        # SKOS relation from score
         mapping_relation = _score_to_skos(score)
-        # Match level
         match_level = (
             MatchLevel.element_match if is_value and score >= 0.9 else MatchLevel.concept_match
         )
@@ -256,28 +585,12 @@ def _assign_ontology_annotations(
                 "match_level": match_level.value,
                 "score": round(score, 4),
                 "model": model_name,
-                "primary": len(annotations) == 0,  # first = primary
+                "primary": len(annotations) == 0,
             }
         )
         prev_score = score
 
     return annotations
-
-
-def _assign_ontology_term(
-    element_uri: str,
-    elem_store: EmbeddingStore,
-    onto_store: EmbeddingStore,
-    onto_cache: dict[str, dict],
-    threshold: float,
-) -> str | None:
-    """Legacy single-term assignment. Returns primary term URI or None."""
-    annotations = _assign_ontology_annotations(
-        element_uri, elem_store, onto_store, onto_cache, threshold
-    )
-    if not annotations:
-        return None
-    return annotations[0]["term_uri"]
 
 
 def _score_to_skos(score: float) -> str:
@@ -288,12 +601,11 @@ def _score_to_skos(score: float) -> str:
         return "skos:closeMatch"
     if score >= 0.5:
         return "skos:relatedMatch"
-    return "skos:noMatch"  # Below threshold — should not be used (filtered earlier)
+    return "skos:noMatch"
 
 
 def _ontology_from_uri(uri: str) -> str:
     """Extract ontology prefix from term URI."""
-    # http://purl.obolibrary.org/obo/NCIT_C25150 → ncit
     if "/obo/" in uri:
         part = uri.rsplit("/obo/", 1)[-1]
         prefix = part.split("_")[0]
@@ -310,10 +622,8 @@ def _resolve_response_options(sem: dict, value_lookup: dict[str, str]) -> int:
             continue
         value = opt.get("value", "")
         label = opt.get("label", "")
-        # Skip if already a URI
         if value.startswith("https://"):
             continue
-        # Match by value or label
         key = value.lower()
         if key in value_lookup:
             opt["ontology_term"] = value_lookup[key]
@@ -328,7 +638,6 @@ def _populate_value_domain(sem: dict) -> str | None:
     """Auto-populate value_domain from data_type."""
     if sem.get("response_options"):
         return "categorical"
-
     dt = sem.get("data_type", "")
     mapping = {
         "string": "text",
@@ -352,7 +661,6 @@ def _build_value_lookup(values_dir: Path) -> dict[str, str]:
             uri = f"https://schema.undata.live/values/{f.stem}"
             if label:
                 lookup[label.lower()] = uri
-            # Also index raw_value from provenance
             for p in data.get("provenance", []):
                 raw = p.get("raw_value", "")
                 if raw:
@@ -360,57 +668,3 @@ def _build_value_lookup(values_dir: Path) -> dict[str, str]:
         except (yaml.YAMLError, OSError):
             continue
     return lookup
-
-
-def _create_enriched_element(
-    original_data: dict,
-    new_semantic: dict,
-    original_path: Path,
-    library_path: Path,
-) -> Path:
-    """Create a new element file with enriched semantic identity."""
-
-    # Compute new hash
-    canonical = canonical_json(new_semantic)
-    sha = compute_sha256(canonical)
-    key = generate_short_key(sha)
-
-    # Get attribute name from first provenance
-    prov = original_data.get("provenance", [{}])
-    name = prov[0].get("name", "unknown") if prov else "unknown"
-
-    # Build old URI for derived_from
-    old_uri = f"https://schema.undata.live/elements/{original_path.stem}"
-
-    # Create enrichment provenance entry
-    now_iso = datetime.now(timezone.utc).isoformat()
-    enrichment_prov = {
-        "source": "enrichment",
-        "class": prov[0].get("class", "") if prov else "",
-        "name": name,
-        "generated_at": now_iso,
-        "attributed_to": "urn:undata:enrichment-pipeline",
-        "activity": "enrichment",
-        "derived_from": old_uri,
-    }
-
-    # New element data with enriched semantic + original provenance + enrichment entry
-    new_data = {
-        "sha256": sha,
-        "semantic": new_semantic,
-        "provenance": list(original_data.get("provenance", [])) + [enrichment_prov],
-    }
-
-    # Write new file
-    elements_dir = library_path / "elements"
-    safe_name = name.lower().replace("/", "_").replace(":", "_").replace("\\", "_")
-    if len(safe_name) > 60:
-        safe_name = safe_name[:60]
-    filename = f"{safe_name}_{key}.yaml"
-    new_path = elements_dir / filename
-    new_path.write_text(
-        yaml.dump(new_data, default_flow_style=False, sort_keys=False),
-        encoding="utf-8",
-    )
-
-    return new_path

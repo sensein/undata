@@ -76,38 +76,28 @@ class ResponseOption(BaseModel):
     ontology_term: str | None = None
 
 
-class Constraints(BaseModel):
-    """Legacy constraint block. Use min_value/max_value on SemanticIdentity for ranges."""
-
-    minimum: float | None = None  # deprecated — use SemanticIdentity.min_value
-    maximum: float | None = None  # deprecated — use SemanticIdentity.max_value
-    pattern: str | None = None
-    allowed_values: list[str] | None = None
-
-
 class SemanticIdentity(BaseModel):
-    """Identity block — hashed for content-addressed URI.
+    """Identity block — hashed post-enrichment at commit time.
 
-    Fields IN the hash: ontology_term, data_type, unit, constraints (pattern + allowed_values only),
-    min_value, max_value, response_options (sorted by value).
-    Fields NOT in hash: question_text, value_domain.
+    Two hash modes (see hashing.py compute_identity_hash):
+    1. Ontology-anchored: data_type + unit + pattern + response_options + min/max + type_ref + primary_ontology_uri
+    2. Structural fallback: data_type + unit + pattern + response_options + min/max + type_ref + class + attribute + description (from first provenance)
+
+    Fields NOT in hash: question_text, value_domain, ontology_annotations, description (in ontology-anchored mode).
     """
 
-    ontology_term: str | None = None
     data_type: DataType
     unit: str | None = None
-    constraints: Constraints | None = None
-    # reproschema-aligned fields:
+    pattern: str | None = None  # regex constraint (replaces constraints.pattern)
     response_options: list[ResponseOption] | None = None  # IN hash (sorted by value)
     question_text: str | None = None  # NOT in hash
     value_domain: str | None = None  # NOT in hash (categorical|numeric|text|date|boolean)
-    min_value: float | None = None  # IN hash — replaces constraints.minimum
-    max_value: float | None = None  # IN hash — replaces constraints.maximum
-    # Disambiguators for underspecified elements (no ontology_term/unit).
-    # Stored in the semantic block so the backend can reproduce the same hash.
-    source_attribute: str | None = None  # IN hash when present
-    source_class: str | None = None  # IN hash when present
+    min_value: float | None = None  # IN hash
+    max_value: float | None = None  # IN hash
     type_ref: str | None = None  # IN hash — URI of referenced SchemaRecord when data_type=object
+    description: str | None = (
+        None  # IN hash (structural fallback only); NOT in hash (ontology-anchored)
+    )
     ontology_annotations: list[OntologyAnnotation] | None = (
         None  # NOT in hash — enrichment metadata
     )
@@ -127,6 +117,7 @@ class ProvenanceEntry(BaseModel):
     attributed_to: str | None = None  # prov:wasAttributedTo (agent URI)
     activity: str | None = None  # prov:wasGeneratedBy (ingestion|curation|enrichment|migration)
     derived_from: str | None = None  # prov:wasDerivedFrom (element URI)
+    source_ref: SourceRef | None = None  # precise origin tracking
 
     model_config = {"populate_by_name": True}
 
@@ -144,11 +135,13 @@ class ElementRecord(BaseModel):
 
 
 class SchemaIdentity(BaseModel):
-    """Identity block for a class shape — hashed."""
+    """Identity block for a class shape — hashed post-enrichment."""
 
     properties: list[str] = Field(default_factory=list)
     subclass_of: str | None = None
     mixins: list[str] = Field(default_factory=list)
+    description: str | None = None  # IN hash (structural fallback only)
+    ontology_annotations: list[OntologyAnnotation] | None = None  # NOT in hash
 
 
 class SourceRef(BaseModel):
@@ -161,24 +154,11 @@ class SourceRef(BaseModel):
     package_version: str | None = None  # pip/npm version (Docker sources only)
 
 
-class SchemaProvenance(BaseModel):
-    """One source's attestation of this class shape — PROV-O aligned."""
-
-    source: str
-    name: str
-    description: str | None = None
-    generated_at: str | None = None
-    attributed_to: str | None = None
-    activity: str | None = None
-    derived_from: str | None = None
-    source_ref: SourceRef | None = None
-
-
 class SchemaRecord(BaseModel):
     """A class shape (sh:NodeShape) with semantic identity + provenance."""
 
     semantic: SchemaIdentity
-    provenance: list[SchemaProvenance] = Field(min_length=1)
+    provenance: list[ProvenanceEntry] = Field(min_length=1)
 
 
 # ---------------------------------------------------------------------------
@@ -189,24 +169,17 @@ class SchemaRecord(BaseModel):
 class ValueSemanticIdentity(BaseModel):
     """Identity block for a value concept — hashed for content-addressed URI."""
 
-    ontology_term: str | None = None
     value_type: str = "categorical"
     label: str
+    description: str | None = None
     ontology_annotations: list[OntologyAnnotation] | None = None  # NOT in hash
-
-
-class ValueProvenance(BaseModel):
-    """One source's representation of this value."""
-
-    source: str
-    raw_value: str
 
 
 class ValueConcept(BaseModel):
     """A categorical value with content-addressed identity + provenance."""
 
     semantic: ValueSemanticIdentity
-    provenance: list[ValueProvenance] = Field(min_length=1)
+    provenance: list[ProvenanceEntry] = Field(min_length=1)
 
 
 # ---------------------------------------------------------------------------
@@ -219,6 +192,8 @@ class ValueSetIdentity(BaseModel):
 
     name: str  # e.g., "units", "modalities"
     members: list[str] = Field(default_factory=list)  # sorted ValueConcept URIs — IN hash
+    description: str | None = None
+    ontology_annotations: list[OntologyAnnotation] | None = None  # NOT in hash
 
 
 class ValueSetRecord(BaseModel):

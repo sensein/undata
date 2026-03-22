@@ -63,7 +63,7 @@ class TestSchemaRecord:
                     "properties": ["https://schema.undata.live/elements/age_x7k2m9"],
                     "subclass_of": "https://schema.undata.live/schemas/base_a1b2c3",
                 },
-                "provenance": [{"source": "nwb", "name": "TimeSeries"}],
+                "provenance": [{"source": "nwb", "class": "NWB", "name": "TimeSeries"}],
             }
         )
         assert record.semantic.subclass_of == "https://schema.undata.live/schemas/base_a1b2c3"

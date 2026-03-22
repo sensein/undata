@@ -182,7 +182,6 @@ class JSONSchemaAdapter(BaseAdapter):
         enum_vals = resolved.get("enum") or prop_def.get("enum")
         if enum_vals:
             allowed = [str(v) for v in enum_vals if v is not None]
-            semantic["constraints"] = {"allowed_values": allowed}
             semantic["response_options"] = [{"value": v, "label": v} for v in allowed]
 
         # Min/max

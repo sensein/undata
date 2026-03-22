@@ -5,6 +5,54 @@ Updated after each significant re-extraction or pipeline change.
 
 ---
 
+## 2026-03-21 — Feature 026: Staged Enrichment Pipeline
+
+**Pipeline**: extract (UUID staging) → enrich (in-place) → commit (two-mode hash) → align
+**Changes**: Staged pipeline, two-mode identity hash, in-place enrichment, no new elements from enrichment
+**Output dir**: `/tmp/undata-registry/` (not in git)
+
+### Source Extraction
+
+| Source | Elements | Schemas | Values | Valuesets |
+|--------|----------|---------|--------|-----------|
+| BIDS | 1,036 | 12 | 289 | 7 |
+| DANDI | 398 | 43 | 76 | 5 |
+| NWB | 283 | 80 | 0 | 0 |
+| openMINDS | 4,736 | 322 | 0 | 0 |
+| AIND | 1,292 | 185 | 641 | 74 |
+| **Total** | **7,745** | **642** | **1,006** | **86** |
+
+### Comparison to Baseline (019–025)
+
+| Metric | Baseline | 026 | Delta | Notes |
+|--------|----------|-----|-------|-------|
+| Elements | 7,756 | 7,745 | -11 | openMINDS dedup by (source,class,name) |
+| Schemas | 642 | 642 | 0 | |
+| Values | 987 | 1,000 | +13 | AIND description differentiation |
+| Valuesets | 86 | 86 | 0 | |
+
+### Enrichment
+
+| Source | Elements | Values | Schemas | Valuesets |
+|--------|----------|--------|---------|-----------|
+| BIDS | 58/1,036 (5.6%) | 90/295 (31%) | 8/12 (67%) | 0/7 |
+| DANDI | 103/398 (26%) | 0/76 | 29/43 (67%) | 0/5 |
+| NWB | 21/283 (7.4%) | 0/0 | 25/80 (31%) | 0/0 |
+| openMINDS | 124/4,736 (2.6%) | 0/0 | 20/322 (6.2%) | 0/0 |
+| AIND | 225/1,292 (17%) | 321/836 (38%) | 84/185 (45%) | 16/74 (22%) |
+| **Total** | **531** | **411** | **166** | **16** |
+
+### Key Changes from 026
+
+- **UUID staging**: Extraction writes UUID-named files (no hash at extraction time)
+- **Two-mode hash**: Computed at commit time (ontology-anchored or structural fallback)
+- **In-place enrichment**: No new elements created from enrichment
+- **Enrichment working**: 531 elements + 411 values + 166 schemas + 16 valuesets annotated
+- **Cross-source merge**: 118 AIND elements merged at commit time (same hash from different sources)
+- **Ontology store**: 268K embedded terms from 13 ontologies (reused from 025)
+
+---
+
 ## 2026-03-21 — Full Re-extraction (Features 019–025)
 
 **Pipeline**: ingest → embed → enrich → align → transform

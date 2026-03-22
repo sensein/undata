@@ -58,7 +58,7 @@ def validate_file(path: Path) -> ValidationReport:
         model_cls = SchemaRecord
     elif "label" in semantic and "value_type" in semantic:
         model_cls = ValueConcept
-    elif "data_type" in semantic or "ontology_term" in semantic:
+    elif "data_type" in semantic:
         model_cls = ElementRecord
     else:
         return ValidationReport(
@@ -108,7 +108,7 @@ def validate_ingestion_output(library_path: Path) -> list[dict]:
 
     Returns list of violation dicts: {file, entity_type, check, message, severity}
     """
-    from .hashing import canonical_json, compute_sha256
+    from .hashing import compute_identity_hash, determine_hash_mode
 
     violations: list[dict] = []
     uri_set: set[str] = set()
@@ -135,10 +135,20 @@ def validate_ingestion_output(library_path: Path) -> list[dict]:
                     }
                 )
 
-            # SHA-256 integrity
+            # SHA-256 integrity (two-mode hash)
             stored_sha = data.get("sha256")
             if stored_sha:
-                recomputed = compute_sha256(canonical_json(sem))
+                annotations = sem.get("ontology_annotations", [])
+                ontology_anchored, primary_uri = determine_hash_mode(annotations)
+                prov = data.get("provenance", [])
+                prov_dicts = [
+                    p if isinstance(p, dict) else p.model_dump(by_alias=True) for p in prov
+                ]
+                recomputed, _ = compute_identity_hash(
+                    sem, prov_dicts,
+                    ontology_anchored=ontology_anchored,
+                    primary_ontology_uri=primary_uri,
+                )
                 if stored_sha != recomputed:
                     violations.append(
                         {
