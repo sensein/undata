@@ -19,8 +19,9 @@ class TestValidateFile:
     def test_missing_data_type_fails(self):
         report = validate_file(FIXTURES / "invalid-element-no-datatype.yaml")
         assert not report.valid
-        fields = [v.field for v in report.violations]
-        assert any("data_type" in f for f in fields)
+        # Without data_type, the record can't be identified as an element
+        messages = [v.message for v in report.violations]
+        assert any("data_type" in m or "Cannot determine" in m for m in messages)
 
     def test_bad_enum_fails(self):
         report = validate_file(FIXTURES / "invalid-element-bad-enum.yaml")

@@ -21,7 +21,7 @@ def classify_entity(
 
     Structural signals:
     - Has 'properties' or 'slots' → class (sh:NodeShape)
-    - Leaf type with constraints → attribute (rdf:Property)
+    - Leaf type with type info → attribute (rdf:Property)
     - 'enum' or 'oneOf' with literal values → enum_value (ValueConcept)
     - Named collection of enum values → valueset (ValueSetRecord)
     - Type reference to another class → attribute with type_ref

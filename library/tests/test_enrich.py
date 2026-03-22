@@ -6,6 +6,7 @@ from undata_library.enrich import (
     _build_value_lookup,
     _populate_value_domain,
     _resolve_response_options,
+    _update_entity_in_place,
     enrich_elements,
 )
 
@@ -40,7 +41,6 @@ def test_populate_value_domain_categorical_override():
 
 def test_populate_value_domain_already_set():
     """If value_domain already set, enrich_elements skips it."""
-    # _populate_value_domain itself doesn't check — enrich_elements does
     assert _populate_value_domain({"data_type": "string"}) == "text"
 
 
@@ -95,17 +95,73 @@ def test_build_value_lookup(tmp_path):
     assert lookup["male"].endswith("male_abc123")
 
 
+# -- _update_entity_in_place tests --
+
+
+def test_update_entity_in_place_adds_annotations(tmp_path):
+    elem = {
+        "semantic": {"data_type": "string"},
+        "provenance": [{"source": "test", "class": "T", "name": "x"}],
+    }
+    f = tmp_path / "test.yaml"
+    f.write_text(yaml.dump(elem))
+
+    anns = [{"term_uri": "http://example.org/X", "primary": True}]
+    changed = _update_entity_in_place(f, ontology_annotations=anns)
+    assert changed is True
+
+    result = yaml.safe_load(f.read_text())
+    assert result["semantic"]["ontology_annotations"] == anns
+
+
+def test_update_entity_in_place_adds_value_domain(tmp_path):
+    elem = {
+        "semantic": {"data_type": "integer"},
+        "provenance": [{"source": "test", "class": "T", "name": "x"}],
+    }
+    f = tmp_path / "test.yaml"
+    f.write_text(yaml.dump(elem))
+
+    changed = _update_entity_in_place(f, value_domain="numeric")
+    assert changed is True
+
+    result = yaml.safe_load(f.read_text())
+    assert result["semantic"]["value_domain"] == "numeric"
+
+
+def test_update_entity_in_place_skips_existing_domain(tmp_path):
+    elem = {
+        "semantic": {"data_type": "integer", "value_domain": "numeric"},
+        "provenance": [{"source": "test", "class": "T", "name": "x"}],
+    }
+    f = tmp_path / "test.yaml"
+    f.write_text(yaml.dump(elem))
+
+    changed = _update_entity_in_place(f, value_domain="text")
+    assert changed is False
+
+
+def test_update_entity_in_place_no_changes(tmp_path):
+    elem = {
+        "semantic": {"data_type": "string"},
+        "provenance": [{"source": "test", "class": "T", "name": "x"}],
+    }
+    f = tmp_path / "test.yaml"
+    f.write_text(yaml.dump(elem))
+
+    changed = _update_entity_in_place(f)
+    assert changed is False
+
+
 # -- enrich_elements integration tests --
 
 
-def _make_element(tmp_path, name, data_type="string", ontology_term=None, value_domain=None):
-    """Helper to create a test element YAML."""
-    elements_dir = tmp_path / "elements"
-    elements_dir.mkdir(exist_ok=True)
+def _make_staged_element(staging_dir, name, data_type="string", value_domain=None):
+    """Helper to create a test element YAML in staging structure."""
+    elements_dir = staging_dir / "elements"
+    elements_dir.mkdir(parents=True, exist_ok=True)
 
     sem = {"data_type": data_type}
-    if ontology_term:
-        sem["ontology_term"] = ontology_term
     if value_domain:
         sem["value_domain"] = value_domain
 
@@ -119,74 +175,40 @@ def _make_element(tmp_path, name, data_type="string", ontology_term=None, value_
 
 
 def test_enrich_populates_value_domain(tmp_path):
-    _make_element(tmp_path, "age", data_type="integer")
+    staging = tmp_path / "staging"
+    _make_staged_element(staging, "age", data_type="integer")
     cache_dir = tmp_path / "ontology-cache"
     cache_dir.mkdir()
 
-    stats = enrich_elements(
-        elements_dir=tmp_path / "elements",
-        cache_dir=cache_dir,
-        library_path=tmp_path,
-    )
+    stats = enrich_elements(staging_dir=staging, cache_dir=cache_dir)
 
     assert stats["total"] >= 1
-    # value_domain should be set (either in-place or in new enriched element)
-    assert stats["value_domain_set"] >= 1 or stats["enriched_new"] >= 1
+    assert stats["value_domain_set"] >= 1
 
 
 def test_enrich_idempotent(tmp_path):
     """Re-running enrich on already-enriched elements produces no changes."""
-    _make_element(tmp_path, "species", data_type="string", value_domain="text")
+    staging = tmp_path / "staging"
+    _make_staged_element(staging, "species", data_type="string", value_domain="text")
     cache_dir = tmp_path / "ontology-cache"
     cache_dir.mkdir()
 
-    stats = enrich_elements(
-        elements_dir=tmp_path / "elements",
-        cache_dir=cache_dir,
-        library_path=tmp_path,
-    )
+    stats = enrich_elements(staging_dir=staging, cache_dir=cache_dir)
 
     assert stats["total"] == 1
-    assert stats["enriched_unchanged"] == 1
-    assert stats["enriched_new"] == 0
+    assert stats["unchanged"] == 1
 
 
 def test_enrich_dry_run_no_changes(tmp_path):
-    _make_element(tmp_path, "weight", data_type="float")
+    staging = tmp_path / "staging"
+    _make_staged_element(staging, "weight", data_type="float")
     cache_dir = tmp_path / "ontology-cache"
     cache_dir.mkdir()
 
-    stats = enrich_elements(
-        elements_dir=tmp_path / "elements",
-        cache_dir=cache_dir,
-        library_path=tmp_path,
-        dry_run=True,
-    )
+    stats = enrich_elements(staging_dir=staging, cache_dir=cache_dir, dry_run=True)
 
     assert stats["value_domain_set"] == 1
 
     # File should NOT be changed in dry-run
-    data = yaml.safe_load((tmp_path / "elements" / "weight_abc123.yaml").read_text())
+    data = yaml.safe_load((staging / "elements" / "weight_abc123.yaml").read_text())
     assert data["semantic"].get("value_domain") is None
-
-
-def test_enrich_skips_element_with_ontology(tmp_path):
-    """Elements with existing ontology_term are not re-assigned."""
-    _make_element(
-        tmp_path,
-        "age",
-        data_type="float",
-        ontology_term="http://purl.obolibrary.org/obo/NCIT_C25150",
-        value_domain="numeric",
-    )
-    cache_dir = tmp_path / "ontology-cache"
-    cache_dir.mkdir()
-
-    stats = enrich_elements(
-        elements_dir=tmp_path / "elements",
-        cache_dir=cache_dir,
-        library_path=tmp_path,
-    )
-
-    assert stats["ontology_assigned"] == 0
-    assert stats["enriched_unchanged"] == 1

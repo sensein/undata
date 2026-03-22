@@ -119,7 +119,6 @@ class BIDSAdapter(BaseAdapter):
                 semantic: dict[str, Any] = {"data_type": dt}
                 if enum_vals:
                     allowed = [str(v) for v in enum_vals if v is not None]
-                    semantic["constraints"] = {"allowed_values": allowed}
                     semantic["response_options"] = [{"value": v, "label": v} for v in allowed]
                     semantic["value_domain"] = "categorical"
                 elif dt in ("integer", "float"):

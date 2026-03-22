@@ -82,7 +82,6 @@ def main():
             enum_vals = field_def.get("enum") if hasattr(field_def, "get") else None
             if enum_vals and hasattr(enum_vals, "__iter__"):
                 allowed = [str(v) for v in enum_vals if v is not None]
-                semantic["constraints"] = {"allowed_values": allowed}
                 semantic["response_options"] = [{"value": v, "label": v} for v in allowed]
                 semantic["value_domain"] = "categorical"
             elif dt in ("integer", "float"):

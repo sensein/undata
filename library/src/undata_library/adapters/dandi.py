@@ -98,7 +98,6 @@ class DANDIAdapter(BaseAdapter):
                     if enum_cls:
                         allowed = [str(v.value) for v in enum_cls]
                         if allowed:
-                            semantic["constraints"] = {"allowed_values": allowed}
                             semantic["response_options"] = [
                                 {"value": v, "label": v} for v in allowed
                             ]

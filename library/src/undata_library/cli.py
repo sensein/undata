@@ -541,54 +541,67 @@ def pipeline(
     skip_enrich: bool,
     skip_align: bool,
 ) -> None:
-    """Run ingest → enrich → align → transform pipeline."""
+    """Run staged pipeline: extract → enrich → commit → align."""
     import time
 
     from .align import align_elements
-    from .enrich import enrich_elements
+    from .commit import commit_staged
+    from .enrich import enrich_all
     from .ingest import ingest_source
+    from .staging import create_staging_dir, generate_run_id
 
     lib = get_output_dir(output_dir)
     schema_path = Path(path) if path else None
-    elements_dir = lib / "elements"
     cache_dir = lib / "ontology-cache"
     timings: dict[str, float] = {}
 
-    # Step 1: Ingest
-    click.echo(f"[1/3] Ingesting {source}...")
+    # Step 1: Extract to staging
+    run_id = generate_run_id()
+    staging_dir = create_staging_dir(lib, run_id)
+    click.echo(f"[1/5] Extracting {source} to staging ({run_id})...")
     t0 = time.time()
-    ingest_stats = ingest_source(source, schema_path, lib)
-    timings["ingest"] = time.time() - t0
+    ingest_stats = ingest_source(source, schema_path, staging_dir)
+    timings["extract"] = time.time() - t0
     click.echo(
-        f"  {ingest_stats['total']} elements "
+        f"  {ingest_stats['total']} entities "
         f"({ingest_stats['created']} created, {ingest_stats['merged']} merged) "
-        f"in {timings['ingest']:.1f}s"
+        f"in {timings['extract']:.1f}s"
     )
 
-    # Step 2: Enrich
-    enrich_stats: dict = {}
+    # Step 2: Enrich in-place
+    enrich_results: dict = {}
     if not skip_enrich:
-        click.echo("[2/3] Enriching elements...")
+        click.echo("[2/5] Enriching all entity types...")
         t0 = time.time()
-        enrich_stats = enrich_elements(
-            elements_dir=elements_dir,
+        enrich_results = enrich_all(
+            staging_dir=staging_dir,
             cache_dir=cache_dir,
-            library_path=lib,
             model_name=model,
         )
         timings["enrich"] = time.time() - t0
-        click.echo(
-            f"  {enrich_stats.get('enriched_new', 0)} new, "
-            f"{enrich_stats.get('enriched_unchanged', 0)} unchanged "
-            f"in {timings['enrich']:.1f}s"
-        )
+        for etype, stats in enrich_results.items():
+            assigned = stats.get("ontology_assigned", stats.get("enriched", 0))
+            click.echo(f"  {etype}: {assigned} enriched, {stats.get('total', 0)} total")
+        click.echo(f"  in {timings['enrich']:.1f}s")
     else:
-        click.echo("[2/3] Enrichment skipped.")
+        click.echo("[2/5] Enrichment skipped.")
 
-    # Step 3: Align
+    # Step 3: Commit (rehash + merge to registry)
+    click.echo("[3/5] Committing to registry...")
+    t0 = time.time()
+    commit_stats = commit_staged(staging_dir, lib)
+    timings["commit"] = time.time() - t0
+    click.echo(
+        f"  {commit_stats['committed']} committed, "
+        f"{commit_stats['merged']} merged "
+        f"in {timings['commit']:.1f}s"
+    )
+
+    # Step 4: Align
     align_stats: dict = {}
+    elements_dir = lib / "elements"
     if not skip_align:
-        click.echo("[3/3] Aligning elements...")
+        click.echo("[4/5] Aligning elements...")
         t0 = time.time()
         align_stats = align_elements(
             elements_dir=elements_dir,
@@ -601,11 +614,11 @@ def pipeline(
             f"in {timings['align']:.1f}s"
         )
     else:
-        click.echo("[3/4] Alignment skipped.")
+        click.echo("[4/5] Alignment skipped.")
 
-    # Step 4: Transform
+    # Step 5: Transform
     if not skip_align:  # transforms depend on alignment
-        click.echo("[4/4] Generating transforms...")
+        click.echo("[5/5] Generating transforms...")
         t0 = time.time()
         from .transform import generate_transforms
 
@@ -619,7 +632,7 @@ def pipeline(
             f"in {timings['transform']:.1f}s"
         )
     else:
-        click.echo("[4/4] Transforms skipped (requires alignment).")
+        click.echo("[5/5] Transforms skipped (requires alignment).")
 
     total_time = sum(timings.values())
     click.echo(f"\nPipeline complete in {total_time:.1f}s.")
@@ -691,12 +704,10 @@ def enrich(path: str, cache_dir: str, threshold: float, model: str, dry_run: boo
     from .enrich import enrich_elements
 
     base = Path(path)
-    elements_dir = base / "elements" if (base / "elements").exists() else base
 
     stats = enrich_elements(
-        elements_dir=elements_dir,
+        staging_dir=base,
         cache_dir=Path(cache_dir),
-        library_path=base,
         model_name=model,
         threshold=threshold,
         dry_run=dry_run,
@@ -705,8 +716,8 @@ def enrich(path: str, cache_dir: str, threshold: float, model: str, dry_run: boo
     prefix = "[DRY RUN] " if dry_run else ""
     click.echo(
         f"{prefix}Enriched: {stats['total']} elements — "
-        f"{stats['enriched_new']} new, {stats['enriched_unchanged']} unchanged, "
         f"{stats['ontology_assigned']} ontology assigned, "
+        f"{stats['unchanged']} unchanged, "
         f"{stats['values_resolved']} values resolved, "
         f"{stats['value_domain_set']} value_domain set."
     )

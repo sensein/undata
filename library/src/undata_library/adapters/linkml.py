@@ -139,16 +139,12 @@ class LinkMLAdapter(BaseAdapter):
                 )
 
                 for val_name in members:
-                    val_def = pvs[val_name] if isinstance(pvs, dict) else {}
                     results.append(
                         ClassifiedEntity(
                             entity_type=EntityType.ENUM_VALUE,
                             semantic={
                                 "label": val_name,
                                 "value_type": "categorical",
-                                "ontology_term": val_def.get("meaning")
-                                if isinstance(val_def, dict)
-                                else None,
                             },
                             provenance={"source": "linkml", "raw_value": val_name},
                             confidence=0.95,
