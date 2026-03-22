@@ -107,6 +107,8 @@
 - [ ] T038b [US2] Report source version changes in pipeline extraction output: when `_resolved_committish` differs from previous run, log a warning and include version change details (old → new committish) in RunSummary
 - [ ] T038c [US2] Implement idempotency short-circuit in pipeline CLI: before extraction, compare source committish + file checksums against previous run; if unchanged, skip pipeline with "no changes detected" message
 - [ ] T038d [US2] Add idempotency test in `library/tests/test_pipeline_e2e.py`: run pipeline twice for same source, verify zero file changes on second run and all elements still present
+- [ ] T038e [US2] Add entity-level idempotency test in `library/tests/test_pipeline_e2e.py`: ingest a single YAML entity file that duplicates an existing registry entity, verify same sha256 hash and provenance merge (no duplicate)
+- [ ] T038f [US2] Add registry roundtrip test in `library/tests/test_pipeline_e2e.py`: export full registry, delete all state (runs/, curation-flags/, staging/, hash-registry.yaml), re-ingest exported files through full pipeline, verify byte-identical registry output
 
 ### Adapter Accuracy Review
 

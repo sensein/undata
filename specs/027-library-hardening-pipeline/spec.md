@@ -47,6 +47,8 @@ A data engineer optimizes each pipeline step (extract, enrich, commit, align, tr
 7. **Given** a new entity added to a source, **When** the full pipeline runs end-to-end (extract through alignment), **Then** the new entity is extracted, enriched, committed, aligned with similar existing entities, and transforms are generated
 8. **Given** a source that has already been fully ingested with no upstream changes, **When** the pipeline runs again, **Then** the registry is unchanged (zero file modifications) and every previously extracted element is still present
 9. **Given** a source whose committish and file checksums match the previous run, **When** the pipeline is invoked, **Then** it short-circuits with a "no changes detected" message without running extraction/enrichment/commit
+10. **Given** a single YAML entity file with the same semantic content as an existing registry entity, **When** it is ingested via the pipeline, **Then** it produces the same sha256 hash and merges provenance (no duplicate entity created)
+11. **Given** the entire registry exported as YAML files with all state markers removed (run summaries, curation flags, staging dirs), **When** re-ingested through the full pipeline, **Then** the resulting registry is byte-identical to the original
 
 ---
 
@@ -104,6 +106,8 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - **FR-015**: Each workstream MUST conclude with a full pipeline re-extraction test (extract → enrich → commit → align → transform) including addition of a new entity, validated against the 026 baseline
 - **FR-015b**: Re-ingesting the same source with no upstream changes MUST be idempotent — the registry MUST NOT change (zero new files, zero modified files, zero deleted files), and every previously extracted element MUST still be present
 - **FR-015c**: The pipeline MUST support an efficient idempotency check (e.g., source committish + file checksum comparison) that short-circuits the full pipeline when the source has not changed, avoiding redundant extraction/enrichment/commit
+- **FR-015d**: Content-addressed identity MUST guarantee entity-level idempotency: ingesting any individual YAML entity file that has the same semantic content as an existing registry entity MUST produce the same sha256 hash and merge provenance into the existing file (not create a duplicate)
+- **FR-015e**: Exporting the entire registry and re-ingesting it (even after removing all pipeline state markers like run summaries, curation flags, and staging directories) MUST reproduce the identical registry — same files, same hashes, same content
 
 **Workstream 3: UI/DB Rebuild (CivicDB-inspired)**
 
@@ -178,3 +182,4 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - Q: Tech stack for UI/DB? → A: Next.js + FastAPI + Vite. Adopt CivicDB's patterns (GraphQL, social curation, revision workflow) but NOT its stack (no Ruby/Angular)
 - Q: Frontend testing? → A: Visual regression tests via Playwright/Chromium for all key UI flows
 - Q: Re-ingestion behavior? → A: Must be idempotent (zero changes if source unchanged). Must have efficient short-circuit check (committish + checksum) to avoid redundant full pipeline runs. Both a real test and a runtime optimization.
+- Q: Entity-level idempotency? → A: Content-addressed identity guarantees it — same semantic content always produces same sha256. Must hold for individual entity files AND for full registry export/re-import with state markers removed.
