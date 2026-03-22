@@ -8,7 +8,6 @@ import yaml
 
 from .hashing import (
     build_element_uri,
-    build_schema_uri,
     build_value_uri,
     canonical_json,
     compute_sha256,
@@ -606,7 +605,6 @@ def _build_schemas_from_provenance(
     from collections import defaultdict
 
     from .models import (
-        HashRegistryEntry,
         ProvenanceEntry,
         SchemaIdentity,
         SchemaRecord,
@@ -616,7 +614,9 @@ def _build_schemas_from_provenance(
     schemas_dir = library_path / "schemas"
     schemas_dir.mkdir(parents=True, exist_ok=True)
 
-    # Group element URIs by (source, class)
+    # Group element file references by (source, class)
+    # During staging, element filenames are UUIDs — use file stem as reference.
+    # These will be resolved to content-addressed URIs at commit time.
     class_elements: dict[str, list[str]] = defaultdict(list)
 
     for f in sorted(elements_dir.glob("*.yaml")):
@@ -625,30 +625,19 @@ def _build_schemas_from_provenance(
             continue
         for p in data["provenance"]:
             if p.get("source") == source_name:
-                # Find URI from registry by filename
-                fname = f.stem  # e.g., "age_3c1gtm"
-                parts = fname.rsplit("_", 1)
-                if len(parts) == 2:
-                    key = parts[1]
-                    entry = registry.elements.get(key)
-                    if entry:
-                        class_elements[p["class"]].append(entry.uri)
+                # Use element name as property reference
+                name = p.get("name", f.stem)
+                class_elements[p["class"]].append(name)
 
     created = 0
 
-    for class_name, element_uris in class_elements.items():
-        sorted_uris = sorted(set(element_uris))
-        schema_id = SchemaIdentity(properties=sorted_uris)
-        schema_dict = schema_id.model_dump(mode="json", exclude_none=True)
-        canonical = canonical_json(schema_dict)
-        sha = compute_sha256(canonical)
-        key = generate_short_key(sha)
+    import uuid as _uuid
+    from datetime import datetime as dt_mod
+    from datetime import timezone
 
-        filename = f"{class_name.lower()}_{key}.yaml"
-        filepath = schemas_dir / filename
-
-        from datetime import datetime as dt_mod
-        from datetime import timezone
+    for class_name, element_names in class_elements.items():
+        sorted_names = sorted(set(element_names))
+        schema_id = SchemaIdentity(properties=sorted_names)
 
         now_iso = dt_mod.now(timezone.utc).isoformat()
         prov = ProvenanceEntry(
@@ -660,34 +649,15 @@ def _build_schemas_from_provenance(
             activity="ingestion",
         )
 
-        if filepath.exists():
-            existing = yaml.safe_load(filepath.read_text(encoding="utf-8"))
-            existing_record = SchemaRecord.model_validate(existing)
-            existing_sources = {p.source for p in existing_record.provenance}
-            if source_name not in existing_sources:
-                all_provs = existing_record.provenance + [prov]
-                record = SchemaRecord(semantic=schema_id, provenance=all_provs)
-                data = record.model_dump(mode="json", exclude_none=True)
-                data["sha256"] = sha
-                filepath.write_text(
-                    yaml.dump(data, default_flow_style=False, sort_keys=False),
-                    encoding="utf-8",
-                )
-        else:
-            record = SchemaRecord(semantic=schema_id, provenance=[prov])
-            data = record.model_dump(mode="json", exclude_none=True)
-            data["sha256"] = sha
-            filepath.write_text(
-                yaml.dump(data, default_flow_style=False, sort_keys=False),
-                encoding="utf-8",
-            )
-            created += 1
-
-        uri = build_schema_uri(class_name, key)
-        registry.schemas[key] = HashRegistryEntry(sha256=sha, name=class_name, uri=uri)
-
-    # Re-write registry with schemas
-    _write_registry(library_path / "hash-registry.yaml", registry)
+        # UUID filename (no hashing at extraction time)
+        filepath = schemas_dir / f"{_uuid.uuid4()}.yaml"
+        record = SchemaRecord(semantic=schema_id, provenance=[prov])
+        data = record.model_dump(mode="json", exclude_none=True)
+        filepath.write_text(
+            yaml.dump(data, default_flow_style=False, sort_keys=False),
+            encoding="utf-8",
+        )
+        created += 1
 
     return {"created": created}
 
