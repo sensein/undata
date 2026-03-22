@@ -36,6 +36,10 @@ A data engineer optimizes each pipeline step (extract, enrich, commit, align, tr
 
 **Accuracy approach**: Use every available technique — embedding similarity, LLM-assisted classification (for borderline cases), ontology hierarchy traversal, rule-based heuristics, and source-specific domain knowledge — to maximize annotation accuracy. Cost and latency are secondary to correctness.
 
+**Enrichment depth**: Every entity should be matched to related terms at varying precision levels — exact match, close match, broad match, related match. Almost every concept in neuroscience has a representation in some ontology, terminology, lexicon, or database. The enrichment system must search across all available knowledge sources, not just the current 13 ontologies.
+
+**Dynamic evolution**: The system must not be static. It should actively discover and integrate new sources of neuroscience data elements (which may span human biology, behavior, and environment) and new ontologies/terminologies as the field evolves. The architecture must support adding new sources and ontologies without code changes — configuration-driven ingestion and enrichment.
+
 **Acceptance Scenarios**:
 
 1. **Given** a source schema (BIDS, DANDI, NWB, openMINDS, AIND), **When** extraction runs, **Then** every data element, vocabulary type, and class definition present in the source is captured (no silent omissions)
@@ -114,6 +118,9 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - **FR-015f**: When ingesting a raw YAML entity file (pre-enrichment, no ontology_annotations, no sha256), the pipeline MUST use the minimum steps necessary to determine if the entity already exists in the registry: compute the two-mode identity hash from semantic + provenance, check if that hash exists in the registry, and if so merge provenance without re-running enrichment/alignment — only new (unmatched) entities proceed through the full pipeline
 - **FR-015g**: Provenance sources MUST be validated against a registry of known sources (the 5 configured adapters + any explicitly authorized custom sources). If an entity arrives with an unrecognized source, the pipeline MUST reject the provenance merge, flag the entity as `suspicious_source` for curator review, and return feedback to the submitter indicating the source is not authorized
 - **FR-015h**: When provenance merge is attempted on an entity that already has identical semantics from the same source, the pipeline MUST detect the duplicate provenance and skip it (no bloat). If provenance from multiple novel sources arrives for the same entity in a short time window, the pipeline MUST flag this as `provenance_bloat` for curator review
+- **FR-015i**: Enrichment MUST assign ontology annotations at multiple precision levels (exactMatch, closeMatch, broadMatch, relatedMatch) using SKOS mapping relations, so that entities have a spectrum of related terms from precise to general
+- **FR-015j**: The system MUST support adding new data element sources and new ontologies/terminologies via configuration (YAML source definitions + ontology definitions) without requiring code changes — new adapters for novel formats may require code, but standard formats (JSON Schema, LinkML, CSV) must be configurable
+- **FR-015k**: The system MUST include a source discovery mechanism that identifies candidate neuroscience data element repositories (spanning biology, behavior, environment) for potential ingestion — this may be LLM-assisted, registry-based (e.g., FAIRsharing, BioPortal), or curator-driven
 
 **Workstream 3: UI/DB Rebuild (CivicDB-inspired)**
 
@@ -151,7 +158,7 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 
 - The library codebase at the end of feature 026 is the baseline for all review and optimization work
 - Source schemas (BIDS, DANDI, NWB, openMINDS, AIND) remain accessible at their current locations
-- The existing ontology store (268K embedded terms from 13 ontologies) is sufficient for enrichment; no new ontologies need to be added in this feature
+- The existing ontology store (268K embedded terms from 13 ontologies) is the starting point; the system must be designed to dynamically add new ontologies and terminologies as they are discovered
 - This is NOT a deployed platform — there are no deprecation signals needed, and any component (backend, frontend, database) can be rewritten from scratch if that better serves the goals
 - The UI/DB rebuild MAY start from scratch rather than extending the existing backend (002-schema-backend); the decision will be made after studying CivicDB's architecture
 - Human curation decisions feed back into the enrichment pipeline (approved annotations become ground truth for future runs)
@@ -170,8 +177,6 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - Performance optimization across all layers
 
 **Out of scope**:
-- Adding new source schemas beyond the existing 5
-- Adding new ontologies beyond the existing 13
 - Automated retraining of embedding models
 - Mobile UI support
 
@@ -191,3 +196,4 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - Q: Entity-level idempotency? → A: Content-addressed identity guarantees it — same semantic content always produces same sha256. Must hold for individual entity files AND for full registry export/re-import with state markers removed.
 - Q: Pre-enrichment YAML dedup? → A: Compute identity hash from semantic + provenance, check registry for existing match. If match found, merge provenance and skip enrichment. Only unmatched entities proceed through full pipeline. Minimal steps to discard duplicates.
 - Q: Provenance spoofing/bloat? → A: Validate sources against known registry. Unrecognized sources → reject merge + flag as suspicious_source + feedback to submitter. Rapid novel-source provenance on same entity → flag as provenance_bloat for curator review. Authorized users only add new terms.
+- Q: Enrichment depth + system evolution? → A: Enrichment must find terms at all precision levels (exact/close/broad/related). System must be dynamic — actively discover new sources and ontologies spanning neuroscience, biology, behavior, environment. Config-driven source/ontology addition, no code changes for standard formats. Source discovery via LLM/registries/curators.

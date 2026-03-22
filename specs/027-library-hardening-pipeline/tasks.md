@@ -116,6 +116,14 @@
 - [ ] T038j [P] [US2] Implement provenance bloat detection in `library/src/undata_library/commit.py`: if multiple novel sources attempt provenance merge on the same entity within a configurable window, flag as `provenance_bloat` for curator review
 - [ ] T038k [US2] Add source validation tests in `library/tests/test_curation.py`: test unrecognized source rejection, provenance bloat detection, and duplicate provenance skip
 
+### Multi-Precision Enrichment + Dynamic Sources
+
+- [ ] T038l [US2] Update `library/src/undata_library/enrich.py` to assign ontology annotations at all SKOS precision levels (exactMatch, closeMatch, broadMatch, relatedMatch) — currently only assigns top matches; extend to include broader/related terms with appropriate match_level markers
+- [ ] T038m [P] [US2] Make ontology ingestion config-driven: update `library/src/undata_library/source_defs/ontologies.yaml` to support adding new ontologies without code changes (URL, format, subset filter); verify `ontology refresh` CLI command loads any configured ontology
+- [ ] T038n [P] [US2] Make data source ingestion config-driven for standard formats: verify that `source_defs/*.yaml` with `adapter: json_schema`, `adapter: linkml`, or `adapter: csv_dictionary` can ingest new sources without code changes
+- [ ] T038o [US2] Create source discovery utility in `library/src/undata_library/discovery.py`: LLM-assisted scan of registries (FAIRsharing, BioPortal, OBO Foundry) to identify candidate neuroscience data element repositories; output candidate list for curator review
+- [ ] T038p [US2] Add tests for multi-precision enrichment in `library/tests/test_enrich.py`: verify that a matched entity has annotations at multiple SKOS levels (not just the top match)
+
 ### Adapter Accuracy Review
 
 - [ ] T039 [US2] Read BIDS schema format docs, verify `library/src/undata_library/adapters/bids.py` + `docker_scripts/bids_extract.py` capture all entity types; document mapping in adapter docstring
