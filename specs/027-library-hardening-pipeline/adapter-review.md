@@ -50,11 +50,79 @@
 - **$defs misclassified**: Underscore-prefixed `$defs` emitted as `ENUM_VALUE` but many are classes
 - **Array items lose type_ref**: `items.$ref` not tracked
 
+## Detailed Per-Source Issues
+
+### BIDS (8 issues)
+1. **CRITICAL**: ~211 enum entries in `objects.enums` extracted as ATTRIBUTE instead of ENUM_VALUE. Each has a `value` field (e.g., `"L"` for left_hemisphere) that is never read.
+2. **CRITICAL**: 7 underscore valueset members may contain stringified $ref dicts instead of resolved values.
+3. **MODERATE**: 9 vocabulary categories (`enums`, `datatypes`, `modalities`, `suffixes`, `extensions`, `formats`, `common_principles`, `files`, `metaentities`) incorrectly emitted as CLASS.
+4. **MODERATE**: ~189 vocabulary terms in `datatypes`/`modalities`/`suffixes`/`extensions` extracted as ATTRIBUTE instead of ENUM_VALUE.
+5. **MAJOR**: `value`, `display_name`, `unit` fields never read from ANY bidsschematools entry. Units like `"s"`, `"mm"`, `"Hz"` are critical for cross-source mapping and are lost.
+6. **MAJOR**: Missing sidecar rules (`rules/sidecars/`) that define class-property membership (which metadata fields belong to which modality).
+7. **MODERATE**: `entities` category entries are filename components, not data elements.
+8. **MINOR**: Metadata enum response_options are flat strings, not references to ENUM_VALUE entities.
+
+### DANDI (11 issues)
+1. **HIGH**: ~110 enum members never emitted as ENUM_VALUE entities.
+2. **HIGH**: No inheritance hierarchy — `cls.__bases__` available but never used for ~35 classes.
+3. **MEDIUM**: Empty CLASS properties list (docker script has them correct, main adapter does not).
+4. **HIGH**: ~40-50 reference-typed fields have no `type_ref` — typed as "string" instead of "object".
+5. **MEDIUM**: Fragile `_pydantic_type` uses string matching on annotation repr.
+6. **MEDIUM**: `_extract_enum_class` misses `X | None` unions (Python 3.10+).
+7. **LOW**: Duplicate VALUESET emission from same enum across multiple classes.
+8. **LOW**: No `required` flag tracking.
+9. **LOW**: No `multivalued` flag tracking.
+10. **MEDIUM**: PropertyValue handling incomplete.
+11. **LOW**: Docker script / main adapter divergence.
+
+### NWB (11 issues)
+1. **MEDIUM**: Namespace file not parsed — no multi-file traversal.
+2. **CRITICAL**: Inheritance (`neurodata_type_inc`) completely ignored — the defining feature of NWB.
+3. **HIGH**: `links` section not extracted (inter-type relationships lost).
+4. **HIGH**: Nested groups not extracted (composition relationships lost).
+5. **MEDIUM**: Fixed values / default values ignored.
+6. **MEDIUM**: `quantity` / `required` not captured.
+7. **MEDIUM**: Compound dtypes not decomposed.
+8. **HIGH**: Reference dtypes (`target_type`) not handled.
+9. **MEDIUM**: `dims`/`shape` metadata discarded.
+10. **MEDIUM**: Type defs emitted as spurious ATTRIBUTEs.
+11. **MEDIUM**: No extract() test coverage.
+
+### openMINDS (11 issues)
+1. **HIGH**: Property names are full URIs instead of short names (e.g., `https://openminds.om-i.org/props/familyName` instead of `familyName`).
+2. **HIGH**: `_linkedTypes`/`_embeddedTypes` ignored — all reference properties typed as "string".
+3. **MEDIUM**: CLASS properties list always empty.
+4. **HIGH**: ~85+ controlled vocabulary types (`controlledTerms` module) not emitted as VALUESET.
+5. **MEDIUM**: `@context` fallback for properties is wrong.
+6. **HIGH**: source_defs `schema_path` targets nonexistent `.jsonld` files.
+7. **MEDIUM**: `@type` vs `_type` and class name extraction broken (names like `fileBundle.schema.omi`).
+8. **MEDIUM**: No type hierarchy tracking (categories, modules).
+9. **LOW-MEDIUM**: `required` field ignored.
+10. **LOW**: Schema description/label not captured.
+11. **LOW**: Rich property metadata discarded.
+
+### AIND (10 issues)
+1. **LOW-MEDIUM**: `$defs` entries without `properties` silently dropped.
+2. **HIGH**: anyOf/oneOf unions NOT decomposed into separate elements per variant.
+3. **HIGH**: Underscore-prefixed `$defs` misclassified as ENUM_VALUE — they are actually CLASS objects with properties.
+4. **MEDIUM**: Descriptions lost for anyOf/oneOf wrapped references.
+5. **MEDIUM-HIGH**: Array `items.$ref` loses `type_ref`.
+6. **LOW-MEDIUM**: ENUM_VALUE labels lowercased inconsistently.
+7. **LOW**: No circular reference protection.
+8. **LOW**: `_find_parent_class` shallow traversal.
+9. **MEDIUM**: Dead code references non-existent `extractors.aind` module.
+10. **LOW**: Non-recursive file glob.
+
+## Upstream Changes
+
+- **DANDI PR #387**: Converting dandischema to LinkML. Once merged, DANDI adapter should consume LinkML YAML directly via existing LinkML adapter instead of Pydantic introspection.
+- All source repos should be monitored for schema format changes that affect extraction.
+
 ## Recommended Fix Order
 
-1. **Classifier logic** (affects all): Improve `classify_entity` to distinguish vocabulary/enum categories from attributes
-2. **BIDS**: Separate enum categories from attribute categories; add sidecar rule parsing
-3. **DANDI**: Add ENUM_VALUE emission; fix _pydantic_type; populate CLASS properties and subclass_of
-4. **NWB**: Add inheritance tracking; extract links/groups/refs
-5. **openMINDS**: Extract controlled vocabularies; fix property name extraction; handle references
-6. **AIND**: Decompose anyOf; fix $defs classification; track array item types
+1. **BIDS enum classification** (Critical, ~400 entities): Separate enum/vocabulary categories from attributes; read `value`/`display_name`/`unit` fields
+2. **DANDI ENUM_VALUE + type_ref** (High, ~150 entities): Emit enum members; fix type introspection; populate inheritance
+3. **openMINDS vocabulary + property names** (High, ~85 entities): Controlled terms as VALUESET; short property names; handle references
+4. **NWB inheritance + links** (Critical): Track `neurodata_type_inc`; extract links/groups; handle reference dtypes
+5. **AIND anyOf decomposition** (High): Split unions per variant; fix $defs classification
+6. **Cross-cutting**: Read `unit`/`required`/`multivalued` where available
