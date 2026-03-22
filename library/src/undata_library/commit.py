@@ -11,16 +11,24 @@ from .hashing import compute_identity_hash, determine_hash_mode, generate_short_
 from .utils import safe_load_yaml, sanitize_filename
 
 
-def commit_staged(staging_dir: Path, output_dir: Path) -> dict[str, int]:
+def commit_staged(
+    staging_dir: Path,
+    output_dir: Path,
+    validate_sources: bool = False,
+    known_sources: set[str] | None = None,
+) -> dict[str, int]:
     """Commit all staged entities to the registry.
 
     For each entity: determine hash mode → compute hash → write to output_dir.
     Merge provenance if target file already exists.
     Delete staging dir after successful commit.
 
-    Returns stats: {committed, merged, per_type: {elements: N, ...}}
+    If validate_sources=True, provenance sources are checked against known_sources.
+    Entities with unrecognized sources are flagged as suspicious_source.
+
+    Returns stats: {committed, merged, rejected, per_type: {elements: N, ...}}
     """
-    stats = {"committed": 0, "merged": 0, "per_type": {}}
+    stats = {"committed": 0, "merged": 0, "rejected": 0, "per_type": {}}
 
     for entity_type in ("elements", "schemas", "values", "valuesets"):
         type_dir = staging_dir / entity_type
@@ -43,6 +51,27 @@ def commit_staged(staging_dir: Path, output_dir: Path) -> dict[str, int]:
 
             semantic = data["semantic"]
             provenance = data.get("provenance", [])
+
+            # Source validation: reject unrecognized sources
+            if validate_sources and known_sources:
+                entity_sources = {p.get("source", "") for p in provenance if isinstance(p, dict)}
+                unknown = entity_sources - known_sources - {""}
+                if unknown:
+                    from .curation import create_flag, write_flag
+                    from .models import FlagType
+
+                    flag = create_flag(
+                        entity_type=entity_type.rstrip("s"),
+                        entity_ref=str(staged_file.name),
+                        flag_type=FlagType.suspicious_source,
+                        context={
+                            "reason": f"unrecognized source(s): {', '.join(sorted(unknown))}",
+                            "sources": sorted(unknown),
+                        },
+                    )
+                    write_flag(output_dir, flag)
+                    stats["rejected"] += 1
+                    continue
 
             # Determine hash mode from ontology annotations
             annotations = semantic.get("ontology_annotations", [])

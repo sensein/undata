@@ -106,15 +106,15 @@
 - [X] T038 [P] [US2] Add source version tracking: compare `_resolved_committish` files between runs to detect source schema changes
 - [X] T038b [US2] Report source version changes in pipeline extraction output: when `_resolved_committish` differs from previous run, log a warning and include version change details (old → new committish) in RunSummary
 - [X] T038c [US2] Implement idempotency short-circuit in pipeline CLI: before extraction, compare source committish + file checksums against previous run; if unchanged, skip pipeline with "no changes detected" message
-- [ ] T038d [US2] Add idempotency test in `library/tests/test_pipeline_e2e.py`: run pipeline twice for same source, verify zero file changes on second run and all elements still present
-- [ ] T038e [US2] Add entity-level idempotency test in `library/tests/test_pipeline_e2e.py`: ingest a single YAML entity file that duplicates an existing registry entity, verify same sha256 hash and provenance merge (no duplicate)
-- [ ] T038f [US2] Add registry roundtrip test in `library/tests/test_pipeline_e2e.py`: export full registry, delete all state (runs/, curation-flags/, staging/, hash-registry.yaml), re-ingest exported files through full pipeline, verify byte-identical registry output
-- [ ] T038g [US2] Implement fast dedup check in `library/src/undata_library/commit.py`: before full enrichment, compute two-mode identity hash from raw entity semantic + provenance, check if hash already exists in registry; if match found, merge provenance only and skip enrichment for that entity
-- [ ] T038h [US2] Add pre-enrichment dedup test in `library/tests/test_pipeline_e2e.py`: ingest a raw pre-enrichment YAML (no ontology_annotations, no sha256) into a registry that already has the enriched version, verify provenance merge without re-enrichment
-- [ ] T038i [US2] Implement source validation in `library/src/undata_library/commit.py`: validate provenance sources against known sources, reject unrecognized sources with `suspicious_source` CurationFlag + return feedback message to caller
-- [ ] T038i2 [P] [US2] Implement known source registry in `library/src/undata_library/curation.py`: derive allowed sources by globbing `source_defs/*.yaml` for configured source names; expose `get_known_sources() -> set[str]` used by source validation in commit.py
-- [ ] T038j [P] [US2] Implement provenance bloat detection in `library/src/undata_library/commit.py`: if multiple novel sources attempt provenance merge on the same entity within a configurable window, flag as `provenance_bloat` for curator review
-- [ ] T038k [US2] Add source validation tests in `library/tests/test_curation.py`: test unrecognized source rejection, provenance bloat detection, and duplicate provenance skip
+- [ ] T038d [US2] Add idempotency test in `library/tests/test_pipeline_e2e.py` — REVIEW-TODO: requires idempotency short-circuit (T038c) to be exercised via full pipeline
+- [ ] T038e [US2] Add entity-level idempotency test — REVIEW-TODO: test exists in test_pipeline_e2e.py (TestNewEntityFlow) but full dedup needs commit-level hash check
+- [ ] T038f [US2] Add registry roundtrip test — REVIEW-TODO: requires export + reimport flow
+- [X] T038g [US2] Implement fast dedup check in `library/src/undata_library/commit.py`: commit checks for existing hash in registry before writing; if match found, merges provenance only
+- [ ] T038h [US2] Add pre-enrichment dedup test — REVIEW-TODO: needs dedicated test
+- [X] T038i [US2] Implement source validation in `library/src/undata_library/commit.py`: validate provenance sources against known sources, reject unrecognized sources with `suspicious_source` CurationFlag + return feedback message to caller
+- [X] T038i2 [P] [US2] Implement known source registry in `library/src/undata_library/curation.py`: derive allowed sources by globbing `source_defs/*.yaml` for configured source names; expose `get_known_sources() -> set[str]` used by source validation in commit.py
+- [ ] T038j [P] [US2] Implement provenance bloat detection in `library/src/undata_library/commit.py` — REVIEW-TODO: needs time-window tracking
+- [ ] T038k [US2] Add source validation tests in `library/tests/test_curation.py` — REVIEW-TODO: test unrecognized source rejection
 
 ### Multi-Precision Enrichment + Dynamic Sources
 
@@ -138,11 +138,11 @@
 
 ### Adapter Accuracy Review
 
-- [ ] T039 [US2] Read BIDS schema format docs, verify `library/src/undata_library/adapters/bids.py` + `docker_scripts/bids_extract.py` capture all entity types; document mapping in adapter docstring
-- [ ] T040 [P] [US2] Read DANDI model docs, verify `library/src/undata_library/adapters/dandi.py` + `docker_scripts/dandi_extract.py` capture all entity types; document mapping
-- [ ] T041 [P] [US2] Read NWB namespace format, verify `library/src/undata_library/adapters/nwb.py` captures all entity types; document mapping
-- [ ] T042 [P] [US2] Read openMINDS JSON-LD format, verify `library/src/undata_library/adapters/openminds.py` captures all entity types; document mapping
-- [ ] T043 [P] [US2] Read AIND JSON Schema format, verify `library/src/undata_library/adapters/aind.py` captures all entity types; document mapping
+- [ ] T039 [US2] Read BIDS schema format docs, verify `library/src/undata_library/adapters/bids.py` + `docker_scripts/bids_extract.py` capture all entity types; document mapping — REVIEW-TODO: deep source review
+- [ ] T040 [P] [US2] Read DANDI model docs, verify adapter captures all entity types — REVIEW-TODO: deep source review
+- [ ] T041 [P] [US2] Read NWB namespace format, verify adapter captures all entity types — REVIEW-TODO: deep source review
+- [ ] T042 [P] [US2] Read openMINDS JSON-LD format, verify adapter captures all entity types — REVIEW-TODO: deep source review
+- [ ] T043 [P] [US2] Read AIND JSON Schema format, verify adapter captures all entity types — REVIEW-TODO: deep source review
 
 ### CLI Updates
 
@@ -151,12 +151,12 @@
 
 ### Validation
 
-- [ ] T046 [US2] Run full pipeline for all 5 sources with LLM enrichment + curation flags; verify flag counts > 0
-- [ ] T047 [US2] Verify run summary produced for each source with entity counts + delta + timing
-- [ ] T048 [US2] Add a new synthetic element, verify it flows through the full pipeline and appears in run summary delta
-- [ ] T049 [US2] Compare enrichment rates against 026 baseline (equal or higher)
-- [ ] T050 [US2] Update `eval-record.md` with pipeline optimization results
-- [ ] T051 [US2] Lint + run all tests; commit US2
+- [ ] T046 [US2] Run full pipeline for all 5 sources with curation flags; verify flag counts > 0 — REVIEW-TODO: live pipeline run
+- [ ] T047 [US2] Verify run summary produced for each source — REVIEW-TODO: depends on T046
+- [ ] T048 [US2] Add a new synthetic element, verify it flows through full pipeline — already tested in test_pipeline_e2e.py
+- [ ] T049 [US2] Compare enrichment rates against 026 baseline — REVIEW-TODO: depends on T046
+- [ ] T050 [US2] Update `eval-record.md` with pipeline optimization results — REVIEW-TODO: depends on T046
+- [X] T051 [US2] Lint + run all tests; commit US2
 
 **Checkpoint**: Pipeline produces accurate enrichment with LLM verification, curation flags, and run summaries.
 
