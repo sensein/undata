@@ -6,17 +6,23 @@
 
 **Findings from CivicDB (civicdb.org / griffithlab/civic-v2)**:
 
-- **Tech stack**: Angular frontend + Ruby on Rails backend + PostgreSQL + GraphQL API
-- **API**: GraphQL with connection-based cursor pagination (edges/nodes pattern). The same API powers the frontend and is publicly available.
-- **Data model**: Highly connected — Variants ↔ MolecularProfiles ↔ Assertions ↔ EvidenceItems ↔ Diseases ↔ Therapies ↔ Sources. Polymorphic comments on any entity.
-- **Social model**: Three-tier — Contributors (suggest/comment) → Curators (propose changes) → Editors (approve/reject). Revision workflow with suggest → moderate → approve cycle.
+- **Tech stack**: Angular frontend + Ruby on Rails 8.0 backend + PostgreSQL (130+ tables, 10 materialized views) + GraphQL-only API (graphql-ruby) + Searchkick/Elasticsearch + Sidekiq + Redis + OmniAuth (GitHub/Google/ORCID)
+- **API**: GraphQL-only (no REST). 50 mutations, Relay-style cursor pagination. Same API powers frontend and is publicly available via GraphiQL.
+- **Data model**: Feature (Gene/Factor/Fusion/Region) → Variant → MolecularProfile → EvidenceItem/Assertion. Plus Disease, Therapy, Source, ClinicalTrial. Polymorphic delegated_type for Feature subtypes.
+- **Social model**: Three-tier — Curator (default, can submit/comment/flag) → Editor (reviews/accepts/rejects, needs email) → Admin. Revision-based workflow with field-level diffs.
+- **Curation workflow**: Submit → Suggest Revision (field-level diff) → Editor Review (accept/reject) → Moderate → Approve. Full activity/audit trail.
+- **Commenting**: Polymorphic `Commentable` concern on all entities. Markdown support. Entity/user/role mentions.
+- **Flagging**: Polymorphic `Flaggable` on all entities. Open → resolved states. Flags are themselves commentable and subscribable.
+- **Notifications**: Subscribable concern, in-app + email notifications.
+- **Performance**: Materialized views for browse tables, batch DataLoaders, Redis caching, Searchkick async indexing.
 - **Key patterns worth adopting**:
-  - GraphQL for connected entity traversal (perfect for elements ↔ ontology ↔ provenance ↔ transforms)
-  - Connection-based pagination with filtering
-  - Polymorphic comments/flags on any entity type
-  - Submission → moderation → approval workflow for annotations
-  - `browseX` queries with faceted filtering + `searchX` for text search
-  - Revision history on entity changes
+  - GraphQL for connected entity traversal
+  - Polymorphic concerns (Commentable, Flaggable, Subscribable) on any entity type
+  - Revision-based curation with field-level diffs
+  - Materialized views for browse/search performance
+  - DataLoader batching for N+1 prevention
+  - `browseX` queries with faceted filtering + full-text search
+  - Activity/audit trail for all state changes
 
 **Alternatives considered**: REST-only (simpler but poor for graph traversal), Hasura auto-generated GraphQL (fast but less control over business logic)
 
