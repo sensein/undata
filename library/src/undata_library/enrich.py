@@ -664,12 +664,15 @@ def _assign_ontology_annotations(
     use_llm: bool = False,
     element_desc: str = "",
     source_context: str = "",
+    ontology_rdf_store=None,
 ) -> list[dict]:
     """Assign multiple ontology annotations via embedding similarity.
 
     Returns list of OntologyAnnotation-compatible dicts.
     Heuristic: threshold + gap cutoff + max cap.
     If use_llm=True, borderline matches (0.7-0.95) are verified via LLM.
+    If ontology_rdf_store is provided, ancestors of the primary match are
+    added as broadMatch annotations (multi-precision enrichment).
     """
     from .models import MatchLevel
 
@@ -737,6 +740,35 @@ def _assign_ontology_annotations(
             ann["llm_verification"] = llm_result
         annotations.append(ann)
         prev_score = score
+
+    # Multi-precision: add broadMatch annotations from ontology hierarchy
+    if ontology_rdf_store and annotations:
+        primary_uri = annotations[0].get("term_uri", "")
+        if primary_uri:
+            try:
+                ancestors = ontology_rdf_store.get_ancestors(primary_uri, max_depth=2)
+                for anc_uri in ancestors[:3]:  # Limit to 3 broader terms
+                    anc_info = onto_cache.get(anc_uri, {})
+                    anc_label = anc_info.get("label", "")
+                    if not anc_label:
+                        # Try to look up label
+                        term_data = ontology_rdf_store.lookup_term(anc_uri)
+                        anc_label = term_data["label"] if term_data else ""
+                    if anc_label:
+                        annotations.append(
+                            {
+                                "term_uri": anc_uri,
+                                "term_label": anc_label,
+                                "ontology": _ontology_from_uri(anc_uri),
+                                "mapping_relation": "skos:broadMatch",
+                                "match_level": MatchLevel.concept_match.value,
+                                "score": 0.0,  # Not from embedding
+                                "model": "hierarchy",
+                                "primary": False,
+                            }
+                        )
+            except Exception:
+                pass  # Hierarchy lookup is best-effort
 
     return annotations
 
