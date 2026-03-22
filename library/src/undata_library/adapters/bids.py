@@ -1,11 +1,21 @@
-"""BIDS schema adapter — uses bidsschematools."""
+"""BIDS schema adapter — converts bidsschematools to LinkML, then extracts entities.
+
+Architecture: build a LinkML SchemaDefinition programmatically from the BIDS
+schema, then use the standard LinkML adapter to extract entities. This ensures
+correct entity classification (classes, slots, enums) without ad-hoc logic.
+
+The BIDS schema has three layers:
+1. objects/ — field definitions (metadata, columns, entities, enums)
+2. rules/sidecars/ — which fields apply to which modality (class-property membership)
+3. rules/tabular_data/ — which columns apply to which TSV type
+"""
 
 from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
 
-from ..models import EntityType, SourceRef
+from ..models import SourceRef
 from .base import BaseAdapter, ClassifiedEntity
 
 _TYPE_MAP = {
@@ -13,37 +23,9 @@ _TYPE_MAP = {
     "number": "float",
     "integer": "integer",
     "boolean": "boolean",
-    "array": "array",
-    "object": "object",
+    "array": "string",
+    "object": "string",
 }
-
-# Categories whose entries are vocabulary terms (ENUM_VALUE), not data elements
-_VOCABULARY_CATEGORIES = frozenset(
-    {
-        "enums",
-        "datatypes",
-        "modalities",
-        "suffixes",
-        "extensions",
-        "formats",
-        "common_principles",
-    }
-)
-
-# Categories whose entries are structural data elements (ATTRIBUTE)
-_ATTRIBUTE_CATEGORIES = frozenset(
-    {
-        "metadata",
-        "columns",
-    }
-)
-
-# Categories whose entries are filename structural components
-_ENTITY_CATEGORIES = frozenset(
-    {
-        "entities",
-    }
-)
 
 
 class BIDSAdapter(BaseAdapter):
@@ -53,7 +35,7 @@ class BIDSAdapter(BaseAdapter):
 
     @property
     def supported_formats(self) -> list[str]:
-        return []  # Uses bidsschematools API, not file parsing
+        return []
 
     def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
         try:
@@ -62,260 +44,300 @@ class BIDSAdapter(BaseAdapter):
             raise ImportError(f"bidsschematools required for BIDS extraction: {exc}") from exc
 
         schema = bids_schema.load_schema()
-        results: list[ClassifiedEntity] = []
         base_ref = self._build_source_ref(source_path)
 
-        objects = schema.get("objects", {})
-        for cat_name in objects:
-            category = objects[cat_name]
-            if not hasattr(category, "__iter__"):
-                continue
+        # Build LinkML schema from BIDS
+        linkml_schema = self._build_linkml_schema(schema)
 
-            if cat_name in _VOCABULARY_CATEGORIES:
-                self._extract_vocabulary(cat_name, category, results, base_ref)
-            elif cat_name in _ATTRIBUTE_CATEGORIES:
-                self._extract_attributes(cat_name, category, results, base_ref)
-            elif cat_name in _ENTITY_CATEGORIES:
-                self._extract_entities(cat_name, category, results, base_ref)
-            else:
-                # Unknown category — extract as attributes by default
-                self._extract_attributes(cat_name, category, results, base_ref)
+        # Extract entities via LinkML adapter
+        from .linkml import LinkMLAdapter
 
-        return results
-
-    def _extract_vocabulary(
-        self,
-        cat_name: str,
-        category: Any,
-        results: list[ClassifiedEntity],
-        base_ref: SourceRef,
-    ) -> None:
-        """Extract vocabulary terms as ENUM_VALUE entities.
-
-        Vocabulary categories contain named terms with value, display_name,
-        and description fields. These are categorical constants, not data elements.
-        """
-        for field_name in category:
-            field_def = category[field_name]
-            if not hasattr(field_def, "get"):
-                continue
-
-            if field_name.startswith("_"):
-                # Underscore entries are valuesets
-                self._extract_valueset(cat_name, field_name, field_def, results, base_ref)
-                continue
-
-            # Regular entries are enum values
-            value = str(field_def.get("value", field_name))
-            display_name = str(field_def.get("display_name", "") or "")
-            desc = str(field_def.get("description", "") or "")
-
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.ENUM_VALUE,
-                    semantic={
-                        "label": value,
-                        "value_type": "categorical",
-                        "display_name": display_name,
-                    },
-                    provenance={
-                        "source": "bids",
-                        "class": cat_name,
-                        "name": field_name,
-                        "description": desc or None,
-                    },
-                    confidence=0.95,
-                    source_ref=base_ref,
-                    source_context={"category": cat_name, "value": value},
-                )
-            )
-
-    def _extract_valueset(
-        self,
-        cat_name: str,
-        field_name: str,
-        field_def: Any,
-        results: list[ClassifiedEntity],
-        base_ref: SourceRef,
-    ) -> None:
-        """Extract underscore-prefixed entries as VALUESET + their ENUM_VALUE members."""
-        enum_vals = field_def.get("enum") if hasattr(field_def, "get") else None
-        if not enum_vals or not hasattr(enum_vals, "__iter__"):
-            return
-
-        members = []
-        for v in enum_vals:
-            if v is None:
-                continue
-            # Handle potential $ref entries
-            if isinstance(v, dict):
-                ref = v.get("$ref", "")
-                # Try to resolve: objects.enums.CapTrak.value → CapTrak
-                parts = ref.split(".")
-                members.append(parts[-2] if len(parts) >= 3 else str(v))
-            else:
-                members.append(str(v))
-
-        results.append(
-            ClassifiedEntity(
-                entity_type=EntityType.VALUESET,
-                semantic={
-                    "name": field_name.lstrip("_"),
-                    "members": sorted(members),
-                },
-                provenance={
-                    "source": "bids",
-                    "class": cat_name,
-                    "name": field_name,
-                },
-                confidence=0.9,
-                source_ref=base_ref,
-            )
+        linkml_adapter = LinkMLAdapter()
+        entities = linkml_adapter.extract_from_schema_definition(
+            linkml_schema, source_name="bids", source_ref=base_ref
         )
-        # Emit individual enum values
-        for val in members:
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.ENUM_VALUE,
-                    semantic={"label": val, "value_type": "categorical"},
-                    provenance={"source": "bids", "class": cat_name, "name": val},
-                    confidence=0.95,
-                    source_ref=base_ref,
-                )
-            )
 
-    def _extract_attributes(
-        self,
-        cat_name: str,
-        category: Any,
-        results: list[ClassifiedEntity],
-        base_ref: SourceRef,
-    ) -> None:
-        """Extract data element attributes with full semantic metadata."""
-        # Emit the category as a CLASS (schema shape)
-        if hasattr(category, "keys"):
-            prop_names = [k for k in category if not k.startswith("_")]
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.CLASS,
-                    semantic={"properties": prop_names},
-                    provenance={"source": "bids", "class": cat_name, "name": cat_name},
-                    confidence=0.9,
-                    source_ref=base_ref,
-                    source_context={"category": cat_name},
-                )
-            )
+        return entities
 
-        for field_name in category:
-            if field_name.startswith("_"):
-                # Underscore entries are valuesets even in attribute categories
-                field_def = category[field_name]
-                if hasattr(field_def, "get"):
-                    self._extract_valueset(cat_name, field_name, field_def, results, base_ref)
+    def _build_linkml_schema(self, schema: Any) -> Any:
+        """Convert bidsschematools schema to a LinkML SchemaDefinition."""
+        from linkml_runtime.linkml_model import (
+            EnumDefinition,
+            PermissibleValue,
+            Prefix,
+            SchemaDefinition,
+            SlotDefinition,
+        )
+
+        objects = schema.get("objects", {})
+        sidecars = schema.get("rules", {}).get("sidecars", {})
+        tabular = schema.get("rules", {}).get("tabular_data", {})
+
+        ld = SchemaDefinition(
+            id="https://bids-specification.readthedocs.io/schema",
+            name="bids",
+            title="BIDS Specification Schema",
+            description="Auto-generated LinkML from BIDS schema via bidsschematools",
+            default_range="string",
+        )
+        ld.prefixes["bids"] = Prefix("bids", "https://bids-specification.readthedocs.io/schema/")
+        ld.prefixes["linkml"] = Prefix("linkml", "https://w3id.org/linkml/")
+
+        # 1. Slots from metadata objects
+        metadata = objects.get("metadata", {})
+        self._add_slots_from_objects(ld, metadata, "metadata")
+
+        # 2. Slots from columns objects
+        columns = objects.get("columns", {})
+        self._add_slots_from_objects(ld, columns, "columns")
+
+        # 3. Slots from entities objects (filename components)
+        entities_cat = objects.get("entities", {})
+        for fname in entities_cat:
+            if fname in ld.slots:
                 continue
-
-            field_def = category[field_name]
-            if not hasattr(field_def, "get"):
+            fdef = entities_cat[fname]
+            if not hasattr(fdef, "get"):
                 continue
-
-            dt = _bids_type(field_def)
-            desc = str(field_def.get("description", "") or "")
-
-            # Build semantic dict with full metadata
-            semantic: dict[str, Any] = {"data_type": dt}
-
-            # Read unit (critical for cross-source mapping)
-            unit = field_def.get("unit")
-            if unit:
-                semantic["unit"] = str(unit)
-
-            # Read pattern
-            pattern = field_def.get("pattern")
-            if pattern:
-                semantic["pattern"] = str(pattern)
-
-            # Enum values → response_options
-            enum_vals = field_def.get("enum") if hasattr(field_def, "get") else None
-            if enum_vals and hasattr(enum_vals, "__iter__"):
-                allowed = [str(v) for v in enum_vals if v is not None]
-                semantic["response_options"] = [{"value": v, "label": v} for v in allowed]
-                semantic["value_domain"] = "categorical"
-            elif dt in ("integer", "float"):
-                semantic["value_domain"] = "numeric"
-            elif dt == "boolean":
-                semantic["value_domain"] = "boolean"
-            elif dt == "string":
-                semantic["value_domain"] = "text"
-
-            # Min/max
-            min_val = field_def.get("minimum")
-            max_val = field_def.get("maximum")
-            if min_val is not None:
-                semantic["min_value"] = float(min_val)
-            if max_val is not None:
-                semantic["max_value"] = float(max_val)
-
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.ATTRIBUTE,
-                    semantic=semantic,
-                    provenance={
-                        "source": "bids",
-                        "class": cat_name,
-                        "name": field_name,
-                        "description": desc or None,
-                    },
-                    confidence=0.9,
-                    source_ref=base_ref,
-                    source_context={"category": cat_name},
-                )
-            )
-
-    def _extract_entities(
-        self,
-        cat_name: str,
-        category: Any,
-        results: list[ClassifiedEntity],
-        base_ref: SourceRef,
-    ) -> None:
-        """Extract BIDS filename entities as tagged attributes."""
-        for field_name in category:
-            field_def = category[field_name]
-            if not hasattr(field_def, "get"):
-                continue
-
-            # Entities have name (filename key), format, display_name
-            entity_name = str(field_def.get("name", field_name))
-            display_name = str(field_def.get("display_name", "") or "")
-            desc = str(field_def.get("description", "") or "")
-            fmt = str(field_def.get("format", "label"))
-
+            fmt = str(fdef.get("format", "label"))
             dt = "integer" if fmt == "index" else "string"
-
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.ATTRIBUTE,
-                    semantic={
-                        "data_type": dt,
-                        "value_domain": "numeric" if dt == "integer" else "text",
-                    },
-                    provenance={
-                        "source": "bids",
-                        "class": cat_name,
-                        "name": field_name,
-                        "description": desc or None,
-                    },
-                    confidence=0.85,
-                    source_ref=base_ref,
-                    source_context={
-                        "category": cat_name,
-                        "entity_name": entity_name,
-                        "format": fmt,
-                        "display_name": display_name,
-                        "is_filename_entity": True,
-                    },
-                )
+            slot = SlotDefinition(
+                name=fname,
+                range=dt,
+                description=str(fdef.get("description", "") or "")[:500] or None,
             )
+            entity_name = fdef.get("name", fname)
+            if entity_name:
+                slot.annotations["bids_entity_name"] = str(entity_name)
+            slot.annotations["bids_category"] = "entities"
+            ld.slots[fname] = slot
+
+        # 4. Enums from objects.enums
+        enums_cat = objects.get("enums", {})
+        self._add_enums(ld, enums_cat)
+
+        # 5. Enums from vocabulary categories (datatypes, modalities, suffixes, extensions)
+        for cat_name in ("datatypes", "modalities", "suffixes", "extensions", "formats"):
+            vocab = objects.get(cat_name, {})
+            if not vocab:
+                continue
+            ed = EnumDefinition(
+                name=cat_name,
+                description=f"BIDS {cat_name} vocabulary",
+            )
+            for vname in vocab:
+                vdef = vocab[vname]
+                if not hasattr(vdef, "get") or vname.startswith("_"):
+                    continue
+                value = str(vdef.get("value", vname))
+                display = str(vdef.get("display_name", "") or "")
+                pv = PermissibleValue(text=value)
+                if display:
+                    pv.description = display
+                ed.permissible_values[vname] = pv
+            if ed.permissible_values:
+                ld.enums[cat_name] = ed
+
+        # 6. Classes from sidecar rules — field groups as mixins, modalities as concrete
+        for modality in sorted(sidecars.keys()):
+            groups = sidecars[modality]
+            if not hasattr(groups, "keys"):
+                continue
+            self._add_sidecar_classes(ld, modality, groups)
+
+        # 7. Classes from tabular_data rules
+        for table_name in sorted(tabular.keys()):
+            groups = tabular[table_name]
+            if not hasattr(groups, "keys"):
+                continue
+            self._add_tabular_classes(ld, table_name, groups)
+
+        return ld
+
+    def _add_slots_from_objects(self, ld: Any, objects_cat: Any, category: str) -> None:
+        """Add slots from a BIDS objects category (metadata or columns)."""
+        from linkml_runtime.linkml_model import (
+            EnumDefinition,
+            PermissibleValue,
+            SlotDefinition,
+        )
+
+        for fname in objects_cat:
+            if fname in ld.slots or fname.startswith("_"):
+                continue
+            fdef = objects_cat[fname]
+            if not hasattr(fdef, "get"):
+                continue
+
+            t = fdef.get("type", "string")
+            if isinstance(t, (list, tuple)):
+                t = t[0] if t else "string"
+
+            slot = SlotDefinition(
+                name=fname,
+                range=_TYPE_MAP.get(str(t), "string"),
+                description=str(fdef.get("description", "") or "")[:500] or None,
+            )
+
+            # Unit
+            unit = fdef.get("unit")
+            if unit:
+                slot.annotations["unit"] = str(unit)
+
+            # Pattern
+            pattern = fdef.get("pattern")
+            if pattern:
+                slot.pattern = str(pattern)
+
+            # Enum values → create enum and set range
+            enum_vals = fdef.get("enum")
+            if enum_vals and hasattr(enum_vals, "__iter__"):
+                vals = [str(v) for v in enum_vals if v is not None]
+                if vals:
+                    enum_name = f"{fname}Enum"
+                    ed = EnumDefinition(name=enum_name)
+                    for v in vals:
+                        ed.permissible_values[v] = PermissibleValue(text=v)
+                    ld.enums[enum_name] = ed
+                    slot.range = enum_name
+
+            slot.annotations["bids_category"] = category
+            ld.slots[fname] = slot
+
+    def _add_enums(self, ld: Any, enums_cat: Any) -> None:
+        """Add enums from objects.enums — valuesets and individual values."""
+        from linkml_runtime.linkml_model import EnumDefinition, PermissibleValue
+
+        for ename in enums_cat:
+            edef = enums_cat[ename]
+            if not hasattr(edef, "get"):
+                continue
+
+            if ename.startswith("_"):
+                # Valueset
+                enum_vals = edef.get("enum", [])
+                if not enum_vals:
+                    continue
+                clean_name = ename.lstrip("_")
+                if clean_name in ld.enums:
+                    continue
+                ed = EnumDefinition(name=clean_name)
+                for v in enum_vals:
+                    if v is None:
+                        continue
+                    if isinstance(v, dict):
+                        ref = v.get("$ref", "")
+                        parts = ref.split(".")
+                        text = parts[-2] if len(parts) >= 3 else str(v)
+                    else:
+                        text = str(v)
+                    ed.permissible_values[text] = PermissibleValue(text=text)
+                ld.enums[clean_name] = ed
+            else:
+                # Individual enum value — store in a collector enum
+                value = str(edef.get("value", ename))
+                display = str(edef.get("display_name", "") or "")
+                # These get collected into the vocabulary enums above
+                # Also store as individual entries in a "bids_enum_values" enum
+                collector = ld.enums.get("bids_enum_values")
+                if collector is None:
+                    from linkml_runtime.linkml_model import EnumDefinition as ED
+
+                    collector = ED(
+                        name="bids_enum_values",
+                        description="Individual BIDS enum values",
+                    )
+                    ld.enums["bids_enum_values"] = collector
+                pv = PermissibleValue(text=value)
+                if display:
+                    pv.description = display
+                collector.permissible_values[ename] = pv
+
+    def _add_sidecar_classes(self, ld: Any, modality: str, groups: Any) -> None:
+        """Add mixin classes from sidecar field groups + concrete modality class."""
+        from linkml_runtime.linkml_model import ClassDefinition, SlotDefinition
+
+        mixin_names = []
+        for group_name, group in groups.items():
+            if not hasattr(group, "get"):
+                continue
+            fields = group.get("fields", {})
+            if not hasattr(fields, "keys") or not fields:
+                continue
+
+            mixin = ClassDefinition(
+                name=group_name,
+                mixin=True,
+                description=f"Sidecar field group for {modality}",
+            )
+            selectors = group.get("selectors", [])
+            if selectors:
+                mixin.annotations["bids_selectors"] = str(selectors)
+
+            for fname, fdef in fields.items():
+                mixin.slots.append(fname)
+                # Ensure slot exists (may reference metadata not in objects)
+                if fname not in ld.slots:
+                    from linkml_runtime.linkml_model import SlotDefinition as SD
+
+                    ld.slots[fname] = SD(name=fname, range="string")
+
+                level = fdef if isinstance(fdef, str) else fdef.get("level", "optional")
+                if level == "required":
+                    mixin.slot_usage[fname] = SlotDefinition(name=fname, required=True)
+                elif level == "recommended":
+                    mixin.slot_usage[fname] = SlotDefinition(name=fname, recommended=True)
+
+            ld.classes[group_name] = mixin
+            mixin_names.append(group_name)
+
+        if mixin_names:
+            concrete = ClassDefinition(
+                name=f"{modality}_sidecar",
+                description=f"BIDS sidecar metadata for {modality} datatype",
+                mixins=mixin_names,
+            )
+            ld.classes[f"{modality}_sidecar"] = concrete
+
+    def _add_tabular_classes(self, ld: Any, table_name: str, groups: Any) -> None:
+        """Add classes from tabular_data column groups."""
+        from linkml_runtime.linkml_model import ClassDefinition, SlotDefinition
+
+        mixin_names = []
+        for group_name, group in groups.items():
+            if not hasattr(group, "get"):
+                continue
+            cols = group.get("columns", group.get("fields", {}))
+            if not hasattr(cols, "keys") or not cols:
+                continue
+
+            mixin = ClassDefinition(
+                name=f"{table_name}_{group_name}",
+                mixin=True,
+                description=f"Tabular columns for {table_name}",
+            )
+
+            for cname, cdef in cols.items():
+                mixin.slots.append(cname)
+                if cname not in ld.slots:
+                    from linkml_runtime.linkml_model import SlotDefinition as SD
+
+                    ld.slots[cname] = SD(name=cname, range="string")
+
+                level = cdef if isinstance(cdef, str) else cdef.get("level", "optional")
+                if level == "required":
+                    mixin.slot_usage[cname] = SlotDefinition(name=cname, required=True)
+
+            ld.classes[f"{table_name}_{group_name}"] = mixin
+            mixin_names.append(f"{table_name}_{group_name}")
+
+        if mixin_names:
+            concrete = ClassDefinition(
+                name=f"{table_name}_table",
+                description=f"BIDS tabular data for {table_name}",
+                mixins=mixin_names,
+            )
+            ld.classes[f"{table_name}_table"] = concrete
 
     def _build_source_ref(self, source_path: Path) -> SourceRef:
         repo = "https://github.com/bids-standard/bids-specification"
@@ -331,13 +353,6 @@ class BIDSAdapter(BaseAdapter):
         return SourceRef(
             repo=repo,
             committish=committish,
-            file="schema/objects",
+            file="schema",
             checksum="",
         )
-
-
-def _bids_type(field_def: object) -> str:
-    t = field_def.get("type", "string") if hasattr(field_def, "get") else "string"
-    if isinstance(t, (list, tuple)):
-        t = t[0] if t else "string"
-    return _TYPE_MAP.get(str(t), "string")
