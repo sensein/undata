@@ -8,6 +8,7 @@ from pathlib import Path
 
 import click
 import yaml
+from dotenv import load_dotenv
 
 from .hashing import (
     build_element_uri,
@@ -37,6 +38,9 @@ def get_ontology_store_path() -> Path:
 @click.group()
 def main() -> None:
     """undata-library: content-addressed neuroscience data element registry."""
+    # Load .env for HF_TOKEN and other secrets
+    load_dotenv(Path(__file__).resolve().parents[3] / ".env", override=False)
+    load_dotenv(override=False)  # also check CWD/.env
 
 
 @main.command()
