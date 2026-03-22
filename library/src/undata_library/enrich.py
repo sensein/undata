@@ -84,8 +84,13 @@ def enrich_elements(
     """
     elements_dir = staging_dir / "elements"
     if not elements_dir.exists():
-        return {"ontology_assigned": 0, "value_domain_set": 0, "values_resolved": 0,
-                "unchanged": 0, "total": 0}
+        return {
+            "ontology_assigned": 0,
+            "value_domain_set": 0,
+            "values_resolved": 0,
+            "unchanged": 0,
+            "total": 0,
+        }
 
     # Load ontology embeddings if not provided
     if onto_store is None and cache_dir is not None:
@@ -123,10 +128,18 @@ def enrich_elements(
         domain = None
 
         # 1. Assign ontology_annotations via embedding distance
-        if not sem.get("ontology_annotations") and onto_store is not None and elem_store is not None:
+        if (
+            not sem.get("ontology_annotations")
+            and onto_store is not None
+            and elem_store is not None
+        ):
             uri = f"https://schema.undata.live/elements/{f.stem}"
             annotations = _assign_ontology_annotations(
-                uri, elem_store, onto_store, onto_cache, threshold,
+                uri,
+                elem_store,
+                onto_store,
+                onto_cache,
+                threshold,
                 model_name=model_name,
             )
             if annotations:
@@ -213,8 +226,13 @@ def enrich_values(
 
         uri = f"https://schema.undata.live/elements/{f.stem}"
         annotations = _assign_ontology_annotations(
-            uri, elem_store, onto_store, onto_cache, threshold,
-            is_value=True, model_name=model_name,
+            uri,
+            elem_store,
+            onto_store,
+            onto_cache,
+            threshold,
+            is_value=True,
+            model_name=model_name,
         )
 
         if annotations:
@@ -280,8 +298,13 @@ def enrich_schemas(
         uri = f"https://schema.undata.live/elements/{f.stem}"
         # Schemas always get concept_match (not element_match)
         annotations = _assign_ontology_annotations(
-            uri, elem_store, onto_store, onto_cache, threshold,
-            is_value=False, model_name=model_name,
+            uri,
+            elem_store,
+            onto_store,
+            onto_cache,
+            threshold,
+            is_value=False,
+            model_name=model_name,
         )
 
         if annotations:
@@ -424,13 +447,21 @@ def enrich_all(
     # Phase 1: elements + values (independent of each other)
     logger.info("Enriching elements...")
     results["elements"] = enrich_elements(
-        staging_dir, cache_dir=None, onto_store=onto_store, onto_cache=onto_cache,
-        model_name=model_name, threshold=threshold,
+        staging_dir,
+        cache_dir=None,
+        onto_store=onto_store,
+        onto_cache=onto_cache,
+        model_name=model_name,
+        threshold=threshold,
     )
     logger.info("Enriching values...")
     results["values"] = enrich_values(
-        staging_dir, cache_dir=None, onto_store=onto_store, onto_cache=onto_cache,
-        model_name=model_name, threshold=0.8,
+        staging_dir,
+        cache_dir=None,
+        onto_store=onto_store,
+        onto_cache=onto_cache,
+        model_name=model_name,
+        threshold=0.8,
     )
 
     # Phase 2: valuesets (depends on enriched values)
@@ -440,8 +471,12 @@ def enrich_all(
     # Phase 3: schemas (last — may reference enriched elements/valuesets)
     logger.info("Enriching schemas...")
     results["schemas"] = enrich_schemas(
-        staging_dir, cache_dir=None, onto_store=onto_store, onto_cache=onto_cache,
-        model_name=model_name, threshold=threshold,
+        staging_dir,
+        cache_dir=None,
+        onto_store=onto_store,
+        onto_cache=onto_cache,
+        model_name=model_name,
+        threshold=threshold,
     )
 
     return results

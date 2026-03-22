@@ -19,22 +19,34 @@ def _write_yaml(path, data):
 def _make_staging(tmp_path):
     """Create a staging dir with one entity per type."""
     staging = tmp_path / "staging"
-    _write_yaml(staging / "elements" / "age.yaml", {
-        "semantic": {"data_type": "float", "unit": "year"},
-        "provenance": [{"source": "bids", "class": "participant", "name": "age"}],
-    })
-    _write_yaml(staging / "values" / "male.yaml", {
-        "semantic": {"label": "male", "value_type": "categorical"},
-        "provenance": [{"source": "bids", "class": "participant", "name": "male"}],
-    })
-    _write_yaml(staging / "schemas" / "participant.yaml", {
-        "semantic": {"properties": ["age", "sex"], "description": "Participant"},
-        "provenance": [{"source": "bids", "class": "participant", "name": "participant"}],
-    })
-    _write_yaml(staging / "valuesets" / "sex.yaml", {
-        "semantic": {"name": "sex", "members": []},
-        "provenance": [{"source": "bids", "class": "participant", "name": "sex"}],
-    })
+    _write_yaml(
+        staging / "elements" / "age.yaml",
+        {
+            "semantic": {"data_type": "float", "unit": "year"},
+            "provenance": [{"source": "bids", "class": "participant", "name": "age"}],
+        },
+    )
+    _write_yaml(
+        staging / "values" / "male.yaml",
+        {
+            "semantic": {"label": "male", "value_type": "categorical"},
+            "provenance": [{"source": "bids", "class": "participant", "name": "male"}],
+        },
+    )
+    _write_yaml(
+        staging / "schemas" / "participant.yaml",
+        {
+            "semantic": {"properties": ["age", "sex"], "description": "Participant"},
+            "provenance": [{"source": "bids", "class": "participant", "name": "participant"}],
+        },
+    )
+    _write_yaml(
+        staging / "valuesets" / "sex.yaml",
+        {
+            "semantic": {"name": "sex", "members": []},
+            "provenance": [{"source": "bids", "class": "participant", "name": "sex"}],
+        },
+    )
     return staging
 
 
@@ -43,10 +55,13 @@ class TestNoNewFilesCreated:
 
     def test_element_enrichment_no_new_files(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(staging / "elements" / "age.yaml", {
-            "semantic": {"data_type": "float"},
-            "provenance": [{"source": "test", "class": "T", "name": "age"}],
-        })
+        _write_yaml(
+            staging / "elements" / "age.yaml",
+            {
+                "semantic": {"data_type": "float"},
+                "provenance": [{"source": "test", "class": "T", "name": "age"}],
+            },
+        )
         before = set((staging / "elements").glob("*.yaml"))
 
         enrich_elements(staging_dir=staging)
@@ -56,10 +71,13 @@ class TestNoNewFilesCreated:
 
     def test_value_enrichment_no_new_files(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(staging / "values" / "male.yaml", {
-            "semantic": {"label": "male", "value_type": "categorical"},
-            "provenance": [{"source": "test", "class": "T", "name": "male"}],
-        })
+        _write_yaml(
+            staging / "values" / "male.yaml",
+            {
+                "semantic": {"label": "male", "value_type": "categorical"},
+                "provenance": [{"source": "test", "class": "T", "name": "male"}],
+            },
+        )
         before = set((staging / "values").glob("*.yaml"))
 
         enrich_values(staging_dir=staging)
@@ -69,10 +87,13 @@ class TestNoNewFilesCreated:
 
     def test_schema_enrichment_no_new_files(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(staging / "schemas" / "participant.yaml", {
-            "semantic": {"properties": [], "description": "Test"},
-            "provenance": [{"source": "test", "class": "T", "name": "p"}],
-        })
+        _write_yaml(
+            staging / "schemas" / "participant.yaml",
+            {
+                "semantic": {"properties": [], "description": "Test"},
+                "provenance": [{"source": "test", "class": "T", "name": "p"}],
+            },
+        )
         before = set((staging / "schemas").glob("*.yaml"))
 
         enrich_schemas(staging_dir=staging)
@@ -86,10 +107,13 @@ class TestValueDomainSet:
 
     def test_integer_gets_numeric(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(staging / "elements" / "count.yaml", {
-            "semantic": {"data_type": "integer"},
-            "provenance": [{"source": "test", "class": "T", "name": "count"}],
-        })
+        _write_yaml(
+            staging / "elements" / "count.yaml",
+            {
+                "semantic": {"data_type": "integer"},
+                "provenance": [{"source": "test", "class": "T", "name": "count"}],
+            },
+        )
 
         stats = enrich_elements(staging_dir=staging)
         assert stats["value_domain_set"] == 1
@@ -99,13 +123,16 @@ class TestValueDomainSet:
 
     def test_categorical_from_response_options(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(staging / "elements" / "sex.yaml", {
-            "semantic": {
-                "data_type": "string",
-                "response_options": [{"value": "male"}, {"value": "female"}],
+        _write_yaml(
+            staging / "elements" / "sex.yaml",
+            {
+                "semantic": {
+                    "data_type": "string",
+                    "response_options": [{"value": "male"}, {"value": "female"}],
+                },
+                "provenance": [{"source": "test", "class": "T", "name": "sex"}],
             },
-            "provenance": [{"source": "test", "class": "T", "name": "sex"}],
-        })
+        )
 
         stats = enrich_elements(staging_dir=staging)
         assert stats["value_domain_set"] == 1
@@ -119,10 +146,13 @@ class TestIdempotency:
 
     def test_enrich_elements_idempotent(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(staging / "elements" / "age.yaml", {
-            "semantic": {"data_type": "float", "value_domain": "numeric"},
-            "provenance": [{"source": "test", "class": "T", "name": "age"}],
-        })
+        _write_yaml(
+            staging / "elements" / "age.yaml",
+            {
+                "semantic": {"data_type": "float", "value_domain": "numeric"},
+                "provenance": [{"source": "test", "class": "T", "name": "age"}],
+            },
+        )
 
         stats1 = enrich_elements(staging_dir=staging)
         stats2 = enrich_elements(staging_dir=staging)
@@ -132,27 +162,33 @@ class TestIdempotency:
 
     def test_enrich_values_idempotent(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(staging / "values" / "male.yaml", {
-            "semantic": {
-                "label": "male",
-                "value_type": "categorical",
-                "ontology_annotations": [{"term_uri": "http://x", "primary": True}],
+        _write_yaml(
+            staging / "values" / "male.yaml",
+            {
+                "semantic": {
+                    "label": "male",
+                    "value_type": "categorical",
+                    "ontology_annotations": [{"term_uri": "http://x", "primary": True}],
+                },
+                "provenance": [{"source": "test", "class": "T", "name": "male"}],
             },
-            "provenance": [{"source": "test", "class": "T", "name": "male"}],
-        })
+        )
 
         stats = enrich_values(staging_dir=staging)
         assert stats["unchanged"] == 1
 
     def test_enrich_schemas_idempotent(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(staging / "schemas" / "p.yaml", {
-            "semantic": {
-                "properties": [],
-                "ontology_annotations": [{"term_uri": "http://x", "primary": True}],
+        _write_yaml(
+            staging / "schemas" / "p.yaml",
+            {
+                "semantic": {
+                    "properties": [],
+                    "ontology_annotations": [{"term_uri": "http://x", "primary": True}],
+                },
+                "provenance": [{"source": "test", "class": "T", "name": "p"}],
             },
-            "provenance": [{"source": "test", "class": "T", "name": "p"}],
-        })
+        )
 
         stats = enrich_schemas(staging_dir=staging)
         assert stats["unchanged"] == 1
@@ -197,10 +233,13 @@ class TestUpdateInPlace:
 
     def test_adds_description(self, tmp_path):
         f = tmp_path / "e.yaml"
-        _write_yaml(f, {
-            "semantic": {"data_type": "string"},
-            "provenance": [{"source": "t", "class": "T", "name": "x"}],
-        })
+        _write_yaml(
+            f,
+            {
+                "semantic": {"data_type": "string"},
+                "provenance": [{"source": "t", "class": "T", "name": "x"}],
+            },
+        )
 
         changed = _update_entity_in_place(f, description="A test field")
         assert changed is True
@@ -210,10 +249,13 @@ class TestUpdateInPlace:
 
     def test_skips_existing_description(self, tmp_path):
         f = tmp_path / "e.yaml"
-        _write_yaml(f, {
-            "semantic": {"data_type": "string", "description": "Original"},
-            "provenance": [{"source": "t", "class": "T", "name": "x"}],
-        })
+        _write_yaml(
+            f,
+            {
+                "semantic": {"data_type": "string", "description": "Original"},
+                "provenance": [{"source": "t", "class": "T", "name": "x"}],
+            },
+        )
 
         changed = _update_entity_in_place(f, description="New")
         assert changed is False
@@ -223,10 +265,13 @@ class TestUpdateInPlace:
 
     def test_multiple_updates_at_once(self, tmp_path):
         f = tmp_path / "e.yaml"
-        _write_yaml(f, {
-            "semantic": {"data_type": "float"},
-            "provenance": [{"source": "t", "class": "T", "name": "x"}],
-        })
+        _write_yaml(
+            f,
+            {
+                "semantic": {"data_type": "float"},
+                "provenance": [{"source": "t", "class": "T", "name": "x"}],
+            },
+        )
 
         anns = [{"term_uri": "http://example.org/Y", "primary": True}]
         changed = _update_entity_in_place(

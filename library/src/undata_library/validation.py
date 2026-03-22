@@ -145,7 +145,8 @@ def validate_ingestion_output(library_path: Path) -> list[dict]:
                     p if isinstance(p, dict) else p.model_dump(by_alias=True) for p in prov
                 ]
                 recomputed, _ = compute_identity_hash(
-                    sem, prov_dicts,
+                    sem,
+                    prov_dicts,
                     ontology_anchored=ontology_anchored,
                     primary_ontology_uri=primary_uri,
                 )
