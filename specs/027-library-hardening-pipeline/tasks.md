@@ -88,9 +88,9 @@
 
 ### LLM-Assisted Enrichment
 
-- [ ] T030 [US2] Create `library/src/undata_library/llm_enrich.py`: `verify_borderline_match(element_desc, ontology_term_def, source_context, model="claude-haiku") -> LLMVerification` using litellm
-- [ ] T031 [P] [US2] Create `library/tests/test_llm_enrich.py` with tests (mock LLM responses: confirm, reject, error handling, timeout)
-- [ ] T032 [US2] Integrate LLM verification into `library/src/undata_library/enrich.py`: for matches with 0.7-0.95 cosine similarity, call `verify_borderline_match()` before assigning or flagging
+- [X] T030 [US2] Create `library/src/undata_library/llm_enrich.py`: `verify_borderline_match(element_desc, ontology_term_def, source_context, model="claude-haiku") -> LLMVerification` using litellm
+- [X] T031 [P] [US2] Create `library/tests/test_llm_enrich.py` with tests (mock LLM responses: confirm, reject, error handling, timeout)
+- [X] T032 [US2] Integrate LLM verification into `library/src/undata_library/enrich.py`: for matches with 0.7-0.95 cosine similarity, call `verify_borderline_match()` before assigning or flagging
 
 ### Curation Flag Integration
 

@@ -572,11 +572,15 @@ def _assign_ontology_annotations(
     model_name: str = "all-MiniLM-L6-v2",
     max_annotations: int = 10,
     gap_threshold: float = 0.15,
+    use_llm: bool = False,
+    element_desc: str = "",
+    source_context: str = "",
 ) -> list[dict]:
     """Assign multiple ontology annotations via embedding similarity.
 
     Returns list of OntologyAnnotation-compatible dicts.
     Heuristic: threshold + gap cutoff + max cap.
+    If use_llm=True, borderline matches (0.7-0.95) are verified via LLM.
     """
     from .models import MatchLevel
 
@@ -612,18 +616,37 @@ def _assign_ontology_annotations(
             MatchLevel.element_match if is_value and score >= 0.9 else MatchLevel.concept_match
         )
 
-        annotations.append(
-            {
-                "term_uri": uri,
-                "term_label": label,
-                "ontology": ontology,
-                "mapping_relation": mapping_relation,
-                "match_level": match_level.value,
-                "score": round(score, 4),
-                "model": model_name,
-                "primary": len(annotations) == 0,
-            }
-        )
+        # LLM verification for borderline matches
+        llm_result = None
+        if use_llm and 0.7 <= score < 0.95 and element_desc:
+            from .llm_enrich import verify_borderline_match
+
+            llm_result = verify_borderline_match(
+                element_desc=element_desc,
+                ontology_term_label=label,
+                ontology_term_uri=uri,
+                ontology_name=ontology,
+                embedding_score=score,
+                source_context=source_context or None,
+            )
+            # If LLM rejects, skip this annotation
+            if llm_result.get("decision") == "reject":
+                logger.info("LLM rejected match: %s ↔ %s (score=%.3f)", element_desc, label, score)
+                continue
+
+        ann: dict = {
+            "term_uri": uri,
+            "term_label": label,
+            "ontology": ontology,
+            "mapping_relation": mapping_relation,
+            "match_level": match_level.value,
+            "score": round(score, 4),
+            "model": model_name,
+            "primary": len(annotations) == 0,
+        }
+        if llm_result and llm_result.get("error") is None:
+            ann["llm_verification"] = llm_result
+        annotations.append(ann)
         prev_score = score
 
     return annotations
