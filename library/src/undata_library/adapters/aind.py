@@ -1,24 +1,26 @@
-"""AIND schema adapter — JSON Schema with $defs recursion."""
+"""AIND schema adapter — converts JSON Schema to LinkML, then extracts.
+
+Parses JSON Schema files (from aind-data-schema) and builds a LinkML
+SchemaDefinition with classes from $defs, slots from properties,
+and enums from enum fields.
+"""
 
 from __future__ import annotations
 
-import hashlib
 import json
 from pathlib import Path
 from typing import Any
 
-from ..models import EntityType, SourceRef
+from ..models import SourceRef
 from .base import BaseAdapter, ClassifiedEntity
-from .classifier import classify_entity
 
 _TYPE_MAP = {
     "string": "string",
     "integer": "integer",
     "number": "float",
     "boolean": "boolean",
-    "array": "array",
-    "object": "object",
-    "null": "string",
+    "array": "string",
+    "object": "string",
 }
 
 
@@ -34,7 +36,27 @@ class AINDAdapter(BaseAdapter):
     def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
         repo = options.get("repo", "https://github.com/AllenNeuralDynamics/aind-data-schema")
         committish = options.get("committish")
-        results: list[ClassifiedEntity] = []
+        base_ref = SourceRef(repo=repo, committish=committish, file="schemas", checksum="")
+
+        schema = self._build_linkml_schema(source_path)
+
+        from .linkml import LinkMLAdapter
+
+        return LinkMLAdapter().extract_from_schema_definition(
+            schema, source_name="aind", source_ref=base_ref
+        )
+
+    def _build_linkml_schema(self, source_path: Path) -> Any:
+        """Convert AIND JSON Schema files to a LinkML SchemaDefinition."""
+        from . import linkml_builder as lb
+
+        ld = lb.build_schema(
+            name="aind",
+            schema_id="https://aind-data-schema.readthedocs.io/schema",
+            title="AIND Data Schema",
+            prefix="aind",
+            prefix_uri="https://aind-data-schema.readthedocs.io/schema/",
+        )
 
         for f in sorted(source_path.glob("*.json")):
             try:
@@ -44,212 +66,129 @@ class AINDAdapter(BaseAdapter):
             if not isinstance(data, dict):
                 continue
 
-            file_ref = SourceRef(
-                repo=repo,
-                committish=committish,
-                file=str(f.relative_to(source_path)) if f.is_relative_to(source_path) else str(f),
-                checksum=hashlib.sha256(f.read_bytes()).hexdigest(),
-            )
-
             model_name = f.stem.replace("_schema", "")
             defs = data.get("$defs", {})
 
-            # Top-level properties
-            self._extract_props(data, model_name, model_name, defs, file_ref, results)
+            # Top-level schema → class
+            self._add_schema_class(ld, data, model_name, defs, lb)
 
-            # $defs
+            # $defs → classes or enums
             for def_name, def_schema in defs.items():
-                if def_name.startswith("_"):
-                    # Underscore → ValueConcept (enum value)
-                    clean_name = def_name.lstrip("_")
-                    parent_class = _find_parent_class(def_name, defs, data)
-                    tag = f"aind.{model_name}.{parent_class}.{clean_name}"
-                    results.append(
-                        ClassifiedEntity(
-                            entity_type=EntityType.ENUM_VALUE,
-                            semantic={"label": clean_name.lower(), "value_type": "categorical"},
-                            provenance={"source": "aind", "raw_value": tag},
-                            confidence=0.95,
-                            source_ref=file_ref,
-                        )
-                    )
+                if not isinstance(def_schema, dict):
                     continue
+                self._add_def(ld, def_name, def_schema, model_name, defs, lb)
 
-                if isinstance(def_schema, dict):
-                    # Classify the $def
-                    etype, conf = classify_entity(def_name, def_schema)
-                    if etype == EntityType.CLASS and def_schema.get("properties"):
-                        results.append(
-                            ClassifiedEntity(
-                                entity_type=EntityType.CLASS,
-                                semantic={"properties": []},
-                                provenance={
-                                    "source": "aind",
-                                    "class": def_name,
-                                    "name": def_name,
-                                    "description": def_schema.get("description"),
-                                },
-                                confidence=conf,
-                                source_ref=file_ref,
-                            )
-                        )
-                        self._extract_props(
-                            def_schema, def_name, model_name, defs, file_ref, results
-                        )
-                    elif etype == EntityType.VALUESET:
-                        enum_vals = def_schema.get("enum", [])
-                        results.append(
-                            ClassifiedEntity(
-                                entity_type=EntityType.VALUESET,
-                                semantic={
-                                    "name": def_name,
-                                    "members": sorted(str(v) for v in enum_vals),
-                                },
-                                provenance={
-                                    "source": "aind",
-                                    "class": model_name,
-                                    "name": def_name,
-                                },
-                                confidence=conf,
-                                source_ref=file_ref,
-                            )
-                        )
-                        for val in enum_vals:
-                            results.append(
-                                ClassifiedEntity(
-                                    entity_type=EntityType.ENUM_VALUE,
-                                    semantic={
-                                        "label": str(val).lower(),
-                                        "value_type": "categorical",
-                                    },
-                                    provenance={"source": "aind", "raw_value": str(val)},
-                                    confidence=0.95,
-                                    source_ref=file_ref,
-                                )
-                            )
+        return ld
 
-        return results
-
-    def _extract_props(
-        self,
-        schema: dict,
-        class_name: str,
-        model_name: str,
-        defs: dict,
-        file_ref: SourceRef,
-        results: list[ClassifiedEntity],
+    def _add_schema_class(
+        self, ld: Any, schema: dict, model_name: str, defs: dict, lb: Any
     ) -> None:
-        for prop_name, prop_def in schema.get("properties", {}).items():
-            if prop_name in ("object_type", "describedBy", "schema_version"):
+        """Add top-level JSON Schema as a LinkML class."""
+        props = schema.get("properties", {})
+        required = set(schema.get("required", []))
+        slot_names = []
+        slot_usage = {}
+
+        for prop_name, prop_def in props.items():
+            if not isinstance(prop_def, dict):
                 continue
-
-            resolved = prop_def
-            if "$ref" in prop_def:
-                ref = prop_def["$ref"]
-                if ref.startswith("#/$defs/"):
-                    resolved = defs.get(ref[len("#/$defs/") :], prop_def)
-
-            dt = _get_type(prop_def, defs)
-            desc = (
-                prop_def.get("description")
-                or resolved.get("description")
-                or prop_def.get("title")
-                or resolved.get("title")
-                or ""
+            rng = self._json_schema_range(prop_def, defs)
+            desc = prop_def.get("description", "")
+            multivalued = prop_def.get("type") == "array"
+            lb.add_slot(
+                ld, prop_name, range=rng, description=desc[:500] or None, multivalued=multivalued
             )
-            if not isinstance(desc, str):
-                desc = str(desc) if desc else ""
+            slot_names.append(prop_name)
+            if prop_name in required:
+                slot_usage[prop_name] = {"required": True}
 
-            semantic: dict[str, Any] = {"data_type": dt}
+        desc = schema.get("description", schema.get("title", ""))
+        lb.add_class(
+            ld, model_name, slots=slot_names, description=desc[:500] or None, slot_usage=slot_usage
+        )
 
-            # Enum → response_options
-            enum_vals = resolved.get("enum") or prop_def.get("enum")
-            if enum_vals:
-                allowed = [str(v) for v in enum_vals if v is not None]
-                semantic["response_options"] = [{"value": v, "label": v} for v in allowed]
+    def _add_def(
+        self, ld: Any, def_name: str, def_schema: dict, parent: str, defs: dict, lb: Any
+    ) -> None:
+        """Add a $defs entry as a class or enum."""
+        # Enum
+        enum_vals = def_schema.get("enum")
+        if enum_vals and isinstance(enum_vals, list):
+            vals = [str(v) for v in enum_vals if v is not None]
+            if vals:
+                lb.add_enum(ld, def_name, vals, description=def_schema.get("description"))
+            return
 
-            # Min/max
-            for src in (prop_def, resolved):
-                for attr, key in [
-                    ("minimum", "min_value"),
-                    ("exclusiveMinimum", "min_value"),
-                    ("maximum", "max_value"),
-                    ("exclusiveMaximum", "max_value"),
-                ]:
-                    if key not in semantic and src.get(attr) is not None:
-                        semantic[key] = float(src[attr])
+        # Check for const-only (discriminator member) — skip
+        if "const" in def_schema and not def_schema.get("properties"):
+            return
 
-            # Question text
-            qt = prop_def.get("title") or resolved.get("title")
-            if qt:
-                semantic["question_text"] = qt
-
-            # Type ref for object references
-            if "$ref" in prop_def and dt == "object":
-                ref_name = prop_def["$ref"].replace("#/$defs/", "")
-                semantic["type_ref"] = ref_name
-
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.ATTRIBUTE,
-                    semantic=semantic,
-                    provenance={
-                        "source": "aind",
-                        "class": class_name,
-                        "name": prop_name,
-                        "description": desc or None,
-                    },
-                    confidence=0.85,
-                    source_ref=file_ref,
+        # Class with properties
+        props = def_schema.get("properties", {})
+        if props:
+            required = set(def_schema.get("required", []))
+            slot_names = []
+            slot_usage = {}
+            for prop_name, prop_def in props.items():
+                if not isinstance(prop_def, dict):
+                    continue
+                rng = self._json_schema_range(prop_def, defs)
+                desc = prop_def.get("description", "")
+                multivalued = prop_def.get("type") == "array"
+                lb.add_slot(
+                    ld,
+                    prop_name,
+                    range=rng,
+                    description=desc[:500] or None,
+                    multivalued=multivalued,
                 )
+                slot_names.append(prop_name)
+                if prop_name in required:
+                    slot_usage[prop_name] = {"required": True}
+
+            desc = def_schema.get("description", def_schema.get("title", ""))
+            lb.add_class(
+                ld,
+                def_name,
+                slots=slot_names,
+                description=desc[:500] or None,
+                slot_usage=slot_usage,
             )
 
+    def _json_schema_range(self, prop_def: dict, defs: dict) -> str:
+        """Map a JSON Schema property to a LinkML range."""
+        # Direct $ref
+        ref = prop_def.get("$ref", "")
+        if ref:
+            return ref.split("/")[-1]
 
-def _find_parent_class(def_name: str, defs: dict, schema: dict) -> str:
-    ref_str = f"#/$defs/{def_name}"
-    for prop_name, prop_def in schema.get("properties", {}).items():
-        if _refs_contain(prop_def, ref_str):
-            return prop_name
-    for other_name, other_schema in defs.items():
-        if other_name == def_name or other_name.startswith("_"):
-            continue
-        if not isinstance(other_schema, dict):
-            continue
-        for prop_name, prop_def in other_schema.get("properties", {}).items():
-            if _refs_contain(prop_def, ref_str):
-                return f"{other_name}.{prop_name}"
-    return "unknown"
+        # anyOf/oneOf — take first non-null $ref
+        for combiner in ("anyOf", "oneOf"):
+            options = prop_def.get(combiner, [])
+            for opt in options:
+                if isinstance(opt, dict):
+                    ref = opt.get("$ref", "")
+                    if ref:
+                        return ref.split("/")[-1]
+                    t = opt.get("type", "")
+                    if t and t != "null":
+                        return _TYPE_MAP.get(t, "string")
 
+        # Array items
+        if prop_def.get("type") == "array":
+            items = prop_def.get("items", {})
+            if isinstance(items, dict):
+                ref = items.get("$ref", "")
+                if ref:
+                    return ref.split("/")[-1]
+                # anyOf in items
+                for combiner in ("anyOf", "oneOf"):
+                    for opt in items.get(combiner, []):
+                        if isinstance(opt, dict) and opt.get("$ref"):
+                            return opt["$ref"].split("/")[-1]
 
-def _refs_contain(prop_def: dict, ref_str: str, depth: int = 0) -> bool:
-    if depth > 3 or not isinstance(prop_def, dict):
-        return False
-    if prop_def.get("$ref") == ref_str:
-        return True
-    for combiner in ("anyOf", "oneOf", "allOf"):
-        for opt in prop_def.get(combiner, []):
-            if isinstance(opt, dict) and opt.get("$ref") == ref_str:
-                return True
-    items = prop_def.get("items", {})
-    if isinstance(items, dict):
-        return _refs_contain(items, ref_str, depth + 1)
-    return False
-
-
-def _get_type(prop: dict, defs: dict) -> str:
-    if "$ref" in prop:
-        ref = prop["$ref"]
-        if ref.startswith("#/$defs/"):
-            resolved = defs.get(ref[len("#/$defs/") :], {})
-            return _get_type(resolved, defs)
-    raw = prop.get("type")
-    if isinstance(raw, list):
-        non_null = [t for t in raw if t != "null"]
-        raw = non_null[0] if non_null else "string"
-    if raw:
-        return _TYPE_MAP.get(raw, "string")
-    for combiner in ("anyOf", "oneOf", "allOf"):
-        for opt in prop.get(combiner, []):
-            if "type" in opt:
-                return _TYPE_MAP.get(opt["type"], "string")
-    return "string"
+        # Simple type
+        t = prop_def.get("type", "string")
+        if isinstance(t, list):
+            t = next((x for x in t if x != "null"), "string")
+        return _TYPE_MAP.get(str(t), "string")

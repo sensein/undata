@@ -1,21 +1,16 @@
-"""NWB schema adapter — YAML parse of neurodata_type_def format.
+"""NWB schema adapter — converts NWB YAML to LinkML, then extracts entities.
 
-Extracts:
-- Classes with inheritance (neurodata_type_inc → subclass_of)
-- Attributes from datasets, attributes, and nested datasets
-- Links as object references (type_ref to target_type)
-- Nested groups as composition references
-- Fixed values as response_options
-- quantity → required/multivalued flags
+Parses neurodata_type_def YAML files and builds a LinkML SchemaDefinition
+with classes (is_a for inheritance), slots (attributes, datasets, links, groups),
+and proper type references.
 """
 
 from __future__ import annotations
 
-import hashlib
 from pathlib import Path
 from typing import Any
 
-from ..models import EntityType, SourceRef
+from ..models import SourceRef
 from ..utils import safe_load_yaml
 from .base import BaseAdapter, ClassifiedEntity
 
@@ -41,36 +36,18 @@ _NWB_TYPE_MAP = {
 }
 
 
-def _nwb_dtype(dtype_val: Any) -> tuple[str, str | None]:
-    """Resolve NWB dtype to (data_type, type_ref).
-
-    Returns (data_type, type_ref) where type_ref is set for object references.
-    """
+def _nwb_range(dtype_val: Any) -> tuple[str, str | None]:
+    """Resolve NWB dtype to (linkml_range, type_ref)."""
     if dtype_val is None:
         return "string", None
     if isinstance(dtype_val, list):
-        # Compound dtype — treat as object
-        return "object", None
+        return "string", None  # Compound dtype
     if isinstance(dtype_val, dict):
-        # Reference dtype: {target_type: X, reftype: object}
         target = dtype_val.get("target_type")
         if target:
-            return "object", target
-        return "object", None
+            return target, target
+        return "string", None
     return _NWB_TYPE_MAP.get(str(dtype_val), "string"), None
-
-
-def _quantity_to_flags(quantity: Any) -> tuple[bool, bool]:
-    """Map NWB quantity to (required, multivalued)."""
-    if quantity is None or quantity == 1:
-        return True, False
-    if quantity == "?":
-        return False, False
-    if quantity == "+":
-        return True, True
-    if quantity == "*":
-        return False, True
-    return True, False
 
 
 class NWBAdapter(BaseAdapter):
@@ -83,260 +60,142 @@ class NWBAdapter(BaseAdapter):
         return [".yaml", ".yml"]
 
     def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
-        self._repo = options.get("repo", "https://github.com/NeurodataWithoutBorders/nwb-schema")
-        self._committish = options.get("committish")
-        self._base_path = source_path
-        results: list[ClassifiedEntity] = []
+        repo = options.get("repo", "https://github.com/NeurodataWithoutBorders/nwb-schema")
+        committish = options.get("committish")
+        base_ref = SourceRef(repo=repo, committish=committish, file="core", checksum="")
+
+        schema = self._build_linkml_schema(source_path)
+
+        from .linkml import LinkMLAdapter
+
+        return LinkMLAdapter().extract_from_schema_definition(
+            schema, source_name="nwb", source_ref=base_ref
+        )
+
+    def _build_linkml_schema(self, source_path: Path) -> Any:
+        """Convert NWB YAML files to a LinkML SchemaDefinition."""
+        from . import linkml_builder as lb
+
+        ld = lb.build_schema(
+            name="nwb",
+            schema_id="https://nwb-schema.readthedocs.io/schema",
+            title="NWB Schema",
+            prefix="nwb",
+            prefix_uri="https://nwb-schema.readthedocs.io/schema/",
+        )
 
         for f in sorted(source_path.glob("*.yaml")):
             data = safe_load_yaml(f)
-            if data is None:
+            if data is None or "namespaces" in data:
                 continue
-            # Skip namespace files (they list source files, not schema)
-            if "namespaces" in data:
-                continue
-
-            file_ref = self._file_ref(f)
 
             for section in ("datasets", "groups"):
                 for item in data.get(section, []):
-                    self._extract_type(item, section, file_ref, results)
+                    self._add_type_to_schema(ld, item, section, lb)
 
-        return results
+        return ld
 
-    def _extract_type(
-        self,
-        item: dict,
-        section: str,
-        file_ref: SourceRef,
-        results: list[ClassifiedEntity],
-    ) -> None:
-        """Extract a single NWB type definition (dataset or group)."""
+    def _add_type_to_schema(self, ld: Any, item: dict, section: str, lb: Any) -> None:
+        """Add an NWB type definition to the LinkML schema."""
         type_def = item.get("neurodata_type_def")
         type_name = type_def or item.get("default_name") or item.get("name", "")
         if not type_name:
             return
 
-        # If this is a type definition, emit CLASS
         if type_def:
+            # This is a named type → class
             parent = item.get("neurodata_type_inc")
-            semantic: dict[str, Any] = {"properties": []}
-            if parent:
-                semantic["subclass_of"] = parent
+            slot_names = []
 
-            # Collect property names
-            props = []
+            # Attributes → slots
             for attr in item.get("attributes", []):
-                if attr.get("name"):
-                    props.append(attr["name"])
+                aname = attr.get("name", "")
+                if not aname:
+                    continue
+                rng, _ = _nwb_range(attr.get("dtype"))
+                lb.add_slot(ld, aname, range=rng, description=attr.get("doc"))
+                slot_names.append(aname)
+
+            # Nested datasets → slots
             for ds in item.get("datasets", []):
-                n = ds.get("name") or ds.get("neurodata_type_def", "")
-                if n:
-                    props.append(n)
+                dname = ds.get("name") or ds.get("neurodata_type_def", "")
+                if not dname:
+                    continue
+                rng, ref = _nwb_range(ds.get("dtype"))
+                if ds.get("dims") or ds.get("shape"):
+                    rng = "string"  # Array — LinkML doesn't have native array range
+                lb.add_slot(
+                    ld,
+                    dname,
+                    range=rng,
+                    description=ds.get("doc"),
+                    multivalued=ds.get("quantity") in ("*", "+"),
+                )
+                slot_names.append(dname)
+
+            # Links → slots with range = target_type
+            for lnk in item.get("links", []):
+                lname = lnk.get("name") or lnk.get("target_type", "")
+                target = lnk.get("target_type", "")
+                if not lname:
+                    continue
+                lb.add_slot(
+                    ld,
+                    lname,
+                    range=target or "string",
+                    description=lnk.get("doc"),
+                    multivalued=lnk.get("quantity") in ("*", "+"),
+                )
+                slot_names.append(lname)
+
+            # Nested groups → slots with range = neurodata_type_inc
             for grp in item.get("groups", []):
-                n = (
+                gname = (
                     grp.get("name")
                     or grp.get("neurodata_type_def")
                     or grp.get("neurodata_type_inc", "")
                 )
-                if n:
-                    props.append(n)
-            for lnk in item.get("links", []):
-                if lnk.get("name"):
-                    props.append(lnk["name"])
-            semantic["properties"] = props
-
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.CLASS,
-                    semantic=semantic,
-                    provenance={
-                        "source": "nwb",
-                        "class": type_name,
-                        "name": type_name,
-                        "description": item.get("doc", ""),
-                    },
-                    confidence=0.9,
-                    source_ref=file_ref,
+                ginc = grp.get("neurodata_type_inc", "")
+                if not gname:
+                    continue
+                lb.add_slot(
+                    ld,
+                    gname,
+                    range=ginc or "string",
+                    description=grp.get("doc"),
+                    multivalued=grp.get("quantity") in ("*", "+"),
                 )
+                slot_names.append(gname)
+
+                # Recurse if nested type def
+                if grp.get("neurodata_type_def"):
+                    self._add_type_to_schema(ld, grp, "groups", lb)
+
+            # Build slot_usage for required fields
+            slot_usage = {}
+            for attr in item.get("attributes", []):
+                if attr.get("required") is not False and attr.get("name"):
+                    slot_usage[attr["name"]] = {"required": True}
+
+            lb.add_class(
+                ld,
+                type_name,
+                slots=slot_names,
+                is_a=parent,
+                description=item.get("doc"),
+                slot_usage=slot_usage,
             )
         else:
-            # Not a type def — emit as attribute only
-            dt, type_ref = _nwb_dtype(item.get("dtype"))
+            # Not a type def — just a slot
+            rng, _ = _nwb_range(item.get("dtype"))
             if section == "groups":
-                dt = "object"
-                type_ref = item.get("neurodata_type_inc")
-            sem: dict[str, Any] = {"data_type": dt}
-            if type_ref:
-                sem["type_ref"] = type_ref
-            # Fixed value
-            fixed = item.get("value")
-            if fixed is not None:
-                sem["response_options"] = [{"value": str(fixed), "label": str(fixed)}]
-                sem["value_domain"] = "categorical"
-            # Quantity
-            req, multi = _quantity_to_flags(item.get("quantity"))
-            if not req:
-                sem["required"] = False
-            if multi:
-                sem["multivalued"] = True
-            # Dims/shape → array
+                rng = item.get("neurodata_type_inc") or "string"
             if item.get("dims") or item.get("shape"):
-                sem["data_type"] = "array"
-
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.ATTRIBUTE,
-                    semantic=sem,
-                    provenance={
-                        "source": "nwb",
-                        "class": type_name,
-                        "name": type_name,
-                        "description": item.get("doc", ""),
-                    },
-                    confidence=0.85,
-                    source_ref=file_ref,
-                )
+                rng = "string"
+            lb.add_slot(
+                ld,
+                type_name,
+                range=rng,
+                description=item.get("doc"),
+                multivalued=item.get("quantity") in ("*", "+"),
             )
-
-        # Extract child attributes
-        for attr in item.get("attributes", []):
-            aname = attr.get("name", "")
-            if not aname:
-                continue
-            adt, aref = _nwb_dtype(attr.get("dtype"))
-            asem: dict[str, Any] = {"data_type": adt}
-            if aref:
-                asem["type_ref"] = aref
-            # Fixed value
-            fixed = attr.get("value")
-            if fixed is not None:
-                asem["response_options"] = [{"value": str(fixed), "label": str(fixed)}]
-            # Default value
-            default = attr.get("default_value")
-            if default is not None:
-                asem["default_value"] = str(default)
-            # Required
-            if attr.get("required") is False:
-                asem["required"] = False
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.ATTRIBUTE,
-                    semantic=asem,
-                    provenance={
-                        "source": "nwb",
-                        "class": type_name,
-                        "name": aname,
-                        "description": attr.get("doc", ""),
-                    },
-                    confidence=0.9,
-                    source_ref=file_ref,
-                )
-            )
-
-        # Extract nested datasets
-        for ds in item.get("datasets", []):
-            dname = ds.get("name") or ds.get("neurodata_type_def", "")
-            if not dname:
-                continue
-            ddt, dref = _nwb_dtype(ds.get("dtype"))
-            dsem: dict[str, Any] = {"data_type": ddt}
-            if dref:
-                dsem["type_ref"] = dref
-            if ds.get("dims") or ds.get("shape"):
-                dsem["data_type"] = "array"
-            fixed = ds.get("value")
-            if fixed is not None:
-                dsem["response_options"] = [{"value": str(fixed), "label": str(fixed)}]
-            req, multi = _quantity_to_flags(ds.get("quantity"))
-            if not req:
-                dsem["required"] = False
-            if multi:
-                dsem["multivalued"] = True
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.ATTRIBUTE,
-                    semantic=dsem,
-                    provenance={
-                        "source": "nwb",
-                        "class": type_name,
-                        "name": dname,
-                        "description": ds.get("doc", ""),
-                    },
-                    confidence=0.85,
-                    source_ref=file_ref,
-                )
-            )
-
-        # Extract links (inter-type references)
-        for lnk in item.get("links", []):
-            lname = lnk.get("name", "")
-            target = lnk.get("target_type", "")
-            if not lname and not target:
-                continue
-            display_name = lname or target
-            lsem: dict[str, Any] = {"data_type": "object"}
-            if target:
-                lsem["type_ref"] = target
-            req, multi = _quantity_to_flags(lnk.get("quantity"))
-            if not req:
-                lsem["required"] = False
-            if multi:
-                lsem["multivalued"] = True
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.ATTRIBUTE,
-                    semantic=lsem,
-                    provenance={
-                        "source": "nwb",
-                        "class": type_name,
-                        "name": display_name,
-                        "description": lnk.get("doc", ""),
-                    },
-                    confidence=0.85,
-                    source_ref=file_ref,
-                )
-            )
-
-        # Extract nested groups (composition)
-        for grp in item.get("groups", []):
-            gname = grp.get("name") or grp.get("neurodata_type_def") or ""
-            ginc = grp.get("neurodata_type_inc", "")
-            if not gname and not ginc:
-                continue
-            display_name = gname or ginc
-            gsem: dict[str, Any] = {"data_type": "object"}
-            if ginc:
-                gsem["type_ref"] = ginc
-            req, multi = _quantity_to_flags(grp.get("quantity"))
-            if not req:
-                gsem["required"] = False
-            if multi:
-                gsem["multivalued"] = True
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.ATTRIBUTE,
-                    semantic=gsem,
-                    provenance={
-                        "source": "nwb",
-                        "class": type_name,
-                        "name": display_name,
-                        "description": grp.get("doc", ""),
-                    },
-                    confidence=0.85,
-                    source_ref=file_ref,
-                )
-            )
-            # Recurse into nested group if it's a type def
-            if grp.get("neurodata_type_def"):
-                self._extract_type(grp, "groups", file_ref, results)
-
-    def _file_ref(self, f: Path) -> SourceRef:
-        checksum = hashlib.sha256(f.read_bytes()).hexdigest()
-        rel = str(f.relative_to(self._base_path)) if f.is_relative_to(self._base_path) else str(f)
-        return SourceRef(
-            repo=self._repo,
-            committish=self._committish,
-            file=rel,
-            checksum=checksum,
-        )

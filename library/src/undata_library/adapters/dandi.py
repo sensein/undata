@@ -1,8 +1,9 @@
 """DANDI schema adapter — delegates to standalone extraction script.
 
-The actual extraction happens in standalone_scripts/dandi_extract.py running in an
-isolated venv with dandischema. This adapter class exists for the registry and
-as a fallback when dandischema is available in the current environment.
+The actual extraction happens in standalone_scripts/dandi_extract.py running in
+an isolated venv with dandischema. This adapter class provides a fallback when
+dandischema is available in the current environment, converting Pydantic models
+to LinkML and then extracting via the standard LinkML adapter.
 """
 
 from __future__ import annotations
@@ -24,31 +25,40 @@ class DANDIAdapter(BaseAdapter):
         return []
 
     def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
-        """Extract entities from dandischema.
-
-        Primary path: standalone script in isolated venv (via pipeline).
-        Fallback: direct extraction if dandischema is in current env.
-        """
         try:
             import dandischema.models as dm
         except ImportError:
             return []
 
-        return self._extract_from_models(dm, source_path)
-
-    def _extract_from_models(self, dm: Any, source_path: Path) -> list[ClassifiedEntity]:
-        """Extract entities from dandischema models module."""
-        import inspect
-
-        from ..models import EntityType
-
-        results: list[ClassifiedEntity] = []
         base_ref = SourceRef(
             repo="https://github.com/dandi/dandischema",
             committish=getattr(dm, "__version__", None),
             file="models.py",
             checksum="",
         )
+
+        schema = self._build_linkml_schema(dm)
+
+        from .linkml import LinkMLAdapter
+
+        return LinkMLAdapter().extract_from_schema_definition(
+            schema, source_name="dandi", source_ref=base_ref
+        )
+
+    def _build_linkml_schema(self, dm: Any) -> Any:
+        """Convert dandischema Pydantic models to LinkML SchemaDefinition."""
+        import inspect
+
+        from . import linkml_builder as lb
+
+        ld = lb.build_schema(
+            name="dandi",
+            schema_id="https://dandiarchive.org/schema",
+            title="DANDI Schema",
+            prefix="dandi",
+            prefix_uri="https://dandiarchive.org/schema/",
+        )
+
         seen_enums: set[str] = set()
 
         for cls_name, cls in inspect.getmembers(dm, inspect.isclass):
@@ -61,91 +71,96 @@ class DANDIAdapter(BaseAdapter):
                 for b in cls.__bases__
                 if b.__name__ != "BaseModel" and hasattr(b, "model_fields")
             ]
-            semantic: dict[str, Any] = {"properties": list(cls.model_fields.keys())}
-            if bases:
-                semantic["subclass_of"] = bases[0]
-                if len(bases) > 1:
-                    semantic["mixins"] = bases[1:]
+            is_a = bases[0] if bases else None
+            mixins = bases[1:] if len(bases) > 1 else None
 
-            desc = cls.__doc__.strip().split("\n")[0] if cls.__doc__ else None
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.CLASS,
-                    semantic=semantic,
-                    provenance={
-                        "source": "dandi",
-                        "class": cls_name,
-                        "name": cls_name,
-                        "description": desc,
-                    },
-                    confidence=0.9,
-                    source_ref=base_ref,
-                )
-            )
-
+            # Collect slots + slot_usage
+            slot_names = []
+            slot_usage = {}
             for field_name, field_info in cls.model_fields.items():
                 ann = field_info.annotation
-                field_desc = field_info.description or ""
+                desc = field_info.description or ""
 
-                dt = self._pydantic_type(field_info)
-                sem: dict[str, Any] = {"data_type": dt}
+                # Determine range
+                rng = self._linkml_range(ann)
 
-                # Enum → VALUESET + ENUM_VALUE
+                # Check for enum
                 enum_cls = self._extract_enum(ann)
+                if enum_cls and enum_cls.__name__ not in seen_enums:
+                    seen_enums.add(enum_cls.__name__)
+                    vals = [str(v.value) for v in enum_cls]
+                    lb.add_enum(ld, enum_cls.__name__, vals)
                 if enum_cls:
-                    allowed = [str(v.value) for v in enum_cls]
-                    if allowed:
-                        sem["response_options"] = [{"value": v, "label": v} for v in allowed]
-                        sem["value_domain"] = "categorical"
-                        if enum_cls.__name__ not in seen_enums:
-                            seen_enums.add(enum_cls.__name__)
-                            results.append(
-                                ClassifiedEntity(
-                                    entity_type=EntityType.VALUESET,
-                                    semantic={
-                                        "name": enum_cls.__name__,
-                                        "members": sorted(allowed),
-                                    },
-                                    provenance={
-                                        "source": "dandi",
-                                        "class": cls_name,
-                                        "name": enum_cls.__name__,
-                                    },
-                                    confidence=0.9,
-                                    source_ref=base_ref,
-                                )
-                            )
-                            for val in allowed:
-                                results.append(
-                                    ClassifiedEntity(
-                                        entity_type=EntityType.ENUM_VALUE,
-                                        semantic={"label": val, "value_type": "categorical"},
-                                        provenance={
-                                            "source": "dandi",
-                                            "class": enum_cls.__name__,
-                                            "name": val,
-                                        },
-                                        confidence=0.95,
-                                        source_ref=base_ref,
-                                    )
-                                )
+                    rng = enum_cls.__name__
 
-                results.append(
-                    ClassifiedEntity(
-                        entity_type=EntityType.ATTRIBUTE,
-                        semantic=sem,
-                        provenance={
-                            "source": "dandi",
-                            "class": cls_name,
-                            "name": field_name,
-                            "description": field_desc,
-                        },
-                        confidence=0.85,
-                        source_ref=base_ref,
-                    )
+                multivalued = self._is_multivalued(ann)
+                lb.add_slot(
+                    ld,
+                    field_name,
+                    range=rng,
+                    description=desc[:500] or None,
+                    multivalued=multivalued,
                 )
+                slot_names.append(field_name)
 
-        return results
+                if field_info.is_required():
+                    slot_usage[field_name] = {"required": True}
+
+            desc = cls.__doc__.strip().split("\n")[0] if cls.__doc__ else None
+            lb.add_class(
+                ld,
+                cls_name,
+                slots=slot_names,
+                is_a=is_a,
+                mixins=mixins,
+                description=desc,
+                slot_usage=slot_usage,
+            )
+
+        return ld
+
+    @staticmethod
+    def _linkml_range(annotation: Any) -> str:
+        """Map a Pydantic annotation to a LinkML range."""
+        import enum
+        import types
+        import typing
+
+        if annotation is None:
+            return "string"
+
+        # Unwrap Optional/Union
+        args = None
+        origin = getattr(annotation, "__origin__", None)
+        if origin is typing.Union:
+            args = annotation.__args__
+        elif isinstance(annotation, types.UnionType):
+            args = annotation.__args__
+        core = annotation
+        if args:
+            non_none = [a for a in args if a is not type(None)]
+            if len(non_none) == 1:
+                core = non_none[0]
+
+        co = getattr(core, "__origin__", None)
+        if co in (list, tuple, set, frozenset):
+            return "string"  # multivalued handled separately
+        if co is dict:
+            return "string"
+        if isinstance(core, type):
+            if issubclass(core, bool):
+                return "boolean"
+            if issubclass(core, int):
+                return "integer"
+            if issubclass(core, float):
+                return "float"
+            if issubclass(core, str):
+                return "string"
+            if issubclass(core, enum.Enum):
+                return core.__name__
+            if hasattr(core, "model_fields"):
+                return core.__name__  # Reference to another model
+        return "string"
 
     @staticmethod
     def _extract_enum(annotation: Any) -> Any:
@@ -168,41 +183,27 @@ class DANDIAdapter(BaseAdapter):
         return None
 
     @staticmethod
-    def _pydantic_type(field_info: Any) -> str:
-        import enum
+    def _is_multivalued(annotation: Any) -> bool:
         import types
         import typing
 
-        ann = field_info.annotation
-        if ann is None:
-            return "string"
+        if annotation is None:
+            return False
+        origin = getattr(annotation, "__origin__", None)
+        if origin in (list, tuple, set, frozenset):
+            return True
         args = None
-        origin = getattr(ann, "__origin__", None)
-        if origin is typing.Union:
-            args = ann.__args__
-        elif isinstance(ann, types.UnionType):
-            args = ann.__args__
-        core = ann
+        if getattr(annotation, "__origin__", None) is typing.Union:
+            args = annotation.__args__
+        elif isinstance(annotation, types.UnionType):
+            args = annotation.__args__
         if args:
-            non_none = [a for a in args if a is not type(None)]
-            if len(non_none) == 1:
-                core = non_none[0]
-        co = getattr(core, "__origin__", None)
-        if co in (list, tuple, set, frozenset):
-            return "array"
-        if co is dict:
-            return "object"
-        if isinstance(core, type):
-            if issubclass(core, bool):
-                return "boolean"
-            if issubclass(core, int):
-                return "integer"
-            if issubclass(core, float):
-                return "float"
-            if issubclass(core, str):
-                return "string"
-            if issubclass(core, enum.Enum):
-                return "string"
-            if hasattr(core, "model_fields"):
-                return "object"
-        return "string"
+            for a in args:
+                if a is not type(None) and getattr(a, "__origin__", None) in (
+                    list,
+                    tuple,
+                    set,
+                    frozenset,
+                ):
+                    return True
+        return False
