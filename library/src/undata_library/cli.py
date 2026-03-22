@@ -905,6 +905,51 @@ def resolve_flag_cmd(
         click.echo(f"Flag {result.id[:12]} → {result.status.value} by {resolved_by}")
 
 
+@main.command("discovery-scan")
+@click.argument("path", type=click.Path(exists=True), default=".")
+def discovery_scan_cmd(path: str) -> None:
+    """Scan registries for candidate neuroscience data element sources."""
+    from .discovery import save_candidates, scan_for_candidates
+
+    base = Path(path)
+    click.echo("Scanning registries for candidates...")
+    candidates = scan_for_candidates()
+    if candidates:
+        filepath = save_candidates(base, candidates)
+        click.echo(f"  {len(candidates)} candidates found → {filepath}")
+    else:
+        click.echo("  No new candidates found.")
+
+
+@main.command("discovery-approve")
+@click.argument("path", type=click.Path(exists=True))
+@click.option("--url", required=True, help="Candidate URL to approve")
+@click.option("--by", "curator", required=True, help="Curator identity")
+def discovery_approve_cmd(path: str, url: str, curator: str) -> None:
+    """Approve a discovered source candidate for ingestion."""
+    from .discovery import approve_candidate
+
+    if approve_candidate(Path(path), url, curator):
+        click.echo(f"Candidate approved: {url}")
+    else:
+        click.echo(f"Candidate not found: {url}")
+
+
+@main.command("discovery-reject")
+@click.argument("path", type=click.Path(exists=True))
+@click.option("--url", required=True, help="Candidate URL to reject")
+@click.option("--by", "curator", required=True, help="Curator identity")
+@click.option("--reason", default="", help="Rejection reason")
+def discovery_reject_cmd(path: str, url: str, curator: str, reason: str) -> None:
+    """Reject a discovered source candidate."""
+    from .discovery import reject_candidate
+
+    if reject_candidate(Path(path), url, curator, reason):
+        click.echo(f"Candidate rejected: {url}")
+    else:
+        click.echo(f"Candidate not found: {url}")
+
+
 @main.group("cache")
 def cache_group() -> None:
     """Manage the source cache."""

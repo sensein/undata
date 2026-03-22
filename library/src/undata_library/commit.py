@@ -140,27 +140,45 @@ def _derive_name(data: dict, entity_type: str) -> str:
     return "unknown"
 
 
-def _merge_provenance(target: Path, new_data: dict) -> None:
-    """Merge provenance from new_data into existing target file."""
+def _merge_provenance(
+    target: Path,
+    new_data: dict,
+    output_dir: Path | None = None,
+    max_novel_sources: int = 3,
+) -> bool:
+    """Merge provenance from new_data into existing target file.
+
+    Returns True if new provenance was added, False if all was duplicate.
+    If more than max_novel_sources distinct novel sources are merged,
+    generates a provenance_bloat CurationFlag.
+    """
     existing = safe_load_yaml(target)
     if existing is None:
-        return
+        return False
 
     existing_prov = existing.get("provenance", [])
     new_prov = new_data.get("provenance", [])
 
     # Dedup by (source, name)
     existing_keys = set()
+    existing_sources = set()
     for p in existing_prov:
         if isinstance(p, dict):
             existing_keys.add((p.get("source", ""), p.get("name", "")))
+            existing_sources.add(p.get("source", ""))
 
+    added = 0
+    novel_sources: set[str] = set()
     for p in new_prov:
         if isinstance(p, dict):
             key = (p.get("source", ""), p.get("name", ""))
             if key not in existing_keys:
                 existing_prov.append(p)
                 existing_keys.add(key)
+                added += 1
+                src = p.get("source", "")
+                if src and src not in existing_sources:
+                    novel_sources.add(src)
 
     existing["provenance"] = existing_prov
 
@@ -173,3 +191,22 @@ def _merge_provenance(target: Path, new_data: dict) -> None:
         yaml.dump(existing, default_flow_style=False, sort_keys=False),
         encoding="utf-8",
     )
+
+    # Flag provenance bloat if many novel sources are merging
+    if len(novel_sources) >= max_novel_sources and output_dir:
+        from .curation import create_flag, write_flag
+        from .models import FlagType
+
+        flag = create_flag(
+            entity_type="element",
+            entity_ref=str(target.name),
+            flag_type=FlagType.provenance_bloat,
+            context={
+                "reason": f"{len(novel_sources)} novel sources merged in one commit",
+                "novel_sources": sorted(novel_sources),
+                "total_provenance": len(existing_prov),
+            },
+        )
+        write_flag(output_dir, flag)
+
+    return added > 0

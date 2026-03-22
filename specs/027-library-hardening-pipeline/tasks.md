@@ -113,7 +113,7 @@
 - [ ] T038h [US2] Add pre-enrichment dedup test — REVIEW-TODO: needs dedicated test
 - [X] T038i [US2] Implement source validation in `library/src/undata_library/commit.py`: validate provenance sources against known sources, reject unrecognized sources with `suspicious_source` CurationFlag + return feedback message to caller
 - [X] T038i2 [P] [US2] Implement known source registry in `library/src/undata_library/curation.py`: derive allowed sources by globbing `source_defs/*.yaml` for configured source names; expose `get_known_sources() -> set[str]` used by source validation in commit.py
-- [ ] T038j [P] [US2] Implement provenance bloat detection in `library/src/undata_library/commit.py` — REVIEW-TODO: needs time-window tracking
+- [X] T038j [P] [US2] Implement provenance bloat detection in `library/src/undata_library/commit.py`: flags when >= 3 novel sources merge into same entity
 - [X] T038k [US2] Add source validation tests in `library/tests/test_source_validation.py`: unrecognized source rejection, provenance dedup
 
 ### Multi-Precision Enrichment + Dynamic Sources
@@ -129,7 +129,7 @@
 ### Source Discovery Infrastructure
 
 - [X] T038s [US2] Add source candidate persistence in `library/src/undata_library/discovery.py`: save/load/approve/reject candidates
-- [ ] T038t [US2] Add `discovery-scan` CLI command — REVIEW-TODO: add CLI wrappers for discovery
+- [X] T038t [US2] Add `discovery-scan`, `discovery-approve`, `discovery-reject` CLI commands
 - [ ] T038u [P] [US2] Add tests for discovery + approval workflow — REVIEW-TODO: needs mock HTTP for OBO Foundry
 
 ### Config-Only Source Integration Test
