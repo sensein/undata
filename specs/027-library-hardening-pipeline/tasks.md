@@ -43,23 +43,23 @@
 
 ### Requirements Audit
 
-- [ ] T010 [US1] Read all specs 001-026 and create `specs/027-library-hardening-pipeline/requirements-audit.md` mapping every user story to status (implemented, partial, outdated)
-- [ ] T011 [US1] Identify and document outdated requirements that no longer apply after 026 identity model changes
+- [X] T010 [US1] Read all specs 001-026 and create `specs/027-library-hardening-pipeline/requirements-audit.md` mapping every user story to status (implemented, partial, outdated)
+- [X] T011 [US1] Identify and document outdated requirements that no longer apply after 026 identity model changes
 
 ### Shared Utilities Integration
 
-- [ ] T012 [US1] Replace all unguarded `yaml.safe_load()` calls in `library/src/undata_library/ingest.py` with `safe_load_yaml()` from utils.py (~8 occurrences)
-- [ ] T013 [P] [US1] Replace all unguarded `yaml.safe_load()` calls in `library/src/undata_library/commit.py`, `align.py`, `transform.py` with `safe_load_yaml()`
-- [ ] T014 [P] [US1] Replace all filename sanitization patterns in `library/src/undata_library/ingest.py`, `commit.py`, `transform.py` with `sanitize_filename()` from utils.py
-- [ ] T015 [P] [US1] Replace all hardcoded `https://schema.undata.live/...` URIs in `library/src/undata_library/enrich.py`, `validation.py`, `index.py`, `alias_detection.py` with `BASE_URI` constant + builder functions from hashing.py
-- [ ] T016 [P] [US1] Extract duplicate export pagination loop in `library/src/undata_library/export.py` into shared helper function
+- [X] T012 [US1] Replace all unguarded `yaml.safe_load()` calls in `library/src/undata_library/ingest.py` with `safe_load_yaml()` from utils.py (~8 occurrences)
+- [X] T013 [P] [US1] Replace all unguarded `yaml.safe_load()` calls in `library/src/undata_library/commit.py`, `align.py`, `transform.py` with `safe_load_yaml()`
+- [X] T014 [P] [US1] Replace all filename sanitization patterns in `library/src/undata_library/ingest.py`, `commit.py`, `transform.py` with `sanitize_filename()` from utils.py
+- [X] T015 [P] [US1] Replace all hardcoded `https://schema.undata.live/...` URIs in `library/src/undata_library/enrich.py`, `validation.py`, `index.py`, `alias_detection.py` with `BASE_URI` constant + builder functions from hashing.py
+- [X] T016 [P] [US1] Extract duplicate export pagination loop in `library/src/undata_library/export.py` into shared helper function
 
 ### Encapsulation + Dead Code
 
-- [ ] T017 [US1] Fix `_download_obo` import in `library/src/undata_library/cli.py` — make public or create wrapper in `ontology_fetch.py`
-- [ ] T018 [US1] Audit ALL cross-module imports and accesses of underscore-prefixed functions and variables across `library/src/undata_library/` — fix each violation
-- [ ] T019 [P] [US1] Remove all dead code branches, obsolete comments, and unreachable conditions across the entire `library/src/undata_library/` directory
-- [ ] T020 [P] [US1] Verify no remaining references to removed models: `ontology_term` (on SemanticIdentity), `Constraints`, `SchemaProvenance`, `ValueProvenance`, `source_attribute`, `source_class`
+- [X] T017 [US1] Fix `_download_obo` import in `library/src/undata_library/cli.py` — make public or create wrapper in `ontology_fetch.py`
+- [X] T018 [US1] Audit ALL cross-module imports and accesses of underscore-prefixed functions and variables across `library/src/undata_library/` — fix each violation
+- [X] T019 [P] [US1] Remove all dead code branches, obsolete comments, and unreachable conditions across the entire `library/src/undata_library/` directory
+- [X] T020 [P] [US1] Verify no remaining references to removed models: `ontology_term` (on SemanticIdentity), `Constraints`, `SchemaProvenance`, `ValueProvenance`, `source_attribute`, `source_class`
 
 ### Test Coverage
 
