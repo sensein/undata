@@ -55,72 +55,50 @@ def ingest_source(
     # This keeps ingestion pure (source data only) and tracks annotations
     # as separate PROV-O curation events.
 
-    # Load existing hash registry
-    registry_path = library_path / "hash-registry.yaml"
-    registry = _load_registry(registry_path)
+    # Write each element to staging with UUID filename (no hashing at extraction)
+    import uuid
 
     elements_dir = library_path / "elements"
     elements_dir.mkdir(parents=True, exist_ok=True)
 
+    # Dedup by (source, class, name) within this extraction to avoid writing
+    # the same element twice from the same source
+    seen_keys: set[tuple[str, str, str]] = set()
     created = 0
     merged = 0
 
-    # Group by semantic hash.
-    # When the semantic graph is underspecified (no ontology_annotations, no unit,
-    # no response_options), include the attribute name in the hash to prevent
-    # unrelated properties from collapsing. The attribute name IS semantic
-    # when no richer annotation exists.
-    hash_to_records: dict[str, tuple[SemanticIdentity, list[ProvenanceEntry], str]] = {}
-
     for sem, prov in pairs:
-        sem_dict = sem.model_dump(exclude_none=True)
-        if "data_type" in sem_dict:
-            sem_dict["data_type"] = str(sem_dict["data_type"])
+        dedup_key = (prov.source, prov.class_, prov.name)
+        if dedup_key in seen_keys:
+            merged += 1
+            continue
+        seen_keys.add(dedup_key)
 
-        # Description from provenance (used in structural fallback hash)
-        if prov.description:
-            sem_dict["description"] = prov.description
+        record = ElementRecord(semantic=sem, provenance=[prov])
+        entity_id = str(uuid.uuid4())
+        filepath = elements_dir / f"{entity_id}.yaml"
+        _write_element(filepath, record)
+        created += 1
 
-        sha = compute_sha256(canonical_json(sem_dict))
+    # Load hash registry for downstream compatibility (schemas, values, mappings)
+    registry_path = library_path / "hash-registry.yaml"
+    registry = _load_registry(registry_path)
 
-        if sha not in hash_to_records:
-            hash_to_records[sha] = (sem, [], prov.name)
-        hash_to_records[sha][1].append(prov)
-
-    for sha, (sem, provs, first_name) in hash_to_records.items():
-        # Deterministic 12-hex-char key from SHA-256 (no collision detection needed)
-        key = generate_short_key(sha)
-
-        attr_name = first_name.lower().lstrip("_")
-        # Sanitize: replace slashes, colons, and other filesystem-unsafe chars
-        safe_name = attr_name.replace("/", "_").replace(":", "_").replace("\\", "_")
-        # Truncate long names (URI-based names can be very long)
-        if len(safe_name) > 60:
-            safe_name = safe_name[:60]
-        filename = f"{safe_name}_{key}.yaml"
-        filepath = elements_dir / filename
-
-        if filepath.exists():
-            # Merge provenance into existing file
-            existing_data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
-            existing_record = ElementRecord.model_validate(existing_data)
-            existing_sources = {(p.source, p.name) for p in existing_record.provenance}
-
-            new_provs = [p for p in provs if (p.source, p.name) not in existing_sources]
-            if new_provs:
-                all_provs = existing_record.provenance + new_provs
-                record = ElementRecord(semantic=existing_record.semantic, provenance=all_provs)
-                _write_element(filepath, record, sha256=sha)
-                merged += len(new_provs)
-        else:
-            record = ElementRecord(semantic=sem, provenance=provs)
-            _write_element(filepath, record, sha256=sha)
-            created += 1
-
-        # Update registry
+    # Build a temporary registry for URI generation (needed by schema builder)
+    for f in sorted(elements_dir.glob("*.yaml")):
+        data = yaml.safe_load(f.read_text(encoding="utf-8"))
+        if not data or "provenance" not in data:
+            continue
+        prov_list = data.get("provenance", [])
+        if not prov_list:
+            continue
+        first_prov = prov_list[0]
+        attr_name = first_prov.get("name", "unknown")
+        # Use filename stem as key for registry
+        key = f.stem
         uri = build_element_uri(attr_name, key)
         registry.elements[key] = HashRegistryEntry(
-            sha256=sha,
+            sha256="",  # Hash computed at commit time, not extraction
             attribute=attr_name,
             uri=uri,
         )
@@ -158,7 +136,7 @@ def ingest_source(
     return {
         "created": created,
         "merged": merged,
-        "total": len(hash_to_records),
+        "total": created + merged,
         "schemas_created": schema_stats.get("created", 0),
         "values_created": value_stats.get("created", 0) + classified_stats.get("values_created", 0),
         "valuesets_created": classified_stats.get("valuesets_created", 0),
