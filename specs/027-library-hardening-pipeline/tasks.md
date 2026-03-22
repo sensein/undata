@@ -100,12 +100,12 @@
 
 ### Run Summary + Delta Detection
 
-- [ ] T036 [US2] Integrate `run_summary.py` into pipeline CLI: generate and save `RunSummary` after each pipeline run to `{output_dir}/runs/{timestamp}-{source}.yaml`
-- [ ] T037 [US2] Implement delta detection: compare current run entity counts/hashes against previous run, report added/removed/modified per entity type
-- [ ] T037b [US2] Implement per-entity change detection in `library/src/undata_library/run_summary.py`: compare sha256 hashes of individual entity files between current and previous run, classify each as added/modified/unchanged/removed, include in RunSummary delta
-- [ ] T038 [P] [US2] Add source version tracking: compare `_resolved_committish` files between runs to detect source schema changes
-- [ ] T038b [US2] Report source version changes in pipeline extraction output: when `_resolved_committish` differs from previous run, log a warning and include version change details (old → new committish) in RunSummary
-- [ ] T038c [US2] Implement idempotency short-circuit in pipeline CLI: before extraction, compare source committish + file checksums against previous run; if unchanged, skip pipeline with "no changes detected" message
+- [X] T036 [US2] Integrate `run_summary.py` into pipeline CLI: generate and save `RunSummary` after each pipeline run to `{output_dir}/runs/{timestamp}-{source}.yaml`
+- [X] T037 [US2] Implement delta detection: compare current run entity counts/hashes against previous run, report added/removed/modified per entity type
+- [X] T037b [US2] Implement per-entity change detection in `library/src/undata_library/run_summary.py`: compare sha256 hashes of individual entity files between current and previous run, classify each as added/modified/unchanged/removed, include in RunSummary delta
+- [X] T038 [P] [US2] Add source version tracking: compare `_resolved_committish` files between runs to detect source schema changes
+- [X] T038b [US2] Report source version changes in pipeline extraction output: when `_resolved_committish` differs from previous run, log a warning and include version change details (old → new committish) in RunSummary
+- [X] T038c [US2] Implement idempotency short-circuit in pipeline CLI: before extraction, compare source committish + file checksums against previous run; if unchanged, skip pipeline with "no changes detected" message
 - [ ] T038d [US2] Add idempotency test in `library/tests/test_pipeline_e2e.py`: run pipeline twice for same source, verify zero file changes on second run and all elements still present
 - [ ] T038e [US2] Add entity-level idempotency test in `library/tests/test_pipeline_e2e.py`: ingest a single YAML entity file that duplicates an existing registry entity, verify same sha256 hash and provenance merge (no duplicate)
 - [ ] T038f [US2] Add registry roundtrip test in `library/tests/test_pipeline_e2e.py`: export full registry, delete all state (runs/, curation-flags/, staging/, hash-registry.yaml), re-ingest exported files through full pipeline, verify byte-identical registry output
@@ -146,8 +146,8 @@
 
 ### CLI Updates
 
-- [ ] T044 [US2] Add `curation-queue` CLI command to `library/src/undata_library/cli.py`: list pending flags with filtering by type/status
-- [ ] T045 [P] [US2] Add `resolve-flag` CLI command to `library/src/undata_library/cli.py`: resolve a flag by ID with action + note
+- [X] T044 [US2] Add `curation-queue` CLI command to `library/src/undata_library/cli.py`: list pending flags with filtering by type/status
+- [X] T045 [P] [US2] Add `resolve-flag` CLI command to `library/src/undata_library/cli.py`: resolve a flag by ID with action + note
 
 ### Validation
 
