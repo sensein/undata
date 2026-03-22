@@ -113,10 +113,16 @@
 9. **MEDIUM**: Dead code references non-existent `extractors.aind` module.
 10. **LOW**: Non-recursive file glob.
 
-## Upstream Changes
+## Upstream Changes (reviewed 2026-03-22)
 
-- **DANDI PR #387**: Converting dandischema to LinkML. Once merged, DANDI adapter should consume LinkML YAML directly via existing LinkML adapter instead of Pydantic introspection.
-- All source repos should be monitored for schema format changes that affect extraction.
+- **DANDI PR #387**: Converting dandischema to LinkML. Once merged, DANDI adapter should consume LinkML YAML directly via existing LinkML adapter. PR #385 replaces discriminated unions with simple unions — affects schemaKey detection.
+- **openMINDS v5 released** (PR #86, merged 2026-03-11): New/modified schema files, vocabulary label fixes (PR #93). Must re-ingest against v5.
+- **NWB HERD type merged** (PR #646): New group under NWBFile.general. Picked up automatically on re-ingestion.
+- **NWB EventsTable** (PR #645, draft): New neurodata types targeting schema v2.10.0.
+- **NWB #675**: Discussion about making many required fields optional — would change required flags on extracted elements.
+- **AIND NHPSubject** (PR #1778, merged): New Subject union member. **files.json** (PR #1780, draft): Croissant-based file structure model.
+- **BIDS PR #2359**: Schema expression language changes (context restructuring). **#2358**: Deprecating `_recording-` entity.
+- **DANDI #372**: 3D probe/electrode positions proposed. **#369**: New DatasetType metadata field.
 
 ## Recommended Fix Order
 
