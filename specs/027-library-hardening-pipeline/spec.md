@@ -112,6 +112,7 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - **FR-024**: The UI MUST support two user roles: contributors (authenticated users who can suggest annotations, comment on elements, and flag issues) and curators (who can approve, reject, or modify contributor suggestions)
 - **FR-022**: The database MUST support incremental updates from new pipeline runs without requiring full reimport
 - **FR-023**: All layers (library, database, UI) MUST be optimized for efficiency: batch operations for import, indexed queries for search, lazy loading for large result sets
+- **FR-025**: The frontend MUST have visual regression tests via Playwright/Chromium covering: element browser, curation queue, flag resolution, connected entity navigation, and search
 
 ### Key Entities
 
@@ -171,3 +172,4 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - Q: Community contribution model? → A: Curators + contributors — authenticated users can suggest annotations and comment on elements, curators approve/reject
 - Q: Encapsulation scope? → A: Not just private function imports — also private variable access across modules must be audited and fixed
 - Q: Tech stack for UI/DB? → A: Next.js + FastAPI + Vite. Adopt CivicDB's patterns (GraphQL, social curation, revision workflow) but NOT its stack (no Ruby/Angular)
+- Q: Frontend testing? → A: Visual regression tests via Playwright/Chromium for all key UI flows
