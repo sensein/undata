@@ -41,7 +41,7 @@ Machine-generated flag requiring human review.
 - `id`: UUID
 - `entity_type`: enum (element, schema, value, valueset, transform)
 - `entity_ref`: string (file path or content hash)
-- `flag_type`: enum (low_confidence, ambiguous_match, multiple_candidates, unknown_transform, needs_review)
+- `flag_type`: enum (low_confidence, ambiguous_match, multiple_candidates, unknown_transform, needs_review, suspicious_source, provenance_bloat)
 - `context`: dict (candidate_matches: list[{uri, score, label}], reason: string)
 - `llm_verification`: dict | None (model, response, confidence, justification)
 - `status`: enum (pending, approved, rejected, deferred)

@@ -123,9 +123,9 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - **FR-019**: The UI MUST provide a browsable element catalog with faceted search (source, data_type, ontology, curation status) and connected entity navigation
 - **FR-020**: The UI MUST provide a CivicDB-style curation queue with evidence panels showing match candidates, scores, source provenance, and related elements
 - **FR-021**: The UI MUST allow curators to approve, reject, or defer flagged items with recorded identity, timestamp, and justification
-- **FR-024**: The UI MUST support two user roles: contributors (authenticated users who can suggest annotations, comment on elements, and flag issues) and curators (who can approve, reject, or modify contributor suggestions)
 - **FR-022**: The database MUST support incremental updates from new pipeline runs without requiring full reimport
 - **FR-023**: All layers (library, database, UI) MUST be optimized for efficiency: batch operations for import, indexed queries for search, lazy loading for large result sets
+- **FR-024**: The UI MUST support two user roles: contributors (authenticated users who can suggest annotations, comment on elements, and flag issues) and curators (who can approve, reject, or modify contributor suggestions)
 - **FR-025**: The frontend MUST have visual regression tests via Playwright/Chromium covering: element browser, curation queue, flag resolution, connected entity navigation, and search
 
 ### Key Entities
