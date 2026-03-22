@@ -1,6 +1,6 @@
 """DANDI schema adapter — delegates to standalone extraction script.
 
-The actual extraction happens in docker_scripts/dandi_extract.py running in an
+The actual extraction happens in standalone_scripts/dandi_extract.py running in an
 isolated venv with dandischema. This adapter class exists for the registry and
 as a fallback when dandischema is available in the current environment.
 """

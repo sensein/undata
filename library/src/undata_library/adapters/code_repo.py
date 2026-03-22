@@ -36,7 +36,7 @@ class CodeRepoAdapter(BaseAdapter):
             return []
 
         image = docker_image or _DEFAULT_IMAGES.get(language, "python:3.12-slim")
-        scripts_dir = Path(__file__).parent / "docker_scripts"
+        scripts_dir = Path(__file__).parent / "standalone_scripts"
 
         try:
             result_json = self._run_container(source_path, language, image, scripts_dir, timeout)

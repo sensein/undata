@@ -138,7 +138,7 @@
 
 ### Adapter Accuracy Review
 
-- [ ] T039 [US2] Read BIDS schema format docs, verify `library/src/undata_library/adapters/bids.py` + `docker_scripts/bids_extract.py` capture all entity types; document mapping — REVIEW-TODO: deep source review
+- [ ] T039 [US2] Read BIDS schema format docs, verify `library/src/undata_library/adapters/bids.py` + `standalone_scripts/bids_extract.py` capture all entity types; document mapping — REVIEW-TODO: deep source review
 - [ ] T040 [P] [US2] Read DANDI model docs, verify adapter captures all entity types — REVIEW-TODO: deep source review
 - [ ] T041 [P] [US2] Read NWB namespace format, verify adapter captures all entity types — REVIEW-TODO: deep source review
 - [ ] T042 [P] [US2] Read openMINDS JSON-LD format, verify adapter captures all entity types — REVIEW-TODO: deep source review

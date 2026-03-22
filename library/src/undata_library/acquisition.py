@@ -283,7 +283,7 @@ class IsolatedEnv:
             raise RuntimeError(f"Failed to install {package}: {result.stderr[:500]}")
 
         # Run introspection script
-        script = Path(__file__).parent / "adapters" / "docker_scripts" / "python_inspect.py"
+        script = Path(__file__).parent / "adapters" / "standalone_scripts" / "python_inspect.py"
         if not script.exists():
             raise FileNotFoundError(f"Introspection script not found: {script}")
 
@@ -327,7 +327,7 @@ class IsolatedEnv:
             raise RuntimeError(f"Failed to install {packages}: {result.stderr[:500]}")
 
         # Find standalone extraction script for this adapter
-        scripts_dir = Path(__file__).parent / "adapters" / "docker_scripts"
+        scripts_dir = Path(__file__).parent / "adapters" / "standalone_scripts"
         script = scripts_dir / f"{adapter_name}_extract.py"
         if not script.exists():
             # Fall back to generic introspection

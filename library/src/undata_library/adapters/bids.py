@@ -1,6 +1,6 @@
 """BIDS schema adapter — delegates to standalone extraction script.
 
-The actual extraction happens in docker_scripts/bids_extract.py running in an
+The actual extraction happens in standalone_scripts/bids_extract.py running in an
 isolated venv with bidsschematools + linkml-runtime. This adapter class exists
 for the registry and for direct file-based extraction when bidsschematools
 happens to be available in the current environment.
