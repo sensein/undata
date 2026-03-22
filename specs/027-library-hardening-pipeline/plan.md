@@ -19,7 +19,7 @@ Three-workstream feature: (1) Audit and clean up the library codebase — shared
 **Project Type**: Library + CLI + web application (full stack)
 **Performance Goals**: GraphQL queries < 500ms p95, curation queue < 2s load, incremental import < 60s
 **Constraints**: Not a deployed platform — can rewrite anything from scratch. Accuracy over cost/latency.
-**Scale/Scope**: ~7,700 elements, 642 schemas, 1,000 values, 86 valuesets, 268K ontology terms
+**Scale/Scope**: ~7,700+ elements (growing), 642+ schemas, 1,000+ values, 86+ valuesets, 268K+ ontology terms (dynamically expanding via new sources and ontologies)
 
 ## Constitution Check
 

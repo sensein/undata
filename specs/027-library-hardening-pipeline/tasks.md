@@ -123,6 +123,18 @@
 - [ ] T038n [P] [US2] Make data source ingestion config-driven for standard formats: verify that `source_defs/*.yaml` with `adapter: json_schema`, `adapter: linkml`, or `adapter: csv_dictionary` can ingest new sources without code changes
 - [ ] T038o [US2] Create source discovery utility in `library/src/undata_library/discovery.py`: LLM-assisted scan of registries (FAIRsharing, BioPortal, OBO Foundry) to identify candidate neuroscience data element repositories; output candidate list for curator review
 - [ ] T038p [US2] Add tests for multi-precision enrichment in `library/tests/test_enrich.py`: verify that a matched entity has annotations at multiple SKOS levels (not just the top match)
+- [ ] T038q [US2] Extend `library/src/undata_library/ontology_store.py` to index parent/broader terms via rdfs:subClassOf and skos:broader traversal in pyoxigraph — expose `get_ancestors(term_uri, max_depth=3) -> list[str]` for hierarchy-based broadMatch/relatedMatch assignment
+- [ ] T038r [P] [US2] Add tests for ontology hierarchy traversal in `library/tests/test_ontology_store.py`: verify ancestor lookup returns parent chain, handles cycles, respects max_depth
+
+### Source Discovery Infrastructure
+
+- [ ] T038s [US2] Add source candidate persistence in `library/src/undata_library/discovery.py`: save discovered candidates to `{output_dir}/discovery/candidates.yaml` with status (pending, approved, rejected), discovery date, registry source, and curator notes
+- [ ] T038t [US2] Add `discovery-scan` CLI command to `library/src/undata_library/cli.py`: trigger background scan, save candidates; add `discovery-approve` and `discovery-reject` commands for curator source-level approval
+- [ ] T038u [P] [US2] Add tests for discovery + approval workflow in `library/tests/test_discovery.py`: scan produces candidates, approve adds to source_defs, reject marks candidate, approved source is ingestible via pipeline
+
+### Config-Only Source Integration Test
+
+- [ ] T038n2 [P] [US2] Add integration test in `library/tests/test_pipeline_e2e.py`: create a new `source_defs/test-source.yaml` with `adapter: json_schema` pointing to a mock JSON Schema file, run pipeline, verify entities extracted without any code changes
 
 ### Adapter Accuracy Review
 
