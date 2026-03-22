@@ -483,6 +483,95 @@ def enrich_all(
     return results
 
 
+def generate_curation_flags(
+    staging_dir: Path,
+    output_dir: Path | None = None,
+) -> list:
+    """Scan enriched entities and generate CurationFlags for ambiguous cases.
+
+    Flags are generated for:
+    - Elements/values/schemas with no ontology_annotations after enrichment (low_confidence)
+    - Annotations where best score is borderline (0.7-0.95) and no LLM confirmed (ambiguous_match)
+    - Multiple candidate annotations within 0.05 of each other (multiple_candidates)
+
+    If output_dir is provided, flags are written to {output_dir}/curation-flags/.
+    Returns list of CurationFlag objects.
+    """
+    from .curation import create_flag, write_flag
+    from .models import FlagType
+
+    flags = []
+
+    for entity_type in ("elements", "values", "schemas"):
+        entity_dir = staging_dir / entity_type
+        if not entity_dir.exists():
+            continue
+
+        for f in sorted(entity_dir.glob("*.yaml")):
+            data = safe_load_yaml(f)
+            if data is None or "semantic" not in data:
+                continue
+
+            sem = data["semantic"]
+            annotations = sem.get("ontology_annotations", [])
+
+            if not annotations:
+                # No annotations at all — flag as low_confidence
+                prov = data.get("provenance", [{}])
+                name = prov[0].get("name", f.stem) if prov else f.stem
+                flag = create_flag(
+                    entity_type=entity_type.rstrip("s"),  # elements → element
+                    entity_ref=str(f.name),
+                    flag_type=FlagType.low_confidence,
+                    context={"reason": "no ontology annotations after enrichment", "name": name},
+                )
+                flags.append(flag)
+                continue
+
+            # Check for ambiguous matches (top score borderline, no LLM confirmation)
+            top = annotations[0]
+            top_score = top.get("score", 0)
+            if 0.7 <= top_score < 0.95 and not top.get("llm_verification"):
+                flag = create_flag(
+                    entity_type=entity_type.rstrip("s"),
+                    entity_ref=str(f.name),
+                    flag_type=FlagType.ambiguous_match,
+                    context={
+                        "reason": f"borderline match (score={top_score:.3f}), no LLM verification",
+                        "top_match": top.get("term_uri", ""),
+                        "top_label": top.get("term_label", ""),
+                        "top_score": top_score,
+                    },
+                )
+                flags.append(flag)
+
+            # Check for multiple close candidates
+            if len(annotations) >= 2:
+                scores = [a.get("score", 0) for a in annotations[:5]]
+                if len(scores) >= 2 and (scores[0] - scores[1]) < 0.05:
+                    flag = create_flag(
+                        entity_type=entity_type.rstrip("s"),
+                        entity_ref=str(f.name),
+                        flag_type=FlagType.multiple_candidates,
+                        context={
+                            "reason": f"multiple close candidates (gap={scores[0] - scores[1]:.3f})",
+                            "candidates": [
+                                {"uri": a.get("term_uri"), "score": a.get("score")}
+                                for a in annotations[:3]
+                            ],
+                        },
+                    )
+                    flags.append(flag)
+
+    # Write flags to output directory if provided
+    if output_dir and flags:
+        for flag in flags:
+            write_flag(output_dir, flag)
+        logger.info("Generated %d curation flags", len(flags))
+
+    return flags
+
+
 # ---------------------------------------------------------------------------
 # Shared helpers
 # ---------------------------------------------------------------------------

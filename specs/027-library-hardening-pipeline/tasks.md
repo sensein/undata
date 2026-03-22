@@ -94,9 +94,9 @@
 
 ### Curation Flag Integration
 
-- [ ] T033 [US2] Update `library/src/undata_library/enrich.py` to generate CurationFlags: `low_confidence` for matches < 0.7, `ambiguous_match` for multiple candidates within 0.05, `needs_review` for LLM-rejected matches
-- [ ] T034 [P] [US2] Update `library/src/undata_library/transform.py` to flag transforms with `unknown` function type as `unknown_transform`
-- [ ] T035 [US2] Write curation flags to `{output_dir}/curation-flags/` directory during pipeline run
+- [X] T033 [US2] Update `library/src/undata_library/enrich.py` to generate CurationFlags: `low_confidence` for matches < 0.7, `ambiguous_match` for multiple candidates within 0.05, `needs_review` for LLM-rejected matches
+- [X] T034 [P] [US2] Update `library/src/undata_library/transform.py` to flag transforms with `unknown` function type as `unknown_transform`
+- [X] T035 [US2] Write curation flags to `{output_dir}/curation-flags/` directory during pipeline run
 
 ### Run Summary + Delta Detection
 
