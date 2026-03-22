@@ -250,9 +250,9 @@ def _nwb_spec() -> dict:
             "class": {"min": 50, "max": 150},
         },
         "known_entities": [
-            {"name": "TimeSeries", "type": "class"},
-            {"name": "NWBFile", "type": "class"},
-            {"name": "ElectricalSeries", "type": "class"},
+            {"name": "TimeSeries", "class": "TimeSeries", "type": "class"},
+            {"name": "NWBFile", "class": "NWBFile", "type": "class"},
+            {"name": "ElectricalSeries", "class": "ElectricalSeries", "type": "class"},
         ],
         "required_fields": {
             "attribute": ["data_type"],
