@@ -32,34 +32,38 @@ A data engineer optimizes each pipeline step (extract, enrich, commit, align, tr
 
 **Why this priority**: Equally critical to US1 — the pipeline is the core product. Inaccurate extraction or insensitivity to source changes undermines the entire registry's value. Human curation flags are foundational for the UI/DB rebuild.
 
-**Independent Test**: Re-extract all 5 sources, compare element/schema/value counts and ontology annotation rates against the 026 baseline. Verify that flagged items appear in a machine-readable curation queue. Run against a modified source (e.g., simulated BIDS schema update) and verify the pipeline detects the change.
+**Independent Test**: Re-extract all 5 sources through the full pipeline (extract → enrich → commit → align → transform), compare against the 026 baseline. Add a new synthetic entity and verify it flows through the entire pipeline. Verify flagged items appear in a machine-readable curation queue.
+
+**Accuracy approach**: Use every available technique — embedding similarity, LLM-assisted classification (for borderline cases), ontology hierarchy traversal, rule-based heuristics, and source-specific domain knowledge — to maximize annotation accuracy. Cost and latency are secondary to correctness.
 
 **Acceptance Scenarios**:
 
 1. **Given** a source schema (BIDS, DANDI, NWB, openMINDS, AIND), **When** extraction runs, **Then** every data element, vocabulary type, and class definition present in the source is captured (no silent omissions)
 2. **Given** a source schema with a new or changed field compared to the previous version, **When** re-extraction runs, **Then** the pipeline detects new, modified, and removed elements and reports them in the extraction summary
 3. **Given** an element where ontology matching confidence is below the enrichment threshold, **When** enrichment runs, **Then** the element is flagged for human curation with the reason (low confidence, ambiguous match, multiple candidates)
-4. **Given** a transform between two elements where the conversion function cannot be automatically determined, **When** transform generation runs, **Then** the transform is flagged as "needs-review" with the ambiguity described
-5. **Given** the enrichment step, **When** it processes values like "male" against ontology terms, **Then** clear matches (cosine similarity >= 0.95) are assigned automatically and borderline matches (0.7-0.95) are flagged for review
+4. **Given** a borderline ontology match (0.7-0.95), **When** LLM-assisted enrichment runs, **Then** the LLM evaluates the match using the element description, ontology term definition, and source context, and either confirms or rejects the annotation
+5. **Given** the enrichment step, **When** it processes values like "male" against ontology terms, **Then** clear matches (cosine similarity >= 0.95) are assigned automatically and borderline matches are escalated to LLM verification before flagging for human review
 6. **Given** a complete pipeline run, **When** the run finishes, **Then** a summary report lists: counts per entity type, enrichment rates, number of curation flags, and comparison to previous run
+7. **Given** a new entity added to a source, **When** the full pipeline runs end-to-end (extract through alignment), **Then** the new entity is extracted, enriched, committed, aligned with similar existing entities, and transforms are generated
 
 ---
 
-### User Story 3 - UI/DB Layer Rebuild with Efficiency Optimization (Priority: P2)
+### User Story 3 - UI/DB Layer Rebuild Inspired by CivicDB (Priority: P2)
 
-A platform operator rebuilds the web UI and database layers to consume the library's content-addressed registry, display elements with provenance and ontology annotations, support human curation workflows (review flagged items, approve/reject annotations), and optimize for efficiency at all levels (query performance, rendering, caching).
+A platform operator rebuilds the web UI and database layers from scratch, taking design inspiration from CivicDB (civicdb.org). The implementation begins with a study of the CivicDB website (via Playwright-based exploration) and its open-source codebase (https://github.com/griffithlab/civic-v2) to understand their approach to social curation, evidence management, and connected data visualization. The rebuild implements a similar social + technical + UI/UX with a modern stack, including community contribution features, evidence-based annotation workflows, and a graph-oriented data model. GraphQL should be evaluated as the API layer given the highly connected nature of the data (elements ↔ ontology terms ↔ provenance ↔ transforms ↔ schemas).
 
 **Why this priority**: Depends on US1 (clean library) and US2 (accurate pipeline with curation flags). Cannot meaningfully build a UI for curation without the underlying data quality and flag infrastructure.
 
-**Independent Test**: Deploy the UI against a populated registry. A curator can browse elements, review flagged items, and approve/reject ontology annotations. Page load times meet performance targets.
+**Independent Test**: Deploy the UI against a populated registry. A curator can browse elements, review flagged items with CivicDB-style evidence context, and approve/reject ontology annotations. The full pipeline runs and results are reflected in the UI.
 
 **Acceptance Scenarios**:
 
-1. **Given** a populated registry with 7,000+ elements, **When** a curator opens the element browser, **Then** elements load with pagination and the page is interactive within 2 seconds
-2. **Given** elements flagged for curation, **When** a curator views the curation queue, **Then** flagged items are grouped by type (low confidence, ambiguous match, needs-review transform) with supporting context
-3. **Given** a flagged ontology annotation, **When** a curator approves or rejects it, **Then** the decision is recorded with the curator's identity and timestamp, and the element is updated accordingly
+1. **Given** a populated registry with 7,000+ elements, **When** a user opens the element browser, **Then** elements load with faceted search (source, data_type, ontology, curation status) and the page is interactive within 2 seconds
+2. **Given** elements flagged for curation, **When** a curator views the curation queue, **Then** flagged items are displayed with CivicDB-style evidence panels (match candidates, scores, source provenance, related elements)
+3. **Given** a flagged ontology annotation, **When** a curator approves or rejects it, **Then** the decision is recorded with identity, timestamp, and justification, and the element is updated accordingly
 4. **Given** the database layer, **When** elements are imported from the flat-file registry, **Then** content-addressed identities, provenance chains, and ontology annotations are preserved without loss
 5. **Given** the full stack (UI + DB + library), **When** a new pipeline run produces updated elements, **Then** the database reflects changes incrementally (new elements added, merged elements updated, no full reimport required)
+6. **Given** the graph-oriented data model, **When** a user explores an element, **Then** related entities (transforms, schemas, values, ontology terms) are navigable as a connected graph
 
 ---
 
@@ -91,18 +95,23 @@ A platform operator rebuilds the web UI and database layers to consume the libra
 - **FR-008**: Each adapter MUST document the source schema structure it expects and the mapping from source fields to undata entities
 - **FR-009**: The pipeline MUST detect new, modified, and removed entities when re-extracting a source that has been previously extracted
 - **FR-010**: The enrichment step MUST flag entities for human curation when: (a) best ontology match confidence is between 0.7 and 0.95, (b) multiple candidate matches are within 0.05 of each other, (c) value_domain cannot be determined
-- **FR-011**: The transform step MUST flag transforms as "needs-review" when the conversion function type is "unknown"
-- **FR-012**: The pipeline MUST produce a machine-readable run summary with entity counts, enrichment rates, curation flag counts, and delta from previous run
-- **FR-013**: Each adapter MUST be sensitive to source schema version changes and report when the source format has changed from what was previously extracted
+- **FR-011**: The enrichment step MUST use LLM-assisted classification for borderline ontology matches — the LLM evaluates element description + ontology term definition + source context to confirm or reject before flagging for human review
+- **FR-012**: The transform step MUST flag transforms as "needs-review" when the conversion function type is "unknown"
+- **FR-013**: The pipeline MUST produce a machine-readable run summary with entity counts, enrichment rates, curation flag counts, and delta from previous run
+- **FR-014**: Each adapter MUST be sensitive to source schema version changes and report when the source format has changed from what was previously extracted
+- **FR-015**: Each workstream MUST conclude with a full pipeline re-extraction test (extract → enrich → commit → align → transform) including addition of a new entity, validated against the 026 baseline
 
-**Workstream 3: UI/DB Rebuild**
+**Workstream 3: UI/DB Rebuild (CivicDB-inspired)**
 
-- **FR-014**: The database layer MUST import elements, schemas, values, and valuesets from the flat-file registry preserving content-addressed identities and full provenance
-- **FR-015**: The UI MUST provide a browsable element catalog with search, filtering by source/data_type/ontology, and pagination
-- **FR-016**: The UI MUST provide a curation queue showing all flagged items grouped by flag type with supporting context (match candidates, scores, source provenance)
-- **FR-017**: The UI MUST allow curators to approve, reject, or defer flagged items with recorded identity and timestamp
-- **FR-018**: The database MUST support incremental updates from new pipeline runs without requiring full reimport
-- **FR-019**: All layers (library, database, UI) MUST be optimized for efficiency: batch operations for import, indexed queries for search, lazy loading for large result sets
+- **FR-016**: A study of CivicDB (civicdb.org via Playwright exploration + github.com/griffithlab/civic-v2 codebase review) MUST be completed before UI/DB design, documenting: data model patterns, social curation workflows, evidence management, API architecture, and UI/UX patterns worth adopting
+- **FR-017**: The API layer MUST be evaluated for GraphQL vs REST, with a documented decision rationale based on the connected nature of the data model (elements ↔ ontology ↔ provenance ↔ transforms ↔ schemas)
+- **FR-018**: The database layer MUST import elements, schemas, values, and valuesets from the flat-file registry preserving content-addressed identities and full provenance
+- **FR-019**: The UI MUST provide a browsable element catalog with faceted search (source, data_type, ontology, curation status) and connected entity navigation
+- **FR-020**: The UI MUST provide a CivicDB-style curation queue with evidence panels showing match candidates, scores, source provenance, and related elements
+- **FR-021**: The UI MUST allow curators to approve, reject, or defer flagged items with recorded identity, timestamp, and justification
+- **FR-024**: The UI MUST support two user roles: contributors (authenticated users who can suggest annotations, comment on elements, and flag issues) and curators (who can approve, reject, or modify contributor suggestions)
+- **FR-022**: The database MUST support incremental updates from new pipeline runs without requiring full reimport
+- **FR-023**: All layers (library, database, UI) MUST be optimized for efficiency: batch operations for import, indexed queries for search, lazy loading for large result sets
 
 ### Key Entities
 
@@ -128,8 +137,11 @@ A platform operator rebuilds the web UI and database layers to consume the libra
 - The library codebase at the end of feature 026 is the baseline for all review and optimization work
 - Source schemas (BIDS, DANDI, NWB, openMINDS, AIND) remain accessible at their current locations
 - The existing ontology store (268K embedded terms from 13 ontologies) is sufficient for enrichment; no new ontologies need to be added in this feature
-- The UI/DB rebuild will reuse the existing backend architecture (002-schema-backend) as a starting point, not start from scratch
+- This is NOT a deployed platform — there are no deprecation signals needed, and any component (backend, frontend, database) can be rewritten from scratch if that better serves the goals
+- The UI/DB rebuild MAY start from scratch rather than extending the existing backend (002-schema-backend); the decision will be made after studying CivicDB's architecture
 - Human curation decisions feed back into the enrichment pipeline (approved annotations become ground truth for future runs)
+- LLM API access is available for enrichment accuracy improvement (e.g., via litellm, already in optional deps)
+- Every workstream concludes with a full pipeline re-extraction test through alignment to validate no regressions
 
 ## Scope Boundaries
 
@@ -145,6 +157,15 @@ A platform operator rebuilds the web UI and database layers to consume the libra
 **Out of scope**:
 - Adding new source schemas beyond the existing 5
 - Adding new ontologies beyond the existing 13
-- Multi-user collaboration features (concurrent curation by teams)
 - Automated retraining of embedding models
 - Mobile UI support
+
+## Clarifications
+
+### Session 2026-03-22
+
+- Q: End-to-end testing scope? → A: Every workstream concludes with full pipeline re-extraction tests through alignment, including addition of new entities
+- Q: Enrichment accuracy approach? → A: Use any available technique — LLM support, heuristics, ontology hierarchy, embeddings — to maximize accuracy; correctness over cost/latency
+- Q: UI/DB rebuild approach? → A: Study CivicDB (civicdb.org via Playwright + civic-v2 codebase) and implement similar social + technical + UI/UX with modern stack; evaluate GraphQL vs REST
+- Q: Deprecation constraints? → A: Not a deployed platform — no deprecation needed, anything can be rewritten from scratch; goals are what matter
+- Q: Community contribution model? → A: Curators + contributors — authenticated users can suggest annotations and comment on elements, curators approve/reject
