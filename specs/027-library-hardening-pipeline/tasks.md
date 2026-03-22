@@ -106,11 +106,11 @@
 - [X] T038 [P] [US2] Add source version tracking: compare `_resolved_committish` files between runs to detect source schema changes
 - [X] T038b [US2] Report source version changes in pipeline extraction output: when `_resolved_committish` differs from previous run, log a warning and include version change details (old → new committish) in RunSummary
 - [X] T038c [US2] Implement idempotency short-circuit in pipeline CLI: before extraction, compare source committish + file checksums against previous run; if unchanged, skip pipeline with "no changes detected" message
-- [ ] T038d [US2] Add idempotency test in `library/tests/test_pipeline_e2e.py` — REVIEW-TODO: requires idempotency short-circuit (T038c) to be exercised via full pipeline
-- [ ] T038e [US2] Add entity-level idempotency test — REVIEW-TODO: test exists in test_pipeline_e2e.py (TestNewEntityFlow) but full dedup needs commit-level hash check
-- [ ] T038f [US2] Add registry roundtrip test — REVIEW-TODO: requires export + reimport flow
-- [X] T038g [US2] Implement fast dedup check in `library/src/undata_library/commit.py`: commit checks for existing hash in registry before writing; if match found, merges provenance only
-- [ ] T038h [US2] Add pre-enrichment dedup test — REVIEW-TODO: needs dedicated test
+- [X] T038d [US2] Add idempotency test in `library/tests/test_pipeline_e2e.py`
+- [X] T038e [US2] Add entity-level idempotency test in test_pipeline_e2e.py
+- [ ] T038f [US2] Add registry roundtrip test — REVIEW-TODO: requires export + full reimport flow
+- [X] T038g [US2] Implement fast dedup check in `library/src/undata_library/commit.py`
+- [X] T038h [US2] Add pre-enrichment dedup test in test_pipeline_e2e.py
 - [X] T038i [US2] Implement source validation in `library/src/undata_library/commit.py`: validate provenance sources against known sources, reject unrecognized sources with `suspicious_source` CurationFlag + return feedback message to caller
 - [X] T038i2 [P] [US2] Implement known source registry in `library/src/undata_library/curation.py`: derive allowed sources by globbing `source_defs/*.yaml` for configured source names; expose `get_known_sources() -> set[str]` used by source validation in commit.py
 - [X] T038j [P] [US2] Implement provenance bloat detection in `library/src/undata_library/commit.py`: flags when >= 3 novel sources merge into same entity
@@ -130,11 +130,11 @@
 
 - [X] T038s [US2] Add source candidate persistence in `library/src/undata_library/discovery.py`: save/load/approve/reject candidates
 - [X] T038t [US2] Add `discovery-scan`, `discovery-approve`, `discovery-reject` CLI commands
-- [ ] T038u [P] [US2] Add tests for discovery + approval workflow — REVIEW-TODO: needs mock HTTP for OBO Foundry
+- [X] T038u [P] [US2] Add tests for discovery + approval workflow in `library/tests/test_discovery.py` (8 tests)
 
 ### Config-Only Source Integration Test
 
-- [ ] T038n2 [P] [US2] Add integration test in `library/tests/test_pipeline_e2e.py`: create a new `source_defs/test-source.yaml` with `adapter: json_schema` pointing to a mock JSON Schema file, run pipeline, verify entities extracted without any code changes
+- [X] T038n2 [P] [US2] Add config-only source integration test in `library/tests/test_config_source.py`
 
 ### Adapter Accuracy Review
 
