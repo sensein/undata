@@ -124,7 +124,7 @@ def enrich_elements(
 
         # 1. Assign ontology_annotations via embedding distance
         if not sem.get("ontology_annotations") and onto_store is not None and elem_store is not None:
-            uri = f"urn:staged:{f.stem}"
+            uri = f"https://schema.undata.live/elements/{f.stem}"
             annotations = _assign_ontology_annotations(
                 uri, elem_store, onto_store, onto_cache, threshold,
                 model_name=model_name,
@@ -211,7 +211,7 @@ def enrich_values(
             stats["unchanged"] += 1
             continue
 
-        uri = f"urn:staged:{f.stem}"
+        uri = f"https://schema.undata.live/elements/{f.stem}"
         annotations = _assign_ontology_annotations(
             uri, elem_store, onto_store, onto_cache, threshold,
             is_value=True, model_name=model_name,
@@ -277,7 +277,7 @@ def enrich_schemas(
             stats["unchanged"] += 1
             continue
 
-        uri = f"urn:staged:{f.stem}"
+        uri = f"https://schema.undata.live/elements/{f.stem}"
         # Schemas always get concept_match (not element_match)
         annotations = _assign_ontology_annotations(
             uri, elem_store, onto_store, onto_cache, threshold,
@@ -384,7 +384,7 @@ def _build_value_ontology_map(values_dir: Path) -> dict[str, list[dict]]:
             anns = data["semantic"].get("ontology_annotations", [])
             if anns:
                 # Use both stem-based URI and any label-based keys
-                uri = f"urn:staged:{f.stem}"
+                uri = f"https://schema.undata.live/elements/{f.stem}"
                 mapping[uri] = anns
                 label = data["semantic"].get("label", "")
                 if label:
@@ -487,7 +487,8 @@ def _load_ontology_embeddings(cache_dir: Path, model_name: str) -> EmbeddingStor
 
 def _load_or_build_element_embeddings(elements_dir: Path, model_name: str) -> EmbeddingStore | None:
     """Load or build element embeddings."""
-    parquet_path = elements_dir.parent / "embeddings.parquet"
+    # Use entity-type-specific parquet to avoid collision between elements/values/schemas
+    parquet_path = elements_dir / "embeddings.parquet"
     if parquet_path.exists():
         try:
             store = EmbeddingStore(uri_col="uri").load(parquet_path, expected_model=model_name)

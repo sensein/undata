@@ -248,6 +248,28 @@ working correctly. Without a persistent record, regressions go undetected and
 progress is invisible. Commit messages capture intent; `eval-record.md` captures
 outcomes.
 
+### Secret & Token Handling (NON-NEGOTIABLE)
+
+Tokens, API keys, and credentials MUST NEVER appear in plain text in:
+
+- Terminal commands or shell scripts (including inline `export KEY=value`)
+- Source code, configuration files, or test fixtures committed to git
+- Agent output visible in the conversation window
+
+The following rules MUST be followed:
+
+1. **Load from .env**: All secrets MUST be loaded via `python-dotenv`
+   (`from dotenv import load_dotenv; load_dotenv(...)`) or equivalent
+   mechanism at runtime. The `.env` file MUST be listed in `.gitignore`.
+2. **Environment variables only**: Code that requires tokens (e.g., HF_TOKEN)
+   MUST read them from `os.environ`, never from hardcoded strings.
+3. **No inline export**: Shell commands MUST NOT contain
+   `export TOKEN=<value>` or `KEY=value command`. Use dotenv or source the
+   env file in a subprocess that does not echo the values.
+
+**Rationale**: Tokens in terminal history, conversation logs, or CI output are
+a persistent security risk. Once exposed, secrets cannot be revoked from logs.
+
 ### Bash Task Hygiene
 
 Every bash command the agent runs MUST be verified for completion and its result
@@ -319,4 +341,4 @@ All PRs and implementation plans MUST include a Constitution Check section
 confirming compliance with active principles. Violations require documented
 justification or the work is blocked.
 
-**Version**: 1.4.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-21
+**Version**: 1.5.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-21

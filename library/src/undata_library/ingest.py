@@ -176,7 +176,6 @@ def _extract_values(
     values_dir.mkdir(parents=True, exist_ok=True)
 
     value_mappings = _load_value_mappings(library_path)
-    existing_keys = set(registry.elements.keys()) | set(registry.schemas.keys())
 
     # Collect all raw enum values with their source
     raw_values: list[tuple[str, str]] = []  # (raw_value, source_name)
@@ -211,42 +210,23 @@ def _extract_values(
         if (src, raw_val) not in existing_raw:
             value_groups[sha][1].append(prov)
 
+    import uuid as _uuid
+
     created = 0
-    for sha, (sem_id, provs) in value_groups.items():
-        key = generate_short_key(sha)
-        existing_keys.add(key)
-
-        safe_label = (
-            sem_id.label.lower().replace("/", "_").replace("\\", "_").replace(" ", "_")[:50]
+    for _sha, (sem_id, provs) in value_groups.items():
+        # UUID filename (no hashing at extraction time — hash at commit)
+        filepath = values_dir / f"{_uuid.uuid4()}.yaml"
+        record = ValueConcept(semantic=sem_id, provenance=provs)
+        data = record.model_dump(mode="json", exclude_none=True)
+        filepath.write_text(
+            yaml.dump(data, default_flow_style=False, sort_keys=False),
+            encoding="utf-8",
         )
-        filename = f"{safe_label}_{key}.yaml"
-        filepath = values_dir / filename
+        created += 1
 
-        if filepath.exists():
-            existing_data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
-            existing_record = ValueConcept.model_validate(existing_data)
-            existing_raw = {(p.source, p.name) for p in existing_record.provenance}
-            new_provs = [p for p in provs if (p.source, p.name) not in existing_raw]
-            if new_provs:
-                all_provs = existing_record.provenance + new_provs
-                record = ValueConcept(semantic=sem_id, provenance=all_provs)
-                data = record.model_dump(mode="json", exclude_none=True)
-                filepath.write_text(
-                    yaml.dump(data, default_flow_style=False, sort_keys=False),
-                    encoding="utf-8",
-                )
-        else:
-            record = ValueConcept(semantic=sem_id, provenance=provs)
-            data = record.model_dump(mode="json", exclude_none=True)
-            filepath.write_text(
-                yaml.dump(data, default_flow_style=False, sort_keys=False),
-                encoding="utf-8",
-            )
-            created += 1
-
-        uri = build_value_uri(sem_id.label, key)
-        registry.elements[f"v_{key}"] = HashRegistryEntry(
-            sha256=sha,
+        uri = build_value_uri(sem_id.label, filepath.stem)
+        registry.elements[f"v_{filepath.stem}"] = HashRegistryEntry(
+            sha256="",  # Hash computed at commit time
             attribute=sem_id.label,
             uri=uri,
         )
@@ -259,51 +239,29 @@ def _ingest_extracted_values(
     library_path: Path,
     registry: HashRegistry,
 ) -> int:
-    """Write ValueConcept files from extracted value pairs."""
+    """Write ValueConcept files from extracted value pairs (UUID filenames)."""
+    import uuid as _uuid
+
     values_dir = library_path / "values"
     values_dir.mkdir(parents=True, exist_ok=True)
-    existing_keys = set(registry.elements.keys()) | set(registry.schemas.keys())
 
+    # Dedup by (source, name) to avoid duplicate value files
+    seen: set[tuple[str, str]] = set()
     created = 0
     for sem_id, prov in value_pairs:
-        sem_dict = sem_id.model_dump(exclude_none=True)
-        sha = compute_sha256(canonical_json(sem_dict))
-        key = generate_short_key(sha)
-        existing_keys.add(key)
+        key = (prov.source, prov.name)
+        if key in seen:
+            continue
+        seen.add(key)
 
-        safe_label = (
-            sem_id.label.lower().replace("/", "_").replace("\\", "_").replace(" ", "_")[:50]
+        filepath = values_dir / f"{_uuid.uuid4()}.yaml"
+        record = ValueConcept(semantic=sem_id, provenance=[prov])
+        data = record.model_dump(mode="json", exclude_none=True)
+        filepath.write_text(
+            yaml.dump(data, default_flow_style=False, sort_keys=False),
+            encoding="utf-8",
         )
-        filename = f"{safe_label}_{key}.yaml"
-        filepath = values_dir / filename
-
-        if filepath.exists():
-            existing_data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
-            existing_record = ValueConcept.model_validate(existing_data)
-            existing_raw = {(p.source, p.name) for p in existing_record.provenance}
-            if (prov.source, prov.name) not in existing_raw:
-                all_provs = existing_record.provenance + [prov]
-                record = ValueConcept(semantic=sem_id, provenance=all_provs)
-                data = record.model_dump(mode="json", exclude_none=True)
-                filepath.write_text(
-                    yaml.dump(data, default_flow_style=False, sort_keys=False),
-                    encoding="utf-8",
-                )
-        else:
-            record = ValueConcept(semantic=sem_id, provenance=[prov])
-            data = record.model_dump(mode="json", exclude_none=True)
-            filepath.write_text(
-                yaml.dump(data, default_flow_style=False, sort_keys=False),
-                encoding="utf-8",
-            )
-            created += 1
-
-        uri = build_value_uri(sem_id.label, key)
-        registry.elements[f"v_{key}"] = HashRegistryEntry(
-            sha256=sha,
-            attribute=sem_id.label,
-            uri=uri,
-        )
+        created += 1
 
     return created
 
