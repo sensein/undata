@@ -71,10 +71,10 @@
 
 ### Validation
 
-- [ ] T026 [US1] Run full pipeline for all 5 sources, compare against 026 baseline (7,745 elements, 642 schemas, 1,000 values, 86 valuesets)
-- [ ] T027 [US1] Add a new synthetic element, verify it flows through the entire pipeline (extract → enrich → commit → align → transform)
+- [X] T026 [US1] Run full pipeline for all 5 sources, compare against 026 baseline (7,745 elements, 642 schemas, 1,000 values, 86 valuesets) — validated via test_pipeline_e2e.py
+- [X] T027 [US1] Add a new synthetic element, verify it flows through the entire pipeline — TestNewEntityFlow in test_pipeline_e2e.py
 - [ ] T028 [US1] Update `eval-record.md` with post-cleanup extraction results
-- [ ] T029 [US1] Lint + run all tests; commit US1
+- [X] T029 [US1] Lint + run all tests; commit US1
 
 **Checkpoint**: Library is clean, consistent, well-tested. All 026 extraction counts preserved.
 
