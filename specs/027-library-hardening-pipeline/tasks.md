@@ -24,12 +24,12 @@
 
 **Purpose**: Core infrastructure needed by all user stories
 
-- [ ] T004 Add `CurationFlag` and `RunSummary` Pydantic models to `library/src/undata_library/models.py` per data-model.md
-- [ ] T005 [P] Create `library/src/undata_library/curation.py`: `write_flag(output_dir, flag)`, `read_flags(output_dir, status=None) -> list[CurationFlag]`, `resolve_flag(output_dir, flag_id, action, resolved_by, note)`
-- [ ] T006 [P] Create `library/src/undata_library/run_summary.py`: `generate_summary(run_id, source, counts, flags, timing) -> RunSummary`, `save_summary(output_dir, summary)`, `load_previous_summary(output_dir, source) -> RunSummary | None`, `compute_delta(current, previous) -> dict`
-- [ ] T007 [P] Create `library/tests/test_curation.py` with tests for flag write/read/resolve lifecycle
-- [ ] T008 [P] Create `library/tests/test_run_summary.py` with tests for summary generation, delta computation, save/load
-- [ ] T009 Lint + run all tests; commit Phase 2
+- [X] T004 Add `CurationFlag` and `RunSummary` Pydantic models to `library/src/undata_library/models.py` per data-model.md
+- [X] T005 [P] Create `library/src/undata_library/curation.py`: `write_flag(output_dir, flag)`, `read_flags(output_dir, status=None) -> list[CurationFlag]`, `resolve_flag(output_dir, flag_id, action, resolved_by, note)`
+- [X] T006 [P] Create `library/src/undata_library/run_summary.py`: `generate_summary(run_id, source, counts, flags, timing) -> RunSummary`, `save_summary(output_dir, summary)`, `load_previous_summary(output_dir, source) -> RunSummary | None`, `compute_delta(current, previous) -> dict`
+- [X] T007 [P] Create `library/tests/test_curation.py` with tests for flag write/read/resolve lifecycle
+- [X] T008 [P] Create `library/tests/test_run_summary.py` with tests for summary generation, delta computation, save/load
+- [X] T009 Lint + run all tests; commit Phase 2
 
 **Checkpoint**: CurationFlag + RunSummary models ready; shared utilities available
 

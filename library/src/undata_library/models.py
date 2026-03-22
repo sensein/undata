@@ -367,6 +367,63 @@ class HashRegistry(BaseModel):
 
 
 # ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Curation + Run Summary (027)
+# ---------------------------------------------------------------------------
+
+
+class FlagType(str, Enum):
+    """Type of curation flag requiring human review."""
+
+    low_confidence = "low_confidence"
+    ambiguous_match = "ambiguous_match"
+    multiple_candidates = "multiple_candidates"
+    unknown_transform = "unknown_transform"
+    needs_review = "needs_review"
+    suspicious_source = "suspicious_source"
+    provenance_bloat = "provenance_bloat"
+
+
+class FlagStatus(str, Enum):
+    """Lifecycle status of a curation flag."""
+
+    pending = "pending"
+    approved = "approved"
+    rejected = "rejected"
+    deferred = "deferred"
+
+
+class CurationFlag(BaseModel):
+    """Machine-generated flag on an entity requiring human review."""
+
+    id: str  # UUID
+    entity_type: str  # element, schema, value, valueset, transform
+    entity_ref: str  # file path or content hash
+    flag_type: FlagType
+    context: dict  # candidate_matches, reason, etc.
+    llm_verification: dict | None = None  # model, response, confidence, justification
+    status: FlagStatus = FlagStatus.pending
+    created_at: str  # ISO 8601
+    resolved_at: str | None = None
+    resolved_by: str | None = None
+    resolution_note: str | None = None
+
+
+class RunSummary(BaseModel):
+    """Per-pipeline-run report."""
+
+    run_id: str
+    source: str
+    started_at: str  # ISO 8601
+    completed_at: str | None = None
+    entity_counts: dict  # {extract: {elements: N, ...}, enrich: {...}, commit: {...}}
+    enrichment_rate: dict | None = None  # {ontology_assigned: N, ...} per entity type
+    curation_flags: dict | None = None  # {by flag_type: count}
+    delta: dict | None = None  # {elements: {added: N, removed: N, modified: N}, ...}
+    timing: dict | None = None  # {extract_s: N, enrich_s: N, ...}
+
+
+# ---------------------------------------------------------------------------
 # Validation report (reused from v1)
 # ---------------------------------------------------------------------------
 
