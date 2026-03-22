@@ -338,16 +338,17 @@ def _extract(
             cache_path = cache.acquire(source_def)
 
             if source_def.acquisition == "pip_install":
-                # Install source package + undata-library in isolated venv,
-                # then run the actual adapter extraction via subprocess
+                # Run standalone extraction script in isolated venv
                 iso = IsolatedEnv()
                 env_path = iso.create_venv(source_def)
                 try:
-                    introspected = iso.install_and_run_adapter(
+                    output = iso.install_and_run_adapter(
                         env_path,
                         source_def.package or source_def.name,
                         source_def.adapter,
+                        extra_deps=source_def.extra_deps,
                     )
+
                     from .adapters.base import ClassifiedEntity
                     from .models import EntityType, SourceRef
 
@@ -361,18 +362,40 @@ def _extract(
                             checksum="",
                         )
 
-                    pip_entities = []
-                    for item in introspected:
-                        pip_entities.append(
-                            ClassifiedEntity(
-                                entity_type=EntityType(item["entity_type"]),
-                                semantic=item["semantic"],
-                                provenance=item["provenance"],
-                                confidence=float(item.get("confidence", 0.8)),
-                                source_ref=ref,
+                    if isinstance(output, str):
+                        # LinkML YAML output — parse via LinkML adapter
+                        import tempfile
+
+                        from .adapters.linkml import LinkMLAdapter
+
+                        with tempfile.NamedTemporaryFile(
+                            suffix=".yaml", mode="w", delete=False
+                        ) as tmp:
+                            tmp.write(output)
+                            tmp_path = Path(tmp.name)
+                        try:
+                            linkml_adapter = LinkMLAdapter()
+                            entities = linkml_adapter.extract(
+                                tmp_path,
+                                source_name=source_name,
+                                repo=source_def.repo,
                             )
-                        )
-                    entities = pip_entities
+                        finally:
+                            tmp_path.unlink(missing_ok=True)
+                    else:
+                        # JSON entity list output
+                        pip_entities = []
+                        for item in output:
+                            pip_entities.append(
+                                ClassifiedEntity(
+                                    entity_type=EntityType(item["entity_type"]),
+                                    semantic=item["semantic"],
+                                    provenance=item["provenance"],
+                                    confidence=float(item.get("confidence", 0.8)),
+                                    source_ref=ref,
+                                )
+                            )
+                        entities = pip_entities
                     path = None
                 finally:
                     iso.cleanup(env_path)

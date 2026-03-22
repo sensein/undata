@@ -260,6 +260,8 @@ class SourceDefinition(BaseModel):
     schema_path: str | None = None  # glob pattern for schema files
     isolation: str = "none"  # none | venv | docker
     python_version: str | None = None  # e.g., "3.12" for bridge venvs
+    extra_deps: list[str] | None = None  # additional packages for isolated venv
+    output_format: str = "json"  # json | linkml_yaml — format of standalone script output
 
 
 class RegistryConfig:

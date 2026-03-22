@@ -5,3 +5,6 @@ acquisition: pip_install
 package: bidsschematools
 adapter: bids
 isolation: venv
+extra_deps:
+  - linkml-runtime
+output_format: linkml_yaml

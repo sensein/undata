@@ -297,25 +297,34 @@ class IsolatedEnv:
         return json.loads(result.stdout)
 
     def install_and_run_adapter(
-        self, env_path: Path, package: str, adapter_name: str
-    ) -> list[dict]:
+        self,
+        env_path: Path,
+        package: str,
+        adapter_name: str,
+        extra_deps: list[str] | None = None,
+    ) -> list[dict] | str:
         """Install source package in venv, run standalone extraction script.
 
-        Uses adapter-specific standalone scripts (bids_extract.py, dandi_extract.py)
-        that only depend on the source package + stdlib. Does NOT install
-        undata-library in the isolated venv (avoids dependency clashes).
-        Output is JSON parseable by undata-library.
+        Uses adapter-specific standalone scripts (bids_extract.py, dandi_extract.py).
+        Extra dependencies (e.g., linkml-runtime) can be installed alongside the
+        source package for scripts that need them.
+
+        Returns JSON-parsed list of dicts, or raw string output if the script
+        produces non-JSON (e.g., LinkML YAML).
         """
         import json
 
         venv_path = env_path / ".venv"
         python = venv_path / "bin" / "python"
 
-        # Install source package only
-        install_cmd = ["uv", "pip", "install", "--python", str(python), package]
+        # Install source package + extra dependencies
+        packages = [package]
+        if extra_deps:
+            packages.extend(extra_deps)
+        install_cmd = ["uv", "pip", "install", "--python", str(python)] + packages
         result = subprocess.run(install_cmd, capture_output=True, text=True, timeout=300)
         if result.returncode != 0:
-            raise RuntimeError(f"Failed to install {package}: {result.stderr[:500]}")
+            raise RuntimeError(f"Failed to install {packages}: {result.stderr[:500]}")
 
         # Find standalone extraction script for this adapter
         scripts_dir = Path(__file__).parent / "adapters" / "docker_scripts"
@@ -331,7 +340,12 @@ class IsolatedEnv:
         if result.returncode != 0:
             raise RuntimeError(f"Extraction failed for {adapter_name}: {result.stderr[:500]}")
 
-        return json.loads(result.stdout)
+        # Try JSON first; if it fails, return raw output (e.g., LinkML YAML)
+        stdout = result.stdout.strip()
+        try:
+            return json.loads(stdout)
+        except json.JSONDecodeError:
+            return stdout
 
     def cleanup(self, env_path: Path) -> None:
         """Remove an isolated environment."""
