@@ -88,7 +88,53 @@ class OpenMINDSAdapter(BaseAdapter):
                 continue
             self._add_schema_to_linkml(ld, data, lb)
 
+        # Load controlled term instances from instances repo (if available)
+        # Instances are in instances/latest/terminologies/<term>/<value>.jsonld
+        self._load_instances(ld, source_path, lb)
+
         return ld
+
+    def _load_instances(self, ld: Any, source_path: Path, lb: Any) -> None:
+        """Load controlled term instances to populate enum values."""
+        from linkml_runtime.linkml_model import PermissibleValue
+
+        # Instance .jsonld files are in a separate repo cached at a known location
+        cache_dir = Path.home() / ".cache" / "undata" / "sources"
+        instance_dir = cache_dir / "openminds_instances" / "instances" / "latest" / "terminologies"
+        instance_dirs = [instance_dir] if instance_dir.exists() else []
+
+        for inst_dir in instance_dirs:
+            for jsonld_file in sorted(inst_dir.rglob("*.jsonld")):
+                try:
+                    data = json.loads(jsonld_file.read_text())
+                except (json.JSONDecodeError, OSError):
+                    continue
+                if not isinstance(data, dict):
+                    continue
+
+                # Get the type this instance belongs to
+                inst_type = data.get("@type", "")
+                if isinstance(inst_type, list):
+                    inst_type = inst_type[0] if inst_type else ""
+                type_name = inst_type.rsplit("/", 1)[-1] if "/" in inst_type else inst_type
+
+                inst_name = data.get("name", jsonld_file.stem)
+                if not type_name or not inst_name:
+                    continue
+
+                # Add to the enum if it exists
+                if type_name in ld.enums:
+                    enum_def = ld.enums[type_name]
+                    if inst_name not in enum_def.permissible_values:
+                        pv = PermissibleValue(text=inst_name)
+                        desc = data.get("definition", data.get("description", ""))
+                        if desc:
+                            pv.description = str(desc)[:200]
+                        # Attach ontology identifier if available
+                        onto_id = data.get("preferredOntologyIdentifier")
+                        if onto_id:
+                            pv.meaning = onto_id
+                        enum_def.permissible_values[inst_name] = pv
 
     def _add_schema_to_linkml(self, ld: Any, data: dict, lb: Any) -> None:
         """Add a single openMINDS schema to the LinkML schema."""
