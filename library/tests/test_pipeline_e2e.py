@@ -38,16 +38,27 @@ def _run_pipeline(source: str, output_dir: Path, skip_enrich: bool = True) -> di
 
 
 class TestBIDSBaseline:
-    """Verify BIDS extraction matches the 026 baseline."""
+    """Verify BIDS extraction after 027 entity reclassification.
+
+    Post-027: vocabulary terms (enums, datatypes, suffixes, modalities, extensions)
+    are now correctly classified as enum_value/valueset, not attribute.
+    Elements = metadata fields + columns + entities (~600).
+    Values = vocabulary terms (~490+).
+    """
 
     def test_bids_element_count(self, tmp_path):
         result = _run_pipeline("bids", tmp_path)
-        # 026 baseline: 1,036 BIDS elements
-        assert result["elements"] >= 1030, f"Expected ~1036 elements, got {result['elements']}"
+        # Post-027: ~600 elements (metadata + columns + entities)
+        assert result["elements"] >= 400, f"Expected ~600 elements, got {result['elements']}"
 
     def test_bids_schemas_created(self, tmp_path):
         result = _run_pipeline("bids", tmp_path)
-        assert result["schemas"] >= 10, f"Expected ~12 schemas, got {result['schemas']}"
+        assert result["schemas"] >= 2, f"Expected ~2+ schemas, got {result['schemas']}"
+
+    def test_bids_values_created(self, tmp_path):
+        result = _run_pipeline("bids", tmp_path)
+        # Post-027: ~490+ values from vocabulary categories
+        assert result["values"] >= 200, f"Expected ~490+ values, got {result['values']}"
 
 
 class TestNewEntityFlow:
