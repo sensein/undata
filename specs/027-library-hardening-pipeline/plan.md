@@ -11,8 +11,8 @@ Three-workstream feature: (1) Audit and clean up the library codebase — shared
 **Language/Version**: Python 3.14 (library + backend), TypeScript 5.x (frontend)
 **Primary Dependencies**:
 - Library: pydantic, pyarrow, sentence-transformers, pyoxigraph, litellm, python-dotenv
-- Backend: FastAPI, Strawberry (GraphQL), SQLAlchemy 2.x async, PostgreSQL 16
-- Frontend: Next.js 15, Apollo Client, Tailwind CSS
+- Backend: FastAPI, Strawberry (GraphQL), SQLAlchemy 2.x async, PostgreSQL 16 (NOT Ruby/Rails)
+- Frontend: Next.js 15 + Vite, Apollo Client, Tailwind CSS (NOT Angular)
 **Storage**: PostgreSQL 16 (backend DB), flat-file YAML (library registry), pyoxigraph (ontology store)
 **Testing**: pytest (library + backend), Playwright (frontend + CivicDB study)
 **Target Platform**: Linux/macOS server, web browser

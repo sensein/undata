@@ -19,7 +19,7 @@ A developer reviews the complete undata-library codebase to consolidate requirem
 
 1. **Given** the library codebase from features 001-026, **When** a developer audits all modules, **Then** a consolidated requirements document lists every active user story and functional requirement with status (implemented, partially implemented, outdated)
 2. **Given** modules with inconsistent patterns (e.g., some using hash-registry, others not), **When** shared utilities are extracted, **Then** common operations (YAML I/O, provenance dedup, filename sanitization) use a single shared utility
-3. **Given** internal functions prefixed with underscore, **When** all imports across the codebase are audited, **Then** no underscore-prefixed function is imported from outside its defining module or class
+3. **Given** internal symbols prefixed with underscore (functions and variables), **When** all imports and cross-module accesses are audited, **Then** no underscore-prefixed function or variable is imported or accessed from outside its defining module or class
 4. **Given** dead code branches from removed features (ontology_term, Constraints, SchemaProvenance), **When** a full code audit is performed, **Then** all dead branches, unreachable conditions, and obsolete comments are removed
 5. **Given** the test suite (221 tests), **When** coverage is analyzed, **Then** every public function has at least one test, and edge cases (empty inputs, malformed YAML, missing fields, Unicode names) are covered
 6. **Given** any code path skipped during review, **When** the review concludes, **Then** that path is documented with a "REVIEW-TODO" marker and a brief reason for deferral
@@ -84,7 +84,7 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 
 - **FR-001**: System MUST have a consolidated requirements document mapping every active user story from features 001-026 to its implementation status
 - **FR-002**: System MUST extract shared utilities for common operations: YAML read/write with error handling, provenance deduplication, filename sanitization, URI building
-- **FR-003**: System MUST NOT expose underscore-prefixed internal functions in any public import path (no cross-module imports of `_private` functions)
+- **FR-003**: System MUST NOT expose underscore-prefixed internal symbols (functions, variables, constants) across module boundaries — no cross-module imports or access of `_private` functions or `_private` variables
 - **FR-004**: System MUST remove all dead code paths, obsolete comments, and references to removed models (ontology_term on elements, Constraints, SchemaProvenance, ValueProvenance, source_attribute, source_class)
 - **FR-005**: System MUST have test coverage for every public function, including edge cases for empty inputs, malformed data, missing required fields, and Unicode/special character handling
 - **FR-006**: System MUST document any code paths deferred during review with machine-searchable markers (e.g., "REVIEW-TODO")
@@ -123,7 +123,7 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 
 ### Measurable Outcomes
 
-- **SC-001**: Zero underscore-prefixed internal functions imported across module boundaries after cleanup
+- **SC-001**: Zero underscore-prefixed internal symbols (functions or variables) imported or accessed across module boundaries after cleanup
 - **SC-002**: Test coverage reaches every public function with at least one positive and one negative/edge-case test
 - **SC-003**: Re-extraction of all 5 sources produces element counts within 1% of the 026 baseline (7,745 elements), with equal or higher enrichment rates
 - **SC-004**: At least 80% of all "clear match" ontology annotations (score >= 0.95) are assigned automatically; remaining annotations are flagged for curation
@@ -169,3 +169,5 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - Q: UI/DB rebuild approach? → A: Study CivicDB (civicdb.org via Playwright + civic-v2 codebase) and implement similar social + technical + UI/UX with modern stack; evaluate GraphQL vs REST
 - Q: Deprecation constraints? → A: Not a deployed platform — no deprecation needed, anything can be rewritten from scratch; goals are what matter
 - Q: Community contribution model? → A: Curators + contributors — authenticated users can suggest annotations and comment on elements, curators approve/reject
+- Q: Encapsulation scope? → A: Not just private function imports — also private variable access across modules must be audited and fixed
+- Q: Tech stack for UI/DB? → A: Next.js + FastAPI + Vite. Adopt CivicDB's patterns (GraphQL, social curation, revision workflow) but NOT its stack (no Ruby/Angular)
