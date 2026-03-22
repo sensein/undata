@@ -49,6 +49,7 @@ A data engineer optimizes each pipeline step (extract, enrich, commit, align, tr
 9. **Given** a source whose committish and file checksums match the previous run, **When** the pipeline is invoked, **Then** it short-circuits with a "no changes detected" message without running extraction/enrichment/commit
 10. **Given** a single YAML entity file with the same semantic content as an existing registry entity, **When** it is ingested via the pipeline, **Then** it produces the same sha256 hash and merges provenance (no duplicate entity created)
 11. **Given** the entire registry exported as YAML files with all state markers removed (run summaries, curation flags, staging dirs), **When** re-ingested through the full pipeline, **Then** the resulting registry is byte-identical to the original
+12. **Given** a raw YAML entity file from pre-enrichment staging (no ontology_annotations, no sha256), **When** ingested into a registry that already contains the enriched version of that entity, **Then** the pipeline computes the identity hash, finds the existing match, merges provenance, and does NOT re-run enrichment — completing in minimal time
 
 ---
 
@@ -108,6 +109,7 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - **FR-015c**: The pipeline MUST support an efficient idempotency check (e.g., source committish + file checksum comparison) that short-circuits the full pipeline when the source has not changed, avoiding redundant extraction/enrichment/commit
 - **FR-015d**: Content-addressed identity MUST guarantee entity-level idempotency: ingesting any individual YAML entity file that has the same semantic content as an existing registry entity MUST produce the same sha256 hash and merge provenance into the existing file (not create a duplicate)
 - **FR-015e**: Exporting the entire registry and re-ingesting it (even after removing all pipeline state markers like run summaries, curation flags, and staging directories) MUST reproduce the identical registry — same files, same hashes, same content
+- **FR-015f**: When ingesting a raw YAML entity file (pre-enrichment, no ontology_annotations, no sha256), the pipeline MUST use the minimum steps necessary to determine if the entity already exists in the registry: compute the two-mode identity hash from semantic + provenance, check if that hash exists in the registry, and if so merge provenance without re-running enrichment/alignment — only new (unmatched) entities proceed through the full pipeline
 
 **Workstream 3: UI/DB Rebuild (CivicDB-inspired)**
 
@@ -183,3 +185,4 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - Q: Frontend testing? → A: Visual regression tests via Playwright/Chromium for all key UI flows
 - Q: Re-ingestion behavior? → A: Must be idempotent (zero changes if source unchanged). Must have efficient short-circuit check (committish + checksum) to avoid redundant full pipeline runs. Both a real test and a runtime optimization.
 - Q: Entity-level idempotency? → A: Content-addressed identity guarantees it — same semantic content always produces same sha256. Must hold for individual entity files AND for full registry export/re-import with state markers removed.
+- Q: Pre-enrichment YAML dedup? → A: Compute identity hash from semantic + provenance, check registry for existing match. If match found, merge provenance and skip enrichment. Only unmatched entities proceed through full pipeline. Minimal steps to discard duplicates.
