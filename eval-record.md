@@ -5,6 +5,42 @@ Updated after each significant re-extraction or pipeline change.
 
 ---
 
+## 2026-03-21 — Feature 026: Staged Enrichment Pipeline
+
+**Pipeline**: extract (UUID staging) → enrich (in-place) → commit (two-mode hash) → align
+**Changes**: Staged pipeline, two-mode identity hash, in-place enrichment, no new elements from enrichment
+**Output dir**: `/tmp/undata-registry/` (not in git)
+
+### Source Extraction
+
+| Source | Elements | Schemas | Values | Valuesets |
+|--------|----------|---------|--------|-----------|
+| BIDS | 1,036 | 12 | 289 | 7 |
+| DANDI | 398 | 43 | 76 | 5 |
+| NWB | 283 | 80 | 0 | 0 |
+| openMINDS | 4,736 | 322 | 0 | 0 |
+| AIND | 1,292 | 185 | 641 | 74 |
+| **Total** | **7,745** | **642** | **1,006** | **86** |
+
+### Comparison to Baseline (019–025)
+
+| Metric | Baseline | 026 | Delta | Notes |
+|--------|----------|-----|-------|-------|
+| Elements | 7,756 | 7,745 | -11 | openMINDS dedup by (source,class,name) |
+| Schemas | 642 | 642 | 0 | |
+| Values | 987 | 1,000 | +13 | AIND description differentiation |
+| Valuesets | 86 | 86 | 0 | |
+
+### Key Changes from 026
+
+- **UUID staging**: Extraction writes UUID-named files (no hash at extraction time)
+- **Two-mode hash**: Computed at commit time (ontology-anchored or structural fallback)
+- **In-place enrichment**: No new elements created from enrichment
+- **Enrichment**: 0 ontology annotations assigned (embedding threshold not met for current entities)
+- **Cross-source merge**: 6 AIND elements merged at commit time (same hash from different sources)
+
+---
+
 ## 2026-03-21 — Full Re-extraction (Features 019–025)
 
 **Pipeline**: ingest → embed → enrich → align → transform
