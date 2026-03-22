@@ -45,6 +45,8 @@ A data engineer optimizes each pipeline step (extract, enrich, commit, align, tr
 5. **Given** the enrichment step, **When** it processes values like "male" against ontology terms, **Then** clear matches (cosine similarity >= 0.95) are assigned automatically and borderline matches are escalated to LLM verification before flagging for human review
 6. **Given** a complete pipeline run, **When** the run finishes, **Then** a summary report lists: counts per entity type, enrichment rates, number of curation flags, and comparison to previous run
 7. **Given** a new entity added to a source, **When** the full pipeline runs end-to-end (extract through alignment), **Then** the new entity is extracted, enriched, committed, aligned with similar existing entities, and transforms are generated
+8. **Given** a source that has already been fully ingested with no upstream changes, **When** the pipeline runs again, **Then** the registry is unchanged (zero file modifications) and every previously extracted element is still present
+9. **Given** a source whose committish and file checksums match the previous run, **When** the pipeline is invoked, **Then** it short-circuits with a "no changes detected" message without running extraction/enrichment/commit
 
 ---
 
@@ -100,6 +102,8 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - **FR-013**: The pipeline MUST produce a machine-readable run summary with entity counts, enrichment rates, curation flag counts, and delta from previous run
 - **FR-014**: Each adapter MUST be sensitive to source schema version changes and report when the source format has changed from what was previously extracted
 - **FR-015**: Each workstream MUST conclude with a full pipeline re-extraction test (extract → enrich → commit → align → transform) including addition of a new entity, validated against the 026 baseline
+- **FR-015b**: Re-ingesting the same source with no upstream changes MUST be idempotent — the registry MUST NOT change (zero new files, zero modified files, zero deleted files), and every previously extracted element MUST still be present
+- **FR-015c**: The pipeline MUST support an efficient idempotency check (e.g., source committish + file checksum comparison) that short-circuits the full pipeline when the source has not changed, avoiding redundant extraction/enrichment/commit
 
 **Workstream 3: UI/DB Rebuild (CivicDB-inspired)**
 
@@ -173,3 +177,4 @@ A platform operator rebuilds the web UI and database layers from scratch, taking
 - Q: Encapsulation scope? → A: Not just private function imports — also private variable access across modules must be audited and fixed
 - Q: Tech stack for UI/DB? → A: Next.js + FastAPI + Vite. Adopt CivicDB's patterns (GraphQL, social curation, revision workflow) but NOT its stack (no Ruby/Angular)
 - Q: Frontend testing? → A: Visual regression tests via Playwright/Chromium for all key UI flows
+- Q: Re-ingestion behavior? → A: Must be idempotent (zero changes if source unchanged). Must have efficient short-circuit check (committish + checksum) to avoid redundant full pipeline runs. Both a real test and a runtime optimization.

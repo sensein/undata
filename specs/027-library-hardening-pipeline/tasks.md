@@ -105,6 +105,8 @@
 - [ ] T037b [US2] Implement per-entity change detection in `library/src/undata_library/run_summary.py`: compare sha256 hashes of individual entity files between current and previous run, classify each as added/modified/unchanged/removed, include in RunSummary delta
 - [ ] T038 [P] [US2] Add source version tracking: compare `_resolved_committish` files between runs to detect source schema changes
 - [ ] T038b [US2] Report source version changes in pipeline extraction output: when `_resolved_committish` differs from previous run, log a warning and include version change details (old → new committish) in RunSummary
+- [ ] T038c [US2] Implement idempotency short-circuit in pipeline CLI: before extraction, compare source committish + file checksums against previous run; if unchanged, skip pipeline with "no changes detected" message
+- [ ] T038d [US2] Add idempotency test in `library/tests/test_pipeline_e2e.py`: run pipeline twice for same source, verify zero file changes on second run and all elements still present
 
 ### Adapter Accuracy Review
 
