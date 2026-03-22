@@ -14,9 +14,9 @@
 
 **Purpose**: Shared infrastructure and tooling
 
-- [ ] T001 Create `library/src/undata_library/utils.py` with shared utilities: `safe_load_yaml(path) -> dict | None`, `write_yaml(path, data)`, `sanitize_filename(name, max_length=60) -> str`, `BASE_URI` constant
-- [ ] T002 [P] Create `library/tests/test_utils.py` with tests for all utility functions (valid YAML, malformed YAML, empty file, Unicode filenames, long names)
-- [ ] T003 Lint + run all tests; commit Phase 1
+- [X] T001 Create `library/src/undata_library/utils.py` with shared utilities: `safe_load_yaml(path) -> dict | None`, `write_yaml(path, data)`, `sanitize_filename(name, max_length=60) -> str`, `BASE_URI` constant
+- [X] T002 [P] Create `library/tests/test_utils.py` with tests for all utility functions (valid YAML, malformed YAML, empty file, Unicode filenames, long names)
+- [X] T003 Lint + run all tests; commit Phase 1
 
 ---
 
