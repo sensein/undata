@@ -1,25 +1,17 @@
-"""DANDI schema adapter — uses dandischema for Pydantic model introspection."""
+"""DANDI schema adapter — delegates to standalone extraction script.
+
+The actual extraction happens in docker_scripts/dandi_extract.py running in an
+isolated venv with dandischema. This adapter class exists for the registry and
+as a fallback when dandischema is available in the current environment.
+"""
 
 from __future__ import annotations
 
-import enum
-import typing
 from pathlib import Path
 from typing import Any
 
-from ..models import EntityType, SourceRef
+from ..models import SourceRef
 from .base import BaseAdapter, ClassifiedEntity
-
-_PROPERTY_VALUE_VARIANTS: dict[str, list[tuple[str, str, dict]]] = {
-    "age": [
-        ("age", "postnatal age (ISO 8601 duration, valueReference=BirthReference)", {}),
-        (
-            "gestational_age",
-            "gestational age (ISO 8601 duration, valueReference=GestationalReference)",
-            {},
-        ),
-    ],
-}
 
 
 class DANDIAdapter(BaseAdapter):
@@ -27,41 +19,65 @@ class DANDIAdapter(BaseAdapter):
     def name(self) -> str:
         return "dandi"
 
+    @property
+    def supported_formats(self) -> list[str]:
+        return []
+
     def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
+        """Extract entities from dandischema.
+
+        Primary path: standalone script in isolated venv (via pipeline).
+        Fallback: direct extraction if dandischema is in current env.
+        """
         try:
             import dandischema.models as dm
-        except ImportError as exc:
-            raise ImportError(f"dandischema required for DANDI extraction: {exc}") from exc
+        except ImportError:
+            return []
 
+        return self._extract_from_models(dm, source_path)
+
+    def _extract_from_models(self, dm: Any, source_path: Path) -> list[ClassifiedEntity]:
+        """Extract entities from dandischema models module."""
         import inspect
 
-        repo = options.get("repo", "https://github.com/dandi/dandischema")
-        committish = options.get("committish")
-        try:
-            version = getattr(dm, "__version__", None) or getattr(
-                __import__("dandischema"), "__version__", None
-            )
-            if version and not committish:
-                committish = f"v{version}"
-        except Exception:
-            pass
-
-        base_ref = SourceRef(
-            repo=repo, committish=committish, file="dandischema/models.py", checksum=""
-        )
+        from ..models import EntityType
 
         results: list[ClassifiedEntity] = []
+        base_ref = SourceRef(
+            repo="https://github.com/dandi/dandischema",
+            committish=getattr(dm, "__version__", None),
+            file="models.py",
+            checksum="",
+        )
+        seen_enums: set[str] = set()
 
         for cls_name, cls in inspect.getmembers(dm, inspect.isclass):
             if not hasattr(cls, "model_fields"):
                 continue
 
-            # Emit class entity
+            # Inheritance
+            bases = [
+                b.__name__
+                for b in cls.__bases__
+                if b.__name__ != "BaseModel" and hasattr(b, "model_fields")
+            ]
+            semantic: dict[str, Any] = {"properties": list(cls.model_fields.keys())}
+            if bases:
+                semantic["subclass_of"] = bases[0]
+                if len(bases) > 1:
+                    semantic["mixins"] = bases[1:]
+
+            desc = cls.__doc__.strip().split("\n")[0] if cls.__doc__ else None
             results.append(
                 ClassifiedEntity(
                     entity_type=EntityType.CLASS,
-                    semantic={"properties": []},
-                    provenance={"source": "dandi", "class": cls_name, "name": cls_name},
+                    semantic=semantic,
+                    provenance={
+                        "source": "dandi",
+                        "class": cls_name,
+                        "name": cls_name,
+                        "description": desc,
+                    },
                     confidence=0.9,
                     source_ref=base_ref,
                 )
@@ -69,39 +85,20 @@ class DANDIAdapter(BaseAdapter):
 
             for field_name, field_info in cls.model_fields.items():
                 ann = field_info.annotation
-                desc = field_info.description or ""
+                field_desc = field_info.description or ""
 
-                if field_name in _PROPERTY_VALUE_VARIANTS and _is_property_value(ann):
-                    for variant_name, variant_desc, extra in _PROPERTY_VALUE_VARIANTS[field_name]:
-                        results.append(
-                            ClassifiedEntity(
-                                entity_type=EntityType.ATTRIBUTE,
-                                semantic={"data_type": "string", **extra},
-                                provenance={
-                                    "source": "dandi",
-                                    "class": cls_name,
-                                    "name": variant_name,
-                                    "description": f"{desc} ({variant_desc})",
-                                },
-                                confidence=0.9,
-                                source_ref=base_ref,
-                            )
-                        )
-                    continue
+                dt = self._pydantic_type(field_info)
+                sem: dict[str, Any] = {"data_type": dt}
 
-                dt = _pydantic_type(field_info)
-                semantic: dict[str, Any] = {"data_type": dt}
-
-                # Enum → valueset + individual values
-                if ann is not None:
-                    enum_cls = _extract_enum_class(ann)
-                    if enum_cls:
-                        allowed = [str(v.value) for v in enum_cls]
-                        if allowed:
-                            semantic["response_options"] = [
-                                {"value": v, "label": v} for v in allowed
-                            ]
-                            # Emit valueset
+                # Enum → VALUESET + ENUM_VALUE
+                enum_cls = self._extract_enum(ann)
+                if enum_cls:
+                    allowed = [str(v.value) for v in enum_cls]
+                    if allowed:
+                        sem["response_options"] = [{"value": v, "label": v} for v in allowed]
+                        sem["value_domain"] = "categorical"
+                        if enum_cls.__name__ not in seen_enums:
+                            seen_enums.add(enum_cls.__name__)
                             results.append(
                                 ClassifiedEntity(
                                     entity_type=EntityType.VALUESET,
@@ -118,28 +115,30 @@ class DANDIAdapter(BaseAdapter):
                                     source_ref=base_ref,
                                 )
                             )
-
-                # Min/max from Pydantic metadata
-                if hasattr(field_info, "metadata"):
-                    for m in field_info.metadata:
-                        for attr, key in [
-                            ("ge", "min_value"),
-                            ("gt", "min_value"),
-                            ("le", "max_value"),
-                            ("lt", "max_value"),
-                        ]:
-                            if hasattr(m, attr) and getattr(m, attr) is not None:
-                                semantic[key] = float(getattr(m, attr))
+                            for val in allowed:
+                                results.append(
+                                    ClassifiedEntity(
+                                        entity_type=EntityType.ENUM_VALUE,
+                                        semantic={"label": val, "value_type": "categorical"},
+                                        provenance={
+                                            "source": "dandi",
+                                            "class": enum_cls.__name__,
+                                            "name": val,
+                                        },
+                                        confidence=0.95,
+                                        source_ref=base_ref,
+                                    )
+                                )
 
                 results.append(
                     ClassifiedEntity(
                         entity_type=EntityType.ATTRIBUTE,
-                        semantic=semantic,
+                        semantic=sem,
                         provenance={
                             "source": "dandi",
                             "class": cls_name,
                             "name": field_name,
-                            "description": desc,
+                            "description": field_desc,
                         },
                         confidence=0.85,
                         source_ref=base_ref,
@@ -148,30 +147,62 @@ class DANDIAdapter(BaseAdapter):
 
         return results
 
+    @staticmethod
+    def _extract_enum(annotation: Any) -> Any:
+        import enum
+        import types
+        import typing
 
-def _is_property_value(annotation) -> bool:
-    return "PropertyValue" in (str(annotation) if annotation else "")
+        if isinstance(annotation, type) and issubclass(annotation, enum.Enum):
+            return annotation
+        args = None
+        origin = getattr(annotation, "__origin__", None)
+        if origin is typing.Union:
+            args = annotation.__args__
+        elif isinstance(annotation, types.UnionType):
+            args = annotation.__args__
+        if args:
+            for a in args:
+                if isinstance(a, type) and issubclass(a, enum.Enum):
+                    return a
+        return None
 
+    @staticmethod
+    def _pydantic_type(field_info: Any) -> str:
+        import enum
+        import types
+        import typing
 
-def _extract_enum_class(annotation) -> type | None:
-    origin = getattr(annotation, "__origin__", None)
-    if origin is typing.Union:
-        for arg in annotation.__args__:
-            if isinstance(arg, type) and issubclass(arg, enum.Enum):
-                return arg
-    if isinstance(annotation, type) and issubclass(annotation, enum.Enum):
-        return annotation
-    return None
-
-
-def _pydantic_type(field_info) -> str:
-    ann = str(field_info.annotation) if field_info.annotation else "string"
-    if "int" in ann.lower():
-        return "integer"
-    if "float" in ann.lower():
-        return "float"
-    if "bool" in ann.lower():
-        return "boolean"
-    if "list" in ann.lower():
-        return "array"
-    return "string"
+        ann = field_info.annotation
+        if ann is None:
+            return "string"
+        args = None
+        origin = getattr(ann, "__origin__", None)
+        if origin is typing.Union:
+            args = ann.__args__
+        elif isinstance(ann, types.UnionType):
+            args = ann.__args__
+        core = ann
+        if args:
+            non_none = [a for a in args if a is not type(None)]
+            if len(non_none) == 1:
+                core = non_none[0]
+        co = getattr(core, "__origin__", None)
+        if co in (list, tuple, set, frozenset):
+            return "array"
+        if co is dict:
+            return "object"
+        if isinstance(core, type):
+            if issubclass(core, bool):
+                return "boolean"
+            if issubclass(core, int):
+                return "integer"
+            if issubclass(core, float):
+                return "float"
+            if issubclass(core, str):
+                return "string"
+            if issubclass(core, enum.Enum):
+                return "string"
+            if hasattr(core, "model_fields"):
+                return "object"
+        return "string"

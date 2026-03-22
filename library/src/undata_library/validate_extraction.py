@@ -233,8 +233,8 @@ def _dandi_spec() -> dict:
         "known_entities": [
             {"name": "name", "class": "Dandiset", "type": "attribute"},
             {"name": "description", "class": "Dandiset", "type": "attribute"},
-            {"name": "Person", "class": "", "type": "class"},
-            {"name": "Organization", "class": "", "type": "class"},
+            {"name": "Person", "class": "Person", "type": "class"},
+            {"name": "Organization", "class": "Organization", "type": "class"},
         ],
         "required_fields": {
             "attribute": ["data_type"],
