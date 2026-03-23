@@ -17,9 +17,10 @@ try:
 except ImportError:
     _llm_completion = None
 
-# LLM result cache — keyed by (element_desc, term_label, term_defn)
-_LLM_CACHE: dict[tuple[str, str, str], str] = {}
+# LLM result cache — keyed by (model, element_desc, term_label, term_defn)
+_LLM_CACHE: dict[tuple[str, str, str, str], str] = {}
 _CACHE_PATH: str | None = None
+_CACHE_ENABLED: bool = True
 
 
 def _get_default_model() -> str:
@@ -27,12 +28,14 @@ def _get_default_model() -> str:
     model = os.environ.get("UNDATA_LLM_MODEL")
     if model:
         return model
-    return "gpt-4.1-nano" if os.environ.get("OPENAI_API_KEY") else "ollama/qwen3.5:latest"
+    return "gpt-5.4-nano" if os.environ.get("OPENAI_API_KEY") else "ollama/qwen3.5:latest"
 
 
 def _load_cache(cache_dir: str | None = None) -> None:
     """Load LLM decision cache from disk."""
     global _LLM_CACHE, _CACHE_PATH
+    if not _CACHE_ENABLED:
+        return
     import json
     from pathlib import Path
 
@@ -194,11 +197,19 @@ def verify_batch(
     if not _LLM_CACHE:
         _load_cache()
 
+    # Enable litellm.drop_params for GPT-5 model compatibility (no temperature=0)
+    try:
+        import litellm
+
+        litellm.drop_params = True
+    except ImportError:
+        pass
+
     # Separate cached from uncached
     uncached_indices: list[int] = []
     uncached_pairs: list[tuple] = []
     for i, (elem_desc, term_label, term_defn, term_uri) in enumerate(pairs):
-        cache_key = (elem_desc[:200], term_label, (term_defn or "")[:200])
+        cache_key = (model, elem_desc[:200], term_label, (term_defn or "")[:200])
         if cache_key in _LLM_CACHE:
             all_decisions.append(_LLM_CACHE[cache_key])
         else:
@@ -265,8 +276,9 @@ def verify_batch(
     # Update cache + fill in pending decisions
     for idx, decision in zip(uncached_indices, batch_decisions):
         all_decisions[idx] = decision
-        elem_desc, term_label, term_defn, _ = uncached_pairs[uncached_indices.index(idx)]
-        cache_key = (elem_desc[:200], term_label, (term_defn or "")[:200])
+        pair_idx = uncached_indices.index(idx)
+        elem_desc, term_label, term_defn, _ = uncached_pairs[pair_idx]
+        cache_key = (model, elem_desc[:200], term_label, (term_defn or "")[:200])
         _LLM_CACHE[cache_key] = decision
 
     # Save cache to disk
