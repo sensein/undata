@@ -115,4 +115,4 @@ class TestVerifyBorderlineMatch:
             model="test-model",
         )
         assert result["decision"] == "uncertain"
-        assert "API timeout" in result["error"]
+        assert result["error"] is not None

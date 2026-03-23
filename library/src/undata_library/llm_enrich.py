@@ -102,42 +102,42 @@ def verify_borderline_match(
         ontology_term_synonyms=ontology_term_synonyms,
     )
 
-    # Try ollama direct API first (avoids litellm compatibility issues)
+    # 1. Try litellm (standard interface — OpenAI, Anthropic, ollama_chat)
+    if _llm_completion is not None:
+        # For ollama models, use ollama_chat/ prefix for proper thinking support
+        litellm_model = model
+        if model.startswith("ollama/"):
+            litellm_model = f"ollama_chat/{model.removeprefix('ollama/')}"
+        try:
+            response = _llm_completion(
+                model=litellm_model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=300,
+                temperature=0.0,
+                reasoning_effort="none",  # Disable thinking for ollama models
+            )
+            content = (response.choices[0].message.content or "").strip()
+            if content:
+                return _parse_llm_response(content, model)
+            logger.warning("litellm returned empty content for %s", model)
+        except Exception as exc:
+            logger.warning("litellm call failed for %s: %s", model, exc)
+
+    # 2. Fallback: direct ollama API (bypasses litellm entirely)
     if model.startswith("ollama/"):
         try:
             return _call_ollama(model.removeprefix("ollama/"), prompt)
         except Exception as exc:
-            logger.warning("Ollama call failed: %s", exc)
+            logger.warning("Ollama direct API also failed: %s", exc)
 
-    # Fall back to litellm
-    if _llm_completion is None:
-        logger.warning("litellm not installed; skipping LLM verification")
-        return {
-            "model": model,
-            "decision": "uncertain",
-            "confidence": 0.0,
-            "justification": "litellm not available",
-            "error": "litellm not installed",
-        }
-
-    try:
-        response = _llm_completion(
-            model=model,
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=300,
-            temperature=0.0,
-        )
-        content = response.choices[0].message.content.strip()
-        return _parse_llm_response(content, model)
-    except Exception as exc:
-        logger.warning("LLM verification failed: %s", exc)
-        return {
-            "model": model,
-            "decision": "uncertain",
-            "confidence": 0.0,
-            "justification": "",
-            "error": str(exc)[:200],
-        }
+    # 3. No working LLM path
+    return {
+        "model": model,
+        "decision": "uncertain",
+        "confidence": 0.0,
+        "justification": "no LLM available",
+        "error": "litellm not installed" if _llm_completion is None else "all LLM calls failed",
+    }
 
 
 def _build_verification_prompt(
