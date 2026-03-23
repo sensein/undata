@@ -1,6 +1,5 @@
 """Unit tests for acquisition module — no network required."""
 
-
 from undata_library.acquisition import (
     build_source_ref_from_cache,
     list_bundled_sources,
