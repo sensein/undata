@@ -21,7 +21,6 @@ class TestBuildPrompt:
         assert "participant age in years" in prompt
         assert "Age" in prompt
         assert "NCIT_C25150" in prompt
-        assert "0.850" in prompt
 
     def test_includes_source_context(self):
         prompt = _build_verification_prompt(

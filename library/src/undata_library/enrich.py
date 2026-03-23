@@ -804,10 +804,14 @@ def _assign_ontology_annotations(
             MatchLevel.element_match if is_value and score >= 0.9 else MatchLevel.concept_match
         )
 
-        # LLM verification for borderline matches
+        # LLM verification for borderline matches (below 0.95 auto-assign threshold)
         llm_result = None
-        if use_llm and 0.7 <= score < 0.95 and element_desc:
+        if use_llm and score < 0.95 and element_desc:
             from .llm_enrich import verify_borderline_match
+
+            # Get term definition and synonyms from onto_cache for LLM context
+            term_defn = term_info.get("definition") or term_info.get("description")
+            term_syns = term_info.get("synonyms", [])
 
             llm_result = verify_borderline_match(
                 element_desc=element_desc,
@@ -816,6 +820,8 @@ def _assign_ontology_annotations(
                 ontology_name=ontology,
                 embedding_score=score,
                 source_context=source_context or None,
+                ontology_term_definition=term_defn,
+                ontology_term_synonyms=term_syns if term_syns else None,
             )
             # If LLM rejects, skip this annotation
             if llm_result.get("decision") == "reject":

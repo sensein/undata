@@ -2351,6 +2351,7 @@ similarity = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "litellm" },
     { name = "numpy" },
     { name = "pytest" },
     { name = "ruff" },
@@ -2378,6 +2379,7 @@ provides-extras = ["similarity", "embeddings", "llm", "docker"]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "litellm", specifier = ">=1.40" },
     { name = "numpy", specifier = ">=1.26" },
     { name = "pytest", specifier = ">=8.0" },
     { name = "ruff", specifier = ">=0.15" },
