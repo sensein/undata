@@ -615,7 +615,9 @@ def pipeline(
         )
         timings["enrich"] = time.time() - t0
         for etype, stats in enrich_results.items():
-            assigned = stats.get("ontology_assigned", stats.get("enriched", 0))
+            assigned = stats.get(
+                "ontology_assigned", stats.get("assigned", stats.get("enriched", 0))
+            )
             click.echo(f"  {etype}: {assigned} enriched, {stats.get('total', 0)} total")
         click.echo(f"  in {timings['enrich']:.1f}s")
     else:
