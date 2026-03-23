@@ -9,7 +9,6 @@ import yaml
 from .utils import BASE_URI, safe_load_yaml, sanitize_filename
 
 from .hashing import (
-    build_element_uri,
     build_value_uri,
     canonical_json,
     compute_sha256,
@@ -56,92 +55,95 @@ def ingest_source(
     # This keeps ingestion pure (source data only) and tracks annotations
     # as separate PROV-O curation events.
 
-    # Write each element to staging with UUID filename (no hashing at extraction)
+    # Route all entity types to their correct directories
     import uuid
 
-    elements_dir = library_path / "elements"
-    elements_dir.mkdir(parents=True, exist_ok=True)
+    from .models import EntityType
 
-    # Dedup by (source, class, name) within this extraction to avoid writing
-    # the same element twice from the same source
-    seen_keys: set[tuple[str, str, str]] = set()
+    stats_by_type: dict[str, int] = {
+        "elements": 0,
+        "schemas": 0,
+        "values": 0,
+        "valuesets": 0,
+    }
+
+    # Map entity types to directory names
+    type_to_dir = {
+        EntityType.ATTRIBUTE: "elements",
+        EntityType.CLASS: "schemas",
+        EntityType.ENUM_VALUE: "values",
+        EntityType.VALUESET: "valuesets",
+    }
+
+    # Create all directories
+    for dirname in type_to_dir.values():
+        (library_path / dirname).mkdir(parents=True, exist_ok=True)
+
+    # Dedup by (entity_type, source, class, name)
+    seen_keys: set[tuple[str, str, str, str]] = set()
     created = 0
     merged = 0
 
+    # Write ATTRIBUTE entities from pairs (legacy path — these have SemanticIdentity)
     for sem, prov in pairs:
-        dedup_key = (prov.source, prov.class_, prov.name)
+        dedup_key = ("attribute", prov.source, prov.class_, prov.name)
         if dedup_key in seen_keys:
             merged += 1
             continue
         seen_keys.add(dedup_key)
 
         record = ElementRecord(semantic=sem, provenance=[prov])
-        entity_id = str(uuid.uuid4())
-        filepath = elements_dir / f"{entity_id}.yaml"
+        filepath = library_path / "elements" / f"{uuid.uuid4()}.yaml"
         _write_element(filepath, record)
         created += 1
+        stats_by_type["elements"] += 1
 
-    # Load hash registry for downstream compatibility (schemas, values, mappings)
+    # Write CLASS, ENUM_VALUE, VALUESET entities from all_entities
+    for entity in all_entities:
+        etype = entity.entity_type
+        dirname = type_to_dir.get(etype)
+        if dirname is None or dirname == "elements":
+            continue  # Elements handled above via pairs
+
+        prov = entity.provenance if isinstance(entity.provenance, dict) else {}
+        dedup_key = (
+            etype.value,
+            prov.get("source", ""),
+            prov.get("class", ""),
+            prov.get("name", ""),
+        )
+        if dedup_key in seen_keys:
+            continue
+        seen_keys.add(dedup_key)
+
+        data = {
+            "semantic": entity.semantic if isinstance(entity.semantic, dict) else {},
+            "provenance": [prov],
+        }
+        filepath = library_path / dirname / f"{uuid.uuid4()}.yaml"
+        filepath.write_text(
+            yaml.dump(data, default_flow_style=False, sort_keys=False),
+            encoding="utf-8",
+        )
+        stats_by_type[dirname] += 1
+
+    # Legacy: also extract values from response_options on elements
     registry_path = library_path / "hash-registry.yaml"
     registry = _load_registry(registry_path)
-
-    # Build a temporary registry for URI generation (needed by schema builder)
-    for f in sorted(elements_dir.glob("*.yaml")):
-        data = safe_load_yaml(f)
-        if data is None or "provenance" not in data:
-            continue
-        prov_list = data.get("provenance", [])
-        if not prov_list:
-            continue
-        first_prov = prov_list[0]
-        attr_name = first_prov.get("name", "unknown")
-        # Use filename stem as key for registry
-        key = f.stem
-        uri = build_element_uri(attr_name, key)
-        registry.elements[key] = HashRegistryEntry(
-            sha256="",  # Hash computed at commit time, not extraction
-            attribute=attr_name,
-            uri=uri,
-        )
-
-    # Write registry
-    _write_registry(registry_path, registry)
-
-    # Extract enum values as ValueConcepts
     value_stats = _extract_values(source_name, pairs, library_path, registry)
+    stats_by_type["values"] += value_stats.get("created", 0)
 
-    # Extract underscore-prefixed AIND $defs as ValueConcepts (FR-008)
-    if source_name == "aind" and schema_path is not None:
-        from .extractors.aind import extract_aind_values
-
-        aind_values = extract_aind_values(schema_path)
-        aind_val_count = _ingest_extracted_values(aind_values, library_path, registry)
-        value_stats["created"] = value_stats.get("created", 0) + aind_val_count
-
-    _write_registry(registry_path, registry)
-
-    # Resolve response_option values to ValueConcept URIs (U1 fix)
+    # Resolve response_option values to ValueConcept URIs
     _resolve_response_option_uris(library_path)
-
-    # Build schema shapes from class groupings
-    schema_stats = _build_schemas_from_provenance(source_name, library_path, registry)
-
-    # Process non-ATTRIBUTE classified entities (valuesets, enum values)
-    classified_stats = _process_classified_entities(all_entities, library_path, source_name)
-
-    # Generate cross-element transform mappings (bidirectional) for elements
-    # sharing a primary ontology annotation but with different data_type/unit
-    mapping_stats = _generate_transform_mappings(library_path, registry)
-    _write_registry(registry_path, registry)
 
     return {
         "created": created,
         "merged": merged,
         "total": created + merged,
-        "schemas_created": schema_stats.get("created", 0),
-        "values_created": value_stats.get("created", 0) + classified_stats.get("values_created", 0),
-        "valuesets_created": classified_stats.get("valuesets_created", 0),
-        "mappings_created": mapping_stats.get("created", 0),
+        "schemas_created": stats_by_type["schemas"],
+        "values_created": stats_by_type["values"],
+        "valuesets_created": stats_by_type["valuesets"],
+        "mappings_created": 0,
     }
 
 
