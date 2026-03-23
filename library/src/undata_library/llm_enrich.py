@@ -131,6 +131,87 @@ CONFIDENCE: 0.0 to 1.0
 JUSTIFICATION: one sentence explaining why"""
 
 
+def verify_batch(
+    pairs: list[tuple[str, str, str, str]],
+    model: str | None = None,
+    batch_size: int = 30,
+) -> list[str]:
+    """Verify multiple element-term pairs in batched LLM calls.
+
+    Each pair is (element_desc, term_label, term_definition, term_uri).
+    Returns a list of decisions: "confirm", "reject", or "uncertain" for each pair.
+    """
+    model = model or os.environ.get("UNDATA_LLM_MODEL", "ollama/qwen3.5:latest")
+    all_decisions: list[str] = []
+
+    for batch_start in range(0, len(pairs), batch_size):
+        batch = pairs[batch_start : batch_start + batch_size]
+
+        # Build batch prompt
+        lines = [
+            "For each pair below, decide if the ontology term matches the data element.",
+            "Answer ONLY with the pair number and decision (confirm/reject/uncertain), one per line.",
+            "",
+        ]
+        for i, (elem_desc, term_label, term_defn, term_uri) in enumerate(batch, 1):
+            lines.append(f'{i}. Element: "{elem_desc}"')
+            term_info = f'"{term_label}'
+            if term_defn:
+                term_info += f": {term_defn[:150]}"
+            term_info += '"'
+            lines.append(f"   Term: {term_info}")
+            lines.append("")
+
+        lines.append("Format: NUMBER: confirm/reject/uncertain")
+        prompt = "\n".join(lines)
+
+        try:
+            if model.startswith("ollama/"):
+                result = _call_ollama(model.removeprefix("ollama/"), prompt, timeout=120)
+                raw = result.get("justification", "")
+            elif _llm_completion:
+                resp = _llm_completion(
+                    model=model,
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=batch_size * 5,
+                    temperature=0.0,
+                )
+                raw = resp.choices[0].message.content.strip()
+            else:
+                all_decisions.extend(["uncertain"] * len(batch))
+                continue
+
+            # Parse batch response
+            batch_decisions = _parse_batch_response(raw, len(batch))
+            all_decisions.extend(batch_decisions)
+        except Exception as exc:
+            logger.warning("Batch LLM verification failed: %s", exc)
+            all_decisions.extend(["uncertain"] * len(batch))
+
+    return all_decisions
+
+
+def _parse_batch_response(raw: str, expected_count: int) -> list[str]:
+    """Parse batch LLM response into list of decisions."""
+    decisions = ["uncertain"] * expected_count
+    for line in raw.strip().split("\n"):
+        line = line.strip()
+        if not line:
+            continue
+        # Parse "1: confirm" or "1. confirm" or just "confirm"
+        parts = line.replace(".", ":").split(":", 1)
+        if len(parts) == 2:
+            try:
+                idx = int(parts[0].strip()) - 1
+                decision = parts[1].strip().lower()
+                if decision in ("confirm", "reject", "uncertain"):
+                    if 0 <= idx < expected_count:
+                        decisions[idx] = decision
+            except ValueError:
+                continue
+    return decisions
+
+
 def _call_ollama(model_name: str, prompt: str, timeout: int = 60) -> dict:
     """Call ollama API directly with thinking mode disabled."""
     import httpx
