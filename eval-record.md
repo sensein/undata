@@ -5,6 +5,46 @@ Updated after each significant re-extraction or pipeline change.
 
 ---
 
+## 2026-03-22 — Feature 027: Library Hardening (post-adapter review)
+
+**Pipeline**: LinkML-first adapters → extract → enrich → commit
+**Changes**: All 5 adapters converted to LinkML-first. Entity classification fixed. Schemas, values, valuesets now routed directly from extraction.
+
+### Source Extraction (post-reclassification)
+
+| Source | Elements | Schemas | Values | Valuesets |
+|--------|----------|---------|--------|-----------|
+| BIDS | 585 | 214 | 628 | 7 |
+| DANDI | 398 | 44 | 152 | 5 |
+| NWB | 179 | 80 | 0 | 0 |
+| openMINDS | 473 | 202 | 4,378 | 123 |
+| AIND | 556 | 375 | 401 | 79 |
+| **Total** | **2,191** | **915** | **5,559** | **214** |
+
+### Comparison to 026 Baseline
+
+| Metric | 026 | 027 | Notes |
+|--------|-----|-----|-------|
+| Elements | 7,745 | 2,191 | Vocabulary terms reclassified as values (correct) |
+| Schemas | 642 | 915 | Now includes sidecar field groups + tabular classes |
+| Values | 1,000 | 5,559 | Includes enum_values from all sources + openMINDS instances |
+| Valuesets | 86 | 214 | controlledTerms, BIDS valuesets, AIND enums |
+
+### Key Changes
+
+- **LinkML-first architecture**: All adapters build LinkML SchemaDefinition, extract via standard LinkML adapter
+- **BIDS**: Sidecar rules → 165 mixin classes + 32 modality classes. Units on 70 fields. ~494 vocabulary terms correctly as values.
+- **DANDI**: Inheritance tracked (42/44 classes). 76 enum_values from enum classes.
+- **NWB**: Full inheritance (80/80 classes). Links, groups, reference dtypes extracted.
+- **openMINDS**: 4,390 instances from separate repo. 123 controlled vocabulary types as valuesets. Short property names.
+- **AIND**: JSON Schema $defs → classes/enums via LinkML builder.
+
+### Enrichment Status
+
+Enrichment rates are currently low (2-35% for elements). Top embedding match scores are 0.45-0.67 — below the 0.7 threshold. Next step: lower candidate threshold to 0.5, use LLM verification for borderline matches, implement multi-precision annotation.
+
+---
+
 ## 2026-03-21 — Feature 026: Staged Enrichment Pipeline
 
 **Pipeline**: extract (UUID staging) → enrich (in-place) → commit (two-mode hash) → align
