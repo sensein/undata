@@ -17,6 +17,51 @@ try:
 except ImportError:
     _llm_completion = None
 
+# LLM result cache — keyed by (element_desc, term_label, term_defn)
+_LLM_CACHE: dict[tuple[str, str, str], str] = {}
+_CACHE_PATH: str | None = None
+
+
+def _get_default_model() -> str:
+    """Select default model: OpenAI if key available, else local ollama."""
+    model = os.environ.get("UNDATA_LLM_MODEL")
+    if model:
+        return model
+    return "gpt-4.1-nano" if os.environ.get("OPENAI_API_KEY") else "ollama/qwen3.5:latest"
+
+
+def _load_cache(cache_dir: str | None = None) -> None:
+    """Load LLM decision cache from disk."""
+    global _LLM_CACHE, _CACHE_PATH
+    import json
+    from pathlib import Path
+
+    if cache_dir:
+        _CACHE_PATH = str(Path(cache_dir) / "llm-cache.json")
+    elif _CACHE_PATH is None:
+        _CACHE_PATH = str(Path.home() / ".cache" / "undata" / "llm-cache.json")
+
+    try:
+        with open(_CACHE_PATH) as f:
+            data = json.load(f)
+        _LLM_CACHE = {tuple(k.split("|||")): v for k, v in data.items()}
+        logger.info("Loaded %d cached LLM decisions from %s", len(_LLM_CACHE), _CACHE_PATH)
+    except (FileNotFoundError, json.JSONDecodeError):
+        _LLM_CACHE = {}
+
+
+def _save_cache() -> None:
+    """Save LLM decision cache to disk."""
+    import json
+    from pathlib import Path
+
+    if _CACHE_PATH is None:
+        return
+    Path(_CACHE_PATH).parent.mkdir(parents=True, exist_ok=True)
+    data = {"|||".join(k): v for k, v in _LLM_CACHE.items()}
+    with open(_CACHE_PATH, "w") as f:
+        json.dump(data, f)
+
 
 def verify_borderline_match(
     element_desc: str,
@@ -139,13 +184,42 @@ def verify_batch(
     """Verify multiple element-term pairs in batched LLM calls.
 
     Each pair is (element_desc, term_label, term_definition, term_uri).
+    Uses a disk cache to avoid re-running calls on repeated pipeline runs.
     Returns a list of decisions: "confirm", "reject", or "uncertain" for each pair.
     """
-    model = model or os.environ.get("UNDATA_LLM_MODEL", "ollama/qwen3.5:latest")
+    model = model or _get_default_model()
     all_decisions: list[str] = []
 
-    for batch_start in range(0, len(pairs), batch_size):
-        batch = pairs[batch_start : batch_start + batch_size]
+    # Load cache
+    if not _LLM_CACHE:
+        _load_cache()
+
+    # Separate cached from uncached
+    uncached_indices: list[int] = []
+    uncached_pairs: list[tuple] = []
+    for i, (elem_desc, term_label, term_defn, term_uri) in enumerate(pairs):
+        cache_key = (elem_desc[:200], term_label, (term_defn or "")[:200])
+        if cache_key in _LLM_CACHE:
+            all_decisions.append(_LLM_CACHE[cache_key])
+        else:
+            all_decisions.append("__pending__")
+            uncached_indices.append(i)
+            uncached_pairs.append((elem_desc, term_label, term_defn, term_uri))
+
+    if not uncached_pairs:
+        logger.info("All %d pairs found in LLM cache", len(pairs))
+        return all_decisions
+
+    logger.info(
+        "LLM verification: %d cached, %d to verify",
+        len(pairs) - len(uncached_pairs),
+        len(uncached_pairs),
+    )
+
+    # Process uncached in batches
+    batch_decisions: list[str] = []
+    for batch_start in range(0, len(uncached_pairs), batch_size):
+        batch = uncached_pairs[batch_start : batch_start + batch_size]
 
         # Build batch prompt
         lines = [
@@ -182,11 +256,21 @@ def verify_batch(
                 continue
 
             # Parse batch response
-            batch_decisions = _parse_batch_response(raw, len(batch))
-            all_decisions.extend(batch_decisions)
+            decisions_batch = _parse_batch_response(raw, len(batch))
+            batch_decisions.extend(decisions_batch)
         except Exception as exc:
             logger.warning("Batch LLM verification failed: %s", exc)
-            all_decisions.extend(["uncertain"] * len(batch))
+            batch_decisions.extend(["uncertain"] * len(batch))
+
+    # Update cache + fill in pending decisions
+    for idx, decision in zip(uncached_indices, batch_decisions):
+        all_decisions[idx] = decision
+        elem_desc, term_label, term_defn, _ = uncached_pairs[uncached_indices.index(idx)]
+        cache_key = (elem_desc[:200], term_label, (term_defn or "")[:200])
+        _LLM_CACHE[cache_key] = decision
+
+    # Save cache to disk
+    _save_cache()
 
     return all_decisions
 
