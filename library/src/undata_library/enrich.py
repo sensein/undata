@@ -111,6 +111,11 @@ def enrich_elements(
     values_dir = staging_dir / "values"
     value_lookup = _build_value_lookup(values_dir) if values_dir.exists() else {}
 
+    # Collect candidates for batch LLM verification
+    _llm_candidates: list[
+        tuple
+    ] = []  # (filepath, elem_desc, term_label, term_defn, term_uri, annotations)
+
     stats = {
         "ontology_assigned": 0,
         "value_domain_set": 0,
@@ -132,23 +137,14 @@ def enrich_elements(
         annotations = None
         domain = None
 
-        # 1. Assign ontology_annotations via embedding + optional LLM verification
+        # 1. Assign ontology_annotations via embedding similarity
         if (
             not sem.get("ontology_annotations")
             and onto_store is not None
             and elem_store is not None
         ):
             uri = f"{BASE_URI}/elements/{f.stem}"
-            # Build description for LLM context
-            prov = data.get("provenance", [{}])
-            first_prov = prov[0] if prov and isinstance(prov[0], dict) else {}
-            elem_desc = f"{first_prov.get('class', '')} {first_prov.get('name', '')}"
-            desc = first_prov.get("description") or sem.get("description", "")
-            if desc:
-                elem_desc = f"{elem_desc}: {desc}"
-            source_ctx = f"source={first_prov.get('source', '')}"
-
-            # Use lower threshold for candidate retrieval when LLM is available
+            # Use lower threshold when LLM batch verification follows
             effective_threshold = 0.4 if use_llm else threshold
             annotations = _assign_ontology_annotations(
                 uri,
@@ -157,10 +153,31 @@ def enrich_elements(
                 onto_cache,
                 effective_threshold,
                 model_name=model_name,
-                use_llm=use_llm,
-                element_desc=elem_desc.strip(),
-                source_context=source_ctx,
+                use_llm=False,  # No per-entity LLM; batch below
             )
+
+            if use_llm and annotations:
+                # Collect for batch LLM verification
+                prov = data.get("provenance", [{}])
+                first_prov = prov[0] if prov and isinstance(prov[0], dict) else {}
+                elem_desc = f"{first_prov.get('class', '')} {first_prov.get('name', '')}"
+                desc_text = first_prov.get("description") or sem.get("description", "")
+                if desc_text:
+                    elem_desc = f"{elem_desc}: {desc_text}"
+                top = annotations[0]
+                top_score = top.get("score", 0)
+                if top_score < 0.95:  # Only verify non-obvious matches
+                    _llm_candidates.append(
+                        (
+                            str(f),
+                            elem_desc.strip(),
+                            top.get("term_label", ""),
+                            onto_cache.get(top["term_uri"], {}).get("definition", ""),
+                            top["term_uri"],
+                            annotations,
+                        )
+                    )
+                    continue  # Don't assign yet — wait for batch verification
             if annotations:
                 stats["ontology_assigned"] += 1
 
@@ -188,6 +205,24 @@ def enrich_elements(
                 _update_entity_in_place(f, ontology_annotations=annotations, value_domain=domain)
         else:
             stats["unchanged"] += 1
+
+    # Batch LLM verification for collected candidates
+    if _llm_candidates and use_llm:
+        from .llm_enrich import verify_batch
+
+        pairs = [
+            (elem_desc, term_label, term_defn, term_uri)
+            for _, elem_desc, term_label, term_defn, term_uri, _ in _llm_candidates
+        ]
+        logger.info("Batch LLM verification: %d candidates", len(pairs))
+        decisions = verify_batch(pairs)
+
+        for (filepath, _, _, _, _, anns), decision in zip(_llm_candidates, decisions):
+            if decision == "confirm":
+                if not dry_run:
+                    _update_entity_in_place(Path(filepath), ontology_annotations=anns)
+                stats["ontology_assigned"] += 1
+            # reject/uncertain → not assigned, will be flagged by curation
 
     return stats
 
