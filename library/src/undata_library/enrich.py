@@ -76,10 +76,14 @@ def enrich_elements(
     model_name: str = "all-MiniLM-L6-v2",
     threshold: float = 0.7,
     dry_run: bool = False,
+    use_llm: bool = False,
 ) -> dict[str, int]:
     """Enrich staged elements in-place: assign ontology_annotations, populate value_domain.
 
     Works on staging_dir/elements/. No new files are created.
+    If use_llm=True, the candidate threshold drops to 0.4 and borderline matches
+    (0.4-0.7) are verified by LLM before assignment. Without LLM, only matches
+    above threshold (0.7) are auto-assigned.
 
     Returns stats: {ontology_assigned, value_domain_set, values_resolved, unchanged, total}
     """
@@ -128,20 +132,34 @@ def enrich_elements(
         annotations = None
         domain = None
 
-        # 1. Assign ontology_annotations via embedding distance
+        # 1. Assign ontology_annotations via embedding + optional LLM verification
         if (
             not sem.get("ontology_annotations")
             and onto_store is not None
             and elem_store is not None
         ):
             uri = f"{BASE_URI}/elements/{f.stem}"
+            # Build description for LLM context
+            prov = data.get("provenance", [{}])
+            first_prov = prov[0] if prov and isinstance(prov[0], dict) else {}
+            elem_desc = f"{first_prov.get('class', '')} {first_prov.get('name', '')}"
+            desc = first_prov.get("description") or sem.get("description", "")
+            if desc:
+                elem_desc = f"{elem_desc}: {desc}"
+            source_ctx = f"source={first_prov.get('source', '')}"
+
+            # Use lower threshold for candidate retrieval when LLM is available
+            effective_threshold = 0.4 if use_llm else threshold
             annotations = _assign_ontology_annotations(
                 uri,
                 elem_store,
                 onto_store,
                 onto_cache,
-                threshold,
+                effective_threshold,
                 model_name=model_name,
+                use_llm=use_llm,
+                element_desc=elem_desc.strip(),
+                source_context=source_ctx,
             )
             if annotations:
                 stats["ontology_assigned"] += 1
@@ -168,7 +186,7 @@ def enrich_elements(
         if annotations or domain:
             if not dry_run:
                 _update_entity_in_place(f, ontology_annotations=annotations, value_domain=domain)
-        elif stats["values_resolved"] == 0 or dry_run:
+        else:
             stats["unchanged"] += 1
 
     return stats
@@ -179,13 +197,81 @@ def enrich_elements(
 # ---------------------------------------------------------------------------
 
 
+def enrich_from_source_metadata(staging_dir: Path) -> dict[str, int]:
+    """Pre-enrich entities that already have ontology identifiers from their source.
+
+    openMINDS instances have preferredOntologyIdentifier; other sources may have
+    similar fields. This step assigns high-confidence annotations without
+    embedding lookup or LLM verification.
+    """
+    from .models import MatchLevel
+
+    stats = {"assigned": 0, "total": 0}
+
+    for entity_type in ("elements", "values", "schemas", "valuesets"):
+        entity_dir = staging_dir / entity_type
+        if not entity_dir.exists():
+            continue
+
+        for f in sorted(entity_dir.glob("*.yaml")):
+            data = safe_load_yaml(f)
+            if data is None or "semantic" not in data:
+                continue
+            stats["total"] += 1
+
+            sem = data["semantic"]
+            if sem.get("ontology_annotations"):
+                continue  # Already annotated
+
+            # Check provenance for ontology identifiers
+            prov_list = data.get("provenance", [])
+            if not prov_list:
+                continue
+            first_prov = prov_list[0] if isinstance(prov_list[0], dict) else {}
+
+            # openMINDS instances: check for meaning field (set by LinkML adapter from PermissibleValue.meaning)
+            # Also check description for ontology URIs
+            onto_uri = None
+            desc = first_prov.get("description", "") or sem.get("description", "") or ""
+
+            # Check for OBO URIs in description
+            import re
+
+            obo_match = re.search(r"(http://purl\.obolibrary\.org/obo/\w+)", desc)
+            if obo_match:
+                onto_uri = obo_match.group(1)
+
+            # Check semantic dict for ontology_id or meaning
+            if sem.get("ontology_id"):
+                onto_uri = sem["ontology_id"]
+
+            if onto_uri:
+                annotation = {
+                    "term_uri": onto_uri,
+                    "term_label": first_prov.get("name", ""),
+                    "ontology": _ontology_from_uri(onto_uri),
+                    "mapping_relation": "skos:exactMatch",
+                    "match_level": MatchLevel.element_match.value
+                    if entity_type == "values"
+                    else MatchLevel.concept_match.value,
+                    "score": 1.0,
+                    "model": "source_metadata",
+                    "primary": True,
+                }
+                _update_entity_in_place(f, ontology_annotations=[annotation])
+                stats["assigned"] += 1
+
+    return stats
+
+
 def enrich_values(
     staging_dir: Path,
     cache_dir: Path | None = None,
     onto_store: EmbeddingStore | None = None,
     onto_cache: dict[str, dict] | None = None,
     model_name: str = "all-MiniLM-L6-v2",
-    threshold: float = 0.8,
+    threshold: float = 0.7,
+    use_llm: bool = False,
 ) -> dict[str, int]:
     """Enrich staged values in-place: assign ontology_annotations with element_match for high scores.
 
@@ -430,12 +516,16 @@ def enrich_all(
     onto_cache: dict[str, dict] | None = None,
     model_name: str = "all-MiniLM-L6-v2",
     threshold: float = 0.7,
+    use_llm: bool = False,
 ) -> dict[str, dict]:
     """Orchestrate enrichment of all entity types in dependency order.
 
-    Order: (1) elements + values  (2) valuesets  (3) schemas
+    Order: (0) source metadata  (1) elements + values  (2) valuesets  (3) schemas
 
-    Returns: {elements: {...}, values: {...}, valuesets: {...}, schemas: {...}}
+    When use_llm=True, candidate threshold drops to 0.4 and borderline matches
+    are verified by LLM. Without LLM, only matches above threshold are auto-assigned.
+
+    Returns: {source_metadata: {...}, elements: {...}, values: {...}, valuesets: {...}, schemas: {...}}
     """
     # Load shared resources once
     if onto_store is None and cache_dir is not None:
@@ -444,6 +534,10 @@ def enrich_all(
         onto_cache = _load_ontology_cache(cache_dir)
 
     results: dict[str, dict] = {}
+
+    # Phase 0: Pre-enrich from source metadata (ontology IDs already in source data)
+    logger.info("Pre-enriching from source metadata...")
+    results["source_metadata"] = enrich_from_source_metadata(staging_dir)
 
     # Phase 1: elements + values (independent of each other)
     logger.info("Enriching elements...")
@@ -454,6 +548,7 @@ def enrich_all(
         onto_cache=onto_cache,
         model_name=model_name,
         threshold=threshold,
+        use_llm=use_llm,
     )
     logger.info("Enriching values...")
     results["values"] = enrich_values(
@@ -462,7 +557,8 @@ def enrich_all(
         onto_store=onto_store,
         onto_cache=onto_cache,
         model_name=model_name,
-        threshold=0.8,
+        threshold=threshold,
+        use_llm=use_llm,
     )
 
     # Phase 2: valuesets (depends on enriched values)
