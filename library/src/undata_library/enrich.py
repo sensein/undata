@@ -18,6 +18,9 @@ from .utils import BASE_URI, safe_load_yaml
 
 logger = logging.getLogger(__name__)
 
+# Module-level cache for ontology term metadata (loaded once from pyoxigraph)
+_ONTO_CACHE_SINGLETON: dict[str, dict] | None = None
+
 
 # ---------------------------------------------------------------------------
 # In-place update (T023)
@@ -764,11 +767,40 @@ def _load_or_build_element_embeddings(elements_dir: Path, model_name: str) -> Em
 
 
 def _load_ontology_cache(cache_dir: Path) -> dict[str, dict]:
-    """Load ontology term metadata from cache YAML files."""
+    """Load ontology term metadata — tries pyoxigraph store first, then legacy YAML.
+
+    Returns dict[term_uri → {label, synonyms, definition, deprecated, parents}].
+    """
     cache: dict[str, dict] = {}
+
+    # Try pyoxigraph store (primary — has all terms with labels/synonyms)
+    # Use a module-level cache to avoid re-loading 268K terms on every call
+    global _ONTO_CACHE_SINGLETON
+    if _ONTO_CACHE_SINGLETON is not None:
+        return _ONTO_CACHE_SINGLETON
+
+    store_path = Path.home() / ".cache" / "undata" / "ontology-store"
+    if store_path.exists():
+        try:
+            from .ontology_store import OntologyStore
+
+            store = OntologyStore(store_path)
+            for uri, label, synonyms in store.all_terms():
+                cache[uri] = {
+                    "label": label,
+                    "synonyms": synonyms,
+                    "deprecated": False,
+                }
+            if cache:
+                logger.info("Loaded %d terms from ontology store", len(cache))
+                _ONTO_CACHE_SINGLETON = cache
+                return cache
+        except Exception as exc:
+            logger.warning("Failed to load from ontology store: %s", exc)
+
+    # Fallback: legacy YAML cache files
     if not cache_dir.exists():
         return cache
-
     for f in sorted(cache_dir.glob("*.yaml")):
         try:
             data = yaml.safe_load(f.read_text(encoding="utf-8"))
