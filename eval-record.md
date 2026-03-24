@@ -39,9 +39,36 @@ Updated after each significant re-extraction or pipeline change.
 - **openMINDS**: 4,390 instances from separate repo. 123 controlled vocabulary types as valuesets. Short property names.
 - **AIND**: JSON Schema $defs → classes/enums via LinkML builder.
 
-### Enrichment Status
+### Enrichment (027 pipeline with source metadata + LLM + cross-source)
 
-Enrichment rates are currently low (2-35% for elements). Top embedding match scores are 0.45-0.67 — below the 0.7 threshold. Next step: lower candidate threshold to 0.5, use LLM verification for borderline matches, implement multi-precision annotation.
+| Source | Source Metadata | Embedding | Schemas | Total Enriched | Flags |
+|--------|----------------|-----------|---------|----------------|-------|
+| BIDS | 0 | 15 elem + 356 val | 2 | 374 | 1,466 |
+| DANDI | 0 | 103 elem + 8 val | 22 | 134 | 2,085 |
+| NWB | 0 | 2 elem | 5 | 7 | 2,344 |
+| openMINDS | 3,084 | 1 elem + 859 val + 85 vs | 70 | 4,099 | 4,213 |
+| AIND | 0 | 191 elem + 264 val + 19 vs | 78 | 552 | 5,591 |
+
+Cross-source alignment: 73 label matches, 43 annotations transferred (openMINDS → BIDS/AIND)
+
+### Pipeline Performance
+
+| Step | Time |
+|------|------|
+| BIDS pipeline | 277s |
+| DANDI pipeline | 220s |
+| NWB pipeline | 197s |
+| openMINDS pipeline | 340s |
+| AIND pipeline | 274s |
+| **Total** | **~22 min** |
+
+### Enrichment Notes
+
+- Element enrichment rates low (2-35%) — ontology coverage is the bottleneck, not matching quality
+- LLM verification (gpt-5.4-nano) works correctly but most candidates are rejected (bad ontology coverage)
+- Source metadata pre-enrichment effective for openMINDS (70% of instances have curated ontology IDs)
+- Cross-source alignment transfers annotations between matching entities (73 label matches found)
+- Further improvement needs: ontology expansion, fine-tuned embeddings, quantified validation
 
 ---
 

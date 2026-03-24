@@ -73,7 +73,7 @@
 
 - [X] T026 [US1] Run full pipeline for all 5 sources, compare against 026 baseline (7,745 elements, 642 schemas, 1,000 values, 86 valuesets) — validated via test_pipeline_e2e.py
 - [X] T027 [US1] Add a new synthetic element, verify it flows through the entire pipeline — TestNewEntityFlow in test_pipeline_e2e.py
-- [ ] T028 [US1] Update `eval-record.md` with post-cleanup extraction results
+- [X] T028 [US1] Update `eval-record.md` with post-cleanup extraction results
 - [X] T029 [US1] Lint + run all tests; commit US1
 
 **Checkpoint**: Library is clean, consistent, well-tested. All 026 extraction counts preserved.
@@ -138,11 +138,11 @@
 
 ### Adapter Accuracy Review
 
-- [ ] T039 [US2] Read BIDS schema format docs, verify `library/src/undata_library/adapters/bids.py` + `standalone_scripts/bids_extract.py` capture all entity types; document mapping — REVIEW-TODO: deep source review
-- [ ] T040 [P] [US2] Read DANDI model docs, verify adapter captures all entity types — REVIEW-TODO: deep source review
-- [ ] T041 [P] [US2] Read NWB namespace format, verify adapter captures all entity types — REVIEW-TODO: deep source review
-- [ ] T042 [P] [US2] Read openMINDS JSON-LD format, verify adapter captures all entity types — REVIEW-TODO: deep source review
-- [ ] T043 [P] [US2] Read AIND JSON Schema format, verify adapter captures all entity types — REVIEW-TODO: deep source review
+- [X] T039 [US2] BIDS adapter: LinkML-first, sidecar rules, vocabulary reclassification, units. 51 issues documented in adapter-review.md
+- [X] T040 [P] [US2] DANDI adapter: LinkML-first, inheritance, ENUM_VALUE emission, type_ref
+- [X] T041 [P] [US2] NWB adapter: LinkML-first, inheritance (80/80), links/groups/refs, quantity
+- [X] T042 [P] [US2] openMINDS adapter: LinkML-first, controlled vocabulary → enums, instances (4,390), short property names
+- [X] T043 [P] [US2] AIND adapter: LinkML-first, JSON Schema $defs → classes/enums
 
 ### CLI Updates
 
@@ -151,11 +151,11 @@
 
 ### Validation
 
-- [ ] T046 [US2] Run full pipeline for all 5 sources with curation flags; verify flag counts > 0 — REVIEW-TODO: live pipeline run
-- [ ] T047 [US2] Verify run summary produced for each source — REVIEW-TODO: depends on T046
-- [ ] T048 [US2] Add a new synthetic element, verify it flows through full pipeline — already tested in test_pipeline_e2e.py
-- [ ] T049 [US2] Compare enrichment rates against 026 baseline — REVIEW-TODO: depends on T046
-- [ ] T050 [US2] Update `eval-record.md` with pipeline optimization results — REVIEW-TODO: depends on T046
+- [X] T046 [US2] Run full pipeline for all 5 sources: 8,820 entities, 5,166 enriched, 15,699 curation flags
+- [X] T047 [US2] Verify run summary produced — 5 run summaries in /tmp/undata-027-final/runs/
+- [X] T048 [US2] Synthetic element tested in test_pipeline_e2e.py
+- [X] T049 [US2] Enrichment improved: source metadata (3,084), embedding + LLM, cross-source alignment (43 transferred)
+- [X] T050 [US2] eval-record.md updated with full pipeline results
 - [X] T051 [US2] Lint + run all tests; commit US2
 
 **Checkpoint**: Pipeline produces accurate enrichment with LLM verification, curation flags, and run summaries.
