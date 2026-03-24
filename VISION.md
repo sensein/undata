@@ -97,19 +97,27 @@ Source Schemas ──→ Extract ──→ Enrich ──→ Commit ──→ Ali
 1. **Extract**: Source-specific adapters convert each schema into a common
    intermediate representation (LinkML SchemaDefinition), then a standard
    extractor produces classified entities with semantic identity and provenance.
+   Entities are written to a staging area with temporary UUIDs.
 
-2. **Enrich**: Each entity is matched against an ontology store (268,000+ terms
-   from 13 ontologies) using embedding similarity, with LLM verification for
-   borderline matches. Ontology annotations are assigned at multiple precision
-   levels (exactMatch, closeMatch, broadMatch, relatedMatch).
+2. **Enrich**: Each staged entity is matched against an ontology store (268,000+
+   terms from 13 ontologies) using embedding similarity, with LLM verification
+   for borderline matches. Ontology annotations are assigned at multiple
+   precision levels (exactMatch, closeMatch, broadMatch, relatedMatch).
+   Enrichment modifies staged entities in-place — no new files are created.
 
-3. **Commit**: Enriched entities are content-addressed. The hash determines
-   whether an entity is new or already exists in the registry. Cross-source
-   duplicates are merged (provenance accumulated, single identity preserved).
+3. **Commit**: Enriched entities are content-addressed. The identity hash is
+   computed from the semantic block (including ontology annotations if
+   high-confidence). The hash determines whether an entity is new or already
+   exists in the registry. Cross-source duplicates are merged (provenance
+   accumulated, single identity preserved). Staging is cleared after commit.
 
-4. **Align**: Embedding-based similarity detects aliases across sources.
-   Elements that share an ontology concept or have high structural similarity
-   are grouped.
+4. **Align**: Runs *after* commit, on the full committed registry. This is
+   necessary because alignment detects cross-source aliases — it needs entities
+   from all sources to be committed and content-addressed before it can compare
+   them. Embedding-based similarity and shared ontology terms identify groups of
+   equivalent entities. Cross-source annotation transfer propagates ontology
+   annotations from well-annotated entities (e.g., openMINDS at 70%) to
+   under-annotated ones (e.g., NWB at 1%).
 
 5. **Transform**: For aligned elements with differing types, units, or
    encodings, explicit transform records are generated with documented
@@ -126,10 +134,47 @@ files on disk (for standalone CLI use) or a database (for the web service).
   identify gaps or redundancies.
 - **Curators** review low-confidence matches and ambiguous annotations through
   a web interface, improving registry quality over time.
+- **Contributors** suggest annotations, flag issues, and comment on entities
+  through an authenticated submission workflow.
 - **Tool builders** query the GraphQL API to power search, autocomplete, and
   validation in their applications.
 - **Researchers** browse the registry to understand what data elements exist
   across ecosystems and how they relate.
+
+## Community Model (Inspired by CivicDB)
+
+The curation and contribution system is modeled after
+[CivicDB](https://civicdb.org) — a production biomedical knowledgebase with a
+proven social curation workflow. Key patterns adopted:
+
+**Three-tier roles.** Contributor (default — can submit annotations, comments,
+and flags) → Curator (reviews and resolves submissions) → Admin (manages users,
+triggers pipelines). Every action is attributed to an authenticated identity.
+
+**Revision-based curation.** Contributions are not applied directly. A
+contributor submits a suggestion (e.g., "this element should be annotated with
+NCIT:C25150"). A curator reviews the suggestion with supporting evidence
+(embedding score, LLM justification, related entities) and approves, rejects, or
+defers. Field-level diffs show exactly what changes.
+
+**Polymorphic concerns.** Any entity type (element, schema, value, valueset,
+transform) can be commented on, flagged, and subscribed to. This avoids
+entity-type-specific UI for generic operations.
+
+**Evidence panels.** When reviewing a curation flag, the curator sees:
+- The automated match candidates with similarity scores
+- LLM verification results (model, justification, confidence)
+- Related entities from other sources with the same ontology term
+- The entity's full provenance chain
+
+**Activity trail.** All state changes (flag created, contribution submitted,
+flag resolved, entity re-enriched) produce audit records. The full history of
+any entity is browsable.
+
+**GraphQL-only API.** Following CivicDB's architecture, the same GraphQL API
+powers both the frontend and external consumers. No separate REST layer. Relay-
+style cursor pagination, DataLoader batching, and materialized views for
+performance.
 
 ---
 
