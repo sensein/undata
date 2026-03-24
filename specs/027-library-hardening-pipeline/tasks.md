@@ -175,12 +175,12 @@
 
 ### Backend — Database + GraphQL
 
-- [ ] T054 [US3] Create `backend/` project structure: FastAPI + Strawberry + SQLAlchemy + Alembic + PostgreSQL per plan.md
-- [ ] T055 [US3] Create SQLAlchemy models in `backend/src/models/`: Element, Schema, Value, ValueSet, Transform, CurationFlag, Contribution, User per data-model.md
+- [X] T054 [US3] Create `backend/` project structure: FastAPI + Strawberry + SQLAlchemy + Alembic + PostgreSQL per plan.md
+- [X] T055 [US3] Create SQLAlchemy models in `backend/src/models/`: Element, Schema, Value, ValueSet, Transform, CurationFlag, Contribution, User per data-model.md
 - [ ] T056 [US3] Create Alembic migration for initial database schema in `backend/migrations/`
 - [ ] T057 [US3] Create registry import service in `backend/src/services/import_service.py`: read flat-file YAML registry → batch insert to PostgreSQL preserving sha256 + provenance
-- [ ] T058 [US3] Create Strawberry GraphQL schema in `backend/src/schema.py`: types for all entities per `contracts/graphql-schema.md`
-- [ ] T059 [P] [US3] Create query resolvers in `backend/src/resolvers/queries.py`: `element`, `browseElements`, `schema`, `browseSchemas`, `curationQueue`, `runSummaries`
+- [X] T058 [US3] Create Strawberry GraphQL schema in `backend/src/schema.py`: types for all entities per `contracts/graphql-schema.md`
+- [X] T059 [P] [US3] Create query resolvers in `backend/src/resolvers/queries.py`: `element`, `browseElements`, `schema`, `browseSchemas`, `curationQueue`, `runSummaries`
 - [ ] T060 [P] [US3] Create mutation resolvers in `backend/src/resolvers/mutations.py`: `resolveFlag`, `submitContribution`, `reviewContribution`, `importRegistry`
 - [ ] T061 [US3] Add DataLoader batching for all relationships (element → ontology_annotations, element → transforms, element → schemas)
 - [ ] T062 [US3] Add query depth limiting and cost analysis to prevent fan-out attacks
@@ -189,9 +189,9 @@
 
 ### Frontend — Element Browser
 
-- [ ] T065 [US3] Create `frontend/` project structure: Next.js 15 + Vite + Apollo Client + Tailwind CSS
-- [ ] T066 [US3] Create Apollo Client provider with GraphQL connection in `frontend/src/lib/apollo.ts`
-- [ ] T067 [US3] Create element browse page in `frontend/src/app/elements/page.tsx`: faceted search (source, data_type, ontology, curation status) with cursor pagination
+- [X] T065 [US3] Create `frontend/` project structure: Next.js 15 + Vite + Apollo Client + Tailwind CSS
+- [X] T066 [US3] Create Apollo Client provider with GraphQL connection in `frontend/src/lib/apollo.ts`
+- [X] T067 [US3] Create element browse page in `frontend/src/app/elements/page.tsx`: faceted search (source, data_type, ontology, curation status) with cursor pagination
 - [ ] T068 [P] [US3] Create element detail page in `frontend/src/app/elements/[sha256]/page.tsx`: semantic identity, provenance, ontology annotations, related transforms, schemas
 - [ ] T069 [P] [US3] Create connected entity navigation component in `frontend/src/components/EntityGraph.tsx`: visualize element → transforms → target elements → schemas
 - [ ] T070 [P] [US3] Create search component in `frontend/src/components/Search.tsx`: full-text search across all entity types
