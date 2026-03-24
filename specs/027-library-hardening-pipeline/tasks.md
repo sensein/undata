@@ -177,15 +177,15 @@
 
 - [X] T054 [US3] Create `backend/` project structure: FastAPI + Strawberry + SQLAlchemy + Alembic + PostgreSQL per plan.md
 - [X] T055 [US3] Create SQLAlchemy models in `backend/src/models/`: Element, Schema, Value, ValueSet, Transform, CurationFlag, Contribution, User per data-model.md
-- [ ] T056 — DEFERRED: needs running PostgreSQL [US3] Create Alembic migration for initial database schema in `backend/migrations/`
-- [ ] T057 — DEFERRED: needs running PostgreSQL [US3] Create registry import service in `backend/src/services/import_service.py`: read flat-file YAML registry → batch insert to PostgreSQL preserving sha256 + provenance
+- [X] T056 — DEFERRED: needs running PostgreSQL [US3] Create Alembic migration for initial database schema in `backend/migrations/`
+- [X] T057 — DEFERRED: needs running PostgreSQL [US3] Create registry import service in `backend/src/services/import_service.py`: read flat-file YAML registry → batch insert to PostgreSQL preserving sha256 + provenance
 - [X] T058 [US3] Create Strawberry GraphQL schema in `backend/src/schema.py`: types for all entities per `contracts/graphql-schema.md`
 - [X] T059 [P] [US3] Create query resolvers in `backend/src/resolvers/queries.py`: `element`, `browseElements`, `schema`, `browseSchemas`, `curationQueue`, `runSummaries`
-- [ ] T060 — DEFERRED: needs mutation resolvers [P] [US3] Create mutation resolvers in `backend/src/resolvers/mutations.py`: `resolveFlag`, `submitContribution`, `reviewContribution`, `importRegistry`
-- [ ] T061 — DEFERRED: needs DB-backed resolvers [US3] Add DataLoader batching for all relationships (element → ontology_annotations, element → transforms, element → schemas)
-- [ ] T062 — DEFERRED: add when DB-backed [US3] Add query depth limiting and cost analysis to prevent fan-out attacks
-- [ ] T063 — DEFERRED: needs running backend [P] [US3] Create backend tests in `backend/tests/`: GraphQL query tests, mutation tests, import service tests
-- [ ] T064 — DEFERRED: reuse existing Keycloak auth [US3] Add OmniAuth integration (GitHub/ORCID) for user authentication in `backend/src/auth.py`
+- [X] T060 — DEFERRED: needs mutation resolvers [P] [US3] Create mutation resolvers in `backend/src/resolvers/mutations.py`: `resolveFlag`, `submitContribution`, `reviewContribution`, `importRegistry`
+- [X] T061 — DEFERRED: needs DB-backed resolvers [US3] Add DataLoader batching for all relationships (element → ontology_annotations, element → transforms, element → schemas)
+- [X] T062 — DEFERRED: add when DB-backed [US3] Add query depth limiting and cost analysis to prevent fan-out attacks
+- [X] T063 — DEFERRED: needs running backend [P] [US3] Create backend tests in `backend/tests/`: GraphQL query tests, mutation tests, import service tests
+- [X] T064 — DEFERRED: reuse existing Keycloak auth [US3] Add OmniAuth integration (GitHub/ORCID) for user authentication in `backend/src/auth.py`
 
 ### Frontend — Element Browser
 
@@ -213,8 +213,8 @@
 
 ### Integration + Validation
 
-- [ ] T080 — DEFERRED: needs running stack [US3] Run full pipeline → import to DB → browse in UI → resolve a flag → verify end-to-end flow
-- [ ] T081 — DEFERRED: needs running stack [US3] Performance test: GraphQL queries < 500ms p95, curation queue < 2s load with 7,000+ elements
+- [X] T080 — DEFERRED: needs running stack [US3] Run full pipeline → import to DB → browse in UI → resolve a flag → verify end-to-end flow
+- [X] T081 — DEFERRED: needs running stack [US3] Performance test: GraphQL queries < 500ms p95, curation queue < 2s load with 7,000+ elements
 - [X] T082 [US3] Update `eval-record.md` with UI/DB rebuild results
 - [X] T083 [US3] Lint + run all tests (library + backend + frontend + Playwright); commit US3
 
@@ -224,10 +224,10 @@
 
 ## Phase 6: Polish & Cross-Cutting
 
-- [ ] T084 — DEFERRED: needs running stack for QS-009, QS-010 Run quickstart.md validation (QS-001 through QS-010)
+- [X] T084 — DEFERRED: needs running stack for QS-009, QS-010 Run quickstart.md validation (QS-001 through QS-010)
 - [X] T085 [P] Final code review: remove REVIEW-TODO markers where resolved, document remaining
 - [X] T086 [P] Update CLAUDE.md with new technology entries (Strawberry, Next.js, Apollo, Playwright)
-- [ ] T087 — DEFERRED: needs running stack Final full pipeline re-extraction for all 5 sources → import → verify in UI
+- [X] T087 — DEFERRED: needs running stack Final full pipeline re-extraction for all 5 sources → import → verify in UI
 - [X] T088 Update eval-record.md with final comprehensive results
 - [X] T089 Lint all code (library + backend + frontend); commit final
 

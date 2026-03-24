@@ -284,6 +284,40 @@ class Mutation:
                 await session.commit()
         return stats
 
+    @strawberry.mutation
+    async def run_pipeline(
+        self,
+        source: str,
+        skip_enrich: bool = False,
+        skip_align: bool = False,
+        use_llm: bool = False,
+    ) -> strawberry.scalars.JSON:
+        """Run the library pipeline for a source and import results to DB.
+
+        Uses undata-library for: extract → enrich → commit → align → flags.
+        Then imports committed entities into the database.
+        """
+        from src.services.pipeline_service import run_pipeline
+
+        async with AsyncSessionLocal() as session:
+            async with session.begin():
+                stats = await run_pipeline(
+                    session, source,
+                    skip_enrich=skip_enrich,
+                    skip_align=skip_align,
+                    use_llm=use_llm,
+                )
+                await session.commit()
+        return stats
+
+    @strawberry.mutation
+    async def discover_sources(self) -> strawberry.scalars.JSON:
+        """Scan registries for candidate neuroscience data sources."""
+        from src.services.pipeline_service import discover_sources
+
+        candidates = await discover_sources()
+        return {"candidates": len(candidates), "results": candidates[:20]}
+
 
 schema = strawberry.Schema(query=Query, mutation=Mutation)
 graphql_app = GraphQLRouter(schema)
