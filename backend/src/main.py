@@ -152,3 +152,8 @@ from src.api.v1.pathways import router as pathways_router  # noqa: E402
 
 app.include_router(pathways_router, prefix="/api/v1")
 
+# 027: GraphQL API (Strawberry)
+from src.graphql.schema import graphql_app  # noqa: E402
+
+app.include_router(graphql_app, prefix="/graphql")
+

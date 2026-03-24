@@ -19,6 +19,7 @@ dependencies = [
     "uvicorn[standard]>=0.29",
     "rdflib>=7.0",
     "cmixf>=0.2",
+    "strawberry-graphql[fastapi]>=0.250",
     "undata-library",
 ]
 

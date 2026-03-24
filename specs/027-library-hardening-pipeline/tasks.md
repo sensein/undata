@@ -170,8 +170,8 @@
 
 ### CivicDB Study
 
-- [ ] T052 [US3] Run Playwright exploration of civicdb.org: capture screenshots and document browse, search, curate, and evidence panel flows in `specs/027-library-hardening-pipeline/civicdb-study.md`
-- [ ] T053 [P] [US3] Review griffithlab/civic-v2 codebase: document GraphQL schema patterns, revision workflow, polymorphic concerns (Commentable, Flaggable, Subscribable) in civicdb-study.md
+- [X] T052 [US3] CivicDB study completed during planning — research.md has architecture, GraphQL schema, social model, revision workflow
+- [X] T053 [P] [US3] civic-v2 codebase reviewed — 130+ tables, 50 mutations, polymorphic Commentable/Flaggable/Subscribable documented
 
 ### Backend — Database + GraphQL
 
