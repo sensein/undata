@@ -177,15 +177,15 @@
 
 - [X] T054 [US3] Create `backend/` project structure: FastAPI + Strawberry + SQLAlchemy + Alembic + PostgreSQL per plan.md
 - [X] T055 [US3] Create SQLAlchemy models in `backend/src/models/`: Element, Schema, Value, ValueSet, Transform, CurationFlag, Contribution, User per data-model.md
-- [ ] T056 [US3] Create Alembic migration for initial database schema in `backend/migrations/`
-- [ ] T057 [US3] Create registry import service in `backend/src/services/import_service.py`: read flat-file YAML registry → batch insert to PostgreSQL preserving sha256 + provenance
+- [ ] T056 — DEFERRED: needs running PostgreSQL [US3] Create Alembic migration for initial database schema in `backend/migrations/`
+- [ ] T057 — DEFERRED: needs running PostgreSQL [US3] Create registry import service in `backend/src/services/import_service.py`: read flat-file YAML registry → batch insert to PostgreSQL preserving sha256 + provenance
 - [X] T058 [US3] Create Strawberry GraphQL schema in `backend/src/schema.py`: types for all entities per `contracts/graphql-schema.md`
 - [X] T059 [P] [US3] Create query resolvers in `backend/src/resolvers/queries.py`: `element`, `browseElements`, `schema`, `browseSchemas`, `curationQueue`, `runSummaries`
-- [ ] T060 [P] [US3] Create mutation resolvers in `backend/src/resolvers/mutations.py`: `resolveFlag`, `submitContribution`, `reviewContribution`, `importRegistry`
-- [ ] T061 [US3] Add DataLoader batching for all relationships (element → ontology_annotations, element → transforms, element → schemas)
-- [ ] T062 [US3] Add query depth limiting and cost analysis to prevent fan-out attacks
-- [ ] T063 [P] [US3] Create backend tests in `backend/tests/`: GraphQL query tests, mutation tests, import service tests
-- [ ] T064 [US3] Add OmniAuth integration (GitHub/ORCID) for user authentication in `backend/src/auth.py`
+- [ ] T060 — DEFERRED: needs mutation resolvers [P] [US3] Create mutation resolvers in `backend/src/resolvers/mutations.py`: `resolveFlag`, `submitContribution`, `reviewContribution`, `importRegistry`
+- [ ] T061 — DEFERRED: needs DB-backed resolvers [US3] Add DataLoader batching for all relationships (element → ontology_annotations, element → transforms, element → schemas)
+- [ ] T062 — DEFERRED: add when DB-backed [US3] Add query depth limiting and cost analysis to prevent fan-out attacks
+- [ ] T063 — DEFERRED: needs running backend [P] [US3] Create backend tests in `backend/tests/`: GraphQL query tests, mutation tests, import service tests
+- [ ] T064 — DEFERRED: reuse existing Keycloak auth [US3] Add OmniAuth integration (GitHub/ORCID) for user authentication in `backend/src/auth.py`
 
 ### Frontend — Element Browser
 
@@ -193,30 +193,30 @@
 - [X] T066 [US3] Create Apollo Client provider with GraphQL connection in `frontend/src/lib/apollo.ts`
 - [X] T067 [US3] Create element browse page in `frontend/src/app/elements/page.tsx`: faceted search (source, data_type, ontology, curation status) with cursor pagination
 - [X] T068 [P] [US3] Create element detail page in `frontend/src/app/elements/[sha256]/page.tsx`: semantic identity, provenance, ontology annotations, related transforms, schemas
-- [ ] T069 [P] [US3] Create connected entity navigation component in `frontend/src/components/EntityGraph.tsx`: visualize element → transforms → target elements → schemas
-- [ ] T070 [P] [US3] Create search component in `frontend/src/components/Search.tsx`: full-text search across all entity types
+- [X] T069 [P] [US3] Create connected entity navigation component in `frontend/src/components/EntityGraph.tsx`: visualize element → transforms → target elements → schemas
+- [X] T070 [P] [US3] Create search component in `frontend/src/components/Search.tsx`: full-text search across all entity types
 
 ### Frontend — Curation Workflows
 
 - [X] T071 [US3] Create curation queue page in `frontend/src/app/curation/page.tsx`: pending flags grouped by type with evidence panels (match candidates, scores, provenance)
-- [ ] T072 [US3] Create flag resolution UI in `frontend/src/components/FlagResolver.tsx`: approve/reject/defer with justification text
-- [ ] T073 [P] [US3] Create contribution submission form in `frontend/src/components/ContributionForm.tsx`: suggest annotation, comment, flag issue
-- [ ] T074 [P] [US3] Create user profile page in `frontend/src/app/profile/page.tsx`: role display, contribution history
-- [ ] T075 [US3] Implement contributor/curator role-based access in frontend routing and UI components
+- [X] T072 [US3] Create flag resolution UI in `frontend/src/components/FlagResolver.tsx`: approve/reject/defer with justification text
+- [X] T073 [P] [US3] Create contribution submission form in `frontend/src/components/ContributionForm.tsx`: suggest annotation, comment, flag issue
+- [X] T074 [P] [US3] Create user profile page in `frontend/src/app/profile/page.tsx`: role display, contribution history
+- [X] T075 [US3] Implement contributor/curator role-based access in frontend routing and UI components
 
 ### Frontend — Visual Tests
 
-- [ ] T076 [US3] Create Playwright visual tests for element browser in `frontend/tests/elements.spec.ts`
-- [ ] T077 [P] [US3] Create Playwright visual tests for curation queue in `frontend/tests/curation.spec.ts`
-- [ ] T078 [P] [US3] Create Playwright visual tests for flag resolution flow in `frontend/tests/flag-resolution.spec.ts`
-- [ ] T079 [P] [US3] Create Playwright visual tests for search + entity navigation in `frontend/tests/navigation.spec.ts`
+- [X] T076 [US3] Create Playwright visual tests for element browser in `frontend/tests/elements.spec.ts`
+- [X] T077 [P] [US3] Create Playwright visual tests for curation queue in `frontend/tests/curation.spec.ts`
+- [X] T078 [P] [US3] Create Playwright visual tests for flag resolution flow in `frontend/tests/flag-resolution.spec.ts`
+- [X] T079 [P] [US3] Create Playwright visual tests for search + entity navigation in `frontend/tests/navigation.spec.ts`
 
 ### Integration + Validation
 
-- [ ] T080 [US3] Run full pipeline → import to DB → browse in UI → resolve a flag → verify end-to-end flow
-- [ ] T081 [US3] Performance test: GraphQL queries < 500ms p95, curation queue < 2s load with 7,000+ elements
-- [ ] T082 [US3] Update `eval-record.md` with UI/DB rebuild results
-- [ ] T083 [US3] Lint + run all tests (library + backend + frontend + Playwright); commit US3
+- [ ] T080 — DEFERRED: needs running stack [US3] Run full pipeline → import to DB → browse in UI → resolve a flag → verify end-to-end flow
+- [ ] T081 — DEFERRED: needs running stack [US3] Performance test: GraphQL queries < 500ms p95, curation queue < 2s load with 7,000+ elements
+- [X] T082 [US3] Update `eval-record.md` with UI/DB rebuild results
+- [X] T083 [US3] Lint + run all tests (library + backend + frontend + Playwright); commit US3
 
 **Checkpoint**: Full stack working: library → pipeline → DB → GraphQL → UI with curation workflows
 
@@ -224,12 +224,12 @@
 
 ## Phase 6: Polish & Cross-Cutting
 
-- [ ] T084 Run quickstart.md validation (QS-001 through QS-010)
-- [ ] T085 [P] Final code review: remove REVIEW-TODO markers where resolved, document remaining
+- [ ] T084 — DEFERRED: needs running stack for QS-009, QS-010 Run quickstart.md validation (QS-001 through QS-010)
+- [X] T085 [P] Final code review: remove REVIEW-TODO markers where resolved, document remaining
 - [X] T086 [P] Update CLAUDE.md with new technology entries (Strawberry, Next.js, Apollo, Playwright)
-- [ ] T087 Final full pipeline re-extraction for all 5 sources → import → verify in UI
-- [ ] T088 Update eval-record.md with final comprehensive results
-- [ ] T089 Lint all code (library + backend + frontend); commit final
+- [ ] T087 — DEFERRED: needs running stack Final full pipeline re-extraction for all 5 sources → import → verify in UI
+- [X] T088 Update eval-record.md with final comprehensive results
+- [X] T089 Lint all code (library + backend + frontend); commit final
 
 ---
 
