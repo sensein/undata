@@ -1,17 +1,24 @@
-"""Strawberry GraphQL schema for the undata registry.
+"""Strawberry GraphQL schema — database-backed resolvers.
 
-Reads from the flat-file YAML registry directly (no database required).
-This is the simplest path to a working GraphQL API — database-backed
-resolvers can be added later for performance.
+All queries go through PostgreSQL via SQLAlchemy async session.
+The frontend communicates exclusively through this GraphQL API.
 """
 
 from __future__ import annotations
 
-from pathlib import Path
 from typing import Optional
 
 import strawberry
+from sqlalchemy import func, select
 from strawberry.fastapi import GraphQLRouter
+
+from src.db.session import AsyncSessionLocal
+from src.models.db import (
+    CurationFlag as CurationFlagModel,
+    Element as ElementModel,
+    RunSummary as RunSummaryModel,
+    Value as ValueModel,
+)
 
 from .types import (
     CurationFlag,
@@ -24,78 +31,56 @@ from .types import (
     PageInfo,
     ProvenanceEntry,
     RunSummary,
-    Schema,
     Value,
-    ValueSet,
 )
 
-# Registry directory — configurable via environment
-_REGISTRY_DIR: Path | None = None
 
-
-def set_registry_dir(path: Path) -> None:
-    global _REGISTRY_DIR
-    _REGISTRY_DIR = path
-
-
-def _get_registry() -> Path:
-    if _REGISTRY_DIR:
-        return _REGISTRY_DIR
-    import os
-    return Path(os.environ.get("UNDATA_REGISTRY_DIR", str(Path.home() / ".local/share/undata/registry")))
-
-
-def _load_yaml(path: Path) -> dict | None:
-    import yaml
-    try:
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
-        return data if isinstance(data, dict) else None
-    except Exception:
-        return None
-
-
-def _to_element(data: dict, file_name: str) -> Element:
-    sem = data.get("semantic", {})
-    prov_list = data.get("provenance", [])
-    anns = sem.get("ontology_annotations", [])
+def _to_element(row: ElementModel) -> Element:
+    anns = row.ontology_annotations or []
+    prov_list = row.provenance or []
     return Element(
-        sha256=data.get("sha256"),
-        data_type=sem.get("data_type"),
-        unit=sem.get("unit"),
-        pattern=sem.get("pattern"),
-        value_domain=sem.get("value_domain"),
-        description=sem.get("description"),
-        min_value=sem.get("min_value"),
-        max_value=sem.get("max_value"),
-        type_ref=sem.get("type_ref"),
-        ontology_annotations=[OntologyAnnotation(**a) for a in anns if isinstance(a, dict)],
+        sha256=row.sha256,
+        data_type=row.data_type,
+        unit=row.unit,
+        pattern=row.pattern,
+        value_domain=row.value_domain,
+        description=row.description,
+        min_value=row.min_value,
+        max_value=row.max_value,
+        type_ref=row.type_ref,
+        ontology_annotations=[
+            OntologyAnnotation(**a)
+            for a in anns
+            if isinstance(a, dict) and "term_uri" in a
+        ],
         provenance=[
             ProvenanceEntry(
                 source=p.get("source", ""),
                 class_name=p.get("class", p.get("class_", "")),
                 name=p.get("name", ""),
                 description=p.get("description"),
-                generated_at=p.get("generated_at"),
-                attributed_to=p.get("attributed_to"),
-                activity=p.get("activity"),
             )
-            for p in prov_list if isinstance(p, dict)
+            for p in prov_list
+            if isinstance(p, dict)
         ],
-        file_name=file_name,
+        file_name=row.file_name,
     )
 
 
-def _to_value(data: dict, file_name: str) -> Value:
-    sem = data.get("semantic", {})
-    prov_list = data.get("provenance", [])
-    anns = sem.get("ontology_annotations", [])
+def _to_value(row: ValueModel) -> Value:
+    anns = row.ontology_annotations or []
+    prov_list = row.provenance or []
     return Value(
-        sha256=data.get("sha256"),
-        label=sem.get("label", ""),
-        value_type=sem.get("value_type"),
-        description=sem.get("description"),
-        ontology_id=sem.get("ontology_id"),
-        ontology_annotations=[OntologyAnnotation(**a) for a in anns if isinstance(a, dict)],
+        sha256=row.sha256,
+        label=row.label,
+        value_type=row.value_type,
+        description=row.description,
+        ontology_id=row.ontology_id,
+        ontology_annotations=[
+            OntologyAnnotation(**a)
+            for a in anns
+            if isinstance(a, dict) and "term_uri" in a
+        ],
         provenance=[
             ProvenanceEntry(
                 source=p.get("source", ""),
@@ -103,137 +88,202 @@ def _to_value(data: dict, file_name: str) -> Value:
                 name=p.get("name", ""),
                 description=p.get("description"),
             )
-            for p in prov_list if isinstance(p, dict)
+            for p in prov_list
+            if isinstance(p, dict)
         ],
-        file_name=file_name,
+        file_name=row.file_name,
     )
 
 
 @strawberry.type
 class Query:
     @strawberry.field
-    def element(self, sha256: str) -> Optional[Element]:
-        """Look up a single element by sha256 hash."""
-        registry = _get_registry()
-        for f in (registry / "elements").glob(f"*_{sha256[:12]}.yaml"):
-            data = _load_yaml(f)
-            if data:
-                return _to_element(data, f.name)
-        return None
+    async def element(self, sha256: str) -> Optional[Element]:
+        """Look up a single element by sha256 hash prefix."""
+        async with AsyncSessionLocal() as session:
+            stmt = select(ElementModel).where(
+                ElementModel.sha256.startswith(sha256)
+            )
+            result = await session.execute(stmt)
+            row = result.scalar_one_or_none()
+            return _to_element(row) if row else None
 
     @strawberry.field
-    def browse_elements(
+    async def browse_elements(
         self,
         source: Optional[str] = None,
         data_type: Optional[str] = None,
         first: int = 20,
-        after: Optional[str] = None,
+        offset: int = 0,
     ) -> ElementConnection:
-        """Browse elements with optional filtering."""
-        registry = _get_registry()
-        elements_dir = registry / "elements"
-        if not elements_dir.exists():
-            return ElementConnection(edges=[], page_info=PageInfo(has_next_page=False, has_previous_page=False), total_count=0)
+        """Browse elements with filtering and pagination."""
+        async with AsyncSessionLocal() as session:
+            stmt = select(ElementModel)
+            count_stmt = select(func.count()).select_from(ElementModel)
 
-        all_files = sorted(elements_dir.glob("*.yaml"))
+            if source:
+                # Filter by source in provenance JSONB
+                stmt = stmt.where(
+                    ElementModel.provenance[0]["source"].astext == source
+                )
+                count_stmt = count_stmt.where(
+                    ElementModel.provenance[0]["source"].astext == source
+                )
+            if data_type:
+                stmt = stmt.where(ElementModel.data_type == data_type)
+                count_stmt = count_stmt.where(ElementModel.data_type == data_type)
 
-        # Apply filters
-        filtered = []
-        for f in all_files:
-            data = _load_yaml(f)
-            if data is None:
-                continue
-            sem = data.get("semantic", {})
-            prov = data.get("provenance", [{}])
-            first_prov = prov[0] if prov and isinstance(prov[0], dict) else {}
+            total = (await session.execute(count_stmt)).scalar() or 0
 
-            if source and first_prov.get("source") != source:
-                continue
-            if data_type and sem.get("data_type") != data_type:
-                continue
-            filtered.append((f, data))
+            stmt = stmt.order_by(ElementModel.file_name).offset(offset).limit(first)
+            result = await session.execute(stmt)
+            rows = result.scalars().all()
 
-        total = len(filtered)
+            edges = [
+                ElementEdge(
+                    node=_to_element(row),
+                    cursor=row.file_name,
+                )
+                for row in rows
+            ]
 
-        # Cursor pagination
-        start_idx = 0
-        if after:
-            for i, (f, _) in enumerate(filtered):
-                if f.stem == after:
-                    start_idx = i + 1
-                    break
-
-        page = filtered[start_idx : start_idx + first]
-        edges = [
-            ElementEdge(node=_to_element(data, f.name), cursor=f.stem)
-            for f, data in page
-        ]
-
-        return ElementConnection(
-            edges=edges,
-            page_info=PageInfo(
-                has_next_page=start_idx + first < total,
-                has_previous_page=start_idx > 0,
-                start_cursor=edges[0].cursor if edges else None,
-                end_cursor=edges[-1].cursor if edges else None,
-            ),
-            total_count=total,
-        )
+            return ElementConnection(
+                edges=edges,
+                page_info=PageInfo(
+                    has_next_page=offset + first < total,
+                    has_previous_page=offset > 0,
+                    start_cursor=edges[0].cursor if edges else None,
+                    end_cursor=edges[-1].cursor if edges else None,
+                ),
+                total_count=total,
+            )
 
     @strawberry.field
-    def browse_values(
+    async def browse_values(
         self,
         source: Optional[str] = None,
         first: int = 20,
-        after: Optional[str] = None,
+        offset: int = 0,
     ) -> list[Value]:
         """Browse values with optional source filtering."""
-        registry = _get_registry()
-        values_dir = registry / "values"
-        if not values_dir.exists():
-            return []
-
-        results = []
-        for f in sorted(values_dir.glob("*.yaml")):
-            if len(results) >= first:
-                break
-            data = _load_yaml(f)
-            if data is None:
-                continue
+        async with AsyncSessionLocal() as session:
+            stmt = select(ValueModel)
             if source:
-                prov = data.get("provenance", [{}])
-                if prov and isinstance(prov[0], dict) and prov[0].get("source") != source:
-                    continue
-            results.append(_to_value(data, f.name))
-
-        return results
+                stmt = stmt.where(
+                    ValueModel.provenance[0]["source"].astext == source
+                )
+            stmt = stmt.order_by(ValueModel.label).offset(offset).limit(first)
+            result = await session.execute(stmt)
+            return [_to_value(row) for row in result.scalars().all()]
 
     @strawberry.field
-    def run_summaries(self) -> list[RunSummary]:
-        """List all pipeline run summaries."""
-        registry = _get_registry()
-        runs_dir = registry / "runs"
-        if not runs_dir.exists():
-            return []
+    async def curation_queue(
+        self,
+        status: Optional[str] = "pending",
+        flag_type: Optional[str] = None,
+        first: int = 20,
+        offset: int = 0,
+    ) -> list[CurationFlag]:
+        """List curation flags."""
+        async with AsyncSessionLocal() as session:
+            stmt = select(CurationFlagModel)
+            if status:
+                stmt = stmt.where(CurationFlagModel.status == status)
+            if flag_type:
+                stmt = stmt.where(CurationFlagModel.flag_type == flag_type)
+            stmt = stmt.order_by(CurationFlagModel.created_at.desc()).offset(offset).limit(first)
+            result = await session.execute(stmt)
+            return [
+                CurationFlag(
+                    id=str(row.id),
+                    entity_type=row.entity_type,
+                    entity_ref=row.entity_ref,
+                    flag_type=FlagType(row.flag_type),
+                    context=row.context,
+                    status=FlagStatus(row.status),
+                    created_at=str(row.created_at),
+                    resolved_at=str(row.resolved_at) if row.resolved_at else None,
+                    resolved_by=row.resolved_by,
+                    resolution_note=row.resolution_note,
+                )
+                for row in result.scalars().all()
+            ]
 
-        results = []
-        for f in sorted(runs_dir.glob("*.yaml"), reverse=True):
-            data = _load_yaml(f)
-            if data is None:
-                continue
-            results.append(RunSummary(
-                run_id=data.get("run_id", f.stem),
-                source=data.get("source", ""),
-                started_at=data.get("started_at", ""),
-                completed_at=data.get("completed_at"),
-                entity_counts=data.get("entity_counts", {}),
-                enrichment_rate=data.get("enrichment_rate"),
-                curation_flags=data.get("curation_flags"),
-                delta=data.get("delta"),
-                timing=data.get("timing"),
-            ))
-        return results
+    @strawberry.field
+    async def run_summaries(self) -> list[RunSummary]:
+        """List pipeline run summaries."""
+        async with AsyncSessionLocal() as session:
+            stmt = select(RunSummaryModel).order_by(RunSummaryModel.started_at.desc())
+            result = await session.execute(stmt)
+            return [
+                RunSummary(
+                    run_id=row.run_id,
+                    source=row.source,
+                    started_at=row.started_at,
+                    completed_at=row.completed_at,
+                    entity_counts=row.entity_counts,
+                    enrichment_rate=row.enrichment_rate,
+                    curation_flags=row.curation_flags,
+                    delta=row.delta,
+                    timing=row.timing,
+                )
+                for row in result.scalars().all()
+            ]
 
 
-schema = strawberry.Schema(query=Query)
+@strawberry.type
+class Mutation:
+    @strawberry.mutation
+    async def resolve_flag(
+        self,
+        flag_id: str,
+        action: str,
+        resolved_by: str,
+        note: Optional[str] = None,
+    ) -> Optional[CurationFlag]:
+        """Resolve a curation flag."""
+        from datetime import datetime, timezone
+
+        async with AsyncSessionLocal() as session:
+            async with session.begin():
+                stmt = select(CurationFlagModel).where(
+                    CurationFlagModel.id == flag_id
+                )
+                result = await session.execute(stmt)
+                row = result.scalar_one_or_none()
+                if not row:
+                    return None
+                row.status = action
+                row.resolved_by = resolved_by
+                row.resolution_note = note
+                row.resolved_at = datetime.now(timezone.utc)
+                await session.flush()
+                return CurationFlag(
+                    id=str(row.id),
+                    entity_type=row.entity_type,
+                    entity_ref=row.entity_ref,
+                    flag_type=FlagType(row.flag_type),
+                    context=row.context,
+                    status=FlagStatus(row.status),
+                    created_at=str(row.created_at),
+                    resolved_at=str(row.resolved_at),
+                    resolved_by=row.resolved_by,
+                    resolution_note=row.resolution_note,
+                )
+
+    @strawberry.mutation
+    async def import_registry(self, registry_path: str) -> strawberry.scalars.JSON:
+        """Import a flat-file registry into the database."""
+        from pathlib import Path
+
+        from src.services.import_service import import_registry
+
+        async with AsyncSessionLocal() as session:
+            async with session.begin():
+                stats = await import_registry(session, Path(registry_path))
+                await session.commit()
+        return stats
+
+
+schema = strawberry.Schema(query=Query, mutation=Mutation)
 graphql_app = GraphQLRouter(schema)
