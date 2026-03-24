@@ -106,4 +106,5 @@ TypeScript: strict mode, eslint + prettier
 <!-- Last updated: 2026-03-13 by update-agent-context.sh (branch: 011-metamodel-provenance) -->
 <!-- Last updated: 2026-03-15 by update-agent-context.sh (branch: 015-undata-library) -->
 <!-- Last updated: 2026-03-22 by update-agent-context.sh (branch: 027-library-hardening-pipeline) -->
+<!-- Last updated: 2026-03-24 by update-agent-context.sh (branch: 027-library-hardening-pipeline) -->
 <!-- MANUAL ADDITIONS END -->

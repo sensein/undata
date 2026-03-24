@@ -192,13 +192,13 @@
 - [X] T065 [US3] Create `frontend/` project structure: Next.js 15 + Vite + Apollo Client + Tailwind CSS
 - [X] T066 [US3] Create Apollo Client provider with GraphQL connection in `frontend/src/lib/apollo.ts`
 - [X] T067 [US3] Create element browse page in `frontend/src/app/elements/page.tsx`: faceted search (source, data_type, ontology, curation status) with cursor pagination
-- [ ] T068 [P] [US3] Create element detail page in `frontend/src/app/elements/[sha256]/page.tsx`: semantic identity, provenance, ontology annotations, related transforms, schemas
+- [X] T068 [P] [US3] Create element detail page in `frontend/src/app/elements/[sha256]/page.tsx`: semantic identity, provenance, ontology annotations, related transforms, schemas
 - [ ] T069 [P] [US3] Create connected entity navigation component in `frontend/src/components/EntityGraph.tsx`: visualize element → transforms → target elements → schemas
 - [ ] T070 [P] [US3] Create search component in `frontend/src/components/Search.tsx`: full-text search across all entity types
 
 ### Frontend — Curation Workflows
 
-- [ ] T071 [US3] Create curation queue page in `frontend/src/app/curation/page.tsx`: pending flags grouped by type with evidence panels (match candidates, scores, provenance)
+- [X] T071 [US3] Create curation queue page in `frontend/src/app/curation/page.tsx`: pending flags grouped by type with evidence panels (match candidates, scores, provenance)
 - [ ] T072 [US3] Create flag resolution UI in `frontend/src/components/FlagResolver.tsx`: approve/reject/defer with justification text
 - [ ] T073 [P] [US3] Create contribution submission form in `frontend/src/components/ContributionForm.tsx`: suggest annotation, comment, flag issue
 - [ ] T074 [P] [US3] Create user profile page in `frontend/src/app/profile/page.tsx`: role display, contribution history
@@ -226,7 +226,7 @@
 
 - [ ] T084 Run quickstart.md validation (QS-001 through QS-010)
 - [ ] T085 [P] Final code review: remove REVIEW-TODO markers where resolved, document remaining
-- [ ] T086 [P] Update CLAUDE.md with new technology entries (Strawberry, Next.js, Apollo, Playwright)
+- [X] T086 [P] Update CLAUDE.md with new technology entries (Strawberry, Next.js, Apollo, Playwright)
 - [ ] T087 Final full pipeline re-extraction for all 5 sources → import → verify in UI
 - [ ] T088 Update eval-record.md with final comprehensive results
 - [ ] T089 Lint all code (library + backend + frontend); commit final
