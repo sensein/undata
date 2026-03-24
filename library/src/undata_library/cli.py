@@ -653,6 +653,20 @@ def pipeline(
     else:
         click.echo("[4/5] Alignment skipped.")
 
+    # Step 4b: Cross-source alignment (annotation transfer)
+    if not skip_align:
+        from .cross_align import cross_source_align
+
+        click.echo("  Cross-source alignment...")
+        t0 = time.time()
+        cross_stats = cross_source_align(lib)
+        timings["cross_align"] = time.time() - t0
+        click.echo(
+            f"  {cross_stats['label_matches']} label matches, "
+            f"{cross_stats['annotations_transferred']} annotations transferred "
+            f"in {timings['cross_align']:.1f}s"
+        )
+
     # Step 5: Transform
     if not skip_align:  # transforms depend on alignment
         click.echo("[5/5] Generating transforms...")
