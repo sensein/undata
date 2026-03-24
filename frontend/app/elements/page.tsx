@@ -3,6 +3,7 @@
 import { useQuery } from "@apollo/client";
 import { useState } from "react";
 import { BROWSE_ELEMENTS } from "@/graphql/queries";
+import type { ElementEdge, OntologyAnnotation } from "@/graphql/types";
 
 export default function ElementsPage() {
   const [source, setSource] = useState<string | undefined>();
@@ -70,10 +71,10 @@ export default function ElementsPage() {
             </tr>
           </thead>
           <tbody>
-            {elements.map(({ node, cursor }: any) => {
+            {elements.map(({ node, cursor }: ElementEdge) => {
               const prov = node.provenance?.[0];
               const primaryAnn = node.ontologyAnnotations?.find(
-                (a: any) => a.primary
+                (a: OntologyAnnotation) => a.primary
               );
               return (
                 <tr key={cursor} className="border-b hover:bg-gray-50">

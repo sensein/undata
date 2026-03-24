@@ -2,6 +2,7 @@
 
 import { useQuery } from "@apollo/client";
 import { RUN_SUMMARIES } from "@/graphql/queries";
+import type { RunSummaryNode } from "@/graphql/types";
 
 export default function RunsPage() {
   const { data, loading, error } = useQuery(RUN_SUMMARIES);
@@ -15,7 +16,7 @@ export default function RunsPage() {
       {error && <p className="text-red-500">Error: {error.message}</p>}
 
       <div className="space-y-4">
-        {runs.map((run: any) => (
+        {runs.map((run: RunSummaryNode) => (
           <div key={run.runId} className="border rounded p-4">
             <div className="flex justify-between items-start">
               <div>
@@ -29,8 +30,8 @@ export default function RunsPage() {
 
             {run.entityCounts && (
               <div className="mt-3 grid grid-cols-4 gap-4 text-sm">
-                {Object.entries(run.entityCounts as Record<string, any>).map(
-                  ([stage, counts]: [string, any]) => (
+                {Object.entries(run.entityCounts).map(
+                  ([stage, counts]) => (
                     <div key={stage}>
                       <div className="text-xs text-gray-500 uppercase">{stage}</div>
                       {typeof counts === "object" ? (

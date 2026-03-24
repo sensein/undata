@@ -1,10 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
-// Schemas page — shows class hierarchy from the registry
-// TODO: integrate with GraphQL browseSchemas query once implemented
-
 export default function SchemasPage() {
   return (
     <div className="max-w-7xl mx-auto p-6">

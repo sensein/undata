@@ -3,6 +3,7 @@
 import { useQuery } from "@apollo/client";
 import { useState } from "react";
 import { BROWSE_VALUES } from "@/graphql/queries";
+import type { ValueNode, OntologyAnnotation } from "@/graphql/types";
 
 export default function ValuesPage() {
   const [source, setSource] = useState<string | undefined>();
@@ -34,8 +35,8 @@ export default function ValuesPage() {
       {error && <p className="text-red-500">Error: {error.message}</p>}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {values.map((v: any) => {
-          const primaryAnn = v.ontologyAnnotations?.find((a: any) => a.primary);
+        {values.map((v: ValueNode) => {
+          const primaryAnn = v.ontologyAnnotations?.find((a: OntologyAnnotation) => a.primary);
           return (
             <div key={v.fileName} className="border rounded p-3 hover:bg-gray-50">
               <div className="font-mono text-sm font-medium">{v.label}</div>
