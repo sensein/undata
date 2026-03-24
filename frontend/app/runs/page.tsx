@@ -1,11 +1,13 @@
 "use client";
 
-import { useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client/react";
 import { RUN_SUMMARIES } from "@/graphql/queries";
 import type { RunSummaryNode } from "@/graphql/types";
 
 export default function RunsPage() {
-  const { data, loading, error } = useQuery(RUN_SUMMARIES);
+  const { data, loading, error } = useQuery<{
+    runSummaries: import("@/graphql/types").RunSummaryNode[];
+  }>(RUN_SUMMARIES);
   const runs = data?.runSummaries ?? [];
 
   return (

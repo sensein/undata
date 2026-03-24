@@ -1,6 +1,6 @@
 "use client";
 
-import { useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client/react";
 import { useState } from "react";
 import { BROWSE_ELEMENTS } from "@/graphql/queries";
 import type { ElementEdge, OntologyAnnotation } from "@/graphql/types";
@@ -9,7 +9,9 @@ export default function ElementsPage() {
   const [source, setSource] = useState<string | undefined>();
   const [dataType, setDataType] = useState<string | undefined>();
 
-  const { data, loading, error, fetchMore } = useQuery(BROWSE_ELEMENTS, {
+  const { data, loading, error, fetchMore } = useQuery<{
+    browseElements: import("@/graphql/types").ElementConnection;
+  }>(BROWSE_ELEMENTS, {
     variables: { source, dataType, first: 50 },
   });
 

@@ -1,13 +1,15 @@
 "use client";
 
-import { useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client/react";
 import { useState } from "react";
 import { BROWSE_VALUES } from "@/graphql/queries";
 import type { ValueNode, OntologyAnnotation } from "@/graphql/types";
 
 export default function ValuesPage() {
   const [source, setSource] = useState<string | undefined>();
-  const { data, loading, error } = useQuery(BROWSE_VALUES, {
+  const { data, loading, error } = useQuery<{
+    browseValues: import("@/graphql/types").ValueNode[];
+  }>(BROWSE_VALUES, {
     variables: { source, first: 100 },
   });
 
