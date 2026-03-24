@@ -14,8 +14,12 @@ from pathlib import Path
 import yaml
 
 from .embeddings import EmbeddingStore, build_element_embeddings, build_ontology_embeddings
+from .utils import BASE_URI, safe_load_yaml
 
 logger = logging.getLogger(__name__)
+
+# Module-level cache for ontology term metadata (loaded once from pyoxigraph)
+_ONTO_CACHE_SINGLETON: dict[str, dict] | None = None
 
 
 # ---------------------------------------------------------------------------
@@ -34,8 +38,8 @@ def _update_entity_in_place(
     Only writes fields that are provided and non-None.
     Returns True if any change was made.
     """
-    data = yaml.safe_load(filepath.read_text(encoding="utf-8"))
-    if not isinstance(data, dict) or "semantic" not in data:
+    data = safe_load_yaml(filepath)
+    if data is None or "semantic" not in data:
         return False
 
     sem = data["semantic"]
@@ -75,10 +79,14 @@ def enrich_elements(
     model_name: str = "all-MiniLM-L6-v2",
     threshold: float = 0.7,
     dry_run: bool = False,
+    use_llm: bool = False,
 ) -> dict[str, int]:
     """Enrich staged elements in-place: assign ontology_annotations, populate value_domain.
 
     Works on staging_dir/elements/. No new files are created.
+    If use_llm=True, the candidate threshold drops to 0.4 and borderline matches
+    (0.4-0.7) are verified by LLM before assignment. Without LLM, only matches
+    above threshold (0.7) are auto-assigned.
 
     Returns stats: {ontology_assigned, value_domain_set, values_resolved, unchanged, total}
     """
@@ -106,6 +114,11 @@ def enrich_elements(
     values_dir = staging_dir / "values"
     value_lookup = _build_value_lookup(values_dir) if values_dir.exists() else {}
 
+    # Collect candidates for batch LLM verification
+    _llm_candidates: list[
+        tuple
+    ] = []  # (filepath, elem_desc, term_label, term_defn, term_uri, annotations)
+
     stats = {
         "ontology_assigned": 0,
         "value_domain_set": 0,
@@ -127,21 +140,47 @@ def enrich_elements(
         annotations = None
         domain = None
 
-        # 1. Assign ontology_annotations via embedding distance
+        # 1. Assign ontology_annotations via embedding similarity
         if (
             not sem.get("ontology_annotations")
             and onto_store is not None
             and elem_store is not None
         ):
-            uri = f"https://schema.undata.live/elements/{f.stem}"
+            uri = f"{BASE_URI}/elements/{f.stem}"
+            # Use lower threshold when LLM batch verification follows
+            effective_threshold = 0.4 if use_llm else threshold
             annotations = _assign_ontology_annotations(
                 uri,
                 elem_store,
                 onto_store,
                 onto_cache,
-                threshold,
+                effective_threshold,
                 model_name=model_name,
+                use_llm=False,  # No per-entity LLM; batch below
             )
+
+            if use_llm and annotations:
+                # Collect for batch LLM verification
+                prov = data.get("provenance", [{}])
+                first_prov = prov[0] if prov and isinstance(prov[0], dict) else {}
+                elem_desc = f"{first_prov.get('class', '')} {first_prov.get('name', '')}"
+                desc_text = first_prov.get("description") or sem.get("description", "")
+                if desc_text:
+                    elem_desc = f"{elem_desc}: {desc_text}"
+                top = annotations[0]
+                top_score = top.get("score", 0)
+                if top_score < 0.95:  # Only verify non-obvious matches
+                    _llm_candidates.append(
+                        (
+                            str(f),
+                            elem_desc.strip(),
+                            top.get("term_label", ""),
+                            onto_cache.get(top["term_uri"], {}).get("definition", ""),
+                            top["term_uri"],
+                            annotations,
+                        )
+                    )
+                    continue  # Don't assign yet — wait for batch verification
             if annotations:
                 stats["ontology_assigned"] += 1
 
@@ -167,8 +206,26 @@ def enrich_elements(
         if annotations or domain:
             if not dry_run:
                 _update_entity_in_place(f, ontology_annotations=annotations, value_domain=domain)
-        elif stats["values_resolved"] == 0 or dry_run:
+        else:
             stats["unchanged"] += 1
+
+    # Batch LLM verification for collected candidates
+    if _llm_candidates and use_llm:
+        from .llm_enrich import verify_batch
+
+        pairs = [
+            (elem_desc, term_label, term_defn, term_uri)
+            for _, elem_desc, term_label, term_defn, term_uri, _ in _llm_candidates
+        ]
+        logger.info("Batch LLM verification: %d candidates", len(pairs))
+        decisions = verify_batch(pairs)
+
+        for (filepath, _, _, _, _, anns), decision in zip(_llm_candidates, decisions):
+            if decision == "confirm":
+                if not dry_run:
+                    _update_entity_in_place(Path(filepath), ontology_annotations=anns)
+                stats["ontology_assigned"] += 1
+            # reject/uncertain → not assigned, will be flagged by curation
 
     return stats
 
@@ -178,13 +235,81 @@ def enrich_elements(
 # ---------------------------------------------------------------------------
 
 
+def enrich_from_source_metadata(staging_dir: Path) -> dict[str, int]:
+    """Pre-enrich entities that already have ontology identifiers from their source.
+
+    openMINDS instances have preferredOntologyIdentifier; other sources may have
+    similar fields. This step assigns high-confidence annotations without
+    embedding lookup or LLM verification.
+    """
+    from .models import MatchLevel
+
+    stats = {"assigned": 0, "total": 0}
+
+    for entity_type in ("elements", "values", "schemas", "valuesets"):
+        entity_dir = staging_dir / entity_type
+        if not entity_dir.exists():
+            continue
+
+        for f in sorted(entity_dir.glob("*.yaml")):
+            data = safe_load_yaml(f)
+            if data is None or "semantic" not in data:
+                continue
+            stats["total"] += 1
+
+            sem = data["semantic"]
+            if sem.get("ontology_annotations"):
+                continue  # Already annotated
+
+            # Check provenance for ontology identifiers
+            prov_list = data.get("provenance", [])
+            if not prov_list:
+                continue
+            first_prov = prov_list[0] if isinstance(prov_list[0], dict) else {}
+
+            # openMINDS instances: check for meaning field (set by LinkML adapter from PermissibleValue.meaning)
+            # Also check description for ontology URIs
+            onto_uri = None
+            desc = first_prov.get("description", "") or sem.get("description", "") or ""
+
+            # Check for OBO URIs in description
+            import re
+
+            obo_match = re.search(r"(http://purl\.obolibrary\.org/obo/\w+)", desc)
+            if obo_match:
+                onto_uri = obo_match.group(1)
+
+            # Check semantic dict for ontology_id or meaning
+            if sem.get("ontology_id"):
+                onto_uri = sem["ontology_id"]
+
+            if onto_uri:
+                annotation = {
+                    "term_uri": onto_uri,
+                    "term_label": first_prov.get("name", ""),
+                    "ontology": _ontology_from_uri(onto_uri),
+                    "mapping_relation": "skos:exactMatch",
+                    "match_level": MatchLevel.element_match.value
+                    if entity_type == "values"
+                    else MatchLevel.concept_match.value,
+                    "score": 1.0,
+                    "model": "source_metadata",
+                    "primary": True,
+                }
+                _update_entity_in_place(f, ontology_annotations=[annotation])
+                stats["assigned"] += 1
+
+    return stats
+
+
 def enrich_values(
     staging_dir: Path,
     cache_dir: Path | None = None,
     onto_store: EmbeddingStore | None = None,
     onto_cache: dict[str, dict] | None = None,
     model_name: str = "all-MiniLM-L6-v2",
-    threshold: float = 0.8,
+    threshold: float = 0.7,
+    use_llm: bool = False,
 ) -> dict[str, int]:
     """Enrich staged values in-place: assign ontology_annotations with element_match for high scores.
 
@@ -224,7 +349,7 @@ def enrich_values(
             stats["unchanged"] += 1
             continue
 
-        uri = f"https://schema.undata.live/elements/{f.stem}"
+        uri = f"{BASE_URI}/elements/{f.stem}"
         annotations = _assign_ontology_annotations(
             uri,
             elem_store,
@@ -295,7 +420,7 @@ def enrich_schemas(
             stats["unchanged"] += 1
             continue
 
-        uri = f"https://schema.undata.live/elements/{f.stem}"
+        uri = f"{BASE_URI}/elements/{f.stem}"
         # Schemas always get concept_match (not element_match)
         annotations = _assign_ontology_annotations(
             uri,
@@ -407,7 +532,7 @@ def _build_value_ontology_map(values_dir: Path) -> dict[str, list[dict]]:
             anns = data["semantic"].get("ontology_annotations", [])
             if anns:
                 # Use both stem-based URI and any label-based keys
-                uri = f"https://schema.undata.live/elements/{f.stem}"
+                uri = f"{BASE_URI}/elements/{f.stem}"
                 mapping[uri] = anns
                 label = data["semantic"].get("label", "")
                 if label:
@@ -429,12 +554,16 @@ def enrich_all(
     onto_cache: dict[str, dict] | None = None,
     model_name: str = "all-MiniLM-L6-v2",
     threshold: float = 0.7,
+    use_llm: bool = False,
 ) -> dict[str, dict]:
     """Orchestrate enrichment of all entity types in dependency order.
 
-    Order: (1) elements + values  (2) valuesets  (3) schemas
+    Order: (0) source metadata  (1) elements + values  (2) valuesets  (3) schemas
 
-    Returns: {elements: {...}, values: {...}, valuesets: {...}, schemas: {...}}
+    When use_llm=True, candidate threshold drops to 0.4 and borderline matches
+    are verified by LLM. Without LLM, only matches above threshold are auto-assigned.
+
+    Returns: {source_metadata: {...}, elements: {...}, values: {...}, valuesets: {...}, schemas: {...}}
     """
     # Load shared resources once
     if onto_store is None and cache_dir is not None:
@@ -443,6 +572,10 @@ def enrich_all(
         onto_cache = _load_ontology_cache(cache_dir)
 
     results: dict[str, dict] = {}
+
+    # Phase 0: Pre-enrich from source metadata (ontology IDs already in source data)
+    logger.info("Pre-enriching from source metadata...")
+    results["source_metadata"] = enrich_from_source_metadata(staging_dir)
 
     # Phase 1: elements + values (independent of each other)
     logger.info("Enriching elements...")
@@ -453,6 +586,7 @@ def enrich_all(
         onto_cache=onto_cache,
         model_name=model_name,
         threshold=threshold,
+        use_llm=use_llm,
     )
     logger.info("Enriching values...")
     results["values"] = enrich_values(
@@ -461,7 +595,8 @@ def enrich_all(
         onto_store=onto_store,
         onto_cache=onto_cache,
         model_name=model_name,
-        threshold=0.8,
+        threshold=threshold,
+        use_llm=use_llm,
     )
 
     # Phase 2: valuesets (depends on enriched values)
@@ -480,6 +615,95 @@ def enrich_all(
     )
 
     return results
+
+
+def generate_curation_flags(
+    staging_dir: Path,
+    output_dir: Path | None = None,
+) -> list:
+    """Scan enriched entities and generate CurationFlags for ambiguous cases.
+
+    Flags are generated for:
+    - Elements/values/schemas with no ontology_annotations after enrichment (low_confidence)
+    - Annotations where best score is borderline (0.7-0.95) and no LLM confirmed (ambiguous_match)
+    - Multiple candidate annotations within 0.05 of each other (multiple_candidates)
+
+    If output_dir is provided, flags are written to {output_dir}/curation-flags/.
+    Returns list of CurationFlag objects.
+    """
+    from .curation import create_flag, write_flag
+    from .models import FlagType
+
+    flags = []
+
+    for entity_type in ("elements", "values", "schemas"):
+        entity_dir = staging_dir / entity_type
+        if not entity_dir.exists():
+            continue
+
+        for f in sorted(entity_dir.glob("*.yaml")):
+            data = safe_load_yaml(f)
+            if data is None or "semantic" not in data:
+                continue
+
+            sem = data["semantic"]
+            annotations = sem.get("ontology_annotations", [])
+
+            if not annotations:
+                # No annotations at all — flag as low_confidence
+                prov = data.get("provenance", [{}])
+                name = prov[0].get("name", f.stem) if prov else f.stem
+                flag = create_flag(
+                    entity_type=entity_type.rstrip("s"),  # elements → element
+                    entity_ref=str(f.name),
+                    flag_type=FlagType.low_confidence,
+                    context={"reason": "no ontology annotations after enrichment", "name": name},
+                )
+                flags.append(flag)
+                continue
+
+            # Check for ambiguous matches (top score borderline, no LLM confirmation)
+            top = annotations[0]
+            top_score = top.get("score", 0)
+            if 0.7 <= top_score < 0.95 and not top.get("llm_verification"):
+                flag = create_flag(
+                    entity_type=entity_type.rstrip("s"),
+                    entity_ref=str(f.name),
+                    flag_type=FlagType.ambiguous_match,
+                    context={
+                        "reason": f"borderline match (score={top_score:.3f}), no LLM verification",
+                        "top_match": top.get("term_uri", ""),
+                        "top_label": top.get("term_label", ""),
+                        "top_score": top_score,
+                    },
+                )
+                flags.append(flag)
+
+            # Check for multiple close candidates
+            if len(annotations) >= 2:
+                scores = [a.get("score", 0) for a in annotations[:5]]
+                if len(scores) >= 2 and (scores[0] - scores[1]) < 0.05:
+                    flag = create_flag(
+                        entity_type=entity_type.rstrip("s"),
+                        entity_ref=str(f.name),
+                        flag_type=FlagType.multiple_candidates,
+                        context={
+                            "reason": f"multiple close candidates (gap={scores[0] - scores[1]:.3f})",
+                            "candidates": [
+                                {"uri": a.get("term_uri"), "score": a.get("score")}
+                                for a in annotations[:3]
+                            ],
+                        },
+                    )
+                    flags.append(flag)
+
+    # Write flags to output directory if provided
+    if output_dir and flags:
+        for flag in flags:
+            write_flag(output_dir, flag)
+        logger.info("Generated %d curation flags", len(flags))
+
+    return flags
 
 
 # ---------------------------------------------------------------------------
@@ -543,11 +767,40 @@ def _load_or_build_element_embeddings(elements_dir: Path, model_name: str) -> Em
 
 
 def _load_ontology_cache(cache_dir: Path) -> dict[str, dict]:
-    """Load ontology term metadata from cache YAML files."""
+    """Load ontology term metadata — tries pyoxigraph store first, then legacy YAML.
+
+    Returns dict[term_uri → {label, synonyms, definition, deprecated, parents}].
+    """
     cache: dict[str, dict] = {}
+
+    # Try pyoxigraph store (primary — has all terms with labels/synonyms)
+    # Use a module-level cache to avoid re-loading 268K terms on every call
+    global _ONTO_CACHE_SINGLETON
+    if _ONTO_CACHE_SINGLETON is not None:
+        return _ONTO_CACHE_SINGLETON
+
+    store_path = Path.home() / ".cache" / "undata" / "ontology-store"
+    if store_path.exists():
+        try:
+            from .ontology_store import OntologyStore
+
+            store = OntologyStore(store_path)
+            for uri, label, synonyms in store.all_terms():
+                cache[uri] = {
+                    "label": label,
+                    "synonyms": synonyms,
+                    "deprecated": False,
+                }
+            if cache:
+                logger.info("Loaded %d terms from ontology store", len(cache))
+                _ONTO_CACHE_SINGLETON = cache
+                return cache
+        except Exception as exc:
+            logger.warning("Failed to load from ontology store: %s", exc)
+
+    # Fallback: legacy YAML cache files
     if not cache_dir.exists():
         return cache
-
     for f in sorted(cache_dir.glob("*.yaml")):
         try:
             data = yaml.safe_load(f.read_text(encoding="utf-8"))
@@ -571,11 +824,18 @@ def _assign_ontology_annotations(
     model_name: str = "all-MiniLM-L6-v2",
     max_annotations: int = 10,
     gap_threshold: float = 0.15,
+    use_llm: bool = False,
+    element_desc: str = "",
+    source_context: str = "",
+    ontology_rdf_store=None,
 ) -> list[dict]:
     """Assign multiple ontology annotations via embedding similarity.
 
     Returns list of OntologyAnnotation-compatible dicts.
     Heuristic: threshold + gap cutoff + max cap.
+    If use_llm=True, borderline matches (0.7-0.95) are verified via LLM.
+    If ontology_rdf_store is provided, ancestors of the primary match are
+    added as broadMatch annotations (multi-precision enrichment).
     """
     from .models import MatchLevel
 
@@ -611,19 +871,73 @@ def _assign_ontology_annotations(
             MatchLevel.element_match if is_value and score >= 0.9 else MatchLevel.concept_match
         )
 
-        annotations.append(
-            {
-                "term_uri": uri,
-                "term_label": label,
-                "ontology": ontology,
-                "mapping_relation": mapping_relation,
-                "match_level": match_level.value,
-                "score": round(score, 4),
-                "model": model_name,
-                "primary": len(annotations) == 0,
-            }
-        )
+        # LLM verification for borderline matches (below 0.95 auto-assign threshold)
+        llm_result = None
+        if use_llm and score < 0.95 and element_desc:
+            from .llm_enrich import verify_borderline_match
+
+            # Get term definition and synonyms from onto_cache for LLM context
+            term_defn = term_info.get("definition") or term_info.get("description")
+            term_syns = term_info.get("synonyms", [])
+
+            llm_result = verify_borderline_match(
+                element_desc=element_desc,
+                ontology_term_label=label,
+                ontology_term_uri=uri,
+                ontology_name=ontology,
+                embedding_score=score,
+                source_context=source_context or None,
+                ontology_term_definition=term_defn,
+                ontology_term_synonyms=term_syns if term_syns else None,
+            )
+            # If LLM rejects, skip this annotation
+            if llm_result.get("decision") == "reject":
+                logger.info("LLM rejected match: %s ↔ %s (score=%.3f)", element_desc, label, score)
+                continue
+
+        ann: dict = {
+            "term_uri": uri,
+            "term_label": label,
+            "ontology": ontology,
+            "mapping_relation": mapping_relation,
+            "match_level": match_level.value,
+            "score": round(score, 4),
+            "model": model_name,
+            "primary": len(annotations) == 0,
+        }
+        if llm_result and llm_result.get("error") is None:
+            ann["llm_verification"] = llm_result
+        annotations.append(ann)
         prev_score = score
+
+    # Multi-precision: add broadMatch annotations from ontology hierarchy
+    if ontology_rdf_store and annotations:
+        primary_uri = annotations[0].get("term_uri", "")
+        if primary_uri:
+            try:
+                ancestors = ontology_rdf_store.get_ancestors(primary_uri, max_depth=2)
+                for anc_uri in ancestors[:3]:  # Limit to 3 broader terms
+                    anc_info = onto_cache.get(anc_uri, {})
+                    anc_label = anc_info.get("label", "")
+                    if not anc_label:
+                        # Try to look up label
+                        term_data = ontology_rdf_store.lookup_term(anc_uri)
+                        anc_label = term_data["label"] if term_data else ""
+                    if anc_label:
+                        annotations.append(
+                            {
+                                "term_uri": anc_uri,
+                                "term_label": anc_label,
+                                "ontology": _ontology_from_uri(anc_uri),
+                                "mapping_relation": "skos:broadMatch",
+                                "match_level": MatchLevel.concept_match.value,
+                                "score": 0.0,  # Not from embedding
+                                "model": "hierarchy",
+                                "primary": False,
+                            }
+                        )
+            except Exception:
+                pass  # Hierarchy lookup is best-effort
 
     return annotations
 
@@ -693,7 +1007,7 @@ def _build_value_lookup(values_dir: Path) -> dict[str, str]:
                 continue
             sem = data["semantic"]
             label = sem.get("label", "")
-            uri = f"https://schema.undata.live/values/{f.stem}"
+            uri = f"{BASE_URI}/values/{f.stem}"
             if label:
                 lookup[label.lower()] = uri
             for p in data.get("provenance", []):

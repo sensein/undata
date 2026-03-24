@@ -1,22 +1,21 @@
-"""BIDS schema adapter — uses bidsschematools."""
+"""BIDS schema adapter — delegates to standalone extraction script.
+
+The actual extraction happens in standalone_scripts/bids_extract.py running in an
+isolated venv with bidsschematools + linkml-runtime. This adapter class exists
+for the registry and for direct file-based extraction when bidsschematools
+happens to be available in the current environment.
+
+There is ONE extraction path: standalone script → JSON entities or LinkML YAML
+→ main process consumes. No in-process import of bidsschematools is required.
+"""
 
 from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
 
-from ..models import EntityType, SourceRef
+from ..models import SourceRef
 from .base import BaseAdapter, ClassifiedEntity
-from .classifier import classify_entity
-
-_TYPE_MAP = {
-    "string": "string",
-    "number": "float",
-    "integer": "integer",
-    "boolean": "boolean",
-    "array": "array",
-    "object": "object",
-}
 
 
 class BIDSAdapter(BaseAdapter):
@@ -26,51 +25,69 @@ class BIDSAdapter(BaseAdapter):
 
     @property
     def supported_formats(self) -> list[str]:
-        return []  # Uses bidsschematools API, not file parsing
+        return []
 
     def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
+        """Extract entities from BIDS schema.
+
+        Primary path: standalone script in isolated venv (via pipeline).
+        Fallback: direct extraction if bidsschematools is in current env.
+        """
         try:
             from bidsschematools import schema as bids_schema
-        except ImportError as exc:
-            raise ImportError(f"bidsschematools required for BIDS extraction: {exc}") from exc
+        except ImportError:
+            return []
 
         schema = bids_schema.load_schema()
-        results: list[ClassifiedEntity] = []
-
-        # Determine source_ref from bidsschematools install location
         base_ref = self._build_source_ref(source_path)
+        return self._extract_from_schema(schema, base_ref)
 
+    def _extract_from_schema(self, schema: Any, base_ref: SourceRef) -> list[ClassifiedEntity]:
+        """Extract entities from a loaded bidsschematools schema object."""
+        from ..models import EntityType
+
+        _VOCAB = {
+            "enums",
+            "datatypes",
+            "modalities",
+            "suffixes",
+            "extensions",
+            "formats",
+            "common_principles",
+        }
+        TYPE_MAP = {
+            "string": "string",
+            "number": "float",
+            "integer": "integer",
+            "boolean": "boolean",
+            "array": "array",
+            "object": "object",
+        }
+
+        results: list[ClassifiedEntity] = []
         objects = schema.get("objects", {})
-        for cat_name in objects:
-            category = objects[cat_name]
-            if not hasattr(category, "__iter__"):
-                continue
+        sidecars = schema.get("rules", {}).get("sidecars", {})
+        tabular = schema.get("rules", {}).get("tabular_data", {})
 
-            # Classify the category itself
-            cat_type_info = {"properties": dict(category)} if hasattr(category, "keys") else {}
-            if cat_type_info.get("properties"):
-                cat_etype, cat_conf = classify_entity(cat_name, cat_type_info)
-                if cat_etype == EntityType.CLASS:
-                    results.append(
-                        ClassifiedEntity(
-                            entity_type=EntityType.CLASS,
-                            semantic={"properties": []},  # populated later by ingest
-                            provenance={"source": "bids", "class": cat_name, "name": cat_name},
-                            confidence=cat_conf,
-                            source_ref=base_ref,
-                            source_context={"category": cat_name},
-                        )
-                    )
-
-            for field_name in category:
+        # 1. Vocabulary → enum_value + valueset
+        for cat_name in _VOCAB:
+            cat = objects.get(cat_name, {})
+            for field_name in cat:
+                fdef = cat[field_name]
+                if not hasattr(fdef, "get"):
+                    continue
                 if field_name.startswith("_"):
-                    # Underscore entries are valuesets
-                    field_def = category[field_name]
-                    if not hasattr(field_def, "get"):
-                        continue
-                    enum_vals = field_def.get("enum") if hasattr(field_def, "get") else None
-                    if enum_vals and hasattr(enum_vals, "__iter__"):
-                        members = [str(v) for v in enum_vals if v is not None]
+                    evs = fdef.get("enum", [])
+                    if evs:
+                        members = []
+                        for v in evs:
+                            if v is None:
+                                continue
+                            if isinstance(v, dict):
+                                parts = v.get("$ref", "").split(".")
+                                members.append(parts[-2] if len(parts) >= 3 else str(v))
+                            else:
+                                members.append(str(v))
                         results.append(
                             ClassifiedEntity(
                                 entity_type=EntityType.VALUESET,
@@ -87,80 +104,199 @@ class BIDSAdapter(BaseAdapter):
                                 source_ref=base_ref,
                             )
                         )
-                        # Also emit individual enum values
                         for val in members:
                             results.append(
                                 ClassifiedEntity(
                                     entity_type=EntityType.ENUM_VALUE,
                                     semantic={"label": val, "value_type": "categorical"},
-                                    provenance={"source": "bids", "raw_value": val},
+                                    provenance={"source": "bids", "class": cat_name, "name": val},
                                     confidence=0.95,
                                     source_ref=base_ref,
                                 )
                             )
-                    continue
+                else:
+                    value = str(fdef.get("value", field_name))
+                    display = str(fdef.get("display_name", "") or "")
+                    desc = str(fdef.get("description", "") or "")
+                    results.append(
+                        ClassifiedEntity(
+                            entity_type=EntityType.ENUM_VALUE,
+                            semantic={
+                                "label": value,
+                                "value_type": "categorical",
+                                "display_name": display,
+                            },
+                            provenance={
+                                "source": "bids",
+                                "class": cat_name,
+                                "name": field_name,
+                                "description": desc or None,
+                            },
+                            confidence=0.95,
+                            source_ref=base_ref,
+                        )
+                    )
 
-                field_def = category[field_name]
-                if not hasattr(field_def, "get"):
-                    continue
-
-                dt = _bids_type(field_def)
-                desc = str(field_def.get("description", "") or "")
-
-                # Build type_info for classifier
-                type_info: dict[str, Any] = {"type": dt}
-                enum_vals = field_def.get("enum") if hasattr(field_def, "get") else None
-                if enum_vals and hasattr(enum_vals, "__iter__"):
-                    type_info["enum"] = list(enum_vals)
-
-                etype, conf = classify_entity(field_name, type_info, parent=cat_name)
-
-                # Build semantic dict
-                semantic: dict[str, Any] = {"data_type": dt}
-                if enum_vals:
-                    allowed = [str(v) for v in enum_vals if v is not None]
-                    semantic["response_options"] = [{"value": v, "label": v} for v in allowed]
-                    semantic["value_domain"] = "categorical"
-                elif dt in ("integer", "float"):
-                    semantic["value_domain"] = "numeric"
-                elif dt == "boolean":
-                    semantic["value_domain"] = "boolean"
-                elif dt == "string":
-                    semantic["value_domain"] = "text"
-
-                # Min/max
-                if hasattr(field_def, "get"):
-                    min_val = field_def.get("minimum")
-                    max_val = field_def.get("maximum")
-                    if min_val is not None:
-                        semantic["min_value"] = float(min_val)
-                    if max_val is not None:
-                        semantic["max_value"] = float(max_val)
-
+        # 2. Metadata + columns → attribute
+        for cat_name in ("metadata", "columns"):
+            cat = objects.get(cat_name, {})
+            if hasattr(cat, "keys"):
+                prop_names = [k for k in cat if not k.startswith("_")]
                 results.append(
                     ClassifiedEntity(
-                        entity_type=etype,
-                        semantic=semantic,
+                        entity_type=EntityType.CLASS,
+                        semantic={"properties": prop_names},
+                        provenance={"source": "bids", "class": cat_name, "name": cat_name},
+                        confidence=0.9,
+                        source_ref=base_ref,
+                    )
+                )
+            for field_name in cat:
+                fdef = cat[field_name]
+                if not hasattr(fdef, "get") or field_name.startswith("_"):
+                    continue
+                t = fdef.get("type", "string")
+                if isinstance(t, (list, tuple)):
+                    t = t[0] if t else "string"
+                dt = TYPE_MAP.get(str(t), "string")
+                sem: dict[str, Any] = {"data_type": dt}
+                unit = fdef.get("unit")
+                if unit:
+                    sem["unit"] = str(unit)
+                pattern = fdef.get("pattern")
+                if pattern:
+                    sem["pattern"] = str(pattern)
+                evs = fdef.get("enum")
+                if evs and hasattr(evs, "__iter__"):
+                    allowed = [str(v) for v in evs if v is not None]
+                    sem["response_options"] = [{"value": v, "label": v} for v in allowed]
+                    sem["value_domain"] = "categorical"
+                elif dt in ("integer", "float"):
+                    sem["value_domain"] = "numeric"
+                elif dt == "boolean":
+                    sem["value_domain"] = "boolean"
+                elif dt == "string":
+                    sem["value_domain"] = "text"
+                min_val = fdef.get("minimum")
+                max_val = fdef.get("maximum")
+                if min_val is not None:
+                    sem["min_value"] = float(min_val)
+                if max_val is not None:
+                    sem["max_value"] = float(max_val)
+                desc = str(fdef.get("description", "") or "")
+                results.append(
+                    ClassifiedEntity(
+                        entity_type=EntityType.ATTRIBUTE,
+                        semantic=sem,
                         provenance={
                             "source": "bids",
                             "class": cat_name,
                             "name": field_name,
                             "description": desc or None,
                         },
-                        confidence=conf,
+                        confidence=0.85,
                         source_ref=base_ref,
-                        source_context={"category": cat_name},
+                    )
+                )
+
+        # 3. Entities → attribute (filename components)
+        for field_name in objects.get("entities", {}):
+            fdef = objects["entities"][field_name]
+            if not hasattr(fdef, "get"):
+                continue
+            fmt = str(fdef.get("format", "label"))
+            dt = "integer" if fmt == "index" else "string"
+            desc = str(fdef.get("description", "") or "")
+            results.append(
+                ClassifiedEntity(
+                    entity_type=EntityType.ATTRIBUTE,
+                    semantic={
+                        "data_type": dt,
+                        "value_domain": "numeric" if dt == "integer" else "text",
+                    },
+                    provenance={
+                        "source": "bids",
+                        "class": "entities",
+                        "name": field_name,
+                        "description": desc or None,
+                    },
+                    confidence=0.85,
+                    source_ref=base_ref,
+                )
+            )
+
+        # 4. Sidecar rules → class (mixin field groups + concrete modality)
+        for modality in sorted(sidecars.keys()):
+            groups = sidecars[modality]
+            if not hasattr(groups, "keys"):
+                continue
+            mixin_names = []
+            for gname, group in groups.items():
+                if not hasattr(group, "get"):
+                    continue
+                fields = group.get("fields", {})
+                if not hasattr(fields, "keys") or not fields:
+                    continue
+                results.append(
+                    ClassifiedEntity(
+                        entity_type=EntityType.CLASS,
+                        semantic={"properties": list(fields.keys()), "is_mixin": True},
+                        provenance={
+                            "source": "bids",
+                            "class": gname,
+                            "name": gname,
+                            "description": f"Sidecar field group for {modality}",
+                        },
+                        confidence=0.9,
+                        source_ref=base_ref,
+                    )
+                )
+                mixin_names.append(gname)
+            if mixin_names:
+                results.append(
+                    ClassifiedEntity(
+                        entity_type=EntityType.CLASS,
+                        semantic={"properties": [], "mixins": mixin_names},
+                        provenance={
+                            "source": "bids",
+                            "class": f"{modality}_sidecar",
+                            "name": f"{modality}_sidecar",
+                            "description": f"BIDS sidecar for {modality}",
+                        },
+                        confidence=0.9,
+                        source_ref=base_ref,
+                    )
+                )
+
+        # 5. Tabular data rules → class
+        for tname in sorted(tabular.keys()):
+            groups = tabular[tname]
+            if not hasattr(groups, "keys"):
+                continue
+            for gname, group in groups.items():
+                if not hasattr(group, "get"):
+                    continue
+                cols = group.get("columns", group.get("fields", {}))
+                if not hasattr(cols, "keys") or not cols:
+                    continue
+                results.append(
+                    ClassifiedEntity(
+                        entity_type=EntityType.CLASS,
+                        semantic={"properties": list(cols.keys()), "is_mixin": True},
+                        provenance={
+                            "source": "bids",
+                            "class": f"{tname}_{gname}",
+                            "name": f"{tname}_{gname}",
+                            "description": f"Tabular columns for {tname}",
+                        },
+                        confidence=0.9,
+                        source_ref=base_ref,
                     )
                 )
 
         return results
 
     def _build_source_ref(self, source_path: Path) -> SourceRef:
-        """Build source_ref for BIDS.
-
-        Uses --repo and --committish options if provided, otherwise derives from
-        bidsschematools package metadata.
-        """
         repo = "https://github.com/bids-standard/bids-specification"
         committish = None
         try:
@@ -171,16 +307,4 @@ class BIDSAdapter(BaseAdapter):
                 committish = f"v{version}"
         except Exception:
             pass
-        return SourceRef(
-            repo=repo,
-            committish=committish,
-            file="schema/objects",
-            checksum="",
-        )
-
-
-def _bids_type(field_def: object) -> str:
-    t = field_def.get("type", "string") if hasattr(field_def, "get") else "string"
-    if isinstance(t, (list, tuple)):
-        t = t[0] if t else "string"
-    return _TYPE_MAP.get(str(t), "string")
+        return SourceRef(repo=repo, committish=committish, file="schema", checksum="")

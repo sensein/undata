@@ -8,18 +8,27 @@ from pathlib import Path
 import yaml
 
 from .hashing import compute_identity_hash, determine_hash_mode, generate_short_key
+from .utils import safe_load_yaml, sanitize_filename
 
 
-def commit_staged(staging_dir: Path, output_dir: Path) -> dict[str, int]:
+def commit_staged(
+    staging_dir: Path,
+    output_dir: Path,
+    validate_sources: bool = False,
+    known_sources: set[str] | None = None,
+) -> dict[str, int]:
     """Commit all staged entities to the registry.
 
     For each entity: determine hash mode → compute hash → write to output_dir.
     Merge provenance if target file already exists.
     Delete staging dir after successful commit.
 
-    Returns stats: {committed, merged, per_type: {elements: N, ...}}
+    If validate_sources=True, provenance sources are checked against known_sources.
+    Entities with unrecognized sources are flagged as suspicious_source.
+
+    Returns stats: {committed, merged, rejected, per_type: {elements: N, ...}}
     """
-    stats = {"committed": 0, "merged": 0, "per_type": {}}
+    stats = {"committed": 0, "merged": 0, "rejected": 0, "per_type": {}}
 
     for entity_type in ("elements", "schemas", "values", "valuesets"):
         type_dir = staging_dir / entity_type
@@ -43,6 +52,27 @@ def commit_staged(staging_dir: Path, output_dir: Path) -> dict[str, int]:
             semantic = data["semantic"]
             provenance = data.get("provenance", [])
 
+            # Source validation: reject unrecognized sources
+            if validate_sources and known_sources:
+                entity_sources = {p.get("source", "") for p in provenance if isinstance(p, dict)}
+                unknown = entity_sources - known_sources - {""}
+                if unknown:
+                    from .curation import create_flag, write_flag
+                    from .models import FlagType
+
+                    flag = create_flag(
+                        entity_type=entity_type.rstrip("s"),
+                        entity_ref=str(staged_file.name),
+                        flag_type=FlagType.suspicious_source,
+                        context={
+                            "reason": f"unrecognized source(s): {', '.join(sorted(unknown))}",
+                            "sources": sorted(unknown),
+                        },
+                    )
+                    write_flag(output_dir, flag)
+                    stats["rejected"] += 1
+                    continue
+
             # Determine hash mode from ontology annotations
             annotations = semantic.get("ontology_annotations", [])
             ontology_anchored, primary_uri = determine_hash_mode(annotations)
@@ -65,9 +95,7 @@ def commit_staged(staging_dir: Path, output_dir: Path) -> dict[str, int]:
                 target = existing_with_hash[0]
             else:
                 name = _derive_name(data, entity_type)
-                safe_name = name.lower().replace("/", "_").replace(":", "_").replace("\\", "_")
-                if len(safe_name) > 60:
-                    safe_name = safe_name[:60]
+                safe_name = sanitize_filename(name)
                 target = out_dir / f"{safe_name}_{key}.yaml"
 
             if target.exists():
@@ -112,27 +140,45 @@ def _derive_name(data: dict, entity_type: str) -> str:
     return "unknown"
 
 
-def _merge_provenance(target: Path, new_data: dict) -> None:
-    """Merge provenance from new_data into existing target file."""
-    existing = yaml.safe_load(target.read_text(encoding="utf-8"))
-    if not isinstance(existing, dict):
-        return
+def _merge_provenance(
+    target: Path,
+    new_data: dict,
+    output_dir: Path | None = None,
+    max_novel_sources: int = 3,
+) -> bool:
+    """Merge provenance from new_data into existing target file.
+
+    Returns True if new provenance was added, False if all was duplicate.
+    If more than max_novel_sources distinct novel sources are merged,
+    generates a provenance_bloat CurationFlag.
+    """
+    existing = safe_load_yaml(target)
+    if existing is None:
+        return False
 
     existing_prov = existing.get("provenance", [])
     new_prov = new_data.get("provenance", [])
 
     # Dedup by (source, name)
     existing_keys = set()
+    existing_sources = set()
     for p in existing_prov:
         if isinstance(p, dict):
             existing_keys.add((p.get("source", ""), p.get("name", "")))
+            existing_sources.add(p.get("source", ""))
 
+    added = 0
+    novel_sources: set[str] = set()
     for p in new_prov:
         if isinstance(p, dict):
             key = (p.get("source", ""), p.get("name", ""))
             if key not in existing_keys:
                 existing_prov.append(p)
                 existing_keys.add(key)
+                added += 1
+                src = p.get("source", "")
+                if src and src not in existing_sources:
+                    novel_sources.add(src)
 
     existing["provenance"] = existing_prov
 
@@ -145,3 +191,22 @@ def _merge_provenance(target: Path, new_data: dict) -> None:
         yaml.dump(existing, default_flow_style=False, sort_keys=False),
         encoding="utf-8",
     )
+
+    # Flag provenance bloat if many novel sources are merging
+    if len(novel_sources) >= max_novel_sources and output_dir:
+        from .curation import create_flag, write_flag
+        from .models import FlagType
+
+        flag = create_flag(
+            entity_type="element",
+            entity_ref=str(target.name),
+            flag_type=FlagType.provenance_bloat,
+            context={
+                "reason": f"{len(novel_sources)} novel sources merged in one commit",
+                "novel_sources": sorted(novel_sources),
+                "total_provenance": len(existing_prov),
+            },
+        )
+        write_flag(output_dir, flag)
+
+    return added > 0

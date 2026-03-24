@@ -44,7 +44,7 @@ def fetch_ontology(name: str) -> dict:
         raise ValueError(f"Unsupported ontology: {name}. Supported: {list(SUPPORTED_ONTOLOGIES)}")
 
     try:
-        obo_path = _download_obo(name, url)
+        obo_path = download_obo(name, url)
         try:
             if name.lower() in _PRONTO_ONTOLOGIES:
                 return _parse_with_pronto(name, obo_path)
@@ -57,7 +57,7 @@ def fetch_ontology(name: str) -> dict:
         return _fetch_ols_fallback(name)
 
 
-def _download_obo(name: str, url: str) -> Path:
+def download_obo(name: str, url: str) -> Path:
     """Download OBO file, return path to temp file."""
     logger.info("Downloading %s from %s", name, url)
     tmp = tempfile.NamedTemporaryFile(suffix=".obo", delete=False)

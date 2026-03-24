@@ -12,6 +12,8 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 import yaml
 
+from .utils import BASE_URI
+
 logger = logging.getLogger(__name__)
 
 DEFAULT_MODEL = "all-MiniLM-L6-v2"
@@ -231,7 +233,7 @@ def build_element_embeddings(
         except (yaml.YAMLError, OSError):
             continue
 
-        uri = f"https://schema.undata.live/elements/{f.stem}"
+        uri = f"{BASE_URI}/elements/{f.stem}"
         text = _build_element_text(data)
         if not text:
             continue

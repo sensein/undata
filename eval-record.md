@@ -5,6 +5,73 @@ Updated after each significant re-extraction or pipeline change.
 
 ---
 
+## 2026-03-22 — Feature 027: Library Hardening (post-adapter review)
+
+**Pipeline**: LinkML-first adapters → extract → enrich → commit
+**Changes**: All 5 adapters converted to LinkML-first. Entity classification fixed. Schemas, values, valuesets now routed directly from extraction.
+
+### Source Extraction (post-reclassification)
+
+| Source | Elements | Schemas | Values | Valuesets |
+|--------|----------|---------|--------|-----------|
+| BIDS | 585 | 214 | 628 | 7 |
+| DANDI | 398 | 44 | 152 | 5 |
+| NWB | 179 | 80 | 0 | 0 |
+| openMINDS | 473 | 202 | 4,378 | 123 |
+| AIND | 556 | 375 | 401 | 79 |
+| **Total** | **2,191** | **915** | **5,559** | **214** |
+
+### Comparison to 026 Baseline
+
+| Metric | 026 | 027 | Notes |
+|--------|-----|-----|-------|
+| Elements | 7,745 | 2,191 | Vocabulary terms reclassified as values (correct) |
+| Schemas | 642 | 915 | Now includes sidecar field groups + tabular classes |
+| Values | 1,000 | 5,559 | Includes enum_values from all sources + openMINDS instances |
+| Valuesets | 86 | 214 | controlledTerms, BIDS valuesets, AIND enums |
+
+### Key Changes
+
+- **LinkML-first architecture**: All adapters build LinkML SchemaDefinition, extract via standard LinkML adapter
+- **BIDS**: Sidecar rules → 165 mixin classes + 32 modality classes. Units on 70 fields. ~494 vocabulary terms correctly as values.
+- **DANDI**: Inheritance tracked (42/44 classes). 76 enum_values from enum classes.
+- **NWB**: Full inheritance (80/80 classes). Links, groups, reference dtypes extracted.
+- **openMINDS**: 4,390 instances from separate repo. 123 controlled vocabulary types as valuesets. Short property names.
+- **AIND**: JSON Schema $defs → classes/enums via LinkML builder.
+
+### Enrichment (027 pipeline with source metadata + LLM + cross-source)
+
+| Source | Source Metadata | Embedding | Schemas | Total Enriched | Flags |
+|--------|----------------|-----------|---------|----------------|-------|
+| BIDS | 0 | 15 elem + 356 val | 2 | 374 | 1,466 |
+| DANDI | 0 | 103 elem + 8 val | 22 | 134 | 2,085 |
+| NWB | 0 | 2 elem | 5 | 7 | 2,344 |
+| openMINDS | 3,084 | 1 elem + 859 val + 85 vs | 70 | 4,099 | 4,213 |
+| AIND | 0 | 191 elem + 264 val + 19 vs | 78 | 552 | 5,591 |
+
+Cross-source alignment: 73 label matches, 43 annotations transferred (openMINDS → BIDS/AIND)
+
+### Pipeline Performance
+
+| Step | Time |
+|------|------|
+| BIDS pipeline | 277s |
+| DANDI pipeline | 220s |
+| NWB pipeline | 197s |
+| openMINDS pipeline | 340s |
+| AIND pipeline | 274s |
+| **Total** | **~22 min** |
+
+### Enrichment Notes
+
+- Element enrichment rates low (2-35%) — ontology coverage is the bottleneck, not matching quality
+- LLM verification (gpt-5.4-nano) works correctly but most candidates are rejected (bad ontology coverage)
+- Source metadata pre-enrichment effective for openMINDS (70% of instances have curated ontology IDs)
+- Cross-source alignment transfers annotations between matching entities (73 label matches found)
+- Further improvement needs: ontology expansion, fine-tuned embeddings, quantified validation
+
+---
+
 ## 2026-03-21 — Feature 026: Staged Enrichment Pipeline
 
 **Pipeline**: extract (UUID staging) → enrich (in-place) → commit (two-mode hash) → align

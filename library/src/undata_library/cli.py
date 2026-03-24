@@ -10,6 +10,8 @@ import click
 import yaml
 from dotenv import load_dotenv
 
+from .utils import safe_load_yaml
+
 from .hashing import (
     build_element_uri,
     build_schema_uri,
@@ -79,9 +81,9 @@ def validate(path: str, strict: bool) -> None:
 @click.argument("file", type=click.Path(exists=True))
 def hash_cmd(file: str) -> None:
     """Compute and display the content hash for a YAML file."""
-    data = yaml.safe_load(Path(file).read_text(encoding="utf-8"))
+    data = safe_load_yaml(Path(file))
 
-    if not isinstance(data, dict) or "semantic" not in data:
+    if data is None or "semantic" not in data:
         click.echo("Error: file must contain a 'semantic' block.", err=True)
         sys.exit(1)
 
@@ -361,7 +363,7 @@ def ontology_group() -> None:
 @click.option("--exclude", multiple=True, help="Ontologies to skip (e.g., --exclude ncbitaxon)")
 def ontology_refresh(ontology: str | None, output_dir: str | None, exclude: tuple) -> None:
     """Download ontologies from OBO Foundry and load into local store."""
-    from .ontology_fetch import _download_obo
+    from .ontology_fetch import download_obo
     from .ontology_store import OntologyStore, build_vector_index, load_ontology_config
 
     store = OntologyStore(get_ontology_store_path())
@@ -378,7 +380,7 @@ def ontology_refresh(ontology: str | None, output_dir: str | None, exclude: tupl
         fmt = cfg.get("format", "obo")
         click.echo(f"Fetching {name} ({fmt})...")
         try:
-            dl_path = _download_obo(name, url)
+            dl_path = download_obo(name, url)
             try:
                 if fmt == "obo":
                     count = store.load_obo(name, dl_path)
@@ -463,8 +465,8 @@ def similarity_cmd(file_a: str, file_b: str) -> None:
     """Compute similarity between two element files."""
     from .similarity import compute_similarity
 
-    data_a = yaml.safe_load(Path(file_a).read_text(encoding="utf-8"))
-    data_b = yaml.safe_load(Path(file_b).read_text(encoding="utf-8"))
+    data_a = safe_load_yaml(Path(file_a))
+    data_b = safe_load_yaml(Path(file_b))
 
     result = compute_similarity(data_a, data_b)
 
@@ -559,6 +561,35 @@ def pipeline(
     cache_dir = lib / "ontology-cache"
     timings: dict[str, float] = {}
 
+    # Check source version for idempotency short-circuit
+    from .run_summary import load_previous_summary as _load_prev
+
+    prev_summary = _load_prev(lib, source)
+
+    # Idempotency check: compare source committish with previous run
+    _source_changed = True
+    try:
+        from .acquisition import SourceCache, load_source_def
+
+        source_def = load_source_def(source)
+        cache = SourceCache()
+        cache_path = (
+            cache.get_cached_path(source_def) if hasattr(cache, "get_cached_path") else None
+        )
+        if cache_path:
+            committish_file = cache_path / "_resolved_committish"
+            if committish_file.exists() and prev_summary:
+                current_committish = committish_file.read_text().strip()
+                prev_committish = (prev_summary.timing or {}).get("committish", "")
+                if current_committish and current_committish == prev_committish:
+                    _source_changed = False
+                    click.echo(
+                        f"Source {source} unchanged (committish={current_committish[:12]}). No changes detected."
+                    )
+                    return
+    except Exception:
+        pass  # Continue with extraction if check fails
+
     # Step 1: Extract to staging
     run_id = generate_run_id()
     staging_dir = create_staging_dir(lib, run_id)
@@ -584,7 +615,9 @@ def pipeline(
         )
         timings["enrich"] = time.time() - t0
         for etype, stats in enrich_results.items():
-            assigned = stats.get("ontology_assigned", stats.get("enriched", 0))
+            assigned = stats.get(
+                "ontology_assigned", stats.get("assigned", stats.get("enriched", 0))
+            )
             click.echo(f"  {etype}: {assigned} enriched, {stats.get('total', 0)} total")
         click.echo(f"  in {timings['enrich']:.1f}s")
     else:
@@ -620,6 +653,20 @@ def pipeline(
     else:
         click.echo("[4/5] Alignment skipped.")
 
+    # Step 4b: Cross-source alignment (annotation transfer)
+    if not skip_align:
+        from .cross_align import cross_source_align
+
+        click.echo("  Cross-source alignment...")
+        t0 = time.time()
+        cross_stats = cross_source_align(lib)
+        timings["cross_align"] = time.time() - t0
+        click.echo(
+            f"  {cross_stats['label_matches']} label matches, "
+            f"{cross_stats['annotations_transferred']} annotations transferred "
+            f"in {timings['cross_align']:.1f}s"
+        )
+
     # Step 5: Transform
     if not skip_align:  # transforms depend on alignment
         click.echo("[5/5] Generating transforms...")
@@ -638,8 +685,58 @@ def pipeline(
     else:
         click.echo("[5/5] Transforms skipped (requires alignment).")
 
+    # Step 6: Generate curation flags
+    from .enrich import generate_curation_flags
+    from .transform import flag_unknown_transforms
+
+    flags = generate_curation_flags(staging_dir=lib, output_dir=lib)
+    transform_flags = flag_unknown_transforms(transforms_dir=lib / "transforms", output_dir=lib)
+    total_flags = len(flags) + len(transform_flags)
+    if total_flags > 0:
+        click.echo(f"  {total_flags} curation flags generated")
+
+    # Step 7: Generate run summary
+    from .run_summary import compute_delta, generate_summary, load_previous_summary, save_summary
+
+    entity_counts = {
+        "elements": ingest_stats.get("created", 0) + ingest_stats.get("merged", 0),
+        "schemas": ingest_stats.get("schemas_created", 0),
+        "values": ingest_stats.get("values_created", 0),
+        "valuesets": ingest_stats.get("valuesets_created", 0),
+    }
+    enrichment_rate = {}
+    for etype, stats in enrich_results.items():
+        enrichment_rate[etype] = stats.get("ontology_assigned", stats.get("enriched", 0))
+
+    # Compute delta from previous run
+    prev = load_previous_summary(lib, source)
+    delta = None
+    if prev and prev.entity_counts:
+        prev_counts = prev.entity_counts.get("extract", prev.entity_counts)
+        delta = compute_delta(entity_counts, prev_counts)
+
+    flag_counts = {}
+    for f in flags + transform_flags:
+        ft = f.flag_type.value if hasattr(f.flag_type, "value") else str(f.flag_type)
+        flag_counts[ft] = flag_counts.get(ft, 0) + 1
+
+    summary = generate_summary(
+        run_id=run_id,
+        source=source,
+        entity_counts={"extract": entity_counts},
+        enrichment_rate=enrichment_rate or None,
+        curation_flags=flag_counts or None,
+        timing=timings or None,
+    )
+    summary.delta = delta
+    summary.completed_at = (
+        __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat()
+    )
+    summary_path = save_summary(lib, summary)
+    click.echo(f"\nRun summary saved to {summary_path}")
+
     total_time = sum(timings.values())
-    click.echo(f"\nPipeline complete in {total_time:.1f}s.")
+    click.echo(f"Pipeline complete in {total_time:.1f}s.")
 
 
 @main.command()
@@ -754,6 +851,119 @@ def embed_cmd(path: str, model: str, include_ontology: bool) -> None:
             click.echo(f"  {onto_store.size} terms → {onto_out}")
         else:
             click.echo("  No ontology-cache/ found — skipping ontology embeddings.")
+
+
+@main.command("curation-queue")
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option(
+    "--status",
+    "-s",
+    default="pending",
+    help="Filter by status (pending, approved, rejected, deferred)",
+)
+@click.option("--type", "-t", "flag_type", default=None, help="Filter by flag type")
+def curation_queue_cmd(path: str, status: str, flag_type: str | None) -> None:
+    """List curation flags requiring human review."""
+    from .curation import read_flags
+    from .models import FlagStatus, FlagType
+
+    base = Path(path)
+    try:
+        fs = FlagStatus(status)
+    except ValueError:
+        click.echo(f"Invalid status: {status}. Use: pending, approved, rejected, deferred")
+        return
+
+    ft = None
+    if flag_type:
+        try:
+            ft = FlagType(flag_type)
+        except ValueError:
+            click.echo(
+                f"Invalid flag type: {flag_type}. Use: {', '.join(t.value for t in FlagType)}"
+            )
+            return
+
+    flags = read_flags(base, status=fs, flag_type=ft)
+    if not flags:
+        click.echo(f"No {status} flags found.")
+        return
+
+    click.echo(f"{len(flags)} {status} flag(s):\n")
+    for flag in flags:
+        ctx = flag.context
+        reason = ctx.get("reason", "") if isinstance(ctx, dict) else ""
+        click.echo(
+            f"  {flag.id[:12]}  {flag.flag_type.value:20s}  {flag.entity_type:10s}  {flag.entity_ref}"
+        )
+        if reason:
+            click.echo(f"    → {reason}")
+
+
+@main.command("resolve-flag")
+@click.argument("path", type=click.Path(exists=True))
+@click.option("--id", "flag_id", required=True, help="Flag ID to resolve")
+@click.option("--action", required=True, type=click.Choice(["approved", "rejected", "deferred"]))
+@click.option("--by", "resolved_by", required=True, help="Curator identity")
+@click.option("--note", default=None, help="Resolution note")
+def resolve_flag_cmd(
+    path: str, flag_id: str, action: str, resolved_by: str, note: str | None
+) -> None:
+    """Resolve a curation flag by ID."""
+    from .curation import resolve_flag
+    from .models import FlagStatus
+
+    base = Path(path)
+    result = resolve_flag(base, flag_id, FlagStatus(action), resolved_by, note)
+    if result is None:
+        click.echo(f"Flag {flag_id} not found.")
+    else:
+        click.echo(f"Flag {result.id[:12]} → {result.status.value} by {resolved_by}")
+
+
+@main.command("discovery-scan")
+@click.argument("path", type=click.Path(exists=True), default=".")
+def discovery_scan_cmd(path: str) -> None:
+    """Scan registries for candidate neuroscience data element sources."""
+    from .discovery import save_candidates, scan_for_candidates
+
+    base = Path(path)
+    click.echo("Scanning registries for candidates...")
+    candidates = scan_for_candidates()
+    if candidates:
+        filepath = save_candidates(base, candidates)
+        click.echo(f"  {len(candidates)} candidates found → {filepath}")
+    else:
+        click.echo("  No new candidates found.")
+
+
+@main.command("discovery-approve")
+@click.argument("path", type=click.Path(exists=True))
+@click.option("--url", required=True, help="Candidate URL to approve")
+@click.option("--by", "curator", required=True, help="Curator identity")
+def discovery_approve_cmd(path: str, url: str, curator: str) -> None:
+    """Approve a discovered source candidate for ingestion."""
+    from .discovery import approve_candidate
+
+    if approve_candidate(Path(path), url, curator):
+        click.echo(f"Candidate approved: {url}")
+    else:
+        click.echo(f"Candidate not found: {url}")
+
+
+@main.command("discovery-reject")
+@click.argument("path", type=click.Path(exists=True))
+@click.option("--url", required=True, help="Candidate URL to reject")
+@click.option("--by", "curator", required=True, help="Curator identity")
+@click.option("--reason", default="", help="Rejection reason")
+def discovery_reject_cmd(path: str, url: str, curator: str, reason: str) -> None:
+    """Reject a discovered source candidate."""
+    from .discovery import reject_candidate
+
+    if reject_candidate(Path(path), url, curator, reason):
+        click.echo(f"Candidate rejected: {url}")
+    else:
+        click.echo(f"Candidate not found: {url}")
 
 
 @main.group("cache")

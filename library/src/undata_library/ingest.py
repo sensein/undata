@@ -6,8 +6,9 @@ from pathlib import Path
 
 import yaml
 
+from .utils import BASE_URI, safe_load_yaml, sanitize_filename
+
 from .hashing import (
-    build_element_uri,
     build_value_uri,
     canonical_json,
     compute_sha256,
@@ -54,92 +55,95 @@ def ingest_source(
     # This keeps ingestion pure (source data only) and tracks annotations
     # as separate PROV-O curation events.
 
-    # Write each element to staging with UUID filename (no hashing at extraction)
+    # Route all entity types to their correct directories
     import uuid
 
-    elements_dir = library_path / "elements"
-    elements_dir.mkdir(parents=True, exist_ok=True)
+    from .models import EntityType
 
-    # Dedup by (source, class, name) within this extraction to avoid writing
-    # the same element twice from the same source
-    seen_keys: set[tuple[str, str, str]] = set()
+    stats_by_type: dict[str, int] = {
+        "elements": 0,
+        "schemas": 0,
+        "values": 0,
+        "valuesets": 0,
+    }
+
+    # Map entity types to directory names
+    type_to_dir = {
+        EntityType.ATTRIBUTE: "elements",
+        EntityType.CLASS: "schemas",
+        EntityType.ENUM_VALUE: "values",
+        EntityType.VALUESET: "valuesets",
+    }
+
+    # Create all directories
+    for dirname in type_to_dir.values():
+        (library_path / dirname).mkdir(parents=True, exist_ok=True)
+
+    # Dedup by (entity_type, source, class, name)
+    seen_keys: set[tuple[str, str, str, str]] = set()
     created = 0
     merged = 0
 
+    # Write ATTRIBUTE entities from pairs (legacy path — these have SemanticIdentity)
     for sem, prov in pairs:
-        dedup_key = (prov.source, prov.class_, prov.name)
+        dedup_key = ("attribute", prov.source, prov.class_, prov.name)
         if dedup_key in seen_keys:
             merged += 1
             continue
         seen_keys.add(dedup_key)
 
         record = ElementRecord(semantic=sem, provenance=[prov])
-        entity_id = str(uuid.uuid4())
-        filepath = elements_dir / f"{entity_id}.yaml"
+        filepath = library_path / "elements" / f"{uuid.uuid4()}.yaml"
         _write_element(filepath, record)
         created += 1
+        stats_by_type["elements"] += 1
 
-    # Load hash registry for downstream compatibility (schemas, values, mappings)
+    # Write CLASS, ENUM_VALUE, VALUESET entities from all_entities
+    for entity in all_entities:
+        etype = entity.entity_type
+        dirname = type_to_dir.get(etype)
+        if dirname is None or dirname == "elements":
+            continue  # Elements handled above via pairs
+
+        prov = entity.provenance if isinstance(entity.provenance, dict) else {}
+        dedup_key = (
+            etype.value,
+            prov.get("source", ""),
+            prov.get("class", ""),
+            prov.get("name", ""),
+        )
+        if dedup_key in seen_keys:
+            continue
+        seen_keys.add(dedup_key)
+
+        data = {
+            "semantic": entity.semantic if isinstance(entity.semantic, dict) else {},
+            "provenance": [prov],
+        }
+        filepath = library_path / dirname / f"{uuid.uuid4()}.yaml"
+        filepath.write_text(
+            yaml.dump(data, default_flow_style=False, sort_keys=False),
+            encoding="utf-8",
+        )
+        stats_by_type[dirname] += 1
+
+    # Legacy: also extract values from response_options on elements
     registry_path = library_path / "hash-registry.yaml"
     registry = _load_registry(registry_path)
-
-    # Build a temporary registry for URI generation (needed by schema builder)
-    for f in sorted(elements_dir.glob("*.yaml")):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        if not data or "provenance" not in data:
-            continue
-        prov_list = data.get("provenance", [])
-        if not prov_list:
-            continue
-        first_prov = prov_list[0]
-        attr_name = first_prov.get("name", "unknown")
-        # Use filename stem as key for registry
-        key = f.stem
-        uri = build_element_uri(attr_name, key)
-        registry.elements[key] = HashRegistryEntry(
-            sha256="",  # Hash computed at commit time, not extraction
-            attribute=attr_name,
-            uri=uri,
-        )
-
-    # Write registry
-    _write_registry(registry_path, registry)
-
-    # Extract enum values as ValueConcepts
     value_stats = _extract_values(source_name, pairs, library_path, registry)
+    stats_by_type["values"] += value_stats.get("created", 0)
 
-    # Extract underscore-prefixed AIND $defs as ValueConcepts (FR-008)
-    if source_name == "aind" and schema_path is not None:
-        from .extractors.aind import extract_aind_values
-
-        aind_values = extract_aind_values(schema_path)
-        aind_val_count = _ingest_extracted_values(aind_values, library_path, registry)
-        value_stats["created"] = value_stats.get("created", 0) + aind_val_count
-
-    _write_registry(registry_path, registry)
-
-    # Resolve response_option values to ValueConcept URIs (U1 fix)
+    # Resolve response_option values to ValueConcept URIs
     _resolve_response_option_uris(library_path)
-
-    # Build schema shapes from class groupings
-    schema_stats = _build_schemas_from_provenance(source_name, library_path, registry)
-
-    # Process non-ATTRIBUTE classified entities (valuesets, enum values)
-    classified_stats = _process_classified_entities(all_entities, library_path, source_name)
-
-    # Generate cross-element transform mappings (bidirectional) for elements
-    # sharing a primary ontology annotation but with different data_type/unit
-    mapping_stats = _generate_transform_mappings(library_path, registry)
-    _write_registry(registry_path, registry)
 
     return {
         "created": created,
         "merged": merged,
         "total": created + merged,
-        "schemas_created": schema_stats.get("created", 0),
-        "values_created": value_stats.get("created", 0) + classified_stats.get("values_created", 0),
-        "valuesets_created": classified_stats.get("valuesets_created", 0),
-        "mappings_created": mapping_stats.get("created", 0),
+        "schemas_created": stats_by_type["schemas"],
+        "values_created": stats_by_type["values"],
+        "valuesets_created": stats_by_type["valuesets"],
+        "mappings_created": 0,
     }
 
 
@@ -148,8 +152,8 @@ def _load_value_mappings(library_path: Path) -> dict[str, dict]:
     mappings_path = library_path / "value-mappings.yaml"
     if not mappings_path.exists():
         return {}
-    data = yaml.safe_load(mappings_path.read_text(encoding="utf-8"))
-    if not isinstance(data, dict):
+    data = safe_load_yaml(mappings_path)
+    if data is None:
         return {}
 
     # Build a flat lookup: raw_value (lowercased) → {label}
@@ -277,19 +281,19 @@ def _resolve_response_option_uris(library_path: Path) -> int:
     # Build lookup: raw_value (lowercased) → value URI
     value_lookup: dict[str, str] = {}
     for f in values_dir.glob("*.yaml"):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        if not data or "semantic" not in data:
+        data = safe_load_yaml(f)
+        if data is None or "semantic" not in data:
             continue
         label = data["semantic"].get("label", "")
-        uri = f"https://schema.undata.live/values/{f.stem}"
+        uri = f"{BASE_URI}/values/{f.stem}"
         value_lookup[label.lower()] = uri
         for p in data.get("provenance", []):
             value_lookup[p.get("name", "").lower()] = uri
 
     resolved = 0
     for f in elements_dir.glob("*.yaml"):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        if not data or "semantic" not in data:
+        data = safe_load_yaml(f)
+        if data is None or "semantic" not in data:
             continue
         opts = data["semantic"].get("response_options")
         if not opts:
@@ -336,16 +340,17 @@ def _extract(
             cache_path = cache.acquire(source_def)
 
             if source_def.acquisition == "pip_install":
-                # Install source package + undata-library in isolated venv,
-                # then run the actual adapter extraction via subprocess
+                # Run standalone extraction script in isolated venv
                 iso = IsolatedEnv()
                 env_path = iso.create_venv(source_def)
                 try:
-                    introspected = iso.install_and_run_adapter(
+                    output = iso.install_and_run_adapter(
                         env_path,
                         source_def.package or source_def.name,
                         source_def.adapter,
+                        extra_deps=source_def.extra_deps,
                     )
+
                     from .adapters.base import ClassifiedEntity
                     from .models import EntityType, SourceRef
 
@@ -359,18 +364,40 @@ def _extract(
                             checksum="",
                         )
 
-                    pip_entities = []
-                    for item in introspected:
-                        pip_entities.append(
-                            ClassifiedEntity(
-                                entity_type=EntityType(item["entity_type"]),
-                                semantic=item["semantic"],
-                                provenance=item["provenance"],
-                                confidence=float(item.get("confidence", 0.8)),
-                                source_ref=ref,
+                    if isinstance(output, str):
+                        # LinkML YAML output — parse via LinkML adapter
+                        import tempfile
+
+                        from .adapters.linkml import LinkMLAdapter
+
+                        with tempfile.NamedTemporaryFile(
+                            suffix=".yaml", mode="w", delete=False
+                        ) as tmp:
+                            tmp.write(output)
+                            tmp_path = Path(tmp.name)
+                        try:
+                            linkml_adapter = LinkMLAdapter()
+                            entities = linkml_adapter.extract(
+                                tmp_path,
+                                source_name=source_name,
+                                repo=source_def.repo,
                             )
-                        )
-                    entities = pip_entities
+                        finally:
+                            tmp_path.unlink(missing_ok=True)
+                    else:
+                        # JSON entity list output
+                        pip_entities = []
+                        for item in output:
+                            pip_entities.append(
+                                ClassifiedEntity(
+                                    entity_type=EntityType(item["entity_type"]),
+                                    semantic=item["semantic"],
+                                    provenance=item["provenance"],
+                                    confidence=float(item.get("confidence", 0.8)),
+                                    source_ref=ref,
+                                )
+                            )
+                        entities = pip_entities
                     path = None
                 finally:
                     iso.cleanup(env_path)
@@ -466,7 +493,7 @@ def _process_classified_entities(
             sha = compute_sha256(canonical)
             key = generate_short_key(sha)
 
-            safe_name = name.lower().replace("/", "_").replace(":", "_")[:60]
+            safe_name = sanitize_filename(name)
             filename = f"{safe_name}_{key}.yaml"
             filepath = valuesets_dir / filename
 
@@ -499,13 +526,15 @@ def _process_classified_entities(
             sha = compute_sha256(canonical)
             key = generate_short_key(sha)
 
-            safe_label = label.lower().replace("/", "_").replace(":", "_").replace(" ", "_")[:60]
+            safe_label = sanitize_filename(label)
             filename = f"{safe_label}_{key}.yaml"
             filepath = values_dir / filename
 
             if filepath.exists():
                 # Merge provenance
-                existing = yaml.safe_load(filepath.read_text(encoding="utf-8"))
+                existing = safe_load_yaml(filepath)
+                if existing is None:
+                    continue
                 existing_sources = {
                     (p.get("source"), p.get("name", "")) for p in existing.get("provenance", [])
                 }
@@ -542,8 +571,8 @@ def _write_element(path: Path, record: ElementRecord, sha256: str | None = None)
 def _load_registry(path: Path) -> HashRegistry:
     """Load hash registry from YAML, or return empty."""
     if path.exists():
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if isinstance(data, dict):
+        data = safe_load_yaml(path)
+        if data is not None:
             return HashRegistry.model_validate(data)
     return HashRegistry()
 
@@ -578,8 +607,8 @@ def _build_schemas_from_provenance(
     class_elements: dict[str, list[str]] = defaultdict(list)
 
     for f in sorted(elements_dir.glob("*.yaml")):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        if not data or "provenance" not in data:
+        data = safe_load_yaml(f)
+        if data is None or "provenance" not in data:
             continue
         for p in data["provenance"]:
             if p.get("source") == source_name:
@@ -659,8 +688,8 @@ def _generate_transform_mappings(
     # Group elements by primary ontology annotation URI
     onto_groups: dict[str, list[tuple[str, dict]]] = defaultdict(list)
     for f in sorted(elements_dir.glob("*.yaml")):
-        data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        if not data or "semantic" not in data:
+        data = safe_load_yaml(f)
+        if data is None or "semantic" not in data:
             continue
         # Extract primary ontology URI from annotations
         annotations = data["semantic"].get("ontology_annotations", [])
@@ -711,9 +740,7 @@ def _generate_transform_mappings(
                     func_type = "unit_conversion"
 
                 # Forward mapping: A → B
-                mapping_id = f"{uri_a}__to__{uri_b}".replace(
-                    "https://schema.undata.live/elements/", ""
-                )
+                mapping_id = f"{uri_a}__to__{uri_b}".replace(f"{BASE_URI}/elements/", "")
                 safe_id = mapping_id.replace("/", "_")[:80]
 
                 if safe_id not in existing_mapping_files:
@@ -735,7 +762,7 @@ def _generate_transform_mappings(
                     created += 1
 
                 # Reverse mapping: B → A
-                rev_id = f"{uri_b}__to__{uri_a}".replace("https://schema.undata.live/elements/", "")
+                rev_id = f"{uri_b}__to__{uri_a}".replace(f"{BASE_URI}/elements/", "")
                 safe_rev = rev_id.replace("/", "_")[:80]
 
                 if safe_rev not in existing_mapping_files:

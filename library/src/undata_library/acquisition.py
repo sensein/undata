@@ -13,6 +13,7 @@ from typing import Any
 import yaml
 
 from .models import SourceDefinition, SourceRef
+from .utils import safe_load_yaml
 
 logger = logging.getLogger(__name__)
 
@@ -31,13 +32,17 @@ def load_source_def(name_or_path: str) -> SourceDefinition:
     # Try as file path first
     p = Path(name_or_path)
     if p.exists() and p.suffix in (".yaml", ".yml"):
-        data = yaml.safe_load(p.read_text(encoding="utf-8"))
+        data = safe_load_yaml(p)
+        if data is None:
+            raise ValueError(f"Invalid or empty source definition: {p}")
         return SourceDefinition.model_validate(data)
 
     # Try bundled definitions
     bundled = _BUNDLED_DEFS_DIR / f"{name_or_path}.yaml"
     if bundled.exists():
-        data = yaml.safe_load(bundled.read_text(encoding="utf-8"))
+        data = safe_load_yaml(bundled)
+        if data is None:
+            raise ValueError(f"Invalid or empty bundled source definition: {bundled}")
         return SourceDefinition.model_validate(data)
 
     available = [f.stem for f in _BUNDLED_DEFS_DIR.glob("*.yaml")]
@@ -186,7 +191,7 @@ class SourceCache:
                 meta_file = ver_dir / "source-meta.yaml"
                 meta = {}
                 if meta_file.exists():
-                    meta = yaml.safe_load(meta_file.read_text()) or {}
+                    meta = safe_load_yaml(meta_file) or {}
                 # Calculate size
                 size = sum(f.stat().st_size for f in ver_dir.rglob("*") if f.is_file())
                 results.append(
@@ -215,7 +220,7 @@ class SourceCache:
                 if older_than_days is not None:
                     meta_file = ver_dir / "source-meta.yaml"
                     if meta_file.exists():
-                        meta = yaml.safe_load(meta_file.read_text()) or {}
+                        meta = safe_load_yaml(meta_file) or {}
                         dl_at = meta.get("downloaded_at")
                         if dl_at:
                             from datetime import datetime as dt_cls
@@ -278,7 +283,7 @@ class IsolatedEnv:
             raise RuntimeError(f"Failed to install {package}: {result.stderr[:500]}")
 
         # Run introspection script
-        script = Path(__file__).parent / "adapters" / "docker_scripts" / "python_inspect.py"
+        script = Path(__file__).parent / "adapters" / "standalone_scripts" / "python_inspect.py"
         if not script.exists():
             raise FileNotFoundError(f"Introspection script not found: {script}")
 
@@ -292,28 +297,37 @@ class IsolatedEnv:
         return json.loads(result.stdout)
 
     def install_and_run_adapter(
-        self, env_path: Path, package: str, adapter_name: str
-    ) -> list[dict]:
+        self,
+        env_path: Path,
+        package: str,
+        adapter_name: str,
+        extra_deps: list[str] | None = None,
+    ) -> list[dict] | str:
         """Install source package in venv, run standalone extraction script.
 
-        Uses adapter-specific standalone scripts (bids_extract.py, dandi_extract.py)
-        that only depend on the source package + stdlib. Does NOT install
-        undata-library in the isolated venv (avoids dependency clashes).
-        Output is JSON parseable by undata-library.
+        Uses adapter-specific standalone scripts (bids_extract.py, dandi_extract.py).
+        Extra dependencies (e.g., linkml-runtime) can be installed alongside the
+        source package for scripts that need them.
+
+        Returns JSON-parsed list of dicts, or raw string output if the script
+        produces non-JSON (e.g., LinkML YAML).
         """
         import json
 
         venv_path = env_path / ".venv"
         python = venv_path / "bin" / "python"
 
-        # Install source package only
-        install_cmd = ["uv", "pip", "install", "--python", str(python), package]
+        # Install source package + extra dependencies
+        packages = [package]
+        if extra_deps:
+            packages.extend(extra_deps)
+        install_cmd = ["uv", "pip", "install", "--python", str(python)] + packages
         result = subprocess.run(install_cmd, capture_output=True, text=True, timeout=300)
         if result.returncode != 0:
-            raise RuntimeError(f"Failed to install {package}: {result.stderr[:500]}")
+            raise RuntimeError(f"Failed to install {packages}: {result.stderr[:500]}")
 
         # Find standalone extraction script for this adapter
-        scripts_dir = Path(__file__).parent / "adapters" / "docker_scripts"
+        scripts_dir = Path(__file__).parent / "adapters" / "standalone_scripts"
         script = scripts_dir / f"{adapter_name}_extract.py"
         if not script.exists():
             # Fall back to generic introspection
@@ -326,7 +340,12 @@ class IsolatedEnv:
         if result.returncode != 0:
             raise RuntimeError(f"Extraction failed for {adapter_name}: {result.stderr[:500]}")
 
-        return json.loads(result.stdout)
+        # Try JSON first; if it fails, return raw output (e.g., LinkML YAML)
+        stdout = result.stdout.strip()
+        try:
+            return json.loads(stdout)
+        except json.JSONDecodeError:
+            return stdout
 
     def cleanup(self, env_path: Path) -> None:
         """Remove an isolated environment."""
@@ -395,7 +414,7 @@ def build_source_ref_from_cache(source_def: SourceDefinition, cache_path: Path) 
     else:
         meta_file = cache_path / "source-meta.yaml"
         if meta_file.exists():
-            meta = yaml.safe_load(meta_file.read_text()) or {}
+            meta = safe_load_yaml(meta_file) or {}
             committish = meta.get("version")
         else:
             committish = None

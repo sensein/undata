@@ -5,8 +5,8 @@ from __future__ import annotations
 from pathlib import Path
 
 import httpx
-import yaml
 
+from .utils import safe_load_yaml
 from .validation import validate_file
 
 
@@ -32,7 +32,9 @@ async def import_elements(
             if not report.valid:
                 continue
 
-            data = yaml.safe_load(path.read_text(encoding="utf-8"))
+            data = safe_load_yaml(path)
+            if data is None:
+                continue
             resp = await client.post("/api/v1/elements", json=data)
 
             if resp.status_code == 201:
@@ -58,8 +60,8 @@ async def import_values(
 
     async with httpx.AsyncClient(base_url=backend_url, headers=headers) as client:
         for path in sorted(values_dir.glob("*.yaml")):
-            data = yaml.safe_load(path.read_text(encoding="utf-8"))
-            if not isinstance(data, dict) or "semantic" not in data:
+            data = safe_load_yaml(path)
+            if data is None or "semantic" not in data:
                 continue
             resp = await client.post("/api/v1/values", json=data)
             if resp.status_code == 201:
@@ -85,8 +87,8 @@ async def import_schemas(
 
     async with httpx.AsyncClient(base_url=backend_url, headers=headers) as client:
         for path in sorted(schemas_dir.glob("*.yaml")):
-            data = yaml.safe_load(path.read_text(encoding="utf-8"))
-            if not isinstance(data, dict) or "semantic" not in data:
+            data = safe_load_yaml(path)
+            if data is None or "semantic" not in data:
                 continue
             resp = await client.post("/api/v1/schemas", json=data)
             if resp.status_code == 201:

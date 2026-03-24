@@ -30,6 +30,7 @@ dev = [
     "ruff>=0.15",
     "numpy>=1.26",
     "sentence-transformers>=3.0",
+    "litellm>=1.40",
 ]
 
 [project.scripts]

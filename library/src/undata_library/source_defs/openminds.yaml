@@ -2,6 +2,10 @@ name: openminds
 repo: https://github.com/openMetadataInitiative/openMINDS
 default_version: latest
 acquisition: git_clone
-schema_path: "**/*.jsonld"
+schema_path: "schemas/latest/**/*.schema.omi.json"
 adapter: openminds
 isolation: none
+# Controlled term instances are in openMINDS_instances repo (4,390 instances, 109 types)
+# e.g., BiologicalSex: male.jsonld, female.jsonld with PATO ontology identifiers
+instance_repo: https://github.com/openMetadataInitiative/openMINDS_instances
+instance_path: "instances/latest/terminologies/**/*.jsonld"

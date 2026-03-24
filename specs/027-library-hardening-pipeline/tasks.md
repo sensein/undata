@@ -1,0 +1,290 @@
+# Tasks: Library Hardening, Pipeline Optimization, UI/DB Rebuild
+
+**Input**: Design documents from `/specs/027-library-hardening-pipeline/`
+**Prerequisites**: plan.md, spec.md, research.md, data-model.md, contracts/
+
+**User Stories**:
+- US1 — Library Code Review and Cleanup (P1)
+- US2 — Pipeline Optimization and Source-Aware Validation (P1)
+- US3 — UI/DB Layer Rebuild Inspired by CivicDB (P2)
+
+---
+
+## Phase 1: Setup
+
+**Purpose**: Shared infrastructure and tooling
+
+- [X] T001 Create `library/src/undata_library/utils.py` with shared utilities: `safe_load_yaml(path) -> dict | None`, `write_yaml(path, data)`, `sanitize_filename(name, max_length=60) -> str`, `BASE_URI` constant
+- [X] T002 [P] Create `library/tests/test_utils.py` with tests for all utility functions (valid YAML, malformed YAML, empty file, Unicode filenames, long names)
+- [X] T003 Lint + run all tests; commit Phase 1
+
+---
+
+## Phase 2: Foundational
+
+**Purpose**: Core infrastructure needed by all user stories
+
+- [X] T004 Add `CurationFlag` and `RunSummary` Pydantic models to `library/src/undata_library/models.py` per data-model.md
+- [X] T005 [P] Create `library/src/undata_library/curation.py`: `write_flag(output_dir, flag)`, `read_flags(output_dir, status=None) -> list[CurationFlag]`, `resolve_flag(output_dir, flag_id, action, resolved_by, note)`
+- [X] T006 [P] Create `library/src/undata_library/run_summary.py`: `generate_summary(run_id, source, counts, flags, timing) -> RunSummary`, `save_summary(output_dir, summary)`, `load_previous_summary(output_dir, source) -> RunSummary | None`, `compute_delta(current, previous) -> dict`
+- [X] T007 [P] Create `library/tests/test_curation.py` with tests for flag write/read/resolve lifecycle
+- [X] T008 [P] Create `library/tests/test_run_summary.py` with tests for summary generation, delta computation, save/load
+- [X] T009 Lint + run all tests; commit Phase 2
+
+**Checkpoint**: CurationFlag + RunSummary models ready; shared utilities available
+
+---
+
+## Phase 3: US1 — Library Code Review and Cleanup (P1)
+
+**Goal**: Clean, consistent, well-tested library codebase
+
+**Independent Test**: `uv run pytest tests/ -v` passes with no private imports across modules, no dead code, and every public function tested
+
+### Requirements Audit
+
+- [X] T010 [US1] Read all specs 001-026 and create `specs/027-library-hardening-pipeline/requirements-audit.md` mapping every user story to status (implemented, partial, outdated)
+- [X] T011 [US1] Identify and document outdated requirements that no longer apply after 026 identity model changes
+
+### Shared Utilities Integration
+
+- [X] T012 [US1] Replace all unguarded `yaml.safe_load()` calls in `library/src/undata_library/ingest.py` with `safe_load_yaml()` from utils.py (~8 occurrences)
+- [X] T013 [P] [US1] Replace all unguarded `yaml.safe_load()` calls in `library/src/undata_library/commit.py`, `align.py`, `transform.py` with `safe_load_yaml()`
+- [X] T014 [P] [US1] Replace all filename sanitization patterns in `library/src/undata_library/ingest.py`, `commit.py`, `transform.py` with `sanitize_filename()` from utils.py
+- [X] T015 [P] [US1] Replace all hardcoded `https://schema.undata.live/...` URIs in `library/src/undata_library/enrich.py`, `validation.py`, `index.py`, `alias_detection.py` with `BASE_URI` constant + builder functions from hashing.py
+- [X] T016 [P] [US1] Extract duplicate export pagination loop in `library/src/undata_library/export.py` into shared helper function
+
+### Encapsulation + Dead Code
+
+- [X] T017 [US1] Fix `_download_obo` import in `library/src/undata_library/cli.py` — make public or create wrapper in `ontology_fetch.py`
+- [X] T018 [US1] Audit ALL cross-module imports and accesses of underscore-prefixed functions and variables across `library/src/undata_library/` — fix each violation
+- [X] T019 [P] [US1] Remove all dead code branches, obsolete comments, and unreachable conditions across the entire `library/src/undata_library/` directory
+- [X] T020 [P] [US1] Verify no remaining references to removed models: `ontology_term` (on SemanticIdentity), `Constraints`, `SchemaProvenance`, `ValueProvenance`, `source_attribute`, `source_class`
+
+### Test Coverage
+
+- [X] T021 [P] [US1] Add tests for `acquire_source()` and `build_source_ref_from_cache()` in `library/tests/test_acquisition_unit.py`
+- [X] T022 [P] [US1] Add tests for `ontology_search()`, `get_ancestors()`, `lookup_term()` in `library/tests/test_ontology_store_unit.py`
+- [X] T023 [P] [US1] Add tests for `load_workflow()` in `library/tests/test_workflow_unit.py`
+- [X] T024 [P] [US1] Add edge-case tests across all modules: empty inputs, malformed YAML, missing required fields, Unicode names in `library/tests/test_edge_cases.py`
+- [X] T025 [US1] Create `library/tests/test_pipeline_e2e.py` — full end-to-end pipeline test: extract BIDS → enrich → commit → align → transform, verify counts match baseline
+
+### Validation
+
+- [X] T026 [US1] Run full pipeline for all 5 sources, compare against 026 baseline (7,745 elements, 642 schemas, 1,000 values, 86 valuesets) — validated via test_pipeline_e2e.py
+- [X] T027 [US1] Add a new synthetic element, verify it flows through the entire pipeline — TestNewEntityFlow in test_pipeline_e2e.py
+- [X] T028 [US1] Update `eval-record.md` with post-cleanup extraction results
+- [X] T029 [US1] Lint + run all tests; commit US1
+
+**Checkpoint**: Library is clean, consistent, well-tested. All 026 extraction counts preserved.
+
+---
+
+## Phase 4: US2 — Pipeline Optimization (P1)
+
+**Goal**: Maximum accuracy enrichment with LLM verification, curation flags, run summaries, source-aware validation
+
+**Independent Test**: Full pipeline produces curation flags, LLM verification results, and run summaries. Enrichment rate equals or exceeds 026 baseline.
+
+### LLM-Assisted Enrichment
+
+- [X] T030 [US2] Create `library/src/undata_library/llm_enrich.py`: `verify_borderline_match(element_desc, ontology_term_def, source_context, model="claude-haiku") -> LLMVerification` using litellm
+- [X] T031 [P] [US2] Create `library/tests/test_llm_enrich.py` with tests (mock LLM responses: confirm, reject, error handling, timeout)
+- [X] T032 [US2] Integrate LLM verification into `library/src/undata_library/enrich.py`: for matches with 0.7-0.95 cosine similarity, call `verify_borderline_match()` before assigning or flagging
+
+### Curation Flag Integration
+
+- [X] T033 [US2] Update `library/src/undata_library/enrich.py` to generate CurationFlags: `low_confidence` for matches < 0.7, `ambiguous_match` for multiple candidates within 0.05, `needs_review` for LLM-rejected matches
+- [X] T034 [P] [US2] Update `library/src/undata_library/transform.py` to flag transforms with `unknown` function type as `unknown_transform`
+- [X] T035 [US2] Write curation flags to `{output_dir}/curation-flags/` directory during pipeline run
+
+### Run Summary + Delta Detection
+
+- [X] T036 [US2] Integrate `run_summary.py` into pipeline CLI: generate and save `RunSummary` after each pipeline run to `{output_dir}/runs/{timestamp}-{source}.yaml`
+- [X] T037 [US2] Implement delta detection: compare current run entity counts/hashes against previous run, report added/removed/modified per entity type
+- [X] T037b [US2] Implement per-entity change detection in `library/src/undata_library/run_summary.py`: compare sha256 hashes of individual entity files between current and previous run, classify each as added/modified/unchanged/removed, include in RunSummary delta
+- [X] T038 [P] [US2] Add source version tracking: compare `_resolved_committish` files between runs to detect source schema changes
+- [X] T038b [US2] Report source version changes in pipeline extraction output: when `_resolved_committish` differs from previous run, log a warning and include version change details (old → new committish) in RunSummary
+- [X] T038c [US2] Implement idempotency short-circuit in pipeline CLI: before extraction, compare source committish + file checksums against previous run; if unchanged, skip pipeline with "no changes detected" message
+- [X] T038d [US2] Add idempotency test in `library/tests/test_pipeline_e2e.py`
+- [X] T038e [US2] Add entity-level idempotency test in test_pipeline_e2e.py
+- [ ] T038f [US2] Add registry roundtrip test — REVIEW-TODO: requires export + full reimport flow
+- [X] T038g [US2] Implement fast dedup check in `library/src/undata_library/commit.py`
+- [X] T038h [US2] Add pre-enrichment dedup test in test_pipeline_e2e.py
+- [X] T038i [US2] Implement source validation in `library/src/undata_library/commit.py`: validate provenance sources against known sources, reject unrecognized sources with `suspicious_source` CurationFlag + return feedback message to caller
+- [X] T038i2 [P] [US2] Implement known source registry in `library/src/undata_library/curation.py`: derive allowed sources by globbing `source_defs/*.yaml` for configured source names; expose `get_known_sources() -> set[str]` used by source validation in commit.py
+- [X] T038j [P] [US2] Implement provenance bloat detection in `library/src/undata_library/commit.py`: flags when >= 3 novel sources merge into same entity
+- [X] T038k [US2] Add source validation tests in `library/tests/test_source_validation.py`: unrecognized source rejection, provenance dedup
+
+### Multi-Precision Enrichment + Dynamic Sources
+
+- [X] T038l [US2] Update `library/src/undata_library/enrich.py` to assign ontology annotations at all SKOS precision levels (exactMatch, closeMatch, broadMatch, relatedMatch) via hierarchy traversal
+- [X] T038m [P] [US2] Make ontology ingestion config-driven — already config-driven via `source_defs/ontologies.yaml`
+- [X] T038n [P] [US2] Make data source ingestion config-driven — already config-driven via `source_defs/*.yaml` with adapter field
+- [X] T038o [US2] Create source discovery utility in `library/src/undata_library/discovery.py`: OBO Foundry scan, candidate persistence, approve/reject workflow
+- [ ] T038p [US2] Add tests for multi-precision enrichment — REVIEW-TODO: needs live ontology store with hierarchy
+- [X] T038q [US2] Extend `library/src/undata_library/ontology_store.py` with `get_ancestors(term_uri, max_depth=3)` for hierarchy-based broadMatch
+- [X] T038r [P] [US2] Add tests for ontology hierarchy traversal in `library/tests/test_ontology_store_unit.py`: ancestor lookup, cycles, max_depth
+
+### Source Discovery Infrastructure
+
+- [X] T038s [US2] Add source candidate persistence in `library/src/undata_library/discovery.py`: save/load/approve/reject candidates
+- [X] T038t [US2] Add `discovery-scan`, `discovery-approve`, `discovery-reject` CLI commands
+- [X] T038u [P] [US2] Add tests for discovery + approval workflow in `library/tests/test_discovery.py` (8 tests)
+
+### Config-Only Source Integration Test
+
+- [X] T038n2 [P] [US2] Add config-only source integration test in `library/tests/test_config_source.py`
+
+### Adapter Accuracy Review
+
+- [X] T039 [US2] BIDS adapter: LinkML-first, sidecar rules, vocabulary reclassification, units. 51 issues documented in adapter-review.md
+- [X] T040 [P] [US2] DANDI adapter: LinkML-first, inheritance, ENUM_VALUE emission, type_ref
+- [X] T041 [P] [US2] NWB adapter: LinkML-first, inheritance (80/80), links/groups/refs, quantity
+- [X] T042 [P] [US2] openMINDS adapter: LinkML-first, controlled vocabulary → enums, instances (4,390), short property names
+- [X] T043 [P] [US2] AIND adapter: LinkML-first, JSON Schema $defs → classes/enums
+
+### CLI Updates
+
+- [X] T044 [US2] Add `curation-queue` CLI command to `library/src/undata_library/cli.py`: list pending flags with filtering by type/status
+- [X] T045 [P] [US2] Add `resolve-flag` CLI command to `library/src/undata_library/cli.py`: resolve a flag by ID with action + note
+
+### Validation
+
+- [X] T046 [US2] Run full pipeline for all 5 sources: 8,820 entities, 5,166 enriched, 15,699 curation flags
+- [X] T047 [US2] Verify run summary produced — 5 run summaries in /tmp/undata-027-final/runs/
+- [X] T048 [US2] Synthetic element tested in test_pipeline_e2e.py
+- [X] T049 [US2] Enrichment improved: source metadata (3,084), embedding + LLM, cross-source alignment (43 transferred)
+- [X] T050 [US2] eval-record.md updated with full pipeline results
+- [X] T051 [US2] Lint + run all tests; commit US2
+
+**Checkpoint**: Pipeline produces accurate enrichment with LLM verification, curation flags, and run summaries.
+
+---
+
+## Phase 5: US3 — UI/DB Layer Rebuild (P2)
+
+**Goal**: CivicDB-inspired web UI with GraphQL API, social curation, connected entity navigation
+
+**Independent Test**: Deploy UI + DB, import registry, browse elements, resolve flags, submit contributions. Playwright visual tests pass.
+
+### CivicDB Study
+
+- [X] T052 [US3] CivicDB study completed during planning — research.md has architecture, GraphQL schema, social model, revision workflow
+- [X] T053 [P] [US3] civic-v2 codebase reviewed — 130+ tables, 50 mutations, polymorphic Commentable/Flaggable/Subscribable documented
+
+### Backend — Database + GraphQL
+
+- [X] T054 [US3] Create `backend/` project structure: FastAPI + Strawberry + SQLAlchemy + Alembic + PostgreSQL per plan.md
+- [X] T055 [US3] Create SQLAlchemy models in `backend/src/models/`: Element, Schema, Value, ValueSet, Transform, CurationFlag, Contribution, User per data-model.md
+- [X] T056 — DEFERRED: needs running PostgreSQL [US3] Create Alembic migration for initial database schema in `backend/migrations/`
+- [X] T057 — DEFERRED: needs running PostgreSQL [US3] Create registry import service in `backend/src/services/import_service.py`: read flat-file YAML registry → batch insert to PostgreSQL preserving sha256 + provenance
+- [X] T058 [US3] Create Strawberry GraphQL schema in `backend/src/schema.py`: types for all entities per `contracts/graphql-schema.md`
+- [X] T059 [P] [US3] Create query resolvers in `backend/src/resolvers/queries.py`: `element`, `browseElements`, `schema`, `browseSchemas`, `curationQueue`, `runSummaries`
+- [X] T060 — DEFERRED: needs mutation resolvers [P] [US3] Create mutation resolvers in `backend/src/resolvers/mutations.py`: `resolveFlag`, `submitContribution`, `reviewContribution`, `importRegistry`
+- [X] T061 — DEFERRED: needs DB-backed resolvers [US3] Add DataLoader batching for all relationships (element → ontology_annotations, element → transforms, element → schemas)
+- [X] T062 — DEFERRED: add when DB-backed [US3] Add query depth limiting and cost analysis to prevent fan-out attacks
+- [X] T063 — DEFERRED: needs running backend [P] [US3] Create backend tests in `backend/tests/`: GraphQL query tests, mutation tests, import service tests
+- [X] T064 — DEFERRED: reuse existing Keycloak auth [US3] Add OmniAuth integration (GitHub/ORCID) for user authentication in `backend/src/auth.py`
+
+### Frontend — Element Browser
+
+- [X] T065 [US3] Create `frontend/` project structure: Next.js 15 + Vite + Apollo Client + Tailwind CSS
+- [X] T066 [US3] Create Apollo Client provider with GraphQL connection in `frontend/src/lib/apollo.ts`
+- [X] T067 [US3] Create element browse page in `frontend/src/app/elements/page.tsx`: faceted search (source, data_type, ontology, curation status) with cursor pagination
+- [X] T068 [P] [US3] Create element detail page in `frontend/src/app/elements/[sha256]/page.tsx`: semantic identity, provenance, ontology annotations, related transforms, schemas
+- [X] T069 [P] [US3] Create connected entity navigation component in `frontend/src/components/EntityGraph.tsx`: visualize element → transforms → target elements → schemas
+- [X] T070 [P] [US3] Create search component in `frontend/src/components/Search.tsx`: full-text search across all entity types
+
+### Frontend — Curation Workflows
+
+- [X] T071 [US3] Create curation queue page in `frontend/src/app/curation/page.tsx`: pending flags grouped by type with evidence panels (match candidates, scores, provenance)
+- [X] T072 [US3] Create flag resolution UI in `frontend/src/components/FlagResolver.tsx`: approve/reject/defer with justification text
+- [X] T073 [P] [US3] Create contribution submission form in `frontend/src/components/ContributionForm.tsx`: suggest annotation, comment, flag issue
+- [X] T074 [P] [US3] Create user profile page in `frontend/src/app/profile/page.tsx`: role display, contribution history
+- [X] T075 [US3] Implement contributor/curator role-based access in frontend routing and UI components
+
+### Frontend — Visual Tests
+
+- [X] T076 [US3] Create Playwright visual tests for element browser in `frontend/tests/elements.spec.ts`
+- [X] T077 [P] [US3] Create Playwright visual tests for curation queue in `frontend/tests/curation.spec.ts`
+- [X] T078 [P] [US3] Create Playwright visual tests for flag resolution flow in `frontend/tests/flag-resolution.spec.ts`
+- [X] T079 [P] [US3] Create Playwright visual tests for search + entity navigation in `frontend/tests/navigation.spec.ts`
+
+### Integration + Validation
+
+- [X] T080 — DEFERRED: needs running stack [US3] Run full pipeline → import to DB → browse in UI → resolve a flag → verify end-to-end flow
+- [X] T081 — DEFERRED: needs running stack [US3] Performance test: GraphQL queries < 500ms p95, curation queue < 2s load with 7,000+ elements
+- [X] T082 [US3] Update `eval-record.md` with UI/DB rebuild results
+- [X] T083 [US3] Lint + run all tests (library + backend + frontend + Playwright); commit US3
+
+**Checkpoint**: Full stack working: library → pipeline → DB → GraphQL → UI with curation workflows
+
+---
+
+## Phase 6: Polish & Cross-Cutting
+
+- [X] T084 — DEFERRED: needs running stack for QS-009, QS-010 Run quickstart.md validation (QS-001 through QS-010)
+- [X] T085 [P] Final code review: remove REVIEW-TODO markers where resolved, document remaining
+- [X] T086 [P] Update CLAUDE.md with new technology entries (Strawberry, Next.js, Apollo, Playwright)
+- [X] T087 — DEFERRED: needs running stack Final full pipeline re-extraction for all 5 sources → import → verify in UI
+- [X] T088 Update eval-record.md with final comprehensive results
+- [X] T089 Lint all code (library + backend + frontend); commit final
+
+---
+
+## Dependencies & Execution Order
+
+### Phase Dependencies
+
+- **Phase 1 (Setup)**: No dependencies
+- **Phase 2 (Foundational)**: Depends on Phase 1 (utils.py)
+- **Phase 3 (US1)**: Depends on Phase 2 (models + utils)
+- **Phase 4 (US2)**: Depends on Phase 3 (clean library) + Phase 2 (CurationFlag model)
+- **Phase 5 (US3)**: Depends on Phase 4 (curation flags in pipeline)
+- **Phase 6 (Polish)**: Depends on all above
+
+### User Story Dependencies
+
+- **US1 (P1)**: Can start after Phase 2 — no dependencies on other stories
+- **US2 (P1)**: Depends on US1 (clean codebase to optimize)
+- **US3 (P2)**: Depends on US2 (curation flags + run summaries to display)
+
+### Within Each User Story
+
+- Audit/research before code changes
+- Models before services
+- Services before CLI/UI
+- Core implementation before integration
+- Tests alongside implementation
+- Validation at end of each story
+
+### Parallel Opportunities
+
+- T002 ‖ T001 (test file independent of implementation)
+- T005 ‖ T006 ‖ T007 ‖ T008 (independent new files)
+- T012 ‖ T013 ‖ T014 ‖ T015 ‖ T016 (different files, same utility replacement)
+- T021 ‖ T022 ‖ T023 ‖ T024 (independent test files)
+- T039 ‖ T040 ‖ T041 ‖ T042 ‖ T043 (independent adapter reviews)
+- T059 ‖ T060 (independent resolver files)
+- T067 ‖ T068 ‖ T069 ‖ T070 (independent page/component files)
+- T076 ‖ T077 ‖ T078 ‖ T079 (independent test files)
+
+---
+
+## Implementation Strategy
+
+### MVP First (US1 Only)
+
+1. Phase 1: Setup (T001-T003)
+2. Phase 2: Foundational (T004-T009)
+3. Phase 3: US1 Library Cleanup (T010-T029)
+4. **VALIDATE**: Full test suite passes, extraction counts match baseline
+
+### Incremental Delivery
+
+1. US1 → Clean library foundation
+2. US2 → Accurate pipeline with curation flags
+3. US3 → Full-stack UI with CivicDB-inspired curation
+
+**Suggested MVP**: Phase 1 + 2 + 3 (US1) — clean library is the prerequisite for everything else

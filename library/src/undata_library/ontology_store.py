@@ -9,7 +9,8 @@ from pathlib import Path
 from typing import Iterator
 
 import pyoxigraph
-import yaml
+
+from .utils import safe_load_yaml
 
 logger = logging.getLogger(__name__)
 
@@ -231,6 +232,34 @@ class OntologyStore:
             results.append({"name": name, "term_count": count, "loaded_at": loaded_at})
         return results
 
+    def get_ancestors(self, term_uri: str, max_depth: int = 3) -> list[str]:
+        """Traverse rdfs:subClassOf hierarchy upward to find broader/parent terms.
+
+        Returns a list of ancestor URIs up to max_depth levels. Handles cycles
+        by tracking visited nodes.
+        """
+        visited: set[str] = set()
+        queue = [term_uri]
+        ancestors: list[str] = []
+        depth = 0
+
+        while queue and depth < max_depth:
+            next_queue: list[str] = []
+            for uri in queue:
+                if uri in visited:
+                    continue
+                visited.add(uri)
+                q = f"SELECT ?p WHERE {{ GRAPH ?g {{ <{uri}> <{_RDFS_SUBCLASS}> ?p }} }}"
+                for row in self.store.query(q):
+                    parent = _val(row[0])
+                    if parent and parent not in visited and not parent.startswith("_:"):
+                        ancestors.append(parent)
+                        next_queue.append(parent)
+            queue = next_queue
+            depth += 1
+
+        return ancestors
+
     def _add_triple(
         self,
         subject: str,
@@ -330,6 +359,8 @@ def nearest_terms(
 def load_ontology_config(path: Path | None = None) -> list[dict]:
     """Load ontology config from YAML."""
     config_path = path or _BUNDLED_CONFIG
-    data = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+    data = safe_load_yaml(config_path)
+    if data is None:
+        return []
     all_onts = data.get("ontologies", [])
     return [o for o in all_onts if o.get("enabled", True) is not False]

@@ -9,6 +9,8 @@ from pathlib import Path
 
 import yaml
 
+from .utils import BASE_URI
+
 from .hashing import canonical_json, compute_sha256, generate_short_key
 from .models import FunctionSpec, MappingFunctionType, ProvenanceEntry, TransformRecord
 
@@ -62,7 +64,7 @@ def generate_transforms(
         if not onto:
             continue
 
-        uri = f"https://schema.undata.live/elements/{f.stem}"
+        uri = f"{BASE_URI}/elements/{f.stem}"
         by_onto.setdefault(onto, []).append((uri, data))
 
     stats = {
@@ -325,3 +327,48 @@ def _extract_values(sem: dict) -> list[str]:
     if constraints and constraints.get("allowed_values"):
         return constraints["allowed_values"]
     return []
+
+
+def flag_unknown_transforms(
+    transforms_dir: Path,
+    output_dir: Path | None = None,
+) -> list:
+    """Scan transforms and create CurationFlags for unknown function types.
+
+    Returns list of CurationFlag objects.
+    """
+    from .curation import create_flag, write_flag
+    from .models import FlagType
+    from .utils import safe_load_yaml
+
+    flags = []
+    if not transforms_dir.exists():
+        return flags
+
+    for f in sorted(transforms_dir.glob("*.yaml")):
+        data = safe_load_yaml(f)
+        if data is None:
+            continue
+
+        func = data.get("function", {})
+        if func.get("function_type") == "unknown":
+            flag = create_flag(
+                entity_type="transform",
+                entity_ref=str(f.name),
+                flag_type=FlagType.unknown_transform,
+                context={
+                    "reason": "unknown conversion function type",
+                    "source_element": data.get("source_element", ""),
+                    "target_element": data.get("target_element", ""),
+                    "input_type": func.get("input_type", ""),
+                    "output_type": func.get("output_type", ""),
+                },
+            )
+            flags.append(flag)
+
+    if output_dir and flags:
+        for flag in flags:
+            write_flag(output_dir, flag)
+        logger.info("Flagged %d unknown transforms", len(flags))
+
+    return flags
