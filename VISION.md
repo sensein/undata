@@ -455,13 +455,23 @@ variables to shared concepts. Two datasets with different variable names
 (`age_months` vs `age_at_scan`) both link to the same Age concept, enabling
 cross-dataset discovery.
 
-NIDM-Terms validates the approach but its mapping is largely manual — ad-hoc
-Python scripts per source, interactive annotation tools, human curation via
-GitHub PRs. undata automates what NIDM-Terms does manually: the pipeline
-(extract → enrich → align → commit) replaces interactive `isAbout` annotation
-with embedding similarity + LLM verification + curator review. The three-tier
-hierarchy maps directly: source variables → enriched elements → ontology
-concepts.
+NIDM-Terms validates the approach but has two limitations. First, `isAbout` is a
+single binary link — either an element is about a concept or it isn't. There is
+no way to express precision: is `age_at_mri_scan` an *exact* match for the Age
+concept, or a more specific *narrow* variant? Second, the mapping is largely
+manual — ad-hoc Python scripts per source, interactive annotation tools, human
+curation via GitHub PRs.
+
+undata addresses both. The ontology annotation model uses **SKOS mapping
+relations** (exactMatch, closeMatch, broadMatch, narrowMatch, relatedMatch) —
+each with a confidence score, the model that produced it, and match level. This
+subsumes `isAbout`: an `isAbout` link is equivalent to a relatedMatch or
+closeMatch annotation depending on confidence. But undata also captures that
+`age` is an exactMatch for NCIT:C25150, while `age_at_mri_scan` is a
+narrowMatch (a specialization). The pipeline (extract → enrich → align → commit)
+automates what NIDM-Terms does manually, with richer semantics at each link.
+The three-tier hierarchy maps directly: source variables → enriched elements →
+ontology concepts.
 
 #### Entity Structure
 
