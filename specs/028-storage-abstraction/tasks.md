@@ -7,6 +7,8 @@
 
 **Organization**: Tasks grouped by user story. US1+US2 are tightly coupled (protocol + file backend) and form Phase 3 together. US3 is the pipeline refactor. US4 and US5 are independent P2 stories.
 
+**Phase mapping** (tasks.md → plan.md): Tasks Phase 1-2 = plan Setup; Tasks Phase 3 = plan Phase 1; Tasks Phase 4 = plan Phase 2; Tasks Phase 5 = plan Phase 3; Tasks Phase 6 = plan Phase 4; Tasks Phase 7 = plan Polish.
+
 ## Format: `[ID] [P?] [Story] Description`
 
 - **[P]**: Can run in parallel (different files, no dependencies)
@@ -34,7 +36,7 @@
 - [ ] T004 Define `FlagStore` protocol with write_flag/read_flags/resolve_flag in `storage/protocol.py`
 - [ ] T005 Define `RunStore` protocol with save_summary/load_previous/list_runs in `storage/protocol.py`
 - [ ] T006 Define `StorageBackend` composite protocol (entities + flags + runs) in `storage/protocol.py`
-- [ ] T007 Write protocol conformance test suite in `library/tests/test_storage_protocol.py` — tests that any backend must pass (round-trip, list, exists, merge_provenance, find_by_hash, filters, flag lifecycle, run lifecycle)
+- [ ] T007 Write protocol conformance test suite in `library/tests/test_storage_protocol.py` — tests that any backend must pass (round-trip, list, exists, merge_provenance, find_by_hash, filters [source, has_annotations, data_type], flag lifecycle, run lifecycle, concurrent reads)
 
 **Checkpoint**: Protocol defined, conformance tests written (will fail until backends are implemented)
 
@@ -79,7 +81,7 @@
 
 ### Implementation
 
-- [ ] T020 [US3] Refactor `ingest.py` — replace `library_path: Path` parameter with `staging: StorageBackend`, use `staging.entities.write()` instead of direct file I/O
+- [ ] T020 [US3] Refactor `ingest.py` — replace `library_path: Path` parameter with `staging: StorageBackend | None = None` (auto-creates FileBackend from path if None), use `staging.entities.write()` instead of direct file I/O
 - [ ] T021 [US3] Refactor `enrich.py` — replace `staging_dir: Path` with `staging: StorageBackend`, use `staging.entities.list()`/`read()`/`write()` for in-place updates
 - [ ] T022 [US3] Refactor `commit.py` — replace `staging_dir: Path, output_dir: Path` with `staging: StorageBackend, output: StorageBackend`, use `output.entities.find_by_hash()` for merge detection
 - [ ] T023 [US3] Refactor `align.py` — replace `elements_dir: Path` with `backend: StorageBackend`, use `backend.entities.list("elements")` for alias detection

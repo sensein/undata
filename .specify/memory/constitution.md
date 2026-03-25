@@ -384,7 +384,8 @@ addressed here defaults to the principle of Simplicity First (Principle I).
 - MINOR: Addition of a new principle or materially expanded guidance.
 - PATCH: Clarifications, wording improvements, typo fixes.
 
-Project releases MUST use CalVer `YYYY.MM.MICRO` as defined in Principle V.
+Project releases will use CalVer `YYYY.MM.MICRO` when the system has external
+consumers. Until then, versioning is not required (see Principle V).
 
 **Compliance review**:
 
