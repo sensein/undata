@@ -411,6 +411,16 @@ The backend needs an async task manager:
 - **Result access**: completed tasks produce results (run summaries, entity
   counts) accessible through the API
 
+**What runs as a task** — any operation that takes more than a few seconds:
+- Pipeline runs (extract + enrich + align + commit for a source)
+- Knowledge service operations: indexing a new ontology (loading millions of
+  RDF triples, computing embeddings for 100K+ terms), refreshing all ontologies,
+  ingesting a new knowledge resource
+- Batch LLM verification (thousands of entity-term pairs)
+- Re-enrichment after a model upgrade or new knowledge resource
+- Full registry re-extraction across all sources
+- Embedding recomputation after model change
+
 Candidate implementations: Celery + Redis, arq, or Dramatiq for the backend;
 the library itself remains synchronous (the task manager wraps library calls in
 async workers). The GraphQL API exposes task status through queries and
@@ -418,6 +428,8 @@ mutations:
 
 ```
 triggerPipelineRun(source) → Task       # returns immediately with task ID
+triggerOntologyRefresh(ontologies?) → Task
+triggerReEnrichment(source?) → Task
 taskStatus(id) → Task                   # poll for progress
 cancelTask(id) → Task                   # request cancellation
 tasks(status?, first?, after?) → TaskConnection  # browse task history
@@ -425,11 +437,40 @@ tasks(status?, first?, after?) → TaskConnection  # browse task history
 
 ### Entity Model
 
+#### Prior Art: NIDM-Terms
+
+The entity model draws on lessons from the [NIDM-Terms](https://github.com/incf-nidash/nidm-terms)
+project (Queder et al., 2023, *Frontiers in Neuroinformatics*), which defines a
+three-tier hierarchy for neuroimaging data elements:
+
+1. **Personal Data Elements (PDEs)** — source-specific variables (e.g.,
+   `age_at_mri_scan` in a particular dataset)
+2. **Common Data Elements (CDEs)** — community-standardized terms adopted through
+   consortium processes (BIDS terms, NDA terms)
+3. **Concepts** — abstract higher-order notions (e.g., "age", "handedness")
+   linked via InterLex URIs
+
+The critical mechanism is **`isAbout`** — a property linking source-specific
+variables to shared concepts. Two datasets with different variable names
+(`age_months` vs `age_at_scan`) both link to the same Age concept, enabling
+cross-dataset discovery.
+
+NIDM-Terms validates the approach but its mapping is largely manual — ad-hoc
+Python scripts per source, interactive annotation tools, human curation via
+GitHub PRs. undata automates what NIDM-Terms does manually: the pipeline
+(extract → enrich → align → commit) replaces interactive `isAbout` annotation
+with embedding similarity + LLM verification + curator review. The three-tier
+hierarchy maps directly: source variables → enriched elements → ontology
+concepts.
+
+#### Entity Structure
+
 Four entity types, all following the same structure:
 
 ```
 Entity
   ├── sha256: str                     content hash (identity)
+  ├── status: staged | curated        curation lifecycle state
   ├── semantic: dict                  type-specific semantic block
   │     ├── (Element) data_type, unit, pattern, constraints, type_ref
   │     ├── (Schema)  properties[], subclass_of, mixins[], is_mixin
@@ -437,13 +478,41 @@ Entity
   │     └── (ValueSet) name, members[]
   ├── provenance: [ProvenanceEntry]   where it came from (accumulates)
   │     └── source, class, name, description, PROV-O fields
-  ├── ontology_annotations: [OntologyAnnotation]  what it means
+  ├── ontology_annotations: [OntologyAnnotation]  what it means (isAbout)
   │     └── term_uri, term_label, ontology, relation, match_level,
   │         score, model, primary
   └── curation_flags: [CurationFlag]  quality review items
 ```
 
-Plus supporting entities:
+#### Entity Lifecycle: Staged → Curated
+
+Every entity enters the registry in **staged** state. Staged entities are
+visible, browsable, and queryable — but they carry a visual indicator that they
+have not been reviewed by a curator. This is analogous to CivicDB's yellow
+"submitted" label on evidence items.
+
+An entity transitions to **curated** when:
+- A curator explicitly approves it (marks annotations as correct)
+- All associated curation flags are resolved (no pending low_confidence,
+  ambiguous_match, etc.)
+- The entity has at least one high-confidence ontology annotation
+
+Staged entities are not second-class — they are the default state for
+automatically ingested and enriched entities. The system is useful with only
+staged entities. Curation is an ongoing quality improvement process, not a gate
+that blocks visibility.
+
+This means the pipeline produces staged entities end-to-end:
+```
+extract → enrich → align → commit → [all entities are staged]
+                                       ↓
+                              curator review (ongoing)
+                                       ↓
+                              [entities become curated]
+```
+
+#### Supporting Entities
+
 - **Transform**: source_element → target_element with function spec
 - **CurationFlag**: entity_ref + flag_type + status + evidence
 - **RunSummary**: pipeline execution record with counts and timing
@@ -536,8 +605,10 @@ entity annotation:
 - NITRC (neuroimaging tools and resources with tagged capabilities)
 - NeuroSynth / NeuroQuery (term → brain region associations)
 
-**Schema registries** (data element definitions from other domains):
-- NIH CDE Repository (Common Data Elements)
+**Data element registries** (prior art in element standardization):
+- NIDM-Terms (neuroimaging data elements with `isAbout` concept links,
+  per-source converters for BIDS/NDA/OpenNeuro/OWL, SHACL validation)
+- NIH CDE Repository (Common Data Elements across NIH institutes)
 - CDISC (clinical trial data standards)
 - FHIR resources (health data interoperability)
 - schema.org (general-purpose structured data vocabulary)
