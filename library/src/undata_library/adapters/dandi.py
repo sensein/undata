@@ -24,7 +24,19 @@ class DANDIAdapter(BaseAdapter):
     def supported_formats(self) -> list[str]:
         return []
 
+    def to_linkml(self, source_path: Path, **options: Any) -> Any:
+        """Convert DANDI schemas to LinkML SchemaDefinition."""
+        try:
+            import dandischema.models as dm
+        except ImportError:
+            return None
+        return self._build_linkml_schema(dm)
+
     def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
+        schema = self.to_linkml(source_path, **options)
+        if schema is None:
+            return []
+
         try:
             import dandischema.models as dm
         except ImportError:
@@ -37,13 +49,9 @@ class DANDIAdapter(BaseAdapter):
             checksum="",
         )
 
-        schema = self._build_linkml_schema(dm)
+        from .extractor import extract_from_schema_definition
 
-        from .linkml import LinkMLAdapter
-
-        return LinkMLAdapter().extract_from_schema_definition(
-            schema, source_name="dandi", source_ref=base_ref
-        )
+        return extract_from_schema_definition(schema, source_name="dandi", source_ref=base_ref)
 
     def _build_linkml_schema(self, dm: Any) -> Any:
         """Convert dandischema Pydantic models to LinkML SchemaDefinition."""

@@ -106,17 +106,17 @@
 
 ### Implementation
 
-- [ ] T032 [US4] Create standard `extract_from_schema_definition()` function in `adapters/extractor.py` — converts LinkML SchemaDefinition → [ClassifiedEntity]
-- [ ] T033 [US4] Update `BaseAdapter` in `adapters/base.py` — rename `extract()` to `to_linkml()` returning SchemaDefinition
-- [ ] T034 [P] [US4] Update BIDSAdapter in `adapters/bids.py` — pure `to_linkml()`, remove any direct ClassifiedEntity creation
-- [ ] T035 [P] [US4] Update NWBAdapter in `adapters/nwb.py` — pure `to_linkml()`, remove any direct ClassifiedEntity creation
-- [ ] T036 [P] [US4] Update DANDIAdapter in `adapters/dandi.py` — pure `to_linkml()`, remove any direct ClassifiedEntity creation
-- [ ] T037 [P] [US4] Update openMINDSAdapter in `adapters/openminds.py` — pure `to_linkml()`, remove any direct ClassifiedEntity creation
-- [ ] T038 [P] [US4] Update AINDAdapter in `adapters/aind.py` — pure `to_linkml()`, remove any direct ClassifiedEntity creation
-- [ ] T039 [US4] Update `ingest.py` to call `adapter.to_linkml()` → `extract_from_schema_definition()` instead of `adapter.extract()`
-- [ ] T040 [US4] Update adapter registry in `adapters/registry.py` to reflect new interface
-- [ ] T041 [US4] Run extraction for all 5 sources, compare entity counts to baseline (2,191 elements, 915 schemas, 5,500 values, 214 valuesets) — document deltas
-- [ ] T042 [US4] Run full test suite — verify all tests pass (`uv run pytest tests/ -v`)
+- [X] T032 [US4] Create standard `extract_from_schema_definition()` function in `adapters/extractor.py` — converts LinkML SchemaDefinition → [ClassifiedEntity]
+- [X] T033 [US4] Update `BaseAdapter` in `adapters/base.py` — rename `extract()` to `to_linkml()` returning SchemaDefinition
+- [X] T034 [P] [US4] Update BIDSAdapter in `adapters/bids.py` — pure `to_linkml()`, remove any direct ClassifiedEntity creation
+- [X] T035 [P] [US4] Update NWBAdapter in `adapters/nwb.py` — pure `to_linkml()`, remove any direct ClassifiedEntity creation
+- [X] T036 [P] [US4] Update DANDIAdapter in `adapters/dandi.py` — pure `to_linkml()`, remove any direct ClassifiedEntity creation
+- [X] T037 [P] [US4] Update openMINDSAdapter in `adapters/openminds.py` — pure `to_linkml()`, remove any direct ClassifiedEntity creation
+- [X] T038 [P] [US4] Update AINDAdapter in `adapters/aind.py` — pure `to_linkml()`, remove any direct ClassifiedEntity creation
+- [X] T039 [US4] Update `ingest.py` to call `adapter.to_linkml()` → `extract_from_schema_definition()` instead of `adapter.extract()`
+- [X] T040 [US4] Update adapter registry in `adapters/registry.py` to reflect new interface
+- [X] T041 [US4] Run extraction for all 5 sources, compare entity counts to baseline (2,191 elements, 915 schemas, 5,500 values, 214 valuesets) — document deltas
+- [X] T042 [US4] Run full test suite — verify all tests pass (`uv run pytest tests/ -v`)
 
 **Checkpoint**: All adapters produce LinkML only. Standard extractor classifies. Entity counts documented.
 

@@ -33,18 +33,22 @@ class AINDAdapter(BaseAdapter):
     def supported_formats(self) -> list[str]:
         return [".json"]
 
+    def to_linkml(self, source_path: Path, **options: Any) -> Any:
+        """Convert AIND JSON Schema files to LinkML SchemaDefinition."""
+        return self._build_linkml_schema(source_path)
+
     def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
+        schema = self.to_linkml(source_path, **options)
+        if schema is None:
+            return []
+
         repo = options.get("repo", "https://github.com/AllenNeuralDynamics/aind-data-schema")
         committish = options.get("committish")
         base_ref = SourceRef(repo=repo, committish=committish, file="schemas", checksum="")
 
-        schema = self._build_linkml_schema(source_path)
+        from .extractor import extract_from_schema_definition
 
-        from .linkml import LinkMLAdapter
-
-        return LinkMLAdapter().extract_from_schema_definition(
-            schema, source_name="aind", source_ref=base_ref
-        )
+        return extract_from_schema_definition(schema, source_name="aind", source_ref=base_ref)
 
     def _build_linkml_schema(self, source_path: Path) -> Any:
         """Convert AIND JSON Schema files to a LinkML SchemaDefinition."""
