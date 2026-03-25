@@ -87,11 +87,12 @@ From a collection of source schemas, undata produces:
 The system operates as a six-stage pipeline:
 
 ```
-Source Schemas ──→ Extract ──→ Enrich ──→ Commit ──→ Align ──→ Transform
-  (BIDS, NWB,      (adapters    (ontology    (content     (cross-source  (conversion
-   DANDI, etc.)      → LinkML     matching,    addressing,   alias         pattern
-                     → entities)   LLM verify)  dedup,        detection)    detection)
-                                               merge)
+Source Schemas ──→ Extract ──→ Enrich ──→ Align ──→ Commit ──→ Transform
+  (BIDS, NWB,      (adapters    (ontology    (cross-source  (content     (conversion
+   DANDI, etc.)      → LinkML     matching,    alias          addressing,  pattern
+                     → entities)   LLM verify)  detection,     dedup,       detection)
+                                               annotation     merge)
+                                               transfer)
 ```
 
 1. **Extract**: Source-specific adapters convert each schema into a common
@@ -99,10 +100,13 @@ Source Schemas ──→ Extract ──→ Enrich ──→ Commit ──→ Ali
    extractor produces classified entities with semantic identity and provenance.
    Entities are written to a staging area with temporary UUIDs.
 
-2. **Enrich**: Each staged entity is matched against an ontology store (268,000+
-   terms from 13 ontologies) using embedding similarity, with LLM verification
-   for borderline matches. Ontology annotations are assigned at multiple
-   precision levels (exactMatch, closeMatch, broadMatch, relatedMatch).
+2. **Enrich**: Each staged entity is matched against the knowledge service —
+   a continuously expanding collection of ontologies, data repositories,
+   knowledge bases, and schema registries. Embedding similarity finds
+   candidates, LLM verification evaluates borderline matches, and ontology
+   hierarchy traversal assigns annotations at multiple SKOS precision levels
+   (exactMatch, closeMatch, broadMatch, narrowMatch, relatedMatch). Source
+   metadata with curated ontology IDs is assigned directly (highest confidence).
    Enrichment modifies staged entities in-place — no new files are created.
 
 3. **Commit**: Enriched entities are content-addressed. The identity hash is
@@ -111,15 +115,23 @@ Source Schemas ──→ Extract ──→ Enrich ──→ Commit ──→ Ali
    exists in the registry. Cross-source duplicates are merged (provenance
    accumulated, single identity preserved). Staging is cleared after commit.
 
-4. **Align**: Runs *after* commit, on the full committed registry. This is
-   necessary because alignment detects cross-source aliases — it needs entities
-   from all sources to be committed and content-addressed before it can compare
-   them. Embedding-based similarity and shared ontology terms identify groups of
-   equivalent entities. Cross-source annotation transfer propagates ontology
-   annotations from well-annotated entities (e.g., openMINDS at 70%) to
-   under-annotated ones (e.g., NWB at 1%).
+4. **Align**: Runs after all sources have been extracted and enriched.
+   Alignment detects cross-source aliases — entities from different sources
+   that refer to the same concept. It uses embedding similarity and shared
+   ontology terms to identify groups of equivalent entities. Cross-source
+   annotation transfer propagates ontology annotations from well-annotated
+   entities (e.g., openMINDS at 70%) to under-annotated ones (e.g., NWB at
+   1%). Alignment results can inform the commit hash — if two entities are
+   aligned, their ontology annotations converge, producing the same
+   content-addressed identity.
 
-5. **Transform**: For aligned elements with differing types, units, or
+5. **Commit**: Aligned, enriched entities are content-addressed. The identity
+   hash is computed from the semantic block (including ontology annotations).
+   The hash determines whether an entity is new or already exists in the
+   registry. Cross-source duplicates are merged (provenance accumulated, single
+   identity preserved).
+
+6. **Transform**: For aligned elements with differing types, units, or
    encodings, explicit transform records are generated with documented
    conversion logic.
 
@@ -145,11 +157,21 @@ files on disk (for standalone CLI use) or a database (for the web service).
 
 The curation and contribution system is modeled after
 [CivicDB](https://civicdb.org) — a production biomedical knowledgebase with a
-proven social curation workflow. Key patterns adopted:
+proven social curation workflow.
+
+### Roles and Engagement
 
 **Three-tier roles.** Contributor (default — can submit annotations, comments,
 and flags) → Curator (reviews and resolves submissions) → Admin (manages users,
 triggers pipelines). Every action is attributed to an authenticated identity.
+
+**Graduated engagement.** Anonymous browse (no login) → comment/discuss → flag
+issues → suggest annotations → submit evidence → editorial review. Each step
+has lower friction than the next, creating a natural onboarding funnel. Curator
+promotion requires demonstrated activity (minimum submissions, accepted
+contributions).
+
+### Curation Workflow
 
 **Revision-based curation.** Contributions are not applied directly. A
 contributor submits a suggestion (e.g., "this element should be annotated with
@@ -157,24 +179,65 @@ NCIT:C25150"). A curator reviews the suggestion with supporting evidence
 (embedding score, LLM justification, related entities) and approves, rejects, or
 defers. Field-level diffs show exactly what changes.
 
-**Polymorphic concerns.** Any entity type (element, schema, value, valueset,
-transform) can be commented on, flagged, and subscribed to. This avoids
-entity-type-specific UI for generic operations.
-
 **Evidence panels.** When reviewing a curation flag, the curator sees:
 - The automated match candidates with similarity scores
 - LLM verification results (model, justification, confidence)
 - Related entities from other sources with the same ontology term
 - The entity's full provenance chain
 
-**Activity trail.** All state changes (flag created, contribution submitted,
-flag resolved, entity re-enriched) produce audit records. The full history of
-any entity is browsable.
+**Polymorphic concerns.** Any entity type (element, schema, value, valueset,
+transform) can be commented on, flagged, and subscribed to. This avoids
+entity-type-specific UI for generic operations.
+
+### UI Design Patterns
+
+The web interface serves three audiences simultaneously — browsers seeking
+information, contributors participating in curation, and curators reviewing
+submissions. Following CivicDB's approach:
+
+**Entity browse pages.** Filterable data grids for each entity type with
+entity-specific columns. Every count is a clickable link (e.g., "5 transforms"
+navigates to those transforms). Multi-column sort, per-column filters, cursor
+pagination.
+
+**Entity detail pages.** Consistent layout across entity types: identity block
+(hash, type, unit) → semantic content → provenance chain → ontology annotations
+→ related entities (transforms, schemas, alias group members). Inline curation
+status indicators (pending/approved/rejected) make review state visible while
+browsing.
+
+**Connected entity navigation.** Entities link bidirectionally: an element page
+lists its transforms; a transform page links back to source and target elements;
+a schema page lists its properties (elements). Users traverse the knowledge
+graph in any direction.
+
+**Curation queue.** Pending flags grouped by type (low_confidence,
+ambiguous_match, etc.) with evidence panels. Curators claim items, review
+evidence, and resolve with a note. Pre-populated forms reduce friction between
+"this needs review" and "I'm reviewing this."
+
+**Activity feed.** Platform-wide timeline of curation events: flag created,
+contribution submitted, flag resolved, entity re-enriched. Filterable by action
+type, user, source. Each entity has its own revision history.
+
+**Community features.** User profiles with contribution statistics and activity
+history. Organization-level attribution. Leaderboards for curation activity.
+Notification system for subscribed entities and @mentions.
+
+**Source suggestion queue.** Users suggest new sources or ontologies by
+submitting a reference with a relevance comment. Curators triage and approve.
+Approved sources enter the pipeline automatically.
+
+### API Design
 
 **GraphQL-only API.** Following CivicDB's architecture, the same GraphQL API
 powers both the frontend and external consumers. No separate REST layer. Relay-
 style cursor pagination, DataLoader batching, and materialized views for
 performance.
+
+**Activity trail.** All state changes (flag created, contribution submitted,
+flag resolved, entity re-enriched) produce audit records. The full history of
+any entity is browsable through the API.
 
 ---
 
@@ -219,28 +282,31 @@ phase ("brainstorm v1") and defines the architecture for a production system.
 ┌─────────────────────────────────────────────────────────────┐
 │                        Frontend                             │
 │   Next.js · Apollo Client · Playwright tests                │
-│   Element browser · Curation queue · Run dashboard          │
+│   Entity browser · Curation queue · Community · Dashboard   │
 └──────────────────────────┬──────────────────────────────────┘
                            │ GraphQL
 ┌──────────────────────────┴──────────────────────────────────┐
 │                        Backend                              │
 │   FastAPI · Strawberry GraphQL · Auth (OIDC + API keys)     │
-│   Thin service layer: calls library, stores in DB           │
+│   Task manager (async jobs) · Thin service layer            │
 ├─────────────────────────────────────────────────────────────┤
-│                   Storage Backend (DB)                       │
-│   PostgreSQL 16 · pgvector · JSONB entities                 │
-│   Implements StorageBackend protocol                        │
+│                   Storage Layer                              │
+│   PostgreSQL 16 (JSONB entities, provenance, audit log)     │
+│   pgvector (embeddings, similarity search)                  │
+│   RDF store (ontology terms, hierarchy, SPARQL)             │
+│   Search index (full-text entity search)                    │
+│   All behind StorageBackend protocol                        │
 └──────────────────────────┬──────────────────────────────────┘
                            │ StorageBackend protocol
 ┌──────────────────────────┴──────────────────────────────────┐
 │                        Library                              │
-│   Pipeline: extract → enrich → commit → align → transform   │
+│   Pipeline: extract → enrich → align → commit → transform   │
 │   Adapters: BIDS, NWB, DANDI, openMINDS, AIND, ...         │
 │   Ontology store · Embeddings · LLM verification            │
 │   Hashing · Curation flags · Run summaries                  │
 ├─────────────────────────────────────────────────────────────┤
-│                   Storage Backend (File)                     │
-│   YAML flat files on disk                                   │
+│                   Storage Layer (File)                       │
+│   YAML flat files · Parquet vectors · pyoxigraph RDF        │
 │   Implements StorageBackend protocol                        │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -297,6 +363,64 @@ Pipeline functions accept `backend: StorageBackend` instead of `Path`:
 def commit_staged(staging: StorageBackend, output: StorageBackend) → stats
 def enrich_elements(backend: StorageBackend, onto_store, ...) → stats
 def align_elements(backend: StorageBackend, ...) → stats
+```
+
+### Polyglot Storage
+
+Different data types have fundamentally different access patterns. A single
+relational database is not the right store for everything. The storage layer
+uses the right tool for each kind of data:
+
+| Data | Access Pattern | File Backend | DB Backend |
+|------|---------------|--------------|------------|
+| Entities (elements, schemas, values, valuesets) | CRUD, filter, paginate | YAML files | PostgreSQL JSONB |
+| Provenance chains | Append, query by source | Nested in YAML | JSONB arrays or normalized tables |
+| Ontology terms + hierarchy | Graph traversal, SPARQL, label search | pyoxigraph (local RDF) | RDF store or PostgreSQL with ltree/recursive CTE |
+| Embeddings (entity + ontology) | Nearest-neighbor, cosine similarity | Parquet + numpy | pgvector |
+| Full-text search | Keyword search, faceted filtering | grep / in-memory | Search index (Meilisearch or PostgreSQL tsvector) |
+| LLM verification cache | Key-value lookup by (model, element, term) | JSON file | PostgreSQL table |
+| Curation flags + contributions | CRUD, status filter, queue ordering | YAML files | PostgreSQL |
+| Run summaries + audit log | Append-only, time-range queries | YAML files | PostgreSQL |
+| Source definitions | Read-only config | Bundled YAML | PostgreSQL or config files |
+
+The StorageBackend protocol abstracts over these — a `FileBackend` composes
+YAML files + parquet + pyoxigraph, while a `DatabaseBackend` composes
+PostgreSQL + pgvector + RDF store + search index. Pipeline functions don't know
+which backend they're using.
+
+The library ships with no database dependencies. The `DatabaseBackend`
+implementation lives in the backend package and depends on SQLAlchemy, asyncpg,
+etc. Installing `undata-library` alone gives you the `FileBackend` only.
+
+### Task Manager
+
+Pipeline operations can take minutes to hours — full re-extraction across 5
+sources, ontology refresh (downloading and loading 13 ontologies), LLM batch
+verification of thousands of entity pairs, or re-enrichment after a model
+upgrade. These cannot be synchronous request-response.
+
+The backend needs an async task manager:
+
+- **Task lifecycle**: submitted → queued → running → completed/failed
+- **Progress reporting**: tasks report progress (e.g., "enriching: 1,234 / 8,820
+  entities") visible through the API and UI
+- **Cancellation**: long-running tasks can be cancelled by the user
+- **Retry**: failed tasks can be retried with the same or modified parameters
+- **Concurrency control**: some tasks are mutually exclusive (e.g., two pipeline
+  runs for the same source should not overlap)
+- **Result access**: completed tasks produce results (run summaries, entity
+  counts) accessible through the API
+
+Candidate implementations: Celery + Redis, arq, or Dramatiq for the backend;
+the library itself remains synchronous (the task manager wraps library calls in
+async workers). The GraphQL API exposes task status through queries and
+mutations:
+
+```
+triggerPipelineRun(source) → Task       # returns immediately with task ID
+taskStatus(id) → Task                   # poll for progress
+cancelTask(id) → Task                   # request cancellation
+tasks(status?, first?, after?) → TaskConnection  # browse task history
 ```
 
 ### Entity Model
@@ -379,30 +503,109 @@ Based on the validated contract from feature 027:
 - Four roles: viewer (default), contributor, curator, admin
 - Queries are always public
 
-### Ontology & Enrichment
+### Knowledge Service
 
-- **Ontology store**: pyoxigraph RDF with 13 ontologies (268K+ terms)
-- **Embeddings**: sentence-transformers (all-MiniLM-L6-v2 or domain-tuned)
-  stored in pgvector (DB) or parquet (file)
-- **LLM verification**: Batch verification of borderline matches via
-  litellm (OpenAI) or ollama (local). Disk-cached by (model, element, term).
-- **Multi-precision**: Annotations at exactMatch, closeMatch, broadMatch,
-  relatedMatch using ontology hierarchy traversal
-- **Source metadata pre-enrichment**: Directly assign ontology IDs from source
-  data (e.g., openMINDS preferredOntologyIdentifier) before embedding search
+A key lesson from brainstorm v1: enrichment was limited by the knowledge
+available to it. The ontology store had 268K terms from 13 ontologies, but
+domain-specific concepts (MRI sequences, EEG montages, specific assay types)
+were absent. The system declared "ontology not rich enough" and stopped — instead
+of actively seeking richer sources. Ontology annotation was effectively exact
+match only, despite the SKOS multi-precision model being designed in.
+
+Iteration 2 introduces a **knowledge service** — a continuously expanding
+collection of neuroscience knowledge resources that the enrichment pipeline draws
+from. This is not just ontologies; it's any structured source that can inform
+entity annotation:
+
+**Ontologies** (formal term hierarchies):
+- Core biomedical: NCIT, PATO, UBERON, HP, OBI, CHEBI, EFO, MONDO
+- Neuroscience-specific: NEMO (neural electrophysiology), CogPO (cognitive
+  paradigms), NIF-std (neuroscience information framework), ReproNim terms
+- Imaging: DICOM terminology, RadLex, NeuroNames
+
+**Data repositories** (curated metadata with ontology bindings):
+- OpenNeuro (BIDS datasets with rich metadata)
+- DANDI (dandisets with NWB + schema.org annotations)
+- openMINDS instances (4,390 controlled vocabulary entries with
+  preferredOntologyIdentifier)
+- NeuroVault (statistical maps with cognitive concept annotations)
+
+**Knowledge bases** (structured concept mappings):
+- Cognitive Atlas (cognitive concepts → tasks → contrasts → disorders)
+- InterLex (NIF term registry, cross-references to major ontologies)
+- NITRC (neuroimaging tools and resources with tagged capabilities)
+- NeuroSynth / NeuroQuery (term → brain region associations)
+
+**Schema registries** (data element definitions from other domains):
+- NIH CDE Repository (Common Data Elements)
+- CDISC (clinical trial data standards)
+- FHIR resources (health data interoperability)
+- schema.org (general-purpose structured data vocabulary)
+
+The knowledge service:
+
+1. **Ingests resources** using the same adapter pattern as data sources.
+   Each knowledge resource gets an adapter that produces structured terms,
+   mappings, or annotations in a common format.
+
+2. **Indexes for enrichment** — terms are embedded, indexed for full-text
+   search, and loaded into the RDF store with hierarchy and cross-references.
+
+3. **Enables multi-precision annotation.** With richer knowledge, the system
+   can assign annotations at all SKOS levels:
+   - **exactMatch**: Entity maps directly to an ontology term
+     (e.g., `age` → NCIT:C25150 "Age")
+   - **closeMatch**: Entity is very similar but not identical
+     (e.g., `age_at_scan` → NCIT:C25150 with qualifier)
+   - **broadMatch**: Entity is a specialization of a broader term
+     (e.g., `t1w_acquisition_time` → DICOM:AcquisitionTime)
+   - **narrowMatch**: Entity is more general than a specific term
+   - **relatedMatch**: Entity is conceptually related
+     (e.g., `diagnosis` → MONDO:disease via Cognitive Atlas task→disorder)
+
+4. **Discovers gaps.** When enrichment cannot find a match for an entity, the
+   knowledge service records the miss. Accumulated misses by domain (e.g., "247
+   MRI-related entities have no ontology match") surface as actionable gaps that
+   guide which resources to ingest next.
+
+5. **Grows through curation.** Curator-approved annotations become ground truth
+   that improves future enrichment. When a curator maps an entity to a term not
+   in the knowledge store, the service can ingest that term's ontology to cover
+   related concepts.
+
+**Embedding and similarity:**
+- sentence-transformers (all-MiniLM-L6-v2 or domain-tuned model)
+- Stored in pgvector (DB) or parquet (file)
+- Used for candidate retrieval, alias detection, and gap analysis
+
+**LLM verification:**
+- Batch verification of borderline matches (0.4–0.7 similarity range)
+- litellm (OpenAI) or ollama (local), with disk/DB cache
+- LLM receives term label + definition + synonyms for informed evaluation
+
+**Source metadata pre-enrichment:**
+- Directly assign ontology IDs from source data (e.g., openMINDS
+  preferredOntologyIdentifier) before embedding search — this is the highest
+  confidence path and produced 70% enrichment for openMINDS in brainstorm v1
 
 ### What Changed from Brainstorm v1
 
 | Aspect | Brainstorm v1 | Iteration 2 |
 |--------|---------------|-------------|
 | Adapters | Each does own classification | All produce LinkML, standard extractor classifies |
-| Storage | File-only, import service copies to DB | StorageBackend protocol, same pipeline on both |
+| Storage | File-only, import service copies to DB | StorageBackend protocol, polyglot backends |
 | Backend | REST routes → wiped → GraphQL (broken) | GraphQL from day 1, thin layer over library |
 | Pipeline | Library-only, backend can't call it | Library functions accept backend parameter |
+| Pipeline order | Extract → enrich → commit → align | Extract → enrich → align → commit (alignment informs hash) |
+| Long tasks | Synchronous only, CLI blocks | Task manager with progress, cancellation, retry |
 | Embeddings | Parquet files only | pgvector (DB) or parquet (file) |
+| Ontology | pyoxigraph only | RDF store (file) or graph DB/PostgreSQL (backend) |
+| Search | None | Full-text search index (Meilisearch or tsvector) |
 | LLM cache | JSON file | DB table (backend) or JSON file (CLI) |
 | Testing | 343 library tests, no backend/e2e | Library + backend + Playwright from the start |
 | Auth | Keycloak config exists, not enforced | OIDC + RBAC enforced on mutations |
+| Enrichment | Exact match only, "ontology not rich enough" | Multi-precision SKOS, knowledge service for richer sources |
+| UI | Stub pages, no community features | CivicDB-inspired: browse + curate + community integrated |
 
 ### Implementation Sequence
 
@@ -433,12 +636,14 @@ Based on the validated contract from feature 027:
 - API key support
 - CI pipeline (library → backend → frontend → e2e)
 
-**Phase 5: Enrichment improvements**
-- Ground truth validation dataset from curator decisions
-- Fine-tuned embedding model
-- Expanded ontology coverage
-- Cross-source annotation transfer
-- LLM-guided ontology search for uncovered domains
+**Phase 5: Knowledge service & enrichment**
+- Knowledge service ingesting neuroscience ontologies, data repositories,
+  knowledge bases, and schema registries
+- Multi-precision SKOS annotation (exact, close, broad, narrow, related)
+- Gap analysis: track unmatched entities by domain, surface actionable gaps
+- Ground truth from curator decisions feeds back into enrichment
+- Domain-tuned embedding model trained on neuroscience terminology
+- Cross-source annotation transfer in alignment stage
 
 ## Validated Knowledge from Brainstorm v1
 
@@ -467,7 +672,9 @@ These findings are confirmed through implementation and testing:
 **Ontology store**:
 - 13 ontologies, 2.99M terms total, 268K embedded
 - pyoxigraph handles the scale without issues
-- Gap: domain-specific terms (MRI sequences, EEG montages) not covered
+- Gap: domain-specific terms (MRI sequences, EEG montages, cognitive paradigms)
+  not covered — enrichment effectively did exact match only and gave up when
+  ontology terms were absent. This motivates the knowledge service in iteration 2
 
 **Adapters** (all 5 validated with LinkML-first pattern):
 - BIDS: 214 schemas, 585 elements, 494 values (sidecar rules → mixins)
