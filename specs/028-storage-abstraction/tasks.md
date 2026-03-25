@@ -130,11 +130,11 @@
 
 ### Implementation
 
-- [ ] T043 [US5] Modify `align.py` to work on staged entities (not just committed) — accept staging backend, read from staging entity store
-- [ ] T044 [US5] Modify `cross_align.py` to work on staged entities — transfer annotations in staging before commit
-- [ ] T045 [US5] Update pipeline command in `cli.py` — change stage order from extract→enrich→commit→align to extract→enrich→align→commit→transform
-- [ ] T046 [US5] Run full pipeline with new order, verify annotation transfers happen before commit — check that committed entities contain transferred annotations
-- [ ] T047 [US5] Run full test suite — verify all tests pass (`uv run pytest tests/ -v`)
+- [X] T043 [US5] Modify `align.py` to work on staged entities (not just committed) — accept staging backend, read from staging entity store
+- [X] T044 [US5] Modify `cross_align.py` to work on staged entities — transfer annotations in staging before commit
+- [X] T045 [US5] Update pipeline command in `cli.py` — change stage order from extract→enrich→commit→align to extract→enrich→align→commit→transform
+- [X] T046 [US5] Run full pipeline with new order, verify annotation transfers happen before commit — check that committed entities contain transferred annotations
+- [X] T047 [US5] Run full test suite — verify all tests pass (`uv run pytest tests/ -v`)
 
 **Checkpoint**: Pipeline stages reordered. Annotation transfer before commit verified.
 
