@@ -4,9 +4,13 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from .models import RunSummary
 from .utils import safe_load_yaml, write_yaml
+
+if TYPE_CHECKING:
+    from .storage.protocol import StorageBackend
 
 
 def generate_summary(
@@ -29,8 +33,16 @@ def generate_summary(
     )
 
 
-def save_summary(output_dir: Path, summary: RunSummary) -> Path:
-    """Save a RunSummary to the runs/ directory."""
+def save_summary(
+    output_dir: Path | None,
+    summary: RunSummary,
+    *,
+    backend: StorageBackend | None = None,
+) -> Path | str:
+    """Save a RunSummary. Uses backend if provided, else writes to output_dir."""
+    if backend is not None:
+        return backend.runs.save_summary(summary)
+
     runs_dir = output_dir / "runs"
     runs_dir.mkdir(parents=True, exist_ok=True)
 
@@ -42,11 +54,16 @@ def save_summary(output_dir: Path, summary: RunSummary) -> Path:
     return filepath
 
 
-def load_previous_summary(output_dir: Path, source: str) -> RunSummary | None:
-    """Load the most recent RunSummary for a given source.
+def load_previous_summary(
+    output_dir: Path | None,
+    source: str,
+    *,
+    backend: StorageBackend | None = None,
+) -> RunSummary | None:
+    """Load most recent RunSummary. Uses backend if provided, else reads from output_dir."""
+    if backend is not None:
+        return backend.runs.load_previous(source)
 
-    Returns None if no previous run exists.
-    """
     runs_dir = output_dir / "runs"
     if not runs_dir.exists():
         return None
