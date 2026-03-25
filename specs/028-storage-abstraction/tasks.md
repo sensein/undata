@@ -81,18 +81,18 @@
 
 ### Implementation
 
-- [ ] T020 [US3] Refactor `ingest.py` — replace `library_path: Path` parameter with `staging: StorageBackend | None = None` (auto-creates FileBackend from path if None), use `staging.entities.write()` instead of direct file I/O
-- [ ] T021 [US3] Refactor `enrich.py` — replace `staging_dir: Path` with `staging: StorageBackend`, use `staging.entities.list()`/`read()`/`write()` for in-place updates
-- [ ] T022 [US3] Refactor `commit.py` — replace `staging_dir: Path, output_dir: Path` with `staging: StorageBackend, output: StorageBackend`, use `output.entities.find_by_hash()` for merge detection
-- [ ] T023 [US3] Refactor `align.py` — replace `elements_dir: Path` with `backend: StorageBackend`, use `backend.entities.list("elements")` for alias detection
-- [ ] T024 [US3] Refactor `cross_align.py` — replace `registry_dir: Path` with `backend: StorageBackend`, use entity listing and in-place writes
-- [ ] T025 [US3] Refactor `transform.py` — replace path parameters with `backend: StorageBackend`
+- [X] T020 [US3] Refactor `ingest.py` — replace `library_path: Path` parameter with `staging: StorageBackend | None = None` (auto-creates FileBackend from path if None), use `staging.entities.write()` instead of direct file I/O
+- [X] T021 [US3] Refactor `enrich.py` — replace `staging_dir: Path` with `staging: StorageBackend`, use `staging.entities.list()`/`read()`/`write()` for in-place updates
+- [X] T022 [US3] Refactor `commit.py` — replace `staging_dir: Path, output_dir: Path` with `staging: StorageBackend, output: StorageBackend`, use `output.entities.find_by_hash()` for merge detection
+- [X] T023 [US3] Refactor `align.py` — replace `elements_dir: Path` with `backend: StorageBackend`, use `backend.entities.list("elements")` for alias detection
+- [X] T024 [US3] Refactor `cross_align.py` — replace `registry_dir: Path` with `backend: StorageBackend`, use entity listing and in-place writes
+- [X] T025 [US3] Refactor `transform.py` — replace path parameters with `backend: StorageBackend`
 - [X] T026 [US3] Refactor `curation.py` — delegate to `backend.flags` (write_flag, read_flags, resolve_flag) instead of direct file I/O
 - [X] T027 [US3] Refactor `run_summary.py` — delegate to `backend.runs` (save_summary, load_previous) instead of direct file I/O
-- [ ] T028 [US3] Refactor `staging.py` — create staging as `FileBackend(staging_dir)` instead of manual directory management
-- [ ] T029 [US3] Refactor `cli.py` — create `FileBackend(output_dir)` and pass to all pipeline functions, update all CLI commands
-- [ ] T030 [US3] Run full existing test suite — verify all 343+ tests still pass (`uv run pytest tests/ -v`)
-- [ ] T031 [US3] Run pipeline integration tests with MockBackend — verify no file system access in `library/tests/test_pipeline_with_backend.py`
+- [X] T028 [US3] Refactor `staging.py` — create staging as `FileBackend(staging_dir)` instead of manual directory management
+- [X] T029 [US3] Refactor `cli.py` — create `FileBackend(output_dir)` and pass to all pipeline functions, update all CLI commands
+- [X] T030 [US3] Run full existing test suite — verify all 343+ tests still pass (`uv run pytest tests/ -v`)
+- [X] T031 [US3] Run pipeline integration tests with MockBackend — verify no file system access in `library/tests/test_pipeline_with_backend.py`
 
 **Checkpoint**: All pipeline functions accept StorageBackend. CLI behavior identical. MockBackend tests pass.
 

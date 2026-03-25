@@ -9,17 +9,25 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import yaml
 
 from .utils import safe_load_yaml
 
+if TYPE_CHECKING:
+    from .storage.protocol import StorageBackend
+
 logger = logging.getLogger(__name__)
 
 
 def cross_source_align(
-    registry_dir: Path,
+    registry_dir: Path | None = None,
+    *,
+    backend: StorageBackend | None = None,
 ) -> dict[str, int]:
+    if registry_dir is None and backend is not None and hasattr(backend, "base_dir"):
+        registry_dir = backend.base_dir
     """Align entities across sources by transferring ontology annotations.
 
     Scans all entity directories (elements, values, schemas, valuesets) for:

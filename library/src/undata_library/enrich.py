@@ -10,6 +10,10 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .storage.protocol import StorageBackend
 
 import yaml
 
@@ -72,7 +76,7 @@ def _update_entity_in_place(
 
 
 def enrich_elements(
-    staging_dir: Path,
+    staging_dir: Path | None = None,
     cache_dir: Path | None = None,
     onto_store: EmbeddingStore | None = None,
     onto_cache: dict[str, dict] | None = None,
@@ -80,6 +84,8 @@ def enrich_elements(
     threshold: float = 0.7,
     dry_run: bool = False,
     use_llm: bool = False,
+    *,
+    backend: StorageBackend | None = None,
 ) -> dict[str, int]:
     """Enrich staged elements in-place: assign ontology_annotations, populate value_domain.
 
@@ -90,6 +96,8 @@ def enrich_elements(
 
     Returns stats: {ontology_assigned, value_domain_set, values_resolved, unchanged, total}
     """
+    if staging_dir is None and backend is not None and hasattr(backend, "base_dir"):
+        staging_dir = backend.base_dir
     elements_dir = staging_dir / "elements"
     if not elements_dir.exists():
         return {
@@ -235,7 +243,9 @@ def enrich_elements(
 # ---------------------------------------------------------------------------
 
 
-def enrich_from_source_metadata(staging_dir: Path) -> dict[str, int]:
+def enrich_from_source_metadata(staging_dir: Path | None = None, *, backend: StorageBackend | None = None) -> dict[str, int]:
+    if staging_dir is None and backend is not None and hasattr(backend, "base_dir"):
+        staging_dir = backend.base_dir
     """Pre-enrich entities that already have ontology identifiers from their source.
 
     openMINDS instances have preferredOntologyIdentifier; other sources may have
@@ -303,18 +313,22 @@ def enrich_from_source_metadata(staging_dir: Path) -> dict[str, int]:
 
 
 def enrich_values(
-    staging_dir: Path,
+    staging_dir: Path | None = None,
     cache_dir: Path | None = None,
     onto_store: EmbeddingStore | None = None,
     onto_cache: dict[str, dict] | None = None,
     model_name: str = "all-MiniLM-L6-v2",
     threshold: float = 0.7,
     use_llm: bool = False,
+    *,
+    backend: StorageBackend | None = None,
 ) -> dict[str, int]:
     """Enrich staged values in-place: assign ontology_annotations with element_match for high scores.
 
     Returns stats: {ontology_assigned, unchanged, total}
     """
+    if staging_dir is None and backend is not None and hasattr(backend, "base_dir"):
+        staging_dir = backend.base_dir
     values_dir = staging_dir / "values"
     if not values_dir.exists():
         return {"ontology_assigned": 0, "unchanged": 0, "total": 0}
@@ -375,17 +389,21 @@ def enrich_values(
 
 
 def enrich_schemas(
-    staging_dir: Path,
+    staging_dir: Path | None = None,
     cache_dir: Path | None = None,
     onto_store: EmbeddingStore | None = None,
     onto_cache: dict[str, dict] | None = None,
     model_name: str = "all-MiniLM-L6-v2",
     threshold: float = 0.7,
+    *,
+    backend: StorageBackend | None = None,
 ) -> dict[str, int]:
     """Enrich staged schemas in-place: assign ontology_annotations (concept_match).
 
     Returns stats: {ontology_assigned, unchanged, total}
     """
+    if staging_dir is None and backend is not None and hasattr(backend, "base_dir"):
+        staging_dir = backend.base_dir
     schemas_dir = staging_dir / "schemas"
     if not schemas_dir.exists():
         return {"ontology_assigned": 0, "unchanged": 0, "total": 0}
@@ -447,7 +465,9 @@ def enrich_schemas(
 
 
 def enrich_valuesets(
-    staging_dir: Path,
+    staging_dir: Path | None = None,
+    *,
+    backend: StorageBackend | None = None,
 ) -> dict[str, int]:
     """Enrich staged valuesets in-place: derive ontology_annotations from enriched member values.
 
@@ -456,6 +476,8 @@ def enrich_valuesets(
 
     Returns stats: {enriched, unchanged, total}
     """
+    if staging_dir is None and backend is not None and hasattr(backend, "base_dir"):
+        staging_dir = backend.base_dir
     valuesets_dir = staging_dir / "valuesets"
     if not valuesets_dir.exists():
         return {"enriched": 0, "unchanged": 0, "total": 0}
@@ -548,13 +570,15 @@ def _build_value_ontology_map(values_dir: Path) -> dict[str, list[dict]]:
 
 
 def enrich_all(
-    staging_dir: Path,
+    staging_dir: Path | None = None,
     cache_dir: Path | None = None,
     onto_store: EmbeddingStore | None = None,
     onto_cache: dict[str, dict] | None = None,
     model_name: str = "all-MiniLM-L6-v2",
     threshold: float = 0.7,
     use_llm: bool = False,
+    *,
+    backend: StorageBackend | None = None,
 ) -> dict[str, dict]:
     """Orchestrate enrichment of all entity types in dependency order.
 
@@ -565,6 +589,8 @@ def enrich_all(
 
     Returns: {source_metadata: {...}, elements: {...}, values: {...}, valuesets: {...}, schemas: {...}}
     """
+    if staging_dir is None and backend is not None and hasattr(backend, "base_dir"):
+        staging_dir = backend.base_dir
     # Load shared resources once
     if onto_store is None and cache_dir is not None:
         onto_store = _load_ontology_embeddings(cache_dir, model_name)

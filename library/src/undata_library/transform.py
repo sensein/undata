@@ -3,6 +3,10 @@
 from __future__ import annotations
 
 import json
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .storage.protocol import StorageBackend
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
@@ -30,14 +34,19 @@ _UNIT_CONVERSIONS: dict[tuple[str, str], float] = {
 
 
 def generate_transforms(
-    elements_dir: Path,
-    library_path: Path,
+    elements_dir: Path | None = None,
+    library_path: Path | None = None,
     threshold: float = 0.5,
+    *,
+    backend: StorageBackend | None = None,
 ) -> dict[str, int]:
     """Generate transforms between elements sharing ontology_term but differing in type/unit.
 
     Returns stats: {pairs_evaluated, transforms_created, patterns: {identity, unit_conversion, ...}}
     """
+    if elements_dir is None and backend is not None and hasattr(backend, "base_dir"):
+        elements_dir = backend.base_dir / "elements"
+        library_path = library_path or backend.base_dir
     transforms_dir = library_path / "transforms"
     transforms_dir.mkdir(parents=True, exist_ok=True)
 
