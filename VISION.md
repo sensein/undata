@@ -688,6 +688,37 @@ The knowledge service:
 | Enrichment | Exact match only, "ontology not rich enough" | Multi-precision SKOS, knowledge service for richer sources |
 | UI | Stub pages, no community features | CivicDB-inspired: browse + curate + community integrated |
 
+### Developer Experience
+
+A new developer should be productive within minutes, not hours:
+
+```bash
+# Full stack — one command
+docker compose up -d
+# → PostgreSQL + backend + frontend + seed data
+# → Browse elements at http://localhost:3000
+# → GraphQL playground at http://localhost:8002/graphql
+
+# Library only — no Docker needed
+cd library && uv run undata-library pipeline --source bids
+
+# Run all tests
+cd library && uv run pytest tests/ -v
+cd backend && uv run pytest tests/ -v
+cd frontend && pnpm test && pnpm exec playwright test
+```
+
+- **Single command startup**: `docker compose up` brings up everything with
+  sample data pre-loaded. The UI has content on first load.
+- **Library standalone**: The library works with only Python and uv. No Docker,
+  no database, no running services required.
+- **Hot reload**: Backend (uvicorn --reload) and frontend (next dev) reflect
+  code changes without restart.
+- **Consistent environments**: Docker and local `uv run` produce the same
+  behavior. Tests that pass locally pass in CI.
+- **No external services**: Development never requires cloud databases, SaaS
+  APIs, or production Keycloak. Everything runs locally.
+
 ### Implementation Sequence
 
 **Phase 1: Library core with storage abstraction**

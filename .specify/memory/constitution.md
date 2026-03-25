@@ -1,29 +1,23 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: 1.2.1 → 1.3.0
-Bump rationale: MINOR — new "Git Commit Discipline" subsection added to the
-  Development Workflow section. Materially expanded guidance requiring the agent
-  to commit every meaningful unit of work and leave no uncommitted changes at
-  session end.
+Version change: 1.5.0 → 2.0.0
+Bump rationale: MAJOR — Principle V rewritten from "Versioning & Stability"
+  (CalVer + deprecation retention) to "No Deprecation, No Migration" (system
+  has no consumers, anything can be rewritten). New Principle VII "Developer
+  Experience" added (single-command startup, library standalone, hot reload,
+  seed data). CLAUDE.md fully rewritten for iteration 2.
 
-Modified principles: None renamed.
+Modified principles:
+  - V: "Versioning & Stability" → "No Deprecation, No Migration" (breaking change)
 
 Added sections:
-  - Development Workflow > Git Commit Discipline (new subsection)
+  - VII: Developer Experience (new principle)
 
-Removed sections: None
+Removed sections: None (V was replaced, not removed)
 
 Templates requiring updates:
-  - .specify/templates/plan-template.md  ✅ No changes required.
-  - .specify/templates/spec-template.md  ✅ No changes required.
-  - .specify/templates/tasks-template.md ✅ No changes required.
-  - .specify/templates/agent-file-template.md  ✅ No changes required.
-  - .specify/templates/checklist-template.md   ✅ No changes required.
-  - CLAUDE.md (root agent file)  ✅ No changes required; rule is agent-session
-    behaviour, not a project technology baseline.
-
-Deferred TODOs: None.
+  - CLAUDE.md ✅ Updated — rewritten for iteration 2
 -->
 
 # undata Constitution
@@ -80,19 +74,27 @@ Silent failures are prohibited.
 **Rationale**: Systems that cannot be observed cannot be reliably operated or
 debugged in production.
 
-### V. Versioning & Stability
+### V. No Deprecation, No Migration
 
-Public interfaces MUST follow Calendar Versioning (CalVer) using the format
-`YYYY.MM.MICRO`, where `YYYY` is the four-digit year, `MM` is the two-digit
-month, and `MICRO` is a zero-based release counter reset each month
-(e.g., `2026.03.0`, `2026.03.1`). Breaking changes MUST be accompanied by a
-migration guide documented before the change is merged. Deprecated interfaces
-MUST be marked and retained for at least one calendar-month release cycle
-before removal.
+This system has never been deployed and has no external consumers. Any code,
+schema, API, or interface can be rewritten from scratch at any time. The
+following are prohibited:
 
-**Rationale**: CalVer communicates the release timeline directly in the
-version string, making it easy to assess freshness and coordinate upgrades
-in time-aware workflows.
+- Deprecation markers, warnings, or "kept for one release cycle" shims
+- Backwards-compatibility wrappers or renamed-but-preserved interfaces
+- API versioning prefixes (`/api/v2/`) when `/api/v1/` has no consumers
+- Migration scripts for schema changes (use `create_all` or fresh DDL)
+- Re-exporting removed types, adding `_unused` suffixes, or `# removed` comments
+
+When something needs to change, change it directly. Delete old code. Rewrite
+modules. The goal is to deliver a working system, not to maintain compatibility
+with a system that does not exist.
+
+**Rationale**: Deprecation and migration are taxes paid to protect existing
+users. With zero users, these taxes produce pure overhead — dead code, confusing
+interfaces, and wasted development time. When the system is deployed and has
+real consumers, this principle will be revised to add appropriate stability
+guarantees.
 
 ### VI. Environment Isolation & Reproducibility
 
@@ -147,6 +149,35 @@ CI/CD and local developer runs execute against identical dependency graphs.
 The bridge venv exception acknowledges real-world library adoption lag while
 preserving the 3.14+ baseline for all first-party development and preventing
 silent fallbacks or mixed-interpreter contamination.
+
+### VII. Developer Experience
+
+A new developer MUST be able to run the complete system locally with minimal
+setup. The following rules apply:
+
+- **Single command startup**: `docker compose up` MUST bring up all services
+  (database, backend, frontend, task queue) in a working state with sample data.
+- **No external dependencies for dev**: Development MUST NOT require access to
+  external services (cloud databases, SaaS APIs, production Keycloak). All
+  dependencies MUST be local or mocked.
+- **Library standalone**: The library MUST be fully usable without Docker or any
+  running services. `uv run undata-library pipeline --source bids` MUST work
+  with only Python and uv installed.
+- **Hot reload**: Backend and frontend MUST support hot reload in development
+  mode so code changes are reflected without restart.
+- **Seed data**: A seed script or compose profile MUST populate the database
+  with representative data (import from library registry) so the UI has
+  content on first load.
+- **Documented setup**: README or CLAUDE.md MUST contain copy-pasteable
+  commands for: full stack startup, running tests, running individual
+  components, and common development tasks.
+- **Consistent environments**: `docker compose` and local `uv run` MUST produce
+  the same behavior. Tests that pass locally MUST pass in CI.
+
+**Rationale**: Developer friction compounds over time. Every minute spent on
+setup, debugging environment differences, or hunting for documentation is a
+minute not spent on the product. A system that is hard to run locally is a
+system that doesn't get tested.
 
 ## Technology & Quality Standards
 
@@ -341,4 +372,4 @@ All PRs and implementation plans MUST include a Constitution Check section
 confirming compliance with active principles. Violations require documented
 justification or the work is blocked.
 
-**Version**: 1.5.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-21
+**Version**: 2.0.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-24
