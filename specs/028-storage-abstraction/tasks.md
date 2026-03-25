@@ -19,8 +19,8 @@
 
 **Purpose**: Create storage module structure
 
-- [ ] T001 Create `storage/` package directory with `__init__.py` in `library/src/undata_library/storage/__init__.py`
-- [ ] T002 Run full test suite to establish baseline — record passing count in `library/tests/` (`uv run pytest tests/ -v`)
+- [X] T001 Create `storage/` package directory with `__init__.py` in `library/src/undata_library/storage/__init__.py`
+- [X] T002 Run full test suite to establish baseline — record passing count in `library/tests/` (`uv run pytest tests/ -v`)
 
 **Checkpoint**: Module structure exists, baseline test count recorded
 
@@ -32,11 +32,11 @@
 
 **⚠️ CRITICAL**: No implementation work can begin until the protocol is defined and reviewed
 
-- [ ] T003 Define `EntityStore` protocol with read/write/list/exists/delete/merge_provenance/count/find_by_hash in `storage/protocol.py`
-- [ ] T004 Define `FlagStore` protocol with write_flag/read_flags/resolve_flag in `storage/protocol.py`
-- [ ] T005 Define `RunStore` protocol with save_summary/load_previous/list_runs in `storage/protocol.py`
-- [ ] T006 Define `StorageBackend` composite protocol (entities + flags + runs) in `storage/protocol.py`
-- [ ] T007 Write protocol conformance test suite in `library/tests/test_storage_protocol.py` — tests that any backend must pass (round-trip, list, exists, merge_provenance, find_by_hash, filters [source, has_annotations, data_type], flag lifecycle, run lifecycle, concurrent reads)
+- [X] T003 Define `EntityStore` protocol with read/write/list/exists/delete/merge_provenance/count/find_by_hash in `storage/protocol.py`
+- [X] T004 Define `FlagStore` protocol with write_flag/read_flags/resolve_flag in `storage/protocol.py`
+- [X] T005 Define `RunStore` protocol with save_summary/load_previous/list_runs in `storage/protocol.py`
+- [X] T006 Define `StorageBackend` composite protocol (entities + flags + runs) in `storage/protocol.py`
+- [X] T007 Write protocol conformance test suite in `library/tests/test_storage_protocol.py` — tests that any backend must pass (round-trip, list, exists, merge_provenance, find_by_hash, filters [source, has_annotations, data_type], flag lifecycle, run lifecycle, concurrent reads)
 
 **Checkpoint**: Protocol defined, conformance tests written (will fail until backends are implemented)
 
