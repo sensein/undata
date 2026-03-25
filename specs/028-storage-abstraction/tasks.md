@@ -144,11 +144,11 @@
 
 **Purpose**: Final validation, evaluation record, cleanup
 
-- [ ] T048 Run full pipeline for all 5 sources, record entity counts in `eval-record.md` at repository root
-- [ ] T049 Compare entity counts with brainstorm v1 baseline — document any changes and reasons
-- [ ] T050 Run quickstart validation scenarios QS-001 through QS-008 from `specs/028-storage-abstraction/quickstart.md`
-- [ ] T051 Verify `ruff check` and `ruff format` pass on all modified files
-- [ ] T052 Push branch and verify CI is green
+- [X] T048 Run full pipeline for all 5 sources, record entity counts in `eval-record.md` at repository root
+- [X] T049 Compare entity counts with brainstorm v1 baseline — document any changes and reasons
+- [X] T050 Run quickstart validation scenarios QS-001 through QS-008 from `specs/028-storage-abstraction/quickstart.md`
+- [X] T051 Verify `ruff check` and `ruff format` pass on all modified files
+- [X] T052 Push branch and verify CI is green
 
 ---
 

@@ -243,7 +243,9 @@ def enrich_elements(
 # ---------------------------------------------------------------------------
 
 
-def enrich_from_source_metadata(staging_dir: Path | None = None, *, backend: StorageBackend | None = None) -> dict[str, int]:
+def enrich_from_source_metadata(
+    staging_dir: Path | None = None, *, backend: StorageBackend | None = None
+) -> dict[str, int]:
     if staging_dir is None and backend is not None and hasattr(backend, "base_dir"):
         staging_dir = backend.base_dir
     """Pre-enrich entities that already have ontology identifiers from their source.
