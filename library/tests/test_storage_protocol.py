@@ -8,6 +8,9 @@ from __future__ import annotations
 
 import pytest
 
+import uuid
+from datetime import datetime, timezone
+
 from undata_library.models import CurationFlag, FlagStatus, FlagType, RunSummary
 from undata_library.storage.protocol import StorageBackend
 
@@ -85,17 +88,20 @@ def _sample_valueset(source: str = "bids") -> dict:
 
 def _sample_flag() -> CurationFlag:
     return CurationFlag(
+        id=str(uuid.uuid4()),
         entity_type="element",
         entity_ref="age_abc123",
-        flag_type=FlagType.LOW_CONFIDENCE,
+        flag_type=FlagType.low_confidence,
         context={"reason": "score below threshold", "score": 0.45},
+        created_at=datetime.now(timezone.utc).isoformat(),
     )
 
 
 def _sample_summary(source: str = "bids") -> RunSummary:
     return RunSummary(
-        run_id="2026-03-24T12:00:00-bids",
+        run_id=f"2026-03-24T12:00:00-{source}",
         source=source,
+        started_at=datetime.now(timezone.utc).isoformat(),
         entity_counts={"extract": {"elements": 100}},
     )
 
@@ -248,38 +254,40 @@ class TestFlagStoreConformance:
         flag_id = backend.flags.write_flag(flag)
         assert flag_id
 
-        pending = backend.flags.read_flags(status=FlagStatus.PENDING)
+        pending = backend.flags.read_flags(status=FlagStatus.pending)
         assert len(pending) == 1
-        assert pending[0].flag_type == FlagType.LOW_CONFIDENCE
+        assert pending[0].flag_type == FlagType.low_confidence
 
         resolved = backend.flags.resolve_flag(
-            flag_id, FlagStatus.APPROVED, "curator@test", "Confirmed match"
+            flag_id, FlagStatus.approved, "curator@test", "Confirmed match"
         )
         assert resolved is not None
-        assert resolved.status == FlagStatus.APPROVED
+        assert resolved.status == FlagStatus.approved
         assert resolved.resolved_by == "curator@test"
 
-        approved = backend.flags.read_flags(status=FlagStatus.APPROVED)
+        approved = backend.flags.read_flags(status=FlagStatus.approved)
         assert len(approved) == 1
 
-        still_pending = backend.flags.read_flags(status=FlagStatus.PENDING)
+        still_pending = backend.flags.read_flags(status=FlagStatus.pending)
         assert len(still_pending) == 0
 
     def test_filter_by_flag_type(self, backend: StorageBackend):
         flag1 = _sample_flag()
         flag2 = CurationFlag(
+            id=str(uuid.uuid4()),
             entity_type="element",
             entity_ref="weight_def456",
-            flag_type=FlagType.AMBIGUOUS_MATCH,
+            flag_type=FlagType.ambiguous_match,
             context={"reason": "multiple candidates"},
+            created_at=datetime.now(timezone.utc).isoformat(),
         )
         backend.flags.write_flag(flag1)
         backend.flags.write_flag(flag2)
-        low_conf = backend.flags.read_flags(flag_type=FlagType.LOW_CONFIDENCE)
+        low_conf = backend.flags.read_flags(flag_type=FlagType.low_confidence)
         assert len(low_conf) == 1
 
     def test_resolve_missing_returns_none(self, backend: StorageBackend):
-        result = backend.flags.resolve_flag("nonexistent", FlagStatus.APPROVED, "test")
+        result = backend.flags.resolve_flag("nonexistent", FlagStatus.approved, "test")
         assert result is None
 
 

@@ -50,20 +50,20 @@
 
 ### Tests
 
-- [ ] T008 [P] [US1] Write FileBackend-specific tests in `library/tests/test_file_backend.py` — entity CRUD with YAML files, directory layout, filename patterns
-- [ ] T009 [P] [US1] Write MockBackend tests in `library/tests/test_mock_backend.py` — in-memory dict behavior, operation recording
+- [X] T008 [P] [US1] Write FileBackend-specific tests in `library/tests/test_file_backend.py` — entity CRUD with YAML files, directory layout, filename patterns
+- [X] T009 [P] [US1] Write MockBackend tests in `library/tests/test_mock_backend.py` — in-memory dict behavior, operation recording
 
 ### Implementation
 
-- [ ] T010 [US2] Implement `FileEntityStore` in `storage/file_backend.py` — wraps `safe_load_yaml`/`write_yaml`/glob for elements/schemas/values/valuesets
-- [ ] T011 [P] [US2] Implement `FileFlagStore` in `storage/file_backend.py` — wraps current `curation.py` file I/O for curation-flags/
-- [ ] T012 [P] [US2] Implement `FileRunStore` in `storage/file_backend.py` — wraps current `run_summary.py` file I/O for runs/
-- [ ] T013 [US2] Implement `FileBackend` class composing EntityStore + FlagStore + RunStore in `storage/file_backend.py`
-- [ ] T014 [US1] Implement `MockBackend` with in-memory dict storage and operation recording in `storage/mock_backend.py`
-- [ ] T015 [US1] Export `StorageBackend`, `FileBackend`, `MockBackend` from `storage/__init__.py`
-- [ ] T016 [US2] Run protocol conformance tests against FileBackend — all must pass in `library/tests/test_storage_protocol.py`
-- [ ] T017 [US1] Run protocol conformance tests against MockBackend — all must pass in `library/tests/test_storage_protocol.py`
-- [ ] T018 [US2] Run full existing test suite — verify all 343+ tests still pass (`uv run pytest tests/ -v`)
+- [X] T010 [US2] Implement `FileEntityStore` in `storage/file_backend.py` — wraps `safe_load_yaml`/`write_yaml`/glob for elements/schemas/values/valuesets
+- [X] T011 [P] [US2] Implement `FileFlagStore` in `storage/file_backend.py` — wraps current `curation.py` file I/O for curation-flags/
+- [X] T012 [P] [US2] Implement `FileRunStore` in `storage/file_backend.py` — wraps current `run_summary.py` file I/O for runs/
+- [X] T013 [US2] Implement `FileBackend` class composing EntityStore + FlagStore + RunStore in `storage/file_backend.py`
+- [X] T014 [US1] Implement `MockBackend` with in-memory dict storage and operation recording in `storage/mock_backend.py`
+- [X] T015 [US1] Export `StorageBackend`, `FileBackend`, `MockBackend` from `storage/__init__.py`
+- [X] T016 [US2] Run protocol conformance tests against FileBackend — all must pass in `library/tests/test_storage_protocol.py`
+- [X] T017 [US1] Run protocol conformance tests against MockBackend — all must pass in `library/tests/test_storage_protocol.py`
+- [X] T018 [US2] Run full existing test suite — verify all 343+ tests still pass (`uv run pytest tests/ -v`)
 
 **Checkpoint**: FileBackend and MockBackend satisfy protocol. All existing tests pass. Zero test files modified.
 
