@@ -37,6 +37,9 @@ export default function RootLayout({
               <Link href="/schemas" className="text-sm text-muted-foreground hover:text-foreground">
                 Schemas
               </Link>
+              <Link href="/valuesets" className="text-sm text-muted-foreground hover:text-foreground">
+                Value Sets
+              </Link>
               <Link href="/curation" className="text-sm text-muted-foreground hover:text-foreground">
                 Curation
               </Link>

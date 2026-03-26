@@ -91,12 +91,12 @@
 
 **Independent Test**: `pnpm exec playwright test` — all tests pass.
 
-- [ ] T020 [US6] Write `tests/e2e/elements.spec.ts` — test: page loads, elements visible, filter by source works, click element navigates to detail page, detail page shows provenance
-- [ ] T021 [US6] Write `tests/e2e/navigation.spec.ts` — test: nav links work (elements, schemas, values, curation, runs), each page loads without JS errors
-- [ ] T022 [US6] Update `playwright.config.ts` — set baseURL to http://localhost:3000, webServer config to start frontend
-- [ ] T023 Verify `pnpm exec eslint` and `pnpm exec next build` pass without errors
-- [ ] T024 Run quickstart validation scenarios QS-001 through QS-008
-- [ ] T025 Push branch and verify CI is green
+- [X] T020 [US6] Write `tests/e2e/elements.spec.ts` — test: page loads, elements visible, filter by source works, click element navigates to detail page, detail page shows provenance
+- [X] T021 [US6] Write `tests/e2e/navigation.spec.ts` — test: nav links work (elements, schemas, values, curation, runs), each page loads without JS errors
+- [X] T022 [US6] Update `playwright.config.ts` — set baseURL to http://localhost:3000, webServer config to start frontend
+- [X] T023 Verify `pnpm exec eslint` and `pnpm exec next build` pass without errors
+- [X] T024 Run quickstart validation scenarios QS-001 through QS-008
+- [X] T025 Push branch and verify CI is green
 
 ---
 
