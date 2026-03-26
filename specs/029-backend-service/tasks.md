@@ -128,11 +128,11 @@
 
 **Independent Test**: Open browser to http://localhost:3000 — elements displayed
 
-- [ ] T038 [US5] Verify `frontend/lib/apollo.ts` points to correct backend URL (http://localhost:8002/graphql)
-- [ ] T039 [US5] Verify `frontend/graphql/queries.ts` query shapes match the implemented GraphQL schema — fix any field name mismatches
-- [ ] T040 [US5] Test element browser page loads with real data from backend — verify in browser
-- [ ] T041 [US5] Test element detail page renders when clicking an element — verify semantic, provenance, annotations display
-- [ ] T042 [US5] Fix any TypeScript type mismatches in `frontend/graphql/types.ts`
+- [X] T038 [US5] Verify `frontend/lib/apollo.ts` points to correct backend URL (http://localhost:8002/graphql)
+- [X] T039 [US5] Verify `frontend/graphql/queries.ts` query shapes match the implemented GraphQL schema — fix any field name mismatches
+- [X] T040 [US5] Test element browser page loads with real data from backend — verify in browser
+- [X] T041 [US5] Test element detail page renders when clicking an element — verify semantic, provenance, annotations display
+- [X] T042 [US5] Fix any TypeScript type mismatches in `frontend/graphql/types.ts`
 
 **Checkpoint**: Frontend displays real data from backend without errors
 
@@ -142,12 +142,12 @@
 
 **Purpose**: CI setup, final checks, documentation
 
-- [ ] T043 [US7] Set up CI workflow in `.github/workflows/` — job that starts PostgreSQL service, runs `uv run pytest tests/ -v` in backend
-- [ ] T044 [US7] Ensure CI also runs library tests (400+ tests) as a separate job
-- [ ] T045 Verify `ruff check` and `ruff format` pass on all backend files
-- [ ] T046 Update `CLAUDE.md` with backend developer commands (docker compose up, running tests, accessing GraphQL playground, importing registry)
-- [ ] T047 Run quickstart validation scenarios QS-001 through QS-010 from `specs/029-backend-service/quickstart.md`
-- [ ] T048 Push branch and verify CI is green
+- [X] T043 [US7] Set up CI workflow in `.github/workflows/` — job that starts PostgreSQL service, runs `uv run pytest tests/ -v` in backend
+- [X] T044 [US7] Ensure CI also runs library tests (400+ tests) as a separate job
+- [X] T045 Verify `ruff check` and `ruff format` pass on all backend files
+- [X] T046 Update `CLAUDE.md` with backend developer commands (docker compose up, running tests, accessing GraphQL playground, importing registry)
+- [X] T047 Run quickstart validation scenarios QS-001 through QS-010 from `specs/029-backend-service/quickstart.md`
+- [X] T048 Push branch and verify CI is green
 
 ---
 
