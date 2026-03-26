@@ -53,16 +53,16 @@
 
 ### Tests
 
-- [ ] T013 [US2] Write `tests/conftest.py` — test database URL, async engine fixture, per-test transaction with rollback, create_all/drop_all around test session
-- [ ] T014 [US2] Write `tests/test_database_backend.py` — port conformance tests from `library/tests/test_storage_protocol.py`, parametrize for DatabaseBackend against real PostgreSQL
+- [X] T013 [US2] Write `tests/conftest.py` — test database URL, async engine fixture, per-test transaction with rollback, create_all/drop_all around test session
+- [X] T014 [US2] Write `tests/test_database_backend.py` — port conformance tests from `library/tests/test_storage_protocol.py`, parametrize for DatabaseBackend against real PostgreSQL
 
 ### Implementation
 
-- [ ] T015 [US2] Implement `DatabaseEntityStore` in `src/storage/database_backend.py` — read/write/list/exists/delete/merge_provenance/count/find_by_hash using SQLAlchemy async queries on Element/Schema/Value/ValueSet models
-- [ ] T016 [P] [US2] Implement `DatabaseFlagStore` in `src/storage/database_backend.py` — write_flag/read_flags/resolve_flag using CurationFlag model
-- [ ] T017 [P] [US2] Implement `DatabaseRunStore` in `src/storage/database_backend.py` — save_summary/load_previous/list_runs using RunSummary model
-- [ ] T018 [US2] Implement `DatabaseBackend` composite class in `src/storage/database_backend.py` — entities + flags + runs properties, constructor takes async session
-- [ ] T019 [US2] Run conformance tests: `uv run pytest tests/test_database_backend.py -v` — all 52 must pass
+- [X] T015 [US2] Implement `DatabaseEntityStore` in `src/storage/database_backend.py` — read/write/list/exists/delete/merge_provenance/count/find_by_hash using SQLAlchemy async queries on Element/Schema/Value/ValueSet models
+- [X] T016 [P] [US2] Implement `DatabaseFlagStore` in `src/storage/database_backend.py` — write_flag/read_flags/resolve_flag using CurationFlag model
+- [X] T017 [P] [US2] Implement `DatabaseRunStore` in `src/storage/database_backend.py` — save_summary/load_previous/list_runs using RunSummary model
+- [X] T018 [US2] Implement `DatabaseBackend` composite class in `src/storage/database_backend.py` — entities + flags + runs properties, constructor takes async session
+- [X] T019 [US2] Run conformance tests: `uv run pytest tests/test_database_backend.py -v` — all 52 must pass
 
 **Checkpoint**: DatabaseBackend satisfies StorageBackend protocol. 52 conformance tests green.
 
