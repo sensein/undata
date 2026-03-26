@@ -1,104 +1,88 @@
-# Implementation Plan: [FEATURE]
+# Implementation Plan: Frontend Integration
 
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
-
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/plan-template.md` for the execution workflow.
+**Branch**: `030-frontend-integration` | **Date**: 2026-03-26 | **Spec**: [spec.md](spec.md)
 
 ## Summary
 
-[Extract from feature spec: primary requirement + technical approach from research]
+Wire the existing Next.js frontend to the backend GraphQL API. Fix query/type mismatches, ensure all entity browsers work with real data, add error handling and empty states, write Playwright E2E tests.
 
 ## Technical Context
 
-<!--
-  ACTION REQUIRED: Replace the content in this section with the technical details
-  for the project. The structure here is presented in advisory capacity to guide
-  the iteration process.
--->
-
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [e.g., library/cli/web-service/mobile-app/compiler/desktop-app or NEEDS CLARIFICATION]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Language/Version**: TypeScript 5.x + Next.js 16.x (React 19)
+**Primary Dependencies**: Apollo Client 4.x, shadcn/ui, Tailwind CSS 4
+**Testing**: Playwright for E2E, Vitest for unit
+**Target Platform**: Browser (Chrome, Firefox, Safari)
+**Project Type**: Web application (frontend)
+**Constraints**: Must work with backend Docker stack from 029
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
-
-[Gates determined based on constitution file]
+| Principle | Status | Notes |
+|-----------|--------|-------|
+| I. Simplicity First | PASS | Fix existing pages, don't rewrite. Remove broken pages. |
+| II. TDD | PASS | Playwright tests written for key flows. |
+| III. API-First Design | PASS | Frontend consumes the GraphQL API contract from 027/029. |
+| IV. Observability | N/A | Frontend doesn't emit server logs (browser console only). |
+| V. No Deprecation | PASS | Remove broken pages directly, no stubs. |
+| VI. Environment Isolation | PASS | pnpm for deps, no system installs. |
+| VII. Developer Experience | PASS | pnpm dev starts frontend with hot reload. |
+| CI Green Before Merge | PASS | Playwright tests run in CI. |
 
 ## Project Structure
 
-### Documentation (this feature)
-
 ```text
-specs/[###-feature]/
-├── plan.md              # This file (/speckit.plan command output)
-├── research.md          # Phase 0 output (/speckit.plan command)
-├── data-model.md        # Phase 1 output (/speckit.plan command)
-├── quickstart.md        # Phase 1 output (/speckit.plan command)
-├── contracts/           # Phase 1 output (/speckit.plan command)
-└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
-```
-
-### Source Code (repository root)
-<!--
-  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
-  for this feature. Delete unused options and expand the chosen structure with
-  real paths (e.g., apps/admin, packages/something). The delivered plan must
-  not include Option labels.
--->
-
-```text
-# [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
-src/
-├── models/
-├── services/
-├── cli/
-└── lib/
-
-tests/
-├── contract/
-├── integration/
-└── unit/
-
-# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
-backend/
-├── src/
-│   ├── models/
-│   ├── services/
-│   └── api/
-└── tests/
-
 frontend/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   └── services/
+├── app/
+│   ├── layout.tsx            # KEEP: root layout with nav
+│   ├── page.tsx              # KEEP: home/landing
+│   ├── elements/
+│   │   ├── page.tsx          # FIX: wire to browseElements query
+│   │   └── [sha256]/
+│   │       └── page.tsx      # FIX: wire to element(sha256) query
+│   ├── schemas/
+│   │   └── page.tsx          # FIX: wire to browseSchemas query
+│   ├── values/
+│   │   └── page.tsx          # FIX: wire to browseValues query
+│   ├── curation/
+│   │   └── page.tsx          # FIX: wire to curationQueue query
+│   └── runs/
+│       └── page.tsx          # FIX: wire to runSummaries query
+├── graphql/
+│   ├── queries.ts            # UPDATED in 029 — verify correct
+│   └── types.ts              # UPDATE: match backend schema
+├── lib/
+│   └── apollo.ts             # KEEP: already configured
+├── components/               # FIX: update as needed
 └── tests/
-
-# [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
-api/
-└── [same as backend above]
-
-ios/ or android/
-└── [platform-specific structure: feature modules, UI flows, platform tests]
+    └── e2e/
+        ├── elements.spec.ts  # REWRITE: test against real backend
+        └── navigation.spec.ts # REWRITE: basic nav tests
 ```
 
-**Structure Decision**: [Document the selected structure and reference the real
-directories captured above]
+**Pages to remove** (depend on unbuilt features):
+- `app/migrations/` (migration API not in scope)
+- `app/aliases/` (alias groups not yet exposed via API)
+- `app/compare/` (comparison not yet exposed)
+- `app/add/` (contribution form — deferred)
+- `app/profile/` (auth deferred)
 
-## Complexity Tracking
+## Implementation Approach
 
-> **Fill ONLY if Constitution Check has violations that must be justified**
+### Phase 1: Fix Element Browser + Detail (US1 + US2)
+1. Update `app/elements/page.tsx` to use updated BROWSE_ELEMENTS query
+2. Fix TypeScript types to match backend response shape
+3. Update `app/elements/[sha256]/page.tsx` to use GET_ELEMENT query
+4. Add error and empty state handling
 
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+### Phase 2: Fix Other Browsers (US3)
+1. Update schemas page to use BROWSE_SCHEMAS query
+2. Update values page to use BROWSE_VALUES query
+
+### Phase 3: Fix Curation + Runs (US4 + US5)
+1. Update curation page to use CURATION_QUEUE query
+2. Update runs page to use RUN_SUMMARIES query
+
+### Phase 4: Cleanup + Tests (US6)
+1. Remove broken pages (migrations, aliases, compare, add, profile)
+2. Write Playwright E2E tests
+3. Verify all pages load without errors
