@@ -17,9 +17,9 @@
 
 **Purpose**: Clean broken pages, update shared types
 
-- [ ] T001 Remove broken pages that depend on unbuilt features: delete `app/migrations/`, `app/aliases/`, `app/compare/`, `app/add/`, `app/profile/`, `app/auth/`
-- [ ] T002 Update navigation in `app/layout.tsx` — remove links to deleted pages, keep: Elements, Schemas, Values, Curation, Runs
-- [ ] T003 Update `graphql/types.ts` — TypeScript interfaces matching backend schema: Element, Schema, Value, ValueSet, CurationFlag, RunSummary, PageInfo, Connection types, all with camelCase field names
+- [X] T001 Remove broken pages that depend on unbuilt features: delete `app/migrations/`, `app/aliases/`, `app/compare/`, `app/add/`, `app/profile/`, `app/auth/`
+- [X] T002 Update navigation in `app/layout.tsx` — remove links to deleted pages, keep: Elements, Schemas, Values, Curation, Runs
+- [X] T003 Update `graphql/types.ts` — TypeScript interfaces matching backend schema: Element, Schema, Value, ValueSet, CurationFlag, RunSummary, PageInfo, Connection types, all with camelCase field names
 
 **Checkpoint**: No broken imports, navigation works, types match backend
 
