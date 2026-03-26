@@ -1,29 +1,19 @@
-"""Strawberry GraphQL types for the undata registry.
-
-Maps the flat-file registry entities (elements, schemas, values, valuesets)
-and curation infrastructure (flags, contributions, users) to GraphQL types.
-"""
+"""Strawberry GraphQL types matching the 027 contract."""
 
 from __future__ import annotations
 
-from enum import Enum
+import enum
 from typing import Optional
 
 import strawberry
+from strawberry.scalars import JSON
+
+
+# --- Enums ---
 
 
 @strawberry.enum
-class DataType(Enum):
-    STRING = "string"
-    INTEGER = "integer"
-    FLOAT = "float"
-    BOOLEAN = "boolean"
-    ARRAY = "array"
-    OBJECT = "object"
-
-
-@strawberry.enum
-class FlagType(Enum):
+class FlagType(enum.Enum):
     LOW_CONFIDENCE = "low_confidence"
     AMBIGUOUS_MATCH = "ambiguous_match"
     MULTIPLE_CANDIDATES = "multiple_candidates"
@@ -34,7 +24,7 @@ class FlagType(Enum):
 
 
 @strawberry.enum
-class FlagStatus(Enum):
+class FlagStatus(enum.Enum):
     PENDING = "pending"
     APPROVED = "approved"
     REJECTED = "rejected"
@@ -42,7 +32,7 @@ class FlagStatus(Enum):
 
 
 @strawberry.enum
-class ContributionType(Enum):
+class ContributionType(enum.Enum):
     SUGGEST_ANNOTATION = "suggest_annotation"
     COMMENT = "comment"
     FLAG_ISSUE = "flag_issue"
@@ -50,17 +40,39 @@ class ContributionType(Enum):
 
 
 @strawberry.enum
-class ContributionStatus(Enum):
+class ContributionStatus(enum.Enum):
     PENDING = "pending"
     APPROVED = "approved"
     REJECTED = "rejected"
 
 
 @strawberry.enum
-class UserRole(Enum):
-    CONTRIBUTOR = "contributor"
-    CURATOR = "curator"
-    ADMIN = "admin"
+class CurationStatus(enum.Enum):
+    UNFLAGGED = "unflagged"
+    PENDING = "pending"
+    CURATED = "curated"
+
+
+@strawberry.enum
+class DataType(enum.Enum):
+    STRING = "string"
+    INTEGER = "integer"
+    FLOAT = "float"
+    BOOLEAN = "boolean"
+    ARRAY = "array"
+    OBJECT = "object"
+
+
+@strawberry.enum
+class EntityType(enum.Enum):
+    ELEMENT = "element"
+    SCHEMA = "schema"
+    VALUE = "value"
+    VALUESET = "valueset"
+    TRANSFORM = "transform"
+
+
+# --- Nested Types ---
 
 
 @strawberry.type
@@ -78,78 +90,77 @@ class OntologyAnnotation:
 @strawberry.type
 class ProvenanceEntry:
     source: str
-    class_name: str  # "class" is reserved in Python
+    class_name: str  # 'class' is reserved in Python
     name: str
-    description: Optional[str] = None
-    generated_at: Optional[str] = None
-    attributed_to: Optional[str] = None
-    activity: Optional[str] = None
+    description: str
+
+
+# --- Core Entity Types ---
 
 
 @strawberry.type
 class Element:
-    sha256: Optional[str]
-    data_type: Optional[str]
-    unit: Optional[str]
-    pattern: Optional[str]
-    value_domain: Optional[str]
-    description: Optional[str]
-    min_value: Optional[float]
-    max_value: Optional[float]
-    type_ref: Optional[str]
-    ontology_annotations: list[OntologyAnnotation]
-    provenance: list[ProvenanceEntry]
-    # File-level metadata
-    file_name: str
-    entity_type: str = "element"
+    sha256: str
+    file_name: Optional[str] = None
+    data_type: Optional[str] = None
+    unit: Optional[str] = None
+    pattern: Optional[str] = None
+    value_domain: Optional[str] = None
+    description: Optional[str] = None
+    min_value: Optional[float] = None
+    max_value: Optional[float] = None
+    type_ref: Optional[str] = None
+    semantic: JSON = strawberry.field(default_factory=dict)
+    provenance: list[ProvenanceEntry] = strawberry.field(default_factory=list)
+    ontology_annotations: list[OntologyAnnotation] = strawberry.field(default_factory=list)
 
 
 @strawberry.type
 class Schema:
-    sha256: Optional[str]
-    properties: list[str]
-    subclass_of: Optional[str]
-    mixins: list[str]
-    is_mixin: bool
-    description: Optional[str]
-    ontology_annotations: list[OntologyAnnotation]
-    provenance: list[ProvenanceEntry]
-    file_name: str
-    entity_type: str = "schema"
+    sha256: str
+    file_name: Optional[str] = None
+    subclass_of: Optional[str] = None
+    is_mixin: Optional[bool] = None
+    properties: list[str] = strawberry.field(default_factory=list)
+    description: Optional[str] = None
+    semantic: JSON = strawberry.field(default_factory=dict)
+    provenance: list[ProvenanceEntry] = strawberry.field(default_factory=list)
+    ontology_annotations: list[OntologyAnnotation] = strawberry.field(default_factory=list)
 
 
 @strawberry.type
 class Value:
-    sha256: Optional[str]
-    label: str
-    value_type: Optional[str]
-    description: Optional[str]
-    ontology_id: Optional[str]
-    ontology_annotations: list[OntologyAnnotation]
-    provenance: list[ProvenanceEntry]
-    file_name: str
-    entity_type: str = "value"
+    sha256: str
+    file_name: Optional[str] = None
+    label: Optional[str] = None
+    value_type: Optional[str] = None
+    ontology_id: Optional[str] = None
+    description: Optional[str] = None
+    semantic: JSON = strawberry.field(default_factory=dict)
+    provenance: list[ProvenanceEntry] = strawberry.field(default_factory=list)
+    ontology_annotations: list[OntologyAnnotation] = strawberry.field(default_factory=list)
 
 
 @strawberry.type
 class ValueSet:
-    sha256: Optional[str]
-    name: str
-    members: list[str]
-    description: Optional[str]
-    ontology_annotations: list[OntologyAnnotation]
-    provenance: list[ProvenanceEntry]
-    file_name: str
-    entity_type: str = "valueset"
+    sha256: str
+    file_name: Optional[str] = None
+    name: Optional[str] = None
+    members: list[str] = strawberry.field(default_factory=list)
+    description: Optional[str] = None
+    semantic: JSON = strawberry.field(default_factory=dict)
+    provenance: list[ProvenanceEntry] = strawberry.field(default_factory=list)
+    ontology_annotations: list[OntologyAnnotation] = strawberry.field(default_factory=list)
 
 
 @strawberry.type
 class CurationFlag:
-    id: str
+    id: strawberry.ID
     entity_type: str
     entity_ref: str
     flag_type: FlagType
-    context: strawberry.scalars.JSON
+    context: JSON
+    llm_verification: Optional[JSON] = None
     status: FlagStatus
     created_at: str
     resolved_at: Optional[str] = None
@@ -158,44 +169,56 @@ class CurationFlag:
 
 
 @strawberry.type
-class RunSummary:
-    run_id: str
-    source: str
-    started_at: str
-    completed_at: Optional[str]
-    entity_counts: strawberry.scalars.JSON
-    enrichment_rate: Optional[strawberry.scalars.JSON]
-    curation_flags: Optional[strawberry.scalars.JSON]
-    delta: Optional[strawberry.scalars.JSON]
-    timing: Optional[strawberry.scalars.JSON]
-
-
-@strawberry.type
 class Contribution:
-    id: str
+    id: strawberry.ID
     entity_type: str
     entity_ref: str
     contribution_type: ContributionType
-    content: strawberry.scalars.JSON
+    content: JSON
     status: ContributionStatus
-    contributor: str
+    contributor: Optional[str] = None
     reviewed_by: Optional[str] = None
+    reviewed_at: Optional[str] = None
+    review_note: Optional[str] = None
     created_at: str
 
 
-# Connection types for cursor-based pagination
+@strawberry.type
+class RunSummary:
+    run_id: str
+    source: str
+    started_at: Optional[str] = None
+    completed_at: Optional[str] = None
+    entity_counts: JSON = strawberry.field(default_factory=dict)
+    enrichment_rate: Optional[JSON] = None
+    curation_flags: Optional[JSON] = None
+    delta: Optional[JSON] = None
+    timing: Optional[JSON] = None
+
+
+@strawberry.type
+class ImportResult:
+    elements: int
+    schemas: int
+    values: int
+    valuesets: int
+    flags: int
+    runs: int
+
+
+# --- Pagination (Relay-style) ---
+
+
 @strawberry.type
 class PageInfo:
     has_next_page: bool
-    has_previous_page: bool
-    start_cursor: Optional[str] = None
     end_cursor: Optional[str] = None
 
 
 @strawberry.type
 class ElementEdge:
-    node: Element
     cursor: str
+    node: Element
 
 
 @strawberry.type
@@ -203,3 +226,117 @@ class ElementConnection:
     edges: list[ElementEdge]
     page_info: PageInfo
     total_count: int
+
+
+@strawberry.type
+class SchemaEdge:
+    cursor: str
+    node: Schema
+
+
+@strawberry.type
+class SchemaConnection:
+    edges: list[SchemaEdge]
+    page_info: PageInfo
+    total_count: int
+
+
+@strawberry.type
+class ValueEdge:
+    cursor: str
+    node: Value
+
+
+@strawberry.type
+class ValueConnection:
+    edges: list[ValueEdge]
+    page_info: PageInfo
+    total_count: int
+
+
+@strawberry.type
+class ValueSetEdge:
+    cursor: str
+    node: ValueSet
+
+
+@strawberry.type
+class ValueSetConnection:
+    edges: list[ValueSetEdge]
+    page_info: PageInfo
+    total_count: int
+
+
+@strawberry.type
+class CurationFlagEdge:
+    cursor: str
+    node: CurationFlag
+
+
+@strawberry.type
+class CurationFlagConnection:
+    edges: list[CurationFlagEdge]
+    page_info: PageInfo
+    total_count: int
+
+
+@strawberry.type
+class ContributionEdge:
+    cursor: str
+    node: Contribution
+
+
+@strawberry.type
+class ContributionConnection:
+    edges: list[ContributionEdge]
+    page_info: PageInfo
+    total_count: int
+
+
+@strawberry.type
+class RunSummaryEdge:
+    cursor: str
+    node: RunSummary
+
+
+@strawberry.type
+class RunSummaryConnection:
+    edges: list[RunSummaryEdge]
+    page_info: PageInfo
+    total_count: int
+
+
+# --- Input Types ---
+
+
+@strawberry.input
+class ResolveFlagInput:
+    flag_id: strawberry.ID
+    action: FlagStatus
+    resolved_by: str
+    note: Optional[str] = None
+
+
+@strawberry.input
+class BatchResolveFlagInput:
+    flag_ids: list[strawberry.ID]
+    action: FlagStatus
+    resolved_by: str
+    note: Optional[str] = None
+
+
+@strawberry.input
+class SubmitContributionInput:
+    entity_type: str
+    entity_ref: str
+    contribution_type: ContributionType
+    content: JSON
+    contributor: Optional[str] = None
+
+
+@strawberry.input
+class ReviewContributionInput:
+    contribution_id: strawberry.ID
+    action: ContributionStatus
+    reviewed_by: str
+    note: Optional[str] = None

@@ -92,31 +92,31 @@
 
 ### Tests
 
-- [ ] T025 [US7] Write `tests/test_graphql_queries.py` — tests for all query resolvers: element, schema, value, valueset lookups; browseElements/Schemas/Values/Transforms with pagination; curationQueue; runSummaries; latestRun
-- [ ] T026 [US7] Write `tests/test_graphql_mutations.py` — tests for: resolveFlag, batchResolveFlags, submitContribution, reviewContribution, triggerPipelineRun, importRegistry
+- [X] T025 [US7] Write `tests/test_graphql_queries.py` — tests for all query resolvers: element, schema, value, valueset lookups; browseElements/Schemas/Values/Transforms with pagination; curationQueue; runSummaries; latestRun
+- [X] T026 [US7] Write `tests/test_graphql_mutations.py` — tests for: resolveFlag, batchResolveFlags, submitContribution, reviewContribution, triggerPipelineRun, importRegistry
 
 ### Implementation — Types
 
-- [ ] T027 [US4] Rewrite `src/graphql/types.py` — Strawberry types matching 027 contract: Element, Schema, Value, ValueSet, CurationFlag, Contribution, RunSummary, OntologyAnnotation, ProvenanceEntry, PageInfo, all Connection/Edge types, all enums (FlagType, FlagStatus, ContributionType, ContributionStatus, CurationStatus, DataType, EntityType)
+- [X] T027 [US4] Rewrite `src/graphql/types.py` — Strawberry types matching 027 contract: Element, Schema, Value, ValueSet, CurationFlag, Contribution, RunSummary, OntologyAnnotation, ProvenanceEntry, PageInfo, all Connection/Edge types, all enums (FlagType, FlagStatus, ContributionType, ContributionStatus, CurationStatus, DataType, EntityType)
 
 ### Implementation — Query Resolvers
 
-- [ ] T028 [US4] Implement single-entity lookups in `src/graphql/resolvers.py` — element(sha256), schema(sha256), value(sha256), valueset(sha256) using DatabaseBackend.entities.read()
-- [ ] T029 [US4] Implement browse queries with Relay cursor pagination in `src/graphql/resolvers.py` — browseElements(source, dataType, ontology, curationStatus, searchText, first, after), browseSchemas, browseValues, browseTransforms. Cursors: base64(created_at|id)
-- [ ] T030 [US4] Implement curation queries in `src/graphql/resolvers.py` — curationQueue(flagType, status, first, after), contributions(status, first, after)
-- [ ] T031 [US4] Implement pipeline queries in `src/graphql/resolvers.py` — runSummaries(source, first, after), latestRun(source)
+- [X] T028 [US4] Implement single-entity lookups in `src/graphql/resolvers.py` — element(sha256), schema(sha256), value(sha256), valueset(sha256) using DatabaseBackend.entities.read()
+- [X] T029 [US4] Implement browse queries with Relay cursor pagination in `src/graphql/resolvers.py` — browseElements(source, dataType, ontology, curationStatus, searchText, first, after), browseSchemas, browseValues, browseTransforms. Cursors: base64(created_at|id)
+- [X] T030 [US4] Implement curation queries in `src/graphql/resolvers.py` — curationQueue(flagType, status, first, after), contributions(status, first, after)
+- [X] T031 [US4] Implement pipeline queries in `src/graphql/resolvers.py` — runSummaries(source, first, after), latestRun(source)
 
 ### Implementation — Mutation Resolvers
 
-- [ ] T032 [US4] Implement flag mutations in `src/graphql/resolvers.py` — resolveFlag(input), batchResolveFlags(input) using DatabaseBackend.flags
-- [ ] T033 [US4] Implement contribution mutations in `src/graphql/resolvers.py` — submitContribution(input), reviewContribution(input) using direct ORM
-- [ ] T034 [US4] Implement pipeline mutations in `src/graphql/resolvers.py` — triggerPipelineRun(source) calling library pipeline with DatabaseBackend, importRegistry(registryPath) calling import_service
+- [X] T032 [US4] Implement flag mutations in `src/graphql/resolvers.py` — resolveFlag(input), batchResolveFlags(input) using DatabaseBackend.flags
+- [X] T033 [US4] Implement contribution mutations in `src/graphql/resolvers.py` — submitContribution(input), reviewContribution(input) using direct ORM
+- [X] T034 [US4] Implement pipeline mutations in `src/graphql/resolvers.py` — triggerPipelineRun(source) calling library pipeline with DatabaseBackend, importRegistry(registryPath) calling import_service
 
 ### Implementation — Schema Assembly
 
-- [ ] T035 [US4] Rewrite `src/graphql/schema.py` — Strawberry Schema with Query + Mutation classes, wire all resolvers, add query depth limiting
-- [ ] T036 [US4] Update `src/main.py` — mount the full GraphQL schema (replace placeholder)
-- [ ] T037 [US4] Run GraphQL tests: `uv run pytest tests/test_graphql_queries.py tests/test_graphql_mutations.py -v`
+- [X] T035 [US4] Rewrite `src/graphql/schema.py` — Strawberry Schema with Query + Mutation classes, wire all resolvers, add query depth limiting
+- [X] T036 [US4] Update `src/main.py` — mount the full GraphQL schema (replace placeholder)
+- [X] T037 [US4] Run GraphQL tests: `uv run pytest tests/test_graphql_queries.py tests/test_graphql_mutations.py -v`
 
 **Checkpoint**: All GraphQL queries and mutations work. Tests pass.
 

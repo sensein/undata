@@ -5,7 +5,6 @@ from __future__ import annotations
 import time
 from contextlib import asynccontextmanager
 
-import strawberry
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -29,38 +28,6 @@ async def lifespan(app: FastAPI):
     yield
     await engine.dispose()
 
-
-# Placeholder schema — Phase 5 will wire the full resolvers
-@strawberry.type
-class Query:
-    @strawberry.field
-    def status(self) -> str:
-        return "ok"
-
-    @strawberry.field
-    async def element_count(self) -> int:
-        from src.db.session import AsyncSessionLocal
-        from src.storage.database_backend import DatabaseBackend
-
-        async with AsyncSessionLocal() as session:
-            backend = DatabaseBackend(session)
-            return await backend.entities.count("elements")
-
-
-@strawberry.type
-class Mutation:
-    @strawberry.mutation
-    async def import_registry(self, registry_path: str) -> str:
-        from src.db.session import AsyncSessionLocal
-        from src.services.import_service import import_registry
-
-        async with AsyncSessionLocal() as session:
-            stats = await import_registry(session, registry_path)
-            await session.commit()
-            return str(stats)
-
-
-schema = strawberry.Schema(query=Query, mutation=Mutation)
 
 app = FastAPI(title="undata API", lifespan=lifespan)
 
@@ -121,6 +88,8 @@ async def health():
 
 # GraphQL mount
 from strawberry.fastapi import GraphQLRouter
+
+from src.graphql.schema import schema
 
 graphql_app = GraphQLRouter(schema)
 app.include_router(graphql_app, prefix="/graphql")
