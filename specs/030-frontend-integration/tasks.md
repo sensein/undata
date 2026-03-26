@@ -31,7 +31,7 @@
 
 **Independent Test**: Open /elements — seed elements displayed with source, type, description.
 
-- [ ] T004 [US1] Rewrite `app/elements/page.tsx` — use BROWSE_ELEMENTS query from `graphql/queries.ts`, display elements in a table/grid with: name (from file_name or provenance), data_type, unit, source (from provenance[0].source), description. Handle loading/error/empty states.
+- [ ] T004 [US1] Rewrite `app/elements/page.tsx` — use BROWSE_ELEMENTS query from `graphql/queries.ts`, display elements in a table/grid with: name (from file_name or provenance), data_type, unit, source (from provenance[0].source), description. Handle three states: loading (skeleton), error (inline banner with retry — covers FR-010 backend-unreachable case), empty ("No elements found" message). Include search text input that passes `searchText` to the query.
 - [ ] T005 [US1] Add source filter dropdown in `app/elements/page.tsx` — filter options: all, bids, dandi, nwb, openminds, aind. Passes `source` variable to browseElements query.
 - [ ] T006 [US1] Add data type filter in `app/elements/page.tsx` — filter by DataType enum values (STRING, INTEGER, FLOAT, etc.)
 - [ ] T007 [US1] Add cursor pagination in `app/elements/page.tsx` — "Load more" button that calls `fetchMore` with `after: endCursor`. Uses Apollo merge policy from `lib/apollo.ts`.
