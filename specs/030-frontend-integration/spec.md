@@ -155,6 +155,13 @@ As a maintainer, I need automated browser tests that verify the frontend works w
 - Mobile responsive design
 - Performance optimization (SSR, code splitting)
 - Search with Meilisearch integration
+- CivicDB-inspired UI redesign (entity grids with clickable counts, inline curation status indicators, evidence panels, activity feeds, bidirectional entity navigation) — deferred to a dedicated feature (031)
+
+## Clarifications
+
+### Session 2026-03-26
+
+- Q: Should this feature include redesigning pages to match CivicDB's UI patterns? → A: No — wire existing pages now, defer CivicDB UI redesign to a dedicated feature (031).
 
 ## Assumptions
 
