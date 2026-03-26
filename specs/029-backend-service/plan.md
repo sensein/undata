@@ -1,104 +1,132 @@
-# Implementation Plan: [FEATURE]
+# Implementation Plan: Backend Service
 
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
-
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/plan-template.md` for the execution workflow.
+**Branch**: `029-backend-service` | **Date**: 2026-03-26 | **Spec**: [spec.md](spec.md)
+**Input**: Feature specification from `/specs/029-backend-service/spec.md`
 
 ## Summary
 
-[Extract from feature spec: primary requirement + technical approach from research]
+Rebuild the backend as a working service: DatabaseBackend implementing StorageBackend protocol over PostgreSQL, complete Strawberry GraphQL API matching the 027 contract, registry import, seed data, Docker stack, and test suite with CI.
 
 ## Technical Context
 
-<!--
-  ACTION REQUIRED: Replace the content in this section with the technical details
-  for the project. The structure here is presented in advisory capacity to guide
-  the iteration process.
--->
-
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [e.g., library/cli/web-service/mobile-app/compiler/desktop-app or NEEDS CLARIFICATION]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Language/Version**: Python 3.14 (`requires-python = ">=3.14"`)
+**Primary Dependencies**: FastAPI 0.111+, SQLAlchemy 2.x async, asyncpg, Strawberry GraphQL 0.250+, pydantic 2.x
+**Storage**: PostgreSQL 16 + pgvector (via Docker)
+**Testing**: pytest + pytest-asyncio, httpx for ASGI testing
+**Target Platform**: Docker Compose (PostgreSQL + FastAPI backend)
+**Project Type**: Web service (GraphQL API)
+**Performance Goals**: Browse queries < 500ms p95 with 10K entities
+**Constraints**: Must pass 52 StorageBackend conformance tests from 028
+**Scale/Scope**: ~8,820 entities, 7 GraphQL query types, 6 mutation types
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
-
-[Gates determined based on constitution file]
+| Principle | Status | Notes |
+|-----------|--------|-------|
+| I. Simplicity First | PASS | DatabaseBackend wraps existing ORM models. No new abstractions beyond the protocol. |
+| II. Test-Driven Development | PASS | Conformance tests from 028 run against DatabaseBackend. GraphQL tests written before resolvers. |
+| III. API-First Design | PASS | GraphQL contract from 027 is the authoritative spec. Implemented via Strawberry types. |
+| IV. Observability | PASS | Structured JSON logging on all requests. Health endpoint reports DB status. |
+| V. No Deprecation, No Migration | PASS | Backend rewritten from scratch. create_all on startup, no Alembic migrations. |
+| VI. Environment Isolation | PASS | Docker Compose with uv venv inside image. |
+| VII. Developer Experience | PASS | docker compose up starts everything with seed data. Hot reload via uvicorn --reload. |
+| Git Commit Discipline | PASS | Commit per task phase. |
+| CI Green Before Merge | PASS | Library tests + backend tests in CI. |
+| Evaluation Record | PASS | Import counts recorded. |
 
 ## Project Structure
 
-### Documentation (this feature)
+### Documentation
 
 ```text
-specs/[###-feature]/
-├── plan.md              # This file (/speckit.plan command output)
-├── research.md          # Phase 0 output (/speckit.plan command)
-├── data-model.md        # Phase 1 output (/speckit.plan command)
-├── quickstart.md        # Phase 1 output (/speckit.plan command)
-├── contracts/           # Phase 1 output (/speckit.plan command)
-└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
+specs/029-backend-service/
+├── plan.md
+├── research.md
+├── data-model.md
+├── quickstart.md
+├── contracts/           # Uses 027 GraphQL contract as-is
+└── checklists/
+    └── requirements.md
 ```
 
-### Source Code (repository root)
-<!--
-  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
-  for this feature. Delete unused options and expand the chosen structure with
-  real paths (e.g., apps/admin, packages/something). The delivered plan must
-  not include Option labels.
--->
+### Source Code
 
 ```text
-# [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
-src/
-├── models/
-├── services/
-├── cli/
-└── lib/
-
-tests/
-├── contract/
-├── integration/
-└── unit/
-
-# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
 backend/
 ├── src/
-│   ├── models/
-│   ├── services/
-│   └── api/
-└── tests/
-
-frontend/
-├── src/
-│   ├── components/
-│   ├── pages/
+│   ├── main.py                    # REWRITE: clean FastAPI app, health, GraphQL mount
+│   ├── core/
+│   │   ├── config.py              # KEEP: pydantic-settings
+│   │   └── logging.py             # KEEP: structured JSON logging
+│   ├── db/
+│   │   ├── session.py             # REWRITE: async engine + session factory
+│   │   └── models.py              # REWRITE: ORM models (from models/db.py)
+│   ├── storage/
+│   │   └── database_backend.py    # NEW: DatabaseBackend implementing StorageBackend
+│   ├── graphql/
+│   │   ├── schema.py              # REWRITE: Strawberry Query + Mutation
+│   │   ├── types.py               # REWRITE: Strawberry types matching 027 contract
+│   │   └── resolvers.py           # NEW: resolver functions using DatabaseBackend
 │   └── services/
-└── tests/
-
-# [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
-api/
-└── [same as backend above]
-
-ios/ or android/
-└── [platform-specific structure: feature modules, UI flows, platform tests]
+│       └── import_service.py      # REWRITE: import via DatabaseBackend (not raw SQL)
+├── tests/
+│   ├── conftest.py                # NEW: DB fixtures, test session, cleanup
+│   ├── test_database_backend.py   # NEW: 52 conformance tests against real DB
+│   ├── test_graphql_queries.py    # NEW: all query resolvers
+│   └── test_graphql_mutations.py  # NEW: all mutation resolvers
+├── seed/                          # NEW: sample registry YAML for dev seeding
+├── docker-compose.yml             # REWRITE: PostgreSQL only (no Keycloak)
+├── Dockerfile                     # REWRITE: clean Python 3.14 + uv
+├── entrypoint.sh                  # REWRITE: create tables + seed + start uvicorn
+└── pyproject.toml                 # KEEP: update deps
 ```
 
-**Structure Decision**: [Document the selected structure and reference the real
-directories captured above]
+## Implementation Approach
+
+### Phase 1: Docker + Database Foundation (US1)
+1. Rewrite docker-compose.yml — PostgreSQL 16 only (remove Keycloak, Redis)
+2. Rewrite Dockerfile — Python 3.14, uv, install library + backend
+3. Rewrite db/session.py — async engine factory
+4. Move models to db/models.py (from models/db.py)
+5. Rewrite main.py — health endpoint, table creation, GraphQL mount
+6. Verify: docker compose up → health returns 200
+
+### Phase 2: DatabaseBackend (US2)
+1. Implement DatabaseEntityStore — read/write/list/exists/delete/merge_provenance/count/find_by_hash
+2. Implement DatabaseFlagStore — write_flag/read_flags/resolve_flag
+3. Implement DatabaseRunStore — save_summary/load_previous/list_runs
+4. Implement DatabaseBackend composite
+5. Port conformance tests from 028 — parametrize for database backend
+6. Verify: 52 conformance tests pass against real PostgreSQL
+
+### Phase 3: Registry Import + Seed Data (US3 + US6)
+1. Rewrite import_service.py — use DatabaseBackend.entities.write() instead of raw SQL
+2. Create seed/ directory with sample YAML entities
+3. Add seed logic to entrypoint.sh — import seed data if DB empty
+4. Verify: docker compose up → browse elements returns data
+
+### Phase 4: Complete GraphQL API (US4)
+1. Rewrite graphql/types.py — all types from 027 contract
+2. Implement all query resolvers (element, schema, value, valueset lookups; browse queries with cursor pagination; curationQueue; runSummaries; latestRun)
+3. Implement all mutation resolvers (resolveFlag, batchResolveFlags, submitContribution, reviewContribution, triggerPipelineRun, importRegistry)
+4. Add query depth limiting
+5. Verify: introspection matches 027 contract
+
+### Phase 5: Frontend Connection (US5)
+1. Verify Apollo Client config points to backend URL
+2. Test element browser loads with real data
+3. Test element detail page renders
+4. Fix any query/type mismatches
+
+### Phase 6: Tests + CI (US7)
+1. Write conftest.py — test DB, session fixtures, cleanup
+2. Write GraphQL query tests
+3. Write GraphQL mutation tests
+4. Set up CI workflow — library tests + backend tests
+5. Verify: CI green
 
 ## Complexity Tracking
 
-> **Fill ONLY if Constitution Check has violations that must be justified**
-
 | Violation | Why Needed | Simpler Alternative Rejected Because |
 |-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+| Sync DatabaseBackend wrapping async SQLAlchemy | StorageBackend protocol is sync (matches FileBackend + library) | Async protocol would require changing library pipeline functions and 028's protocol |
