@@ -31,11 +31,11 @@
 
 **Independent Test**: Open /elements — seed elements displayed with source, type, description.
 
-- [ ] T004 [US1] Rewrite `app/elements/page.tsx` — use BROWSE_ELEMENTS query from `graphql/queries.ts`, display elements in a table/grid with: name (from file_name or provenance), data_type, unit, source (from provenance[0].source), description. Handle three states: loading (skeleton), error (inline banner with retry — covers FR-010 backend-unreachable case), empty ("No elements found" message). Include search text input that passes `searchText` to the query.
-- [ ] T005 [US1] Add source filter dropdown in `app/elements/page.tsx` — filter options: all, bids, dandi, nwb, openminds, aind. Passes `source` variable to browseElements query.
-- [ ] T006 [US1] Add data type filter in `app/elements/page.tsx` — filter by DataType enum values (STRING, INTEGER, FLOAT, etc.)
-- [ ] T007 [US1] Add cursor pagination in `app/elements/page.tsx` — "Load more" button that calls `fetchMore` with `after: endCursor`. Uses Apollo merge policy from `lib/apollo.ts`.
-- [ ] T008 [US1] Verify element browser against running backend — start docker stack, open /elements, confirm 5 seed elements display correctly
+- [X] T004 [US1] Rewrite `app/elements/page.tsx` — use BROWSE_ELEMENTS query from `graphql/queries.ts`, display elements in a table/grid with: name (from file_name or provenance), data_type, unit, source (from provenance[0].source), description. Handle three states: loading (skeleton), error (inline banner with retry — covers FR-010 backend-unreachable case), empty ("No elements found" message). Include search text input that passes `searchText` to the query.
+- [X] T005 [US1] Add source filter dropdown in `app/elements/page.tsx` — filter options: all, bids, dandi, nwb, openminds, aind. Passes `source` variable to browseElements query.
+- [X] T006 [US1] Add data type filter in `app/elements/page.tsx` — filter by DataType enum values (STRING, INTEGER, FLOAT, etc.)
+- [X] T007 [US1] Add cursor pagination in `app/elements/page.tsx` — "Load more" button that calls `fetchMore` with `after: endCursor`. Uses Apollo merge policy from `lib/apollo.ts`.
+- [X] T008 [US1] Verify element browser against running backend — start docker stack, open /elements, confirm 5 seed elements display correctly
 
 **Checkpoint**: Element browser shows real data with working filters and pagination
 
@@ -47,11 +47,11 @@
 
 **Independent Test**: Click any element → detail page renders all fields.
 
-- [ ] T009 [US2] Rewrite `app/elements/[sha256]/page.tsx` — use GET_ELEMENT query from `graphql/queries.ts`, display: data_type, unit, pattern, value_domain, description, min/max values, type_ref
-- [ ] T010 [US2] Add provenance section in element detail page — list each provenance entry with source, class, name, description
-- [ ] T011 [US2] Add ontology annotations section in element detail page — list each annotation with term_label, ontology, mapping_relation, score, model
-- [ ] T012 [US2] Handle missing element (invalid sha256) — show "Element not found" message
-- [ ] T013 [US2] Verify element detail against running backend — click an element, confirm all fields render
+- [X] T009 [US2] Rewrite `app/elements/[sha256]/page.tsx` — use GET_ELEMENT query from `graphql/queries.ts`, display: data_type, unit, pattern, value_domain, description, min/max values, type_ref
+- [X] T010 [US2] Add provenance section in element detail page — list each provenance entry with source, class, name, description
+- [X] T011 [US2] Add ontology annotations section in element detail page — list each annotation with term_label, ontology, mapping_relation, score, model
+- [X] T012 [US2] Handle missing element (invalid sha256) — show "Element not found" message
+- [X] T013 [US2] Verify element detail against running backend — click an element, confirm all fields render
 
 **Checkpoint**: Element detail page shows complete entity information
 
@@ -63,9 +63,9 @@
 
 **Independent Test**: Navigate to /schemas and /values — data displays.
 
-- [ ] T014 [P] [US3] Rewrite `app/schemas/page.tsx` — use BROWSE_SCHEMAS query, display: description, properties list, subclass_of, source. Handle loading/error/empty.
-- [ ] T015 [P] [US3] Rewrite `app/values/page.tsx` — use BROWSE_VALUES query, display: label, value_type, description, ontology annotations. Handle loading/error/empty.
-- [ ] T016 [US3] Verify schemas and values pages against running backend
+- [X] T014 [P] [US3] Rewrite `app/schemas/page.tsx` — use BROWSE_SCHEMAS query, display: description, properties list, subclass_of, source. Handle loading/error/empty.
+- [X] T015 [P] [US3] Rewrite `app/values/page.tsx` — use BROWSE_VALUES query, display: label, value_type, description, ontology annotations. Handle loading/error/empty.
+- [X] T016 [US3] Verify schemas and values pages against running backend
 
 **Checkpoint**: All entity browsers (elements, schemas, values) display real data
 
@@ -77,9 +77,9 @@
 
 **Independent Test**: Navigate to /curation and /runs — pages load without errors.
 
-- [ ] T017 [P] [US4] Rewrite `app/curation/page.tsx` — use CURATION_QUEUE query, display flags with: entity_ref, flag_type, status, context summary. Show empty state if no flags.
-- [ ] T018 [P] [US5] Rewrite `app/runs/page.tsx` — use RUN_SUMMARIES query, display: source, started_at, entity_counts (formatted). Show empty state if no runs.
-- [ ] T019 [US4] Verify curation and runs pages against running backend
+- [X] T017 [P] [US4] Rewrite `app/curation/page.tsx` — use CURATION_QUEUE query, display flags with: entity_ref, flag_type, status, context summary. Show empty state if no flags.
+- [X] T018 [P] [US5] Rewrite `app/runs/page.tsx` — use RUN_SUMMARIES query, display: source, started_at, entity_counts (formatted). Show empty state if no runs.
+- [X] T019 [US4] Verify curation and runs pages against running backend
 
 **Checkpoint**: All 5 main pages load without errors
 
