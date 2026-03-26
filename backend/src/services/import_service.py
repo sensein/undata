@@ -8,16 +8,17 @@ from pathlib import Path
 import yaml
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.models.db import CurationFlag, Element, RunSummary, Schema, Value, ValueSet
+from src.db.models import CurationFlag, Element, RunSummary, Schema, Value, ValueSet
 
 logger = logging.getLogger(__name__)
 
 
 async def import_registry(
     session: AsyncSession,
-    registry_dir: Path,
+    registry_dir: str | Path,
     clear_existing: bool = True,
 ) -> dict[str, int]:
+    registry_dir = Path(registry_dir)
     """Import all entities from a flat-file YAML registry into the database.
 
     Args:
