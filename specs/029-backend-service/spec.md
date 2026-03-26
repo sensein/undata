@@ -68,7 +68,7 @@ As a frontend developer, I need all queries and mutations from the API contract 
 1. **Given** a populated database, **When** any single-entity lookup query is sent (element, schema, value, valueset by identifier), **Then** the full entity is returned with all nested fields (semantic, provenance, ontology annotations).
 2. **Given** a populated database, **When** any browse query is sent with cursor-based pagination, **Then** the response includes edges, nodes, and pageInfo with hasNextPage and endCursor.
 3. **Given** a pending curation flag, **When** a resolveFlag mutation is sent, **Then** the flag status updates and the resolution metadata is persisted.
-4. **Given** the API, **When** a triggerPipelineRun mutation is sent, **Then** the pipeline runs asynchronously and the result is queryable through run summaries.
+4. **Given** the API, **When** a triggerPipelineRun mutation is sent, **Then** the pipeline runs synchronously and the result (entity counts, timing) is returned in the response and saved as a run summary.
 5. **Given** the API, **When** an importRegistry mutation is sent with a path to a flat-file registry, **Then** entities are loaded into the database and counts are returned.
 
 ---

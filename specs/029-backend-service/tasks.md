@@ -38,7 +38,7 @@
 - [ ] T008 [US1] Rewrite `src/db/models.py` — ORM models for all 8 tables (Element, Schema, Value, ValueSet, CurationFlag, Contribution, RunSummary, UserProfile) with UUID PKs, JSONB columns, server_default timestamps
 - [ ] T009 [US1] Rewrite `src/core/config.py` — pydantic-settings Settings class with DATABASE_URL, LOG_LEVEL, UNDATA_BASE_URL
 - [ ] T010 [P] [US1] Keep/update `src/core/logging.py` — structured JSON logging with pythonjsonlogger
-- [ ] T011 [US1] Rewrite `src/main.py` — FastAPI app with lifespan (create_all on startup), CORS middleware, health endpoint returning DB status, minimal GraphQL mount placeholder
+- [ ] T011 [US1] Rewrite `src/main.py` — FastAPI app with lifespan (create_all on startup), CORS middleware, HTTP request logging middleware (method/path/status/duration), structured error handlers (ValidationError → 422, DB errors → 503, unknown → 500 with JSON body), health endpoint returning DB status, minimal GraphQL mount placeholder
 - [ ] T012 [US1] Verify: `docker compose up -d && curl http://localhost:8002/health` returns 200 with `{"status": "ok"}`
 
 **Checkpoint**: Stack starts, health returns 200, GraphQL playground accessible at /graphql
@@ -74,7 +74,7 @@
 
 **Independent Test**: Start stack, query browseElements — returns entities
 
-- [ ] T020 [US3] Rewrite `src/services/import_service.py` — async function that reads YAML files from a directory and calls `DatabaseBackend.entities.write()` for each entity type, `flags.write_flag()` for curation flags, `runs.save_summary()` for run summaries. Returns counts dict.
+- [ ] T020 [US3] Rewrite `src/services/import_service.py` — async function that reads YAML files from a directory and calls `DatabaseBackend.entities.write()` for each entity type, `flags.write_flag()` for curation flags, `runs.save_summary()` for run summaries. Must be idempotent: use upsert (ON CONFLICT sha256 DO UPDATE provenance) so re-imports merge provenance without duplicating entities. Returns counts dict.
 - [ ] T021 [US6] Create `seed/` directory with sample YAML files — ~50 elements, ~20 schemas, ~30 values, ~5 valuesets, ~3 curation flags, ~1 run summary (curated from library pipeline output)
 - [ ] T022 [US6] Add seed logic to `entrypoint.sh` — on startup, check if DB is empty (count elements), if empty run import_service on seed/ directory
 - [ ] T023 [US3] Add `importRegistry` mutation to GraphQL — accepts registry path, calls import_service, returns counts
