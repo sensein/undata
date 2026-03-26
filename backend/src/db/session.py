@@ -1,3 +1,7 @@
+"""Async SQLAlchemy engine and session factory."""
+
+from __future__ import annotations
+
 from collections.abc import AsyncGenerator
 
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
@@ -16,5 +20,4 @@ class Base(DeclarativeBase):
 
 async def get_db() -> AsyncGenerator[AsyncSession, None]:
     async with AsyncSessionLocal() as session:
-        async with session.begin():
-            yield session
+        yield session

@@ -1,10 +1,43 @@
 #!/bin/sh
 set -e
 
-# Run Alembic migrations before starting the server
-echo "Running database migrations..."
-alembic upgrade head
-echo "Migrations complete."
+echo "Creating database tables..."
+python -c "
+import asyncio
+from src.db.session import engine, Base
+from src.db import models  # noqa: F401 — registers models with Base
 
-# Start the server
-exec uvicorn src.main:app --host 0.0.0.0 --port 8002
+async def init():
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+    await engine.dispose()
+
+asyncio.run(init())
+"
+
+echo "Checking if seed data needed..."
+python -c "
+import asyncio
+from src.db.session import engine, AsyncSessionLocal
+from src.db.models import Element
+from sqlalchemy import select, func
+
+async def check_and_seed():
+    async with AsyncSessionLocal() as session:
+        result = await session.execute(select(func.count()).select_from(Element))
+        count = result.scalar()
+        if count == 0:
+            print('Database empty — importing seed data...')
+            from src.services.import_service import import_registry
+            stats = await import_registry(session, '/app/backend/seed')
+            await session.commit()
+            print(f'Seeded: {stats}')
+        else:
+            print(f'Database has {count} elements — skipping seed')
+    await engine.dispose()
+
+asyncio.run(check_and_seed())
+"
+
+echo "Starting backend..."
+exec uvicorn src.main:app --host 0.0.0.0 --port 8002 --reload

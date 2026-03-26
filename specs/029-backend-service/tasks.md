@@ -31,15 +31,15 @@
 
 **⚠️ CRITICAL**: No backend code work until docker compose up succeeds
 
-- [ ] T004 [US1] Rewrite `docker-compose.yml` — PostgreSQL 16 (pgvector) + backend service only. Remove Keycloak, Redis, migration-api, celery. Backend on port 8002, DB on 5432
-- [ ] T005 [US1] Rewrite `Dockerfile` — Python 3.14-slim, uv, install undata-library from ../library (editable), install backend with dev deps, expose 8002
-- [ ] T006 [US1] Rewrite `entrypoint.sh` — create tables via Python script, then exec uvicorn with --reload for dev
-- [ ] T007 [US1] Rewrite `src/db/session.py` — async engine factory (`create_async_engine` with asyncpg), `AsyncSessionLocal` session maker, `Base` declarative base
-- [ ] T008 [US1] Rewrite `src/db/models.py` — ORM models for all 8 tables (Element, Schema, Value, ValueSet, CurationFlag, Contribution, RunSummary, UserProfile) with UUID PKs, JSONB columns, server_default timestamps
-- [ ] T009 [US1] Rewrite `src/core/config.py` — pydantic-settings Settings class with DATABASE_URL, LOG_LEVEL, UNDATA_BASE_URL
-- [ ] T010 [P] [US1] Keep/update `src/core/logging.py` — structured JSON logging with pythonjsonlogger
-- [ ] T011 [US1] Rewrite `src/main.py` — FastAPI app with lifespan (create_all on startup), CORS middleware, HTTP request logging middleware (method/path/status/duration), structured error handlers (ValidationError → 422, DB errors → 503, unknown → 500 with JSON body), health endpoint returning DB status, minimal GraphQL mount placeholder
-- [ ] T012 [US1] Verify: `docker compose up -d && curl http://localhost:8002/health` returns 200 with `{"status": "ok"}`
+- [X] T004 [US1] Rewrite `docker-compose.yml` — PostgreSQL 16 (pgvector) + backend service only. Remove Keycloak, Redis, migration-api, celery. Backend on port 8002, DB on 5432
+- [X] T005 [US1] Rewrite `Dockerfile` — Python 3.14-slim, uv, install undata-library from ../library (editable), install backend with dev deps, expose 8002
+- [X] T006 [US1] Rewrite `entrypoint.sh` — create tables via Python script, then exec uvicorn with --reload for dev
+- [X] T007 [US1] Rewrite `src/db/session.py` — async engine factory (`create_async_engine` with asyncpg), `AsyncSessionLocal` session maker, `Base` declarative base
+- [X] T008 [US1] Rewrite `src/db/models.py` — ORM models for all 8 tables (Element, Schema, Value, ValueSet, CurationFlag, Contribution, RunSummary, UserProfile) with UUID PKs, JSONB columns, server_default timestamps
+- [X] T009 [US1] Rewrite `src/core/config.py` — pydantic-settings Settings class with DATABASE_URL, LOG_LEVEL, UNDATA_BASE_URL
+- [X] T010 [P] [US1] Keep/update `src/core/logging.py` — structured JSON logging with pythonjsonlogger
+- [X] T011 [US1] Rewrite `src/main.py` — FastAPI app with lifespan (create_all on startup), CORS middleware, HTTP request logging middleware (method/path/status/duration), structured error handlers (ValidationError → 422, DB errors → 503, unknown → 500 with JSON body), health endpoint returning DB status, minimal GraphQL mount placeholder
+- [X] T012 [US1] Verify: `docker compose up -d && curl http://localhost:8002/health` returns 200 with `{"status": "ok"}`
 
 **Checkpoint**: Stack starts, health returns 200, GraphQL playground accessible at /graphql
 
