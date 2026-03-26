@@ -1,0 +1,19 @@
+semantic:
+  value_type: categorical
+  label: female
+  description: Female biological sex
+  ontology_annotations:
+    - term_uri: http://purl.obolibrary.org/obo/PATO_0000383
+      term_label: female
+      ontology: pato
+      mapping_relation: skos:exactMatch
+      match_level: element_match
+      score: 0.99
+      model: all-MiniLM-L6-v2
+      primary: true
+provenance:
+  - source: bids
+    class: Sex
+    name: female
+    description: Female
+sha256: c1c2c3c4c5c6000000000000000000000000000000000000000000000000abcd

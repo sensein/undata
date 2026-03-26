@@ -35,26 +35,28 @@ undata/
 ## Developer Setup
 
 ```bash
-# Start all services locally (database, backend, frontend)
-docker compose up -d
+# Start backend stack (PostgreSQL + FastAPI, seeds data on first run)
+cd backend && docker compose up -d
+# → Health: http://localhost:8002/health
+# → GraphQL playground: http://localhost:8002/graphql
+# → Seeded with sample elements, schemas, values on first start
 
-# Or run individual components for development:
+# Start frontend (needs backend running)
+cd frontend && pnpm install && pnpm dev
+# → http://localhost:3000
 
-# Library (standalone, no services needed)
+# Library (standalone, no Docker needed)
 cd library && uv run pytest tests/ -v
 cd library && uv run undata-library pipeline --source bids
 
-# Backend (needs PostgreSQL)
-cd backend && uv run pytest tests/ -v
+# Backend tests (needs PostgreSQL running)
+cd backend && docker compose up db -d  # start just the database
+cd backend && TEST_DATABASE_URL="postgresql+asyncpg://undata:undata@localhost:5432/undata_test" uv run pytest tests/ -v
 
-# Frontend (needs backend running)
-cd frontend && pnpm install && pnpm dev    # http://localhost:3000
-cd frontend && pnpm exec playwright test   # E2E tests
-
-# Full test suite (what CI runs)
-cd library && uv run pytest tests/ -v
-cd backend && uv run pytest tests/ -v
-cd frontend && pnpm test && pnpm exec playwright test
+# Import full registry (after running library pipeline)
+curl -X POST http://localhost:8002/graphql \
+  -H "Content-Type: application/json" \
+  -d '{"query": "mutation { importRegistry(registryPath: \"/path/to/registry\") { elements schemas values valuesets } }"}'
 ```
 
 ## Service Ports
@@ -64,8 +66,6 @@ cd frontend && pnpm test && pnpm exec playwright test
 | Frontend (Next.js) | 3000 |
 | Backend (FastAPI/GraphQL) | 8002 |
 | PostgreSQL | 5432 |
-| Keycloak (IdP) | 8080 |
-| Redis (task queue) | 6379 |
 
 ## Code Style
 
