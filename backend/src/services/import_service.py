@@ -1,14 +1,20 @@
-"""Import flat-file YAML registry into PostgreSQL database."""
+"""Import flat-file YAML registry into PostgreSQL via DatabaseBackend.
+
+Reads YAML files from a registry directory and writes them through the
+DatabaseBackend, which handles upsert (idempotent re-import).
+"""
 
 from __future__ import annotations
 
 import logging
+from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.db.models import CurationFlag, Element, RunSummary, Schema, Value, ValueSet
+from src.storage.database_backend import DatabaseBackend
+from undata_library.models import CurationFlag, FlagStatus, FlagType, RunSummary
 
 logger = logging.getLogger(__name__)
 
@@ -16,10 +22,12 @@ logger = logging.getLogger(__name__)
 async def import_registry(
     session: AsyncSession,
     registry_dir: str | Path,
-    clear_existing: bool = True,
+    clear_existing: bool = False,
 ) -> dict[str, int]:
-    registry_dir = Path(registry_dir)
     """Import all entities from a flat-file YAML registry into the database.
+
+    Uses DatabaseBackend.entities.write() for upsert semantics — re-importing
+    the same data merges provenance without creating duplicates.
 
     Args:
         session: SQLAlchemy async session
@@ -28,19 +36,25 @@ async def import_registry(
 
     Returns: {elements, schemas, values, valuesets, flags, runs}
     """
+    registry_dir = Path(registry_dir)
+    backend = DatabaseBackend(session)
     stats: dict[str, int] = {}
 
     if clear_existing:
-        for model in [Element, Schema, Value, ValueSet, CurationFlag, RunSummary]:
+        from src.db.models import (
+            CurationFlag as CurationFlagModel,
+            Element,
+            RunSummary as RunSummaryModel,
+            Schema,
+            Value,
+            ValueSet,
+        )
+
+        for model in [Element, Schema, Value, ValueSet, CurationFlagModel, RunSummaryModel]:
             await session.execute(model.__table__.delete())
 
-    # Import each entity type
-    for entity_type, model_cls, parse_fn in [
-        ("elements", Element, _parse_element),
-        ("schemas", Schema, _parse_schema),
-        ("values", Value, _parse_value),
-        ("valuesets", ValueSet, _parse_valueset),
-    ]:
+    # Import core entity types via DatabaseBackend
+    for entity_type in ("elements", "schemas", "values", "valuesets"):
         entity_dir = registry_dir / entity_type
         if not entity_dir.exists():
             stats[entity_type] = 0
@@ -52,8 +66,7 @@ async def import_registry(
                 data = yaml.safe_load(f.read_text(encoding="utf-8"))
                 if not isinstance(data, dict) or "semantic" not in data:
                     continue
-                record = parse_fn(data, f.name)
-                session.add(record)
+                await backend.entities.write(entity_type, data, identifier=f.stem)
                 count += 1
             except Exception as exc:
                 logger.warning("Failed to import %s: %s", f, exc)
@@ -69,21 +82,22 @@ async def import_registry(
                 data = yaml.safe_load(f.read_text(encoding="utf-8"))
                 if not isinstance(data, dict):
                     continue
-                record = CurationFlag(
+                flag = CurationFlag(
+                    id=data.get("id", f.stem),
                     entity_type=data.get("entity_type", ""),
                     entity_ref=data.get("entity_ref", ""),
-                    flag_type=data.get("flag_type", ""),
+                    flag_type=FlagType(data["flag_type"]) if data.get("flag_type") else FlagType.needs_review,
                     context=data.get("context", {}),
-                    llm_verification=data.get("llm_verification"),
-                    status=data.get("status", "pending"),
-                    resolved_by=data.get("resolved_by"),
-                    resolution_note=data.get("resolution_note"),
+                    status=FlagStatus(data["status"]) if data.get("status") else FlagStatus.pending,
+                    created_at=data.get("created_at", datetime.now(timezone.utc).isoformat()),
                 )
-                session.add(record)
+                await backend.flags.write_flag(flag)
                 count += 1
             except Exception as exc:
                 logger.warning("Failed to import flag %s: %s", f, exc)
         stats["flags"] = count
+    else:
+        stats["flags"] = 0
 
     # Import run summaries
     runs_dir = registry_dir / "runs"
@@ -94,86 +108,20 @@ async def import_registry(
                 data = yaml.safe_load(f.read_text(encoding="utf-8"))
                 if not isinstance(data, dict):
                     continue
-                record = RunSummary(
+                summary = RunSummary(
                     run_id=data.get("run_id", f.stem),
                     source=data.get("source", ""),
                     started_at=data.get("started_at", ""),
-                    completed_at=data.get("completed_at"),
                     entity_counts=data.get("entity_counts", {}),
-                    enrichment_rate=data.get("enrichment_rate"),
-                    curation_flags=data.get("curation_flags"),
-                    delta=data.get("delta"),
-                    timing=data.get("timing"),
                 )
-                session.add(record)
+                await backend.runs.save_summary(summary)
                 count += 1
             except Exception as exc:
                 logger.warning("Failed to import run %s: %s", f, exc)
         stats["runs"] = count
+    else:
+        stats["runs"] = 0
 
     await session.flush()
     logger.info("Imported: %s", stats)
     return stats
-
-
-def _parse_element(data: dict, file_name: str) -> Element:
-    sem = data.get("semantic", {})
-    return Element(
-        sha256=data.get("sha256"),
-        file_name=file_name,
-        data_type=sem.get("data_type"),
-        unit=sem.get("unit"),
-        pattern=sem.get("pattern"),
-        value_domain=sem.get("value_domain"),
-        description=sem.get("description"),
-        min_value=sem.get("min_value"),
-        max_value=sem.get("max_value"),
-        type_ref=sem.get("type_ref"),
-        semantic=sem,
-        provenance=data.get("provenance", []),
-        ontology_annotations=sem.get("ontology_annotations", []),
-    )
-
-
-def _parse_schema(data: dict, file_name: str) -> Schema:
-    sem = data.get("semantic", {})
-    return Schema(
-        sha256=data.get("sha256"),
-        file_name=file_name,
-        properties=sem.get("properties", []),
-        subclass_of=sem.get("subclass_of"),
-        is_mixin=sem.get("is_mixin", False),
-        description=sem.get("description"),
-        semantic=sem,
-        provenance=data.get("provenance", []),
-        ontology_annotations=sem.get("ontology_annotations", []),
-    )
-
-
-def _parse_value(data: dict, file_name: str) -> Value:
-    sem = data.get("semantic", {})
-    return Value(
-        sha256=data.get("sha256"),
-        file_name=file_name,
-        label=sem.get("label", ""),
-        value_type=sem.get("value_type"),
-        ontology_id=sem.get("ontology_id"),
-        description=sem.get("description"),
-        semantic=sem,
-        provenance=data.get("provenance", []),
-        ontology_annotations=sem.get("ontology_annotations", []),
-    )
-
-
-def _parse_valueset(data: dict, file_name: str) -> ValueSet:
-    sem = data.get("semantic", {})
-    return ValueSet(
-        sha256=data.get("sha256"),
-        file_name=file_name,
-        name=sem.get("name", ""),
-        members=sem.get("members", []),
-        description=sem.get("description"),
-        semantic=sem,
-        provenance=data.get("provenance", []),
-        ontology_annotations=sem.get("ontology_annotations", []),
-    )

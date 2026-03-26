@@ -74,11 +74,11 @@
 
 **Independent Test**: Start stack, query browseElements — returns entities
 
-- [ ] T020 [US3] Rewrite `src/services/import_service.py` — async function that reads YAML files from a directory and calls `DatabaseBackend.entities.write()` for each entity type, `flags.write_flag()` for curation flags, `runs.save_summary()` for run summaries. Must be idempotent: use upsert (ON CONFLICT sha256 DO UPDATE provenance) so re-imports merge provenance without duplicating entities. Returns counts dict.
-- [ ] T021 [US6] Create `seed/` directory with sample YAML files — ~50 elements, ~20 schemas, ~30 values, ~5 valuesets, ~3 curation flags, ~1 run summary (curated from library pipeline output)
-- [ ] T022 [US6] Add seed logic to `entrypoint.sh` — on startup, check if DB is empty (count elements), if empty run import_service on seed/ directory
-- [ ] T023 [US3] Add `importRegistry` mutation to GraphQL — accepts registry path, calls import_service, returns counts
-- [ ] T024 [US6] Verify: `docker compose down -v && docker compose up -d` → wait → `curl http://localhost:8002/graphql` query browseElements returns >0 results
+- [X] T020 [US3] Rewrite `src/services/import_service.py` — async function that reads YAML files from a directory and calls `DatabaseBackend.entities.write()` for each entity type, `flags.write_flag()` for curation flags, `runs.save_summary()` for run summaries. Must be idempotent: use upsert (ON CONFLICT sha256 DO UPDATE provenance) so re-imports merge provenance without duplicating entities. Returns counts dict.
+- [X] T021 [US6] Create `seed/` directory with sample YAML files — ~50 elements, ~20 schemas, ~30 values, ~5 valuesets, ~3 curation flags, ~1 run summary (curated from library pipeline output)
+- [X] T022 [US6] Add seed logic to `entrypoint.sh` — on startup, check if DB is empty (count elements), if empty run import_service on seed/ directory
+- [X] T023 [US3] Add `importRegistry` mutation to GraphQL — accepts registry path, calls import_service, returns counts
+- [X] T024 [US6] Verify: `docker compose down -v && docker compose up -d` → wait → `curl http://localhost:8002/graphql` query browseElements returns >0 results
 
 **Checkpoint**: Stack starts with seed data. Import mutation works.
 

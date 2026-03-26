@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  description: Handedness of the participant
+  response_options:
+    - value: left
+      label: Left
+    - value: right
+      label: Right
+    - value: ambidextrous
+      label: Ambidextrous
+  ontology_annotations:
+    - term_uri: http://purl.obolibrary.org/obo/NCIT_C49480
+      term_label: Handedness
+      ontology: ncit
+      mapping_relation: skos:closeMatch
+      match_level: concept_match
+      score: 0.87
+      model: all-MiniLM-L6-v2
+      primary: true
+provenance:
+  - source: bids
+    class: Subject
+    name: handedness
+    description: Handedness of the participant
+sha256: d4e5f6a1b2c3000000000000000000000000000000000000000000000000abcd
