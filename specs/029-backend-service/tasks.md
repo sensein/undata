@@ -17,9 +17,9 @@
 
 **Purpose**: Clean project structure, remove broken artifacts
 
-- [ ] T001 Delete all stale files from brainstorm v1 backend — remove old routes, services, migrations that don't match the plan structure
-- [ ] T002 Create clean directory structure per plan: `src/{core,db,storage,graphql,services}/`, `tests/`, `seed/`
-- [ ] T003 Update `pyproject.toml` — ensure deps match plan (fastapi, sqlalchemy[asyncio], asyncpg, strawberry-graphql[fastapi], pydantic-settings, httpx, pytest, pytest-asyncio, ruff)
+- [X] T001 Delete all stale files from brainstorm v1 backend — remove old routes, services, migrations that don't match the plan structure
+- [X] T002 Create clean directory structure per plan: `src/{core,db,storage,graphql,services}/`, `tests/`, `seed/`
+- [X] T003 Update `pyproject.toml` — ensure deps match plan (fastapi, sqlalchemy[asyncio], asyncpg, strawberry-graphql[fastapi], pydantic-settings, httpx, pytest, pytest-asyncio, ruff)
 
 **Checkpoint**: Clean directory structure, no stale imports
 
