@@ -3,6 +3,10 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .storage.protocol import StorageBackend
 
 import yaml
 
@@ -29,12 +33,21 @@ from .models import (
 def ingest_source(
     source_name: str,
     schema_path: Path | None,
-    library_path: Path,
+    library_path: Path | None = None,
+    *,
+    backend: "StorageBackend | None" = None,
 ) -> dict[str, int]:
     """Ingest elements from a single source into the library.
 
+    Accepts either library_path (Path) or backend (StorageBackend).
+    If backend is provided and has a base_dir attribute, uses that as library_path.
+
     Returns stats: {created, merged, total}.
     """
+    if library_path is None and backend is not None and hasattr(backend, "base_dir"):
+        library_path = backend.base_dir
+    elif library_path is None and backend is None:
+        raise ValueError("Either library_path or backend must be provided")
     from datetime import datetime, timezone
 
     # Load extractor — returns (attribute_pairs, all_entities)

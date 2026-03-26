@@ -5,9 +5,13 @@ from __future__ import annotations
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from .models import CurationFlag, FlagStatus, FlagType
 from .utils import safe_load_yaml, write_yaml
+
+if TYPE_CHECKING:
+    from .storage.protocol import StorageBackend
 
 
 def create_flag(
@@ -30,8 +34,16 @@ def create_flag(
     )
 
 
-def write_flag(output_dir: Path, flag: CurationFlag) -> Path:
-    """Write a CurationFlag to the curation-flags directory."""
+def write_flag(
+    output_dir: Path | None,
+    flag: CurationFlag,
+    *,
+    backend: StorageBackend | None = None,
+) -> Path | str:
+    """Write a CurationFlag. Uses backend if provided, else writes to output_dir."""
+    if backend is not None:
+        return backend.flags.write_flag(flag)
+
     flags_dir = output_dir / "curation-flags"
     flags_dir.mkdir(parents=True, exist_ok=True)
     filepath = flags_dir / f"{flag.id}.yaml"
@@ -40,14 +52,16 @@ def write_flag(output_dir: Path, flag: CurationFlag) -> Path:
 
 
 def read_flags(
-    output_dir: Path,
+    output_dir: Path | None,
     status: FlagStatus | None = None,
     flag_type: FlagType | None = None,
+    *,
+    backend: StorageBackend | None = None,
 ) -> list[CurationFlag]:
-    """Read all CurationFlags from the curation-flags directory.
+    """Read CurationFlags. Uses backend if provided, else reads from output_dir."""
+    if backend is not None:
+        return backend.flags.read_flags(status=status, flag_type=flag_type)
 
-    Optionally filter by status and/or flag_type.
-    """
     flags_dir = output_dir / "curation-flags"
     if not flags_dir.exists():
         return []
@@ -70,13 +84,18 @@ def read_flags(
 
 
 def resolve_flag(
-    output_dir: Path,
+    output_dir: Path | None,
     flag_id: str,
     action: FlagStatus,
     resolved_by: str,
     note: str | None = None,
+    *,
+    backend: StorageBackend | None = None,
 ) -> CurationFlag | None:
-    """Resolve a CurationFlag by ID. Returns the updated flag or None if not found."""
+    """Resolve a CurationFlag. Uses backend if provided, else uses output_dir."""
+    if backend is not None:
+        return backend.flags.resolve_flag(flag_id, action, resolved_by, note)
+
     flags_dir = output_dir / "curation-flags"
     filepath = flags_dir / f"{flag_id}.yaml"
     if not filepath.exists():

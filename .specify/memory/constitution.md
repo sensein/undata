@@ -255,6 +255,26 @@ reviewed or reverted atomically, and are at risk of being lost. Committing per
 task creates an auditable, recoverable history that mirrors the speckit lifecycle
 and supports parallel work across branches.
 
+### CI Green Before Merge (NON-NEGOTIABLE)
+
+Remote CI MUST be green before any feature branch is considered complete or
+merged. The following rules apply:
+
+- **Push and verify**: After pushing a feature branch, the developer MUST wait
+  for CI to report status before declaring the branch ready.
+- **Fix, don't skip**: If CI fails, the fix MUST be applied to the branch and
+  CI re-run. Disabling tests, skipping checks, or merging with red CI is
+  prohibited.
+- **CI defines done**: A feature is not complete until CI passes. Local test
+  success is necessary but not sufficient — CI catches environment differences,
+  dependency issues, and integration problems that local runs may miss.
+- **Branch protection**: The main branch SHOULD have branch protection requiring
+  CI status checks to pass before merge.
+
+**Rationale**: CI is the shared verification layer. Code that passes locally
+but fails in CI introduces regressions for all collaborators. Enforcing green
+CI before merge prevents broken main branches and ensures reproducibility.
+
 ### Evaluation Record
 
 Pipeline runs, extraction results, and quality metrics MUST be recorded in
@@ -364,7 +384,8 @@ addressed here defaults to the principle of Simplicity First (Principle I).
 - MINOR: Addition of a new principle or materially expanded guidance.
 - PATCH: Clarifications, wording improvements, typo fixes.
 
-Project releases MUST use CalVer `YYYY.MM.MICRO` as defined in Principle V.
+Project releases will use CalVer `YYYY.MM.MICRO` when the system has external
+consumers. Until then, versioning is not required (see Principle V).
 
 **Compliance review**:
 
@@ -372,4 +393,4 @@ All PRs and implementation plans MUST include a Constitution Check section
 confirming compliance with active principles. Violations require documented
 justification or the work is blocked.
 
-**Version**: 2.0.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-24
+**Version**: 2.1.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-24

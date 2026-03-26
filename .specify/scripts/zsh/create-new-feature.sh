@@ -75,11 +75,13 @@ SPECS_DIR="$REPO_ROOT/specs"
 if [[ $NUMBER -eq 0 ]]; then
   HIGHEST=0
   if [[ -d "$SPECS_DIR" ]]; then
-    for d in "$SPECS_DIR"/[0-9][0-9][0-9]-* 2>/dev/null; do
+    setopt nullglob 2>/dev/null || true
+    for d in "$SPECS_DIR"/[0-9][0-9][0-9]-*; do
       [[ -d "$d" ]] || continue
       n="${d##*/}"; n="${n%%-*}"; n="${n#0}"; n="${n#0}"
       [[ $n -gt $HIGHEST ]] && HIGHEST=$n
     done
+    setopt nonullglob 2>/dev/null || true
   fi
   NUMBER=$((HIGHEST + 1))
 fi

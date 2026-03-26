@@ -4,24 +4,32 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import yaml
 
 from .alias_detection import detect_aliases
 from .embeddings import EmbeddingStore
 
+if TYPE_CHECKING:
+    from .storage.protocol import StorageBackend
+
 
 def align_elements(
-    elements_dir: Path,
+    elements_dir: Path | None = None,
     library_path: Path | None = None,
     threshold: float = 0.5,
     output_path: Path | None = None,
     dry_run: bool = False,
+    *,
+    backend: StorageBackend | None = None,
 ) -> dict:
     """Run alias detection, form groups, update provenance, produce alignment report.
 
     Returns stats dict.
     """
+    if elements_dir is None and backend is not None and hasattr(backend, "base_dir"):
+        elements_dir = backend.base_dir / "elements"
     lib_path = library_path or elements_dir.parent
 
     # Load embedding store if available

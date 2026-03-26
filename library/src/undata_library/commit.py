@@ -4,20 +4,29 @@ from __future__ import annotations
 
 import shutil
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import yaml
 
 from .hashing import compute_identity_hash, determine_hash_mode, generate_short_key
 from .utils import safe_load_yaml, sanitize_filename
 
+if TYPE_CHECKING:
+    from .storage.protocol import StorageBackend
+
 
 def commit_staged(
-    staging_dir: Path,
-    output_dir: Path,
+    staging_dir: Path | None = None,
+    output_dir: Path | None = None,
     validate_sources: bool = False,
     known_sources: set[str] | None = None,
+    *,
+    staging_backend: StorageBackend | None = None,
+    output_backend: StorageBackend | None = None,
 ) -> dict[str, int]:
     """Commit all staged entities to the registry.
+
+    Accepts either Path arguments or StorageBackend arguments.
 
     For each entity: determine hash mode → compute hash → write to output_dir.
     Merge provenance if target file already exists.
@@ -28,6 +37,10 @@ def commit_staged(
 
     Returns stats: {committed, merged, rejected, per_type: {elements: N, ...}}
     """
+    if staging_dir is None and staging_backend is not None and hasattr(staging_backend, "base_dir"):
+        staging_dir = staging_backend.base_dir
+    if output_dir is None and output_backend is not None and hasattr(output_backend, "base_dir"):
+        output_dir = output_backend.base_dir
     stats = {"committed": 0, "merged": 0, "rejected": 0, "per_type": {}}
 
     for entity_type in ("elements", "schemas", "values", "valuesets"):

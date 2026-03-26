@@ -623,8 +623,40 @@ def pipeline(
     else:
         click.echo("[2/5] Enrichment skipped.")
 
-    # Step 3: Commit (rehash + merge to registry)
-    click.echo("[3/5] Committing to registry...")
+    # Step 3: Align (on staging, before commit — so transfers inform content hash)
+    align_stats: dict = {}
+    staging_elements_dir = staging_dir / "elements"
+    if not skip_align:
+        click.echo("[3/5] Aligning elements (pre-commit)...")
+        t0 = time.time()
+        align_stats = align_elements(
+            elements_dir=staging_elements_dir,
+            library_path=staging_dir,
+        )
+        timings["align"] = time.time() - t0
+        click.echo(
+            f"  {align_stats.get('total_pairs_evaluated', 0)} pairs, "
+            f"{align_stats.get('exact_match_groups', 0)} exact groups "
+            f"in {timings['align']:.1f}s"
+        )
+
+        # Step 3b: Cross-source alignment (annotation transfer on staging)
+        from .cross_align import cross_source_align
+
+        click.echo("  Cross-source alignment...")
+        t0 = time.time()
+        cross_stats = cross_source_align(staging_dir)
+        timings["cross_align"] = time.time() - t0
+        click.echo(
+            f"  {cross_stats['label_matches']} label matches, "
+            f"{cross_stats['annotations_transferred']} annotations transferred "
+            f"in {timings['cross_align']:.1f}s"
+        )
+    else:
+        click.echo("[3/5] Alignment skipped.")
+
+    # Step 4: Commit (rehash + merge to registry)
+    click.echo("[4/5] Committing to registry...")
     t0 = time.time()
     commit_stats = commit_staged(staging_dir, lib)
     timings["commit"] = time.time() - t0
@@ -634,40 +666,8 @@ def pipeline(
         f"in {timings['commit']:.1f}s"
     )
 
-    # Step 4: Align
-    align_stats: dict = {}
-    elements_dir = lib / "elements"
-    if not skip_align:
-        click.echo("[4/5] Aligning elements...")
-        t0 = time.time()
-        align_stats = align_elements(
-            elements_dir=elements_dir,
-            library_path=lib,
-        )
-        timings["align"] = time.time() - t0
-        click.echo(
-            f"  {align_stats.get('total_pairs_evaluated', 0)} pairs, "
-            f"{align_stats.get('exact_match_groups', 0)} exact groups "
-            f"in {timings['align']:.1f}s"
-        )
-    else:
-        click.echo("[4/5] Alignment skipped.")
-
-    # Step 4b: Cross-source alignment (annotation transfer)
-    if not skip_align:
-        from .cross_align import cross_source_align
-
-        click.echo("  Cross-source alignment...")
-        t0 = time.time()
-        cross_stats = cross_source_align(lib)
-        timings["cross_align"] = time.time() - t0
-        click.echo(
-            f"  {cross_stats['label_matches']} label matches, "
-            f"{cross_stats['annotations_transferred']} annotations transferred "
-            f"in {timings['cross_align']:.1f}s"
-        )
-
     # Step 5: Transform
+    elements_dir = lib / "elements"
     if not skip_align:  # transforms depend on alignment
         click.echo("[5/5] Generating transforms...")
         t0 = time.time()
