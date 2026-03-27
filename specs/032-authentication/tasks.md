@@ -33,16 +33,16 @@
 
 ### Tests
 
-- [ ] T005 [US2] Write `backend/tests/test_auth.py` — test JWT validation middleware with mock tokens: valid token → user extracted, expired token → 401, invalid signature → 401, missing token on mutation → 401, valid token with viewer role on curator mutation → 403, valid token with curator role → success
+- [X] T005 [US2] Write `backend/tests/test_auth.py` — test JWT validation middleware with mock tokens: valid token → user extracted, expired token → 401, invalid signature → 401, missing token on mutation → 401, valid token with viewer role on curator mutation → 403, valid token with curator role → success
 
 ### Implementation
 
-- [ ] T006 [US1] Create `backend/src/auth/middleware.py` — JWT validation using Keycloak JWKS endpoint. Fetches public keys from `{keycloak_url}/realms/{realm}/protocol/openid-connect/certs`. Caches keys. Validates token signature, expiry, issuer. Returns decoded payload with sub, email, name, realm_roles
-- [ ] T007 [US2] Create `backend/src/auth/dependencies.py` — FastAPI dependencies: `get_current_user(request) → UserProfile | None` (extracts JWT from Authorization header or cookie, looks up/creates UserProfile), `require_auth(user)` (raises 401 if None), `require_role(role)(user)` (raises 403 if insufficient). Expired tokens return 401 prompting re-login (acceptable for MVP — token refresh deferred)
-- [ ] T008 [US1] Update `backend/src/main.py` — add Keycloak config (URL, realm, client_id from env vars), register auth middleware. Add `GET /auth/me` endpoint returning current user from JWT (or 401 if not authenticated) for FR-012 token validity check
-- [ ] T009 [US2] Update `backend/src/graphql/schema.py` — wrap all mutations with `require_auth`. Apply `require_role("curator")` to resolveFlag/batchResolveFlags, `require_role("contributor")` to submitContribution, `require_role("admin")` to triggerPipelineRun. Queries remain unauthenticated
-- [ ] T010 [US1] Update `backend/src/db/models.py` — ensure UserProfile has `external_sub` (unique), `email`, `display_name`, `role` with proper defaults
-- [ ] T011 [US2] Run auth tests: `uv run pytest tests/test_auth.py -v` — all must pass with mock JWTs
+- [X] T006 [US1] Create `backend/src/auth/middleware.py` — JWT validation using Keycloak JWKS endpoint. Fetches public keys from `{keycloak_url}/realms/{realm}/protocol/openid-connect/certs`. Caches keys. Validates token signature, expiry, issuer. Returns decoded payload with sub, email, name, realm_roles
+- [X] T007 [US2] Create `backend/src/auth/dependencies.py` — FastAPI dependencies: `get_current_user(request) → UserProfile | None` (extracts JWT from Authorization header or cookie, looks up/creates UserProfile), `require_auth(user)` (raises 401 if None), `require_role(role)(user)` (raises 403 if insufficient). Expired tokens return 401 prompting re-login (acceptable for MVP — token refresh deferred)
+- [X] T008 [US1] Update `backend/src/main.py` — add Keycloak config (URL, realm, client_id from env vars), register auth middleware. Add `GET /auth/me` endpoint returning current user from JWT (or 401 if not authenticated) for FR-012 token validity check
+- [X] T009 [US2] Update `backend/src/graphql/schema.py` — wrap all mutations with `require_auth`. Apply `require_role("curator")` to resolveFlag/batchResolveFlags, `require_role("contributor")` to submitContribution, `require_role("admin")` to triggerPipelineRun. Queries remain unauthenticated
+- [X] T010 [US1] Update `backend/src/db/models.py` — ensure UserProfile has `external_sub` (unique), `email`, `display_name`, `role` with proper defaults
+- [X] T011 [US2] Run auth tests: `uv run pytest tests/test_auth.py -v` — all must pass with mock JWTs
 
 **Checkpoint**: Mutations require auth, roles enforced, queries remain public
 
