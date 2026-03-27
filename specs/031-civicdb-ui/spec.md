@@ -116,16 +116,19 @@ As any user on any device, I need the interface to be clean, consistent, and rea
 
 ### Functional Requirements
 
-- **FR-001**: Entity browsers MUST display sortable data grids with entity-specific columns.
-- **FR-002**: Counts in data grids (sources, annotations, properties) MUST be clickable links navigating to the referenced entities.
-- **FR-003**: Entity detail pages MUST follow a consistent layout: identity → semantic → provenance → annotations → related entities → curation status.
-- **FR-004**: Entities MUST link bidirectionally — elements ↔ schemas, values ↔ valuesets.
-- **FR-005**: Curation flags MUST display evidence panels with match candidates, scores, and LLM justification when available.
-- **FR-006**: System MUST display an activity feed showing platform events chronologically.
-- **FR-007**: Source badges MUST use consistent color coding across all pages.
-- **FR-008**: Entities with pending curation flags MUST show an inline status indicator.
-- **FR-009**: All pages MUST be responsive (desktop + mobile layouts).
-- **FR-010**: Playwright E2E tests MUST cover entity navigation, sorting, and curation flow.
+- **FR-001**: Navigation MUST use a collapsible sidebar with grouped sections (Browse, Curation, Community/Resources) following CivicDB's pattern.
+- **FR-002**: Entity browsers MUST display sortable data grids with entity-specific columns and per-column filters.
+- **FR-003**: Counts in data grids (sources, annotations, properties) MUST be clickable links navigating to the referenced entities.
+- **FR-004**: Entity tags in data grids MUST show hover popovers with key entity details (following CivicDB's entity tag popover pattern).
+- **FR-005**: Entity detail pages MUST follow a consistent layout: identity block → description → tab navigation (Summary, Flags, Activity) → content sections.
+- **FR-006**: Entities MUST link bidirectionally — elements ↔ schemas, values ↔ valuesets.
+- **FR-007**: Curation flags MUST display evidence panels with match candidates, scores, and LLM justification when available.
+- **FR-008**: System MUST display an activity feed showing platform events chronologically.
+- **FR-009**: Source and entity-type badges MUST use consistent color coding across all pages.
+- **FR-010**: Status badges MUST visually distinguish pending (yellow), approved (green), rejected (red), deferred (gray) states — matching CivicDB's status tag pattern.
+- **FR-011**: Entities with pending curation flags MUST show an inline status indicator.
+- **FR-012**: All pages MUST be responsive — sidebar collapses on mobile, grids become stacked cards.
+- **FR-013**: Playwright E2E tests MUST cover sidebar navigation, entity sorting, detail page traversal, and curation flow.
 
 ## Success Criteria *(mandatory)*
 
@@ -138,18 +141,27 @@ As any user on any device, I need the interface to be clean, consistent, and rea
 - **SC-005**: All pages render correctly at 375px and 1200px viewports.
 - **SC-006**: Playwright E2E tests cover navigation traversal and pass.
 
+## Clarifications
+
+### Session 2026-03-27
+
+- Q: Should we adopt CivicDB's sidebar navigation or keep horizontal top nav? → A: Adopt sidebar navigation with grouped sections (Browse, Curation, Community) + collapsible icons.
+
 ## Scope Boundaries
 
 ### In Scope
 
-- Entity data grid redesign with sorting and clickable counts
-- Consistent entity detail page layout
+- **Sidebar navigation** with grouped sections (Browse: Elements/Schemas/Values/ValueSets; Curation: Queue/Activity; Resources) — collapsible with icons, dark theme matching CivicDB
+- Entity data grid redesign with sorting, per-column filters, and clickable counts
+- **Entity hover popovers** — hovering entity tags in grids shows quick-view popover with key details (following CivicDB pattern)
+- Consistent entity detail page layout with **tab navigation** (Summary, Flags, Activity)
+- **Status badges** — pending (yellow), approved (green), rejected (red) on all entity references
 - Bidirectional entity navigation (element ↔ schema, value ↔ valueset)
 - Curation evidence panels
 - Activity feed page
-- Source color coding
+- Source/entity-type color coding
 - Inline curation status indicators
-- Responsive layout
+- Responsive layout (sidebar collapses on mobile)
 - Playwright E2E tests
 
 ### Out of Scope
