@@ -103,15 +103,15 @@
 
 **Independent Test**: Resize to 375px — sidebar hidden, grids become cards. `pnpm exec playwright test` passes.
 
-- [ ] T027 [US6] Add responsive breakpoints to Sidebar — hidden below `md:`, toggle button appears in top bar
-- [ ] T028 [US6] Add responsive breakpoints to EntityDataGrid — below `md:`, table rows become stacked cards with label:value pairs
-- [ ] T029 [US6] Add responsive breakpoints to EntityDetailLayout — single column on mobile, two-column semantic grid on desktop
-- [ ] T030 [US6] Update `tests/e2e/elements.spec.ts` — add: sidebar visible, column sorting works, entity tag popover appears on hover, click-through to detail shows tabs (Summary/Flags/Activity)
-- [ ] T031 [US6] Update `tests/e2e/navigation.spec.ts` — add: sidebar links work, element → schema → element traversal via RelatedEntities
-- [ ] T032 [US6] Update `tests/e2e/curation.spec.ts` — add: flag card expands, evidence panel visible with match candidates
-- [ ] T033 Verify `pnpm exec eslint` and `pnpm exec next build` pass
-- [ ] T034 Run quickstart validation QS-001 through QS-008
-- [ ] T035 Push branch and verify CI is green
+- [X] T027 [US6] Add responsive breakpoints to Sidebar — hidden below `md:`, toggle button appears in top bar
+- [X] T028 [US6] Add responsive breakpoints to EntityDataGrid — below `md:`, table rows become stacked cards with label:value pairs
+- [X] T029 [US6] Add responsive breakpoints to EntityDetailLayout — single column on mobile, two-column semantic grid on desktop
+- [X] T030 [US6] Update `tests/e2e/elements.spec.ts` — add: sidebar visible, column sorting works, entity tag popover appears on hover, click-through to detail shows tabs (Summary/Flags/Activity)
+- [X] T031 [US6] Update `tests/e2e/navigation.spec.ts` — add: sidebar links work, element → schema → element traversal via RelatedEntities
+- [X] T032 [US6] Update `tests/e2e/curation.spec.ts` — add: flag card expands, evidence panel visible with match candidates
+- [X] T033 Verify `pnpm exec eslint` and `pnpm exec next build` pass
+- [X] T034 Run quickstart validation QS-001 through QS-008
+- [X] T035 Push branch and verify CI is green
 
 ---
 

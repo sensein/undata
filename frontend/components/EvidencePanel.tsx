@@ -3,8 +3,10 @@
 import { useState } from "react";
 
 interface EvidencePanelProps {
-  context: Record<string, unknown>;
-  llmVerification?: Record<string, unknown> | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  context: Record<string, any>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  llmVerification?: Record<string, any> | null;
 }
 
 export function EvidencePanel({ context, llmVerification }: EvidencePanelProps) {

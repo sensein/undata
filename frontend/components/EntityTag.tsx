@@ -36,7 +36,9 @@ function EntityPopover({ entityType, sha256 }: { entityType: string; sha256: str
 
   if (loading) return <div className="p-2 text-xs text-gray-400">Loading...</div>;
 
-  const entity = data?.element ?? data?.schema_ ?? data?.value;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const d = data as any;
+  const entity = d?.element ?? d?.schema_ ?? d?.value;
   if (!entity) return null;
 
   const prov = entity.provenance?.[0];
