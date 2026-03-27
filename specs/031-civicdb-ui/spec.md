@@ -146,6 +146,7 @@ As any user on any device, I need the interface to be clean, consistent, and rea
 ### Session 2026-03-27
 
 - Q: Should we adopt CivicDB's sidebar navigation or keep horizontal top nav? → A: Adopt sidebar navigation with grouped sections (Browse, Curation, Community) + collapsible icons.
+- Q: Which tabs should entity detail pages have? → A: Summary + Flags + Activity (three tabs, no auth needed). Comments and Revisions added when auth lands.
 
 ## Scope Boundaries
 
