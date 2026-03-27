@@ -16,10 +16,10 @@
 
 **Purpose**: Keycloak Docker, auth module structure
 
-- [ ] T001 Add Keycloak service to `backend/docker-compose.yml` — Keycloak 24+ on port 8080, import realm from `keycloak/realm-export.json`, depends_on db, health check at /health/ready
-- [ ] T002 Verify `backend/keycloak/realm-export.json` exists and has GitHub/ORCID identity providers configured. Update realm settings if needed (redirect URIs to localhost:8002 and localhost:3000)
-- [ ] T003 Create `backend/src/auth/` package with `__init__.py`
-- [ ] T004 Add `python-jose[cryptography]` or `PyJWT` to `backend/pyproject.toml` for JWT decode
+- [X] T001 Add Keycloak service to `backend/docker-compose.yml` — Keycloak 24+ on port 8080, import realm from `keycloak/realm-export.json`, depends_on db, health check at /health/ready
+- [X] T002 Verify `backend/keycloak/realm-export.json` exists and has GitHub/ORCID identity providers configured. Update realm settings if needed (redirect URIs to localhost:8002 and localhost:3000)
+- [X] T003 Create `backend/src/auth/` package with `__init__.py`
+- [X] T004 Add `python-jose[cryptography]` or `PyJWT` to `backend/pyproject.toml` for JWT decode
 
 **Checkpoint**: Keycloak starts with docker compose up, auth module exists
 
