@@ -49,16 +49,17 @@ frontend/
 │   │   └── page.tsx              # REDESIGN: evidence panels
 │   ├── activity/
 │   │   └── page.tsx              # NEW: activity feed
-│   └── layout.tsx                # UPDATE: responsive nav, source colors
+│   └── layout.tsx                # UPDATE: sidebar navigation, source colors
 ├── components/
+│   ├── Sidebar.tsx               # NEW: collapsible sidebar navigation (CivicDB pattern)
 │   ├── EntityDataGrid.tsx        # NEW: reusable sortable grid component
-│   ├── EntityDetailLayout.tsx    # NEW: consistent detail page wrapper
+│   ├── EntityDetailLayout.tsx    # NEW: consistent detail page wrapper with tabs
+│   ├── EntityTag.tsx             # NEW: clickable entity tag with hover popover
 │   ├── SourceBadge.tsx           # NEW: color-coded source badge
-│   ├── CurationIndicator.tsx     # NEW: inline pending/approved/rejected
+│   ├── StatusBadge.tsx           # NEW: pending/approved/rejected/deferred status pill
 │   ├── EvidencePanel.tsx         # NEW: curation flag evidence display
 │   ├── RelatedEntities.tsx       # NEW: bidirectional entity links
-│   ├── ActivityFeed.tsx          # NEW: event timeline component
-│   └── ResponsiveNav.tsx         # NEW: collapsible mobile navigation
+│   └── ActivityTimeline.tsx      # NEW: event timeline component
 ├── lib/
 │   ├── apollo.ts                 # UPDATE: add cache policies for new queries
 │   └── source-colors.ts          # NEW: centralized source color map
