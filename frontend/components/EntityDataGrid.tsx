@@ -12,8 +12,8 @@ import {
   type ColumnFiltersState,
 } from "@tanstack/react-table";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface EntityDataGridProps<T> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   columns: ColumnDef<T, any>[];
   data: T[];
   isLoading?: boolean;
