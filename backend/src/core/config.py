@@ -8,6 +8,12 @@ class Settings(BaseSettings):
     undata_base_url: str = "http://localhost:8002"
     log_level: str = "INFO"
 
+    # Keycloak OIDC
+    keycloak_url: str = "http://localhost:8080"
+    keycloak_realm: str = "undata"
+    keycloak_client_id: str = "undata-backend"
+    keycloak_client_secret: str = ""
+
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
 

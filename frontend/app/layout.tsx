@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { AuthProvider } from "@/components/AuthProvider";
 import { Providers } from "@/components/Providers";
 import { Sidebar } from "@/components/Sidebar";
 import "./globals.css";
@@ -23,8 +24,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased bg-gray-50`}>
         <Providers>
-          <Sidebar />
-          <main className="md:ml-52 p-6 min-h-screen">{children}</main>
+          <AuthProvider>
+            <Sidebar />
+            <main className="md:ml-52 p-6 min-h-screen">{children}</main>
+          </AuthProvider>
         </Providers>
       </body>
     </html>

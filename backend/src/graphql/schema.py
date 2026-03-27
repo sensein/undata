@@ -6,10 +6,26 @@ from typing import Optional
 
 import strawberry
 
+from fastapi import HTTPException
+
+from src.auth.dependencies import check_role, get_current_user
 from src.db.session import AsyncSessionLocal
 
 from . import resolvers as r
 from . import types as t
+
+
+async def _require_auth(info: strawberry.types.Info, required_role: str = "viewer") -> dict:
+    """Extract auth from Strawberry info context and enforce role."""
+    request = info.context.get("request") if isinstance(info.context, dict) else getattr(info.context, "request", None)
+    if request is None:
+        raise HTTPException(status_code=401, detail="Authentication required")
+    user = await get_current_user(request)
+    if user is None:
+        raise HTTPException(status_code=401, detail="Authentication required")
+    if not check_role(user, required_role):
+        raise HTTPException(status_code=403, detail=f"Role '{required_role}' required")
+    return user
 
 
 @strawberry.type
@@ -101,28 +117,53 @@ class Query:
 @strawberry.type
 class Mutation:
     @strawberry.mutation
-    async def resolve_flag(self, input: t.ResolveFlagInput) -> t.CurationFlag:
+    async def resolve_flag(self, info: strawberry.types.Info, input: t.ResolveFlagInput) -> t.CurationFlag:
+        user = await _require_auth(info, "curator")
         async with AsyncSessionLocal() as session:
-            result = await r.resolve_resolve_flag(session, input)
+            # Override resolved_by with authenticated user's name
+            input_with_user = t.ResolveFlagInput(
+                flag_id=input.flag_id,
+                action=input.action,
+                resolved_by=user.get("name", user.get("sub", "unknown")),
+                note=input.note,
+            )
+            result = await r.resolve_resolve_flag(session, input_with_user)
             await session.commit()
             return result
 
     @strawberry.mutation
-    async def batch_resolve_flags(self, input: t.BatchResolveFlagInput) -> list[t.CurationFlag]:
+    async def batch_resolve_flags(self, info: strawberry.types.Info, input: t.BatchResolveFlagInput) -> list[t.CurationFlag]:
+        user = await _require_auth(info, "curator")
         async with AsyncSessionLocal() as session:
-            results = await r.resolve_batch_resolve_flags(session, input)
+            input_with_user = t.BatchResolveFlagInput(
+                flag_ids=input.flag_ids,
+                action=input.action,
+                resolved_by=user.get("name", user.get("sub", "unknown")),
+                note=input.note,
+            )
+            results = await r.resolve_batch_resolve_flags(session, input_with_user)
             await session.commit()
             return results
 
     @strawberry.mutation
-    async def submit_contribution(self, input: t.SubmitContributionInput) -> t.Contribution:
+    async def submit_contribution(self, info: strawberry.types.Info, input: t.SubmitContributionInput) -> t.Contribution:
+        user = await _require_auth(info, "contributor")
+        # Override contributor with authenticated user
+        input_with_user = t.SubmitContributionInput(
+            entity_type=input.entity_type,
+            entity_ref=input.entity_ref,
+            contribution_type=input.contribution_type,
+            content=input.content,
+            contributor=user.get("name", user.get("sub", "unknown")),
+        )
         async with AsyncSessionLocal() as session:
-            result = await r.resolve_submit_contribution(session, input)
+            result = await r.resolve_submit_contribution(session, input_with_user)
             await session.commit()
             return result
 
     @strawberry.mutation
-    async def import_registry(self, registry_path: str) -> t.ImportResult:
+    async def import_registry(self, info: strawberry.types.Info, registry_path: str) -> t.ImportResult:
+        await _require_auth(info, "admin")
         async with AsyncSessionLocal() as session:
             result = await r.resolve_import_registry(session, registry_path)
             await session.commit()

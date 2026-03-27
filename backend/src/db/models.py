@@ -136,6 +136,17 @@ class UserProfile(Base):
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
 
 
+class APIKey(Base):
+    __tablename__ = "api_keys"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    user_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True))
+    token_hash: Mapped[str] = mapped_column(String, unique=True, index=True)
+    label: Mapped[str | None] = mapped_column(String, nullable=True)
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+    revoked_at = mapped_column(TIMESTAMP, nullable=True)
+
+
 # Entity type → ORM model mapping
 ENTITY_MODEL_MAP = {
     "elements": Element,

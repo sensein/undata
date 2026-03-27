@@ -86,6 +86,22 @@ async def health():
     return {"status": "ok", "database": db_status}
 
 
+# Auth endpoint — token validity check (FR-012)
+@app.get("/auth/me")
+async def auth_me(request: Request):
+    from src.auth.dependencies import get_current_user
+
+    user = await get_current_user(request)
+    if user is None:
+        return JSONResponse(status_code=401, content={"error": "Not authenticated"})
+    return {
+        "sub": user.get("sub"),
+        "email": user.get("email"),
+        "name": user.get("name"),
+        "roles": user.get("realm_access", {}).get("roles", []),
+    }
+
+
 # GraphQL mount
 from strawberry.fastapi import GraphQLRouter
 

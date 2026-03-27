@@ -3,6 +3,44 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useAuth } from "./AuthProvider";
+
+function UserSection({ collapsed }: { collapsed: boolean }) {
+  const { user, isAuthenticated, signIn, signOut } = useAuth();
+
+  if (!isAuthenticated) {
+    return (
+      <button
+        onClick={signIn}
+        className="w-full text-left text-sm text-gray-400 hover:text-white transition-colors"
+      >
+        {collapsed ? "→" : "Sign in"}
+      </button>
+    );
+  }
+
+  return (
+    <div className="text-sm">
+      {!collapsed && (
+        <>
+          <div className="text-white font-medium truncate">{user?.name}</div>
+          <div className="text-xs text-gray-400">{user?.roles?.[0] ?? "viewer"}</div>
+          <button
+            onClick={signOut}
+            className="mt-2 text-xs text-gray-500 hover:text-white transition-colors"
+          >
+            Sign out
+          </button>
+        </>
+      )}
+      {collapsed && (
+        <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center text-white text-xs" title={user?.name}>
+          {user?.name?.[0]?.toUpperCase() ?? "?"}
+        </div>
+      )}
+    </div>
+  );
+}
 
 interface NavItem {
   label: string;
@@ -111,6 +149,11 @@ export function Sidebar() {
             </div>
           ))}
         </nav>
+
+        {/* User section at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 border-t border-gray-700 p-4">
+          <UserSection collapsed={collapsed} />
+        </div>
       </aside>
 
       {/* Mobile overlay */}
