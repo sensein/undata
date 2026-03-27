@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useQuery } from "@apollo/client/react";
 import { BROWSE_ELEMENTS, BROWSE_VALUES } from "@/graphql/queries";
-import type { ElementEdge, ValueNode } from "@/graphql/types";
+import type { Edge, ElementNode, ValueNode } from "@/graphql/types";
 
 export function Search() {
   const [query, setQuery] = useState("");
@@ -13,7 +13,7 @@ export function Search() {
 
   // Queries will be used when search index is available
   const _elemResult = useQuery<{
-    browseElements: { edges: ElementEdge[]; totalCount: number };
+    browseElements: { edges: Edge<ElementNode>[]; totalCount: number };
   }>(BROWSE_ELEMENTS, {
     variables: { first: 10 },
     skip: searchType !== "elements" || !query,

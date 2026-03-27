@@ -1,59 +1,78 @@
 "use client";
 
 import { useQuery } from "@apollo/client/react";
-import { useState } from "react";
 import { BROWSE_VALUES } from "@/graphql/queries";
-import type { ValueNode, OntologyAnnotation } from "@/graphql/types";
+import type { ValueConnection, Edge, ValueNode, OntologyAnnotation } from "@/graphql/types";
 
 export default function ValuesPage() {
-  const [source, setSource] = useState<string | undefined>();
-  const { data, loading, error } = useQuery<{
-    browseValues: import("@/graphql/types").ValueNode[];
-  }>(BROWSE_VALUES, {
-    variables: { source, first: 100 },
+  const { data, loading, error } = useQuery<{ browseValues: ValueConnection }>(BROWSE_VALUES, {
+    variables: { first: 50 },
   });
 
-  const values = data?.browseValues ?? [];
+  const values = data?.browseValues?.edges ?? [];
+  const totalCount = data?.browseValues?.totalCount ?? 0;
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
+    <div>
       <h1 className="text-2xl font-bold mb-6">Values</h1>
-      <div className="flex gap-4 mb-6">
-        <select
-          className="border rounded px-3 py-2"
-          value={source ?? ""}
-          onChange={(e) => setSource(e.target.value || undefined)}
-        >
-          <option value="">All sources</option>
-          <option value="bids">BIDS</option>
-          <option value="dandi">DANDI</option>
-          <option value="openminds">openMINDS</option>
-          <option value="aind">AIND</option>
-        </select>
-        <span className="text-gray-500 self-center">{values.length} values</span>
-      </div>
+      <p className="text-gray-500 mb-6">{totalCount} values</p>
 
-      {loading && <p className="text-gray-500">Loading...</p>}
-      {error && <p className="text-red-500">Error: {error.message}</p>}
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded p-4 mb-6">
+          <p className="text-red-800">Unable to load values: {error.message}</p>
+        </div>
+      )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {values.map((v: ValueNode) => {
-          const primaryAnn = v.ontologyAnnotations?.find((a: OntologyAnnotation) => a.primary);
-          return (
-            <div key={v.fileName} className="border rounded p-3 hover:bg-gray-50">
-              <div className="font-mono text-sm font-medium">{v.label}</div>
-              <div className="text-xs text-gray-500 mt-1">
-                {v.provenance?.[0]?.source} · {v.valueType}
-              </div>
-              {(primaryAnn || v.ontologyId) && (
-                <div className="text-xs text-green-700 mt-1">
-                  {primaryAnn?.termLabel || v.ontologyId}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
+      {loading && !data && (
+        <div className="space-y-3">
+          {[...Array(5)].map((_, i) => (
+            <div key={i} className="h-12 bg-gray-100 rounded animate-pulse" />
+          ))}
+        </div>
+      )}
+
+      {!loading && !error && values.length === 0 && (
+        <p className="text-gray-500 text-center py-12">No values found.</p>
+      )}
+
+      {values.length > 0 && (
+        <table className="w-full border-collapse">
+          <thead>
+            <tr className="bg-gray-100 border-b">
+              <th className="text-left p-3">Label</th>
+              <th className="text-left p-3">Source</th>
+              <th className="text-left p-3">Type</th>
+              <th className="text-left p-3">Ontology</th>
+              <th className="text-left p-3">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {values.map(({ node, cursor }: Edge<ValueNode>) => {
+              const prov = node.provenance?.[0];
+              const primaryAnn = node.ontologyAnnotations?.find((a: OntologyAnnotation) => a.primary);
+              return (
+                <tr key={cursor} className="border-b hover:bg-gray-50">
+                  <td className="p-3 font-mono text-sm font-medium">{node.label}</td>
+                  <td className="p-3">
+                    {prov?.source && (
+                      <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">{prov.source}</span>
+                    )}
+                  </td>
+                  <td className="p-3 text-sm">{node.valueType ?? "—"}</td>
+                  <td className="p-3 text-sm">
+                    {primaryAnn ? (
+                      <span className="text-green-700">{primaryAnn.termLabel}</span>
+                    ) : (
+                      <span className="text-gray-400">—</span>
+                    )}
+                  </td>
+                  <td className="p-3 text-sm text-gray-600 truncate max-w-md">{node.description ?? "—"}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }

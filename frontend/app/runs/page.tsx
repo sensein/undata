@@ -2,70 +2,70 @@
 
 import { useQuery } from "@apollo/client/react";
 import { RUN_SUMMARIES } from "@/graphql/queries";
-import type { RunSummaryNode } from "@/graphql/types";
+import type { RunSummaryConnection, Edge, RunSummaryNode } from "@/graphql/types";
 
 export default function RunsPage() {
-  const { data, loading, error } = useQuery<{
-    runSummaries: import("@/graphql/types").RunSummaryNode[];
-  }>(RUN_SUMMARIES);
-  const runs = data?.runSummaries ?? [];
+  const { data, loading, error } = useQuery<{ runSummaries: RunSummaryConnection }>(
+    RUN_SUMMARIES,
+    { variables: { first: 20 } },
+  );
+
+  const runs = data?.runSummaries?.edges ?? [];
+  const totalCount = data?.runSummaries?.totalCount ?? 0;
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
+    <div>
       <h1 className="text-2xl font-bold mb-6">Pipeline Runs</h1>
+      <p className="text-gray-500 mb-6">{totalCount} runs</p>
 
-      {loading && <p className="text-gray-500">Loading...</p>}
-      {error && <p className="text-red-500">Error: {error.message}</p>}
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded p-4 mb-6">
+          <p className="text-red-800">Unable to load runs: {error.message}</p>
+        </div>
+      )}
 
-      <div className="space-y-4">
-        {runs.map((run: RunSummaryNode) => (
-          <div key={run.runId} className="border rounded p-4">
-            <div className="flex justify-between items-start">
-              <div>
-                <span className="font-mono text-sm">{run.runId}</span>
-                <span className="ml-3 px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">
-                  {run.source}
+      {loading && !data && (
+        <div className="space-y-3">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="h-20 bg-gray-100 rounded animate-pulse" />
+          ))}
+        </div>
+      )}
+
+      {!loading && !error && runs.length === 0 && (
+        <div className="text-center py-12">
+          <p className="text-gray-500 text-lg">No pipeline runs yet</p>
+          <p className="text-gray-400 text-sm mt-1">
+            Run the pipeline via CLI or GraphQL mutation to see results here.
+          </p>
+        </div>
+      )}
+
+      <div className="space-y-3">
+        {runs.map(({ node, cursor }: Edge<RunSummaryNode>) => (
+          <div key={cursor} className="border rounded p-4">
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-3">
+                <span className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">
+                  {node.source}
                 </span>
+                <span className="font-mono text-sm">{node.runId}</span>
               </div>
-              <span className="text-xs text-gray-500">{run.startedAt}</span>
+              <span className="text-xs text-gray-400">{node.startedAt}</span>
             </div>
-
-            {run.entityCounts && (
-              <div className="mt-3 grid grid-cols-4 gap-4 text-sm">
-                {Object.entries(run.entityCounts).map(
-                  ([stage, counts]) => (
-                    <div key={stage}>
-                      <div className="text-xs text-gray-500 uppercase">{stage}</div>
-                      {typeof counts === "object" ? (
-                        <div>
-                          {Object.entries(counts).map(([k, v]) => (
-                            <div key={k} className="text-xs">
-                              {k}: {String(v)}
-                            </div>
-                          ))}
-                        </div>
-                      ) : (
-                        <div>{String(counts)}</div>
-                      )}
-                    </div>
+            {node.entityCounts && typeof node.entityCounts === "object" && (
+              <div className="text-sm text-gray-600">
+                {Object.entries(node.entityCounts as Record<string, unknown>)
+                  .map(([k, v]) =>
+                    typeof v === "object" && v !== null
+                      ? `${k}: ${JSON.stringify(v)}`
+                      : `${k}: ${v}`,
                   )
-                )}
-              </div>
-            )}
-
-            {run.timing && (
-              <div className="mt-2 text-xs text-gray-500">
-                {Object.entries(run.timing as Record<string, number>)
-                  .map(([k, v]) => `${k}: ${v.toFixed(1)}s`)
                   .join(" · ")}
               </div>
             )}
           </div>
         ))}
-
-        {runs.length === 0 && !loading && (
-          <p className="text-gray-500">No pipeline runs found.</p>
-        )}
       </div>
     </div>
   );

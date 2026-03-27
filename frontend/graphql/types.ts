@@ -1,11 +1,13 @@
-// TypeScript types matching the GraphQL schema
+// TypeScript types matching the backend GraphQL schema (feature 029)
 
 export interface OntologyAnnotation {
   termUri: string;
   termLabel: string;
   ontology: string;
   mappingRelation: string;
+  matchLevel?: string;
   score: number;
+  model?: string;
   primary: boolean;
 }
 
@@ -16,52 +18,101 @@ export interface ProvenanceEntry {
   description?: string;
 }
 
+// --- Core Entity Types ---
+
 export interface ElementNode {
-  sha256?: string;
+  sha256: string;
+  fileName?: string;
   dataType?: string;
   unit?: string;
+  pattern?: string;
   valueDomain?: string;
   description?: string;
-  ontologyAnnotations: OntologyAnnotation[];
+  minValue?: number;
+  maxValue?: number;
+  typeRef?: string;
+  semantic?: Record<string, unknown>;
   provenance: ProvenanceEntry[];
-  fileName: string;
+  ontologyAnnotations: OntologyAnnotation[];
 }
 
-export interface ElementEdge {
-  node: ElementNode;
-  cursor: string;
-}
-
-export interface PageInfo {
-  hasNextPage: boolean;
-  hasPreviousPage: boolean;
-  startCursor?: string;
-  endCursor?: string;
-}
-
-export interface ElementConnection {
-  edges: ElementEdge[];
-  pageInfo: PageInfo;
-  totalCount: number;
+export interface SchemaNode {
+  sha256: string;
+  fileName?: string;
+  subclassOf?: string;
+  isMixin?: boolean;
+  properties: string[];
+  description?: string;
+  provenance: ProvenanceEntry[];
+  ontologyAnnotations: OntologyAnnotation[];
 }
 
 export interface ValueNode {
-  sha256?: string;
-  label: string;
+  sha256: string;
+  fileName?: string;
+  label?: string;
   valueType?: string;
   ontologyId?: string;
-  ontologyAnnotations: OntologyAnnotation[];
+  description?: string;
   provenance: ProvenanceEntry[];
-  fileName: string;
+  ontologyAnnotations: OntologyAnnotation[];
+}
+
+export interface ValueSetNode {
+  sha256: string;
+  fileName?: string;
+  name?: string;
+  members: string[];
+  description?: string;
+  provenance: ProvenanceEntry[];
+  ontologyAnnotations: OntologyAnnotation[];
+}
+
+export interface CurationFlagNode {
+  id: string;
+  entityType: string;
+  entityRef: string;
+  flagType: string;
+  context: Record<string, unknown>;
+  status: string;
+  createdAt: string;
+  resolvedAt?: string;
+  resolvedBy?: string;
+  resolutionNote?: string;
 }
 
 export interface RunSummaryNode {
   runId: string;
   source: string;
-  startedAt: string;
+  startedAt?: string;
   completedAt?: string;
-  entityCounts: Record<string, Record<string, number> | number>;
-  enrichmentRate?: Record<string, number>;
-  curationFlags?: Record<string, number>;
-  timing?: Record<string, number>;
+  entityCounts: Record<string, unknown>;
+  enrichmentRate?: Record<string, unknown>;
+  curationFlags?: Record<string, unknown>;
+  timing?: Record<string, unknown>;
 }
+
+// --- Pagination ---
+
+export interface PageInfo {
+  hasNextPage: boolean;
+  endCursor?: string;
+}
+
+export interface Edge<T> {
+  node: T;
+  cursor: string;
+}
+
+export interface Connection<T> {
+  edges: Edge<T>[];
+  pageInfo: PageInfo;
+  totalCount: number;
+}
+
+// Convenience aliases
+export type ElementConnection = Connection<ElementNode>;
+export type SchemaConnection = Connection<SchemaNode>;
+export type ValueConnection = Connection<ValueNode>;
+export type CurationFlagConnection = Connection<CurationFlagNode>;
+export type RunSummaryConnection = Connection<RunSummaryNode>;

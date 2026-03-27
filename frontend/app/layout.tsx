@@ -37,17 +37,16 @@ export default function RootLayout({
               <Link href="/schemas" className="text-sm text-muted-foreground hover:text-foreground">
                 Schemas
               </Link>
+              <Link href="/valuesets" className="text-sm text-muted-foreground hover:text-foreground">
+                Value Sets
+              </Link>
               <Link href="/curation" className="text-sm text-muted-foreground hover:text-foreground">
                 Curation
               </Link>
               <Link href="/runs" className="text-sm text-muted-foreground hover:text-foreground">
                 Runs
               </Link>
-              <div className="ml-auto">
-                <a href="/auth/login" className="text-sm text-muted-foreground hover:text-foreground">
-                  Sign in
-                </a>
-              </div>
+              {/* Auth deferred to feature 031 */}
             </nav>
           </header>
           <main className="mx-auto max-w-7xl px-6 py-8">{children}</main>
