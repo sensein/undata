@@ -22,9 +22,9 @@
 
 **Purpose**: Shared utilities, GraphQL queries, color maps
 
-- [ ] T001 Create `lib/source-colors.ts` — centralized color maps: SOURCE_COLORS (bids→blue, dandi→green, nwb→purple, openminds→orange, aind→teal) + ENTITY_TYPE_COLORS (element→cyan, schema→blue, value→lime, valueset→green, flag→red). Export `getSourceColor(source)` and `getEntityColor(type)` returning Tailwind class pairs (bg + text)
-- [ ] T002 Add new GraphQL queries to `graphql/queries.ts` — GET_SCHEMA (schema by sha256 with properties + provenance + annotations), GET_VALUE (value by sha256), GET_VALUESET (valueset by sha256 with members), ELEMENT_POPOVER (lightweight element query for hover: sha256, dataType, unit, description, first provenance source), SCHEMA_POPOVER, VALUE_POPOVER
-- [ ] T003 Update `lib/apollo.ts` — add cache policies for browseSchemas, browseValues (cursor merge), add type policies for popover queries (cache-first)
+- [X] T001 Create `lib/source-colors.ts` — centralized color maps: SOURCE_COLORS (bids→blue, dandi→green, nwb→purple, openminds→orange, aind→teal) + ENTITY_TYPE_COLORS (element→cyan, schema→blue, value→lime, valueset→green, flag→red). Export `getSourceColor(source)` and `getEntityColor(type)` returning Tailwind class pairs (bg + text)
+- [X] T002 Add new GraphQL queries to `graphql/queries.ts` — GET_SCHEMA (schema by sha256 with properties + provenance + annotations), GET_VALUE (value by sha256), GET_VALUESET (valueset by sha256 with members), ELEMENT_POPOVER (lightweight element query for hover: sha256, dataType, unit, description, first provenance source), SCHEMA_POPOVER, VALUE_POPOVER
+- [X] T003 Update `lib/apollo.ts` — add cache policies for browseSchemas, browseValues (cursor merge), add type policies for popover queries (cache-first)
 
 **Checkpoint**: Utilities, queries, and cache ready
 

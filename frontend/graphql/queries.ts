@@ -193,3 +193,65 @@ export const GET_ELEMENT = gql`
     }
   }
 `;
+
+export const GET_SCHEMA = gql`
+  query GetSchema($sha256: String!) {
+    schema_(sha256: $sha256) {
+      sha256
+      subclassOf
+      isMixin
+      properties
+      description
+      semantic
+      provenance { source className name description }
+      ontologyAnnotations { termUri termLabel ontology mappingRelation matchLevel score model primary }
+    }
+  }
+`;
+
+export const GET_VALUE = gql`
+  query GetValue($sha256: String!) {
+    value(sha256: $sha256) {
+      sha256
+      label
+      valueType
+      ontologyId
+      description
+      semantic
+      provenance { source className name description }
+      ontologyAnnotations { termUri termLabel ontology mappingRelation score primary }
+    }
+  }
+`;
+
+export const GET_VALUESET = gql`
+  query GetValueSet($sha256: String!) {
+    valueset(sha256: $sha256) {
+      sha256
+      name
+      members
+      description
+      semantic
+      provenance { source className name description }
+      ontologyAnnotations { termUri termLabel ontology score primary }
+    }
+  }
+`;
+
+export const ELEMENT_POPOVER = gql`
+  query ElementPopover($sha256: String!) {
+    element(sha256: $sha256) { sha256 dataType unit description provenance { source name } }
+  }
+`;
+
+export const SCHEMA_POPOVER = gql`
+  query SchemaPopover($sha256: String!) {
+    schema_(sha256: $sha256) { sha256 description properties provenance { source name } }
+  }
+`;
+
+export const VALUE_POPOVER = gql`
+  query ValuePopover($sha256: String!) {
+    value(sha256: $sha256) { sha256 label description provenance { source name } }
+  }
+`;
