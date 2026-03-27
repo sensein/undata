@@ -1,104 +1,105 @@
-# Implementation Plan: [FEATURE]
+# Implementation Plan: CivicDB UI Redesign
 
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
-
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/plan-template.md` for the execution workflow.
+**Branch**: `031-civicdb-ui` | **Date**: 2026-03-27 | **Spec**: [spec.md](spec.md)
 
 ## Summary
 
-[Extract from feature spec: primary requirement + technical approach from research]
+Redesign frontend pages following CivicDB patterns: sortable data grids with clickable counts, consistent entity detail layouts, bidirectional entity navigation, curation evidence panels, activity feed, responsive layout with source color coding.
 
 ## Technical Context
 
-<!--
-  ACTION REQUIRED: Replace the content in this section with the technical details
-  for the project. The structure here is presented in advisory capacity to guide
-  the iteration process.
--->
-
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [e.g., library/cli/web-service/mobile-app/compiler/desktop-app or NEEDS CLARIFICATION]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Language/Version**: TypeScript 5.x + Next.js 16.x (React 19)
+**Primary Dependencies**: TanStack Table (headless sorting/filtering), Apollo Client 4.x, shadcn/ui, Tailwind CSS 4
+**Testing**: Playwright for E2E
+**Target Platform**: Browser (desktop + mobile)
+**Project Type**: Frontend redesign
+**Constraints**: Frontend-only — no backend API changes. Uses existing GraphQL queries.
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
-
-[Gates determined based on constitution file]
+| Principle | Status | Notes |
+|-----------|--------|-------|
+| I. Simplicity First | PASS | TanStack Table already in deps. No new heavy libraries. |
+| II. TDD | PASS | Playwright tests for navigation traversal and sorting. |
+| III. API-First Design | PASS | Uses existing GraphQL API — no new endpoints. |
+| IV. Observability | N/A | Frontend (browser-only). |
+| V. No Deprecation | PASS | Replace existing pages directly. |
+| VI. Environment Isolation | PASS | pnpm, no system deps. |
+| VII. Developer Experience | PASS | pnpm dev with hot reload. |
+| CI Green Before Merge | PASS | Playwright + build must pass. |
 
 ## Project Structure
 
-### Documentation (this feature)
-
 ```text
-specs/[###-feature]/
-├── plan.md              # This file (/speckit.plan command output)
-├── research.md          # Phase 0 output (/speckit.plan command)
-├── data-model.md        # Phase 1 output (/speckit.plan command)
-├── quickstart.md        # Phase 1 output (/speckit.plan command)
-├── contracts/           # Phase 1 output (/speckit.plan command)
-└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
-```
-
-### Source Code (repository root)
-<!--
-  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
-  for this feature. Delete unused options and expand the chosen structure with
-  real paths (e.g., apps/admin, packages/something). The delivered plan must
-  not include Option labels.
--->
-
-```text
-# [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
-src/
-├── models/
-├── services/
-├── cli/
-└── lib/
-
-tests/
-├── contract/
-├── integration/
-└── unit/
-
-# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
-backend/
-├── src/
-│   ├── models/
-│   ├── services/
-│   └── api/
-└── tests/
-
 frontend/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   └── services/
+├── app/
+│   ├── elements/
+│   │   ├── page.tsx              # REDESIGN: TanStack data grid
+│   │   └── [sha256]/page.tsx     # REDESIGN: consistent detail layout
+│   ├── schemas/
+│   │   ├── page.tsx              # REDESIGN: data grid + schema detail
+│   │   └── [sha256]/page.tsx     # NEW: schema detail page
+│   ├── values/
+│   │   ├── page.tsx              # REDESIGN: data grid
+│   │   └── [sha256]/page.tsx     # NEW: value detail page
+│   ├── valuesets/
+│   │   ├── page.tsx              # REDESIGN: data grid
+│   │   └── [sha256]/page.tsx     # NEW: valueset detail page
+│   ├── curation/
+│   │   └── page.tsx              # REDESIGN: evidence panels
+│   ├── activity/
+│   │   └── page.tsx              # NEW: activity feed
+│   └── layout.tsx                # UPDATE: responsive nav, source colors
+├── components/
+│   ├── EntityDataGrid.tsx        # NEW: reusable sortable grid component
+│   ├── EntityDetailLayout.tsx    # NEW: consistent detail page wrapper
+│   ├── SourceBadge.tsx           # NEW: color-coded source badge
+│   ├── CurationIndicator.tsx     # NEW: inline pending/approved/rejected
+│   ├── EvidencePanel.tsx         # NEW: curation flag evidence display
+│   ├── RelatedEntities.tsx       # NEW: bidirectional entity links
+│   ├── ActivityFeed.tsx          # NEW: event timeline component
+│   └── ResponsiveNav.tsx         # NEW: collapsible mobile navigation
+├── lib/
+│   ├── apollo.ts                 # UPDATE: add cache policies for new queries
+│   └── source-colors.ts          # NEW: centralized source color map
 └── tests/
-
-# [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
-api/
-└── [same as backend above]
-
-ios/ or android/
-└── [platform-specific structure: feature modules, UI flows, platform tests]
+    └── e2e/
+        ├── elements.spec.ts      # UPDATE: test sorting, navigation
+        ├── navigation.spec.ts    # UPDATE: test traversal
+        └── curation.spec.ts      # UPDATE: test evidence panel
 ```
 
-**Structure Decision**: [Document the selected structure and reference the real
-directories captured above]
+## Implementation Approach
+
+### Phase 1: Shared Components (Foundational)
+1. Create `SourceBadge.tsx` — color-coded badge with `SOURCE_COLORS` map
+2. Create `CurationIndicator.tsx` — inline status pill (pending/approved/rejected)
+3. Create `EntityDetailLayout.tsx` — consistent detail page wrapper
+4. Create `RelatedEntities.tsx` — bidirectional entity links section
+5. Create `EntityDataGrid.tsx` — TanStack Table wrapper with sorting
+6. Create `ResponsiveNav.tsx` — mobile-friendly navigation
+7. Update `layout.tsx` — use ResponsiveNav
+
+### Phase 2: Entity Browsers (US1)
+1. Redesign elements page with EntityDataGrid
+2. Redesign schemas page with EntityDataGrid
+3. Redesign values page with EntityDataGrid
+
+### Phase 3: Detail Pages (US2 + US3)
+1. Redesign element detail with EntityDetailLayout + RelatedEntities
+2. Create schema detail page with properties → element links
+3. Create value detail page with valueset links
+4. Create valueset detail page with member value links
+
+### Phase 4: Curation + Activity (US4 + US5)
+1. Redesign curation page with EvidencePanel
+2. Create activity feed page
+
+### Phase 5: Responsive + Polish + Tests (US6)
+1. Add responsive breakpoints to all pages
+2. Update Playwright tests for navigation traversal + sorting
+3. Verify CI green
 
 ## Complexity Tracking
 
-> **Fill ONLY if Constitution Check has violations that must be justified**
-
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+No violations — all work uses existing libraries (TanStack Table, Tailwind, shadcn/ui).
