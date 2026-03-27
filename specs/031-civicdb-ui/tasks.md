@@ -72,12 +72,12 @@
 
 **Independent Test**: Click element → detail page has tabs → Summary shows props + provenance + annotations + related schemas. Click schema → schema detail → click property element → round-trip.
 
-- [ ] T018 [US2] Redesign `app/elements/[sha256]/page.tsx` — use EntityDetailLayout with tabs. Summary tab: semantic properties grid, provenance entries, ontology annotations (with id="annotations" anchor). Flags tab: list flags for this entity. Activity tab: timeline for this entity. Add RelatedEntities "Used in schemas" (client-side: load schemas, filter by properties containing this element)
-- [ ] T019 [US3] Create `app/schemas/[sha256]/page.tsx` — use EntityDetailLayout with tabs. Summary: properties as EntityTag links to elements, subclass_of link, description. Flags + Activity tabs. RelatedEntities: property elements
-- [ ] T020 [P] [US3] Create `app/values/[sha256]/page.tsx` — EntityDetailLayout with tabs. Summary: label, value_type, ontology annotation. RelatedEntities: "Part of valuesets"
-- [ ] T021 [P] [US3] Redesign `app/valuesets/[sha256]/page.tsx` — EntityDetailLayout with tabs. Summary: members as EntityTag links to values. Replace placeholder
-- [ ] T022 [US3] Update all browser pages — ensure entity names use EntityTag linking to /{entityType}/{sha256} detail pages
-- [ ] T023 [US3] Verify bidirectional navigation: element → schema → element round-trip. Value → valueset → value round-trip
+- [X] T018 [US2] Redesign `app/elements/[sha256]/page.tsx` — use EntityDetailLayout with tabs. Summary tab: semantic properties grid, provenance entries, ontology annotations (with id="annotations" anchor). Flags tab: list flags for this entity. Activity tab: timeline for this entity. Add RelatedEntities "Used in schemas" (client-side: load schemas, filter by properties containing this element)
+- [X] T019 [US3] Create `app/schemas/[sha256]/page.tsx` — use EntityDetailLayout with tabs. Summary: properties as EntityTag links to elements, subclass_of link, description. Flags + Activity tabs. RelatedEntities: property elements
+- [X] T020 [P] [US3] Create `app/values/[sha256]/page.tsx` — EntityDetailLayout with tabs. Summary: label, value_type, ontology annotation. RelatedEntities: "Part of valuesets"
+- [X] T021 [P] [US3] Redesign `app/valuesets/[sha256]/page.tsx` — EntityDetailLayout with tabs. Summary: members as EntityTag links to values. Replace placeholder
+- [X] T022 [US3] Update all browser pages — ensure entity names use EntityTag linking to /{entityType}/{sha256} detail pages
+- [X] T023 [US3] Verify bidirectional navigation: element → schema → element round-trip. Value → valueset → value round-trip
 
 **Checkpoint**: All 4 entity types have tabbed detail pages with bidirectional navigation
 
