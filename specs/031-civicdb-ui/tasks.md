@@ -89,9 +89,9 @@
 
 **Independent Test**: Open curation flag → expand → evidence panel with scores. Navigate to /activity → events listed.
 
-- [ ] T024 [US4] Redesign `app/curation/page.tsx` — flags as expandable cards. Collapsed: entity_ref, flag_type badge, status badge, created_at. Expanded: EvidencePanel showing context.candidates with scores, LLM verification details. Approve/Reject action buttons (call resolveFlag mutation)
-- [ ] T025 [P] [US5] Create `app/activity/page.tsx` — full-page ActivityTimeline. Sources events from curation flags (by created_at) merged chronologically. Add "Activity" to sidebar under CURATION group
-- [ ] T026 [US4] Add entity-level activity to Flags and Activity tabs in EntityDetailLayout — filter events/flags by entity_ref matching the current entity
+- [X] T024 [US4] Redesign `app/curation/page.tsx` — flags as expandable cards. Collapsed: entity_ref, flag_type badge, status badge, created_at. Expanded: EvidencePanel showing context.candidates with scores, LLM verification details. Approve/Reject action buttons (call resolveFlag mutation)
+- [X] T025 [P] [US5] Create `app/activity/page.tsx` — full-page ActivityTimeline. Sources events from curation flags (by created_at) merged chronologically. Add "Activity" to sidebar under CURATION group
+- [X] T026 [US4] Add entity-level activity to Flags and Activity tabs in EntityDetailLayout — filter events/flags by entity_ref matching the current entity
 
 **Checkpoint**: Curation has evidence panels, activity feed works globally and per-entity
 
