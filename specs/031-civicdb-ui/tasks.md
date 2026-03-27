@@ -50,7 +50,7 @@
 
 **Independent Test**: Open /elements → click column header → rows sort.
 
-- [ ] T012 [US1] Redesign `app/elements/page.tsx` — replace HTML table with EntityDataGrid. Columns: name (link), source (SourceBadge), type, unit, annotations count (clickable), description. Sortable by all columns. Keep existing filters + search + pagination
+- [ ] T012 [US1] Redesign `app/elements/page.tsx` — replace HTML table with EntityDataGrid. Columns: name (link to detail), source (SourceBadge), type, unit, annotations count (clickable — navigates to detail page #annotations anchor), description. Sortable by all columns. Keep existing filters + search + pagination
 - [ ] T013 [P] [US1] Redesign `app/schemas/page.tsx` — use EntityDataGrid. Columns: name (link), source, properties count (clickable badge showing "N properties"), is_mixin badge, description
 - [ ] T014 [P] [US1] Redesign `app/values/page.tsx` — use EntityDataGrid. Columns: label (link), source, value_type, ontology annotation (primary term), description
 - [ ] T015 [US1] Verify all three grids sort correctly and clickable counts work
@@ -65,7 +65,7 @@
 
 **Independent Test**: Click element → detail page → click related schema → schema detail → click property → back to element.
 
-- [ ] T016 [US2] Redesign `app/elements/[sha256]/page.tsx` — use EntityDetailLayout. Add RelatedEntities for "Used in schemas" (resolve from schema properties). Add CurationIndicator if flags exist
+- [ ] T016 [US2] Redesign `app/elements/[sha256]/page.tsx` — use EntityDetailLayout. Add RelatedEntities for "Used in schemas" (client-side: load all schemas, filter by properties containing this element's identifier — works at current scale ~10 schemas). Add CurationIndicator if flags exist. Add id="annotations" anchor to annotations section for clickable count links
 - [ ] T017 [US3] Create `app/schemas/[sha256]/page.tsx` — use EntityDetailLayout. Show properties as clickable links to element detail pages (extract sha256 from property identifier). Add RelatedEntities for property elements
 - [ ] T018 [P] [US3] Create `app/values/[sha256]/page.tsx` — use EntityDetailLayout. Add "Part of valuesets" section linking to parent valuesets
 - [ ] T019 [P] [US3] Create `app/valuesets/[sha256]/page.tsx` — use EntityDetailLayout. Show members as clickable links to value detail pages. Replace placeholder page
