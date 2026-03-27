@@ -56,11 +56,11 @@
 
 **Independent Test**: Open /elements → click "Type" header → rows sort. Hover element name → popover appears.
 
-- [ ] T013 [US1] Update `app/layout.tsx` — replace horizontal nav with Sidebar component. Content area shifts right with sidebar width. Mobile: sidebar hidden, toggle button in top bar
-- [ ] T014 [US1] Redesign `app/elements/page.tsx` — use EntityDataGrid with columns: name (EntityTag with popover), source (SourceBadge), type (sortable), unit (sortable), annotations count (clickable → detail #annotations), description (truncated). Per-column filter for source + type. Keep search + pagination
-- [ ] T015 [P] [US1] Redesign `app/schemas/page.tsx` — use EntityDataGrid. Columns: name (EntityTag), source (SourceBadge), properties count (clickable badge), is_mixin badge, description
-- [ ] T016 [P] [US1] Redesign `app/values/page.tsx` — use EntityDataGrid. Columns: label (EntityTag with popover), source (SourceBadge), value_type, primary annotation (term label), description
-- [ ] T017 [US1] Verify all three grids: sorting works, source badges consistent, entity tags render with popovers
+- [X] T013 [US1] Update `app/layout.tsx` — replace horizontal nav with Sidebar component. Content area shifts right with sidebar width. Mobile: sidebar hidden, toggle button in top bar
+- [X] T014 [US1] Redesign `app/elements/page.tsx` — use EntityDataGrid with columns: name (EntityTag with popover), source (SourceBadge), type (sortable), unit (sortable), annotations count (clickable → detail #annotations), description (truncated). Per-column filter for source + type. Keep search + pagination
+- [X] T015 [P] [US1] Redesign `app/schemas/page.tsx` — use EntityDataGrid. Columns: name (EntityTag), source (SourceBadge), properties count (clickable badge), is_mixin badge, description
+- [X] T016 [P] [US1] Redesign `app/values/page.tsx` — use EntityDataGrid. Columns: label (EntityTag with popover), source (SourceBadge), value_type, primary annotation (term label), description
+- [X] T017 [US1] Verify all three grids: sorting works, source badges consistent, entity tags render with popovers
 
 **Checkpoint**: All entity browsers use sortable data grids with CivicDB-style entity tags
 

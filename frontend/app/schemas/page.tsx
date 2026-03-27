@@ -1,67 +1,109 @@
 "use client";
 
+import { useMemo } from "react";
 import { useQuery } from "@apollo/client/react";
+import { createColumnHelper } from "@tanstack/react-table";
 import { BROWSE_SCHEMAS } from "@/graphql/queries";
-import type { SchemaConnection, Edge, SchemaNode } from "@/graphql/types";
+import { EntityDataGrid } from "@/components/EntityDataGrid";
+import { EntityTag } from "@/components/EntityTag";
+import { SourceBadge } from "@/components/SourceBadge";
+import type { SchemaConnection, SchemaNode, Edge } from "@/graphql/types";
+
+const columnHelper = createColumnHelper<SchemaNode>();
 
 export default function SchemasPage() {
-  const { data, loading, error } = useQuery<{ browseSchemas: SchemaConnection }>(BROWSE_SCHEMAS, {
-    variables: { first: 50 },
-  });
+  const { data, loading, error, fetchMore } = useQuery<{ browseSchemas: SchemaConnection }>(
+    BROWSE_SCHEMAS,
+    { variables: { first: 50 } },
+  );
 
-  const schemas = data?.browseSchemas?.edges ?? [];
+  const schemas = useMemo(
+    () => (data?.browseSchemas?.edges ?? []).map((e: Edge<SchemaNode>) => e.node),
+    [data],
+  );
+  const pageInfo = data?.browseSchemas?.pageInfo;
   const totalCount = data?.browseSchemas?.totalCount ?? 0;
+
+  const columns = useMemo(
+    () => [
+      columnHelper.accessor("sha256", {
+        header: "Name",
+        cell: (info) => {
+          const prov = info.row.original.provenance?.[0];
+          return (
+            <EntityTag
+              entityType="schemas"
+              sha256={info.getValue()}
+              label={prov?.name ?? info.row.original.fileName ?? info.getValue().slice(0, 12)}
+            />
+          );
+        },
+        enableColumnFilter: false,
+      }),
+      columnHelper.display({
+        id: "source",
+        header: "Source",
+        cell: (info) => {
+          const prov = info.row.original.provenance?.[0];
+          return prov?.source ? <SourceBadge source={prov.source} /> : "—";
+        },
+        enableSorting: false,
+        enableColumnFilter: false,
+      }),
+      columnHelper.display({
+        id: "properties",
+        header: "Properties",
+        cell: (info) => {
+          const count = info.row.original.properties?.length ?? 0;
+          return count > 0 ? (
+            <a
+              href={`/schemas/${info.row.original.sha256}`}
+              className="text-blue-600 hover:underline text-sm"
+            >
+              {count} properties
+            </a>
+          ) : "—";
+        },
+        enableSorting: false,
+        enableColumnFilter: false,
+      }),
+      columnHelper.display({
+        id: "mixin",
+        header: "Mixin",
+        cell: (info) =>
+          info.row.original.isMixin ? (
+            <span className="px-2 py-0.5 bg-purple-100 text-purple-800 rounded text-xs">mixin</span>
+          ) : null,
+        enableSorting: false,
+        enableColumnFilter: false,
+      }),
+      columnHelper.accessor("description", {
+        header: "Description",
+        cell: (info) => (
+          <span className="text-gray-600 text-sm truncate block max-w-xs">{info.getValue() ?? "—"}</span>
+        ),
+        enableSorting: false,
+      }),
+    ],
+    [],
+  );
 
   return (
     <div>
       <h1 className="text-2xl font-bold mb-6">Schemas</h1>
-      <p className="text-gray-500 mb-6">{totalCount} schemas</p>
-
       {error && (
         <div className="bg-red-50 border border-red-200 rounded p-4 mb-6">
           <p className="text-red-800">Unable to load schemas: {error.message}</p>
         </div>
       )}
-
-      {loading && !data && (
-        <div className="space-y-3">
-          {[...Array(5)].map((_, i) => (
-            <div key={i} className="h-16 bg-gray-100 rounded animate-pulse" />
-          ))}
-        </div>
-      )}
-
-      {!loading && !error && schemas.length === 0 && (
-        <p className="text-gray-500 text-center py-12">No schemas found.</p>
-      )}
-
-      <div className="space-y-3">
-        {schemas.map(({ node, cursor }: Edge<SchemaNode>) => {
-          const prov = node.provenance?.[0];
-          return (
-            <div key={cursor} className="border rounded p-4">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="font-mono font-medium">{prov?.name ?? node.fileName ?? node.sha256.slice(0, 12)}</span>
-                {prov?.source && (
-                  <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">{prov.source}</span>
-                )}
-                {node.isMixin && (
-                  <span className="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs">mixin</span>
-                )}
-              </div>
-              {node.description && <p className="text-gray-600 text-sm mb-2">{node.description}</p>}
-              {node.properties.length > 0 && (
-                <div className="text-xs text-gray-500">
-                  Properties: {node.properties.join(", ")}
-                </div>
-              )}
-              {node.subclassOf && (
-                <div className="text-xs text-gray-500">Extends: {node.subclassOf}</div>
-              )}
-            </div>
-          );
-        })}
-      </div>
+      <EntityDataGrid
+        columns={columns}
+        data={schemas}
+        isLoading={loading}
+        totalCount={totalCount}
+        hasNextPage={pageInfo?.hasNextPage}
+        onLoadMore={() => fetchMore({ variables: { after: pageInfo?.endCursor } })}
+      />
     </div>
   );
 }
