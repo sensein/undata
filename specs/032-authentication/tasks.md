@@ -54,9 +54,9 @@
 
 **Independent Test**: Resolve flag as curator → query flag → resolved_by shows curator's name.
 
-- [ ] T012 [US4] Update `backend/src/graphql/resolvers.py` — `resolve_resolve_flag` uses `current_user.display_name` for `resolved_by` (not client-provided). `resolve_submit_contribution` uses `current_user.display_name` for `contributor`
-- [ ] T013 [US4] Update `backend/src/graphql/schema.py` — pass `current_user` from auth context to resolver functions. Remove `resolved_by` and `contributor` from mutation inputs (server sets them)
-- [ ] T014 [US4] Write test in `backend/tests/test_auth.py` — resolve flag with mock curator JWT, verify resolved_by matches JWT's name claim
+- [X] T012 [US4] Update `backend/src/graphql/resolvers.py` — `resolve_resolve_flag` uses `current_user.display_name` for `resolved_by` (not client-provided). `resolve_submit_contribution` uses `current_user.display_name` for `contributor`
+- [X] T013 [US4] Update `backend/src/graphql/schema.py` — pass `current_user` from auth context to resolver functions. Remove `resolved_by` and `contributor` from mutation inputs (server sets them)
+- [X] T014 [US4] Write test in `backend/tests/test_auth.py` — resolve flag with mock curator JWT, verify resolved_by matches JWT's name claim
 
 **Checkpoint**: All mutations record authenticated user identity
 
@@ -68,11 +68,11 @@
 
 **Independent Test**: Generate key → use in curl → mutation succeeds.
 
-- [ ] T015 [US3] Add `APIKey` model to `backend/src/db/models.py` — id (UUID), user_id (FK to UserProfile), token_hash (VARCHAR, indexed), label (VARCHAR), created_at, revoked_at (nullable)
-- [ ] T016 [US3] Create `backend/src/auth/api_keys.py` — `validate_api_key(token) → UserProfile | None` (SHA-256 hash the token, look up by hash, check not revoked, return associated UserProfile)
-- [ ] T017 [US3] Update `backend/src/auth/dependencies.py` — `get_current_user` checks for API key if no JWT present (Authorization: Bearer <key> where key is not a JWT)
-- [ ] T018 [US3] Add `generateApiKey` and `revokeApiKey` mutations to GraphQL — require auth, return the raw key once on creation
-- [ ] T019 [US3] Write API key test in `backend/tests/test_auth.py` — create key, use key for mutation, revoke key, verify revoked key rejected
+- [X] T015 [US3] Add `APIKey` model to `backend/src/db/models.py` — id (UUID), user_id (FK to UserProfile), token_hash (VARCHAR, indexed), label (VARCHAR), created_at, revoked_at (nullable)
+- [X] T016 [US3] Create `backend/src/auth/api_keys.py` — `validate_api_key(token) → UserProfile | None` (SHA-256 hash the token, look up by hash, check not revoked, return associated UserProfile)
+- [X] T017 [US3] Update `backend/src/auth/dependencies.py` — `get_current_user` checks for API key if no JWT present (Authorization: Bearer <key> where key is not a JWT)
+- [X] T018 [US3] Add `generateApiKey` and `revokeApiKey` mutations to GraphQL — require auth, return the raw key once on creation
+- [X] T019 [US3] Write API key test in `backend/tests/test_auth.py` — create key, use key for mutation, revoke key, verify revoked key rejected
 
 **Checkpoint**: API keys work for all mutations
 
@@ -84,12 +84,12 @@
 
 **Independent Test**: Sign in → name in sidebar. Curation shows resolve buttons for curators only.
 
-- [ ] T020 [US5] Create `frontend/lib/auth.ts` — auth helpers: `getSession()` → {user, token} | null, `signIn()` redirect to Keycloak, `signOut()` clear session
-- [ ] T021 [US5] Create `frontend/components/AuthProvider.tsx` — React context wrapping auth state, provides `useAuth()` hook returning {user, role, isAuthenticated, signIn, signOut}
-- [ ] T022 [US5] Create `frontend/app/auth/callback/route.ts` — handle OAuth callback, exchange code for tokens via backend proxy, set session cookie
-- [ ] T023 [US5] Update `frontend/components/Sidebar.tsx` — bottom section: if signed in show display_name + role badge + "Sign out" link. If not signed in show "Sign in" button
-- [ ] T024 [US5] Update `frontend/app/curation/page.tsx` — show Approve/Reject buttons only when `useAuth().role` is "curator" or "admin". Show "Sign in to review" for unauthenticated users
-- [ ] T025 [US5] Update `frontend/app/layout.tsx` — wrap children with AuthProvider
+- [X] T020 [US5] Create `frontend/lib/auth.ts` — auth helpers: `getSession()` → {user, token} | null, `signIn()` redirect to Keycloak, `signOut()` clear session
+- [X] T021 [US5] Create `frontend/components/AuthProvider.tsx` — React context wrapping auth state, provides `useAuth()` hook returning {user, role, isAuthenticated, signIn, signOut}
+- [X] T022 [US5] Create `frontend/app/auth/callback/route.ts` — handle OAuth callback, exchange code for tokens via backend proxy, set session cookie
+- [X] T023 [US5] Update `frontend/components/Sidebar.tsx` — bottom section: if signed in show display_name + role badge + "Sign out" link. If not signed in show "Sign in" button
+- [X] T024 [US5] Update `frontend/app/curation/page.tsx` — show Approve/Reject buttons only when `useAuth().role` is "curator" or "admin". Show "Sign in to review" for unauthenticated users
+- [X] T025 [US5] Update `frontend/app/layout.tsx` — wrap children with AuthProvider
 
 **Checkpoint**: Frontend shows identity, role-aware actions work
 
@@ -99,11 +99,11 @@
 
 **Purpose**: Tests, CI, documentation
 
-- [ ] T026 Verify existing Playwright tests (20+) still pass — queries are public, auth doesn't break browsing
-- [ ] T027 Update `CLAUDE.md` with auth developer setup: Keycloak URL, creating test users, generating API keys
-- [ ] T028 Run quickstart validation QS-001 through QS-008
-- [ ] T029 Verify `ruff check` and `ruff format` pass on backend
-- [ ] T030 Push branch and verify CI is green
+- [X] T026 Verify existing Playwright tests (20+) still pass — queries are public, auth doesn't break browsing
+- [X] T027 Update `CLAUDE.md` with auth developer setup: Keycloak URL, creating test users, generating API keys
+- [X] T028 Run quickstart validation QS-001 through QS-008
+- [X] T029 Verify `ruff check` and `ruff format` pass on backend
+- [X] T030 Push branch and verify CI is green
 
 ---
 
