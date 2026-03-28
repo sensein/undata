@@ -184,6 +184,30 @@ async def auth_callback(code: str = ""):
     return RedirectResponse(f"{settings.frontend_url}/auth/callback?token={quote(access_token, safe='')}")
 
 
+# Chat endpoint — LLM curation assistant with tool execution
+@app.post("/api/chat")
+async def api_chat(request: Request):
+    from src.auth.dependencies import get_current_user, require_auth, check_role
+    from src.services.chat_service import chat_completion
+    from starlette.responses import StreamingResponse
+    import json as json_module
+
+    user = await get_current_user(request)
+    if user is None or not check_role(user, "curator"):
+        return JSONResponse(status_code=403, content={"error": "Curator role required"})
+
+    body = await request.json()
+    messages = body.get("messages", [])
+    entity_context = body.get("entityContext")
+
+    async def event_stream():
+        async for event in chat_completion(messages, entity_context):
+            yield f"data: {json_module.dumps(event)}\n\n"
+        yield "data: [DONE]\n\n"
+
+    return StreamingResponse(event_stream(), media_type="text/event-stream")
+
+
 # GraphQL mount
 from strawberry.fastapi import GraphQLRouter
 

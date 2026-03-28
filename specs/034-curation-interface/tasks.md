@@ -33,19 +33,19 @@
 
 ### Tests
 
-- [ ] T005 Write `backend/tests/test_entity_mutations.py` — test updateElement mutation: change unit field, verify updated value, verify old value preserved in diff response. Test validation: reject invalid data_type
+- [X] T005 Write `backend/tests/test_entity_mutations.py` — test updateElement mutation: change unit field, verify updated value, verify old value preserved in diff response. Test validation: reject invalid data_type
 
 ### Implementation
 
-- [ ] T006 Add `updateElement`, `updateSchema`, `updateValue`, `updateValueSet` input types to `backend/src/graphql/types.py` — UpdateElementInput with optional fields (dataType, unit, description, ontologyAnnotations, etc.) + required `reason: str` field for change attribution (FR-008)
-- [ ] T007 Implement update resolvers in `backend/src/graphql/resolvers.py` — `resolve_update_element(session, sha256, input)` fetches entity, applies changes, returns updated entity. Records curator identity + `reason` in provenance/audit (append to provenance with activity="curation", attributed_to=curator, description=reason).
-- [ ] T008 Wire update mutations in `backend/src/graphql/schema.py` — `updateElement(sha256, input)`, `updateSchema`, `updateValue`, `updateValueSet`. All require curator auth.
-- [ ] T009 Create `backend/src/tools/entity_tools.py` — implement `propose_entity_change()`, `create_entity()`, `delete_entity()`, `fetch_entity()` as Python functions callable by the LLM tool loop. Each validates inputs and returns structured results.
-- [ ] T010 [P] Create `backend/src/tools/ontology_tools.py` — implement `lookup_ontology_term(query, ontology, limit)` using OntologyStore.search_terms(). Returns validated URIs with labels.
-- [ ] T011 [P] Create `backend/src/tools/pipeline_tools.py` — implement `trigger_ingestion(source_url, adapter_pattern)` calling library pipeline functions. Returns stats.
-- [ ] T012 Create `backend/src/services/chat_service.py` — LLM chat service: accepts messages + entity context, calls litellm.completion() with tool definitions from contracts/llm-tools.md, executes tool calls in a loop, streams responses via SSE. Uses existing litellm/ollama infrastructure.
-- [ ] T013 Add `/api/chat` SSE endpoint to `backend/src/main.py` — POST with {messages, entityContext}, streams chat response chunks. Requires auth (curator role).
-- [ ] T014 Run entity mutation tests — all must pass
+- [X] T006 Add `updateElement`, `updateSchema`, `updateValue`, `updateValueSet` input types to `backend/src/graphql/types.py` — UpdateElementInput with optional fields (dataType, unit, description, ontologyAnnotations, etc.) + required `reason: str` field for change attribution (FR-008)
+- [X] T007 Implement update resolvers in `backend/src/graphql/resolvers.py` — `resolve_update_element(session, sha256, input)` fetches entity, applies changes, returns updated entity. Records curator identity + `reason` in provenance/audit (append to provenance with activity="curation", attributed_to=curator, description=reason).
+- [X] T008 Wire update mutations in `backend/src/graphql/schema.py` — `updateElement(sha256, input)`, `updateSchema`, `updateValue`, `updateValueSet`. All require curator auth.
+- [X] T009 Create `backend/src/tools/entity_tools.py` — implement `propose_entity_change()`, `create_entity()`, `delete_entity()`, `fetch_entity()` as Python functions callable by the LLM tool loop. Each validates inputs and returns structured results.
+- [X] T010 [P] Create `backend/src/tools/ontology_tools.py` — implement `lookup_ontology_term(query, ontology, limit)` using OntologyStore.search_terms(). Returns validated URIs with labels.
+- [X] T011 [P] Create `backend/src/tools/pipeline_tools.py` — implement `trigger_ingestion(source_url, adapter_pattern)` calling library pipeline functions. Returns stats.
+- [X] T012 Create `backend/src/services/chat_service.py` — LLM chat service: accepts messages + entity context, calls litellm.completion() with tool definitions from contracts/llm-tools.md, executes tool calls in a loop, streams responses via SSE. Uses existing litellm/ollama infrastructure.
+- [X] T013 Add `/api/chat` SSE endpoint to `backend/src/main.py` — POST with {messages, entityContext}, streams chat response chunks. Requires auth (curator role).
+- [X] T014 Run entity mutation tests — all must pass
 
 **Checkpoint**: Entity updates work via GraphQL. Chat endpoint streams LLM responses with tool execution.
 
