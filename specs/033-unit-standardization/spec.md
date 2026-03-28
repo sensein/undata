@@ -109,6 +109,7 @@ As a curator, I need unit strings validated against the cmixf grammar so typos a
 - **FR-008**: The QUDT vocabulary MUST be loadable from the bundled TTL file without external network access.
 - **FR-009**: Resolved QUDT URIs MUST be stored in the entity's semantic block as `unit_uri` alongside the raw `unit` string.
 - **FR-010**: The system MUST work correctly when QUDT is unavailable — falling back to raw unit strings.
+- **FR-011**: When an element has no explicit `unit` field but its description mentions a unit (e.g., "Age in years"), the system MUST use LLM to extract the unit and resolve it via QUDT.
 
 ### Key Entities
 
@@ -154,6 +155,7 @@ As a curator, I need unit strings validated against the cmixf grammar so typos a
 ### Session 2026-03-28
 
 - Q: Should QUDT be a separate resolver or integrated into the existing ontology service? → A: Load QUDT into the existing OntologyStore (pyoxigraph) as another ontology alongside NCIT, PATO, etc. Reuse the same search_terms/lookup_term patterns. Unit resolution is ontology enrichment for the `unit` field, following the same approach as entity ontology enrichment.
+- Q: Should LLM extract units from descriptions when no explicit unit field is set? → A: Yes — use LLM to extract units from descriptions when `unit` field is empty. Add as an enrichment step after QUDT symbol resolution. Reuses existing LLM infrastructure (litellm/ollama).
 
 ## Assumptions
 
