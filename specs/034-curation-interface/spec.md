@@ -110,9 +110,11 @@ As a curator, I need to be able to add new entities, update existing ones, and m
 - **FR-007**: The curation interface MUST use a resizable split-panel layout (chat left, editor right).
 - **FR-008**: All entity modifications MUST record the curator's identity and the modification reason.
 - **FR-009**: The system MUST support batch operations — a curator can ask the LLM to propose changes across multiple entities.
-- **FR-010**: Entity creation, update, and deletion MUST all be available through the chat interface.
+- **FR-010**: Full CRUD (create, read, update, delete) for entities MUST be available through the chat interface. Update includes modifying any field conversationally (e.g., "change the unit of age to months").
 - **FR-011**: Every LLM-proposed change MUST be reviewable as a diff before being applied.
 - **FR-012**: The interface MUST work for all entity types: elements, schemas, values, valuesets.
+- **FR-013**: The chat interface MUST support triggering pipeline ingestion on new sources — a curator can provide a source URL and reference an existing adapter pattern (e.g., "ingest this using the BIDS adapter"). The LLM calls the pipeline and shows ingestion results for review.
+- **FR-014**: Ingestion results from chat-triggered pipeline runs MUST be reviewable before committing to the registry — showing new entities, modified entities, and conflicts.
 
 ### Key Entities
 
@@ -131,6 +133,13 @@ As a curator, I need to be able to add new entities, update existing ones, and m
 - **SC-005**: Curators can complete a batch review of 5 related flags in under 10 minutes using chat commands.
 - **SC-006**: Every committed change records the curator's identity and is visible in the activity feed.
 
+## Clarifications
+
+### Session 2026-03-28
+
+- Q: Does CRUD via chat include update/modification explicitly? → A: Yes — chat supports full CRUD: create new entities, read/inspect existing ones, update/modify any field conversationally (e.g., "change the unit of age to months"), and delete/deprecate entities. All with diff preview before commit.
+- Q: Can the chat trigger new ingestion flows? → A: Yes — a curator can point the chat to a new source and say "ingest this using the BIDS adapter pattern" or "run the pipeline on this source." The LLM calls `trigger_ingestion(source_url, adapter_pattern)` which runs the pipeline and shows results for review. Existing adapter patterns serve as templates for new sources.
+
 ## Scope Boundaries
 
 ### In Scope
@@ -140,7 +149,8 @@ As a curator, I need to be able to add new entities, update existing ones, and m
 - LLM chat assistant with structured tool calls for entity modifications
 - Ontology term lookup tool for the LLM
 - Split-panel layout (chat + editor) with resizable divider
-- Entity CRUD operations via chat
+- Entity CRUD operations via chat (create, read, **update**, delete)
+- **Chat-driven ingestion** — trigger pipeline runs on new sources using existing adapter patterns as templates
 - Batch curation operations
 - Change attribution (who changed what)
 
