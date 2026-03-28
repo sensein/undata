@@ -57,3 +57,10 @@ ontologies:
     url: https://www.w3.org/ns/prov-o#
     format: ttl
     notes: "W3C PROV-O — validates provenance terms"
+
+  # -- Units --
+  - name: qudt
+    url: bundled
+    path: data/qudt/VOCAB_QUDT-UNITS-ALL.ttl
+    format: ttl
+    notes: "QUDT v3.1 — 2,897 units with symbols, UCUM codes, conversion factors"

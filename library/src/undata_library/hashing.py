@@ -11,7 +11,14 @@ SHORT_KEY_LENGTH = 12  # 12 hex chars = 6 bytes = 2^48 key space (~16.7M collisi
 
 
 # Fields excluded from identity hash (descriptive metadata, varies by source)
-_EXCLUDED_FROM_HASH = {"question_text", "value_domain", "ontology_annotations", "description"}
+_EXCLUDED_FROM_HASH = {
+    "question_text",
+    "value_domain",
+    "ontology_annotations",
+    "description",
+    "unit_uri",
+}
+# unit_uri is excluded from the hash dict because its value replaces `unit` before hashing
 
 # Deprecated constraint fields (replaced by top-level min_value/max_value)
 _DEPRECATED_CONSTRAINT_FIELDS = {"minimum", "maximum"}
@@ -27,6 +34,11 @@ def canonical_json(semantic: dict[str, Any]) -> str:
     - response_options sorted by 'value' field for determinism
     - Compact (no whitespace)
     """
+
+    # Normalize unit: if unit_uri exists, use it as the unit value for hashing
+    # This ensures "kg" and "kilogram" produce the same hash when both resolve to qudt:KiloGM
+    if "unit_uri" in semantic and semantic["unit_uri"]:
+        semantic = {**semantic, "unit": semantic["unit_uri"]}
 
     def _prune(obj: Any, parent_key: str = "") -> Any:
         if isinstance(obj, dict):
