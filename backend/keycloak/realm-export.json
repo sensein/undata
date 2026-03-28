@@ -1,6 +1,7 @@
 {
   "realm": "undata",
   "enabled": true,
+  "sslRequired": "none",
   "registrationAllowed": true,
   "loginWithEmailAllowed": true,
   "clients": [
@@ -21,11 +22,12 @@
       "alias": "globus",
       "providerId": "oidc",
       "enabled": true,
+      "trustEmail": true,
+      "firstBrokerLoginFlowAlias": "first broker login",
       "displayName": "Globus (Institutional Login)",
       "config": {
-        "clientId": "CONFIGURE_IN_ADMIN_CONSOLE",
-        "clientSecret": "CONFIGURE_IN_ADMIN_CONSOLE",
-        "discoveryUrl": "https://auth.globus.org/.well-known/openid-configuration",
+        "clientId": "dcfe08ee-2dc0-4a3e-b9eb-f2c4214b13cc",
+        "clientSecret": "uO0VGcerBTVEiQ3LQZgIulgNK3274vn4az/hmtaIzsE=",
         "authorizationUrl": "https://auth.globus.org/v2/oauth2/authorize",
         "tokenUrl": "https://auth.globus.org/v2/oauth2/token",
         "userInfoUrl": "https://auth.globus.org/v2/oauth2/userinfo",
@@ -34,7 +36,8 @@
         "defaultScope": "openid profile email",
         "clientAuthMethod": "client_secret_basic",
         "syncMode": "IMPORT",
-        "trustEmail": "true"
+        "validateSignature": "true",
+        "useJwksUrl": "true"
       }
     }
   ],

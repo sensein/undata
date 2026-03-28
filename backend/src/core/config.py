@@ -9,7 +9,8 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
 
     # Keycloak OIDC
-    keycloak_url: str = "http://localhost:8080"
+    keycloak_url: str = "http://localhost:8080"  # internal (backend→Keycloak)
+    keycloak_external_url: str = "http://localhost:8080"  # browser-facing
     keycloak_realm: str = "undata"
     keycloak_client_id: str = "undata-backend"
     keycloak_client_secret: str = ""

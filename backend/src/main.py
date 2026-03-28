@@ -108,8 +108,9 @@ async def auth_login():
     from src.core.config import settings
 
     redirect_uri = f"{settings.undata_base_url}/auth/callback"
+    # Use external URL for browser redirect (not Docker-internal keycloak_url)
     keycloak_auth_url = (
-        f"{settings.keycloak_url}/realms/{settings.keycloak_realm}"
+        f"{settings.keycloak_external_url}/realms/{settings.keycloak_realm}"
         f"/protocol/openid-connect/auth"
         f"?client_id={settings.keycloak_client_id}"
         f"&redirect_uri={redirect_uri}"

@@ -31,12 +31,14 @@ services:
 
   keycloak:
     image: quay.io/keycloak/keycloak:24.0
-    command: start-dev --import-realm
+    entrypoint: ["/bin/bash", "/opt/keycloak/data/import/configure-and-start.sh"]
     env_file:
       - .env
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HOSTNAME_STRICT: "false"
+      KC_HTTP_ENABLED: "true"
     ports:
       - "8080:8080"
     volumes:
@@ -59,6 +61,7 @@ services:
       LOG_LEVEL: INFO
       UNDATA_BASE_URL: http://localhost:8002
       KEYCLOAK_URL: http://keycloak:8080
+      KEYCLOAK_EXTERNAL_URL: http://localhost:8080
       KEYCLOAK_REALM: undata
       KEYCLOAK_CLIENT_ID: undata-backend
     volumes:
