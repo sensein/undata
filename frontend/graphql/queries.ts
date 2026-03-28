@@ -134,6 +134,26 @@ export const RUN_SUMMARIES = gql`
   }
 `;
 
+export const BROWSE_VALUESETS = gql`
+  query BrowseValueSets($source: String, $searchText: String, $first: Int = 50, $after: String) {
+    browseValuesets(source: $source, searchText: $searchText, first: $first, after: $after) {
+      edges {
+        node {
+          sha256
+          name
+          members
+          description
+          provenance { source name }
+          ontologyAnnotations { termUri termLabel ontology score primary }
+        }
+        cursor
+      }
+      pageInfo { hasNextPage endCursor }
+      totalCount
+    }
+  }
+`;
+
 export const CURATION_QUEUE = gql`
   query CurationQueue($flagType: FlagType, $status: FlagStatus = PENDING, $first: Int = 20, $after: String) {
     curationQueue(flagType: $flagType, status: $status, first: $first, after: $after) {
@@ -240,18 +260,30 @@ export const GET_VALUESET = gql`
 
 export const ELEMENT_POPOVER = gql`
   query ElementPopover($sha256: String!) {
-    element(sha256: $sha256) { sha256 dataType unit description provenance { source name } }
+    element(sha256: $sha256) {
+      sha256 dataType unit description
+      provenance { source name }
+      ontologyAnnotations { termUri termLabel ontology mappingRelation score primary }
+    }
   }
 `;
 
 export const SCHEMA_POPOVER = gql`
   query SchemaPopover($sha256: String!) {
-    schema_(sha256: $sha256) { sha256 description properties provenance { source name } }
+    schema_(sha256: $sha256) {
+      sha256 description properties
+      provenance { source name }
+      ontologyAnnotations { termUri termLabel ontology score primary }
+    }
   }
 `;
 
 export const VALUE_POPOVER = gql`
   query ValuePopover($sha256: String!) {
-    value(sha256: $sha256) { sha256 label description provenance { source name } }
+    value(sha256: $sha256) {
+      sha256 label description
+      provenance { source name }
+      ontologyAnnotations { termUri termLabel ontology score primary }
+    }
   }
 `;

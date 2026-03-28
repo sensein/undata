@@ -1,6 +1,8 @@
 {
   "realm": "undata",
   "enabled": true,
+  "registrationAllowed": true,
+  "loginWithEmailAllowed": true,
   "clients": [
     {
       "clientId": "undata-backend",
@@ -8,9 +10,10 @@
       "protocol": "openid-connect",
       "publicClient": false,
       "standardFlowEnabled": true,
-      "directAccessGrantsEnabled": false,
-      "redirectUris": ["http://localhost:8002/*"],
-      "webOrigins": ["http://localhost:8002"]
+      "directAccessGrantsEnabled": true,
+      "redirectUris": ["http://localhost:8002/*", "http://localhost:3000/*"],
+      "webOrigins": ["http://localhost:8002", "http://localhost:3000"],
+      "defaultClientScopes": ["openid", "profile", "email"]
     }
   ],
   "identityProviders": [
@@ -18,12 +21,20 @@
       "alias": "globus",
       "providerId": "oidc",
       "enabled": false,
-      "displayName": "Globus",
+      "displayName": "Globus (Institutional Login)",
       "config": {
-        "clientId": "",
-        "clientSecret": "",
+        "clientId": "${GLOBUS_CLIENT_ID}",
+        "clientSecret": "${GLOBUS_CLIENT_SECRET}",
+        "discoveryUrl": "https://auth.globus.org/.well-known/openid-configuration",
         "authorizationUrl": "https://auth.globus.org/v2/oauth2/authorize",
-        "tokenUrl": "https://auth.globus.org/v2/oauth2/token"
+        "tokenUrl": "https://auth.globus.org/v2/oauth2/token",
+        "userInfoUrl": "https://auth.globus.org/v2/oauth2/userinfo",
+        "jwksUrl": "https://auth.globus.org/jwk.json",
+        "logoutUrl": "https://auth.globus.org/v2/web/logout",
+        "defaultScope": "openid profile email",
+        "clientAuthMethod": "client_secret_basic",
+        "syncMode": "IMPORT",
+        "trustEmail": "true"
       }
     },
     {
@@ -32,18 +43,8 @@
       "enabled": false,
       "displayName": "GitHub",
       "config": {
-        "clientId": "",
-        "clientSecret": ""
-      }
-    },
-    {
-      "alias": "incommon",
-      "providerId": "saml",
-      "enabled": false,
-      "displayName": "InCommon (SAML)",
-      "config": {
-        "entityId": "",
-        "singleSignOnServiceUrl": ""
+        "clientId": "${GITHUB_CLIENT_ID}",
+        "clientSecret": "${GITHUB_CLIENT_SECRET}"
       }
     }
   ],
@@ -54,5 +55,6 @@
       {"name": "contributor"},
       {"name": "viewer"}
     ]
-  }
+  },
+  "defaultRoles": ["viewer"]
 }

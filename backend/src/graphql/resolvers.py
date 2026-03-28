@@ -332,6 +332,31 @@ async def resolve_browse_values(
     )
 
 
+async def resolve_browse_valuesets(
+    session: AsyncSession,
+    source: str | None = None,
+    search_text: str | None = None,
+    first: int = 20,
+    after: str | None = None,
+) -> t.ValueSetConnection:
+    from src.db.models import ValueSet
+
+    stmt = select(ValueSet)
+    if search_text:
+        stmt = stmt.where(ValueSet.name.ilike(f"%{search_text}%"))
+
+    rows, has_next, total = await _paginated_query(session, ValueSet, stmt, first, after)
+    edges = [
+        t.ValueSetEdge(cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_valueset_from_row(r))
+        for r in rows
+    ]
+    return t.ValueSetConnection(
+        edges=edges,
+        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        total_count=total,
+    )
+
+
 async def resolve_curation_queue(
     session: AsyncSession,
     flag_type: t.FlagType | None = None,

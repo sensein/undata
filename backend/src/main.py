@@ -102,6 +102,73 @@ async def auth_me(request: Request):
     }
 
 
+# Auth login — redirect to Keycloak
+@app.get("/auth/login")
+async def auth_login():
+    from src.core.config import settings
+
+    redirect_uri = f"{settings.undata_base_url}/auth/callback"
+    keycloak_auth_url = (
+        f"{settings.keycloak_url}/realms/{settings.keycloak_realm}"
+        f"/protocol/openid-connect/auth"
+        f"?client_id={settings.keycloak_client_id}"
+        f"&redirect_uri={redirect_uri}"
+        f"&response_type=code"
+        f"&scope=openid+profile+email"
+    )
+    from fastapi.responses import RedirectResponse
+
+    return RedirectResponse(keycloak_auth_url)
+
+
+# Auth callback — exchange code for token, set cookie
+@app.get("/auth/callback")
+async def auth_callback(code: str = ""):
+    import httpx as httpx_client
+
+    from src.core.config import settings
+
+    if not code:
+        return JSONResponse(status_code=400, content={"error": "Missing authorization code"})
+
+    token_url = (
+        f"{settings.keycloak_url}/realms/{settings.keycloak_realm}"
+        f"/protocol/openid-connect/token"
+    )
+    redirect_uri = f"{settings.undata_base_url}/auth/callback"
+
+    async with httpx_client.AsyncClient() as client:
+        resp = await client.post(
+            token_url,
+            data={
+                "grant_type": "authorization_code",
+                "code": code,
+                "redirect_uri": redirect_uri,
+                "client_id": settings.keycloak_client_id,
+                "client_secret": settings.keycloak_client_secret,
+            },
+        )
+
+    if resp.status_code != 200:
+        return JSONResponse(status_code=401, content={"error": "Token exchange failed"})
+
+    tokens = resp.json()
+    access_token = tokens.get("access_token", "")
+
+    # Set cookie and redirect to frontend
+    from fastapi.responses import RedirectResponse
+
+    response = RedirectResponse("http://localhost:3000")
+    response.set_cookie(
+        "access_token",
+        access_token,
+        httponly=True,
+        samesite="lax",
+        max_age=tokens.get("expires_in", 3600),
+    )
+    return response
+
+
 # GraphQL mount
 from strawberry.fastapi import GraphQLRouter
 

@@ -88,6 +88,17 @@ class Query:
             return await r.resolve_browse_values(session, source, search_text, first, after)
 
     @strawberry.field
+    async def browse_valuesets(
+        self,
+        source: Optional[str] = None,
+        search_text: Optional[str] = None,
+        first: int = 20,
+        after: Optional[str] = None,
+    ) -> t.ValueSetConnection:
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_browse_valuesets(session, source, search_text, first, after)
+
+    @strawberry.field
     async def curation_queue(
         self,
         flag_type: Optional[t.FlagType] = None,

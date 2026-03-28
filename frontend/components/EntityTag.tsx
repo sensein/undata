@@ -42,15 +42,37 @@ function EntityPopover({ entityType, sha256 }: { entityType: string; sha256: str
   if (!entity) return null;
 
   const prov = entity.provenance?.[0];
+  const annotations = entity.ontologyAnnotations ?? [];
+  const primaryAnn = annotations.find((a: { primary: boolean }) => a.primary);
+
   return (
     <div className="p-3 max-w-xs">
       <div className="font-medium text-sm mb-1">{prov?.name ?? entity.label ?? entity.sha256?.slice(0, 12)}</div>
-      {entity.description && <div className="text-xs text-gray-600 mb-1">{entity.description}</div>}
-      <div className="text-xs text-gray-400 space-x-2">
-        {entity.dataType && <span>Type: {entity.dataType}</span>}
-        {entity.unit && <span>Unit: {entity.unit}</span>}
-        {entity.properties && <span>{entity.properties.length} properties</span>}
-        {prov?.source && <span>Source: {prov.source}</span>}
+      {entity.description && <div className="text-xs text-gray-600 mb-2">{entity.description}</div>}
+      <div className="text-xs text-gray-500 space-y-1">
+        <div className="flex flex-wrap gap-1">
+          {entity.dataType && <span className="px-1.5 py-0.5 bg-gray-100 rounded">Type: {entity.dataType}</span>}
+          {entity.unit && <span className="px-1.5 py-0.5 bg-gray-100 rounded">Unit: {entity.unit}</span>}
+          {entity.properties && <span className="px-1.5 py-0.5 bg-gray-100 rounded">{entity.properties.length} properties</span>}
+          {prov?.source && <span className="px-1.5 py-0.5 bg-blue-50 text-blue-700 rounded">{prov.source}</span>}
+        </div>
+        {/* Ontology annotation chips */}
+        {primaryAnn && (
+          <div className="mt-1.5 pt-1.5 border-t border-gray-100">
+            <a
+              href={primaryAnn.termUri}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-green-50 text-green-700 rounded text-xs hover:bg-green-100"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {primaryAnn.termLabel}
+              <span className="text-green-500">{primaryAnn.ontology}</span>
+              <span className="text-green-400">({primaryAnn.score?.toFixed(2)})</span>
+              <span className="text-[10px]">↗</span>
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
