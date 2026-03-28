@@ -24,11 +24,11 @@
 
 **Purpose**: QUDT data, dependencies, model updates
 
-- [ ] T001 Copy QUDT TTL from `backend/data/qudt/VOCAB_QUDT-UNITS-ALL.ttl` to `library/src/undata_library/data/qudt/VOCAB_QUDT-UNITS-ALL.ttl` — bundle in library package
-- [ ] T002 Add QUDT to `source_defs/ontologies.yaml` — new entry with name "qudt", path to bundled TTL, format "ttl"
-- [ ] T003 Re-add `cmixf>=0.2` to `library/pyproject.toml` dependencies
-- [ ] T004 Add `unit_uri: str | None = None` field to `SemanticIdentity` in `models.py` — nullable, not included in hash exclusions
-- [ ] T005 Add `unresolved_unit` and `unit_encoded_string` to `FlagType` enum in `models.py`
+- [X] T001 Copy QUDT TTL from `backend/data/qudt/VOCAB_QUDT-UNITS-ALL.ttl` to `library/src/undata_library/data/qudt/VOCAB_QUDT-UNITS-ALL.ttl` — bundle in library package
+- [X] T002 Add QUDT to `source_defs/ontologies.yaml` — new entry with name "qudt", path to bundled TTL, format "ttl"
+- [X] T003 Re-add `cmixf>=0.2` to `library/pyproject.toml` dependencies
+- [X] T004 Add `unit_uri: str | None = None` field to `SemanticIdentity` in `models.py` — nullable, not included in hash exclusions
+- [X] T005 Add `unresolved_unit` and `unit_encoded_string` to `FlagType` enum in `models.py`
 
 **Checkpoint**: Data bundled, model updated, deps ready
 

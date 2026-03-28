@@ -16,6 +16,7 @@ dependencies = [
     "pronto>=2.5",
     "pyoxigraph>=0.4",
     "python-dotenv>=1.0",
+    "cmixf>=0.2",
 ]
 
 [project.optional-dependencies]

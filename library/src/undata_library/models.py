@@ -88,6 +88,7 @@ class SemanticIdentity(BaseModel):
 
     data_type: DataType
     unit: str | None = None
+    unit_uri: str | None = None  # canonical QUDT URI (e.g., http://qudt.org/vocab/unit/KiloGM)
     pattern: str | None = None  # regex constraint (replaces constraints.pattern)
     response_options: list[ResponseOption] | None = None  # IN hash (sorted by value)
     question_text: str | None = None  # NOT in hash
@@ -384,6 +385,8 @@ class FlagType(str, Enum):
     needs_review = "needs_review"
     suspicious_source = "suspicious_source"
     provenance_bloat = "provenance_bloat"
+    unresolved_unit = "unresolved_unit"
+    unit_encoded_string = "unit_encoded_string"
 
 
 class FlagStatus(str, Enum):
