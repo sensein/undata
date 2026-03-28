@@ -1,0 +1,19 @@
+semantic:
+  value_type: categorical
+  label: parkinson
+  description: parkinson value
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/MONDO_0005180
+    term_label: Parkinson disease
+    ontology: mondo
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.93
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: ''
+  name: parkinson
+  description: ''
+sha256: 78e504799c9b87bd67f47898dbe8f50d814fbfc8448f4fd0148fb5bffbc49469

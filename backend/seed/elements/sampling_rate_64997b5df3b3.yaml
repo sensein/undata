@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+  ontology_annotations: []
+  unit: Hz
+provenance:
+- source: nwb
+  class: TimeSeries
+  name: sampling_rate
+  description: Sampling rate
+sha256: 64997b5df3b3652ba15e03cecc6d1e7a52ead8d431685232f11198b5408cbdfe

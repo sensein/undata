@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+  ontology_annotations: []
+  unit: degrees
+provenance:
+- source: bids
+  class: MRI
+  name: flip_angle
+  description: Flip angle
+sha256: 0eb8b59aba0bb8eae48161d6bc201e087c3fb5df75a8c0b71b776bb81bf4555f

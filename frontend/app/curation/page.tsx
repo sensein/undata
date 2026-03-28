@@ -1,27 +1,64 @@
 "use client";
 
 import { useState } from "react";
-import { useQuery } from "@apollo/client/react";
-import { CURATION_QUEUE } from "@/graphql/queries";
+import { useQuery, useMutation } from "@apollo/client/react";
+import { CURATION_QUEUE, RESOLVE_FLAG } from "@/graphql/queries";
 import { StatusBadge } from "@/components/StatusBadge";
 import { EvidencePanel } from "@/components/EvidencePanel";
+import { useAuth } from "@/components/AuthProvider";
 import type { CurationFlagConnection, Edge, CurationFlagNode } from "@/graphql/types";
 
 export default function CurationPage() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [resolveNote, setResolveNote] = useState("");
+  const { user, hasRole } = useAuth();
+  const canResolve = hasRole("curator");
 
-  const { data, loading, error } = useQuery<{ curationQueue: CurationFlagConnection }>(
+  const { data, loading, error, refetch } = useQuery<{ curationQueue: CurationFlagConnection }>(
     CURATION_QUEUE,
-    { variables: { first: 50 } },
+    { variables: { status: "PENDING", first: 50 } },
   );
+
+  const [resolveFlag, { loading: resolving }] = useMutation(RESOLVE_FLAG, {
+    onCompleted: () => {
+      setExpandedId(null);
+      setResolveNote("");
+      refetch();
+    },
+  });
+
+  const handleResolve = (flagId: string, action: string) => {
+    resolveFlag({
+      variables: {
+        input: {
+          flagId,
+          action,
+          resolvedBy: user?.name ?? "unknown",
+          note: resolveNote || undefined,
+        },
+      },
+    });
+  };
 
   const flags = data?.curationQueue?.edges ?? [];
   const totalCount = data?.curationQueue?.totalCount ?? 0;
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">Curation Queue</h1>
+      <h1 className="text-2xl font-bold mb-2">Curation Queue</h1>
       <p className="text-sm text-gray-500 mb-6">{totalCount} pending flags</p>
+
+      {!canResolve && user && (
+        <div className="bg-blue-50 border border-blue-200 rounded p-3 mb-6 text-sm text-blue-700">
+          You have viewer access. Curator role required to resolve flags.
+        </div>
+      )}
+
+      {!user && (
+        <div className="bg-gray-50 border border-gray-200 rounded p-3 mb-6 text-sm text-gray-600">
+          Sign in with curator role to resolve flags.
+        </div>
+      )}
 
       {error && (
         <div className="bg-red-50 border border-red-200 rounded p-4 mb-6">
@@ -47,11 +84,12 @@ export default function CurationPage() {
       <div className="space-y-3">
         {flags.map(({ node, cursor }: Edge<CurationFlagNode>) => {
           const isExpanded = expandedId === node.id;
-          const ctx = (node.context ?? {}) as Record<string, unknown>;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const ctx = (node.context ?? {}) as Record<string, any>;
 
           return (
             <div key={cursor} className="border rounded-lg overflow-hidden">
-              {/* Collapsed header — click to expand */}
+              {/* Header */}
               <button
                 className="w-full p-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                 onClick={() => setExpandedId(isExpanded ? null : node.id)}
@@ -70,17 +108,54 @@ export default function CurationPage() {
                 </div>
               </button>
 
-              {/* Expanded evidence panel */}
+              {/* Expanded panel */}
               {isExpanded && (
-                <div className="border-t p-4 bg-gray-50">
+                <div className="border-t p-4 bg-gray-50 space-y-4">
                   <EvidencePanel
                     context={ctx}
                     llmVerification={ctx.llm_verification as Record<string, unknown> | undefined}
                   />
 
-                  {/* Resolution context */}
+                  {/* Resolve actions */}
+                  {canResolve && node.status === "pending" && (
+                    <div className="border-t pt-4 mt-4">
+                      <h4 className="text-sm font-semibold mb-2">Resolve this flag</h4>
+                      <textarea
+                        className="w-full border rounded p-2 text-sm mb-3"
+                        rows={2}
+                        placeholder="Resolution note (optional)..."
+                        value={resolveNote}
+                        onChange={(e) => setResolveNote(e.target.value)}
+                      />
+                      <div className="flex gap-2">
+                        <button
+                          className="px-4 py-2 bg-green-600 text-white rounded text-sm hover:bg-green-700 disabled:opacity-50"
+                          onClick={() => handleResolve(node.id, "APPROVED")}
+                          disabled={resolving}
+                        >
+                          ✓ Approve
+                        </button>
+                        <button
+                          className="px-4 py-2 bg-red-600 text-white rounded text-sm hover:bg-red-700 disabled:opacity-50"
+                          onClick={() => handleResolve(node.id, "REJECTED")}
+                          disabled={resolving}
+                        >
+                          ✗ Reject
+                        </button>
+                        <button
+                          className="px-4 py-2 bg-gray-500 text-white rounded text-sm hover:bg-gray-600 disabled:opacity-50"
+                          onClick={() => handleResolve(node.id, "DEFERRED")}
+                          disabled={resolving}
+                        >
+                          — Defer
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Already resolved */}
                   {node.resolvedBy && (
-                    <div className="mt-4 text-sm text-gray-600">
+                    <div className="text-sm text-gray-600 border-t pt-3">
                       <strong>Resolved by:</strong> {node.resolvedBy}
                       {node.resolutionNote && <span> — {node.resolutionNote}</span>}
                     </div>

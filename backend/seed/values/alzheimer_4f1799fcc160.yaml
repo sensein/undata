@@ -1,0 +1,19 @@
+semantic:
+  value_type: categorical
+  label: alzheimer
+  description: alzheimer value
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/MONDO_0004975
+    term_label: Alzheimer disease
+    ontology: mondo
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.92
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: ''
+  name: alzheimer
+  description: ''
+sha256: 4f1799fcc16007d08efd812a32a6d6990f97e67b3d18181d48e515305e183e31

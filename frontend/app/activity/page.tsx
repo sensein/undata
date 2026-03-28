@@ -11,7 +11,7 @@ export default function ActivityPage() {
   // Future: merge with contributions when that data is available
   const { data, loading, error } = useQuery<{ curationQueue: CurationFlagConnection }>(
     CURATION_QUEUE,
-    { variables: { first: 50, status: null } }, // all statuses
+    { variables: { first: 50 } }, // no status filter = all statuses
   );
 
   const events = useMemo(() => {

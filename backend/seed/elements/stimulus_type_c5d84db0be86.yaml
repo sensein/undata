@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+  ontology_annotations: []
+provenance:
+- source: nwb
+  class: Stimulus
+  name: stimulus_type
+  description: Type of stimulus presented
+sha256: c5d84db0be864cc87df83cf8a97ebb0dfe3bae91949310eccc21be8e3d9626bc

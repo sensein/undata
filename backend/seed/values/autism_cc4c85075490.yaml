@@ -1,0 +1,19 @@
+semantic:
+  value_type: categorical
+  label: autism
+  description: autism value
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/MONDO_0005260
+    term_label: Autism
+    ontology: mondo
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.89
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: ''
+  name: autism
+  description: ''
+sha256: cc4c85075490a03f418d1449fa0cfa9794be6bb037076218c7156f3cbe9d5f0d

@@ -1,0 +1,19 @@
+semantic:
+  value_type: categorical
+  label: Homo sapiens
+  description: Homo sapiens value
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C14225
+    term_label: Human
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.99
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: openminds
+  class: ''
+  name: Homo sapiens
+  description: ''
+sha256: 2e501aa3c6e38244a5f14e653c6e12e08148f30c64f1b3681c260d63383441b2

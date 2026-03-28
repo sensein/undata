@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+  ontology_annotations: []
+  unit: nm
+provenance:
+- source: aind
+  class: LaserConfig
+  name: wavelength
+  description: Laser wavelength
+sha256: 188899898cd08eb139312e22cf32deb8dd850a3dc1a9fbd6f3f9d1e0a19c71d0

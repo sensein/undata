@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+  ontology_annotations: []
+  unit: seconds
+provenance:
+- source: bids
+  class: MRI
+  name: repetition_time
+  description: TR repetition time
+sha256: 30ba75d53815be963d6cdfc858c37186c854ba066223022f0622eb78c82d8acf

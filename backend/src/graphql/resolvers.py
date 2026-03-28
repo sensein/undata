@@ -360,11 +360,13 @@ async def resolve_browse_valuesets(
 async def resolve_curation_queue(
     session: AsyncSession,
     flag_type: t.FlagType | None = None,
-    status: t.FlagStatus = t.FlagStatus.PENDING,
+    status: t.FlagStatus | None = None,
     first: int = 20,
     after: str | None = None,
 ) -> t.CurationFlagConnection:
-    stmt = select(CurationFlagModel).where(CurationFlagModel.status == status.value)
+    stmt = select(CurationFlagModel)
+    if status:
+        stmt = stmt.where(CurationFlagModel.status == status.value)
     if flag_type:
         stmt = stmt.where(CurationFlagModel.flag_type == flag_type.value)
 

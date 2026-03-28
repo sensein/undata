@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - sampling_rate
+  - duration
+  subclass_of: null
+  is_mixin: false
+  description: TimeSeries schema
+  ontology_annotations: []
+provenance:
+- source: nwb
+  class: ''
+  name: TimeSeries
+  description: nwb TimeSeries
+sha256: c7dd412c291f2f142b6d2c3ae50445d213dd291a2f8c4e74c7598974912dc597

@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C28421
+    term_label: Sex
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: concept_match
+    score: 0.96
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: Subject
+  name: sex
+  description: Biological sex
+sha256: 37b34ec4c3756ae0252ee2deffbce469584864bd4546b57a49643b038d2788ef

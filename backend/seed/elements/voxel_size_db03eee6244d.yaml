@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+  ontology_annotations: []
+  unit: mm
+provenance:
+- source: bids
+  class: MRI
+  name: voxel_size
+  description: Voxel size
+sha256: db03eee6244df55b8b8438d81e63d11c839b430ea0663779b552b9ccd95a1445

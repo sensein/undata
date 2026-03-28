@@ -155,7 +155,7 @@ export const BROWSE_VALUESETS = gql`
 `;
 
 export const CURATION_QUEUE = gql`
-  query CurationQueue($flagType: FlagType, $status: FlagStatus = PENDING, $first: Int = 20, $after: String) {
+  query CurationQueue($flagType: FlagType, $status: FlagStatus, $first: Int = 50, $after: String) {
     curationQueue(flagType: $flagType, status: $status, first: $first, after: $after) {
       edges {
         node {
@@ -177,6 +177,17 @@ export const CURATION_QUEUE = gql`
         endCursor
       }
       totalCount
+    }
+  }
+`;
+
+export const RESOLVE_FLAG = gql`
+  mutation ResolveFlag($input: ResolveFlagInput!) {
+    resolveFlag(input: $input) {
+      id
+      status
+      resolvedBy
+      resolutionNote
     }
   }
 `;

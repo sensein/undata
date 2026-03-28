@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - wavelength
+  - power
+  subclass_of: null
+  is_mixin: false
+  description: LaserConfig schema
+  ontology_annotations: []
+provenance:
+- source: aind
+  class: ''
+  name: LaserConfig
+  description: aind LaserConfig
+sha256: b782f1d6d69cb0103e2b568b585143103b563ea8051722832dc4373c9407996d

@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+  ontology_annotations: []
+  unit: kg
+provenance:
+- source: bids
+  class: Subject
+  name: weight
+  description: Body weight
+sha256: a3099e385d13106f500215f8d40cfc6b673634c3651d6f1e10d11bc735435a6b

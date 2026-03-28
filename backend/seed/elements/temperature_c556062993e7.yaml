@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+  ontology_annotations: []
+  unit: celsius
+provenance:
+- source: openminds
+  class: Protocol
+  name: temperature
+  description: Temperature during recording
+sha256: c556062993e7389ae67dc094cda67e0670efb86f09c67ab7c259ca608c9a5e6b

@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25347
+    term_label: Height
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: concept_match
+    score: 0.91
+    model: all-MiniLM-L6-v2
+    primary: true
+  unit: cm
+provenance:
+- source: bids
+  class: Subject
+  name: height
+  description: Height
+sha256: a44fc23262b82711bad741b2bec88534bd2c9e886be2418fbd4c5961765b88b9

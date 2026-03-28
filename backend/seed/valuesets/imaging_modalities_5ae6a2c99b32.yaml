@@ -1,0 +1,15 @@
+semantic:
+  name: imaging_modalities
+  members:
+  - MRI
+  - EEG
+  - MEG
+  - PET
+  description: Modalities
+  ontology_annotations: []
+provenance:
+- source: bids
+  class: ''
+  name: imaging_modalities
+  description: Modalities
+sha256: 5ae6a2c99b324d02b7ec9c5d3a7ccd2bd985d88a40fdeae6d6cba6cd07915e71

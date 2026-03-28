@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+  ontology_annotations: []
+  unit: seconds
+provenance:
+- source: nwb
+  class: TimeSeries
+  name: duration
+  description: Duration of recording
+sha256: 1b9de30615ad56bc9184ba217c8d788d0171ef118b4d3e6302e3651aedfe11ba

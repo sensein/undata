@@ -1,0 +1,9 @@
+semantic:
+  data_type: integer
+  ontology_annotations: []
+provenance:
+- source: nwb
+  class: ElectrodeGroup
+  name: electrode_count
+  description: Number of electrodes
+sha256: 9e5188332fb01b356322716db09cd7eb56fa54c6b16a817347fc7d9e3b147c30

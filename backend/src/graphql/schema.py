@@ -102,7 +102,7 @@ class Query:
     async def curation_queue(
         self,
         flag_type: Optional[t.FlagType] = None,
-        status: t.FlagStatus = t.FlagStatus.PENDING,
+        status: Optional[t.FlagStatus] = None,
         first: int = 20,
         after: Optional[str] = None,
     ) -> t.CurationFlagConnection:

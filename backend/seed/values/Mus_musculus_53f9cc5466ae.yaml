@@ -1,0 +1,19 @@
+semantic:
+  value_type: categorical
+  label: Mus musculus
+  description: Mus musculus value
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C14238
+    term_label: Mouse
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.99
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: openminds
+  class: ''
+  name: Mus musculus
+  description: ''
+sha256: 53f9cc5466aef50bea06f59d597ae9b7cb11aeb27c9e53296c85d4235aa2abd9

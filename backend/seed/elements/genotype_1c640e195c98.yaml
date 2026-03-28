@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+  ontology_annotations: []
+provenance:
+- source: aind
+  class: Subject
+  name: genotype
+  description: Genotype
+sha256: 1c640e195c986b093e6b5d2c73a16b72130c7e41125dcca9eb9232d3e47aaade

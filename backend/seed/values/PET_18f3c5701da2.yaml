@@ -1,0 +1,11 @@
+semantic:
+  value_type: categorical
+  label: PET
+  description: PET value
+  ontology_annotations: []
+provenance:
+- source: bids
+  class: ''
+  name: PET
+  description: ''
+sha256: 18f3c5701da283197997bf0bd78898f6109923dbe19aceb4e941904c45287ee8

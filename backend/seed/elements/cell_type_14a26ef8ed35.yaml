@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+  ontology_annotations: []
+provenance:
+- source: openminds
+  class: CellType
+  name: cell_type
+  description: Type of cell recorded
+sha256: 14a26ef8ed3539deeba73478f28bc1b60235ac400f6d27aecdd4c10aa4aeb9df

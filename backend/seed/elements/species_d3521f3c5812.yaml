@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C14250
+    term_label: Species
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: concept_match
+    score: 0.99
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: openminds
+  class: Subject
+  name: species
+  description: Species
+sha256: d3521f3c5812edb3d71462e3f11cef56e773d797d441900b54afa3aa56ee6a3c

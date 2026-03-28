@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+  ontology_annotations: []
+provenance:
+- source: bids
+  class: Session
+  name: session_date
+  description: Date of recording session
+sha256: 18715cea669ec6b80743a5bcfe2ed412978ac34ac848e9541aa12aee3cd4bfd6

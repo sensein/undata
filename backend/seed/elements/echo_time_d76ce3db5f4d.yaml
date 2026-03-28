@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+  ontology_annotations: []
+  unit: milliseconds
+provenance:
+- source: bids
+  class: MRI
+  name: echo_time
+  description: TE echo time
+sha256: d76ce3db5f4df09f4c60b7fdc6643a3eac800f12acc53946fe929d6c843a0a2e

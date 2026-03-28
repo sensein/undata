@@ -1,0 +1,10 @@
+semantic:
+  data_type: float
+  ontology_annotations: []
+  unit: mW
+provenance:
+- source: aind
+  class: LaserConfig
+  name: power
+  description: Laser power
+sha256: 4be76ef4b2fd3320dbeb3afe5cd848a1a2f67d7847f049bbb0bad0e9da4161b8

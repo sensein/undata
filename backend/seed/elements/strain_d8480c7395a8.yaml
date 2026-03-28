@@ -1,0 +1,9 @@
+semantic:
+  data_type: string
+  ontology_annotations: []
+provenance:
+- source: openminds
+  class: Subject
+  name: strain
+  description: Strain of animal
+sha256: d8480c7395a86753cab83f8be2d1753ff05678fd0542bdf3f64234f4d76ad072

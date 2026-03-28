@@ -1,0 +1,15 @@
+semantic:
+  name: common_species
+  members:
+  - Homo_sapiens
+  - Mus_musculus
+  - Rattus_norvegicus
+  - Macaca_mulatta
+  description: Species
+  ontology_annotations: []
+provenance:
+- source: openminds
+  class: ''
+  name: common_species
+  description: Species
+sha256: eecbe1e1b9f14d06aba93f6bfe14739c02b08bd8aa89e581c3b597c7cc6f0fa4

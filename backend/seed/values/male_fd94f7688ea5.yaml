@@ -1,0 +1,19 @@
+semantic:
+  value_type: categorical
+  label: male
+  description: male value
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000384
+    term_label: male
+    ontology: pato
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.99
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: ''
+  name: male
+  description: ''
+sha256: fd94f7688ea579a6eebaa32be285f2b7776f12055e04bf83ff7ae64e742a03ff

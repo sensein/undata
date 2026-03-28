@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25150
+    term_label: Age
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: concept_match
+    score: 0.98
+    model: all-MiniLM-L6-v2
+    primary: true
+  unit: years
+provenance:
+- source: bids
+  class: Subject
+  name: age
+  description: Age of the participant
+sha256: 337fdfc5bf80a367d87dc79a85ce5e22fa3c6c27afa604f2fed28111a617f33f

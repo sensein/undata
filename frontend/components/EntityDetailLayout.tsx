@@ -123,13 +123,29 @@ export function EntityDetailLayout({
               <h2 className="text-lg font-semibold mb-3">Ontology Annotations ({annotations.length})</h2>
               <div className="space-y-2">
                 {annotations.map((a, i) => (
-                  <div key={i} className="border rounded p-3 flex justify-between items-center">
-                    <div>
-                      <span className="font-medium">{a.termLabel || a.termUri}</span>
-                      <span className="text-gray-400 ml-2 text-xs">{a.ontology}</span>
-                      <span className="text-gray-400 ml-2 text-xs">{a.mappingRelation}</span>
+                  <div key={i} className="border rounded p-3">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <a
+                          href={a.termUri}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-blue-700 hover:underline"
+                        >
+                          {a.termLabel || a.termUri}
+                          <span className="text-xs ml-1">↗</span>
+                        </a>
+                        <span className="ml-2 px-1.5 py-0.5 bg-green-50 text-green-700 rounded text-xs">{a.ontology}</span>
+                        <span className="ml-1 px-1.5 py-0.5 bg-gray-100 text-gray-600 rounded text-xs">{a.mappingRelation}</span>
+                        {a.matchLevel && (
+                          <span className="ml-1 px-1.5 py-0.5 bg-blue-50 text-blue-600 rounded text-xs">{a.matchLevel}</span>
+                        )}
+                      </div>
+                      <span className="text-sm font-mono text-gray-500">{a.score?.toFixed(3)}</span>
                     </div>
-                    <span className="text-sm font-mono">{a.score?.toFixed(3)}</span>
+                    {a.termUri && (
+                      <div className="mt-1 text-xs text-gray-400 font-mono truncate">{a.termUri}</div>
+                    )}
                   </div>
                 ))}
               </div>

@@ -1,0 +1,9 @@
+id: c0c9e544-65e3-412f-a459-cd0fa969854c
+entity_type: element
+entity_ref: genotype
+flag_type: low_confidence
+context:
+  reason: "Genotype field from AIND \u2014 no ontology mapping available"
+  score: 0.45
+status: pending
+created_at: '2026-03-28T19:26:17.442142+00:00'

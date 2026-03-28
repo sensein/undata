@@ -1,0 +1,11 @@
+semantic:
+  value_type: categorical
+  label: ambidextrous
+  description: ambidextrous value
+  ontology_annotations: []
+provenance:
+- source: bids
+  class: ''
+  name: ambidextrous
+  description: ''
+sha256: 80c9f0edb1e41d2ab663a3d795534870168db3cda2541670625d9cd39ea20b7c

@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - tissue_origin
+  - cell_type
+  subclass_of: null
+  is_mixin: false
+  description: TissueSample schema
+  ontology_annotations: []
+provenance:
+- source: openminds
+  class: ''
+  name: TissueSample
+  description: openminds TissueSample
+sha256: e68b391931f75705c650779ca3dd7f8678d206de8684b51fc190f4d3af3a737d

@@ -1,0 +1,18 @@
+semantic:
+  name: neurological_conditions
+  members:
+  - healthy
+  - alzheimer
+  - epilepsy
+  - parkinson
+  - schizophrenia
+  - autism
+  - depression
+  description: Conditions
+  ontology_annotations: []
+provenance:
+- source: dandi
+  class: ''
+  name: neurological_conditions
+  description: Conditions
+sha256: f7912e0d02e80059b596794648d71048b88e16f3c610053b0efb720b1dc5f7d6

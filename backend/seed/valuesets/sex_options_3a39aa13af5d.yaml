@@ -1,0 +1,13 @@
+semantic:
+  name: sex_options
+  members:
+  - male
+  - female
+  description: Biological sex
+  ontology_annotations: []
+provenance:
+- source: bids
+  class: ''
+  name: sex_options
+  description: Biological sex
+sha256: 3a39aa13af5d32861cb282b2e25015bfced2c05305581ace84365d11b0e68b19
