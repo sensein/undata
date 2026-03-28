@@ -1,104 +1,85 @@
-# Implementation Plan: [FEATURE]
+# Implementation Plan: Unit Standardization with QUDT
 
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
-
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/plan-template.md` for the execution workflow.
+**Branch**: `033-unit-standardization` | **Date**: 2026-03-28 | **Spec**: [spec.md](spec.md)
 
 ## Summary
 
-[Extract from feature spec: primary requirement + technical approach from research]
+Resolve raw unit strings to canonical QUDT URIs using the bundled TTL vocabulary, normalize units before hashing for correct dedup, extract units from all adapters, and generate QUDT-based conversion transforms.
 
 ## Technical Context
 
-<!--
-  ACTION REQUIRED: Replace the content in this section with the technical details
-  for the project. The structure here is presented in advisory capacity to guide
-  the iteration process.
--->
-
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [e.g., library/cli/web-service/mobile-app/compiler/desktop-app or NEEDS CLARIFICATION]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Language/Version**: Python 3.14
+**Primary Dependencies**: pyoxigraph (RDF parsing, already in deps), cmixf 0.2.x (unit validation, to be re-added)
+**Storage**: QUDT TTL bundled in library package
+**Testing**: pytest, 400+ existing tests as regression baseline
+**Project Type**: Library (pipeline enhancement)
+**Constraints**: Must not break existing 400+ tests. Fallback to raw strings when QUDT unavailable.
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
-
-[Gates determined based on constitution file]
+| Principle | Status | Notes |
+|-----------|--------|-------|
+| I. Simplicity First | PASS | UnitResolver is a single module with dict-based lookup. No new abstractions. |
+| II. TDD | PASS | Unit resolver tests before implementation. |
+| III. API-First Design | PASS | UnitResolver has clear interface: resolve(string) → UnitResult. |
+| IV. Observability | PASS | Unresolved units logged as warnings + curation flags. |
+| V. No Deprecation | PASS | Adding unit_uri field, not changing unit field. |
+| VI. Environment Isolation | PASS | QUDT TTL bundled, no external downloads. |
+| VII. Developer Experience | PASS | Resolver works offline with bundled data. |
+| CI Green Before Merge | PASS | All tests must pass. |
 
 ## Project Structure
 
-### Documentation (this feature)
-
 ```text
-specs/[###-feature]/
-├── plan.md              # This file (/speckit.plan command output)
-├── research.md          # Phase 0 output (/speckit.plan command)
-├── data-model.md        # Phase 1 output (/speckit.plan command)
-├── quickstart.md        # Phase 1 output (/speckit.plan command)
-├── contracts/           # Phase 1 output (/speckit.plan command)
-└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
+library/src/undata_library/
+├── unit_resolver.py              # NEW: QUDT resolution + alias table
+├── data/
+│   └── qudt/
+│       └── VOCAB_QUDT-UNITS-ALL.ttl  # COPY from backend/data/qudt/
+├── models.py                     # UPDATE: add unit_uri to SemanticIdentity
+├── hashing.py                    # UPDATE: use unit_uri in hash when available
+├── enrich.py                     # UPDATE: call resolve_units() in enrich_all()
+├── adapters/
+│   ├── nwb.py                    # UPDATE: extract units from NWB schemas
+│   ├── dandi.py                  # UPDATE: extract units from DANDI models
+│   ├── openminds.py              # UPDATE: extract units from openMINDS
+│   └── aind.py                   # UPDATE: extract units from AIND JSON Schema
+└── transform.py                  # UPDATE: use QUDT conversion factors
+
+library/tests/
+├── test_unit_resolver.py         # NEW: resolver tests
+└── [existing 400+ tests]         # UNCHANGED
 ```
 
-### Source Code (repository root)
-<!--
-  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
-  for this feature. Delete unused options and expand the chosen structure with
-  real paths (e.g., apps/admin, packages/something). The delivered plan must
-  not include Option labels.
--->
+## Implementation Approach
 
-```text
-# [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
-src/
-├── models/
-├── services/
-├── cli/
-└── lib/
+### Phase 1: QUDT in Ontology Store + UnitResolver (US1)
+1. Copy QUDT TTL to library/src/undata_library/data/qudt/
+2. Add QUDT to ontologies.yaml config so OntologyStore loads it alongside NCIT, PATO, etc.
+3. Update ontology_store.py — add unit-specific methods: `lookup_unit(symbol)`, `search_units(query)`
+4. Create unit_resolver.py — thin wrapper over OntologyStore with alias table for common neuroscience unit variants ("years"→YR, "kg"→KiloGM), `resolve(raw_string) → UnitResult`
+5. Write resolver tests — common units, aliases, unresolved, conversion factors
+6. Re-add cmixf to library deps
 
-tests/
-├── contract/
-├── integration/
-└── unit/
+### Phase 2: Hash Normalization (US2)
+1. Add unit_uri field to SemanticIdentity in models.py
+2. Update hashing.py — use unit_uri in canonical_json when available
+3. Write hash normalization tests — verify equivalent units produce same hash
 
-# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
-backend/
-├── src/
-│   ├── models/
-│   ├── services/
-│   └── api/
-└── tests/
+### Phase 3: Enrichment Integration (US1 continued)
+1. Add resolve_units() function to enrich.py (or unit_resolver.py)
+2. Call from enrich_all() as first enrichment step
+3. Generate unresolved_unit curation flags
+4. Verify with pipeline run
 
-frontend/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   └── services/
-└── tests/
+### Phase 4: Adapter Unit Extraction (US3)
+1. Update NWB adapter — extract units from dtype/quantity annotations
+2. Update DANDI adapter — extract units from Pydantic model field metadata
+3. Update openMINDS adapter — extract units from property definitions
+4. Update AIND adapter — extract units from JSON Schema fields
+5. Verify entity counts and unit coverage
 
-# [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
-api/
-└── [same as backend above]
-
-ios/ or android/
-└── [platform-specific structure: feature modules, UI flows, platform tests]
-```
-
-**Structure Decision**: [Document the selected structure and reference the real
-directories captured above]
-
-## Complexity Tracking
-
-> **Fill ONLY if Constitution Check has violations that must be justified**
-
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+### Phase 5: QUDT Transforms + cmixf + Polish (US4 + US5)
+1. Update transform.py — use QUDT conversion factors instead of hardcoded table
+2. Add cmixf validation as optional enrichment step
+3. Run full test suite, verify CI green

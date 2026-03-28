@@ -149,10 +149,17 @@ As a curator, I need unit strings validated against the cmixf grammar so typos a
 - Unit conversion execution (only factor generation, not runtime conversion)
 - Backend/frontend changes (this is library-only)
 
+## Clarifications
+
+### Session 2026-03-28
+
+- Q: Should QUDT be a separate resolver or integrated into the existing ontology service? → A: Load QUDT into the existing OntologyStore (pyoxigraph) as another ontology alongside NCIT, PATO, etc. Reuse the same search_terms/lookup_term patterns. Unit resolution is ontology enrichment for the `unit` field, following the same approach as entity ontology enrichment.
+
 ## Assumptions
 
 - The QUDT TTL file at `backend/data/qudt/VOCAB_QUDT-UNITS-ALL.ttl` is the authoritative vocabulary
-- rdflib 7.x can parse the QUDT TTL file efficiently
+- QUDT loads into the existing OntologyStore (pyoxigraph) alongside other ontologies
+- The enrichment pipeline's existing pattern (embedding similarity + lookup) is reused for unit resolution
 - cmixf 0.2.x is available for symbol validation
 - Unit strings from sources are typically simple symbols ("kg", "mV", "years") not complex expressions
 - The `unit_uri` field is new and will not conflict with existing data
