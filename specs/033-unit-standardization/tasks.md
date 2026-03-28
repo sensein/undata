@@ -80,15 +80,15 @@
 
 **Independent Test**: NWB extraction → elements with units populated.
 
-- [ ] T015 [P] [US3] Update NWB adapter in `adapters/nwb.py` — extract unit from `dtype` field annotations, `quantity` attributes, and namespace-level unit declarations. Map to LinkML slot `unit` annotation
-- [ ] T016 [P] [US3] Update DANDI adapter in `adapters/dandi.py` — extract unit from Pydantic model field metadata (`json_schema_extra`, `description` patterns)
-- [ ] T017 [P] [US3] Update openMINDS adapter in `adapters/openminds.py` — extract unit from property `unitOfMeasurement` or linked `QuantitativeValue` patterns
-- [ ] T018 [P] [US3] Update AIND adapter in `adapters/aind.py` — extract unit from JSON Schema `unit` or `units` properties in field definitions
-- [ ] T019 [US3] Update standard extractor in `adapters/extractor.py` — when extracting slots from LinkML, preserve `unit` annotation and map to SemanticIdentity.unit
-- [ ] T020 [US3] Detect multi-unit fields in adapters — when a field has `allowed_units: [...]` or similar, create one ClassifiedEntity per unit variant. Each variant has a single unit and distinct provenance noting the variant
-- [ ] T021 [US3] Detect paired value+unit fields in adapters — when schema has `{name}` (numeric) + `{name}_unit` (enum), recognize the pair. Create unit-specific element variants for each enum value. Generate transforms: `{name}_in_{unit} = T({name}, {name}_unit)`
-- [ ] T022 [US3] Detect string-encoded unit patterns — when a string field's description or response_options suggest embedded units (e.g., "120 mmHg"), generate `unit_encoded_string` curation flag
-- [ ] T023 [US3] Run extraction for all 5 sources, count elements with `unit` populated — compare to brainstorm v1 baseline
+- [X] T015 [P] [US3] Update NWB adapter in `adapters/nwb.py` — extract unit from `dtype` field annotations, `quantity` attributes, and namespace-level unit declarations. Map to LinkML slot `unit` annotation
+- [X] T016 [P] [US3] Update DANDI adapter in `adapters/dandi.py` — extract unit from Pydantic model field metadata (`json_schema_extra`, `description` patterns)
+- [X] T017 [P] [US3] Update openMINDS adapter in `adapters/openminds.py` — extract unit from property `unitOfMeasurement` or linked `QuantitativeValue` patterns
+- [X] T018 [P] [US3] Update AIND adapter in `adapters/aind.py` — extract unit from JSON Schema `unit` or `units` properties in field definitions
+- [X] T019 [US3] Update standard extractor in `adapters/extractor.py` — when extracting slots from LinkML, preserve `unit` annotation and map to SemanticIdentity.unit
+- [X] T020 [US3] Detect multi-unit fields in adapters — when a field has `allowed_units: [...]` or similar, create one ClassifiedEntity per unit variant. Each variant has a single unit and distinct provenance noting the variant
+- [X] T021 [US3] Detect paired value+unit fields in adapters — when schema has `{name}` (numeric) + `{name}_unit` (enum), recognize the pair. Create unit-specific element variants for each enum value. Generate transforms: `{name}_in_{unit} = T({name}, {name}_unit)`
+- [X] T022 [US3] Detect string-encoded unit patterns — when a string field's description or response_options suggest embedded units (e.g., "120 mmHg"), generate `unit_encoded_string` curation flag
+- [X] T023 [US3] Run extraction for all 5 sources, count elements with `unit` populated — compare to brainstorm v1 baseline
 
 **Checkpoint**: All adapters extract units. Multi-unit and paired fields handled.
 
@@ -100,11 +100,11 @@
 
 **Independent Test**: Transform between year/month elements uses QUDT factor 12.0.
 
-- [ ] T024 [US4] Update `transform.py` — replace `_UNIT_CONVERSIONS` hardcoded dict with QUDT-based lookup. For each element pair sharing an ontology term but differing in unit_uri, compute conversion factor via `UnitResolver.conversion_factor(uri_a, uri_b)`. Fall back to hardcoded table if QUDT unavailable
-- [ ] T025 [US4] Handle paired-field transforms in `transform.py` — for recognized `(value, value_unit)` pairs, generate parametric transforms: `value_in_{unit} = value * factor` where factor comes from QUDT
-- [ ] T026 [P] [US5] Add cmixf validation to `unit_resolver.py` — `validate_cmixf(unit_string) → {valid: bool, error: str | None}` using cmixf library. Called optionally during enrichment
-- [ ] T027 [US4] Run transform generation, compare to brainstorm v1 — verify ≥20 QUDT-based conversion pairs (was 8 hardcoded)
-- [ ] T028 [US5] Run cmixf validation on all extracted units — report valid/invalid counts
+- [X] T024 [US4] Update `transform.py` — replace `_UNIT_CONVERSIONS` hardcoded dict with QUDT-based lookup. For each element pair sharing an ontology term but differing in unit_uri, compute conversion factor via `UnitResolver.conversion_factor(uri_a, uri_b)`. Fall back to hardcoded table if QUDT unavailable
+- [X] T025 [US4] Handle paired-field transforms in `transform.py` — for recognized `(value, value_unit)` pairs, generate parametric transforms: `value_in_{unit} = value * factor` where factor comes from QUDT
+- [X] T026 [P] [US5] Add cmixf validation to `unit_resolver.py` — `validate_cmixf(unit_string) → {valid: bool, error: str | None}` using cmixf library. Called optionally during enrichment
+- [X] T027 [US4] Run transform generation, compare to brainstorm v1 — verify ≥20 QUDT-based conversion pairs (was 8 hardcoded)
+- [X] T028 [US5] Run cmixf validation on all extracted units — report valid/invalid counts
 
 **Checkpoint**: QUDT-based transforms working. cmixf validation available.
 
@@ -114,12 +114,12 @@
 
 **Purpose**: Full regression, eval record, cleanup
 
-- [ ] T029 Run full library test suite — all 400+ tests pass (`uv run pytest tests/ -v`)
-- [ ] T030 Run full pipeline for BIDS source — verify unit_uri populated on elements, count unit resolution rate
-- [ ] T031 Record unit resolution stats in `eval-record.md` — resolved count, unresolved count, LLM-extracted count, conversion pairs generated
-- [ ] T032 Verify `ruff check` and `ruff format` pass on all modified files
-- [ ] T033 Run quickstart validation QS-001 through QS-007
-- [ ] T034 Push branch and verify CI is green
+- [X] T029 Run full library test suite — all 400+ tests pass (`uv run pytest tests/ -v`)
+- [X] T030 Run full pipeline for BIDS source — verify unit_uri populated on elements, count unit resolution rate
+- [X] T031 Record unit resolution stats in `eval-record.md` — resolved count, unresolved count, LLM-extracted count, conversion pairs generated
+- [X] T032 Verify `ruff check` and `ruff format` pass on all modified files
+- [X] T033 Run quickstart validation QS-001 through QS-007
+- [X] T034 Push branch and verify CI is green
 
 ---
 
