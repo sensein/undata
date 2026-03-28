@@ -54,10 +54,10 @@ def validate_jwt(token: str, public_key: Any = None) -> dict | None:
             )
         return decoded
     except jwt.ExpiredSignatureError:
-        logger.debug("JWT expired")
+        logger.warning("JWT expired")
         return None
     except jwt.InvalidTokenError as e:
-        logger.debug("JWT invalid: %s", e)
+        logger.warning("JWT invalid: %s", e)
         return None
     except Exception as e:
         logger.warning("JWT validation error: %s", e)

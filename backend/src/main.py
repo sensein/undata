@@ -90,6 +90,25 @@ async def health():
 @app.get("/auth/me")
 async def auth_me(request: Request):
     from src.auth.dependencies import get_current_user
+    from src.auth.middleware import extract_token, is_jwt, validate_jwt
+
+    # Debug: log what we receive
+    auth_header = request.headers.get("authorization", "")
+    token = extract_token(auth_header)
+    logger.info("auth_me: header=%s, token_found=%s, is_jwt=%s",
+                auth_header[:30] + "..." if len(auth_header) > 30 else auth_header,
+                token is not None,
+                is_jwt(token) if token else False)
+
+    if token and is_jwt(token):
+        # Try decode without verification to see claims
+        import jwt as pyjwt
+        try:
+            unverified = pyjwt.decode(token, options={"verify_signature": False})
+            logger.info("auth_me: unverified claims: iss=%s, aud=%s, sub=%s",
+                        unverified.get("iss"), unverified.get("aud"), unverified.get("sub"))
+        except Exception as e:
+            logger.info("auth_me: can't decode unverified: %s", e)
 
     user = await get_current_user(request)
     if user is None:
@@ -160,7 +179,9 @@ async def auth_callback(code: str = ""):
     # Frontend reads the fragment and stores in localStorage
     from fastapi.responses import RedirectResponse
 
-    return RedirectResponse(f"{settings.frontend_url}/auth/callback#token={access_token}")
+    # Use query parameter — more reliable than fragment across redirect chains
+    from urllib.parse import quote
+    return RedirectResponse(f"{settings.frontend_url}/auth/callback?token={quote(access_token, safe='')}")
 
 
 # GraphQL mount
