@@ -9,7 +9,7 @@
       "clientId": "undata-backend",
       "enabled": true,
       "protocol": "openid-connect",
-      "publicClient": false,
+      "publicClient": true,
       "standardFlowEnabled": true,
       "directAccessGrantsEnabled": true,
       "redirectUris": ["http://localhost:8002/*", "http://localhost:3000/*"],
