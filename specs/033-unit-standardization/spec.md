@@ -177,5 +177,5 @@ As a curator, I need unit strings validated against the cmixf grammar so typos a
 
 - Feature 028 (storage abstraction) — enrichment pipeline accepts StorageBackend
 - QUDT TTL vocabulary file (already in repo)
-- rdflib 7.x (already in library dependencies)
+- pyoxigraph (already in library dependencies — used by OntologyStore)
 - cmixf 0.2.x (needs to be added back to library dependencies)
