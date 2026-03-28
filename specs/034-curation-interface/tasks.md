@@ -37,8 +37,8 @@
 
 ### Implementation
 
-- [ ] T006 Add `updateElement`, `updateSchema`, `updateValue`, `updateValueSet` input types to `backend/src/graphql/types.py` — UpdateElementInput with optional fields (dataType, unit, description, ontologyAnnotations, etc.)
-- [ ] T007 Implement update resolvers in `backend/src/graphql/resolvers.py` — `resolve_update_element(session, sha256, input)` fetches entity, applies changes, returns updated entity. Records curator identity.
+- [ ] T006 Add `updateElement`, `updateSchema`, `updateValue`, `updateValueSet` input types to `backend/src/graphql/types.py` — UpdateElementInput with optional fields (dataType, unit, description, ontologyAnnotations, etc.) + required `reason: str` field for change attribution (FR-008)
+- [ ] T007 Implement update resolvers in `backend/src/graphql/resolvers.py` — `resolve_update_element(session, sha256, input)` fetches entity, applies changes, returns updated entity. Records curator identity + `reason` in provenance/audit (append to provenance with activity="curation", attributed_to=curator, description=reason).
 - [ ] T008 Wire update mutations in `backend/src/graphql/schema.py` — `updateElement(sha256, input)`, `updateSchema`, `updateValue`, `updateValueSet`. All require curator auth.
 - [ ] T009 Create `backend/src/tools/entity_tools.py` — implement `propose_entity_change()`, `create_entity()`, `delete_entity()`, `fetch_entity()` as Python functions callable by the LLM tool loop. Each validates inputs and returns structured results.
 - [ ] T010 [P] Create `backend/src/tools/ontology_tools.py` — implement `lookup_ontology_term(query, ontology, limit)` using OntologyStore.search_terms(). Returns validated URIs with labels.
