@@ -20,11 +20,11 @@
     {
       "alias": "globus",
       "providerId": "oidc",
-      "enabled": false,
+      "enabled": true,
       "displayName": "Globus (Institutional Login)",
       "config": {
-        "clientId": "${GLOBUS_CLIENT_ID}",
-        "clientSecret": "${GLOBUS_CLIENT_SECRET}",
+        "clientId": "CONFIGURE_IN_ADMIN_CONSOLE",
+        "clientSecret": "CONFIGURE_IN_ADMIN_CONSOLE",
         "discoveryUrl": "https://auth.globus.org/.well-known/openid-configuration",
         "authorizationUrl": "https://auth.globus.org/v2/oauth2/authorize",
         "tokenUrl": "https://auth.globus.org/v2/oauth2/token",
@@ -35,16 +35,6 @@
         "clientAuthMethod": "client_secret_basic",
         "syncMode": "IMPORT",
         "trustEmail": "true"
-      }
-    },
-    {
-      "alias": "github",
-      "providerId": "github",
-      "enabled": false,
-      "displayName": "GitHub",
-      "config": {
-        "clientId": "${GITHUB_CLIENT_ID}",
-        "clientSecret": "${GITHUB_CLIENT_SECRET}"
       }
     }
   ],
