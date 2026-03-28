@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     keycloak_realm: str = "undata"
     keycloak_client_id: str = "undata-backend"
     keycloak_client_secret: str = ""
+    frontend_url: str = "http://localhost:3000"
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 

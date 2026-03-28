@@ -64,6 +64,7 @@ services:
       KEYCLOAK_EXTERNAL_URL: http://localhost:8080
       KEYCLOAK_REALM: undata
       KEYCLOAK_CLIENT_ID: undata-backend
+      FRONTEND_URL: http://localhost:3000
     volumes:
       - ./backend/src:/app/backend/src
       - ./backend/seed:/app/backend/seed

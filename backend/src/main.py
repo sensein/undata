@@ -34,7 +34,7 @@ app = FastAPI(title="undata API", lifespan=lifespan)
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],
+    allow_origins=[settings.frontend_url, "http://localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -156,18 +156,11 @@ async def auth_callback(code: str = ""):
     tokens = resp.json()
     access_token = tokens.get("access_token", "")
 
-    # Set cookie and redirect to frontend
+    # Redirect to frontend with token in URL fragment
+    # Frontend reads the fragment and stores in localStorage
     from fastapi.responses import RedirectResponse
 
-    response = RedirectResponse("http://localhost:3000")
-    response.set_cookie(
-        "access_token",
-        access_token,
-        httponly=True,
-        samesite="lax",
-        max_age=tokens.get("expires_in", 3600),
-    )
-    return response
+    return RedirectResponse(f"{settings.frontend_url}/auth/callback#token={access_token}")
 
 
 # GraphQL mount

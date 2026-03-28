@@ -1,5 +1,6 @@
 /**
  * Auth helpers — session management, sign in/out.
+ * Token stored in localStorage after OAuth callback.
  */
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8002";
@@ -11,12 +12,24 @@ export interface AuthUser {
   roles: string[];
 }
 
+export function getToken(): string | null {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem("access_token");
+}
+
 export async function getSession(): Promise<AuthUser | null> {
+  const token = getToken();
+  if (!token) return null;
+
   try {
     const resp = await fetch(`${BACKEND_URL}/auth/me`, {
-      credentials: "include",
+      headers: { Authorization: `Bearer ${token}` },
     });
-    if (!resp.ok) return null;
+    if (!resp.ok) {
+      // Token expired or invalid — clear it
+      if (resp.status === 401) localStorage.removeItem("access_token");
+      return null;
+    }
     return await resp.json();
   } catch {
     return null;
@@ -28,7 +41,7 @@ export function signIn() {
 }
 
 export function signOut() {
-  document.cookie = "access_token=; Max-Age=0; path=/";
+  localStorage.removeItem("access_token");
   window.location.href = "/";
 }
 
