@@ -16,10 +16,10 @@
 
 **Purpose**: Backend tools package, LLM dependencies, frontend structure
 
-- [ ] T001 Create `backend/src/tools/` package with `__init__.py`
-- [ ] T002 Add `litellm>=1.0` to `backend/pyproject.toml` if not present (for LLM proxy)
-- [ ] T003 Create `frontend/app/curation/chat/` directory for the split-panel chat page
-- [ ] T004 Add `OPENAI_API_KEY` or `OLLAMA_HOST` to backend `docker-compose.yml` environment (from .env)
+- [X] T001 Create `backend/src/tools/` package with `__init__.py`
+- [X] T002 Add `litellm>=1.0` to `backend/pyproject.toml` if not present (for LLM proxy)
+- [X] T003 Create `frontend/app/curation/chat/` directory for the split-panel chat page
+- [X] T004 Add `OPENAI_API_KEY` or `OLLAMA_HOST` to backend `docker-compose.yml` environment (from .env)
 
 **Checkpoint**: Tool package exists, LLM deps ready
 
