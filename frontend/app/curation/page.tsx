@@ -117,7 +117,7 @@ export default function CurationPage() {
                   />
 
                   {/* Resolve actions */}
-                  {canResolve && node.status === "pending" && (
+                  {canResolve && node.status.toLowerCase() === "pending" && (
                     <div className="border-t pt-4 mt-4">
                       <h4 className="text-sm font-semibold mb-2">Resolve this flag</h4>
                       <textarea
