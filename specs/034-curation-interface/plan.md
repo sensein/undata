@@ -1,104 +1,90 @@
-# Implementation Plan: [FEATURE]
+# Implementation Plan: AI-Assisted Curation Interface
 
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
-
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/plan-template.md` for the execution workflow.
+**Branch**: `034-curation-interface` | **Date**: 2026-03-28 | **Spec**: [spec.md](spec.md)
 
 ## Summary
 
-[Extract from feature spec: primary requirement + technical approach from research]
+Build a curator interface with LLM-powered chat for editing entities. Split-panel layout (chat + diff viewer), structured LLM tool calls for entity CRUD and pipeline triggers, field-level validation, diff preview before commit. Inspired by dandi-medit.
 
 ## Technical Context
 
-<!--
-  ACTION REQUIRED: Replace the content in this section with the technical details
-  for the project. The structure here is presented in advisory capacity to guide
-  the iteration process.
--->
-
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [e.g., library/cli/web-service/mobile-app/compiler/desktop-app or NEEDS CLARIFICATION]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Language/Version**: TypeScript 5.x (frontend) + Python 3.14 (backend)
+**Primary Dependencies**: litellm (LLM proxy), SSE for streaming, existing GraphQL API
+**Testing**: Playwright E2E, backend API tests
+**Constraints**: LLM tools must use backend for DB access. All changes require curator approval.
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
-
-[Gates determined based on constitution file]
+| Principle | Status | Notes |
+|-----------|--------|-------|
+| I. Simplicity First | PASS | Split-panel is a simple flexbox. LLM tools reuse existing backend services. |
+| II. TDD | PASS | Tool call tests before implementation. |
+| III. API-First Design | PASS | LLM tools defined as contract in contracts/llm-tools.md. |
+| IV. Observability | PASS | All LLM calls logged. Tool execution traced. |
+| V. No Deprecation | PASS | New pages/components, no removal. |
+| VI. Environment Isolation | PASS | LLM via litellm (existing). |
+| VII. Developer Experience | PASS | Works with local ollama or OpenAI key. |
+| CI Green Before Merge | PASS | Playwright tests for curation flow. |
 
 ## Project Structure
 
-### Documentation (this feature)
-
 ```text
-specs/[###-feature]/
-├── plan.md              # This file (/speckit.plan command output)
-├── research.md          # Phase 0 output (/speckit.plan command)
-├── data-model.md        # Phase 1 output (/speckit.plan command)
-├── quickstart.md        # Phase 1 output (/speckit.plan command)
-├── contracts/           # Phase 1 output (/speckit.plan command)
-└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
-```
-
-### Source Code (repository root)
-<!--
-  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
-  for this feature. Delete unused options and expand the chosen structure with
-  real paths (e.g., apps/admin, packages/something). The delivered plan must
-  not include Option labels.
--->
-
-```text
-# [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
-src/
-├── models/
+backend/src/
 ├── services/
-├── cli/
-└── lib/
-
-tests/
-├── contract/
-├── integration/
-└── unit/
-
-# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
-backend/
-├── src/
-│   ├── models/
-│   ├── services/
-│   └── api/
-└── tests/
+│   └── chat_service.py           # NEW: LLM chat with tool execution
+├── graphql/
+│   ├── schema.py                 # UPDATE: entity update mutations + chatCompletion
+│   └── resolvers.py              # UPDATE: update resolvers
+└── tools/
+    ├── __init__.py               # NEW: tool registry
+    ├── entity_tools.py           # NEW: propose_change, create, delete, fetch
+    ├── ontology_tools.py         # NEW: lookup_ontology_term
+    └── pipeline_tools.py         # NEW: trigger_ingestion
 
 frontend/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   └── services/
-└── tests/
-
-# [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
-api/
-└── [same as backend above]
-
-ios/ or android/
-└── [platform-specific structure: feature modules, UI flows, platform tests]
+├── app/
+│   └── curation/
+│       ├── page.tsx              # UPDATE: enhanced flag review
+│       └── chat/
+│           └── page.tsx          # NEW: split-panel curation chat
+├── components/
+│   ├── SplitPanel.tsx            # NEW: resizable split layout
+│   ├── ChatPanel.tsx             # NEW: LLM chat with message rendering
+│   ├── EntityEditor.tsx          # NEW: editable entity fields with validation
+│   ├── EntityDiff.tsx            # NEW: side-by-side diff view
+│   └── PendingChanges.tsx        # NEW: accumulated changes + apply/discard
+└── lib/
+    └── chat-api.ts               # NEW: SSE streaming chat client
 ```
 
-**Structure Decision**: [Document the selected structure and reference the real
-directories captured above]
+## Implementation Approach
 
-## Complexity Tracking
+### Phase 1: Backend — Entity Update Mutations + Chat Endpoint
+1. Add updateElement/Schema/Value/ValueSet mutations
+2. Create chat_service.py — litellm integration with tool execution loop
+3. Create tool definitions (entity CRUD, ontology lookup, pipeline trigger)
+4. Add /api/chat SSE endpoint
+5. Backend tests for mutations and tool execution
 
-> **Fill ONLY if Constitution Check has violations that must be justified**
+### Phase 2: Frontend — Split Panel + Entity Editor
+1. Create SplitPanel.tsx (resizable divider)
+2. Create EntityEditor.tsx (editable fields, validation, diff)
+3. Create EntityDiff.tsx (color-coded field comparison)
+4. Create PendingChanges.tsx (accumulated changes sidebar)
 
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+### Phase 3: Frontend — Chat Panel + LLM Integration
+1. Create chat-api.ts (SSE streaming client)
+2. Create ChatPanel.tsx (message list, input, streaming response)
+3. Wire tool call results to EntityEditor (propose_change → diff)
+4. Create /curation/chat page with SplitPanel layout
+
+### Phase 4: Enhanced Curation Queue
+1. Update curation page — load full entity context for each flag
+2. Add "Edit Entity" button → opens EntityEditor
+3. Add "Open in Chat" button → navigates to chat with entity pre-loaded
+
+### Phase 5: Chat-Driven Ingestion + Polish
+1. Wire trigger_ingestion tool to pipeline service
+2. Show staged entities for review after ingestion
+3. Playwright tests for full curation flow
+4. CI green
