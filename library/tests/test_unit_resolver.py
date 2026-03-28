@@ -77,8 +77,16 @@ class TestHashNormalization:
         """Elements with 'kg' and 'kilogram' should produce same hash after normalization."""
         from undata_library.hashing import canonical_json
 
-        sem_a = {"data_type": "float", "unit": "kg", "unit_uri": "http://qudt.org/vocab/unit/KiloGM"}
-        sem_b = {"data_type": "float", "unit": "kilogram", "unit_uri": "http://qudt.org/vocab/unit/KiloGM"}
+        sem_a = {
+            "data_type": "float",
+            "unit": "kg",
+            "unit_uri": "http://qudt.org/vocab/unit/KiloGM",
+        }
+        sem_b = {
+            "data_type": "float",
+            "unit": "kilogram",
+            "unit_uri": "http://qudt.org/vocab/unit/KiloGM",
+        }
         assert canonical_json(sem_a) == canonical_json(sem_b)
 
     def test_no_unit_uri_uses_raw_string(self):
@@ -94,7 +102,11 @@ class TestHashNormalization:
         """unit_uri should be used instead of unit in hash computation."""
         from undata_library.hashing import canonical_json
 
-        sem_with_uri = {"data_type": "float", "unit": "kg", "unit_uri": "http://qudt.org/vocab/unit/KiloGM"}
+        sem_with_uri = {
+            "data_type": "float",
+            "unit": "kg",
+            "unit_uri": "http://qudt.org/vocab/unit/KiloGM",
+        }
         sem_without_uri = {"data_type": "float", "unit": "kg"}
         # These should be different because one uses URI in hash
         assert canonical_json(sem_with_uri) != canonical_json(sem_without_uri)

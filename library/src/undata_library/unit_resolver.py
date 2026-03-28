@@ -195,7 +195,9 @@ class UnitResolver:
             except (ValueError, TypeError):
                 pass
 
-        logger.info("QUDT loaded: %d symbols, %d labels", len(self._symbol_index), len(self._label_index))
+        logger.info(
+            "QUDT loaded: %d symbols, %d labels", len(self._symbol_index), len(self._label_index)
+        )
 
     def resolve(self, raw: str | None) -> UnitResult | None:
         """Resolve a raw unit string to a QUDT URI.
