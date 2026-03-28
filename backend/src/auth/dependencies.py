@@ -52,8 +52,13 @@ async def get_current_user(request: Request) -> dict | None:
         claims = validate_jwt(token)
         if claims is None:
             return None
-        # Ensure/update user profile in DB
+        # Ensure/update user profile in DB and inject local role
         await _ensure_user_profile(claims)
+        # Override realm_access roles with local role determination
+        email = claims.get("email", "")
+        keycloak_roles = claims.get("realm_access", {}).get("roles", [])
+        local_role = _determine_role(email, keycloak_roles)
+        claims.setdefault("realm_access", {})["roles"] = [local_role]
         return claims
     else:
         # API key — handled separately
@@ -62,11 +67,43 @@ async def get_current_user(request: Request) -> dict | None:
         return await validate_api_key(token)
 
 
+# Emails with elevated roles (configurable via CURATOR_EMAILS / ADMIN_EMAILS env vars)
+import os
+
+_CURATOR_EMAILS = set(
+    e.strip().lower()
+    for e in os.environ.get("CURATOR_EMAILS", "satra@mit.edu").split(",")
+    if e.strip()
+)
+_ADMIN_EMAILS = set(
+    e.strip().lower()
+    for e in os.environ.get("ADMIN_EMAILS", "").split(",")
+    if e.strip()
+)
+
+
+def _determine_role(email: str, keycloak_roles: list[str]) -> str:
+    """Determine user role from email overrides and Keycloak roles."""
+    email_lower = email.lower() if email else ""
+    if email_lower in _ADMIN_EMAILS:
+        return "admin"
+    if email_lower in _CURATOR_EMAILS:
+        return "curator"
+    for r in ["admin", "curator", "contributor"]:
+        if r in keycloak_roles:
+            return r
+    return "viewer"
+
+
 async def _ensure_user_profile(claims: dict) -> None:
     """Create or update UserProfile from JWT claims."""
     sub = claims.get("sub", "")
     if not sub:
         return
+
+    email = claims.get("email", "")
+    keycloak_roles = claims.get("realm_access", {}).get("roles", [])
+    role = _determine_role(email, keycloak_roles)
 
     async with AsyncSessionLocal() as session:
         stmt = select(UserProfile).where(UserProfile.external_sub == sub)
@@ -74,30 +111,26 @@ async def _ensure_user_profile(claims: dict) -> None:
         profile = result.scalar_one_or_none()
 
         if profile is None:
-            # Create new user
-            roles = claims.get("realm_access", {}).get("roles", [])
-            role = "viewer"
-            for r in ["admin", "curator", "contributor"]:
-                if r in roles:
-                    role = r
-                    break
-
             profile = UserProfile(
                 external_sub=sub,
-                email=claims.get("email", ""),
+                email=email,
                 display_name=claims.get("name", claims.get("preferred_username", sub)),
                 role=role,
             )
             session.add(profile)
             await session.commit()
         else:
-            # Update name/email if changed
+            # Update name/email/role if changed
             changed = False
             if claims.get("email") and profile.email != claims["email"]:
                 profile.email = claims["email"]
                 changed = True
             if claims.get("name") and profile.display_name != claims["name"]:
                 profile.display_name = claims["name"]
+                changed = True
+            # Upgrade role if email is in curator/admin list
+            if profile.role != role and role in ("curator", "admin"):
+                profile.role = role
                 changed = True
             if changed:
                 await session.commit()

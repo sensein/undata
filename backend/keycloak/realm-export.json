@@ -26,8 +26,8 @@
       "firstBrokerLoginFlowAlias": "first broker login",
       "displayName": "Globus (Institutional Login)",
       "config": {
-        "clientId": "dcfe08ee-2dc0-4a3e-b9eb-f2c4214b13cc",
-        "clientSecret": "uO0VGcerBTVEiQ3LQZgIulgNK3274vn4az/hmtaIzsE=",
+        "clientId": "PLACEHOLDER_GLOBUS_CLIENT_ID",
+        "clientSecret": "PLACEHOLDER_GLOBUS_CLIENT_SECRET",
         "authorizationUrl": "https://auth.globus.org/v2/oauth2/authorize",
         "tokenUrl": "https://auth.globus.org/v2/oauth2/token",
         "userInfoUrl": "https://auth.globus.org/v2/oauth2/userinfo",
