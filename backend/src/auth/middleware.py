@@ -44,12 +44,13 @@ def validate_jwt(token: str, public_key: Any = None) -> dict | None:
             # Production mode — fetch key from JWKS
             client = _get_jwks_client()
             signing_key = client.get_signing_key_from_jwt(token)
+            # Issuer in JWT is the external URL (browser-facing), not the internal Docker URL
             decoded = jwt.decode(
                 token,
                 signing_key.key,
                 algorithms=["RS256"],
                 audience=settings.keycloak_client_id,
-                issuer=f"{settings.keycloak_url}/realms/{settings.keycloak_realm}",
+                issuer=f"{settings.keycloak_external_url}/realms/{settings.keycloak_realm}",
             )
         return decoded
     except jwt.ExpiredSignatureError:
