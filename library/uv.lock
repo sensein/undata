@@ -237,6 +237,19 @@ wheels = [
 ]
 
 [[package]]
+name = "cmixf"
+version = "0.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "click" },
+    { name = "sly" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/6b/1e/665caeae8770ebb2b90032aa5737407935fbf26f9b26509a47d4ba5ae97f/cmixf-0.2.0.tar.gz", hash = "sha256:bc5c83e4f160e726ad24edf5faa87129253d3e5872681f9def74688aff2ef4c4", size = 5647, upload-time = "2020-05-25T20:57:04.008Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5b/86/97cf993cfad4ca51ea6b2cbcb1263273ae7bb510ef43fbf503cb55c78ae4/cmixf-0.2.0-py3-none-any.whl", hash = "sha256:74f0e5ddbd53e1c3843d70994b1630395385238f020e2743847ab470a6e419c2", size = 5866, upload-time = "2020-05-25T20:57:02.861Z" },
+]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 source = { registry = "https://pypi.org/simple" }
@@ -2076,6 +2089,15 @@ wheels = [
 ]
 
 [[package]]
+name = "sly"
+version = "0.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/41/8a/59e943f7b27904c7756a7b565ffbd55f3841f5cd3d2da2b2b0713c49e488/sly-0.5.tar.gz", hash = "sha256:251d42015e8507158aec2164f06035df4a82b0314ce6450f457d7125e7649024", size = 66702, upload-time = "2022-10-25T14:35:30.592Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8e/4d/c96d807295183f2360329cd8d8bf5e8072c53d664125b3858c04153f026e/sly-0.5-py3-none-any.whl", hash = "sha256:20485483259eec7f6ba85ff4d2e96a4e50c6621902667fc2695cc8bc2a3e5133", size = 28864, upload-time = "2022-10-25T14:35:28.054Z" },
+]
+
+[[package]]
 name = "sniffio"
 version = "1.3.1"
 source = { registry = "https://pypi.org/simple" }
@@ -2324,6 +2346,7 @@ version = "2026.3.0"
 source = { editable = "." }
 dependencies = [
     { name = "click" },
+    { name = "cmixf" },
     { name = "httpx" },
     { name = "linkml-runtime" },
     { name = "pronto" },
@@ -2361,6 +2384,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "click", specifier = ">=8.0" },
+    { name = "cmixf", specifier = ">=0.2" },
     { name = "docker", marker = "extra == 'docker'", specifier = ">=7.0" },
     { name = "httpx", specifier = ">=0.27" },
     { name = "linkml-runtime", specifier = ">=1.8" },

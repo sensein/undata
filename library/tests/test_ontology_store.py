@@ -110,5 +110,5 @@ def test_load_ontology_config():
     assert {"ncit", "pato", "hp", "obi", "ncbitaxon"}.issubset(names)
     assert len(names) >= 10  # 5 original + UBERON, CL, EDAM, SKOS, PROV-O
     for c in configs:
-        assert c["url"].startswith("http")
+        assert c["url"].startswith("http") or c["url"] == "bundled"
         assert c["format"] in ("obo", "owl", "ttl", "custom")

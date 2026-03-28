@@ -42,17 +42,17 @@
 
 ### Tests
 
-- [ ] T006 Write `library/tests/test_unit_resolver.py` — tests: load QUDT vocab (≥2800 units), resolve "kg" → qudt:KiloGM, resolve "kilogram" → same URI, resolve "years" → qudt:YR, resolve "yr" → same URI as "years", resolve "wobbles" → None, resolve None → None, conversion_factor(YR, MO) → 12.0, alias table works
+- [X] T006 Write `library/tests/test_unit_resolver.py` — tests: load QUDT vocab (≥2800 units), resolve "kg" → qudt:KiloGM, resolve "kilogram" → same URI, resolve "years" → qudt:YR, resolve "yr" → same URI as "years", resolve "wobbles" → None, resolve None → None, conversion_factor(YR, MO) → 12.0, alias table works
 
 ### Implementation
 
-- [ ] T007 [US1] Update `ontology_store.py` — add `load_qudt(path)` method that loads QUDT TTL into the pyoxigraph store. Add unit-specific query methods: `lookup_unit(symbol) → {uri, label, symbol, dimension}`, `search_units(query) → list` using qudt:symbol, qudt:ucumCode, rdfs:label as search fields
-- [ ] T008 [US1] Create `unit_resolver.py` — thin wrapper over OntologyStore:
+- [X] T007 [US1] Update `ontology_store.py` — add `load_qudt(path)` method that loads QUDT TTL into the pyoxigraph store. Add unit-specific query methods: `lookup_unit(symbol) → {uri, label, symbol, dimension}`, `search_units(query) → list` using qudt:symbol, qudt:ucumCode, rdfs:label as search fields
+- [X] T008 [US1] Create `unit_resolver.py` — thin wrapper over OntologyStore:
   - `UNIT_ALIASES` dict mapping common neuroscience variants: years→YR, yr→YR, months→MO, days→DAY, seconds→SEC, milliseconds→MilliSEC, ms→MilliSEC, microvolt→MicroV, uV→MicroV, millivolt→MilliV, mV→MilliV, kilogram→KiloGM, gram→GM, meter→M, centimeter→CentiM, mm→MilliM, Hz→HZ, kHz→KiloHZ
   - `resolve(raw_string) → UnitResult | None` — try: alias table → OntologyStore symbol lookup → OntologyStore label lookup → None
   - `UnitResult` dataclass: uri, label, symbol, dimension, conversion_multiplier, conversion_offset
   - `conversion_factor(uri_a, uri_b) → float | None` — compute from QUDT conversionMultiplier values
-- [ ] T009 [US1] Run unit resolver tests — all must pass
+- [X] T009 [US1] Run unit resolver tests — all must pass
 
 **Checkpoint**: UnitResolver works with ≥50 common units. OntologyStore has QUDT loaded.
 
@@ -64,11 +64,11 @@
 
 **Independent Test**: `age(unit="years")` and `age(unit="yr")` → same hash.
 
-- [ ] T010 [US2] Write hash normalization tests in `library/tests/test_unit_resolver.py` — two elements differing only in unit spelling ("kg" vs "kilogram") produce same canonical_json and same sha256 after enrichment
-- [ ] T011 [US2] Update `hashing.py` — in `canonical_json()`, when computing hash input, use `semantic.get("unit_uri", semantic.get("unit"))` so QUDT URI takes priority over raw string. Fallback to raw string when unit_uri absent
-- [ ] T012 [US2] Update `enrich.py` — add `resolve_units()` function called by `enrich_all()` as first step. For each entity with a `unit` field, call `UnitResolver.resolve(unit)` and set `unit_uri` in semantic block. Generate `unresolved_unit` curation flag for failures
-- [ ] T013 [US2] Add LLM unit extraction to `resolve_units()` — when `unit` is None/empty but `description` mentions a unit, call LLM with prompt: "Extract the unit of measurement from this description: '{description}'. Return only the unit symbol or 'none'." Resolve extracted symbol via QUDT
-- [ ] T014 [US2] Run full test suite — verify all 400+ existing tests pass plus new hash normalization tests
+- [X] T010 [US2] Write hash normalization tests in `library/tests/test_unit_resolver.py` — two elements differing only in unit spelling ("kg" vs "kilogram") produce same canonical_json and same sha256 after enrichment
+- [X] T011 [US2] Update `hashing.py` — in `canonical_json()`, when computing hash input, use `semantic.get("unit_uri", semantic.get("unit"))` so QUDT URI takes priority over raw string. Fallback to raw string when unit_uri absent
+- [X] T012 [US2] Update `enrich.py` — add `resolve_units()` function called by `enrich_all()` as first step. For each entity with a `unit` field, call `UnitResolver.resolve(unit)` and set `unit_uri` in semantic block. Generate `unresolved_unit` curation flag for failures
+- [X] T013 [US2] Add LLM unit extraction to `resolve_units()` — when `unit` is None/empty but `description` mentions a unit, call LLM with prompt: "Extract the unit of measurement from this description: '{description}'. Return only the unit symbol or 'none'." Resolve extracted symbol via QUDT
+- [X] T014 [US2] Run full test suite — verify all 400+ existing tests pass plus new hash normalization tests
 
 **Checkpoint**: Unit normalization works. Hash uses unit_uri. LLM extracts from descriptions.
 
