@@ -94,6 +94,9 @@ As a curator, I need unit strings validated against the cmixf grammar so typos a
 - What happens when a unit maps to multiple QUDT entries? The most specific match is chosen (e.g., "meter" → qudt:M, not qudt:M_Length).
 - What happens when the same element is extracted from two sources with different unit spellings? After normalization they resolve to the same QUDT URI and merge at commit.
 - What happens when an adapter returns a unit not in QUDT? The raw string is preserved and a curation flag is generated.
+- What happens when a field has `allowed_units: ["kg", "lb", "g"]`? Three separate elements are created, each with one unit, linked by unit_conversion transforms.
+- What happens when a schema has `age` (float) + `age_unit` (enum: years/months/days)? The pair is recognized; transforms are generated linking `age_in_years`, `age_in_months`, `age_in_days` to the generic `T(age, age_unit)`.
+- What happens when a string field contains "120 mmHg"? A curation flag is generated with type `unit_encoded_string` suggesting decomposition into numeric value + unit.
 
 ## Requirements *(mandatory)*
 
@@ -110,6 +113,9 @@ As a curator, I need unit strings validated against the cmixf grammar so typos a
 - **FR-009**: Resolved QUDT URIs MUST be stored in the entity's semantic block as `unit_uri` alongside the raw `unit` string.
 - **FR-010**: The system MUST work correctly when QUDT is unavailable — falling back to raw unit strings.
 - **FR-011**: When an element has no explicit `unit` field but its description mentions a unit (e.g., "Age in years"), the system MUST use LLM to extract the unit and resolve it via QUDT.
+- **FR-012**: When a source schema allows multiple units for the same field (e.g., `allowed_units: ["kg", "lb"]`), the system MUST create one element per unit variant, each with its own content hash, linked by unit_conversion transforms.
+- **FR-013**: When a source schema has paired value+unit fields (e.g., `age` + `age_unit`), the system MUST recognize the pair as a single semantic concept with runtime unit selection. A transform MUST be generated: `age_in_{unit} = T(age, age_unit)` linking the generic pair to each unit-specific variant.
+- **FR-014**: String values with embedded units (e.g., `"5.2 kg"`) MUST generate a curation flag suggesting decomposition into a numeric value + canonical unit element.
 
 ### Key Entities
 
@@ -156,6 +162,7 @@ As a curator, I need unit strings validated against the cmixf grammar so typos a
 
 - Q: Should QUDT be a separate resolver or integrated into the existing ontology service? → A: Load QUDT into the existing OntologyStore (pyoxigraph) as another ontology alongside NCIT, PATO, etc. Reuse the same search_terms/lookup_term patterns. Unit resolution is ontology enrichment for the `unit` field, following the same approach as entity ontology enrichment.
 - Q: Should LLM extract units from descriptions when no explicit unit field is set? → A: Yes — use LLM to extract units from descriptions when `unit` field is empty. Add as an enrichment step after QUDT symbol resolution. Reuses existing LLM infrastructure (litellm/ollama).
+- Q: How should multi-unit elements and unit-encoded strings be handled? → A: One element per unit variant (split). `age(kg)` and `age(lb)` are separate elements linked by unit_conversion transforms. String-encoded values flagged for decomposition. Also: schemas with paired fields (age, age_unit) should generate transforms: `age_in_years = T(age, age_unit)` — recognizing that the pair represents a single semantic concept with runtime unit selection.
 
 ## Assumptions
 
