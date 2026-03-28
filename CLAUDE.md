@@ -35,7 +35,14 @@ undata/
 ## Developer Setup
 
 ```bash
-# Start backend stack (PostgreSQL + FastAPI, seeds data on first run)
+# ONE COMMAND — start everything (database, backend, frontend, Keycloak)
+docker compose up -d
+# → Backend:  http://localhost:8002 (health, GraphQL playground at /graphql)
+# → Frontend: http://localhost:3000 (element browser, schemas, curation)
+# → Keycloak: http://localhost:8080 (admin: admin/admin)
+# → Database seeded with sample data on first run
+
+# Or start backend stack only (for backend development)
 cd backend && docker compose up -d
 # → Health: http://localhost:8002/health
 # → GraphQL playground: http://localhost:8002/graphql

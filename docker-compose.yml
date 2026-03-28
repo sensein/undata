@@ -1,140 +1,82 @@
+# undata full stack — one command to start everything
+#
+# Usage: docker compose up -d
+#
+# Services:
+#   - db:       PostgreSQL 16 + pgvector     (localhost:5432)
+#   - backend:  FastAPI + GraphQL            (localhost:8002, playground at /graphql)
+#   - frontend: Next.js                      (localhost:3000)
+#   - keycloak: OIDC identity provider       (localhost:8080, admin: admin/admin)
+#
+# First run: database is seeded with sample data automatically.
+# Browse elements at http://localhost:3000/elements
+
 services:
   db:
     image: pgvector/pgvector:pg16
-    ports:
-      - "${POSTGRES_PORT:-5432}:5432"
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-undata}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-undata}
-      POSTGRES_DB: ${POSTGRES_DB:-undata}
+      POSTGRES_USER: undata
+      POSTGRES_PASSWORD: undata
+      POSTGRES_DB: undata
+    ports:
+      - "5432:5432"
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
       - ./backend/postgres-init:/docker-entrypoint-initdb.d
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-undata}"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
-
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "${REDIS_PORT:-6379}:6379"
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ["CMD-SHELL", "pg_isready -U undata"]
       interval: 5s
       timeout: 3s
-      retries: 5
+      retries: 10
 
   keycloak:
     image: quay.io/keycloak/keycloak:24.0
     command: start-dev --import-realm
-    ports:
-      - "${KEYCLOAK_PORT:-8080}:8080"
     environment:
-      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN:-admin}
-      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-admin}
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
     volumes:
-      - ./backend/keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json
+      - ./backend/keycloak:/opt/keycloak/data/import
     healthcheck:
-      test: ["CMD-SHELL", "curl -sf http://localhost:8080/health/ready || exit 1"]
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/8080 && echo -e 'GET /health/ready HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && cat <&3 | grep -q '200'"]
       interval: 10s
       timeout: 5s
-      retries: 20
+      retries: 15
       start_period: 30s
-
-  meilisearch:
-    image: getmeili/meilisearch:v1
-    ports:
-      - "${MEILI_PORT:-7700}:7700"
-    environment:
-      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY:-dev-master-key}
-      MEILI_ENV: development
-    volumes:
-      - meili_data:/meili_data
-    healthcheck:
-      test: ["CMD", "curl", "-sf", "http://localhost:7700/health"]
-      interval: 5s
-      timeout: 3s
-      retries: 10
 
   backend:
     build:
       context: .
       dockerfile: backend/Dockerfile
     ports:
-      - "${BACKEND_PORT:-8002}:8002"
+      - "8002:8002"
     environment:
-      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-undata}:${POSTGRES_PASSWORD:-undata}@db:5432/${POSTGRES_DB:-undata}
-      SECRET_KEY: ${SECRET_KEY:-dev-secret-change-in-production}
+      DATABASE_URL: postgresql+asyncpg://undata:undata@db:5432/undata
+      LOG_LEVEL: INFO
+      UNDATA_BASE_URL: http://localhost:8002
       KEYCLOAK_URL: http://keycloak:8080
-      KEYCLOAK_REALM: ${KEYCLOAK_REALM:-undata}
-      KEYCLOAK_CLIENT_ID: ${KEYCLOAK_CLIENT_ID:-}
-      KEYCLOAK_CLIENT_SECRET: ${KEYCLOAK_CLIENT_SECRET:-}
-      ALIAS_SIMILARITY_THRESHOLD: ${ALIAS_SIMILARITY_THRESHOLD:-0.88}
-      TOKEN_CACHE_TTL_SECONDS: ${TOKEN_CACHE_TTL_SECONDS:-300}
-      LOG_LEVEL: ${LOG_LEVEL:-INFO}
-      UNDATA_BASE_URL: http://localhost:${BACKEND_PORT:-8002}
+      KEYCLOAK_REALM: undata
+      KEYCLOAK_CLIENT_ID: undata-backend
+    volumes:
+      - ./backend/src:/app/backend/src
+      - ./backend/seed:/app/backend/seed
     depends_on:
       db:
         condition: service_healthy
-      keycloak:
-        condition: service_healthy
-    healthcheck:
-      test: ["CMD", "curl", "-sf", "http://localhost:8002/api/v1/sources"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
-      start_period: 15s
-
-  migration-api:
-    build: ./migration-api
-    ports:
-      - "${MIGRATION_API_PORT:-8004}:8004"
-    environment:
-      BACKEND_URL: http://backend:8002
-      REDIS_URL: redis://redis:6379/0
-      SECRET_KEY: ${SECRET_KEY:-dev-secret-change-in-production}
-    depends_on:
-      redis:
-        condition: service_healthy
-      backend:
-        condition: service_healthy
-    healthcheck:
-      test: ["CMD", "curl", "-sf", "http://localhost:8004/health"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  celery-worker:
-    build: ./migration-api
-    command: celery -A src.tasks.celery_app worker --loglevel=info
-    environment:
-      BACKEND_URL: http://backend:8002
-      REDIS_URL: redis://redis:6379/0
-      SECRET_KEY: ${SECRET_KEY:-dev-secret-change-in-production}
-    depends_on:
-      redis:
-        condition: service_healthy
 
   frontend:
-    build: ./frontend
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
     ports:
-      - "${FRONTEND_PORT:-3000}:3000"
+      - "3000:3000"
     environment:
-      NEXT_PUBLIC_BACKEND_URL: http://localhost:${BACKEND_PORT:-8002}
-      NEXT_PUBLIC_MEILI_URL: http://localhost:${MEILI_PORT:-7700}
-      NEXT_PUBLIC_MIGRATION_URL: http://localhost:${MIGRATION_API_PORT:-8004}
-      BACKEND_INTERNAL_URL: http://backend:8002
-      MIGRATION_INTERNAL_URL: http://migration-api:8004
-      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY:-dev-master-key}
-      API_TOKEN: ${API_TOKEN:-}
+      NEXT_PUBLIC_BACKEND_URL: http://localhost:8002
+      NEXT_PUBLIC_GRAPHQL_URL: http://localhost:8002/graphql
     depends_on:
-      backend:
-        condition: service_healthy
-      meilisearch:
-        condition: service_healthy
+      - backend
 
 volumes:
-  pg_data:
-  meili_data:
+  pgdata:
