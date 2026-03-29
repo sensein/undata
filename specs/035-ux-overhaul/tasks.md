@@ -60,8 +60,8 @@
 
 - [ ] T013 [P] [US3] Reduce table row height and cell padding in EntityDataGrid (48px→32px rows, p-2→p-1.5 cells) in frontend/components/EntityDataGrid.tsx
 - [ ] T014 [P] [US3] Compact EntityDetailLayout — reduce section gaps (space-y-6→space-y-3), card padding (p-4→p-2), property grid to 3-column on desktop in frontend/components/EntityDetailLayout.tsx
-- [ ] T015 [P] [US3] Convert ontology annotations display to compact chips (CURIE + score + external link icon) with tooltip for full URI in frontend/components/EntityDetailLayout.tsx
-- [ ] T016 [P] [US3] Convert provenance display to horizontal badge strip with expandable details on click in frontend/components/EntityDetailLayout.tsx
+- [ ] T015 [US3] Convert ontology annotations display to compact chips (CURIE + score + external link icon) with tooltip for full URI in frontend/components/EntityDetailLayout.tsx (depends on T014, same file)
+- [ ] T016 [US3] Convert provenance display to horizontal badge strip with expandable details on click in frontend/components/EntityDetailLayout.tsx (depends on T015, same file)
 - [ ] T017 [US3] Update all detail pages (elements, schemas, values, valuesets, transforms) to use compact card grid layout in frontend/app/elements/[sha256]/page.tsx, frontend/app/schemas/[sha256]/page.tsx, frontend/app/values/[sha256]/page.tsx, frontend/app/valuesets/[sha256]/page.tsx, frontend/app/transforms/[sha256]/page.tsx
 
 **Checkpoint**: 20+ rows visible on browse pages; detail pages fit without scrolling at 1080p
@@ -77,6 +77,7 @@
 - [ ] T018 [US2] Build full entity context card for chat right panel — display all semantic fields, provenance with source badges, ontology annotation chips, related entities (schemas using this element, transforms), and pending curation flags in frontend/app/curation/chat/page.tsx
 - [ ] T019 [US2] Support all entity types in chat right panel — type-appropriate field layouts (properties for schemas, members for valuesets, source/target for transforms) in frontend/app/curation/chat/page.tsx
 - [ ] T020 [US2] Add "Chat about this" link to EntityTag popover (navigates to /curation/chat?entity={sha256}&type={entityType}) in frontend/components/EntityTag.tsx
+- [ ] T020a [US2] Add row-level "Chat" action icon on browse table hover — visible on all browse pages (elements, schemas, values, valuesets, transforms) in frontend/components/EntityDataGrid.tsx
 - [ ] T021 [US2] Add standalone assistant mode — when no entity param, chat starts in general-purpose mode with entity search capability in frontend/app/curation/chat/page.tsx
 - [ ] T022 [US2] Add "Assistant" link under CURATION group in sidebar (navigates to /curation/chat with no entity) in frontend/components/Sidebar.tsx
 
@@ -163,6 +164,7 @@
 - [ ] T051 Run quickstart.md validation — verify all visual checks and GraphQL queries work
 - [ ] T052 Verify mobile responsiveness — tables switch to card layouts, split panels stack vertically
 - [ ] T053 [P] Audit all detail pages for consistent dense layout, outbound links, and cross-reference sections
+- [ ] T053a [P] Audit EntityDiff, ChatPanel, and EvidencePanel for non-interactive entity refs — ensure all sha256 references render as EntityTag links with popovers (FR-005) in frontend/components/EntityDiff.tsx, frontend/components/ChatPanel.tsx, frontend/components/EvidencePanel.tsx
 - [ ] T054 [P] Verify case-insensitive sorting works on all browse pages and property tables
 
 ---
@@ -194,7 +196,7 @@
 
 ### Parallel Opportunities
 
-- T013, T014, T015, T016 (US3 layout changes) — all different components, run in parallel
+- T013, T014 (US3 layout changes) — different components, run in parallel; T015→T016 sequential (same file as T014)
 - T023, T024, T025, T026 (US4 cross-references) — all different detail pages, run in parallel
 - T047, T048 (US6) — model change + validation rule in different files
 - US7 backend (T030-T033) can run in parallel with US1/US3/US4 frontend work
