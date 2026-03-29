@@ -57,9 +57,9 @@
 
 **Independent Test**: Expand a flag → see entity fields + reason text + match candidates.
 
-- [ ] T015 [US1] Update `frontend/components/EvidencePanel.tsx` — always show the flagged entity's key fields (data_type, unit, description, source) at the top of the panel, loaded via a separate GraphQL query using entity_ref
-- [ ] T016 [US1] Update `frontend/app/curation/page.tsx` — add "Edit Entity" button on each flag card (opens EntityEditor) and "Open in Chat" button (navigates to /curation/chat?entity=sha256)
-- [ ] T017 [US1] Verify: expand a flag → entity context visible, reason displayed, "Edit Entity" and "Open in Chat" buttons present
+- [X] T015 [US1] Update `frontend/components/EvidencePanel.tsx` — always show the flagged entity's key fields (data_type, unit, description, source) at the top of the panel, loaded via a separate GraphQL query using entity_ref
+- [X] T016 [US1] Update `frontend/app/curation/page.tsx` — add "Edit Entity" button on each flag card (opens EntityEditor) and "Open in Chat" button (navigates to /curation/chat?entity=sha256)
+- [X] T017 [US1] Verify: expand a flag → entity context visible, reason displayed, "Edit Entity" and "Open in Chat" buttons present
 
 **Checkpoint**: Flag review shows full context. Buttons link to editor and chat.
 
@@ -71,13 +71,13 @@
 
 **Independent Test**: Open entity from flag → edit unit → see diff → save.
 
-- [ ] T018 [US4] Create `frontend/components/SplitPanel.tsx` — resizable flexbox layout: left panel (min 25%) + draggable divider (6px) + right panel. Mobile: full-width with tab toggle (Chat/Editor). Props: leftContent, rightContent.
-- [ ] T019 [US2] Create `frontend/components/EntityEditor.tsx` — form with all entity fields pre-populated from current values. Fields: data_type (select), unit (text), description (textarea), ontology_annotations (list with add/remove). Real-time validation: data_type must be valid enum, unit validated via QUDT if available. Shows save/discard buttons.
-- [ ] T020 [US2] Create `frontend/components/EntityDiff.tsx` — field-by-field comparison of original vs modified entity. Green background for added/changed fields, red strikethrough for removed values. Props: original (dict), modified (dict).
-- [ ] T021 [US2] Create `frontend/components/PendingChanges.tsx` — sidebar showing accumulated changes: list of {entity_ref, field, old_value, new_value}. "Apply All" and "Discard All" buttons. Individual change revert.
-- [ ] T022 [US2] Wire EntityEditor save to `updateElement` GraphQL mutation — on save, call mutation with changed fields, show success/error, refresh entity data.
-- [ ] T023 [US4] Create `frontend/app/curation/chat/page.tsx` — split-panel page: ChatPanel (left) + EntityEditor/EntityDiff (right). Reads `?entity=sha256` from URL to pre-load entity. Shows PendingChanges.
-- [ ] T024 [US2] Verify: open entity → edit unit → diff shows change → save → entity updated in database
+- [X] T018 [US4] Create `frontend/components/SplitPanel.tsx` — resizable flexbox layout: left panel (min 25%) + draggable divider (6px) + right panel. Mobile: full-width with tab toggle (Chat/Editor). Props: leftContent, rightContent.
+- [X] T019 [US2] Create `frontend/components/EntityEditor.tsx` — form with all entity fields pre-populated from current values. Fields: data_type (select), unit (text), description (textarea), ontology_annotations (list with add/remove). Real-time validation: data_type must be valid enum, unit validated via QUDT if available. Shows save/discard buttons.
+- [X] T020 [US2] Create `frontend/components/EntityDiff.tsx` — field-by-field comparison of original vs modified entity. Green background for added/changed fields, red strikethrough for removed values. Props: original (dict), modified (dict).
+- [X] T021 [US2] Create `frontend/components/PendingChanges.tsx` — sidebar showing accumulated changes: list of {entity_ref, field, old_value, new_value}. "Apply All" and "Discard All" buttons. Individual change revert.
+- [X] T022 [US2] Wire EntityEditor save to `updateElement` GraphQL mutation — on save, call mutation with changed fields, show success/error, refresh entity data.
+- [X] T023 [US4] Create `frontend/app/curation/chat/page.tsx` — split-panel page: ChatPanel (left) + EntityEditor/EntityDiff (right). Reads `?entity=sha256` from URL to pre-load entity. Shows PendingChanges.
+- [X] T024 [US2] Verify: open entity → edit unit → diff shows change → save → entity updated in database
 
 **Checkpoint**: Entity editor works with validation + diff. Split-panel layout functional.
 
@@ -89,12 +89,12 @@
 
 **Independent Test**: Type "suggest better ontology annotation" → LLM proposes → diff appears.
 
-- [ ] T025 [US3] Create `frontend/lib/chat-api.ts` — SSE client for `/api/chat`. Sends messages + entity context, receives streamed response chunks. Handles tool_call events (display pending changes in EntityDiff).
-- [ ] T026 [US3] Create `frontend/components/ChatPanel.tsx` — message list (user + assistant messages), text input with send button, streaming response rendering (markdown), tool call indicator ("Searching ontology..." / "Proposing change..."). Shows entity context badge at top.
-- [ ] T027 [US3] Wire ChatPanel to EntityEditor — when LLM calls `propose_entity_change`, the result appears as a pending diff in the right panel. Curator can "Apply" or "Discard" each proposal.
-- [ ] T028 [US3] Wire ChatPanel to PendingChanges — accumulated proposals shown in PendingChanges sidebar. "Apply All" commits all via update mutations.
-- [ ] T029 [US3] Create system prompt in `backend/src/services/chat_service.py` — includes: entity context (current fields), available tools, instructions (use lookup_ontology_term, propose changes via tools, never output raw JSON)
-- [ ] T030 [US3] Verify: open chat with entity → ask for ontology suggestion → LLM calls lookup_ontology_term → proposes annotation → diff appears → apply → entity updated
+- [X] T025 [US3] Create `frontend/lib/chat-api.ts` — SSE client for `/api/chat`. Sends messages + entity context, receives streamed response chunks. Handles tool_call events (display pending changes in EntityDiff).
+- [X] T026 [US3] Create `frontend/components/ChatPanel.tsx` — message list (user + assistant messages), text input with send button, streaming response rendering (markdown), tool call indicator ("Searching ontology..." / "Proposing change..."). Shows entity context badge at top.
+- [X] T027 [US3] Wire ChatPanel to EntityEditor — when LLM calls `propose_entity_change`, the result appears as a pending diff in the right panel. Curator can "Apply" or "Discard" each proposal.
+- [X] T028 [US3] Wire ChatPanel to PendingChanges — accumulated proposals shown in PendingChanges sidebar. "Apply All" commits all via update mutations.
+- [X] T029 [US3] Create system prompt in `backend/src/services/chat_service.py` — includes: entity context (current fields), available tools, instructions (use lookup_ontology_term, propose changes via tools, never output raw JSON)
+- [X] T030 [US3] Verify: open chat with entity → ask for ontology suggestion → LLM calls lookup_ontology_term → proposes annotation → diff appears → apply → entity updated
 
 **Checkpoint**: Full LLM chat → diff → apply flow works end-to-end.
 
@@ -106,11 +106,11 @@
 
 **Independent Test**: "Create a new element for age in months" → LLM creates → curator approves.
 
-- [ ] T031 [US5] Wire `create_entity` tool — LLM calls it, result shown as new entity preview in right panel. Curator clicks "Create" to commit via GraphQL mutation.
-- [ ] T032 [US5] Wire `delete_entity` tool — LLM proposes deletion with reason, confirmation dialog. Curator confirms → entity marked for deletion.
-- [ ] T033 [US5] Wire `trigger_ingestion` tool — LLM triggers pipeline, shows staged results (N elements, N schemas). Curator reviews → "Commit" button writes to registry.
-- [ ] T034 [US5] Add batch mode to ChatPanel — when LLM proposes changes to multiple entities, PendingChanges shows all changes grouped by entity. "Apply All" commits batch.
-- [ ] T035 [US5] Verify: "create element for age_months" → preview → approve. "ingest from URL using BIDS adapter" → pipeline runs → staged entities shown.
+- [X] T031 [US5] Wire `create_entity` tool — LLM calls it, result shown as new entity preview in right panel. Curator clicks "Create" to commit via GraphQL mutation.
+- [X] T032 [US5] Wire `delete_entity` tool — LLM proposes deletion with reason, confirmation dialog. Curator confirms → entity marked for deletion.
+- [X] T033 [US5] Wire `trigger_ingestion` tool — LLM triggers pipeline, shows staged results (N elements, N schemas). Curator reviews → "Commit" button writes to registry.
+- [X] T034 [US5] Add batch mode to ChatPanel — when LLM proposes changes to multiple entities, PendingChanges shows all changes grouped by entity. "Apply All" commits batch.
+- [X] T035 [US5] Verify: "create element for age_months" → preview → approve. "ingest from URL using BIDS adapter" → pipeline runs → staged entities shown.
 
 **Checkpoint**: Full CRUD + ingestion via chat works.
 
@@ -120,11 +120,11 @@
 
 **Purpose**: Tests, CI, documentation
 
-- [ ] T036 Write Playwright test `frontend/tests/e2e/curation-chat.spec.ts` — test: split panel loads, entity editor fields visible, chat input works, save button updates entity
-- [ ] T037 Verify all existing Playwright tests (20+) still pass
-- [ ] T038 Verify `pnpm exec next build` passes
-- [ ] T039 Update `CLAUDE.md` with curation chat usage instructions
-- [ ] T040 Push branch and verify CI is green
+- [X] T036 Write Playwright test `frontend/tests/e2e/curation-chat.spec.ts` — test: split panel loads, entity editor fields visible, chat input works, save button updates entity
+- [X] T037 Verify all existing Playwright tests (20+) still pass
+- [X] T038 Verify `pnpm exec next build` passes
+- [X] T039 Update `CLAUDE.md` with curation chat usage instructions
+- [X] T040 Push branch and verify CI is green
 
 ---
 
