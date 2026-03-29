@@ -81,7 +81,18 @@ export function EvidencePanel({ context, llmVerification }: EvidencePanelProps) 
         </div>
       )}
 
-      {candidates.length === 0 && !llmVerification && (
+      {/* Display reason from context if no structured candidates */}
+      {candidates.length === 0 && !llmVerification && context.reason && (
+        <div>
+          <h4 className="text-sm font-semibold mb-1">Reason</h4>
+          <p className="text-sm text-gray-700">{String(context.reason)}</p>
+          {context.score != null && (
+            <p className="text-sm text-gray-500 mt-1">Score: {String(context.score)}</p>
+          )}
+        </div>
+      )}
+
+      {candidates.length === 0 && !llmVerification && !context.reason && (
         <p className="text-sm text-gray-500">No evidence data available for this flag.</p>
       )}
     </div>

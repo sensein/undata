@@ -153,6 +153,16 @@ export default function CurationPage() {
                     </div>
                   )}
 
+                  {/* Quick actions */}
+                  <div className="border-t pt-3 mt-3 flex gap-2">
+                    <a
+                      href={`/curation/chat?entity=${node.entityRef}`}
+                      className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded text-xs hover:bg-blue-100"
+                    >
+                      Open in Chat →
+                    </a>
+                  </div>
+
                   {/* Already resolved */}
                   {node.resolvedBy && (
                     <div className="text-sm text-gray-600 border-t pt-3">

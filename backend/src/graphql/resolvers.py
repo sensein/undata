@@ -470,6 +470,62 @@ async def resolve_submit_contribution(
     return _contribution_from_row(record)
 
 
+async def resolve_update_entity(
+    session: AsyncSession,
+    entity_type: str,
+    sha256: str,
+    updates: dict,
+    reason: str,
+    curator_name: str,
+) -> dict | None:
+    """Update an entity's fields and record the change in provenance."""
+    from datetime import datetime, timezone
+
+    from src.db.models import ENTITY_MODEL_MAP
+
+    model = ENTITY_MODEL_MAP.get(entity_type)
+    if not model:
+        raise ValueError(f"Invalid entity type: {entity_type}")
+
+    stmt = select(model).where(model.sha256.startswith(sha256)).limit(1)
+    result = await session.execute(stmt)
+    row = result.scalar_one_or_none()
+    if not row:
+        return None
+
+    # Apply updates to columns and semantic JSONB
+    semantic = dict(row.semantic or {})
+    for field, value in updates.items():
+        if value is None:
+            continue
+        if hasattr(row, field):
+            setattr(row, field, value)
+        semantic[field] = value
+    row.semantic = semantic
+
+    # Handle ontology_annotations specially
+    if "ontology_annotations" in updates and updates["ontology_annotations"] is not None:
+        row.ontology_annotations = updates["ontology_annotations"]
+        semantic["ontology_annotations"] = updates["ontology_annotations"]
+        row.semantic = semantic
+
+    # Record change in provenance
+    provenance = list(row.provenance or [])
+    provenance.append({
+        "source": "curation",
+        "class": "",
+        "name": curator_name,
+        "description": reason,
+        "activity": "curation",
+        "attributed_to": curator_name,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+    })
+    row.provenance = provenance
+
+    await session.flush()
+    return row
+
+
 async def resolve_import_registry(session: AsyncSession, registry_path: str) -> t.ImportResult:
     from src.services.import_service import import_registry
 

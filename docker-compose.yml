@@ -65,6 +65,8 @@ services:
       KEYCLOAK_REALM: undata
       KEYCLOAK_CLIENT_ID: undata-backend
       FRONTEND_URL: http://localhost:3000
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OLLAMA_HOST: ${OLLAMA_HOST:-http://host.docker.internal:11434}
     volumes:
       - ./backend/src:/app/backend/src
       - ./backend/seed:/app/backend/seed

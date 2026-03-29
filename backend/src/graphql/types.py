@@ -340,3 +340,47 @@ class ReviewContributionInput:
     action: ContributionStatus
     reviewed_by: str
     note: Optional[str] = None
+
+
+@strawberry.input
+class UpdateElementInput:
+    reason: str  # Required — change attribution (FR-008)
+    data_type: Optional[str] = None
+    unit: Optional[str] = None
+    unit_uri: Optional[str] = None
+    description: Optional[str] = None
+    pattern: Optional[str] = None
+    value_domain: Optional[str] = None
+    min_value: Optional[float] = None
+    max_value: Optional[float] = None
+    type_ref: Optional[str] = None
+    ontology_annotations: Optional[JSON] = None
+
+
+@strawberry.input
+class UpdateSchemaInput:
+    reason: str
+    description: Optional[str] = None
+    subclass_of: Optional[str] = None
+    is_mixin: Optional[bool] = None
+    properties: Optional[list[str]] = None
+    ontology_annotations: Optional[JSON] = None
+
+
+@strawberry.input
+class UpdateValueInput:
+    reason: str
+    label: Optional[str] = None
+    value_type: Optional[str] = None
+    description: Optional[str] = None
+    ontology_id: Optional[str] = None
+    ontology_annotations: Optional[JSON] = None
+
+
+@strawberry.input
+class UpdateValueSetInput:
+    reason: str
+    name: Optional[str] = None
+    description: Optional[str] = None
+    members: Optional[list[str]] = None
+    ontology_annotations: Optional[JSON] = None

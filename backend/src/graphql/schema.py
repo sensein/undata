@@ -181,4 +181,61 @@ class Mutation:
             return result
 
 
+    @strawberry.mutation
+    async def update_element(self, info: strawberry.types.Info, sha256: str, input: t.UpdateElementInput) -> t.Element | None:
+        user = await _require_auth(info, "curator")
+        updates = {k: v for k, v in {
+            "data_type": input.data_type, "unit": input.unit, "unit_uri": input.unit_uri,
+            "description": input.description, "pattern": input.pattern,
+            "value_domain": input.value_domain, "min_value": input.min_value,
+            "max_value": input.max_value, "type_ref": input.type_ref,
+            "ontology_annotations": input.ontology_annotations,
+        }.items() if v is not None}
+        async with AsyncSessionLocal() as session:
+            row = await r.resolve_update_entity(
+                session, "elements", sha256, updates, input.reason,
+                user.get("name", user.get("sub", "unknown")),
+            )
+            if row is None:
+                raise ValueError(f"Element {sha256} not found")
+            await session.commit()
+            return r._element_from_row(row)
+
+    @strawberry.mutation
+    async def update_schema(self, info: strawberry.types.Info, sha256: str, input: t.UpdateSchemaInput) -> t.Schema | None:
+        user = await _require_auth(info, "curator")
+        updates = {k: v for k, v in {
+            "description": input.description, "subclass_of": input.subclass_of,
+            "is_mixin": input.is_mixin, "properties": input.properties,
+            "ontology_annotations": input.ontology_annotations,
+        }.items() if v is not None}
+        async with AsyncSessionLocal() as session:
+            row = await r.resolve_update_entity(
+                session, "schemas", sha256, updates, input.reason,
+                user.get("name", user.get("sub", "unknown")),
+            )
+            if row is None:
+                raise ValueError(f"Schema {sha256} not found")
+            await session.commit()
+            return r._schema_from_row(row)
+
+    @strawberry.mutation
+    async def update_value(self, info: strawberry.types.Info, sha256: str, input: t.UpdateValueInput) -> t.Value | None:
+        user = await _require_auth(info, "curator")
+        updates = {k: v for k, v in {
+            "label": input.label, "value_type": input.value_type,
+            "description": input.description, "ontology_id": input.ontology_id,
+            "ontology_annotations": input.ontology_annotations,
+        }.items() if v is not None}
+        async with AsyncSessionLocal() as session:
+            row = await r.resolve_update_entity(
+                session, "values", sha256, updates, input.reason,
+                user.get("name", user.get("sub", "unknown")),
+            )
+            if row is None:
+                raise ValueError(f"Value {sha256} not found")
+            await session.commit()
+            return r._value_from_row(row)
+
+
 schema = strawberry.Schema(query=Query, mutation=Mutation)
