@@ -79,7 +79,10 @@ export function ElementPropertyTable({ properties, schemaSource, schemaClass }: 
           }
           return <EntityTag entityType="elements" sha256={row.sha256} label={row.name} />;
         },
-        sortingFn: "caseInsensitive",
+        sortingFn: (rowA, rowB) => {
+          const get = (o: Record<string, unknown>) => String(o.raw ?? o.name ?? o.label ?? "");
+          return get(rowA.original as Record<string, unknown>).toLowerCase().localeCompare(get(rowB.original as Record<string, unknown>).toLowerCase());
+        },
         enableColumnFilter: false,
       }),
       elemColHelper.display({
@@ -189,7 +192,10 @@ export function ValueMemberTable({ members }: ValueMemberTableProps) {
           }
           return <EntityTag entityType="values" sha256={row.sha256} label={row.label} />;
         },
-        sortingFn: "caseInsensitive",
+        sortingFn: (rowA, rowB) => {
+          const get = (o: Record<string, unknown>) => String(o.raw ?? o.name ?? o.label ?? "");
+          return get(rowA.original as Record<string, unknown>).toLowerCase().localeCompare(get(rowB.original as Record<string, unknown>).toLowerCase());
+        },
         enableColumnFilter: false,
       }),
       valColHelper.display({
