@@ -1,0 +1,9 @@
+id: c0612d1f-8329-4ef4-867b-a83731b5d6a2
+entity_type: element
+entity_ref: reconstruction_66cb0d87460e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: reconstruction
+status: pending
+created_at: '2026-03-29T05:40:55.833078+00:00'

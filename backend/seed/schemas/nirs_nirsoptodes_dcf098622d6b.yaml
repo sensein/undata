@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - name__optodes
+  - type__optodes
+  - x__optodes
+  - y__optodes
+  - z__optodes
+  - template_x
+  - template_y
+  - template_z
+  - description__optode
+  - detector_type
+  - source__optodes
+  is_mixin: true
+provenance:
+- source: bids
+  class: nirs_nirsOptodes
+  name: nirs_nirsOptodes
+  description: Tabular columns for nirs
+sha256: dcf098622d6b1a464c0797e7f6eda84df584db287206e7d4eda46a87f2351918

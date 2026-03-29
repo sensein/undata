@@ -1,0 +1,21 @@
+semantic:
+  label: FERMI
+  value_type: categorical
+  display_name: Fermi pulse
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_36340
+    term_label: fermion
+    ontology: chebi
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8922
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: FERMI
+  description: 'A Fermi-shaped pulse.
+
+    '
+sha256: 85d030e28f1ef09b3b6ea5809e33f4a29852bb0533469e9137bc38af5f24256f

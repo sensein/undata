@@ -99,6 +99,25 @@ class Query:
             return await r.resolve_browse_valuesets(session, source, search_text, first, after)
 
     @strawberry.field
+    async def transform(self, sha256: str) -> t.Transform | None:
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_transform(session, sha256)
+
+    @strawberry.field
+    async def browse_transforms(
+        self,
+        source_element: Optional[str] = None,
+        target_element: Optional[str] = None,
+        function_type: Optional[str] = None,
+        first: int = 20,
+        after: Optional[str] = None,
+    ) -> t.TransformConnection:
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_browse_transforms(
+                session, source_element, target_element, function_type, first, after
+            )
+
+    @strawberry.field
     async def curation_queue(
         self,
         flag_type: Optional[t.FlagType] = None,

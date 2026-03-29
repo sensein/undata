@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - Manufacturer
+  - ManufacturersModelName
+  - SoftwareVersions
+  - DeviceSerialNumber
+  is_mixin: true
+provenance:
+- source: bids
+  class: MEGHardware
+  name: MEGHardware
+  description: Sidecar field group for meg
+sha256: b9392004c4ea0f012c447ac08b23b98672ff847977351123e2b9d63027a24dd6

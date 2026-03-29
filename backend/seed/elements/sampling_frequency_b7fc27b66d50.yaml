@@ -1,0 +1,15 @@
+semantic:
+  data_type: float
+  unit: Hz
+  value_domain: numeric
+provenance:
+- source: bids
+  class: columns
+  name: sampling_frequency
+  description: 'Sampling rate of the channel in Hz.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b7fc27b66d502495c0b80c8b1b9525e59f2a3ebe1a2e89b280afa3bce83f028a

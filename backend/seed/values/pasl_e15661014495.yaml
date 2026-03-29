@@ -1,0 +1,12 @@
+semantic:
+  label: PASL
+  value_type: categorical
+  display_name: Pulsed arterial spin labeling
+provenance:
+- source: bids
+  class: enums
+  name: PASL
+  description: 'Pulsed arterial spin labeling was employed.
+
+    '
+sha256: e15661014495c77c5cfe83ba269087f6d8bb2122d7baea67626b621a404aa6de

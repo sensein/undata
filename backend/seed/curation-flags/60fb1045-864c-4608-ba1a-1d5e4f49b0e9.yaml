@@ -1,0 +1,11 @@
+id: 60fb1045-864c-4608-ba1a-1d5e4f49b0e9
+entity_type: value
+entity_ref: cell_line_e7d60c00f16e.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.843), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/CLO_0000031
+  top_label: cell line
+  top_score: 0.8432
+status: pending
+created_at: '2026-03-29T05:37:09.378550+00:00'

@@ -1,0 +1,21 @@
+semantic:
+  label: Estimate
+  value_type: categorical
+  display_name: Estimate
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25498
+    term_label: Estimate
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: Estimate
+  description: 'A single whole-brain M0 value is provided in the metadata.
+
+    '
+sha256: 219889c36e6f4ab7e8b559c7a166be150fca36dc6ae6ad7e5a178e1f6600ca3e

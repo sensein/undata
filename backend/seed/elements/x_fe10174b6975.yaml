@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  unit: micrometers
+provenance:
+- source: nwb
+  class: nwb
+  name: x
+  description: x coordinate of the channel location in the brain (+x is posterior).
+    Units should be specified in microns.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fe10174b69752cb0b67701e0380982cffbdae70e53b0c5c6e2bbb9a3f5637d65

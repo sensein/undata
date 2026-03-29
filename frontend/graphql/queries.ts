@@ -198,6 +198,7 @@ export const GET_ELEMENT = gql`
       sha256
       dataType
       unit
+      unitUri
       pattern
       valueDomain
       description
@@ -295,6 +296,47 @@ export const VALUE_POPOVER = gql`
       sha256 label description
       provenance { source name }
       ontologyAnnotations { termUri termLabel ontology score primary }
+    }
+  }
+`;
+
+export const BROWSE_TRANSFORMS = gql`
+  query BrowseTransforms($sourceElement: String, $targetElement: String, $functionType: String, $first: Int = 50, $after: String) {
+    browseTransforms(sourceElement: $sourceElement, targetElement: $targetElement, functionType: $functionType, first: $first, after: $after) {
+      edges {
+        node {
+          sha256
+          sourceElement
+          targetElement
+          functionType
+          inputType
+          outputType
+          expression
+          confidence
+          provenance { source name }
+        }
+        cursor
+      }
+      pageInfo { hasNextPage endCursor }
+      totalCount
+    }
+  }
+`;
+
+export const GET_TRANSFORM = gql`
+  query GetTransform($sha256: String!) {
+    transform(sha256: $sha256) {
+      sha256
+      sourceElement
+      targetElement
+      functionType
+      inputType
+      outputType
+      expression
+      expressionType
+      confidence
+      description
+      provenance { source className name description }
     }
   }
 `;

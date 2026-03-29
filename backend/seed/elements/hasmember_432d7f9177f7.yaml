@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: BioSample
+  name: hasMember
+  description: ''
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 432d7f9177f7dc0f0a8b37b252453e594fa03c6a25cece6377952a34c7cc43ed

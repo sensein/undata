@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: fsaverage5
+provenance:
+- source: bids
+  class_: ''
+  name: fsaverage5
+sha256: 089565de867c9b90145bd08753eef1b87c791305a37fe9a758938f5706978f5c

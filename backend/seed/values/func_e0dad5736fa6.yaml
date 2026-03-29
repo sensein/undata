@@ -1,0 +1,12 @@
+semantic:
+  label: func
+  value_type: categorical
+  display_name: Task-Based Magnetic Resonance Imaging
+provenance:
+- source: bids
+  class: datatypes
+  name: func
+  description: 'Task (including resting state) imaging data
+
+    '
+sha256: e0dad5736fa6c47aea9a94ae016dd9fca77041276ad19e8981af67032d845893

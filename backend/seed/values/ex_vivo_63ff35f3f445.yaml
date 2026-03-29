@@ -1,0 +1,21 @@
+semantic:
+  label: ex vivo
+  value_type: categorical
+  display_name: ex vivo
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C70676
+    term_label: ex vivo
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: ex_vivo
+  description: 'The environment of a sample: ex vivo
+
+    '
+sha256: 63ff35f3f4455ce71f603cdb88caf4654f37424fa4af3cd3ec45b85f589fc371

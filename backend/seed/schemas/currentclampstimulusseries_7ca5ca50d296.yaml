@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - data
+  subclass_of: PatchClampSeries
+provenance:
+- source: nwb
+  class: CurrentClampStimulusSeries
+  name: CurrentClampStimulusSeries
+  description: Stimulus current applied during current clamp recording.
+sha256: 7ca5ca50d2967d9b3c3d0ee132ab80b5049fb03489a3d598a04b2e7d5c7017f5

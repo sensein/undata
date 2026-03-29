@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: image_mode
+  description: Image mode (color mode) of the image, e.g., "RGB", "RGBA", "grayscale",
+    and "LA".
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0e9ebff0483e2c313c480f7df9a2ae3429437ad35bb738db9185656117a3e83f

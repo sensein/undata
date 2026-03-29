@@ -19,6 +19,7 @@ class Element(Base):
     file_name: Mapped[str | None] = mapped_column(String, nullable=True)
     data_type: Mapped[str | None] = mapped_column(String, index=True, nullable=True)
     unit: Mapped[str | None] = mapped_column(String, nullable=True)
+    unit_uri: Mapped[str | None] = mapped_column(String, nullable=True)
     pattern: Mapped[str | None] = mapped_column(String, nullable=True)
     value_domain: Mapped[str | None] = mapped_column(String, nullable=True)
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
@@ -147,10 +148,31 @@ class APIKey(Base):
     revoked_at = mapped_column(TIMESTAMP, nullable=True)
 
 
+class Transform(Base):
+    __tablename__ = "transforms"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    sha256: Mapped[str] = mapped_column(String, unique=True, index=True)
+    file_name: Mapped[str | None] = mapped_column(String, nullable=True)
+    source_element: Mapped[str] = mapped_column(String, index=True)  # sha256 or URI of source element
+    target_element: Mapped[str] = mapped_column(String, index=True)  # sha256 or URI of target element
+    function_type: Mapped[str | None] = mapped_column(String, nullable=True)  # identity, unit_conversion, etc.
+    input_type: Mapped[str | None] = mapped_column(String, nullable=True)
+    output_type: Mapped[str | None] = mapped_column(String, nullable=True)
+    expression: Mapped[str | None] = mapped_column(Text, nullable=True)
+    expression_type: Mapped[str | None] = mapped_column(String, nullable=True)
+    confidence: Mapped[float | None] = mapped_column(Float, nullable=True)
+    description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    semantic: Mapped[dict] = mapped_column(JSONB, default=dict)
+    provenance: Mapped[list] = mapped_column(JSONB, default=list)
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+
+
 # Entity type → ORM model mapping
 ENTITY_MODEL_MAP = {
     "elements": Element,
     "schemas": Schema,
     "values": Value,
     "valuesets": ValueSet,
+    "transforms": Transform,
 }

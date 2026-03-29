@@ -1,0 +1,20 @@
+semantic:
+  label: .bdf
+  value_type: categorical
+  display_name: Biosemi Data Format
+provenance:
+- source: bids
+  class: extensions
+  name: bdf
+  description: 'A [Biosemi](https://www.biosemi.com/) Data Format file.
+
+
+    Each recording consists of a single `.bdf` file.
+
+    [`bdf+`](https://www.teuniz.net/edfbrowser/bdfplus%20format%20description.html)
+    files are permitted.
+
+    The capital `.BDF` extension MUST NOT be used.
+
+    '
+sha256: 9ac34cd7a03ec7be39211fd5b56f551bc79acd4b3154510e05a64d17684c4674

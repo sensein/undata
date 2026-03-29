@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - SliceTiming
+  - SliceEncodingDirection
+  is_mixin: true
+provenance:
+- source: bids
+  class: SliceTimingMRI
+  name: SliceTimingMRI
+  description: Sidecar field group for mri
+sha256: 78f94e67f8b77cdcbcc4df7d79c0e4a3ec8f9ab745c9d04bbf6950c05d4e9bc4

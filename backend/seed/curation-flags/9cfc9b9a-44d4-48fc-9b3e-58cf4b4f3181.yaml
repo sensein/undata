@@ -1,0 +1,9 @@
+id: 9cfc9b9a-44d4-48fc-9b3e-58cf4b4f3181
+entity_type: schema
+entity_ref: mrispatialencoding_224a1d1a4c36.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRISpatialEncoding
+status: pending
+created_at: '2026-03-29T05:33:44.038500+00:00'

@@ -1,0 +1,20 @@
+semantic:
+  label: file_relative
+  value_type: categorical
+  display_name: Path relative to the parent file
+provenance:
+- source: bids
+  class: formats
+  name: file_relative
+  description: 'A path to a file, relative to the file in which the field is defined.
+
+
+    The validation for this format is minimal.
+
+    It simply ensures that the value is a string with any characters that may appear
+    in a valid path,
+
+    without starting with "/" (an absolute path).
+
+    '
+sha256: d26f2aef08a063180ebae8512ff8178f224538f07bcf60a88f9491aab77cd257

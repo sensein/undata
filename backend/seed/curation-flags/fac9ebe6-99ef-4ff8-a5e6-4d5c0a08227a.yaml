@@ -1,0 +1,11 @@
+id: fac9ebe6-99ef-4ff8-a5e6-4d5c0a08227a
+entity_type: value
+entity_ref: .dat_057a1f87f2fe.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.905), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_format_1637
+  top_label: dat
+  top_score: 0.9053
+status: pending
+created_at: '2026-03-29T05:37:09.280391+00:00'

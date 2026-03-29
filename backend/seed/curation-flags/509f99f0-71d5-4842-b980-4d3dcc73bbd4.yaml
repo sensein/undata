@@ -1,0 +1,15 @@
+id: 509f99f0-71d5-4842-b980-4d3dcc73bbd4
+entity_type: schema
+entity_ref: person_68b84353cfc9.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://www.w3.org/ns/prov#Person
+    score: 0.9359
+  - uri: http://purl.obolibrary.org/obo/NCIT_C25190
+    score: 0.9359
+  - uri: http://purl.obolibrary.org/obo/NCIT_C25191
+    score: 0.7981
+status: pending
+created_at: '2026-03-29T05:40:56.855391+00:00'

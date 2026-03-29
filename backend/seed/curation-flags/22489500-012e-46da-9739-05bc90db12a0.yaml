@@ -1,0 +1,15 @@
+id: 22489500-012e-46da-9739-05bc90db12a0
+entity_type: value
+entity_ref: description_4485828d0c23.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C25365
+    score: 1.0
+  - uri: http://purl.org/dc/elements/1.1/description
+    score: 1.0
+  - uri: http://purl.org/dc/terms/description
+    score: 1.0
+status: pending
+created_at: '2026-03-29T05:37:09.425742+00:00'

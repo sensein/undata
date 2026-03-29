@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - EchoTime__fmap
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIFieldmapTwoPhase
+  name: MRIFieldmapTwoPhase
+  description: Sidecar field group for fmap
+sha256: 524ef2061a928ad7538384d6dd0c875a517b53d44997590b3cca3d1b7f44466f

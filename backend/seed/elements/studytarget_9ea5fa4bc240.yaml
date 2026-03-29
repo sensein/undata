@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: BareAsset
+  name: studyTarget
+  description: Objectives or specific questions of the study.
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9ea5fa4bc2409b1a281051fb1db4bd01daa5a7686f9226a012ccabff46fb2e90

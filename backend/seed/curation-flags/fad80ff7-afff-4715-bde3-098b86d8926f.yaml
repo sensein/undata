@@ -1,0 +1,9 @@
+id: fad80ff7-afff-4715-bde3-098b86d8926f
+entity_type: element
+entity_ref: descriptors_65c70b08cbc4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Descriptors
+status: pending
+created_at: '2026-03-29T05:37:08.845884+00:00'

@@ -1,0 +1,11 @@
+id: be222740-38c6-4719-8065-e2d41922a7bb
+entity_type: value
+entity_ref: custom_6844fbb1e294.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.782), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C65167
+  top_label: Customize
+  top_score: 0.7818
+status: pending
+created_at: '2026-03-29T05:40:56.192661+00:00'

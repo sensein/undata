@@ -1,0 +1,157 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: Pixels
+    label: Pixels
+    ontology_term: https://schema.undata.live/values/df652dfd-00d6-496a-8dfd-75f4afee24e9
+  - value: ACPC
+    label: ACPC
+    ontology_term: https://schema.undata.live/values/86ea4b6b-6328-41bd-a06b-7950105a0903
+  - value: ScanRAS
+    label: ScanRAS
+    ontology_term: https://schema.undata.live/values/602d7889-d00f-4c3a-8b93-feb0249a6895
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/437193a7-ec96-4411-86d5-5682d460558a
+  - value: ICBM452AirSpace
+    label: ICBM452AirSpace
+    ontology_term: https://schema.undata.live/values/82614255-cf27-4f14-b126-0fe69ab1a027
+  - value: ICBM452Warp5Space
+    label: ICBM452Warp5Space
+    ontology_term: https://schema.undata.live/values/cbb6d472-e211-437f-9f0c-512ffcd493b5
+  - value: IXI549Space
+    label: IXI549Space
+    ontology_term: https://schema.undata.live/values/b54c9982-0075-4a40-a281-a81b378ddbf1
+  - value: fsaverage
+    label: fsaverage
+    ontology_term: https://schema.undata.live/values/cd2d67d3-932a-434d-8d07-0949557c6feb
+  - value: fsaverageSym
+    label: fsaverageSym
+    ontology_term: https://schema.undata.live/values/ba4c7471-ec1d-48b0-98b9-a706ff4f94a2
+  - value: fsLR
+    label: fsLR
+    ontology_term: https://schema.undata.live/values/4973aa2c-26da-4d78-a473-60676adb5593
+  - value: MNIColin27
+    label: MNIColin27
+    ontology_term: https://schema.undata.live/values/f8c8c8b2-71a2-4abc-be34-5381c50373d9
+  - value: MNI152Lin
+    label: MNI152Lin
+    ontology_term: https://schema.undata.live/values/87b5f280-bcbf-4e53-b06e-597c0ea8208d
+  - value: MNI152NLin2009aSym
+    label: MNI152NLin2009aSym
+    ontology_term: https://schema.undata.live/values/bf0c6901-b6c4-4fae-90f8-5d2e340eac0f
+  - value: MNI152NLin2009bSym
+    label: MNI152NLin2009bSym
+    ontology_term: https://schema.undata.live/values/efae3a4f-055a-49ae-9c0b-6643e2377934
+  - value: MNI152NLin2009cSym
+    label: MNI152NLin2009cSym
+    ontology_term: https://schema.undata.live/values/d1dbc029-4689-45ce-97df-01f447de23bd
+  - value: MNI152NLin2009aAsym
+    label: MNI152NLin2009aAsym
+    ontology_term: https://schema.undata.live/values/cc10e2c5-18c6-49aa-8ecf-2f68097458c4
+  - value: MNI152NLin2009bAsym
+    label: MNI152NLin2009bAsym
+    ontology_term: https://schema.undata.live/values/b5295fbd-797c-439d-bb6c-7f8db8fd7c5c
+  - value: MNI152NLin2009cAsym
+    label: MNI152NLin2009cAsym
+    ontology_term: https://schema.undata.live/values/ec01b417-1283-462b-8b5b-fe5c9a8ef10e
+  - value: MNI152NLin6Sym
+    label: MNI152NLin6Sym
+    ontology_term: https://schema.undata.live/values/900bbb17-8c3b-41bd-b64e-bfd9cf473307
+  - value: MNI152NLin6Asym
+    label: MNI152NLin6Asym
+    ontology_term: https://schema.undata.live/values/aabd4554-a926-4521-a02a-15c6d45d4143
+  - value: MNI305
+    label: MNI305
+    ontology_term: https://schema.undata.live/values/b24bb773-c789-4739-a642-76dcd0e35c17
+  - value: NIHPD
+    label: NIHPD
+    ontology_term: https://schema.undata.live/values/338a4f20-6ef9-4ae8-b1ab-c3298381a3f6
+  - value: OASIS30AntsOASISAnts
+    label: OASIS30AntsOASISAnts
+    ontology_term: https://schema.undata.live/values/d2b75cb2-7313-47d5-8943-2fccb87d4886
+  - value: OASIS30Atropos
+    label: OASIS30Atropos
+    ontology_term: https://schema.undata.live/values/a7a8cafc-bcb8-4c66-b6d1-20a96c6a8ea3
+  - value: Talairach
+    label: Talairach
+    ontology_term: https://schema.undata.live/values/8fdbf4ec-a031-4128-8381-e7227c760053
+  - value: UNCInfant
+    label: UNCInfant
+    ontology_term: https://schema.undata.live/values/9b809075-a8de-47a3-92a4-2b1967e9fccb
+  - value: fsaverage3
+    label: fsaverage3
+    ontology_term: https://schema.undata.live/values/be250b45-2918-42cb-9155-fef3dd2aacc7
+  - value: fsaverage4
+    label: fsaverage4
+    ontology_term: https://schema.undata.live/values/febedb31-286b-4d5a-9647-3a089707d18f
+  - value: fsaverage5
+    label: fsaverage5
+    ontology_term: https://schema.undata.live/values/a4c2d6a7-507c-41aa-962f-4dbb779dcffa
+  - value: fsaverage6
+    label: fsaverage6
+    ontology_term: https://schema.undata.live/values/db733270-2e7b-4593-a862-59f1325a8ab0
+  - value: fsaveragesym
+    label: fsaveragesym
+    ontology_term: https://schema.undata.live/values/ba4c7471-ec1d-48b0-98b9-a706ff4f94a2
+  - value: UNCInfant0V21
+    label: UNCInfant0V21
+    ontology_term: https://schema.undata.live/values/8852947e-d88e-4fac-bb70-67af4b129ab7
+  - value: UNCInfant1V21
+    label: UNCInfant1V21
+    ontology_term: https://schema.undata.live/values/dee207af-2064-4852-a885-aa104105202b
+  - value: UNCInfant2V21
+    label: UNCInfant2V21
+    ontology_term: https://schema.undata.live/values/3764a63e-7ec7-419f-899f-2016d3f8c179
+  - value: UNCInfant0V22
+    label: UNCInfant0V22
+    ontology_term: https://schema.undata.live/values/fd46740b-93bc-47c8-b027-bbda239cf50a
+  - value: UNCInfant1V22
+    label: UNCInfant1V22
+    ontology_term: https://schema.undata.live/values/a775c57b-53c1-4ef4-ad4d-694088d2a1f7
+  - value: UNCInfant2V22
+    label: UNCInfant2V22
+    ontology_term: https://schema.undata.live/values/ab66c6a4-a71e-415a-b554-b73b0e42d504
+  - value: UNCInfant0V23
+    label: UNCInfant0V23
+    ontology_term: https://schema.undata.live/values/ec8c5ea2-d7db-49f3-bcf4-25119db6a47b
+  - value: UNCInfant1V23
+    label: UNCInfant1V23
+    ontology_term: https://schema.undata.live/values/69935a1c-c51a-47f8-847d-9664c3a4a8f5
+  - value: UNCInfant2V23
+    label: UNCInfant2V23
+    ontology_term: https://schema.undata.live/values/934ddbac-9188-49ff-ad85-a1adef32cc78
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: iEEGCoordinateSystem
+  description: 'Defines the coordinate system for the iEEG sensors.
+
+    See the
+
+    [Coordinate Systems Appendix](SPEC_ROOT/appendices/coordinate-systems.md)
+
+    for a list of restricted keywords for coordinate systems.
+
+    If `"Other"`, provide definition of the coordinate system in
+
+    `iEEGCoordinateSystemDescription`.
+
+    If positions correspond to pixel indices in a 2D image
+
+    (of either a volume-rendering, surface-rendering, operative photo, or
+
+    operative drawing), this MUST be `"Pixels"`.
+
+    For more information, see the section on
+
+    [2D coordinate systems](SPEC_ROOT/modality-specific-files/intracranial\
+
+    -electroencephalography.md#allowed-2d-coordinate-systems).
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7eb07d3f55548a22ddad879e0303ca0387fba765ab98b97f08163e4144755e09

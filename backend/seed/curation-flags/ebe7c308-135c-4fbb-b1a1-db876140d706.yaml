@@ -1,0 +1,11 @@
+id: ebe7c308-135c-4fbb-b1a1-db876140d706
+entity_type: element
+entity_ref: startdate_a1e9a45a0176.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.755), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C164907
+  top_label: Performed Activity Order Date
+  top_score: 0.7552
+status: pending
+created_at: '2026-03-29T05:40:55.967751+00:00'

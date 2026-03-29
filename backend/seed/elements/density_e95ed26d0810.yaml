@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: Density
+  description: 'Specifies the interpretation of the density keyword.
+
+    If an object is used, then the keys should be values for the `den` entity
+
+    and values should be descriptions of those `den` values.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e95ed26d0810873cc4d4cc1e7d0bc0c3fb6c4c272888543e632212d6006fc24c

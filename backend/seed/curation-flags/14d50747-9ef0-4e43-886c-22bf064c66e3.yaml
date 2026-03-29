@@ -1,0 +1,9 @@
+id: 14d50747-9ef0-4e43-886c-22bf064c66e3
+entity_type: element
+entity_ref: studytarget_014c031ace41.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: studyTarget
+status: pending
+created_at: '2026-03-29T05:40:55.978257+00:00'

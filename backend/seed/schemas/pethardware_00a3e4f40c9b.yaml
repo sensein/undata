@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - Manufacturer
+  - ManufacturersModelName
+  - Units
+  - BodyPart
+  is_mixin: true
+provenance:
+- source: bids
+  class: PETHardware
+  name: PETHardware
+  description: Sidecar field group for pet
+sha256: 00a3e4f40c9bf6c156d561f4415760653bcadae29a98c4905e5695271a2ec35c

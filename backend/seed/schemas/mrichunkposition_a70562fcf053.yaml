@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - TablePosition
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIChunkPosition
+  name: MRIChunkPosition
+  description: Sidecar field group for mri
+sha256: a70562fcf0538c5724eca946d6d7e41662fcaee6da4ced859e3a5158a8fcb5c6

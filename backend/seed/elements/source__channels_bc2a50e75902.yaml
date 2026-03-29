@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: columns
+  name: source__channels
+  description: 'Name of the source as specified in the `*_optodes.tsv` file.
+
+    `n/a` for channels that do not contain fNIRS signals (for example, acceleration).
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bc2a50e75902d51d262ae3b6074224a1c1d4d75ce76240ac6f888fe0d1383b14

@@ -1,0 +1,20 @@
+semantic:
+  data_type: array
+  ontology_annotations:
+  - term_uri: http://www.w3.org/ns/prov#wasDerivedFrom
+    term_label: wasDerivedFrom
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7262
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: BareAsset
+  name: wasDerivedFrom
+  description: ''
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: edf2d0f9ec503f91be96f5ae67c5a3a8d9688aff31c1b09585bc9d7e5d1a9add

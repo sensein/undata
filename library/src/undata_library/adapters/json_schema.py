@@ -195,6 +195,26 @@ class JSONSchemaAdapter(BaseAdapter):
                 if key not in semantic and src.get(attr) is not None:
                     semantic[key] = float(src[attr])
 
+        # Pattern
+        for src in (prop_def, resolved):
+            if "pattern" not in semantic and src.get("pattern"):
+                semantic["pattern"] = src["pattern"]
+
+        # Format → pattern mapping
+        for src in (prop_def, resolved):
+            fmt = src.get("format")
+            if fmt and "pattern" not in semantic:
+                fmt_patterns = {
+                    "date-time": r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}",
+                    "date": r"^\d{4}-\d{2}-\d{2}$",
+                    "time": r"^\d{2}:\d{2}:\d{2}",
+                    "email": r"^[^@]+@[^@]+\.[^@]+$",
+                    "uri": r"^https?://",
+                    "uuid": r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                }
+                if fmt in fmt_patterns:
+                    semantic["pattern"] = fmt_patterns[fmt]
+
         results.append(
             ClassifiedEntity(
                 entity_type=EntityType.ATTRIBUTE,

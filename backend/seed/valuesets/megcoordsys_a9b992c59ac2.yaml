@@ -1,0 +1,15 @@
+semantic:
+  name: MEGCoordSys
+  members:
+  - 4DBti
+  - CTF
+  - ChietiItab
+  - ElektaNeuromag
+  - KitYokogawa
+  - NeuromagElektaMEGIN
+  - Other
+provenance:
+- source: bids
+  class: enums
+  name: _MEGCoordSys
+sha256: a9b992c59ac298b7dde49ae5a6bae7bafdb82394a3ecf757fc6bb29d062d6f60

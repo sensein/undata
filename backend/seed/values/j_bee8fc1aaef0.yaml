@@ -1,0 +1,15 @@
+semantic:
+  label: j
+  value_type: categorical
+  display_name: j
+provenance:
+- source: bids
+  class: enums
+  name: j
+  description: 'The encoding direction is along the second axis of the data in the
+    NIFTI file,
+
+    and the encoding value increases from the zero index to the maximum index.
+
+    '
+sha256: bee8fc1aaef03f1a6be9dea41d480e6a75af5cc7772de6846796965884a66f64

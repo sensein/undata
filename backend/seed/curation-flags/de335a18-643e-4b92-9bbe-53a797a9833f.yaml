@@ -1,0 +1,9 @@
+id: de335a18-643e-4b92-9bbe-53a797a9833f
+entity_type: element
+entity_ref: sampleenvironment_cbaefa41f2a2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SampleEnvironment
+status: pending
+created_at: '2026-03-29T05:40:55.883453+00:00'

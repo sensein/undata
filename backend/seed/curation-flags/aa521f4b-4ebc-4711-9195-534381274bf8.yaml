@@ -1,0 +1,9 @@
+id: aa521f4b-4ebc-4711-9195-534381274bf8
+entity_type: element
+entity_ref: encodingformat_bc776250108f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: encodingFormat
+status: pending
+created_at: '2026-03-29T05:40:55.506903+00:00'

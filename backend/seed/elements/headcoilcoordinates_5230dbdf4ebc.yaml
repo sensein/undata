@@ -1,0 +1,33 @@
+semantic:
+  data_type: object
+provenance:
+- source: bids
+  class: metadata
+  name: HeadCoilCoordinates
+  description: 'Key-value pairs describing head localization coil labels and their
+
+    coordinates, interpreted following the `HeadCoilCoordinateSystem`
+
+    (for example, `{"NAS": [12.7,21.3,13.9], "LPA": [5.2,11.3,9.6],
+
+    "RPA": [20.2,11.3,9.1]}`).
+
+    Note that coils are not always placed at locations that have a known
+
+    anatomical name (for example, for Neuromag/Elekta/MEGIN, Yokogawa systems);
+
+    in that case generic labels can be used
+
+    (for example, `{"coil1": [12.2,21.3,12.3], "coil2": [6.7,12.3,8.6],
+
+    "coil3": [21.9,11.0,8.1]}`).
+
+    Each array MUST contain three numeric values corresponding to x, y, and z
+
+    axis of the coordinate system in that exact order.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5230dbdf4ebc3769897426fdcabc32c349d48ce70fa8ad8b0bf1083853a03c73

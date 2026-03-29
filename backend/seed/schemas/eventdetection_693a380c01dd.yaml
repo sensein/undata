@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - detection_method
+  - source_idx
+  - times
+  - source_electricalseries
+  subclass_of: NWBDataInterface
+provenance:
+- source: nwb
+  class: EventDetection
+  name: EventDetection
+  description: Detected spike events from voltage trace(s).
+sha256: 693a380c01dd69a7d82c3c16360b7bc7d6e2934973d7d97e3bae9c744f7ba797

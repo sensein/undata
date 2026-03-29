@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: columns
+  name: strain
+  description: 'For species different from `homo sapiens`, string value indicating
+
+    the strain of the species, for example: `C57BL/6J`.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6bd21c631b013ba035eb2a71caa5afdeb74ee73e01937cc01312ee862966f23f

@@ -1,0 +1,22 @@
+semantic:
+  label: svs
+  value_type: categorical
+  display_name: Single-voxel spectroscopy
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C14279
+    term_label: SV40
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7293
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: suffixes
+  name: svs
+  description: 'MRS acquisitions where the detected MR signal is spatially localized
+    to a single volume.
+
+    '
+sha256: 2fd43aa7ec3a0cf41417dffd3f5964a2640fd3d0667a0f3a78ace34aae38d250

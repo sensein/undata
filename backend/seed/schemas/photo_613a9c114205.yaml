@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - PhotoDescription
+  - IntendedFor
+  is_mixin: true
+provenance:
+- source: bids
+  class: Photo
+  name: Photo
+  description: Sidecar field group for micr
+sha256: 613a9c114205a8bd4107a59d30d9c97e9dd087a9b15cad75b70eed202a8cef83

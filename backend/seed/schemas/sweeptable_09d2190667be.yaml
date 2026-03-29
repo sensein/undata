@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - sweep_number
+  - series
+  - series_index
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: SweepTable
+  name: SweepTable
+  description: '[DEPRECATED] Table used to group different PatchClampSeries. SweepTable
+    is being replaced by IntracellularRecordingsTable and SimultaneousRecordingsTable
+    tables. Additional SequentialRecordingsTable, RepetitionsTable, and ExperimentalConditions
+    tables provide enhanced support for experiment metadata.'
+sha256: 09d2190667be6843746a8775c1a72d15242d33105130cc220b91a3ed58dd05e5

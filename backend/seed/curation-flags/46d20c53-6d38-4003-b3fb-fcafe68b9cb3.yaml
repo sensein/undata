@@ -1,0 +1,11 @@
+id: 46d20c53-6d38-4003-b3fb-fcafe68b9cb3
+entity_type: value
+entity_ref: cbf_ffaaf3a7b8d7.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.775), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_format_3020
+  top_label: BCF
+  top_score: 0.7754
+status: pending
+created_at: '2026-03-29T05:33:43.547467+00:00'

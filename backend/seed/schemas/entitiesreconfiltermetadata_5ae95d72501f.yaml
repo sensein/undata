@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - ReconFilterSize
+  is_mixin: true
+provenance:
+- source: bids
+  class: EntitiesReconFilterMetadata
+  name: EntitiesReconFilterMetadata
+  description: Sidecar field group for pet
+sha256: 5ae95d72501fe2d078630c08a203752e08d6b7ec04270c8a4e81981a7ca94fba

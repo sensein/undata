@@ -1,0 +1,9 @@
+id: a63fef75-2dca-49a3-b2dc-033db50714f4
+entity_type: value
+entity_ref: r2starmap_8b2ae5439231.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: R2starmap
+status: pending
+created_at: '2026-03-29T05:37:09.750036+00:00'

@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: CogAtlasID
+  description: '[URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator)
+
+    of the corresponding [Cognitive Atlas](https://www.cognitiveatlas.org/)
+
+    Task term.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 13322e2083207eea2778327e1b78aaae3b3be877f4685f732f4dd332f692df4c

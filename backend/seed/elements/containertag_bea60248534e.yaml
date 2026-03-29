@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: ContainerTag
+  description: 'Tag of software container image used to produce the dataset
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bea60248534e545446dfc6b6b410c7d283d1c698a28ffc91f01d56030078932f

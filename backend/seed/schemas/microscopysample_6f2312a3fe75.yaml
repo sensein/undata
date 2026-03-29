@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - BodyPart
+  - BodyPartDetails
+  - BodyPartDetailsOntology
+  - SampleEnvironment
+  - SampleEmbedding
+  - SampleFixation
+  - SampleStaining
+  - SamplePrimaryAntibody
+  - SampleSecondaryAntibody
+  - SliceThickness
+  - TissueDeformationScaling
+  - SampleExtractionProtocol
+  - SampleExtractionInstitution
+  is_mixin: true
+provenance:
+- source: bids
+  class: MicroscopySample
+  name: MicroscopySample
+  description: Sidecar field group for micr
+sha256: 6f2312a3fe756829cf1bafae607a781730b906eca3f3d5427b94d643af3899c9

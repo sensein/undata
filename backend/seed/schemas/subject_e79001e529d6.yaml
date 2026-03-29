@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - age
+  - date_of_birth
+  - description
+  - genotype
+  - sex
+  - species
+  - strain
+  - subject_id
+  - weight
+  subclass_of: NWBContainer
+provenance:
+- source: nwb
+  class: Subject
+  name: Subject
+  description: Information about the animal or person from which the data was measured.
+sha256: e79001e529d6e8e238d59c7376fdc9be91ed9955cf09c51a77d21f8d6341c97e

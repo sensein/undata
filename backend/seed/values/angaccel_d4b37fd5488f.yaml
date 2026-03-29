@@ -1,0 +1,15 @@
+semantic:
+  label: ANGACCEL
+  value_type: categorical
+  display_name: ANGACCEL
+provenance:
+- source: bids
+  class: enums
+  name: ANGACCEL
+  description: 'Angular acceleration channel, one channel for each spatial axis.
+
+    Column `component` for the axis MUST be added to the `*_channels.tsv` file (x,
+    y, or z).
+
+    '
+sha256: d4b37fd5488fe2cad5ede5faf38626fe0dc39314d03a1d4f29cb1b08c05c9182

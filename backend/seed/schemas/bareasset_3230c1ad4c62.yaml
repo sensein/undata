@@ -1,0 +1,40 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - schemaVersion
+  - name
+  - description
+  - contributor
+  - about
+  - studyTarget
+  - license
+  - protocol
+  - ethicsApproval
+  - keywords
+  - acknowledgement
+  - access
+  - url
+  - repository
+  - relatedResource
+  - wasGeneratedBy
+  - contentSize
+  - encodingFormat
+  - digest
+  - path
+  - dateModified
+  - blobDateModified
+  - dataType
+  - sameAs
+  - approach
+  - measurementTechnique
+  - variableMeasured
+  - wasDerivedFrom
+  - wasAttributedTo
+  subclass_of: CommonModel
+provenance:
+- source: dandi
+  class: BareAsset
+  name: BareAsset
+  description: Metadata used to describe an asset anywhere (local or server).
+sha256: 3230c1ad4c629e7f77180290073b6779ee37205c0a5f7cf8fdf69916077e8433

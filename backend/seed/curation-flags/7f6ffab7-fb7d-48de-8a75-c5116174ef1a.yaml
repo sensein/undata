@@ -1,0 +1,9 @@
+id: 7f6ffab7-fb7d-48de-8a75-c5116174ef1a
+entity_type: value
+entity_ref: coordsystem_512ace6ec2fb.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: coordsystem
+status: pending
+created_at: '2026-03-29T05:37:09.394147+00:00'

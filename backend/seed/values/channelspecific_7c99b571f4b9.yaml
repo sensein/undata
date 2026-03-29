@@ -1,0 +1,25 @@
+semantic:
+  value_type: categorical
+  label: channelspecific
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/uberon/core#channels_from
+    term_label: channels_from
+    ontology: uberon/core#channels
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7294
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/uberon/core#channels_into
+    term_label: channels_into
+    ontology: uberon/core#channels
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7077
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: ChannelSpecific
+sha256: 7c99b571f4b97a662c99eed81980bdfaa2300ae9d7556f878cfb3d908bbd75d8

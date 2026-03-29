@@ -1,0 +1,11 @@
+id: f66959b4-eed4-43c6-a86a-936bfe16a01f
+entity_type: value
+entity_ref: angio_f02bac397e91.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.866), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C33934
+  top_label: Angioblast
+  top_score: 0.8659
+status: pending
+created_at: '2026-03-29T05:37:09.328425+00:00'

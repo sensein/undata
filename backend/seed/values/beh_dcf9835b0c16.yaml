@@ -1,0 +1,12 @@
+semantic:
+  label: beh
+  value_type: categorical
+  display_name: Behavioral Data
+provenance:
+- source: bids
+  class: datatypes
+  name: beh
+  description: 'Behavioral data.
+
+    '
+sha256: dcf9835b0c16ac67761242336609dfaf1ff16617fb875d0229c58f986d8b8eaf

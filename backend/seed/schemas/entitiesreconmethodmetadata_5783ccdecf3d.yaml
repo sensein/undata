@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - ReconMethodParameterValues
+  - ReconMethodParameterUnits
+  is_mixin: true
+provenance:
+- source: bids
+  class: EntitiesReconMethodMetadata
+  name: EntitiesReconMethodMetadata
+  description: Sidecar field group for pet
+sha256: 5783ccdecf3d3eb8fbeb0f8095331a9395e7b068e87b3e184ae675c62f7e42fe

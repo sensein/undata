@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - FlipAngle
+  - InversionTime
+  - RepetitionTimeExcitation
+  - RepetitionTimePreparation
+  - NumberShots
+  - MagneticFieldStrength
+  is_mixin: true
+provenance:
+- source: bids
+  class: MP2RAGEMetadata
+  name: MP2RAGEMetadata
+  description: Sidecar field group for qmri
+sha256: 1dc533b5a0f4914a98eb2062d46db1d8bf78221656380dcbdcb37e4811bb7751

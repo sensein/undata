@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - metabolite_parent_fraction
+  - metabolite_polar_fraction
+  is_mixin: true
+provenance:
+- source: bids
+  class: pet_BloodMetabolite
+  name: pet_BloodMetabolite
+  description: Tabular columns for pet
+sha256: a9a1116894f7656e81e92ba2cb15e183aefd7a84a2640d2ec2e3bb8d6014e587

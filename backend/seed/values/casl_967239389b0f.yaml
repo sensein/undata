@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: casl
+provenance:
+- source: bids
+  class_: ''
+  name: CASL
+sha256: 967239389b0fc3ded6e777da47ca9e827d0f7d65459470511e0fc086f522ddfb

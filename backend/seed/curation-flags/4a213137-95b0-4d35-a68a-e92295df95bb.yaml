@@ -1,0 +1,9 @@
+id: 4a213137-95b0-4d35-a68a-e92295df95bb
+entity_type: element
+entity_ref: scanningsequence_a54fbdddcdd8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ScanningSequence
+status: pending
+created_at: '2026-03-29T05:40:55.895966+00:00'

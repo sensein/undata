@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: EncodingTechnique
+  description: 'The encoding technique used during readout.
+
+    For example, `"Cartesian"`, `"EPSI"`, `"Spiral"`,
+
+    or `"Density-weighted concentric ring trajectory"`.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a4d94dc4d530bdee95057ad8dfa64ab9dedaf9ecbfe9dfa01b3a527e101eb92a

@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - maxValue
+  - minValue
+  - unitText
+  - value
+  - valueReference
+  - propertyID
+  subclass_of: DandiBaseModel
+provenance:
+- source: dandi
+  class: PropertyValue
+  name: PropertyValue
+  description: null
+sha256: b4d399e7c3eb2582f20defed7d3b03a887a84de092e0ee794a3e50c05fc4cba1

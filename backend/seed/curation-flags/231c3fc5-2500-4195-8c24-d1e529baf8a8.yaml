@@ -1,0 +1,15 @@
+id: 231c3fc5-2500-4195-8c24-d1e529baf8a8
+entity_type: value
+entity_ref: metabolomic_aa9b52728a0d.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/EDAM_topic_3172
+    score: 0.9545
+  - uri: http://purl.obolibrary.org/obo/NCIT_C49019
+    score: 0.9545
+  - uri: http://purl.obolibrary.org/obo/NCIT_C210457
+    score: 0.8971
+status: pending
+created_at: '2026-03-29T05:40:56.462015+00:00'

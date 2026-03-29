@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - filtering
+  - data
+  - electrodes
+  - channel_conversion
+  subclass_of: TimeSeries
+provenance:
+- source: nwb
+  class: ElectricalSeries
+  name: ElectricalSeries
+  description: A time series of acquired voltage data from extracellular recordings.
+    The data field is an int or float array storing data in volts. The first dimension
+    should always represent time. The second dimension, if present, should represent
+    channels.
+sha256: 28d8a272cd637bb02d3f932b8a668323bbacbf5587805860f69622b73ff4bb7e

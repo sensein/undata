@@ -1,0 +1,11 @@
+id: de6ab723-f156-44fe-8025-8f548dbe28ad
+entity_type: value
+entity_ref: events_85cfae6f01a4.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.941), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C25499
+  top_label: Event
+  top_score: 0.9413
+status: pending
+created_at: '2026-03-29T05:37:09.467771+00:00'

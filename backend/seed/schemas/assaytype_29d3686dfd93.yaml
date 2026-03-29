@@ -1,0 +1,54 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  subclass_of: BaseType
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C171266
+    term_label: Assay Identifier
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8331
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C181947
+    term_label: Assay Device Identifier
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.767
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C189101
+    term_label: Assay Type
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7657
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C178860
+    term_label: Assay Result Type
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7249
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C171272
+    term_label: Immunohistochemistry Assay Unique Identifier
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7047
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: dandi
+  class: AssayType
+  name: AssayType
+  description: OBI based identifier for the assay(s) used
+sha256: 29d3686dfd93548f46f17bf9ed12f09ffd34e59ef7cdf3262c74b0723e7f86da

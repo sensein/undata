@@ -1,0 +1,9 @@
+id: c1df9777-abcd-46df-a7e4-32846e909bd8
+entity_type: element
+entity_ref: totalacquiredpairs_93852d9c0115.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TotalAcquiredPairs
+status: pending
+created_at: '2026-03-29T05:33:43.439808+00:00'

@@ -1,0 +1,9 @@
+id: 1a359fd1-f5c8-479f-8a5d-b091cd668172
+entity_type: element
+entity_ref: reference__eeg_9a62a70bd2b0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: reference__eeg
+status: pending
+created_at: '2026-03-29T05:37:09.113459+00:00'

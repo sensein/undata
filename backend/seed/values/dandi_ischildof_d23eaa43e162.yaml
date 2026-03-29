@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: dandi:ischildof
+provenance:
+- source: dandi
+  class_: ''
+  name: dandi:isChildOf
+sha256: d23eaa43e1626dcf84b777ab4efb4dfce77039d219ca19d7d681918abefc46b9

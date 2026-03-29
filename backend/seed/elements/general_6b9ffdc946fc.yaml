@@ -1,0 +1,27 @@
+semantic:
+  data_type: string
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165216
+    term_label: Experiment Metadata
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7064
+    model: all-MiniLM-L6-v2
+    primary: true
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: general
+  description: Experimental metadata, including protocol, notes and description of
+    hardware device(s).  The metadata stored in this section should be used to describe
+    the experiment. Metadata necessary for interpreting the data is stored with the
+    data. General experimental metadata, including animal strain, experimental protocols,
+    experimenter, devices, etc, are stored under 'general'. Core metadata (e.g., that
+    required to interpret data fields) is stored with the data itself, and implicitly
+    defined by the fil
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6b9ffdc946fcebe2488766498559b452fb928904553ce884338141a5f31f10c0

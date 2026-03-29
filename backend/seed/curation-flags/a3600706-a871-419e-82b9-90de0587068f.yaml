@@ -1,0 +1,9 @@
+id: a3600706-a871-419e-82b9-90de0587068f
+entity_type: element
+entity_ref: acq_time__sessions_4328fd16dba9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: acq_time__sessions
+status: pending
+created_at: '2026-03-29T05:40:55.324413+00:00'

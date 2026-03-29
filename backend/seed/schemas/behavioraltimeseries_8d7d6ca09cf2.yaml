@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - TimeSeries
+  subclass_of: NWBDataInterface
+provenance:
+- source: nwb
+  class: BehavioralTimeSeries
+  name: BehavioralTimeSeries
+  description: TimeSeries for storing behavioral time series data. See description
+    of BehavioralEpochs for more details.
+sha256: 8d7d6ca09cf2fb563d23ca0e641e522045b82bea3bb9e5099561961bfc0c14e0

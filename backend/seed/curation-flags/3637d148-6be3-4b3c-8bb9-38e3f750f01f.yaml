@@ -1,0 +1,9 @@
+id: 3637d148-6be3-4b3c-8bb9-38e3f750f01f
+entity_type: element
+entity_ref: digitizedheadpointscoordinatesystem_811439230f4e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DigitizedHeadPointsCoordinateSystem
+status: pending
+created_at: '2026-03-29T05:33:43.196448+00:00'

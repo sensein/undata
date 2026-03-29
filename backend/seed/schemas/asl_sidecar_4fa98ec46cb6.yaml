@@ -1,0 +1,24 @@
+semantic:
+  properties: []
+  mixins:
+  - MRIASLTextOnly
+  - MRIASLCommonMetadataFields
+  - MRIASLCommonMetadataFieldsM0TypeRec
+  - MRIASLCommonMetadataFieldsM0TypeReq
+  - MRIASLCommonMetadataFieldsBackgroundSuppressionOpt
+  - MRIASLCommonMetadataFieldsBackgroundSuppressionReq
+  - MRIASLCommonMetadataFieldsVascularCrushingOpt
+  - MRIASLCommonMetadataFieldsVascularCrushingRec
+  - MRIASLCaslPcaslSpecific
+  - MRIASLPcaslSpecific
+  - MRIASLCaslSpecific
+  - MRIASLPaslSpecific
+  - MRIASLPASLSpecificBolusCutOffFlagFalse
+  - MRIASLPaslSpecificBolusCutOffFlagTrue
+  - MRIASLM0Scan
+provenance:
+- source: bids
+  class: asl_sidecar
+  name: asl_sidecar
+  description: BIDS sidecar for asl
+sha256: 4fa98ec46cb6dfe0ff7efb7dcd70f3546cdc0ea8f72cb008b80eca860122974a

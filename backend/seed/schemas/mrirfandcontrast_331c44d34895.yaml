@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - NegativeContrast
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIRFandContrast
+  name: MRIRFandContrast
+  description: Sidecar field group for mri
+sha256: 331c44d34895c4c1fa9214a1d78dc2ed5087088bb3d91495ac3e017b82a540a1

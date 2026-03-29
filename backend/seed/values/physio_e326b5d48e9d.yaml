@@ -1,0 +1,21 @@
+semantic:
+  label: physio
+  value_type: categorical
+  display_name: Physiological recording
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C93068
+    term_label: Physiatrist
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7379
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: suffixes
+  name: physio
+  description: 'Physiological recordings such as cardiac and respiratory signals.
+
+    '
+sha256: e326b5d48e9d517771e19da2121791da8137f636c798efce0bfec81ee2cc4edf

@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - IntervalSeries
+  subclass_of: NWBDataInterface
+provenance:
+- source: nwb
+  class: BehavioralEpochs
+  name: BehavioralEpochs
+  description: TimeSeries for storing behavioral epochs.  The objective of this and
+    the other two Behavioral interfaces (e.g. BehavioralEvents and BehavioralTimeSeries)
+    is to provide generic hooks for software tools/scripts. This allows a tool/script
+    to take the output one specific interface (e.g., UnitTimes) and plot that data
+    relative to another data modality (e.g., behavioral events) without having to
+    define all possible modalities in advance. Declaring one of these interfaces means
+    that one or more TimeSer
+sha256: 84a69f6a7be45462f36a94a5dcf6c24f0c777e11dd7077e6d38b9b5c7884e9b1

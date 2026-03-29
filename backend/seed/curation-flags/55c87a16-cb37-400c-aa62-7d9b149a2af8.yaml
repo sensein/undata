@@ -1,0 +1,9 @@
+id: 55c87a16-cb37-400c-aa62-7d9b149a2af8
+entity_type: element
+entity_ref: slice_53726e720182.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: slice
+status: pending
+created_at: '2026-03-29T05:37:09.171268+00:00'

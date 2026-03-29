@@ -104,6 +104,7 @@ class Element:
     file_name: Optional[str] = None
     data_type: Optional[str] = None
     unit: Optional[str] = None
+    unit_uri: Optional[str] = None
     pattern: Optional[str] = None
     value_domain: Optional[str] = None
     description: Optional[str] = None
@@ -151,6 +152,32 @@ class ValueSet:
     semantic: JSON = strawberry.field(default_factory=dict)
     provenance: list[ProvenanceEntry] = strawberry.field(default_factory=list)
     ontology_annotations: list[OntologyAnnotation] = strawberry.field(default_factory=list)
+
+
+@strawberry.type
+class FunctionSpec:
+    function_type: Optional[str] = None
+    input_type: Optional[str] = None
+    output_type: Optional[str] = None
+    expression: Optional[str] = None
+    expression_type: Optional[str] = None
+
+
+@strawberry.type
+class Transform:
+    sha256: str
+    file_name: Optional[str] = None
+    source_element: str = ""
+    target_element: str = ""
+    function_type: Optional[str] = None
+    input_type: Optional[str] = None
+    output_type: Optional[str] = None
+    expression: Optional[str] = None
+    expression_type: Optional[str] = None
+    confidence: Optional[float] = None
+    description: Optional[str] = None
+    semantic: JSON = strawberry.field(default_factory=dict)
+    provenance: list[ProvenanceEntry] = strawberry.field(default_factory=list)
 
 
 @strawberry.type
@@ -202,6 +229,7 @@ class ImportResult:
     schemas: int
     values: int
     valuesets: int
+    transforms: int
     flags: int
     runs: int
 
@@ -263,6 +291,19 @@ class ValueSetEdge:
 @strawberry.type
 class ValueSetConnection:
     edges: list[ValueSetEdge]
+    page_info: PageInfo
+    total_count: int
+
+
+@strawberry.type
+class TransformEdge:
+    cursor: str
+    node: Transform
+
+
+@strawberry.type
+class TransformConnection:
+    edges: list[TransformEdge]
     page_info: PageInfo
     total_count: int
 

@@ -1,0 +1,31 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+provenance:
+- source: bids
+  class: entities
+  name: flip
+  description: 'If files belonging to an entity-linked file collection are acquired
+    at different
+
+    flip angles, the `_flip-<index>` entity pair MUST be used to distinguish
+
+    individual files.
+
+
+    This entity represents the `"FlipAngle"` metadata field.
+
+    Therefore, if the `flip-<index>` entity is present in a filename,
+
+    `"FlipAngle"` MUST be defined in the associated metadata.
+
+    Please note that the `<index>` denotes the number/index (in the form of a nonnegative
+    integer),
+
+    not the `"FlipAngle"` value of the separate JSON file.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7c45e8ef7b1d0983158253f6196f576f648633aa15c64179898f583b6da4074a

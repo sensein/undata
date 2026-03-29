@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: iEEGCoordinateProcessingReference
+  description: 'A reference to a paper that defines in more detail the method used
+    to
+
+    localize the electrodes and to post-process the electrode positions.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 30232d36df692e117848ca8507f139701b097671a32e016e21979f7ef4159089

@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - TimeZero
+  - ScanStart
+  - InjectionStart
+  - FrameTimesStart
+  - FrameDuration
+  - InjectionEnd
+  - ScanDate
+  is_mixin: true
+provenance:
+- source: bids
+  class: PETTime
+  name: PETTime
+  description: Sidecar field group for pet
+sha256: 61e65c19949d6a6a6d8014ff47dec06bf36b9b5c90a5d00646822e80bd6324bf

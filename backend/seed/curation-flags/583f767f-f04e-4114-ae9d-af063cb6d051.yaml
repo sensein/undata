@@ -1,0 +1,9 @@
+id: 583f767f-f04e-4114-ae9d-af063cb6d051
+entity_type: element
+entity_ref: matrixcoilmode_8538eba9a235.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MatrixCoilMode
+status: pending
+created_at: '2026-03-29T05:37:09.003806+00:00'

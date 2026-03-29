@@ -1,0 +1,8 @@
+semantic:
+  label: dcite:ConferencePaper
+  value_type: categorical
+provenance:
+- source: dandi
+  class: ResourceType
+  name: dcite:ConferencePaper
+sha256: bb6c516e3a12f39628a28757dc1986570ac6e25cc1e3c9a438e924255a81e6d7

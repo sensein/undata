@@ -1,0 +1,9 @@
+id: 7fd26d23-8831-4f5e-b5ad-adcc5816e5d0
+entity_type: element
+entity_ref: rolename_ab4f1f5a4d47.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: roleName
+status: pending
+created_at: '2026-03-29T05:40:55.872381+00:00'

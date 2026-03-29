@@ -1,0 +1,10 @@
+semantic:
+  label: nirs
+  value_type: categorical
+  display_name: Near Infrared Spectroscopy
+provenance:
+- source: bids
+  class: suffixes
+  name: nirs
+  description: Data associated with a Shared Near Infrared Spectroscopy Format file.
+sha256: e372f582ec5764f1205f1bfdb8a1bea22e9c725c441338853ca1477d25e34f3d

@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: emg
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/HP_0003457
+    term_label: EMG abnormality
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7175
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: EMG
+sha256: 202fb4c4d8167c5544b36afc9f38896830fa3adf00531bdea3a36ffac06ec554

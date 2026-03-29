@@ -1,0 +1,9 @@
+id: a60730b1-6517-49de-b7e5-0325a56cba64
+entity_type: element
+entity_ref: numbertransmitcoilactiveelements_144d29ef8c7a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NumberTransmitCoilActiveElements
+status: pending
+created_at: '2026-03-29T05:37:09.058651+00:00'

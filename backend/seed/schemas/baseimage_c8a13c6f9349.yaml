@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - description
+  subclass_of: NWBData
+provenance:
+- source: nwb
+  class: BaseImage
+  name: BaseImage
+  description: An abstract base type for image data. Parent type for Image and ExternalImage
+    types.
+sha256: c8a13c6f9349ef882fa759d9879bd5bcce2b24c067003dbcc2ab6af0efb44c25

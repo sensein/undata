@@ -1,0 +1,25 @@
+semantic:
+  value_type: categorical
+  label: double-coil
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0001794
+    term_label: coiling
+    ontology: pato
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7752
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C49877
+    term_label: Coil Device
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7662
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: double-coil
+sha256: 854d0b500170a70542f92480d375501dc595016bf6a9bb9a6dbdd3e32ad1d536

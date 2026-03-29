@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - Manufacturer
+  - ManufacturersModelName
+  - DeviceSerialNumber
+  - StationName
+  - SoftwareVersions
+  is_mixin: true
+provenance:
+- source: bids
+  class: MicroscopyHardware
+  name: MicroscopyHardware
+  description: Sidecar field group for micr
+sha256: 2c9ea4547c6247ff80c4ea3c07d766af35844811554185097b9c101a4a4e4a61

@@ -1,0 +1,9 @@
+id: afbe07c1-1d06-4497-9f0e-e81caa2ee53f
+entity_type: schema
+entity_ref: dandibasemodel_9209efcffa9c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DandiBaseModel
+status: pending
+created_at: '2026-03-29T05:40:56.733380+00:00'

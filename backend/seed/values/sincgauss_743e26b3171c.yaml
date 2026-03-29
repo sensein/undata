@@ -1,0 +1,12 @@
+semantic:
+  label: SINCGAUSS
+  value_type: categorical
+  display_name: Sinc-Gauss pulse
+provenance:
+- source: bids
+  class: enums
+  name: SINCGAUSS
+  description: 'A sinc-shaped pulse with a Gaussian window.
+
+    '
+sha256: 743e26b3171c12160cea630dbd006dbdc9040d765f07f73a47d778456dac1112

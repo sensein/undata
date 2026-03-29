@@ -1,0 +1,9 @@
+id: 9486adda-73b7-45c9-ab19-d30c805e1762
+entity_type: element
+entity_ref: detection_method_f30bd2e1dec0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: detection_method
+status: pending
+created_at: '2026-03-29T05:40:55.451067+00:00'

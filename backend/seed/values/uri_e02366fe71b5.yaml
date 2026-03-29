@@ -1,0 +1,21 @@
+semantic:
+  label: uri
+  value_type: categorical
+  display_name: Uniform resource indicator
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_1047
+    term_label: URI
+    ontology: edam
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: formats
+  name: uri
+  description: 'A uniform resource indicator.
+
+    '
+sha256: e02366fe71b53e116f1f9b2da3bf0462b0fd8baf262c89871d5fa5c1efb54710

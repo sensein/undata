@@ -1,0 +1,98 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  - url
+  - repository
+  - relation
+  - resourceType
+  subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165072
+    term_label: Resource Name
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8586
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.org/dc/elements/1.1/type
+    term_label: Resource Type
+    ontology: unknown
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8207
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C15828
+    term_label: Other Resources
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7966
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C19441
+    term_label: Resource Development
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7804
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/dc/elements/1.1/source
+    term_label: derived from resource
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7661
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C61011
+    term_label: Resource Description Framework
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7497
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C19268
+    term_label: Resource Informatics
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7424
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165073
+    term_label: Resource Type Code
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7414
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/dc/elements/1.1/identifier
+    term_label: Resource Identifier
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7307
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165071
+    term_label: Resource Identifier
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7307
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: dandi
+  class: Resource
+  name: Resource
+  description: null
+sha256: 754f280cf1dba6642314f1ffe795102456239c5451f91c348d940f957fe337e7

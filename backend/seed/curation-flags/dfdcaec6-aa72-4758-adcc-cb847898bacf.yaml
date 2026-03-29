@@ -1,0 +1,9 @@
+id: dfdcaec6-aa72-4758-adcc-cb847898bacf
+entity_type: schema
+entity_ref: mrs_sidecar_b3486e9f4002.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: mrs_sidecar
+status: pending
+created_at: '2026-03-29T05:37:09.991447+00:00'

@@ -1,0 +1,11 @@
+id: b506a1da-993b-4326-b79f-486b35f6a087
+entity_type: element
+entity_ref: sequencevariant_2c1427fad55d.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.721), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_data_0855
+  top_label: Sequence metadata
+  top_score: 0.7208
+status: pending
+created_at: '2026-03-29T05:33:43.405334+00:00'

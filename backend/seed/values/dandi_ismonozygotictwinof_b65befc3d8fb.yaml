@@ -1,0 +1,8 @@
+semantic:
+  label: dandi:isMonozygoticTwinOf
+  value_type: categorical
+provenance:
+- source: dandi
+  class: ParticipantRelationType
+  name: dandi:isMonozygoticTwinOf
+sha256: b65befc3d8fb26cca310b7156f946a98d0c53c943af43a66eaa7e0b9d1a6d709

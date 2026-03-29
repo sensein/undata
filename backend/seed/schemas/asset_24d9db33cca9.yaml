@@ -1,0 +1,51 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - schemaVersion
+  - name
+  - description
+  - contributor
+  - about
+  - studyTarget
+  - license
+  - protocol
+  - ethicsApproval
+  - keywords
+  - acknowledgement
+  - access
+  - url
+  - repository
+  - relatedResource
+  - wasGeneratedBy
+  - contentSize
+  - encodingFormat
+  - digest
+  - path
+  - dateModified
+  - blobDateModified
+  - dataType
+  - sameAs
+  - approach
+  - measurementTechnique
+  - variableMeasured
+  - wasDerivedFrom
+  - wasAttributedTo
+  - identifier
+  - contentUrl
+  subclass_of: BareAsset
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_2218
+    term_label: Server metadata
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7008
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: Asset
+  name: Asset
+  description: Metadata used to describe an asset on the server.
+sha256: 24d9db33cca95bff15c1d397d85788afcf4702d415788a9a935c2a53096072a0

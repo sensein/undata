@@ -1,0 +1,13 @@
+id: 1a10060d-3027-4f5e-adb7-d71079762d0a
+entity_type: value
+entity_ref: magnitude2_bcab1632d225.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C49158
+    score: 0.8432
+  - uri: http://purl.obolibrary.org/obo/PATO_0002016
+    score: 0.8432
+status: pending
+created_at: '2026-03-29T05:40:56.434643+00:00'

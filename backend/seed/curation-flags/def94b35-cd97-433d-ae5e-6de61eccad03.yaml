@@ -1,0 +1,9 @@
+id: def94b35-cd97-433d-ae5e-6de61eccad03
+entity_type: value
+entity_ref: dcite_software_947960ccdc6d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:Software
+status: pending
+created_at: '2026-03-29T05:40:56.253822+00:00'

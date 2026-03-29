@@ -1,0 +1,11 @@
+id: e7b94ef5-7a12-4130-850b-9656087025e3
+entity_type: value
+entity_ref: datetime_79ee08390911.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.814), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C37939
+  top_label: Date and Time
+  top_score: 0.8141
+status: pending
+created_at: '2026-03-29T05:40:56.217599+00:00'

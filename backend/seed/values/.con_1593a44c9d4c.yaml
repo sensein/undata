@@ -1,0 +1,15 @@
+semantic:
+  label: .con
+  value_type: categorical
+  display_name: KIT/Yokogawa/Ricoh Continuous Data
+provenance:
+- source: bids
+  class: extensions
+  name: con
+  description: 'Raw continuous data from a KIT/Yokogawa/Ricoh MEG system.
+
+
+    Successor to the `.sqd` extension for raw continuous data.
+
+    '
+sha256: 1593a44c9d4c607523ecce8bfc2a0a1eda50614cd63b6bd5adbc1fcc717fdcd5

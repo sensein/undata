@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - description
+  - response
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: IntracellularResponsesTable
+  name: IntracellularResponsesTable
+  description: Table for storing intracellular response related metadata.
+sha256: e9e181e882d9eb59311b2333e7c736f1e80f0820cfb8545ead45e15a60904cad

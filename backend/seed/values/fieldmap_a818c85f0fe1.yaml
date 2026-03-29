@@ -1,0 +1,15 @@
+semantic:
+  label: fieldmap
+  value_type: categorical
+  display_name: Fieldmap
+provenance:
+- source: bids
+  class: suffixes
+  name: fieldmap
+  description: 'Some MR schemes such as spiral-echo imaging (SEI) sequences are able
+    to
+
+    directly provide maps of the *B<sub>0</sub>* field inhomogeneity.
+
+    '
+sha256: a818c85f0fe109e3bdd3c1876c2b6edfe0ccab85d6f5c54862f832915a137004

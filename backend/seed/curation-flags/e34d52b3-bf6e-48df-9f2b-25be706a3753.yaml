@@ -1,0 +1,11 @@
+id: e34d52b3-bf6e-48df-9f2b-25be706a3753
+entity_type: value
+entity_ref: z_9f5db59f0007.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.778), no LLM verification
+  top_match: http://uri.interlex.org/tgbugs/uris/readable/atlas/NegativeZ
+  top_label: negative z
+  top_score: 0.7777
+status: pending
+created_at: '2026-03-29T05:37:09.881097+00:00'

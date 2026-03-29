@@ -1,0 +1,31 @@
+semantic:
+  label: noRF
+  value_type: categorical
+  display_name: noRF
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_1807
+    term_label: ORF name
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7238
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: noRF
+  description: 'An ASL volume type: noRF.
+
+    The no radio frequency excitation (noRF) image is a noise scan acquired by disabling
+    the
+
+    radio frequency excitation,
+
+    while maintaining all other parameters from the associated scan.
+
+    These volumes may optionally be separated into a separate file with the ``noRF``
+    suffix.
+
+    '
+sha256: d169408668465cb0cca4e99b3cd75243a215808488c3cdeafa46c032e5cf3fee

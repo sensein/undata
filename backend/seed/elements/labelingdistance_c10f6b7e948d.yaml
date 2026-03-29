@@ -1,0 +1,26 @@
+semantic:
+  data_type: float
+  unit: mm
+  value_domain: numeric
+provenance:
+- source: bids
+  class: metadata
+  name: LabelingDistance
+  description: 'Distance from the center of the imaging slab to the center of the
+    labeling
+
+    plane (`(P)CASL`) or the leading edge of the labeling slab (`PASL`),
+
+    in millimeters.
+
+    If the labeling is performed inferior to the isocenter,
+
+    this number should be negative.
+
+    Based on DICOM macro C.8.13.5.14.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c10f6b7e948d6404fddc7da3b174a444e3f55dbc2b61a05ccc104070a760075b

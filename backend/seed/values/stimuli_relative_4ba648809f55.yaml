@@ -1,0 +1,23 @@
+semantic:
+  label: stimuli_relative
+  value_type: categorical
+  display_name: Path relative to the stimuli directory
+provenance:
+- source: bids
+  class: formats
+  name: stimuli_relative
+  description: 'A path to a stimulus file, relative to a `/stimuli` directory somewhere.
+
+
+    The validation for this format is minimal.
+
+    It simply ensures that the value is a string with any characters that may appear
+    in a valid path,
+
+    without starting with "/" (an absolute path) or "stimuli/"
+
+    (a relative path starting with the stimuli directory, rather than relative to
+    that directory).
+
+    '
+sha256: 4ba648809f554f31caf0302420895441a6ad50d67b19bf24c225ffc89db81797

@@ -1,0 +1,30 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  subclass_of: BaseType
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_2379
+    term_label: Strain identifier
+    ontology: edam
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.849
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_1046
+    term_label: Strain name
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7236
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: dandi
+  class: StrainType
+  name: StrainType
+  description: Identifier for the strain of the sample
+sha256: efb5208e5ee28107a0949dd6975b4b7a5aa0f37490cfcfb3f4b92d6faa01dbde

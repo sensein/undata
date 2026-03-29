@@ -1,0 +1,9 @@
+id: cd22a5d2-9605-4943-a99c-7ede2113db16
+entity_type: element
+entity_ref: anatomicallandmarkcoordinatesystemdescription_8acd3d09b182.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AnatomicalLandmarkCoordinateSystemDescription
+status: pending
+created_at: '2026-03-29T05:33:43.141786+00:00'

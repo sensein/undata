@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - volume_type
+  is_mixin: true
+provenance:
+- source: bids
+  class: perf_ASLContext
+  name: perf_ASLContext
+  description: Tabular columns for perf
+sha256: 5a4d158b3462ee511d12d3d393e90a645534f23bfe0d0b66c4deb827acbdb0cc

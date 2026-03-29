@@ -1,0 +1,14 @@
+semantic:
+  label: T2star
+  value_type: categorical
+  display_name: T2\* image
+provenance:
+- source: bids
+  class: suffixes
+  name: T2star
+  description: 'Ambiguous, may refer to a parametric image or to a conventional image.
+
+    **Change:** Replaced by `T2starw` or `T2starmap`.
+
+    '
+sha256: 3e95937bde095e04e0f0ac457a597c6695fb84fb15bd4def50ac0151b1ed0583

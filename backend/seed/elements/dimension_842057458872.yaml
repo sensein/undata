@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: dimension
+  description: Number of pixels on x, y, (and z) axes.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8420574588729962d1d21a930566ad65cef04d7eb36b41491165569c38d7ae1d

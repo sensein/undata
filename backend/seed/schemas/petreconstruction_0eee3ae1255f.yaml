@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - AcquisitionMode
+  - ImageDecayCorrected
+  - ImageDecayCorrectionTime
+  - ReconMethodName
+  - ReconMethodParameterLabels
+  - ReconMethodParameterUnits
+  - ReconMethodParameterValues
+  - ReconFilterType
+  - ReconFilterSize
+  - AttenuationCorrection
+  - ReconMethodImplementationVersion
+  - AttenuationCorrectionMethodReference
+  - ScaleFactor
+  - ScatterFraction
+  - DecayCorrectionFactor
+  - DoseCalibrationFactor
+  - PromptRate
+  - SinglesRate
+  - RandomRate
+  is_mixin: true
+provenance:
+- source: bids
+  class: PETReconstruction
+  name: PETReconstruction
+  description: Sidecar field group for pet
+sha256: 0eee3ae1255ff42856826f784ffe546f1a94ec5f841f1d1229202f53589af0f4

@@ -1,0 +1,9 @@
+id: e1c03d82-66d2-4a8c-bcc4-26df96199e2c
+entity_type: schema
+entity_ref: entitiesflipmetadata_78214aa3ce27.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EntitiesFlipMetadata
+status: pending
+created_at: '2026-03-29T05:33:43.988841+00:00'

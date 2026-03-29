@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  subclass_of: BaseType
+provenance:
+- source: dandi
+  class: SpeciesType
+  name: SpeciesType
+  description: Identifier for species of the sample
+sha256: 00624d9c09e72ad4433264d9230d73c8785c9cd0f63fc206fc1dbedbb2337076

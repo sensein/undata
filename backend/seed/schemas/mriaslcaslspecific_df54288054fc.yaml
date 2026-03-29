@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - CASLType
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIASLCaslSpecific
+  name: MRIASLCaslSpecific
+  description: Sidecar field group for asl
+sha256: df54288054fc2a5fd72ba46e432c2493160fc222bdbb1f0c982e5c65700fa6a2

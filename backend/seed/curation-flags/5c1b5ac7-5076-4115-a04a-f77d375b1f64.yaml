@@ -1,0 +1,9 @@
+id: 5c1b5ac7-5076-4115-a04a-f77d375b1f64
+entity_type: element
+entity_ref: mtransfer_4ea857b7ec9e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: mtransfer
+status: pending
+created_at: '2026-03-29T05:40:55.728438+00:00'

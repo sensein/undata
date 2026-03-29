@@ -1,0 +1,40 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - publishedBy
+  - datePublished
+  - schemaVersion
+  - name
+  - description
+  - contributor
+  - about
+  - studyTarget
+  - license
+  - protocol
+  - ethicsApproval
+  - keywords
+  - acknowledgement
+  - access
+  - url
+  - repository
+  - relatedResource
+  - wasGeneratedBy
+  - identifier
+  - dateCreated
+  - dateModified
+  - citation
+  - assetsSummary
+  - manifestLocation
+  - version
+  - doi
+  - releaseNotes
+  subclass_of: Dandiset
+  mixins:
+  - Publishable
+provenance:
+- source: dandi
+  class: PublishedDandiset
+  name: PublishedDandiset
+  description: null
+sha256: 3026c4a584f74d53d36168617a80e787717cfccf7ee975bd87a751b48385c328

@@ -1,0 +1,13 @@
+semantic:
+  name: ParticipantRelationType
+  members:
+  - dandi:isChildOf
+  - dandi:isDizygoticTwinOf
+  - dandi:isMonozygoticTwinOf
+  - dandi:isParentOf
+  - dandi:isSiblingOf
+provenance:
+- source: dandi
+  class: RelatedParticipant
+  name: ParticipantRelationType
+sha256: 8ead3aae1a26679d9955a224ad237ae0c72d512e1affad15998d26fd8a93a995

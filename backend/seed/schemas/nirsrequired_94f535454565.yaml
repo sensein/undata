@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - SamplingFrequency__nirs
+  - NIRSChannelCount
+  - NIRSSourceOptodeCount
+  - NIRSDetectorOptodeCount
+  - ACCELChannelCount
+  - GYROChannelCount
+  - MAGNChannelCount
+  is_mixin: true
+provenance:
+- source: bids
+  class: NirsRequired
+  name: NirsRequired
+  description: Sidecar field group for nirs
+sha256: 94f535454565fb8ca398698df37e2631d4a1ad24e1515a8c0a22e5f1e4aad7e7

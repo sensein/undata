@@ -1,0 +1,32 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: EMGReference
+  description: 'Description of the approach to signal referencing.
+
+    If the same signal source is used as reference for all channels (often called
+    a
+
+    "monopolar" recording), specify the signal source (typically an electrode name).
+
+    If different channels have different reference electrodes, this field SHOULD contain
+
+    the string `"ChannelSpecific"` and each channel''s reference SHOULD be given in
+    the
+
+    `reference` column of `*_channels.tsv`.
+
+    For bipolar recording devices (where a single sensor unit contains two rigidly
+
+    separated contacts, and the paired contacts are not listed independently in
+
+    `*_electrodes.tsv`), this field SHOULD be `"Bipolar"`.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 065a5a6dd7d4508a18ee5bb48b7193e05591cb043b639d62d0aa60d7289ef1c1

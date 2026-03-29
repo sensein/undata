@@ -1,0 +1,11 @@
+id: 867a6ff1-193a-4c15-b071-a0107192a16b
+entity_type: value
+entity_ref: double-coil_854d0b500170.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.775), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/PATO_0001794
+  top_label: coiling
+  top_score: 0.7752
+status: pending
+created_at: '2026-03-29T05:40:56.270774+00:00'

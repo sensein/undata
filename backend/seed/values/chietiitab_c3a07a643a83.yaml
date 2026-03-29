@@ -1,0 +1,41 @@
+semantic:
+  value_type: categorical
+  label: chietiitab
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C14194
+    term_label: Chimera
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7475
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0100014
+    term_label: chimera
+    ontology: obi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7475
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C43938
+    term_label: Chitimacha
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7227
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C44744
+    term_label: Chistochina
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7141
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: ChietiItab
+sha256: c3a07a643a83c896bc7c101356a38de3429edb63b740d1d740759d24a4c62402

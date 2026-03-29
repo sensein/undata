@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: entities
+  name: tracer
+  description: 'The `trc-<label>` entity can be used to distinguish sequences using
+    different tracers.
+
+
+    This entity represents the `"TracerName"` metadata field.
+
+    Therefore, if the `trc-<label>` entity is present in a filename,
+
+    `"TracerName"` MUST be defined in the associated metadata.
+
+    Please note that the `<label>` does not need to match the actual value of the
+    field.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 013a68b211ae215145ec6ef4cb3b2fc70a32fd67bc02c36eb07ee927fc3286d3

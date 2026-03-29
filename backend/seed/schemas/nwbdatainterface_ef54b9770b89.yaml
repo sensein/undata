@@ -1,0 +1,10 @@
+semantic:
+  properties: []
+  subclass_of: NWBContainer
+provenance:
+- source: nwb
+  class: NWBDataInterface
+  name: NWBDataInterface
+  description: An abstract data type for a generic container storing collections of
+    data, as opposed to metadata.
+sha256: ef54b9770b892dacb8b6f383e87244c3ecde8ce583cb9bef0438ad7ee6feb453

@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: resp
+provenance:
+- source: bids
+  class_: ''
+  name: RESP
+sha256: 7efbc043339f7b104eda74a3f257cb890bde157d3ae10a0e5759623b5ee7b0bd

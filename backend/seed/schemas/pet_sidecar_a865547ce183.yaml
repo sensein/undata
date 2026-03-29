@@ -1,0 +1,23 @@
+semantic:
+  properties: []
+  mixins:
+  - PETHardware
+  - PETInstitutionInformation
+  - PETSample
+  - PETRadioChemistry
+  - EntitiesBolusMetadata
+  - PETPharmaceuticals
+  - PETTime
+  - PETReconstruction
+  - EntitiesReconMethodMetadata
+  - EntitiesReconFilterMetadata
+  - BloodRecording
+  - BloodPlasmaFreeFraction
+  - BloodMetaboliteMethod
+  - PETTask
+provenance:
+- source: bids
+  class: pet_sidecar
+  name: pet_sidecar
+  description: BIDS sidecar for pet
+sha256: a865547ce18395bacf8f2e3797a09159cb8bda6e46bee9c957cd268676f0dcf8

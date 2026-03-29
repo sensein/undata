@@ -1,0 +1,21 @@
+semantic:
+  properties:
+  - ChemicalShiftOffset
+  - ChemicalShiftReference
+  - EditTarget
+  - EditPulse
+  - EditCondition
+  - EchoAcquisition
+  - ParallelReductionFactorInPlane
+  - ParallelAcquisitionTechnique
+  - MultibandAccelerationFactor
+  - PulseSequenceTiming
+  - PulseSequencePulses
+  - ReceiveGain
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRSOptionalFields
+  name: MRSOptionalFields
+  description: Sidecar field group for mrs
+sha256: 4bca66b74f18b840fad917fde597597ab82b0a9ffa422a21b54db0e8aca94f4a

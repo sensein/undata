@@ -1,0 +1,9 @@
+id: f4841e8a-0fc1-4e9a-93e7-af90bfc97aff
+entity_type: element
+entity_ref: power_6edc71a70e93.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: power
+status: pending
+created_at: '2026-03-29T05:40:55.813505+00:00'

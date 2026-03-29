@@ -1,0 +1,9 @@
+id: b75c9c9d-b3cb-4f50-af42-88f8c07e16ea
+entity_type: element
+entity_ref: immersion_b474e9f1d165.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Immersion
+status: pending
+created_at: '2026-03-29T05:40:55.644410+00:00'

@@ -1,0 +1,13 @@
+id: 50fd0b78-2ed2-432a-9339-42f8cb6a0597
+entity_type: element
+entity_ref: attenuationcorrectionmethodreference_2f6c938a8b04.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.019)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C69286
+    score: 0.7381
+  - uri: http://purl.obolibrary.org/obo/NCIT_C94862
+    score: 0.7189
+status: pending
+created_at: '2026-03-29T05:40:55.358206+00:00'

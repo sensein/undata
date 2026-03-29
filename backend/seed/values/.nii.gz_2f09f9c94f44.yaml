@@ -1,0 +1,13 @@
+semantic:
+  label: .nii.gz
+  value_type: categorical
+  display_name: Compressed NIfTI
+provenance:
+- source: bids
+  class: extensions
+  name: nii_gz
+  description: 'A compressed Neuroimaging Informatics Technology Initiative (NIfTI)
+    data file.
+
+    '
+sha256: 2f09f9c94f44a6907ed4c1225ae7f18ae165ad6636a26ac6c099385edb2900aa

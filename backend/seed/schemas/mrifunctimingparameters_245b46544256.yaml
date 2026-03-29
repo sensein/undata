@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - NumberOfVolumesDiscardedByScanner
+  - NumberOfVolumesDiscardedByUser
+  - DelayTime
+  - FrameAcquisitionDuration
+  - DelayAfterTrigger
+  - AcquisitionDuration
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIFuncTimingParameters
+  name: MRIFuncTimingParameters
+  description: Sidecar field group for func
+sha256: 245b465442567944804164bf9973493e34be17cbee4377322fc685e7bc823854

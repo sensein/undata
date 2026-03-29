@@ -1,0 +1,8 @@
+semantic:
+  label: MNI152NLin6Sym
+  value_type: categorical
+provenance:
+- source: bids
+  class: enums
+  name: MNI152NLin6Sym
+sha256: f000a06d7ec4619d3bb1ace9482b568a806b67f2ceab6102fcf102d8a3122aa0

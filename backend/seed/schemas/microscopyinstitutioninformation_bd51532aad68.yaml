@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - InstitutionName
+  - InstitutionAddress
+  - InstitutionalDepartmentName
+  is_mixin: true
+provenance:
+- source: bids
+  class: MicroscopyInstitutionInformation
+  name: MicroscopyInstitutionInformation
+  description: Sidecar field group for micr
+sha256: bd51532aad680127d11370f0bdaf490713787c43e89d1e744db4b98aa03d629b

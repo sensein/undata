@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: gaze-on-screen
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/HP_0025401
+    term_label: Staring gaze
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7254
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: gaze-on-screen
+sha256: bbfa47515ceaa93689432af6cf4b9287b5c1d0fef80ea064e735f0e9e505cc51

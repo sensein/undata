@@ -1,0 +1,24 @@
+semantic:
+  properties:
+  - nwb_version
+  - file_create_date
+  - identifier
+  - session_description
+  - session_start_time
+  - timestamps_reference_time
+  - acquisition
+  - analysis
+  - scratch
+  - processing
+  - stimulus
+  - general
+  - intervals
+  - units
+  subclass_of: NWBContainer
+provenance:
+- source: nwb
+  class: NWBFile
+  name: NWBFile
+  description: An NWB file storing cellular-based neurophysiology data from a single
+    experimental session.
+sha256: c90b6bb936b3c7c9a5fa52ebaa63383f77bbe9a63b7471e80002a1416962be67

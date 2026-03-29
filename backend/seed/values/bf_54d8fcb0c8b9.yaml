@@ -1,0 +1,21 @@
+semantic:
+  label: BF
+  value_type: categorical
+  display_name: Bright-field microscopy
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C89281
+    term_label: Boyfriend
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7658
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: suffixes
+  name: BF
+  description: 'Bright-field microscopy imaging data
+
+    '
+sha256: 54d8fcb0c8b9c059fc1ecdc913807884e8841917708e6ae43b83c050656bd35c

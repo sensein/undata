@@ -1,0 +1,9 @@
+id: 6b00b4c3-84d3-4046-a4c6-d81ba7a8916b
+entity_type: value
+entity_ref: eog_062513598ed4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EOG
+status: pending
+created_at: '2026-03-29T05:33:43.623052+00:00'

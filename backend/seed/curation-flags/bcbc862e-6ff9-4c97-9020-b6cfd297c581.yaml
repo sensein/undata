@@ -1,0 +1,11 @@
+id: bcbc862e-6ff9-4c97-9020-b6cfd297c581
+entity_type: value
+entity_ref: mrsref_be56fcab0867.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.722), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C69168
+  top_label: Mrs
+  top_score: 0.7223
+status: pending
+created_at: '2026-03-29T05:37:09.658544+00:00'

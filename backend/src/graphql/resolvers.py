@@ -67,6 +67,7 @@ def _element_from_row(row) -> t.Element:
         file_name=row.file_name,
         data_type=row.data_type,
         unit=row.unit,
+        unit_uri=getattr(row, "unit_uri", None),
         pattern=row.pattern,
         value_domain=row.value_domain,
         description=row.description,
@@ -117,6 +118,24 @@ def _valueset_from_row(row) -> t.ValueSet:
         semantic=row.semantic or {},
         provenance=_row_to_provenance(row.provenance),
         ontology_annotations=_row_to_annotations(row.ontology_annotations),
+    )
+
+
+def _transform_from_row(row) -> t.Transform:
+    return t.Transform(
+        sha256=row.sha256 or "",
+        file_name=row.file_name,
+        source_element=row.source_element or "",
+        target_element=row.target_element or "",
+        function_type=row.function_type,
+        input_type=row.input_type,
+        output_type=row.output_type,
+        expression=row.expression,
+        expression_type=row.expression_type,
+        confidence=row.confidence,
+        description=row.description,
+        semantic=row.semantic or {},
+        provenance=_row_to_provenance(row.provenance),
     )
 
 
@@ -239,6 +258,15 @@ async def resolve_valueset(session: AsyncSession, sha256: str) -> t.ValueSet | N
     return _valueset_from_row(row) if row else None
 
 
+async def resolve_transform(session: AsyncSession, sha256: str) -> t.Transform | None:
+    from src.db.models import Transform
+
+    stmt = select(Transform).where(Transform.sha256.startswith(sha256)).limit(1)
+    result = await session.execute(stmt)
+    row = result.scalar_one_or_none()
+    return _transform_from_row(row) if row else None
+
+
 # --- Browse Queries ---
 
 
@@ -351,6 +379,36 @@ async def resolve_browse_valuesets(
         for r in rows
     ]
     return t.ValueSetConnection(
+        edges=edges,
+        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        total_count=total,
+    )
+
+
+async def resolve_browse_transforms(
+    session: AsyncSession,
+    source_element: str | None = None,
+    target_element: str | None = None,
+    function_type: str | None = None,
+    first: int = 20,
+    after: str | None = None,
+) -> t.TransformConnection:
+    from src.db.models import Transform
+
+    stmt = select(Transform)
+    if source_element:
+        stmt = stmt.where(Transform.source_element.ilike(f"%{source_element}%"))
+    if target_element:
+        stmt = stmt.where(Transform.target_element.ilike(f"%{target_element}%"))
+    if function_type:
+        stmt = stmt.where(Transform.function_type == function_type)
+
+    rows, has_next, total = await _paginated_query(session, Transform, stmt, first, after)
+    edges = [
+        t.TransformEdge(cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_transform_from_row(r))
+        for r in rows
+    ]
+    return t.TransformConnection(
         edges=edges,
         page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
         total_count=total,

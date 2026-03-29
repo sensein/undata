@@ -1,0 +1,25 @@
+semantic:
+  label: T1rho
+  value_type: categorical
+  display_name: T1 in rotating frame (T1 rho) image
+  ontology_annotations:
+  - term_uri: http://identifiers.org/ensembl/ENSG00000038295
+    term_label: TLL1
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7667
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: suffixes
+  name: T1rho
+  description: 'In seconds (s).
+
+    T1-rho maps are REQUIRED to use this suffix regardless of the method used to
+
+    generate them.
+
+    '
+sha256: 28c7f2c9e3ed5b729b0209b29010afc98df65278a6930c0c64141874afd3b1e2

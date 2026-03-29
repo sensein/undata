@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - MRAcquisitionType
+  is_mixin: true
+provenance:
+- source: bids
+  class: ASLMRISequenceSpecifics
+  name: ASLMRISequenceSpecifics
+  description: Sidecar field group for mri
+sha256: cb8471424f6099295a3486830b4457593a7f8b5c2fa04133e5dc479639ab68c8

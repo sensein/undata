@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - SpikeEventSeries
+  subclass_of: NWBDataInterface
+provenance:
+- source: nwb
+  class: EventWaveform
+  name: EventWaveform
+  description: DEPRECATED. Represents either the waveforms of detected events, as
+    extracted from a raw data trace in /acquisition, or the event waveforms that were
+    stored during experiment acquisition.
+sha256: 4894175a553cc9afe3c2a119931024654de2417bbde4d189fcd0be5c40e34d64

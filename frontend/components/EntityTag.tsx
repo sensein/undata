@@ -17,6 +17,7 @@ const ENTITY_PATHS: Record<string, string> = {
   schemas: "/schemas",
   values: "/values",
   valuesets: "/valuesets",
+  transforms: "/transforms",
 };
 
 interface EntityTagProps {

@@ -1,0 +1,11 @@
+id: 8f692236-c860-4d60-81c5-e0e1daaeef66
+entity_type: value
+entity_ref: gaze-on-screen_bbfa47515cea.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.725), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/HP_0025401
+  top_label: Staring gaze
+  top_score: 0.7254
+status: pending
+created_at: '2026-03-29T05:40:56.336745+00:00'

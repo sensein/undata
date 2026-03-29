@@ -1,0 +1,9 @@
+id: 91f12a5f-9644-48b8-af16-d5505e1f95c3
+entity_type: schema
+entity_ref: microscopyimageacquisition_8a7bdba5dabe.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MicroscopyImageAcquisition
+status: pending
+created_at: '2026-03-29T05:37:09.962980+00:00'

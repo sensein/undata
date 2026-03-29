@@ -1,0 +1,11 @@
+id: 9545f3b0-e58e-4e48-bae2-a6189795c480
+entity_type: value
+entity_ref: ctf_58d6bc860bc7.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.701), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C73679
+  top_label: CTCF Gene
+  top_score: 0.7006
+status: pending
+created_at: '2026-03-29T05:37:09.398906+00:00'

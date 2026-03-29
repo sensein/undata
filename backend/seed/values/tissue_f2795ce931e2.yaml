@@ -1,0 +1,93 @@
+semantic:
+  label: tissue
+  value_type: categorical
+  display_name: tissue
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0000479
+    term_label: tissue
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C12801
+    term_label: Tissue
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C38625
+    term_label: Tissue Part
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8733
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C33563
+    term_label: Skin Tissue
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8422
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C12471
+    term_label: Soft Tissue
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8285
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C12435
+    term_label: Muscle Tissue
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8058
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0002385
+    term_label: muscle tissue
+    ontology: uberon
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8058
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0002481
+    term_label: bone tissue
+    ontology: uberon
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8002
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C13076
+    term_label: Bone Tissue
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8002
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C132256
+    term_label: Unspecified Tissue
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7955
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: tissue
+  description: 'A biosample type (`sample_type`): tissue
+
+    '
+sha256: f2795ce931e24ad2037132507f20d695ede3e2eaf32593a9eccb7ba88dc54c38

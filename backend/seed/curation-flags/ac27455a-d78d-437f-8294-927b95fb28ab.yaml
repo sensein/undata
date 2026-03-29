@@ -1,0 +1,11 @@
+id: ac27455a-d78d-437f-8294-927b95fb28ab
+entity_type: value
+entity_ref: primary_cell_325faad422df.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.782), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/OBI_0001910
+  top_label: primary cell culture
+  top_score: 0.7823
+status: pending
+created_at: '2026-03-29T05:33:43.852411+00:00'

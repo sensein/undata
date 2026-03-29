@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: unlocalized_mrs
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000635
+    term_label: unlocalised
+    ontology: pato
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7408
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: Unlocalized MRS
+sha256: da47a6b1361d69d7752a0b3d05aea6a6a213b7928d6f99da10f7262351131103

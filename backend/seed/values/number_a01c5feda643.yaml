@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: number
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25337
+    term_label: Number
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: number
+sha256: a01c5feda6430fef7f92fa794b9c0f0cadaaec286e827951d0963376595c627d

@@ -1,9 +1,0 @@
-semantic:
-  data_type: string
-  ontology_annotations: []
-provenance:
-- source: bids
-  class: Session
-  name: task_name
-  description: Name of task performed
-sha256: 43d0014d086213314a36faee96c3e173b3cc44c772688c5f18dc75694154db89

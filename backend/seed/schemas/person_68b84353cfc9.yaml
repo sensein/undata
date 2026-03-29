@@ -1,0 +1,68 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  - email
+  - url
+  - roleName
+  - includeInCitation
+  - awardNumber
+  - affiliation
+  subclass_of: Contributor
+  ontology_annotations:
+  - term_uri: http://www.w3.org/ns/prov#Person
+    term_label: Person
+    ontology: unknown
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.9359
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25190
+    term_label: Person
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.9359
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25191
+    term_label: Person Name
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7981
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_1692
+    term_label: Person name
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7981
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C14225
+    term_label: Human
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7201
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C198999
+    term_label: Person by Personal Characteristic
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7003
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: dandi
+  class: Person
+  name: Person
+  description: null
+sha256: 68b84353cfc9e9cffe92fd95b6c91c51fca466b30ad6cace4bb71a0677ea281f

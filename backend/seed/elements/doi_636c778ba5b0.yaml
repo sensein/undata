@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  pattern: ^10\.\d{4,}
+provenance:
+- source: bids
+  class: metadata
+  name: DOI
+  description: 'A Digital Object Identifier (DOI) is a persistent, resolvable name
+    for a digital resource.
+
+    (see [URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator))
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 636c778ba5b03cdc1b9aa850257072f8a8bbc68d5e3c0d3b2115d77a35d2ba18

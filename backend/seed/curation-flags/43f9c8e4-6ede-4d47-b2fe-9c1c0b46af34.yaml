@@ -1,0 +1,9 @@
+id: 43f9c8e4-6ede-4d47-b2fe-9c1c0b46af34
+entity_type: element
+entity_ref: watersuppression_c9d71b2cd8bb.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: WaterSuppression
+status: pending
+created_at: '2026-03-29T05:33:43.462859+00:00'

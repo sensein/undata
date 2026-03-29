@@ -1,0 +1,9 @@
+id: ebc3d8a0-dde8-4e9d-b412-07bbd6627708
+entity_type: element
+entity_ref: parallelreductionfactorinplane_c9e647cadcb7.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ParallelReductionFactorInPlane
+status: pending
+created_at: '2026-03-29T05:33:43.344672+00:00'

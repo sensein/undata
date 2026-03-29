@@ -1,0 +1,9 @@
+id: e5395116-5d8c-4305-880c-38b931b17f5a
+entity_type: element
+entity_ref: curators_4164d430e226.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Curators
+status: pending
+created_at: '2026-03-29T05:33:43.176657+00:00'

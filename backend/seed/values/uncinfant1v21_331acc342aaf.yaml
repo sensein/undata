@@ -1,0 +1,8 @@
+semantic:
+  label: UNCInfant1V21
+  value_type: categorical
+provenance:
+- source: bids
+  class: enums
+  name: UNCInfant1V21
+sha256: 331acc342aaf16c39416ce17aea2ab21940bad81c16c917d57b11f2d0a8e7bd4

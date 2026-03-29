@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - trial_type
+  - response_time
+  - HED
+  - stim_file
+  is_mixin: true
+provenance:
+- source: bids
+  class: events_Behavioral
+  name: events_Behavioral
+  description: Tabular columns for events
+sha256: b34415c412fc075a59162c4f797497b567eb3129fb528d1ff5416a5293f43b37

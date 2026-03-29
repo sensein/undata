@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: reference_frame
+  description: Description defining what exactly 'straight-ahead' means.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: edf4e401d46b39e8f73f035cf5cce6fada5e52c05d8c38b7e475ca03cb0a1ea7

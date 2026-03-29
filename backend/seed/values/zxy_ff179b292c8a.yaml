@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: zxy
+provenance:
+- source: bids
+  class_: ''
+  name: ZXY
+sha256: ff179b292c8a8d3367ae2badb9876228ae354f2e2d5fe8e50a93ee6ef3bda082

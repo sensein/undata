@@ -92,7 +92,19 @@ export default function ElementDetailPage() {
         {element.unit && (
           <div className="border rounded p-3">
             <div className="text-xs text-gray-500 uppercase">Unit</div>
-            <div>{element.unit}</div>
+            <div>
+              {element.unit}
+              {element.unitUri && (
+                <a
+                  href={element.unitUri}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-2 text-xs text-blue-600 hover:underline"
+                >
+                  (QUDT)
+                </a>
+              )}
+            </div>
           </div>
         )}
         {element.pattern && (

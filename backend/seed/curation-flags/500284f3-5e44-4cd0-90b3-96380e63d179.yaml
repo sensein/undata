@@ -1,0 +1,13 @@
+id: 500284f3-5e44-4cd0-90b3-96380e63d179
+entity_type: value
+entity_ref: raw_de8baf4754af.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/EDAM_format_1957
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C48188
+    score: 1.0
+status: pending
+created_at: '2026-03-29T05:33:43.866567+00:00'

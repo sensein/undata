@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+provenance:
+- source: nwb
+  class: nwb
+  name: imp
+  description: Impedance of the channel, in ohms.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5e952d6fb84f65ff61d8a05025fe846d4ac661ac48aa58a15b546b3676a62e9d

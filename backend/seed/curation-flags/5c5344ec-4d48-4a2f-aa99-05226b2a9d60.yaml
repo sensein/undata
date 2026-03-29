@@ -1,0 +1,9 @@
+id: 5c5344ec-4d48-4a2f-aa99-05226b2a9d60
+entity_type: element
+entity_ref: manufacturer_96bc29a63f39.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: manufacturer
+status: pending
+created_at: '2026-03-29T05:33:43.296239+00:00'

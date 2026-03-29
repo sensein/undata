@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: columns
+  name: trigger
+  description: 'continuous measurement of the scanner trigger signal
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 06650423de1545b802e58e2ce751e9694f03bff29791f3cbea6e2e8c35cc7fa7

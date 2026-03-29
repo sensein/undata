@@ -1,0 +1,9 @@
+id: 2ced5f27-3ebf-4802-a4a0-b0eba5edbb20
+entity_type: element
+entity_ref: voxel_mask_index_3fe226d2590c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: voxel_mask_index
+status: pending
+created_at: '2026-03-29T05:40:56.041983+00:00'

@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - Manufacturer
+  - ManufacturersModelName
+  - SoftwareVersions
+  - DeviceSerialNumber
+  is_mixin: true
+provenance:
+- source: bids
+  class: EEGHardware
+  name: EEGHardware
+  description: Sidecar field group for eeg
+sha256: f94ad3162ee501bcf71511bcc416181a62e7b0287ba7e6c07a54af585546fbd6

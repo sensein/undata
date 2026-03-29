@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: included
+provenance:
+- source: bids
+  class_: ''
+  name: Included
+sha256: b1b9830421e40b03393f2eda617387400fd1b2722ec7fcec5011c3cd4050680b

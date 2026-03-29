@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: axis_descriptions
+  description: Two-element array describing the contents of the two response axis
+    fields. Description should be something like ['altitude', 'azimuth'] or '['radius',
+    'theta'].
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c5f81dbf6f109b5799c6d81d0b0ed238111314a0f7ae11396343d60cb27119c3

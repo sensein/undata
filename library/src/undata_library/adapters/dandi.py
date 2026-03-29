@@ -102,12 +102,22 @@ class DANDIAdapter(BaseAdapter):
                     rng = enum_cls.__name__
 
                 multivalued = self._is_multivalued(ann)
+
+                # Extract pattern from Pydantic field metadata
+                field_pattern = None
+                if hasattr(field_info, "metadata"):
+                    for meta in field_info.metadata:
+                        if hasattr(meta, "pattern"):
+                            field_pattern = meta.pattern
+                            break
+
                 lb.add_slot(
                     ld,
                     field_name,
                     range=rng,
                     description=desc[:500] or None,
                     multivalued=multivalued,
+                    pattern=field_pattern,
                 )
                 slot_names.append(field_name)
 

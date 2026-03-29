@@ -1,0 +1,9 @@
+id: e816d0ec-5888-40c4-8cf2-25bbc427e26d
+entity_type: schema
+entity_ref: mriscannerhardwareasl_a2c7902d3cbd.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRIScannerHardwareASL
+status: pending
+created_at: '2026-03-29T05:33:44.037014+00:00'

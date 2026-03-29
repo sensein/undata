@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: columns
+  name: software_filters
+  description: 'List of temporal and/or spatial software filters applied
+
+    (for example, `SSS`, `SpatialCompensation`).
+
+    Note that parameters should be defined in the general MEG sidecar .json file.
+
+    Indicate `n/a` in the absence of software filters applied.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d2072489dc3cc5265e1b402736600e69bb333e63c285b2bbe09e3ec9f9bd5e1e

@@ -1,0 +1,15 @@
+id: a323c6b6-05d9-4042-aa53-e6d6dfe82133
+entity_type: value
+entity_ref: chietiitab_c3a07a643a83.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C14194
+    score: 0.7475
+  - uri: http://purl.obolibrary.org/obo/OBI_0100014
+    score: 0.7475
+  - uri: http://purl.obolibrary.org/obo/NCIT_C43938
+    score: 0.7227
+status: pending
+created_at: '2026-03-29T05:40:56.177066+00:00'

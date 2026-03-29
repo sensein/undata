@@ -1,0 +1,89 @@
+semantic:
+  value_type: categorical
+  label: gadolinium
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C39765
+    term_label: Gadolinium
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C62358
+    term_label: Gadolinium-Chelate
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8585
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_35729
+    term_label: gadolinium molecular entity
+    ontology: chebi
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.828
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C180560
+    term_label: Gadolinium Enhancement
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.811
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_33375
+    term_label: gadolinium atom
+    ontology: chebi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7829
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C1881
+    term_label: Motexafin Gadolinium
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7775
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C209440
+    term_label: Late Gadolinium Enhancement
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7716
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/HP_0034780
+    term_label: Gadolinium exposure
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.77
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C28746
+    term_label: Gadolinium-Enhancing Lesion
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7526
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C219958
+    term_label: Gadolinium Measurement
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7399
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: GADOLINIUM
+sha256: b664bf8e5a3eb14172afb9eee4aa25a49116594a4eaa7fb0c9ed40eaa7e83558

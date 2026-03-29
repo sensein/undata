@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - PhysioType
+  is_mixin: true
+provenance:
+- source: bids
+  class: PhysioTypeRecommended
+  name: PhysioTypeRecommended
+  description: Sidecar field group for continuous
+sha256: 098aabdef6ce4dba4c0463d248e26818efc031d7d58d8248e4c7ffc29fd94b37

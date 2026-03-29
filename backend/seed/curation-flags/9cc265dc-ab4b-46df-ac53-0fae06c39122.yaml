@@ -1,0 +1,9 @@
+id: 9cc265dc-ab4b-46df-ac53-0fae06c39122
+entity_type: schema
+entity_ref: motioninstitutioninformation_bff74621ce96.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: motionInstitutionInformation
+status: pending
+created_at: '2026-03-29T05:40:56.811263+00:00'

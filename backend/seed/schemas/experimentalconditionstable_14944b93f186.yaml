@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - repetitions
+  - repetitions_index
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: ExperimentalConditionsTable
+  name: ExperimentalConditionsTable
+  description: A table for grouping different intracellular recording repetitions
+    together that belong to the same experimental condition.
+sha256: 14944b93f1862a6eaa7a83d547527032cf2987363a31227b66e9dda788c9d7c4

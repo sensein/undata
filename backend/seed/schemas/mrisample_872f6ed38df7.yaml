@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - BodyPart
+  - BodyPartDetails
+  - BodyPartDetailsOntology
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRISample
+  name: MRISample
+  description: Sidecar field group for mri
+sha256: 872f6ed38df7b282cfc722e4b7f80371f005633ebd214c249b5c3a0f46c15a8a

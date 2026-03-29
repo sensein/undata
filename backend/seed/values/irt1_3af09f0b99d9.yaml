@@ -1,0 +1,16 @@
+semantic:
+  label: IRT1
+  value_type: categorical
+  display_name: Inversion recovery T1 mapping
+provenance:
+- source: bids
+  class: suffixes
+  name: IRT1
+  description: 'The IRT1 method involves multiple inversion recovery spin-echo images
+
+    acquired at different inversion times
+
+    ([Barral et al. 2010](https://doi.org/10.1002/mrm.22497)).
+
+    '
+sha256: 3af09f0b99d91e236f4eb74cbe3e785cae84d8067d3a723497bd5aada10a8a17

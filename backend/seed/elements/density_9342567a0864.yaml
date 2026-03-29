@@ -1,0 +1,24 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: entities
+  name: density
+  description: 'Density of non-parametric surfaces.
+
+
+    This entity represents the `"Density"` metadata field.
+
+    Therefore, if the `den-<label>` entity is present in a filename,
+
+    `"Density"` MUST also be added in the JSON file, to provide interpretation.
+
+
+    This entity is only applicable to derivative data.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9342567a0864b85c2786131e79b12aa63011eeadf332c914066e83189103a2e2

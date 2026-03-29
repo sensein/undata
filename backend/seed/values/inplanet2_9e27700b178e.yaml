@@ -1,0 +1,14 @@
+semantic:
+  label: inplaneT2
+  value_type: categorical
+  display_name: Inplane T2
+provenance:
+- source: bids
+  class: suffixes
+  name: inplaneT2
+  description: 'In arbitrary units (arbitrary).
+
+    T2 weighted structural image matched to a functional (task) image.
+
+    '
+sha256: 9e27700b178e3db3fbf40f144dae8605e9f6cef731d057a17f041406e3cd9f28

@@ -1,0 +1,9 @@
+id: bf8e7a9a-2f6c-4e39-8ec8-b4ddff6dbcea
+entity_type: element
+entity_ref: purity_3cb732d22e23.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Purity
+status: pending
+created_at: '2026-03-29T05:33:43.366487+00:00'

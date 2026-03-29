@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - sample_id
+  - participant_id
+  - sample_type
+  - pathology
+  - derived_from
+  is_mixin: true
+provenance:
+- source: bids
+  class: modality_agnostic_Samples
+  name: modality_agnostic_Samples
+  description: Tabular columns for modality_agnostic
+sha256: 01b3a17eff1a24c61b16640ac8833f0f2cd0ba5511ec8a027e31143f6f825cea

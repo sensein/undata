@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - InfusionRadioactivity
+  - InfusionStart
+  - InfusionSpeed
+  - InfusionSpeedUnits
+  - InjectedVolume
+  is_mixin: true
+provenance:
+- source: bids
+  class: EntitiesBolusMetadata
+  name: EntitiesBolusMetadata
+  description: Sidecar field group for pet
+sha256: 361d1a6e41b71f4d7f670d708fc952ca37cd8132b8d4f52c83299af34d0717aa

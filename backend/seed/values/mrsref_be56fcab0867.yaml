@@ -1,0 +1,24 @@
+semantic:
+  label: mrsref
+  value_type: categorical
+  display_name: MRS reference acquisition
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C69168
+    term_label: Mrs
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7223
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: suffixes
+  name: mrsref
+  description: 'An MRS acquisition collected to serve as a concentration reference
+    for absolute quantification
+
+    or as a calibration reference for preprocessing (for example, eddy-current correction).
+
+    '
+sha256: be56fcab086726cac61b90037a5bb11c20c287d063115141b3fe096a88b9d0b7

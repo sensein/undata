@@ -1,0 +1,11 @@
+id: e017608f-f6a8-47c7-aec9-875154e67fbd
+entity_type: value
+entity_ref: chimap_acddec0155f3.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.717), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C28351
+  top_label: Chiasma
+  top_score: 0.7174
+status: pending
+created_at: '2026-03-29T05:37:09.385056+00:00'

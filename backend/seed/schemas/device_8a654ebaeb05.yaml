@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - description
+  - manufacturer
+  - model_number
+  - model_name
+  - serial_number
+  - model
+  subclass_of: NWBContainer
+provenance:
+- source: nwb
+  class: Device
+  name: Device
+  description: Metadata about a specific instance of a data acquisition device, e.g.,
+    recording system, electrode, microscope. Link to a DeviceModel.model to represent
+    information about the model of the device.
+sha256: 8a654ebaeb0583901592e5793550407b6f1e2149cf4b2dc7727290da3c29fe94

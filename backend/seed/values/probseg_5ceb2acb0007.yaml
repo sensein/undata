@@ -1,0 +1,15 @@
+semantic:
+  label: probseg
+  value_type: categorical
+  display_name: Probabilistic Segmentation
+provenance:
+- source: bids
+  class: suffixes
+  name: probseg
+  description: 'A probabilistic segmentation.
+
+
+    This suffix may only be used in derivative datasets.
+
+    '
+sha256: 5ceb2acb0007dc0d99765a3e090006f1576aad438d81da6ac9e05a4059f15a7e

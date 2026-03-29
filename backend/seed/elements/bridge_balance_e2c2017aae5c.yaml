@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+provenance:
+- source: nwb
+  class: nwb
+  name: bridge_balance
+  description: Bridge balance, in ohms.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e2c2017aae5c0f3fb440ec7bbc7730294b662cf7122006fc5981471b643b65c0

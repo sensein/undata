@@ -1,0 +1,44 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: cell line
+    label: cell line
+    ontology_term: https://schema.undata.live/values/954f35de-f39d-4e83-bdc0-e3e4e312c1a0
+  - value: in vitro differentiated cells
+    label: in vitro differentiated cells
+    ontology_term: https://schema.undata.live/values/9d89b9b8-3962-42b2-b14b-2925ebc41051
+  - value: primary cell
+    label: primary cell
+    ontology_term: https://schema.undata.live/values/19b9a40e-5099-44ae-97ec-5a0bac9ab4cf
+  - value: cell-free sample
+    label: cell-free sample
+    ontology_term: https://schema.undata.live/values/6476256d-483c-48dd-bbb4-00009310501a
+  - value: cloning host
+    label: cloning host
+    ontology_term: https://schema.undata.live/values/84404143-e7b3-418d-bb70-c323cfc3c8e0
+  - value: tissue
+    label: tissue
+    ontology_term: https://schema.undata.live/values/d07fc7d6-686a-4646-b40c-65b9dbafc375
+  - value: whole organisms
+    label: whole organisms
+    ontology_term: https://schema.undata.live/values/d490c6b9-ed0a-4d3d-960e-67c0bafc1804
+  - value: organoid
+    label: organoid
+    ontology_term: https://schema.undata.live/values/a74857d1-690a-49a8-899a-9b108b2e7b8d
+  - value: technical sample
+    label: technical sample
+    ontology_term: https://schema.undata.live/values/009b8d6b-4394-452b-8c7b-0757149e05da
+  value_domain: categorical
+provenance:
+- source: bids
+  class: columns
+  name: sample_type
+  description: 'Biosample type defined by
+
+    [ENCODE Biosample Type](https://www.encodeproject.org/profiles/biosample_type).
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 081c198a7034bf6a3d4a18d9c576af1c5097f180d725b8bf48972f8579e6eef2

@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - DCOffsetCorrection
+  - HardwareFilters
+  - ElectrodeManufacturer
+  - ElectrodeManufacturersModelName
+  - ECOGChannelCount
+  - SEEGChannelCount
+  - EEGChannelCount
+  - EOGChannelCount
+  - ECGChannelCount
+  - EMGChannelCount
+  - MiscChannelCount
+  - TriggerChannelCount
+  - RecordingDuration
+  - RecordingType
+  - EpochLength
+  - iEEGGround
+  - iEEGPlacementScheme
+  - iEEGElectrodeGroups
+  - SubjectArtefactDescription
+  is_mixin: true
+provenance:
+- source: bids
+  class: iEEGRecommended
+  name: iEEGRecommended
+  description: Sidecar field group for ieeg
+sha256: 99d147f9de7fecba46085ac4b1b830109721d8e46d719bbc8bf0b0caf0c057f8

@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - FlipAngle
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIFlipAngleLookLockerFalse
+  name: MRIFlipAngleLookLockerFalse
+  description: Sidecar field group for mri
+sha256: fd0731fc47042ee59967be9bf861fed61c8d5e8619bd00fca165e9946cd6b69c

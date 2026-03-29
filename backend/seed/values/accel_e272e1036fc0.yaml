@@ -1,0 +1,15 @@
+semantic:
+  label: ACCEL
+  value_type: categorical
+  display_name: ACCEL
+provenance:
+- source: bids
+  class: enums
+  name: ACCEL
+  description: 'Accelerometer channel, one channel for each spatial axis.
+
+    Column `component` for the axis MUST be added to the `*_channels.tsv` file (x,
+    y, or z).
+
+    '
+sha256: e272e1036fc0c9a739a94f68f0e2c93db3747c6434eca15e089ad909f20b09cd

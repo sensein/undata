@@ -1,0 +1,8 @@
+semantic:
+  label: dcite:OutputManagementPlan
+  value_type: categorical
+provenance:
+- source: dandi
+  class: ResourceType
+  name: dcite:OutputManagementPlan
+sha256: 656e80e33b563da3695e3012e74112478fdbf056b6ef59985717646bc7184566

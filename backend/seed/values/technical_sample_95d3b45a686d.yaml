@@ -1,0 +1,12 @@
+semantic:
+  label: technical sample
+  value_type: categorical
+  display_name: technical sample
+provenance:
+- source: bids
+  class: enums
+  name: technical_sample
+  description: 'A biosample type (`sample_type`): technical sample
+
+    '
+sha256: 95d3b45a686d19b34667d89171b9d102c2f030ced4e8154f887cc3c83175a9c8

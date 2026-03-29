@@ -1,0 +1,9 @@
+id: 31573778-d5c9-4cd7-b6e5-4dd06b43a494
+entity_type: element
+entity_ref: latencychannelcount_23ba5e84d272.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: LATENCYChannelCount
+status: pending
+created_at: '2026-03-29T05:37:08.990813+00:00'

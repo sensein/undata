@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  type_ref: SpikeEventSeries
+provenance:
+- source: nwb
+  class: nwb
+  name: SpikeEventSeries
+  description: SpikeEventSeries object(s) containing detected spike event waveforms.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b870637bdd7e19e503495056d626539a7e63e15126d086c13e8bf935a79d8ab1

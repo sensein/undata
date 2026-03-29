@@ -1,0 +1,15 @@
+id: 2f73b2b5-9a0f-452c-8ee6-9e61c5d97c19
+entity_type: element
+entity_ref: locustype_4e120fa047b9.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.046)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C45822
+    score: 0.8421
+  - uri: http://purl.obolibrary.org/obo/EDAM_data_1893
+    score: 0.7956
+  - uri: http://purl.obolibrary.org/obo/NCIT_C94514
+    score: 0.7601
+status: pending
+created_at: '2026-03-29T05:40:55.683577+00:00'

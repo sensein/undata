@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - iEEGReference
+  - SamplingFrequency
+  - PowerLineFrequency
+  - SoftwareFilters
+  is_mixin: true
+provenance:
+- source: bids
+  class: iEEGRequired
+  name: iEEGRequired
+  description: Sidecar field group for ieeg
+sha256: 6458a88231276e2dc9c69af8705cc84a760e928f77fdcdea26f0a47283ab9a1b

@@ -1,0 +1,9 @@
+id: e52bd667-a4b0-49bf-b8b3-f90302f6e368
+entity_type: schema
+entity_ref: rgbaimage_c377cc27b383.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: RGBAImage
+status: pending
+created_at: '2026-03-29T05:40:56.878418+00:00'

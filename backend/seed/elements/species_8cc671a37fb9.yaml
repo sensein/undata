@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: Species
+  description: 'The `species` column SHOULD be a binomial species name from the
+
+    [NCBI Taxonomy](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi)
+
+    (for example, `homo sapiens`, `mus musculus`, `rattus norvegicus`).
+
+    For backwards compatibility, if `species` is absent, the participant is assumed
+    to be
+
+    `homo sapiens`.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8cc671a37fb91a388ac52125984332931602330d428fb17ced8e41686ed3e806

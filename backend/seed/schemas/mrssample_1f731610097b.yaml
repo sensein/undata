@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - BodyPart
+  - BodyPartDetails
+  - BodyPartDetailsOntology
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRSSample
+  name: MRSSample
+  description: Sidecar field group for mrs
+sha256: 1f731610097b69c8c761ad5f6a4414b0f5289eb2a22b254a01d16faf6c13b9da

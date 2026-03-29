@@ -1,0 +1,15 @@
+id: f21de6ba-9cb8-4033-b373-bd9da7796240
+entity_type: value
+entity_ref: left_c3b381ef8daa.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/HP_0012835
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/PATO_0000366
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C25229
+    score: 1.0
+status: pending
+created_at: '2026-03-29T05:33:43.732517+00:00'

@@ -1,0 +1,11 @@
+id: 4daa5c4e-b5b0-4c9e-b9ae-9046eb623471
+entity_type: value
+entity_ref: unlocalized_mrs_da47a6b1361d.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.741), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/PATO_0000635
+  top_label: unlocalised
+  top_score: 0.7408
+status: pending
+created_at: '2026-03-29T05:33:43.952893+00:00'

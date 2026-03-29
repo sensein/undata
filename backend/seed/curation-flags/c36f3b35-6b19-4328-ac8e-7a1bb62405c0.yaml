@@ -1,0 +1,9 @@
+id: c36f3b35-6b19-4328-ac8e-7a1bb62405c0
+entity_type: element
+entity_ref: wavelength_nominal_64f9017349e0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: wavelength_nominal
+status: pending
+created_at: '2026-03-29T05:40:56.056971+00:00'

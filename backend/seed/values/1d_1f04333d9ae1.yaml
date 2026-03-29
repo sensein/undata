@@ -1,0 +1,12 @@
+semantic:
+  label: 1D
+  value_type: categorical
+  display_name: One-dimensional
+provenance:
+- source: bids
+  class: enums
+  name: OneD
+  description: 'One-dimensional MR acquisition.
+
+    '
+sha256: 1f04333d9ae167d2907ba1dad0aa69b912d22518f0bfe99a300536ee7852df4e

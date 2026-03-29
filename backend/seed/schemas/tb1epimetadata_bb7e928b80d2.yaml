@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - EchoTime
+  - FlipAngle
+  - TotalReadoutTime
+  - MixingTime
+  is_mixin: true
+provenance:
+- source: bids
+  class: TB1EPIMetadata
+  name: TB1EPIMetadata
+  description: Sidecar field group for qmri
+sha256: bb7e928b80d247939f5942ce0fcc913f333763991310f82ddea6b35ce23df047

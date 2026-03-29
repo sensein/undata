@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - Units
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIFieldmapDirectFieldMapping
+  name: MRIFieldmapDirectFieldMapping
+  description: Sidecar field group for fmap
+sha256: dacf537aa5126b782a00d562bd29a8abbb19190670bc148fe843f0720181efa1

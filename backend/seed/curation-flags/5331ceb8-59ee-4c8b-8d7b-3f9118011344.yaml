@@ -1,0 +1,15 @@
+id: 5331ceb8-59ee-4c8b-8d7b-3f9118011344
+entity_type: value
+entity_ref: bile_57b6775da121.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/UBERON_0001970
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C13192
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/CHEBI_3098
+    score: 0.8751
+status: pending
+created_at: '2026-03-29T05:40:56.139261+00:00'

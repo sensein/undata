@@ -1,0 +1,18 @@
+semantic:
+  data_type: object
+provenance:
+- source: bids
+  class: metadata
+  name: Container
+  description: 'Used to specify the location and relevant attributes of software container
+    image
+
+    used to produce the dataset. Valid keys in this object include `Type`, `Tag` and
+
+    [`URI`][uri] with [string][] values.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 71b5ee81ce4e1d0660262d8aec20100b51932f60eabc30d8a5ffcd8df1533261

@@ -1,0 +1,25 @@
+semantic:
+  properties:
+  - name__channels
+  - type__channels
+  - source__channels
+  - detector__channels
+  - wavelength_nominal
+  - units__nirs
+  - sampling_frequency
+  - component
+  - wavelength_actual
+  - low_cutoff
+  - high_cutoff
+  - description
+  - wavelength_emission_actual
+  - short_channel
+  - status
+  - status_description
+  is_mixin: true
+provenance:
+- source: bids
+  class: nirs_nirsChannels
+  name: nirs_nirsChannels
+  description: Tabular columns for nirs
+sha256: 367c521cb36f18c3a5c61c8e885289b4811f01986d694ab0828b09f8e59d44b6

@@ -1,0 +1,12 @@
+semantic:
+  label: perf
+  value_type: categorical
+  display_name: Perfusion imaging
+provenance:
+- source: bids
+  class: datatypes
+  name: perf
+  description: 'Blood perfusion imaging data, including arterial spin labeling (ASL)
+
+    '
+sha256: fe727806dff4037bcf63791bb031e4dbf5c36b14bacf9bfe0985af8b6846a97f

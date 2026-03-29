@@ -1,0 +1,23 @@
+semantic:
+  properties: []
+  mixins:
+  - MRSInstitutionInformation
+  - MRSScannerHardware
+  - MRSSample
+  - MRSSampleVOI
+  - MRSSequenceSpecifics
+  - MRSRequiredFields
+  - MRSRecommendedFields
+  - MRSRepetitionTime
+  - MRSVolumeTiming
+  - MRSConditionalInversionTime
+  - MRSConditionalAnatomicalImage
+  - MRSConditionalNumTransients
+  - MRSIRecommendedFields
+  - MRSOptionalFields
+provenance:
+- source: bids
+  class: mrs_sidecar
+  name: mrs_sidecar
+  description: BIDS sidecar for mrs
+sha256: b3486e9f4002dd0027a4fe91a1400aa84eaf6da3f97e86376414b77e9eab5955

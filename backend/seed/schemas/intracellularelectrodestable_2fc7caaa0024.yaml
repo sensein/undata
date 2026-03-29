@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - description
+  - electrode
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: IntracellularElectrodesTable
+  name: IntracellularElectrodesTable
+  description: Table for storing intracellular electrode related metadata.
+sha256: 2fc7caaa0024602c4f7d3454c7a1ecb5a982b261fbaa4dc04f2fa27f6a18173b

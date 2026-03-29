@@ -1,0 +1,11 @@
+id: 28258904-6c9e-4ff8-bf24-aa549c39060b
+entity_type: value
+entity_ref: descriptions_e1ffc06c235b.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.904), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C25365
+  top_label: Description
+  top_score: 0.9043
+status: pending
+created_at: '2026-03-29T05:33:43.596989+00:00'

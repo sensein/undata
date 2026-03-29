@@ -24,6 +24,8 @@ const ENTITY_TYPE_COLORS: Record<string, { bg: string; text: string }> = {
   values: { bg: "bg-lime-100", text: "text-lime-800" },
   valueset: { bg: "bg-green-100", text: "text-green-800" },
   valuesets: { bg: "bg-green-100", text: "text-green-800" },
+  transform: { bg: "bg-amber-100", text: "text-amber-800" },
+  transforms: { bg: "bg-amber-100", text: "text-amber-800" },
   flag: { bg: "bg-red-100", text: "text-red-800" },
   contribution: { bg: "bg-yellow-100", text: "text-yellow-800" },
 };

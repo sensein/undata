@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - EchoTime1
+  - EchoTime2
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIFieldmapPhaseDifferencePhasediff
+  name: MRIFieldmapPhaseDifferencePhasediff
+  description: Sidecar field group for fmap
+sha256: 5befee37aa8e8880bfa2f9be75a0896cd43e26c50a847a27e055113bb2509ae5

@@ -1,0 +1,10 @@
+semantic:
+  properties: []
+  subclass_of: NWBData
+provenance:
+- source: nwb
+  class: ImageReferences
+  name: ImageReferences
+  description: Ordered dataset of references to BaseImage (e.g., Image or ExternalImage)
+    objects.
+sha256: 7419b4afe82a0b01614b2061ecec9601529d82d70a89739faac44fd97900c9f1

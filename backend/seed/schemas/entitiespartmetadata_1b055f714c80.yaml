@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - Units
+  is_mixin: true
+provenance:
+- source: bids
+  class: EntitiesPartMetadata
+  name: EntitiesPartMetadata
+  description: Sidecar field group for entity_rules
+sha256: 1b055f714c80041223a3ea4d2f3d99db107f9d52ca8f9568d394cc4d79d425db

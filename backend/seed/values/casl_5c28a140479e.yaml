@@ -1,0 +1,12 @@
+semantic:
+  label: CASL
+  value_type: categorical
+  display_name: Continuous arterial spin labeling
+provenance:
+- source: bids
+  class: enums
+  name: CASL
+  description: 'Continuous arterial spin labeling was employed.
+
+    '
+sha256: 5c28a140479e05f4a17302e721aaf4e0227c83fb42415ea7372897088cdf1005

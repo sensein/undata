@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - onset__physioevents
+  - duration
+  - trial_type
+  - message
+  is_mixin: true
+provenance:
+- source: bids
+  class: physio_PhysioEventsColumns
+  name: physio_PhysioEventsColumns
+  description: Tabular columns for physio
+sha256: 76651bde43d97c037048502733e5633632923ab73c8247f944bf09065e8a7445

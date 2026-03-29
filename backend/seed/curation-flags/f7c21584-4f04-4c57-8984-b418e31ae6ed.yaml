@@ -1,0 +1,9 @@
+id: f7c21584-4f04-4c57-8984-b418e31ae6ed
+entity_type: element
+entity_ref: screensize_4211add64b49.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ScreenSize
+status: pending
+created_at: '2026-03-29T05:40:55.919993+00:00'

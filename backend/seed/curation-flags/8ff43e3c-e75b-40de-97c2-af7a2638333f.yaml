@@ -1,0 +1,11 @@
+id: 8ff43e3c-e75b-40de-97c2-af7a2638333f
+entity_type: value
+entity_ref: cyclopean_d42389afbf14.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.777), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C94881
+  top_label: Cyclotron
+  top_score: 0.7772
+status: pending
+created_at: '2026-03-29T05:37:09.402937+00:00'

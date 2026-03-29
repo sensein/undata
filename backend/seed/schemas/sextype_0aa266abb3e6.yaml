@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  subclass_of: BaseType
+provenance:
+- source: dandi
+  class: SexType
+  name: SexType
+  description: Identifier for the sex of the sample
+sha256: 0aa266abb3e69ad270b606cbb488d4bab50ecc2fd1736c3c3f4742b02aec8c7f

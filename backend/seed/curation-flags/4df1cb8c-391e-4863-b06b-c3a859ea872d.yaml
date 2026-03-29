@@ -1,0 +1,9 @@
+id: 4df1cb8c-391e-4863-b06b-c3a859ea872d
+entity_type: element
+entity_ref: sources_a8d0fb7f9a1f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Sources
+status: pending
+created_at: '2026-03-29T05:37:09.182396+00:00'

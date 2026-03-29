@@ -1,0 +1,9 @@
+id: 5f9095dd-cc08-4211-99ca-7e78d41cfd47
+entity_type: value
+entity_ref: .mrk_deb60b1c2d01.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: mrk
+status: pending
+created_at: '2026-03-29T05:33:43.481802+00:00'

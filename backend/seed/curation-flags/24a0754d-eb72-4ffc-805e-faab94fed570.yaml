@@ -1,0 +1,9 @@
+id: 24a0754d-eb72-4ffc-805e-faab94fed570
+entity_type: schema
+entity_ref: physio_physiocolumns_454ab324f50f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: physio_PhysioColumns
+status: pending
+created_at: '2026-03-29T05:37:10.015876+00:00'

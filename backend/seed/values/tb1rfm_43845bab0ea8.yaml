@@ -1,0 +1,27 @@
+semantic:
+  label: TB1RFM
+  value_type: categorical
+  display_name: TB1RFM
+  ontology_annotations:
+  - term_uri: http://identifiers.org/ncbigene/10716
+    term_label: TBR1
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7525
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: suffixes
+  name: TB1RFM
+  description: 'The result of a Siemens `rf_map` product sequence.
+
+    This sequence produces two images.
+
+    The first image appears like an anatomical image and the second output is a
+
+    scaled flip angle map.
+
+    '
+sha256: 43845bab0ea8177426073974872066b21b059e1c9b8dbd769f860dbee1d0330a

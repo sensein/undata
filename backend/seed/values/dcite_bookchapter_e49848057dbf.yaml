@@ -1,0 +1,8 @@
+semantic:
+  label: dcite:BookChapter
+  value_type: categorical
+provenance:
+- source: dandi
+  class: ResourceType
+  name: dcite:BookChapter
+sha256: e49848057dbf3d6a8fcd1ba0f53b24cfba76d5f187db74f645af39ca0ccc7131

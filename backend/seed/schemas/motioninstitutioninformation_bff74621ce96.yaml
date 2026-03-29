@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - InstitutionName
+  - InstitutionAddress
+  - InstitutionalDepartmentName
+  is_mixin: true
+provenance:
+- source: bids
+  class: motionInstitutionInformation
+  name: motionInstitutionInformation
+  description: Sidecar field group for motion
+sha256: bff74621ce9689fe6234cd089f1789a37bd6139dacf412f39bfc6e673afd974e

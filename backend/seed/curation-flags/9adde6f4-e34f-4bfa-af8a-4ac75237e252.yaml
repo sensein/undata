@@ -1,0 +1,9 @@
+id: 9adde6f4-e34f-4bfa-af8a-4ac75237e252
+entity_type: value
+entity_ref: .vhdr_131733105050.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: vhdr
+status: pending
+created_at: '2026-03-29T05:40:56.098153+00:00'

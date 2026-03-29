@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - MTOffsetFrequency
+  - MTPulseBandwidth
+  - MTNumberOfPulses
+  - MTPulseShape
+  - MTPulseDuration
+  is_mixin: true
+provenance:
+- source: bids
+  class: MTParameters
+  name: MTParameters
+  description: Sidecar field group for mri
+sha256: d40c94573ac633048ba388e75a0cc98537904cee7dfb26acd9761d7fa9197c8d

@@ -1,0 +1,11 @@
+id: 78df39a8-53c3-4dc1-9105-8f0bb2208ef2
+entity_type: value
+entity_ref: emg_54ac80f50a16.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.718), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/HP_0003457
+  top_label: EMG abnormality
+  top_score: 0.7175
+status: pending
+created_at: '2026-03-29T05:40:56.292780+00:00'

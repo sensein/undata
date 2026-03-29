@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: ixi549space
+provenance:
+- source: bids
+  class_: ''
+  name: IXI549Space
+sha256: a94aef68ca8932d257e3b2dc29cc36d6e623649c9df0d5cc8b58d2d14b3c585c

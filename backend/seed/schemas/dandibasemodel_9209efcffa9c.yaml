@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+provenance:
+- source: dandi
+  class: DandiBaseModel
+  name: DandiBaseModel
+  description: null
+sha256: 9209efcffa9c8e992be3c6d1a51ae4b3b50044cf1369692974d9003e9bdfb266

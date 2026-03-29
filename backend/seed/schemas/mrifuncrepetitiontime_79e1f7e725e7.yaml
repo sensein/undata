@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - RepetitionTime
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIFuncRepetitionTime
+  name: MRIFuncRepetitionTime
+  description: Sidecar field group for func
+sha256: 79e1f7e725e7258355cf0f76e0142ade97d5d78a9e34cbe39ac42f0d5f84ece6

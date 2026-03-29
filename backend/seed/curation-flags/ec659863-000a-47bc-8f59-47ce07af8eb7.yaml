@@ -1,0 +1,11 @@
+id: ec659863-000a-47bc-8f59-47ce07af8eb7
+entity_type: value
+entity_ref: markers_70eda8a1404e.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.913), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C177671
+  top_label: Marker
+  top_score: 0.9135
+status: pending
+created_at: '2026-03-29T05:33:43.748087+00:00'

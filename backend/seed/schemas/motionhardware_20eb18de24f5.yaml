@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - DeviceSerialNumber
+  - Manufacturer
+  - ManufacturersModelName
+  - SoftwareVersions
+  is_mixin: true
+provenance:
+- source: bids
+  class: motionHardware
+  name: motionHardware
+  description: Sidecar field group for motion
+sha256: 20eb18de24f5f72d22fd0009e04b245718476f8eabec20fdd51adecce6fc8d7f

@@ -1,0 +1,9 @@
+id: 2cd4e6f3-f715-41e0-b526-c7d1d5ad2813
+entity_type: schema
+entity_ref: decompositionseries_237e22954182.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DecompositionSeries
+status: pending
+created_at: '2026-03-29T05:40:56.734750+00:00'

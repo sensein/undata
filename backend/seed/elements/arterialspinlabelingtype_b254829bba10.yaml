@@ -1,0 +1,33 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: CASL
+    label: CASL
+    ontology_term: https://schema.undata.live/values/e946427b-4e90-420d-90eb-0fda31699c4c
+  - value: PCASL
+    label: PCASL
+    ontology_term: https://schema.undata.live/values/6eb02d7a-252f-4746-81f0-b8640b9d2429
+  - value: PASL
+    label: PASL
+    ontology_term: https://schema.undata.live/values/f1e9c9e5-3d9b-4d36-81c7-78b5956eb79a
+  value_domain: categorical
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C116450
+    term_label: Arterial Spin Labeling Magnetic Resonance Imaging
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7057
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: metadata
+  name: ArterialSpinLabelingType
+  description: 'The arterial spin labeling type.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b254829bba1037a00187dc84e4bf9ed3a8c658f1295aca1d4f04a34b34ffcf68

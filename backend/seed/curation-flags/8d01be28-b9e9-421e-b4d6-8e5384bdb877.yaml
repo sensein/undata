@@ -1,0 +1,15 @@
+id: 8d01be28-b9e9-421e-b4d6-8e5384bdb877
+entity_type: value
+entity_ref: face_81834a6fa6de.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/UBERON_0001456
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C13071
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C126364
+    score: 1.0
+status: pending
+created_at: '2026-03-29T05:33:43.637481+00:00'

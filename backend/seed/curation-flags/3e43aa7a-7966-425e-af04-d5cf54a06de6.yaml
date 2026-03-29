@@ -1,0 +1,9 @@
+id: 3e43aa7a-7966-425e-af04-d5cf54a06de6
+entity_type: element
+entity_ref: mixingtime_a9faef3d6a57.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MixingTime
+status: pending
+created_at: '2026-03-29T05:33:43.314464+00:00'

@@ -1,0 +1,29 @@
+semantic:
+  label: TEM
+  value_type: categorical
+  display_name: Transmission electron microscopy
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C152553
+    term_label: Temsavir
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7263
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C74282
+    term_label: Tetrazepam
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7008
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: suffixes
+  name: TEM
+  description: 'Transmission electron microscopy imaging data
+
+    '
+sha256: 9a37407bb416eec30ef587781c789288797918e1598b877b6e18e15a10b80d29

@@ -1,0 +1,11 @@
+id: 0b0ca980-e716-4f5c-8e6e-f73f8789693b
+entity_type: value
+entity_ref: crosstalk_542c5b123f88.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.781), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C94304
+  top_label: Cross-Talk
+  top_score: 0.7806
+status: pending
+created_at: '2026-03-29T05:33:43.568745+00:00'

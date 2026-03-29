@@ -1,0 +1,14 @@
+semantic:
+  label: m0scan
+  value_type: categorical
+  display_name: M0 image
+provenance:
+- source: bids
+  class: suffixes
+  name: m0scan
+  description: 'The M0 image is a calibration image, used to estimate the equilibrium
+
+    magnetization of blood.
+
+    '
+sha256: 283f92f3285604e5a50c44e02501010a7fa4483964e3e653b87d2d2ae10f1e59

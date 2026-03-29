@@ -1,0 +1,13 @@
+semantic:
+  data_type: object
+  type_ref: SpeciesType
+provenance:
+- source: dandi
+  class: Participant
+  name: species
+  description: An identifier indicating the taxonomic classification of the participant
+    or subject.
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 797bf9a59f75ea70fc2f7c49692297eb63397bcc16e53553e3eb9d55d10ca04c

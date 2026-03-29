@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - description
+  - stimulus
+  - stimulus_template
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: IntracellularStimuliTable
+  name: IntracellularStimuliTable
+  description: Table for storing intracellular stimulus related metadata.
+sha256: 6bb13757787543e1d2b782c293e0ccdbbcc5d3cf8f7b7aaf86f2a347deb47bac

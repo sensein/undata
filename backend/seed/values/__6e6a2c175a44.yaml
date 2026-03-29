@@ -1,0 +1,14 @@
+semantic:
+  label: /
+  value_type: categorical
+  display_name: Directory
+provenance:
+- source: bids
+  class: extensions
+  name: Directory
+  description: 'A directory with no extension.
+
+    Corresponds to BTi/4D data.
+
+    '
+sha256: 6e6a2c175a443b5c78dad71c4bba77fb4fbe7f5b5badd9ff9037b8d053ea491a

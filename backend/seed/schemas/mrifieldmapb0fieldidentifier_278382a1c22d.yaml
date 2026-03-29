@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - B0FieldIdentifier
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIFieldmapB0FieldIdentifier
+  name: MRIFieldmapB0FieldIdentifier
+  description: Sidecar field group for fmap
+sha256: 278382a1c22d7b581ec09337811499de74bafd1c05e6de98d26e9a6dd428fe33

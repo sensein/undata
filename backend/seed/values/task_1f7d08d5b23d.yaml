@@ -1,0 +1,34 @@
+semantic:
+  label: task
+  value_type: categorical
+  display_name: Task
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C101129
+    term_label: Task
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: common_principles
+  name: task
+  description: 'A set of structured activities performed by the participant.
+
+    Tasks are usually accompanied by stimuli and responses, and can greatly vary in
+    complexity.
+
+    For the purpose of this specification we consider the so-called "resting state"
+    a task.
+
+    In the context of brain scanning, a task is always tied to one data acquisition.
+
+    Therefore, even if during one acquisition the subject performed multiple conceptually
+    different behaviors
+
+    (with different sets of instructions) they will be considered one (combined) task.
+
+    '
+sha256: 1f7d08d5b23d811f730c1d5b81c150a6e20f2ffd09b7454ab2c21a1083a9c5d6

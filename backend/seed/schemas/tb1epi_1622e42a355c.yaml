@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - EchoTime
+  - FlipAngle
+  - TotalReadoutTime
+  - MixingTime
+  is_mixin: true
+provenance:
+- source: bids
+  class: TB1EPI
+  name: TB1EPI
+  description: Sidecar field group for fmap
+sha256: 1622e42a355ccdb2f06fae3780f49af4de6db9c1e26608a5dc0f3ff5f7a3421f

@@ -1,0 +1,11 @@
+semantic:
+  properties: []
+  mixins:
+  - MRIDiffusionMultipart
+  - MRIDiffusionOtherMetadata
+provenance:
+- source: bids
+  class: dwi_sidecar
+  name: dwi_sidecar
+  description: BIDS sidecar for dwi
+sha256: 6912081554f1ccbf999794dd837a125100c63a278fb8b46dbd65515ab9b0d313

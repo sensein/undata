@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - waveform_filtering
+  - waveform_mean
+  - waveform_sd
+  - clustering_interface
+  subclass_of: NWBDataInterface
+provenance:
+- source: nwb
+  class: ClusterWaveforms
+  name: ClusterWaveforms
+  description: DEPRECATED The mean waveform shape, including standard deviation, of
+    the different clusters. Ideally, the waveform analysis should be performed on
+    data that is only high-pass filtered. This is a separate module because it is
+    expected to require updating. For example, IMEC probes may require different storage
+    requirements to store/display mean waveforms, requiring a new interface or an
+    extension of this one.
+sha256: a2539530c4e19b509e1ff70b081ed446d61d7c75b22631bc9358ccfc6ec8f8a6

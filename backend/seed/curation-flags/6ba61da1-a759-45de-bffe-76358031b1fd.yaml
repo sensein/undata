@@ -1,0 +1,9 @@
+id: 6ba61da1-a759-45de-bffe-76358031b1fd
+entity_type: value
+entity_ref: i-_07780188a55a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: iMinus
+status: pending
+created_at: '2026-03-29T05:37:09.527818+00:00'

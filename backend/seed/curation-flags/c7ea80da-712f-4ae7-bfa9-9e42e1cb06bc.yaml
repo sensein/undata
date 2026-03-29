@@ -1,0 +1,9 @@
+id: c7ea80da-712f-4ae7-bfa9-9e42e1cb06bc
+entity_type: element
+entity_ref: negativecontrast_3ff1908dddab.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NegativeContrast
+status: pending
+created_at: '2026-03-29T05:33:43.326565+00:00'

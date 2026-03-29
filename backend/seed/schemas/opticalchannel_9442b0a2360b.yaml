@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - description
+  - emission_lambda
+  subclass_of: NWBContainer
+provenance:
+- source: nwb
+  class: OpticalChannel
+  name: OpticalChannel
+  description: An optical channel used to record from an imaging plane.
+sha256: 9442b0a2360b1704ebcc7e80c85196b9c134e93b94d624d72c69eb989783de0f

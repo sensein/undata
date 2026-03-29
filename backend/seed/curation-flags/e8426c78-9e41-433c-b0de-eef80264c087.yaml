@@ -1,0 +1,9 @@
+id: e8426c78-9e41-433c-b0de-eef80264c087
+entity_type: element
+entity_ref: mracquisitiontype_aa2512d3227f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRAcquisitionType
+status: pending
+created_at: '2026-03-29T05:37:09.029853+00:00'

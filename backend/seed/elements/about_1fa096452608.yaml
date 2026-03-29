@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: PublishedDandiset
+  name: about
+  description: The subject matter of the content, such as disorders, brain anatomy.
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1fa09645260811df3639a588744a566b07ee83cd1cbf7e1fcb6b60212448a8e0

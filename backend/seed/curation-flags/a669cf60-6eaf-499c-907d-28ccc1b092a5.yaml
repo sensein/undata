@@ -1,0 +1,13 @@
+id: a669cf60-6eaf-499c-907d-28ccc1b092a5
+entity_type: value
+entity_ref: blood_6d80ed364052.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/UBERON_0000178
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C12434
+    score: 1.0
+status: pending
+created_at: '2026-03-29T05:37:09.349988+00:00'

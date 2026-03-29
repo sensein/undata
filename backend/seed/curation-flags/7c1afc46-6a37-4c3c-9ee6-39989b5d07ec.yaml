@@ -1,0 +1,9 @@
+id: 7c1afc46-6a37-4c3c-9ee6-39989b5d07ec
+entity_type: value
+entity_ref: center_of_mass_25f84054ef58.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: center_of_mass
+status: pending
+created_at: '2026-03-29T05:37:09.378917+00:00'

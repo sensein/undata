@@ -1,0 +1,13 @@
+semantic:
+  label: NIRSCWOPTICALDENSITY
+  value_type: categorical
+  display_name: NIRSCWOPTICALDENSITY
+provenance:
+- source: bids
+  class: enums
+  name: NIRSCWOPTICALDENSITY
+  description: 'Continuous wave change in optical density measurements. Equivalent
+    to dataTypeLabel dOD in SNIRF.
+
+    '
+sha256: 0e9289176315a50163b88c182b903579bb965df7997470c59572a756171b48dc

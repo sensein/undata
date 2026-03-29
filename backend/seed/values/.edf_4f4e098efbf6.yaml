@@ -1,0 +1,19 @@
+semantic:
+  label: .edf
+  value_type: categorical
+  display_name: European Data Format
+provenance:
+- source: bids
+  class: extensions
+  name: edf
+  description: 'A [European data format](https://www.edfplus.info/) file.
+
+
+    Each recording consists of a single `.edf`` file.
+
+    [`edf+`](https://www.edfplus.info/specs/edfplus.html) files are permitted.
+
+    The capital `.EDF` extension MUST NOT be used.
+
+    '
+sha256: 4f4e098efbf6383c3009fb1ade3807425ce95054a09ba4d9888610ead2b12550

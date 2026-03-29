@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - ParallelReductionFactorInPlane
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIParallelReductionFactorInPlane
+  name: MRIParallelReductionFactorInPlane
+  description: Sidecar field group for mri
+sha256: fca902eeda44ddea666c2ebdaec6a1b991c8ac35ea4dbb0a413a2c92c3a9d7b3

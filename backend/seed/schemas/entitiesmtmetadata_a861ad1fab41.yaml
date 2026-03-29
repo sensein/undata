@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - MTState
+  is_mixin: true
+provenance:
+- source: bids
+  class: EntitiesMTMetadata
+  name: EntitiesMTMetadata
+  description: Sidecar field group for entity_rules
+sha256: a861ad1fab417bc46c1e4f1417a8b5e9819f440730e7ef9f733dd2440113cf45

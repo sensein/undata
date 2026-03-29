@@ -1,0 +1,89 @@
+semantic:
+  value_type: categorical
+  label: cell_line
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/CLO_0000031
+    term_label: cell line
+    ontology: clo
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8432
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C16403
+    term_label: Cell Line
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8432
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_2316
+    term_label: Cell line name
+    ontology: edam
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8147
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C189147
+    term_label: Cell Line Name
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8147
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/CLO_0000001
+    term_label: cell line cell
+    ontology: clo
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8131
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0001867
+    term_label: establishing cell line
+    ontology: obi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7637
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0100062
+    term_label: obsolete_cell line
+    ontology: obi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7627
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C20231
+    term_label: EG Cell Line
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.76
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_2317
+    term_label: Cell line name (exact)
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7524
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0100055
+    term_label: obsolete_cell line cell
+    ontology: obi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7466
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: cell line
+sha256: e7d60c00f16efdd9d4ca31e94c5477c36a2c3b6ecd237b4da6c4b3e6e321c774

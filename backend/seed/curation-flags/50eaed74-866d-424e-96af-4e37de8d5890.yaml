@@ -1,0 +1,9 @@
+id: 50eaed74-866d-424e-96af-4e37de8d5890
+entity_type: element
+entity_ref: injectedradioactivityunits_88227711daf4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: InjectedRadioactivityUnits
+status: pending
+created_at: '2026-03-29T05:37:08.970980+00:00'

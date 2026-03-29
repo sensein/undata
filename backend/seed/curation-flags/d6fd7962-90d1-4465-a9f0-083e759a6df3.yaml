@@ -1,0 +1,11 @@
+id: d6fd7962-90d1-4465-a9f0-083e759a6df3
+entity_type: value
+entity_ref: nirscwhbr_ae6e3067704e.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.713), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_format_1948
+  top_label: nbrf
+  top_score: 0.7128
+status: pending
+created_at: '2026-03-29T05:33:43.798775+00:00'

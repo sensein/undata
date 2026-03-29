@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - cell_id
+  - description
+  - filtering
+  - initial_access_resistance
+  - location
+  - resistance
+  - seal
+  - slice
+  - device
+  subclass_of: NWBContainer
+provenance:
+- source: nwb
+  class: IntracellularElectrode
+  name: IntracellularElectrode
+  description: An intracellular electrode and its metadata.
+sha256: e41919aa6b6c89970de79e2ffd6929a9183ab879cc7f09e0631345406a48d4fc

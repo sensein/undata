@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - name__electrodes
+  - x
+  - y
+  - z
+  - coordinate_system
+  - type__electrodes
+  - material
+  - impedance
+  - group__emg
+  is_mixin: true
+provenance:
+- source: bids
+  class: emg_EMGElectrodes
+  name: emg_EMGElectrodes
+  description: Tabular columns for emg
+sha256: e1f018d90b0b9a7ceadbee9ea24740e229e89d681262b5e6a714b142bd21b2e9

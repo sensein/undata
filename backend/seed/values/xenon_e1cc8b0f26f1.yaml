@@ -1,0 +1,21 @@
+semantic:
+  label: XENON
+  value_type: categorical
+  display_name: XENON
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C85247
+    term_label: Xenon
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: XENON
+  description: 'A Contrast Bolus Ingredient: Xenon
+
+    '
+sha256: e1cc8b0f26f1873613d2c859503b61089047c4fb427bbfdbf91f609348866525

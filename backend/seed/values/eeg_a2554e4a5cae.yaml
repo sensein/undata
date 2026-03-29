@@ -1,0 +1,29 @@
+semantic:
+  label: EEG
+  value_type: categorical
+  display_name: EEG
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/HP_0011178
+    term_label: Alpha-EEG
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.76
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/HP_0011179
+    term_label: Beta-EEG
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7084
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: EEG
+  description: 'Electroencephalogram channel.
+
+    '
+sha256: a2554e4a5cae2b4a2fb1f9eecc56c83874280a0af8305cf1d2320fd072d81da9

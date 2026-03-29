@@ -1,0 +1,9 @@
+id: a2d18095-0b91-45d2-bbae-2976e29f9157
+entity_type: value
+entity_ref: expadc_8d43ca2d1a1f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: expADC
+status: pending
+created_at: '2026-03-29T05:40:56.305992+00:00'

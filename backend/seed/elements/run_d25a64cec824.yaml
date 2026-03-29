@@ -1,0 +1,40 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+provenance:
+- source: bids
+  class: entities
+  name: run
+  description: 'The `run-<index>` entity is used to distinguish separate data acquisitions
+    with the same acquisition parameters
+
+    and (other) entities.
+
+
+    If several data acquisitions (for example, MRI scans or EEG recordings)
+
+    with the same acquisition parameters are acquired in the same session,
+
+    they MUST be indexed with the [`run-<index>`](SPEC_ROOT/appendices/entities.md#run)
+    entity:
+
+    `_run-1`, `_run-2`, `_run-3`, and so on
+
+    (only nonnegative integers are allowed as run indices).
+
+
+    If different entities apply,
+
+    such as a different session indicated by [`ses-<label>`](SPEC_ROOT/appendices/entities.md#ses),
+
+    or different acquisition parameters indicated by
+
+    [`acq-<label>`](SPEC_ROOT/appendices/entities.md#acq),
+
+    then `run` is not needed to distinguish the scans and MAY be omitted.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d25a64cec824210dd6fba485bfa023f4ca830c10fcb06187f6d878ddc36c646c

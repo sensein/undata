@@ -1,0 +1,9 @@
+id: 2d7b9d52-b850-42f0-9093-d4cc96ea5694
+entity_type: schema
+entity_ref: nwbdata_b9296dc72965.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NWBData
+status: pending
+created_at: '2026-03-29T05:40:56.844726+00:00'

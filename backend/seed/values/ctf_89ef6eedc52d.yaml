@@ -1,0 +1,17 @@
+semantic:
+  label: CTF
+  value_type: categorical
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C73679
+    term_label: CTCF Gene
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7006
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: CTF
+sha256: 89ef6eedc52d9e92e8065e3e2c113409013e3ad79c9e42b6fe8925230cb63cfa

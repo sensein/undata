@@ -1,0 +1,16 @@
+semantic:
+  properties: []
+  mixins:
+  - MEGHardware
+  - MEGTaskInformation
+  - MEGInstitutionInformation
+  - MEGRequired
+  - MEGRecommended
+  - MEGOptional
+  - MEGwithEEG
+provenance:
+- source: bids
+  class: meg_sidecar
+  name: meg_sidecar
+  description: BIDS sidecar for meg
+sha256: ab207e2321c6afd217d0304c119c3b12d6db7db57ecd734cdb7d5284137748c4

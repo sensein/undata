@@ -1,0 +1,85 @@
+semantic:
+  label: markers
+  value_type: categorical
+  display_name: MEG Sensor Coil Positions
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C177671
+    term_label: Marker
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9135
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C16082
+    term_label: Marker Discovery
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8008
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C171165
+    term_label: Marker Device
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7927
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: https://purl.brain-bican.org/taxonomy/CCN20230722#nt_markers
+    term_label: nt markers
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7621
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: https://purl.brain-bican.org/taxonomy/CCN20230722#np_markers
+    term_label: np markers
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7438
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/CLM_0010003
+    term_label: has marker set
+    ontology: clm
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7261
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/HP_0430091
+    term_label: Marker expression
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7197
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/RO_0015004
+    term_label: has characterizing marker set
+    ontology: ro
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7154
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: suffixes
+  name: markers
+  description: 'Another manufacturer-specific detail pertains to the KIT/Yokogawa/Ricoh
+
+    system, which saves the MEG sensor coil positions in a separate file with two
+
+    possible filename extensions  (`.sqd`, `.mrk`).
+
+    For these files, the `markers` suffix MUST be used.
+
+    For example: `sub-01_task-nback_markers.sqd`
+
+    '
+sha256: 70eda8a1404e4ce27c8cfb82a5c130fb12377afd9cfda2803500530d1aed6ae1

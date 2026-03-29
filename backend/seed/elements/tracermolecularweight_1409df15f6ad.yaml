@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+provenance:
+- source: bids
+  class: metadata
+  name: TracerMolecularWeight
+  description: 'Accurate molecular weight of the tracer used.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1409df15f6ad7a9a8ca21d5e71577705f2014c4af2bd3f4da1d2d980669d8b97

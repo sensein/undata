@@ -1,0 +1,11 @@
+id: f93ea5c3-73e8-46c3-adce-5114f8317564
+entity_type: element
+entity_ref: url_7110f6ea22f0.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.708), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C127802
+  top_label: Study Protocol Uniform Resource Locator Description
+  top_score: 0.7084
+status: pending
+created_at: '2026-03-29T05:40:56.024022+00:00'

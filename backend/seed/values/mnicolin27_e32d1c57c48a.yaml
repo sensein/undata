@@ -1,0 +1,8 @@
+semantic:
+  label: MNIColin27
+  value_type: categorical
+provenance:
+- source: bids
+  class: enums
+  name: MNIColin27
+sha256: e32d1c57c48a25b0d00175bd57bee8738626ff45f3c117d269f0b0be25809ade

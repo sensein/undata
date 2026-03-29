@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - name__channels
+  - component
+  - type__channels
+  - tracked_point__channels
+  - units__motion
+  - placement__motion
+  - reference_frame
+  - description
+  - sampling_frequency
+  - status
+  - status_description
+  is_mixin: true
+provenance:
+- source: bids
+  class: motion_motionChannels
+  name: motion_motionChannels
+  description: Tabular columns for motion
+sha256: 2005473e9acd5bc459d8b1b52791401c62ee6f7beca6239a61921f0f10045ae0

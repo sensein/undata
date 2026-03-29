@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - filename
+  - acq_time__scans
+  - HED
+  is_mixin: true
+provenance:
+- source: bids
+  class: modality_agnostic_Scans
+  name: modality_agnostic_Scans
+  description: Tabular columns for modality_agnostic
+sha256: 1293120d6b8e0d96e6abb5990d002d94d619de05ab17bb7e785548469d2b6794

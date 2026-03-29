@@ -1,0 +1,11 @@
+id: 63b46c63-50da-4dd3-b358-6d9b1facaac5
+entity_type: value
+entity_ref: zyx_f4f3341cfc30.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.889), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C92674
+  top_label: Zyxin
+  top_score: 0.8888
+status: pending
+created_at: '2026-03-29T05:40:56.699479+00:00'

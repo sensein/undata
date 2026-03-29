@@ -1,0 +1,48 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - altName
+  - strain
+  - cellLine
+  - vendor
+  - age
+  - sex
+  - genotype
+  - species
+  - disorder
+  - relatedParticipant
+  - sameAs
+  subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C79269
+    term_label: Participant Object
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7278
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C29867
+    term_label: Participant
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7221
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C142710
+    term_label: Study Participant
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.712
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: dandi
+  class: Participant
+  name: Participant
+  description: Description about the Participant or Subject studied.
+sha256: 055736a44e0065eee9e1b6955b0ce533658051ba55c00515e5e51b6fa3a44192

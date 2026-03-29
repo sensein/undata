@@ -1,0 +1,12 @@
+semantic:
+  label: 2PE
+  value_type: categorical
+  display_name: 2-photon excitation microscopy
+provenance:
+- source: bids
+  class: suffixes
+  name: TwoPE
+  description: '2-photon excitation microscopy imaging data
+
+    '
+sha256: 4123764885ec0e53221ecb373315c62f1bc852c6c25c0d71f31da8bb9b060779

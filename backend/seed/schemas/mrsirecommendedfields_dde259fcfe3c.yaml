@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - MRAcquisitionType
+  - MatrixSize
+  - VolumeAffineMatrix
+  - EncodingTechnique
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRSIRecommendedFields
+  name: MRSIRecommendedFields
+  description: Sidecar field group for mrs
+sha256: dde259fcfe3cc24796b16d34b742b33a8f47a6f7b8150a4cb3b159a7725fd506

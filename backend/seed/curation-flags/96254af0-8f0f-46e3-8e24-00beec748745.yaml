@@ -1,0 +1,11 @@
+id: 96254af0-8f0f-46e3-8e24-00beec748745
+entity_type: schema
+entity_ref: twophotonseries_644d0a6c8ea4.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.783), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C116504
+  top_label: Multiphoton Microscopy
+  top_score: 0.7827
+status: pending
+created_at: '2026-03-29T05:40:56.896831+00:00'

@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - EMGChannelCount
+  - HardwareFilters
+  - RecordingDuration
+  is_mixin: true
+provenance:
+- source: bids
+  class: EMGRecommended
+  name: EMGRecommended
+  description: Sidecar field group for emg
+sha256: 569fbe5a926c1a72987d5ebf87ee6653a644c460bea36ea39e148f7016adfa93

@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: norf
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_1807
+    term_label: ORF name
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7238
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: noRF
+sha256: 6ad32cf116160632645dde91c7e938fa2cd0048bade16299a57e7921a372b00f

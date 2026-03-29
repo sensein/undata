@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: 1D
+    label: 1D
+    ontology_term: https://schema.undata.live/values/a1e9a33f-fc82-434d-bc8b-56670346c24e
+  - value: 2D
+    label: 2D
+    ontology_term: https://schema.undata.live/values/e5c43c08-5de3-4989-bbf6-1382c49c8015
+  - value: 3D
+    label: 3D
+    ontology_term: https://schema.undata.live/values/c7d87f92-e99b-4e6d-a892-29b8d2132c08
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: MRAcquisitionType
+  description: 'Type of sequence readout.
+
+    Corresponds to [DICOM Tag 0018, 0023](http://www.dicomlookup.com/dicomtags/(0018,0023))
+
+    `MR Acquisition Type`.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: aa2512d3227fafc77ec57973a6c1c13e549e77685b25441299ad3e489deacf9f

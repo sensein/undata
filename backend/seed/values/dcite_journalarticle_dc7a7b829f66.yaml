@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: dcite:journalarticle
+provenance:
+- source: dandi
+  class_: ''
+  name: dcite:JournalArticle
+sha256: dc7a7b829f668ce952f90afc00b8b2cf0574a8c54b48f71d0d8e2a2db8787c7e

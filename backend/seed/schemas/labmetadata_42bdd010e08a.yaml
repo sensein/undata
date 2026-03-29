@@ -1,0 +1,9 @@
+semantic:
+  properties: []
+  subclass_of: NWBContainer
+provenance:
+- source: nwb
+  class: LabMetaData
+  name: LabMetaData
+  description: Lab-specific meta-data.
+sha256: 42bdd010e08ae40b6ed2a14c8faf59547d2abca4eccae29362e71f9a1b808ea4

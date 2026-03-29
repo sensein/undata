@@ -1,0 +1,21 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - numberOfBytes
+  - numberOfFiles
+  - numberOfSubjects
+  - numberOfSamples
+  - numberOfCells
+  - dataStandard
+  - approach
+  - measurementTechnique
+  - variableMeasured
+  - species
+  subclass_of: DandiBaseModel
+provenance:
+- source: dandi
+  class: AssetsSummary
+  name: AssetsSummary
+  description: Summary over assets contained in a dandiset (published or not)
+sha256: 1d6373a482304c9f08350fef99ea66f40039ba553ba02cf130fcc685c929aeb0

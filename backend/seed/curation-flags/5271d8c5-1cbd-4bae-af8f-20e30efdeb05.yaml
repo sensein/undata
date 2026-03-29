@@ -1,0 +1,11 @@
+id: 5271d8c5-1cbd-4bae-af8f-20e30efdeb05
+entity_type: schema
+entity_ref: genotypeinfo_4321b3b5b35f.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.771), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C16631
+  top_label: Genotype
+  top_score: 0.7709
+status: pending
+created_at: '2026-03-29T05:40:56.769272+00:00'

@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - data
+  - rois
+  subclass_of: TimeSeries
+provenance:
+- source: nwb
+  class: RoiResponseSeries
+  name: RoiResponseSeries
+  description: ROI responses over an imaging plane. The first dimension represents
+    time. The second dimension, if present, represents ROIs.
+sha256: e38a215f5b6eca80592d801f8c00f18f7f1d73a1bb983697fae14afc07c73177

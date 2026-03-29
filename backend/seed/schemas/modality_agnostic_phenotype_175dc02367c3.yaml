@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - participant_id
+  - HED
+  is_mixin: true
+provenance:
+- source: bids
+  class: modality_agnostic_Phenotype
+  name: modality_agnostic_Phenotype
+  description: Tabular columns for modality_agnostic
+sha256: 175dc02367c38aaa4d25f9832691f344592c85ae0d14c885b18e5f1c639a9004

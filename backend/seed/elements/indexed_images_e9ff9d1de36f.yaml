@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  type_ref: Images
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: indexed_images
+  description: Link to Images object containing an ordered set of images that are
+    indexed. The Images object must contain a 'ordered_images' dataset specifying
+    the order of the images in the Images type.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e9ff9d1de36f1512528a79fa99cecbcb892b79b2d15ef2b34c6993ddfade0cd5

@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: mni305
+provenance:
+- source: bids
+  class_: ''
+  name: MNI305
+sha256: f99a8b1dfa6fc7d7b87d92dd150daadcb0dac0a8ec599ba57d09b37fc383bc48

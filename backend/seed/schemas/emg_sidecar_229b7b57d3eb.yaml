@@ -1,0 +1,16 @@
+semantic:
+  properties: []
+  mixins:
+  - EMGHardware
+  - EMGTaskInformation
+  - EMGInstitutionInformation
+  - EMGRequired
+  - EMGRecommended
+  - EMGOptional
+  - EMGPlacementSchemeDescription
+provenance:
+- source: bids
+  class: emg_sidecar
+  name: emg_sidecar
+  description: BIDS sidecar for emg
+sha256: 229b7b57d3eb010e58daaed2049615dcc1f8ad08f8cfccd5c56c23033b8e3fda

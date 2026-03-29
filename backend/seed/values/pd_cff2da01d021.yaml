@@ -1,0 +1,23 @@
+semantic:
+  label: PD
+  value_type: categorical
+  display_name: Proton density image
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C159622
+    term_label: RECIL PD
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.814
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: suffixes
+  name: PD
+  description: 'Ambiguous, may refer to a parametric image or to a conventional image.
+
+    **Change:** Replaced by `PDw` or `PDmap`.
+
+    '
+sha256: cff2da01d0212a141350eddba7929253683a216bdbbc50227676c963ed845dd2

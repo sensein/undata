@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - description
+  - comments
+  - data
+  - starting_time
+  - timestamps
+  - control
+  - control_description
+  - sync
+  subclass_of: NWBDataInterface
+provenance:
+- source: nwb
+  class: TimeSeries
+  name: TimeSeries
+  description: General purpose time series.
+sha256: b7aefcbf8a7296c7c61354156e8e38b7df0d28e07978abc7faf3b0aaa33c38d9

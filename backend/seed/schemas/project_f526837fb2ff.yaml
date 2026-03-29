@@ -1,0 +1,51 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  - description
+  - startDate
+  - endDate
+  - wasAssociatedWith
+  - used
+  subclass_of: Activity
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C47885
+    term_label: Project
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8931
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165054
+    term_label: Project Description
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7851
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165058
+    term_label: Project Type
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7427
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165056
+    term_label: Project Name
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7201
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: dandi
+  class: Project
+  name: Project
+  description: null
+sha256: f526837fb2ffcbb38f4c6e40fa27034468fdef6e3843f0feaad837eec9ef12e4

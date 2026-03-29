@@ -1,0 +1,16 @@
+semantic:
+  label: T2map
+  value_type: categorical
+  display_name: True transverse relaxation time image
+provenance:
+- source: bids
+  class: suffixes
+  name: T2map
+  description: 'In seconds (s).
+
+    T2 maps are REQUIRED to use this suffix regardless of the method used to
+
+    generate them.
+
+    '
+sha256: 5b623c501d157104f42c06d16aec3a7ee02a268b70de15031a415bd054ef05de

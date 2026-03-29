@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: electrodes_index
+  description: Index into electrodes.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6a6cb3e818e89461a35e0f9f2c9792a8e784a12281b1395be5f36bc10bd478ca

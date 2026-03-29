@@ -1,0 +1,13 @@
+id: dd1af3ef-1e03-4a9e-8835-ea7c32d6a081
+entity_type: element
+entity_ref: name__electrodes_11126bbafbad.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.023)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C50351
+    score: 0.7277
+  - uri: http://purl.obolibrary.org/obo/NCIT_C93237
+    score: 0.7047
+status: pending
+created_at: '2026-03-29T05:40:55.749196+00:00'

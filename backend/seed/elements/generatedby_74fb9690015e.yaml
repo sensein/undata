@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: GeneratedBy
+  description: 'Used to specify provenance of the dataset.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 74fb9690015e042bc6735dd6cf1bc2e699658d5af815c7cca92b2c211cb12c2f

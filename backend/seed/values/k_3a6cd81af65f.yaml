@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: k
+provenance:
+- source: bids
+  class_: ''
+  name: k
+sha256: 3a6cd81af65fbd3af59fb6fcdafc14299f31d2b16ab2c557c7786cc0a42c2865

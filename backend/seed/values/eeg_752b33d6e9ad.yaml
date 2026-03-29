@@ -1,0 +1,25 @@
+semantic:
+  value_type: categorical
+  label: eeg
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/HP_0011178
+    term_label: Alpha-EEG
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.76
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/HP_0011179
+    term_label: Beta-EEG
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7084
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: EEG
+sha256: 752b33d6e9ad3792b377c9a38a38409d1a925d0524bbae60c2be5c581e682ef6

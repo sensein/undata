@@ -1,0 +1,10 @@
+semantic:
+  properties: []
+  subclass_of: Container
+provenance:
+- source: nwb
+  class: NWBContainer
+  name: NWBContainer
+  description: An abstract data type for a generic container storing collections of
+    data and metadata. Base type for all data and metadata containers.
+sha256: b32a28b1ba8b90b781b8391aef683677bc60b0ee7339739287503d14f58371c7

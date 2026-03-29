@@ -1,0 +1,11 @@
+id: a4c0c27d-e151-4966-9d11-91aee8921da4
+entity_type: value
+entity_ref: atlas_a59d4590591e.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.851), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C147843
+  top_label: ATLAS - Age
+  top_score: 0.8514
+status: pending
+created_at: '2026-03-29T05:37:09.332632+00:00'

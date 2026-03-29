@@ -1,0 +1,16 @@
+semantic:
+  label: MTsat
+  value_type: categorical
+  display_name: Magnetization transfer saturation image
+provenance:
+- source: bids
+  class: suffixes
+  name: MTsat
+  description: 'In arbitrary units (arbitrary).
+
+    MTsat maps are REQUIRED to use this suffix regardless of the method used to
+
+    generate them.
+
+    '
+sha256: 6b1ea5595580deead3b9fb16ef447431d2df80d7d3ba3f53efa69ac353dcfcb3

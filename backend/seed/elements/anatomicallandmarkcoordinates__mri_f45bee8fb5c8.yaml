@@ -1,0 +1,28 @@
+semantic:
+  data_type: object
+provenance:
+- source: bids
+  class: metadata
+  name: AnatomicalLandmarkCoordinates__mri
+  description: 'Key-value pairs of any number of additional anatomical landmarks and
+    their
+
+    coordinates in voxel units (where first voxel has index 0,0,0)
+
+    relative to the associated anatomical MRI
+
+    (for example, `{"AC": [127,119,149], "PC": [128,93,141],
+
+    "IH": [131,114,206]}`, or `{"NAS": [127,213,139], "LPA": [52,113,96],
+
+    "RPA": [202,113,91]}`).
+
+    Each array MUST contain three numeric values corresponding to x, y, and z
+
+    axis of the coordinate system in that exact order.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f45bee8fb5c8fc652d18c0f087a4470de13c1949b5653b3ae419f58b218b06f5

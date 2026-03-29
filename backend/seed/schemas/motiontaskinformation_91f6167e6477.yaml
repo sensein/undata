@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - TaskName
+  - TaskDescription
+  - Instructions
+  is_mixin: true
+provenance:
+- source: bids
+  class: motionTaskInformation
+  name: motionTaskInformation
+  description: Sidecar field group for motion
+sha256: 91f6167e647788a177c77201da8e2e2283ffdd9e927337067fdce5da6b03c9a8

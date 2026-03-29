@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: Person
+  name: roleName
+  description: Role(s) of the contributor. Multiple roles can be selected.
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 83083e5b81e4d401af02e945cc2698121fa7da1f595fe2e3a494ef84b055995a

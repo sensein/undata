@@ -461,6 +461,8 @@ def _extract(
 
         sem = SemanticIdentity(
             data_type=dt,
+            unit=sem_dict.get("unit"),
+            unit_uri=sem_dict.get("unit_uri"),
             pattern=pattern,
             response_options=response_options,
             min_value=sem_dict.get("min_value"),
@@ -468,6 +470,7 @@ def _extract(
             question_text=sem_dict.get("question_text"),
             value_domain=sem_dict.get("value_domain"),
             type_ref=sem_dict.get("type_ref"),
+            description=sem_dict.get("description"),
         )
 
         prov_dict = entity.provenance

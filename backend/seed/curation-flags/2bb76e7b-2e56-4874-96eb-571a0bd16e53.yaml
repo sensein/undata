@@ -1,0 +1,9 @@
+id: 2bb76e7b-2e56-4874-96eb-571a0bd16e53
+entity_type: element
+entity_ref: band_stdev_bd158d53bfad.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: band_stdev
+status: pending
+created_at: '2026-03-29T05:40:55.372259+00:00'

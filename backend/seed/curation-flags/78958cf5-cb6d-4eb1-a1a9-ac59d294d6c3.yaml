@@ -1,0 +1,15 @@
+id: 78958cf5-cb6d-4eb1-a1a9-ac59d294d6c3
+entity_type: element
+entity_ref: metabolitemethod_530d0a4020e5.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.011)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/OBI_0000366
+    score: 0.7768
+  - uri: http://purl.obolibrary.org/obo/CHEBI_25212
+    score: 0.7655
+  - uri: http://purl.obolibrary.org/obo/NCIT_C61154
+    score: 0.7655
+status: pending
+created_at: '2026-03-29T05:40:55.713000+00:00'

@@ -1,0 +1,8 @@
+semantic:
+  label: dcite:Dissertation
+  value_type: categorical
+provenance:
+- source: dandi
+  class: ResourceType
+  name: dcite:Dissertation
+sha256: 554252ad96fe9bd38a0e688e48c5aa0fae7b725a8427eaf6cb619e85dce59652

@@ -1,0 +1,9 @@
+id: fc130f26-d0d3-46b0-a861-10e3273ee857
+entity_type: element
+entity_ref: ethicsapprovals_29fadf5906f0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EthicsApprovals
+status: pending
+created_at: '2026-03-29T05:40:55.515410+00:00'

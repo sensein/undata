@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - BolusCutOffFlag
+  - PASLType
+  - LabelingSlabThickness
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIASLPaslSpecific
+  name: MRIASLPaslSpecific
+  description: Sidecar field group for asl
+sha256: e776d7eebc05674ab83cb4f39274e8750d02e6ed51b94b88c18fd8e878c4e630

@@ -1,0 +1,93 @@
+semantic:
+  label: gray matter
+  value_type: categorical
+  display_name: gray matter
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C32695
+    term_label: Gray Matter
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: https://purl.brain-bican.org/ontology/hbao/HBA_4006
+    term_label: gray matter
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0002020
+    term_label: gray matter
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C158080
+    term_label: Deep Gray Matter
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8716
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0003528
+    term_label: brain gray matter
+    ontology: uberon
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8483
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C49333
+    term_label: Brain Gray Matter
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8483
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/HP_0002282
+    term_label: Gray matter heterotopia
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7681
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C96352
+    term_label: Entrapped Gray Matter Present
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7652
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: https://purl.brain-bican.org/ontology/hbao/HBA_9218
+    term_label: white matter
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7312
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0002316
+    term_label: white matter
+    ontology: uberon
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7312
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: gray_matter
+  description: 'The origin of a tissue: gray matter
+
+    '
+sha256: 4587e5531d86099ac267747da05457124768d6fe771adc795700dcdb999d017a

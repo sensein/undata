@@ -1,0 +1,8 @@
+semantic:
+  label: dcite:IsVariantFormOf
+  value_type: categorical
+provenance:
+- source: dandi
+  class: RelationType
+  name: dcite:IsVariantFormOf
+sha256: 3c12a765d57ab80937cdf08846728f0d34bd9b5f41323968738970b66690aeef

@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - FlipAngle
+  is_mixin: true
+provenance:
+- source: bids
+  class: EntitiesFlipMetadata
+  name: EntitiesFlipMetadata
+  description: Sidecar field group for entity_rules
+sha256: 78214aa3ce278d17aac2b4d21fbd9e2cf70e53b268edd436e430674e95c3a354

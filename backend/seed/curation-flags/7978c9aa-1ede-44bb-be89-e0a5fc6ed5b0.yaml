@@ -1,0 +1,9 @@
+id: 7978c9aa-1ede-44bb-be89-e0a5fc6ed5b0
+entity_type: schema
+entity_ref: ieegrequired_6458a8823127.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: iEEGRequired
+status: pending
+created_at: '2026-03-29T05:37:09.935060+00:00'

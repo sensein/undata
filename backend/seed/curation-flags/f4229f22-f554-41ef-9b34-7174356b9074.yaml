@@ -1,0 +1,9 @@
+id: f4229f22-f554-41ef-9b34-7174356b9074
+entity_type: value
+entity_ref: dcite_ispreviousversionof_ea22c5e98442.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:IsPreviousVersionOf
+status: pending
+created_at: '2026-03-29T05:40:56.241091+00:00'

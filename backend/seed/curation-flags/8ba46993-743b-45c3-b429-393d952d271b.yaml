@@ -1,0 +1,9 @@
+id: 8ba46993-743b-45c3-b429-393d952d271b
+entity_type: value
+entity_ref: m0scan_283f92f32856.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: m0scan
+status: pending
+created_at: '2026-03-29T05:40:56.426831+00:00'

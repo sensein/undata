@@ -1,0 +1,9 @@
+id: 977e436b-cff9-43ec-a2a5-464e08087207
+entity_type: element
+entity_ref: relatedresource_d1a1aeff769e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: relatedResource
+status: pending
+created_at: '2026-03-29T05:40:55.846563+00:00'

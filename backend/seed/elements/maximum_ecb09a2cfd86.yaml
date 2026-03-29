@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+provenance:
+- source: bids
+  class: metadata
+  name: Maximum
+  description: 'Maximum value a column entry is permitted to have.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ecb09a2cfd8695bf89d744a49fae1e0b2676c458d766955bcfd8403e1b08fbc6

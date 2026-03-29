@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - FlipAngle
+  - MTState
+  - RepetitionTimeExcitation
+  is_mixin: true
+provenance:
+- source: bids
+  class: MultiParametricMappingMetadata
+  name: MultiParametricMappingMetadata
+  description: Sidecar field group for qmri
+sha256: f41f9c4884c134978dd8e591538c37f42f10c4e608f5e4d710734f123f494f11

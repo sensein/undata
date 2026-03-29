@@ -1,0 +1,11 @@
+id: bdd15c94-220b-4cb6-9eb3-dac334a4102c
+entity_type: value
+entity_ref: phase1_8275dd4c88af.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.824), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C25257
+  top_label: Phase
+  top_score: 0.8243
+status: pending
+created_at: '2026-03-29T05:37:09.712148+00:00'

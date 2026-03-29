@@ -1,0 +1,11 @@
+id: 304d1c4f-2f2c-4269-a27b-76e0c9a7968b
+entity_type: value
+entity_ref: gaussian_d4ec6ee3bcac.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.765), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C68915
+  top_label: Gauss
+  top_score: 0.765
+status: pending
+created_at: '2026-03-29T05:40:56.334928+00:00'

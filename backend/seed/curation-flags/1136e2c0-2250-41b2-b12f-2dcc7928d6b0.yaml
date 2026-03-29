@@ -1,0 +1,9 @@
+id: 1136e2c0-2250-41b2-b12f-2dcc7928d6b0
+entity_type: element
+entity_ref: dcoffsetcorrection_55d402d682a7.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DCOffsetCorrection
+status: pending
+created_at: '2026-03-29T05:33:43.179597+00:00'

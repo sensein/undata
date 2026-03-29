@@ -1,0 +1,9 @@
+id: 7040cc33-0bb1-4298-a2f4-4afbf9ef102d
+entity_type: value
+entity_ref: dcite_hasmetadata_5f10071df25e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:HasMetadata
+status: pending
+created_at: '2026-03-29T05:40:56.231221+00:00'

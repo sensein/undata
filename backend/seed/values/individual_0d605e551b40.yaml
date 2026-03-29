@@ -1,0 +1,47 @@
+semantic:
+  label: individual
+  value_type: categorical
+  display_name: individual
+  ontology_annotations:
+  - term_uri: http://www.w3.org/ns/prov#Person
+    term_label: Person
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7286
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25190
+    term_label: Person
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7286
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C164216
+    term_label: Child Individual
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7099
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: individual
+  description: 'Participant specific anatomical space (for example derived from T1w
+    and/or T2w images).
+
+    This coordinate system requires specifying an additional, participant-specific
+    file to be fully defined.
+
+    In context of surfaces this space has been referred to as `fsnative`.
+
+
+    In order for this space to be interpretable, `SpatialReference` metadata MUST
+    be provided.
+
+    '
+sha256: 0d605e551b407616a904934989bf16d49f90eccf8f3835a70f86612eee1f93b0

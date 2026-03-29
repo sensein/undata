@@ -1,0 +1,15 @@
+source_element: https://schema.undata.live/elements/identifier_fc76bd4bbc44
+target_element: https://schema.undata.live/elements/participant_id_3819dda23499
+function:
+  function_type: identity
+  input_type: string
+  output_type: string
+  expression_type: none
+provenance:
+- source: auto
+  class: ''
+  name: ''
+  generated_at: '2026-03-29T05:41:10.659796+00:00'
+  attributed_to: urn:undata:transform-pipeline
+  activity: transform
+sha256: 839da88ab1e946428d17b6b81e0ac464a0d6cfbeaa91e20dcd0bdcc41d4e466a

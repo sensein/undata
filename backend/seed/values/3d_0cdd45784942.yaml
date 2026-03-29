@@ -1,0 +1,12 @@
+semantic:
+  label: 3D
+  value_type: categorical
+  display_name: Three-dimensional
+provenance:
+- source: bids
+  class: enums
+  name: ThreeD
+  description: 'Three-dimensional MR acquisition.
+
+    '
+sha256: 0cdd45784942d5170728769e0e6b48ba69dc9c2c831b8f545ebccd3a9361f975

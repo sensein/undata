@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - PlasmaFreeFraction
+  - PlasmaFreeFractionMethod
+  is_mixin: true
+provenance:
+- source: bids
+  class: BloodPlasmaFreeFraction
+  name: BloodPlasmaFreeFraction
+  description: Sidecar field group for pet
+sha256: 9497bc652a18fc0cc8cab4e9d6e437cf00fc094dd39776374cdb9837dae444c9

@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: dandi:OpenAccess
+    label: dandi:OpenAccess
+    ontology_term: https://schema.undata.live/values/9587b491-af1b-4bea-9a4a-33c9dd0f1957
+  - value: dandi:EmbargoedAccess
+    label: dandi:EmbargoedAccess
+    ontology_term: https://schema.undata.live/values/703f77cb-21e2-451e-8567-069bf51ecffd
+  value_domain: categorical
+provenance:
+- source: dandi
+  class: AccessRequirements
+  name: status
+  description: The access status of the item.
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a593c7129cf14ef87b12039520775cb3962e150463f2ef390c3c15d79f196471

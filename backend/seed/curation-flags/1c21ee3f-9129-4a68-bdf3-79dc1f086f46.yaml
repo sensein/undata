@@ -1,0 +1,9 @@
+id: 1c21ee3f-9129-4a68-bdf3-79dc1f086f46
+entity_type: element
+entity_ref: sampleextractionprotocol_aa8d82e3a0f7.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SampleExtractionProtocol
+status: pending
+created_at: '2026-03-29T05:37:09.139074+00:00'

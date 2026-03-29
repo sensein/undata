@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - SpatialSeries
+  subclass_of: NWBDataInterface
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C176742
+    term_label: Eye Tracking
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7849
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: nwb
+  class: EyeTracking
+  name: EyeTracking
+  description: Eye-tracking data, representing direction of gaze.
+sha256: 89f6707fea3ddc758b7078a4d6c107625bf660a1b181c184437a70a0c5393eb1

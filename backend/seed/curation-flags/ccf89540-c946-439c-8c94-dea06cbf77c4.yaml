@@ -1,0 +1,9 @@
+id: ccf89540-c946-439c-8c94-dea06cbf77c4
+entity_type: value
+entity_ref: dandi_ismonozygotictwinof_b65befc3d8fb.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dandi:isMonozygoticTwinOf
+status: pending
+created_at: '2026-03-29T05:40:56.199655+00:00'

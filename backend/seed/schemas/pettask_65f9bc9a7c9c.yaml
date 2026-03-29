@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - TaskName
+  - Instructions
+  - TaskDescription
+  - CogAtlasID
+  - CogPOID
+  is_mixin: true
+provenance:
+- source: bids
+  class: PETTask
+  name: PETTask
+  description: Sidecar field group for pet
+sha256: 65f9bc9a7c9c98dffab9016be876feb4dfa8cc6b382688adfe6f44d6ea6137a0

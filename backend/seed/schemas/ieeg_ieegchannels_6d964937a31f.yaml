@@ -1,0 +1,21 @@
+semantic:
+  properties:
+  - name__channels
+  - type__channels
+  - units
+  - low_cutoff
+  - high_cutoff
+  - reference__ieeg
+  - group__channel
+  - sampling_frequency
+  - description
+  - notch
+  - status
+  - status_description
+  is_mixin: true
+provenance:
+- source: bids
+  class: ieeg_iEEGChannels
+  name: ieeg_iEEGChannels
+  description: Tabular columns for ieeg
+sha256: 6d964937a31fea99a58eb82e2bc86be8cb7e9535686a5df5278997b7b210a1e7

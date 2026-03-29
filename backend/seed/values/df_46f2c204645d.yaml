@@ -1,0 +1,12 @@
+semantic:
+  label: DF
+  value_type: categorical
+  display_name: Dark-field microscopy
+provenance:
+- source: bids
+  class: suffixes
+  name: DF
+  description: 'Dark-field microscopy imaging data
+
+    '
+sha256: 46f2c204645d665e0cd7d9f895c11bcfe7ad42a0a35dd0d0a08b34b3b1ad7498

@@ -1,0 +1,15 @@
+id: 42447300-9ad4-40ff-801e-4a7a4673bb0f
+entity_type: value
+entity_ref: tissue_a9e179afa5e3.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/UBERON_0000479
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C12801
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C38625
+    score: 0.8733
+status: pending
+created_at: '2026-03-29T05:37:09.835662+00:00'

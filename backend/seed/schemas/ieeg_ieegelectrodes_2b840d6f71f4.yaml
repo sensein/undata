@@ -1,0 +1,21 @@
+semantic:
+  properties:
+  - name__electrodes
+  - x
+  - y
+  - z
+  - size
+  - material
+  - manufacturer
+  - group__channel
+  - hemisphere
+  - type__electrodes
+  - impedance
+  - dimension
+  is_mixin: true
+provenance:
+- source: bids
+  class: ieeg_iEEGElectrodes
+  name: ieeg_iEEGElectrodes
+  description: Tabular columns for ieeg
+sha256: 2b840d6f71f4642b435cd119535dd8265cb1c505f85a75e37fbf3532dbb95d54

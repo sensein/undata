@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: OnsetSource
+  description: 'An existing column name in an corresponding recoding data TSV file
+    that
+
+    indexes or is correspondent to the `"onset"` column of the present TSV file.
+
+    For example, `"timestamp"` column.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6c72770562c1a0a57d73f49e248471541e828608c365b6d10c88d9c19f9c3b9a

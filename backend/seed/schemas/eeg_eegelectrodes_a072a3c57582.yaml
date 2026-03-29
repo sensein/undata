@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - name__electrodes
+  - x
+  - y
+  - z
+  - type__electrodes
+  - material
+  - impedance
+  is_mixin: true
+provenance:
+- source: bids
+  class: eeg_EEGElectrodes
+  name: eeg_EEGElectrodes
+  description: Tabular columns for eeg
+sha256: a072a3c57582d9c118999a3852989b2fdf66c3a33f06933d73aa9fccc361ef90

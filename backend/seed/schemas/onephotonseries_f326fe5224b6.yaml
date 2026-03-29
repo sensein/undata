@@ -1,0 +1,25 @@
+semantic:
+  properties:
+  - pmt_gain
+  - scan_line_rate
+  - exposure_time
+  - binning
+  - power
+  - intensity
+  - imaging_plane
+  subclass_of: ImageSeries
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C116504
+    term_label: Multiphoton Microscopy
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7779
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: nwb
+  class: OnePhotonSeries
+  name: OnePhotonSeries
+  description: Image stack recorded over time from 1-photon microscope.
+sha256: f326fe5224b6c4a8f64e53c71e57fd6af2c6ad875150fabe134475069e018f9f

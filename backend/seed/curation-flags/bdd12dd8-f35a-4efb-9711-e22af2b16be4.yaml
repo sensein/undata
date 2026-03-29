@@ -1,0 +1,11 @@
+id: bdd12dd8-f35a-4efb-9711-e22af2b16be4
+entity_type: value
+entity_ref: in_vivo_2a95edfabce0.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.828), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C15744
+  top_label: In Vivo
+  top_score: 0.8278
+status: pending
+created_at: '2026-03-29T05:40:56.375837+00:00'

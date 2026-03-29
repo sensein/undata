@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  subclass_of: BaseType
+provenance:
+- source: dandi
+  class: Anatomy
+  name: Anatomy
+  description: UBERON or other identifier for anatomical part studied
+sha256: 802b3c2fea266bea1ec2938ced4f5224e644bb14486e55443f9b71e70b002ef6

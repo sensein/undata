@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - data
+  - site
+  subclass_of: TimeSeries
+provenance:
+- source: nwb
+  class: OptogeneticSeries
+  name: OptogeneticSeries
+  description: An optogenetic stimulus.
+sha256: 36d7c01007d65665dd5e81808489d39ef904f7ed7999dedce22d0d8fd74e061e

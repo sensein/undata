@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - Columns
+  - Description
+  - OnsetSource
+  is_mixin: true
+provenance:
+- source: bids
+  class: PhysioEvents
+  name: PhysioEvents
+  description: Sidecar field group for continuous
+sha256: d1ac1750b20f1741e2d6137a84a744485cb4a27e6271c58907834ddbe903157a

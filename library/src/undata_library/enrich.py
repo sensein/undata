@@ -1,8 +1,14 @@
 """Enrichment pipeline: in-place enrichment of staged registry entities.
 
-Enrichment adds metadata (ontology_annotations, value_domain) to staged entities
-WITHOUT creating new entities. All updates are in-place.
+Enrichment fills every field in SemanticIdentity that can be inferred:
+- ontology_annotations: via embedding similarity to ontology terms
+- value_domain: auto-populated from data_type
+- unit / unit_uri: inferred from provenance description, resolved to QUDT
+- pattern: inferred from description (ISO 8601, UUID, DOI, etc.)
+- min_value / max_value: extracted from description
+- response_options: resolved to ValueConcept URIs
 
+All updates are in-place — no new entities are created.
 Dependency order: elements + values → valuesets → schemas.
 """
 
@@ -36,6 +42,11 @@ def _update_entity_in_place(
     ontology_annotations: list[dict] | None = None,
     value_domain: str | None = None,
     description: str | None = None,
+    unit: str | None = None,
+    unit_uri: str | None = None,
+    pattern: str | None = None,
+    min_value: float | None = None,
+    max_value: float | None = None,
 ) -> bool:
     """Update a staged entity file in-place with enrichment metadata.
 
@@ -61,6 +72,26 @@ def _update_entity_in_place(
         sem["description"] = description
         changed = True
 
+    if unit is not None and not sem.get("unit"):
+        sem["unit"] = unit
+        changed = True
+
+    if unit_uri is not None and not sem.get("unit_uri"):
+        sem["unit_uri"] = unit_uri
+        changed = True
+
+    if pattern is not None and not sem.get("pattern"):
+        sem["pattern"] = pattern
+        changed = True
+
+    if min_value is not None and sem.get("min_value") is None:
+        sem["min_value"] = min_value
+        changed = True
+
+    if max_value is not None and sem.get("max_value") is None:
+        sem["max_value"] = max_value
+        changed = True
+
     if changed:
         filepath.write_text(
             yaml.dump(data, default_flow_style=False, sort_keys=False),
@@ -68,6 +99,154 @@ def _update_entity_in_place(
         )
 
     return changed
+
+
+# ---------------------------------------------------------------------------
+# Semantic field inference helpers
+# ---------------------------------------------------------------------------
+
+import re
+
+# Unit patterns found in descriptions — map regex to unit string
+_UNIT_PATTERNS: list[tuple[re.Pattern, str]] = [
+    (re.compile(r"\b(?:in\s+)?years?\b", re.I), "years"),
+    (re.compile(r"\b(?:in\s+)?months?\b", re.I), "months"),
+    (re.compile(r"\b(?:in\s+)?days?\b", re.I), "days"),
+    (re.compile(r"\b(?:in\s+)?hours?\b", re.I), "hours"),
+    (re.compile(r"\b(?:in\s+)?minutes?\b", re.I), "minutes"),
+    (re.compile(r"\b(?:in\s+)?seconds?\b", re.I), "seconds"),
+    (re.compile(r"\b(?:in\s+)?milliseconds?\b", re.I), "milliseconds"),
+    (re.compile(r"\b(?:in\s+)?microseconds?\b", re.I), "microseconds"),
+    (re.compile(r"\bISO\s*8601\b", re.I), "ISO8601"),
+    (re.compile(r"\b(?:in\s+)?(?:milli)?meters?\b", re.I), "meters"),
+    (re.compile(r"\b(?:in\s+)?centimeters?\b", re.I), "centimeters"),
+    (re.compile(r"\b(?:in\s+)?millimeters?\b", re.I), "millimeters"),
+    (re.compile(r"\b(?:in\s+)?microns?\b", re.I), "micrometers"),
+    (re.compile(r"\b(?:in\s+)?micrometers?\b", re.I), "micrometers"),
+    (re.compile(r"\b(?:in\s+)?kilograms?\b", re.I), "kilograms"),
+    (re.compile(r"\b(?:in\s+)?grams?\b", re.I), "grams"),
+    (re.compile(r"\b(?:in\s+)?pounds?\b", re.I), "pounds"),
+    (re.compile(r"\b(?:in\s+)?hertz\b|\bHz\b", re.I), "hertz"),
+    (re.compile(r"\b(?:in\s+)?(?:kilo)?hertz\b|\bkHz\b", re.I), "kilohertz"),
+    (re.compile(r"\b(?:in\s+)?tesla\b|\bT\b"), "tesla"),
+    (re.compile(r"\b(?:in\s+)?volts?\b|\bV\b"), "volts"),
+    (re.compile(r"\b(?:in\s+)?millivolts?\b|\bmV\b"), "millivolts"),
+    (re.compile(r"\b(?:in\s+)?degrees?\b", re.I), "degrees"),
+    (re.compile(r"\b(?:in\s+)?radians?\b", re.I), "radians"),
+    (re.compile(r"\b(?:in\s+)?percent(?:age)?\b|\b%\b", re.I), "percent"),
+]
+
+# Patterns that indicate specific value formats
+_FORMAT_PATTERNS: list[tuple[re.Pattern, str]] = [
+    (re.compile(r"\bISO\s*8601\b", re.I), r"^P(\d+Y)?(\d+M)?(\d+D)?(T(\d+H)?(\d+M)?(\d+(\.\d+)?S)?)?$"),
+    (re.compile(r"\bRFC\s*3339\b|\bdatetime\b", re.I), r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}"),
+    (re.compile(r"\bUUID\b", re.I), r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"),
+    (re.compile(r"\bDOI\b", re.I), r"^10\.\d{4,}"),
+    (re.compile(r"\bORCID\b", re.I), r"^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$"),
+]
+
+# Numeric bound extraction
+_MIN_PATTERN = re.compile(r"\b(?:min(?:imum)?|at\s+least|>=?)\s*(\d+(?:\.\d+)?)", re.I)
+_MAX_PATTERN = re.compile(r"\b(?:max(?:imum)?|at\s+most|<=?|capped\s+at)\s*(\d+(?:\.\d+)?)", re.I)
+
+
+def _infer_unit_from_description(description: str, name: str = "") -> str | None:
+    """Infer unit from element description or name.
+
+    ISO 8601 takes priority: if the description mentions ISO 8601, return
+    "ISO8601" immediately — don't let incidental mentions of "years" or
+    "days" in ISO 8601 examples trigger a time-unit match.
+    """
+    text = f"{name} {description}"
+
+    # ISO 8601 takes priority over all time units
+    if re.search(r"\bISO\s*8601\b", text, re.I):
+        return "ISO8601"
+
+    for pattern, unit in _UNIT_PATTERNS:
+        # Skip the ISO8601 entry in _UNIT_PATTERNS (handled above)
+        if unit == "ISO8601":
+            continue
+        if pattern.search(text):
+            return unit
+    return None
+
+
+def _infer_pattern_from_description(description: str) -> str | None:
+    """Infer regex pattern from description if it mentions a known format."""
+    for pattern, regex in _FORMAT_PATTERNS:
+        if pattern.search(description):
+            return regex
+    return None
+
+
+def _extract_bounds(description: str) -> tuple[float | None, float | None]:
+    """Extract min/max numeric bounds from description."""
+    min_val = None
+    max_val = None
+    m = _MIN_PATTERN.search(description)
+    if m:
+        min_val = float(m.group(1))
+    m = _MAX_PATTERN.search(description)
+    if m:
+        max_val = float(m.group(1))
+    return min_val, max_val
+
+
+def _resolve_unit_uri(unit_str: str) -> str | None:
+    """Resolve a unit string to a QUDT URI if the unit_resolver is available."""
+    try:
+        from .unit_resolver import get_resolver
+        resolver = get_resolver()
+        result = resolver.resolve(unit_str)
+        if result:
+            return result.uri
+    except Exception:
+        pass
+    return None
+
+
+def _enrich_semantic_fields(
+    data: dict,
+) -> dict[str, object]:
+    """Infer missing semantic fields from provenance descriptions.
+
+    Returns a dict of field_name → value for fields that could be inferred.
+    Only returns fields that are currently missing/None in the semantic block.
+    """
+    sem = data.get("semantic", {})
+    prov_list = data.get("provenance", [])
+    first_prov = prov_list[0] if prov_list and isinstance(prov_list[0], dict) else {}
+
+    description = first_prov.get("description", "") or sem.get("description", "") or ""
+    name = first_prov.get("name", "")
+    updates: dict[str, object] = {}
+
+    # Infer unit
+    if not sem.get("unit") and description:
+        unit = _infer_unit_from_description(description, name)
+        if unit:
+            updates["unit"] = unit
+            # Try to resolve URI
+            uri = _resolve_unit_uri(unit)
+            if uri:
+                updates["unit_uri"] = uri
+
+    # Infer pattern
+    if not sem.get("pattern") and description:
+        pattern = _infer_pattern_from_description(description)
+        if pattern:
+            updates["pattern"] = pattern
+
+    # Extract min/max bounds
+    if description:
+        min_val, max_val = _extract_bounds(description)
+        if min_val is not None and sem.get("min_value") is None:
+            updates["min_value"] = min_val
+        if max_val is not None and sem.get("max_value") is None:
+            updates["max_value"] = max_val
+
+    return updates
 
 
 # ---------------------------------------------------------------------------
@@ -211,9 +390,23 @@ def enrich_elements(
             if domain:
                 stats["value_domain_set"] += 1
 
-        if annotations or domain:
+        # 4. Infer missing semantic fields (unit, pattern, min/max) from description
+        sem_updates = _enrich_semantic_fields(data)
+        if sem_updates:
+            stats["semantic_fields_inferred"] = stats.get("semantic_fields_inferred", 0) + len(sem_updates)
+
+        if annotations or domain or sem_updates:
             if not dry_run:
-                _update_entity_in_place(f, ontology_annotations=annotations, value_domain=domain)
+                _update_entity_in_place(
+                    f,
+                    ontology_annotations=annotations,
+                    value_domain=domain,
+                    unit=sem_updates.get("unit"),
+                    unit_uri=sem_updates.get("unit_uri"),
+                    pattern=sem_updates.get("pattern"),
+                    min_value=sem_updates.get("min_value"),
+                    max_value=sem_updates.get("max_value"),
+                )
         else:
             stats["unchanged"] += 1
 

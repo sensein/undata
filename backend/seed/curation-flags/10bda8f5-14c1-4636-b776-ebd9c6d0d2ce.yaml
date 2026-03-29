@@ -1,0 +1,9 @@
+id: 10bda8f5-14c1-4636-b776-ebd9c6d0d2ce
+entity_type: element
+entity_ref: stop_time_873444ea5d20.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: stop_time
+status: pending
+created_at: '2026-03-29T05:37:09.204081+00:00'

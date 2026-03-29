@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - SamplingFrequency
+  - StartTime
+  - Columns
+  is_mixin: true
+provenance:
+- source: bids
+  class: Continuous
+  name: Continuous
+  description: Sidecar field group for continuous
+sha256: 66642e8a1ddd37c090e04591e5a03aaac8f3a473bb6751a02c7fbdab6d557b30

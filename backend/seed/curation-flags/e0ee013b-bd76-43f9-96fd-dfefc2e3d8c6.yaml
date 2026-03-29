@@ -1,0 +1,9 @@
+id: e0ee013b-bd76-43f9-96fd-dfefc2e3d8c6
+entity_type: element
+entity_ref: pathology_5e925df35ada.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: pathology
+status: pending
+created_at: '2026-03-29T05:40:55.794737+00:00'

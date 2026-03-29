@@ -1,0 +1,9 @@
+id: bfefb39a-34d6-401a-b718-668ad9c407e7
+entity_type: value
+entity_ref: .sqd_03fe018a81d3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: sqd
+status: pending
+created_at: '2026-03-29T05:40:56.094725+00:00'

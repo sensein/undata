@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - RepetitionTimePreparation
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIASLTextOnly
+  name: MRIASLTextOnly
+  description: Sidecar field group for asl
+sha256: af8026ec166378c1fb382411a73267bc458d99c58607ad1390e19beb7e69797a

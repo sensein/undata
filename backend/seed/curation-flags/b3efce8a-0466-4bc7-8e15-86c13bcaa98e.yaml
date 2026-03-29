@@ -1,0 +1,11 @@
+id: b3efce8a-0466-4bc7-8e15-86c13bcaa98e
+entity_type: value
+entity_ref: ecg_541b6d7cdf4a.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.773), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C114172
+  top_label: Poor Quality ECG
+  top_score: 0.7734
+status: pending
+created_at: '2026-03-29T05:37:09.436936+00:00'

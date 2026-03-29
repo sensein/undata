@@ -1,0 +1,15 @@
+id: c042dbf3-451c-4228-adf7-a6dbba147dc4
+entity_type: value
+entity_ref: megrefmag_95fde21b1b7d.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.010)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C630
+    score: 0.7315
+  - uri: http://purl.obolibrary.org/obo/NCIT_C174659
+    score: 0.7213
+  - uri: http://purl.obolibrary.org/obo/NCIT_C66075
+    score: 0.7059
+status: pending
+created_at: '2026-03-29T05:33:43.763579+00:00'

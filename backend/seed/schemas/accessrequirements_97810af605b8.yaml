@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - status
+  - contactPoint
+  - description
+  - embargoedUntil
+  subclass_of: DandiBaseModel
+provenance:
+- source: dandi
+  class: AccessRequirements
+  name: AccessRequirements
+  description: Information about access options for the dataset
+sha256: 97810af605b8583c808a89ec0dde152f447c6a7ef526d0bfc30d88505a4ddfd7

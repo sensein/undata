@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - data
+  - metric
+  - source_channels
+  - source_timeseries
+  - bands
+  subclass_of: TimeSeries
+provenance:
+- source: nwb
+  class: DecompositionSeries
+  name: DecompositionSeries
+  description: Spectral analysis of a time series, e.g. of an LFP or a speech signal.
+sha256: 237e2295418219ac1e8e1aa62433c98282f4528c6c7bd9597bf8e66e7fc7af13

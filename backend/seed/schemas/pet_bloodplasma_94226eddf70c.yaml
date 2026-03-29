@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - plasma_radioactivity
+  is_mixin: true
+provenance:
+- source: bids
+  class: pet_BloodPlasma
+  name: pet_BloodPlasma
+  description: Tabular columns for pet
+sha256: 94226eddf70c04e2b58e22b209b9a95785f2baddb53706b40f8ebb4dd5fe1bcd

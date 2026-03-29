@@ -1,0 +1,53 @@
+semantic:
+  label: brain
+  value_type: categorical
+  display_name: brain
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C12439
+    term_label: Brain
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: https://purl.brain-bican.org/ontology/mbao/MBA_997
+    term_label: brain
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0000955
+    term_label: brain
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: https://purl.brain-bican.org/ontology/dhbao/DHBA_10155
+    term_label: brain
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: https://purl.brain-bican.org/ontology/hbao/HBA_4005
+    term_label: brain
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: brain
+  description: 'The origin of a sample: brain
+
+    '
+sha256: 71ef189ce740ea4efba7d032a57a783ef6cfc4c587b197a296897608b3924545

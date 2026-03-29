@@ -1,0 +1,11 @@
+id: 9bdea434-c497-4541-8404-260a71f8aa85
+entity_type: schema
+entity_ref: resource_754f280cf1db.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.859), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C165072
+  top_label: Resource Name
+  top_score: 0.8586
+status: pending
+created_at: '2026-03-29T05:40:56.877843+00:00'

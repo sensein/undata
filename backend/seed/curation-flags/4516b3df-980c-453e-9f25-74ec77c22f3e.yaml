@@ -1,0 +1,9 @@
+id: 4516b3df-980c-453e-9f25-74ec77c22f3e
+entity_type: element
+entity_ref: pmt_gain_34ea6e711f8a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: pmt_gain
+status: pending
+created_at: '2026-03-29T05:40:55.811070+00:00'

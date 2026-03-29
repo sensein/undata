@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - manufacturer
+  - model_number
+  - description
+  subclass_of: NWBContainer
+provenance:
+- source: nwb
+  class: DeviceModel
+  name: DeviceModel
+  description: Model properties of a data acquisition device, e.g., recording system,
+    electrode, microscope. This should be extended for specific types of device models
+    to include additional attributes specific to each type. The name of the DeviceModel
+    should be the most common representation of the model name, e.g., Neuropixels
+    1.0, V-Probe, Bergamo III.
+sha256: 8325aa25ba23362a11f734609d519e2c97d104d65994f10d3a53eba0a82f4174

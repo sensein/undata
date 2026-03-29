@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - EEGPlacementScheme
+  - CapManufacturer
+  - CapManufacturersModelName
+  - EEGReference
+  is_mixin: true
+provenance:
+- source: bids
+  class: MEGwithEEG
+  name: MEGwithEEG
+  description: Sidecar field group for meg
+sha256: 0625644c692931f1a51bc59b6523f355d022980e1e25284e2025ffd183f764dc

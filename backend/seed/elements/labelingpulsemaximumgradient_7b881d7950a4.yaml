@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  unit: mT/m
+  value_domain: numeric
+provenance:
+- source: bids
+  class: metadata
+  name: LabelingPulseMaximumGradient
+  description: 'The maximum amplitude of the gradient switched on during the application
+    of
+
+    the labeling RF pulse(s), in milliteslas per meter.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7b881d7950a4eb39f8712d635706cd0c2b9696f7e0dcfd7b9f7711dc1eea8fc4

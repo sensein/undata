@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: iEEGElectrodeGroups
+  description: 'Field to describe the way electrodes are grouped into strips, grids
+    or depth
+
+    probes.
+
+    For example, `"grid1: 10x8 grid on left temporal pole, strip2: 1x8 electrode
+
+    strip on xxx"`.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 09c8aa6b1df3d6ce6ccea0878eeb18f1b75f8eba79d592a111fc2065601f652e

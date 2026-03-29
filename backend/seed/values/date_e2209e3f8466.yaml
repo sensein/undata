@@ -1,0 +1,47 @@
+semantic:
+  label: date
+  value_type: categorical
+  display_name: Date
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25164
+    term_label: Date
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.org/dc/elements/1.1/date
+    term_label: Date
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_2156
+    term_label: Date
+    ontology: edam
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/dc/terms/date
+    term_label: date
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: formats
+  name: date
+  description: 'A date in the form `"YYYY-MM-DD[Z]"`,
+
+    where [Z] is an optional, valid timezone code.
+
+    '
+sha256: e2209e3f8466a032b024daa3e8128a41532baab23b4a76175c579e01884fba97

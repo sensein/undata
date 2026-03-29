@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: icbm452airspace
+provenance:
+- source: bids
+  class_: ''
+  name: ICBM452AirSpace
+sha256: fb751750ec4b0343ced51e8f328d4310d18deb854c532cc3b559de612bde7776

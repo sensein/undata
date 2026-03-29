@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - simultaneous_recordings
+  - simultaneous_recordings_index
+  - stimulus_type
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: SequentialRecordingsTable
+  name: SequentialRecordingsTable
+  description: A table for grouping different sequential recordings from the SimultaneousRecordingsTable
+    table together. This is typically used to group together sequential recordings
+    where a sequence of stimuli of the same type with varying parameters have been
+    presented in a sequence.
+sha256: ac62080f9216d1d21c4ad5d28d535906ddfc61139b159fa73913f332ae40a76e

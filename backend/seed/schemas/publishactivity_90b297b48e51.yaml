@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  - description
+  - startDate
+  - endDate
+  - wasAssociatedWith
+  - used
+  subclass_of: Activity
+provenance:
+- source: dandi
+  class: PublishActivity
+  name: PublishActivity
+  description: null
+sha256: 90b297b48e51d2bc644b5bff5f009401e015340a1a66209e624caac08b0e6e3b

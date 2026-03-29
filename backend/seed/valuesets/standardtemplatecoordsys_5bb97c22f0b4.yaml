@@ -1,0 +1,39 @@
+semantic:
+  name: StandardTemplateCoordSys
+  members:
+  - ICBM452AirSpace
+  - ICBM452Warp5Space
+  - IXI549Space
+  - MNI152Lin
+  - MNI152NLin2009aAsym
+  - MNI152NLin2009aSym
+  - MNI152NLin2009bAsym
+  - MNI152NLin2009bSym
+  - MNI152NLin2009cAsym
+  - MNI152NLin2009cSym
+  - MNI152NLin6Asym
+  - MNI152NLin6Sym
+  - MNI305
+  - MNIColin27
+  - NIHPD
+  - OASIS30AntsOASISAnts
+  - OASIS30Atropos
+  - Talairach
+  - UNCInfant
+  - fsLR
+  - fsaverage
+  - fsaverageSym
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0002296
+    term_label: foveate
+    ontology: pato
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7008
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: _StandardTemplateCoordSys
+sha256: 5bb97c22f0b4ebb9ca217bd06845ca50e9c44f8e15c41f594966fc43f10943da

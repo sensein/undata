@@ -1,0 +1,17 @@
+semantic:
+  label: .mrk
+  value_type: categorical
+  display_name: MRK
+provenance:
+- source: bids
+  class: extensions
+  name: mrk
+  description: 'A file containing MEG sensor coil positions.
+
+
+    Used by KIT, Yokogawa, and Ricoh MEG systems.
+
+    Successor to the `.sqd` extension for marker files.
+
+    '
+sha256: deb60b1c2d01f51e3f28f600ef60aeef34b2791739bc8e64937f3f3943cd0e0b

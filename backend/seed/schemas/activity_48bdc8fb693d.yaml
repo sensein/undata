@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  - description
+  - startDate
+  - endDate
+  - wasAssociatedWith
+  - used
+  subclass_of: DandiBaseModel
+provenance:
+- source: dandi
+  class: Activity
+  name: Activity
+  description: Information about the Project activity
+sha256: 48bdc8fb693d165cb0266ed0e0f1a6f228296e4e9f6be16e9e72ef808b10e798

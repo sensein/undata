@@ -1,0 +1,11 @@
+id: 5c09cdf6-aef2-4d5c-a87e-2e738ee78a67
+entity_type: value
+entity_ref: pc_d28359a3da94.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.744), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C117219
+  top_label: PC-3
+  top_score: 0.7436
+status: pending
+created_at: '2026-03-29T05:37:09.696456+00:00'

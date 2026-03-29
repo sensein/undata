@@ -1,0 +1,15 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  unit: seconds
+provenance:
+- source: nwb
+  class: nwb
+  name: starting_time
+  description: Timestamp of the first sample in seconds. When timestamps are uniformly
+    spaced, the timestamp of the first sample can be specified and all subsequent
+    ones calculated from the sampling rate attribute.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6d970068d73db9a0e694e37afcd4f8712d3afcf70cdc688b7aebae592b05ebca

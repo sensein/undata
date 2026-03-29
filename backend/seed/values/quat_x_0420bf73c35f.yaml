@@ -1,0 +1,12 @@
+semantic:
+  label: quat_x
+  value_type: categorical
+  display_name: quat_x
+provenance:
+- source: bids
+  class: enums
+  name: quat_x
+  description: 'The quaternion x dimension of the coordinate system.
+
+    '
+sha256: 0420bf73c35f22e3d7b748b92a822b9964b898960d2a27fe8b3c86c7ec73845f

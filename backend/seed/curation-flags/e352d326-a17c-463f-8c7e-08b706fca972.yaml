@@ -1,0 +1,13 @@
+id: e352d326-a17c-463f-8c7e-08b706fca972
+entity_type: element
+entity_ref: identifier_9e2a0af92abf.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.040)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/EDAM_data_1893
+    score: 0.7506
+  - uri: http://purl.obolibrary.org/obo/EDAM_data_1908
+    score: 0.7103
+status: pending
+created_at: '2026-03-29T05:40:55.622040+00:00'

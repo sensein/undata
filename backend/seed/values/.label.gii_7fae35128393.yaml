@@ -1,0 +1,15 @@
+semantic:
+  label: .label.gii
+  value_type: categorical
+  display_name: GIFTI label/annotation file
+provenance:
+- source: bids
+  class: extensions
+  name: labelgii
+  description: 'A GIFTI label/annotation file.
+
+
+    This extension may only be used in derivative datasets.
+
+    '
+sha256: 7fae35128393ab9b6d97fb3d2b9ebb2e76cdc334d3f50147cd2e1b161646f97f

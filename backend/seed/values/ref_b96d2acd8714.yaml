@@ -1,0 +1,12 @@
+semantic:
+  label: REF
+  value_type: categorical
+  display_name: REF
+provenance:
+- source: bids
+  class: enums
+  name: REF
+  description: 'Reference channel.
+
+    '
+sha256: b96d2acd87144b29e8f941af12d3ac0e7d40e9cd54615db0acf02d6b8f76c76c

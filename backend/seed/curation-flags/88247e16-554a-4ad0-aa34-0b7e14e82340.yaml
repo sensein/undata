@@ -1,0 +1,9 @@
+id: 88247e16-554a-4ad0-aa34-0b7e14e82340
+entity_type: element
+entity_ref: scatterfraction_38a614e0b06f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ScatterFraction
+status: pending
+created_at: '2026-03-29T05:37:09.152102+00:00'

@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - Instructions
+  - TaskDescription
+  - CogAtlasID
+  - CogPOID
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIFuncTaskInformation
+  name: MRIFuncTaskInformation
+  description: Sidecar field group for func
+sha256: 7b50c0ce2a256357c988df8697cd0c89abbb1d4af71cd92a1f75e969a7446422

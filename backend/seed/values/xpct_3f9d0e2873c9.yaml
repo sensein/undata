@@ -1,0 +1,12 @@
+semantic:
+  label: XPCT
+  value_type: categorical
+  display_name: X-ray Phase-Contrast Tomography
+provenance:
+- source: bids
+  class: suffixes
+  name: XPCT
+  description: 'X-ray phase-contrast tomography imaging data
+
+    '
+sha256: 3f9d0e2873c962efbf92bb8536ab06bb299d7ccf393e0baec2f8db58a56ccd25

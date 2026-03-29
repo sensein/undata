@@ -1,0 +1,9 @@
+id: e9788e16-df63-4932-828f-77ddc44beefd
+entity_type: element
+entity_ref: calibrationtype_d235040cfbe4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CalibrationType
+status: pending
+created_at: '2026-03-29T05:40:55.384303+00:00'

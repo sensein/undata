@@ -1,0 +1,26 @@
+semantic:
+  label: control
+  value_type: categorical
+  display_name: control
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C61299
+    term_label: Control
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: control
+  description: 'An ASL volume type: control.
+
+    The control image is acquired in the exact same way as the label image,
+
+    except that the magnetization of the blood flowing into the imaging region has
+    not been inverted.
+
+    '
+sha256: 91b27653b5dc08a4c284f09c8d6c4b21195efedaebcf94d3191ce3ed7089d71f

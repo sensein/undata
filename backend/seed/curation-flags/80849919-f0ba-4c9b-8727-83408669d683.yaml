@@ -1,0 +1,9 @@
+id: 80849919-f0ba-4c9b-8727-83408669d683
+entity_type: value
+entity_ref: .bval_48edc902f454.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: bval
+status: pending
+created_at: '2026-03-29T05:40:56.073774+00:00'

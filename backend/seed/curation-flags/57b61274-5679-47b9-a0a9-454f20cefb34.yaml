@@ -1,0 +1,11 @@
+id: 57b61274-5679-47b9-a0a9-454f20cefb34
+entity_type: value
+entity_ref: pcasl_bcaad2085f04.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.744), no LLM verification
+  top_match: http://identifiers.org/ensembl/ENSG00000166803
+  top_label: PCLAF
+  top_score: 0.7438
+status: pending
+created_at: '2026-03-29T05:33:43.820690+00:00'

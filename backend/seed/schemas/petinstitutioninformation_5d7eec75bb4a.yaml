@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - InstitutionName
+  - InstitutionAddress
+  - InstitutionalDepartmentName
+  is_mixin: true
+provenance:
+- source: bids
+  class: PETInstitutionInformation
+  name: PETInstitutionInformation
+  description: Sidecar field group for pet
+sha256: 5d7eec75bb4ad14f941d747ffd279a16098cf9c51491d0e2ecf4292967e1b0e4

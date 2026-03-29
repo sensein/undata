@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - EpochLength
+  is_mixin: true
+provenance:
+- source: bids
+  class: EpochedData
+  name: EpochedData
+  description: Sidecar field group for electrophys
+sha256: de2698b4844ebd1b50fbfccf6dc828c25fc03f979e51122c5c4e4534f9ce56a3

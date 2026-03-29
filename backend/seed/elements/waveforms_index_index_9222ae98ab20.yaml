@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: waveforms_index_index
+  description: Index into the 'waveforms_index' dataset. One value for every unit
+    (row in the table). See 'waveforms' for more detail.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9222ae98ab203f63eda32cff04a97be3bcce9bfab5e563f44f8810e2fe849e7b

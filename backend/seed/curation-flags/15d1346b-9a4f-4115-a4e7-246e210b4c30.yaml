@@ -1,0 +1,13 @@
+id: 15d1346b-9a4f-4115-a4e7-246e210b4c30
+entity_type: schema
+entity_ref: contributor_84dc6e068e14.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.org/dc/elements/1.1/contributor
+    score: 0.8689
+  - uri: http://purl.org/dc/terms/contributor
+    score: 0.8689
+status: pending
+created_at: '2026-03-29T05:40:56.731179+00:00'

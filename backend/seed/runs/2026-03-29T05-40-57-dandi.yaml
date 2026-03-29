@@ -1,0 +1,24 @@
+run_id: 406df621-cd3
+source: dandi
+started_at: '2026-03-29T05:40:57.656067+00:00'
+completed_at: '2026-03-29T05:40:57.656147+00:00'
+entity_counts:
+  extract:
+    elements: 398
+    schemas: 44
+    values: 152
+    valuesets: 5
+enrichment_rate:
+  source_metadata: 0
+  elements: 103
+  values: 8
+  valuesets: 1
+  schemas: 22
+curation_flags:
+  low_confidence: 1809
+  ambiguous_match: 345
+  multiple_candidates: 190
+timing:
+  extract: 1.3387951850891113
+  enrich: 220.1133508682251
+  commit: 1.0437476634979248

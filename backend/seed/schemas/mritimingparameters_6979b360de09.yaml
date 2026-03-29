@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - EchoTime
+  - InversionTime
+  - DwellTime
+  - AcquisitionDuration
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRITimingParameters
+  name: MRITimingParameters
+  description: Sidecar field group for mri
+sha256: 6979b360de09c75c9398b940da06205d175295c37c30316fcfd04471d34eb871

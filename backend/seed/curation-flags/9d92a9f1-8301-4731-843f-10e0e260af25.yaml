@@ -1,0 +1,9 @@
+id: 9d92a9f1-8301-4731-843f-10e0e260af25
+entity_type: element
+entity_ref: spoilinggradientduration_5058e2a35d5f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpoilingGradientDuration
+status: pending
+created_at: '2026-03-29T05:37:09.193154+00:00'

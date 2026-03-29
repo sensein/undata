@@ -1,0 +1,32 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  unit: seconds
+provenance:
+- source: bids
+  class: metadata
+  name: ParallelReductionFactorOutOfPlane
+  description: 'The parallel imaging (for instance, GRAPPA) factor in the second phase
+    encoding dimension of 3D sequences.
+
+    Use the denominator of the fraction of k-space encoded in the second phase encoding
+    dimension.
+
+    For example, 2 means half of k-space is encoded.
+
+    Will typically be 1 for 2D sequences, as each slice in a 2D acquisition is usually
+    fully encoded.
+
+    `ParallelReductionFactorOutOfPlane` should not be confused with `MultibandAccelerationFactor`,
+
+    as they imply different methods of accelerating the acquisition.
+
+    Corresponds to [DICOM Tag 0018, 9155](http://www.dicomlookup.com/dicomtags/(0018,9155))
+
+    `Parallel Reduction Factor out-of-plane`.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 75314e7d1a63677f7e74ce79a6b2b7d2439b776c63a6746dccbab159fd774a81

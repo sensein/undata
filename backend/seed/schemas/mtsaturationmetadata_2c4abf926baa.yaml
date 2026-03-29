@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - FlipAngle
+  - MTState
+  - RepetitionTimeExcitation
+  is_mixin: true
+provenance:
+- source: bids
+  class: MTSaturationMetadata
+  name: MTSaturationMetadata
+  description: Sidecar field group for qmri
+sha256: 2c4abf926baa2460922c69be98520a1e50b77d4145b96b989e27854e55ea5692

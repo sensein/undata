@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - description
+  - features
+  - times
+  - electrodes
+  subclass_of: NWBDataInterface
+provenance:
+- source: nwb
+  class: FeatureExtraction
+  name: FeatureExtraction
+  description: Features, such as PC1 and PC2, that are extracted from signals stored
+    in a SpikeEventSeries or other source.
+sha256: 6c0ab8b844c5bf3993564358eee53aedb83490d250e9f6fca90f1b10699306d3

@@ -1,0 +1,22 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: ScreenResolution
+  description: 'Screen resolution in pixel
+
+    (for example `[1920, 1200]` for a screen of 1920-width by 1080-height pixels),
+
+    if no screen use `n/a`.
+
+    `ScreenResolution` is REQUIRED when the experiment included simultaneous eye-tracking
+
+    recordings with `SampleCoordinateSystem` matching `"gaze-on-screen"`.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dccfa6a32169b1a3f524caa2637a2c0892d5d9bf38619dfd6558c29f94a0731f

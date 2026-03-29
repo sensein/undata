@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  unit: hexadecimal
+  value_domain: text
+provenance:
+- source: bids
+  class: columns
+  name: color
+  description: 'Hexadecimal. Label color for visualization.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 73b1fcd02d01337399632cdc4c2eed4b34ba477b4ce12695ac9ac6c5ad46cdb4

@@ -1,0 +1,21 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: LabelingOrientation
+  description: 'Orientation of the labeling plane (`(P)CASL`) or slab (`PASL`).
+
+    The direction cosines of a normal vector perpendicular to the ASL labeling
+
+    slab or plane with respect to the patient.
+
+    Corresponds to [DICOM Tag 0018, 9255](http://www.dicomlookup.com/dicomtags/(0018,9255))
+
+    `ASL Slab Orientation`.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b400417829b98741bbddf261c3bc1f6c540ed8f4c34f3ae0032ab082b11469a5

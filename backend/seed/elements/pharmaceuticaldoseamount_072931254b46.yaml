@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  value_domain: text
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C42636
+    term_label: Pharmaceutical Dosage Form
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7225
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: metadata
+  name: PharmaceuticalDoseAmount
+  description: 'Dose amount of administered pharmaceutical.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 072931254b463252cddf8410f22fc320aa922eb9f227852dfef81d93bd0a9988

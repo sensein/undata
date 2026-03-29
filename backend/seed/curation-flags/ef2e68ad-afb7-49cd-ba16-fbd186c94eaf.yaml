@@ -1,0 +1,15 @@
+id: ef2e68ad-afb7-49cd-ba16-fbd186c94eaf
+entity_type: schema
+entity_ref: genotypeinfo_4321b3b5b35f.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.041)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C16631
+    score: 0.7709
+  - uri: http://purl.obolibrary.org/obo/EDAM_topic_0625
+    score: 0.73
+  - uri: http://purl.obolibrary.org/obo/OBI_0001305
+    score: 0.7097
+status: pending
+created_at: '2026-03-29T05:40:56.769281+00:00'

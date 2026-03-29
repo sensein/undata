@@ -1,0 +1,9 @@
+id: 1308488f-e551-49ce-81d5-a748db3b7370
+entity_type: schema
+entity_ref: entitiescemetadata_3c321620ca38.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EntitiesCeMetadata
+status: pending
+created_at: '2026-03-29T05:37:09.917670+00:00'

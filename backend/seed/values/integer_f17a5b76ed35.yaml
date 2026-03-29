@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: integer
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C45255
+    term_label: Integer
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: integer
+sha256: f17a5b76ed353202ec8344d02efc2465b2976fc602487eda3137862a06ca7768

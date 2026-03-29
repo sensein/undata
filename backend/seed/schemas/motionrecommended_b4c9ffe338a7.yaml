@@ -1,0 +1,25 @@
+semantic:
+  properties:
+  - ACCELChannelCount
+  - ANGACCELChannelCount
+  - GYROChannelCount
+  - JNTANGChannelCount
+  - LATENCYChannelCount
+  - MAGNChannelCount
+  - MISCChannelCount
+  - MissingValues
+  - MotionChannelCount
+  - ORNTChannelCount
+  - POSChannelCount
+  - SamplingFrequencyEffective
+  - SubjectArtefactDescription
+  - TrackedPointsCount
+  - TrackingSystemName
+  - VELChannelCount
+  is_mixin: true
+provenance:
+- source: bids
+  class: motionRecommended
+  name: motionRecommended
+  description: Sidecar field group for motion
+sha256: b4c9ffe338a7e763a13437db4b65a01ed08463d55a3f3a2080a10798567873e5

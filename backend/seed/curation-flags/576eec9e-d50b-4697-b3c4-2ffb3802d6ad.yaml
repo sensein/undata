@@ -1,0 +1,9 @@
+id: 576eec9e-d50b-4697-b3c4-2ffb3802d6ad
+entity_type: value
+entity_ref: dcite_journal_1ef7aa8a3e32.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:Journal
+status: pending
+created_at: '2026-03-29T05:40:56.246128+00:00'

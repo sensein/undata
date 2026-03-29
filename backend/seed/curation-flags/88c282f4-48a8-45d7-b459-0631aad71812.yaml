@@ -1,0 +1,11 @@
+id: 88c282f4-48a8-45d7-b459-0631aad71812
+entity_type: value
+entity_ref: vel_fdac3773aa0b.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.778), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C71937
+  top_label: Veal
+  top_score: 0.7783
+status: pending
+created_at: '2026-03-29T05:40:56.680358+00:00'

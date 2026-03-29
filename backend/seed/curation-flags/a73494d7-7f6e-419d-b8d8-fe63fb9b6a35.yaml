@@ -1,0 +1,9 @@
+id: a73494d7-7f6e-419d-b8d8-fe63fb9b6a35
+entity_type: element
+entity_ref: session_id_02b6b546a87a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: session_id
+status: pending
+created_at: '2026-03-29T05:37:09.163323+00:00'

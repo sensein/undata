@@ -1,0 +1,37 @@
+semantic:
+  properties: []
+  mixins:
+  - MRIHardware
+  - MRIChunkPosition
+  - MRISample
+  - MRIScannerHardwareASL
+  - MRISequenceSpecifics
+  - PETMRISequenceSpecifics
+  - ASLMRISequenceSpecifics
+  - MTParameters
+  - SpoilingType
+  - SpoilingRF
+  - SpoilingGradient
+  - MRISpatialEncoding
+  - MRIPartialFourier
+  - MRIParallelReductionFactorInPlane
+  - MRIParallelReductionFactorOutOfPlane
+  - PhaseEncodingDirectionRec
+  - MRITimingParameters
+  - EchoTimeRequiredASL
+  - SliceTimingMRI
+  - SliceTimingASL
+  - MRIRFandContrast
+  - MRIFlipAngleLookLockerFalse
+  - MRIFlipAngleLookLockerTrue
+  - MRISliceAcceleration
+  - MRIAnatomicalLandmarks
+  - MRIEchoPlanarImagingAndB0FieldSource
+  - MRIInstitutionInformation
+  - DeidentificationMethod
+provenance:
+- source: bids
+  class: mri_sidecar
+  name: mri_sidecar
+  description: BIDS sidecar for mri
+sha256: 3d6438b0d461fec2fb6dd27c2399727a1cca96afade57df43f792a608228e5ab

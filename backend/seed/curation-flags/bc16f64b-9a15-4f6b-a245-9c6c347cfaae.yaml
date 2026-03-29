@@ -1,0 +1,9 @@
+id: bc16f64b-9a15-4f6b-a245-9c6c347cfaae
+entity_type: element
+entity_ref: propertyid_82d6d782b677.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: propertyID
+status: pending
+created_at: '2026-03-29T05:40:55.817560+00:00'

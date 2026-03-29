@@ -1,0 +1,21 @@
+semantic:
+  label: .tif
+  value_type: categorical
+  display_name: Tag Image File Format
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C70631
+    term_label: TIFF
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7641
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: extensions
+  name: tif
+  description: 'A [Tag Image File Format](https://en.wikipedia.org/wiki/TIFF) file.
+
+    '
+sha256: 7ce302fae98e6b8cd9bad9b20d16d286ef3d07a87d68a4ff5f2db809e2a3c694

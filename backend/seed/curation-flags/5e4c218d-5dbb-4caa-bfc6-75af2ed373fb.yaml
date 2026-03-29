@@ -1,0 +1,9 @@
+id: 5e4c218d-5dbb-4caa-bfc6-75af2ed373fb
+entity_type: schema
+entity_ref: repetitionstable_218a7e5ac581.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: RepetitionsTable
+status: pending
+created_at: '2026-03-29T05:40:56.875104+00:00'

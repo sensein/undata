@@ -1,0 +1,11 @@
+id: de913e05-b4c0-4f47-9596-b77a4d9d05b2
+entity_type: schema
+entity_ref: affiliation_705a98a97a9a.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.950), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C25412
+  top_label: Affiliation
+  top_score: 0.9499
+status: pending
+created_at: '2026-03-29T05:40:56.703252+00:00'

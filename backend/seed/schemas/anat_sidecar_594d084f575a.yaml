@@ -1,0 +1,11 @@
+semantic:
+  properties: []
+  mixins:
+  - MRIAnatomyCommonMetadataFields
+  - TaskMetadata
+provenance:
+- source: bids
+  class: anat_sidecar
+  name: anat_sidecar
+  description: BIDS sidecar for anat
+sha256: 594d084f575af1b2c373243ab27c4df98dd85cd61eccebceae9be54fabd688eb

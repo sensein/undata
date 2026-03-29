@@ -1,0 +1,8 @@
+semantic:
+  label: dcite:Dataset
+  value_type: categorical
+provenance:
+- source: dandi
+  class: ResourceType
+  name: dcite:Dataset
+sha256: c8507a1149c3c3116d94eb9fec27782c6322e8fe68fddc3f089fd88041a85110

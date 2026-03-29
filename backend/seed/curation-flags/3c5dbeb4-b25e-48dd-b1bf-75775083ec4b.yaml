@@ -1,0 +1,15 @@
+id: 3c5dbeb4-b25e-48dd-b1bf-75775083ec4b
+entity_type: value
+entity_ref: transcriptomic_05437d8e63b0.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C153189
+    score: 0.9585
+  - uri: http://purl.obolibrary.org/obo/EDAM_topic_0203
+    score: 0.9585
+  - uri: http://purl.obolibrary.org/obo/NCIT_C153194
+    score: 0.9154
+status: pending
+created_at: '2026-03-29T05:37:09.842349+00:00'

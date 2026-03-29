@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - ParallelReductionFactorInPlane
+  - ParallelReductionFactorOutOfPlane
+  - ParallelAcquisitionTechnique
+  - PartialFourier
+  - PartialFourierDirection
+  - EffectiveEchoSpacing
+  - MixingTime
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRISpatialEncoding
+  name: MRISpatialEncoding
+  description: Sidecar field group for mri
+sha256: 224a1d1a4c364c77954dab18add159223f6065827a4ff11403b95204ad741186

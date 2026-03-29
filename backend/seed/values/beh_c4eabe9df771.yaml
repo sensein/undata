@@ -1,0 +1,12 @@
+semantic:
+  label: beh
+  value_type: categorical
+  display_name: Behavioral experiments
+provenance:
+- source: bids
+  class: modalities
+  name: beh
+  description: 'Behavioral data acquired without accompanying neuroimaging data.
+
+    '
+sha256: c4eabe9df771fcb26573c39a21fff271400bfa5b302991386d9aaff44d7be33e

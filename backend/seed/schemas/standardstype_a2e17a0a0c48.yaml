@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  subclass_of: BaseType
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C103180
+    term_label: Data Standard
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.746
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: StandardsType
+  name: StandardsType
+  description: Identifier for data standard used
+sha256: a2e17a0a0c4817c1d800a7bdb1acf489b384504170cb95f81c39e73535f7fadb

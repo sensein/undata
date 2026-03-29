@@ -1,0 +1,37 @@
+semantic:
+  data_type: string
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C42778
+    term_label: Uniform Resource Identifier
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8023
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.org/dc/elements/1.1/identifier
+    term_label: Resource Identifier
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7362
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165071
+    term_label: Resource Identifier
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7362
+    model: all-MiniLM-L6-v2
+    primary: false
+  value_domain: text
+provenance:
+- source: dandi
+  class: Person
+  name: id
+  description: Uniform resource identifier
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ed6aea193e1aa40e4c16b02e8d63836635787a160668e074f406ea7d9a280c60

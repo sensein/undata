@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: accel
+provenance:
+- source: bids
+  class_: ''
+  name: ACCEL
+sha256: bf25f56e29d968a26bdb5e598751f0efabb37713df26e03c1947579d0346e24f

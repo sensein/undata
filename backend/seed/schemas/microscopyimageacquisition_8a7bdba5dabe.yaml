@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - PixelSize
+  - PixelSizeUnits
+  - Immersion
+  - NumericalAperture
+  - Magnification
+  - ImageAcquisitionProtocol
+  - OtherAcquisitionParameters
+  is_mixin: true
+provenance:
+- source: bids
+  class: MicroscopyImageAcquisition
+  name: MicroscopyImageAcquisition
+  description: Sidecar field group for micr
+sha256: 8a7bdba5dabecf508b0c39f61b5deba3219022603be6cc4254fa0f060c092065

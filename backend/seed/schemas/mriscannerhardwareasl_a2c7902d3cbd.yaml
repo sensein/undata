@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - MagneticFieldStrength
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIScannerHardwareASL
+  name: MRIScannerHardwareASL
+  description: Sidecar field group for mri
+sha256: a2c7902d3cbda928e0109c68dd7f175c6cda78e37387691c33bd7468ccdaf88c

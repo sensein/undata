@@ -1,0 +1,13 @@
+id: 9f93da68-fcaf-4100-94fd-49c4b79d559b
+entity_type: value
+entity_ref: absent_239e99d1912a.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/PATO_0000462
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C48190
+    score: 1.0
+status: pending
+created_at: '2026-03-29T05:37:09.311292+00:00'

@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - Manufacturer
+  - ManufacturersModelName
+  - SoftwareVersions
+  - DeviceSerialNumber
+  is_mixin: true
+provenance:
+- source: bids
+  class: NirsHardware
+  name: NirsHardware
+  description: Sidecar field group for nirs
+sha256: ea19a5b1c724206e51b88969c80997c8bb004a4926ed9afd877588ff2937b273

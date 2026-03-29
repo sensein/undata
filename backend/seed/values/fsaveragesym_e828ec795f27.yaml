@@ -1,0 +1,8 @@
+semantic:
+  label: fsaverageSym
+  value_type: categorical
+provenance:
+- source: bids
+  class: enums
+  name: fsaverageSym
+sha256: e828ec795f2759d071516dab79350f6c56bdf498b593c5aea5b8b38bedc06104

@@ -1,0 +1,8 @@
+semantic:
+  label: dandi:isSiblingOf
+  value_type: categorical
+provenance:
+- source: dandi
+  class: ParticipantRelationType
+  name: dandi:isSiblingOf
+sha256: 6226936338b024a1ac5e6e6529caef14666eef53c04fb875ff29d4752358cd55

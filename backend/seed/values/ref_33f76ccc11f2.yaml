@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: ref
+provenance:
+- source: bids
+  class_: ''
+  name: REF
+sha256: 33f76ccc11f25ca0fce4e658c865b48daba3c22e900c2abc65b27b2d3622d092

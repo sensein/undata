@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - email
+  - url
+  subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165046
+    term_label: Point Of Contact Telecom Address
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7243
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: ContactPoint
+  name: ContactPoint
+  description: null
+sha256: ef739f55d3cdd9b05640019db3ee0d92706bf74963086d0ab24e89ffea5f0676

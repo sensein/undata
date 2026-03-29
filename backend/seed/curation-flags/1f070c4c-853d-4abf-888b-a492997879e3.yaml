@@ -1,0 +1,11 @@
+id: 1f070c4c-853d-4abf-888b-a492997879e3
+entity_type: value
+entity_ref: carbon_dioxide_08d47e1c85fe.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.862), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C65288
+  top_label: Carbon Dioxide
+  top_score: 0.8623
+status: pending
+created_at: '2026-03-29T05:37:09.367050+00:00'

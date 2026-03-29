@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - data
+  - reference_frame
+  subclass_of: TimeSeries
+provenance:
+- source: nwb
+  class: SpatialSeries
+  name: SpatialSeries
+  description: 'Direction, e.g., of gaze or travel, or position. The TimeSeries::data
+    field is a 2D array storing position or direction relative to some reference frame.
+    Array structure: [num measurements] [num dimensions]. Each SpatialSeries has a
+    text dataset reference_frame that indicates the zero-position, or the zero-axes
+    for direction. For example, if representing gaze direction, ''straight-ahead''
+    might be a specific pixel on the monitor, or some other point in space. For position
+    data, the 0,0 point might'
+sha256: c30da77cf02d849749b7be7405e93edb930121259c1ff5c3e57df87478bb632b

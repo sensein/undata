@@ -1,0 +1,9 @@
+id: f126cf0f-6a07-4886-b0fb-ca5067c6c6bb
+entity_type: element
+entity_ref: timestamps_23441b9249db.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: timestamps
+status: pending
+created_at: '2026-03-29T05:40:55.993701+00:00'

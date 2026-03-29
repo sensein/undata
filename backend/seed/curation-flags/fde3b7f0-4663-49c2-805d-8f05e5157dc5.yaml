@@ -1,0 +1,9 @@
+id: fde3b7f0-4663-49c2-805d-8f05e5157dc5
+entity_type: value
+entity_ref: seeg_46949e009ae8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SEEG
+status: pending
+created_at: '2026-03-29T05:33:43.889849+00:00'

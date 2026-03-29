@@ -1,0 +1,18 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+provenance:
+- source: bids
+  class: metadata
+  name: AtlasSampleSize
+  description: 'Number of items (typically, independent participants;
+
+    although it could also refer to, for example, sessions)
+
+    that were employed to create the corresponding atlas.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a269a403581c7e10311e3327868a728af9bb316bf5b48e8c02979fd8a38b081e

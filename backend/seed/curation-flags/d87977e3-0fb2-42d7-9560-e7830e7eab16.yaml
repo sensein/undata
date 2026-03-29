@@ -1,0 +1,11 @@
+id: d87977e3-0fb2-42d7-9560-e7830e7eab16
+entity_type: value
+entity_ref: gsr_47ef1de84647.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.788), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C157040
+  top_label: GSR Gene
+  top_score: 0.7883
+status: pending
+created_at: '2026-03-29T05:37:09.519823+00:00'

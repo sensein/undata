@@ -1,0 +1,13 @@
+semantic:
+  label: ieeg
+  value_type: categorical
+  display_name: Intracranial electroencephalography
+provenance:
+- source: bids
+  class: datatypes
+  name: ieeg
+  description: 'Intracranial electroencephalography (iEEG) or electrocorticography
+    (ECoG) data
+
+    '
+sha256: 314c805d3a16dcb4162bcf9a6db55984ae9eff99c31cbd66fb1095f48feab76d

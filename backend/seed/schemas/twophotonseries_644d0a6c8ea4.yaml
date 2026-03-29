@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - pmt_gain
+  - scan_line_rate
+  - field_of_view
+  - imaging_plane
+  subclass_of: ImageSeries
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C116504
+    term_label: Multiphoton Microscopy
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7827
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: nwb
+  class: TwoPhotonSeries
+  name: TwoPhotonSeries
+  description: Image stack recorded over time from 2-photon microscope.
+sha256: 644d0a6c8ea4c058aeef58f3b5866f34b2fbd3681a8cae829fe3ea34dcb97b85

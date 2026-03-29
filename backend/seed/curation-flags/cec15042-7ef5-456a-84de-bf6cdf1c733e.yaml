@@ -1,0 +1,9 @@
+id: cec15042-7ef5-456a-84de-bf6cdf1c733e
+entity_type: value
+entity_ref: .ome.tif_9b319068b985.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: OMETiff
+status: pending
+created_at: '2026-03-29T05:40:56.089086+00:00'

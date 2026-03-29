@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: format
+  description: Format of image. If this is 'external', then the attribute 'external_file'
+    contains the path information to the image files. If this is 'raw', then the raw
+    (single-channel) binary data is stored in the 'data' dataset. If this attribute
+    is not present, then the default format='raw' case is assumed.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: df4df811659c3a94f85eb353ac6c3ddac21015d7e1227517c8dd4d0f3c1627f9

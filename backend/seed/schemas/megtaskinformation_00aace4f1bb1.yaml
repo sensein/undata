@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - TaskName
+  - TaskDescription
+  - Instructions
+  - CogAtlasID
+  - CogPOID
+  is_mixin: true
+provenance:
+- source: bids
+  class: MEGTaskInformation
+  name: MEGTaskInformation
+  description: Sidecar field group for meg
+sha256: 00aace4f1bb11c9ff13cb85d5cde2f8d56544375694454fbdf9671f3b41ece33

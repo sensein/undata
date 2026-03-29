@@ -1,0 +1,11 @@
+id: 931a6558-5207-4768-ade0-70fda410c76d
+entity_type: element
+entity_ref: general_6b9ffdc946fc.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.706), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C165216
+  top_label: Experiment Metadata
+  top_score: 0.7064
+status: pending
+created_at: '2026-03-29T05:37:08.924302+00:00'

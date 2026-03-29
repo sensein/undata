@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - data
+  - bias_current
+  - bridge_balance
+  - capacitance_compensation
+  subclass_of: PatchClampSeries
+provenance:
+- source: nwb
+  class: CurrentClampSeries
+  name: CurrentClampSeries
+  description: Voltage data from an intracellular current-clamp recording. A corresponding
+    CurrentClampStimulusSeries (stored separately as a stimulus) is used to store
+    the current injected.
+sha256: 23a8e20e5430bf3aedc380f0efdfeeb865f46d1361ecd7e6dd8ddb4f13813f7f

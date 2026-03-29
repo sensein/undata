@@ -1,0 +1,9 @@
+id: ef08f74c-5102-4e62-866a-31dd9a1d6b21
+entity_type: schema
+entity_ref: activity_48bdc8fb693d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Activity
+status: pending
+created_at: '2026-03-29T05:40:56.702670+00:00'

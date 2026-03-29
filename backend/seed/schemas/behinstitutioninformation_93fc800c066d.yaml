@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - InstitutionName
+  - InstitutionAddress
+  - InstitutionalDepartmentName
+  is_mixin: true
+provenance:
+- source: bids
+  class: BEHInstitutionInformation
+  name: BEHInstitutionInformation
+  description: Sidecar field group for beh
+sha256: 93fc800c066d568e74b74b277c5ddc2fc5b014b69fceafc5537392b1f1981209

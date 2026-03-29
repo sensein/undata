@@ -1,0 +1,8 @@
+semantic:
+  label: dcite:Other
+  value_type: categorical
+provenance:
+- source: dandi
+  class: ResourceType
+  name: dcite:Other
+sha256: 74b585cf961c11f18932f8a64e4f392a60359af9e46967a8abacbb34aeeae8d2

@@ -1,0 +1,32 @@
+semantic:
+  label: dseg
+  value_type: categorical
+  display_name: Discrete Segmentation
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_format_1454
+    term_label: dssp
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7597
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://identifiers.org/ensembl/ENSG00000171587
+    term_label: DSCAM
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7047
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: suffixes
+  name: dseg
+  description: 'A discrete segmentation.
+
+
+    This suffix may only be used in derivative datasets.
+
+    '
+sha256: 0b98ace3fd9f10d274c62ad339cb1208b0535332c4f54a8174a71890ce39ad34

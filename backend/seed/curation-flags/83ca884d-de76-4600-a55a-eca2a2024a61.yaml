@@ -1,0 +1,11 @@
+id: 83ca884d-de76-4600-a55a-eca2a2024a61
+entity_type: element
+entity_ref: alleletype_9edbea247052.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.913), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C209560
+  top_label: Allele Type
+  top_score: 0.9126
+status: pending
+created_at: '2026-03-29T05:40:55.335193+00:00'

@@ -1,0 +1,36 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - schemaVersion
+  - name
+  - description
+  - contributor
+  - about
+  - studyTarget
+  - license
+  - protocol
+  - ethicsApproval
+  - keywords
+  - acknowledgement
+  - access
+  - url
+  - repository
+  - relatedResource
+  - wasGeneratedBy
+  subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C142487
+    term_label: Common Data Model
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7358
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: CommonModel
+  name: CommonModel
+  description: null
+sha256: 9efd8a7c1b121a9a81953955544e57894e10ab5e8524fc17c1bf893dfbd8f09a

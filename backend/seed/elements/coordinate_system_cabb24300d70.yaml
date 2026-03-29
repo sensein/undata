@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: columns
+  name: coordinate_system
+  description: 'Name of the coordinate system defined in `coordsystem.json` in which
+    the electrode''s
+
+    `x`, `y`, and (optionally) `z` coordinates are given.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cabb24300d709b64af283586f11e5bb7b6a682314f9d4bd28d125773a4f1215f

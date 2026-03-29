@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: nirscwamplitude
+provenance:
+- source: bids
+  class_: ''
+  name: NIRSCWAMPLITUDE
+sha256: 576a300f277f089092f14318234c72d2c4a62878c38b026aa38bb5c8d2d0fc9a

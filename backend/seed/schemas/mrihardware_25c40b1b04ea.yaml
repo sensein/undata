@@ -1,0 +1,25 @@
+semantic:
+  properties:
+  - Manufacturer
+  - ManufacturersModelName
+  - DeviceSerialNumber
+  - StationName
+  - SoftwareVersions
+  - HardcopyDeviceSoftwareVersion
+  - MagneticFieldStrength
+  - ReceiveCoilName
+  - ReceiveCoilActiveElements
+  - NumberReceiveCoilActiveElements
+  - GradientSetType
+  - MRTransmitCoilSequence
+  - MatrixCoilMode
+  - CoilCombinationMethod
+  - NumberTransmitCoilActiveElements
+  - TablePosition
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIHardware
+  name: MRIHardware
+  description: Sidecar field group for mri
+sha256: 25c40b1b04ea9851cd7dd9bb63915e5b516630d33c7d7d110e8cc4dd20b1c4be

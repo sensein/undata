@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - timestamp__eyetrack
+  - x_coordinate
+  - y_coordinate
+  - pupil_size
+  is_mixin: true
+provenance:
+- source: bids
+  class: physio_PhysioEyeTracking
+  name: physio_PhysioEyeTracking
+  description: Tabular columns for physio
+sha256: 0aa10d29526c51844c614e7a60be613bdab60af8af258f6a3a5c5325b15c597b

@@ -1,0 +1,16 @@
+semantic:
+  label: R2starmap
+  value_type: categorical
+  display_name: Observed transverse relaxation rate image
+provenance:
+- source: bids
+  class: suffixes
+  name: R2starmap
+  description: 'In seconds<sup>-1</sup> (1/s).
+
+    R2-star maps (R2star = 1/T2star) are REQUIRED to use this suffix regardless
+
+    of the method used to generate them.
+
+    '
+sha256: 8b2ae543923100f4c67f4e1d006b123e6c785b78f65d49aa37c8dd9ff8615172

@@ -1,0 +1,10 @@
+semantic:
+  properties: []
+  mixins:
+  - StimulusPresentation
+provenance:
+- source: bids
+  class: events_sidecar
+  name: events_sidecar
+  description: BIDS sidecar for events
+sha256: 668f222f9d8744748c3f0a6b9d7ac1622acaf64f970c5550b813c7bab3c26057

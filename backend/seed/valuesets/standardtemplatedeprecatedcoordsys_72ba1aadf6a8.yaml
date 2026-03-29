@@ -1,0 +1,22 @@
+semantic:
+  name: StandardTemplateDeprecatedCoordSys
+  members:
+  - UNCInfant0V21
+  - UNCInfant0V22
+  - UNCInfant0V23
+  - UNCInfant1V21
+  - UNCInfant1V22
+  - UNCInfant1V23
+  - UNCInfant2V21
+  - UNCInfant2V22
+  - UNCInfant2V23
+  - fsaverage3
+  - fsaverage4
+  - fsaverage5
+  - fsaverage6
+  - fsaveragesym
+provenance:
+- source: bids
+  class: enums
+  name: _StandardTemplateDeprecatedCoordSys
+sha256: 72ba1aadf6a8d842f6d86d13ddb039b405a610467ab8d6148447840d1016aefe

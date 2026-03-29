@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - DeviceSerialNumber
+  - Manufacturer
+  - ManufacturersModelName
+  - SoftwareVersions
+  is_mixin: true
+provenance:
+- source: bids
+  class: PhysioHardware
+  name: PhysioHardware
+  description: Sidecar field group for continuous
+sha256: 5ff709b0a062f7c662d6ff55b4d55ee9e4cfe457477a0228e7e499a2e369466b

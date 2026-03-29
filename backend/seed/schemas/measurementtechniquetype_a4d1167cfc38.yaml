@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  subclass_of: BaseType
+provenance:
+- source: dandi
+  class: MeasurementTechniqueType
+  name: MeasurementTechniqueType
+  description: Identifier for measurement technique used
+sha256: a4d1167cfc38b3182fb8b05e2a3d14452ba34e1f4a3d3fe22cee1e6b9fc6b041

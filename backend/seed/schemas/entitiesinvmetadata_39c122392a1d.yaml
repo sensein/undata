@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - InversionTime
+  is_mixin: true
+provenance:
+- source: bids
+  class: EntitiesInvMetadata
+  name: EntitiesInvMetadata
+  description: Sidecar field group for entity_rules
+sha256: 39c122392a1d80d2da7b350b119679ad4c555283d573f7e2b6a94743e3cd2b15

@@ -1,0 +1,9 @@
+id: 06338f19-8887-484b-8fd2-c9bb8560e721
+entity_type: element
+entity_ref: injectionend_725a2ed5f5b4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: InjectionEnd
+status: pending
+created_at: '2026-03-29T05:33:43.277441+00:00'

@@ -1,0 +1,9 @@
+id: 6efe536b-988d-4b9f-b9e3-01a0f30506d2
+entity_type: element
+entity_ref: y_coordinate_4714853ea691.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: y_coordinate
+status: pending
+created_at: '2026-03-29T05:37:09.267534+00:00'

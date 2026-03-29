@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - SpoilingRFPhaseIncrement
+  is_mixin: true
+provenance:
+- source: bids
+  class: SpoilingRF
+  name: SpoilingRF
+  description: Sidecar field group for mri
+sha256: a1a24bb5e44cbc75f7b4569df4a05ead40a6276ba32e01b690567644de1fe7c7

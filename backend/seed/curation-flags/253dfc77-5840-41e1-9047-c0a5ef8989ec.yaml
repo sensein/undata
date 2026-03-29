@@ -1,9 +1,0 @@
-id: 253dfc77-5840-41e1-9047-c0a5ef8989ec
-entity_type: element
-entity_ref: temperature
-flag_type: needs_review
-context:
-  reason: Unit celsius needs QUDT resolution to canonical URI
-  score: 0.65
-status: pending
-created_at: '2026-03-28T19:26:17.442962+00:00'

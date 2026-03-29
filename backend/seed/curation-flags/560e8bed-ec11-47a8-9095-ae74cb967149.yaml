@@ -1,0 +1,15 @@
+id: 560e8bed-ec11-47a8-9095-ae74cb967149
+entity_type: value
+entity_ref: gray_matter_4587e5531d86.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C32695
+    score: 1.0
+  - uri: https://purl.brain-bican.org/ontology/hbao/HBA_4006
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/UBERON_0002020
+    score: 1.0
+status: pending
+created_at: '2026-03-29T05:40:56.352708+00:00'

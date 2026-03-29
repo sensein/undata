@@ -1,0 +1,78 @@
+semantic:
+  label: datetime
+  value_type: categorical
+  display_name: Datetime
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C37939
+    term_label: Date and Time
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8141
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C82518
+    term_label: Reference Date Time
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.739
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/dc/terms/date
+    term_label: date
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7091
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_2156
+    term_label: Date
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7091
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/dc/elements/1.1/date
+    term_label: Date
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7091
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25164
+    term_label: Date
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7091
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: formats
+  name: datetime
+  description: 'An [RFC 3339](https://doi.org/10.17487/RFC3339) timestamp, with OPTIONAL
+    time offset.
+
+    Datetimes take the form `"YYYY-MM-DDThh:mm:ss[.000000][Z|+hh:mm|-hh:mm]"`,
+
+    where `[.000000]` is an OPTIONAL subsecond resolution between 1 and 6 decimal
+    points,
+
+    and `[Z|+hh:mm|-hh:mm]` is a time offset.
+
+    The character `Z` indicates Coordinated Universal Time (UTC),
+
+    or else an integral number of minutes may be specified.
+
+
+    For simplicity, this format validates RFC3339-invalid dates such as 2024-02-31,
+
+    but implementations SHOULD error on non-existent dates and times.
+
+    '
+sha256: 79ee08390911df773a0afbef609f455efa8bcdaa5d905489ff538f9e22838c5b

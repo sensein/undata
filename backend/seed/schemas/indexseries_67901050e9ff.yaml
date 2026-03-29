@@ -1,0 +1,18 @@
+semantic:
+  properties:
+  - data
+  - indexed_timeseries
+  - indexed_images
+  subclass_of: TimeSeries
+provenance:
+- source: nwb
+  class: IndexSeries
+  name: IndexSeries
+  description: Stores indices that reference images defined in other containers. The
+    primary purpose of the IndexSeries is to allow images stored in an Images container
+    to be referenced in a specific sequence through the 'indexed_images' link. This
+    approach avoids duplicating image data when the same image needs to be presented
+    multiple times or when images need to be shown in a different order than they
+    are stored. Since images in an Images container do not have an inherent order,
+    the Images container needs t
+sha256: 67901050e9ffb0b9ed73f215165086b02b1377900453b29e8b9385f5a4a07d44

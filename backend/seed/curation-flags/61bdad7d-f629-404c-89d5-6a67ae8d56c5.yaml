@@ -1,0 +1,9 @@
+id: 61bdad7d-f629-404c-89d5-6a67ae8d56c5
+entity_type: schema
+entity_ref: voltageclampstimulusseries_54d48d365554.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: VoltageClampStimulusSeries
+status: pending
+created_at: '2026-03-29T05:40:56.899082+00:00'

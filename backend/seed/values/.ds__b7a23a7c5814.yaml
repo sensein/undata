@@ -1,0 +1,13 @@
+semantic:
+  label: .ds/
+  value_type: categorical
+  display_name: CTF MEG Dataset Directory
+provenance:
+- source: bids
+  class: extensions
+  name: CTF
+  description: 'A directory for MEG data, typically containing a `.meg4` file for
+    the data and a `.res4` file for the resources.
+
+    '
+sha256: b7a23a7c58149211b9306729f7e147d6049477ed09c233951677e389c6827752

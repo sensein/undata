@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+provenance:
+- source: bids
+  class: columns
+  name: y
+  description: 'Recorded position along the y-axis.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1bcc02f70dab234c066e5e81be07e9a2526d1105adaa1477fa9ed7446babfe7e

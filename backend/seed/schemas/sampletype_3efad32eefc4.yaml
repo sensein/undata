@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  subclass_of: BaseType
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C210102
+    term_label: Sample Type
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7294
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: SampleType
+  name: SampleType
+  description: OBI based identifier for the sample type used
+sha256: 3efad32eefc43a086d1b5bd170ec402113b3729b4e8510bf866dab270205b770

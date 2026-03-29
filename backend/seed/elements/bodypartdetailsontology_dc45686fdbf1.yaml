@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: BodyPartDetailsOntology
+  description: '[URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator) of
+    ontology used for
+
+    BodyPartDetails (for example: `"https://www.ebi.ac.uk/ols/ontologies/uberon"`).
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dc45686fdbf1cc5c3e62e7e1754d61f2862bc8b0a16384b16dfd4a72dc834191

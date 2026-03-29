@@ -1,0 +1,9 @@
+id: 3c7ef789-b395-4514-b6d5-11aa3ec46a97
+entity_type: schema
+entity_ref: entitiesdenmetadata_6ed170ddd241.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EntitiesDenMetadata
+status: pending
+created_at: '2026-03-29T05:37:09.918075+00:00'

@@ -1,0 +1,9 @@
+semantic:
+  properties: []
+  subclass_of: Data
+provenance:
+- source: nwb
+  class: NWBData
+  name: NWBData
+  description: An abstract data type for a dataset.
+sha256: b9296dc72965c33d5bed1faa8499cd053fcc1a82d3ba328f32a53e4160e5c881

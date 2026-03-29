@@ -1,0 +1,8 @@
+semantic:
+  label: CapTrak
+  value_type: categorical
+provenance:
+- source: bids
+  class: enums
+  name: CapTrak
+sha256: 4b7160d1710e5aa768b944b48572f21d79bf80734036f4166611dd5fcb8c20d1

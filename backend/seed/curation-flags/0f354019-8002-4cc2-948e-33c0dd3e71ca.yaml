@@ -1,0 +1,11 @@
+id: 0f354019-8002-4cc2-948e-33c0dd3e71ca
+entity_type: value
+entity_ref: pet_234e2b743967.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.801), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C14201
+  top_label: Dog
+  top_score: 0.8008
+status: pending
+created_at: '2026-03-29T05:40:56.533536+00:00'

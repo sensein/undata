@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - name__channels
+  - type__channels
+  - units
+  - description
+  - sampling_frequency
+  - low_cutoff
+  - high_cutoff
+  - notch
+  - software_filters
+  - status
+  - status_description
+  is_mixin: true
+provenance:
+- source: bids
+  class: meg_MEGChannels
+  name: meg_MEGChannels
+  description: Tabular columns for meg
+sha256: 15e2574cd27e95f707f36b1a7f870f01351e6bb0ee32a81c094f6342625a8a49

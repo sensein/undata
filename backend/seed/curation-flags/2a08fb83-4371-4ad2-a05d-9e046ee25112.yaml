@@ -1,0 +1,9 @@
+id: 2a08fb83-4371-4ad2-a05d-9e046ee25112
+entity_type: schema
+entity_ref: currentclampseries_23a8e20e5430.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CurrentClampSeries
+status: pending
+created_at: '2026-03-29T05:37:09.900229+00:00'

@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: nirscwfluorescenseamplitude
+provenance:
+- source: bids
+  class_: ''
+  name: NIRSCWFLUORESCENSEAMPLITUDE
+sha256: f49d29629cdaa69d7dbecf2970feb73b1233eb7f8ba765a62a4731e0241bb6d5

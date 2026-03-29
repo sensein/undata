@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - RoiResponseSeries
+  subclass_of: NWBDataInterface
+provenance:
+- source: nwb
+  class: Fluorescence
+  name: Fluorescence
+  description: Fluorescence information about a region of interest (ROI). Storage
+    hierarchy of fluorescence should be the same as for segmentation (ie, same names
+    for ROIs and for image planes).
+sha256: 7fda946f5b1d3daab00e9ad15a3c8e158f495f9e320b3f98708b4f3fc2e20374

@@ -189,6 +189,10 @@ class LinkMLAdapter(BaseAdapter):
                 sem["pattern"] = slot_def["pattern"]
             if slot_def.get("multivalued"):
                 sem["multivalued"] = True
+            if slot_def.get("minimum_value") is not None:
+                sem["min_value"] = float(slot_def["minimum_value"])
+            if slot_def.get("maximum_value") is not None:
+                sem["max_value"] = float(slot_def["maximum_value"])
             # Annotations (e.g., unit, bids_category)
             for ann_key, ann_val in slot_def.get("annotations", {}).items():
                 if isinstance(ann_val, dict):

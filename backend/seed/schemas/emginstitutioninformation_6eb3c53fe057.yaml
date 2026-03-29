@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - InstitutionName
+  - InstitutionAddress
+  - InstitutionalDepartmentName
+  is_mixin: true
+provenance:
+- source: bids
+  class: EMGInstitutionInformation
+  name: EMGInstitutionInformation
+  description: Sidecar field group for emg
+sha256: 6eb3c53fe057222ce191caee129105574d1a323c9cf64c81ff4a17f8e4aef4df

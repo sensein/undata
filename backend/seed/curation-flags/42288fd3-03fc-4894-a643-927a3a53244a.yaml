@@ -1,0 +1,11 @@
+id: 42288fd3-03fc-4894-a643-927a3a53244a
+entity_type: value
+entity_ref: pd_cff2da01d021.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.814), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C159622
+  top_label: RECIL PD
+  top_score: 0.814
+status: pending
+created_at: '2026-03-29T05:40:56.525069+00:00'

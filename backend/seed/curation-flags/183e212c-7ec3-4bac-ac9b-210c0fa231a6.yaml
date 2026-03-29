@@ -1,0 +1,9 @@
+id: 183e212c-7ec3-4bac-ac9b-210c0fa231a6
+entity_type: schema
+entity_ref: baseimage_c8a13c6f9349.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: BaseImage
+status: pending
+created_at: '2026-03-29T05:40:56.716314+00:00'

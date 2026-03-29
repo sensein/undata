@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  - dxdate
+  subclass_of: BaseType
+provenance:
+- source: dandi
+  class: Disorder
+  name: Disorder
+  description: Biolink, SNOMED, or other identifier for disorder studied
+sha256: cc991bdd51dc4467f26fda77c0f6861c1a926e5d71c581bdd3e15ac8af96253d

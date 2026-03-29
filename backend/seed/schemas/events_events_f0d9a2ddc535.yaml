@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - onset
+  - duration
+  - trial_type
+  - response_time
+  - HED
+  - stim_file
+  - channel
+  is_mixin: true
+provenance:
+- source: bids
+  class: events_Events
+  name: events_Events
+  description: Tabular columns for events
+sha256: f0d9a2ddc53533da01c116ee26980e2602471446cece6fc7a1cc1da1f91c3bd1

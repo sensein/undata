@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - Manufacturer
+  - ManufacturersModelName
+  - SoftwareVersions
+  - DeviceSerialNumber
+  - ElectrodeManufacturer
+  - ElectrodeManufacturersModelName
+  is_mixin: true
+provenance:
+- source: bids
+  class: EMGHardware
+  name: EMGHardware
+  description: Sidecar field group for emg
+sha256: 413d1cf326ac06f36a21a4f8f45a704990d00fba68672e3965b0adbdec8828d5

@@ -1,0 +1,9 @@
+id: bf12ff74-2cf3-49b8-a36e-62dea41e3ea1
+entity_type: schema
+entity_ref: ieeg_sidecar_8ea10682ba42.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ieeg_sidecar
+status: pending
+created_at: '2026-03-29T05:37:09.932117+00:00'

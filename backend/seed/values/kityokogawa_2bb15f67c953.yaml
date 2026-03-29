@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: kityokogawa
+provenance:
+- source: bids
+  class_: ''
+  name: KitYokogawa
+sha256: 2bb15f67c95344be885545a5f731fb417ee4684b0cb7b88c2a9b1759c5307974

@@ -1,0 +1,9 @@
+id: 0c140fe7-42d7-410c-ab1c-b085cf2c16ed
+entity_type: value
+entity_ref: .vmrk_6717447c779c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: vmrk
+status: pending
+created_at: '2026-03-29T05:33:43.490857+00:00'

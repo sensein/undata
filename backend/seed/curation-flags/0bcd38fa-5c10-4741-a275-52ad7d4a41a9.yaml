@@ -1,9 +1,0 @@
-id: 0bcd38fa-5c10-4741-a275-52ad7d4a41a9
-entity_type: element
-entity_ref: cell_type
-flag_type: needs_review
-context:
-  reason: Extracted from openMINDS but no standardized cell type ontology loaded
-  score: 0.65
-status: pending
-created_at: '2026-03-28T19:26:17.441856+00:00'

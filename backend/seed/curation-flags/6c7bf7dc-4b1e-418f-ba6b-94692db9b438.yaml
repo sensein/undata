@@ -1,0 +1,9 @@
+id: 6c7bf7dc-4b1e-418f-ba6b-94692db9b438
+entity_type: element
+entity_ref: termurl_481946972281.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TermURL
+status: pending
+created_at: '2026-03-29T05:37:09.215127+00:00'

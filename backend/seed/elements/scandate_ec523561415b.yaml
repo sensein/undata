@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: ScanDate
+  description: 'Date of scan in the format `"YYYY-MM-DD[Z]"`.
+
+    This field is DEPRECATED, and this metadata SHOULD be recorded in the `acq_time`
+    column of the
+
+    corresponding [Scans file](SPEC_ROOT/modality-agnostic-files/data-summary-files.md#scans-file).
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ec523561415bf5eed630059c2a214ba68b024378ccee82c997c8e1c1363bf561

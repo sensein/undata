@@ -1,0 +1,8 @@
+semantic:
+  label: dandi:rrid
+  value_type: categorical
+provenance:
+- source: dandi
+  class: IdentifierType
+  name: dandi:rrid
+sha256: cdaf6634bfec9d43f951a96cdba69d83db80c2adf8dac4c8505d2ea7877066f1

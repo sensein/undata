@@ -1,0 +1,9 @@
+id: 53099324-900a-414c-a626-1e03140a7d4a
+entity_type: element
+entity_ref: corrected_a65a254d3aca.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: corrected
+status: pending
+created_at: '2026-03-29T05:40:55.420661+00:00'

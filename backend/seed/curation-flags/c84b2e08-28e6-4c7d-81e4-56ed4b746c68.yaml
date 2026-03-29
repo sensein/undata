@@ -1,0 +1,9 @@
+id: c84b2e08-28e6-4c7d-81e4-56ed4b746c68
+entity_type: element
+entity_ref: signal_electrode_102cd83ae43a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: signal_electrode
+status: pending
+created_at: '2026-03-29T05:37:09.167241+00:00'

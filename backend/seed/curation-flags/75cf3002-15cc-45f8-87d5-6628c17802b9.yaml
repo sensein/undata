@@ -1,0 +1,15 @@
+id: 75cf3002-15cc-45f8-87d5-6628c17802b9
+entity_type: value
+entity_ref: genomic_e64f7e89176d.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/EDAM_topic_0622
+    score: 0.9191
+  - uri: http://purl.obolibrary.org/obo/NCIT_C84343
+    score: 0.9191
+  - uri: http://purl.obolibrary.org/obo/NCIT_C95940
+    score: 0.8517
+status: pending
+created_at: '2026-03-29T05:37:09.509321+00:00'

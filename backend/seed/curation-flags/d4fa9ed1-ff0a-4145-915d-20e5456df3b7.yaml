@@ -1,0 +1,11 @@
+id: d4fa9ed1-ff0a-4145-915d-20e5456df3b7
+entity_type: value
+entity_ref: proteomic_1c37453d64e9.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.937), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C20085
+  top_label: Proteomics
+  top_score: 0.9371
+status: pending
+created_at: '2026-03-29T05:33:43.855736+00:00'

@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - ContrastBolusIngredient
+  is_mixin: true
+provenance:
+- source: bids
+  class: EntitiesCeMetadata
+  name: EntitiesCeMetadata
+  description: Sidecar field group for entity_rules
+sha256: 3c321620ca38456a1aeb58f25a3f4993e616f29fb8a06c895c6771c885a22706

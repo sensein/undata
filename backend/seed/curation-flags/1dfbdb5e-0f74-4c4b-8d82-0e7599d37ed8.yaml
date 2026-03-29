@@ -1,0 +1,9 @@
+id: 1dfbdb5e-0f74-4c4b-8d82-0e7599d37ed8
+entity_type: value
+entity_ref: acpc_854f6aa71faf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ACPC
+status: pending
+created_at: '2026-03-29T05:33:43.497244+00:00'

@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - PharmaceuticalName
+  - PharmaceuticalDoseAmount
+  - PharmaceuticalDoseUnits
+  - PharmaceuticalDoseRegimen
+  - PharmaceuticalDoseTime
+  - Anaesthesia
+  is_mixin: true
+provenance:
+- source: bids
+  class: PETPharmaceuticals
+  name: PETPharmaceuticals
+  description: Sidecar field group for pet
+sha256: c2c69a6a641a8a3d86536fd7b9dcb694dccda894c0f03873e5803e17f8ffdd5c

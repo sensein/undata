@@ -1,0 +1,33 @@
+semantic:
+  value_type: categorical
+  label: face
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0001456
+    term_label: face
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C13071
+    term_label: Face
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C126364
+    term_label: Face
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: Face
+sha256: d1afd57ec98d2de0e3ace8f4071beef3ac5b12caa20ea487ac8a2c5453be4b2a

@@ -1,0 +1,9 @@
+id: 635c44dc-9e06-494a-8205-3b63c7ea0d82
+entity_type: schema
+entity_ref: optogeneticseries_36d7c01007d6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: OptogeneticSeries
+status: pending
+created_at: '2026-03-29T05:40:56.848388+00:00'

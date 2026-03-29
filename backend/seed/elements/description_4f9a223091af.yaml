@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: dandi
+  class: PublishedDandiset
+  name: description
+  description: A description of the Dandiset
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4f9a223091afc55204703e965bbe20c4391723fc43d27ea1d9c4c281c4dfe83c

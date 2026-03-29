@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: hlu
+provenance:
+- source: bids
+  class_: ''
+  name: HLU
+sha256: 1a427f0e937441502322c1d6ce35b1e38a1d9b103f924a36980cdb25473ddbe7

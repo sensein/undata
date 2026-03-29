@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - InstitutionName
+  - InstitutionAddress
+  - InstitutionalDepartmentName
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRSInstitutionInformation
+  name: MRSInstitutionInformation
+  description: Sidecar field group for mrs
+sha256: b2748c53f6ea47c8b21afd332c8c4a067112f5a0a9e296dfe0e35c0a1216d61a

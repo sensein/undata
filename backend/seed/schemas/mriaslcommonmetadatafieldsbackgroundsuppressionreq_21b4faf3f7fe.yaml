@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - BackgroundSuppressionNumberPulses
+  - BackgroundSuppressionPulseTime
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIASLCommonMetadataFieldsBackgroundSuppressionReq
+  name: MRIASLCommonMetadataFieldsBackgroundSuppressionReq
+  description: Sidecar field group for asl
+sha256: 21b4faf3f7fee96eb7140430ae5a216874aecb6df0262c4217a247af58ecf4bc

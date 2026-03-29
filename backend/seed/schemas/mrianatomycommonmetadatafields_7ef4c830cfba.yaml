@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - ContrastBolusIngredient
+  - RepetitionTimeExcitation
+  - RepetitionTimePreparation
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIAnatomyCommonMetadataFields
+  name: MRIAnatomyCommonMetadataFields
+  description: Sidecar field group for anat
+sha256: 7ef4c830cfbacc0ae7ad9deaa53a0032de95f88f4ba9dc5a81d0124d3fc6f728

@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - ElectricalStimulation
+  - ElectricalStimulationParameters
+  is_mixin: true
+provenance:
+- source: bids
+  class: MEGOptional
+  name: MEGOptional
+  description: Sidecar field group for meg
+sha256: 4608cccc2eea86460c4d43f87e3da939f74c4c6b4304cd64715d87bf97577377

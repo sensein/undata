@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - SampleStaining
+  - SamplePrimaryAntibody
+  - SampleSecondaryAntibody
+  is_mixin: true
+provenance:
+- source: bids
+  class: EntitiesStainMetadata
+  name: EntitiesStainMetadata
+  description: Sidecar field group for entity_rules
+sha256: 57431669988d65f6df2f194a45cf82fe2ee1d59ef002656f5eae969933db3fef

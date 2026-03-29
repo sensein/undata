@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - InstitutionName
+  - InstitutionAddress
+  - InstitutionalDepartmentName
+  is_mixin: true
+provenance:
+- source: bids
+  class: MEGInstitutionInformation
+  name: MEGInstitutionInformation
+  description: Sidecar field group for meg
+sha256: e2871bf10ea32c2c4d08e61f2ade8196a3599fecd120ce4592bc8d488a9e7fe0

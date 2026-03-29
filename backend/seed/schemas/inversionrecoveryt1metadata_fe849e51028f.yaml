@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - InversionTime
+  is_mixin: true
+provenance:
+- source: bids
+  class: InversionRecoveryT1Metadata
+  name: InversionRecoveryT1Metadata
+  description: Sidecar field group for qmri
+sha256: fe849e51028f5160c4b3bc93370f9929ad3b1f072605ae102c64136b66ae6c34

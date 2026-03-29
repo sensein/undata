@@ -1,0 +1,11 @@
+id: 5c9ec999-9117-4eda-91d1-38960920a9a3
+entity_type: value
+entity_ref: pcasl_d910813c2b7e.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.744), no LLM verification
+  top_match: http://identifiers.org/ensembl/ENSG00000166803
+  top_label: PCLAF
+  top_score: 0.7438
+status: pending
+created_at: '2026-03-29T05:33:43.821222+00:00'

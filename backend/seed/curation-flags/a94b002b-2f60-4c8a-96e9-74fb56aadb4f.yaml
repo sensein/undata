@@ -1,0 +1,11 @@
+id: a94b002b-2f60-4c8a-96e9-74fb56aadb4f
+entity_type: element
+entity_ref: name_6b6ebc9e2238.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.793), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C97054
+  top_label: Generic Name
+  top_score: 0.7932
+status: pending
+created_at: '2026-03-29T05:40:55.743088+00:00'

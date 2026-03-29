@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - ChunkTransformationMatrixAxis
+  is_mixin: true
+provenance:
+- source: bids
+  class: MicroscopyChunkTransformationsMatrixAxis
+  name: MicroscopyChunkTransformationsMatrixAxis
+  description: Sidecar field group for micr
+sha256: 18fe49db1816b5d0f3cc5ce38e5830cc2decb5d092cad8d7b47529d54be8a7a8

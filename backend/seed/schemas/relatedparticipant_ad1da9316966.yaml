@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  - url
+  - relation
+  subclass_of: DandiBaseModel
+provenance:
+- source: dandi
+  class: RelatedParticipant
+  name: RelatedParticipant
+  description: null
+sha256: ad1da9316966c4b27029d684e23eb399844aca95d9b895d6d849c9965fcd8765

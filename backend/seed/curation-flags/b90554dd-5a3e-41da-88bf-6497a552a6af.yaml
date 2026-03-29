@@ -1,0 +1,11 @@
+id: b90554dd-5a3e-41da-88bf-6497a552a6af
+entity_type: value
+entity_ref: sem_5c50615512c1.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.829), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/UBERON_0001866
+  top_label: sebum
+  top_score: 0.8285
+status: pending
+created_at: '2026-03-29T05:33:43.890964+00:00'

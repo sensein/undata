@@ -1,0 +1,16 @@
+semantic:
+  label: R2map
+  value_type: categorical
+  display_name: True transverse relaxation rate image
+provenance:
+- source: bids
+  class: suffixes
+  name: R2map
+  description: 'In seconds<sup>-1</sup> (1/s).
+
+    R2 maps (R2 = 1/T2) are REQUIRED to use this suffix regardless of the method
+
+    used to generate them.
+
+    '
+sha256: d35699a083e0e1913c519e0cf73971d34ed0b63f21f48a22dda9baef76d9075c

@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+provenance:
+- source: bids
+  class: metadata
+  name: MultibandAccelerationFactor
+  description: 'The multiband factor, for multiband acquisitions.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8cab6ba6ee27e4707cfbd91f8e0d9afecab29c11990db37e3048ae499356a4e9

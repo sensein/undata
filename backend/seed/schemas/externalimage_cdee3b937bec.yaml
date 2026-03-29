@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - image_mode
+  - image_format
+  subclass_of: BaseImage
+provenance:
+- source: nwb
+  class: ExternalImage
+  name: ExternalImage
+  description: A type for referencing an external image file. The single file path
+    or URI to the external image file should be stored in the dataset. This type should
+    NOT be used if the image is stored in another NWB file and that file is linked
+    to this file.
+sha256: cdee3b937bec678d114c500c173c3e6c5f469f6d684afe14cf0edb2481cc27b0

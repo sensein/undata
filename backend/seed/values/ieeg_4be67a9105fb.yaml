@@ -1,0 +1,12 @@
+semantic:
+  label: ieeg
+  value_type: categorical
+  display_name: Intracranial Electroencephalography
+provenance:
+- source: bids
+  class: modalities
+  name: ieeg
+  description: 'Data acquired with iEEG.
+
+    '
+sha256: 4be67a9105fbc84c46a9843ef44e3ba805c6eb751bef11128e827d941d3e0dc8

@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: eyegaze
+provenance:
+- source: bids
+  class_: ''
+  name: EYEGAZE
+sha256: a7a290814d3162f084e986ea0a5dcc1acbc25ee8604af7393fc7781996f076c5

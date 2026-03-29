@@ -1,0 +1,15 @@
+semantic:
+  label: .mhd
+  value_type: categorical
+  display_name: ITAB Binary Header
+provenance:
+- source: bids
+  class: extensions
+  name: mhd
+  description: 'Produced by ITAB-ARGOS153 systems. This file a binary header file,
+    and is generated along with a
+
+    raw data file with the `.raw` extension.
+
+    '
+sha256: 6ca54abe48e296dd0a32c1579be9a3d5c40f2d5fb8d1616297daa5ab2ed7c079

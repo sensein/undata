@@ -1,0 +1,13 @@
+id: 82689880-1193-4cfb-a11a-dac8632b2377
+entity_type: value
+entity_ref: gaussian_d4ec6ee3bcac.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.026)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C68915
+    score: 0.765
+  - uri: http://purl.obolibrary.org/obo/NCIT_C79422
+    score: 0.7393
+status: pending
+created_at: '2026-03-29T05:40:56.334937+00:00'

@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - spike_times_index
+  - spike_times
+  - obs_intervals_index
+  - obs_intervals
+  - electrodes_index
+  - electrodes
+  - electrode_group
+  - waveform_mean
+  - waveform_sd
+  - waveforms
+  - waveforms_index
+  - waveforms_index_index
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: Units
+  name: Units
+  description: Data about spiking units. Event times of observed units (e.g. cell,
+    synapse, etc.) should be concatenated and stored in spike_times.
+sha256: a6cce68c71512c51b8d0cc37f7e555b0477d59ebbea9e5943034c7164984a8ef

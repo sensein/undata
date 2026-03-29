@@ -1,0 +1,21 @@
+semantic:
+  properties:
+  - description
+  - NWBDataInterface
+  - DynamicTable
+  subclass_of: NWBContainer
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C84340
+    term_label: Processed Data
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7117
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: nwb
+  class: ProcessingModule
+  name: ProcessingModule
+  description: A collection of processed data.
+sha256: 26d9c8067f8dc16882ea84a24755b6dc5b840d9255aeb2be2b7c4d35ed4ba27c

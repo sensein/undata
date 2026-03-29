@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - description
+  - excitation_lambda
+  - location
+  - device
+  subclass_of: NWBContainer
+provenance:
+- source: nwb
+  class: OptogeneticStimulusSite
+  name: OptogeneticStimulusSite
+  description: A site of optogenetic stimulation.
+sha256: 33b9b1ee4416e546f4e9ff13023159a8e58d8c57dc35f18284fd6faec337ecd8

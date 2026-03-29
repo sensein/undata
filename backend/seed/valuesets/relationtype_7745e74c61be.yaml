@@ -1,0 +1,42 @@
+semantic:
+  name: RelationType
+  members:
+  - dcite:Cites
+  - dcite:Compiles
+  - dcite:Continues
+  - dcite:Describes
+  - dcite:Documents
+  - dcite:HasMetadata
+  - dcite:HasPart
+  - dcite:HasVersion
+  - dcite:IsCitedBy
+  - dcite:IsCompiledBy
+  - dcite:IsContinuedBy
+  - dcite:IsDerivedFrom
+  - dcite:IsDescribedBy
+  - dcite:IsDocumentedBy
+  - dcite:IsIdenticalTo
+  - dcite:IsMetadataFor
+  - dcite:IsNewVersionOf
+  - dcite:IsObsoletedBy
+  - dcite:IsOriginalFormOf
+  - dcite:IsPartOf
+  - dcite:IsPreviousVersionOf
+  - dcite:IsPublishedIn
+  - dcite:IsReferencedBy
+  - dcite:IsRequiredBy
+  - dcite:IsReviewedBy
+  - dcite:IsSourceOf
+  - dcite:IsSupplementTo
+  - dcite:IsSupplementedBy
+  - dcite:IsVariantFormOf
+  - dcite:IsVersionOf
+  - dcite:Obsoletes
+  - dcite:References
+  - dcite:Requires
+  - dcite:Reviews
+provenance:
+- source: dandi
+  class: Resource
+  name: RelationType
+sha256: 7745e74c61befd9ba55416cc7029f6010fc52ab9e8459282d7ae08829b7c7c9d

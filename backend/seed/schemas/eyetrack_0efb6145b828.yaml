@@ -1,0 +1,21 @@
+semantic:
+  properties:
+  - RecordedEye
+  - SampleCoordinateSystem
+  - AverageCalibrationError
+  - CalibrationCount
+  - CalibrationPosition
+  - CalibrationType
+  - CalibrationUnit
+  - EyeTrackerDistance
+  - EyeTrackingMethod
+  - MaximalCalibrationError
+  - PupilFitMethod
+  - RawDataFilters
+  is_mixin: true
+provenance:
+- source: bids
+  class: EyeTrack
+  name: EyeTrack
+  description: Sidecar field group for continuous
+sha256: 0efb6145b828f1881a0a4eceed21c1c74e2062adf0ff4b07996f2c4243b3246a

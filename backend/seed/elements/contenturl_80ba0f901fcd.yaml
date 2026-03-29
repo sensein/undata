@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: Asset
+  name: contentUrl
+  description: ''
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 80ba0f901fcd4e823c8b36136e36f29d01f59f5a3c865838845e96221af46689

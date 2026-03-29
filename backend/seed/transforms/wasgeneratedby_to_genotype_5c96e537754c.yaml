@@ -1,0 +1,15 @@
+source_element: https://schema.undata.live/elements/wasgeneratedby_5ca08adf8c03
+target_element: https://schema.undata.live/elements/genotype_fbfce989217a
+function:
+  function_type: unknown
+  input_type: array
+  output_type: string
+  expression_type: none
+provenance:
+- source: auto
+  class: ''
+  name: ''
+  generated_at: '2026-03-29T05:41:10.659796+00:00'
+  attributed_to: urn:undata:transform-pipeline
+  activity: transform
+sha256: 5c96e537754ca438cc588ad3921a8a19156e14ff9b0a4121eca306f5eb4092d4

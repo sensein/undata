@@ -1,0 +1,34 @@
+semantic:
+  label: sessions
+  value_type: categorical
+  display_name: Sessions file
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C67447
+    term_label: Session
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9081
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: suffixes
+  name: sessions
+  description: 'In case of multiple sessions there is an option of adding additional
+    sessions.tsv files
+
+    describing variables changing between sessions.
+
+    In such case one file per participant SHOULD be added.
+
+    These files MUST include a session_id column and describe each session by one
+    and only one row.
+
+    Column names in sessions.tsv files MUST be different from group level participant
+    key column
+
+    names in the participants.tsv file.
+
+    '
+sha256: 7ef64887050c7a4e55294529bdf082d549d742e382b67b2630fe459094493659

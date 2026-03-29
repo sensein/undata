@@ -1,0 +1,17 @@
+semantic:
+  label: Other
+  value_type: categorical
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C17649
+    term_label: Other
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: Other
+sha256: df6995f1bdf11bb65315cc13c0862c3c5d38c842ed6261532b72c198374bad98

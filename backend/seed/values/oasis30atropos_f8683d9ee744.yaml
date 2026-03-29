@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: oasis30atropos
+provenance:
+- source: bids
+  class_: ''
+  name: OASIS30Atropos
+sha256: f8683d9ee7446608ad91b718162c893f3bc7fcbb03a08eb6f5e8b1e17721c30a

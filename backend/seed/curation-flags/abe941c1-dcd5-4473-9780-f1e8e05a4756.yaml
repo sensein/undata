@@ -1,0 +1,11 @@
+id: abe941c1-dcd5-4473-9780-f1e8e05a4756
+entity_type: schema
+entity_ref: grayscaleimage_f3867fc48f54.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.844), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C85845
+  top_label: Grayscale Image
+  top_score: 0.8442
+status: pending
+created_at: '2026-03-29T05:40:56.770018+00:00'

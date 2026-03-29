@@ -1,0 +1,11 @@
+id: fae605ab-a71f-4fd6-b38b-8c64d8ad2e88
+entity_type: element
+entity_ref: description_6980f63df2d4.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.872), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C165054
+  top_label: Project Description
+  top_score: 0.8722
+status: pending
+created_at: '2026-03-29T05:40:55.442822+00:00'

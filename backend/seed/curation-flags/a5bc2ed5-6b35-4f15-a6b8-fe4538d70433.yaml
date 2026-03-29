@@ -1,0 +1,9 @@
+id: a5bc2ed5-6b35-4f15-a6b8-fe4538d70433
+entity_type: schema
+entity_ref: tb1afimetadata_5ca90f2ecfed.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TB1AFIMetadata
+status: pending
+created_at: '2026-03-29T05:37:10.028557+00:00'

@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - TaskName
+  - TaskDescription
+  - Instructions
+  is_mixin: true
+provenance:
+- source: bids
+  class: TaskMetadata
+  name: TaskMetadata
+  description: Sidecar field group for anat
+sha256: 00f043ebce182f8cc564714319db9db2305065c45d7140e3b88750089a8a05ad

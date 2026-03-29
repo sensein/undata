@@ -1,0 +1,21 @@
+semantic:
+  properties:
+  - ArterialSpinLabelingType
+  - PostLabelingDelay
+  - BackgroundSuppression
+  - M0Type
+  - TotalAcquiredPairs
+  - VascularCrushing
+  - AcquisitionVoxelSize
+  - LabelingOrientation
+  - LabelingDistance
+  - LabelingLocationDescription
+  - LookLocker
+  - LabelingEfficiency
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIASLCommonMetadataFields
+  name: MRIASLCommonMetadataFields
+  description: Sidecar field group for asl
+sha256: 6db9d16e0d12cb9071f557c2c7d3af25a87107e36a5affa219ecb82eda13584c

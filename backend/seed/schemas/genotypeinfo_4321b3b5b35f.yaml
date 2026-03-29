@@ -1,0 +1,39 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - locus
+  - alleles
+  - wasGeneratedBy
+  subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C16631
+    term_label: Genotype
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7709
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_topic_0625
+    term_label: Genotype and phenotype
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.73
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0001305
+    term_label: genotype information
+    ontology: obi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7097
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: dandi
+  class: GenotypeInfo
+  name: GenotypeInfo
+  description: null
+sha256: 4321b3b5b35f847ece4fb5a2c6ec1d9bae9e4b553bf6779f1b107ca8da9d030d

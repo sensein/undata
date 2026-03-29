@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - IntendedFor
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIFieldmapIntendedFor
+  name: MRIFieldmapIntendedFor
+  description: Sidecar field group for fmap
+sha256: 243ce2bec423875fda589fd80a92877f38a3e103ba6299627ee605074e714035

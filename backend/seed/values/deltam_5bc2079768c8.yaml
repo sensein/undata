@@ -1,0 +1,24 @@
+semantic:
+  label: deltam
+  value_type: categorical
+  display_name: deltam
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C54126
+    term_label: Delta
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8342
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: deltam
+  description: 'An ASL volume type: deltam.
+
+    The deltaM image is a perfusion-weighted image, obtained by the subtraction of
+    `control` - `label`.
+
+    '
+sha256: 5bc2079768c8e8f4f2f9da9772a54b9c430e6adb6eb8f6d37ded6a561f352043

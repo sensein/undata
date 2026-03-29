@@ -1,0 +1,11 @@
+id: 9c74ddf9-f5f0-4366-ac83-cfbbbb946657
+entity_type: value
+entity_ref: audio_1d374e52ec2a.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.868), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C96977
+  top_label: Audio Media
+  top_score: 0.8675
+status: pending
+created_at: '2026-03-29T05:37:09.334052+00:00'

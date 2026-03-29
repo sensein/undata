@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: cloning_host
+provenance:
+- source: bids
+  class_: ''
+  name: cloning host
+sha256: ee395cbca1b5e9f58378a9b2c4461180b65f058a6a543702ac0b9f3a09ae307d

@@ -1,0 +1,9 @@
+id: 1652f915-5c64-45e9-a3dc-9cdca48d8e53
+entity_type: schema
+entity_ref: variableflipanglemetadata_744a4f4fd97d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: VariableFlipAngleMetadata
+status: pending
+created_at: '2026-03-29T05:37:10.033390+00:00'

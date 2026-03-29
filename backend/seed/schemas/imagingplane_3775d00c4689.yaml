@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - description
+  - excitation_lambda
+  - imaging_rate
+  - indicator
+  - location
+  - manifold
+  - origin_coords
+  - grid_spacing
+  - reference_frame
+  - device
+  - OpticalChannel
+  subclass_of: NWBContainer
+provenance:
+- source: nwb
+  class: ImagingPlane
+  name: ImagingPlane
+  description: An imaging plane and its metadata.
+sha256: 3775d00c46895a56a88188a0021db4a4e4a6eda1c7a60047d3a592de078cd491

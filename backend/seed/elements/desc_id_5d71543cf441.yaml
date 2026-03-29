@@ -1,0 +1,30 @@
+semantic:
+  data_type: string
+  pattern: ^desc-[0-9a-zA-Z+]+$
+  value_domain: text
+provenance:
+- source: bids
+  class: columns
+  name: desc_id
+  description: 'A `desc-<label>` entity present in the derivatives dataset.
+
+
+    The `desc_id` column contains the labels used with the
+
+    [`desc` entity](SPEC_ROOT/appendices/entities.md#desc),
+
+    within the particular nesting that the `descriptions.tsv` file is placed.
+
+
+    For example, if the `descriptions.tsv` file is placed at the root of the derivative
+    dataset,
+
+    its `desc_id` column SHOULD contain all labels of the `desc` entity)
+
+    used across the entire derivative dataset.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5d71543cf4415b42a2e26513cc95af507592f14327547dd5add7b16a24889c3e

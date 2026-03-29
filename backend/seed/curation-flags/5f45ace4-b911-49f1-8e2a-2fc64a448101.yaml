@@ -1,0 +1,11 @@
+id: 5f45ace4-b911-49f1-8e2a-2fc64a448101
+entity_type: value
+entity_ref: .nii_a2596ec9a840.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.761), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_format_3010
+  top_label: .nib
+  top_score: 0.7606
+status: pending
+created_at: '2026-03-29T05:37:09.291781+00:00'

@@ -1,0 +1,14 @@
+semantic:
+  label: FA
+  value_type: categorical
+  display_name: Fractional Anisotropy image
+provenance:
+- source: bids
+  class: suffixes
+  name: FA
+  description: 'Scanner-generated derivative parametric map
+
+    reflecting the anisotropy of the diffusion tensor
+
+    '
+sha256: 14a3cc8ac49363de80cd5713d6c1921fd8d0518a9ff7386681f12888886c1fac

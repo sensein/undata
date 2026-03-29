@@ -1,0 +1,55 @@
+semantic:
+  data_type: string
+  value_domain: text
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_2899
+    term_label: Drug name
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7725
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C164322
+    term_label: Drug Name
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7725
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C97104
+    term_label: Established Drug Name
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7432
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_52217
+    term_label: pharmaceutical
+    ontology: chebi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7098
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C79323
+    term_label: 'Drug Substance: Nomenclature'
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: metadata
+  name: PharmaceuticalName
+  description: 'Name of pharmaceutical.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 40f90a872c0bb058fd8919ae39d1ad20aeefda45c2417ca97546b0bf5cf80f99

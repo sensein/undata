@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: SkinPreparation
+  description: 'How skin was prepared prior to sensor device placement, for example,
+    `"alcohol wipe"`
+
+    or `"abrasive gel"`.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b4869880c3878169ac35482815c3eb90df28c8a7d63c62e82853aba5cce156fb

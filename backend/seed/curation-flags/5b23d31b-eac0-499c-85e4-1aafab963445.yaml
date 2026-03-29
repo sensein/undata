@@ -1,0 +1,9 @@
+id: 5b23d31b-eac0-499c-85e4-1aafab963445
+entity_type: element
+entity_ref: codevalue_2c87b421f9e0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CodeValue
+status: pending
+created_at: '2026-03-29T05:40:55.400351+00:00'

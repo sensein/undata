@@ -1,0 +1,9 @@
+id: 5b9cc6ab-20dc-4e4d-85c3-92bba020d8ba
+entity_type: value
+entity_ref: func_e0dad5736fa6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: func
+status: pending
+created_at: '2026-03-29T05:37:09.489269+00:00'

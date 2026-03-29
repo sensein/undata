@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: cell-free_sample
+provenance:
+- source: bids
+  class_: ''
+  name: cell-free sample
+sha256: 3e8455f317889c0fb6c170d23692069cd8cd1e815814b8c09ac7e42ae041c103

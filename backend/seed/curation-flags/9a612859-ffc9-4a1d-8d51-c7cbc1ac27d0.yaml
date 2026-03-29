@@ -1,0 +1,9 @@
+id: 9a612859-ffc9-4a1d-8d51-c7cbc1ac27d0
+entity_type: value
+entity_ref: dcite_outputmanagementplan_656e80e33b56.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:OutputManagementPlan
+status: pending
+created_at: '2026-03-29T05:40:56.248740+00:00'

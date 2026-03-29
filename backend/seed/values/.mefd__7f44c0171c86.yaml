@@ -1,0 +1,15 @@
+semantic:
+  label: .mefd/
+  value_type: categorical
+  display_name: Multiscale Electrophysiology File Format Version 3.0
+provenance:
+- source: bids
+  class: extensions
+  name: mefd
+  description: 'A directory in the [MEF3](https://osf.io/e3sf9/) format.
+
+
+    Each recording consists of a `.mefd` directory.
+
+    '
+sha256: 7f44c0171c86f6b5f4cca70d9463e169be2e762c8d3a17ec9d21e9565125122f

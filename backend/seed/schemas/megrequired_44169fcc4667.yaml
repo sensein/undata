@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - SamplingFrequency
+  - PowerLineFrequency
+  - DewarPosition
+  - SoftwareFilters
+  - DigitizedLandmarks
+  - DigitizedHeadPoints
+  is_mixin: true
+provenance:
+- source: bids
+  class: MEGRequired
+  name: MEGRequired
+  description: Sidecar field group for meg
+sha256: 44169fcc46676049c40c588d17b9a0779eeb838fccbf082c0ff03d40cec47438

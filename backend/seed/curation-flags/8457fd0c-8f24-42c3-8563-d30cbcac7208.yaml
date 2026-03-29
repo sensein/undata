@@ -1,0 +1,11 @@
+id: 8457fd0c-8f24-42c3-8563-d30cbcac7208
+entity_type: value
+entity_ref: phase2_64f51512a09a.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.811), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/PATO_0000083
+  top_label: phase
+  top_score: 0.8108
+status: pending
+created_at: '2026-03-29T05:37:09.713220+00:00'

@@ -1,0 +1,9 @@
+id: e1b16aed-eead-4ff9-91a0-f36ec7c1645b
+entity_type: element
+entity_ref: softwareversions_1c84278b1aa1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SoftwareVersions
+status: pending
+created_at: '2026-03-29T05:40:55.942827+00:00'

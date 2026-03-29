@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - sampleType
+  - assayType
+  - anatomy
+  - wasDerivedFrom
+  - wasAttributedTo
+  - sameAs
+  - hasMember
+  subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C43412
+    term_label: Biosample
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8185
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: BioSample
+  name: BioSample
+  description: Description of the sample that was studied
+sha256: 5132694d42a9ece13ab2f00bc723582c09aa1c2f6dd4e2abfb4179e5830e458b

@@ -1,0 +1,11 @@
+id: 7f961f88-bce0-4cd2-a88a-a454c861b6a5
+entity_type: value
+entity_ref: dic_ab6a216e91d3.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.700), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C28985
+  top_label: Diclofenac
+  top_score: 0.7002
+status: pending
+created_at: '2026-03-29T05:33:43.599527+00:00'

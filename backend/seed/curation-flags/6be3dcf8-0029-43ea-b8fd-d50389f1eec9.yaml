@@ -1,0 +1,13 @@
+id: 6be3dcf8-0029-43ea-b8fd-d50389f1eec9
+entity_type: value
+entity_ref: meggradaxial_96549ed8127f.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.015)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C66075
+    score: 0.7346
+  - uri: http://purl.obolibrary.org/obo/NCIT_C61828
+    score: 0.7194
+status: pending
+created_at: '2026-03-29T05:33:43.754505+00:00'

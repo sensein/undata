@@ -1,0 +1,15 @@
+id: 6daf3775-313d-4a92-becd-7f544ea85ec6
+entity_type: value
+entity_ref: adc_d88cf23629e7.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.028)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/CHEBI_16761
+    score: 0.771
+  - uri: http://purl.obolibrary.org/obo/NCIT_C105311
+    score: 0.7433
+  - uri: http://purl.obolibrary.org/obo/NCIT_C105343
+    score: 0.7233
+status: pending
+created_at: '2026-03-29T05:37:09.318677+00:00'

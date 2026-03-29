@@ -1,0 +1,12 @@
+semantic:
+  label: NLO
+  value_type: categorical
+  display_name: Nonlinear optical microscopy
+provenance:
+- source: bids
+  class: suffixes
+  name: NLO
+  description: 'Nonlinear optical microscopy imaging data
+
+    '
+sha256: e49971038b45f1faff66fb4ab12046b7f0c4dcbc970fbbb78fa6c35ffb53196d

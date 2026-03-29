@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  type_ref: ImageSeries
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: original
+  description: Link to ImageSeries object that is being registered.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d707e3e4dd76e8ab0be2dc92d319088852f3a7bfacea1ad92d797c9f257487f1

@@ -1,0 +1,26 @@
+semantic:
+  properties:
+  - name__channels
+  - type__channels
+  - units
+  - description
+  - sampling_frequency
+  - signal_electrode
+  - reference__emg
+  - group__emg
+  - target_muscle
+  - placement_scheme
+  - placement_description
+  - interelectrode_distance
+  - low_cutoff
+  - high_cutoff
+  - notch
+  - status
+  - status_description
+  is_mixin: true
+provenance:
+- source: bids
+  class: emg_EMGChannels
+  name: emg_EMGChannels
+  description: Tabular columns for emg
+sha256: ab819ddf31f9f80b9a9349453e2e7bb05a4f0aecc1fe1b51269598b5d0462713

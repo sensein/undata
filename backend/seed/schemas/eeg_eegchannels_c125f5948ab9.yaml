@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - name__channels
+  - type__channels
+  - units
+  - description
+  - sampling_frequency
+  - reference__eeg
+  - low_cutoff
+  - high_cutoff
+  - notch
+  - status
+  - status_description
+  is_mixin: true
+provenance:
+- source: bids
+  class: eeg_EEGChannels
+  name: eeg_EEGChannels
+  description: Tabular columns for eeg
+sha256: c125f5948ab99528c6da10464600d0db385fdee36931c6e42079caefd8f8d662

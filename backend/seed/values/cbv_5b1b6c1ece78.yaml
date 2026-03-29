@@ -1,0 +1,13 @@
+semantic:
+  label: cbv
+  value_type: categorical
+  display_name: Cerebral blood volume image
+provenance:
+- source: bids
+  class: suffixes
+  name: cbv
+  description: 'Cerebral Blood Volume contrast (specialized T2\* weighting or difference
+    between T1 weighted images)
+
+    '
+sha256: 5b1b6c1ece78c3e5d77750bb2f88967b739137246755597c91e90cc2f7bcbbfa

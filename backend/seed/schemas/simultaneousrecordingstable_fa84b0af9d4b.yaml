@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - recordings
+  - recordings_index
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: SimultaneousRecordingsTable
+  name: SimultaneousRecordingsTable
+  description: A table for grouping different intracellular recordings from the IntracellularRecordingsTable
+    table together that were recorded simultaneously from different electrodes.
+sha256: fa84b0af9d4bf8fd98b3cea9a8088c22537c97c90613d560234ef15e77e83c9b

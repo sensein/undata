@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - ParallelReductionFactorOutOfPlane
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIParallelReductionFactorOutOfPlane
+  name: MRIParallelReductionFactorOutOfPlane
+  description: Sidecar field group for mri
+sha256: c764cc89b7812d535f60efe72a4f63c258f9e2edf18e008e8c74531acd31dc12

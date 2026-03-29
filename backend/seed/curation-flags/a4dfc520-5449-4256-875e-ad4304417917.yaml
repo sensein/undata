@@ -1,0 +1,9 @@
+id: a4dfc520-5449-4256-875e-ad4304417917
+entity_type: element
+entity_ref: cogpoid_2c3cc8535c3d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CogPOID
+status: pending
+created_at: '2026-03-29T05:37:08.816414+00:00'

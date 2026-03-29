@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: ppg
+provenance:
+- source: bids
+  class_: ''
+  name: PPG
+sha256: 453a346ce6a7c07d73bb5bdd1a420b25e22c2b6422ee432e83bab9fbd4b8eb9b

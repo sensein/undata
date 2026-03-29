@@ -1,0 +1,9 @@
+id: e261b8bf-175a-4164-bfdc-2f2532dbaa7d
+entity_type: value
+entity_ref: dcite_issourceof_4854527ff59f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:IsSourceOf
+status: pending
+created_at: '2026-03-29T05:40:56.243470+00:00'

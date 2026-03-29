@@ -1,0 +1,11 @@
+id: 0b9aa789-f54e-4909-90ef-fa0dbc333639
+entity_type: value
+entity_ref: talairach_d82d5c7ca4b6.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.788), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C94990
+  top_label: Talairach Space
+  top_score: 0.7877
+status: pending
+created_at: '2026-03-29T05:33:43.920193+00:00'

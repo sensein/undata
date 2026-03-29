@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - ElectricalStimulation
+  - ElectricalStimulationParameters
+  is_mixin: true
+provenance:
+- source: bids
+  class: iEEGOptional
+  name: iEEGOptional
+  description: Sidecar field group for ieeg
+sha256: 910ee4fc1e3fe6f89117250af640bb0fca007ed63d42295ca6825d4c4c47b500

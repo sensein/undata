@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - publishedBy
+  - datePublished
+  subclass_of: DandiBaseModel
+provenance:
+- source: dandi
+  class: Publishable
+  name: Publishable
+  description: null
+sha256: 6899b86942fc459d64a95e49fcfda52ddf82b39b35c6aa43c4682b056c08c6d8

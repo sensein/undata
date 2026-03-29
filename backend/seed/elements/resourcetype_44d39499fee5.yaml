@@ -1,0 +1,160 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: dcite:Audiovisual
+    label: dcite:Audiovisual
+    ontology_term: https://schema.undata.live/values/145162d3-2a53-4f88-879d-870f91304dbf
+  - value: dcite:Book
+    label: dcite:Book
+    ontology_term: https://schema.undata.live/values/e671949f-c1c8-4aeb-a901-e345ef3c685e
+  - value: dcite:BookChapter
+    label: dcite:BookChapter
+    ontology_term: https://schema.undata.live/values/efb925e4-c727-4c45-a177-065a96c19fdb
+  - value: dcite:Collection
+    label: dcite:Collection
+    ontology_term: https://schema.undata.live/values/bab7de60-d91a-41f5-8068-66b6adf009d8
+  - value: dcite:ComputationalNotebook
+    label: dcite:ComputationalNotebook
+    ontology_term: https://schema.undata.live/values/b78e8aee-ab3f-4f03-ab97-5ce95db54bab
+  - value: dcite:ConferencePaper
+    label: dcite:ConferencePaper
+    ontology_term: https://schema.undata.live/values/e9401748-d81a-4109-9a5e-673946adc8b8
+  - value: dcite:ConferenceProceeding
+    label: dcite:ConferenceProceeding
+    ontology_term: https://schema.undata.live/values/30165a08-8de8-42db-bdc6-a9d9a869f900
+  - value: dcite:DataPaper
+    label: dcite:DataPaper
+    ontology_term: https://schema.undata.live/values/49101662-20e3-4511-83f9-257f3dff61e6
+  - value: dcite:Dataset
+    label: dcite:Dataset
+    ontology_term: https://schema.undata.live/values/2473ffe0-3584-491c-8e1d-e50650a4e061
+  - value: dcite:Dissertation
+    label: dcite:Dissertation
+    ontology_term: https://schema.undata.live/values/e6b7c735-2517-47ec-bdfc-97c5d3b8223b
+  - value: dcite:Event
+    label: dcite:Event
+    ontology_term: https://schema.undata.live/values/dadc3f60-8642-4086-8338-4a96585c2fff
+  - value: dcite:Image
+    label: dcite:Image
+    ontology_term: https://schema.undata.live/values/f1e99ff2-a7ce-4d97-8541-aa0366840f9e
+  - value: dcite:Instrument
+    label: dcite:Instrument
+    ontology_term: https://schema.undata.live/values/e33d1571-b809-40a2-b4ff-ec4a9a261fdf
+  - value: dcite:InteractiveResource
+    label: dcite:InteractiveResource
+    ontology_term: https://schema.undata.live/values/831aedff-6204-4fc7-99e6-cd02490edb79
+  - value: dcite:Journal
+    label: dcite:Journal
+    ontology_term: https://schema.undata.live/values/b543dc4a-f463-4199-8bd6-839a8f0c9f20
+  - value: dcite:JournalArticle
+    label: dcite:JournalArticle
+    ontology_term: https://schema.undata.live/values/ba46fa68-07b7-4818-8f85-aebf626f92c4
+  - value: dcite:Model
+    label: dcite:Model
+    ontology_term: https://schema.undata.live/values/f04ea345-34eb-4008-83da-1d7d65398196
+  - value: dcite:OutputManagementPlan
+    label: dcite:OutputManagementPlan
+    ontology_term: https://schema.undata.live/values/3816f1c6-b4bd-470d-9c90-0d1d352dcb2c
+  - value: dcite:PeerReview
+    label: dcite:PeerReview
+    ontology_term: https://schema.undata.live/values/cfeea045-c089-49e3-9fcc-4628dfcd8abb
+  - value: dcite:PhysicalObject
+    label: dcite:PhysicalObject
+    ontology_term: https://schema.undata.live/values/1eafc421-e27b-4d8e-9c3f-556f5960ae42
+  - value: dcite:Preprint
+    label: dcite:Preprint
+    ontology_term: https://schema.undata.live/values/47ac4bb3-2161-4f94-bf02-e93bfd2d57b5
+  - value: dcite:Report
+    label: dcite:Report
+    ontology_term: https://schema.undata.live/values/ad31d117-17f0-4e71-b740-329be2a4052b
+  - value: dcite:Service
+    label: dcite:Service
+    ontology_term: https://schema.undata.live/values/6b1b4814-7716-41f4-80db-5169324687ee
+  - value: dcite:Software
+    label: dcite:Software
+    ontology_term: https://schema.undata.live/values/14dfb400-efaa-4524-ae4c-d22dd825b2a4
+  - value: dcite:Sound
+    label: dcite:Sound
+    ontology_term: https://schema.undata.live/values/f328745f-9adf-49dc-8086-2fe72c9a507e
+  - value: dcite:Standard
+    label: dcite:Standard
+    ontology_term: https://schema.undata.live/values/d13819a4-8a69-4420-80c8-434613b29024
+  - value: dcite:StudyRegistration
+    label: dcite:StudyRegistration
+    ontology_term: https://schema.undata.live/values/f880467f-8724-4dc6-a2d8-83103e885985
+  - value: dcite:Text
+    label: dcite:Text
+    ontology_term: https://schema.undata.live/values/e7731060-444a-44f2-bdf1-aa1047ec0a4a
+  - value: dcite:Workflow
+    label: dcite:Workflow
+    ontology_term: https://schema.undata.live/values/b80bf3ee-db44-468a-b4ad-fdfccb959432
+  - value: dcite:Other
+    label: dcite:Other
+    ontology_term: https://schema.undata.live/values/2a770936-9eb5-4ee0-aef0-38adc8a8e936
+  value_domain: categorical
+  ontology_annotations:
+  - term_uri: http://purl.org/dc/elements/1.1/type
+    term_label: Resource Type
+    ontology: unknown
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.9315
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165073
+    term_label: Resource Type Code
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8394
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165072
+    term_label: Resource Name
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8132
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165071
+    term_label: Resource Identifier
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7401
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/dc/elements/1.1/identifier
+    term_label: Resource Identifier
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7401
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C61011
+    term_label: Resource Description Framework
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7116
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/dc/elements/1.1/source
+    term_label: derived from resource
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.702
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: dandi
+  class: Resource
+  name: resourceType
+  description: The type of resource.
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 44d39499fee5f4aa3de827574fdf8176ad0e491fb7b80bbc8c517a7cd2d90029

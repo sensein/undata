@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - contactPoint
+  subclass_of: DandiBaseModel
+provenance:
+- source: dandi
+  class: EthicsApproval
+  name: EthicsApproval
+  description: Information about ethics committee approval for project
+sha256: 23c1764be668f3135649eb79b69d3adcc293205912b7f5f4f45aa465c29dba19

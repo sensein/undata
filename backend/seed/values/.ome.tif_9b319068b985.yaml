@@ -1,0 +1,13 @@
+semantic:
+  label: .ome.tif
+  value_type: categorical
+  display_name: Open Microscopy Environment Tag Image File Format
+provenance:
+- source: bids
+  class: extensions
+  name: OMETiff
+  description: 'An [OME-TIFF](https://docs.openmicroscopy.org/ome-model/6.1.2/ome-tiff/specification.html#)
+    image file.
+
+    '
+sha256: 9b319068b985a4a09e7b773729629f4551c76f1f370ba19bcfac40ed11501a2a

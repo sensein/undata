@@ -1,0 +1,9 @@
+id: d8b31142-bdb2-4fdc-9a0f-fab06726429e
+entity_type: value
+entity_ref: pdmap_9a844b446564.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PDmap
+status: pending
+created_at: '2026-03-29T05:37:09.700589+00:00'

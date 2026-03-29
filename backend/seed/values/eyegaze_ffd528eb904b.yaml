@@ -1,0 +1,12 @@
+semantic:
+  label: EYEGAZE
+  value_type: categorical
+  display_name: EYEGAZE
+provenance:
+- source: bids
+  class: enums
+  name: EYEGAZE
+  description: 'Eye tracker gaze.
+
+    '
+sha256: ffd528eb904b7f0409cfac6237831fc22f9243689ab977c99dec9ff434135b4d

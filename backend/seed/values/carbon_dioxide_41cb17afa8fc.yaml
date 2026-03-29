@@ -1,0 +1,29 @@
+semantic:
+  label: CARBON DIOXIDE
+  value_type: categorical
+  display_name: CARBON DIOXIDE
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_16526
+    term_label: carbon dioxide
+    ontology: chebi
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C65288
+    term_label: Carbon Dioxide
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: CARBON_DIOXIDE
+  description: 'A Contrast Bolus Ingredient: Carbon Dioxide
+
+    '
+sha256: 41cb17afa8fc8b6f51350b5b1070ed3ca0709aab115182d0e823e686c075f880

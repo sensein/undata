@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - TaskName
+  - TaskDescription
+  - Instructions
+  is_mixin: true
+provenance:
+- source: bids
+  class: EMGTaskInformation
+  name: EMGTaskInformation
+  description: Sidecar field group for emg
+sha256: 88f673836a4e75f72c9ed1cab7220cea7d1ca9df6b5c2d55d9e89820c2b34a00

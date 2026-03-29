@@ -1,0 +1,33 @@
+semantic:
+  value_type: categorical
+  label: gausshann
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C68915
+    term_label: Gauss
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7954
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C184920
+    term_label: Gadoquatrane
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.734
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C216032
+    term_label: Gatuzosiran
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7127
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: GAUSSHANN
+sha256: afab5890706d3ef6589227f04375a30150620796523e273e2d2ae40d91bebfa8

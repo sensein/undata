@@ -1,0 +1,9 @@
+id: 5577c6c5-84c4-4972-9c24-123813807f5d
+entity_type: schema
+entity_ref: tb1epi_1622e42a355c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TB1EPI
+status: pending
+created_at: '2026-03-29T05:40:56.893204+00:00'

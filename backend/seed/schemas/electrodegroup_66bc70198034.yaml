@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - description
+  - location
+  - position
+  - device
+  subclass_of: NWBContainer
+provenance:
+- source: nwb
+  class: ElectrodeGroup
+  name: ElectrodeGroup
+  description: A physical grouping of electrodes, e.g., a shank of an array. An electrode
+    group is typically used to describe electrodes that are physically connected on
+    a single device and are often (but not always) used together for analysis, such
+    as for spike sorting. Note that this is descriptive metadata; electrodes from
+    different groups can still be spike-sorted together if needed.
+sha256: 66bc70198034c89f667677f28790268691ff20ecfa0f2187803948d8fc63357b

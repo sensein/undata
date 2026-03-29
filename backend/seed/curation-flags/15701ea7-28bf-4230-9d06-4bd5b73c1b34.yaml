@@ -1,0 +1,9 @@
+id: 15701ea7-28bf-4230-9d06-4bd5b73c1b34
+entity_type: element
+entity_ref: eyetrackingmethod_ede506897632.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EyeTrackingMethod
+status: pending
+created_at: '2026-03-29T05:37:08.901133+00:00'

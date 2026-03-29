@@ -1,0 +1,9 @@
+id: 253ad6e0-4fad-4ad4-b299-6cd4d477643a
+entity_type: schema
+entity_ref: meg_sidecar_ab207e2321c6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: meg_sidecar
+status: pending
+created_at: '2026-03-29T05:40:56.789343+00:00'

@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: dandi:doi
+provenance:
+- source: dandi
+  class_: ''
+  name: dandi:doi
+sha256: a4b80dcd09fa5af84244ad4670e366a703dbdff5f7e66a49dd3143668e6717e7

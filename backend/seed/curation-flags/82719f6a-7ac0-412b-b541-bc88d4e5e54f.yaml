@@ -1,0 +1,9 @@
+id: 82719f6a-7ac0-412b-b541-bc88d4e5e54f
+entity_type: element
+entity_ref: bridge_balance_e2c2017aae5c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: bridge_balance
+status: pending
+created_at: '2026-03-29T05:37:08.797846+00:00'

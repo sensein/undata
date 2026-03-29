@@ -1,0 +1,34 @@
+semantic:
+  properties:
+  - TracerName
+  - TracerRadionuclide
+  - InjectedRadioactivity
+  - InjectedRadioactivityUnits
+  - InjectedMass
+  - InjectedMassUnits
+  - SpecificRadioactivity
+  - SpecificRadioactivityUnits
+  - ModeOfAdministration
+  - TracerRadLex
+  - TracerSNOMED
+  - TracerMolecularWeight
+  - TracerMolecularWeightUnits
+  - InjectedMassPerWeight
+  - InjectedMassPerWeightUnits
+  - SpecificRadioactivityMeasTime
+  - MolarActivity
+  - MolarActivityUnits
+  - MolarActivityMeasTime
+  - InfusionRadioactivity
+  - InfusionStart
+  - InfusionSpeed
+  - InfusionSpeedUnits
+  - InjectedVolume
+  - Purity
+  is_mixin: true
+provenance:
+- source: bids
+  class: PETRadioChemistry
+  name: PETRadioChemistry
+  description: Sidecar field group for pet
+sha256: f88568a2bf9b6f28a760b947eb597426f7a585fc572dbbe8c1251a779f5ac950

@@ -1,0 +1,11 @@
+semantic:
+  value_type: categorical
+  label: fsaveragesym
+provenance:
+- source: bids
+  class_: ''
+  name: fsaverageSym
+- source: bids
+  class_: ''
+  name: fsaveragesym
+sha256: 6ae10ceca0795eeb3ab4e9001a8a534465a652af3d205e2aacfbb62b4580c374

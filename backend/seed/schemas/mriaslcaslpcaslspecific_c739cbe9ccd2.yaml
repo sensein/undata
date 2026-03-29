@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - LabelingDuration
+  - LabelingPulseAverageGradient
+  - LabelingPulseMaximumGradient
+  - LabelingPulseAverageB1
+  - LabelingPulseDuration
+  - LabelingPulseFlipAngle
+  - LabelingPulseInterval
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIASLCaslPcaslSpecific
+  name: MRIASLCaslPcaslSpecific
+  description: Sidecar field group for asl
+sha256: c739cbe9ccd23c2fd624ffc1a1fa7a2574e6d16a988f5ebb703dffdaf72fc79b

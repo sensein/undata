@@ -73,6 +73,49 @@ async def import_registry(
 
         stats[entity_type] = count
 
+    # Import transforms
+    transforms_dir = registry_dir / "transforms"
+    if transforms_dir.exists():
+        from src.db.models import Transform as TransformModel
+
+        count = 0
+        for f in sorted(transforms_dir.glob("*.yaml")):
+            try:
+                data = yaml.safe_load(f.read_text(encoding="utf-8"))
+                if not isinstance(data, dict):
+                    continue
+                sha = data.get("sha256", f.stem)
+                func_spec = data.get("function", {})
+                prov = data.get("provenance", [])
+                # Upsert by sha256
+                from sqlalchemy import select
+                existing = await session.execute(
+                    select(TransformModel).where(TransformModel.sha256 == sha)
+                )
+                if existing.scalar_one_or_none() is None:
+                    row = TransformModel(
+                        sha256=sha,
+                        file_name=f.stem,
+                        source_element=data.get("source_element", ""),
+                        target_element=data.get("target_element", ""),
+                        function_type=func_spec.get("function_type"),
+                        input_type=func_spec.get("input_type"),
+                        output_type=func_spec.get("output_type"),
+                        expression=func_spec.get("expression"),
+                        expression_type=func_spec.get("expression_type"),
+                        confidence=data.get("confidence"),
+                        description=data.get("description"),
+                        semantic=data.get("semantic", {}),
+                        provenance=prov,
+                    )
+                    session.add(row)
+                    count += 1
+            except Exception as exc:
+                logger.warning("Failed to import transform %s: %s", f, exc)
+        stats["transforms"] = count
+    else:
+        stats["transforms"] = 0
+
     # Import curation flags
     flags_dir = registry_dir / "curation-flags"
     if flags_dir.exists():

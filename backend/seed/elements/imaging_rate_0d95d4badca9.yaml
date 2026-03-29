@@ -1,0 +1,14 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  unit: hertz
+provenance:
+- source: nwb
+  class: nwb
+  name: imaging_rate
+  description: Rate that images are acquired, in Hz. If the corresponding TimeSeries
+    is present, the rate should be stored there instead.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 0d95d4badca983e0dc33c1989ed634468bd1c65d44d5e5911094bdd22c227fbd

@@ -1,0 +1,8 @@
+semantic:
+  label: dcite:HasPart
+  value_type: categorical
+provenance:
+- source: dandi
+  class: RelationType
+  name: dcite:HasPart
+sha256: df02decdfba4a0013b03a8df6ac2f4bc0f651704c84c263d757d2057557f4df7

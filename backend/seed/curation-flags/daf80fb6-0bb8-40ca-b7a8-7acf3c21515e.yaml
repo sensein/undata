@@ -1,0 +1,9 @@
+id: daf80fb6-0bb8-40ca-b7a8-7acf3c21515e
+entity_type: element
+entity_ref: trial_type_0aac34d3cc1f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: trial_type
+status: pending
+created_at: '2026-03-29T05:37:09.229757+00:00'

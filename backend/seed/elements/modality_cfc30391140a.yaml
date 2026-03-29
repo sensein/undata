@@ -1,9 +1,0 @@
-semantic:
-  data_type: string
-  ontology_annotations: []
-provenance:
-- source: bids
-  class: Session
-  name: modality
-  description: Imaging modality
-sha256: cfc30391140aa56f8d891e7817ccfee8b01c5597b5e9ff3df4d785789b39c09f

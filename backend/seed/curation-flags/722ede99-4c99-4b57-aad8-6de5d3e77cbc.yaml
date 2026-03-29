@@ -1,0 +1,9 @@
+id: 722ede99-4c99-4b57-aad8-6de5d3e77cbc
+entity_type: element
+entity_ref: emgcoordinatesystem_f229f45ac167.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EMGCoordinateSystem
+status: pending
+created_at: '2026-03-29T05:40:55.500770+00:00'

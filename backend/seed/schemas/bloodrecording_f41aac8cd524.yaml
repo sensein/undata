@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - PlasmaAvail
+  - MetaboliteAvail
+  - WholeBloodAvail
+  - DispersionCorrected
+  - WithdrawalRate
+  - TubingType
+  - TubingLength
+  - DispersionConstant
+  - Haematocrit
+  - BloodDensity
+  is_mixin: true
+provenance:
+- source: bids
+  class: BloodRecording
+  name: BloodRecording
+  description: Sidecar field group for pet
+sha256: f41aac8cd52406f555247ba2d426142d51bf2d6c6fa002ca315637279a213664

@@ -1,0 +1,35 @@
+semantic:
+  label: RB1COR
+  value_type: categorical
+  display_name: RB1COR
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C131482
+    term_label: RB1 Negative
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7577
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C128842
+    term_label: RB1 Positive
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7321
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: suffixes
+  name: RB1COR
+  description: 'Low resolution images acquired by the body coil
+
+    (in the gantry of the scanner) and the head coil using identical acquisition
+
+    parameters to generate a combined sensitivity map as described in
+
+    [Papp et al. (2016)](https://doi.org/10.1002/mrm.26058).
+
+    '
+sha256: 2ee1957d2748d56f64f39f0e3768d391fac91a80cb5975d1d17fa66c1bb980b9

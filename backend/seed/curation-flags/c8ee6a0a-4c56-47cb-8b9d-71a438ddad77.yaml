@@ -1,0 +1,9 @@
+id: c8ee6a0a-4c56-47cb-8b9d-71a438ddad77
+entity_type: value
+entity_ref: ref_b96d2acd8714.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: REF
+status: pending
+created_at: '2026-03-29T05:33:43.868830+00:00'

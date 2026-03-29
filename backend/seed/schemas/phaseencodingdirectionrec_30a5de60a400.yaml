@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - PhaseEncodingDirection
+  - TotalReadoutTime
+  is_mixin: true
+provenance:
+- source: bids
+  class: PhaseEncodingDirectionRec
+  name: PhaseEncodingDirectionRec
+  description: Sidecar field group for mri
+sha256: 30a5de60a4007dbdcc3f5d66845e3b73e7d933470d661505f0c326f086b0d168

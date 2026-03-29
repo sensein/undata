@@ -1,0 +1,17 @@
+semantic:
+  label: .eeg
+  value_type: categorical
+  display_name: BrainVision Binary Data
+provenance:
+- source: bids
+  class: extensions
+  name: eeg
+  description: 'A binary data file in the
+
+    [BrainVision Core Data Format](https://www.brainproducts.com/support-resources/brainvision-core-data-format-1-0/).
+
+    These files come in three-file sets, including a `.vhdr`, a `.vmrk`, and a `.eeg`
+    file.
+
+    '
+sha256: 5e21d5a46613106830c526a33cb3ae3365db25ce45a73e97cb7f2db247aa8f22

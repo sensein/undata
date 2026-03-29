@@ -1,0 +1,21 @@
+semantic:
+  label: emg
+  value_type: categorical
+  display_name: Electromyography
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/HP_0003457
+    term_label: EMG abnormality
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7175
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: suffixes
+  name: emg
+  description: 'Electromyography recording data.
+
+    '
+sha256: 54ac80f50a16de36a1c75d496c14734c4544c8430a218655d5f476aa867e8ae7

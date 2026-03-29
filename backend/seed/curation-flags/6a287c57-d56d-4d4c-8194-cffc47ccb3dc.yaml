@@ -1,0 +1,9 @@
+id: 6a287c57-d56d-4d4c-8194-cffc47ccb3dc
+entity_type: element
+entity_ref: tracermolecularweight_1409df15f6ad.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TracerMolecularWeight
+status: pending
+created_at: '2026-03-29T05:40:55.999334+00:00'

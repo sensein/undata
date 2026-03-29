@@ -1,0 +1,36 @@
+semantic:
+  value_type: categorical
+  label: measured
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C44473
+    term_label: Measured
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25209
+    term_label: Measurement
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9074
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C189182
+    term_label: Directly Measured
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8698
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: measured
+- source: bids
+  class_: ''
+  name: Measured
+sha256: 5aa7fa4566466705827e9e16c87db090eb3c8f0f40fdd1b04db894aeca1c9471

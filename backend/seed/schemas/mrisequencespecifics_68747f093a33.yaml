@@ -1,0 +1,33 @@
+semantic:
+  properties:
+  - PulseSequenceType
+  - ScanningSequence
+  - SequenceVariant
+  - ScanOptions
+  - SequenceName
+  - PulseSequenceDetails
+  - NonlinearGradientCorrection
+  - MRAcquisitionType
+  - MTState
+  - MTOffsetFrequency
+  - MTPulseBandwidth
+  - MTNumberOfPulses
+  - MTPulseShape
+  - MTPulseDuration
+  - NumberShots
+  - SpoilingState
+  - SpoilingType
+  - SpoilingRFPhaseIncrement
+  - SpoilingGradientMoment
+  - SpoilingGradientDuration
+  - WaterSuppression
+  - WaterSuppressionTechnique
+  - B0ShimmingTechnique
+  - B1ShimmingTechnique
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRISequenceSpecifics
+  name: MRISequenceSpecifics
+  description: Sidecar field group for mri
+sha256: 68747f093a332ae8e56230bc82edc57834bf67874eab3fc2b9982404525cd00f

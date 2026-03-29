@@ -1,0 +1,15 @@
+semantic:
+  label: .pos
+  value_type: categorical
+  display_name: Head Point Position
+provenance:
+- source: bids
+  class: extensions
+  name: pos
+  description: 'File containing digitized positions of the head points.
+
+
+    This may be produced by a 4D neuroimaging/BTi MEG system or a CTF MEG system.
+
+    '
+sha256: b81de21f6e0660699a2e4a67bd566392ac13aa39cfdee17639517a77d2c6837f

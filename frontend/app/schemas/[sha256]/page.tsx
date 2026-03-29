@@ -1,11 +1,14 @@
 "use client";
 
+import { useMemo } from "react";
 import { useQuery } from "@apollo/client/react";
 import { useParams } from "next/navigation";
-import { GET_SCHEMA } from "@/graphql/queries";
+import { GET_SCHEMA, BROWSE_ELEMENTS } from "@/graphql/queries";
 import { EntityDetailLayout } from "@/components/EntityDetailLayout";
 import { EntityTag } from "@/components/EntityTag";
-import type { SchemaNode } from "@/graphql/types";
+import { SourceBadge } from "@/components/SourceBadge";
+import type { SchemaNode, ElementConnection, Edge, ElementNode } from "@/graphql/types";
+import Link from "next/link";
 
 export default function SchemaDetailPage() {
   const params = useParams();
@@ -15,7 +18,44 @@ export default function SchemaDetailPage() {
     variables: { sha256 },
   });
 
+  // Load all elements to resolve property names → sha256
+  const { data: elemData } = useQuery<{ browseElements: ElementConnection }>(BROWSE_ELEMENTS, {
+    variables: { first: 200 },
+  });
+
   const schema = data?.schema_;
+
+  // Build a lookup: provenance name → element sha256
+  const nameToElement = useMemo(() => {
+    const map = new Map<string, { sha256: string; name: string; source: string; dataType: string }>();
+    for (const edge of (elemData?.browseElements?.edges ?? []) as Edge<ElementNode>[]) {
+      const e = edge.node;
+      const prov = e.provenance?.[0];
+      // Index by full sha256 and by sha256 prefix (first 12 chars)
+      map.set(e.sha256, {
+        sha256: e.sha256,
+        name: prov?.name ?? e.sha256.slice(0, 12),
+        source: prov?.source ?? "",
+        dataType: e.dataType ?? "",
+      });
+      map.set(e.sha256.slice(0, 12), {
+        sha256: e.sha256,
+        name: prov?.name ?? e.sha256.slice(0, 12),
+        source: prov?.source ?? "",
+        dataType: e.dataType ?? "",
+      });
+      // Also index by name for backwards compat
+      if (prov?.name) {
+        map.set(prov.name, {
+          sha256: e.sha256,
+          name: prov.name,
+          source: prov.source ?? "",
+          dataType: e.dataType ?? "",
+        });
+      }
+    }
+    return map;
+  }, [elemData]);
 
   if (loading) {
     return (
@@ -27,32 +67,15 @@ export default function SchemaDetailPage() {
     );
   }
 
-  if (error) {
-    return (
-      <div className="bg-red-50 border border-red-200 rounded p-4">
-        <p className="text-red-800">Unable to load schema: {error.message}</p>
-      </div>
-    );
-  }
-
-  if (!schema) {
+  if (error || !schema) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-500 text-lg">Schema not found</p>
-        <p className="text-gray-400 text-sm mt-1 font-mono">{sha256}</p>
+        <p className="text-gray-500 text-lg">{error ? `Error: ${error.message}` : "Schema not found"}</p>
       </div>
     );
   }
 
   const prov = schema.provenance?.[0];
-
-  // Extract sha256 prefixes from property identifiers (format: name_hashprefix)
-  const propertyElements = (schema.properties ?? []).map((prop: string) => {
-    const parts = prop.split("_");
-    const hashPart = parts[parts.length - 1] ?? prop;
-    const namePart = parts.slice(0, -1).join("_") || prop;
-    return { entityType: "elements", sha256: hashPart, label: namePart };
-  });
 
   return (
     <EntityDetailLayout
@@ -66,7 +89,6 @@ export default function SchemaDetailPage() {
       provenance={schema.provenance}
       annotations={schema.ontologyAnnotations}
     >
-      {/* Schema properties */}
       <div className="space-y-4">
         {schema.subclassOf && (
           <div className="border rounded p-3">
@@ -80,27 +102,37 @@ export default function SchemaDetailPage() {
           </div>
         )}
 
-        {/* Properties as table with clickable links */}
-        {propertyElements.length > 0 && (
+        {/* Properties as table with resolved element links */}
+        {(schema.properties ?? []).length > 0 && (
           <div>
-            <h3 className="text-md font-semibold mb-3">Properties ({propertyElements.length})</h3>
+            <h3 className="text-md font-semibold mb-3">Properties ({schema.properties.length})</h3>
             <div className="border rounded overflow-hidden">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-gray-50 border-b">
                     <th className="text-left p-2 font-medium">Name</th>
-                    <th className="text-left p-2 font-medium">Identifier</th>
+                    <th className="text-left p-2 font-medium">Type</th>
+                    <th className="text-left p-2 font-medium">Source</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {propertyElements.map((prop, i) => (
-                    <tr key={i} className="border-b last:border-0 hover:bg-gray-50">
-                      <td className="p-2">
-                        <EntityTag entityType={prop.entityType} sha256={prop.sha256} label={prop.label} />
-                      </td>
-                      <td className="p-2 font-mono text-xs text-gray-400">{prop.sha256.slice(0, 12)}...</td>
-                    </tr>
-                  ))}
+                  {schema.properties.map((propRef: string, i: number) => {
+                    // propRef may be a sha256 hash, sha256 prefix, or name
+                    const resolved = nameToElement.get(propRef) || nameToElement.get(propRef.slice(0, 12));
+                    return (
+                      <tr key={i} className="border-b last:border-0 hover:bg-gray-50">
+                        <td className="p-2">
+                          {resolved ? (
+                            <EntityTag entityType="elements" sha256={resolved.sha256} label={resolved.name} />
+                          ) : (
+                            <span className="text-gray-500 font-mono text-xs">{propRef.slice(0, 16)}...</span>
+                          )}
+                        </td>
+                        <td className="p-2 text-gray-600">{resolved?.dataType ?? "—"}</td>
+                        <td className="p-2">{resolved?.source ? <SourceBadge source={resolved.source} /> : "—"}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

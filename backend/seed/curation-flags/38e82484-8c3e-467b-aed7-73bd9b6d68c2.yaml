@@ -1,0 +1,9 @@
+id: 38e82484-8c3e-467b-aed7-73bd9b6d68c2
+entity_type: element
+entity_ref: effectiveechospacing_16e763b624ee.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EffectiveEchoSpacing
+status: pending
+created_at: '2026-03-29T05:33:43.216836+00:00'

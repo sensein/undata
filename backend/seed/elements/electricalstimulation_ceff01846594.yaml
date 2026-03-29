@@ -1,0 +1,19 @@
+semantic:
+  data_type: boolean
+  value_domain: boolean
+provenance:
+- source: bids
+  class: metadata
+  name: ElectricalStimulation
+  description: 'Boolean field to specify if electrical stimulation was done during
+    the
+
+    recording (options are `true` or `false`). Parameters for event-like
+
+    stimulation should be specified in the `events.tsv` file.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ceff018465942a272690d3125d76be8f94cd33578065d6c05ce6819d63654e1d

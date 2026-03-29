@@ -1,0 +1,45 @@
+semantic:
+  data_type: string
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C42778
+    term_label: Uniform Resource Identifier
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8005
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C93704
+    term_label: Activity Identifier
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7558
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165071
+    term_label: Resource Identifier
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7213
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/dc/elements/1.1/identifier
+    term_label: Resource Identifier
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7213
+    model: all-MiniLM-L6-v2
+    primary: false
+  value_domain: text
+provenance:
+- source: dandi
+  class: Activity
+  name: id
+  description: Uniform resource identifier
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d545fd9d4561f940f7ee923530c02e2abd1bac401327d8f6a40338f44a13f6a6

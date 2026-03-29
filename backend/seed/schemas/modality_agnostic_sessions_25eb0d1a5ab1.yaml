@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - session_id
+  - acq_time__sessions
+  - pathology
+  - HED
+  is_mixin: true
+provenance:
+- source: bids
+  class: modality_agnostic_Sessions
+  name: modality_agnostic_Sessions
+  description: Tabular columns for modality_agnostic
+sha256: 25eb0d1a5ab1453e623377436e4cd2d95bce60538257bd9541f1743968e0e031

@@ -1,0 +1,66 @@
+semantic:
+  label: sample
+  value_type: categorical
+  display_name: Sample
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25662
+    term_label: Sampling
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8229
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C210102
+    term_label: Sample Type
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7877
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C53194
+    term_label: Random Sampling
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7346
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C186293
+    term_label: Request New Sample
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7312
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C71562
+    term_label: Sample Mode
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7154
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C53190
+    term_label: Sample Size
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7042
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: common_principles
+  name: sample
+  description: 'A sample pertaining to a subject such as tissue, primary cell or cell-free
+    sample.
+
+    Sample labels MUST be unique within a subject and it is RECOMMENDED
+
+    that they be unique throughout the dataset.
+
+    '
+sha256: c4d0ebdb07fba9013cbb48ec7537aeea4eb08fb9a25af5573e5de90aa553b496

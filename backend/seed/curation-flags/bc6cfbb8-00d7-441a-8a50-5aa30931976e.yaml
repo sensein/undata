@@ -1,0 +1,9 @@
+id: bc6cfbb8-00d7-441a-8a50-5aa30931976e
+entity_type: element
+entity_ref: rotationrule_ca3b1375eaf3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: RotationRule
+status: pending
+created_at: '2026-03-29T05:40:55.874655+00:00'

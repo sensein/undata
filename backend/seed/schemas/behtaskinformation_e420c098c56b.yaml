@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - TaskName
+  - Instructions
+  - TaskDescription
+  - CogAtlasID
+  - CogPOID
+  is_mixin: true
+provenance:
+- source: bids
+  class: BEHTaskInformation
+  name: BEHTaskInformation
+  description: Sidecar field group for beh
+sha256: e420c098c56b1bdbd766b417664baa7d67ecc7f0ff6b3d258ddee0dc0c75a75c

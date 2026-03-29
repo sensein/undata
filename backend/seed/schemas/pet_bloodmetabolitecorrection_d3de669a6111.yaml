@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - hplc_recovery_fractions
+  is_mixin: true
+provenance:
+- source: bids
+  class: pet_BloodMetaboliteCorrection
+  name: pet_BloodMetaboliteCorrection
+  description: Tabular columns for pet
+sha256: d3de669a6111438fc3f551586964f3cf61a49ccb44ebaa8e4605fef8cfad1607

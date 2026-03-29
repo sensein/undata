@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  value_domain: text
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C127802
+    term_label: Study Protocol Uniform Resource Locator Description
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7084
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: metadata
+  name: URL
+  description: 'A Uniform Resource Locator (URL) is a structured reference to an object
+    that
+
+    includes a resource transfer scheme and a location.
+
+    (see [URI](SPEC_ROOT/common-principles.md#uniform-resource-indicator))
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 7110f6ea22f0ce2a9b16e21043b40ee0103a4469aa0871f639ecc54c962915f0

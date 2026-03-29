@@ -1,0 +1,9 @@
+id: 8b167adc-03be-4029-8456-a50bfb6f9071
+entity_type: schema
+entity_ref: petreconstruction_0eee3ae1255f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PETReconstruction
+status: pending
+created_at: '2026-03-29T05:33:44.055217+00:00'

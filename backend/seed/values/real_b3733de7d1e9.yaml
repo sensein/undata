@@ -1,0 +1,13 @@
+semantic:
+  label: real
+  value_type: categorical
+  display_name: Real
+provenance:
+- source: bids
+  class: enums
+  name: real
+  description: 'A real-valued image, typically paired with an associated "imaginary"
+    (part-imag) image.
+
+    '
+sha256: b3733de7d1e96177756c25218202ce3b8a25676650fc148c70daa2567482598b

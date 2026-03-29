@@ -1,0 +1,46 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - publishedBy
+  - datePublished
+  - schemaVersion
+  - name
+  - description
+  - contributor
+  - about
+  - studyTarget
+  - license
+  - protocol
+  - ethicsApproval
+  - keywords
+  - acknowledgement
+  - access
+  - url
+  - repository
+  - relatedResource
+  - wasGeneratedBy
+  - contentSize
+  - encodingFormat
+  - digest
+  - path
+  - dateModified
+  - blobDateModified
+  - dataType
+  - sameAs
+  - approach
+  - measurementTechnique
+  - variableMeasured
+  - wasDerivedFrom
+  - wasAttributedTo
+  - identifier
+  - contentUrl
+  subclass_of: Asset
+  mixins:
+  - Publishable
+provenance:
+- source: dandi
+  class: PublishedAsset
+  name: PublishedAsset
+  description: null
+sha256: cd954379cb0a1d6a1f30a2386089406d163e208204cca1865b6e8626af3d3775

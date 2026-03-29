@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - FlipAngle
+  - InversionTime
+  - RepetitionTimeExcitation
+  - RepetitionTimePreparation
+  - NumberShots
+  is_mixin: true
+provenance:
+- source: bids
+  class: TB1SRGEMetadata
+  name: TB1SRGEMetadata
+  description: Sidecar field group for qmri
+sha256: 7c1bc214665c533d1a178ae2d82575149e10a18243e69c230ae485d6bad43407

@@ -1,0 +1,16 @@
+semantic:
+  data_type: float
+  unit: arbitrary
+  value_domain: numeric
+provenance:
+- source: bids
+  class: columns
+  name: hplc_recovery_fractions
+  description: 'HPLC recovery fractions (the fraction of activity that gets loaded
+    onto the HPLC).
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e5336a774e719362eff60b36799a44a971e840f2a4cc24f6c41590e2cc4e7622

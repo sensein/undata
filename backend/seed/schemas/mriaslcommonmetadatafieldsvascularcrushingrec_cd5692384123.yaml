@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - VascularCrushingVENC
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIASLCommonMetadataFieldsVascularCrushingRec
+  name: MRIASLCommonMetadataFieldsVascularCrushingRec
+  description: Sidecar field group for asl
+sha256: cd56923841239ea150c3ec1151bcfff059dadb132e24c1dfd46afc11dc00574e

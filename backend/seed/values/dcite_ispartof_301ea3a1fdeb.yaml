@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: dcite:ispartof
+provenance:
+- source: dandi
+  class_: ''
+  name: dcite:IsPartOf
+sha256: 301ea3a1fdebd4d1db74ed73fb7ff98fdac6fbc5a90c6616fef35dc9495508bf

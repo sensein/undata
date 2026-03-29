@@ -1,0 +1,13 @@
+semantic:
+  label: anat
+  value_type: categorical
+  display_name: Anatomical Magnetic Resonance Imaging
+provenance:
+- source: bids
+  class: datatypes
+  name: anat
+  description: 'Magnetic resonance imaging sequences designed to characterize static,
+    anatomical features.
+
+    '
+sha256: 0d0870d924ab9ea89f474857e0f9994cce46571fb7af79d1fe5cb43eb15d6651

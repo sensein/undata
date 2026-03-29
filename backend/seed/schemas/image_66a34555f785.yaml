@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - resolution
+  subclass_of: BaseImage
+provenance:
+- source: nwb
+  class: Image
+  name: Image
+  description: A type for storing image data directly. Shape can be 2-D (x, y), or
+    3-D where the third dimension can have three or four elements, e.g. (x, y, (r,
+    g, b)) or (x, y, (r, g, b, a)).
+sha256: 66a34555f7852d6ed9b1ac6f810216ac835427ac6a67f868da8a27d655f1ee74

@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - TimeSeries
+  subclass_of: NWBDataInterface
+provenance:
+- source: nwb
+  class: PupilTracking
+  name: PupilTracking
+  description: Eye-tracking data, representing pupil size.
+sha256: a2721c50291d21363adae7dacbf3b53ecfd5b6a1b8be92ef4ba6c4d56c13f670

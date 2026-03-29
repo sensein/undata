@@ -1,0 +1,18 @@
+semantic:
+  data_type: array
+provenance:
+- source: bids
+  class: metadata
+  name: DeidentificationMethod
+  description: 'A description of the mechanism or method used to remove the Patient''s
+    identity.
+
+    Corresponds to [DICOM Tag 0012, 0063](http://www.dicomlookup.com/dicomtags/(0012,0063))
+
+    `De-identification Method`.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1be7c59325771965efa84bbab3965bfc60406aec8f15d064f4e0f4b2395defed

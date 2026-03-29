@@ -1,0 +1,17 @@
+semantic:
+  label: dcite:Audiovisual
+  value_type: categorical
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C19695
+    term_label: Audiovisual Material
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7906
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: ResourceType
+  name: dcite:Audiovisual
+sha256: 2de6a88c647523ba3d41bbadfbed8fcbc5ef8cd669c39eba462ff1ed8661743f

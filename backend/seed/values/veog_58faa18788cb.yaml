@@ -1,0 +1,12 @@
+semantic:
+  label: VEOG
+  value_type: categorical
+  display_name: VEOG
+provenance:
+- source: bids
+  class: enums
+  name: VEOG
+  description: 'Vertical EOG (eye).
+
+    '
+sha256: 58faa18788cbdaddbf06e98bf9b5f71507e3229671a6562deb8e7163aa99f1c5

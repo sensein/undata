@@ -1,0 +1,11 @@
+id: d7e10f7a-40ab-44b9-a64f-723fabedb90e
+entity_type: value
+entity_ref: meg_e3e01d8d942c.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.763), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C630
+  top_label: Megestrol
+  top_score: 0.7628
+status: pending
+created_at: '2026-03-29T05:40:56.444279+00:00'

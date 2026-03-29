@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: CapManufacturer
+  description: 'Name of the cap manufacturer (for example, `"EasyCap"`).
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 85d8986a9cb8d178383467a95a05147c85f99a07778d24b809435fb20e15b578

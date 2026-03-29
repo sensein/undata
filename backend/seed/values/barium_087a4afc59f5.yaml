@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: barium
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C61475
+    term_label: Barium
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: BARIUM
+sha256: 087a4afc59f5868ab8983356c2fbc16e8c30f495f076c9189b25054ca28d6e66

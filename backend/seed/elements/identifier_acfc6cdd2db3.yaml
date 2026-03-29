@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165071
+    term_label: Resource Identifier
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: concept_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.org/dc/elements/1.1/identifier
+    term_label: Resource Identifier
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: concept_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  value_domain: text
+provenance:
+- source: dandi
+  class: Resource
+  name: identifier
+  description: ''
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: acfc6cdd2db30a1a77a2beb7eafe56fd4b01cd65fba4865708c0860b579d4c19

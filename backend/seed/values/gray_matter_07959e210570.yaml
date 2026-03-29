@@ -1,0 +1,89 @@
+semantic:
+  value_type: categorical
+  label: gray_matter
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C32695
+    term_label: Gray Matter
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.9518
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: https://purl.brain-bican.org/ontology/hbao/HBA_4006
+    term_label: gray matter
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.9518
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0002020
+    term_label: gray matter
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.9518
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C158080
+    term_label: Deep Gray Matter
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8254
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0003528
+    term_label: brain gray matter
+    ontology: uberon
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8096
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C49333
+    term_label: Brain Gray Matter
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8096
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/HP_0002282
+    term_label: Gray matter heterotopia
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7485
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C96352
+    term_label: Entrapped Gray Matter Present
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7421
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0014933
+    term_label: periventricular gray matter
+    ontology: uberon
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7273
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C48324
+    term_label: Gray
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7008
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: gray matter
+sha256: 07959e210570a2fb8617e0ce0ebc54376232b3367c8265468c67aeb9942dbbe6

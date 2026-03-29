@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  type_ref: ImagingPlane
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: imaging_plane
+  description: Link to ImagingPlane object from which this TimeSeries data was generated.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 02e9bad13a4724d5b2f3af90fb8b9e167eae36ac74429318f05afeff83ff6fbd

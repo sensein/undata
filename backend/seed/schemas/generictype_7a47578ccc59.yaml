@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  subclass_of: BaseType
+provenance:
+- source: dandi
+  class: GenericType
+  name: GenericType
+  description: An object to capture any type for about
+sha256: 7a47578ccc59ccf2c38984dfed97726a941ef83936f54d7f4b92cd9f781e4ebe

@@ -79,6 +79,7 @@ class DatabaseEntityStore:
             kwargs.update({
                 "data_type": sem.get("data_type"),
                 "unit": sem.get("unit"),
+                "unit_uri": sem.get("unit_uri"),
                 "pattern": sem.get("pattern"),
                 "value_domain": sem.get("value_domain"),
                 "description": sem.get("description"),

@@ -1,0 +1,9 @@
+id: 02702f4c-ec26-44b3-9a4d-2fdb399643cb
+entity_type: schema
+entity_ref: nirs_nirsoptodes_dcf098622d6b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: nirs_nirsOptodes
+status: pending
+created_at: '2026-03-29T05:37:10.000037+00:00'

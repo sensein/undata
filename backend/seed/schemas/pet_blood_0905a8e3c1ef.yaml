@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - time
+  - plasma_radioactivity
+  - metabolite_parent_fraction
+  - metabolite_polar_fraction
+  - hplc_recovery_fractions
+  - whole_blood_radioactivity
+  is_mixin: true
+provenance:
+- source: bids
+  class: pet_Blood
+  name: pet_Blood
+  description: Tabular columns for pet
+sha256: 0905a8e3c1ef10295014c8fd3839ddfd9063384e7ca623216e2ddfa6e2f0db69

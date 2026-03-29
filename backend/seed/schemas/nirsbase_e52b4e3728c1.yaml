@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - RecordingDuration
+  - HeadCircumference
+  - HardwareFilters
+  - SubjectArtefactDescription
+  is_mixin: true
+provenance:
+- source: bids
+  class: NirsBase
+  name: NirsBase
+  description: Sidecar field group for nirs
+sha256: e52b4e3728c185ba4a77907c5e2ab49d627988df9a1003ea00cdd3de62268e9b

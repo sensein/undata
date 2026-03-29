@@ -1,0 +1,11 @@
+id: cfc5986b-4bd9-4d40-8791-e46e04bb1ba5
+entity_type: element
+entity_ref: rrid_2d91a4d1e3b6.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.715), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C224810
+  top_label: Research Resource Identifier
+  top_score: 0.7152
+status: pending
+created_at: '2026-03-29T05:37:09.131701+00:00'

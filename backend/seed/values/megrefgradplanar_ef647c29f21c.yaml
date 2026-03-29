@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: megrefgradplanar
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C66075
+    term_label: Meglitinide
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7374
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: MEGREFGRADPLANAR
+sha256: ef647c29f21cbf2f83683d0bda6d4a7305aa77176d9d6712bb9be03d391abf17

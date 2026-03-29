@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: dandi:openaccess
+provenance:
+- source: dandi
+  class_: ''
+  name: dandi:OpenAccess
+sha256: 288b6120e2087314fc59c72f249cdac5fe800ee29880bc7ca3897bdc3fa2c59e

@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - PartialFourierDirection
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIPartialFourier
+  name: MRIPartialFourier
+  description: Sidecar field group for mri
+sha256: adb0b8c511ed0558f9b7b67107f233cad6944251e0db933ac9706cc405a0ce9c

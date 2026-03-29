@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - whole_blood_radioactivity
+  is_mixin: true
+provenance:
+- source: bids
+  class: pet_BloodWholeBlood
+  name: pet_BloodWholeBlood
+  description: Tabular columns for pet
+sha256: 8a408b0d40164a926e8848e6a160866798f285943d2afaf9518b47e79dc3645d

@@ -1,0 +1,34 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - schemaVersion
+  - name
+  - description
+  - contributor
+  - about
+  - studyTarget
+  - license
+  - protocol
+  - ethicsApproval
+  - keywords
+  - acknowledgement
+  - access
+  - url
+  - repository
+  - relatedResource
+  - wasGeneratedBy
+  - identifier
+  - dateCreated
+  - dateModified
+  - citation
+  - assetsSummary
+  - manifestLocation
+  - version
+  subclass_of: CommonModel
+provenance:
+- source: dandi
+  class: Dandiset
+  name: Dandiset
+  description: A body of structured information describing a DANDI dataset.
+sha256: c96af4812c85b9d3ab65391bbbe444c66bb3a7bdd9b83c8d4cfc1281ab2ad519

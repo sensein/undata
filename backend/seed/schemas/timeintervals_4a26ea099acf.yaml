@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - start_time
+  - stop_time
+  - tags
+  - tags_index
+  - timeseries
+  - timeseries_index
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: TimeIntervals
+  name: TimeIntervals
+  description: A container for aggregating epoch data and the TimeSeries that each
+    epoch applies to.
+sha256: 4a26ea099acf8b78947bb10ed2dcc7540c636d61efda730834041301ad9bf855

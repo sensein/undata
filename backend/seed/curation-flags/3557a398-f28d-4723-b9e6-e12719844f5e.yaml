@@ -1,0 +1,11 @@
+id: 3557a398-f28d-4723-b9e6-e12719844f5e
+entity_type: value
+entity_ref: scans_a41920efad29.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.935), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C17999
+  top_label: Scan
+  top_score: 0.9354
+status: pending
+created_at: '2026-03-29T05:37:09.781886+00:00'

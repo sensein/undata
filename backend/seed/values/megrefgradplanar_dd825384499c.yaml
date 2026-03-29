@@ -1,0 +1,21 @@
+semantic:
+  label: MEGREFGRADPLANAR
+  value_type: categorical
+  display_name: MEGREFGRADPLANAR
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C66075
+    term_label: Meglitinide
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7374
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: MEGREFGRADPLANAR
+  description: 'MEG reference planar gradiometer.
+
+    '
+sha256: dd825384499c1ac969357560a7cc2453b4463ca85f99eb03169289b8e74a9a9e

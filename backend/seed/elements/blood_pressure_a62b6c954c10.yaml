@@ -1,9 +1,0 @@
-semantic:
-  data_type: string
-  ontology_annotations: []
-provenance:
-- source: dandi
-  class: Vitals
-  name: blood_pressure
-  description: Blood pressure measurement
-sha256: a62b6c954c108aace6146effa56a93a78b224de5e84d5ed1c9dc51c90ec7f0b2

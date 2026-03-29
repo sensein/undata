@@ -1,0 +1,13 @@
+id: c6dbc4f4-ac61-436f-9929-5c44206368a4
+entity_type: element
+entity_ref: identifier_acfc6cdd2db3.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C165071
+    score: 1.0
+  - uri: http://purl.org/dc/elements/1.1/identifier
+    score: 1.0
+status: pending
+created_at: '2026-03-29T05:40:55.624929+00:00'

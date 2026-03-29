@@ -1,0 +1,11 @@
+id: 334ad46f-f699-4a38-8754-ae70623d9c52
+entity_type: value
+entity_ref: fsaverage_217b3697c999.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.701), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/PATO_0002296
+  top_label: foveate
+  top_score: 0.7008
+status: pending
+created_at: '2026-03-29T05:33:43.646871+00:00'

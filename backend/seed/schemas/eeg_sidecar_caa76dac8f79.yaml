@@ -1,0 +1,15 @@
+semantic:
+  properties: []
+  mixins:
+  - EEGHardware
+  - EEGTaskInformation
+  - EEGInstitutionInformation
+  - EEGRequired
+  - EEGRecommended
+  - EEGOptional
+provenance:
+- source: bids
+  class: eeg_sidecar
+  name: eeg_sidecar
+  description: BIDS sidecar for eeg
+sha256: caa76dac8f79c330665d018153bf1b49f5d28a2c18c9c7bb6ca2bf0ac124a79d

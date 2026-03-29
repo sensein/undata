@@ -1,0 +1,15 @@
+semantic:
+  label: optodes
+  value_type: categorical
+  display_name: Optodes
+provenance:
+- source: bids
+  class: suffixes
+  name: optodes
+  description: 'Either a light emitting device, sometimes called a transmitter, or
+    a photoelectric transducer, sometimes called a
+
+    receiver.
+
+    '
+sha256: c44a6af8465816f0523fd7892c9a35ca881843d8a881ac2528403fbc95d2f10d

@@ -1,0 +1,12 @@
+semantic:
+  label: .fif
+  value_type: categorical
+  display_name: Functional Imaging File Format
+provenance:
+- source: bids
+  class: extensions
+  name: fif
+  description: 'An MEG file format used by Neuromag, Elekta, and MEGIN.
+
+    '
+sha256: 9228b3c7b40d4c285ed60f5a5ffa20d7e325d644006415c303fd95e38892e6c3

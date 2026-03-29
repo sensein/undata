@@ -1,0 +1,25 @@
+semantic:
+  value_type: categorical
+  label: discontinuous
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000690
+    term_label: discontinuous
+    ontology: pato
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25484
+    term_label: Discontinue
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9227
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: discontinuous
+sha256: b5eba1d9e2d33bd3c0fcdd8c89e8bdc4a94589c36a7207a8d425941241223522

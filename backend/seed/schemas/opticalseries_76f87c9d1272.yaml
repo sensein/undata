@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - distance
+  - field_of_view
+  - data
+  - orientation
+  subclass_of: ImageSeries
+provenance:
+- source: nwb
+  class: OpticalSeries
+  name: OpticalSeries
+  description: Image data that is presented or recorded. A stimulus template movie
+    will be stored only as an image. When the image is presented as stimulus, additional
+    data is required, such as field of view (e.g., how much of the visual field the
+    image covers, or how what is the area of the target being imaged). If the OpticalSeries
+    represents acquired imaging data, orientation is also important.
+sha256: 76f87c9d12721987a809de9b599b0e5d439599ece5bd75a1915e0ce7283219a6

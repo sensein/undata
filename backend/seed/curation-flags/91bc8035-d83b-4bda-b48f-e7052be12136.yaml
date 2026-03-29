@@ -1,0 +1,9 @@
+id: 91bc8035-d83b-4bda-b48f-e7052be12136
+entity_type: value
+entity_ref: on_a4d56fde857b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: on__mtransfer
+status: pending
+created_at: '2026-03-29T05:33:43.807599+00:00'

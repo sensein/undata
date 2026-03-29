@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+provenance:
+- source: dandi
+  class: AssetsSummary
+  name: species
+  description: ''
+  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 070b9b60aa3b6106acf936265db2810f95aad8c26e53656250fdb1d4b45d3fc4

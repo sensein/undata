@@ -1,0 +1,38 @@
+semantic:
+  name: ResourceType
+  members:
+  - dcite:Audiovisual
+  - dcite:Book
+  - dcite:BookChapter
+  - dcite:Collection
+  - dcite:ComputationalNotebook
+  - dcite:ConferencePaper
+  - dcite:ConferenceProceeding
+  - dcite:DataPaper
+  - dcite:Dataset
+  - dcite:Dissertation
+  - dcite:Event
+  - dcite:Image
+  - dcite:Instrument
+  - dcite:InteractiveResource
+  - dcite:Journal
+  - dcite:JournalArticle
+  - dcite:Model
+  - dcite:Other
+  - dcite:OutputManagementPlan
+  - dcite:PeerReview
+  - dcite:PhysicalObject
+  - dcite:Preprint
+  - dcite:Report
+  - dcite:Service
+  - dcite:Software
+  - dcite:Sound
+  - dcite:Standard
+  - dcite:StudyRegistration
+  - dcite:Text
+  - dcite:Workflow
+provenance:
+- source: dandi
+  class: Resource
+  name: ResourceType
+sha256: 0c646ed985b9d2db22eea0f50bb78c650f38b8ec16d7ac120eca85c2cc4502b0

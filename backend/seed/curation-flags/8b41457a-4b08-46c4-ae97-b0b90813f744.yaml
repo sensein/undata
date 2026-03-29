@@ -1,0 +1,11 @@
+id: 8b41457a-4b08-46c4-ae97-b0b90813f744
+entity_type: value
+entity_ref: fluo_f6f538d5e893.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.731), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C29056
+  top_label: Fluocinonide
+  top_score: 0.7308
+status: pending
+created_at: '2026-03-29T05:37:09.482286+00:00'

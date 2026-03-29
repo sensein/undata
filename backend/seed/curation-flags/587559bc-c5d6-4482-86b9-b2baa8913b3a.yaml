@@ -1,0 +1,9 @@
+id: 587559bc-c5d6-4482-86b9-b2baa8913b3a
+entity_type: element
+entity_ref: dimension_b8b4dcd0a34c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dimension
+status: pending
+created_at: '2026-03-29T05:37:08.859286+00:00'

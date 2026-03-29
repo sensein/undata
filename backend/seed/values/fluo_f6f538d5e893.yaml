@@ -1,0 +1,37 @@
+semantic:
+  label: FLUO
+  value_type: categorical
+  display_name: Fluorescence microscopy
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C29056
+    term_label: Fluocinonide
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7308
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C65714
+    term_label: Fluindione
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7012
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C29042
+    term_label: Fluorodopan
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7009
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: suffixes
+  name: FLUO
+  description: 'Fluorescence microscopy imaging data
+
+    '
+sha256: f6f538d5e893c7d183191636de67c6b83ddf0cceb26ea44c295d6852d1e17890

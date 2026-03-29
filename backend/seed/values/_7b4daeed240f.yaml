@@ -1,0 +1,12 @@
+semantic:
+  label: ''
+  value_type: categorical
+  display_name: No extension
+provenance:
+- source: bids
+  class: extensions
+  name: None
+  description: 'A file with no extension.
+
+    '
+sha256: 7b4daeed240ff4aba1d00539db94007aae9ae5967ab9bd7a015cfcee993e82e7

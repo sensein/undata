@@ -1,0 +1,9 @@
+id: faa88076-4a76-41e4-911a-ce66ca1a8c5a
+entity_type: element
+entity_ref: atlassamplesize_a269a403581c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AtlasSampleSize
+status: pending
+created_at: '2026-03-29T05:40:55.355789+00:00'

@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  subclass_of: BaseType
+provenance:
+- source: dandi
+  class: ApproachType
+  name: ApproachType
+  description: Identifier for approach used
+sha256: 7a2ed4d3f8fab4754d1282df76aa7dad072f8ad501479bee4558e7383248968f

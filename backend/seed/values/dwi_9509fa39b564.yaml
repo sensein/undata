@@ -1,0 +1,12 @@
+semantic:
+  label: dwi
+  value_type: categorical
+  display_name: Diffusion-Weighted Imaging
+provenance:
+- source: bids
+  class: datatypes
+  name: dwi
+  description: 'Diffusion-weighted imaging (DWI).
+
+    '
+sha256: 9509fa39b564b87e66c7d9fa8540cfd4cec97f0111a1447f153b5198e815aef1

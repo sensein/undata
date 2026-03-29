@@ -1,0 +1,14 @@
+semantic:
+  properties: []
+  mixins:
+  - motionHardware
+  - motionInstitutionInformation
+  - motionTaskInformation
+  - motionRequired
+  - motionRecommended
+provenance:
+- source: bids
+  class: motion_sidecar
+  name: motion_sidecar
+  description: BIDS sidecar for motion
+sha256: 7073b86e07a032d507843c720bead5cd14a73101d7c01c3d75d958da4e95525d

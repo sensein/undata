@@ -1,0 +1,9 @@
+id: ceae7b9f-8ebc-4438-bc4b-d15ff7d7ffb7
+entity_type: element
+entity_ref: echotime_0c33f29ec154.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EchoTime
+status: pending
+created_at: '2026-03-29T05:40:55.476932+00:00'

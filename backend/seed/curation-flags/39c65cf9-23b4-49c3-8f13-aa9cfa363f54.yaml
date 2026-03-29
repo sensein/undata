@@ -1,0 +1,11 @@
+id: 39c65cf9-23b4-49c3-8f13-aa9cfa363f54
+entity_type: value
+entity_ref: right-hand_d2b4a0b3506f.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.824), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/OBI_0000958
+  top_label: right handed
+  top_score: 0.8241
+status: pending
+created_at: '2026-03-29T05:37:09.762095+00:00'

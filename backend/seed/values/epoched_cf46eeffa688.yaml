@@ -1,0 +1,55 @@
+semantic:
+  label: epoched
+  value_type: categorical
+  display_name: Epoched recording
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C93825
+    term_label: Epoch Name
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7872
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C93824
+    term_label: Epoch Description
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7843
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C63779
+    term_label: EPOCH Regimen
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7623
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C202578
+    term_label: Follow-Up Epoch
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7246
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C93826
+    term_label: Epoch Sequence Number
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7089
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: epoched
+  description: 'Recording is limited to time windows around events of interest
+
+    (for example, stimulus presentations or subject responses).
+
+    '
+sha256: cf46eeffa6886d3996eed002a07844a9bd8b8ffddb14f5b0607ac512d5d763ae

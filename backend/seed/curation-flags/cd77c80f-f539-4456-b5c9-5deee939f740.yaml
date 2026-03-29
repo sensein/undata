@@ -1,0 +1,9 @@
+id: cd77c80f-f539-4456-b5c9-5deee939f740
+entity_type: element
+entity_ref: infusionspeed_d976a4c25a4d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: InfusionSpeed
+status: pending
+created_at: '2026-03-29T05:40:55.650061+00:00'

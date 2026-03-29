@@ -1,0 +1,13 @@
+id: 3cd8f5fa-8572-4390-9fe0-2838a1220ed3
+entity_type: value
+entity_ref: channelspecific_7c99b571f4b9.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.022)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/uberon/core#channels_from
+    score: 0.7294
+  - uri: http://purl.obolibrary.org/obo/uberon/core#channels_into
+    score: 0.7077
+status: pending
+created_at: '2026-03-29T05:40:56.174521+00:00'

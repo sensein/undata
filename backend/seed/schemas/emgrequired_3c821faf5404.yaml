@@ -1,0 +1,16 @@
+semantic:
+  properties:
+  - EMGPlacementScheme
+  - EMGPlacementSchemeDescription
+  - EMGReference
+  - SamplingFrequency
+  - PowerLineFrequency
+  - RecordingType
+  - SoftwareFilters
+  is_mixin: true
+provenance:
+- source: bids
+  class: EMGRequired
+  name: EMGRequired
+  description: Sidecar field group for emg
+sha256: 3c821faf540429d823f492891191b4f1c41c6fc69b1e33e42c0905f8ce8f01d1

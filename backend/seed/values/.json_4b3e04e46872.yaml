@@ -1,0 +1,33 @@
+semantic:
+  label: .json
+  value_type: categorical
+  display_name: JavaScript Object Notation
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C184769
+    term_label: JSON Format
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7511
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: extensions
+  name: json
+  description: 'A JSON file.
+
+
+    In the BIDS specification, JSON files are primarily used as "sidecar" files, in
+    which metadata describing "data"
+
+    files are encoded.
+
+    These sidecar files follow the inheritance principle.
+
+
+    There are also a few special cases of JSON files being first-order data files,
+    such as `genetic_info.json`.
+
+    '
+sha256: 4b3e04e4687253d203c0dc67a7f45d7f6b88a92f15aae95ce0f3ca0a8b86d580

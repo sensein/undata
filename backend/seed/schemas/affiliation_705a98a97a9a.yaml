@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25412
+    term_label: Affiliation
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.9499
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: Affiliation
+  name: Affiliation
+  description: null
+sha256: 705a98a97a9a8cb8ce169668c1a55ef3745f3faaeb189c82f91d22153519a760

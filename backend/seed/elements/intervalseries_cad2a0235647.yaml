@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  type_ref: IntervalSeries
+provenance:
+- source: nwb
+  class: nwb
+  name: IntervalSeries
+  description: IntervalSeries object containing start and stop times of epochs.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: cad2a0235647d22b987d4406fdd3edec2afa45c45f280db0d9d3ed74fa435e64

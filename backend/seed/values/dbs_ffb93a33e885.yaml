@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: dbs
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C15426
+    term_label: Database
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7357
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: DBS
+sha256: ffb93a33e885e1cfb2f9ba7afe08b992852be7f2eeb93c644c986ebe192cc7fb

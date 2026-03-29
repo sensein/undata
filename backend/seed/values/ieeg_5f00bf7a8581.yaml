@@ -1,0 +1,12 @@
+semantic:
+  label: ieeg
+  value_type: categorical
+  display_name: Intracranial Electroencephalography
+provenance:
+- source: bids
+  class: suffixes
+  name: ieeg
+  description: 'Intracranial electroencephalography recording data.
+
+    '
+sha256: 5f00bf7a858170a658ce92990f7eaa0a0989b28d703429d42275ace5a875d97e

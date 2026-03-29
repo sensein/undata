@@ -1,0 +1,29 @@
+semantic:
+  label: TEMP
+  value_type: categorical
+  display_name: TEMP
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000146
+    term_label: temperature
+    ontology: pato
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8321
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25206
+    term_label: Temperature
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8321
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: TEMP
+  description: 'Temperature.
+
+    '
+sha256: 3c5c3d8121de26b07a0b0f6c8b6fbd2d4203a8e516e27ced5c57debeb532bca5

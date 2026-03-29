@@ -1,0 +1,9 @@
+id: cde5af93-d6c2-4e1d-a665-7d2939d40760
+entity_type: schema
+entity_ref: nirsrequired_94f535454565.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NirsRequired
+status: pending
+created_at: '2026-03-29T05:37:10.002565+00:00'

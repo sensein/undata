@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - Units
+  is_mixin: true
+provenance:
+- source: bids
+  class: PhaseSuffixUnits
+  name: PhaseSuffixUnits
+  description: Sidecar field group for func
+sha256: 564065fa134b0be941a1f858847abf69aa2f41d6d72a95931b3288369fa2ca73

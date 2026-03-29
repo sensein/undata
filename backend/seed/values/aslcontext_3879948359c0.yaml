@@ -1,0 +1,13 @@
+semantic:
+  label: aslcontext
+  value_type: categorical
+  display_name: Arterial Spin Labeling Context
+provenance:
+- source: bids
+  class: suffixes
+  name: aslcontext
+  description: 'A TSV file defining the image types for volumes in an associated ASL
+    file.
+
+    '
+sha256: 3879948359c0fc464a1d1c0a205639e2f93d3605aac02fc816c563c3f924b7ca

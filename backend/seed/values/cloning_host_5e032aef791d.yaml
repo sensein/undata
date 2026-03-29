@@ -1,0 +1,29 @@
+semantic:
+  label: cloning host
+  value_type: categorical
+  display_name: cloning host
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C43458
+    term_label: Cloning Site
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7888
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C16442
+    term_label: Cloning
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7589
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: cloning_host
+  description: 'A biosample type (`sample_type`): cloning host
+
+    '
+sha256: 5e032aef791d3db9883448a18bce024883b224653f7f7bb84f453bed008b3377

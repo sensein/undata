@@ -1,0 +1,9 @@
+id: a8ae925d-ee7e-416d-b3e7-d7ea5e5da3f5
+entity_type: element
+entity_ref: reference_frame_e2d5025c7ee3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: reference_frame
+status: pending
+created_at: '2026-03-29T05:33:43.376703+00:00'

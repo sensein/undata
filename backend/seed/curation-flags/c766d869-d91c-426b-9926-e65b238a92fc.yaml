@@ -1,0 +1,9 @@
+id: c766d869-d91c-426b-9926-e65b238a92fc
+entity_type: element
+entity_ref: magnchannelcount_2c19b94725d5.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MAGNChannelCount
+status: pending
+created_at: '2026-03-29T05:33:43.294585+00:00'

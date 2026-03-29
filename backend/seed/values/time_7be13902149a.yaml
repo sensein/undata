@@ -1,0 +1,25 @@
+semantic:
+  value_type: categorical
+  label: time
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000165
+    term_label: time
+    ontology: pato
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25207
+    term_label: Time
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: time
+sha256: 7be13902149a334424be23e691c3b895c2af0693589cf978b67381a618a47cdc

@@ -1,0 +1,9 @@
+id: e3b9c432-e018-4d51-8fe4-b3dbc7d8b96a
+entity_type: element
+entity_ref: nirssourceoptodecount_f74f81b5f3f4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NIRSSourceOptodeCount
+status: pending
+created_at: '2026-03-29T05:37:09.051503+00:00'

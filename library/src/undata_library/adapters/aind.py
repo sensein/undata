@@ -99,8 +99,10 @@ class AINDAdapter(BaseAdapter):
             rng = self._json_schema_range(prop_def, defs)
             desc = prop_def.get("description", "")
             multivalued = prop_def.get("type") == "array"
+            pattern = prop_def.get("pattern")
             lb.add_slot(
-                ld, prop_name, range=rng, description=desc[:500] or None, multivalued=multivalued
+                ld, prop_name, range=rng, description=desc[:500] or None,
+                multivalued=multivalued, pattern=pattern,
             )
             slot_names.append(prop_name)
             if prop_name in required:
@@ -139,12 +141,14 @@ class AINDAdapter(BaseAdapter):
                 rng = self._json_schema_range(prop_def, defs)
                 desc = prop_def.get("description", "")
                 multivalued = prop_def.get("type") == "array"
+                pattern = prop_def.get("pattern")
                 lb.add_slot(
                     ld,
                     prop_name,
                     range=rng,
                     description=desc[:500] or None,
                     multivalued=multivalued,
+                    pattern=pattern,
                 )
                 slot_names.append(prop_name)
                 if prop_name in required:

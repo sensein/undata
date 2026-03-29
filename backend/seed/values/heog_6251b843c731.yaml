@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: heog
+provenance:
+- source: bids
+  class_: ''
+  name: HEOG
+sha256: 6251b843c7319ec74447b90a583a22d7bf64c2c2c5da3d683a15d10d3ef6880e

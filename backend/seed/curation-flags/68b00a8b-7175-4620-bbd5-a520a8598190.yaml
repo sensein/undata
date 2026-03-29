@@ -1,0 +1,9 @@
+id: 68b00a8b-7175-4620-bbd5-a520a8598190
+entity_type: element
+entity_ref: boluscutofftechnique_4d91258a42e0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: BolusCutOffTechnique
+status: pending
+created_at: '2026-03-29T05:40:55.381015+00:00'

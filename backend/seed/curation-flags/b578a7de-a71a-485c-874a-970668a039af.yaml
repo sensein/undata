@@ -1,0 +1,9 @@
+id: b578a7de-a71a-485c-874a-970668a039af
+entity_type: schema
+entity_ref: pet_sidecar_a865547ce183.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: pet_sidecar
+status: pending
+created_at: '2026-03-29T05:33:44.052411+00:00'

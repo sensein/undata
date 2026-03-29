@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: peak
+    label: peak
+    ontology_term: https://schema.undata.live/values/f6ee3060-7126-4e39-ad9e-f6830191cea4
+  - value: center_of_mass
+    label: center_of_mass
+    ontology_term: https://schema.undata.live/values/d2d05df2-7cfe-452f-bad2-9d18a5f103ea
+  - value: other
+    label: other
+    ontology_term: https://schema.undata.live/values/437193a7-ec96-4411-86d5-5682d460558a
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: CoordinateReportStrategy
+  description: 'Indicate the method of coordinate reporting in statistically significant
+    clusters.
+
+    Could be the "peak" statistical coordinate in the cluster or the
+
+    "center_of_mass" of the cluster.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 987a20b0579f1fca75216ca1e64b3e07687662174e4a7c4267f7cad78856e8c0

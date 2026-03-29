@@ -1,0 +1,11 @@
+id: fc90081b-31e6-45ec-a881-30d2ca47f1d6
+entity_type: value
+entity_ref: temp_3c5c3d8121de.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.832), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/PATO_0000146
+  top_label: temperature
+  top_score: 0.8321
+status: pending
+created_at: '2026-03-29T05:37:09.829669+00:00'

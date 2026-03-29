@@ -1,0 +1,15 @@
+semantic:
+  properties: []
+  mixins:
+  - MRIFuncRequired
+  - MRIFuncRepetitionTime
+  - MRIFuncVolumeTiming
+  - MRIFuncTimingParameters
+  - MRIFuncTaskInformation
+  - PhaseSuffixUnits
+provenance:
+- source: bids
+  class: func_sidecar
+  name: func_sidecar
+  description: BIDS sidecar for func
+sha256: f3fc9b20dee1efe2334b64a26af5439994e9907a2e6d65ff808139ac10d3badb

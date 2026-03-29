@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: quat_x
+provenance:
+- source: bids
+  class_: ''
+  name: quat_x
+sha256: b780c7af55a9a679f0d1877fdba5610d6246cbd8c686d5978adccd2e17d1beea

@@ -1,0 +1,9 @@
+id: 6081bfbd-6c18-4851-8311-5f2213f4e1b5
+entity_type: element
+entity_ref: orientation_52d25361e11a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: orientation
+status: pending
+created_at: '2026-03-29T05:37:09.064944+00:00'

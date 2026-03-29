@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - TaskName
+  is_mixin: true
+provenance:
+- source: bids
+  class: EntitiesTaskMetadata
+  name: EntitiesTaskMetadata
+  description: Sidecar field group for entity_rules
+sha256: f53d9b21e75938b1c261bb42f41f3df40832cb68a68b87a90e3dbbfb56f7b505

@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - BodyPart
+  - BodyPartDetails
+  - BodyPartDetailsOntology
+  is_mixin: true
+provenance:
+- source: bids
+  class: PETSample
+  name: PETSample
+  description: Sidecar field group for pet
+sha256: 2840430386ea4b600ddbfa5ad32f5d972591ff0208eb0c8e96cbcf94c158d646

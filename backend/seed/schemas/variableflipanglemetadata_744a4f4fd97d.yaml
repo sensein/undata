@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - FlipAngle
+  - PulseSequenceType
+  - RepetitionTimeExcitation
+  is_mixin: true
+provenance:
+- source: bids
+  class: VariableFlipAngleMetadata
+  name: VariableFlipAngleMetadata
+  description: Sidecar field group for qmri
+sha256: 744a4f4fd97d4b7ed6da68d1e41e126c05f4c68b283317a020c41d4ab45c66a5

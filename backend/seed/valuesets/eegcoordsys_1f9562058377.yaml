@@ -1,0 +1,12 @@
+semantic:
+  name: EEGCoordSys
+  members:
+  - CapTrak
+  - EEGLAB
+  - EEGLAB-HJ
+  - Other
+provenance:
+- source: bids
+  class: enums
+  name: _EEGCoordSys
+sha256: 1f95620583779741767ad85ee003b7c5095cf1ef024bea5a315a8c6764011091

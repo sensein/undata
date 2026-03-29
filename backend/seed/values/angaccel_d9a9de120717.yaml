@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: angaccel
+provenance:
+- source: bids
+  class_: ''
+  name: ANGACCEL
+sha256: d9a9de1207176c60d362cf7d553158f87d98339693b972878bb9da7c94e7aa62

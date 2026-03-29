@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - TaskName
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIFuncRequired
+  name: MRIFuncRequired
+  description: Sidecar field group for func
+sha256: 4acb4e3aa0ca45ac58f39bfa82851d44b23e6338e7ed61f30dc3b999e758c868

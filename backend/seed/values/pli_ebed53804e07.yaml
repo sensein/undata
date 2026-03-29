@@ -1,0 +1,12 @@
+semantic:
+  label: PLI
+  value_type: categorical
+  display_name: Polarized-light microscopy
+provenance:
+- source: bids
+  class: suffixes
+  name: PLI
+  description: 'Polarized-light microscopy imaging data
+
+    '
+sha256: ebed53804e072ed810b6a12e0b644c2923f244e19d089a976af49e1bf6794fe0

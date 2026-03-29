@@ -1,0 +1,15 @@
+semantic:
+  label: .txt
+  value_type: categorical
+  display_name: Text
+provenance:
+- source: bids
+  class: extensions
+  name: txt
+  description: 'A free-form text file.
+
+
+    Tab-delimited files should have the `.tsv` extension rather than a `.txt` extension.
+
+    '
+sha256: cf03ca382a7801d5d18d1ace29b87b7c25af60e3e1f3035848aff72588827f4a

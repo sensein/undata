@@ -1,0 +1,11 @@
+semantic:
+  properties: []
+  mixins:
+  - BEHTaskInformation
+  - BEHInstitutionInformation
+provenance:
+- source: bids
+  class: beh_sidecar
+  name: beh_sidecar
+  description: BIDS sidecar for beh
+sha256: 3298483ba3aa35eb0c939425a3c54d4de16485135cdb605b09a7c14c8ef95267

@@ -1,0 +1,9 @@
+id: 18469df7-7ed4-4747-9b14-77ba7099038b
+entity_type: schema
+entity_ref: eeg_eegelectrodes_a072a3c57582.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: eeg_EEGElectrodes
+status: pending
+created_at: '2026-03-29T05:33:43.979964+00:00'

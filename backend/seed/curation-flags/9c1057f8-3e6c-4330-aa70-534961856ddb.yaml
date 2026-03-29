@@ -1,0 +1,9 @@
+id: 9c1057f8-3e6c-4330-aa70-534961856ddb
+entity_type: element
+entity_ref: parallelreductionfactoroutofplane_75314e7d1a63.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ParallelReductionFactorOutOfPlane
+status: pending
+created_at: '2026-03-29T05:33:43.345313+00:00'

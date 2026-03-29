@@ -1,0 +1,9 @@
+semantic:
+  properties: []
+  subclass_of: Image
+provenance:
+- source: nwb
+  class: RGBAImage
+  name: RGBAImage
+  description: A color image with transparency.
+sha256: c377cc27b383a1d2b2871f1a5dcd8886c57e8f4adace0f50f172720d56972f32

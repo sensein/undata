@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - band_name
+  - band_limits
+  - band_mean
+  - band_stdev
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: FrequencyBandsTable
+  name: FrequencyBandsTable
+  description: Table for describing the bands that DecompositionSeries was generated
+    from. There should be one row in this table for each band.
+sha256: ad79959f64fb55f1d9a93c37e19d39e606087885e5ea7515d03ae50281511068

@@ -1,0 +1,49 @@
+semantic:
+  label: data_type
+  value_type: categorical
+  display_name: Data type
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C42645
+    term_label: Data Type
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8201
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C95817
+    term_label: Any Data Type
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7315
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C178114
+    term_label: ALL Data Type Terminology
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7211
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: common_principles
+  name: data_type
+  description: "A functional group of different types of data.\nData files are contained\
+    \ in a directory named for the data type.\nBIDS defines the following data types:\n\
+    \n    1.  `func` (task based and resting state functional MRI)\n\n    2.  `dwi`\
+    \ (diffusion weighted imaging)\n\n    3.  `fmap` (field inhomogeneity mapping\
+    \ data such as field maps)\n\n    4.  `anat` (structural imaging such as T1, T2,\
+    \ PD, and so on)\n\n    5.  `perf` (perfusion)\n\n    6.  `meg` (magnetoencephalography)\n\
+    \n    7.  `eeg` (electroencephalography)\n\n    8.  `ieeg` (intracranial electroencephalography)\n\
+    \n    9.  `beh` (behavioral)\n\n    10. `pet` (positron emission tomography)\n\
+    \n    11. `micr` (microscopy)\n\n    12. `nirs` (near infrared spectroscopy)\n\
+    \n    13. `motion` (motion)\n\n    14. `mrs` (magnetic resonance spectroscopy)\n\
+    \n    15. `phenotype` (measurement and survey data)\n\n    16. `emg` (electromyography)\n\
+    \nFor files that are subject- and session- specific, the data type directory\n\
+    is nested inside those directories.\n`phenotype` data files are aggregated across\
+    \ subjects and sessions,\nand so the `phenotype/` directory is placed in the dataset\
+    \ root.\n"
+sha256: 818f40a112bc86916f2105c732b15e7c4996a60d413a4bbd6c500884ca4c03f5

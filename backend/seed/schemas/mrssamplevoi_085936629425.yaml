@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - BodyPart
+  - BodyPartDetails
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRSSampleVOI
+  name: MRSSampleVOI
+  description: Sidecar field group for mrs
+sha256: 0859366294252b23019046471409500b14c9c9b0ac8dd7379925b763b860e3b5

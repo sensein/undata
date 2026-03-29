@@ -1,0 +1,15 @@
+id: 3c03bc1a-1751-4451-b14b-9817cf35f539
+entity_type: value
+entity_ref: brain_1a2090642e1a.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C12439
+    score: 1.0
+  - uri: https://purl.brain-bican.org/ontology/mbao/MBA_997
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/UBERON_0000955
+    score: 1.0
+status: pending
+created_at: '2026-03-29T05:33:43.533598+00:00'

@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - sequential_recordings
+  - sequential_recordings_index
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: RepetitionsTable
+  name: RepetitionsTable
+  description: A table for grouping different sequential intracellular recordings
+    together. With each SequentialRecording typically representing a particular type
+    of stimulus, the RepetitionsTable table is typically used to group sets of stimuli
+    applied in sequence.
+sha256: 218a7e5ac581a2e31f01d2375421fd33aff0d8773a572bad0d9a891a60ad3688

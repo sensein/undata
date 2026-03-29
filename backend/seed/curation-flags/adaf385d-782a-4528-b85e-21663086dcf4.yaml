@@ -1,0 +1,11 @@
+id: adaf385d-782a-4528-b85e-21663086dcf4
+entity_type: value
+entity_ref: other_biospecimen_102e86810e59.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.928), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C70699
+  top_label: Biospecimen
+  top_score: 0.928
+status: pending
+created_at: '2026-03-29T05:40:56.514672+00:00'

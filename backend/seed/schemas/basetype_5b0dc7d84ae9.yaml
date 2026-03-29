@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  subclass_of: DandiBaseModel
+provenance:
+- source: dandi
+  class: BaseType
+  name: BaseType
+  description: Base class for enumerated types
+sha256: 5b0dc7d84ae9c69b0b61062080b4fae439d73dc2e472a19282c61534ec5c9130

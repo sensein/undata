@@ -1,0 +1,11 @@
+id: d04c721c-ba74-41a5-b48e-67a436af501f
+entity_type: value
+entity_ref: genomic_e64f7e89176d.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.919), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_topic_0622
+  top_label: Genomics
+  top_score: 0.9191
+status: pending
+created_at: '2026-03-29T05:40:56.344701+00:00'

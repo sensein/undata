@@ -1,0 +1,21 @@
+semantic:
+  label: 'off'
+  value_type: categorical
+  display_name: 'Off'
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C40450
+    term_label: 'Off'
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: off__mtransfer
+  description: 'The image acquired in the absence of the magnetization transfer pulse.
+
+    '
+sha256: 6e82ab9fea4ad8fa89187ab515299276c75b97cb2b787f2a42b2a3e2d65aeefe

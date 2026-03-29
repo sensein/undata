@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - image_mask
+  - pixel_mask_index
+  - pixel_mask
+  - voxel_mask_index
+  - voxel_mask
+  - imaging_plane
+  - reference_images
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: PlaneSegmentation
+  name: PlaneSegmentation
+  description: Results from image segmentation of a specific imaging plane. At least
+    one of `image_mask`, `pixel_mask`, or `voxel_mask` is required.
+sha256: 94a38ae36b7aa213593a7f10804fefd9f1039bcf2a00fd69f54d45ce2af59d1b

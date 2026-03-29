@@ -1,0 +1,8 @@
+semantic:
+  label: dandi:dandi
+  value_type: categorical
+provenance:
+- source: dandi
+  class: IdentifierType
+  name: dandi:dandi
+sha256: f5384ddf203f533083e142eea27bd7a033405e70caddaf2bc6cb767c2827261b

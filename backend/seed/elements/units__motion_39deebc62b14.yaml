@@ -1,0 +1,30 @@
+semantic:
+  data_type: string
+  value_domain: text
+  unit: meters
+provenance:
+- source: bids
+  class: columns
+  name: units__motion
+  description: 'Physical or virtual unit of the value represented in this channel,
+
+    for example, ''"rad"'' or ''"deg"'' for angular quantities or ''"m"'' for position
+    data.
+
+    If motion data is recorded in a virtual space and deviate from standard SI units,
+
+    the unit used MUST be specified in the sidecar `*_motion.json`
+
+    file (for example `"vm"` for virtual meters). `"rad"` is used for Euler angles
+
+    and `"n/a"` for quaternions.
+
+    For guidelines about units see the [Appendix](SPEC_ROOT/appendices/units.md)
+
+    and [Common Principles](SPEC_ROOT/common-principles.md#units) pages.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 39deebc62b145e7a04ebdffc581626c5b668e7ab384af71a67ea0c55d1b2e4b1

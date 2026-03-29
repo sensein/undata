@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - RepetitionTime
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRSRepetitionTime
+  name: MRSRepetitionTime
+  description: Sidecar field group for mrs
+sha256: ee1dcf8d0f59301ae0a7fbfe132726c478a43d201a16142404d014c5e8ccb84c

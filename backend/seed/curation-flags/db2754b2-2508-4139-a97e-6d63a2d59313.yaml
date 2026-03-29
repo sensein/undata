@@ -1,0 +1,11 @@
+id: db2754b2-2508-4139-a97e-6d63a2d59313
+entity_type: element
+entity_ref: identifier_23d5d4e0e3e7.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.753), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_data_2118
+  top_label: Person identifier
+  top_score: 0.7527
+status: pending
+created_at: '2026-03-29T05:40:55.611418+00:00'

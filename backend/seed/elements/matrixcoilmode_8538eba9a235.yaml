@@ -1,0 +1,22 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: MatrixCoilMode
+  description: '(If used)
+
+    A method for reducing the number of independent channels by combining in
+
+    analog the signals from multiple coil elements.
+
+    There are typically different default modes when using un-accelerated or
+
+    accelerated (for example, `"GRAPPA"`, `"SENSE"`) imaging.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8538eba9a2359663d1c3277aea549f4e83a65761199976f8e8c7d9efb956949c

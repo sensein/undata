@@ -1,0 +1,8 @@
+semantic:
+  label: dcite:IsPublishedIn
+  value_type: categorical
+provenance:
+- source: dandi
+  class: RelationType
+  name: dcite:IsPublishedIn
+sha256: 41b4054de33dfe57a748d8da4661a66d6b07e59952396fddee7c51adda214dc9

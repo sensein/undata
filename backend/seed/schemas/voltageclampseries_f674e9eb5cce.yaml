@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - data
+  - capacitance_fast
+  - capacitance_slow
+  - resistance_comp_bandwidth
+  - resistance_comp_correction
+  - resistance_comp_prediction
+  - whole_cell_capacitance_comp
+  - whole_cell_series_resistance_comp
+  subclass_of: PatchClampSeries
+provenance:
+- source: nwb
+  class: VoltageClampSeries
+  name: VoltageClampSeries
+  description: Current data from an intracellular voltage-clamp recording. A corresponding
+    VoltageClampStimulusSeries (stored separately as a stimulus) is used to store
+    the voltage injected.
+sha256: f674e9eb5ccea270ac6b1ba2c321406c46df129f61bff7e9fa9047fbe37872f2

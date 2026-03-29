@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - M0Estimate
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIASLCommonMetadataFieldsM0TypeReq
+  name: MRIASLCommonMetadataFieldsM0TypeReq
+  description: Sidecar field group for asl
+sha256: b28ba10a221b4d11dbe9a16cf5c975cd439f8a069bc7393a048f157613920b43

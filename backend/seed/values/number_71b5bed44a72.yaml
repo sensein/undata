@@ -1,0 +1,21 @@
+semantic:
+  label: number
+  value_type: categorical
+  display_name: Number
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25337
+    term_label: Number
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: formats
+  name: number
+  description: 'A number which may be an integer or float, positive or negative.
+
+    '
+sha256: 71b5bed44a72aa284c87146a7acbadc9e0d4587fb1c7e2e8f38660a276decf56

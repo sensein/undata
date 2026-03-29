@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - SpatialSeries
+  subclass_of: NWBDataInterface
+provenance:
+- source: nwb
+  class: Position
+  name: Position
+  description: Position data, whether along the x, x/y or x/y/z axis.
+sha256: a19a84937812c301c11f05054018e1a95284439464d40f608672160e105285bb

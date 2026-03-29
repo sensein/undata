@@ -1,0 +1,11 @@
+id: 0426fccb-44ae-40ee-9305-f85c712f6188
+entity_type: element
+entity_ref: attenuationcorrection_f82feb07d5fe.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.751), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C69286
+  top_label: For Attenuation Correction
+  top_score: 0.7506
+status: pending
+created_at: '2026-03-29T05:33:43.147687+00:00'

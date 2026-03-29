@@ -1,0 +1,29 @@
+semantic:
+  label: TB1EPI
+  value_type: categorical
+  display_name: TB1EPI
+  ontology_annotations:
+  - term_uri: http://identifiers.org/ncbigene/10716
+    term_label: TBR1
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7571
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: suffixes
+  name: TB1EPI
+  description: 'This B1<sup>+</sup> mapping method
+
+    ([Jiru and Klose 2006](https://doi.org/10.1002/mrm.21083)) is based on two
+
+    EPI readouts to acquire spin echo (SE) and stimulated echo (STE) images at
+
+    multiple flip angles in one sequence, used in the calculation of deviations
+
+    from the nominal flip angle.
+
+    '
+sha256: 5d04d4308ff30d78701c5531f5dbe4ccafee79c038d1a8200b1d37a186631528

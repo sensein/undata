@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: DerivedFrom
+  description: 'Indicate what data modality the atlas was derived from; for example,
+    "cytoarchitecture", "resting-state", or "task".
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 99b0301d0d66f67ab6038ec6c1e508e8f944fb6d9d44893c921a31fd4fe0ca4b

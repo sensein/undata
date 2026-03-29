@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - MultibandAccelerationFactor
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRISliceAcceleration
+  name: MRISliceAcceleration
+  description: Sidecar field group for mri
+sha256: 5e4b35d2db8d447a237f87def7deffdf228837d07b2826a38e3e41e652785d8f

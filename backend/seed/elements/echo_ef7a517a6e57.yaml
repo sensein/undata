@@ -1,0 +1,29 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+provenance:
+- source: bids
+  class: entities
+  name: echo
+  description: 'If files belonging to an entity-linked file collection are acquired
+    at different
+
+    echo times, the `echo-<index>` entity MUST be used to distinguish individual files.
+
+
+    This entity represents the `"EchoTime"` metadata field.
+
+    Therefore, if the `echo-<index>` entity is present in a filename,
+
+    `"EchoTime"` MUST be defined in the associated metadata.
+
+    Please note that the `<index>` denotes the number/index (in the form of a nonnegative
+    integer),
+
+    not the `"EchoTime"` value of the separate JSON file.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ef7a517a6e5778e115cb1370dd4f93535993675f017251d23f73cdca7606b589

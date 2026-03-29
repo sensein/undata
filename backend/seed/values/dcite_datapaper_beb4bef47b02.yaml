@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: dcite:datapaper
+provenance:
+- source: dandi
+  class_: ''
+  name: dcite:DataPaper
+sha256: beb4bef47b02dbcb7d7484be5827fd9adf1ffd9a84d6ad552ba072430983e087

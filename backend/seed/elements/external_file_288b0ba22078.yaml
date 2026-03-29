@@ -1,0 +1,15 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: external_file
+  description: Paths to one or more external file(s). The field is only present if
+    format='external'. This is only relevant if the image series is stored in the
+    file system as one or more image file(s). This field should NOT be used if the
+    image is stored in another NWB file and that file is linked to this file.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 288b0ba2207850d82e5a074665a3f6bc054091c81043f07fdd389abb50970137

@@ -1,0 +1,11 @@
+id: d5438147-4597-4e69-93ef-fb6263215b2c
+entity_type: value
+entity_ref: dbs_2b3a796c749e.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.736), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C15426
+  top_label: Database
+  top_score: 0.7357
+status: pending
+created_at: '2026-03-29T05:37:09.418340+00:00'

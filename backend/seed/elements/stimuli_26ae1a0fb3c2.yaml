@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  type_ref: IntracellularStimuliTable
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: stimuli
+  description: Table for storing intracellular stimulus related metadata.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 26ae1a0fb3c269b645bb8def73ec7867ae757b0f807dfc6e27877c8dc006c748

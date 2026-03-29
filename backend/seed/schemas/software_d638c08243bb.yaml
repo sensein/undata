@@ -1,0 +1,80 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  - version
+  - url
+  subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/IAO_0000010
+    term_label: software
+    ontology: iao
+    mapping_relation: skos:exactMatch
+    match_level: concept_match
+    score: 0.959
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/IAO_0000594
+    term_label: software application
+    ontology: iao
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8795
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165086
+    term_label: Software Content
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7668
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C80736
+    term_label: Software Service
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7255
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C150832
+    term_label: Software Name
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7192
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C67226
+    term_label: Software Development
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7122
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://www.w3.org/ns/prov#SoftwareAgent
+    term_label: SoftwareAgent
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7073
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C17147
+    term_label: Software Engineering
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7041
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: dandi
+  class: Software
+  name: Software
+  description: null
+sha256: d638c08243bb30aed7d6e34fc94e256ed584d50c87f2c346dea898a6d46b6a46

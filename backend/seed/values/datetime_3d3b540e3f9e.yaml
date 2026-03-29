@@ -1,0 +1,57 @@
+semantic:
+  value_type: categorical
+  label: datetime
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C37939
+    term_label: Date and Time
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8141
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C82518
+    term_label: Reference Date Time
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.739
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/dc/terms/date
+    term_label: date
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7091
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_2156
+    term_label: Date
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7091
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/dc/elements/1.1/date
+    term_label: Date
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7091
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25164
+    term_label: Date
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7091
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: datetime
+sha256: 3d3b540e3f9e55d5896743587a0342db7b700ec26208876322e9883cd3a862a1

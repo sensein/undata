@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - notes
+  subclass_of: NWBData
+provenance:
+- source: nwb
+  class: ScratchData
+  name: ScratchData
+  description: Any one-off datasets
+sha256: 6b9e0d7542a5857934ed0559a733e6c3b8cbd2bc9127ef6e0f110e686d697d1a

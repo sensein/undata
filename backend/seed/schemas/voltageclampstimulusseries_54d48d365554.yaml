@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - data
+  subclass_of: PatchClampSeries
+provenance:
+- source: nwb
+  class: VoltageClampStimulusSeries
+  name: VoltageClampStimulusSeries
+  description: Stimulus voltage applied during a voltage clamp recording.
+sha256: 54d48d365554669567c495358849e51dc541a8811dc7188383363db07afb2945

@@ -1,0 +1,16 @@
+semantic:
+  properties: []
+  mixins:
+  - MRIFieldmapIntendedFor
+  - MRIFieldmapB0FieldIdentifier
+  - MRIFieldmapPhaseDifferencePhasediff
+  - MRIFieldmapTwoPhase
+  - MRIFieldmapDirectFieldMapping
+  - MRIFieldmapPepolar
+  - TB1EPI
+provenance:
+- source: bids
+  class: fmap_sidecar
+  name: fmap_sidecar
+  description: BIDS sidecar for fmap
+sha256: 9eadc73ce884bf3cde15e146c2e89172bf61479ec9630ad3d55927ff0d0c2f0f

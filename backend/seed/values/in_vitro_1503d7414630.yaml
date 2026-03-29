@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: in_vitro
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C15263
+    term_label: In Vitro
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9373
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: in vitro
+sha256: 1503d7414630c84d03962f96fbbb083eb45d18897aa4f620ef60b80ebb7d3db6

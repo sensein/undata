@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - SpoilingGradientMoment
+  - SpoilingGradientDuration
+  is_mixin: true
+provenance:
+- source: bids
+  class: SpoilingGradient
+  name: SpoilingGradient
+  description: Sidecar field group for mri
+sha256: a09c93052866290e3a51a8ec049f88fee111afaaa40c7b026e9031ef797b3061

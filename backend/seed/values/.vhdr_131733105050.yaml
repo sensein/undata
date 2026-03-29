@@ -1,0 +1,17 @@
+semantic:
+  label: .vhdr
+  value_type: categorical
+  display_name: BrainVision Text Header
+provenance:
+- source: bids
+  class: extensions
+  name: vhdr
+  description: 'A text header file in the
+
+    [BrainVision Core Data Format](https://www.brainproducts.com/support-resources/brainvision-core-data-format-1-0/).
+
+    These files come in three-file sets, including a `.vhdr`, a `.vmrk`, and a `.eeg`
+    file.
+
+    '
+sha256: 13173310505035bace0982f88582fc72b207e3aa3445fad5970be0625e3d1298

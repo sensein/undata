@@ -1,0 +1,46 @@
+semantic:
+  label: trace
+  value_type: categorical
+  display_name: Trace-weighted diffusion image
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C80218
+    term_label: Trace
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C2480
+    term_label: Tracer
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8575
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C896
+    term_label: Trace Element
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7789
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_0924
+    term_label: Sequence trace
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7306
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: suffixes
+  name: trace
+  description: 'Trace-weighted image, as the mean intensity of diffusion-weighted
+    images
+
+    '
+sha256: 261b5e1bfb0d581e25992fb71ccff6e33eeb3e7b6d84c617351ec9068941a6da

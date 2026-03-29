@@ -1,0 +1,12 @@
+semantic:
+  label: .rst
+  value_type: categorical
+  display_name: reStructuredText
+provenance:
+- source: bids
+  class: extensions
+  name: rst
+  description: 'A [reStructuredText](https://docutils.sourceforge.io/rst.html) file.
+
+    '
+sha256: 693af03a25a642c30af6db332a6bf479b88a38d406959d89dcaca39c17c80f65

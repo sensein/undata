@@ -1,0 +1,11 @@
+id: 091176b4-54ea-4644-88b7-8da460c0e6a8
+entity_type: value
+entity_ref: dataset_4d69c9d7d1c9.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.839), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C123884
+  top_label: Feature Dataset
+  top_score: 0.8392
+status: pending
+created_at: '2026-03-29T05:40:56.209939+00:00'

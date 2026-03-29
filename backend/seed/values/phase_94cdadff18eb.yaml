@@ -1,0 +1,36 @@
+semantic:
+  label: phase
+  value_type: categorical
+  display_name: Phase
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25257
+    term_label: Phase
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000083
+    term_label: phase
+    ontology: pato
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: phase
+  description: 'A phase image, typically paird with an associated "magnitude" (part-mag)
+    image.
+
+    Images with this key/value pair MAY be in radians or in arbitrary units.
+
+    The sidecar JSON file MUST include the units of the `phase` image.
+
+    The possible options are `rad` or `arbitrary`.
+
+    '
+sha256: 94cdadff18eb2df278040f4df5e472252ddf93e0540c149bbebd83b42242ee93

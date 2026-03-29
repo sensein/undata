@@ -1,0 +1,11 @@
+id: d422d7c6-ef8d-43b5-bf7a-f904f48eb370
+entity_type: value
+entity_ref: sample_c4d0ebdb07fb.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.823), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C25662
+  top_label: Sampling
+  top_score: 0.8229
+status: pending
+created_at: '2026-03-29T05:37:09.776587+00:00'

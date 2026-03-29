@@ -1,0 +1,15 @@
+semantic:
+  label: coordsystem
+  value_type: categorical
+  display_name: Coordinate System File
+provenance:
+- source: bids
+  class: suffixes
+  name: coordsystem
+  description: 'A JSON document specifying the coordinate system(s) used for the MEG,
+    EEG,
+
+    head localization coils, and anatomical landmarks.
+
+    '
+sha256: 512ace6ec2fb2d0d3d6962551fd5aca0f8c7474693762a4a37b2f403c1d84247

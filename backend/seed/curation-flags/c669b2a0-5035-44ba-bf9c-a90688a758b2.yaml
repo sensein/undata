@@ -1,0 +1,9 @@
+id: c669b2a0-5035-44ba-bf9c-a90688a758b2
+entity_type: schema
+entity_ref: entitiesmtmetadata_a861ad1fab41.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EntitiesMTMetadata
+status: pending
+created_at: '2026-03-29T05:40:56.753875+00:00'

@@ -1,0 +1,12 @@
+semantic:
+  label: SINC
+  value_type: categorical
+  display_name: Sinc pulse
+provenance:
+- source: bids
+  class: enums
+  name: SINC
+  description: 'A sinc-shaped pulse.
+
+    '
+sha256: 5eb6dc08483942edac2d73e6371440e6a99d3d00bfad54d0409ee2ad0a392df3

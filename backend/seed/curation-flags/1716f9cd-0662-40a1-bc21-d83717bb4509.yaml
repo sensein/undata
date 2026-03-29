@@ -1,0 +1,11 @@
+id: 1716f9cd-0662-40a1-bc21-d83717bb4509
+entity_type: value
+entity_ref: whole_organisms_c4f24fa1bb9e.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.946), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C13413
+  top_label: Whole Organism
+  top_score: 0.946
+status: pending
+created_at: '2026-03-29T05:40:56.685604+00:00'

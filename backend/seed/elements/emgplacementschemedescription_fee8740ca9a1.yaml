@@ -1,0 +1,32 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: EMGPlacementSchemeDescription
+  description: 'Additional details of the approach to EMG sensor placement.
+
+    Descriptions SHOULD NOT simply give the name of the targeted muscle (use the
+
+    `target_muscle` column in `*_channels.tsv` for that), but rather SHOULD reflect
+    the
+
+    process used by the researcher(s) when placing electrodes.
+
+    For example, EMG electrode sites may be chosen by *measured distance* from anatomical
+
+    landmarks, by *visual reference* to (parts of) target muscles, by *palpation*
+    of the
+
+    skin to locate target muscles, or by *functional localization* (temporary electrode
+
+    placement at several sites during prescribed behavior, until a site yielding strong
+
+    EMG signal is found).
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fee8740ca9a14b3b3cd864e1456ac378ca2b64f7c8c84d9b16a57353f281aa16

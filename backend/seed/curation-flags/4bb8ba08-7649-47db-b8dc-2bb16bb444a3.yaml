@@ -1,0 +1,11 @@
+id: 4bb8ba08-7649-47db-b8dc-2bb16bb444a3
+entity_type: value
+entity_ref: rrid_065a3de5ed0b.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.715), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C106070
+  top_label: RRAS Gene
+  top_score: 0.7147
+status: pending
+created_at: '2026-03-29T05:37:09.765609+00:00'

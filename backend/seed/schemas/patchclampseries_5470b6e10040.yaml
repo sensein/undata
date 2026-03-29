@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - stimulus_description
+  - sweep_number
+  - data
+  - gain
+  - electrode
+  subclass_of: TimeSeries
+provenance:
+- source: nwb
+  class: PatchClampSeries
+  name: PatchClampSeries
+  description: An abstract base class for patch-clamp data - stimulus or response,
+    current or voltage.
+sha256: 5470b6e100408aed7bf03c061ef093850e84770452eea0bc3fedc0d0f31c6c8f

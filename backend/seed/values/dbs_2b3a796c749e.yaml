@@ -1,0 +1,21 @@
+semantic:
+  label: DBS
+  value_type: categorical
+  display_name: DBS
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C15426
+    term_label: Database
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7357
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: DBS
+  description: 'Electrode channel.
+
+    '
+sha256: 2b3a796c749ea05ced24fa817ada0553373e7314cd8acfd9a7b24bfdc64a8d59

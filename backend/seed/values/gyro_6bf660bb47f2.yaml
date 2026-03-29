@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: gyro
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0000200
+    term_label: gyrus
+    ontology: uberon
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9075
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: GYRO
+sha256: 6bf660bb47f27ed984b8b7f323d1d92ded0292c212f335185da80b84a417c548

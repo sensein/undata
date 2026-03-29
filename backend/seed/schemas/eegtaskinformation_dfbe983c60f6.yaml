@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - TaskName
+  - TaskDescription
+  - Instructions
+  - CogAtlasID
+  - CogPOID
+  is_mixin: true
+provenance:
+- source: bids
+  class: EEGTaskInformation
+  name: EEGTaskInformation
+  description: Sidecar field group for eeg
+sha256: dfbe983c60f6f0d3b63c0812ee7cc1da4663be6b8981b88125c64ef315a4d86d

@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: columns
+  name: HED
+  description: 'Hierarchical Event Descriptor (HED) tags.
+
+    See the [HED Appendix](SPEC_ROOT/appendices/hed.md) for details.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3e731d5da77a37d200c90df2390b5dd347aa5411c8d7d8f14f1c05577398903f

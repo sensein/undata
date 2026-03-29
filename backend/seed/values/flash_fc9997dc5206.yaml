@@ -1,0 +1,38 @@
+semantic:
+  label: FLASH
+  value_type: categorical
+  display_name: Fast-Low-Angle-Shot image
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C50568
+    term_label: Flasher
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8614
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: suffixes
+  name: FLASH
+  description: 'FLASH (Fast-Low-Angle-Shot) is a vendor-specific implementation for
+    spoiled
+
+    gradient echo acquisition.
+
+    It is commonly used for rapid anatomical imaging and also for many different
+
+    qMRI applications.
+
+    When used for a single file, it does not convey any information about the
+
+    image contrast.
+
+    When used in a file collection, it may result in conflicts across filenames of
+
+    different applications.
+
+    **Change:** Removed from suffixes.
+
+    '
+sha256: fc9997dc5206299e936358c014e8dc7a2a21a517379dc6c1f02ea816a677a736

@@ -1,0 +1,9 @@
+id: e9d8836c-d241-40c9-87b6-6cc88ddc373e
+entity_type: schema
+entity_ref: mrssequencespecifics_778f93a79018.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRSSequenceSpecifics
+status: pending
+created_at: '2026-03-29T05:33:44.044355+00:00'

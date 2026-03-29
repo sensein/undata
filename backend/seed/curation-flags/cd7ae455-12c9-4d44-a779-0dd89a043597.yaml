@@ -1,0 +1,9 @@
+id: cd7ae455-12c9-4d44-a779-0dd89a043597
+entity_type: schema
+entity_ref: emgrequired_3c821faf5404.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EMGRequired
+status: pending
+created_at: '2026-03-29T05:40:56.750893+00:00'

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: focal_depth_image
+  description: 'Gray-scale image taken with same settings/parameters (e.g., focal
+    depth, wavelength) as data collection. Array format: [rows][columns].'
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 636e9fb0ed1e18586e3bc6a457b66233b0599e43035d8d5cc0705d130e7a66a9

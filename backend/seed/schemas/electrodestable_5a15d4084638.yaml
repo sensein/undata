@@ -1,0 +1,23 @@
+semantic:
+  properties:
+  - location
+  - group
+  - group_name
+  - x
+  - y
+  - z
+  - imp
+  - filtering
+  - rel_x
+  - rel_y
+  - rel_z
+  - reference
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: ElectrodesTable
+  name: ElectrodesTable
+  description: A table of all electrodes (i.e. channels) used for recording. Introduced
+    in NWB 2.8.0. Replaces the "electrodes" table (neurodata_type_inc DynamicTable,
+    no neurodata_type_def) that is part of NWBFile.
+sha256: 5a15d4084638b15d748ff15072afa7857c14166615248775579a2d61ca87d2c2

@@ -1,0 +1,9 @@
+id: 0ec5b84e-d7b9-49f1-88f3-215a6ac0199d
+entity_type: element
+entity_ref: acquisitionmode_de790d73c5a0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AcquisitionMode
+status: pending
+created_at: '2026-03-29T05:33:43.132584+00:00'

@@ -1,0 +1,11 @@
+id: b5ecdf81-1ccf-424d-980d-96435792a1e3
+entity_type: value
+entity_ref: t1w_a0fc9e085266.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.805), no LLM verification
+  top_match: http://identifiers.org/ensembl/ENSG00000038295
+  top_label: TLL1
+  top_score: 0.8053
+status: pending
+created_at: '2026-03-29T05:37:09.814742+00:00'

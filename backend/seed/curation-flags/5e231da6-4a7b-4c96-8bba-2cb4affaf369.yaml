@@ -1,0 +1,9 @@
+id: 5e231da6-4a7b-4c96-8bba-2cb4affaf369
+entity_type: element
+entity_ref: database_a12ae3bea435.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Database
+status: pending
+created_at: '2026-03-29T05:40:55.423004+00:00'

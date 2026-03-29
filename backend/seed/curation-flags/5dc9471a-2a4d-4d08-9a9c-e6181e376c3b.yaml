@@ -1,0 +1,9 @@
+id: 5dc9471a-2a4d-4d08-9a9c-e6181e376c3b
+entity_type: value
+entity_ref: t2star_3e95937bde09.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: T2star
+status: pending
+created_at: '2026-03-29T05:33:43.915939+00:00'

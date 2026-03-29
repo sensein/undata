@@ -1,0 +1,9 @@
+id: bd58f6eb-e71f-47e4-a652-3028acfbab89
+entity_type: element
+entity_ref: awardnumber_9f56fdb59997.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: awardNumber
+status: pending
+created_at: '2026-03-29T05:40:55.360391+00:00'

@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - SpoilingType
+  is_mixin: true
+provenance:
+- source: bids
+  class: SpoilingType
+  name: SpoilingType
+  description: Sidecar field group for mri
+sha256: 5e9d2dde6533731c3973c153f926f682f72eb25dee38976c803250d58de01077

@@ -1,0 +1,9 @@
+id: 711a26b5-2e91-4af2-a02d-8ff1c8062008
+entity_type: element
+entity_ref: keywords_4d678779a30c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Keywords
+status: pending
+created_at: '2026-03-29T05:37:08.981658+00:00'

@@ -1,0 +1,9 @@
+id: f5d89e2c-d4a3-4ec4-8b0b-eb572a125a5c
+entity_type: value
+entity_ref: nirscwhbo_66c921006bd7.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NIRSCWHBO
+status: pending
+created_at: '2026-03-29T05:33:43.797873+00:00'

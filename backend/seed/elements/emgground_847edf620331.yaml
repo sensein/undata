@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: EMGGround
+  description: 'Description of the location of the ground electrode
+
+    (for example, `"right radial styloid process"`).
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 847edf620331c4457cc978e8a965f3d9536d704651c965f8b922704ca84236ac

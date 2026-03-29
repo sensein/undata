@@ -1,0 +1,25 @@
+semantic:
+  properties:
+  - CapManufacturer
+  - CapManufacturersModelName
+  - EEGChannelCount
+  - ECGChannelCount
+  - EMGChannelCount
+  - EOGChannelCount
+  - MISCChannelCount
+  - TriggerChannelCount
+  - RecordingDuration
+  - RecordingType
+  - EpochLength
+  - EEGGround
+  - HeadCircumference
+  - EEGPlacementScheme
+  - HardwareFilters
+  - SubjectArtefactDescription
+  is_mixin: true
+provenance:
+- source: bids
+  class: EEGRecommended
+  name: EEGRecommended
+  description: Sidecar field group for eeg
+sha256: 31c32692029faddc8f3078d05157268e0c85c1e8df4f0c30c201983e6a3227f5

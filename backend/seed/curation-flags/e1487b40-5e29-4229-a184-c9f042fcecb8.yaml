@@ -1,0 +1,11 @@
+id: e1487b40-5e29-4229-a184-c9f042fcecb8
+entity_type: value
+entity_ref: single-coil_bded609ab6a9.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.789), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C49877
+  top_label: Coil Device
+  top_score: 0.789
+status: pending
+created_at: '2026-03-29T05:33:43.898843+00:00'

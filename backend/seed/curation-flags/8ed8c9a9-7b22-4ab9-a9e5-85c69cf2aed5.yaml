@@ -1,0 +1,9 @@
+id: 8ed8c9a9-7b22-4ab9-a9e5-85c69cf2aed5
+entity_type: element
+entity_ref: path_e5ebf3da3fe4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: path
+status: pending
+created_at: '2026-03-29T05:40:55.794209+00:00'

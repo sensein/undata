@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: seeg
+provenance:
+- source: bids
+  class_: ''
+  name: SEEG
+sha256: 46949e009ae8b1a442bc27c8de6cb7a2fe9d11cf56f1a6a71945a98d4a6ade63

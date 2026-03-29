@@ -1,0 +1,11 @@
+id: ef261606-db70-4ad6-becd-4093b392cbc8
+entity_type: schema
+entity_ref: eyetracking_89f6707fea3d.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.785), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C176742
+  top_label: Eye Tracking
+  top_score: 0.7849
+status: pending
+created_at: '2026-03-29T05:37:09.927119+00:00'

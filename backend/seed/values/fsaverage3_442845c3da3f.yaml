@@ -1,0 +1,8 @@
+semantic:
+  label: fsaverage3
+  value_type: categorical
+provenance:
+- source: bids
+  class: enums
+  name: fsaverage3
+sha256: 442845c3da3f500bf2808cfd0c5260bc352d84fe206eb34a8e5050d4061d079d

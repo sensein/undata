@@ -1,0 +1,9 @@
+id: 57fd3651-ef3c-4bf5-ae73-b49d56020a8c
+entity_type: value
+entity_ref: megmag_77fec1a0a942.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MEGMAG
+status: pending
+created_at: '2026-03-29T05:33:43.757885+00:00'

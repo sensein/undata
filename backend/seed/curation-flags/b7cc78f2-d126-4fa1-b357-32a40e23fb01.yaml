@@ -1,0 +1,9 @@
+id: b7cc78f2-d126-4fa1-b357-32a40e23fb01
+entity_type: element
+entity_ref: wasgeneratedby_b299f43c01bc.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: wasGeneratedBy
+status: pending
+created_at: '2026-03-29T05:40:56.049222+00:00'

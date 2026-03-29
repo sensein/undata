@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: unknown
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C17998
+    term_label: Unknown
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: UNKNOWN
+sha256: f594fcc7f6b4c2d6a72167c0c691f54766a6b8580dc847fd18c5973d5eef7640

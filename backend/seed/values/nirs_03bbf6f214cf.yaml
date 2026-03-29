@@ -1,0 +1,10 @@
+semantic:
+  label: nirs
+  value_type: categorical
+  display_name: Near-Infrared Spectroscopy
+provenance:
+- source: bids
+  class: modalities
+  name: nirs
+  description: Data acquired with NIRS.
+sha256: 03bbf6f214cf54c19ef3ce6b9c62e849957157d77efb3c92a12534570c3913d8

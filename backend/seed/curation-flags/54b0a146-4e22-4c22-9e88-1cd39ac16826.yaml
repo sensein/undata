@@ -1,0 +1,9 @@
+id: 54b0a146-4e22-4c22-9e88-1cd39ac16826
+entity_type: element
+entity_ref: wholebloodavail_e6e107131282.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: WholeBloodAvail
+status: pending
+created_at: '2026-03-29T05:40:56.059648+00:00'

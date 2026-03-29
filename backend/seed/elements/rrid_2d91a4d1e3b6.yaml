@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  value_domain: text
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C224810
+    term_label: Research Resource Identifier
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7152
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: metadata
+  name: RRID
+  description: '[Research Resource Identifier](https://rrid.site) of the file,
+
+    dataset or atlas being described.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2d91a4d1e3b6cdb1e513eb644dde63fd9210b807e236708a0c7d33e0640c4b2f

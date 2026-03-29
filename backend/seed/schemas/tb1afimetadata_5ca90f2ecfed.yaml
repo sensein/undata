@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - RepetitionTimeExcitation
+  is_mixin: true
+provenance:
+- source: bids
+  class: TB1AFIMetadata
+  name: TB1AFIMetadata
+  description: Sidecar field group for qmri
+sha256: 5ca90f2ecfed8982dc4ee73ceb4c5142247b65f86b0fc8155defb86c1360879e

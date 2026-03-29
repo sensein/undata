@@ -1,0 +1,12 @@
+semantic:
+  properties:
+  - InstitutionName
+  - InstitutionAddress
+  - InstitutionalDepartmentName
+  is_mixin: true
+provenance:
+- source: bids
+  class: iEEGInstitutionInformation
+  name: iEEGInstitutionInformation
+  description: Sidecar field group for ieeg
+sha256: 4332c9ec16f8df7761aef76d7c298717af2157d995e74d5c5e664307e3412df0

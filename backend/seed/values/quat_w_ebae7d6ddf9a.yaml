@@ -1,0 +1,12 @@
+semantic:
+  label: quat_w
+  value_type: categorical
+  display_name: quat_w
+provenance:
+- source: bids
+  class: enums
+  name: quat_w
+  description: 'The quaternion w dimension of the coordinate system.
+
+    '
+sha256: ebae7d6ddf9a47f14ef8e63fcb1ef6f6b58b7ae88971c14f04b3987b9445ffba

@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: primary_cell
+provenance:
+- source: bids
+  class_: ''
+  name: primary cell
+sha256: d1175a343c57ee639241d19ca68b7f9dfb54d477e26c6bd2534fe006877c400a

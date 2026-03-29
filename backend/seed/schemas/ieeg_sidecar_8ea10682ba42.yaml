@@ -1,0 +1,15 @@
+semantic:
+  properties: []
+  mixins:
+  - iEEGHardware
+  - iEEGTaskInformation
+  - iEEGInstitutionInformation
+  - iEEGRequired
+  - iEEGRecommended
+  - iEEGOptional
+provenance:
+- source: bids
+  class: ieeg_sidecar
+  name: ieeg_sidecar
+  description: BIDS sidecar for ieeg
+sha256: 8ea10682ba42807931eae083cf8af37404a47d58e14c695fe0e6341522747416

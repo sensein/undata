@@ -1,0 +1,21 @@
+semantic:
+  properties: []
+  mixins:
+  - VariableFlipAngleMetadata
+  - InversionRecoveryT1Metadata
+  - MP2RAGEMetadata
+  - MESpinEchoMetadata
+  - MEGradientEchoMetadata
+  - MTRatioMetadata
+  - MTSaturationMetadata
+  - MultiParametricMappingMetadata
+  - TB1DAMMetadata
+  - TB1EPIMetadata
+  - TB1AFIMetadata
+  - TB1SRGEMetadata
+provenance:
+- source: bids
+  class: qmri_sidecar
+  name: qmri_sidecar
+  description: BIDS sidecar for qmri
+sha256: 80f0e766aaedf6c8ea5689fe5ce5b112732a0f65e7af8653c7218ef343edf52c

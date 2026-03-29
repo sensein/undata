@@ -1,0 +1,12 @@
+semantic:
+  label: Included
+  value_type: categorical
+  display_name: Included
+provenance:
+- source: bids
+  class: enums
+  name: Included
+  description: 'An m0scan volume is contained within the associated `asl` file.
+
+    '
+sha256: 10759123e70dc79383e4e2b67fa8934de2cb487f9d46b9ce5aaa79ecb28909bd

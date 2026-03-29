@@ -25,6 +25,7 @@ export interface ElementNode {
   fileName?: string;
   dataType?: string;
   unit?: string;
+  unitUri?: string;
   pattern?: string;
   valueDomain?: string;
   description?: string;
@@ -81,6 +82,21 @@ export interface CurationFlagNode {
   resolutionNote?: string;
 }
 
+export interface TransformNode {
+  sha256: string;
+  fileName?: string;
+  sourceElement: string;
+  targetElement: string;
+  functionType?: string;
+  inputType?: string;
+  outputType?: string;
+  expression?: string;
+  expressionType?: string;
+  confidence?: number;
+  description?: string;
+  provenance: ProvenanceEntry[];
+}
+
 export interface RunSummaryNode {
   runId: string;
   source: string;
@@ -114,5 +130,6 @@ export interface Connection<T> {
 export type ElementConnection = Connection<ElementNode>;
 export type SchemaConnection = Connection<SchemaNode>;
 export type ValueConnection = Connection<ValueNode>;
+export type TransformConnection = Connection<TransformNode>;
 export type CurationFlagConnection = Connection<CurationFlagNode>;
 export type RunSummaryConnection = Connection<RunSummaryNode>;

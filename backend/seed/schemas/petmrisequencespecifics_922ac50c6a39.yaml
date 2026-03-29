@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - NonlinearGradientCorrection
+  is_mixin: true
+provenance:
+- source: bids
+  class: PETMRISequenceSpecifics
+  name: PETMRISequenceSpecifics
+  description: Sidecar field group for mri
+sha256: 922ac50c6a39d0873aa57ca2dde72a83097c09748a6ae872aee210b28b02c5e1

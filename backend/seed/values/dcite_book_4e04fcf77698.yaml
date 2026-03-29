@@ -1,0 +1,8 @@
+semantic:
+  label: dcite:Book
+  value_type: categorical
+provenance:
+- source: dandi
+  class: ResourceType
+  name: dcite:Book
+sha256: 4e04fcf776988db6e1f19c0a2d68f5d2a9c6daf8b830c5ec23c0ccf5d57bb177

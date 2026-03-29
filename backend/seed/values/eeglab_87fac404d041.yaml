@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: eeglab
+provenance:
+- source: bids
+  class_: ''
+  name: EEGLAB
+sha256: 87fac404d041d7d736f009b0de3213ab247a818dd99ec794b30c291e017f79a4

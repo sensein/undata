@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - StimulusPresentation
+  - VisionCorrection
+  is_mixin: true
+provenance:
+- source: bids
+  class: StimulusPresentation
+  name: StimulusPresentation
+  description: Sidecar field group for events
+sha256: e6468b6fd1f672bc2e370314199148b79fa049301e83eba409e54dab732f0fe6

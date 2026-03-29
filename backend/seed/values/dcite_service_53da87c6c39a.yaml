@@ -1,0 +1,8 @@
+semantic:
+  label: dcite:Service
+  value_type: categorical
+provenance:
+- source: dandi
+  class: ResourceType
+  name: dcite:Service
+sha256: 53da87c6c39a97db2501312cc212f3d4a8c32712fe43ae895614a4ace14c5fd0

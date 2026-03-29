@@ -1,0 +1,9 @@
+id: 49532618-df5f-42df-a736-de95fc33df45
+entity_type: value
+entity_ref: n_a_d249942825c8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: n/a
+status: pending
+created_at: '2026-03-29T05:40:56.490209+00:00'

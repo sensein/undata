@@ -1,0 +1,11 @@
+id: 77aa4d0d-e8b8-44da-bfe7-40253d6690ee
+entity_type: value
+entity_ref: .ave_61bebba58428.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.806), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCBITaxon_8782
+  top_label: Aves
+  top_score: 0.8062
+status: pending
+created_at: '2026-03-29T05:40:56.072286+00:00'

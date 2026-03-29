@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - MetaboliteMethod
+  - MetaboliteRecoveryCorrectionApplied
+  is_mixin: true
+provenance:
+- source: bids
+  class: BloodMetaboliteMethod
+  name: BloodMetaboliteMethod
+  description: Sidecar field group for pet
+sha256: 44caf57dbcbb2950ce62b7d63224efccfef7e72cbc72cdcdfde1b2660ab6066b

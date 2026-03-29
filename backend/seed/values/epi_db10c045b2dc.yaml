@@ -1,0 +1,17 @@
+semantic:
+  label: epi
+  value_type: categorical
+  display_name: EPI
+provenance:
+- source: bids
+  class: suffixes
+  name: epi
+  description: 'The phase-encoding polarity (PEpolar) technique combines two or more
+    Spin Echo
+
+    EPI scans with different phase encoding directions to estimate the underlying
+
+    inhomogeneity/deformation map.
+
+    '
+sha256: db10c045b2dc7f98cf54835e0f6084e139917c49e5e22d52f42c56cc40e61643

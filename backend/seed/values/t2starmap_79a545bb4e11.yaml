@@ -1,0 +1,16 @@
+semantic:
+  label: T2starmap
+  value_type: categorical
+  display_name: Observed transverse relaxation time image
+provenance:
+- source: bids
+  class: suffixes
+  name: T2starmap
+  description: 'In seconds (s).
+
+    T2-star maps are REQUIRED to use this suffix regardless of the method used to
+
+    generate them.
+
+    '
+sha256: 79a545bb4e112db88df82013025beb018bf8c6047862b24d3b57b84041511764

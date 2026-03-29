@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - ElectricalStimulation
+  - ElectricalStimulationParameters
+  is_mixin: true
+provenance:
+- source: bids
+  class: EEGOptional
+  name: EEGOptional
+  description: Sidecar field group for eeg
+sha256: 32708236ed6e4ef02b9d3677ec17fc872b4a5fff97eab3579953c1db57113704

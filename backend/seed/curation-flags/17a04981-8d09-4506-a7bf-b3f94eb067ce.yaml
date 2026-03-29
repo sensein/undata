@@ -1,0 +1,11 @@
+id: 17a04981-8d09-4506-a7bf-b3f94eb067ce
+entity_type: element
+entity_ref: description_b29e4ea80492.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.787), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C67447
+  top_label: Session
+  top_score: 0.7875
+status: pending
+created_at: '2026-03-29T05:40:55.449067+00:00'

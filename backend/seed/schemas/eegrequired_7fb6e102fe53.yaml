@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - EEGReference
+  - SamplingFrequency
+  - PowerLineFrequency
+  - SoftwareFilters
+  is_mixin: true
+provenance:
+- source: bids
+  class: EEGRequired
+  name: EEGRequired
+  description: Sidecar field group for eeg
+sha256: 7fb6e102fe539aedd612604349e54593e4b6c8e7023225dd71f856cc4bd95a88

@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+provenance:
+- source: nwb
+  class: nwb
+  name: power
+  description: Power of the excitation in mW, if known.
+  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6edc71a70e936df8c4ab480c20c5d7dc720d8e0b51a07f8f126b00d10a08b0ba

@@ -1,19 +1,19 @@
 "use client";
 
+import { useMemo } from "react";
 import { useQuery } from "@apollo/client/react";
 import { useParams } from "next/navigation";
-import { GET_VALUESET } from "@/graphql/queries";
+import { GET_VALUESET, BROWSE_VALUES } from "@/graphql/queries";
 import { EntityDetailLayout } from "@/components/EntityDetailLayout";
 import { EntityTag } from "@/components/EntityTag";
-import type { ValueSetNode } from "@/graphql/types";
+import { SourceBadge } from "@/components/SourceBadge";
+import type { ValueConnection, Edge, ValueNode } from "@/graphql/types";
 
-// Type alias for the valueset node extending with optional fields
 interface ValueSetData {
   sha256: string;
   name?: string;
   members: string[];
   description?: string;
-  semantic?: Record<string, unknown>;
   provenance: Array<{ source: string; className: string; name: string; description?: string }>;
   ontologyAnnotations: Array<{
     termUri: string; termLabel: string; ontology: string;
@@ -29,7 +29,27 @@ export default function ValueSetDetailPage() {
     variables: { sha256 },
   });
 
+  // Load values to resolve member sha256 → label
+  const { data: valData } = useQuery<{ browseValues: ValueConnection }>(BROWSE_VALUES, {
+    variables: { first: 200 },
+  });
+
   const valueset = data?.valueset;
+
+  // Build lookup: sha256 → value info
+  const shaToValue = useMemo(() => {
+    const map = new Map<string, { sha256: string; label: string; source: string }>();
+    for (const edge of (valData?.browseValues?.edges ?? []) as Edge<ValueNode>[]) {
+      const v = edge.node;
+      map.set(v.sha256, { sha256: v.sha256, label: v.label ?? v.sha256.slice(0, 12), source: v.provenance?.[0]?.source ?? "" });
+      map.set(v.sha256.slice(0, 12), { sha256: v.sha256, label: v.label ?? v.sha256.slice(0, 12), source: v.provenance?.[0]?.source ?? "" });
+      // Also by label for backwards compat
+      if (v.label) {
+        map.set(v.label.toLowerCase(), { sha256: v.sha256, label: v.label, source: v.provenance?.[0]?.source ?? "" });
+      }
+    }
+    return map;
+  }, [valData]);
 
   if (loading) {
     return (
@@ -51,14 +71,6 @@ export default function ValueSetDetailPage() {
 
   const prov = valueset.provenance?.[0];
 
-  // Members are stored as identifiers (name_hashprefix)
-  const memberValues = (valueset.members ?? []).map((m: string) => {
-    const parts = m.split("_");
-    const hashPart = parts[parts.length - 1] ?? m;
-    const namePart = parts.slice(0, -1).join("_") || m;
-    return { entityType: "values", sha256: hashPart, label: namePart };
-  });
-
   return (
     <EntityDetailLayout
       entityType="valueset"
@@ -71,26 +83,37 @@ export default function ValueSetDetailPage() {
       provenance={valueset.provenance}
       annotations={valueset.ontologyAnnotations}
     >
-      {memberValues.length > 0 && (
+      {(valueset.members ?? []).length > 0 && (
         <div>
-          <h3 className="text-md font-semibold mb-3">Members ({memberValues.length})</h3>
+          <h3 className="text-md font-semibold mb-3">Members ({valueset.members.length})</h3>
           <div className="border rounded overflow-hidden">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-gray-50 border-b">
                   <th className="text-left p-2 font-medium">Value</th>
-                  <th className="text-left p-2 font-medium">Identifier</th>
+                  <th className="text-left p-2 font-medium">Source</th>
                 </tr>
               </thead>
               <tbody>
-                {memberValues.map((v, i) => (
-                  <tr key={i} className="border-b last:border-0 hover:bg-gray-50">
-                    <td className="p-2">
-                      <EntityTag entityType={v.entityType} sha256={v.sha256} label={v.label} />
-                    </td>
-                    <td className="p-2 font-mono text-xs text-gray-400">{v.sha256.slice(0, 12)}...</td>
-                  </tr>
-                ))}
+                {valueset.members.map((memberRef: string, i: number) => {
+                  // memberRef may be sha256, sha256 prefix, or label
+                  const resolved = shaToValue.get(memberRef)
+                    || shaToValue.get(memberRef.slice(0, 12))
+                    || shaToValue.get(memberRef.toLowerCase())
+                    || shaToValue.get(memberRef.replace(/_/g, " ").toLowerCase());
+                  return (
+                    <tr key={i} className="border-b last:border-0 hover:bg-gray-50">
+                      <td className="p-2">
+                        {resolved ? (
+                          <EntityTag entityType="values" sha256={resolved.sha256} label={resolved.label} />
+                        ) : (
+                          <span className="text-gray-500 font-mono text-xs">{memberRef.slice(0, 16)}...</span>
+                        )}
+                      </td>
+                      <td className="p-2">{resolved?.source ? <SourceBadge source={resolved.source} /> : "—"}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

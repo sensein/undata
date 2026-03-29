@@ -1,0 +1,9 @@
+id: 789d76e7-343c-4ed8-bfd5-49acbae8eaf9
+entity_type: element
+entity_ref: editcondition_62ecc6f18f3e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EditCondition
+status: pending
+created_at: '2026-03-29T05:37:08.870892+00:00'

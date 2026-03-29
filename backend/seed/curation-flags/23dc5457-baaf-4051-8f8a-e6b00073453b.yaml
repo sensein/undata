@@ -1,0 +1,9 @@
+id: 23dc5457-baaf-4051-8f8a-e6b00073453b
+entity_type: element
+entity_ref: promptrate_220ae3c4b329.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PromptRate
+status: pending
+created_at: '2026-03-29T05:40:55.816597+00:00'

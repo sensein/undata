@@ -1,0 +1,12 @@
+semantic:
+  label: SEEG
+  value_type: categorical
+  display_name: SEEG
+provenance:
+- source: bids
+  class: enums
+  name: SEEG
+  description: 'Electrode channel.
+
+    '
+sha256: 8a60d3aeae2ba92844b1cc980f9885f3a42aec2293e929112f688e8a4c19fb2d

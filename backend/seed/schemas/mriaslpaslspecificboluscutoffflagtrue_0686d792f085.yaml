@@ -1,0 +1,11 @@
+semantic:
+  properties:
+  - BolusCutOffDelayTime
+  - BolusCutOffTechnique
+  is_mixin: true
+provenance:
+- source: bids
+  class: MRIASLPaslSpecificBolusCutOffFlagTrue
+  name: MRIASLPaslSpecificBolusCutOffFlagTrue
+  description: Sidecar field group for asl
+sha256: 0686d792f0852c415dc210f47749e33cda3b7b839696b1979acc0dd470db4c92

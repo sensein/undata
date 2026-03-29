@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - FlipAngle
+  is_mixin: true
+provenance:
+- source: bids
+  class: TB1DAMMetadata
+  name: TB1DAMMetadata
+  description: Sidecar field group for qmri
+sha256: 9b8b37d9b54d01c3ffe8c9fe837692afae9b539768b9e09268be33527f823cc3

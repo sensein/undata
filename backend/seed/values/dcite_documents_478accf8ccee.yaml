@@ -1,0 +1,8 @@
+semantic:
+  label: dcite:Documents
+  value_type: categorical
+provenance:
+- source: dandi
+  class: RelationType
+  name: dcite:Documents
+sha256: 478accf8ccee255a35253b2d61fd54d1e6e1a0208f836072b62f10bb787a2573

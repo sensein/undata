@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: metadata
+  name: Instructions
+  description: 'Text of the instructions given to participants before the recording.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 424167602cc86654e9dcf76a5652f8877baa93550a1d898be99308c10b83bf52

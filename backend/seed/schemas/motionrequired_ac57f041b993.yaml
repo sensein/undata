@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - SamplingFrequency
+  is_mixin: true
+provenance:
+- source: bids
+  class: motionRequired
+  name: motionRequired
+  description: Sidecar field group for motion
+sha256: ac57f041b993b4422757d7e8c16dccdf3a81e928b6432afd365b4ed5803cdfb7

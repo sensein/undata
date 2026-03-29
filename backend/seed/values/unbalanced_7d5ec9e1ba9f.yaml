@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: unbalanced
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000758
+    term_label: unbalanced
+    ontology: pato
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: unbalanced
+sha256: 7d5ec9e1ba9f6fb237c9a4272fe946b356be06a460220bc41e874a14df446a63

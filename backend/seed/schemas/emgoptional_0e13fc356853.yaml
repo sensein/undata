@@ -1,0 +1,19 @@
+semantic:
+  properties:
+  - ElectrodeMaterial
+  - ElectrodeType
+  - EMGGround
+  - EpochLength
+  - Gain
+  - InterelectrodeDistance
+  - Preamplification
+  - SkinPreparation
+  - SubjectArtefactDescription
+  - TriggerChannelCount
+  is_mixin: true
+provenance:
+- source: bids
+  class: EMGOptional
+  name: EMGOptional
+  description: Sidecar field group for emg
+sha256: 0e13fc356853a9f3eb42fedf410c5983366a180aef32b2a717ebe9b85343092d

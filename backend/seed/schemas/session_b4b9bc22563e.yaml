@@ -1,0 +1,35 @@
+semantic:
+  properties:
+  - id
+  - schemaKey
+  - identifier
+  - name
+  - description
+  - startDate
+  - endDate
+  - wasAssociatedWith
+  - used
+  subclass_of: Activity
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C67447
+    term_label: Session
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: concept_match
+    score: 0.9701
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C62615
+    term_label: Computer Session
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8257
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: dandi
+  class: Session
+  name: Session
+  description: null
+sha256: b4b9bc22563e03655aa50fdf44ad644b88966dc4e30948b3db4f008dabeda352

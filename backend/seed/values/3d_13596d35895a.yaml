@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: 3d
+provenance:
+- source: bids
+  class_: ''
+  name: 3D
+sha256: 13596d35895aaef16b6868edea0bbfbfbac3b18ed1819b84b31416042cd4f5c6

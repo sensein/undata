@@ -1,0 +1,15 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  min_value: 0.0
+provenance:
+- source: bids
+  class: metadata
+  name: ShortChannelCount
+  description: 'The number of short channels. 0 indicates no short channels.
+
+    '
+  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8610dada6180b59e4d175f079e5dbd11badbf311a5707010a935d1a9f8eb7e7b

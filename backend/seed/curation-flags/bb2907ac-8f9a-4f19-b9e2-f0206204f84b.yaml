@@ -1,0 +1,11 @@
+id: bb2907ac-8f9a-4f19-b9e2-f0206204f84b
+entity_type: value
+entity_ref: magnitude2_bcab1632d225.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.843), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C49158
+  top_label: Magnitude
+  top_score: 0.8432
+status: pending
+created_at: '2026-03-29T05:33:43.744983+00:00'

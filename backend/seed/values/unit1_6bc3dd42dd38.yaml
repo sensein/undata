@@ -1,0 +1,53 @@
+semantic:
+  label: UNIT1
+  value_type: categorical
+  display_name: Homogeneous (flat) T1-weighted MP2RAGE image
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C44278
+    term_label: Unit
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7758
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/UO_0000000
+    term_label: unit
+    ontology: uo
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7758
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C68553
+    term_label: Unit
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7758
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: suffixes
+  name: UNIT1
+  description: 'In arbitrary units (arbitrary).
+
+    UNIT1 images are REQUIRED to use this suffix regardless of the method used to
+
+    generate them.
+
+    Note that although this image is T1-weighted, regions without MR signal will
+
+    contain white salt-and-pepper noise that most segmentation algorithms will
+
+    fail on.
+
+    Therefore, it is important to dissociate it from `T1w`.
+
+    Please see [`MP2RAGE` specific notes](SPEC_ROOT/appendices/qmri.md#unit1-images)
+
+    in the qMRI appendix for further information.
+
+    '
+sha256: 6bc3dd42dd382a7217f433bf71392c63f615708c0d459437cfd75c6c00f1f5ab

@@ -1,0 +1,25 @@
+semantic:
+  value_type: categorical
+  label: raw
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_format_1957
+    term_label: raw
+    ontology: edam
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C48188
+    term_label: Raw
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: raw
+sha256: 80b73285ca5bebb6c7c9ae6be63edf9da66ee14f6f5e650b3876a505100acf9e

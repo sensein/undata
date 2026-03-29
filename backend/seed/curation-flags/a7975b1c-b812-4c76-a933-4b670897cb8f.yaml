@@ -1,0 +1,9 @@
+id: a7975b1c-b812-4c76-a933-4b670897cb8f
+entity_type: element
+entity_ref: template_z_eef3ff36a486.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: template_z
+status: pending
+created_at: '2026-03-29T05:40:55.989704+00:00'

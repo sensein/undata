@@ -1,0 +1,17 @@
+semantic:
+  properties:
+  - participant_id
+  - species
+  - age
+  - sex
+  - handedness
+  - strain
+  - strain_rrid
+  - HED
+  is_mixin: true
+provenance:
+- source: bids
+  class: modality_agnostic_Participants
+  name: modality_agnostic_Participants
+  description: Tabular columns for modality_agnostic
+sha256: 825a5a9b4c10717759e52173d1dfae4921fbc45a5c57b63f88e95602cb435a6c

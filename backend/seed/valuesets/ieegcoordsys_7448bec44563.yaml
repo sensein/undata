@@ -1,0 +1,12 @@
+semantic:
+  name: iEEGCoordSys
+  members:
+  - ACPC
+  - Other
+  - Pixels
+  - ScanRAS
+provenance:
+- source: bids
+  class: enums
+  name: _iEEGCoordSys
+sha256: 7448bec445638fcc1fbfee325299c3447dd65379975d2de7703a62584ef881d4
