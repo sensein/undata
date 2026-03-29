@@ -59,7 +59,7 @@ export function ElementPropertyTable({ properties, schemaSource, schemaClass }: 
       }
     }
     return map;
-  }, [elemData, schemaSource, schemaClass]);
+  }, [elemData, schemaSource]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const rows = useMemo(() => {
     return properties.map((ref) => {
