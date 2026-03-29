@@ -3,14 +3,22 @@ semantic:
   label: Mus musculus
   description: Mus musculus value
   ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCBITaxon_10090
+    term_label: Mus musculus
+    ontology: ncbitaxon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
   - term_uri: http://purl.obolibrary.org/obo/NCIT_C14238
     term_label: Mouse
     ontology: ncit
-    mapping_relation: skos:exactMatch
-    match_level: element_match
-    score: 0.99
+    mapping_relation: skos:broadMatch
+    match_level: concept_match
+    score: 0.85
     model: all-MiniLM-L6-v2
-    primary: true
+    primary: false
 provenance:
 - source: openminds
   class: ''

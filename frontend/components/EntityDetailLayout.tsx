@@ -70,8 +70,18 @@ export function EntityDetailLayout({
 
       {description && <p className="text-gray-600 mb-4">{description}</p>}
 
-      {/* SHA-256 */}
-      <div className="text-xs text-gray-400 font-mono mb-6 break-all">{sha256}</div>
+      {/* SHA-256 + action buttons */}
+      <div className="flex items-center justify-between mb-6">
+        <div className="text-xs text-gray-400 font-mono break-all flex-1">{sha256}</div>
+        <div className="flex gap-2 ml-4 flex-shrink-0">
+          <a
+            href={`/curation/chat?entity=${sha256}`}
+            className="px-3 py-1.5 bg-blue-50 text-blue-700 border border-blue-200 rounded text-xs hover:bg-blue-100"
+          >
+            Suggest Change
+          </a>
+        </div>
+      </div>
 
       {/* Tab navigation */}
       <div className="border-b mb-6">

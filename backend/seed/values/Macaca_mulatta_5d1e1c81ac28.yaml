@@ -3,14 +3,22 @@ semantic:
   label: Macaca mulatta
   description: Macaca mulatta value
   ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCBITaxon_9544
+    term_label: Macaca mulatta
+    ontology: ncbitaxon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
   - term_uri: http://purl.obolibrary.org/obo/NCIT_C14232
     term_label: Rhesus Monkey
     ontology: ncit
-    mapping_relation: skos:exactMatch
-    match_level: element_match
-    score: 0.98
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.92
     model: all-MiniLM-L6-v2
-    primary: true
+    primary: false
 provenance:
 - source: openminds
   class: ''

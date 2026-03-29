@@ -74,10 +74,25 @@ export default function ValueSetDetailPage() {
       {memberValues.length > 0 && (
         <div>
           <h3 className="text-md font-semibold mb-3">Members ({memberValues.length})</h3>
-          <div className="flex flex-wrap gap-2">
-            {memberValues.map((v, i) => (
-              <EntityTag key={i} entityType={v.entityType} sha256={v.sha256} label={v.label} />
-            ))}
+          <div className="border rounded overflow-hidden">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-gray-50 border-b">
+                  <th className="text-left p-2 font-medium">Value</th>
+                  <th className="text-left p-2 font-medium">Identifier</th>
+                </tr>
+              </thead>
+              <tbody>
+                {memberValues.map((v, i) => (
+                  <tr key={i} className="border-b last:border-0 hover:bg-gray-50">
+                    <td className="p-2">
+                      <EntityTag entityType={v.entityType} sha256={v.sha256} label={v.label} />
+                    </td>
+                    <td className="p-2 font-mono text-xs text-gray-400">{v.sha256.slice(0, 12)}...</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       )}
