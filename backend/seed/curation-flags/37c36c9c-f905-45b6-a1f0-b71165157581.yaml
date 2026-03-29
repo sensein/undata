@@ -1,0 +1,9 @@
+id: 37c36c9c-f905-45b6-a1f0-b71165157581
+entity_type: schema
+entity_ref: spoilinggradient_a09c93052866.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpoilingGradient
+status: pending
+created_at: '2026-03-29T19:53:53.684107+00:00'

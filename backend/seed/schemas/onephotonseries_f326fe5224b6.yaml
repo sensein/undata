@@ -1,22 +1,13 @@
 semantic:
   properties:
-  - pmt_gain
-  - scan_line_rate
-  - exposure_time
-  - binning
-  - power
-  - intensity
-  - imaging_plane
+  - 34ea6e711f8a96ea9f276c54b346a4022e52050de7024bd8f9e9966f6771b3d4
+  - 09a667b52c19ba918409f414e151e4ad57436bef6e867673a5c186aca8170255
+  - 5f86669a4a9a5fcd1cd9addb358387f935dafd21176b53cc5e7b16ccf6e4ceec
+  - 16c92ad4f2ca070cb76ea8a7c281c0e17829f385c7a7e33c6010b614099ca580
+  - 6edc71a70e936df8c4ab480c20c5d7dc720d8e0b51a07f8f126b00d10a08b0ba
+  - 53df5141d2460f766034785c59d85c2120feeff35149a0cc094238a347496e26
+  - 02e9bad13a4724d5b2f3af90fb8b9e167eae36ac74429318f05afeff83ff6fbd
   subclass_of: ImageSeries
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C116504
-    term_label: Multiphoton Microscopy
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7779
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: nwb
   class: OnePhotonSeries

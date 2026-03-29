@@ -1,0 +1,9 @@
+id: 00464f24-879d-4fd6-a3d3-5ec90d1e791f
+entity_type: value
+entity_ref: tb1dam_96ae6b8997a6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TB1DAM
+status: pending
+created_at: '2026-03-29T19:53:50.560302+00:00'

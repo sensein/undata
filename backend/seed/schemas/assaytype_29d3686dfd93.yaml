@@ -1,51 +1,10 @@
 semantic:
   properties:
-  - id
-  - schemaKey
-  - identifier
-  - name
+  - 1439a3bd8d45d88ea2b0302ce6eb7b210b86e708d08428a2a5a8e791976a7e65
+  - ab65192abbdd29cadb9f7ec3271f6488a86c85bc3f93476e35acfb0c48ba9d93
+  - 946dba87991a1beab198c318434d223a548f25842ed1f8cc643d95e955dccdd9
+  - 40762e6f555ac297fac23cb38fb6b95f2578490d68006f838a93309547c543bf
   subclass_of: BaseType
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C171266
-    term_label: Assay Identifier
-    ontology: ncit
-    mapping_relation: skos:closeMatch
-    match_level: concept_match
-    score: 0.8331
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C181947
-    term_label: Assay Device Identifier
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.767
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C189101
-    term_label: Assay Type
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7657
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C178860
-    term_label: Assay Result Type
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7249
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C171272
-    term_label: Immunohistochemistry Assay Unique Identifier
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7047
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: dandi
   class: AssayType

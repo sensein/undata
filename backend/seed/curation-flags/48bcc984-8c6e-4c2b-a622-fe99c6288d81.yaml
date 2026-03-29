@@ -1,0 +1,9 @@
+id: 48bcc984-8c6e-4c2b-a622-fe99c6288d81
+entity_type: element
+entity_ref: axis_1_phase_map_98ddbb254a04.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: axis_1_phase_map
+status: pending
+created_at: '2026-03-29T19:53:52.957575+00:00'

@@ -1,0 +1,9 @@
+id: 170603f5-678e-4a65-845f-065b938c52df
+entity_type: element
+entity_ref: calibrationcount_a27e193aae9d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CalibrationCount
+status: pending
+created_at: '2026-03-29T19:53:50.067597+00:00'

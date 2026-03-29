@@ -1,25 +1,16 @@
 semantic:
   properties:
-  - id
-  - schemaKey
-  - identifier
-  - sampleType
-  - assayType
-  - anatomy
-  - wasDerivedFrom
-  - wasAttributedTo
-  - sameAs
-  - hasMember
+  - 1439a3bd8d45d88ea2b0302ce6eb7b210b86e708d08428a2a5a8e791976a7e65
+  - ab65192abbdd29cadb9f7ec3271f6488a86c85bc3f93476e35acfb0c48ba9d93
+  - 946dba87991a1beab198c318434d223a548f25842ed1f8cc643d95e955dccdd9
+  - bb97a570a1e522aebae0b5b5cfa7a20405e94d00a3149bf33940320c384d59ed
+  - f937018bae15c54fbb55b08e452ed8e9cf23b294796aa2d63b022dda3cfc74a1
+  - 6dac346a5da4be9f525e00efed6a6976fdbb29d5e2180304206e91dfb943965a
+  - edf2d0f9ec503f91be96f5ae67c5a3a8d9688aff31c1b09585bc9d7e5d1a9add
+  - eb79be4c60c7b926748a75ebdfa3be559b7f515ec488c47a65eb22ed20d8052d
+  - d9c397aaef5aa652bf37697c09c4793ab90e22b2994181b81d0de76f436565b4
+  - 432d7f9177f7dc0f0a8b37b252453e594fa03c6a25cece6377952a34c7cc43ed
   subclass_of: DandiBaseModel
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C43412
-    term_label: Biosample
-    ontology: ncit
-    mapping_relation: skos:closeMatch
-    match_level: concept_match
-    score: 0.8185
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: dandi
   class: BioSample

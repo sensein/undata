@@ -1,0 +1,9 @@
+id: 244eaa59-7e41-47a7-98dd-1abb2ada2186
+entity_type: schema
+entity_ref: tb1epimetadata_bb7e928b80d2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TB1EPIMetadata
+status: pending
+created_at: '2026-03-29T19:53:50.686562+00:00'

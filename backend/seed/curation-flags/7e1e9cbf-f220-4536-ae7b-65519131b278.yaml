@@ -1,0 +1,9 @@
+id: 7e1e9cbf-f220-4536-ae7b-65519131b278
+entity_type: value
+entity_ref: magn_2f09795584ae.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MAGN
+status: pending
+created_at: '2026-03-29T19:53:50.476015+00:00'

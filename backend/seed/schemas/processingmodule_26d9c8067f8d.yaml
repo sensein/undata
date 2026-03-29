@@ -1,18 +1,9 @@
 semantic:
   properties:
-  - description
-  - NWBDataInterface
-  - DynamicTable
+  - 81b803dfd8c3dd44df79c3bfcc9c26c70592ca88d6bd509487414cbe4aa8e58f
+  - f15c14e29a5373a55e3ffc68d48ef11cbdeda71dc5730619e8ab14fc9596fcc5
+  - bfe1f92bcff4fa8ebe31a41645d8c6440d9b959846b295e5ddc1b86d86c31fab
   subclass_of: NWBContainer
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C84340
-    term_label: Processed Data
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7117
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: nwb
   class: ProcessingModule

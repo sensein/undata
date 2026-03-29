@@ -1,0 +1,15 @@
+semantic:
+  label: GYRO
+  value_type: categorical
+  display_name: GYRO
+provenance:
+- source: bids
+  class: enums
+  name: GYRO
+  description: 'Gyrometer channel, one channel for each spatial axis.
+
+    Column `component` for the axis MUST be added to the `*_channels.tsv` file (x,
+    y, or z).
+
+    '
+sha256: f3712a15fed8a8d1f3162b8a528d1d6927347eadffd09bd809bab6d6eb4ef39e

@@ -1,0 +1,9 @@
+id: bd6cee9b-5ea3-450a-8129-46a2b007f52e
+entity_type: schema
+entity_ref: petsample_2840430386ea.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PETSample
+status: pending
+created_at: '2026-03-29T19:53:50.677630+00:00'

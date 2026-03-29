@@ -1,0 +1,9 @@
+id: fbe41bb6-d0a2-4bf5-8bdb-c30ce31b1e02
+entity_type: element
+entity_ref: placement_scheme_79382a0ddaa4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: placement_scheme
+status: pending
+created_at: '2026-03-29T19:53:50.257261+00:00'

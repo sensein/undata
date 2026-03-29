@@ -1,0 +1,9 @@
+id: d5085256-5bf1-4bb9-9fbe-7e0d8ba358f9
+entity_type: value
+entity_ref: dcite_ispartof_301ea3a1fdeb.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:IsPartOf
+status: pending
+created_at: '2026-03-29T19:53:58.137160+00:00'

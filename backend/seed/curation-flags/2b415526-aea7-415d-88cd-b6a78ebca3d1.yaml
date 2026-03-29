@@ -1,0 +1,9 @@
+id: 2b415526-aea7-415d-88cd-b6a78ebca3d1
+entity_type: element
+entity_ref: stimuli_26ae1a0fb3c2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: stimuli
+status: pending
+created_at: '2026-03-29T19:53:57.985893+00:00'

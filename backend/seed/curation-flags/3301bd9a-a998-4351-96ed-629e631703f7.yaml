@@ -1,9 +1,0 @@
-id: 3301bd9a-a998-4351-96ed-629e631703f7
-entity_type: element
-entity_ref: mtpulseduration_3b03fbced2d8.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MTPulseDuration
-status: pending
-created_at: '2026-03-29T05:37:09.032999+00:00'

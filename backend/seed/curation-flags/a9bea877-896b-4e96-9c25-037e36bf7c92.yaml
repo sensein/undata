@@ -1,0 +1,9 @@
+id: a9bea877-896b-4e96-9c25-037e36bf7c92
+entity_type: element
+entity_ref: epochlength_2ae514abede7.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EpochLength
+status: pending
+created_at: '2026-03-29T19:53:53.045817+00:00'

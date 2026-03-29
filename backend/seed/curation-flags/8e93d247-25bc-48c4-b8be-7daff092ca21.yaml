@@ -1,0 +1,9 @@
+id: 8e93d247-25bc-48c4-b8be-7daff092ca21
+entity_type: element
+entity_ref: feature_units_b430843617de.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: feature_units
+status: pending
+created_at: '2026-03-29T19:53:57.666049+00:00'

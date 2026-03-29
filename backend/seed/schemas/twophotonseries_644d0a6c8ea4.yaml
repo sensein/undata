@@ -1,19 +1,10 @@
 semantic:
   properties:
-  - pmt_gain
-  - scan_line_rate
-  - field_of_view
-  - imaging_plane
+  - 34ea6e711f8a96ea9f276c54b346a4022e52050de7024bd8f9e9966f6771b3d4
+  - 09a667b52c19ba918409f414e151e4ad57436bef6e867673a5c186aca8170255
+  - 4ee37344066551e179ccd3b63995c7c4ba8ea3a02ae33a98f71687bcba735777
+  - 02e9bad13a4724d5b2f3af90fb8b9e167eae36ac74429318f05afeff83ff6fbd
   subclass_of: ImageSeries
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C116504
-    term_label: Multiphoton Microscopy
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7827
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: nwb
   class: TwoPhotonSeries

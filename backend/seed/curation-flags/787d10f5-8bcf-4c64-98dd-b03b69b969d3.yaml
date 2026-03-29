@@ -1,9 +1,0 @@
-id: 787d10f5-8bcf-4c64-98dd-b03b69b969d3
-entity_type: element
-entity_ref: metric_b9e765143d62.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: metric
-status: pending
-created_at: '2026-03-29T05:37:09.020977+00:00'

@@ -1,0 +1,9 @@
+id: 3f391ead-2810-45b3-92a8-186348874f85
+entity_type: element
+entity_ref: subjectartefactdescription_f510fffa21d2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SubjectArtefactDescription
+status: pending
+created_at: '2026-03-29T19:53:57.993233+00:00'

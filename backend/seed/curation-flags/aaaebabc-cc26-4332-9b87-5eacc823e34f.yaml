@@ -1,0 +1,9 @@
+id: aaaebabc-cc26-4332-9b87-5eacc823e34f
+entity_type: element
+entity_ref: spatialreference_6e72dd6fa102.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpatialReference
+status: pending
+created_at: '2026-03-29T19:53:57.970650+00:00'

@@ -1,8 +1,8 @@
 semantic:
   properties:
-  - sweep_number
-  - series
-  - series_index
+  - b32ec45c73a89ee10d3c23564b018c175ca4dda06c4d0765b1be6df57d33be1d
+  - c579d3fd0c1744551b2052f9cbdcc037be4aad7edeaf627bf7274629e71091d6
+  - 887ac349781439476e4c584bde7ec4c8477c33afeb21747d54123e742e15852a
   subclass_of: DynamicTable
 provenance:
 - source: nwb

@@ -1,0 +1,12 @@
+semantic:
+  label: raw
+  value_type: categorical
+  display_name: raw
+provenance:
+- source: bids
+  class: enums
+  name: raw
+  description: 'A raw BIDS dataset.
+
+    '
+sha256: b76e4608871ba7ccaf07227b5ccae4d1956d9a775dbc5bf03fcf1f5c2aea4292

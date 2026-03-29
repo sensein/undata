@@ -1,21 +1,11 @@
 semantic:
   data_type: string
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C93752
-    term_label: Defined Activity Description
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7416
-    model: all-MiniLM-L6-v2
-    primary: true
-  value_domain: text
 provenance:
 - source: dandi
   class: PublishActivity
   name: description
   description: The description of the activity.
-  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  generated_at: '2026-03-29T19:53:55.365104+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 710d1607b0be09f65da8026bea93529750eba431f6147f787ec67917e0191334

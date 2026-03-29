@@ -1,12 +1,11 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: dandi
   class: CommonModel
   name: url
   description: permalink to the item
-  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  generated_at: '2026-03-29T19:53:55.365104+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: d85f3e12a846afbdbc61fb87a9c8d6b13a2da781c42c32fcdc154dc2c30996ea

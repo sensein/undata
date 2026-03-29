@@ -1,6 +1,6 @@
 semantic:
   properties:
-  - SpikeEventSeries
+  - b870637bdd7e19e503495056d626539a7e63e15126d086c13e8bf935a79d8ab1
   subclass_of: NWBDataInterface
 provenance:
 - source: nwb

@@ -1,0 +1,32 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: pixels
+    label: pixels
+    ontology_term: https://schema.undata.live/values/f9230ad5-9b9f-4284-8f31-cc1ddc8e84dc
+  - value: m
+    label: m
+    ontology_term: https://schema.undata.live/values/4c1d4d17-5b83-4766-9a04-832d6fa0b900
+  - value: mm
+    label: mm
+    ontology_term: https://schema.undata.live/values/ae8bfad4-8700-4f0f-ae96-a51573a6c23c
+  - value: cm
+    label: cm
+    ontology_term: https://schema.undata.live/values/7226e017-8ba8-450c-b85f-07691bf15d1b
+  - value: n/a
+    label: n/a
+    ontology_term: https://schema.undata.live/values/0a93d16d-1e38-4673-8d46-d2d2a61f4552
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: iEEGCoordinateUnits
+  description: 'Units of the `*_electrodes.tsv`.
+
+    MUST be `"pixels"` if `iEEGCoordinateSystem` is `Pixels`.
+
+    '
+  generated_at: '2026-03-29T19:53:46.692352+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c9fbed11638accece82d5f1e994ba3698e81106e3b89bf4d602724159c33812e

@@ -1,0 +1,12 @@
+semantic:
+  label: cell line
+  value_type: categorical
+  display_name: cell line
+provenance:
+- source: bids
+  class: enums
+  name: cell_line
+  description: 'A biosample type (`sample_type`): cell line
+
+    '
+sha256: bc00871c87731d1696b45c12d2c68f0cf2efff717a93c91fce5d9f95d1b1d249

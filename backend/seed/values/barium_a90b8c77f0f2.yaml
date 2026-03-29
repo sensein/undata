@@ -1,0 +1,12 @@
+semantic:
+  label: BARIUM
+  value_type: categorical
+  display_name: BARIUM
+provenance:
+- source: bids
+  class: enums
+  name: BARIUM
+  description: 'A Contrast Bolus Ingredient: Barium
+
+    '
+sha256: a90b8c77f0f22251e754820fffeb8880b1365c3a79475f1157b549932f1bf8e4

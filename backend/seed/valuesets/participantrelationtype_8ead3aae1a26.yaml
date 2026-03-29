@@ -1,11 +1,11 @@
 semantic:
   name: ParticipantRelationType
   members:
-  - dandi:isChildOf
-  - dandi:isDizygoticTwinOf
-  - dandi:isMonozygoticTwinOf
-  - dandi:isParentOf
-  - dandi:isSiblingOf
+  - 4822c7b56626a3ea9ec73f8eb6ec15b1aa3e31f7328d556b821ade7fcb4ecc48
+  - 4c6dcdba6270ef041c885a14e3f8b1c801cbd5215c72566f993426c6cf8ea412
+  - 3b6fb46880259f132252b0001d199d6c8f58d0a3fd6b26214dea170f962b75ba
+  - bce084741f50d7722ed9c77fa7b28728049c974d2f9405446bdfee3408bdf357
+  - 1dc92685aa01ef057897aad4322e7f43af1988070b783ae68f1d5f163fc00884
 provenance:
 - source: dandi
   class: RelatedParticipant

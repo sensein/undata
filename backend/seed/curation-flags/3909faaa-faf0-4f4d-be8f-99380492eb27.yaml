@@ -1,9 +1,0 @@
-id: 3909faaa-faf0-4f4d-be8f-99380492eb27
-entity_type: value
-entity_ref: df_46f2c204645d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: DF
-status: pending
-created_at: '2026-03-29T05:33:43.598927+00:00'

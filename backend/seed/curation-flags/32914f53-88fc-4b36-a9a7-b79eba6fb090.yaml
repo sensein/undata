@@ -1,0 +1,9 @@
+id: 32914f53-88fc-4b36-a9a7-b79eba6fb090
+entity_type: schema
+entity_ref: mrsrequiredfields_890a29e07b32.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRSRequiredFields
+status: pending
+created_at: '2026-03-29T19:53:50.663509+00:00'

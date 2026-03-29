@@ -1,0 +1,9 @@
+id: 503d90fe-6e34-40c4-96a1-427ce5e92657
+entity_type: value
+entity_ref: .con_1593a44c9d4c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: con
+status: pending
+created_at: '2026-03-29T19:53:53.336840+00:00'

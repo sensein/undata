@@ -1,9 +1,0 @@
-id: c11d2672-9240-4c44-90d5-e7f3392531de
-entity_type: schema
-entity_ref: imageseries_5d6834b2de98.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ImageSeries
-status: pending
-created_at: '2026-03-29T05:40:56.778693+00:00'

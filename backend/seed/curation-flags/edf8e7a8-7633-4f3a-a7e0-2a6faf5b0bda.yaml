@@ -1,0 +1,9 @@
+id: edf8e7a8-7633-4f3a-a7e0-2a6faf5b0bda
+entity_type: value
+entity_ref: .tif_7ce302fae98e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: tif
+status: pending
+created_at: '2026-03-29T19:53:53.347397+00:00'

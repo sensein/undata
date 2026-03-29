@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: time
+provenance:
+- source: bids
+  class_: ''
+  name: time
+sha256: 7ff33910904a76125d1917e6f1195d932d14fac3c045d79c72f5dcb3c2f4045b

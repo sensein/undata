@@ -2,31 +2,6 @@ semantic:
   label: UNIT1
   value_type: categorical
   display_name: Homogeneous (flat) T1-weighted MP2RAGE image
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C44278
-    term_label: Unit
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7758
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/UO_0000000
-    term_label: unit
-    ontology: uo
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7758
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C68553
-    term_label: Unit
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7758
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: suffixes

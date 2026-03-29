@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - id
-  - schemaKey
-  - publishedBy
-  - datePublished
+  - 1439a3bd8d45d88ea2b0302ce6eb7b210b86e708d08428a2a5a8e791976a7e65
+  - ab65192abbdd29cadb9f7ec3271f6488a86c85bc3f93476e35acfb0c48ba9d93
+  - c1cc3875d9f4fd4a646ee75ab39e8d4ae22769061f432869e54d70819e8d4856
+  - eb77555bfc3e32e4836390e825571f51ed9ce0c2107b8d399a3d3669a425e39b
   subclass_of: DandiBaseModel
 provenance:
 - source: dandi

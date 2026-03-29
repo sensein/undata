@@ -1,0 +1,9 @@
+id: 031de124-c888-48b0-8e2f-9fb0608f9b85
+entity_type: element
+entity_ref: manifestlocation_4f413f7234c0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: manifestLocation
+status: pending
+created_at: '2026-03-29T19:53:57.776973+00:00'

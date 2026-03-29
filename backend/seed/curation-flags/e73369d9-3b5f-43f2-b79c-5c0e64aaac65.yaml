@@ -1,9 +1,0 @@
-id: e73369d9-3b5f-43f2-b79c-5c0e64aaac65
-entity_type: value
-entity_ref: irt1_3af09f0b99d9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: IRT1
-status: pending
-created_at: '2026-03-29T05:40:56.396977+00:00'

@@ -1,0 +1,9 @@
+id: b6055d79-351d-4fcb-a186-a2721ffc5bc5
+entity_type: element
+entity_ref: url_192d9ac0dc07.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: url
+status: pending
+created_at: '2026-03-29T19:53:58.024590+00:00'

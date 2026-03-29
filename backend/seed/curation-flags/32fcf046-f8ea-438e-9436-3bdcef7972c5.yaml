@@ -1,9 +1,0 @@
-id: 32fcf046-f8ea-438e-9436-3bdcef7972c5
-entity_type: element
-entity_ref: sync_9a70cc461df7.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: sync
-status: pending
-created_at: '2026-03-29T05:37:09.207929+00:00'

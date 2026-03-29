@@ -1,0 +1,9 @@
+id: a7f4a09f-cbcc-4a1a-adee-e08c96a46740
+entity_type: schema
+entity_ref: featureextraction_6c0ab8b844c5.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: FeatureExtraction
+status: pending
+created_at: '2026-03-29T19:53:53.589612+00:00'

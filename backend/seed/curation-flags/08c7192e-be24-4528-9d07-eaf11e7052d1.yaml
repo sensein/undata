@@ -1,0 +1,9 @@
+id: 08c7192e-be24-4528-9d07-eaf11e7052d1
+entity_type: value
+entity_ref: .con_1593a44c9d4c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: con
+status: pending
+created_at: '2026-03-29T19:53:50.368873+00:00'

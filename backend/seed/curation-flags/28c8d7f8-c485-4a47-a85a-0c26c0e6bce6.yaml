@@ -1,0 +1,9 @@
+id: 28c8d7f8-c485-4a47-a85a-0c26c0e6bce6
+entity_type: element
+entity_ref: units_8c0d59904e43.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: units
+status: pending
+created_at: '2026-03-29T19:53:58.021568+00:00'

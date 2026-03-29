@@ -1,0 +1,9 @@
+id: 6ea2a99f-ec98-4bf7-91af-eb0ad3c43362
+entity_type: element
+entity_ref: digitizedheadpoints_1058c90a2096.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DigitizedHeadPoints
+status: pending
+created_at: '2026-03-29T19:53:50.099218+00:00'

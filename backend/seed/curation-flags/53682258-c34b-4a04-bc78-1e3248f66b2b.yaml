@@ -1,0 +1,9 @@
+id: 53682258-c34b-4a04-bc78-1e3248f66b2b
+entity_type: value
+entity_ref: dcite_hasversion_835ce363470e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:HasVersion
+status: pending
+created_at: '2026-03-29T19:53:58.129082+00:00'

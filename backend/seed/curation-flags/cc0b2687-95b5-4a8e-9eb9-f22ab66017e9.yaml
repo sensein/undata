@@ -1,0 +1,9 @@
+id: cc0b2687-95b5-4a8e-9eb9-f22ab66017e9
+entity_type: element
+entity_ref: anatomicallandmarkcoordinatesystem_080beb5ad1b4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AnatomicalLandmarkCoordinateSystem
+status: pending
+created_at: '2026-03-29T19:53:52.950801+00:00'

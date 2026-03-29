@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: ex_vivo
+provenance:
+- source: bids
+  class_: ''
+  name: ex vivo
+sha256: 282a4a805c34aac040e1bc8bfeef0d4ea389a0224b577ec3b35d2871727afb1e

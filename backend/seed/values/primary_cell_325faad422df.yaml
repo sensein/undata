@@ -2,39 +2,6 @@ semantic:
   label: primary cell
   value_type: categorical
   display_name: primary cell
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/OBI_0001910
-    term_label: primary cell culture
-    ontology: obi
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7823
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C19315
-    term_label: Primary Cell Culture
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7823
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/CL_0000001
-    term_label: primary cultured cell
-    ontology: cl
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7688
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/OBI_0001878
-    term_label: establishing primary cell culture
-    ontology: obi
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7035
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: enums

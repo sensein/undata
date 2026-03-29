@@ -1,0 +1,9 @@
+id: f98dad47-2cee-450d-ac75-cdf24cb46d2b
+entity_type: element
+entity_ref: recordedeye_26a92a64df9e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: RecordedEye
+status: pending
+created_at: '2026-03-29T19:53:57.878827+00:00'

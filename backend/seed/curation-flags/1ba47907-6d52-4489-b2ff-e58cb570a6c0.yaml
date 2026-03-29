@@ -1,9 +1,0 @@
-id: 1ba47907-6d52-4489-b2ff-e58cb570a6c0
-entity_type: element
-entity_ref: genotype_41a64c4ab9cc.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: genotype
-status: pending
-created_at: '2026-03-29T05:40:55.543013+00:00'

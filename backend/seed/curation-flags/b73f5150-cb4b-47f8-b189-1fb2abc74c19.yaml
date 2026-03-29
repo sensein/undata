@@ -1,9 +1,0 @@
-id: b73f5150-cb4b-47f8-b189-1fb2abc74c19
-entity_type: element
-entity_ref: anaesthesia_75a950b29b15.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Anaesthesia
-status: pending
-created_at: '2026-03-29T05:40:55.336148+00:00'

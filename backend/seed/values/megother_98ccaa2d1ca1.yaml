@@ -2,15 +2,6 @@ semantic:
   label: MEGOTHER
   value_type: categorical
   display_name: MEGOTHER
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C630
-    term_label: Megestrol
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7111
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: bids
   class: enums

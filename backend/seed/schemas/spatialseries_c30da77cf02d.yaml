@@ -1,7 +1,7 @@
 semantic:
   properties:
-  - data
-  - reference_frame
+  - f8175de8d99bf59958f6161e1bdd7706974343e5a51456548b7ac94669687981
+  - e2d5025c7ee3744a21bafc9a06b608b6767ebd82673454c8c52400cefbbcb2a3
   subclass_of: TimeSeries
 provenance:
 - source: nwb

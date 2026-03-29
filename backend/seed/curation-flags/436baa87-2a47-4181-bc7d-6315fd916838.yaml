@@ -1,0 +1,9 @@
+id: 436baa87-2a47-4181-bc7d-6315fd916838
+entity_type: element
+entity_ref: imaging_rate_3d69fb93ea23.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: imaging_rate
+status: pending
+created_at: '2026-03-29T19:53:57.742291+00:00'

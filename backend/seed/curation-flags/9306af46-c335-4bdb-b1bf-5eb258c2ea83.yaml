@@ -1,9 +1,0 @@
-id: 9306af46-c335-4bdb-b1bf-5eb258c2ea83
-entity_type: element
-entity_ref: low_cutoff_e735c6a5d85a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: low_cutoff
-status: pending
-created_at: '2026-03-29T05:37:08.994666+00:00'

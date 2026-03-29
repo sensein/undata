@@ -1,0 +1,12 @@
+semantic:
+  label: XENON
+  value_type: categorical
+  display_name: XENON
+provenance:
+- source: bids
+  class: enums
+  name: XENON
+  description: 'A Contrast Bolus Ingredient: Xenon
+
+    '
+sha256: cfcb483a99fb9710b3dd83e8c1a6ae8b19b9274d171fc968009b8cf907c8e174

@@ -1,0 +1,9 @@
+id: 8b93a3a5-ec62-4381-86d2-622645f9355d
+entity_type: element
+entity_ref: ceagent_53f4d197f4d3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ceagent
+status: pending
+created_at: '2026-03-29T19:53:57.568175+00:00'

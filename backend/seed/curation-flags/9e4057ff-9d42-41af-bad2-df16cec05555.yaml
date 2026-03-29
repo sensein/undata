@@ -1,0 +1,9 @@
+id: 9e4057ff-9d42-41af-bad2-df16cec05555
+entity_type: schema
+entity_ref: generictype_7a47578ccc59.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: GenericType
+status: pending
+created_at: '2026-03-29T19:53:58.372913+00:00'

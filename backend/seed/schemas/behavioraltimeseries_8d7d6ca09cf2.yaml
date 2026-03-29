@@ -1,6 +1,6 @@
 semantic:
   properties:
-  - TimeSeries
+  - 3b06b939ceef1cfafa2ac29270e47cc63bbd941c3ef393512ab5a0ebb8a0d16b
   subclass_of: NWBDataInterface
 provenance:
 - source: nwb

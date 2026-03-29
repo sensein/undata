@@ -1,0 +1,9 @@
+id: 19f5e0fd-9cb3-41f8-bda1-21ecc6f1cc55
+entity_type: value
+entity_ref: ixi549space_021f84a168de.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: IXI549Space
+status: pending
+created_at: '2026-03-29T19:53:53.433735+00:00'

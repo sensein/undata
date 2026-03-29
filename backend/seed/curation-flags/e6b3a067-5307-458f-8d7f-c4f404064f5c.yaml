@@ -1,0 +1,9 @@
+id: e6b3a067-5307-458f-8d7f-c4f404064f5c
+entity_type: element
+entity_ref: band_mean_840d51820f9a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: band_mean
+status: pending
+created_at: '2026-03-29T19:53:52.963101+00:00'

@@ -1,0 +1,18 @@
+semantic:
+  label: study
+  value_type: categorical
+  display_name: study
+provenance:
+- source: bids
+  class: enums
+  name: study__space
+  description: 'Custom space defined using a group/study-specific template.
+
+    This coordinate system requires specifying an additional file to be fully defined.
+
+
+    In order for this space to be interpretable, `SpatialReference` metadata MUST
+    be provided.
+
+    '
+sha256: 80a8b82acc8009f1a5d894ed8bafe691c66cfc0137536aac334589200c47b089

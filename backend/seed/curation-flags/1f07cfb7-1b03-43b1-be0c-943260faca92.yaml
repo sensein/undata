@@ -1,0 +1,9 @@
+id: 1f07cfb7-1b03-43b1-be0c-943260faca92
+entity_type: element
+entity_ref: singlesrate_7cfda3d03103.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SinglesRate
+status: pending
+created_at: '2026-03-29T19:53:50.304640+00:00'

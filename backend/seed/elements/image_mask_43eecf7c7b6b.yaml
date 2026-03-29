@@ -1,6 +1,5 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
@@ -8,7 +7,7 @@ provenance:
   description: ROI masks for each ROI. Each image mask is the size of the original
     imaging plane (or volume) and members of the ROI are finite non-zero. At least
     one of `image_mask`, `pixel_mask`, or `voxel_mask` is required.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 43eecf7c7b6b651798eee1cbc1833fa58cae147c23767a9cd7a8003df4165c4d

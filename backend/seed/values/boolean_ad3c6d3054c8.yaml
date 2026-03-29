@@ -1,0 +1,14 @@
+semantic:
+  label: boolean
+  value_type: categorical
+  display_name: Boolean
+provenance:
+- source: bids
+  class: formats
+  name: boolean
+  description: 'A boolean.
+
+    Must be either "true" or "false".
+
+    '
+sha256: ad3c6d3054c8e04feb7d7456b6b00127538686a2a01b3eb003eec5ccd73fbc76

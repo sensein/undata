@@ -1,0 +1,9 @@
+id: d25b1cf8-cdf0-445f-a216-a21a80eb784c
+entity_type: schema
+entity_ref: experimentalconditionstable_14944b93f186.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ExperimentalConditionsTable
+status: pending
+created_at: '2026-03-29T19:53:58.368543+00:00'

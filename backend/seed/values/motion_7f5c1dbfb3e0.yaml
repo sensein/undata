@@ -1,0 +1,12 @@
+semantic:
+  label: motion
+  value_type: categorical
+  display_name: Motion
+provenance:
+- source: bids
+  class: modalities
+  name: motion
+  description: 'Data acquired with Motion-Capture systems.
+
+    '
+sha256: 7f5c1dbfb3e0480db216c675862e5db9dc2badc79e763af720ec772ac33881a1

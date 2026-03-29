@@ -1,17 +1,17 @@
 semantic:
   properties:
-  - RecordedEye
-  - SampleCoordinateSystem
-  - AverageCalibrationError
-  - CalibrationCount
-  - CalibrationPosition
-  - CalibrationType
-  - CalibrationUnit
-  - EyeTrackerDistance
-  - EyeTrackingMethod
-  - MaximalCalibrationError
-  - PupilFitMethod
-  - RawDataFilters
+  - 26a92a64df9e0d61037368b75949dd5c5fb55f52ac1f6533a2c33e57f84e7d96
+  - 39aa432ac41d200bfe12e93166c91c70e0b051280db1ce98d9efdc738fe45706
+  - 54a1d2fa33c47ac3843fa700ca60bb343e52a3d311ab5db86635289118eff607
+  - a27e193aae9dfdf46b006fbae13b0d5856abc039570faefe1e7c7163bbff5a49
+  - 98181d3e0a85852719aaf9f5098f027980b12a7d5b84d759273c44b569e067df
+  - d235040cfbe4bc2b07c354bee0940f9843f151c108138bb65b5cd0a31067a22e
+  - 6675954d281052f68f412b418a3eb82760a21f8159ba2a05f8de6b6c4e6b1ae5
+  - a2f5e008cae2770511dac3b2ef704ea9d90a9fa6e38091742f396f31ff00f210
+  - ede5068976326a183e50847831c51bfb54a5809829e78b43fba9b60204bea9fa
+  - 95d9d1064b138dd044d0030c05331b03ca18a8703c8bc6445d471b9b58fca72b
+  - 65677f20adab1e972057d56e8b7ba42aa40684fd8399b755a2c2fb7bdd8dbd4b
+  - 9501384cddfcd6ee20cf2a0f700f48648b98b4bac99046b54833696b1d6ce7fd
   is_mixin: true
 provenance:
 - source: bids

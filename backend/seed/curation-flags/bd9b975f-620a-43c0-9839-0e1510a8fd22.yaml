@@ -1,0 +1,9 @@
+id: bd9b975f-620a-43c0-9839-0e1510a8fd22
+entity_type: value
+entity_ref: genomic_5d7f2798fdaf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Genomic
+status: pending
+created_at: '2026-03-29T19:53:50.448615+00:00'

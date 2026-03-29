@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - session_id
-  - acq_time__sessions
-  - pathology
-  - HED
+  - 02b6b546a87a8ff2656db520d4907de31e66e637216c2cf109869a24fc9edb8e
+  - 875da10e301eaf59cc84e5c7dc9ac32de9c7e05cd3ee82f1b892a12f23dc2cf8
+  - 5e925df35ada7b67b0bbcb5c0def901b008e85fe304c283b3e645ecf68ce61b0
+  - 3e731d5da77a37d200c90df2390b5dd347aa5411c8d7d8f14f1c05577398903f
   is_mixin: true
 provenance:
 - source: bids

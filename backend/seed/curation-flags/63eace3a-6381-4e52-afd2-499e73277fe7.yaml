@@ -1,0 +1,9 @@
+id: 63eace3a-6381-4e52-afd2-499e73277fe7
+entity_type: value
+entity_ref: dandi_ismonozygotictwinof_b65befc3d8fb.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dandi:isMonozygoticTwinOf
+status: pending
+created_at: '2026-03-29T19:53:58.111518+00:00'

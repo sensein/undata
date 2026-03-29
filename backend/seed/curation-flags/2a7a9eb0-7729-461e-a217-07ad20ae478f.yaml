@@ -1,9 +1,0 @@
-id: 2a7a9eb0-7729-461e-a217-07ad20ae478f
-entity_type: element
-entity_ref: clustering_interface_dd101438a236.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: clustering_interface
-status: pending
-created_at: '2026-03-29T05:40:55.397805+00:00'

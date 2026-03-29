@@ -1,0 +1,9 @@
+id: a1996cfc-2e1e-4f93-abbf-bcad55bb978c
+entity_type: element
+entity_ref: metabolitemethod_530d0a4020e5.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MetaboliteMethod
+status: pending
+created_at: '2026-03-29T19:53:50.214264+00:00'

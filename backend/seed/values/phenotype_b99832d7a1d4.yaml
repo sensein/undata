@@ -1,0 +1,16 @@
+semantic:
+  label: phenotype
+  value_type: categorical
+  display_name: Phenotype
+provenance:
+- source: bids
+  class: datatypes
+  name: phenotype
+  description: 'Participant level measurement data
+
+    (for example, responses from multiple questionnaires)
+
+    split into individual files separate from `participants.tsv`.
+
+    '
+sha256: b99832d7a1d43ac82d544de13265269ab52fc76bb848344e06b2273ecbd1b657

@@ -1,0 +1,9 @@
+id: c78e0dfd-51ff-403b-aabb-6001a6ec23c1
+entity_type: element
+entity_ref: masked_imageseries_1922d03a7fe1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: masked_imageseries
+status: pending
+created_at: '2026-03-29T19:53:57.780158+00:00'

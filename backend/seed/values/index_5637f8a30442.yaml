@@ -1,0 +1,13 @@
+semantic:
+  label: index
+  value_type: categorical
+  display_name: Index
+provenance:
+- source: bids
+  class: formats
+  name: index
+  description: 'Non-negative, optionally prefixed with leading zeros for better visual
+    homogeneity and sorting.
+
+    '
+sha256: 5637f8a30442808111b4e898a57cfe5851c630eca47e6570e14a260cb69819c6

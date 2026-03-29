@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Resource
+  name: id
+  description: Uniform resource identifier
+  generated_at: '2026-03-29T19:53:55.365104+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 2b22eb39d6dc7af0085403db657f89fbf83885fd2b2f324a7cd9c37754125a4c

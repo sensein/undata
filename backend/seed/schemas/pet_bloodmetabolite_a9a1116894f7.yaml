@@ -1,7 +1,7 @@
 semantic:
   properties:
-  - metabolite_parent_fraction
-  - metabolite_polar_fraction
+  - 48116be17530c6425b85b5a3cb0ca25a0831f6bbc3d4e94e66b7400bb5e08676
+  - 1cd83f568269258f84a78962d7e3aafedb93cb2daa847f9b63490b5603c16b88
   is_mixin: true
 provenance:
 - source: bids

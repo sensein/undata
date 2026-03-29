@@ -1,31 +1,6 @@
 semantic:
   value_type: categorical
   label: carbon_dioxide
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C65288
-    term_label: Carbon Dioxide
-    ontology: ncit
-    mapping_relation: skos:closeMatch
-    match_level: concept_match
-    score: 0.8623
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/CHEBI_16526
-    term_label: carbon dioxide
-    ontology: chebi
-    mapping_relation: skos:closeMatch
-    match_level: concept_match
-    score: 0.8623
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C63798
-    term_label: Carbon
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7408
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class_: ''

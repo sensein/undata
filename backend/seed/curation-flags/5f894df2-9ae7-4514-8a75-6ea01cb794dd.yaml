@@ -1,0 +1,9 @@
+id: 5f894df2-9ae7-4514-8a75-6ea01cb794dd
+entity_type: schema
+entity_ref: emginstitutioninformation_6eb3c53fe057.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EMGInstitutionInformation
+status: pending
+created_at: '2026-03-29T19:53:58.357601+00:00'

@@ -1,0 +1,9 @@
+id: 71806860-d675-4532-814e-7a2fb326eaf7
+entity_type: schema
+entity_ref: grayscaleimage_f3867fc48f54.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: GrayscaleImage
+status: pending
+created_at: '2026-03-29T19:53:53.592046+00:00'

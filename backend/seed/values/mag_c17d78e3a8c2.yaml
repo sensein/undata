@@ -2,23 +2,6 @@ semantic:
   label: mag
   value_type: categorical
   display_name: Magnitude
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C60803
-    term_label: Magnifier
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7381
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C95958
-    term_label: Magaldrate
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.701
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: enums

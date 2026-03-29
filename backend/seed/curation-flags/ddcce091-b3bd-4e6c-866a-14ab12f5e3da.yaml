@@ -1,0 +1,9 @@
+id: ddcce091-b3bd-4e6c-866a-14ab12f5e3da
+entity_type: value
+entity_ref: t2starw_1481cb3e6279.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: T2starw
+status: pending
+created_at: '2026-03-29T19:53:58.295539+00:00'

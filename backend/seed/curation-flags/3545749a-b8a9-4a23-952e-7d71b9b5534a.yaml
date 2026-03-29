@@ -1,0 +1,9 @@
+id: 3545749a-b8a9-4a23-952e-7d71b9b5534a
+entity_type: value
+entity_ref: csf_bc0616a02989.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: csf
+status: pending
+created_at: '2026-03-29T19:53:53.380011+00:00'

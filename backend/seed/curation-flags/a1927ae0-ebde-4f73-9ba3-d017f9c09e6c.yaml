@@ -1,0 +1,9 @@
+id: a1927ae0-ebde-4f73-9ba3-d017f9c09e6c
+entity_type: element
+entity_ref: manifold_fe159715b808.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: manifold
+status: pending
+created_at: '2026-03-29T19:53:57.777380+00:00'

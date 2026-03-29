@@ -1,0 +1,9 @@
+id: 9055fe31-ea79-438f-9f63-e8b826ed900e
+entity_type: value
+entity_ref: k-_d827eb8312d9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: kMinus
+status: pending
+created_at: '2026-03-29T19:53:53.436229+00:00'

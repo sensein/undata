@@ -1,0 +1,9 @@
+id: f120112d-b7bc-4b69-aa76-16759bcb0887
+entity_type: element
+entity_ref: id_1439a3bd8d45.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: id
+status: pending
+created_at: '2026-03-29T19:53:57.703909+00:00'

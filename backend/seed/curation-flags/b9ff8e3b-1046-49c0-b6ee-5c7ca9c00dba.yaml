@@ -1,0 +1,9 @@
+id: b9ff8e3b-1046-49c0-b6ee-5c7ca9c00dba
+entity_type: element
+entity_ref: seal_2b5dcc1e4768.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: seal
+status: pending
+created_at: '2026-03-29T19:53:53.244814+00:00'

@@ -1,0 +1,9 @@
+id: c654e534-9cb2-4da3-b524-f790f1678137
+entity_type: schema
+entity_ref: intracellularelectrodestable_2fc7caaa0024.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: IntracellularElectrodesTable
+status: pending
+created_at: '2026-03-29T19:53:58.384237+00:00'

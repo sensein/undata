@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - EchoTime
-  - FlipAngle
-  - TotalReadoutTime
-  - MixingTime
+  - 839d817aa3d44d96517a9c8161a6c9d0b99e5e575693e991defe66048c1c3753
+  - da0f61e74d7a82944c9983f0e40ee180a14a6484b970abdd7c512ad4fbe0ca81
+  - d9995bbe0d471f329227a9a7d566808017131b99eea1e4f4fa77bc216f5775c1
+  - a9faef3d6a57a2729d5e17843d31ba4d33ba5206aefe56b6e5736a40fdf0c414
   is_mixin: true
 provenance:
 - source: bids

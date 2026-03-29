@@ -1,9 +1,0 @@
-id: 2b47629c-fd17-4835-a684-3ee9758551ef
-entity_type: schema
-entity_ref: imagesegmentation_04f51eb36458.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ImageSegmentation
-status: pending
-created_at: '2026-03-29T05:37:09.937991+00:00'

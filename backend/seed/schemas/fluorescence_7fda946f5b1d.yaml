@@ -1,6 +1,6 @@
 semantic:
   properties:
-  - RoiResponseSeries
+  - eb4b1314b986c12df0969d417f5700c5a18b22626c291340e6dc58f3b95a9532
   subclass_of: NWBDataInterface
 provenance:
 - source: nwb

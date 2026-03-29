@@ -1,0 +1,9 @@
+id: 1a14e663-b3bb-47e4-8e26-8badcb47cd21
+entity_type: element
+entity_ref: template_a7977b6b9907.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: template
+status: pending
+created_at: '2026-03-29T19:53:50.329885+00:00'

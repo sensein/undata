@@ -2,23 +2,6 @@ semantic:
   label: CONF
   value_type: categorical
   display_name: Confocal microscopy
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/SO_0000149
-    term_label: contig
-    ontology: so
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.706
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C40984
-    term_label: Contig
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.706
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: suffixes

@@ -1,10 +1,10 @@
 semantic:
   properties:
-  - InfusionRadioactivity
-  - InfusionStart
-  - InfusionSpeed
-  - InfusionSpeedUnits
-  - InjectedVolume
+  - 3a7b6f14dee43bdca039242566ccace8c2b050b9246d98360a73c50cbe6ec32e
+  - 3203b69fb88135872a0826189d1cc3cf5de6c0cd8e82ed799b81ff44b6f6bcd3
+  - d976a4c25a4d108cc4744b083b548018606d6d2146492e642a88208799d63a1b
+  - 0b12585ac3afc36bc30c1bb7818e8341b98cb5aa2b58710a8dfa370697fefbed
+  - a61b59133ba25bad74c5da4b4a4a7fac88023fd03b8041135b6d51010c473032
   is_mixin: true
 provenance:
 - source: bids

@@ -1,8 +1,8 @@
 semantic:
   properties:
-  - BolusCutOffFlag
-  - PASLType
-  - LabelingSlabThickness
+  - ea46a3e2b5f5497e56488a938babd6683cff10803f9eb8aebf9776ee3b82cbf4
+  - 8a42354528cf1677a722b6f27afba9db7b378eeeab5edf101a611b52cb425c40
+  - 46a56370e68a4ccf696f027fbec94b3cb1d112ed9105803d8d4312ac6cc66726
   is_mixin: true
 provenance:
 - source: bids

@@ -1,7 +1,7 @@
 semantic:
   properties:
-  - sequential_recordings
-  - sequential_recordings_index
+  - 27eb025713ecf0ade9bed91976d9705c64fb9456f7b29e3a46afe2a653dbba3c
+  - 0ec6f50b9a52f2d936154ce2c0b80fcf4c0f04948f8ceffe9938127ec7d3e275
   subclass_of: DynamicTable
 provenance:
 - source: nwb

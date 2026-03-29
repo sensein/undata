@@ -1,0 +1,37 @@
+semantic:
+  label: event
+  value_type: categorical
+  display_name: Event
+provenance:
+- source: bids
+  class: common_principles
+  name: event
+  description: 'Something that happens or may be perceived by a test subject as happening
+
+    at a particular instant during the recording.
+
+    Events are most commonly associated with on- or offset of stimulus presentations,
+
+    or with the distinct marker of on- or offset of a subject''s response or motor
+    action.
+
+    Other events may include unplanned incidents
+
+    (for example, sudden onset of noise and vibrations due to construction work,
+
+    laboratory device malfunction),
+
+    changes in task instructions (for example, switching the response hand),
+
+    or experiment control parameters (for example, changing the stimulus presentation
+    rate over experimental blocks),
+
+    and noted data feature occurrences (for example, a recording electrode producing
+    noise).
+
+    In BIDS, each event has an onset time and duration.
+
+    Note that not all tasks will have recorded events (for example, "resting state").
+
+    '
+sha256: 61bc926dd469d74f12dbd801e8ffa4248229b961f16823d923cf312546d4d940

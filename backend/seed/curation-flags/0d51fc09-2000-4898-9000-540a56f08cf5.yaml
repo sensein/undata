@@ -1,0 +1,9 @@
+id: 0d51fc09-2000-4898-9000-540a56f08cf5
+entity_type: schema
+entity_ref: intervalseries_3a20c54b82f3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: IntervalSeries
+status: pending
+created_at: '2026-03-29T19:53:58.383270+00:00'

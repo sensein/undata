@@ -1,9 +1,0 @@
-id: d2d632f9-4135-4bc8-b85d-95c76b3657a4
-entity_type: element
-entity_ref: gain_43524611ac4a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: gain
-status: pending
-created_at: '2026-03-29T05:37:08.922741+00:00'

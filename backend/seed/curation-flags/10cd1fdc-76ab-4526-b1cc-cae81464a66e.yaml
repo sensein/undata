@@ -1,0 +1,9 @@
+id: 10cd1fdc-76ab-4526-b1cc-cae81464a66e
+entity_type: element
+entity_ref: axis_1_power_map_aa88bb635a2e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: axis_1_power_map
+status: pending
+created_at: '2026-03-29T19:53:52.957967+00:00'

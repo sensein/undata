@@ -1,8 +1,8 @@
 semantic:
   properties:
-  - data
-  - indexed_timeseries
-  - indexed_images
+  - f8175de8d99bf59958f6161e1bdd7706974343e5a51456548b7ac94669687981
+  - 03f7e6562701b817d13666d3462435cef98b7d848e3bd65b9d1d122bce0ccbfb
+  - e9ff9d1de36f1512528a79fa99cecbcb892b79b2d15ef2b34c6993ddfade0cd5
   subclass_of: TimeSeries
 provenance:
 - source: nwb

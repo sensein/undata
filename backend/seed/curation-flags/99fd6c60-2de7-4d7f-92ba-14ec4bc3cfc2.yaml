@@ -1,9 +1,0 @@
-id: 99fd6c60-2de7-4d7f-92ba-14ec4bc3cfc2
-entity_type: element
-entity_ref: orntchannelcount_d455f22efc39.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ORNTChannelCount
-status: pending
-created_at: '2026-03-29T05:33:43.342903+00:00'

@@ -1,15 +1,6 @@
 semantic:
   value_type: categorical
   label: 2d
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C48282
-    term_label: 2-Dimensional
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7531
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: bids
   class_: ''

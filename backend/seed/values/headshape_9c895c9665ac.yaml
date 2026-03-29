@@ -2,23 +2,6 @@ semantic:
   label: headshape
   value_type: categorical
   display_name: Headshape File
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C12419
-    term_label: Head
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7273
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/UBERON_0000033
-    term_label: head
-    ontology: uberon
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7273
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: suffixes

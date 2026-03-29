@@ -1,0 +1,9 @@
+id: 925ea41a-93e4-410e-adaf-2bf49eae82e3
+entity_type: element
+entity_ref: plasma_radioactivity_4fa1f8ce40b4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: plasma_radioactivity
+status: pending
+created_at: '2026-03-29T19:53:53.192916+00:00'

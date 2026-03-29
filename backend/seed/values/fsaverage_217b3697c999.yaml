@@ -1,15 +1,6 @@
 semantic:
   label: fsaverage
   value_type: categorical
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/PATO_0002296
-    term_label: foveate
-    ontology: pato
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7008
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: bids
   class: enums

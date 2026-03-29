@@ -1,12 +1,11 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: waveform_filtering
   description: Filtering applied to data before generating mean/sd
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: fe89c8f9b8e4109ef5dbcaa2e12ad7072a7cb9b0625d9ae484bdec9890bf2a61

@@ -1,0 +1,9 @@
+id: f5f0b677-2520-4718-9cff-c15938523a8b
+entity_type: schema
+entity_ref: megwitheeg_0625644c6929.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MEGwithEEG
+status: pending
+created_at: '2026-03-29T19:53:50.619785+00:00'

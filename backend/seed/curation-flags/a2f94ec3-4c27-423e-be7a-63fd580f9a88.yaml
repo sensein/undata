@@ -1,9 +1,0 @@
-id: a2f94ec3-4c27-423e-be7a-63fd580f9a88
-entity_type: schema
-entity_ref: behavioraltimeseries_8d7d6ca09cf2.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: BehavioralTimeSeries
-status: pending
-created_at: '2026-03-29T05:40:56.719533+00:00'

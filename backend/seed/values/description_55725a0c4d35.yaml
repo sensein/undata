@@ -1,0 +1,18 @@
+semantic:
+  label: description
+  value_type: categorical
+  display_name: Description file
+provenance:
+- source: bids
+  class: suffixes
+  name: description
+  description: 'A JSON file describing the entities that occur in the filename.
+
+
+    At present, this is used for atlas descriptions.
+
+
+    This file MUST be located at the root of the dataset.
+
+    '
+sha256: 55725a0c4d35fdac60c11dec5747c0bceb6e8a8f358e0ea870d38ae7b58c6708

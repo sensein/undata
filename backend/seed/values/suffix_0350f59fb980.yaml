@@ -1,0 +1,19 @@
+semantic:
+  label: suffix
+  value_type: categorical
+  display_name: suffix
+provenance:
+- source: bids
+  class: common_principles
+  name: suffix
+  description: 'An alphanumeric string that forms part of a filename, located after
+    all
+
+    [entities](SPEC_ROOT/common-principles.md#entities) and
+
+    following a final `_`, right before the **file extension**;
+
+    for example, it is `eeg` in `sub-05_task-matchingpennies_eeg.vhdr`.
+
+    '
+sha256: 0350f59fb980c7a45324083e7032f56084e1de8ea1d904d982e797a8611d01c1

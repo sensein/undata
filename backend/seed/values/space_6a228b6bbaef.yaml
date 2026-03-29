@@ -1,0 +1,17 @@
+semantic:
+  label: space
+  value_type: categorical
+  display_name: Space
+provenance:
+- source: bids
+  class: common_principles
+  name: space
+  description: 'A space in BIDS is a reference [coordinate system](SPEC_ROOT/appendices/coordinate-systems.md)
+
+    defined by neuroimaging data, which may originate from an individual participant
+    (native space)
+
+    or a standardized reference derived from multiple participants (template space).
+
+    '
+sha256: 6a228b6bbaef82011cb8fb33368fd5b9f2439e0d96a026f2789ddfbfad6b234c

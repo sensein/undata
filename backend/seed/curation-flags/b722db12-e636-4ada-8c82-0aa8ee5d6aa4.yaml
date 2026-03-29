@@ -1,9 +1,0 @@
-id: b722db12-e636-4ada-8c82-0aa8ee5d6aa4
-entity_type: element
-entity_ref: codemeaning_30909d3f2dc1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CodeMeaning
-status: pending
-created_at: '2026-03-29T05:33:43.166379+00:00'

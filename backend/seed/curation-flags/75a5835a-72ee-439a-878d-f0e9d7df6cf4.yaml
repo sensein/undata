@@ -1,9 +1,0 @@
-id: 75a5835a-72ee-439a-878d-f0e9d7df6cf4
-entity_type: value
-entity_ref: pdt2_8943d0cad8c1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PDT2
-status: pending
-created_at: '2026-03-29T05:33:43.823821+00:00'

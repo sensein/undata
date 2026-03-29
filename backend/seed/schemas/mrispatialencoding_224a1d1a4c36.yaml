@@ -1,12 +1,12 @@
 semantic:
   properties:
-  - ParallelReductionFactorInPlane
-  - ParallelReductionFactorOutOfPlane
-  - ParallelAcquisitionTechnique
-  - PartialFourier
-  - PartialFourierDirection
-  - EffectiveEchoSpacing
-  - MixingTime
+  - c9e647cadcb7ba040387ed6436ddc5d4771e4960370df265d87169813b1e01cb
+  - dfd42f744cb5a8c301b54612bf64f12e18d68941cac9d09d431a643092171250
+  - 405a1b3dd39caf2862ee659f61fc6dc2286d863d4e0b05889c4a5958246d7685
+  - f70fc37f8c335fb441562dd6a2f006e4d02ddf742c6e3302f52e1d80639eaa9f
+  - 10417781149838e2cde22e4b4d480050c1504ff98e3c4f482069e3397f10736d
+  - 16e763b624ee758f922a96b3344caba46a666fc28e12cdf50f1b929c8e30ae6c
+  - a9faef3d6a57a2729d5e17843d31ba4d33ba5206aefe56b6e5736a40fdf0c414
   is_mixin: true
 provenance:
 - source: bids

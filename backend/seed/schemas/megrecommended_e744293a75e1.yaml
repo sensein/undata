@@ -1,24 +1,24 @@
 semantic:
   properties:
-  - MEGChannelCount
-  - MEGREFChannelCount
-  - EEGChannelCount
-  - ECOGChannelCount
-  - SEEGChannelCount
-  - EOGChannelCount
-  - ECGChannelCount
-  - EMGChannelCount
-  - MiscChannelCount
-  - TriggerChannelCount
-  - RecordingDuration
-  - RecordingType
-  - EpochLength
-  - ContinuousHeadLocalization
-  - HeadCoilFrequency
-  - MaxMovement
-  - SubjectArtefactDescription
-  - AssociatedEmptyRoom
-  - HardwareFilters
+  - e35e596cb961886e4c55d57cc8524f9c4f237142778a8ef3bf43189cb1714607
+  - 1bc0f13d64907e32d626f2e603b511f74611372f83968f2f984373ceae36502b
+  - 33aea555657d90a14a37ed931b365dc805cec716bd698c7c7b2e97ae73dc5fdf
+  - b542b1b0d16e1762f22a6e241284cff082f899a696bab82c1b5412a9d8ff3720
+  - dbc79e20f8a99584c2c6b33199d908c7c3b5ce482e29721c69b6c7ce98843f1b
+  - 16228dfb9c2467942348355aed47534dca9fb3fc7f408a1e13ebd41f8f2873d0
+  - c8a2a62a33b3be3c714a7a7f0189260814e36a0e54897c12e77c18bc222b249f
+  - dc5ab64b39ddf43987c1268781f110ccfe46c2db0c4a69efd9b7291f2a67e683
+  - b668741c3c042536f5f9d2a2901d65ede560d9bb7c959a93a79d4a454c914013
+  - 3f887962a2025e8fbd754d6b0ab00ce7de9e58a3a2e14f1090d0d05bfc8f6e84
+  - 072bbbf7283998e8903bf088894a7096c000da52717f458ef1783db2cbed0eb5
+  - 89aeadf746c945788d59fed37c5cf799b6dc5c5a6d3e37ca635fe09249c05826
+  - 2ae514abede7e20a835d98b472f562b8d8fd255c7c1b9dc2a60e0e5e32f79620
+  - 3e0ad0dd6b170e87b2b734409baddaafa766841839d080b9de676b6baa15188c
+  - 7243d48027e595c73430f3c8ff025bb3648fe02d34ccff04a0151356fade48d1
+  - 58de99ecdb46ce6424b1f41ad7dbbfede6e35010764a187763a3dfea8ff3c403
+  - f510fffa21d2b09218e5a7d1166ee5ea75941a0aece72aef30cbed04229dbe9f
+  - 1a1ac38eb0bf549d8492475d17294b3e58880ddb8f63633cfc3d9cba0af443ce
+  - 79369ff033d0cd0e31548b4c199e5d9669a6d7998b8699b606754cdd83b9ef49
   is_mixin: true
 provenance:
 - source: bids

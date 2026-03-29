@@ -1,0 +1,9 @@
+id: ab39db55-331a-4d05-9c72-30a95c7a653e
+entity_type: element
+entity_ref: infusionspeedunits_0b12585ac3af.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: InfusionSpeedUnits
+status: pending
+created_at: '2026-03-29T19:53:50.178297+00:00'

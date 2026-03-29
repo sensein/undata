@@ -1,0 +1,9 @@
+id: 06b60289-c10d-4a58-9bdd-8c52d67a63bd
+entity_type: element
+entity_ref: type__optodes_919bea7b4cc8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: type__optodes
+status: pending
+created_at: '2026-03-29T19:53:53.309747+00:00'

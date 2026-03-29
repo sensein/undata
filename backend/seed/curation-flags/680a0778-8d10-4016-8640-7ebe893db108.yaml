@@ -1,9 +1,0 @@
-id: 680a0778-8d10-4016-8640-7ebe893db108
-entity_type: element
-entity_ref: rolename_83083e5b81e4.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: roleName
-status: pending
-created_at: '2026-03-29T05:40:55.872021+00:00'

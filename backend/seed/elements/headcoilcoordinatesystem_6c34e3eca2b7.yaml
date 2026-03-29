@@ -1,0 +1,163 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: CTF
+    label: CTF
+    ontology_term: https://schema.undata.live/values/ddb0f6ab-de4a-42ac-8f89-4f4acddc32c0
+  - value: ElektaNeuromag
+    label: ElektaNeuromag
+    ontology_term: https://schema.undata.live/values/5f80e056-7b52-44e5-bf1e-5ff6421904bf
+  - value: NeuromagElektaMEGIN
+    label: NeuromagElektaMEGIN
+    ontology_term: https://schema.undata.live/values/a64a9697-f00e-46a1-8a81-3193cb59cd52
+  - value: 4DBti
+    label: 4DBti
+    ontology_term: https://schema.undata.live/values/303f4f0b-d28e-479f-bb95-c37ccf6a8da2
+  - value: KitYokogawa
+    label: KitYokogawa
+    ontology_term: https://schema.undata.live/values/719c6af3-778e-4062-bfab-5cc80a943004
+  - value: ChietiItab
+    label: ChietiItab
+    ontology_term: https://schema.undata.live/values/aba38b4b-8646-473f-9ca4-3a9b659e8442
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/f39382c1-82c5-4a19-bbc0-6c5a1c52db17
+  - value: CapTrak
+    label: CapTrak
+    ontology_term: https://schema.undata.live/values/57e2e003-1803-47a3-9832-cacc11a0f028
+  - value: EEGLAB
+    label: EEGLAB
+    ontology_term: https://schema.undata.live/values/bb97575c-235c-40a3-9291-e0148d18d391
+  - value: EEGLAB-HJ
+    label: EEGLAB-HJ
+    ontology_term: https://schema.undata.live/values/f49dbab6-01d1-4408-8987-d2a6bf60545e
+  - value: ICBM452AirSpace
+    label: ICBM452AirSpace
+    ontology_term: https://schema.undata.live/values/e90c815c-5462-4be4-b688-f07dfc49c3dd
+  - value: ICBM452Warp5Space
+    label: ICBM452Warp5Space
+    ontology_term: https://schema.undata.live/values/fbc32701-5c66-44d2-99ba-ed51fcece24a
+  - value: IXI549Space
+    label: IXI549Space
+    ontology_term: https://schema.undata.live/values/4ad02bd7-9f3b-4bfa-b992-ba40cc7e217b
+  - value: fsaverage
+    label: fsaverage
+    ontology_term: https://schema.undata.live/values/a8ac93db-878c-43e5-a7ff-facbaf2919bf
+  - value: fsaverageSym
+    label: fsaverageSym
+    ontology_term: https://schema.undata.live/values/0173e383-b16b-4082-bf7b-eaff5be5c109
+  - value: fsLR
+    label: fsLR
+    ontology_term: https://schema.undata.live/values/e78279e0-0705-4824-b89d-6ac78a63497d
+  - value: MNIColin27
+    label: MNIColin27
+    ontology_term: https://schema.undata.live/values/882fd838-deb4-45c8-b9bb-ad79a51964ce
+  - value: MNI152Lin
+    label: MNI152Lin
+    ontology_term: https://schema.undata.live/values/1e549331-7ac1-4246-be3b-7858f288522f
+  - value: MNI152NLin2009aSym
+    label: MNI152NLin2009aSym
+    ontology_term: https://schema.undata.live/values/1facbf5f-a87f-400f-a700-50a47ef02864
+  - value: MNI152NLin2009bSym
+    label: MNI152NLin2009bSym
+    ontology_term: https://schema.undata.live/values/19d506c6-13b3-4c57-b5ee-c8a3b1a8a3cd
+  - value: MNI152NLin2009cSym
+    label: MNI152NLin2009cSym
+    ontology_term: https://schema.undata.live/values/174f2c2c-0e96-481c-9ac4-0af938cd5253
+  - value: MNI152NLin2009aAsym
+    label: MNI152NLin2009aAsym
+    ontology_term: https://schema.undata.live/values/6bbb672b-daff-4039-bf2d-e3dd4424a45f
+  - value: MNI152NLin2009bAsym
+    label: MNI152NLin2009bAsym
+    ontology_term: https://schema.undata.live/values/2291b2b0-079f-48cf-a452-ae23dc7076a3
+  - value: MNI152NLin2009cAsym
+    label: MNI152NLin2009cAsym
+    ontology_term: https://schema.undata.live/values/0d873efe-3f11-4819-8840-41297037b62e
+  - value: MNI152NLin6Sym
+    label: MNI152NLin6Sym
+    ontology_term: https://schema.undata.live/values/f19b500b-ca1e-4b2a-ba5b-88b0292a855f
+  - value: MNI152NLin6Asym
+    label: MNI152NLin6Asym
+    ontology_term: https://schema.undata.live/values/37bb21ec-9780-4343-b7c7-843ac74642dd
+  - value: MNI305
+    label: MNI305
+    ontology_term: https://schema.undata.live/values/ab6c0958-0423-4f76-8264-79c57b3a98af
+  - value: NIHPD
+    label: NIHPD
+    ontology_term: https://schema.undata.live/values/0b4aaefb-d41a-48d5-be44-09ce785a28a8
+  - value: OASIS30AntsOASISAnts
+    label: OASIS30AntsOASISAnts
+    ontology_term: https://schema.undata.live/values/7f7a7e40-cd20-4efe-b6da-0a7e8dd8f4ea
+  - value: OASIS30Atropos
+    label: OASIS30Atropos
+    ontology_term: https://schema.undata.live/values/e0550fcd-75a4-4cd7-9f95-5ffa09fe7287
+  - value: Talairach
+    label: Talairach
+    ontology_term: https://schema.undata.live/values/fa946dbf-e660-4cd7-9a90-7f5b3557178b
+  - value: UNCInfant
+    label: UNCInfant
+    ontology_term: https://schema.undata.live/values/b79887db-ca15-481f-9e1a-8a714d7c01af
+  - value: fsaverage3
+    label: fsaverage3
+    ontology_term: https://schema.undata.live/values/c22dbd83-a725-4571-a198-ea8b8816bd5f
+  - value: fsaverage4
+    label: fsaverage4
+    ontology_term: https://schema.undata.live/values/eeb952d4-2afc-4bf7-97da-2ef401e24d9f
+  - value: fsaverage5
+    label: fsaverage5
+    ontology_term: https://schema.undata.live/values/086dd5c3-ad29-4e83-b5bd-ec2e6d43d2eb
+  - value: fsaverage6
+    label: fsaverage6
+    ontology_term: https://schema.undata.live/values/d5a3ff22-1558-43d0-a675-c8d6c96056e3
+  - value: fsaveragesym
+    label: fsaveragesym
+    ontology_term: https://schema.undata.live/values/0173e383-b16b-4082-bf7b-eaff5be5c109
+  - value: UNCInfant0V21
+    label: UNCInfant0V21
+    ontology_term: https://schema.undata.live/values/6d5127d4-68fa-40cc-8ac3-1c92ae968fa8
+  - value: UNCInfant1V21
+    label: UNCInfant1V21
+    ontology_term: https://schema.undata.live/values/5b38f4dc-8c90-4922-9cbb-c742a36b5f22
+  - value: UNCInfant2V21
+    label: UNCInfant2V21
+    ontology_term: https://schema.undata.live/values/33d65bbd-b9c0-4017-9312-6b8c70efd809
+  - value: UNCInfant0V22
+    label: UNCInfant0V22
+    ontology_term: https://schema.undata.live/values/1d1dd866-c8ed-410a-8efd-488f125e500d
+  - value: UNCInfant1V22
+    label: UNCInfant1V22
+    ontology_term: https://schema.undata.live/values/d78b0c57-f665-459d-8c74-d2e487000191
+  - value: UNCInfant2V22
+    label: UNCInfant2V22
+    ontology_term: https://schema.undata.live/values/76771a14-1dfc-4116-b479-dc5c8e044aab
+  - value: UNCInfant0V23
+    label: UNCInfant0V23
+    ontology_term: https://schema.undata.live/values/89e680b2-c34c-4666-9d63-8fcf4b24d12d
+  - value: UNCInfant1V23
+    label: UNCInfant1V23
+    ontology_term: https://schema.undata.live/values/e753d6c9-370b-45d9-bbf2-fa33d9a9af47
+  - value: UNCInfant2V23
+    label: UNCInfant2V23
+    ontology_term: https://schema.undata.live/values/d3732383-6acb-4eee-af55-f69beb6c579f
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: HeadCoilCoordinateSystem
+  description: 'Defines the coordinate system for the head coils.
+
+    See the
+
+    [Coordinate Systems Appendix](SPEC_ROOT/appendices/coordinate-systems.md)
+
+    for a list of restricted keywords for coordinate systems.
+
+    If `"Other"`, provide definition of the coordinate system in
+
+    `HeadCoilCoordinateSystemDescription`.
+
+    '
+  generated_at: '2026-03-29T19:53:46.692352+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6c34e3eca2b79b33ef4d55ef8fbbc04d37238d70acfb7ae9d528ef62730daf5a

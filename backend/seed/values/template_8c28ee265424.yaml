@@ -1,0 +1,21 @@
+semantic:
+  label: template
+  value_type: categorical
+  display_name: Template
+provenance:
+- source: bids
+  class: common_principles
+  name: template
+  description: 'A template (sometimes called an *atlas template*) is any aggregation
+    of data across subjects.
+
+    Templates MAY operationalize the notion of a common spatial frame of reference
+
+    (see *space*) beyond individual subjects.
+
+    In practical BIDS usage, templates can be recognized (via the `tpl-` entity) as
+
+    standard spaces that enable analyses of data from multiple individuals.
+
+    '
+sha256: 8c28ee265424ab6708c5b12631ec97287646d4478c9badd4b26e960aa9ac6d5b

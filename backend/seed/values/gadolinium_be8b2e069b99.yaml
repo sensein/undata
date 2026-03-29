@@ -1,0 +1,12 @@
+semantic:
+  label: GADOLINIUM
+  value_type: categorical
+  display_name: GADOLINIUM
+provenance:
+- source: bids
+  class: enums
+  name: GADOLINIUM
+  description: 'A Contrast Bolus Ingredient: Gadolinium
+
+    '
+sha256: be8b2e069b991c47b303d061d2c6266c062fe680ca97e1f2024dc9adb2c7d1d5

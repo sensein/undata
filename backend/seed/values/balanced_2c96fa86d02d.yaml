@@ -1,0 +1,12 @@
+semantic:
+  label: balanced
+  value_type: categorical
+  display_name: balanced
+provenance:
+- source: bids
+  class: enums
+  name: balanced
+  description: 'PCASL Type: when balanced gradient pulses are used.
+
+    '
+sha256: 2c96fa86d02d2c892696ff22382d4f914f00f3f9059ff017af40ee171722dbf9

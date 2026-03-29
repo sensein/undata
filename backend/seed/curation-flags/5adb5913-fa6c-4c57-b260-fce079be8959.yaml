@@ -1,0 +1,9 @@
+id: 5adb5913-fa6c-4c57-b260-fce079be8959
+entity_type: element
+entity_ref: specificradioactivity_7fe6e313147b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpecificRadioactivity
+status: pending
+created_at: '2026-03-29T19:53:53.269378+00:00'

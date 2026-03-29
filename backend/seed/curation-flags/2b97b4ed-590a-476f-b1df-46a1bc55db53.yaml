@@ -1,0 +1,9 @@
+id: 2b97b4ed-590a-476f-b1df-46a1bc55db53
+entity_type: value
+entity_ref: ex_vivo_054aad3dd1f0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ex_vivo
+status: pending
+created_at: '2026-03-29T19:53:53.402221+00:00'

@@ -1,20 +1,11 @@
 semantic:
   data_type: array
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C164339
-    term_label: Date of Diagnosis
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7219
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: dandi
   class: Disorder
   name: dxdate
   description: Dates of diagnosis
-  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  generated_at: '2026-03-29T19:53:55.365104+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 64abf14250445e1cdc2756a9cd0260ec5f25a5183ae506091302a58b5eacb29c

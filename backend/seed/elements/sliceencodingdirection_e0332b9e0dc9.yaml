@@ -1,0 +1,53 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: i
+    label: i
+    ontology_term: https://schema.undata.live/values/938bc772-6377-441e-951c-3b1bf9cb3fce
+  - value: i-
+    label: i-
+    ontology_term: https://schema.undata.live/values/1a7336bb-ecb5-4844-9aa6-b8a3d8dc2972
+  - value: j
+    label: j
+    ontology_term: https://schema.undata.live/values/cd71abe7-c0c5-4a9a-bba5-1a1c76bacdc0
+  - value: j-
+    label: j-
+    ontology_term: https://schema.undata.live/values/dd954378-d9d5-40b8-a148-203989f0a9ed
+  - value: k
+    label: k
+    ontology_term: https://schema.undata.live/values/c19c5e22-8d98-4189-afc7-6c5fcae59bd0
+  - value: k-
+    label: k-
+    ontology_term: https://schema.undata.live/values/0fb60203-ac7f-4f6e-aea7-67781c43b926
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: SliceEncodingDirection
+  description: 'The axis of the NIfTI data along which slices were acquired,
+
+    and the direction in which `"SliceTiming"` is defined with respect to.
+
+    `i`, `j`, `k` identifiers correspond to the first, second and third axis of
+
+    the data in the NIfTI file.
+
+    A `-` sign indicates that the contents of `"SliceTiming"` are defined in
+
+    reverse order - that is, the first entry corresponds to the slice with the
+
+    largest index, and the final entry corresponds to slice index zero.
+
+    When present, the axis defined by `"SliceEncodingDirection"` needs to be
+
+    consistent with the `slice_dim` field in the NIfTI header.
+
+    When absent, the entries in `"SliceTiming"` must be in the order of increasing
+
+    slice index as defined by the NIfTI header.
+
+    '
+  generated_at: '2026-03-29T19:53:46.692352+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e0332b9e0dc909809e060f89bc6aa47e0cad58bc8b2d8bc76bccdffc6f2dd8d5

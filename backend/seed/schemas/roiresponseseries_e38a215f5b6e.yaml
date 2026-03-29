@@ -1,7 +1,7 @@
 semantic:
   properties:
-  - data
-  - rois
+  - f8175de8d99bf59958f6161e1bdd7706974343e5a51456548b7ac94669687981
+  - cf76908735346eecba9fe436e31e6805c896dc253986a81fd385e3e9c1b276b0
   subclass_of: TimeSeries
 provenance:
 - source: nwb

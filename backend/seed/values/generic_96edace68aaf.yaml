@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: generic
+provenance:
+- source: bids
+  class_: ''
+  name: generic
+sha256: 96edace68aaf9d296087244375c87f85132d2dee4d32ea404b7ae9a89260c2e1

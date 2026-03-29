@@ -1,0 +1,9 @@
+id: 57bbed27-f523-44c1-9221-810cf7103f01
+entity_type: value
+entity_ref: chimap_acddec0155f3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Chimap
+status: pending
+created_at: '2026-03-29T19:53:53.374972+00:00'

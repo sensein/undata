@@ -1,12 +1,12 @@
 semantic:
   properties:
-  - onset
-  - duration
-  - trial_type
-  - response_time
-  - HED
-  - stim_file
-  - channel
+  - 86ae705ee0fb73a18db92dde26f07d551a17ba7261ab9d946da431e4e21ec74f
+  - f17e0b956ec56c4a349aa4cd6b1bb7a24a3b8a8cd1773f6c0056840191185168
+  - 0aac34d3cc1f4058cfa98f65edfdd4a48a481d2dc96562bdd226ae71f6f84356
+  - 887001c29e9497715d42008c86bf7f03e4598cb05dd44f84543f1bc61725ace7
+  - 3e731d5da77a37d200c90df2390b5dd347aa5411c8d7d8f14f1c05577398903f
+  - 0507a6bb4d3e0cdf138ace17ece727d6de5220e842c218310632bdc7a622fbe2
+  - 66da881617f634f6fe1488f0df1c674d20be29fbe1dd3ca0dda9c9e5a75da39f
   is_mixin: true
 provenance:
 - source: bids

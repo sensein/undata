@@ -1,0 +1,9 @@
+id: 7d56a2b3-b4d3-4f2b-96e3-aa87f3a4d98b
+entity_type: value
+entity_ref: physioevents_98f0cdbe14c0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: physioevents
+status: pending
+created_at: '2026-03-29T19:53:58.262709+00:00'

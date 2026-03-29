@@ -1,0 +1,9 @@
+id: 20a88a3f-e643-4d98-87ca-7e9e13833641
+entity_type: element
+entity_ref: delimiter_6999f14be1ec.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Delimiter
+status: pending
+created_at: '2026-03-29T19:53:52.999272+00:00'

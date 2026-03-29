@@ -1,9 +1,0 @@
-id: 7cd7332a-9dc5-4677-9eef-ef91e31513f7
-entity_type: schema
-entity_ref: megoptional_4608cccc2eea.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MEGOptional
-status: pending
-created_at: '2026-03-29T05:33:44.001195+00:00'

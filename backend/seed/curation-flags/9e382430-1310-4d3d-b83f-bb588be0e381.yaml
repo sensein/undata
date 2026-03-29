@@ -1,0 +1,9 @@
+id: 9e382430-1310-4d3d-b83f-bb588be0e381
+entity_type: element
+entity_ref: used_76a3ba26d67e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: used
+status: pending
+created_at: '2026-03-29T19:53:58.028949+00:00'

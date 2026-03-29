@@ -1,0 +1,9 @@
+id: 271ad3cf-9e03-4b61-b128-a25314b0931c
+entity_type: value
+entity_ref: dandi_orcid_269e956b5b37.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dandi:orcid
+status: pending
+created_at: '2026-03-29T19:53:58.113355+00:00'

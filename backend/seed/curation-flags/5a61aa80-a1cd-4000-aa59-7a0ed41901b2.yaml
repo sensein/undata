@@ -1,0 +1,9 @@
+id: 5a61aa80-a1cd-4000-aa59-7a0ed41901b2
+entity_type: schema
+entity_ref: motion_motionchannels_2005473e9acd.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: motion_motionChannels
+status: pending
+created_at: '2026-03-29T19:53:58.410826+00:00'

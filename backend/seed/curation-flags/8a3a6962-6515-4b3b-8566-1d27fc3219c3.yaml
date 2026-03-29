@@ -1,0 +1,9 @@
+id: 8a3a6962-6515-4b3b-8566-1d27fc3219c3
+entity_type: value
+entity_ref: ornt_67c08ba05290.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ORNT
+status: pending
+created_at: '2026-03-29T19:53:53.481954+00:00'

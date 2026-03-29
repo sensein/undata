@@ -1,0 +1,12 @@
+semantic:
+  label: continuous
+  value_type: categorical
+  display_name: Continuous recording
+provenance:
+- source: bids
+  class: enums
+  name: continuous
+  description: 'Continuous recording.
+
+    '
+sha256: fa51b813518c14c89b2f0e992babbb1a57de162128199f116012818b8dc1ae1e

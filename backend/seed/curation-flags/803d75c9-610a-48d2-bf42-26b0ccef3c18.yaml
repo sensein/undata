@@ -1,0 +1,9 @@
+id: 803d75c9-610a-48d2-bf42-26b0ccef3c18
+entity_type: element
+entity_ref: eegcoordinateunits_d2bb663c22b1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EEGCoordinateUnits
+status: pending
+created_at: '2026-03-29T19:53:53.032822+00:00'

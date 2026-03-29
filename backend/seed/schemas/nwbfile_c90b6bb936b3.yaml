@@ -1,19 +1,19 @@
 semantic:
   properties:
-  - nwb_version
-  - file_create_date
-  - identifier
-  - session_description
-  - session_start_time
-  - timestamps_reference_time
-  - acquisition
-  - analysis
-  - scratch
-  - processing
-  - stimulus
-  - general
-  - intervals
-  - units
+  - 93e2503ab0292358db713dc7342fd5a9d9c180659dd1947d00db3d23f4736397
+  - 5d32a72a76079d70978280fe8ce6a2337fb83a98bfc85bb50a906507fc981183
+  - 2686687e9197e0e8256625ba8a65375a36a09189a6207e6bccd2e8356af90595
+  - fadd956da657fc6626aa8d70aaad9d666145030990876e9ec60623ccdcd04523
+  - e30ed975e885c55edfa78235f7c72fd7f2d7a99491f09b095d0e59f6ff545b16
+  - 5c14fa0464a6f95f798eb6ec0ff47c517c13f57c9e2c89139e5af908469d0bd3
+  - 9c7eb79364de5815e6632b3112cbbfac8fb11cdd5690412530743d68860f3650
+  - e32c241dc9381630aeb1ce4e768f3c82e5b6bcd965ef93dae3c1dd2c54a32633
+  - 5b8fa435c3e97e99cc4ac2e78aa83afa87bf199067f9302f61fca0cf14139688
+  - be24f5f6a7038e385a296ba9fe4d973ce2a2744ad3d7c2916179e04b88577ae8
+  - 20fdc828262e2d391fdb203b2e3b81c41180041eed4181b4fbc479eb0b77b853
+  - 6b9ffdc946fcebe2488766498559b452fb928904553ce884338141a5f31f10c0
+  - 0338b40fef9242201c5786794aea9c2a996f7e5ecccd0aa3e2ccc71733f882a8
+  - 8c0d59904e43b15c630716907f0da909165905176f96c82c9cebefdceff3f81f
   subclass_of: NWBContainer
 provenance:
 - source: nwb

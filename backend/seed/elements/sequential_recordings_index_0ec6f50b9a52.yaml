@@ -1,12 +1,11 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: sequential_recordings_index
   description: Index dataset for the sequential_recordings column.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 0ec6f50b9a52f2d936154ce2c0b80fcf4c0f04948f8ceffe9938127ec7d3e275

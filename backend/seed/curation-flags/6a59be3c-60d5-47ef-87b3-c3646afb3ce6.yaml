@@ -1,9 +1,0 @@
-id: 6a59be3c-60d5-47ef-87b3-c3646afb3ce6
-entity_type: element
-entity_ref: coordinatereportstrategy_987a20b0579f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CoordinateReportStrategy
-status: pending
-created_at: '2026-03-29T05:40:55.420090+00:00'

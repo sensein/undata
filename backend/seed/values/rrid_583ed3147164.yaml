@@ -2,15 +2,6 @@ semantic:
   label: rrid
   value_type: categorical
   display_name: Research resource identifier
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C106070
-    term_label: RRAS Gene
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7147
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: bids
   class: formats

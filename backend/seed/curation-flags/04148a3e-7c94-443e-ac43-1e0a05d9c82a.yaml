@@ -1,0 +1,9 @@
+id: 04148a3e-7c94-443e-ac43-1e0a05d9c82a
+entity_type: value
+entity_ref: xenon_cfcb483a99fb.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: XENON
+status: pending
+created_at: '2026-03-29T19:53:53.548787+00:00'

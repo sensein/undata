@@ -1,0 +1,9 @@
+id: 40192898-df74-433e-9308-3e2855d6dd53
+entity_type: element
+entity_ref: headcoilfrequency_7243d48027e5.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: HeadCoilFrequency
+status: pending
+created_at: '2026-03-29T19:53:50.161599+00:00'

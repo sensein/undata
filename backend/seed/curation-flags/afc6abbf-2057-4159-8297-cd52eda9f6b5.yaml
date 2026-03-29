@@ -1,0 +1,9 @@
+id: afc6abbf-2057-4159-8297-cd52eda9f6b5
+entity_type: value
+entity_ref: other_1b40cf36b0d3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: other
+status: pending
+created_at: '2026-03-29T19:53:58.251994+00:00'

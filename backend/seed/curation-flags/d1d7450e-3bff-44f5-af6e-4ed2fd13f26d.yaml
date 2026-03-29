@@ -1,0 +1,9 @@
+id: d1d7450e-3bff-44f5-af6e-4ed2fd13f26d
+entity_type: schema
+entity_ref: electrodegroup_66bc70198034.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ElectrodeGroup
+status: pending
+created_at: '2026-03-29T19:53:53.574164+00:00'

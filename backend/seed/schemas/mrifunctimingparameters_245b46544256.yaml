@@ -1,11 +1,11 @@
 semantic:
   properties:
-  - NumberOfVolumesDiscardedByScanner
-  - NumberOfVolumesDiscardedByUser
-  - DelayTime
-  - FrameAcquisitionDuration
-  - DelayAfterTrigger
-  - AcquisitionDuration
+  - 4db2d67df5c07f4db158e60973bb683601a07a59b2bcd1d096187cc64711cd82
+  - e823988d4d6572f238154c6650d0188439b981115378b7dc60ca29765dc9d4f4
+  - 65a091b8b6772d94047bd767e27a1ceeeb3bff69e7a58305c9d036d3e2d8ef0f
+  - 4ca2fff255e4a9d7e13c03a6e9eeefd6a679f18bf9cf4369775d140356b203ac
+  - ab98c58cf35e1de0620a19dfa1da0d4d9149c9b54f1fdc6d2ca2f14ef58fa8c7
+  - d44a27869d963fb0ff6b9c6c5fa197dc7f1968935bdffd2568a8c340e6b929db
   is_mixin: true
 provenance:
 - source: bids

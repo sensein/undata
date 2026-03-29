@@ -1,12 +1,11 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: cell_id
   description: unique ID of the cell
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: cac9de9bd4d60f327db93498c3a6143dd42a72345a34a1d416340005e2d43f87

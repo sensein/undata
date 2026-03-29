@@ -1,0 +1,9 @@
+id: c96fffe1-a297-43e7-acd7-007aface9580
+entity_type: element
+entity_ref: ieegcoordinateprocessingdescription_c788780ebe39.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: iEEGCoordinateProcessingDescription
+status: pending
+created_at: '2026-03-29T19:53:50.166313+00:00'

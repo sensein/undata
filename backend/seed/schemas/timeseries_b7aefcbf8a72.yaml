@@ -1,13 +1,13 @@
 semantic:
   properties:
-  - description
-  - comments
-  - data
-  - starting_time
-  - timestamps
-  - control
-  - control_description
-  - sync
+  - 81b803dfd8c3dd44df79c3bfcc9c26c70592ca88d6bd509487414cbe4aa8e58f
+  - 9d0850c5934edc95d8a5edfbb65914d9bb8374dbaa83bdc17c917ff54f94051a
+  - f8175de8d99bf59958f6161e1bdd7706974343e5a51456548b7ac94669687981
+  - ef43b793760cba2cfae556d7c666a05bb028b99e64b7ede96dbaadbb9f3e4b26
+  - 217397c5fd3b259eb9969276298374399e3f4d25dd094821a7f17a425c32e70c
+  - 58d2d0b93b9def5e64a8fc86a28050a74bc880545a139a34bbcf85e17ce57fe7
+  - 05cda5e7659921e371152be3178c4589783efc97cb12431c4675b324d6a7ec45
+  - 9a70cc461df7fc1a3b6f696baf715f4f0fddc8a98bf61dec4ae428740a8dbead
   subclass_of: NWBDataInterface
 provenance:
 - source: nwb

@@ -1,0 +1,9 @@
+id: 2be7014c-22a0-4aff-bac9-d2b51f71acd8
+entity_type: element
+entity_ref: inversion_c78364f851fc.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: inversion
+status: pending
+created_at: '2026-03-29T19:53:57.757696+00:00'

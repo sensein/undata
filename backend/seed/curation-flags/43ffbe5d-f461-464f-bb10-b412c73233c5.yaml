@@ -1,0 +1,9 @@
+id: 43ffbe5d-f461-464f-bb10-b412c73233c5
+entity_type: element
+entity_ref: referencesandlinks_95c58b386396.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ReferencesAndLinks
+status: pending
+created_at: '2026-03-29T19:53:57.884534+00:00'

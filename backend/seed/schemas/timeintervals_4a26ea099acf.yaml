@@ -1,11 +1,11 @@
 semantic:
   properties:
-  - start_time
-  - stop_time
-  - tags
-  - tags_index
-  - timeseries
-  - timeseries_index
+  - d24d3fc051fc143a1bf9de29f7168c637428b8b323516fb407672adddb8bc6a1
+  - c9e0c230800fa402c6d1ab1190daba446b0fa8c4418db1fff4a4301521e75048
+  - 4d64c48d7925980a28ff8d367b9dd473e3c0731dd672aa4de4dcaaa6b0978da9
+  - b78b4992579e4a2f5d302fc5d2f69d31aa14a0dc65b358f88e96f8eafa8bde10
+  - b30cb742ad9afe0e0de9fbf0816c917aa20ef3c35599405a6945accb30b059e1
+  - 2d100cb755270515115f16fe4139d96628a1680a3ad2a867cb16a036bb6dec34
   subclass_of: DynamicTable
 provenance:
 - source: nwb

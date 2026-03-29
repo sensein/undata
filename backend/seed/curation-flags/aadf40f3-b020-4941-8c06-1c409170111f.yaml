@@ -1,0 +1,9 @@
+id: aadf40f3-b020-4941-8c06-1c409170111f
+entity_type: element
+entity_ref: nirscoordinateunits_c81bc32777ce.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NIRSCoordinateUnits
+status: pending
+created_at: '2026-03-29T19:53:50.235381+00:00'

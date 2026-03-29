@@ -1,7 +1,7 @@
 semantic:
   properties:
-  - description
-  - response
+  - 81b803dfd8c3dd44df79c3bfcc9c26c70592ca88d6bd509487414cbe4aa8e58f
+  - 5c362e6faf151aff96c21014fcd1c99333131fca5051807e012891912a09e12a
   subclass_of: DynamicTable
 provenance:
 - source: nwb

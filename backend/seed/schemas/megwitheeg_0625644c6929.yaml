@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - EEGPlacementScheme
-  - CapManufacturer
-  - CapManufacturersModelName
-  - EEGReference
+  - c4375926e93741339c268f0bea13eb3e9bfcc97a62fbc0b4028ef943213fd830
+  - 85d8986a9cb8d178383467a95a05147c85f99a07778d24b809435fb20e15b578
+  - cabe4fb1802ae3048e4f4611c3d891a59d9b589a7327f28c65cd4516d759e7ca
+  - b5968ecf0a843eb1e09ed6da4ba338f61b2b72d8bcde6dd9cd9ea6d4603ca69d
   is_mixin: true
 provenance:
 - source: bids

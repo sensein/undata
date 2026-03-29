@@ -1,13 +1,12 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: location
   description: Location of electrode group. Specify the area, layer, comments on estimation
     of area/layer, etc. Use standard atlas names for anatomical regions when possible.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 0e3d40fd6880950704b3299ae538924e2fd3f31f861c1cfde7f4c8d6e31e659d

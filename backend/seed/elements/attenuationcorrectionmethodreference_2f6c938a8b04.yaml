@@ -1,23 +1,6 @@
 semantic:
   data_type: string
   value_domain: text
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C69286
-    term_label: For Attenuation Correction
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7381
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C94862
-    term_label: Attenuation Correction
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7189
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: metadata
@@ -25,7 +8,7 @@ provenance:
   description: 'Reference paper for the attenuation correction method used.
 
     '
-  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  generated_at: '2026-03-29T19:53:46.692352+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 2f6c938a8b04d2552204b8765b26386fd2eef8ed6981e739abf7a84e2bda6368

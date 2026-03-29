@@ -1,12 +1,11 @@
 semantic:
   data_type: float
-  value_domain: numeric
 provenance:
 - source: nwb
   class: nwb
   name: intensity
   description: Intensity of the excitation in mW/mm^2, if known.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 53df5141d2460f766034785c59d85c2120feeff35149a0cc094238a347496e26

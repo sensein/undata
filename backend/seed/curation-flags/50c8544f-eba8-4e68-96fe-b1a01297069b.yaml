@@ -1,0 +1,9 @@
+id: 50c8544f-eba8-4e68-96fe-b1a01297069b
+entity_type: value
+entity_ref: physio_e326b5d48e9d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: physio
+status: pending
+created_at: '2026-03-29T19:53:50.524467+00:00'

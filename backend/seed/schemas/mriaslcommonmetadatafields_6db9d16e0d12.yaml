@@ -1,17 +1,17 @@
 semantic:
   properties:
-  - ArterialSpinLabelingType
-  - PostLabelingDelay
-  - BackgroundSuppression
-  - M0Type
-  - TotalAcquiredPairs
-  - VascularCrushing
-  - AcquisitionVoxelSize
-  - LabelingOrientation
-  - LabelingDistance
-  - LabelingLocationDescription
-  - LookLocker
-  - LabelingEfficiency
+  - 621d91e4c556d024bb9d73995e40e2cac5d9afffdb779b873be389ab29fb487d
+  - 990516cb67d32e7c485e60adf0b5ab09dc1b9894e79608b14d71c4a964734ece
+  - 5e0c56d0b7d5d0ad9b919ed67916b41233c4b745fd3f0d2212ef92562c099759
+  - 52c9c53d70f09f335279c2a248bf4e2cd0a66a353734ed1c26b794f266730734
+  - 93852d9c0115d7718308f6cf7eba038fe975f4c9db7f05135a2bef81568a83eb
+  - 798cf99012878fd252475de55df5333022d5d991c5d107357119cde2011630df
+  - 06d7489ac0a729cf6e6492fd2dd3142d6d4223e17ca898e7d0050e9fb9c597dc
+  - b400417829b98741bbddf261c3bc1f6c540ed8f4c34f3ae0032ab082b11469a5
+  - c10f6b7e948d6404fddc7da3b174a444e3f55dbc2b61a05ccc104070a760075b
+  - 377b055bae5948a6b0db52392de06fb37f9345b6d4da512b8418204329ea9af7
+  - 02d4f1605c11999764ec10391730cf81cc6deb8b567f49d2fe7d0544409e6af0
+  - 8a30373052c8162051d18c4f0562b8f50cd2bf12749c7312f269cfffd7aa08cd
   is_mixin: true
 provenance:
 - source: bids

@@ -1,13 +1,12 @@
 semantic:
   data_type: string
   type_ref: DeviceModel
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: model
   description: The model of the device.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 4ff2683c236b4084db2e460570bd9434f1eb4f74675f5d4ad6758925364c6046

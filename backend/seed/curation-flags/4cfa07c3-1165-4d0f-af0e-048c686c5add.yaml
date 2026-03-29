@@ -1,9 +1,0 @@
-id: 4cfa07c3-1165-4d0f-af0e-048c686c5add
-entity_type: element
-entity_ref: injectedmassunits_30a99def8976.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: InjectedMassUnits
-status: pending
-created_at: '2026-03-29T05:37:08.969741+00:00'

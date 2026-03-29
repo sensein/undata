@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - waveform_filtering
-  - waveform_mean
-  - waveform_sd
-  - clustering_interface
+  - fe89c8f9b8e4109ef5dbcaa2e12ad7072a7cb9b0625d9ae484bdec9890bf2a61
+  - 9f2cc952adb0bf1c4d1d7e5b4cd66f89f3364333723d0eb590c865499293a9e4
+  - 48f04c12e845548c254114f756cbf14417079e91dd495649e4fbffa59e0c3a33
+  - dd101438a236cd50986a4f68ea39be801a157ddbf26c5f1924d7722facbb7c60
   subclass_of: NWBDataInterface
 provenance:
 - source: nwb

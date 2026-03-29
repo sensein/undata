@@ -1,12 +1,11 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: dandi
   class: EthicsApproval
   name: identifier
   description: Approved Protocol identifier, often a number or alphanumeric string.
-  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  generated_at: '2026-03-29T19:53:55.365104+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: fbbf3611612c4cac33f443663ada29b3acdd4519c410dd0b30e7d043f9fe2d5d

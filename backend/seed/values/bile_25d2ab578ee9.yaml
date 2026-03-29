@@ -1,0 +1,12 @@
+semantic:
+  label: bile
+  value_type: categorical
+  display_name: Bile
+provenance:
+- source: bids
+  class: enums
+  name: bile
+  description: 'The origin of a sample: bile
+
+    '
+sha256: 25d2ab578ee98318659475e70708acf5b623350993c87f56658d944bd889cebc

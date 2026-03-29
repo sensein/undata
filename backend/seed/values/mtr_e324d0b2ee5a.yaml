@@ -2,23 +2,6 @@ semantic:
   label: MTR
   value_type: categorical
   display_name: Magnetization Transfer Ratio
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C104946
-    term_label: MTR Gene
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7852
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C104948
-    term_label: MTR wt Allele
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7056
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: suffixes

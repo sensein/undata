@@ -1,11 +1,11 @@
 semantic:
   properties:
-  - SamplingFrequency
-  - PowerLineFrequency
-  - DewarPosition
-  - SoftwareFilters
-  - DigitizedLandmarks
-  - DigitizedHeadPoints
+  - 92fad249fc8ed151d949c10cf70c500b744b9ab43af19abd9c96c859398e1d82
+  - ff69cf3867053762bee947f84774b04adce4fb05245dd035a8b2ae0dce82a66f
+  - 38541c24ed0720eb1d3a31e041e3f163aeb626a5003ae7f484c3c4bef2a65b75
+  - aecba9276ce8d553e8f2a2958d1d7decfcb058b9defd4cf9125f32341c6da062
+  - 435b2c2f2e495f4576156f33c1e7eccb29ca12cb1b095a8399e810497a5cd52f
+  - 1058c90a2096ad5f4ef0c922edd44370ced25a5cf41461af0f64442b906a036e
   is_mixin: true
 provenance:
 - source: bids

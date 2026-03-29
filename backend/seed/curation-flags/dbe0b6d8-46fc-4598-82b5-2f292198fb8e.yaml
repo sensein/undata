@@ -1,9 +1,0 @@
-id: dbe0b6d8-46fc-4598-82b5-2f292198fb8e
-entity_type: element
-entity_ref: waveform_mean_9f2cc952adb0.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: waveform_mean
-status: pending
-created_at: '2026-03-29T05:37:09.255564+00:00'

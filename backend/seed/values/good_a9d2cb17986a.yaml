@@ -1,0 +1,12 @@
+semantic:
+  label: good
+  value_type: categorical
+  display_name: good
+provenance:
+- source: bids
+  class: enums
+  name: good
+  description: 'A good status (for example the status of a recording channel).
+
+    '
+sha256: a9d2cb17986ae1acdda158a8da84cd56ae38781cbc291cc1afdd199bcad5cdfd

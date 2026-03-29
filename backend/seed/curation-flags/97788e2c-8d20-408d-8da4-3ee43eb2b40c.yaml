@@ -1,0 +1,9 @@
+id: 97788e2c-8d20-408d-8da4-3ee43eb2b40c
+entity_type: value
+entity_ref: measured_2135dbde224c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: measured
+status: pending
+created_at: '2026-03-29T19:53:53.447323+00:00'

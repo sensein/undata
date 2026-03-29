@@ -1,9 +1,0 @@
-id: e45beb3d-9f1a-400f-9e3c-bcae76a47035
-entity_type: element
-entity_ref: electricalstimulation_ceff01846594.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ElectricalStimulation
-status: pending
-created_at: '2026-03-29T05:37:08.883246+00:00'

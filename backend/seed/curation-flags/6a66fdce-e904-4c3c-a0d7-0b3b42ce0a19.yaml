@@ -1,9 +1,0 @@
-id: 6a66fdce-e904-4c3c-a0d7-0b3b42ce0a19
-entity_type: schema
-entity_ref: emg_emgelectrodes_e1f018d90b0b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: emg_EMGElectrodes
-status: pending
-created_at: '2026-03-29T05:40:56.747335+00:00'

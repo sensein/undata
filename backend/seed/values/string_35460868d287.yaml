@@ -1,0 +1,14 @@
+semantic:
+  label: string
+  value_type: categorical
+  display_name: String
+provenance:
+- source: bids
+  class: formats
+  name: string
+  description: 'The basic string type (not a specific format).
+
+    This should allow any free-form string.
+
+    '
+sha256: 35460868d287409b4db850bbb3c203f030b2f72f54c9a2b201ac97cb0b4b1b37

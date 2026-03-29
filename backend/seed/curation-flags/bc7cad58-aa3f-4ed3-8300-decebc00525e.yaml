@@ -1,0 +1,9 @@
+id: bc7cad58-aa3f-4ed3-8300-decebc00525e
+entity_type: schema
+entity_ref: eventwaveform_4894175a553c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EventWaveform
+status: pending
+created_at: '2026-03-29T19:53:53.587399+00:00'

@@ -1,39 +1,6 @@
 semantic:
   value_type: categorical
   label: dcite:collection
-  ontology_annotations:
-  - term_uri: http://www.w3.org/2004/02/skos/core#Collection
-    term_label: Collection
-    ontology: unknown
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7433
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25453
-    term_label: Collection
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7433
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://www.w3.org/ns/prov#Collection
-    term_label: Collection
-    ontology: unknown
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7433
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C45261
-    term_label: Item Collection
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7169
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: dandi
   class_: ''

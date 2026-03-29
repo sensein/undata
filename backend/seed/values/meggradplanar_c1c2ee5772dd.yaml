@@ -2,31 +2,6 @@ semantic:
   label: MEGGRADPLANAR
   value_type: categorical
   display_name: MEGGRADPLANAR
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C66075
-    term_label: Meglitinide
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7797
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C61828
-    term_label: Meglumine
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7122
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C630
-    term_label: Megestrol
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7045
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: enums

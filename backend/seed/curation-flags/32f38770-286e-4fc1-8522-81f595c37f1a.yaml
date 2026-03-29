@@ -1,0 +1,9 @@
+id: 32f38770-286e-4fc1-8522-81f595c37f1a
+entity_type: value
+entity_ref: fsaverage_67f1d685c4a8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: fsaverage
+status: pending
+created_at: '2026-03-29T19:53:53.412669+00:00'

@@ -1,0 +1,9 @@
+id: 7b7b9557-7dd4-4998-9f90-755b5ad7053d
+entity_type: element
+entity_ref: codeurl_14e04f0e5c38.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CodeURL
+status: pending
+created_at: '2026-03-29T19:53:50.075983+00:00'

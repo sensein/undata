@@ -1,0 +1,12 @@
+semantic:
+  label: motion
+  value_type: categorical
+  display_name: Motion
+provenance:
+- source: bids
+  class: suffixes
+  name: motion
+  description: 'Data recorded from a tracking system store.
+
+    '
+sha256: 69b27290299c00c3194ad10962aa6384aaf95ca0d195de4fc5e89cc216a119b2

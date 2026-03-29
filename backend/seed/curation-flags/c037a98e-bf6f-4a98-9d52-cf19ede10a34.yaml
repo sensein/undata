@@ -1,0 +1,9 @@
+id: c037a98e-bf6f-4a98-9d52-cf19ede10a34
+entity_type: value
+entity_ref: cbv_5b1b6c1ece78.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: cbv
+status: pending
+created_at: '2026-03-29T19:53:53.371890+00:00'

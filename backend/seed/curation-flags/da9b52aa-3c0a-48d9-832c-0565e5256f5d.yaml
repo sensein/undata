@@ -1,0 +1,9 @@
+id: da9b52aa-3c0a-48d9-832c-0565e5256f5d
+entity_type: value
+entity_ref: gadolinium_be8b2e069b99.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: GADOLINIUM
+status: pending
+created_at: '2026-03-29T19:53:58.183328+00:00'

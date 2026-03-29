@@ -1,14 +1,14 @@
 semantic:
   properties:
-  - PulseSequenceType
-  - ScanningSequence__mrs
-  - SequenceName
-  - PulseSequenceDetails
-  - WaterSuppression
-  - WaterSuppressionTechnique
-  - OuterVolumeSuppression
-  - B0ShimmingTechnique
-  - B1ShimmingTechnique
+  - 1d91749600f035c6403d4d669d24e6dad2185c2a780827ea7cf56d0212242218
+  - e823d49c791c884a87b3a87dfb8dab8a133c08ede2749f5fe20004125ed865c9
+  - 2d5a5db05e5aefe53cde2033696fe1c5e79d598c521494ea3c6300762f03af6d
+  - 867f22896c80f02aaa6db45edbe4341cc2f0316a593510de81ba90c05b7cddec
+  - c9d71b2cd8bb2d0556ab05dd1e91518aaa52c536c1314f7652d2504995e4bd11
+  - 99c29c2d21156125adaba06ba3a242d9d56047d1b4402b965ab381843aad1823
+  - a624753a32c4caf2146c4ad4fb8e3010996f9af45777145982ef54b33f9722ab
+  - 7cd9938c5bbb3fba15b60f1fe2c942f08ec3212cde36b6d6a84f8158028677fc
+  - 91c242091cbe1f0cead3294fea82582332cba01f1c32dd2a363b4d7aeabf4807
   is_mixin: true
 provenance:
 - source: bids

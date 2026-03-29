@@ -1,9 +1,0 @@
-id: 44050a3b-a342-4300-9b83-b9c1ccb6c39a
-entity_type: value
-entity_ref: .chn_927a8e790421.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: chn
-status: pending
-created_at: '2026-03-29T05:33:43.474854+00:00'

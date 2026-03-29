@@ -1,21 +1,21 @@
 semantic:
   properties:
-  - ACCELChannelCount
-  - ANGACCELChannelCount
-  - GYROChannelCount
-  - JNTANGChannelCount
-  - LATENCYChannelCount
-  - MAGNChannelCount
-  - MISCChannelCount
-  - MissingValues
-  - MotionChannelCount
-  - ORNTChannelCount
-  - POSChannelCount
-  - SamplingFrequencyEffective
-  - SubjectArtefactDescription
-  - TrackedPointsCount
-  - TrackingSystemName
-  - VELChannelCount
+  - a5c3565e799340e6409ccf91d8fafd080233bc8907698ded8ffc83ba810003c3
+  - c6298445f496ad11da6fc541d5cc0413cec7ea9d1aa4d9e195baad95193256a2
+  - c1384d8cdfbf7ac951c3b773b7466949421f69097f4bdeb5658733ec9efc45d4
+  - f1716d75eee88f5cc358bea7cbc13dd82fd12ca6aefb419aec9b5ff976176570
+  - 23ba5e84d272d94e345343c3058a77e9270176c64d38d5a4a47da91207d21cb5
+  - 2c19b94725d52c21541169e423fbf28d69512b53adb780622351727bce000a97
+  - 1125e930f8bd4b1ae26b9b511f8bfafb47c27af4535a74c9e319160c3d258ebb
+  - 014890132519d2cf78f2f287f8421f720be2eb3233d0b9c9839ed6bfd0a2de2e
+  - 7a25bd49cff4a5fa3a0ffbdf244f6b700c9f25fc60a0b14bac96e1ce32e40ffc
+  - d455f22efc39146456d411d556d29fff1cb8ca328427943f89e4ad61ac2f94e0
+  - 383468ed7796cb35f0bcf037ec2e27d5985fa65343331cec010f7fd1965202a2
+  - 6934177f7ac75341dbcdf7f217b9cc69b2b37f15cde90a404ce2df80e3461a3e
+  - f510fffa21d2b09218e5a7d1166ee5ea75941a0aece72aef30cbed04229dbe9f
+  - c3eff97235141f6947ba8a730e66fd081ecfa5089a55e863b08732833f624ac4
+  - d99b07d6c9e5153c9b4bf157c11fc6406e60c4d6881af91095c6b7c512170b92
+  - b3ed589488de51df9f1845bece3123dd7fa8f10bbb206a55d086e5f21a3d1c13
   is_mixin: true
 provenance:
 - source: bids

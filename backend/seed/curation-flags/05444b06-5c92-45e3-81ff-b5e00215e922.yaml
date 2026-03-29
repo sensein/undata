@@ -1,0 +1,9 @@
+id: 05444b06-5c92-45e3-81ff-b5e00215e922
+entity_type: element
+entity_ref: labelingpulseinterval_3ad65d704ccd.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: LabelingPulseInterval
+status: pending
+created_at: '2026-03-29T19:53:50.193596+00:00'

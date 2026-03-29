@@ -1,0 +1,12 @@
+semantic:
+  label: brain
+  value_type: categorical
+  display_name: brain
+provenance:
+- source: bids
+  class: enums
+  name: brain
+  description: 'The origin of a sample: brain
+
+    '
+sha256: dfb73c6d446aaf2ce5c687fb417ff3ace235db52d4b61d443974d92d30d4ccba

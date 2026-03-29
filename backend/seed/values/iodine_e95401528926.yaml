@@ -1,0 +1,12 @@
+semantic:
+  label: IODINE
+  value_type: categorical
+  display_name: IODINE
+provenance:
+- source: bids
+  class: enums
+  name: IODINE
+  description: 'A Contrast Bolus Ingredient: Iodine
+
+    '
+sha256: e95401528926e22f71711b231c23990b75185e9147217e1aef854e2fb357d8ca

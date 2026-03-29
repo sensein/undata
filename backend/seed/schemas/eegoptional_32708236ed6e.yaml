@@ -1,7 +1,7 @@
 semantic:
   properties:
-  - ElectricalStimulation
-  - ElectricalStimulationParameters
+  - ceff018465942a272690d3125d76be8f94cd33578065d6c05ce6819d63654e1d
+  - 360fa474297901f4e300fad6f7e09478bede7f33112782091df0fd366f7e210c
   is_mixin: true
 provenance:
 - source: bids

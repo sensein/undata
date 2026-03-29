@@ -1,11 +1,11 @@
 semantic:
   properties:
-  - PharmaceuticalName
-  - PharmaceuticalDoseAmount
-  - PharmaceuticalDoseUnits
-  - PharmaceuticalDoseRegimen
-  - PharmaceuticalDoseTime
-  - Anaesthesia
+  - 40f90a872c0bb058fd8919ae39d1ad20aeefda45c2417ca97546b0bf5cf80f99
+  - 072931254b463252cddf8410f22fc320aa922eb9f227852dfef81d93bd0a9988
+  - d7b169d6dfeb6a17b15b23fb287ab50b683ee69bfd49e1e508bc1ac44d293168
+  - b71869f29d479ba417096e9fd3cf2fc29fd26e32e2dca3c90f1b9d3d8db8b1e4
+  - 54b51ca6fd522f4e8de8d325b2061d1276c5bff86c9076e65d90cb9c63100033
+  - 75a950b29b15c5d5ff1dd33bfa7bc4c4b1b8ceb767b32b7bfda5f4bf5f0735e7
   is_mixin: true
 provenance:
 - source: bids

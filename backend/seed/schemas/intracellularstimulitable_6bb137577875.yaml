@@ -1,8 +1,8 @@
 semantic:
   properties:
-  - description
-  - stimulus
-  - stimulus_template
+  - 81b803dfd8c3dd44df79c3bfcc9c26c70592ca88d6bd509487414cbe4aa8e58f
+  - 20fdc828262e2d391fdb203b2e3b81c41180041eed4181b4fbc479eb0b77b853
+  - b4782d3aeb524c30418a5684b47803793af91de697e6b799a3debf5848ef917a
   subclass_of: DynamicTable
 provenance:
 - source: nwb

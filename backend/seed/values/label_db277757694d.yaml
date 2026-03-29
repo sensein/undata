@@ -1,0 +1,21 @@
+semantic:
+  label: label
+  value_type: categorical
+  display_name: label
+provenance:
+- source: bids
+  class: common_principles
+  name: label
+  description: 'An alphanumeric (and possibly including `+` character(s)) value, possibly
+    prefixed with arbitrary
+
+    number of 0s for consistent indentation,
+
+    for example, it is `rest` in `task-rest` following `task-<label>` specification.
+
+    Note that labels MUST not collide when casing is ignored
+
+    (see [Case collision intolerance](SPEC_ROOT/common-principles.md#case-collision-intolerance)).
+
+    '
+sha256: db277757694d6ef428d3bd21e477c4811354285f25bab5e1bd4f8806a95076ab

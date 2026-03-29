@@ -1,9 +1,0 @@
-id: c44817bc-50f1-483d-b8a9-1d028e3a43fc
-entity_type: element
-entity_ref: plasmafreefractionmethod_c7db774dd664.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PlasmaFreeFractionMethod
-status: pending
-created_at: '2026-03-29T05:37:09.090053+00:00'

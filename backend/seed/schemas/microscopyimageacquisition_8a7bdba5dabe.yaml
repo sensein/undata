@@ -1,12 +1,12 @@
 semantic:
   properties:
-  - PixelSize
-  - PixelSizeUnits
-  - Immersion
-  - NumericalAperture
-  - Magnification
-  - ImageAcquisitionProtocol
-  - OtherAcquisitionParameters
+  - 3c5f70e989aab59edc3ef37970724394e4f954674cdf7a8cec3ef8c79907f3d6
+  - 0dc7f50a04729d415e1e10e819f8d031727056884c47eea8b7b5f223ec8e9673
+  - b474e9f1d165ddb7530d4edb6f2a6c893f40ba8fd77f34d2c30cb5d47790b4c3
+  - f35d1c80409121de70946481596c38b61f5fcf2c617f1f90953063332bdc0808
+  - 3c44bdbb94619a0f4a78514905db6e9fa1894c4df25750393785c1ee3d0af1e8
+  - 8819c84a1cb8d24c768d0604949db98637edf9eb666d9a77842d4e69ada7bf2d
+  - c4131a17db44eb6e55ddd9feacc9d0384691547278e841ee5c4c9703577a40c1
   is_mixin: true
 provenance:
 - source: bids

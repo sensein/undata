@@ -1,0 +1,9 @@
+id: 3c894ef3-7f9f-415e-b03c-a0391c8d8b53
+entity_type: element
+entity_ref: density_9342567a0864.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: density
+status: pending
+created_at: '2026-03-29T19:53:50.091507+00:00'

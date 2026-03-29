@@ -1,20 +1,20 @@
 semantic:
   name: StandardTemplateDeprecatedCoordSys
   members:
-  - UNCInfant0V21
-  - UNCInfant0V22
-  - UNCInfant0V23
-  - UNCInfant1V21
-  - UNCInfant1V22
-  - UNCInfant1V23
-  - UNCInfant2V21
-  - UNCInfant2V22
-  - UNCInfant2V23
-  - fsaverage3
-  - fsaverage4
-  - fsaverage5
-  - fsaverage6
-  - fsaveragesym
+  - f31d7868e5e8b8b398bf61a317999c1ebfb1cc5e3a407da82b93d2ba15ca122a
+  - cee5c5e8c1bda8fa4de8a84068d3b964df850163a8eb93abde02de75bb3a147d
+  - e079ea0b2b7f808c04918475bac14d245656fc230bcfeadcb27a3902de874ec3
+  - f2a44b8c574d2ca38ddf4fa7339cf894dd728e470190c8ded575de64cbb5a5c7
+  - a5dbf2e55856bb7789aefb196ea79d237e151667108b69d2918ce56ac360c084
+  - 65b1a00088c3ee2922ae2e1ce2d6b420c43e0003c59a819b4c4d0260e261a97b
+  - 98a0c8b8c49cf33d613aab946db5cb8f36c7f247616be4e278445e523bc31879
+  - f80e7a133b2d6d4f22b8141c7ab79a49c34002ef63efd05309b8dac63abf35a3
+  - 42376c0b8c879de78f0e8044d56cd93eef84f535fbc3e5a5c0b536bd573ccfab
+  - 442845c3da3f500bf2808cfd0c5260bc352d84fe206eb34a8e5050d4061d079d
+  - b47842bd16f626ca5bfc0dac289f40e99bc3c41c5ff71c2911698b5ba46269ee
+  - 089565de867c9b90145bd08753eef1b87c791305a37fe9a758938f5706978f5c
+  - 9601676db935ccd203249e541056eb5a752d23d8d6c78e3ce615a94367f1e9a5
+  - 6ae10ceca0795eeb3ab4e9001a8a534465a652af3d205e2aacfbb62b4580c374
 provenance:
 - source: bids
   class: enums

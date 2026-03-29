@@ -1,0 +1,9 @@
+id: e16bf0ec-8ae7-4d28-9204-1811cf2a3aa8
+entity_type: schema
+entity_ref: emghardware_413d1cf326ac.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EMGHardware
+status: pending
+created_at: '2026-03-29T19:53:50.599461+00:00'

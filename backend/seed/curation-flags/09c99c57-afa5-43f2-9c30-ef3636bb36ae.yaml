@@ -1,0 +1,9 @@
+id: 09c99c57-afa5-43f2-9c30-ef3636bb36ae
+entity_type: element
+entity_ref: split_2030abae4faf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: split
+status: pending
+created_at: '2026-03-29T19:53:50.318905+00:00'

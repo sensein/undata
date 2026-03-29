@@ -1,0 +1,9 @@
+id: 94b31cd5-aeee-40f7-b911-4e5163cc7432
+entity_type: element
+entity_ref: electrodes_index_6a6cb3e818e8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: electrodes_index
+status: pending
+created_at: '2026-03-29T19:53:57.648974+00:00'

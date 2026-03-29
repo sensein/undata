@@ -1,0 +1,11 @@
+semantic:
+  value_type: categorical
+  label: brain
+provenance:
+- source: bids
+  class_: ''
+  name: brain
+- source: bids
+  class_: ''
+  name: Brain
+sha256: 35e185da5ba5d102f19e9c3d358010bd23cfa29fdacf17f1efa4a94be0161443

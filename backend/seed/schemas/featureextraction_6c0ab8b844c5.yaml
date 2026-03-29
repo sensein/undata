@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - description
-  - features
-  - times
-  - electrodes
+  - 81b803dfd8c3dd44df79c3bfcc9c26c70592ca88d6bd509487414cbe4aa8e58f
+  - 23ce7e44e1c03ea5c136def2e6171f41027cefa6780f73db2c2b90a850fb566a
+  - ebf86bf03374a2351300266e086100106e0518e104996f16dde19de27ab10063
+  - ad3c1ca46b207a1daf8390d09d710679995e7c6157dfd5ec1ca13bb936ed3d61
   subclass_of: NWBDataInterface
 provenance:
 - source: nwb

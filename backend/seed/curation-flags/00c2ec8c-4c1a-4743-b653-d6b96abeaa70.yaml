@@ -1,0 +1,9 @@
+id: 00c2ec8c-4c1a-4743-b653-d6b96abeaa70
+entity_type: element
+entity_ref: labelingefficiency_8a30373052c8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: LabelingEfficiency
+status: pending
+created_at: '2026-03-29T19:53:53.114263+00:00'

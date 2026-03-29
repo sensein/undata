@@ -1,0 +1,9 @@
+id: 1eff941f-6e36-4660-8afa-6395405a0187
+entity_type: element
+entity_ref: ieegcoordinateunits_c9fbed11638a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: iEEGCoordinateUnits
+status: pending
+created_at: '2026-03-29T19:53:57.737111+00:00'

@@ -1,7 +1,7 @@
 semantic:
   properties:
-  - image_mode
-  - image_format
+  - 0e9ebff0483e2c313c480f7df9a2ae3429437ad35bb738db9185656117a3e83f
+  - 4847145f7b0fe7139652420d48061ea1ca7336ad6f480a8d59efcc723d3f71af
   subclass_of: BaseImage
 provenance:
 - source: nwb

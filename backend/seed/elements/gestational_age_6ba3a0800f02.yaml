@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Participant
+  name: gestational_age
+  description: A representation of age using ISO 8601 duration. This should include
+    a valueReference if anything other than date of birth is used. (gestational age
+    (ISO 8601 duration))
+  generated_at: '2026-03-29T19:53:55.365104+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6ba3a0800f02797b90682005959eb02fd64ff49c0fcc44c6209067c449485426

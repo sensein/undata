@@ -1,9 +1,0 @@
-id: 3c8debbe-6cb8-457d-9160-02db37e43f76
-entity_type: element
-entity_ref: capacitance_fast_c0b6776434dd.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: capacitance_fast
-status: pending
-created_at: '2026-03-29T05:40:55.386273+00:00'

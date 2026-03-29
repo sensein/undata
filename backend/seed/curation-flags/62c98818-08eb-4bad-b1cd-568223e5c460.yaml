@@ -1,9 +1,0 @@
-id: 62c98818-08eb-4bad-b1cd-568223e5c460
-entity_type: element
-entity_ref: resistance_comp_prediction_0b10f8acd426.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: resistance_comp_prediction
-status: pending
-created_at: '2026-03-29T05:37:09.123651+00:00'

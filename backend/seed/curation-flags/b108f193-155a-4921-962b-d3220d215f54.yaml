@@ -1,0 +1,9 @@
+id: b108f193-155a-4921-962b-d3220d215f54
+entity_type: schema
+entity_ref: pettime_61e65c19949d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PETTime
+status: pending
+created_at: '2026-03-29T19:53:58.457876+00:00'

@@ -1,0 +1,12 @@
+semantic:
+  label: Estimate
+  value_type: categorical
+  display_name: Estimate
+provenance:
+- source: bids
+  class: enums
+  name: Estimate
+  description: 'A single whole-brain M0 value is provided in the metadata.
+
+    '
+sha256: 1e86f22a4fc19656200777dcad41ef7aa73b5f0d8a115fae3986b9799e92d844

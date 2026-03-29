@@ -1,0 +1,9 @@
+id: a5e514ad-acf8-43a0-ae0f-167ca79dec87
+entity_type: element
+entity_ref: rois_cf7690873534.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: rois
+status: pending
+created_at: '2026-03-29T19:53:53.224296+00:00'

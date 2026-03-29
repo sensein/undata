@@ -1,0 +1,9 @@
+id: 02781ad6-821a-4f08-82f2-1a7d41339922
+entity_type: value
+entity_ref: generic_96edace68aaf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: generic
+status: pending
+created_at: '2026-03-29T19:53:53.417411+00:00'

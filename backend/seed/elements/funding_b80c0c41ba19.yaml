@@ -1,22 +1,5 @@
 semantic:
   data_type: array
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C19997
-    term_label: Research Funding Categories
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7141
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C17090
-    term_label: Research Funding
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7002
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: metadata
@@ -24,7 +7,7 @@ provenance:
   description: 'List of sources of funding (grant numbers).
 
     '
-  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  generated_at: '2026-03-29T19:53:46.692352+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: b80c0c41ba19b19d2dc9fc75ba4919bfe3467c4031bdfba2a276bdd6f664e3de

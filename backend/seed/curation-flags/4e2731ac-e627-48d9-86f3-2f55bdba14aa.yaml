@@ -1,0 +1,9 @@
+id: 4e2731ac-e627-48d9-86f3-2f55bdba14aa
+entity_type: element
+entity_ref: backgroundsuppressionpulsetime_7fb32e5d7b1c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: BackgroundSuppressionPulseTime
+status: pending
+created_at: '2026-03-29T19:53:50.062704+00:00'

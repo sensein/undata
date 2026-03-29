@@ -1,9 +1,0 @@
-id: 4b616177-2fb5-4dea-a704-848f371f607f
-entity_type: element
-entity_ref: modeofadministration_ebf8054e17f6.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ModeOfAdministration
-status: pending
-created_at: '2026-03-29T05:40:55.720425+00:00'

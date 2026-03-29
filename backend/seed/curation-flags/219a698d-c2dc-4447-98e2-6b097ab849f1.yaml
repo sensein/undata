@@ -1,0 +1,9 @@
+id: 219a698d-c2dc-4447-98e2-6b097ab849f1
+entity_type: value
+entity_ref: single-coil_fe3245e90c8f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: single-coil
+status: pending
+created_at: '2026-03-29T19:53:50.548566+00:00'

@@ -1,0 +1,9 @@
+id: c20746a8-b23b-4be1-8f2f-626474173a31
+entity_type: element
+entity_ref: nirschannelcount_702804487518.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NIRSChannelCount
+status: pending
+created_at: '2026-03-29T19:53:53.156693+00:00'

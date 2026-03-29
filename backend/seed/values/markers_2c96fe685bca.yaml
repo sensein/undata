@@ -1,0 +1,20 @@
+semantic:
+  label: markers
+  value_type: categorical
+  display_name: MEG Sensor Coil Positions
+provenance:
+- source: bids
+  class: suffixes
+  name: markers
+  description: 'Another manufacturer-specific detail pertains to the KIT/Yokogawa/Ricoh
+
+    system, which saves the MEG sensor coil positions in a separate file with two
+
+    possible filename extensions  (`.sqd`, `.mrk`).
+
+    For these files, the `markers` suffix MUST be used.
+
+    For example: `sub-01_task-nback_markers.sqd`
+
+    '
+sha256: 2c96fe685bca64cf34c9c64aeb312e9023e834028d789cb86370d8a4681c1a26

@@ -1,0 +1,9 @@
+id: 457d18d5-28e7-4517-a1fd-ea0b9f0d55c4
+entity_type: value
+entity_ref: sbref_a32f507b37bf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: sbref
+status: pending
+created_at: '2026-03-29T19:53:58.279404+00:00'

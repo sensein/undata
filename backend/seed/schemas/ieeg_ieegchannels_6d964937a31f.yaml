@@ -1,17 +1,17 @@
 semantic:
   properties:
-  - name__channels
-  - type__channels
-  - units
-  - low_cutoff
-  - high_cutoff
-  - reference__ieeg
-  - group__channel
-  - sampling_frequency
-  - description
-  - notch
-  - status
-  - status_description
+  - 5bc508f15dd7419d700dd461dc95e3f5ec65958036c1ae7bd9d46f72e3f546ee
+  - 3ace586b59a50aa0d8be69c7baaae57a852b660082cd973d3b66c741f5cd16bc
+  - 0886b99629391502d7f34f3b5a514b0e6ac249052a0211e9a83818a62a551ee6
+  - e735c6a5d85a4a39774c1212c59dc55beb9655730338967ad9b44701adf30d9a
+  - f273d7d391f22fbc8c71b26c75db678c2992445f039d9d7884adcf048239dc38
+  - b0228b97b3c38e5d6ec9c8b979049fc2aedc7cb02d921053b4a521a7b1433388
+  - 2a811721b1b04a45359e695ad21315b587ac9d6fddec9a2de4e67ee4885dd078
+  - b7fc27b66d502495c0b80c8b1b9525e59f2a3ebe1a2e89b280afa3bce83f028a
+  - 8dc675f86e5e4e46c2555ebb5438535a6e48d71b2329decbb1a21e3e5687d52a
+  - 5dd77cd8b0e8fc3cb5952eaf25eb9962c30d2782a2005b7d4c24148c62d9faa1
+  - 22dad7fbcabcc5ad1c06e8f772e816e9d6585f02ad846694918614186bf19a35
+  - 5ded3b248e50ab112caed640132cf1dd99c924d58265d0d8fa8a428fc20428c2
   is_mixin: true
 provenance:
 - source: bids

@@ -1,9 +1,0 @@
-id: f8de3b0b-726d-4510-af8d-2183cc9637c6
-entity_type: element
-entity_ref: image_format_4847145f7b0f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: image_format
-status: pending
-created_at: '2026-03-29T05:37:08.957917+00:00'

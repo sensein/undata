@@ -1,0 +1,9 @@
+id: 8d83a5b9-cacc-4fd6-a939-425e557e7d35
+entity_type: element
+entity_ref: magnification_3c44bdbb9461.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Magnification
+status: pending
+created_at: '2026-03-29T19:53:53.124119+00:00'

@@ -1,9 +1,0 @@
-id: 81409be5-93e7-49b2-9ec0-b66f6ed725e6
-entity_type: element
-entity_ref: emgcoordinateunits_9d5420575cbd.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EMGCoordinateUnits
-status: pending
-created_at: '2026-03-29T05:33:43.222018+00:00'

@@ -1,0 +1,9 @@
+id: 6d86580f-2832-4e50-a3c2-b27d7bafb898
+entity_type: schema
+entity_ref: phasesuffixunits_564065fa134b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PhaseSuffixUnits
+status: pending
+created_at: '2026-03-29T19:53:58.458556+00:00'

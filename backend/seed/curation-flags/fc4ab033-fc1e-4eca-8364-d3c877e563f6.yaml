@@ -1,0 +1,9 @@
+id: fc4ab033-fc1e-4eca-8364-d3c877e563f6
+entity_type: schema
+entity_ref: mridiffusionothermetadata_f4341446bd11.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRIDiffusionOtherMetadata
+status: pending
+created_at: '2026-03-29T19:53:53.639377+00:00'

@@ -1,0 +1,9 @@
+id: 4a50d74e-283e-4bbe-9a30-e10e2d37e4be
+entity_type: value
+entity_ref: latency_f5a4fc321ddd.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: LATENCY
+status: pending
+created_at: '2026-03-29T19:53:58.208979+00:00'

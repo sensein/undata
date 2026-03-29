@@ -1,0 +1,9 @@
+id: 00d8e706-b4d6-451a-8761-811655fc6ab1
+entity_type: element
+entity_ref: rrid_2d91a4d1e3b6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: RRID
+status: pending
+created_at: '2026-03-29T19:53:57.910999+00:00'

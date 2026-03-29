@@ -1,0 +1,9 @@
+id: 37f851b5-0a61-4d64-8fc3-e8c60750e34b
+entity_type: value
+entity_ref: microvascular_a08c1b2a098f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: microvascular
+status: pending
+created_at: '2026-03-29T19:53:50.486189+00:00'

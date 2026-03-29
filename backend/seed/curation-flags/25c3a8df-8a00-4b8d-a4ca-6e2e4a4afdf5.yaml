@@ -1,9 +1,0 @@
-id: 25c3a8df-8a00-4b8d-a4ca-6e2e4a4afdf5
-entity_type: value
-entity_ref: .fdt_5acb76b55758.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: fdt
-status: pending
-created_at: '2026-03-29T05:37:09.283793+00:00'

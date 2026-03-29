@@ -1,0 +1,14 @@
+semantic:
+  properties:
+  - 1439a3bd8d45d88ea2b0302ce6eb7b210b86e708d08428a2a5a8e791976a7e65
+  - ab65192abbdd29cadb9f7ec3271f6488a86c85bc3f93476e35acfb0c48ba9d93
+  - 946dba87991a1beab198c318434d223a548f25842ed1f8cc643d95e955dccdd9
+  - 40762e6f555ac297fac23cb38fb6b95f2578490d68006f838a93309547c543bf
+  - 5f8e8ede28bd0c2aaf05b6a6df219ebe21670047b0a8d33642aff8536fc77951
+  subclass_of: DandiBaseModel
+provenance:
+- source: dandi
+  class: Agent
+  name: Agent
+  description: null
+sha256: fe17bf9aadfe858964a9ec35bc7e47073b24cbca68366a41b3508b54b609f167

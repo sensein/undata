@@ -1,0 +1,20 @@
+semantic:
+  label: deprecated
+  value_type: categorical
+  display_name: DEPRECATED
+provenance:
+- source: bids
+  class: common_principles
+  name: deprecated
+  description: 'A "deprecated" entity or metadata field SHOULD NOT be used in the
+    generation of new datasets.
+
+    It remains in the standard in order to preserve the interpretability of existing
+    datasets.
+
+    Validating software SHOULD warn when deprecated practices are detected
+
+    and provide a suggestion for updating the dataset to preserve the curator''s intent.
+
+    '
+sha256: 44e2c8f08ee269350aad2047d1ab6b078e3154764e59c28957e112464cab87a2

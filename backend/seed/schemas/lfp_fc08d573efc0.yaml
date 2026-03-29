@@ -1,6 +1,6 @@
 semantic:
   properties:
-  - ElectricalSeries
+  - 5c439fadd909c89388ca9ff00f21477332c6c59d3e8a93e8fd45f9d2f18053e1
   subclass_of: NWBDataInterface
 provenance:
 - source: nwb

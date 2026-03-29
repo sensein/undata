@@ -2,31 +2,6 @@ semantic:
   label: individual
   value_type: categorical
   display_name: individual
-  ontology_annotations:
-  - term_uri: http://www.w3.org/ns/prov#Person
-    term_label: Person
-    ontology: unknown
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7286
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25190
-    term_label: Person
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7286
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C164216
-    term_label: Child Individual
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7099
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: enums

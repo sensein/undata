@@ -1,8 +1,8 @@
 semantic:
   properties:
-  - manufacturer
-  - model_number
-  - description
+  - f5be0b660aef3f48b22a38d863048eb12aa44a8286bf02ee59b1edae249e39d9
+  - 666c7314643e454e61b5b87eb7fb842f349914a3968d4c5626d3ff64b7a2e8b0
+  - 81b803dfd8c3dd44df79c3bfcc9c26c70592ca88d6bd509487414cbe4aa8e58f
   subclass_of: NWBContainer
 provenance:
 - source: nwb

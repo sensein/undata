@@ -1,0 +1,9 @@
+id: 3d343db8-b81f-40b1-a702-55b6fe85faf8
+entity_type: element
+entity_ref: vascularcrushing_798cf9901287.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: VascularCrushing
+status: pending
+created_at: '2026-03-29T19:53:50.351929+00:00'

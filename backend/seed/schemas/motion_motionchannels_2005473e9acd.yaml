@@ -1,16 +1,16 @@
 semantic:
   properties:
-  - name__channels
-  - component
-  - type__channels
-  - tracked_point__channels
-  - units__motion
-  - placement__motion
-  - reference_frame
-  - description
-  - sampling_frequency
-  - status
-  - status_description
+  - 5bc508f15dd7419d700dd461dc95e3f5ec65958036c1ae7bd9d46f72e3f546ee
+  - 65380d7f639ea1141e21ec4db4b8baf9a76962937a1d19fc844076228f387e18
+  - 3ace586b59a50aa0d8be69c7baaae57a852b660082cd973d3b66c741f5cd16bc
+  - 97a1d2839ef3273828257e79d19bf15794f6863dbd3a2fc741836c9f3edc66cd
+  - de0c24c76b0d4d48e62023fb0784b797e05dd06ec76f82388f9d274e74fe13a2
+  - 8f6869506be99012dc1a98b7bd69d79bd3b806c34a6e8f339d4a81476e72f001
+  - e2d5025c7ee3744a21bafc9a06b608b6767ebd82673454c8c52400cefbbcb2a3
+  - 8dc675f86e5e4e46c2555ebb5438535a6e48d71b2329decbb1a21e3e5687d52a
+  - b7fc27b66d502495c0b80c8b1b9525e59f2a3ebe1a2e89b280afa3bce83f028a
+  - 22dad7fbcabcc5ad1c06e8f772e816e9d6585f02ad846694918614186bf19a35
+  - 5ded3b248e50ab112caed640132cf1dd99c924d58265d0d8fa8a428fc20428c2
   is_mixin: true
 provenance:
 - source: bids

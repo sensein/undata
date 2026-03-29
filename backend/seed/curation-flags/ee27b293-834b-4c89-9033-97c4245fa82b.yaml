@@ -1,0 +1,9 @@
+id: ee27b293-834b-4c89-9033-97c4245fa82b
+entity_type: element
+entity_ref: columns_5e5586d42c20.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Columns
+status: pending
+created_at: '2026-03-29T19:53:52.985042+00:00'

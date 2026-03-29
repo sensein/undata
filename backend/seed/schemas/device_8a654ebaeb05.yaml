@@ -1,11 +1,11 @@
 semantic:
   properties:
-  - description
-  - manufacturer
-  - model_number
-  - model_name
-  - serial_number
-  - model
+  - 81b803dfd8c3dd44df79c3bfcc9c26c70592ca88d6bd509487414cbe4aa8e58f
+  - f5be0b660aef3f48b22a38d863048eb12aa44a8286bf02ee59b1edae249e39d9
+  - 666c7314643e454e61b5b87eb7fb842f349914a3968d4c5626d3ff64b7a2e8b0
+  - 4ef93ccb81248a61f6b1e258687a2ec99e10fe516557c532b7b6a60b71f084a7
+  - b0b84467a49fac6d9433ee6a02d5bd604ed6e5e2ad7dcaf46193e11e017c9610
+  - 4ff2683c236b4084db2e460570bd9434f1eb4f74675f5d4ad6758925364c6046
   subclass_of: NWBContainer
 provenance:
 - source: nwb

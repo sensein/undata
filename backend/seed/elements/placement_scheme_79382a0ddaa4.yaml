@@ -1,0 +1,23 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: measured
+    label: measured
+    ontology_term: https://schema.undata.live/values/e121a3e5-6161-421d-bbb8-7f6afd68f204
+  - value: other
+    label: other
+    ontology_term: https://schema.undata.live/values/f39382c1-82c5-4a19-bbc0-6c5a1c52db17
+  value_domain: categorical
+provenance:
+- source: bids
+  class: columns
+  name: placement_scheme
+  description: 'A description of the electrode placement procedure used.
+
+    See description of the `EMGPlacementScheme` field in `*_emg.json`.
+
+    '
+  generated_at: '2026-03-29T19:53:46.692352+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 79382a0ddaa4379a9aebe83f04a139215137b24c075fc8c4f087b045a20cbc91

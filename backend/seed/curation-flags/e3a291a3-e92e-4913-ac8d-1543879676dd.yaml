@@ -1,0 +1,9 @@
+id: e3a291a3-e92e-4913-ac8d-1543879676dd
+entity_type: element
+entity_ref: nonlineargradientcorrection_b449769e1fe8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NonlinearGradientCorrection
+status: pending
+created_at: '2026-03-29T19:53:53.165425+00:00'

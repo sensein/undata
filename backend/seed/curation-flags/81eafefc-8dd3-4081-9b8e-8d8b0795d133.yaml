@@ -1,0 +1,9 @@
+id: 81eafefc-8dd3-4081-9b8e-8d8b0795d133
+entity_type: element
+entity_ref: tracername_ded497b7bef2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TracerName
+status: pending
+created_at: '2026-03-29T19:53:58.008082+00:00'

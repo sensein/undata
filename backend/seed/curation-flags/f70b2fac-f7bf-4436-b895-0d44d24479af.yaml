@@ -1,9 +1,0 @@
-id: f70b2fac-f7bf-4436-b895-0d44d24479af
-entity_type: element
-entity_ref: samplefixation_70703c0919a0.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SampleFixation
-status: pending
-created_at: '2026-03-29T05:37:09.139725+00:00'

@@ -1,0 +1,9 @@
+id: d6c61301-7d3f-4d59-9201-24f3cfd7bf72
+entity_type: element
+entity_ref: sampleembedding_adacfca7a5d6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SampleEmbedding
+status: pending
+created_at: '2026-03-29T19:53:57.916895+00:00'

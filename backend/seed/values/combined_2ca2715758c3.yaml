@@ -1,0 +1,12 @@
+semantic:
+  label: COMBINED
+  value_type: categorical
+  display_name: COMBINED
+provenance:
+- source: bids
+  class: enums
+  name: COMBINED
+  description: 'A spoiling type: COMBINED
+
+    '
+sha256: 2ca2715758c3e63691f768f82ccbe7a6a5555582685f543b4780bfd220ec4e56

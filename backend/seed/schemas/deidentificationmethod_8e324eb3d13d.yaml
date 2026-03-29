@@ -1,7 +1,7 @@
 semantic:
   properties:
-  - DeidentificationMethod
-  - DeidentificationMethodCodeSequence
+  - 1be7c59325771965efa84bbab3965bfc60406aec8f15d064f4e0f4b2395defed
+  - 63bf0ab564d3e191886f24fac68f31c37f2e81ffa9ca483f83565c13eec0a772
   is_mixin: true
 provenance:
 - source: bids

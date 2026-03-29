@@ -1,9 +1,0 @@
-id: 2f3bfcd2-8f6c-460d-a951-83909ee935e9
-entity_type: element
-entity_ref: emgground_847edf620331.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EMGGround
-status: pending
-created_at: '2026-03-29T05:37:08.891662+00:00'

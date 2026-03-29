@@ -1,9 +1,0 @@
-id: 11ca6129-33a3-4a47-a646-e10ecaee6b2a
-entity_type: element
-entity_ref: wasattributedto_eb79be4c60c7.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: wasAttributedTo
-status: pending
-created_at: '2026-03-29T05:40:56.044989+00:00'

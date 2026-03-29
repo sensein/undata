@@ -1,0 +1,9 @@
+id: d4c3f264-6bbd-4f9a-8c9c-d41dd39ff1a6
+entity_type: value
+entity_ref: nirscwmua_38d81269f7f0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NIRSCWMUA
+status: pending
+created_at: '2026-03-29T19:53:53.474578+00:00'

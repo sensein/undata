@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - detection_method
-  - source_idx
-  - times
-  - source_electricalseries
+  - f30bd2e1dec037904e17c2ac2a2fff0799926b1dd97d9fa9d605fbafc7928dcc
+  - de1183efc72c2b29f1ebc58771506c1bf613647fde000fb147c520b5b58f393a
+  - ebf86bf03374a2351300266e086100106e0518e104996f16dde19de27ab10063
+  - 0a21d01062d7ab608e2596ee6df099f4a2e4f73295f51956a8832b87a6ca310a
   subclass_of: NWBDataInterface
 provenance:
 - source: nwb

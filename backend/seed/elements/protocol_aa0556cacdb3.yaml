@@ -6,7 +6,7 @@ provenance:
   name: protocol
   description: A list of persistent URLs describing the protocol (e.g. protocols.io,
     or other DOIs).
-  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  generated_at: '2026-03-29T19:53:55.365104+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: aa0556cacdb30dbc69793c1620773e3e316688d4b3b532cffd1b88ceddb9ed4e

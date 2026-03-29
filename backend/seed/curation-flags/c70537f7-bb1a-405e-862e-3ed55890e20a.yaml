@@ -1,0 +1,9 @@
+id: c70537f7-bb1a-405e-862e-3ed55890e20a
+entity_type: element
+entity_ref: bidsversion_a880cfdce3d6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: BIDSVersion
+status: pending
+created_at: '2026-03-29T19:53:57.557627+00:00'

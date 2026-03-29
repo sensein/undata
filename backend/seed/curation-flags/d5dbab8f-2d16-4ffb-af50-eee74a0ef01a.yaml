@@ -1,9 +1,0 @@
-id: d5dbab8f-2d16-4ffb-af50-eee74a0ef01a
-entity_type: element
-entity_ref: license_5ad590eaa24c.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: license
-status: pending
-created_at: '2026-03-29T05:40:55.679318+00:00'

@@ -1,0 +1,12 @@
+semantic:
+  label: discontinuous
+  value_type: categorical
+  display_name: Discontinuous recording
+provenance:
+- source: bids
+  class: enums
+  name: discontinuous
+  description: 'Discontinuous recording.
+
+    '
+sha256: 91a010f7297a69fc27fc168fdfa553ae0c23a0331ac7c56179610972b67bc03d

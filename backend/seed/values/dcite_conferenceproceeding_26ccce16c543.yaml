@@ -1,15 +1,6 @@
 semantic:
   label: dcite:ConferenceProceeding
   value_type: categorical
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C17453
-    term_label: Conference
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7061
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: dandi
   class: ResourceType

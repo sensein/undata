@@ -1,0 +1,12 @@
+semantic:
+  label: CARBON DIOXIDE
+  value_type: categorical
+  display_name: CARBON DIOXIDE
+provenance:
+- source: bids
+  class: enums
+  name: CARBON_DIOXIDE
+  description: 'A Contrast Bolus Ingredient: Carbon Dioxide
+
+    '
+sha256: cdeabefcd66b54ada0e7fd10b9baf2c84d02f6216142ce8956e241022d51431b

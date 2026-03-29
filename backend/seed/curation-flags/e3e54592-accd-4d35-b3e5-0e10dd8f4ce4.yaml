@@ -1,9 +1,0 @@
-id: e3e54592-accd-4d35-b3e5-0e10dd8f4ce4
-entity_type: element
-entity_ref: boluscutoffdelaytime_089b875e6cc7.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: BolusCutOffDelayTime
-status: pending
-created_at: '2026-03-29T05:40:55.379635+00:00'

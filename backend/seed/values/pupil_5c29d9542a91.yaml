@@ -1,0 +1,12 @@
+semantic:
+  label: PUPIL
+  value_type: categorical
+  display_name: PUPIL
+provenance:
+- source: bids
+  class: enums
+  name: PUPIL
+  description: 'Eye tracker pupil diameter.
+
+    '
+sha256: 5c29d9542a914ca5db1b57dcefb4d2a461aecd4a62b05f7c7b2374b0e5c6c1b0

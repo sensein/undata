@@ -1,0 +1,9 @@
+id: 03baf31a-755a-447e-ba20-287eae62b6ad
+entity_type: schema
+entity_ref: opticalseries_76f87c9d1272.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: OpticalSeries
+status: pending
+created_at: '2026-03-29T19:53:58.447503+00:00'

@@ -1,0 +1,9 @@
+id: a0805c8f-7a72-4c0f-b96e-49c43a3b4fb3
+entity_type: schema
+entity_ref: abstractfeatureseries_e06c796a1cb6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AbstractFeatureSeries
+status: pending
+created_at: '2026-03-29T19:53:58.322301+00:00'

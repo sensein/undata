@@ -1,0 +1,9 @@
+id: e1166eef-74df-4a07-a9fa-9a70a77d104b
+entity_type: value
+entity_ref: scans_34bbd849f214.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: scans
+status: pending
+created_at: '2026-03-29T19:53:58.281269+00:00'

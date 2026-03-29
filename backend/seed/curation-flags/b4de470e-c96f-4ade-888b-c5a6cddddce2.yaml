@@ -1,0 +1,9 @@
+id: b4de470e-c96f-4ade-888b-c5a6cddddce2
+entity_type: element
+entity_ref: deviceserialnumber_fe97faeef1a8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DeviceSerialNumber
+status: pending
+created_at: '2026-03-29T19:53:57.615512+00:00'

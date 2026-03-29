@@ -1,47 +1,6 @@
 semantic:
   value_type: categorical
   label: ecg
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C114172
-    term_label: Poor Quality ECG
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7734
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C62085
-    term_label: ECG Measurement
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7649
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C114167
-    term_label: Incomplete ECG
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.751
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C117807
-    term_label: ECG Technical Quality
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7246
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C111075
-    term_label: Arrhythmia by ECG Finding
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7017
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class_: ''

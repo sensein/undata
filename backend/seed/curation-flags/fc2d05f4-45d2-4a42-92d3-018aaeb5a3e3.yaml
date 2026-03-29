@@ -1,9 +1,0 @@
-id: fc2d05f4-45d2-4a42-92d3-018aaeb5a3e3
-entity_type: schema
-entity_ref: asl_sidecar_4fa98ec46cb6.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: asl_sidecar
-status: pending
-created_at: '2026-03-29T05:37:09.887243+00:00'

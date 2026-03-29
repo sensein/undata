@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+provenance:
+- source: nwb
+  class: nwb
+  name: resistance_comp_correction
+  description: Resistance compensation correction, in percent.
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 644032261ef48742a8b42effcd731b7e895830a748dbef6c5c7157395f5a9e4e

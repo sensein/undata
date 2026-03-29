@@ -1,9 +1,0 @@
-id: 3fc16f0c-ec57-4bcd-96b7-25a982816bab
-entity_type: element
-entity_ref: visioncorrection_aa160af586f3.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: VisionCorrection
-status: pending
-created_at: '2026-03-29T05:40:56.037545+00:00'

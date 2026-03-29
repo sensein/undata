@@ -1,9 +1,0 @@
-id: 88c76d77-7820-452e-b53e-b81396fb3f2a
-entity_type: element
-entity_ref: exposure_time_5f86669a4a9a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: exposure_time
-status: pending
-created_at: '2026-03-29T05:37:08.899195+00:00'

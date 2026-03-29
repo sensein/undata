@@ -1,9 +1,0 @@
-id: c082df2b-b77f-4fb4-b6dc-438b25bb7985
-entity_type: value
-entity_ref: mts_6f1eab7992f9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MTS
-status: pending
-created_at: '2026-03-29T05:33:43.791988+00:00'

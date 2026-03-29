@@ -1,9 +1,0 @@
-id: 63b6e607-ef29-4f8e-8728-6deba0cc44eb
-entity_type: element
-entity_ref: pulseduration_b24744870336.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PulseDuration
-status: pending
-created_at: '2026-03-29T05:40:55.821561+00:00'

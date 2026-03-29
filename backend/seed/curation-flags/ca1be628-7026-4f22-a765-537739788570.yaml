@@ -1,0 +1,9 @@
+id: ca1be628-7026-4f22-a765-537739788570
+entity_type: element
+entity_ref: samplingfrequency__nirs_9b7dbda06366.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SamplingFrequency__nirs
+status: pending
+created_at: '2026-03-29T19:53:53.236964+00:00'

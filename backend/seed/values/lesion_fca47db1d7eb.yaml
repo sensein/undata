@@ -1,0 +1,12 @@
+semantic:
+  label: Lesion
+  value_type: categorical
+  display_name: Lesion mask
+provenance:
+- source: bids
+  class: enums
+  name: Lesion
+  description: 'A lesion mask.
+
+    '
+sha256: fca47db1d7eb131fc1217dcd86247c31c480f9afb004040f33ff941ede1b2c0a

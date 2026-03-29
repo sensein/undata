@@ -1,9 +1,0 @@
-id: 1cd0589b-d977-4b45-9663-b2a480e150be
-entity_type: schema
-entity_ref: physiotyperecommended_098aabdef6ce.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PhysioTypeRecommended
-status: pending
-created_at: '2026-03-29T05:40:56.866435+00:00'

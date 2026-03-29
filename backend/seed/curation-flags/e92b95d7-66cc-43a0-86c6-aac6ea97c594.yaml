@@ -1,9 +1,0 @@
-id: e92b95d7-66cc-43a0-86c6-aac6ea97c594
-entity_type: element
-entity_ref: voxel_mask_bdc3081f5f9b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: voxel_mask
-status: pending
-created_at: '2026-03-29T05:37:09.253257+00:00'

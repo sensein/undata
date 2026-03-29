@@ -1,9 +1,0 @@
-id: 2cdc55f4-674e-4fe7-8ed8-71a4c75d127e
-entity_type: element
-entity_ref: tracermolecularweightunits_a079d4da8fb7.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TracerMolecularWeightUnits
-status: pending
-created_at: '2026-03-29T05:40:55.999896+00:00'

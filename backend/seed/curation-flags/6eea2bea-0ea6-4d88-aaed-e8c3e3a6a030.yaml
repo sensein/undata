@@ -1,0 +1,9 @@
+id: 6eea2bea-0ea6-4d88-aaed-e8c3e3a6a030
+entity_type: element
+entity_ref: pupil_size_1f30d7f779b4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: pupil_size
+status: pending
+created_at: '2026-03-29T19:53:57.871578+00:00'

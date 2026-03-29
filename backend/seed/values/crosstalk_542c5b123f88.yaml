@@ -2,15 +2,6 @@ semantic:
   label: crosstalk
   value_type: categorical
   display_name: crosstalk
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C94304
-    term_label: Cross-Talk
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7806
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: bids
   class: enums

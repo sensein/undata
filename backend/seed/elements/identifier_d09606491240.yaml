@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Activity
+  name: identifier
+  description: ''
+  generated_at: '2026-03-29T19:53:55.365104+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d09606491240a23ffea77b13b815500d0b0bcb7b48d2eb797a448f6a7f15f665

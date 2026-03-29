@@ -1,9 +1,0 @@
-id: b0cb312c-5509-49da-a81a-06f698ba719f
-entity_type: schema
-entity_ref: mri_sidecar_3d6438b0d461.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: mri_sidecar
-status: pending
-created_at: '2026-03-29T05:33:44.022098+00:00'

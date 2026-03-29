@@ -1,0 +1,9 @@
+id: db2e87a1-e8dc-40b2-8d00-8b9e2a285892
+entity_type: element
+entity_ref: modality_39abfa0bc063.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: modality
+status: pending
+created_at: '2026-03-29T19:53:57.797983+00:00'

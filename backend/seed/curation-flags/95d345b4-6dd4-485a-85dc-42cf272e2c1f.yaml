@@ -1,9 +1,0 @@
-id: 95d345b4-6dd4-485a-85dc-42cf272e2c1f
-entity_type: element
-entity_ref: megcoordinatesystem_b89335b4b9a5.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MEGCoordinateSystem
-status: pending
-created_at: '2026-03-29T05:37:09.013183+00:00'

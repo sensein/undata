@@ -1,9 +1,0 @@
-id: 617b08d1-5fd5-4de7-ae4e-2357d7512c7b
-entity_type: value
-entity_ref: dandi_isdizygotictwinof_4c6dcdba6270.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: dandi:isDizygoticTwinOf
-status: pending
-created_at: '2026-03-29T05:40:56.198842+00:00'

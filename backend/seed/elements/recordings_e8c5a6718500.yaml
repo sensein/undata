@@ -1,13 +1,12 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: recordings
   description: A reference to one or more rows in the IntracellularRecordingsTable
     table.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: e8c5a67185004d2a2f6b1b623ec78c3937e78f61975c1e4b8cee6851a4876f1e

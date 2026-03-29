@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: separate
+provenance:
+- source: bids
+  class_: ''
+  name: Separate
+sha256: 83c593db6a22bf7185c78e3f720be2bb05af6e9d487557bfcc0ed5743fe250b4

@@ -1,0 +1,12 @@
+semantic:
+  label: saliva
+  value_type: categorical
+  display_name: saliva
+provenance:
+- source: bids
+  class: enums
+  name: saliva
+  description: 'The origin of a sample: saliva
+
+    '
+sha256: 0aabdcf0a7ef71218c541329daa851063817584ad3c7852d8f5199840d0b8a95

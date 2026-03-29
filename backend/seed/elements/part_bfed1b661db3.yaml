@@ -1,0 +1,38 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: bids
+  class: entities
+  name: part
+  description: 'This entity is used to indicate which component of the complex
+
+    representation of the MRI signal is represented in voxel data.
+
+    The `part-<label>` entity is associated with the DICOM Tag
+
+    `0008, 9208`.
+
+    Allowed label values for this entity are `phase`, `mag`, `real` and `imag`,
+
+    which are typically used in `part-mag`/`part-phase` or
+
+    `part-real`/`part-imag` pairs of files.
+
+
+    Phase images MAY be in radians or in arbitrary units.
+
+    The sidecar JSON file MUST include the `"Units"` of the `phase` image.
+
+    The possible options are `"rad"` or `"arbitrary"`.
+
+
+    When there is only a magnitude image of a given type, the `part` entity MAY be
+
+    omitted.
+
+    '
+  generated_at: '2026-03-29T19:53:46.692352+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bfed1b661db3ed5a37c5697d9c93a322176fd710529b4a8e51c475904c610b7b

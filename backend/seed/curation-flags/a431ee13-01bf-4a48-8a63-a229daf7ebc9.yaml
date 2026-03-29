@@ -1,9 +1,0 @@
-id: a431ee13-01bf-4a48-8a63-a229daf7ebc9
-entity_type: element
-entity_ref: acknowledgement_552378373b05.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: acknowledgement
-status: pending
-created_at: '2026-03-29T05:40:55.320883+00:00'

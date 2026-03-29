@@ -2,15 +2,6 @@ semantic:
   label: mrsref
   value_type: categorical
   display_name: MRS reference acquisition
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C69168
-    term_label: Mrs
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7223
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: bids
   class: suffixes

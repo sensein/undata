@@ -1,0 +1,13 @@
+semantic:
+  label: .dat
+  value_type: categorical
+  display_name: MEG Fine-Calibration Format
+provenance:
+- source: bids
+  class: extensions
+  name: dat
+  description: 'A fine-calibration file used for Neuromag/Elekta/MEGIN MEG recording
+    hardware.
+
+    '
+sha256: aa0ef5f158b06b5bf5c65a8c6063a0a3e1a2862be39af71eea16d9fd3b8ea32e

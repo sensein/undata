@@ -1,0 +1,9 @@
+id: 50910807-8802-4e57-a4b2-fe6c3e5bb43e
+entity_type: value
+entity_ref: t2map_5b623c501d15.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: T2map
+status: pending
+created_at: '2026-03-29T19:53:50.556703+00:00'

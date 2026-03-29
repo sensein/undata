@@ -1,0 +1,9 @@
+id: f966204a-2fc2-4943-a5fc-896f2f6bbdff
+entity_type: element
+entity_ref: haematocrit_47ab3a7656a9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Haematocrit
+status: pending
+created_at: '2026-03-29T19:53:50.152019+00:00'

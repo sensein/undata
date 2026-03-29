@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: bad
+provenance:
+- source: bids
+  class_: ''
+  name: bad
+sha256: 0dedb413177e9dd2da8776e6d8a2aabb2337a631749292c344962c6cd4c9a740

@@ -1,9 +1,0 @@
-id: b4172e2b-0a58-4254-825d-059e04eac338
-entity_type: schema
-entity_ref: fluorescence_7fda946f5b1d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Fluorescence
-status: pending
-created_at: '2026-03-29T05:40:56.766114+00:00'

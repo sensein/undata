@@ -1,0 +1,12 @@
+semantic:
+  label: GRADIENT
+  value_type: categorical
+  display_name: GRADIENT
+provenance:
+- source: bids
+  class: enums
+  name: GRADIENT
+  description: 'A spoiling type: GRADIENT
+
+    '
+sha256: b841abbd9af958f2dc504e6239efcfeb6d47f35ca31fbfcb0abe3365c8644606

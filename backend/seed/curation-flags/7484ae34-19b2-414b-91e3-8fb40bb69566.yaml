@@ -1,9 +1,0 @@
-id: 7484ae34-19b2-414b-91e3-8fb40bb69566
-entity_type: element
-entity_ref: recordings_index_b1937612063a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: recordings_index
-status: pending
-created_at: '2026-03-29T05:37:09.111214+00:00'

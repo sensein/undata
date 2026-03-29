@@ -1,0 +1,9 @@
+id: 52ed569f-8c18-40d0-bfb3-67815a77bc21
+entity_type: value
+entity_ref: pos_a640aed0c714.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: POS
+status: pending
+created_at: '2026-03-29T19:53:58.264808+00:00'

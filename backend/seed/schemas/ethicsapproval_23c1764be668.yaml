@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - id
-  - schemaKey
-  - identifier
-  - contactPoint
+  - 1439a3bd8d45d88ea2b0302ce6eb7b210b86e708d08428a2a5a8e791976a7e65
+  - ab65192abbdd29cadb9f7ec3271f6488a86c85bc3f93476e35acfb0c48ba9d93
+  - 946dba87991a1beab198c318434d223a548f25842ed1f8cc643d95e955dccdd9
+  - 992ab25bc3264711ee4d15188de64e8f5ea48b3ae44291c6997ac3c2092cc729
   subclass_of: DandiBaseModel
 provenance:
 - source: dandi

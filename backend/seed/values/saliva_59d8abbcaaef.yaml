@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: saliva
+provenance:
+- source: bids
+  class_: ''
+  name: saliva
+sha256: 59d8abbcaaefb7e47b8bf87788adda5c0b3fdd22347ac9a5d60bb4533db64e3b

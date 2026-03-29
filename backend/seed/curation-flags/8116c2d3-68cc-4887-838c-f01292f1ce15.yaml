@@ -1,9 +1,0 @@
-id: 8116c2d3-68cc-4887-838c-f01292f1ce15
-entity_type: element
-entity_ref: sampleorigin_448c5205bf2d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SampleOrigin
-status: pending
-created_at: '2026-03-29T05:37:09.141187+00:00'

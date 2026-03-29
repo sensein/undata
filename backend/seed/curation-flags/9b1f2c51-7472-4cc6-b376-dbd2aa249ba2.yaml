@@ -1,0 +1,9 @@
+id: 9b1f2c51-7472-4cc6-b376-dbd2aa249ba2
+entity_type: schema
+entity_ref: tb1srgemetadata_7c1bc214665c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TB1SRGEMetadata
+status: pending
+created_at: '2026-03-29T19:53:50.686985+00:00'

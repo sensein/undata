@@ -1,0 +1,9 @@
+id: 9bab5f66-baf5-4566-9d36-d2994a86cbef
+entity_type: value
+entity_ref: megrefmag_95fde21b1b7d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MEGREFMAG
+status: pending
+created_at: '2026-03-29T19:53:50.483970+00:00'

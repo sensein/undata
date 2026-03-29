@@ -1,9 +1,0 @@
-id: 2edbe050-1d55-404d-97e0-a8a64259e9a2
-entity_type: element
-entity_ref: approach_e0b94bdec048.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: approach
-status: pending
-created_at: '2026-03-29T05:40:55.350329+00:00'

@@ -1,9 +1,0 @@
-id: e2737003-68ab-42a6-a9ab-ea4a21008535
-entity_type: element
-entity_ref: scandate_ec523561415b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ScanDate
-status: pending
-created_at: '2026-03-29T05:33:43.397826+00:00'

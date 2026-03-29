@@ -1,9 +1,0 @@
-id: 7a9548c2-b0a8-4ca0-bc3c-460c27b38847
-entity_type: element
-entity_ref: receivegain_b41e8c20a957.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ReceiveGain
-status: pending
-created_at: '2026-03-29T05:37:09.103484+00:00'

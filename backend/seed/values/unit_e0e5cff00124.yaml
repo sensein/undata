@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: unit
+provenance:
+- source: bids
+  class_: ''
+  name: unit
+sha256: e0e5cff00124b1b156f105f8467abea6a1efe0209f7cdaa027a3e7c39c7690bb

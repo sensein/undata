@@ -1,0 +1,9 @@
+id: fc7e8739-2dd4-49be-b4b3-23250317c434
+entity_type: value
+entity_ref: mask_7df63dbc2106.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: mask
+status: pending
+created_at: '2026-03-29T19:53:58.215974+00:00'

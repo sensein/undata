@@ -1,0 +1,9 @@
+id: dad9865f-2ab7-442c-aab3-2af962425b2c
+entity_type: value
+entity_ref: casl_5c28a140479e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CASL
+status: pending
+created_at: '2026-03-29T19:53:53.370566+00:00'

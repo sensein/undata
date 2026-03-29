@@ -1,0 +1,9 @@
+id: d8a9b69c-78fb-43d8-9079-ee990f8be5d7
+entity_type: value
+entity_ref: in_vitro_differentiated_cells_e0301949e53e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: in_vitro_differentiated_cells
+status: pending
+created_at: '2026-03-29T19:53:50.459055+00:00'

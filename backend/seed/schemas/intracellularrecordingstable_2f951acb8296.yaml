@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - description
-  - electrodes
-  - stimuli
-  - responses
+  - 81b803dfd8c3dd44df79c3bfcc9c26c70592ca88d6bd509487414cbe4aa8e58f
+  - ad3c1ca46b207a1daf8390d09d710679995e7c6157dfd5ec1ca13bb936ed3d61
+  - 26ae1a0fb3c269b645bb8def73ec7867ae757b0f807dfc6e27877c8dc006c748
+  - 50685103fca21c3933683e974e9cd43cddd961bf48a9b2e46e74536d3ccb59de
   subclass_of: AlignedDynamicTable
 provenance:
 - source: nwb

@@ -1,9 +1,0 @@
-id: e03a2743-2c59-4185-a180-546cd5043c84
-entity_type: element
-entity_ref: alleles_62c8d5279aa4.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: alleles
-status: pending
-created_at: '2026-03-29T05:40:55.332067+00:00'

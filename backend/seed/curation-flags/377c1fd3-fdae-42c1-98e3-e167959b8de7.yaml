@@ -1,0 +1,9 @@
+id: 377c1fd3-fdae-42c1-98e3-e167959b8de7
+entity_type: element
+entity_ref: otheracquisitionparameters_c4131a17db44.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: OtherAcquisitionParameters
+status: pending
+created_at: '2026-03-29T19:53:53.177832+00:00'

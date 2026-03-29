@@ -1,0 +1,12 @@
+semantic:
+  label: 'off'
+  value_type: categorical
+  display_name: 'Off'
+provenance:
+- source: bids
+  class: enums
+  name: off__mtransfer
+  description: 'The image acquired in the absence of the magnetization transfer pulse.
+
+    '
+sha256: 72e6bbf0473cfbe13de412d34fa74e781d4adc9bb4cbebd4deb29a0b6a639646

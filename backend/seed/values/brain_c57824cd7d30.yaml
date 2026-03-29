@@ -1,0 +1,12 @@
+semantic:
+  label: Brain
+  value_type: categorical
+  display_name: Brain mask
+provenance:
+- source: bids
+  class: enums
+  name: Brain
+  description: 'A brain mask.
+
+    '
+sha256: c57824cd7d30ff6160886e43f50e445ace698020e33f7b3d5b8dbaa3584fa055

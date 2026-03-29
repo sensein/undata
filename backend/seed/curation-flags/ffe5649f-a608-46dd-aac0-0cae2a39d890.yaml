@@ -1,0 +1,9 @@
+id: ffe5649f-a608-46dd-aac0-0cae2a39d890
+entity_type: schema
+entity_ref: motion_sidecar_7073b86e07a0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: motion_sidecar
+status: pending
+created_at: '2026-03-29T19:53:50.638394+00:00'

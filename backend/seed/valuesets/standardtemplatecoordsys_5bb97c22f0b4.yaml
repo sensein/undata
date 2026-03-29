@@ -1,37 +1,28 @@
 semantic:
   name: StandardTemplateCoordSys
   members:
-  - ICBM452AirSpace
-  - ICBM452Warp5Space
-  - IXI549Space
-  - MNI152Lin
-  - MNI152NLin2009aAsym
-  - MNI152NLin2009aSym
-  - MNI152NLin2009bAsym
-  - MNI152NLin2009bSym
-  - MNI152NLin2009cAsym
-  - MNI152NLin2009cSym
-  - MNI152NLin6Asym
-  - MNI152NLin6Sym
-  - MNI305
-  - MNIColin27
-  - NIHPD
-  - OASIS30AntsOASISAnts
-  - OASIS30Atropos
-  - Talairach
-  - UNCInfant
-  - fsLR
-  - fsaverage
-  - fsaverageSym
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/PATO_0002296
-    term_label: foveate
-    ontology: pato
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7008
-    model: all-MiniLM-L6-v2
-    primary: true
+  - fb751750ec4b0343ced51e8f328d4310d18deb854c532cc3b559de612bde7776
+  - 531f865265dec2056eace73de0725768111d00c72851f893ecc184e11e568ac6
+  - 021f84a168de3011b99e8647dc309ef46047521a502729cbf59ba4c95ffd683c
+  - deb8a34f016dcb9a8f782d90e93ed9523086d997d9ecb7a54813bd7f09d44719
+  - 1235d2999cf522a6a11c190fcf1f46606726f3366efe34d3ef1dbc8f6beef558
+  - 50578e1e1dc2e86e2fd4cca7d58c0c65b4b1976022371679d01a8128a43a1d70
+  - 64f0083ecfdce12ffc93f36e789b029de87daebf88feb7b8bbb4736d0071c211
+  - 4b65857875a34ffa273890138501d05a0fce1d08ef8d39f889d4e214e8e9145e
+  - f0893f0e9f93e8794217a6a9320b64c3e87f84daee426aab2b35a51180370f59
+  - 06db49f74f1406f45c03cd8c75792e3e8afe0b388951446feedcdacff7833eb7
+  - 3cc7749fd4931ffba602e3979962cfdb0b54c5e65ada7f1ff9bb1cf61a0263e5
+  - f000a06d7ec4619d3bb1ace9482b568a806b67f2ceab6102fcf102d8a3122aa0
+  - f99a8b1dfa6fc7d7b87d92dd150daadcb0dac0a8ec599ba57d09b37fc383bc48
+  - e32d1c57c48a25b0d00175bd57bee8738626ff45f3c117d269f0b0be25809ade
+  - 8c50532d7d65ea60e5387559756dc45def451c17af93fdb45114bfe390bbeb10
+  - fe4db5450b1f8b6a2fc66f4157c11a38505361c1ad68b8437f71479ef1bd9632
+  - ba4002e2715508c4c3dafaf4dfe79a071086036241465bb15de6c8442a199c06
+  - d82d5c7ca4b60ad47fe043924943d6955df4b980b209b4cd884b1319bffea4a3
+  - edf09c5ac248628c331556ff455480796fe88008364ff4ac7d532c73a5076d25
+  - db983a98d24a739281c7350f33fb2c71d31cbf5d16a95d5fc623f080d2621cd8
+  - 67f1d685c4a8953930bc9a5ccde6de6938fb09193305a9d5e40d36b616d70ee0
+  - 6ae10ceca0795eeb3ab4e9001a8a534465a652af3d205e2aacfbb62b4580c374
 provenance:
 - source: bids
   class: enums

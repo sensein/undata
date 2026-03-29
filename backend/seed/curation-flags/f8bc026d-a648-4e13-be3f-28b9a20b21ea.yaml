@@ -1,0 +1,9 @@
+id: f8bc026d-a648-4e13-be3f-28b9a20b21ea
+entity_type: element
+entity_ref: pcasltype_2aebc455bf57.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PCASLType
+status: pending
+created_at: '2026-03-29T19:53:57.849801+00:00'

@@ -1,13 +1,12 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: axis_1_power_map
   description: Power response on the first measured axis. Response is scaled so 0.0
     is no power in the response and 1.0 is maximum relative power.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: aa88bb635a2e247d1c16502957121b9261a02d347c400153321650aefe77eb05

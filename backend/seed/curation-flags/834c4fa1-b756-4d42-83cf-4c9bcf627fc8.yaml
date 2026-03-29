@@ -1,0 +1,9 @@
+id: 834c4fa1-b756-4d42-83cf-4c9bcf627fc8
+entity_type: value
+entity_ref: tb1rfm_43845bab0ea8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TB1RFM
+status: pending
+created_at: '2026-03-29T19:53:50.561573+00:00'

@@ -1,9 +1,0 @@
-id: 42901b73-b71c-4f0e-a01e-5263ca4c02fa
-entity_type: element
-entity_ref: starttime_64203baa435e.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: StartTime
-status: pending
-created_at: '2026-03-29T05:37:09.198125+00:00'

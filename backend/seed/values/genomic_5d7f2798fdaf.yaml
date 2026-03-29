@@ -1,0 +1,8 @@
+semantic:
+  label: Genomic
+  value_type: categorical
+provenance:
+- source: bids
+  class: enums
+  name: Genomic
+sha256: 5d7f2798fdafb4249674956752b5202743d1e712ab96f861e28f43dfdcd7412a

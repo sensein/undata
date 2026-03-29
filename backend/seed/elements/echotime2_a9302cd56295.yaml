@@ -2,15 +2,6 @@ semantic:
   data_type: float
   unit: s
   value_domain: numeric
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C82331
-    term_label: Echo Time
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7072
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: bids
   class: metadata
@@ -18,7 +9,7 @@ provenance:
   description: 'The time (in seconds) when the second (longer) echo occurs.
 
     '
-  generated_at: '2026-03-29T05:28:57.935276+00:00'
+  generated_at: '2026-03-29T19:53:46.692352+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: a9302cd56295338c7baccc15a0a740be14b0b63e51e2a4f704196393d2411ea1

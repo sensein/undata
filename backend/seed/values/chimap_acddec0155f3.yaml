@@ -2,23 +2,6 @@ semantic:
   label: Chimap
   value_type: categorical
   display_name: Quantitative susceptibility map (QSM)
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C28351
-    term_label: Chiasma
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7174
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C44655
-    term_label: Chignik
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7029
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: suffixes

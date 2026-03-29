@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - iEEGReference
-  - SamplingFrequency
-  - PowerLineFrequency
-  - SoftwareFilters
+  - 7a56bf302fed11dbbe81f42ff970e68b3e5eab0b3fc4b246358d83cef369e8d9
+  - 92fad249fc8ed151d949c10cf70c500b744b9ab43af19abd9c96c859398e1d82
+  - ff69cf3867053762bee947f84774b04adce4fb05245dd035a8b2ae0dce82a66f
+  - aecba9276ce8d553e8f2a2958d1d7decfcb058b9defd4cf9125f32341c6da062
   is_mixin: true
 provenance:
 - source: bids

@@ -1,9 +1,0 @@
-id: bb7ed30c-fb3d-4167-bdb5-6895ae3aec47
-entity_type: element
-entity_ref: stimulus_description_16bf5459285f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: stimulus_description
-status: pending
-created_at: '2026-03-29T05:37:09.202363+00:00'

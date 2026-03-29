@@ -1,0 +1,9 @@
+id: 60da0d3b-f312-4d45-b739-6b7075bbec9c
+entity_type: element
+entity_ref: emgreference_065a5a6dd7d4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EMGReference
+status: pending
+created_at: '2026-03-29T19:53:53.044198+00:00'

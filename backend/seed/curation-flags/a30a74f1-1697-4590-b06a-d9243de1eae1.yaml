@@ -1,0 +1,9 @@
+id: a30a74f1-1697-4590-b06a-d9243de1eae1
+entity_type: value
+entity_ref: dcite_bookchapter_4988d3658fde.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:BookChapter
+status: pending
+created_at: '2026-03-29T19:53:58.120400+00:00'

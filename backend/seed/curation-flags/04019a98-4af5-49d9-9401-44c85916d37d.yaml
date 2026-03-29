@@ -1,0 +1,9 @@
+id: 04019a98-4af5-49d9-9401-44c85916d37d
+entity_type: schema
+entity_ref: mrifieldmaptwophase_524ef2061a92.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRIFieldmapTwoPhase
+status: pending
+created_at: '2026-03-29T19:53:50.651773+00:00'

@@ -1,0 +1,12 @@
+semantic:
+  label: in vitro
+  value_type: categorical
+  display_name: in vitro
+provenance:
+- source: bids
+  class: enums
+  name: in_vitro
+  description: 'The environment of a sample: in vitro
+
+    '
+sha256: 04280d45fcfbe8a6394fd3131241a567ee8db20831130131d3e8bfcf08d9b441

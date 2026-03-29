@@ -1,24 +1,24 @@
 semantic:
   properties:
-  - AcquisitionMode
-  - ImageDecayCorrected
-  - ImageDecayCorrectionTime
-  - ReconMethodName
-  - ReconMethodParameterLabels
-  - ReconMethodParameterUnits
-  - ReconMethodParameterValues
-  - ReconFilterType
-  - ReconFilterSize
-  - AttenuationCorrection
-  - ReconMethodImplementationVersion
-  - AttenuationCorrectionMethodReference
-  - ScaleFactor
-  - ScatterFraction
-  - DecayCorrectionFactor
-  - DoseCalibrationFactor
-  - PromptRate
-  - SinglesRate
-  - RandomRate
+  - de790d73c5a059b01d56036377a0752c085313e2b02bd21f8b69cf39a63f3adb
+  - 024c7d8e5c91ea406097003cc1ef10efd3d36134fc14fa7ced613635334fb6f7
+  - f592fcc44cb2739181544ace79bd3ec91b1ca32ca355af83d48a44f02c0a2948
+  - fde5cd9857a5b2bdc9cfec4789a781ae451de275ea7ceffb70287df316079b41
+  - 101697e7b64a39ab319c5c768423c8425b02e768d35960717215f87f712668f1
+  - 98b2c26b6d2e8ba3c3b969bb8efe6fd437b711aa88ce8f5705c1ca6c7fa98411
+  - a953a646096202bbc20ba40cd306f2c66133e81714ca9a1ef2c78894ecb24b0d
+  - b16e71928a80a1764cf7f6ab0e243c261e5d35f498b2b9d4de40a528497c6dcd
+  - c2b94022a4fd5cf93846f27ca49b7d349a4ad88df29baad1a77725fbe52a4238
+  - f82feb07d5fe2a4c3a7d2fb7aa69e275273471d52a978bdbdfeb76504d6a18ae
+  - 25b1c2e13b95ee0eeae777ab6640208d871ac83d95a0efa8a03d56acb5d15159
+  - 2f6c938a8b04d2552204b8765b26386fd2eef8ed6981e739abf7a84e2bda6368
+  - 975e3e2ed20d4d98bdaed4158640730edb9e20d9ddb500c8f0d263d37da9b824
+  - 38a614e0b06f8896ce9c90a2195a2649036b05aac87482314f257b091f7b20da
+  - 45f4c0aa11949b4d921d9a5f9ebddcef4d2fe51b297895d4b2a86b781f161e41
+  - 1dd6c9b61947888e0556e50be6127b6f9da7905dad665fa6b7d0bcd97ad9317c
+  - 220ae3c4b329f6f77a27fcd485c6b553e4dd85abae94fddc085d8706c495dc1c
+  - 7cfda3d03103bee6cec70e2991319e0aca6c02c2c1f1fa7263bf444583e34bec
+  - 22eca313246e804aae147d92d96575c7b7ee102a4c27ad52e8ff0d94b12e55e7
   is_mixin: true
 provenance:
 - source: bids

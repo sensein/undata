@@ -1,0 +1,12 @@
+semantic:
+  label: other biospecimen
+  value_type: categorical
+  display_name: other biospecimen
+provenance:
+- source: bids
+  class: enums
+  name: other_biospecimen
+  description: 'The origin of a sample: other biospecimen
+
+    '
+sha256: 7404fc080d0fb4e8f97c8f0b9552fd2010ab83d24a4909556b6f6128ed6861ea

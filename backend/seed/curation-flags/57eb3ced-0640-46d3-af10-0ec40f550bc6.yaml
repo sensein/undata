@@ -1,0 +1,9 @@
+id: 57eb3ced-0640-46d3-af10-0ec40f550bc6
+entity_type: element
+entity_ref: strain_rrid_ad80d58d9bd0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: strain_rrid
+status: pending
+created_at: '2026-03-29T19:53:57.989863+00:00'

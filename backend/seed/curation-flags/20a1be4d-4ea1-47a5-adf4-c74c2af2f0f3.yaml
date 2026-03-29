@@ -1,9 +1,0 @@
-id: 20a1be4d-4ea1-47a5-adf4-c74c2af2f0f3
-entity_type: element
-entity_ref: chemicalshiftoffset_3d0792e93bc7.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ChemicalShiftOffset
-status: pending
-created_at: '2026-03-29T05:37:08.807940+00:00'

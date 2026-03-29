@@ -1,13 +1,13 @@
 semantic:
   properties:
-  - axis_1_phase_map
-  - axis_1_power_map
-  - axis_2_phase_map
-  - axis_2_power_map
-  - axis_descriptions
-  - focal_depth_image
-  - sign_map
-  - vasculature_image
+  - 98ddbb254a049143e440430ce8c9112b5a3aed76f5da86ddb36c102a3508d9c4
+  - aa88bb635a2e247d1c16502957121b9261a02d347c400153321650aefe77eb05
+  - 91626800bed1712fd76308bc47fd5a1653873181731050a9ef40000df7fa5f9d
+  - 0f64127f8e31de328fbfab997f6e363a89244001a53f5161defe83630038d4c4
+  - c5f81dbf6f109b5799c6d81d0b0ed238111314a0f7ae11396343d60cb27119c3
+  - 636e9fb0ed1e18586e3bc6a457b66233b0599e43035d8d5cc0705d130e7a66a9
+  - ea7e25dac2fe7d9dbaa5d77398e900ff9300a5ca41af2be72abb488120f8a857
+  - cadc4b5e546dff1059fb952f9291dd2d1e6009470c9586672e63e367b6c7777b
   subclass_of: NWBDataInterface
 provenance:
 - source: nwb

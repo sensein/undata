@@ -1,9 +1,0 @@
-id: b10adbdc-2346-4962-bac7-1a3349129cec
-entity_type: schema
-entity_ref: motionhardware_20eb18de24f5.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: motionHardware
-status: pending
-created_at: '2026-03-29T05:40:56.810870+00:00'

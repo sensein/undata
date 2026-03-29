@@ -1,9 +1,0 @@
-id: 57566288-0b89-41b6-959c-5e984cf89f10
-entity_type: element
-entity_ref: repetitiontime_adf449794738.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: RepetitionTime
-status: pending
-created_at: '2026-03-29T05:37:09.120217+00:00'

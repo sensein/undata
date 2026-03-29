@@ -1,0 +1,9 @@
+id: 8acadbd3-603f-423c-92a4-22f1415af0d0
+entity_type: element
+entity_ref: excitation_lambda_a79de42811ae.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: excitation_lambda
+status: pending
+created_at: '2026-03-29T19:53:53.047329+00:00'

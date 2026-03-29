@@ -1,0 +1,9 @@
+id: e8d76b98-ab00-4939-97b1-2b04a58a4080
+entity_type: schema
+entity_ref: publishedasset_cd954379cb0a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PublishedAsset
+status: pending
+created_at: '2026-03-29T19:53:58.465923+00:00'

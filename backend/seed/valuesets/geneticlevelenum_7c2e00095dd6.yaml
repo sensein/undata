@@ -1,12 +1,12 @@
 semantic:
   name: GeneticLevelEnum
   members:
-  - Epigenomic
-  - Genetic
-  - Genomic
-  - Metabolomic
-  - Proteomic
-  - Transcriptomic
+  - 54f5bfb95cb5641071dbc551525346822aa7cdb6222fb4fbc4560189a302f09d
+  - a69f53028b30d985c11cc2f2eee12d985f00e4a1c854188b3c4c536eaa9b6bfc
+  - 5d7f2798fdafb4249674956752b5202743d1e712ab96f861e28f43dfdcd7412a
+  - f06de4368a28b1cc9c429a73f6725eda9394c8e84d5eaa09770673503b7196f1
+  - bd709ea30ae7063b6eb3934ba3f46711507ee56f98bd91aae15ebe6c2df6edf4
+  - 049242c61798570439392c31b22bc9c7044bc131c8bdb9e65e3dd8825037d7ce
 provenance:
 - source: bids
   class: enums

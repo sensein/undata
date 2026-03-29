@@ -1,0 +1,9 @@
+id: 6d2e3c9f-bc23-4fa4-80a0-2c289f9e48c2
+entity_type: element
+entity_ref: attenuationcorrectionmethodreference_2f6c938a8b04.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AttenuationCorrectionMethodReference
+status: pending
+created_at: '2026-03-29T19:53:50.058650+00:00'

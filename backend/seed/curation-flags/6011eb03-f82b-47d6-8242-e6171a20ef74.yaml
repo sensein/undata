@@ -1,9 +1,0 @@
-id: 6011eb03-f82b-47d6-8242-e6171a20ef74
-entity_type: value
-entity_ref: icbm452airspace_d3979ff2b522.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ICBM452AirSpace
-status: pending
-created_at: '2026-03-29T05:33:43.682575+00:00'

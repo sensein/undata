@@ -1,7 +1,7 @@
 semantic:
   properties:
-  - MetaboliteMethod
-  - MetaboliteRecoveryCorrectionApplied
+  - 530d0a4020e586fbca52d596522ba92ffe029f2439c4575cc655b98bf5272f25
+  - 87b65364994d2f52aa829dabafd26e5b66cc0042dd86fd3330ec2c4a19a9eca6
   is_mixin: true
 provenance:
 - source: bids

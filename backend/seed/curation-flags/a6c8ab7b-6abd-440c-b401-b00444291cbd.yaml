@@ -1,0 +1,9 @@
+id: a6c8ab7b-6abd-440c-b401-b00444291cbd
+entity_type: element
+entity_ref: motionchannelcount_7a25bd49cff4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MotionChannelCount
+status: pending
+created_at: '2026-03-29T19:53:53.147357+00:00'

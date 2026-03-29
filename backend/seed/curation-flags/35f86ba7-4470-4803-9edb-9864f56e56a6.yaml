@@ -1,0 +1,9 @@
+id: 35f86ba7-4470-4803-9edb-9864f56e56a6
+entity_type: element
+entity_ref: embargoeduntil_cd059f105f36.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: embargoedUntil
+status: pending
+created_at: '2026-03-29T19:53:57.651075+00:00'

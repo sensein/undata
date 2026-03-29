@@ -1,0 +1,9 @@
+id: 9fbf2439-5c77-4be7-b240-3558aa58b060
+entity_type: element
+entity_ref: stationname_6892c01a776b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: StationName
+status: pending
+created_at: '2026-03-29T19:53:57.983220+00:00'

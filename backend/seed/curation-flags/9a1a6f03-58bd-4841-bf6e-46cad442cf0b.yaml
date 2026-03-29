@@ -1,0 +1,9 @@
+id: 9a1a6f03-58bd-4841-bf6e-46cad442cf0b
+entity_type: element
+entity_ref: referencesignal_bc88f8bddc4c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ReferenceSignal
+status: pending
+created_at: '2026-03-29T19:53:57.884966+00:00'

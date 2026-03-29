@@ -1,0 +1,9 @@
+id: ecf2380d-ecfc-4ef3-8ae2-b3f956046465
+entity_type: element
+entity_ref: resonantnucleus_75cfca02b0be.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ResonantNucleus
+status: pending
+created_at: '2026-03-29T19:53:50.279561+00:00'

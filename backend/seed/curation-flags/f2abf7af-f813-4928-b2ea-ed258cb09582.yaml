@@ -1,0 +1,9 @@
+id: f2abf7af-f813-4928-b2ea-ed258cb09582
+entity_type: value
+entity_ref: iodine_e95401528926.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: IODINE
+status: pending
+created_at: '2026-03-29T19:53:53.433101+00:00'

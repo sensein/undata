@@ -1,0 +1,9 @@
+id: f4bd8e9c-ae3f-41a0-a2c7-6b8cdbd5d22b
+entity_type: schema
+entity_ref: mrsirecommendedfields_dde259fcfe3c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRSIRecommendedFields
+status: pending
+created_at: '2026-03-29T19:53:58.434537+00:00'

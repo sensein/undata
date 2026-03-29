@@ -1,9 +1,0 @@
-id: cc3e7b6d-8945-497b-80b0-c3de83de54b2
-entity_type: element
-entity_ref: channel_conversion_2fc26909f4a8.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: channel_conversion
-status: pending
-created_at: '2026-03-29T05:40:55.392729+00:00'

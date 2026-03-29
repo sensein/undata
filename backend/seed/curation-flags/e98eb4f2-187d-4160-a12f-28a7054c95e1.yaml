@@ -1,9 +1,0 @@
-id: e98eb4f2-187d-4160-a12f-28a7054c95e1
-entity_type: element
-entity_ref: metabolite_parent_fraction_48116be17530.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: metabolite_parent_fraction
-status: pending
-created_at: '2026-03-29T05:37:09.016287+00:00'

@@ -1,0 +1,9 @@
+id: fcc4f375-5d2a-4b19-80be-7502768c1f2e
+entity_type: element
+entity_ref: injectedradioactivity_9147fd871fae.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: InjectedRadioactivity
+status: pending
+created_at: '2026-03-29T19:53:50.180900+00:00'

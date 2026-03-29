@@ -1,13 +1,12 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: stimulus_template
   description: Column storing the reference to the stimulus template for the recording
     (rows).
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: b4782d3aeb524c30418a5684b47803793af91de697e6b799a3debf5848ef917a

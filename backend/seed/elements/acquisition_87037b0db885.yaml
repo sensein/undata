@@ -1,6 +1,5 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
@@ -12,7 +11,7 @@ provenance:
     file while preserving the option of keeping some/all in the file. Acquired data
     includes tracking and experimental data streams (i.e., everything measured from
     the system). If bulk
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 87037b0db885205000ac9c6cc63e80693771261497e78362623b2bb0b4c402fc

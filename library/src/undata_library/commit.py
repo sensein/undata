@@ -128,11 +128,130 @@ def commit_staged(
         stats["committed"] += type_committed
         stats["merged"] += type_merged
 
+    # Post-commit: resolve schema properties and valueset members to sha256 hashes
+    _resolve_cross_references(output_dir)
+
     # Delete staging directory
     if staging_dir.exists():
         shutil.rmtree(staging_dir)
 
     return stats
+
+
+def _resolve_cross_references(output_dir: Path) -> None:
+    """Resolve schema properties and valueset members from names to sha256 hashes.
+
+    After all entities are committed with their sha256 hashes, this step updates:
+    - Schema properties: slot names → element sha256 hashes
+    - Valueset members: value labels → value sha256 hashes
+
+    Uses a name→sha256 lookup built from committed elements and values.
+    """
+    # Build element name → sha256 lookup
+    elem_lookup: dict[str, str] = {}
+    elements_dir = output_dir / "elements"
+    if elements_dir.exists():
+        for f in elements_dir.glob("*.yaml"):
+            data = safe_load_yaml(f)
+            if not data or "sha256" not in data:
+                continue
+            sha = data["sha256"]
+            # Index by provenance name(s)
+            for prov in data.get("provenance", []):
+                if isinstance(prov, dict) and prov.get("name"):
+                    name = prov["name"]
+                    # Prefer not overwriting (first provenance entry wins)
+                    if name not in elem_lookup:
+                        elem_lookup[name] = sha
+                    if name.lower() not in elem_lookup:
+                        elem_lookup[name.lower()] = sha
+
+    # Build value label → sha256 lookup
+    val_lookup: dict[str, str] = {}
+    values_dir = output_dir / "values"
+    if values_dir.exists():
+        for f in values_dir.glob("*.yaml"):
+            data = safe_load_yaml(f)
+            if not data or "sha256" not in data:
+                continue
+            sha = data["sha256"]
+            sem = data.get("semantic", {})
+            label = sem.get("label", "")
+            if label:
+                if label not in val_lookup:
+                    val_lookup[label] = sha
+                if label.lower() not in val_lookup:
+                    val_lookup[label.lower()] = sha
+            # Also index by provenance name
+            for prov in data.get("provenance", []):
+                if isinstance(prov, dict) and prov.get("name"):
+                    name = prov["name"]
+                    if name not in val_lookup:
+                        val_lookup[name] = sha
+                    if name.lower() not in val_lookup:
+                        val_lookup[name.lower()] = sha
+
+    # Update schema properties
+    schemas_dir = output_dir / "schemas"
+    if schemas_dir.exists() and elem_lookup:
+        for f in schemas_dir.glob("*.yaml"):
+            data = safe_load_yaml(f)
+            if not data:
+                continue
+            sem = data.get("semantic", {})
+            props = sem.get("properties", [])
+            if not props:
+                continue
+            resolved = []
+            changed = False
+            for prop in props:
+                # If it's already a sha256 hash (64 hex chars), keep it
+                if len(prop) == 64 and all(c in "0123456789abcdef" for c in prop):
+                    resolved.append(prop)
+                    continue
+                # Try to resolve name → sha256
+                sha = elem_lookup.get(prop) or elem_lookup.get(prop.lower())
+                if sha:
+                    resolved.append(sha)
+                    changed = True
+                else:
+                    resolved.append(prop)  # Keep unresolved name
+            if changed:
+                sem["properties"] = resolved
+                f.write_text(
+                    yaml.dump(data, default_flow_style=False, sort_keys=False),
+                    encoding="utf-8",
+                )
+
+    # Update valueset members
+    valuesets_dir = output_dir / "valuesets"
+    if valuesets_dir.exists() and val_lookup:
+        for f in valuesets_dir.glob("*.yaml"):
+            data = safe_load_yaml(f)
+            if not data:
+                continue
+            sem = data.get("semantic", {})
+            members = sem.get("members", [])
+            if not members:
+                continue
+            resolved = []
+            changed = False
+            for member in members:
+                if len(member) == 64 and all(c in "0123456789abcdef" for c in member):
+                    resolved.append(member)
+                    continue
+                sha = val_lookup.get(member) or val_lookup.get(member.lower())
+                if sha:
+                    resolved.append(sha)
+                    changed = True
+                else:
+                    resolved.append(member)
+            if changed:
+                sem["members"] = resolved
+                f.write_text(
+                    yaml.dump(data, default_flow_style=False, sort_keys=False),
+                    encoding="utf-8",
+                )
 
 
 def _derive_name(data: dict, entity_type: str) -> str:

@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: face
+provenance:
+- source: bids
+  class_: ''
+  name: Face
+sha256: b22aa687afe22073634115eef525192dd43cd2d7809da9e2448e8b9b41f54321

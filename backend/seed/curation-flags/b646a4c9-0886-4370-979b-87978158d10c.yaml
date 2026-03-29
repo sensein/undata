@@ -1,9 +1,0 @@
-id: b646a4c9-0886-4370-979b-87978158d10c
-entity_type: schema
-entity_ref: megrequired_44169fcc4667.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MEGRequired
-status: pending
-created_at: '2026-03-29T05:33:44.002518+00:00'

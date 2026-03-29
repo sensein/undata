@@ -1,0 +1,9 @@
+id: 5529ccb8-5eb4-435b-8af4-cbd7df51f1ee
+entity_type: element
+entity_ref: pharmaceuticalname_40f90a872c0b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PharmaceuticalName
+status: pending
+created_at: '2026-03-29T19:53:57.852299+00:00'

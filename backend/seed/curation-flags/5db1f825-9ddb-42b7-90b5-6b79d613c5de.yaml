@@ -1,9 +1,0 @@
-id: 5db1f825-9ddb-42b7-90b5-6b79d613c5de
-entity_type: value
-entity_ref: tb1map_ea7263866ba1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TB1map
-status: pending
-created_at: '2026-03-29T05:40:56.641133+00:00'

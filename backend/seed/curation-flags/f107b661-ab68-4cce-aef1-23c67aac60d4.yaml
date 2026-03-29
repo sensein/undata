@@ -1,0 +1,9 @@
+id: f107b661-ab68-4cce-aef1-23c67aac60d4
+entity_type: element
+entity_ref: strain_ba7ff3a86473.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: strain
+status: pending
+created_at: '2026-03-29T19:53:57.989430+00:00'

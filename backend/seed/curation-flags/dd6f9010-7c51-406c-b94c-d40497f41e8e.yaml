@@ -1,0 +1,9 @@
+id: dd6f9010-7c51-406c-b94c-d40497f41e8e
+entity_type: value
+entity_ref: cbf_46622e7cb60f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: cbf
+status: pending
+created_at: '2026-03-29T19:53:58.098428+00:00'

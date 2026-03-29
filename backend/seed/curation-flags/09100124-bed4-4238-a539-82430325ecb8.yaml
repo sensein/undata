@@ -1,0 +1,9 @@
+id: 09100124-bed4-4238-a539-82430325ecb8
+entity_type: element
+entity_ref: size_661d52882dcf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: size
+status: pending
+created_at: '2026-03-29T19:53:53.255280+00:00'

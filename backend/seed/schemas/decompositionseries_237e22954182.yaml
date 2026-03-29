@@ -1,10 +1,10 @@
 semantic:
   properties:
-  - data
-  - metric
-  - source_channels
-  - source_timeseries
-  - bands
+  - f8175de8d99bf59958f6161e1bdd7706974343e5a51456548b7ac94669687981
+  - b9e765143d62bed5818c1755bc06cdf14fe08b889b4daeb260b14d457775d928
+  - 40eefc6b471d60127bf4d70ea7b087b9ebaf3d5bc4afdec6602894a1e3a1e593
+  - b92ba91bc5e5d954bcc3f6abc272255fd8571a332014d3388a8224c1db636ec1
+  - a420f342b0cba8e20a255e395ab1845c4085c4499d178695621e8b6305991759
   subclass_of: TimeSeries
 provenance:
 - source: nwb

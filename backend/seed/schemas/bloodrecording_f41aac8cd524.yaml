@@ -1,15 +1,15 @@
 semantic:
   properties:
-  - PlasmaAvail
-  - MetaboliteAvail
-  - WholeBloodAvail
-  - DispersionCorrected
-  - WithdrawalRate
-  - TubingType
-  - TubingLength
-  - DispersionConstant
-  - Haematocrit
-  - BloodDensity
+  - 27b83485136ca9521f106a088dbc7330d373d9b0cd730d0964b1a17bd54aa4c8
+  - b98a9a4fe831e1da21b619b5c0d30fc41ce69f381e16545420ff07466a170f70
+  - e6e107131282dd81e5dcbb2dcb6b55b079d80b93af9089c3e8f5a82b6ca363b5
+  - 48213b5776c1085c9a967ca8e4bb2839878d38c4543e6607e6b72d628fef1406
+  - c14c58872b8784750a784570829b8deac669ad305e82b7cfad62014315debf69
+  - 29ae198bbe976e2fcc09ef930e16b4c1790c74505d0bf3eca21bed3e0a5232c5
+  - 5db56f0664fa58fb72202f9dbec9bdda9bb8599e5b05b5b93808c411e1bb9762
+  - 8a00f3c2dc5537a2446f7ad50b412366e2ed04b27dcee2a39220b5452a75191a
+  - 47ab3a7656a927b76d6322da9b85c368cde93389f5becd1910742f1446e3f86d
+  - 370e08ea937cc082e87e6999343cb380cda3e268e43e1bb159642403a68966b5
   is_mixin: true
 provenance:
 - source: bids

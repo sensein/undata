@@ -2,23 +2,6 @@ semantic:
   label: .raw
   value_type: categorical
   display_name: RAW
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C48188
-    term_label: Raw
-    ontology: ncit
-    mapping_relation: skos:closeMatch
-    match_level: concept_match
-    score: 0.896
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/EDAM_format_1957
-    term_label: raw
-    ontology: edam
-    mapping_relation: skos:closeMatch
-    match_level: concept_match
-    score: 0.896
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: extensions

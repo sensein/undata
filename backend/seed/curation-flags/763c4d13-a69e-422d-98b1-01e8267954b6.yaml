@@ -1,0 +1,9 @@
+id: 763c4d13-a69e-422d-98b1-01e8267954b6
+entity_type: element
+entity_ref: pharmaceuticaldoseamount_072931254b46.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PharmaceuticalDoseAmount
+status: pending
+created_at: '2026-03-29T19:53:57.850571+00:00'

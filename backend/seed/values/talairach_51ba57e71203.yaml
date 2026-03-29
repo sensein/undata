@@ -1,47 +1,6 @@
 semantic:
   value_type: categorical
   label: talairach
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C94990
-    term_label: Talairach Space
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7877
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C66577
-    term_label: Talbutal
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7332
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C38139
-    term_label: Talampanel
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.727
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C76464
-    term_label: Talnetant
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7206
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C48264
-    term_label: Talabostat
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7031
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class_: ''

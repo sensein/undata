@@ -1,0 +1,12 @@
+semantic:
+  label: gray matter
+  value_type: categorical
+  display_name: gray matter
+provenance:
+- source: bids
+  class: enums
+  name: gray_matter
+  description: 'The origin of a tissue: gray matter
+
+    '
+sha256: d5e2d20f704b18fba06447fa6a149bc4020b614134cf270441dbc22ec6920a42

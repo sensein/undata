@@ -1,9 +1,0 @@
-id: a760f231-2272-4f8b-8721-dd99b8aa0fe8
-entity_type: element
-entity_ref: institutionaddress_88210e5d7005.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: InstitutionAddress
-status: pending
-created_at: '2026-03-29T05:37:08.973174+00:00'

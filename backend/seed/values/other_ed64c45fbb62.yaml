@@ -1,0 +1,8 @@
+semantic:
+  label: Other
+  value_type: categorical
+provenance:
+- source: bids
+  class: enums
+  name: Other
+sha256: ed64c45fbb623cc2f9236d94e1803ce130760b6c66188ebc56c7aa62f9959525

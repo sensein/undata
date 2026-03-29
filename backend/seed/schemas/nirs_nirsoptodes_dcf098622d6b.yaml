@@ -1,16 +1,16 @@
 semantic:
   properties:
-  - name__optodes
-  - type__optodes
-  - x__optodes
-  - y__optodes
-  - z__optodes
-  - template_x
-  - template_y
-  - template_z
-  - description__optode
-  - detector_type
-  - source__optodes
+  - f102ddd8e6c2289868cbc22782903481c0c8c187b6b18de40d4c920f549885b4
+  - 919bea7b4cc83291912efdba5894b869522c740b449b002072c4cac1412eff57
+  - 4ec17445917494a4670bb091d19697947113056f37347e201aff1b77c5f8c72d
+  - efaf4330d848c8075f1dd68a83396ff9acdfffd3bea491d27568739ee8436f4c
+  - a39f8c7a8aaeb9892f08933efd8eaeacb17db6b6e88a1f2e3b479830d873791d
+  - b685b3a9c146e0d259e9645ea16161a7dcf0395464a913fd9aec52f306614ab2
+  - d797e5a70248f05e0caee466fe3cf0d0fb377b64092612b6863b10467ca3805e
+  - eef3ff36a486f938b102db65f615d3c5802777b87b812f4c5304b099c0929d53
+  - a92fc528b07226604e1504809b7ee38cd04c01abbc7df54839a0960cedbed893
+  - a617d5161e76bfcaef6b341c2f6d5098e41fa543e38a79adb9b3392daaf33cf0
+  - e8c4cdc49a01381621925d86647216c6db745dac97ef68f6a24ea78ed3f9a43f
   is_mixin: true
 provenance:
 - source: bids

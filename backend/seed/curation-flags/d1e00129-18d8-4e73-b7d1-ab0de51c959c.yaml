@@ -1,9 +1,0 @@
-id: d1e00129-18d8-4e73-b7d1-ab0de51c959c
-entity_type: value
-entity_ref: dcite_physicalobject_c572c7bc2748.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: dcite:PhysicalObject
-status: pending
-created_at: '2026-03-29T05:40:56.250091+00:00'

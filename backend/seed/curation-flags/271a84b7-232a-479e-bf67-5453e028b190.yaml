@@ -1,0 +1,9 @@
+id: 271a84b7-232a-479e-bf67-5453e028b190
+entity_type: schema
+entity_ref: petpharmaceuticals_c2c69a6a641a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PETPharmaceuticals
+status: pending
+created_at: '2026-03-29T19:53:58.454737+00:00'

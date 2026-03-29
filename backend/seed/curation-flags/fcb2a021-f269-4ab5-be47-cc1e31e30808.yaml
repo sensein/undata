@@ -1,0 +1,9 @@
+id: fcb2a021-f269-4ab5-be47-cc1e31e30808
+entity_type: element
+entity_ref: intendedfor__ds_relative_661774efb2d1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: IntendedFor__ds_relative
+status: pending
+created_at: '2026-03-29T19:53:50.184649+00:00'

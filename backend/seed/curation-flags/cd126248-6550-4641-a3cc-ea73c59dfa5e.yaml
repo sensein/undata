@@ -1,0 +1,9 @@
+id: cd126248-6550-4641-a3cc-ea73c59dfa5e
+entity_type: element
+entity_ref: wasattributedto_69b6657312d8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: wasAttributedTo
+status: pending
+created_at: '2026-03-29T19:53:58.041739+00:00'

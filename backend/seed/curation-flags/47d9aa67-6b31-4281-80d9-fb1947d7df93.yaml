@@ -1,0 +1,9 @@
+id: 47d9aa67-6b31-4281-80d9-fb1947d7df93
+entity_type: value
+entity_ref: sem_5c50615512c1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SEM
+status: pending
+created_at: '2026-03-29T19:53:50.544220+00:00'

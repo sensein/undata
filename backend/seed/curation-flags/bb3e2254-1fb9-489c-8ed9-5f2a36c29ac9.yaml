@@ -1,9 +1,0 @@
-id: bb3e2254-1fb9-489c-8ed9-5f2a36c29ac9
-entity_type: element
-entity_ref: multibandaccelerationfactor_8cab6ba6ee27.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MultibandAccelerationFactor
-status: pending
-created_at: '2026-03-29T05:37:09.036147+00:00'

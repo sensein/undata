@@ -1,0 +1,9 @@
+id: d036bdd4-0463-42cf-b5be-61f1083e8ae7
+entity_type: element
+entity_ref: samplingfrequency_92fad249fc8e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SamplingFrequency
+status: pending
+created_at: '2026-03-29T19:53:57.923067+00:00'

@@ -6,7 +6,7 @@ provenance:
   class: nwb
   name: SpatialSeries
   description: SpatialSeries object containing data measuring direction of gaze.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 321bee35505bee759e6789f23f2ffe028e7db6d2767e445698c2388413b6cc7e

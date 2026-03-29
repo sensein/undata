@@ -1,0 +1,9 @@
+id: 32007ba6-6c63-4eac-a671-24cc8c18be55
+entity_type: element
+entity_ref: spectrometerfrequency_efd9ff89ba7e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpectrometerFrequency
+status: pending
+created_at: '2026-03-29T19:53:53.271196+00:00'

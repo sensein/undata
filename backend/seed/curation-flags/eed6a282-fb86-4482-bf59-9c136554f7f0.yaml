@@ -1,0 +1,9 @@
+id: eed6a282-fb86-4482-bf59-9c136554f7f0
+entity_type: element
+entity_ref: spatialseries_321bee35505b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpatialSeries
+status: pending
+created_at: '2026-03-29T19:53:53.267578+00:00'

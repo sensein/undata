@@ -1,0 +1,9 @@
+id: 7aa3eed5-3e83-4be1-ad27-858b4234b9fa
+entity_type: schema
+entity_ref: sweeptable_09d2190667be.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SweepTable
+status: pending
+created_at: '2026-03-29T19:53:53.686092+00:00'

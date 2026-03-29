@@ -1,0 +1,9 @@
+id: f1e24351-276b-4c92-bbab-74da1cf4442d
+entity_type: element
+entity_ref: acq_time__scans_36dddc04ecad.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: acq_time__scans
+status: pending
+created_at: '2026-03-29T19:53:57.524793+00:00'

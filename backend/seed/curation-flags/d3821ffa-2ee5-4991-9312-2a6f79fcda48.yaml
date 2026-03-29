@@ -1,0 +1,9 @@
+id: d3821ffa-2ee5-4991-9312-2a6f79fcda48
+entity_type: value
+entity_ref: gsr_40776dccd765.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: GSR
+status: pending
+created_at: '2026-03-29T19:53:50.450667+00:00'

@@ -1,6 +1,5 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
@@ -9,7 +8,7 @@ provenance:
     array corresponding to time of event or time and channel of event. ''description''
     should define what is meant by time of event (e.g., .25 ms before action potential
     peak, zero-crossing time, etc). The index points to each event from the raw data.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: de1183efc72c2b29f1ebc58771506c1bf613647fde000fb147c520b5b58f393a

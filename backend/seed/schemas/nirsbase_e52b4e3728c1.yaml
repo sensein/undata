@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - RecordingDuration
-  - HeadCircumference
-  - HardwareFilters
-  - SubjectArtefactDescription
+  - 072bbbf7283998e8903bf088894a7096c000da52717f458ef1783db2cbed0eb5
+  - f2def9f8af9deca39b13ae532e7cb09ac05e583fecfa7b1b4f91cbed95aab9fe
+  - 79369ff033d0cd0e31548b4c199e5d9669a6d7998b8699b606754cdd83b9ef49
+  - f510fffa21d2b09218e5a7d1166ee5ea75941a0aece72aef30cbed04229dbe9f
   is_mixin: true
 provenance:
 - source: bids

@@ -1,6 +1,5 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
@@ -11,7 +10,7 @@ provenance:
     group will usually only be populated in TimeSeries that are stored external to
     the NWB file, in files storing raw data. Once timestamp data is calculated, the
     contents of 'sync' are mostly for archival purposes.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 9a70cc461df7fc1a3b6f696baf715f4f0fddc8a98bf61dec4ae428740a8dbead

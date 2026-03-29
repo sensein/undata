@@ -1,0 +1,19 @@
+semantic:
+  label: extension
+  value_type: categorical
+  display_name: File extension
+provenance:
+- source: bids
+  class: common_principles
+  name: extension
+  description: 'A portion of the filename after the left-most period (`.`) preceded
+    by any other alphanumeric.
+
+    For example, `.gitignore` does not have a file extension,
+
+    but the file extension of `test.nii.gz` is `.nii.gz`.
+
+    Note that the left-most period is included in the file extension.
+
+    '
+sha256: 398c9a1b41e271fe6755ccbd669778f8fb9b610d7052fa4f7b9d33a07b96444f

@@ -1,47 +1,6 @@
 semantic:
   value_type: categorical
   label: csf
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C173272
-    term_label: CSF Analysis
-    ontology: ncit
-    mapping_relation: skos:closeMatch
-    match_level: concept_match
-    score: 0.8172
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C168884
-    term_label: CSF Results
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7852
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C168904
-    term_label: CSF Analysis Table
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7172
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C168881
-    term_label: CSF Blasts Present
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7139
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/EDAM_format_3020
-    term_label: BCF
-    ontology: edam
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7136
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class_: ''

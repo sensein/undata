@@ -1,10 +1,10 @@
 semantic:
   properties:
-  - stimulus_description
-  - sweep_number
-  - data
-  - gain
-  - electrode
+  - 16bf5459285f4dfb75aa7abb0b66d34c7b62a88499be4bc5d35c441477e2de36
+  - b32ec45c73a89ee10d3c23564b018c175ca4dda06c4d0765b1be6df57d33be1d
+  - f8175de8d99bf59958f6161e1bdd7706974343e5a51456548b7ac94669687981
+  - b4ec484ed0295632b8ec54cd316d4029f4c16561bb549851e215b2c5ef48e530
+  - 6a6910dd8e84c7f74af97329cb899f81ef01df131d473294f010e3f3dc0a3abc
   subclass_of: TimeSeries
 provenance:
 - source: nwb

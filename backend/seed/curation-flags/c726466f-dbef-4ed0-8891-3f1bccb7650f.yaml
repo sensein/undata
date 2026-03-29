@@ -1,9 +1,0 @@
-id: c726466f-dbef-4ed0-8891-3f1bccb7650f
-entity_type: value
-entity_ref: nirscwopticaldensity_0e9289176315.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: NIRSCWOPTICALDENSITY
-status: pending
-created_at: '2026-03-29T05:37:09.672117+00:00'

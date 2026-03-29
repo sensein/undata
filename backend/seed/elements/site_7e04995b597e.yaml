@@ -1,14 +1,13 @@
 semantic:
   data_type: string
   type_ref: OptogeneticStimulusSite
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: site
   description: Link to OptogeneticStimulusSite object that describes the site to which
     this stimulus was applied.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 7e04995b597eae4f27ae139ecafe8d974c9d45d3cfa212d02f217a061aa178b4

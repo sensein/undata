@@ -1,0 +1,42 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: HARD
+    label: HARD
+    ontology_term: https://schema.undata.live/values/903a567d-3fc7-4584-a44f-619606f60df8
+  - value: GAUSSIAN
+    label: GAUSSIAN
+    ontology_term: https://schema.undata.live/values/f239ec10-0561-4a34-ba7d-dc375b74ff0d
+  - value: GAUSSHANN
+    label: GAUSSHANN
+    ontology_term: https://schema.undata.live/values/b40d57cd-6997-4abf-b3e5-2c1f5c7636f5
+  - value: SINC
+    label: SINC
+    ontology_term: https://schema.undata.live/values/c6cf4227-3459-428b-9a98-2f246fc3491e
+  - value: SINCHANN
+    label: SINCHANN
+    ontology_term: https://schema.undata.live/values/3e83ea32-6bd8-4625-8136-c67b7894b193
+  - value: SINCGAUSS
+    label: SINCGAUSS
+    ontology_term: https://schema.undata.live/values/5d2adc66-303a-452d-a305-1775f01519c5
+  - value: FERMI
+    label: FERMI
+    ontology_term: https://schema.undata.live/values/517bb314-ffec-45ba-8ac1-3ae38bac72ed
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: MTPulseShape
+  description: 'Shape of the magnetization transfer RF pulse waveform.
+
+    The value `"GAUSSHANN"` refers to a Gaussian pulse with a Hanning window.
+
+    The value `"SINCHANN"` refers to a sinc pulse with a Hanning window.
+
+    The value `"SINCGAUSS"` refers to a sinc pulse with a Gaussian window.
+
+    '
+  generated_at: '2026-03-29T19:53:46.692352+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 10d57f22b60c7478245e27d1aa73eaabb9b668c52497d7adececc70f2964d2fc

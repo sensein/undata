@@ -1,12 +1,12 @@
 semantic:
   properties:
-  - LabelingDuration
-  - LabelingPulseAverageGradient
-  - LabelingPulseMaximumGradient
-  - LabelingPulseAverageB1
-  - LabelingPulseDuration
-  - LabelingPulseFlipAngle
-  - LabelingPulseInterval
+  - d897156b0fe4c70d0762e230b184140c1e275ae6309f9a711349533ddc7c3412
+  - 68626a6a5fe7311c00b54d25ed926d32d39398f7f5669d5abce3e14b4111147b
+  - 7b881d7950a4eb39f8712d635706cd0c2b9696f7e0dcfd7b9f7711dc1eea8fc4
+  - 3697a157eb38ac961dd0e2977c7517d1dd71c9d9969cc2aba1a0764a5ccbff2e
+  - 4b7d3454aeea2765458293f3c7441fd090868c7c4f0cecccfd0b97d00a616e74
+  - a6804a0224913b55604074b724a110e604679336ec5e07536a695f9c329b4103
+  - 3ad65d704ccd467db417c095d24a75e4b9c8906f4c4a0e0fc524833f8d1dff13
   is_mixin: true
 provenance:
 - source: bids

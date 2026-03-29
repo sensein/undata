@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+provenance:
+- source: dandi
+  class: Participant
+  name: age
+  description: A representation of age using ISO 8601 duration. This should include
+    a valueReference if anything other than date of birth is used. (postnatal age
+    (ISO 8601 duration))
+  generated_at: '2026-03-29T19:53:55.365104+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 46fe74d79ee82f2fddce46d1c4be65e3495a811f3a91239c280cd011c38bcf66

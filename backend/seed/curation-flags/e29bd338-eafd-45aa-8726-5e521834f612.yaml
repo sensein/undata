@@ -1,0 +1,9 @@
+id: e29bd338-eafd-45aa-8726-5e521834f612
+entity_type: element
+entity_ref: metabolite_polar_fraction_1cd83f568269.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: metabolite_polar_fraction
+status: pending
+created_at: '2026-03-29T19:53:53.139494+00:00'

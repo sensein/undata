@@ -1,0 +1,9 @@
+id: 3a17d5ac-f4e5-4a3a-bae3-b70da3cbbec6
+entity_type: element
+entity_ref: doi_bedf8b78d8aa.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DOI
+status: pending
+created_at: '2026-03-29T19:53:57.628836+00:00'

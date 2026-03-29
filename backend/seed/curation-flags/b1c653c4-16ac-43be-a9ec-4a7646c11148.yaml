@@ -1,0 +1,9 @@
+id: b1c653c4-16ac-43be-a9ec-4a7646c11148
+entity_type: value
+entity_ref: .fif_9228b3c7b40d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: fif
+status: pending
+created_at: '2026-03-29T19:53:58.067104+00:00'

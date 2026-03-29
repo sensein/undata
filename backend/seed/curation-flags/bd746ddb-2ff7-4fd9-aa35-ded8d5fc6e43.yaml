@@ -1,0 +1,9 @@
+id: bd746ddb-2ff7-4fd9-aa35-ded8d5fc6e43
+entity_type: element
+entity_ref: material_d4321aded210.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: material
+status: pending
+created_at: '2026-03-29T19:53:53.128089+00:00'

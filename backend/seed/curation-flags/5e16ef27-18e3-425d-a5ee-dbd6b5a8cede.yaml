@@ -1,9 +1,0 @@
-id: 5e16ef27-18e3-425d-a5ee-dbd6b5a8cede
-entity_type: value
-entity_ref: ppg_453a346ce6a7.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PPG
-status: pending
-created_at: '2026-03-29T05:37:09.734001+00:00'

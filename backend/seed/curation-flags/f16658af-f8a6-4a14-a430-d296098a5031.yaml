@@ -1,0 +1,9 @@
+id: f16658af-f8a6-4a14-a430-d296098a5031
+entity_type: element
+entity_ref: acquisitionduration_d44a27869d96.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AcquisitionDuration
+status: pending
+created_at: '2026-03-29T19:53:50.043833+00:00'

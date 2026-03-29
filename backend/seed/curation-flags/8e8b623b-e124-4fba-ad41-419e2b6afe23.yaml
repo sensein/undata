@@ -1,0 +1,9 @@
+id: 8e8b623b-e124-4fba-ad41-419e2b6afe23
+entity_type: schema
+entity_ref: continuous_sidecar_3c6533cf2eb5.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: continuous_sidecar
+status: pending
+created_at: '2026-03-29T19:53:50.591611+00:00'

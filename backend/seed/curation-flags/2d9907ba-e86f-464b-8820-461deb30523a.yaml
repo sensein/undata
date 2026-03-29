@@ -1,0 +1,9 @@
+id: 2d9907ba-e86f-464b-8820-461deb30523a
+entity_type: element
+entity_ref: fiducialscoordinateunits_62f72e9758b4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: FiducialsCoordinateUnits
+status: pending
+created_at: '2026-03-29T19:53:57.673285+00:00'

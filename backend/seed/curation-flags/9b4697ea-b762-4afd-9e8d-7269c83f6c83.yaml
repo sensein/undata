@@ -1,0 +1,9 @@
+id: 9b4697ea-b762-4afd-9e8d-7269c83f6c83
+entity_type: element
+entity_ref: decaycorrectionfactor_45f4c0aa1194.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DecayCorrectionFactor
+status: pending
+created_at: '2026-03-29T19:53:57.600526+00:00'

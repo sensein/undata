@@ -1,0 +1,116 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: dcite:IsCitedBy
+    label: dcite:IsCitedBy
+    ontology_term: https://schema.undata.live/values/10122e48-4b7f-41b6-89d4-d27b7983f9c9
+  - value: dcite:Cites
+    label: dcite:Cites
+    ontology_term: https://schema.undata.live/values/a8b9b2ce-2b7d-4bec-b370-90c03b56c372
+  - value: dcite:IsSupplementTo
+    label: dcite:IsSupplementTo
+    ontology_term: https://schema.undata.live/values/0c2eead2-6d1c-4dfc-b32a-2517839a7503
+  - value: dcite:IsSupplementedBy
+    label: dcite:IsSupplementedBy
+    ontology_term: https://schema.undata.live/values/8555d363-3e89-4337-9f17-ba54d96bedaf
+  - value: dcite:IsContinuedBy
+    label: dcite:IsContinuedBy
+    ontology_term: https://schema.undata.live/values/05b1af79-c75e-4f10-82ef-e4bad12ce118
+  - value: dcite:Continues
+    label: dcite:Continues
+    ontology_term: https://schema.undata.live/values/3ae1349c-df4c-49d0-a040-32c0ace5c5a3
+  - value: dcite:Describes
+    label: dcite:Describes
+    ontology_term: https://schema.undata.live/values/2db894c3-50c9-44f8-95fa-841269f53a68
+  - value: dcite:IsDescribedBy
+    label: dcite:IsDescribedBy
+    ontology_term: https://schema.undata.live/values/368ad141-af85-4d2c-80fd-65793212e7ab
+  - value: dcite:HasMetadata
+    label: dcite:HasMetadata
+    ontology_term: https://schema.undata.live/values/8c4eb23a-7e47-4934-bdfb-28a00813ac7b
+  - value: dcite:IsMetadataFor
+    label: dcite:IsMetadataFor
+    ontology_term: https://schema.undata.live/values/26b01eda-ffdb-455a-af0c-5b4130c2573e
+  - value: dcite:HasVersion
+    label: dcite:HasVersion
+    ontology_term: https://schema.undata.live/values/182ef2a9-c340-4749-b3d0-a564f1840cd5
+  - value: dcite:IsVersionOf
+    label: dcite:IsVersionOf
+    ontology_term: https://schema.undata.live/values/d362ec6d-94d8-4c96-b917-9a205bfbbd7e
+  - value: dcite:IsNewVersionOf
+    label: dcite:IsNewVersionOf
+    ontology_term: https://schema.undata.live/values/1f8e536f-749d-46f1-b0f8-197fcb47cb5a
+  - value: dcite:IsPreviousVersionOf
+    label: dcite:IsPreviousVersionOf
+    ontology_term: https://schema.undata.live/values/98e84ef4-cdaa-4303-807e-4faf4d774b1c
+  - value: dcite:IsPartOf
+    label: dcite:IsPartOf
+    ontology_term: https://schema.undata.live/values/767be3b5-1a5f-4c8f-a70d-58b33db6d3f7
+  - value: dcite:HasPart
+    label: dcite:HasPart
+    ontology_term: https://schema.undata.live/values/5f83ee25-74da-4394-b878-f8d57090f1f4
+  - value: dcite:IsReferencedBy
+    label: dcite:IsReferencedBy
+    ontology_term: https://schema.undata.live/values/cff03c2c-e57e-4ddf-9732-7ec5c9ae13d5
+  - value: dcite:References
+    label: dcite:References
+    ontology_term: https://schema.undata.live/values/219c341d-8709-4182-9aa4-425de775ade5
+  - value: dcite:IsDocumentedBy
+    label: dcite:IsDocumentedBy
+    ontology_term: https://schema.undata.live/values/ef52664a-4bbd-4169-b3cc-9aa6c195731f
+  - value: dcite:Documents
+    label: dcite:Documents
+    ontology_term: https://schema.undata.live/values/1219d76a-0f28-4c69-9956-162138fbf144
+  - value: dcite:IsCompiledBy
+    label: dcite:IsCompiledBy
+    ontology_term: https://schema.undata.live/values/ac39d800-b743-4dc9-a1bf-f78d892a138c
+  - value: dcite:Compiles
+    label: dcite:Compiles
+    ontology_term: https://schema.undata.live/values/23609978-3f2f-4428-8fe5-a0f7795f15aa
+  - value: dcite:IsVariantFormOf
+    label: dcite:IsVariantFormOf
+    ontology_term: https://schema.undata.live/values/9d904d22-d181-4441-92a0-9bafe9b7bfd4
+  - value: dcite:IsOriginalFormOf
+    label: dcite:IsOriginalFormOf
+    ontology_term: https://schema.undata.live/values/a6b20250-9918-47db-a0c8-94f6cd88946d
+  - value: dcite:IsIdenticalTo
+    label: dcite:IsIdenticalTo
+    ontology_term: https://schema.undata.live/values/e8de8787-f64f-4a12-90d4-3a09fd9d6b67
+  - value: dcite:IsReviewedBy
+    label: dcite:IsReviewedBy
+    ontology_term: https://schema.undata.live/values/df2e8102-b983-4889-b29f-296cc5eb5027
+  - value: dcite:Reviews
+    label: dcite:Reviews
+    ontology_term: https://schema.undata.live/values/0c66dde8-ce96-41bd-a745-f58434a03a43
+  - value: dcite:IsDerivedFrom
+    label: dcite:IsDerivedFrom
+    ontology_term: https://schema.undata.live/values/fd13f6f1-93b6-45e4-90d7-ae8778614c9c
+  - value: dcite:IsSourceOf
+    label: dcite:IsSourceOf
+    ontology_term: https://schema.undata.live/values/b8a0b9a1-8e12-41af-95b0-d213394f45f0
+  - value: dcite:IsRequiredBy
+    label: dcite:IsRequiredBy
+    ontology_term: https://schema.undata.live/values/47d63f72-e87a-44c7-aa65-18f8d2ae70e4
+  - value: dcite:Requires
+    label: dcite:Requires
+    ontology_term: https://schema.undata.live/values/60119931-79f9-451d-9a96-3f7b110ec668
+  - value: dcite:Obsoletes
+    label: dcite:Obsoletes
+    ontology_term: https://schema.undata.live/values/b094b489-759b-44a2-b73a-fc90e5df03c1
+  - value: dcite:IsObsoletedBy
+    label: dcite:IsObsoletedBy
+    ontology_term: https://schema.undata.live/values/640e862f-7858-46b5-882b-ac27abbb1a5b
+  - value: dcite:IsPublishedIn
+    label: dcite:IsPublishedIn
+    ontology_term: https://schema.undata.live/values/be691d10-cb11-4455-8059-16d8cfd3ce8b
+  value_domain: categorical
+provenance:
+- source: dandi
+  class: Resource
+  name: relation
+  description: 'Indicates how the resource is related to the dataset. This relation
+    should satisfy: dandiset <relation> resource.'
+  generated_at: '2026-03-29T19:53:55.365104+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6034f0d8f69be15d25ec49e1d4de921c822860101fd8ade1d0e9ca89ebc24f53

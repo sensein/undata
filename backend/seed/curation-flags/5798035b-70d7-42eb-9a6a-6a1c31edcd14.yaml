@@ -1,0 +1,9 @@
+id: 5798035b-70d7-42eb-9a6a-6a1c31edcd14
+entity_type: element
+entity_ref: pulsesequencetiming_132f543f6e6c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PulseSequenceTiming
+status: pending
+created_at: '2026-03-29T19:53:50.263447+00:00'

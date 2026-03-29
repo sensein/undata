@@ -1,10 +1,10 @@
 semantic:
   properties:
-  - FlipAngle
-  - InversionTime
-  - RepetitionTimeExcitation
-  - RepetitionTimePreparation
-  - NumberShots
+  - da0f61e74d7a82944c9983f0e40ee180a14a6484b970abdd7c512ad4fbe0ca81
+  - fda398cc706640baae47b48ab3300ca76fb83efafc0e4c4275c03bdb4b8828ce
+  - 943c18e69dadab36751023edd9bef3c2ff74a1ada87c55aeb134304cb2223bac
+  - 16bf6ba89b8704ae547089a1c38ae19eba85cc26b8c6dd1d10720ebd7eb4a8fa
+  - 4c241c68d9005ad36f2f8a8343a739a34a85b225b2ca6ae1bde2361cc798494c
   is_mixin: true
 provenance:
 - source: bids

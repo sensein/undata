@@ -1,0 +1,9 @@
+id: 484375cf-fe47-49cf-985b-42af50d6de23
+entity_type: value
+entity_ref: roi_3a27906740af.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ROI
+status: pending
+created_at: '2026-03-29T19:53:58.275958+00:00'

@@ -1,0 +1,9 @@
+id: a2f063ba-00b9-46a3-961d-30a61181b02d
+entity_type: element
+entity_ref: multipartid_de6a69fa9b5f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MultipartID
+status: pending
+created_at: '2026-03-29T19:53:50.225044+00:00'

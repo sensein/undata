@@ -1,7 +1,7 @@
 semantic:
   properties:
-  - recordings
-  - recordings_index
+  - e8c5a67185004d2a2f6b1b623ec78c3937e78f61975c1e4b8cee6851a4876f1e
+  - b1937612063a2b6771ea13ad8a1904b61c66453d030575df2ef79b52b2072142
   subclass_of: DynamicTable
 provenance:
 - source: nwb

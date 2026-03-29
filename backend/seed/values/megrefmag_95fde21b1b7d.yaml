@@ -2,31 +2,6 @@ semantic:
   label: MEGREFMAG
   value_type: categorical
   display_name: MEGREFMAG
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C630
-    term_label: Megestrol
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7315
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C174659
-    term_label: Meglutol
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7213
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C66075
-    term_label: Meglitinide
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7059
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: enums

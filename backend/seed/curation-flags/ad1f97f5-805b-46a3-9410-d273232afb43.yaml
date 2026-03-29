@@ -1,0 +1,9 @@
+id: ad1f97f5-805b-46a3-9410-d273232afb43
+entity_type: schema
+entity_ref: emgtaskinformation_88f673836a4e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EMGTaskInformation
+status: pending
+created_at: '2026-03-29T19:53:58.359714+00:00'

@@ -1,10 +1,10 @@
 semantic:
   properties:
-  - data
-  - dimension
-  - external_file
-  - format
-  - device
+  - f8175de8d99bf59958f6161e1bdd7706974343e5a51456548b7ac94669687981
+  - 8420574588729962d1d21a930566ad65cef04d7eb36b41491165569c38d7ae1d
+  - 288b0ba2207850d82e5a074665a3f6bc054091c81043f07fdd389abb50970137
+  - df4df811659c3a94f85eb353ac6c3ddac21015d7e1227517c8dd4d0f3c1627f9
+  - 4d7c6826b8d0166507c5366eac19c3ba225a04b260d42dd72e0129cd711a9eee
   subclass_of: TimeSeries
 provenance:
 - source: nwb

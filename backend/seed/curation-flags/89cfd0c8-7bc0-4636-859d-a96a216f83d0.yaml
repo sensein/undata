@@ -1,0 +1,9 @@
+id: 89cfd0c8-7bc0-4636-859d-a96a216f83d0
+entity_type: schema
+entity_ref: eeg_eegchannels_c125f5948ab9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: eeg_EEGChannels
+status: pending
+created_at: '2026-03-29T19:53:58.349593+00:00'

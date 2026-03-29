@@ -1,0 +1,9 @@
+id: 85c35749-b8bf-4d03-9cf0-719dc7b72ffc
+entity_type: value
+entity_ref: crosstalk_542c5b123f88.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: crosstalk
+status: pending
+created_at: '2026-03-29T19:53:58.106200+00:00'

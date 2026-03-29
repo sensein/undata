@@ -1,8 +1,8 @@
 semantic:
   properties:
-  - cardiac
-  - respiratory
-  - trigger
+  - e8da61eeffb67a0516d9e1733c89e890d13f425b5faada642d49c37d26ce85df
+  - b3333ad4eacfd113f133c40767ba11899c4b644ada5d41f96995acefd0564ffb
+  - 06650423de1545b802e58e2ce751e9694f03bff29791f3cbea6e2e8c35cc7fa7
   is_mixin: true
 provenance:
 - source: bids

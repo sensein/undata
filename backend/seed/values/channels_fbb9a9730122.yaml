@@ -1,0 +1,12 @@
+semantic:
+  label: channels
+  value_type: categorical
+  display_name: Channels File
+provenance:
+- source: bids
+  class: suffixes
+  name: channels
+  description: 'Channel information.
+
+    '
+sha256: fbb9a973012211743271a7caa951ba50a655b8cfee9300afd4bb2b973f2f875a

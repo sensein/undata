@@ -1,9 +1,0 @@
-id: f3069e74-e07b-4fd0-aef0-4b19c70e5b3a
-entity_type: value
-entity_ref: uct_d66d189f8df3.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: uCT
-status: pending
-created_at: '2026-03-29T05:40:56.661135+00:00'

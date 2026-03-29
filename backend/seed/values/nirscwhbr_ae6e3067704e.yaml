@@ -2,15 +2,6 @@ semantic:
   label: NIRSCWHBR
   value_type: categorical
   display_name: NIRSCWHBR
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/EDAM_format_1948
-    term_label: nbrf
-    ontology: edam
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7128
-    model: all-MiniLM-L6-v2
-    primary: true
 provenance:
 - source: bids
   class: enums

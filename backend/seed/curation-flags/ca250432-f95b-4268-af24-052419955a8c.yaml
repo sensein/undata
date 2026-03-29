@@ -1,9 +1,0 @@
-id: ca250432-f95b-4268-af24-052419955a8c
-entity_type: value
-entity_ref: sincgauss_743e26b3171c.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SINCGAUSS
-status: pending
-created_at: '2026-03-29T05:40:56.609344+00:00'

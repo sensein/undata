@@ -1,9 +1,0 @@
-id: 909eb655-4dd0-4847-8649-99d8df29627f
-entity_type: element
-entity_ref: wavelength_actual_6a7dd26fd7e9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: wavelength_actual
-status: pending
-created_at: '2026-03-29T05:40:56.055624+00:00'

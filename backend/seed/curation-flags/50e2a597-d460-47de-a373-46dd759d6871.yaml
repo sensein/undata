@@ -1,9 +1,0 @@
-id: 50e2a597-d460-47de-a373-46dd759d6871
-entity_type: element
-entity_ref: plasmaavail_27b83485136c.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PlasmaAvail
-status: pending
-created_at: '2026-03-29T05:40:55.809382+00:00'

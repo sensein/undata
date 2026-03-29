@@ -1,0 +1,9 @@
+id: 21924f5e-ab17-454c-90ce-e4e7c5eeb7bc
+entity_type: schema
+entity_ref: func_sidecar_f3fc9b20dee1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: func_sidecar
+status: pending
+created_at: '2026-03-29T19:53:50.610595+00:00'

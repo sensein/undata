@@ -1,9 +1,0 @@
-id: fda461dd-ae87-46fd-8920-3f4092051cf2
-entity_type: schema
-entity_ref: motioninstitutioninformation_bff74621ce96.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: motionInstitutionInformation
-status: pending
-created_at: '2026-03-29T05:37:09.968433+00:00'

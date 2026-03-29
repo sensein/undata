@@ -1,11 +1,11 @@
 semantic:
   properties:
-  - time
-  - plasma_radioactivity
-  - metabolite_parent_fraction
-  - metabolite_polar_fraction
-  - hplc_recovery_fractions
-  - whole_blood_radioactivity
+  - 9c99dff7df2e04624cedfc075fa1b6cfd254dae3b130012c0cf7482d846743be
+  - 4fa1f8ce40b46bb0786ddbbc5756b058cb244d8ad5861fa4e65f3e07c66a485b
+  - 48116be17530c6425b85b5a3cb0ca25a0831f6bbc3d4e94e66b7400bb5e08676
+  - 1cd83f568269258f84a78962d7e3aafedb93cb2daa847f9b63490b5603c16b88
+  - e5336a774e719362eff60b36799a44a971e840f2a4cc24f6c41590e2cc4e7622
+  - a132c9b4e8c4c80295ff887d556dda6f982ca4269c794521b0f46807e4a766d4
   is_mixin: true
 provenance:
 - source: bids

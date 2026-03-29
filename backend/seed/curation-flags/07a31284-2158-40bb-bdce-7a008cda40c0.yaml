@@ -1,0 +1,9 @@
+id: 07a31284-2158-40bb-bdce-7a008cda40c0
+entity_type: value
+entity_ref: carbon_dioxide_08d47e1c85fe.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CARBON DIOXIDE
+status: pending
+created_at: '2026-03-29T19:53:50.401181+00:00'

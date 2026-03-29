@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - distance
-  - field_of_view
-  - data
-  - orientation
+  - abba9214796f05466f5a9e7529317688ceb54c6a25c9c5c3a940b875d5565923
+  - 4ee37344066551e179ccd3b63995c7c4ba8ea3a02ae33a98f71687bcba735777
+  - f8175de8d99bf59958f6161e1bdd7706974343e5a51456548b7ac94669687981
+  - 52d25361e11a1da609a3cd8e8d0f912a02d3b1d3465d3a4a7697fbe9d30f756d
   subclass_of: ImageSeries
 provenance:
 - source: nwb

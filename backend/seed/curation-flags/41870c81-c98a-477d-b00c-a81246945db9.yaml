@@ -1,0 +1,9 @@
+id: 41870c81-c98a-477d-b00c-a81246945db9
+entity_type: schema
+entity_ref: behtaskinformation_e420c098c56b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: BEHTaskInformation
+status: pending
+created_at: '2026-03-29T19:53:53.558241+00:00'

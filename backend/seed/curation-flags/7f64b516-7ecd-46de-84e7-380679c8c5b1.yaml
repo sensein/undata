@@ -1,0 +1,9 @@
+id: 7f64b516-7ecd-46de-84e7-380679c8c5b1
+entity_type: schema
+entity_ref: taskmetadata_00f043ebce18.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TaskMetadata
+status: pending
+created_at: '2026-03-29T19:53:58.478715+00:00'

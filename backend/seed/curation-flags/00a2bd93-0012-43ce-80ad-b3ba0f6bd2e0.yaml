@@ -1,0 +1,9 @@
+id: 00a2bd93-0012-43ce-80ad-b3ba0f6bd2e0
+entity_type: element
+entity_ref: pupilfitmethod_65677f20adab.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PupilFitMethod
+status: pending
+created_at: '2026-03-29T19:53:57.872024+00:00'

@@ -1,13 +1,12 @@
 semantic:
   data_type: string
   type_ref: ImageSeries
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: corrected
   description: Image stack with frames shifted to the common coordinates.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: a65a254d3aca07928f543ba6dc22c0e5a417420c9b0de06675a0b5326d658030

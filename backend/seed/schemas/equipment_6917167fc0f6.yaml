@@ -1,52 +1,11 @@
 semantic:
   properties:
-  - id
-  - schemaKey
-  - identifier
-  - name
-  - description
+  - 1439a3bd8d45d88ea2b0302ce6eb7b210b86e708d08428a2a5a8e791976a7e65
+  - ab65192abbdd29cadb9f7ec3271f6488a86c85bc3f93476e35acfb0c48ba9d93
+  - 946dba87991a1beab198c318434d223a548f25842ed1f8cc643d95e955dccdd9
+  - 40762e6f555ac297fac23cb38fb6b95f2578490d68006f838a93309547c543bf
+  - d61f64ade1d193e606ce2804ce764da05841facbb1f05f22f66c683043ed03bc
   subclass_of: DandiBaseModel
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C178920
-    term_label: Equipment Type
-    ontology: ncit
-    mapping_relation: skos:closeMatch
-    match_level: concept_match
-    score: 0.8808
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C84337
-    term_label: Scientific Equipment
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7856
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C85487
-    term_label: Equipment Operator
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7849
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C212607
-    term_label: Equipment Service Type
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7537
-    model: all-MiniLM-L6-v2
-    primary: false
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C103174
-    term_label: Equipment Qualification
-    ontology: ncit
-    mapping_relation: skos:relatedMatch
-    match_level: concept_match
-    score: 0.7084
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: dandi
   class: Equipment

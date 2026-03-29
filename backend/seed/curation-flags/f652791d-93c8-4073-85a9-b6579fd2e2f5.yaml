@@ -1,0 +1,9 @@
+id: f652791d-93c8-4073-85a9-b6579fd2e2f5
+entity_type: element
+entity_ref: grid_spacing_cf5662611ec1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: grid_spacing
+status: pending
+created_at: '2026-03-29T19:53:53.068779+00:00'

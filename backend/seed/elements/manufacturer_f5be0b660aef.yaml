@@ -1,6 +1,5 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
@@ -8,7 +7,7 @@ provenance:
   description: DEPRECATED. The name of the manufacturer of the device, e.g., Imec,
     Plexon, Thorlabs. Instead of using this field, store the value in DeviceModel.manufacturer
     and link to that DeviceModel from this Device.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: f5be0b660aef3f48b22a38d863048eb12aa44a8286bf02ee59b1edae249e39d9

@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - EchoTime
-  - InversionTime
-  - DwellTime
-  - AcquisitionDuration
+  - 839d817aa3d44d96517a9c8161a6c9d0b99e5e575693e991defe66048c1c3753
+  - fda398cc706640baae47b48ab3300ca76fb83efafc0e4c4275c03bdb4b8828ce
+  - 30075d54f0620a4b03627c33007620ac5b141baf9b792b08a8727d8bf8c82cf8
+  - d44a27869d963fb0ff6b9c6c5fa197dc7f1968935bdffd2568a8c340e6b929db
   is_mixin: true
 provenance:
 - source: bids

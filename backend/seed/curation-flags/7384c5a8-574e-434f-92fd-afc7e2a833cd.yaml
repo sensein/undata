@@ -1,0 +1,9 @@
+id: 7384c5a8-574e-434f-92fd-afc7e2a833cd
+entity_type: element
+entity_ref: infusionstart_3203b69fb881.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: InfusionStart
+status: pending
+created_at: '2026-03-29T19:53:50.178717+00:00'

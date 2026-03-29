@@ -1,9 +1,0 @@
-id: 1381e8eb-22b6-45ce-9634-0c253049f425
-entity_type: schema
-entity_ref: anat_sidecar_594d084f575a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: anat_sidecar
-status: pending
-created_at: '2026-03-29T05:33:43.972075+00:00'

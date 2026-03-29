@@ -1,9 +1,0 @@
-id: be45a0ee-0e63-4ee6-a1fd-5ca350575fc2
-entity_type: element
-entity_ref: imp_5e952d6fb84f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: imp
-status: pending
-created_at: '2026-03-29T05:37:08.962412+00:00'

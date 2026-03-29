@@ -1,30 +1,30 @@
 semantic:
   properties:
-  - TracerName
-  - TracerRadionuclide
-  - InjectedRadioactivity
-  - InjectedRadioactivityUnits
-  - InjectedMass
-  - InjectedMassUnits
-  - SpecificRadioactivity
-  - SpecificRadioactivityUnits
-  - ModeOfAdministration
-  - TracerRadLex
-  - TracerSNOMED
-  - TracerMolecularWeight
-  - TracerMolecularWeightUnits
-  - InjectedMassPerWeight
-  - InjectedMassPerWeightUnits
-  - SpecificRadioactivityMeasTime
-  - MolarActivity
-  - MolarActivityUnits
-  - MolarActivityMeasTime
-  - InfusionRadioactivity
-  - InfusionStart
-  - InfusionSpeed
-  - InfusionSpeedUnits
-  - InjectedVolume
-  - Purity
+  - ded497b7bef28565214e89b291f6e6a846009132efc617e808659685b0c04279
+  - 13954615480e1e1b44ffe2dfb22e144b3399785a5526a3728c43fe8fe213b557
+  - 9147fd871faee2a6e6863479c954c1e56c79520e2926908861852963bda0f5d3
+  - 88227711daf47b9a0e64061d9b82e725a64d24a631f73498ab7a66909ef9704e
+  - f69883505c93fcd2ad151de3275c28218109116907c51134429987982518b33d
+  - 30a99def897686890acccadd169c93c77761d06ceab331aefd5c8e62c9b23448
+  - 7fe6e313147bb1d0537325f7bf31fbf42821218e52bec208c884acb030f877bf
+  - 91ac7e934e845c692308b703305ea18db130c2a023a6cc1481d5e82fd34ec914
+  - ebf8054e17f6b39a3db39bdc1dead635fc4b63d92a34c7b85df7afbec2d626de
+  - 89c01c0d8abcabce427dfce9f98364a53f78cdf01d69c3a007a46720a15d3005
+  - 0a5bdea863c3496135122d3d3eedf58dbe3bab0b90063b4fcfbddebc36635da8
+  - 1409df15f6ad7a9a8ca21d5e71577705f2014c4af2bd3f4da1d2d980669d8b97
+  - a079d4da8fb7fc7a3073caafe0f0745c9d4deaa65c9238ccc5e3dbd69bcf58f5
+  - 90f3ffb076a110b0b63cbb9d40ac0d77bdd97f2af8d00a08cae066c9861714b7
+  - 668d253645fc65eed00f2ff79065b050a4325315f5c817a522b4997f2fbefeb3
+  - c480cc41c3661e90fc8cfd9eae9f92ea4c79773b045424b3b25d5996589d2028
+  - 9665e06dd3d431cd5588017388cc1dd9c53b0b620bbc1aa6f262237815c6bd6c
+  - a7ace75f082ab767477c34d4530bc32e0dd3640f7258860fa1fdc98f9ad7d246
+  - 3d6a15c07724cd746ccbc07510527007fa2ae9ba8dc343da801245944d6140a4
+  - 3a7b6f14dee43bdca039242566ccace8c2b050b9246d98360a73c50cbe6ec32e
+  - 3203b69fb88135872a0826189d1cc3cf5de6c0cd8e82ed799b81ff44b6f6bcd3
+  - d976a4c25a4d108cc4744b083b548018606d6d2146492e642a88208799d63a1b
+  - 0b12585ac3afc36bc30c1bb7818e8341b98cb5aa2b58710a8dfa370697fefbed
+  - a61b59133ba25bad74c5da4b4a4a7fac88023fd03b8041135b6d51010c473032
+  - 3cb732d22e23ee893cd8ea6cbc1ee82b4d2698e1ae6b4a39e89f11b574fa5f9a
   is_mixin: true
 provenance:
 - source: bids

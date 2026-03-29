@@ -1,9 +1,0 @@
-id: 5aa0e277-5196-4f6e-a408-75e7ff0d5ed4
-entity_type: element
-entity_ref: powerlinefrequency_5e27e31d1b8c.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PowerLineFrequency
-status: pending
-created_at: '2026-03-29T05:40:55.813979+00:00'

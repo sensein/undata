@@ -1,0 +1,9 @@
+id: 653277c9-32bc-4a06-9f60-f248e4b5e565
+entity_type: value
+entity_ref: phenotype_b99832d7a1d4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: phenotype
+status: pending
+created_at: '2026-03-29T19:53:50.523804+00:00'

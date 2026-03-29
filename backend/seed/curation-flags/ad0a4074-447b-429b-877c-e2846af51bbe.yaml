@@ -1,0 +1,9 @@
+id: ad0a4074-447b-429b-877c-e2846af51bbe
+entity_type: value
+entity_ref: heog_e87c4002caad.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: HEOG
+status: pending
+created_at: '2026-03-29T19:53:50.453657+00:00'

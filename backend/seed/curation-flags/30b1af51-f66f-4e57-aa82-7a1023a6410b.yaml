@@ -1,0 +1,9 @@
+id: 30b1af51-f66f-4e57-aa82-7a1023a6410b
+entity_type: schema
+entity_ref: ieeg_ieegelectrodes_2b840d6f71f4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ieeg_iEEGElectrodes
+status: pending
+created_at: '2026-03-29T19:53:53.593305+00:00'

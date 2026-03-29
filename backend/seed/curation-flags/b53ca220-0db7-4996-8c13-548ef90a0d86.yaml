@@ -1,9 +1,0 @@
-id: b53ca220-0db7-4996-8c13-548ef90a0d86
-entity_type: element
-entity_ref: derived_from_c9fe2c4e64e3.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: derived_from
-status: pending
-created_at: '2026-03-29T05:37:08.840144+00:00'

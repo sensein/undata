@@ -2,23 +2,6 @@ semantic:
   label: phase2
   value_type: categorical
   display_name: Phase
-  ontology_annotations:
-  - term_uri: http://purl.obolibrary.org/obo/PATO_0000083
-    term_label: phase
-    ontology: pato
-    mapping_relation: skos:closeMatch
-    match_level: concept_match
-    score: 0.8108
-    model: all-MiniLM-L6-v2
-    primary: true
-  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25257
-    term_label: Phase
-    ontology: ncit
-    mapping_relation: skos:closeMatch
-    match_level: concept_match
-    score: 0.8108
-    model: all-MiniLM-L6-v2
-    primary: false
 provenance:
 - source: bids
   class: suffixes

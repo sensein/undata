@@ -1,9 +1,0 @@
-id: 0f996bb8-1c98-4822-ac10-8648fed57424
-entity_type: element
-entity_ref: containeruri_f68538789926.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ContainerURI
-status: pending
-created_at: '2026-03-29T05:33:43.173502+00:00'

@@ -1,0 +1,9 @@
+id: 7577f348-2758-4dd0-9ee9-6e2220af0660
+entity_type: element
+entity_ref: scale_756a29096009.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: scale
+status: pending
+created_at: '2026-03-29T19:53:57.924594+00:00'

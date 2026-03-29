@@ -1,8 +1,8 @@
 semantic:
   properties:
-  - data
-  - feature_units
-  - features
+  - f8175de8d99bf59958f6161e1bdd7706974343e5a51456548b7ac94669687981
+  - b430843617de2eb79155572daa587110880f8a84d115b01ad963e43609ac095e
+  - 23ce7e44e1c03ea5c136def2e6171f41027cefa6780f73db2c2b90a850fb566a
   subclass_of: TimeSeries
 provenance:
 - source: nwb

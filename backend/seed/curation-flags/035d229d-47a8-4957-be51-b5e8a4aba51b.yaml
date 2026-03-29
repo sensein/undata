@@ -1,9 +1,0 @@
-id: 035d229d-47a8-4957-be51-b5e8a4aba51b
-entity_type: schema
-entity_ref: bloodmetabolitemethod_44caf57dbcbb.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: BloodMetaboliteMethod
-status: pending
-created_at: '2026-03-29T05:37:09.892340+00:00'

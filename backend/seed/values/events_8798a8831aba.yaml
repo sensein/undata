@@ -1,0 +1,12 @@
+semantic:
+  label: events
+  value_type: categorical
+  display_name: Events
+provenance:
+- source: bids
+  class: suffixes
+  name: events
+  description: 'Event timing information from a behavioral task.
+
+    '
+sha256: 8798a8831aba33a20151c38add003e210a68476cb919767a0f317f01eb077af6

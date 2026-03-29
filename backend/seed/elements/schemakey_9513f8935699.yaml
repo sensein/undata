@@ -1,12 +1,11 @@
 semantic:
   data_type: string
-  value_domain: text
 provenance:
 - source: dandi
   class: DandiBaseModel
   name: schemaKey
   description: ''
-  generated_at: '2026-03-29T05:37:13.800152+00:00'
+  generated_at: '2026-03-29T19:53:55.365104+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 9513f8935699fbf02753815165fa73a6d90de3a1994310c61bdec2450d523427

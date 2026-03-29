@@ -1,8 +1,8 @@
 semantic:
   properties:
-  - FlipAngle
-  - PulseSequenceType
-  - RepetitionTimeExcitation
+  - da0f61e74d7a82944c9983f0e40ee180a14a6484b970abdd7c512ad4fbe0ca81
+  - 1d91749600f035c6403d4d669d24e6dad2185c2a780827ea7cf56d0212242218
+  - 943c18e69dadab36751023edd9bef3c2ff74a1ada87c55aeb134304cb2223bac
   is_mixin: true
 provenance:
 - source: bids

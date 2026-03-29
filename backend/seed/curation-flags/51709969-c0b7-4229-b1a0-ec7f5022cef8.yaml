@@ -1,0 +1,9 @@
+id: 51709969-c0b7-4229-b1a0-ec7f5022cef8
+entity_type: element
+entity_ref: recordingtype_89aeadf746c9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: RecordingType
+status: pending
+created_at: '2026-03-29T19:53:57.881220+00:00'

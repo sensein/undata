@@ -1,9 +1,0 @@
-id: 34bf5af4-d90e-4842-a7a8-3bc114fc685a
-entity_type: element
-entity_ref: digest_5db44b414453.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: digest
-status: pending
-created_at: '2026-03-29T05:40:55.455544+00:00'

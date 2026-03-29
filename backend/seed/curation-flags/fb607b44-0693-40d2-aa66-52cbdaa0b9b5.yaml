@@ -1,0 +1,9 @@
+id: fb607b44-0693-40d2-aa66-52cbdaa0b9b5
+entity_type: element
+entity_ref: screendistance_6f1825b3147b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ScreenDistance
+status: pending
+created_at: '2026-03-29T19:53:53.242628+00:00'

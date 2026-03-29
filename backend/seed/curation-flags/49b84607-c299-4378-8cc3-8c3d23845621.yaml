@@ -1,9 +1,0 @@
-id: 49b84607-c299-4378-8cc3-8c3d23845621
-entity_type: element
-entity_ref: starting_time_6d970068d73d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: starting_time
-status: pending
-created_at: '2026-03-29T05:37:09.197386+00:00'

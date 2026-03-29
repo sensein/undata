@@ -1,0 +1,103 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: dcite:Audiovisual
+    label: dcite:Audiovisual
+    ontology_term: https://schema.undata.live/values/410f57f2-690d-4f91-9c13-929b79dcd0ec
+  - value: dcite:Book
+    label: dcite:Book
+    ontology_term: https://schema.undata.live/values/678462ca-3a87-43f0-9194-0f49cb574bac
+  - value: dcite:BookChapter
+    label: dcite:BookChapter
+    ontology_term: https://schema.undata.live/values/946fc619-c3c5-4030-8fd5-073c55156919
+  - value: dcite:Collection
+    label: dcite:Collection
+    ontology_term: https://schema.undata.live/values/de70ebaa-0b83-474e-b591-ffa24561c0fb
+  - value: dcite:ComputationalNotebook
+    label: dcite:ComputationalNotebook
+    ontology_term: https://schema.undata.live/values/546bfb7e-7833-4d8d-8011-f9bcf985bce9
+  - value: dcite:ConferencePaper
+    label: dcite:ConferencePaper
+    ontology_term: https://schema.undata.live/values/07c311bf-25af-4d91-9c05-041c90afdaff
+  - value: dcite:ConferenceProceeding
+    label: dcite:ConferenceProceeding
+    ontology_term: https://schema.undata.live/values/e5abb179-9622-4b5b-bc33-1afa19b43eb0
+  - value: dcite:DataPaper
+    label: dcite:DataPaper
+    ontology_term: https://schema.undata.live/values/f1e8f5e5-ea06-4458-a1b9-e452bc652773
+  - value: dcite:Dataset
+    label: dcite:Dataset
+    ontology_term: https://schema.undata.live/values/718aef6b-eb35-4d99-acd7-7cca66f24f08
+  - value: dcite:Dissertation
+    label: dcite:Dissertation
+    ontology_term: https://schema.undata.live/values/2320984b-c78a-43a2-adb8-4a734517af4a
+  - value: dcite:Event
+    label: dcite:Event
+    ontology_term: https://schema.undata.live/values/574ab01b-b1bd-4b79-aec6-da86dffb41a6
+  - value: dcite:Image
+    label: dcite:Image
+    ontology_term: https://schema.undata.live/values/1f111c58-f43d-4746-9280-af71a5ac92e3
+  - value: dcite:Instrument
+    label: dcite:Instrument
+    ontology_term: https://schema.undata.live/values/c3060ddd-d07f-4954-b183-191d44994fe1
+  - value: dcite:InteractiveResource
+    label: dcite:InteractiveResource
+    ontology_term: https://schema.undata.live/values/be258cf5-dd66-4f00-be4d-fb4e7e7a6280
+  - value: dcite:Journal
+    label: dcite:Journal
+    ontology_term: https://schema.undata.live/values/b937329d-8782-4955-a0fb-9ccd4f397ac0
+  - value: dcite:JournalArticle
+    label: dcite:JournalArticle
+    ontology_term: https://schema.undata.live/values/2d1108fa-606c-4a53-ac8b-b9d4acdc1843
+  - value: dcite:Model
+    label: dcite:Model
+    ontology_term: https://schema.undata.live/values/47a55ed9-4c9c-4971-aead-760d987190c0
+  - value: dcite:OutputManagementPlan
+    label: dcite:OutputManagementPlan
+    ontology_term: https://schema.undata.live/values/e3eca668-072f-470c-8918-f61221da9d26
+  - value: dcite:PeerReview
+    label: dcite:PeerReview
+    ontology_term: https://schema.undata.live/values/3aa48904-265f-4e4f-b02c-6930ff0f4a0c
+  - value: dcite:PhysicalObject
+    label: dcite:PhysicalObject
+    ontology_term: https://schema.undata.live/values/0c0f4e3a-8cde-4354-a256-83ed22633a87
+  - value: dcite:Preprint
+    label: dcite:Preprint
+    ontology_term: https://schema.undata.live/values/6e66dc1c-e8dc-46f3-995b-a2dbba57e0ec
+  - value: dcite:Report
+    label: dcite:Report
+    ontology_term: https://schema.undata.live/values/11ac8df7-a4b8-4493-a169-e5b6ab580726
+  - value: dcite:Service
+    label: dcite:Service
+    ontology_term: https://schema.undata.live/values/f282a487-d13d-40c2-9136-b4271290e6e7
+  - value: dcite:Software
+    label: dcite:Software
+    ontology_term: https://schema.undata.live/values/81e1c204-6bd7-4def-92d0-7b32ca9a4197
+  - value: dcite:Sound
+    label: dcite:Sound
+    ontology_term: https://schema.undata.live/values/560938ba-2919-46bd-b442-f37eb8fa22eb
+  - value: dcite:Standard
+    label: dcite:Standard
+    ontology_term: https://schema.undata.live/values/8501af60-b87a-4f86-ad72-5ff980ea1bda
+  - value: dcite:StudyRegistration
+    label: dcite:StudyRegistration
+    ontology_term: https://schema.undata.live/values/6c2c57ca-5432-4433-a5f4-8e8be346fcd4
+  - value: dcite:Text
+    label: dcite:Text
+    ontology_term: https://schema.undata.live/values/2dc6bc9d-cf49-4fb7-ab4b-df0cd7709043
+  - value: dcite:Workflow
+    label: dcite:Workflow
+    ontology_term: https://schema.undata.live/values/9b5893ff-2875-40bc-bed5-1836f889e6b4
+  - value: dcite:Other
+    label: dcite:Other
+    ontology_term: https://schema.undata.live/values/669e0573-0764-48d8-b6fe-e39ac6d57d3a
+  value_domain: categorical
+provenance:
+- source: dandi
+  class: Resource
+  name: resourceType
+  description: The type of resource.
+  generated_at: '2026-03-29T19:53:55.365104+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b9157b7aea0ab3d883dfb8f3dd59ae3e3bb0444b861157f23f2b1244452190f2

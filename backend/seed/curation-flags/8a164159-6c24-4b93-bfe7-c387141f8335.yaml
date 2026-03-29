@@ -1,0 +1,9 @@
+id: 8a164159-6c24-4b93-bfe7-c387141f8335
+entity_type: element
+entity_ref: estimationreference_c387e84a0e30.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EstimationReference
+status: pending
+created_at: '2026-03-29T19:53:50.133546+00:00'

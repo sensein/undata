@@ -1,36 +1,36 @@
 semantic:
   name: ResourceType
   members:
-  - dcite:Audiovisual
-  - dcite:Book
-  - dcite:BookChapter
-  - dcite:Collection
-  - dcite:ComputationalNotebook
-  - dcite:ConferencePaper
-  - dcite:ConferenceProceeding
-  - dcite:DataPaper
-  - dcite:Dataset
-  - dcite:Dissertation
-  - dcite:Event
-  - dcite:Image
-  - dcite:Instrument
-  - dcite:InteractiveResource
-  - dcite:Journal
-  - dcite:JournalArticle
-  - dcite:Model
-  - dcite:Other
-  - dcite:OutputManagementPlan
-  - dcite:PeerReview
-  - dcite:PhysicalObject
-  - dcite:Preprint
-  - dcite:Report
-  - dcite:Service
-  - dcite:Software
-  - dcite:Sound
-  - dcite:Standard
-  - dcite:StudyRegistration
-  - dcite:Text
-  - dcite:Workflow
+  - 54904e6e8dad711aee2d7565006c33b5c51b0a1bcc62db2bce2e899c54894ba6
+  - 4e04fcf776988db6e1f19c0a2d68f5d2a9c6daf8b830c5ec23c0ccf5d57bb177
+  - 4988d3658fdea6d4c31950ad647200b7f1aa78ac79261b9733175cd3e3bcb5d2
+  - 586b9d7faf36b6c5ed2167edea3d31c21869c7f39ed96ddfec7b4aa2936cf1dd
+  - 4feea09a0f188503789eb3a808e5bb4c7b1dc688752fcccb4e66a1b5ad353894
+  - 9c4574a52cb5121b139085796e020d56d6a5a0fd9a1aee7b512c12f613ace14d
+  - 3b5c1132387c03502b56a76b5b3a2e83af8d67279df7263f0ba03cf7b4c0c133
+  - 4010068c665a437d8d99605782cce3011035e5e2ae40e97f37fdd5d4bac4ab23
+  - 9af5899b8edfc9270c46e7be9197a1d6f2411d0d39efed3dece16b53d05b9134
+  - 554252ad96fe9bd38a0e688e48c5aa0fae7b725a8427eaf6cb619e85dce59652
+  - 80fa20b515812b2d596e3691e208e2652b4d51c47e18a367c429f2108137b455
+  - 247a0e0f3e1c94cc5aa01fe70959e9dc3fed873bf64851250b9d40386d78957e
+  - 91b5361f14a8c299dbb89572fdfd0e15d92caad4cc5ec6f3a9c7e0f45bebec38
+  - f9cae1921e583c78e312835e4cb7fc6b4faab970ccf887af74cdf072e9c21ca9
+  - 1ef7aa8a3e32ae14dda4ee55693714c64947220c2ea6e20b9a94f7faa3a9d4ca
+  - 1f6446bafabea225a282c8818055ee26c94b60439b6235d308f0f122a1fd3510
+  - cbf2afc8aef260d21c5806c63e2899ae5946a4a8d97c52f63e354ff204ca6761
+  - 2b4784f2ee0258499ff755bcb4468be9c7aa475ba4735226a23223d3bb76b702
+  - d26132116e1e250a7017eccbfc9ce7c446eddf958889d4d9c3566df7be35eafe
+  - 83aa4d6633ad1442753fc766ba77bee8b56d02ac596f4eb02636ca1e28f09d37
+  - c572c7bc27487bfc1bf1196ff9090c7cac51d1a1ed70f39569bcd42165b612a8
+  - 6309a016107654518f17f32ceb3f1f421e0fe4ce93aca05dcb03eecb5e4b589f
+  - ca2c8b3741a68691a9e0881369d7aa2470e4638a148e0877d145e6b648b1c88d
+  - 53da87c6c39a97db2501312cc212f3d4a8c32712fe43ae895614a4ace14c5fd0
+  - 336ed6bc449678da4b9adc10311ddb700999d0940b86a30b51dbae80e9a5acba
+  - 5e7dd3f3730e12f17ff0c6b23ba2487311f3a6ca4d0678d43081c767bf6c567e
+  - 16b1ce3487eb805f7d064ada68f1e5149193f10446a0b32a2d24aad6808160bc
+  - 68ff37cdb78a0b6a17c7279f74aaa0e94392ad6d21b25a2be487c0cd167ee89e
+  - 21ae78b165db1203b93efe95da4e4cc4a428843ed6ae06b5d2a138b0520a9042
+  - d51038272da0c2b323448476e88218cabb3578e479117dad878f2083e79ddc8c
 provenance:
 - source: dandi
   class: Resource

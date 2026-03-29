@@ -1,0 +1,9 @@
+id: f1e2ad44-f5d5-4e53-a757-60427325cc00
+entity_type: value
+entity_ref: dcite_isderivedfrom_ded9b83e78bc.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:IsDerivedFrom
+status: pending
+created_at: '2026-03-29T19:53:58.133073+00:00'

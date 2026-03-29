@@ -1,12 +1,12 @@
 semantic:
   properties:
-  - image_mask
-  - pixel_mask_index
-  - pixel_mask
-  - voxel_mask_index
-  - voxel_mask
-  - imaging_plane
-  - reference_images
+  - 43eecf7c7b6b651798eee1cbc1833fa58cae147c23767a9cd7a8003df4165c4d
+  - 4333eecafa883fec71c483be27886f6d225544dffd6c162f6fe69e7e9969e6f3
+  - 902230b7773aac58428d0cf1e1e4ff48f1f1418f40e2909d7c11e892031fd453
+  - 3fe226d2590cbc3759c2b6667985249a01d4f96295b175226c4ea5828ee4fd55
+  - bdc3081f5f9b3fa17eface034bf54f10c696019774d22aeacf8f9023252f807c
+  - 02e9bad13a4724d5b2f3af90fb8b9e167eae36ac74429318f05afeff83ff6fbd
+  - 03243f345fd51c0000c6d9d629da316120f0a03b8f2d3d9f1d44d0a2a31d2e81
   subclass_of: DynamicTable
 provenance:
 - source: nwb

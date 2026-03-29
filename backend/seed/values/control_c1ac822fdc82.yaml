@@ -1,0 +1,17 @@
+semantic:
+  label: control
+  value_type: categorical
+  display_name: control
+provenance:
+- source: bids
+  class: enums
+  name: control
+  description: 'An ASL volume type: control.
+
+    The control image is acquired in the exact same way as the label image,
+
+    except that the magnetization of the blood flowing into the imaging region has
+    not been inverted.
+
+    '
+sha256: c1ac822fdc82caef2d2820a6806bac8b6c7e60a52d13df20cce19b9fd0f9d22b

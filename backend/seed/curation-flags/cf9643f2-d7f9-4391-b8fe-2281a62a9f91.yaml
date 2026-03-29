@@ -1,9 +1,0 @@
-id: cf9643f2-d7f9-4391-b8fe-2281a62a9f91
-entity_type: schema
-entity_ref: meg_megchannels_15e2574cd27e.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: meg_MEGChannels
-status: pending
-created_at: '2026-03-29T05:40:56.788772+00:00'

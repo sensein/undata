@@ -1,0 +1,9 @@
+id: cbf7b3e1-8648-43d0-9c0e-ff2f415a985a
+entity_type: value
+entity_ref: study_80a8b82acc80.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: study__space
+status: pending
+created_at: '2026-03-29T19:53:53.520741+00:00'

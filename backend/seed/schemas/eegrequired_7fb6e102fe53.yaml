@@ -1,9 +1,9 @@
 semantic:
   properties:
-  - EEGReference
-  - SamplingFrequency
-  - PowerLineFrequency
-  - SoftwareFilters
+  - b5968ecf0a843eb1e09ed6da4ba338f61b2b72d8bcde6dd9cd9ea6d4603ca69d
+  - 92fad249fc8ed151d949c10cf70c500b744b9ab43af19abd9c96c859398e1d82
+  - ff69cf3867053762bee947f84774b04adce4fb05245dd035a8b2ae0dce82a66f
+  - aecba9276ce8d553e8f2a2958d1d7decfcb058b9defd4cf9125f32341c6da062
   is_mixin: true
 provenance:
 - source: bids

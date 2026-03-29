@@ -1,0 +1,9 @@
+id: b562d13c-4e61-477f-a943-afd77b489176
+entity_type: element
+entity_ref: softwarerrid_219bca8f70bf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SoftwareRRID
+status: pending
+created_at: '2026-03-29T19:53:57.964079+00:00'

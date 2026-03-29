@@ -1,0 +1,8 @@
+semantic:
+  value_type: categorical
+  label: lesion
+provenance:
+- source: bids
+  class_: ''
+  name: Lesion
+sha256: 5f31bb2c34c7ffc2465f4ad006c1751a1f39832c41573be1836d806a4925996d

@@ -1,13 +1,12 @@
 semantic:
   data_type: string
   type_ref: IntracellularResponsesTable
-  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: responses
   description: Table for storing intracellular response related metadata.
-  generated_at: '2026-03-29T05:33:47.074081+00:00'
+  generated_at: '2026-03-29T19:53:51.699572+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 50685103fca21c3933683e974e9cd43cddd961bf48a9b2e46e74536d3ccb59de

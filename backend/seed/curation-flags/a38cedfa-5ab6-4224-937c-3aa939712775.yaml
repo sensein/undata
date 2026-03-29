@@ -1,9 +1,0 @@
-id: a38cedfa-5ab6-4224-937c-3aa939712775
-entity_type: element
-entity_ref: photodescription_13baf50a6a36.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PhotoDescription
-status: pending
-created_at: '2026-03-29T05:40:55.802180+00:00'
