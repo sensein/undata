@@ -62,6 +62,7 @@ const NAV_GROUPS: NavGroup[] = [
       { label: "Values", href: "/values", icon: "●" },
       { label: "Value Sets", href: "/valuesets", icon: "○" },
       { label: "Transforms", href: "/transforms", icon: "⇄" },
+      { label: "Sources", href: "/sources", icon: "◈" },
     ],
   },
   {

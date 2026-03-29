@@ -118,6 +118,26 @@ class Query:
             )
 
     @strawberry.field
+    async def schemas_using_element(self, sha256: str, first: int = 50) -> t.SchemaConnection:
+        """Find schemas whose properties[] array contains the given element sha256."""
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_schemas_using_element(session, sha256, first)
+
+    @strawberry.field
+    async def transforms_for_element(self, sha256: str, first: int = 50) -> t.TransformConnection:
+        """Find transforms where source_element or target_element matches."""
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_transforms_for_element(session, sha256, first)
+
+    @strawberry.field
+    async def flags_for_entity(
+        self, entity_type: str, entity_ref: str, first: int = 50
+    ) -> t.CurationFlagConnection:
+        """Find curation flags for a specific entity."""
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_flags_for_entity(session, entity_type, entity_ref, first)
+
+    @strawberry.field
     async def curation_queue(
         self,
         flag_type: Optional[t.FlagType] = None,

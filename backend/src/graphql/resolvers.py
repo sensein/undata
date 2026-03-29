@@ -427,6 +427,74 @@ async def resolve_browse_transforms(
     )
 
 
+async def resolve_schemas_using_element(
+    session: AsyncSession, element_sha256: str, first: int = 50
+) -> t.SchemaConnection:
+    """Find schemas whose properties[] JSONB array contains the element sha256."""
+    from src.db.models import Schema
+    from sqlalchemy import text as sa_text
+
+    stmt = select(Schema).where(
+        sa_text("properties::jsonb @> :ref ::jsonb").bindparams(ref=f'["{element_sha256}"]')
+    )
+    rows, has_next, total = await _paginated_query(session, Schema, stmt, first, None)
+    edges = [
+        t.SchemaEdge(cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_schema_from_row(r))
+        for r in rows
+    ]
+    return t.SchemaConnection(
+        edges=edges,
+        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        total_count=total,
+    )
+
+
+async def resolve_transforms_for_element(
+    session: AsyncSession, element_sha256: str, first: int = 50
+) -> t.TransformConnection:
+    """Find transforms where source or target matches the element sha256 or contains it."""
+    from src.db.models import Transform
+
+    stmt = select(Transform).where(
+        Transform.source_element.ilike(f"%{element_sha256}%")
+        | Transform.target_element.ilike(f"%{element_sha256}%")
+    )
+    rows, has_next, total = await _paginated_query(session, Transform, stmt, first, None)
+    edges = [
+        t.TransformEdge(
+            cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_transform_from_row(r)
+        )
+        for r in rows
+    ]
+    return t.TransformConnection(
+        edges=edges,
+        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        total_count=total,
+    )
+
+
+async def resolve_flags_for_entity(
+    session: AsyncSession, entity_type: str, entity_ref: str, first: int = 50
+) -> t.CurationFlagConnection:
+    """Find curation flags for a specific entity."""
+    stmt = select(CurationFlagModel).where(
+        CurationFlagModel.entity_type == entity_type,
+        CurationFlagModel.entity_ref == entity_ref,
+    )
+    rows, has_next, total = await _paginated_query(session, CurationFlagModel, stmt, first, None)
+    edges = [
+        t.CurationFlagEdge(
+            cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_flag_from_row(r)
+        )
+        for r in rows
+    ]
+    return t.CurationFlagConnection(
+        edges=edges,
+        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        total_count=total,
+    )
+
+
 async def resolve_curation_queue(
     session: AsyncSession,
     flag_type: t.FlagType | None = None,

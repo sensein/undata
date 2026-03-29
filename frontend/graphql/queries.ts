@@ -340,3 +340,30 @@ export const GET_TRANSFORM = gql`
     }
   }
 `;
+
+export const SCHEMAS_USING_ELEMENT = gql`
+  query SchemasUsingElement($sha256: String!, $first: Int = 50) {
+    schemasUsingElement(sha256: $sha256, first: $first) {
+      edges { node { sha256 provenance { source name } } }
+      totalCount
+    }
+  }
+`;
+
+export const TRANSFORMS_FOR_ELEMENT = gql`
+  query TransformsForElement($sha256: String!, $first: Int = 50) {
+    transformsForElement(sha256: $sha256, first: $first) {
+      edges { node { sha256 sourceElement targetElement functionType inputType outputType } }
+      totalCount
+    }
+  }
+`;
+
+export const FLAGS_FOR_ENTITY = gql`
+  query FlagsForEntity($entityType: String!, $entityRef: String!, $first: Int = 50) {
+    flagsForEntity(entityType: $entityType, entityRef: $entityRef, first: $first) {
+      edges { node { id flagType status context createdAt } }
+      totalCount
+    }
+  }
+`;
