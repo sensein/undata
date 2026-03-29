@@ -68,7 +68,7 @@ export function ChatPanel({ entityContext, onToolResult }: ChatPanelProps) {
       {/* Entity context badge */}
       {entityContext && (
         <div className="px-4 py-2 bg-cyan-50 border-b text-xs text-cyan-700">
-          Editing: {(entityContext.provenance as Array<{name?: string}>)?.[0]?.name ?? (entityContext.sha256 as string)?.slice(0, 12)} ({entityContext.semantic && (entityContext.semantic as Record<string, unknown>).data_type || "entity"})
+          Editing: {String((entityContext.provenance as Array<{name?: string}>)?.[0]?.name ?? (entityContext.sha256 as string)?.slice(0, 12))} ({String((entityContext.semantic as Record<string, string>)?.data_type ?? "entity")})
         </div>
       )}
 
