@@ -29,8 +29,8 @@
 
 **Purpose**: Shared frontend components used by multiple user stories
 
-- [ ] T006 Create PropertyTable component (wraps EntityDataGrid with entity-type-aware columns for schema properties and valueset members) in frontend/components/PropertyTable.tsx
-- [ ] T007 Fix case-insensitive lexical sorting in EntityDataGrid — sort comparator uses localeCompare instead of default ASCII in frontend/components/EntityDataGrid.tsx
+- [X] T006 Create PropertyTable component (wraps EntityDataGrid with entity-type-aware columns for schema properties and valueset members) in frontend/components/PropertyTable.tsx
+- [X] T007 Fix case-insensitive lexical sorting in EntityDataGrid — sort comparator uses localeCompare instead of default ASCII in frontend/components/EntityDataGrid.tsx
 
 **Checkpoint**: Foundation ready — user story implementation can begin
 

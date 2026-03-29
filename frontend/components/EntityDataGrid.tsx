@@ -42,6 +42,13 @@ export function EntityDataGrid<T>({
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
+    sortingFns: {
+      caseInsensitive: (rowA, rowB, columnId) => {
+        const a = String(rowA.getValue(columnId) ?? "").toLowerCase();
+        const b = String(rowB.getValue(columnId) ?? "").toLowerCase();
+        return a.localeCompare(b);
+      },
+    },
   });
 
   // Loading skeleton
