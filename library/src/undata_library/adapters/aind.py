@@ -101,8 +101,12 @@ class AINDAdapter(BaseAdapter):
             multivalued = prop_def.get("type") == "array"
             pattern = prop_def.get("pattern")
             lb.add_slot(
-                ld, prop_name, range=rng, description=desc[:500] or None,
-                multivalued=multivalued, pattern=pattern,
+                ld,
+                prop_name,
+                range=rng,
+                description=desc[:500] or None,
+                multivalued=multivalued,
+                pattern=pattern,
             )
             slot_names.append(prop_name)
             if prop_name in required:

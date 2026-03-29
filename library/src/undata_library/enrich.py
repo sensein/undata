@@ -15,6 +15,7 @@ Dependency order: elements + values → valuesets → schemas.
 from __future__ import annotations
 
 import logging
+import re
 from pathlib import Path
 from typing import TYPE_CHECKING
 
@@ -105,8 +106,6 @@ def _update_entity_in_place(
 # Semantic field inference helpers
 # ---------------------------------------------------------------------------
 
-import re
-
 # Unit patterns found in descriptions — map regex to unit string
 _UNIT_PATTERNS: list[tuple[re.Pattern, str]] = [
     (re.compile(r"\b(?:in\s+)?years?\b", re.I), "years"),
@@ -138,9 +137,15 @@ _UNIT_PATTERNS: list[tuple[re.Pattern, str]] = [
 
 # Patterns that indicate specific value formats
 _FORMAT_PATTERNS: list[tuple[re.Pattern, str]] = [
-    (re.compile(r"\bISO\s*8601\b", re.I), r"^P(\d+Y)?(\d+M)?(\d+D)?(T(\d+H)?(\d+M)?(\d+(\.\d+)?S)?)?$"),
+    (
+        re.compile(r"\bISO\s*8601\b", re.I),
+        r"^P(\d+Y)?(\d+M)?(\d+D)?(T(\d+H)?(\d+M)?(\d+(\.\d+)?S)?)?$",
+    ),
     (re.compile(r"\bRFC\s*3339\b|\bdatetime\b", re.I), r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}"),
-    (re.compile(r"\bUUID\b", re.I), r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"),
+    (
+        re.compile(r"\bUUID\b", re.I),
+        r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+    ),
     (re.compile(r"\bDOI\b", re.I), r"^10\.\d{4,}"),
     (re.compile(r"\bORCID\b", re.I), r"^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$"),
 ]
@@ -197,6 +202,7 @@ def _resolve_unit_uri(unit_str: str) -> str | None:
     """Resolve a unit string to a QUDT URI if the unit_resolver is available."""
     try:
         from .unit_resolver import get_resolver
+
         resolver = get_resolver()
         result = resolver.resolve(unit_str)
         if result:
@@ -393,7 +399,9 @@ def enrich_elements(
         # 4. Infer missing semantic fields (unit, pattern, min/max) from description
         sem_updates = _enrich_semantic_fields(data)
         if sem_updates:
-            stats["semantic_fields_inferred"] = stats.get("semantic_fields_inferred", 0) + len(sem_updates)
+            stats["semantic_fields_inferred"] = stats.get("semantic_fields_inferred", 0) + len(
+                sem_updates
+            )
 
         if annotations or domain or sem_updates:
             if not dry_run:
@@ -478,8 +486,6 @@ def enrich_from_source_metadata(
             desc = first_prov.get("description", "") or sem.get("description", "") or ""
 
             # Check for OBO URIs in description
-            import re
-
             obo_match = re.search(r"(http://purl\.obolibrary\.org/obo/\w+)", desc)
             if obo_match:
                 onto_uri = obo_match.group(1)

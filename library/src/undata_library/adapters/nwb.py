@@ -117,7 +117,9 @@ class NWBAdapter(BaseAdapter):
                 if not aname:
                     continue
                 rng, _ = _nwb_range(attr.get("dtype"))
-                lb.add_slot(ld, aname, range=rng, description=attr.get("doc"), unit=attr.get("unit"))
+                lb.add_slot(
+                    ld, aname, range=rng, description=attr.get("doc"), unit=attr.get("unit")
+                )
                 slot_names.append(aname)
 
             # Nested datasets → slots
