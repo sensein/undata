@@ -37,22 +37,24 @@ export function ChatPanel({ entityContext, onToolResult }: ChatPanelProps) {
     let assistantContent = "";
 
     try {
+      const events: ChatEvent[] = [];
       for await (const event of streamChat(
         newMessages.map((m) => ({ role: m.role, content: m.content })),
         entityContext,
       )) {
+        events.push(event);
+      }
+
+      // Process events after stream completes
+      for (const event of events) {
         if (event.type === "text" && event.content) {
           assistantContent += event.content;
-          setMessages([...newMessages, { role: "assistant", content: assistantContent }]);
-        } else if (event.type === "tool_call") {
-          setToolStatus(`Executing: ${event.name}...`);
         } else if (event.type === "tool_result") {
-          setToolStatus(null);
           onToolResult?.(event);
         }
       }
     } catch (e) {
-      assistantContent += `\n\nError: ${e}`;
+      assistantContent += `\nError: ${e}`;
     }
 
     if (assistantContent) {
