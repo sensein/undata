@@ -108,15 +108,32 @@ class DatabaseEntityStore:
                 "description": sem.get("description"),
             })
 
+        # Compute embedding and search tsvector if model supports it
+        if hasattr(model, "embedding") and model.embedding is not None:
+            from src.services.embedding_service import build_search_text, compute_embedding
+            from sqlalchemy import func
+
+            search_text = build_search_text(entity_type, data)
+            if search_text:
+                embedding = compute_embedding(search_text)
+                if embedding:
+                    kwargs["embedding"] = embedding
+                kwargs["search_tsv"] = func.to_tsvector("english", search_text)
+
         # Upsert by sha256
         stmt = pg_insert(model).values(**kwargs)
+        update_set = {
+            "provenance": stmt.excluded.provenance,
+            "ontology_annotations": stmt.excluded.ontology_annotations,
+            "semantic": stmt.excluded.semantic,
+        }
+        if "embedding" in kwargs:
+            update_set["embedding"] = stmt.excluded.embedding
+        if "search_tsv" in kwargs:
+            update_set["search_tsv"] = stmt.excluded.search_tsv
         stmt = stmt.on_conflict_do_update(
             index_elements=[model.sha256],
-            set_={
-                "provenance": stmt.excluded.provenance,
-                "ontology_annotations": stmt.excluded.ontology_annotations,
-                "semantic": stmt.excluded.semantic,
-            },
+            set_=update_set,
         )
         await self._session.execute(stmt)
         await self._session.flush()

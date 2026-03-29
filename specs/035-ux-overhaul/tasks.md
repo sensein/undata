@@ -15,11 +15,11 @@
 
 **Purpose**: PostgreSQL extensions, embedding infrastructure, shared DB columns
 
-- [ ] T001 Create PostgreSQL init script enabling pgvector and pg_trgm extensions in backend/postgres-init/02-enable-extensions.sql
-- [ ] T002 Add embedding vector(384) and search_tsv tsvector columns to Element, Schema, Value, ValueSet models in backend/src/db/models.py
-- [ ] T003 Create embedding_service.py in backend/src/services/embedding_service.py — compute embeddings using sentence-transformers all-MiniLM-L6-v2, reusing library's encode logic
-- [ ] T004 Update database_backend.py to compute and persist embeddings and search_tsv during entity write in backend/src/storage/database_backend.py
-- [ ] T005 Update import_service.py to populate embeddings and search_tsv during seed import in backend/src/services/import_service.py
+- [X] T001 Create PostgreSQL init script enabling pgvector and pg_trgm extensions in backend/postgres-init/02-enable-extensions.sql
+- [X] T002 Add embedding vector(384) and search_tsv tsvector columns to Element, Schema, Value, ValueSet models in backend/src/db/models.py
+- [X] T003 Create embedding_service.py in backend/src/services/embedding_service.py — compute embeddings using sentence-transformers all-MiniLM-L6-v2, reusing library's encode logic
+- [X] T004 Update database_backend.py to compute and persist embeddings and search_tsv during entity write in backend/src/storage/database_backend.py
+- [X] T005 Update import_service.py to populate embeddings and search_tsv during seed import in backend/src/services/import_service.py
 
 **Checkpoint**: Database supports vector similarity and full-text search; seed data includes embeddings
 

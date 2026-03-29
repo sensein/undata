@@ -4,9 +4,14 @@ from __future__ import annotations
 
 import uuid
 
-from sqlalchemy import Boolean, Float, Index, String, Text, text
-from sqlalchemy.dialects.postgresql import JSONB, TIMESTAMP, UUID
+from sqlalchemy import Boolean, Column, Float, Index, String, Text, text
+from sqlalchemy.dialects.postgresql import JSONB, TIMESTAMP, TSVECTOR, UUID
 from sqlalchemy.orm import Mapped, mapped_column
+
+try:
+    from pgvector.sqlalchemy import Vector
+except ImportError:
+    Vector = None  # graceful fallback for environments without pgvector
 
 from .session import Base
 
@@ -29,6 +34,8 @@ class Element(Base):
     semantic: Mapped[dict] = mapped_column(JSONB, default=dict)
     provenance: Mapped[list] = mapped_column(JSONB, default=list)
     ontology_annotations: Mapped[list] = mapped_column(JSONB, default=list)
+    embedding = Column(Vector(384), nullable=True) if Vector else None
+    search_tsv = Column(TSVECTOR, nullable=True)
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
 
 
@@ -45,6 +52,8 @@ class Schema(Base):
     semantic: Mapped[dict] = mapped_column(JSONB, default=dict)
     provenance: Mapped[list] = mapped_column(JSONB, default=list)
     ontology_annotations: Mapped[list] = mapped_column(JSONB, default=list)
+    embedding = Column(Vector(384), nullable=True) if Vector else None
+    search_tsv = Column(TSVECTOR, nullable=True)
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
 
 
@@ -61,6 +70,8 @@ class Value(Base):
     semantic: Mapped[dict] = mapped_column(JSONB, default=dict)
     provenance: Mapped[list] = mapped_column(JSONB, default=list)
     ontology_annotations: Mapped[list] = mapped_column(JSONB, default=list)
+    embedding = Column(Vector(384), nullable=True) if Vector else None
+    search_tsv = Column(TSVECTOR, nullable=True)
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
 
 
@@ -76,6 +87,8 @@ class ValueSet(Base):
     semantic: Mapped[dict] = mapped_column(JSONB, default=dict)
     provenance: Mapped[list] = mapped_column(JSONB, default=list)
     ontology_annotations: Mapped[list] = mapped_column(JSONB, default=list)
+    embedding = Column(Vector(384), nullable=True) if Vector else None
+    search_tsv = Column(TSVECTOR, nullable=True)
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
 
 
@@ -146,6 +159,20 @@ class APIKey(Base):
     label: Mapped[str | None] = mapped_column(String, nullable=True)
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
     revoked_at = mapped_column(TIMESTAMP, nullable=True)
+
+
+class LinkHealthCheck(Base):
+    __tablename__ = "link_health_checks"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    check_type: Mapped[str] = mapped_column(String, index=True)  # "domain" or "ontology_prefix"
+    target: Mapped[str] = mapped_column(String, unique=True)  # domain or prefix URL
+    http_status: Mapped[int] = mapped_column(default=0)
+    redirect_target: Mapped[str | None] = mapped_column(String, nullable=True)
+    is_healthy: Mapped[bool] = mapped_column(Boolean, default=False)
+    affected_entity_count: Mapped[int] = mapped_column(default=0)
+    checked_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
 
 
 class Transform(Base):
