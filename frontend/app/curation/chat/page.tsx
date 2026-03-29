@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useQuery, useMutation } from "@apollo/client/react";
 import { gql } from "@apollo/client";
@@ -29,6 +29,14 @@ interface DiffEntry {
 }
 
 export default function CurationChatPage() {
+  return (
+    <Suspense fallback={<div className="p-8 text-gray-500">Loading curation chat...</div>}>
+      <CurationChatContent />
+    </Suspense>
+  );
+}
+
+function CurationChatContent() {
   const searchParams = useSearchParams();
   const entitySha = searchParams.get("entity");
 
