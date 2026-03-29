@@ -38,6 +38,8 @@ As a curator, I need the "Suggest Change" button on any entity detail page to op
 2. **Given** the curation chat right panel, **When** entity context loads, **Then** all fields are displayed in a structured card layout: semantic properties (type, unit, pattern, domain, min/max), provenance entries with source badges, ontology annotations as clickable chips, and related entities as EntityTag links.
 3. **Given** any entity type (element, schema, value, valueset, transform), **When** the "Suggest Change" button is clicked, **Then** the curation chat loads the correct entity type context and displays type-appropriate fields (e.g., "properties" for schemas, "members" for valuesets).
 4. **Given** an entity with pending curation flags, **When** the chat right panel loads, **Then** the flags are displayed with their type, reason, and status — enabling the curator to address them directly in conversation.
+5. **Given** any EntityTag popover, browse table row, or search result, **When** the user clicks a "Chat about this" action, **Then** the curation chat opens with that entity pre-loaded — not only from detail pages.
+6. **Given** no specific entity context, **When** a user opens the chat from the sidebar as a standalone assistant, **Then** the chat starts in general-purpose mode where the user can ask questions about the registry, search for entities within the conversation, or reference entities by name/sha256 to load them into context.
 
 ---
 
@@ -86,10 +88,10 @@ As a system administrator, I need the backend to continuously verify that all ex
 
 **Acceptance Scenarios**:
 
-1. **Given** the system is running, **When** the background link checker runs, **Then** it samples external URIs from the registry (ontology term URIs, QUDT URIs, source repo URLs) and records their HTTP status.
-2. **Given** the status page, **When** a user opens it, **Then** it shows a dashboard with: per-domain health (green/red), total URIs checked, last check timestamp, and a list of any broken/unreachable URIs with the entities that reference them.
-3. **Given** a broken external link is detected, **When** the checker finds a non-200 response, **Then** a curation flag is created for each entity referencing the broken URI, with flag type "broken_link" and context containing the URI and HTTP status.
-4. **Given** the status page, **When** a domain shows degraded health, **Then** clicking it expands to show all specific URIs that failed, with links to the affected entities.
+1. **Given** the system is running, **When** the background link checker runs daily, **Then** it checks one representative URL per distinct domain and per ontology base-URI prefix (e.g., `http://purl.obolibrary.org/obo/NCIT_`, `http://qudt.org/vocab/unit/`) and records HTTP status and redirect targets.
+2. **Given** the status page, **When** a user opens it, **Then** it shows a dashboard with: per-domain health (green/red), per-ontology base-URI redirect mapping, last check timestamp, and count of entities affected by any unreachable domain.
+3. **Given** an unreachable domain or ontology base-URI, **When** the checker detects failure, **Then** a single curation flag is created for the domain/base-URI with flag type "broken_link", the HTTP status, and the count of affected entities.
+4. **Given** an ontology base-URI that redirects to a different server than previously recorded, **When** the checker detects the redirect change, **Then** the status page highlights the redirect change and the affected ontology prefix.
 
 ---
 
@@ -110,12 +112,30 @@ As a curator reviewing transforms, I need the system to enforce that transforms 
 
 ---
 
+### User Story 7 — Global Search (Priority: P1)
+
+As a researcher, I need a single search bar accessible from any page that queries all entity types (elements, schemas, values, valuesets, transforms) and returns ranked results with both lexical and semantic matches — so I can discover relevant entities without knowing which type or page to look in.
+
+**Why this priority**: Discovery is the primary use case for the registry. Without a global search, users must browse each entity type separately and rely on per-column text filters, which don't support fuzzy or semantic matching.
+
+**Independent Test**: Type "age" in the global search → results show elements named "age" (lexical match) from BIDS/NWB/DANDI, plus semantically related elements like "date_of_birth" and "gestational_age" — grouped by entity type with match scores.
+
+**Acceptance Scenarios**:
+
+1. **Given** the global search bar is visible on every page, **When** a user types a query, **Then** results appear grouped by entity type (elements, schemas, values, valuesets, transforms) with lexical matches ranked above semantic matches.
+2. **Given** a search query, **When** results load, **Then** each result shows the entity name as an EntityTag chip, the match type (lexical/semantic), the match score for semantic results, and the entity's source badge.
+3. **Given** a search query with no lexical matches, **When** semantic matches exist, **Then** the results section shows only semantic matches with a label indicating "Similar entities" and their similarity scores.
+4. **Given** a search query, **When** the user clicks a result, **Then** they navigate to that entity's detail page.
+
+---
+
 ### Edge Cases
 
 - What happens when an EntityTag references an entity that has been deleted? The tag shows a "removed" indicator with the sha256 prefix.
 - What happens when a property name in a schema doesn't match any element in the registry? The table row shows the raw name with an "unresolved" badge and a tooltip explaining the property may not have been ingested from this source.
 - What happens when the link health checker encounters a rate-limited domain? The checker respects rate limits (exponential backoff), marks the domain as "rate-limited" rather than "broken", and retries in the next cycle.
 - What happens when a curator opens the chat for an entity type that the LLM tools don't yet support (e.g., transforms)? The chat shows the entity in read-only mode with a message indicating editing tools are available for elements only; the entity context is still fully displayed.
+- What happens when a search query matches thousands of entities? Results are capped at 50 per entity type with a "Show more" action that navigates to the filtered browse page for that type.
 - What happens on mobile viewport? Tables switch to card layouts, split panels stack vertically with tab toggle, popovers are replaced by bottom sheets.
 
 ## Requirements *(mandatory)*
@@ -131,13 +151,18 @@ As a curator reviewing transforms, I need the system to enforce that transforms 
 - **FR-007**: All external URIs (ontology terms, QUDT units, source repos) MUST be rendered as outbound links that open in a new tab.
 - **FR-008**: The UI MUST use compact, dense layouts — reduced padding/margins on table rows (24px→16px row height), inline filters, multi-column property cards — to maximize information density.
 - **FR-009**: Ontology annotations MUST display as compact chips showing the CURIE label, mapping relation icon, and score — with a tooltip showing the full URI and an external link icon.
-- **FR-010**: The backend MUST run a background link health checker that periodically samples external URIs from the registry and records their reachability status.
-- **FR-011**: A status page MUST display link health results per domain, with drill-down to specific broken URIs and the entities that reference them.
-- **FR-012**: Broken external links detected by the health checker MUST generate curation flags of type "broken_link" for affected entities.
+- **FR-010**: The backend MUST run a daily background link health checker that verifies reachability at the domain level (one check per distinct domain referenced in the registry) and follows redirects at the ontology base-URI level (e.g., `http://purl.obolibrary.org/obo/NCIT_` may redirect to a different server than `http://purl.obolibrary.org/obo/PATO_`) — but NOT at the individual term-URI level.
+- **FR-011**: A status page MUST display link health results per domain and per ontology base-URI, showing redirect targets, HTTP status, and last check timestamp.
+- **FR-012**: When a domain or ontology base-URI is unreachable, the health checker MUST generate a single curation flag of type "broken_link" referencing the domain/base-URI and the count of affected entities — not one flag per entity.
 - **FR-013**: The transform pipeline MUST reject transforms where the source element has data_type "array" and the target is a singleton type, unless the source element has a structural annotation indicating a mathematically valid transform.
 - **FR-014**: Provenance entries MUST be displayed as compact source badges with expandable details, not verbose vertical lists.
 - **FR-015**: Every entity detail page MUST include a prominent "Start Chat" or "Suggest Change" action that launches the curation flow for that entity.
+- **FR-015a**: A "Chat about this" action MUST be available on EntityTag popovers, browse table row context menus, and search results — launching the curation chat with that entity pre-loaded.
+- **FR-015b**: The chat MUST also be accessible as a standalone assistant (from the sidebar) without a pre-loaded entity, where the user can ask general registry questions, search for entities within the conversation, or reference entities by name/sha256 to load them into context.
 - **FR-016**: All data grids and property tables MUST use case-insensitive lexical sorting on the name/label column by default, so "age" and "Age" sort adjacently rather than ASCII-order separated.
+- **FR-017**: A global search bar MUST be accessible from every page (sidebar or header) and query all entity types simultaneously.
+- **FR-018**: Search results MUST include both lexical matches (substring/prefix on name, label, description) and semantic matches (embedding similarity), ranked with lexical matches first and semantic matches below with similarity scores.
+- **FR-019**: Search results MUST be grouped by entity type and each result MUST display as an EntityTag chip with source badge, match type indicator, and match score for semantic results.
 
 ### Key Entities
 
@@ -152,9 +177,18 @@ As a curator reviewing transforms, I need the system to enforce that transforms 
 - **SC-002**: At least 20 data rows are visible without scrolling on any browse page at 1080p resolution.
 - **SC-003**: The curation chat right panel displays all semantic fields, provenance, and annotations for any entity type within 2 seconds of navigation.
 - **SC-004**: 100% of ontology term URIs and QUDT unit URIs in the UI are clickable outbound links.
-- **SC-005**: The link health checker runs at least once per day and reports results on the status page within 1 hour of completion.
+- **SC-005**: The link health checker runs daily at the domain and ontology base-URI level and reports results on the status page within 1 hour of completion.
 - **SC-006**: Zero array→singleton transforms exist in the registry without a valid structural annotation justification.
 - **SC-007**: Every entity detail page has a working "Suggest Change" action that opens the curation chat with full entity context pre-loaded.
+- **SC-008**: A search query returns both lexical and semantic results across all entity types within 1 second, with results visible from any page.
+
+## Clarifications
+
+### Session 2026-03-29
+
+- Q: Should search be per-page or global, and what match types? → A: Global unified search bar querying all entity types with both lexical and semantic matches, ranked with lexical first.
+- Q: Should curation chat only be accessible from detail pages? → A: Chat launchable from any entity reference (popovers, browse rows, search results) plus a standalone assistant mode from the sidebar without a pre-loaded entity.
+- Q: Should link health checks verify every individual term URI? → A: Domain-level checks daily with ontology base-URI redirect tracking (fragments may resolve to different servers), not individual term-level checks.
 
 ## Scope Boundaries
 
@@ -169,6 +203,7 @@ As a curator reviewing transforms, I need the system to enforce that transforms 
 - Background link health monitoring with status page
 - Curation flag generation for broken links
 - Transform validation rules for array→singleton type mismatches
+- Global unified search bar with lexical + semantic matching across all entity types
 - Mobile-responsive adaptations (card layouts, bottom sheets)
 
 ### Out of Scope
@@ -184,7 +219,7 @@ As a curator reviewing transforms, I need the system to enforce that transforms 
 - The existing component library (EntityTag, EntityDataGrid, SplitPanel, EntityDiff) provides a solid foundation that needs enhancement, not replacement
 - The dandi-medit split-panel pattern is already implemented and working
 - The backend GraphQL API already exposes all fields needed for the curation chat right panel
-- The link health checker will use HEAD requests with appropriate rate limiting and respect robots.txt
+- The link health checker performs domain-level and ontology base-URI-level checks only (not individual term URIs), using HEAD requests with redirect following
 - Structural annotations for array elements will be curated manually (not auto-detected)
 - The current authentication system (Keycloak/Globus OIDC) handles curator identity for all curation flows
 
