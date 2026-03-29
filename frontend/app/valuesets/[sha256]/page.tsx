@@ -31,21 +31,31 @@ export default function ValueSetDetailPage() {
 
   // Load values to resolve member sha256 → label
   const { data: valData } = useQuery<{ browseValues: ValueConnection }>(BROWSE_VALUES, {
-    variables: { first: 200 },
+    variables: { first: 2000 },
   });
 
   const valueset = data?.valueset;
 
-  // Build lookup: sha256 → value info
+  // Build lookup: sha256/label/name → value info
+  // Members may be stored as value labels, provenance names, or sha256 hashes
   const shaToValue = useMemo(() => {
     const map = new Map<string, { sha256: string; label: string; source: string }>();
     for (const edge of (valData?.browseValues?.edges ?? []) as Edge<ValueNode>[]) {
       const v = edge.node;
-      map.set(v.sha256, { sha256: v.sha256, label: v.label ?? v.sha256.slice(0, 12), source: v.provenance?.[0]?.source ?? "" });
-      map.set(v.sha256.slice(0, 12), { sha256: v.sha256, label: v.label ?? v.sha256.slice(0, 12), source: v.provenance?.[0]?.source ?? "" });
-      // Also by label for backwards compat
+      const info = { sha256: v.sha256, label: v.label ?? v.sha256.slice(0, 12), source: v.provenance?.[0]?.source ?? "" };
+      map.set(v.sha256, info);
+      map.set(v.sha256.slice(0, 12), info);
+      // Index by label
       if (v.label) {
-        map.set(v.label.toLowerCase(), { sha256: v.sha256, label: v.label, source: v.provenance?.[0]?.source ?? "" });
+        map.set(v.label, info);
+        map.set(v.label.toLowerCase(), info);
+      }
+      // Index by provenance name (members often stored as names)
+      for (const prov of v.provenance ?? []) {
+        if (prov.name && !map.has(prov.name)) {
+          map.set(prov.name, { ...info, label: prov.name });
+          map.set(prov.name.toLowerCase(), { ...info, label: prov.name });
+        }
       }
     }
     return map;

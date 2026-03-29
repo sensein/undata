@@ -20,42 +20,46 @@ export default function SchemaDetailPage() {
 
   // Load all elements to resolve property names → sha256
   const { data: elemData } = useQuery<{ browseElements: ElementConnection }>(BROWSE_ELEMENTS, {
-    variables: { first: 200 },
+    variables: { first: 2000 },
   });
 
   const schema = data?.schema_;
 
-  // Build a lookup: provenance name → element sha256
+  // Build a lookup: name/sha256 → element info
+  // Properties may be stored as slot names (e.g., "age") or sha256 hashes
   const nameToElement = useMemo(() => {
+    const schemaSource = data?.schema_?.provenance?.[0]?.source ?? "";
+    const schemaClass = data?.schema_?.provenance?.[0]?.className ?? "";
     const map = new Map<string, { sha256: string; name: string; source: string; dataType: string }>();
     for (const edge of (elemData?.browseElements?.edges ?? []) as Edge<ElementNode>[]) {
       const e = edge.node;
-      const prov = e.provenance?.[0];
-      // Index by full sha256 and by sha256 prefix (first 12 chars)
-      map.set(e.sha256, {
+      const info = {
         sha256: e.sha256,
-        name: prov?.name ?? e.sha256.slice(0, 12),
-        source: prov?.source ?? "",
+        name: e.provenance?.[0]?.name ?? e.sha256.slice(0, 12),
+        source: e.provenance?.[0]?.source ?? "",
         dataType: e.dataType ?? "",
-      });
-      map.set(e.sha256.slice(0, 12), {
-        sha256: e.sha256,
-        name: prov?.name ?? e.sha256.slice(0, 12),
-        source: prov?.source ?? "",
-        dataType: e.dataType ?? "",
-      });
-      // Also index by name for backwards compat
-      if (prov?.name) {
-        map.set(prov.name, {
-          sha256: e.sha256,
-          name: prov.name,
-          source: prov.source ?? "",
-          dataType: e.dataType ?? "",
-        });
+      };
+      // Index by full sha256 and prefix
+      map.set(e.sha256, info);
+      map.set(e.sha256.slice(0, 12), info);
+      // Index by provenance name — prefer same source+class match
+      for (const prov of e.provenance ?? []) {
+        if (prov.name) {
+          const key = prov.name;
+          const existing = map.get(key);
+          // Prefer element from same source and class as the schema
+          if (!existing || (prov.source === schemaSource && (prov.className === schemaClass || !existing.source))) {
+            map.set(key, { ...info, name: prov.name, source: prov.source });
+          }
+          // Also index by lowercase name
+          if (!map.has(key.toLowerCase())) {
+            map.set(key.toLowerCase(), { ...info, name: prov.name, source: prov.source });
+          }
+        }
       }
     }
     return map;
-  }, [elemData]);
+  }, [elemData, data]);
 
   if (loading) {
     return (
@@ -117,8 +121,10 @@ export default function SchemaDetailPage() {
                 </thead>
                 <tbody>
                   {schema.properties.map((propRef: string, i: number) => {
-                    // propRef may be a sha256 hash, sha256 prefix, or name
-                    const resolved = nameToElement.get(propRef) || nameToElement.get(propRef.slice(0, 12));
+                    // propRef may be a sha256 hash, sha256 prefix, or slot name
+                    const resolved = nameToElement.get(propRef)
+                      || nameToElement.get(propRef.slice(0, 12))
+                      || nameToElement.get(propRef.toLowerCase());
                     return (
                       <tr key={i} className="border-b last:border-0 hover:bg-gray-50">
                         <td className="p-2">
