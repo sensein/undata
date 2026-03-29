@@ -29,7 +29,15 @@ export default function ElementsPage() {
   );
 
   const elements = useMemo(
-    () => (data?.browseElements?.edges ?? []).map((e: Edge<ElementNode>) => e.node),
+    () => {
+      const nodes = (data?.browseElements?.edges ?? []).map((e: Edge<ElementNode>) => e.node);
+      // Default: case-insensitive alphabetical by provenance name
+      return [...nodes].sort((a, b) => {
+        const nameA = (a.provenance?.[0]?.name ?? a.fileName ?? "").toLowerCase();
+        const nameB = (b.provenance?.[0]?.name ?? b.fileName ?? "").toLowerCase();
+        return nameA.localeCompare(nameB);
+      });
+    },
     [data],
   );
   const pageInfo = data?.browseElements?.pageInfo;
@@ -48,6 +56,11 @@ export default function ElementsPage() {
               label={prov?.name ?? info.row.original.fileName ?? info.getValue().slice(0, 12)}
             />
           );
+        },
+        sortingFn: (rowA, rowB) => {
+          const nameA = (rowA.original.provenance?.[0]?.name ?? rowA.original.fileName ?? "").toLowerCase();
+          const nameB = (rowB.original.provenance?.[0]?.name ?? rowB.original.fileName ?? "").toLowerCase();
+          return nameA.localeCompare(nameB);
         },
         enableColumnFilter: false,
       }),

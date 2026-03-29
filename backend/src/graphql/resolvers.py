@@ -196,8 +196,8 @@ def strawberry_id(val) -> str:
 
 async def _paginated_query(session, model, stmt, first, after):
     """Apply cursor pagination to a query and return edges + page_info + total."""
-    # Total count (before pagination)
-    count_stmt = select(func.count()).select_from(model)
+    # Total count WITH filters (use the filtered stmt, not unfiltered model)
+    count_stmt = select(func.count()).select_from(stmt.subquery())
     total = (await session.execute(count_stmt)).scalar()
 
     # Apply cursor
@@ -283,17 +283,29 @@ async def resolve_browse_elements(
 
     stmt = select(Element)
     if source:
-        from sqlalchemy import cast
-        from sqlalchemy.dialects.postgresql import JSONB
+        from sqlalchemy import text as sa_text
 
-        stmt = stmt.where(Element.provenance.op("@>")(cast(f'[{{"source": "{source}"}}]', JSONB)))
+        stmt = stmt.where(sa_text("provenance @> :src_filter ::jsonb").bindparams(
+            src_filter=f'[{{"source": "{source}"}}]'
+        ))
     if data_type:
         stmt = stmt.where(Element.data_type == data_type.value)
     if has_annotations is True:
         stmt = stmt.where(func.jsonb_array_length(Element.ontology_annotations) > 0)
     if search_text:
-        pattern = f"%{search_text}%"
-        stmt = stmt.where(Element.description.ilike(pattern) | Element.file_name.ilike(pattern))
+        # Use tsvector full-text search if available, otherwise fall back to ILIKE
+        if hasattr(Element, "search_tsv") and Element.search_tsv is not None:
+            from sqlalchemy import func as sa_func
+
+            stmt = stmt.where(
+                Element.search_tsv.op("@@")(sa_func.plainto_tsquery("english", search_text))
+            )
+        else:
+            pattern = f"%{search_text}%"
+            stmt = stmt.where(
+                Element.description.ilike(pattern)
+                | Element.file_name.ilike(pattern)
+            )
 
     rows, has_next, total = await _paginated_query(session, Element, stmt, first, after)
     edges = [

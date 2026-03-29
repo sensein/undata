@@ -48,7 +48,8 @@ export function ElementPropertyTable({ properties, schemaSource, schemaClass }: 
       for (const prov of e.provenance ?? []) {
         if (prov.name) {
           const existing = map.get(prov.name);
-          if (!existing || (prov.source === schemaSource && (!existing.source || prov.className === schemaClass))) {
+          // Index by name — prefer element from same source as the schema
+          if (!existing || (prov.source === schemaSource && existing.source !== schemaSource)) {
             map.set(prov.name, { ...info, name: prov.name, source: prov.source });
           }
           if (!map.has(prov.name.toLowerCase())) {
