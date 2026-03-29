@@ -49,11 +49,15 @@ export default function ElementsPage() {
         header: "Name",
         cell: (info) => {
           const prov = info.row.original.provenance?.[0];
+          const name = prov?.name ?? info.row.original.fileName ?? info.getValue().slice(0, 12);
+          // Show class prefix for disambiguation when name is generic
+          const className = prov?.className;
+          const label = className && className !== name ? `${className}.${name}` : name;
           return (
             <EntityTag
               entityType="elements"
               sha256={info.getValue()}
-              label={prov?.name ?? info.row.original.fileName ?? info.getValue().slice(0, 12)}
+              label={label}
             />
           );
         },
