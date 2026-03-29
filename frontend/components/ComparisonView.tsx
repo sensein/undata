@@ -1,7 +1,5 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { ErrorBanner } from "@/components/ErrorBanner";
 import type { DataElement } from "@/lib/types";
 
 interface ComparisonViewProps {

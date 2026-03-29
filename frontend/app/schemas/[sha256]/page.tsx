@@ -8,7 +8,7 @@ import { EntityTag } from "@/components/EntityTag";
 import { ElementPropertyTable } from "@/components/PropertyTable";
 import { getStatusColor } from "@/lib/source-colors";
 import type { SchemaNode, SchemaConnection, CurationFlagConnection, Edge, CurationFlagNode } from "@/graphql/types";
-import { useMemo } from "react";
+// useMemo removed — parentSchema computed inline
 
 export default function SchemaDetailPage() {
   const params = useParams();
@@ -32,15 +32,17 @@ export default function SchemaDetailPage() {
   const schema = data?.schema_;
 
   // Resolve subclass_of name to a schema sha256
-  const parentSchema = useMemo(() => {
-    if (!schema?.subclassOf || !allSchemas) return null;
+  let parentSchema: { sha256: string; name: string } | null = null;
+  if (schema?.subclassOf && allSchemas) {
     for (const edge of (allSchemas.browseSchemas?.edges ?? []) as Edge<SchemaNode>[]) {
       const s = edge.node;
       const name = s.provenance?.[0]?.name;
-      if (name === schema.subclassOf) return { sha256: s.sha256, name };
+      if (name === schema.subclassOf) {
+        parentSchema = { sha256: s.sha256, name };
+        break;
+      }
     }
-    return null;
-  }, [schema, allSchemas]);
+  }
 
   const flags = (flagsData?.flagsForEntity?.edges ?? []) as Edge<CurationFlagNode>[];
 
@@ -99,7 +101,6 @@ export default function SchemaDetailPage() {
           <ElementPropertyTable
             properties={schema.properties}
             schemaSource={prov?.source}
-            schemaClass={prov?.className}
           />
         )}
 

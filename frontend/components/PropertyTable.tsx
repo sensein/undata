@@ -14,7 +14,6 @@ import type { ElementConnection, ElementNode, ValueConnection, ValueNode, Edge }
 interface ElementPropertyTableProps {
   properties: string[];
   schemaSource?: string;
-  schemaClass?: string;
 }
 
 interface ResolvedElement {
@@ -27,7 +26,7 @@ interface ResolvedElement {
 
 const elemColHelper = createColumnHelper<ResolvedElement | { raw: string }>();
 
-export function ElementPropertyTable({ properties, schemaSource, schemaClass }: ElementPropertyTableProps) {
+export function ElementPropertyTable({ properties, schemaSource }: ElementPropertyTableProps) {
   const { data: elemData } = useQuery<{ browseElements: ElementConnection }>(BROWSE_ELEMENTS, {
     variables: { first: 2000 },
   });
@@ -59,7 +58,7 @@ export function ElementPropertyTable({ properties, schemaSource, schemaClass }: 
       }
     }
     return map;
-  }, [elemData, schemaSource]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [elemData, schemaSource]);
 
   const rows = useMemo(() => {
     return properties.map((ref) => {
