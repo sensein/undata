@@ -66,7 +66,7 @@ export function EntityDataGrid<T>({
     <div>
       {/* Count */}
       {totalCount != null && (
-        <div className="text-sm text-gray-500 mb-3">{totalCount} total</div>
+        <div className="text-xs text-gray-500 mb-2">{totalCount} total</div>
       )}
 
       {/* Table */}
@@ -79,7 +79,7 @@ export function EntityDataGrid<T>({
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
-                    className={`text-left p-3 font-medium text-gray-700 ${
+                    className={`text-left px-2 py-1.5 font-medium text-xs text-gray-700 ${
                       header.column.getCanSort() ? "cursor-pointer select-none hover:bg-gray-100" : ""
                     }`}
                     onClick={header.column.getToggleSortingHandler()}
@@ -123,7 +123,7 @@ export function EntityDataGrid<T>({
               table.getRowModel().rows.map((row) => (
                 <tr key={row.id} className="border-b hover:bg-gray-50 transition-colors">
                   {row.getVisibleCells().map((cell) => (
-                    <td key={cell.id} className="p-3">
+                    <td key={cell.id} className="px-2 py-1">
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </td>
                   ))}

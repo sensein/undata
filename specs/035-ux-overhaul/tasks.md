@@ -58,11 +58,11 @@
 
 **Independent Test**: Load element browse → 20+ rows visible without scrolling at 1080p
 
-- [ ] T013 [P] [US3] Reduce table row height and cell padding in EntityDataGrid (48px→32px rows, p-2→p-1.5 cells) in frontend/components/EntityDataGrid.tsx
-- [ ] T014 [P] [US3] Compact EntityDetailLayout — reduce section gaps (space-y-6→space-y-3), card padding (p-4→p-2), property grid to 3-column on desktop in frontend/components/EntityDetailLayout.tsx
-- [ ] T015 [US3] Convert ontology annotations display to compact chips (CURIE + score + external link icon) with tooltip for full URI in frontend/components/EntityDetailLayout.tsx (depends on T014, same file)
-- [ ] T016 [US3] Convert provenance display to horizontal badge strip with expandable details on click in frontend/components/EntityDetailLayout.tsx (depends on T015, same file)
-- [ ] T017 [US3] Update all detail pages (elements, schemas, values, valuesets, transforms) to use compact card grid layout in frontend/app/elements/[sha256]/page.tsx, frontend/app/schemas/[sha256]/page.tsx, frontend/app/values/[sha256]/page.tsx, frontend/app/valuesets/[sha256]/page.tsx, frontend/app/transforms/[sha256]/page.tsx
+- [X] T013 [P] [US3] Reduce table row height and cell padding in EntityDataGrid (48px→32px rows, p-2→p-1.5 cells) in frontend/components/EntityDataGrid.tsx
+- [X] T014 [P] [US3] Compact EntityDetailLayout — reduce section gaps (space-y-6→space-y-3), card padding (p-4→p-2), property grid to 3-column on desktop in frontend/components/EntityDetailLayout.tsx
+- [X] T015 [US3] Convert ontology annotations display to compact chips (CURIE + score + external link icon) with tooltip for full URI in frontend/components/EntityDetailLayout.tsx (depends on T014, same file)
+- [X] T016 [US3] Convert provenance display to horizontal badge strip with expandable details on click in frontend/components/EntityDetailLayout.tsx (depends on T015, same file)
+- [X] T017 [US3] Update all detail pages (elements, schemas, values, valuesets, transforms) to use compact card grid layout in frontend/app/elements/[sha256]/page.tsx, frontend/app/schemas/[sha256]/page.tsx, frontend/app/values/[sha256]/page.tsx, frontend/app/valuesets/[sha256]/page.tsx, frontend/app/transforms/[sha256]/page.tsx
 
 **Checkpoint**: 20+ rows visible on browse pages; detail pages fit without scrolling at 1080p
 

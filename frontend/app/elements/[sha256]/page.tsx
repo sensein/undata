@@ -83,52 +83,45 @@ export default function ElementDetailPage() {
         <RelatedEntities title="Used in schemas" items={relatedSchemas} />
       }
     >
-      {/* Semantic properties */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="border rounded p-3">
-          <div className="text-xs text-gray-500 uppercase">Data Type</div>
-          <div className="font-mono">{element.dataType ?? "—"}</div>
+      {/* Semantic properties — compact 3-column grid */}
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+        <div className="border rounded p-2">
+          <div className="text-[10px] text-gray-500 uppercase">Data Type</div>
+          <div className="font-mono text-sm">{element.dataType ?? "—"}</div>
         </div>
         {element.unit && (
-          <div className="border rounded p-3">
-            <div className="text-xs text-gray-500 uppercase">Unit</div>
-            <div>
+          <div className="border rounded p-2">
+            <div className="text-[10px] text-gray-500 uppercase">Unit</div>
+            <div className="text-sm">
               {element.unit}
               {element.unitUri && (
-                <a
-                  href={element.unitUri}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ml-2 text-xs text-blue-600 hover:underline"
-                >
-                  (QUDT)
-                </a>
+                <a href={element.unitUri} target="_blank" rel="noopener noreferrer" className="ml-1 text-[10px] text-blue-600 hover:underline">↗ QUDT</a>
               )}
             </div>
           </div>
         )}
         {element.pattern && (
-          <div className="border rounded p-3">
-            <div className="text-xs text-gray-500 uppercase">Pattern</div>
-            <div className="font-mono text-sm">{element.pattern}</div>
+          <div className="border rounded p-2">
+            <div className="text-[10px] text-gray-500 uppercase">Pattern</div>
+            <div className="font-mono text-xs truncate" title={element.pattern}>{element.pattern}</div>
           </div>
         )}
         {element.valueDomain && (
-          <div className="border rounded p-3">
-            <div className="text-xs text-gray-500 uppercase">Value Domain</div>
-            <div>{element.valueDomain}</div>
+          <div className="border rounded p-2">
+            <div className="text-[10px] text-gray-500 uppercase">Value Domain</div>
+            <div className="text-sm">{element.valueDomain}</div>
           </div>
         )}
         {element.minValue != null && (
-          <div className="border rounded p-3">
-            <div className="text-xs text-gray-500 uppercase">Min Value</div>
-            <div>{element.minValue}</div>
+          <div className="border rounded p-2">
+            <div className="text-[10px] text-gray-500 uppercase">Min Value</div>
+            <div className="text-sm">{element.minValue}</div>
           </div>
         )}
         {element.maxValue != null && (
-          <div className="border rounded p-3">
-            <div className="text-xs text-gray-500 uppercase">Max Value</div>
-            <div>{element.maxValue}</div>
+          <div className="border rounded p-2">
+            <div className="text-[10px] text-gray-500 uppercase">Max Value</div>
+            <div className="text-sm">{element.maxValue}</div>
           </div>
         )}
       </div>
