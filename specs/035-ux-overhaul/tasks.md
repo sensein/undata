@@ -42,10 +42,10 @@
 
 **Independent Test**: Open any schema detail page → properties show EntityTag chips identical to element browse grid, including unit column
 
-- [ ] T008 [US1] Replace ad-hoc property table in schema detail page with PropertyTable component in frontend/app/schemas/[sha256]/page.tsx
-- [ ] T009 [US1] Replace ad-hoc member table in valueset detail page with PropertyTable component in frontend/app/valuesets/[sha256]/page.tsx
-- [ ] T010 [US1] Add Unit column to element browse grid in frontend/app/elements/page.tsx
-- [ ] T011 [US1] Add "unresolved" indicator styling to EntityTag for properties that cannot be resolved — monospace name with subtle badge in frontend/components/EntityTag.tsx
+- [X] T008 [US1] Replace ad-hoc property table in schema detail page with PropertyTable component in frontend/app/schemas/[sha256]/page.tsx
+- [X] T009 [US1] Replace ad-hoc member table in valueset detail page with PropertyTable component in frontend/app/valuesets/[sha256]/page.tsx
+- [X] T010 [US1] Add Unit column to element browse grid in frontend/app/elements/page.tsx (already present)
+- [X] T011 [US1] Add "unresolved" indicator styling to EntityTag for properties that cannot be resolved — monospace name with subtle badge in frontend/components/PropertyTable.tsx
 - [ ] T012 [US1] Verify all property tables render entity chips with popovers by visually reviewing schema, valueset, and element browse pages
 
 **Checkpoint**: Property tables show rich entity chips; element browse has unit column
