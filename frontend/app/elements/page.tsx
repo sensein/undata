@@ -29,15 +29,7 @@ export default function ElementsPage() {
   );
 
   const elements = useMemo(
-    () => {
-      const nodes = (data?.browseElements?.edges ?? []).map((e: Edge<ElementNode>) => e.node);
-      // Default: case-insensitive alphabetical by provenance name
-      return [...nodes].sort((a, b) => {
-        const nameA = (a.provenance?.[0]?.name ?? a.fileName ?? "").toLowerCase();
-        const nameB = (b.provenance?.[0]?.name ?? b.fileName ?? "").toLowerCase();
-        return nameA.localeCompare(nameB);
-      });
-    },
+    () => (data?.browseElements?.edges ?? []).map((e: Edge<ElementNode>) => e.node),
     [data],
   );
   const pageInfo = data?.browseElements?.pageInfo;

@@ -194,24 +194,37 @@ def strawberry_id(val) -> str:
 # --- Query Helpers ---
 
 
-async def _paginated_query(session, model, stmt, first, after):
-    """Apply cursor pagination to a query and return edges + page_info + total."""
+async def _paginated_query(session, model, stmt, first, after, sort_column=None):
+    """Apply cursor pagination to a query and return edges + page_info + total.
+
+    If sort_column is provided, sorts by that column instead of created_at.
+    Cursor pagination uses (sort_column, id) for ordering.
+    """
     # Total count WITH filters (use the filtered stmt, not unfiltered model)
     count_stmt = select(func.count()).select_from(stmt.subquery())
     total = (await session.execute(count_stmt)).scalar()
+
+    order_col = sort_column if sort_column is not None else model.created_at
 
     # Apply cursor
     if after:
         from datetime import datetime as dt
 
-        cursor_ts, cursor_id = _decode_cursor(after)
-        ts_val = dt.fromisoformat(cursor_ts)
-        stmt = stmt.where(
-            (model.created_at > ts_val)
-            | ((model.created_at == ts_val) & (model.id > uuid.UUID(cursor_id)))
-        )
+        cursor_val, cursor_id = _decode_cursor(after)
+        if sort_column is not None:
+            # String-based cursor for non-timestamp sort columns
+            stmt = stmt.where(
+                (order_col > cursor_val)
+                | ((order_col == cursor_val) & (model.id > uuid.UUID(cursor_id)))
+            )
+        else:
+            ts_val = dt.fromisoformat(cursor_val)
+            stmt = stmt.where(
+                (order_col > ts_val)
+                | ((order_col == ts_val) & (model.id > uuid.UUID(cursor_id)))
+            )
 
-    stmt = stmt.order_by(model.created_at, model.id).limit(first + 1)
+    stmt = stmt.order_by(order_col, model.id).limit(first + 1)
     result = await session.execute(stmt)
     rows = list(result.scalars())
 
@@ -310,10 +323,12 @@ async def resolve_browse_elements(
                 | Element.file_name.ilike(pattern)
             )
 
-    rows, has_next, total = await _paginated_query(session, Element, stmt, first, after)
+    rows, has_next, total = await _paginated_query(
+        session, Element, stmt, first, after, sort_column=Element.file_name
+    )
     edges = [
         t.ElementEdge(
-            cursor=_encode_cursor(str(r.created_at), str(r.id)),
+            cursor=_encode_cursor(str(r.file_name or ""), str(r.id)),
             node=_element_from_row(r),
         )
         for r in rows
