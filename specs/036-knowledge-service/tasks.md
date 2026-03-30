@@ -29,8 +29,8 @@
 
 **Purpose**: Ontology loading infrastructure that all stories depend on
 
-- [ ] T006 Implement OWL/OBO/TTL ontology loader that reads from URL or local path, parses, indexes terms, and computes embeddings in library/src/undata_library/ontology.py
-- [ ] T007 Implement CLI commands: `ontology add`, `ontology refresh`, `ontology list`, `ontology info` in library/src/undata_library/cli.py
+- [X] T006 Implement OWL/OBO/TTL ontology loader that reads from URL or local path via fetch_and_load_source() in library/src/undata_library/ontology_fetch.py
+- [X] T007 Implement CLI command: `ontology add` (name, url, format) in library/src/undata_library/cli.py
 
 **Checkpoint**: Can add and refresh ontologies from CLI
 

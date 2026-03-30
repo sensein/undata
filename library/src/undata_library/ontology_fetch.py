@@ -33,6 +33,42 @@ _PRONTO_ONTOLOGIES = {"pato", "hp", "obi"}
 _LARGE_ONTOLOGIES = {"ncit", "ncbitaxon"}
 
 
+def download_file(url: str, suffix: str = ".owl") -> Path:
+    """Download a file from URL, return path to temp file."""
+    logger.info("Downloading %s", url)
+    tmp = tempfile.NamedTemporaryFile(suffix=suffix, delete=False)
+    tmp_path = Path(tmp.name)
+    tmp.close()
+
+    with httpx.stream("GET", url, follow_redirects=True, timeout=600) as resp:
+        resp.raise_for_status()
+        with open(tmp_path, "wb") as f:
+            for chunk in resp.iter_bytes(chunk_size=65536):
+                f.write(chunk)
+    return tmp_path
+
+
+def fetch_and_load_source(
+    name: str,
+    url: str,
+    fmt: str,
+    store: "OntologyStore",
+) -> dict:
+    """Download an ontology from URL and load into the store.
+
+    Supports: owl, obo, ttl, nt formats.
+    Returns metadata dict with term_count.
+    """
+    suffix_map = {"owl": ".owl", "obo": ".obo", "ttl": ".ttl", "nt": ".nt"}
+    suffix = suffix_map.get(fmt.lower(), ".owl")
+    tmp_path = download_file(url, suffix=suffix)
+    try:
+        result = store.add_source(name, tmp_path, fmt=fmt)
+        return result
+    finally:
+        tmp_path.unlink(missing_ok=True)
+
+
 def fetch_ontology(name: str) -> dict:
     """Fetch ontology via bulk OBO download.
 
