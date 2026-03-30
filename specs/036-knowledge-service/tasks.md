@@ -112,8 +112,8 @@
 **Independent Test**: New OpenNeuro dataset appears → system discovers it → auto-ingests via BIDS adapter → elements appear in registry
 
 - [X] T031 [US6] Implement discovery scanner — poll OpenNeuro GraphQL API and DANDI API for new datasets since last check in library/src/undata_library/discovery.py
-- [ ] T032 [US6] Implement discovery background service — schedule daily scans, create IngestionJob records for discovered datasets in backend/src/services/discovery_service.py
-- [ ] T033 [US6] Implement auto-ingest logic — when IngestionJob is from pre-approved source with known adapter, auto-approve and run pipeline in backend/src/services/discovery_service.py
+- [X] T032 [US6] Implement discovery background service — schedule daily scans, create IngestionJob records for discovered datasets in backend/src/services/discovery_service.py
+- [X] T033 [US6] Implement auto-ingest logic — when IngestionJob is from pre-approved source with known adapter, auto-approve and run pipeline in backend/src/services/discovery_service.py
 - [ ] T034 [US5] Add GraphQL resolvers for ingestionQueue, approveIngestion, rejectIngestion, queueIngestion in backend/src/graphql/resolvers.py
 - [ ] T035 [US5] Wire ingestion queries and mutations into GraphQL schema in backend/src/graphql/schema.py
 - [ ] T036 [US5] Add GraphQL queries for ingestion queue in frontend/graphql/queries.ts
