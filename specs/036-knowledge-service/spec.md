@@ -92,6 +92,41 @@ As a curator, I need to discover and register new data sources for ingestion —
 
 ---
 
+### User Story 6 — Automated Source Discovery & Ingestion Queue (Priority: P1)
+
+As a system operator, I need the system to automatically monitor known repositories (OpenNeuro, DANDI Archive) for new datasets and add them to an ingestion queue — with pre-approved sources auto-ingested via their adapters and unknown sources queued for curator review — so the registry stays current without manual intervention.
+
+**Why this priority**: The registry must grow continuously. Manual source addition doesn't scale. Pre-approved sources with existing adapters (OpenNeuro=BIDS, DANDI=dandi adapter) should be ingested automatically.
+
+**Independent Test**: A new dataset appears on OpenNeuro → within 24 hours the system discovers it, auto-ingests via BIDS adapter, and the new elements appear in the registry with source "openneuro/{dataset_id}".
+
+**Acceptance Scenarios**:
+
+1. **Given** a list of approved repository endpoints (OpenNeuro API, DANDI API), **When** the discovery service runs on schedule, **Then** it queries each endpoint for new datasets since the last check and adds discovered datasets to the ingestion queue.
+2. **Given** a discovered dataset from a pre-approved source with a known adapter, **When** queued, **Then** it is automatically ingested (extract → enrich → align → commit) without curator approval and the results are visible in the registry.
+3. **Given** a discovered dataset from an unknown or unapproved source, **When** queued, **Then** it waits for curator review — the curator can preview extracted entities, approve, reject, or defer.
+4. **Given** the ingestion queue, **When** a curator views it, **Then** they see pending, in-progress, completed, and failed ingestions with dataset metadata, adapter used, and entity counts.
+
+---
+
+### User Story 7 — LLM-Powered Knowledge Enhancement (Priority: P2)
+
+As a curator, I need the system to use LLM capabilities to improve the knowledge space — suggesting better ontology mappings, disambiguating terms, inferring relationships between elements, proposing unit corrections, and generating descriptions for undocumented elements — so that automated enrichment quality approaches human-level curation.
+
+**Why this priority**: Embedding similarity alone misses nuanced domain mappings. LLMs can reason about context (e.g., "EchoTime is a DICOM acquisition parameter measured in milliseconds") to produce higher-quality annotations than pure vector matching.
+
+**Independent Test**: Ask the chat "suggest better annotations for EchoTime" → LLM proposes DICOM tag (0018,0081) with reasoning, plus NIDM equivalent, with confidence assessment.
+
+**Acceptance Scenarios**:
+
+1. **Given** an element with no or low-confidence annotations, **When** the LLM enrichment skill runs, **Then** it proposes ontology annotations with reasoning (e.g., "EchoTime maps to DICOM (0018,0081) because it represents the time between RF excitation and peak echo signal").
+2. **Given** an element with ambiguous unit (inferred from description), **When** the LLM reviews it, **Then** it proposes a unit correction with justification and creates a curation flag if uncertain.
+3. **Given** two elements with similar names from different sources (e.g., BIDS "age" and DANDI "age"), **When** the LLM alignment skill runs, **Then** it assesses whether they represent the same concept or different variants and proposes appropriate relationship (exactMatch, relatedMatch, or distinct).
+4. **Given** an element with no description, **When** the LLM skill runs, **Then** it generates a description based on the element name, data type, unit, and source context.
+5. **Given** the curation chat, **When** a curator asks "enrich all unannotated BIDS elements using LLM", **Then** the system queues batch LLM enrichment for matching elements and reports progress.
+
+---
+
 ### Edge Cases
 
 - What happens when an ontology URL is unreachable? The refresh fails gracefully with an error message and the existing cached version is retained.
@@ -99,6 +134,9 @@ As a curator, I need to discover and register new data sources for ingestion —
 - What happens when a curator corrects a unit but other elements depend on the old hash? A transform is created linking old→new hash; schemas referencing the old hash are flagged for review.
 - What happens when re-enrichment produces a lower-confidence annotation than an existing curated one? The curated annotation is preserved; the automated one is offered as a secondary annotation for review.
 - What happens when two ontologies define the same concept (e.g., "Echo Time" in both DICOM and RadLex)? Both annotations are stored with their respective ontology labels; the primary annotation is the one with the highest score.
+- What happens when the discovery service finds a dataset that was already ingested? It checks the dataset version/timestamp and only re-ingests if the metadata has changed.
+- What happens when LLM enrichment hallucinates an ontology URI? All LLM-proposed URIs are validated against the ontology store before being presented as proposals; unresolvable URIs are rejected with an explanation.
+- What happens when batch LLM enrichment is expensive (many API calls)? The system respects rate limits, tracks token usage, and allows curators to set a budget per batch run.
 
 ## Requirements *(mandatory)*
 
@@ -116,12 +154,20 @@ As a curator, I need to discover and register new data sources for ingestion —
 - **FR-010**: An ontology management interface MUST display loaded ontologies with term counts, refresh status, and enable/disable controls.
 - **FR-011**: Source registration MUST support auto-detection of adapter type from repository URLs and preview of extracted entities before committing to the registry.
 - **FR-012**: The chat interface MUST support triggering ontology refresh, element re-enrichment, and source ingestion via natural language commands.
+- **FR-013**: The system MUST automatically discover new datasets from pre-approved repository endpoints (OpenNeuro API, DANDI API) on a configurable schedule.
+- **FR-014**: Datasets from pre-approved sources with known adapters MUST be auto-ingested without curator approval; datasets from unknown sources MUST be queued for curator review.
+- **FR-015**: An ingestion queue interface MUST show pending, in-progress, completed, and failed ingestions with metadata, adapter, and entity counts.
+- **FR-016**: The system MUST provide LLM-powered enrichment skills: ontology mapping with reasoning, unit inference with justification, cross-source element alignment assessment, and description generation.
+- **FR-017**: LLM enrichment proposals MUST be presented as reviewable diffs — not auto-applied — unless the curator explicitly enables auto-apply for high-confidence results.
+- **FR-018**: Batch LLM enrichment MUST be supported — a curator can request enrichment of all unannotated elements from a specific source, with progress tracking.
 
 ### Key Entities
 
 - **OntologySource**: A registered ontology with name, URL, format (OWL/OBO/TTL), term count, last refresh timestamp, active status, and embedding index path.
 - **ElementVersion**: A link between two elements where one supersedes the other — old_sha256, new_sha256, change_type (curation_update, semantic_correction), curator, timestamp.
-- **DataRepository**: A registered data source URL with adapter type, last ingestion timestamp, entity counts, and approval status.
+- **DataRepository**: A registered data source URL with adapter type, last ingestion timestamp, entity counts, and approval status (pre-approved / pending / rejected).
+- **IngestionJob**: A queued or completed ingestion run — repository reference, adapter used, status (pending/running/completed/failed), entity counts, curator who approved (if applicable), timestamps.
+- **LLMEnrichmentProposal**: A proposed change from LLM enrichment — element reference, proposed annotation/unit/description, reasoning text, confidence, status (pending/approved/rejected).
 
 ## Success Criteria *(mandatory)*
 
@@ -133,6 +179,15 @@ As a curator, I need to discover and register new data sources for ingestion —
 - **SC-004**: Curators can approve/reject individual ontology annotations and the decision persists across re-enrichment.
 - **SC-005**: Semantic field changes on curated elements produce new element versions with linked transforms.
 - **SC-006**: The ontology admin interface shows term counts and refresh status for all loaded ontologies.
+- **SC-007**: New datasets from OpenNeuro are auto-discovered and ingested within 24 hours of publication, without curator intervention.
+- **SC-008**: LLM-powered enrichment produces ontology annotations with reasoning text for at least 80% of unannotated elements when run in batch mode.
+
+## Clarifications
+
+### Session 2026-03-30
+
+- Q: Should source discovery be manual (curator-provided URLs) or automated? → A: Automated discovery from pre-approved repository endpoints (OpenNeuro, DANDI) with auto-ingestion via known adapters; unknown sources queued for curator approval. Pre-built adapters for approved resources run without human intervention.
+- Q: Should the service integrate LLM operations for knowledge improvement? → A: Yes — LLM skills for ontology mapping with reasoning, unit inference, cross-source alignment, and description generation. Proposals presented as reviewable diffs, batch mode supported.
 
 ## Scope Boundaries
 
@@ -150,7 +205,6 @@ As a curator, I need to discover and register new data sources for ingestion —
 ### Out of Scope
 
 - Custom ontology creation (curators use existing ontologies, not build new ones)
-- Automated dataset crawling/discovery (curators manually provide URLs)
 - Cross-ontology term alignment (e.g., mapping DICOM to RadLex equivalents)
 - Ontology editing (the system consumes ontologies, not produces them)
 
