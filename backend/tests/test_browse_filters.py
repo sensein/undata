@@ -94,3 +94,25 @@ async def test_data_type_filter(seeded_session):
     )
     assert result.total_count == 1
     assert result.edges[0].node.sha256 == "ccc333"
+
+
+async def test_pagination_load_more(seeded_session):
+    """Pagination: first page returns subset, second page returns remainder."""
+    # Get first page
+    result1 = await r.resolve_browse_elements(seeded_session, first=2)
+    assert result1.total_count == 3
+    assert len(result1.edges) == 2
+    assert result1.page_info.has_next_page is True
+    assert result1.page_info.end_cursor is not None
+
+    # Get second page using cursor
+    result2 = await r.resolve_browse_elements(
+        seeded_session, first=2, after=result1.page_info.end_cursor
+    )
+    assert len(result2.edges) == 1
+    assert result2.page_info.has_next_page is False
+
+    # Ensure no duplicates
+    page1_shas = {e.node.sha256 for e in result1.edges}
+    page2_shas = {e.node.sha256 for e in result2.edges}
+    assert page1_shas.isdisjoint(page2_shas)

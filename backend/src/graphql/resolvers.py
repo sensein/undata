@@ -202,10 +202,13 @@ async def _paginated_query(session, model, stmt, first, after):
 
     # Apply cursor
     if after:
+        from datetime import datetime as dt
+
         cursor_ts, cursor_id = _decode_cursor(after)
+        ts_val = dt.fromisoformat(cursor_ts)
         stmt = stmt.where(
-            (model.created_at > cursor_ts)
-            | ((model.created_at == cursor_ts) & (model.id > uuid.UUID(cursor_id)))
+            (model.created_at > ts_val)
+            | ((model.created_at == ts_val) & (model.id > uuid.UUID(cursor_id)))
         )
 
     stmt = stmt.order_by(model.created_at, model.id).limit(first + 1)

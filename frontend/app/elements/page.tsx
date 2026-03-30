@@ -52,7 +52,7 @@ export default function ElementsPage() {
           const name = prov?.name ?? info.row.original.fileName ?? info.getValue().slice(0, 12);
           // Show class prefix for disambiguation when name is generic
           const className = prov?.className;
-          const label = className && className !== name ? `${className}.${name}` : name;
+          const label = className && className !== name ? `${name}::${className}` : name;
           return (
             <EntityTag
               entityType="elements"
