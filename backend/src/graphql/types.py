@@ -234,6 +234,73 @@ class ImportResult:
     runs: int
 
 
+# --- Knowledge Service Types ---
+
+
+@strawberry.type
+class OntologySourceType:
+    id: strawberry.ID
+    name: str
+    display_name: str
+    url: str
+    format: str
+    term_count: int
+    active: bool
+    last_refreshed_at: Optional[str] = None
+    created_at: str = ""
+
+
+@strawberry.type
+class IngestionJobType:
+    id: strawberry.ID
+    repository_url: str
+    adapter_type: str
+    status: str
+    auto_approved: bool
+    entity_counts: Optional[JSON] = None
+    error_message: Optional[str] = None
+    approved_by: Optional[str] = None
+    started_at: Optional[str] = None
+    completed_at: Optional[str] = None
+    created_at: str = ""
+
+
+@strawberry.type
+class LLMEnrichmentProposalType:
+    id: strawberry.ID
+    entity_type: str
+    entity_ref: str
+    proposal_type: str
+    proposed_value: JSON
+    reasoning: Optional[str] = None
+    confidence: Optional[float] = None
+    status: str
+    reviewed_by: Optional[str] = None
+    reviewed_at: Optional[str] = None
+    created_at: str = ""
+
+
+@strawberry.type
+class BatchEnrichmentResult:
+    job_id: str
+    total_entities: int
+    status: str
+
+
+@strawberry.input
+class AddOntologySourceInput:
+    name: str
+    display_name: str
+    url: str
+    format: str
+
+
+@strawberry.input
+class QueueIngestionInput:
+    repository_url: str
+    adapter_type: Optional[str] = None
+
+
 # --- Pagination (Relay-style) ---
 
 

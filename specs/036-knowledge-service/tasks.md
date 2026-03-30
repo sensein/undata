@@ -15,11 +15,11 @@
 
 **Purpose**: Dependencies, shared DB models, ontology store extension
 
-- [ ] T001 Add datalad and pydicom to library dependencies in library/pyproject.toml
-- [ ] T002 Add OntologySource, IngestionJob, LLMEnrichmentProposal DB models to backend/src/db/models.py
-- [ ] T003 Add Strawberry GraphQL types for OntologySource, IngestionJob, LLMEnrichmentProposal in backend/src/graphql/types.py
-- [ ] T004 Extend ontology store with source registration — add_source(), refresh_source(), list_sources(), toggle_active() in library/src/undata_library/ontology.py
-- [ ] T005 Add OntologySourceConfig and IngestionJobConfig pydantic models in library/src/undata_library/models.py
+- [X] T001 Add datalad and pydicom to library dependencies in library/pyproject.toml
+- [X] T002 Add OntologySource, IngestionJob, LLMEnrichmentProposal DB models to backend/src/db/models.py
+- [X] T003 Add Strawberry GraphQL types for OntologySource, IngestionJob, LLMEnrichmentProposal in backend/src/graphql/types.py
+- [X] T004 Extend ontology store with source registration — add_source(), refresh_source(), list_sources(), toggle_active() in library/src/undata_library/ontology_store.py
+- [X] T005 Add OntologySourceConfig and IngestionJobConfig pydantic models in library/src/undata_library/models.py
 
 **Checkpoint**: DB models exist, ontology store supports source management
 

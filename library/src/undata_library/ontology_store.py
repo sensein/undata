@@ -292,6 +292,53 @@ class OntologyStore:
             )
         )
 
+    # ------------------------------------------------------------------
+    # Source management (added for knowledge service)
+    # ------------------------------------------------------------------
+
+    def add_source(
+        self,
+        name: str,
+        path: Path,
+        fmt: str = "owl",
+    ) -> dict:
+        """Add an ontology source — load from file and return metadata.
+
+        Supported formats: owl, obo, ttl, nt.
+        """
+        fmt_lower = fmt.lower()
+        if fmt_lower == "obo":
+            count = self.load_obo(name, path)
+        elif fmt_lower in ("owl", "ttl", "nt", "application/rdf+xml", "text/turtle"):
+            count = self.load_rdf(name, path, fmt=fmt_lower)
+        else:
+            raise ValueError(f"Unsupported ontology format: {fmt}")
+
+        # Record metadata in meta graph
+        meta_graph = pyoxigraph.NamedNode("http://schema.undata.live/ontology-meta")
+        ont_uri = f"http://schema.undata.live/ontology/{name}"
+        now = datetime.now(timezone.utc).isoformat()
+        self._add_triple(ont_uri, _UNDATA_LOADED, "true", meta_graph)
+        self._add_triple(ont_uri, _UNDATA_LOADED_AT, now, meta_graph)
+
+        logger.info("Added ontology source %s: %d terms", name, count)
+        return {"name": name, "term_count": count, "loaded_at": now, "format": fmt}
+
+    def refresh_source(self, name: str, path: Path, fmt: str = "owl") -> dict:
+        """Re-load an existing ontology source (drop old triples, reload).
+
+        Returns updated metadata.
+        """
+        # Drop existing named graph
+        graph_uri = f"http://schema.undata.live/ontology/{name}"
+        try:
+            drop_sparql = f"CLEAR GRAPH <{graph_uri}>"
+            self.store.update(drop_sparql)
+        except Exception:
+            pass  # Graph may not exist
+
+        return self.add_source(name, path, fmt)
+
 
 def build_vector_index(
     store: OntologyStore,

@@ -168,6 +168,53 @@ class Transform(Base):
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
 
 
+class OntologySource(Base):
+    __tablename__ = "ontology_sources"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    name: Mapped[str] = mapped_column(String, unique=True, index=True)
+    display_name: Mapped[str] = mapped_column(String)
+    url: Mapped[str] = mapped_column(String)
+    format: Mapped[str] = mapped_column(String)  # owl, obo, ttl, json-ld, pydicom
+    term_count: Mapped[int] = mapped_column(default=0)
+    active: Mapped[bool] = mapped_column(Boolean, default=True)
+    last_refreshed_at = mapped_column(TIMESTAMP, nullable=True)
+    checksum: Mapped[str | None] = mapped_column(String, nullable=True)
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+
+
+class IngestionJob(Base):
+    __tablename__ = "ingestion_jobs"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    repository_url: Mapped[str] = mapped_column(String, index=True)
+    adapter_type: Mapped[str] = mapped_column(String)
+    status: Mapped[str] = mapped_column(String, index=True, server_default=text("'pending'"))
+    auto_approved: Mapped[bool] = mapped_column(Boolean, default=False)
+    entity_counts: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+    error_message: Mapped[str | None] = mapped_column(Text, nullable=True)
+    approved_by: Mapped[str | None] = mapped_column(String, nullable=True)
+    started_at = mapped_column(TIMESTAMP, nullable=True)
+    completed_at = mapped_column(TIMESTAMP, nullable=True)
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+
+
+class LLMEnrichmentProposal(Base):
+    __tablename__ = "llm_enrichment_proposals"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    entity_type: Mapped[str] = mapped_column(String, index=True)
+    entity_ref: Mapped[str] = mapped_column(String, index=True)
+    proposal_type: Mapped[str] = mapped_column(String)  # ontology_annotation, unit_correction, description, alignment
+    proposed_value: Mapped[dict] = mapped_column(JSONB, default=dict)
+    reasoning: Mapped[str | None] = mapped_column(Text, nullable=True)
+    confidence: Mapped[float | None] = mapped_column(Float, nullable=True)
+    status: Mapped[str] = mapped_column(String, index=True, server_default=text("'pending'"))
+    reviewed_by: Mapped[str | None] = mapped_column(String, nullable=True)
+    reviewed_at = mapped_column(TIMESTAMP, nullable=True)
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+
+
 # Entity type → ORM model mapping
 ENTITY_MODEL_MAP = {
     "elements": Element,

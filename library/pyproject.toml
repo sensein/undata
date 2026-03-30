@@ -24,6 +24,7 @@ similarity = ["sentence-transformers>=3.0"]
 embeddings = ["sentence-transformers>=3.0"]
 llm = ["litellm>=1.40"]
 docker = ["docker>=7.0"]
+knowledge = ["datalad>=1.0", "pydicom>=2.4"]
 
 [dependency-groups]
 dev = [
