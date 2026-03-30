@@ -33,21 +33,22 @@ SUPPORTED_ONTOLOGIES = {
 # Domain-specific ontologies (knowledge service — feature 036)
 # These use OWL format and are loaded via ontology_store.add_source()
 DOMAIN_ONTOLOGIES = {
-    "homba": {
-        "url": "https://purl.brain-bican.org/ontology/homba.owl",
-        "format": "owl",
-        "display_name": "Harmonized Ontology of Mammalian Brain Anatomy",
+    "nidm": {
+        "url": "https://raw.githubusercontent.com/incf-nidash/nidm/master/nidm/nidm-experiment/terms/nidm-experiment.owl",
+        "format": "ttl",  # Actually Turtle despite .owl extension
+        "display_name": "Neuroimaging Data Model (NIDM)",
     },
     "radlex": {
         "url": "http://aber-owl.net/media/ontologies/RADLEX/37/radlex.owl",
         "format": "owl",
         "display_name": "RadLex — Radiology Lexicon (RSNA)",
     },
-    "nidm": {
-        "url": "https://raw.githubusercontent.com/incf-nidash/nidm/master/nidm/nidm-experiment/terms/nidm-experiment.owl",
-        "format": "owl",
-        "display_name": "Neuroimaging Data Model (NIDM)",
-    },
+    # HoMBA: OWL Functional Syntax (not RDF/XML) — needs conversion before loading
+    # "homba": {
+    #     "url": "https://raw.githubusercontent.com/Cellular-Semantics/.../homba-edit.owl",
+    #     "format": "owl-functional",  # Not supported by pyoxigraph; needs robot or owlapi conversion
+    #     "display_name": "Harmonized Ontology of Mammalian Brain Anatomy",
+    # },
 }
 
 # Ontologies small enough for full pronto parse (< 50MB)

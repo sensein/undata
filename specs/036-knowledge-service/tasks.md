@@ -60,9 +60,9 @@
 
 **Independent Test**: `uv run undata-library ingest --source openneuro --path ds000228` produces elements from participants.tsv and phenotype TSVs
 
-- [ ] T014 [US2] Implement OpenNeuro adapter — datalad clone, scan for all TSV/CSV files, read JSON sidecars for column descriptions, extract elements with data types inferred from values in library/src/undata_library/adapters/openneuro.py
-- [ ] T015 [US2] Implement ReproSchema adapter — parse activity JSON-LD as schemas (CLASS), item JSON-LD as elements (ATTRIBUTE), response options as valuesets in library/src/undata_library/adapters/reproschema.py
-- [ ] T016 [US2] Register openneuro and reproschema adapters in library/src/undata_library/adapters/registry.py
+- [X] T014 [US2] Implement OpenNeuro adapter — datalad clone, scan for all TSV/CSV files, read JSON sidecars for column descriptions, extract elements with data types inferred from values in library/src/undata_library/adapters/openneuro.py
+- [X] T015 [US2] Implement ReproSchema adapter — parse activity JSON-LD as schemas (CLASS), item JSON-LD as elements (ATTRIBUTE), response options as valuesets in library/src/undata_library/adapters/reproschema.py
+- [X] T016 [US2] Register openneuro and reproschema adapters in library/src/undata_library/adapters/registry.py
 - [ ] T017 [US2] Add unit tests for OpenNeuro adapter with a mock dataset structure in library/tests/test_openneuro_adapter.py
 - [ ] T018 [US2] Add unit tests for ReproSchema adapter with sample activity/item files in library/tests/test_reproschema_adapter.py
 - [ ] T019 [US2] Test full pipeline: ingest ds000228 from OpenNeuro, verify elements extracted from participants.tsv and phenotype/*.tsv
