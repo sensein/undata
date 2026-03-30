@@ -434,11 +434,20 @@ async def resolve_schemas_using_element(
     session: AsyncSession, element_sha256: str, first: int = 50
 ) -> t.SchemaConnection:
     """Find schemas whose properties[] JSONB array contains the element sha256."""
-    from src.db.models import Schema
+    from src.db.models import Element, Schema
     from sqlalchemy import text as sa_text
 
+    # Resolve prefix to full sha256 if needed
+    full_sha = element_sha256
+    if len(element_sha256) < 64:
+        row = (await session.execute(
+            select(Element.sha256).where(Element.sha256.startswith(element_sha256)).limit(1)
+        )).scalar_one_or_none()
+        if row:
+            full_sha = row
+
     stmt = select(Schema).where(
-        sa_text("properties::jsonb @> :ref ::jsonb").bindparams(ref=f'["{element_sha256}"]')
+        sa_text("properties::jsonb @> :ref ::jsonb").bindparams(ref=f'["{full_sha}"]')
     )
     rows, has_next, total = await _paginated_query(session, Schema, stmt, first, None)
     edges = [
@@ -456,11 +465,20 @@ async def resolve_transforms_for_element(
     session: AsyncSession, element_sha256: str, first: int = 50
 ) -> t.TransformConnection:
     """Find transforms where source or target matches the element sha256 or contains it."""
-    from src.db.models import Transform
+    from src.db.models import Element, Transform
+
+    # Resolve prefix to full sha256
+    full_sha = element_sha256
+    if len(element_sha256) < 64:
+        row = (await session.execute(
+            select(Element.sha256).where(Element.sha256.startswith(element_sha256)).limit(1)
+        )).scalar_one_or_none()
+        if row:
+            full_sha = row
 
     stmt = select(Transform).where(
-        Transform.source_element.ilike(f"%{element_sha256}%")
-        | Transform.target_element.ilike(f"%{element_sha256}%")
+        Transform.source_element.ilike(f"%{full_sha}%")
+        | Transform.target_element.ilike(f"%{full_sha}%")
     )
     rows, has_next, total = await _paginated_query(session, Transform, stmt, first, None)
     edges = [
@@ -479,10 +497,10 @@ async def resolve_transforms_for_element(
 async def resolve_flags_for_entity(
     session: AsyncSession, entity_type: str, entity_ref: str, first: int = 50
 ) -> t.CurationFlagConnection:
-    """Find curation flags for a specific entity."""
+    """Find curation flags for a specific entity (supports sha256 prefix matching)."""
     stmt = select(CurationFlagModel).where(
         CurationFlagModel.entity_type == entity_type,
-        CurationFlagModel.entity_ref == entity_ref,
+        CurationFlagModel.entity_ref.startswith(entity_ref),
     )
     rows, has_next, total = await _paginated_query(session, CurationFlagModel, stmt, first, None)
     edges = [
