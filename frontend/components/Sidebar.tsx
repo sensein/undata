@@ -77,6 +77,13 @@ const NAV_GROUPS: NavGroup[] = [
       { label: "Runs", href: "/runs", icon: "▶" },
     ],
   },
+  {
+    title: "ADMIN",
+    items: [
+      { label: "Ontologies", href: "/admin/ontologies", icon: "🧬" },
+      { label: "Ingestion", href: "/admin/ingestion", icon: "📥" },
+    ],
+  },
 ];
 
 export function Sidebar() {

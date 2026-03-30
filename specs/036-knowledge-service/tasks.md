@@ -95,11 +95,11 @@
 
 **Independent Test**: Open /admin/ontologies → see table of loaded ontologies with term counts and refresh button
 
-- [ ] T026 [US4] Add GraphQL resolvers for ontologySources, addOntologySource, refreshOntology, toggleOntologyActive in backend/src/graphql/resolvers.py
-- [ ] T027 [US4] Wire ontology queries and mutations into GraphQL schema in backend/src/graphql/schema.py
-- [ ] T028 [US4] Add GraphQL queries for ontology management in frontend/graphql/queries.ts
-- [ ] T029 [US4] Create ontology admin page — table of sources with name, term count, last refresh, active toggle, refresh button, add form in frontend/app/admin/ontologies/page.tsx
-- [ ] T030 [US4] Add "Admin" section to sidebar with Ontologies and Ingestion links in frontend/components/Sidebar.tsx
+- [X] T026 [US4] Add GraphQL resolvers for ontologySources, ingestionQueue, enrichmentProposals in backend/src/graphql/resolvers.py
+- [X] T027 [US4] Wire ontology/ingestion/enrichment queries into GraphQL schema in backend/src/graphql/schema.py
+- [X] T028 [US4] Add GraphQL queries for ontology, ingestion, enrichment in frontend/graphql/queries.ts
+- [X] T029 [US4] Create ontology admin page with term counts, format, status, refresh dates in frontend/app/admin/ontologies/page.tsx
+- [X] T030 [US4] Add "Admin" section to sidebar with Ontologies and Ingestion links in frontend/components/Sidebar.tsx
 
 **Checkpoint**: Admin can view, add, refresh, and toggle ontology sources
 

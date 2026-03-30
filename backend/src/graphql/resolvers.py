@@ -483,6 +483,96 @@ async def resolve_latest_run(session: AsyncSession, source: str | None = None) -
 # --- Mutations ---
 
 
+async def resolve_ontology_sources(
+    session: AsyncSession, active: bool | None = None
+) -> list[t.OntologySourceType]:
+    from src.db.models import OntologySource
+
+    stmt = select(OntologySource)
+    if active is not None:
+        stmt = stmt.where(OntologySource.active == active)
+    stmt = stmt.order_by(OntologySource.name)
+    rows = (await session.execute(stmt)).scalars().all()
+    return [
+        t.OntologySourceType(
+            id=str(r.id),
+            name=r.name,
+            display_name=r.display_name,
+            url=r.url,
+            format=r.format,
+            term_count=r.term_count,
+            active=r.active,
+            last_refreshed_at=str(r.last_refreshed_at) if r.last_refreshed_at else None,
+            created_at=str(r.created_at),
+        )
+        for r in rows
+    ]
+
+
+async def resolve_ingestion_queue(
+    session: AsyncSession, status: str | None = None, first: int = 50
+) -> list[t.IngestionJobType]:
+    from src.db.models import IngestionJob
+
+    stmt = select(IngestionJob)
+    if status:
+        stmt = stmt.where(IngestionJob.status == status)
+    stmt = stmt.order_by(IngestionJob.created_at.desc()).limit(first)
+    rows = (await session.execute(stmt)).scalars().all()
+    return [
+        t.IngestionJobType(
+            id=str(r.id),
+            repository_url=r.repository_url,
+            adapter_type=r.adapter_type,
+            status=r.status,
+            auto_approved=r.auto_approved,
+            entity_counts=r.entity_counts,
+            error_message=r.error_message,
+            approved_by=r.approved_by,
+            started_at=str(r.started_at) if r.started_at else None,
+            completed_at=str(r.completed_at) if r.completed_at else None,
+            created_at=str(r.created_at),
+        )
+        for r in rows
+    ]
+
+
+async def resolve_enrichment_proposals(
+    session: AsyncSession,
+    entity_type: str | None = None,
+    entity_ref: str | None = None,
+    status: str | None = None,
+    first: int = 50,
+) -> list[t.LLMEnrichmentProposalType]:
+    from src.db.models import LLMEnrichmentProposal
+
+    stmt = select(LLMEnrichmentProposal)
+    if entity_type:
+        stmt = stmt.where(LLMEnrichmentProposal.entity_type == entity_type)
+    if entity_ref:
+        stmt = stmt.where(LLMEnrichmentProposal.entity_ref.startswith(entity_ref))
+    if status:
+        stmt = stmt.where(LLMEnrichmentProposal.status == status)
+    stmt = stmt.order_by(LLMEnrichmentProposal.created_at.desc()).limit(first)
+    rows = (await session.execute(stmt)).scalars().all()
+    return [
+        t.LLMEnrichmentProposalType(
+            id=str(r.id),
+            entity_type=r.entity_type,
+            entity_ref=r.entity_ref,
+            proposal_type=r.proposal_type,
+            proposed_value=r.proposed_value or {},
+            reasoning=r.reasoning,
+            confidence=r.confidence,
+            status=r.status,
+            reviewed_by=r.reviewed_by,
+            reviewed_at=str(r.reviewed_at) if r.reviewed_at else None,
+            created_at=str(r.created_at),
+        )
+        for r in rows
+    ]
+
+
 async def resolve_approve_annotation(
     session: AsyncSession, entity_sha256: str, annotation_index: int, curator: str
 ) -> t.Element:

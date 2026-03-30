@@ -143,6 +143,27 @@ class Query:
         async with AsyncSessionLocal() as session:
             return await r.resolve_latest_run(session, source)
 
+    @strawberry.field
+    async def ontology_sources(self, active: Optional[bool] = None) -> list[t.OntologySourceType]:
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_ontology_sources(session, active)
+
+    @strawberry.field
+    async def ingestion_queue(self, status: Optional[str] = None, first: int = 50) -> list[t.IngestionJobType]:
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_ingestion_queue(session, status, first)
+
+    @strawberry.field
+    async def enrichment_proposals(
+        self,
+        entity_type: Optional[str] = None,
+        entity_ref: Optional[str] = None,
+        status: Optional[str] = None,
+        first: int = 50,
+    ) -> list[t.LLMEnrichmentProposalType]:
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_enrichment_proposals(session, entity_type, entity_ref, status, first)
+
 
 @strawberry.type
 class Mutation:

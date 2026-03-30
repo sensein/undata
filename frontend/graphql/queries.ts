@@ -340,3 +340,54 @@ export const GET_TRANSFORM = gql`
     }
   }
 `;
+
+export const ONTOLOGY_SOURCES = gql`
+  query OntologySources($active: Boolean) {
+    ontologySources(active: $active) {
+      id
+      name
+      displayName
+      url
+      format
+      termCount
+      active
+      lastRefreshedAt
+      createdAt
+    }
+  }
+`;
+
+export const INGESTION_QUEUE = gql`
+  query IngestionQueue($status: String, $first: Int = 50) {
+    ingestionQueue(status: $status, first: $first) {
+      id
+      repositoryUrl
+      adapterType
+      status
+      autoApproved
+      entityCounts
+      errorMessage
+      approvedBy
+      startedAt
+      completedAt
+      createdAt
+    }
+  }
+`;
+
+export const ENRICHMENT_PROPOSALS = gql`
+  query EnrichmentProposals($entityType: String, $entityRef: String, $status: String, $first: Int = 50) {
+    enrichmentProposals(entityType: $entityType, entityRef: $entityRef, status: $status, first: $first) {
+      id
+      entityType
+      entityRef
+      proposalType
+      proposedValue
+      reasoning
+      confidence
+      status
+      reviewedBy
+      createdAt
+    }
+  }
+`;
