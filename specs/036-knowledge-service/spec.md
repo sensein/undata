@@ -144,7 +144,7 @@ As a curator, I need the system to use LLM capabilities to improve the knowledge
 ### Functional Requirements
 
 - **FR-001**: The ontology store MUST support loading ontologies from OWL, OBO, and TTL formats via URL or local file path.
-- **FR-002**: The system MUST integrate HoMBA (brain anatomy), NIDM (neuroimaging data model), DICOM data element dictionary, RadLex (radiology), and ReproSchema library as ontology/vocabulary sources.
+- **FR-002**: The system MUST integrate HoMBA (brain anatomy), NIDM (neuroimaging data model), DICOM data element dictionary, and RadLex (radiology) as ontology term sources for enrichment. ReproSchema library is a data source (see FR-004a), not an ontology — its items are ingested as registry entities via adapter, not loaded as ontology terms.
 - **FR-003**: After adding new ontologies, enrichment coverage on BIDS+NWB+DANDI elements MUST increase from the current ~10% to at least 40%.
 - **FR-004**: The system MUST support ingesting schema descriptors from OpenNeuro datasets via datalad — scanning each dataset for all CSV/TSV files (participants.tsv, phenotype/*.tsv, etc.) and their corresponding JSON sidecars that describe columns, extracting elements from column headers with data types inferred from values.
 - **FR-004a**: The system MUST ingest schema descriptors from the ReproSchema library (activities and items) and from stats/mapping repositories containing JSON field mappings (e.g., ABCD, HCP data dictionaries).

@@ -46,8 +46,9 @@
 - [ ] T009 [P] [US1] Add NIDM-Terms loader — clone GitHub repo, convert JSON-LD term files to RDF, load via load_rdf() in library/src/undata_library/ontology.py
 - [ ] T010 [P] [US1] Create DICOM TTL generator — extract all tags from pydicom.datadict, generate TTL with URIs, load into ontology store in library/src/undata_library/adapters/standalone_scripts/dicom_to_ttl.py
 - [ ] T011 [P] [US1] Add RadLex ontology loader — download OWL from radlex.org or BioPortal, load via load_rdf() in library/src/undata_library/ontology.py
-- [ ] T012 [US1] Re-run enrichment on BIDS+NWB+DANDI elements with expanded ontology store and verify coverage >40% using library/src/undata_library/enrich.py
+- [ ] T012 [US1] Re-run enrichment on BIDS+NWB+DANDI elements with expanded ontology store, then assert annotated_count/total_count > 0.40 via `undata-library ontology info` and `validate-ingestion` in library/src/undata_library/enrich.py
 - [ ] T013 [US1] Add unit test verifying ontology term counts after loading all 4 new sources in library/tests/test_ontology_sources.py
+- [ ] T013a [US1] Add coverage regression test — assert enrichment produces annotations for >40% of elements, fails if coverage drops below threshold in library/tests/test_enrichment_coverage.py
 
 **Checkpoint**: Ontology store has >50K new terms; enrichment coverage exceeds 40%
 
@@ -80,6 +81,7 @@
 - [ ] T021 [US3] Extend enrichment pipeline to skip entities with curated_annotations (do not overwrite approved annotations) in library/src/undata_library/enrich.py
 - [ ] T022 [US3] Implement element versioning — when a semantic field changes via curation, create new element with new sha256, mark old as superseded, create curation_update transform in backend/src/graphql/resolvers.py
 - [ ] T023 [US3] Add GraphQL mutations: approveAnnotation, rejectAnnotation, requestReEnrichment in backend/src/graphql/schema.py
+- [ ] T023a [US3] Implement requestReEnrichment service — re-run enrichment for a single element using latest ontology store, return proposed new annotations as diff in backend/src/graphql/resolvers.py
 - [ ] T024 [US3] Add approve/reject buttons to annotation chips on element detail page in frontend/app/elements/[sha256]/page.tsx (or via EntityDetailLayout)
 - [ ] T025 [US3] Add unit test for curated annotation protection during re-enrichment in library/tests/test_enrich.py
 
