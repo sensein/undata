@@ -188,3 +188,98 @@ def _scan_fairsharing(use_llm: bool, model: str | None) -> list[dict]:
     # FAIRsharing requires authentication; return empty if not configured
     logger.info("FAIRsharing scan not yet implemented")
     return []
+
+
+# ---------------------------------------------------------------------------
+# Dataset repository scanning (knowledge service — feature 036)
+# ---------------------------------------------------------------------------
+
+# Pre-approved sources with known adapters
+APPROVED_REPO_SOURCES = {
+    "openneuro": {"adapter": "bids", "auto_ingest": True},
+    "dandi": {"adapter": "dandi", "auto_ingest": True},
+}
+
+
+def scan_openneuro_datasets(since: str | None = None, limit: int = 50) -> list[dict]:
+    """Query OpenNeuro GraphQL API for recent datasets."""
+    import httpx
+
+    query = """
+    query($first: Int) {
+      datasets(first: $first, orderBy: {created: descending}) {
+        edges { node { id created } }
+      }
+    }
+    """
+    try:
+        resp = httpx.post(
+            "https://openneuro.org/crn/graphql",
+            json={"query": query, "variables": {"first": limit}},
+            timeout=30,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+
+        datasets = []
+        for edge in data.get("data", {}).get("datasets", {}).get("edges", []):
+            node = edge.get("node", {})
+            ds_id = node.get("id", "")
+            created = node.get("created", "")
+            if since and created < since:
+                continue
+            datasets.append(
+                {
+                    "id": ds_id,
+                    "url": f"https://github.com/OpenNeuroDatasets/{ds_id}.git",
+                    "adapter": "bids",
+                    "source": "openneuro",
+                    "created": created,
+                }
+            )
+        logger.info("OpenNeuro scan: found %d datasets", len(datasets))
+        return datasets
+    except Exception as exc:
+        logger.warning("OpenNeuro scan failed: %s", exc)
+        return []
+
+
+def scan_dandi_datasets(since: str | None = None, limit: int = 50) -> list[dict]:
+    """Query DANDI Archive API for recent dandisets."""
+    import httpx
+
+    try:
+        resp = httpx.get(
+            "https://api.dandiarchive.org/api/dandisets/",
+            params={"page_size": limit, "ordering": "-created"},
+            timeout=30,
+        )
+        resp.raise_for_status()
+        datasets = []
+        for ds in resp.json().get("results", []):
+            ds_id = ds.get("identifier", "")
+            created = ds.get("created", "")
+            if since and created < since:
+                continue
+            datasets.append(
+                {
+                    "id": ds_id,
+                    "url": f"https://dandiarchive.org/dandiset/{ds_id}",
+                    "adapter": "dandi",
+                    "source": "dandi",
+                    "created": created,
+                }
+            )
+        logger.info("DANDI scan: found %d dandisets", len(datasets))
+        return datasets
+    except Exception as exc:
+        logger.warning("DANDI scan failed: %s", exc)
+        return []
+
+
+def scan_all_repositories(since: str | None = None, limit: int = 50) -> list[dict]:
+    """Scan all approved repository endpoints for new datasets."""
+    results = []
+    results.extend(scan_openneuro_datasets(since=since, limit=limit))
+    results.extend(scan_dandi_datasets(since=since, limit=limit))
+    return results

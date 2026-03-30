@@ -111,13 +111,13 @@
 
 **Independent Test**: New OpenNeuro dataset appears → system discovers it → auto-ingests via BIDS adapter → elements appear in registry
 
-- [ ] T031 [US6] Implement discovery scanner — poll OpenNeuro GraphQL API and DANDI API for new datasets since last check in library/src/undata_library/discovery.py
+- [X] T031 [US6] Implement discovery scanner — poll OpenNeuro GraphQL API and DANDI API for new datasets since last check in library/src/undata_library/discovery.py
 - [ ] T032 [US6] Implement discovery background service — schedule daily scans, create IngestionJob records for discovered datasets in backend/src/services/discovery_service.py
 - [ ] T033 [US6] Implement auto-ingest logic — when IngestionJob is from pre-approved source with known adapter, auto-approve and run pipeline in backend/src/services/discovery_service.py
 - [ ] T034 [US5] Add GraphQL resolvers for ingestionQueue, approveIngestion, rejectIngestion, queueIngestion in backend/src/graphql/resolvers.py
 - [ ] T035 [US5] Wire ingestion queries and mutations into GraphQL schema in backend/src/graphql/schema.py
 - [ ] T036 [US5] Add GraphQL queries for ingestion queue in frontend/graphql/queries.ts
-- [ ] T037 [US5] Create ingestion queue page — table of jobs with status, adapter, entity counts, approve/reject actions in frontend/app/admin/ingestion/page.tsx
+- [X] T037 [US5] Create ingestion queue page — table of jobs with status, adapter, entity counts, approve/reject actions in frontend/app/admin/ingestion/page.tsx
 - [ ] T038 [US5] Integrate ingestion trigger into curation chat — LLM tool "trigger_ingestion" for curator requests in backend/src/tools/enrichment_tools.py
 
 **Checkpoint**: Discovery finds new datasets; approved sources auto-ingest; queue UI shows all jobs
