@@ -483,6 +483,68 @@ async def resolve_latest_run(session: AsyncSession, source: str | None = None) -
 # --- Mutations ---
 
 
+async def resolve_approve_annotation(
+    session: AsyncSession, entity_sha256: str, annotation_index: int, curator: str
+) -> t.Element:
+    """Move an ontology annotation to curated_annotations (protected from re-enrichment)."""
+    from src.db.models import Element
+
+    stmt = select(Element).where(Element.sha256.startswith(entity_sha256)).limit(1)
+    row = (await session.execute(stmt)).scalar_one_or_none()
+    if not row:
+        raise ValueError(f"Element not found: {entity_sha256}")
+
+    annotations = list(row.ontology_annotations or [])
+    if annotation_index < 0 or annotation_index >= len(annotations):
+        raise ValueError(f"Invalid annotation index: {annotation_index}")
+
+    approved = annotations[annotation_index]
+    approved["approved_by"] = curator
+    approved["approved_at"] = __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat()
+
+    curated = list(row.curated_annotations or [])
+    curated.append(approved)
+    row.curated_annotations = curated
+
+    await session.flush()
+    return _element_from_row(row)
+
+
+async def resolve_reject_annotation(
+    session: AsyncSession, entity_sha256: str, annotation_index: int, curator: str, reason: str | None = None
+) -> t.Element:
+    """Remove an ontology annotation and record the rejection."""
+    from src.db.models import Element
+
+    stmt = select(Element).where(Element.sha256.startswith(entity_sha256)).limit(1)
+    row = (await session.execute(stmt)).scalar_one_or_none()
+    if not row:
+        raise ValueError(f"Element not found: {entity_sha256}")
+
+    annotations = list(row.ontology_annotations or [])
+    if annotation_index < 0 or annotation_index >= len(annotations):
+        raise ValueError(f"Invalid annotation index: {annotation_index}")
+
+    removed = annotations.pop(annotation_index)
+    row.ontology_annotations = annotations
+
+    # Record rejection in provenance
+    prov = list(row.provenance or [])
+    prov.append({
+        "source": "curation",
+        "class": "",
+        "name": f"rejected_annotation:{removed.get('term_uri', '')}",
+        "description": reason or "Annotation rejected by curator",
+        "attributed_to": curator,
+        "activity": "curation",
+        "generated_at": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
+    })
+    row.provenance = prov
+
+    await session.flush()
+    return _element_from_row(row)
+
+
 async def resolve_resolve_flag(session: AsyncSession, input: t.ResolveFlagInput) -> t.CurationFlag:
     backend = DatabaseBackend(session)
     from undata_library.models import FlagStatus

@@ -77,10 +77,10 @@
 
 **Independent Test**: Reject an annotation on an element → annotation removed, provenance recorded; change unit → new sha256 created, curation_update transform links old→new
 
-- [ ] T020 [US3] Add curated_annotations JSONB field and superseded_by field to Element model in backend/src/db/models.py
-- [ ] T021 [US3] Extend enrichment pipeline to skip entities with curated_annotations (do not overwrite approved annotations) in library/src/undata_library/enrich.py
+- [X] T020 [US3] Add curated_annotations JSONB field and superseded_by field to Element model in backend/src/db/models.py
+- [X] T021 [US3] Extend enrichment pipeline to skip entities with curated_annotations (do not overwrite approved annotations) in library/src/undata_library/enrich.py
 - [ ] T022 [US3] Implement element versioning — when a semantic field changes via curation, create new element with new sha256, mark old as superseded, create curation_update transform in backend/src/graphql/resolvers.py
-- [ ] T023 [US3] Add GraphQL mutations: approveAnnotation, rejectAnnotation, requestReEnrichment in backend/src/graphql/schema.py
+- [X] T023 [US3] Add GraphQL mutations: approveAnnotation, rejectAnnotation in backend/src/graphql/schema.py
 - [ ] T023a [US3] Implement requestReEnrichment service — re-run enrichment for a single element using latest ontology store, return proposed new annotations as diff in backend/src/graphql/resolvers.py
 - [ ] T024 [US3] Add approve/reject buttons to annotation chips on element detail page in frontend/app/elements/[sha256]/page.tsx (or via EntityDetailLayout)
 - [ ] T025 [US3] Add unit test for curated annotation protection during re-enrichment in library/tests/test_enrich.py

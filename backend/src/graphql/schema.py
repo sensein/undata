@@ -192,6 +192,39 @@ class Mutation:
             return result
 
     @strawberry.mutation
+    async def approve_annotation(
+        self,
+        info: strawberry.types.Info,
+        entity_sha256: str,
+        annotation_index: int,
+    ) -> t.Element:
+        """Approve an ontology annotation — moves it to curated_annotations (protected from re-enrichment)."""
+        user = await _require_auth(info, "curator")
+        async with AsyncSessionLocal() as session:
+            result = await r.resolve_approve_annotation(
+                session, entity_sha256, annotation_index, user.get("name", "unknown")
+            )
+            await session.commit()
+            return result
+
+    @strawberry.mutation
+    async def reject_annotation(
+        self,
+        info: strawberry.types.Info,
+        entity_sha256: str,
+        annotation_index: int,
+        reason: Optional[str] = None,
+    ) -> t.Element:
+        """Reject an ontology annotation — removes it and records the rejection."""
+        user = await _require_auth(info, "curator")
+        async with AsyncSessionLocal() as session:
+            result = await r.resolve_reject_annotation(
+                session, entity_sha256, annotation_index, user.get("name", "unknown"), reason
+            )
+            await session.commit()
+            return result
+
+    @strawberry.mutation
     async def import_registry(self, info: strawberry.types.Info, registry_path: str) -> t.ImportResult:
         await _require_auth(info, "admin")
         async with AsyncSessionLocal() as session:

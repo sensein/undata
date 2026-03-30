@@ -29,6 +29,8 @@ class Element(Base):
     semantic: Mapped[dict] = mapped_column(JSONB, default=dict)
     provenance: Mapped[list] = mapped_column(JSONB, default=list)
     ontology_annotations: Mapped[list] = mapped_column(JSONB, default=list)
+    curated_annotations: Mapped[list | None] = mapped_column(JSONB, nullable=True)  # Curator-approved annotations (protected from re-enrichment)
+    superseded_by: Mapped[str | None] = mapped_column(String, nullable=True)  # sha256 of newer version
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
 
 

@@ -334,8 +334,11 @@ def enrich_elements(
         domain = None
 
         # 1. Assign ontology_annotations via embedding similarity
+        # Skip if element has curated (human-approved) annotations
+        has_curated = bool(data.get("curated_annotations"))
         if (
             not sem.get("ontology_annotations")
+            and not has_curated
             and onto_store is not None
             and elem_store is not None
         ):
