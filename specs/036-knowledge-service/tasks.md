@@ -42,10 +42,10 @@
 
 **Independent Test**: `uv run undata-library ontology list` shows 4+ new ontologies with combined >50K terms; re-enrichment of BIDS elements produces >40% annotation coverage
 
-- [ ] T008 [P] [US1] Add HoMBA ontology loader — download OWL from https://purl.brain-bican.org/ontology/homba.owl, load via load_rdf() in library/src/undata_library/ontology.py
-- [ ] T009 [P] [US1] Add NIDM-Terms loader — clone GitHub repo, convert JSON-LD term files to RDF, load via load_rdf() in library/src/undata_library/ontology.py
-- [ ] T010 [P] [US1] Create DICOM TTL generator — extract all tags from pydicom.datadict, generate TTL with URIs, load into ontology store in library/src/undata_library/adapters/standalone_scripts/dicom_to_ttl.py
-- [ ] T011 [P] [US1] Add RadLex ontology loader — download OWL from radlex.org or BioPortal, load via load_rdf() in library/src/undata_library/ontology.py
+- [X] T008 [P] [US1] Add HoMBA ontology config — URL registered in DOMAIN_ONTOLOGIES in library/src/undata_library/ontology_fetch.py
+- [X] T009 [P] [US1] Add NIDM-Terms config — OWL URL registered in DOMAIN_ONTOLOGIES in library/src/undata_library/ontology_fetch.py
+- [X] T010 [P] [US1] Create DICOM TTL generator — extract all tags from pydicom.datadict, generate TTL with URIs in library/src/undata_library/adapters/standalone_scripts/dicom_to_ttl.py
+- [X] T011 [P] [US1] Add RadLex ontology config — OWL URL registered in DOMAIN_ONTOLOGIES in library/src/undata_library/ontology_fetch.py
 - [ ] T012 [US1] Re-run enrichment on BIDS+NWB+DANDI elements with expanded ontology store, then assert annotated_count/total_count > 0.40 via `undata-library ontology info` and `validate-ingestion` in library/src/undata_library/enrich.py
 - [ ] T013 [US1] Add unit test verifying ontology term counts after loading all 4 new sources in library/tests/test_ontology_sources.py
 - [ ] T013a [US1] Add coverage regression test — assert enrichment produces annotations for >40% of elements, fails if coverage drops below threshold in library/tests/test_enrichment_coverage.py

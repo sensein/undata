@@ -405,7 +405,9 @@ def ontology_refresh(ontology: str | None, output_dir: str | None, exclude: tupl
 
 
 @ontology_group.command("add")
-@click.option("--name", "-n", required=True, help="Short name for the ontology (e.g., homba, radlex)")
+@click.option(
+    "--name", "-n", required=True, help="Short name for the ontology (e.g., homba, radlex)"
+)
 @click.option("--url", "-u", required=True, help="Download URL or local file path")
 @click.option("--format", "-f", "fmt", default="owl", help="Format: owl, obo, ttl, nt")
 @click.option("--display-name", default=None, help="Human-readable display name")

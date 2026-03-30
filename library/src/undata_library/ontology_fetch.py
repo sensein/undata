@@ -12,18 +12,42 @@ import re
 import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import httpx
 
+if TYPE_CHECKING:
+    from .ontology_store import OntologyStore
+
 logger = logging.getLogger(__name__)
 
-# Canonical OBO download URLs
+# Canonical OBO download URLs (original set)
 SUPPORTED_ONTOLOGIES = {
     "ncit": "http://purl.obolibrary.org/obo/ncit.obo",
     "pato": "http://purl.obolibrary.org/obo/pato.obo",
     "hp": "http://purl.obolibrary.org/obo/hp.obo",
     "obi": "http://purl.obolibrary.org/obo/obi.obo",
     "ncbitaxon": "http://purl.obolibrary.org/obo/ncbitaxon.obo",
+}
+
+# Domain-specific ontologies (knowledge service — feature 036)
+# These use OWL format and are loaded via ontology_store.add_source()
+DOMAIN_ONTOLOGIES = {
+    "homba": {
+        "url": "https://purl.brain-bican.org/ontology/homba.owl",
+        "format": "owl",
+        "display_name": "Harmonized Ontology of Mammalian Brain Anatomy",
+    },
+    "radlex": {
+        "url": "http://aber-owl.net/media/ontologies/RADLEX/37/radlex.owl",
+        "format": "owl",
+        "display_name": "RadLex — Radiology Lexicon (RSNA)",
+    },
+    "nidm": {
+        "url": "https://raw.githubusercontent.com/incf-nidash/nidm/master/nidm/nidm-experiment/terms/nidm-experiment.owl",
+        "format": "owl",
+        "display_name": "Neuroimaging Data Model (NIDM)",
+    },
 }
 
 # Ontologies small enough for full pronto parse (< 50MB)
@@ -67,6 +91,42 @@ def fetch_and_load_source(
         return result
     finally:
         tmp_path.unlink(missing_ok=True)
+
+
+def load_domain_ontologies(store: "OntologyStore") -> list[dict]:
+    """Load all domain-specific ontologies into the store.
+
+    Downloads HoMBA, NIDM, RadLex from their URLs and generates DICOM TTL
+    from pydicom. Returns list of metadata dicts.
+    """
+    results = []
+
+    for name, config in DOMAIN_ONTOLOGIES.items():
+        try:
+            result = fetch_and_load_source(name, config["url"], config["format"], store)
+            results.append(result)
+            logger.info("Loaded domain ontology %s: %d terms", name, result["term_count"])
+        except Exception as exc:
+            logger.warning("Failed to load domain ontology %s: %s", name, exc)
+            results.append({"name": name, "term_count": 0, "error": str(exc)})
+
+    # DICOM — generate TTL from pydicom
+    try:
+        from .adapters.standalone_scripts.dicom_to_ttl import generate_dicom_ttl
+
+        tmp = tempfile.NamedTemporaryFile(suffix=".ttl", delete=False)
+        tmp_path = Path(tmp.name)
+        tmp.close()
+        generate_dicom_ttl(tmp_path)
+        result = store.add_source("dicom", tmp_path, fmt="ttl")
+        results.append(result)
+        logger.info("Loaded DICOM ontology: %d terms", result["term_count"])
+        tmp_path.unlink(missing_ok=True)
+    except Exception as exc:
+        logger.warning("Failed to generate DICOM TTL: %s", exc)
+        results.append({"name": "dicom", "term_count": 0, "error": str(exc)})
+
+    return results
 
 
 def fetch_ontology(name: str) -> dict:
