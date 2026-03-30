@@ -132,10 +132,10 @@
 
 - [ ] T039 [US7] Add LLMEnrichmentProposal GraphQL resolvers: enrichmentProposals, requestEnrichment, batchEnrichment, reviewProposal in backend/src/graphql/resolvers.py
 - [ ] T040 [US7] Wire LLM enrichment queries and mutations into GraphQL schema in backend/src/graphql/schema.py
-- [ ] T041 [P] [US7] Implement suggest_ontology_annotation LLM skill — search ontology store, propose best match with reasoning in backend/src/services/enrichment_service.py
-- [ ] T042 [P] [US7] Implement suggest_unit LLM skill — infer unit from name+description+context with justification in backend/src/services/enrichment_service.py
+- [X] T041 [P] [US7] Implement suggest_ontology_annotation LLM skill — search ontology store, propose best match with reasoning in backend/src/services/enrichment_service.py
+- [X] T042 [P] [US7] Implement suggest_unit LLM skill — infer unit from name+description+context with justification in backend/src/services/enrichment_service.py
 - [ ] T043 [P] [US7] Implement assess_alignment LLM skill — compare two elements, assess if same concept or different variants in backend/src/services/enrichment_service.py
-- [ ] T044 [P] [US7] Implement generate_description LLM skill — create description from element name, type, unit, source context in backend/src/services/enrichment_service.py
+- [X] T044 [P] [US7] Implement generate_description LLM skill — create description from element name, type, unit, source context in backend/src/services/enrichment_service.py
 - [ ] T045 [US7] Implement batch enrichment orchestrator — queue elements, process with rate limiting and token budget tracking in backend/src/services/enrichment_service.py
 - [ ] T046 [US7] Add LLM enrichment tool definitions for curation chat integration in backend/src/tools/enrichment_tools.py
 - [ ] T047 [US7] Add enrichment proposals UI — show pending proposals per entity with approve/reject in frontend (extend entity detail pages)
