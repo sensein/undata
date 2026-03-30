@@ -34,10 +34,11 @@ As a data engineer, I need to ingest schema descriptors from OpenNeuro datasets 
 
 **Acceptance Scenarios**:
 
-1. **Given** the OpenNeuro adapter, **When** ingestion runs on a dataset (e.g., ds000228), **Then** it extracts elements from `participants.tsv` column headers, `dataset_description.json` fields, and sidecar JSON metadata keys.
-2. **Given** a dataset with non-standard columns in `participants.tsv` (e.g., "handedness_score", "WASI_IQ"), **When** ingested, **Then** each column becomes an element with data_type inferred from the column values and source "openneuro/{dataset_id}".
+1. **Given** the OpenNeuro adapter using datalad, **When** ingestion runs on a dataset (e.g., ds000228), **Then** it scans for all CSV/TSV files (participants.tsv, phenotype/*.tsv, etc.), reads their JSON sidecars for column descriptions, and extracts elements from column headers with data types inferred from values.
+2. **Given** a dataset with non-standard columns (e.g., "handedness_score", "WASI_IQ" in phenotype/behavioral.tsv), **When** ingested, **Then** each column becomes an element with data_type inferred from the column values, description from the JSON sidecar if available, and source "openneuro/{dataset_id}".
 3. **Given** multiple OpenNeuro datasets using the same BIDS field (e.g., "age"), **When** ingested, **Then** the existing "age" element gains additional provenance entries from each dataset (merged by sha256 match), not duplicate elements.
-4. **Given** any data repository that exposes metadata via a known format (JSON-LD, CSV data dictionary, JSON Schema), **When** pointed to by a curator, **Then** the system can ingest it using the existing adapter framework (json-schema, csv, linkml adapters).
+4. **Given** the ReproSchema library, **When** ingested, **Then** activities and items are extracted as schemas and elements respectively, with provenance linking to the ReproSchema repository.
+5. **Given** any data repository that exposes metadata via a known format (JSON-LD, CSV data dictionary, JSON Schema, JSON field mappings), **When** pointed to by a curator, **Then** the system can ingest it using the existing adapter framework.
 
 ---
 
@@ -143,9 +144,10 @@ As a curator, I need the system to use LLM capabilities to improve the knowledge
 ### Functional Requirements
 
 - **FR-001**: The ontology store MUST support loading ontologies from OWL, OBO, and TTL formats via URL or local file path.
-- **FR-002**: The system MUST integrate HoMBA (brain anatomy), NIDM (neuroimaging data model), DICOM data element dictionary, and RadLex (radiology) as ontology sources.
+- **FR-002**: The system MUST integrate HoMBA (brain anatomy), NIDM (neuroimaging data model), DICOM data element dictionary, RadLex (radiology), and ReproSchema library as ontology/vocabulary sources.
 - **FR-003**: After adding new ontologies, enrichment coverage on BIDS+NWB+DANDI elements MUST increase from the current ~10% to at least 40%.
-- **FR-004**: The system MUST support ingesting schema descriptors from OpenNeuro datasets — extracting elements from participants.tsv headers, dataset_description.json fields, and sidecar JSON keys.
+- **FR-004**: The system MUST support ingesting schema descriptors from OpenNeuro datasets via datalad — scanning each dataset for all CSV/TSV files (participants.tsv, phenotype/*.tsv, etc.) and their corresponding JSON sidecars that describe columns, extracting elements from column headers with data types inferred from values.
+- **FR-004a**: The system MUST ingest schema descriptors from the ReproSchema library (activities and items) and from stats/mapping repositories containing JSON field mappings (e.g., ABCD, HCP data dictionaries).
 - **FR-005**: When multiple datasets use the same BIDS field, the existing element MUST gain additional provenance entries (merge), not create duplicate elements.
 - **FR-006**: Curators MUST be able to review, approve, or reject enrichment-assigned ontology annotations on any element.
 - **FR-007**: When a curator modifies a semantic field (unit, data_type, pattern), a new element version MUST be created with a new sha256, and a curation_update transform MUST link old→new.
@@ -188,6 +190,8 @@ As a curator, I need the system to use LLM capabilities to improve the knowledge
 
 - Q: Should source discovery be manual (curator-provided URLs) or automated? → A: Automated discovery from pre-approved repository endpoints (OpenNeuro, DANDI) with auto-ingestion via known adapters; unknown sources queued for curator approval. Pre-built adapters for approved resources run without human intervention.
 - Q: Should the service integrate LLM operations for knowledge improvement? → A: Yes — LLM skills for ontology mapping with reasoning, unit inference, cross-source alignment, and description generation. Proposals presented as reviewable diffs, batch mode supported.
+- Q: What additional vocabulary sources? → A: ReproSchema library (activities/items as data element definitions) and stats/mapping repos with JSON field mappings (ABCD, HCP data dictionaries).
+- Q: How to access OpenNeuro datasets? → A: Via datalad, scanning each dataset for all CSV/TSV files and corresponding JSON sidecars that describe columns, not just participants.tsv.
 
 ## Scope Boundaries
 
