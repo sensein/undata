@@ -1,11 +1,12 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: features
   description: Multi-dimensional array of features extracted from each event.
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 23ce7e44e1c03ea5c136def2e6171f41027cefa6780f73db2c2b90a850fb566a

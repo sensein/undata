@@ -1,9 +1,0 @@
-id: 5a164523-ecb1-4e57-be4e-9c37dc2cf69d
-entity_type: element
-entity_ref: outervolumesuppression_a624753a32c4.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: OuterVolumeSuppression
-status: pending
-created_at: '2026-03-30T00:29:03.946728+00:00'

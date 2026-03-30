@@ -1,0 +1,9 @@
+id: 0f293a4f-a8c4-4dce-8de2-87ab5119404f
+entity_type: schema
+entity_ref: motiontaskinformation_91f6167e6477.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: motionTaskInformation
+status: pending
+created_at: '2026-03-30T00:40:06.351532+00:00'

@@ -1,0 +1,11 @@
+id: 48cd6e5b-f0f4-4c26-9900-4052752ab751
+entity_type: element
+entity_ref: metabolitemethod_530d0a4020e5.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.777), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/OBI_0000366
+  top_label: metabolite profiling assay
+  top_score: 0.7768
+status: pending
+created_at: '2026-03-30T01:18:36.910916+00:00'

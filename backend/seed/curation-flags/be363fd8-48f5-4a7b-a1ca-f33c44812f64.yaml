@@ -1,9 +1,0 @@
-id: be363fd8-48f5-4a7b-a1ca-f33c44812f64
-entity_type: element
-entity_ref: external_file_288b0ba22078.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: external_file
-status: pending
-created_at: '2026-03-30T00:29:03.817697+00:00'

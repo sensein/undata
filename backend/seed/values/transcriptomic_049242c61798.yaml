@@ -1,8 +1,0 @@
-semantic:
-  label: Transcriptomic
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: Transcriptomic
-sha256: 049242c61798570439392c31b22bc9c7044bc131c8bdb9e65e3dd8825037d7ce

@@ -1,8 +1,0 @@
-semantic:
-  label: Metabolomic
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: Metabolomic
-sha256: f06de4368a28b1cc9c429a73f6725eda9394c8e84d5eaa09770673503b7196f1

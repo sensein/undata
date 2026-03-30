@@ -1,8 +1,0 @@
-semantic:
-  label: Proteomic
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: Proteomic
-sha256: bd709ea30ae7063b6eb3934ba3f46711507ee56f98bd91aae15ebe6c2df6edf4

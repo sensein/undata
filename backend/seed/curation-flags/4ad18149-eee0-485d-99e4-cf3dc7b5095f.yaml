@@ -1,0 +1,9 @@
+id: 4ad18149-eee0-485d-99e4-cf3dc7b5095f
+entity_type: element
+entity_ref: times_ebf86bf03374.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: times
+status: pending
+created_at: '2026-03-30T01:18:37.152763+00:00'

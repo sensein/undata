@@ -1,0 +1,15 @@
+id: 52fd3127-302d-43b5-83c9-5579ee677899
+entity_type: value
+entity_ref: date_e2209e3f8466.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C25164
+    score: 1.0
+  - uri: http://purl.org/dc/elements/1.1/date
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/EDAM_data_2156
+    score: 1.0
+status: pending
+created_at: '2026-03-30T00:43:41.678026+00:00'

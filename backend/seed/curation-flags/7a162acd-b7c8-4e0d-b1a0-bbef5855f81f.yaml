@@ -1,0 +1,9 @@
+id: 7a162acd-b7c8-4e0d-b1a0-bbef5855f81f
+entity_type: element
+entity_ref: fiducialsdescription_de2453004d7e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: FiducialsDescription
+status: pending
+created_at: '2026-03-30T00:40:05.577463+00:00'

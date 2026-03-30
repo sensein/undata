@@ -1,0 +1,9 @@
+id: 55122033-8633-4b1d-84a9-bc83a8f9af8b
+entity_type: element
+entity_ref: nirscoordinateprocessingdescription_4d4b9a71bb0d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NIRSCoordinateProcessingDescription
+status: pending
+created_at: '2026-03-30T00:40:05.666561+00:00'

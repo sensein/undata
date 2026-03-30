@@ -1,0 +1,41 @@
+semantic:
+  value_type: categorical
+  label: generic
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C151960
+    term_label: Generic
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C97054
+    term_label: Generic Name
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8691
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C1312
+    term_label: Generic Drug
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7465
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C101886
+    term_label: Manufactures Non-Generics
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7148
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: generic
+sha256: 3b675a9a0a27fb158f6f402933e2ff7987de05d9e0d692ffe67ecc540294cb69

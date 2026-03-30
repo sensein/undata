@@ -1,0 +1,11 @@
+id: b221f207-67d1-4e53-b779-f92091f00f4d
+entity_type: value
+entity_ref: asl_b934836df306.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.714), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C64938
+  top_label: As
+  top_score: 0.7141
+status: pending
+created_at: '2026-03-30T01:18:37.257748+00:00'

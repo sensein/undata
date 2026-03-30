@@ -1,0 +1,9 @@
+id: 7fb51fc0-2e33-4497-b4f4-c755f3bd0e1a
+entity_type: element
+entity_ref: parallelacquisitiontechnique_405a1b3dd39c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ParallelAcquisitionTechnique
+status: pending
+created_at: '2026-03-30T00:40:05.683171+00:00'

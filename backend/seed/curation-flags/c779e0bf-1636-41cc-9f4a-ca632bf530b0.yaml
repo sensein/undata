@@ -1,0 +1,9 @@
+id: c779e0bf-1636-41cc-9f4a-ca632bf530b0
+entity_type: value
+entity_ref: dcite_isdocumentedby_6511e3d007f2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:IsDocumentedBy
+status: pending
+created_at: '2026-03-30T01:18:37.358812+00:00'

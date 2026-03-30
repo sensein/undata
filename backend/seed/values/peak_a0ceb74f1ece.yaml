@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: peak
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C48054
+    term_label: Peak
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: peak
+sha256: a0ceb74f1ece7e0db72c6b73643e527293013f4025e126eec5cd2c1f5a99aeef

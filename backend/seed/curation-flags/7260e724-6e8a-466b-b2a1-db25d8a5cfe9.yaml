@@ -1,0 +1,11 @@
+id: 7260e724-6e8a-466b-b2a1-db25d8a5cfe9
+entity_type: value
+entity_ref: csf_7288da611458.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.817), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C173272
+  top_label: CSF Analysis
+  top_score: 0.8172
+status: pending
+created_at: '2026-03-30T00:43:41.664024+00:00'

@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  min_value: 1.0
+provenance:
+- source: bids
+  class: metadata
+  name: B1ShimmingTechnique
+  description: 'The technique used to shim the *B*<sub>1</sub> field (for example,
+    `"Simple phase align"`
+
+    or `"Pre-saturated TurboFLASH"`).
+
+    '
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b6b07284f21e3112db9348161f9571a5409bb4f410341b83d9bf11d8c62ca4bc

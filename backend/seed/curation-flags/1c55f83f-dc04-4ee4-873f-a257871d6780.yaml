@@ -1,0 +1,9 @@
+id: 1c55f83f-dc04-4ee4-873f-a257871d6780
+entity_type: schema
+entity_ref: microscopychunktransformationsmatrixaxis_18fe49db1816.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MicroscopyChunkTransformationsMatrixAxis
+status: pending
+created_at: '2026-03-30T00:43:42.135426+00:00'

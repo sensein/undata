@@ -1,0 +1,9 @@
+id: fd89b4ca-4570-4684-969b-51d2330bc105
+entity_type: element
+entity_ref: image_mode_0e9ebff0483e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: image_mode
+status: pending
+created_at: '2026-03-30T01:18:36.840935+00:00'

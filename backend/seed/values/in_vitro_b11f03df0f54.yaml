@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: in_vitro
-provenance:
-- source: bids
-  class_: ''
-  name: in vitro
-sha256: b11f03df0f54eccfaa7134a079d8e9c016403c719a62635aabcbf00d5538ab5e

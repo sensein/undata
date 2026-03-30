@@ -1,0 +1,11 @@
+id: 47732df6-71f9-4ace-9e98-ad315ed2d3d6
+entity_type: value
+entity_ref: photo_b2c33279b486.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.857), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C86035
+  top_label: Photograph
+  top_score: 0.8566
+status: pending
+created_at: '2026-03-30T00:43:41.929007+00:00'

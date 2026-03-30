@@ -1,0 +1,11 @@
+id: 966c9a97-3931-49d5-ac4e-f6f91d520d8c
+entity_type: schema
+entity_ref: columns_431ad82cc5a6.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.857), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C61516
+  top_label: Column
+  top_score: 0.8572
+status: pending
+created_at: '2026-03-30T00:43:42.072947+00:00'

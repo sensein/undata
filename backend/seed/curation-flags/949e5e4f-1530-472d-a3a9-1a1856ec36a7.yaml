@@ -1,0 +1,9 @@
+id: 949e5e4f-1530-472d-a3a9-1a1856ec36a7
+entity_type: element
+entity_ref: tracerradlex_89c01c0d8abc.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TracerRadLex
+status: pending
+created_at: '2026-03-30T01:18:37.160689+00:00'

@@ -2,6 +2,47 @@ semantic:
   label: pet
   value_type: categorical
   display_name: Positron Emission Tomography
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C14201
+    term_label: Dog
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8008
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C173482
+    term_label: Pet Question
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7917
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C14182
+    term_label: Animal
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.757
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C14191
+    term_label: Cat
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7402
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C67894
+    term_label: Peta
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7073
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class: suffixes

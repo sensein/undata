@@ -1,6 +1,15 @@
 semantic:
   value_type: categorical
   label: pd
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C159622
+    term_label: RECIL PD
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.814
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: bids
   class_: ''

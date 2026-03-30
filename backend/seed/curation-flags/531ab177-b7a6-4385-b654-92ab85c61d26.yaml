@@ -1,9 +1,0 @@
-id: 531ab177-b7a6-4385-b654-92ab85c61d26
-entity_type: value
-entity_ref: kityokogawa_32fd997804e6.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: KitYokogawa
-status: pending
-created_at: '2026-03-30T00:29:09.145614+00:00'

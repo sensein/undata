@@ -2,7 +2,7 @@ semantic:
   properties:
   - ed6aea193e1aa40e4c16b02e8d63836635787a160668e074f406ea7d9a280c60
   - 8e628845254de4eb3c0f8295e36ed38a29f8c9182926345eefb4ce9e289904d9
-  - 1641b77b03d95664ba85dd887f1b93946cd47fee511c04d7ebe06563b6facd77
+  - 23d5d4e0e3e7048b83a3bf23acdce6f589ec32cdba4c6c1f4e0c53f71923fb12
   - e147f08b8b98c73d03416b219ddffee3f78f57c1b80dd9431291199bd0039af2
   - fedba951639790194abaad271847fcb25d9e3cd46990955d2484ff4438fa80fd
   - 10ca75e3b50f741c39bd0a77bc5885c7aaed2e52306dfeeea2e4d5b288714073
@@ -11,6 +11,55 @@ semantic:
   - b0da724afd3fa2e60ef47992a6f7ca414100f6004ce66a7f5c348ff4d6b42c95
   - e8b1e2aaf649264dc19b8a4eb1627bbd0c38529747810b163039de4b5addb140
   subclass_of: Contributor
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25190
+    term_label: Person
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.9359
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://www.w3.org/ns/prov#Person
+    term_label: Person
+    ontology: unknown
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.9359
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25191
+    term_label: Person Name
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7981
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_1692
+    term_label: Person name
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7981
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C14225
+    term_label: Human
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7201
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C198999
+    term_label: Person by Personal Characteristic
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7003
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: dandi
   class: Person

@@ -1,0 +1,15 @@
+id: 05014f61-fdaf-405e-addc-f4bf00919a58
+entity_type: element
+entity_ref: id_127f48f070e3.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.046)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C42778
+    score: 0.7538
+  - uri: http://purl.org/dc/elements/1.1/identifier
+    score: 0.7082
+  - uri: http://purl.obolibrary.org/obo/NCIT_C165071
+    score: 0.7082
+status: pending
+created_at: '2026-03-30T01:18:36.769061+00:00'

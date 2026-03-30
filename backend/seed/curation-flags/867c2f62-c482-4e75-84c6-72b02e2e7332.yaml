@@ -1,0 +1,9 @@
+id: 867c2f62-c482-4e75-84c6-72b02e2e7332
+entity_type: value
+entity_ref: dcite_book_0255b4f4ca72.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:Book
+status: pending
+created_at: '2026-03-30T01:18:37.342350+00:00'

@@ -2,6 +2,15 @@ semantic:
   label: MAGN
   value_type: categorical
   display_name: MAGN
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C60803
+    term_label: Magnifier
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7029
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: bids
   class: enums

@@ -5,6 +5,23 @@ semantic:
   - 1de334766b1476fb4e79f1080ba6b9c659696ee5add6129c84afde08fb9a27d1
   - c0e05c02477fa00de901d8dcd5c3ffa29f3315649204c4694c79514c4f970ac5
   subclass_of: BaseType
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_2379
+    term_label: Strain identifier
+    ontology: edam
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.849
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_1046
+    term_label: Strain name
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7236
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: dandi
   class: StrainType

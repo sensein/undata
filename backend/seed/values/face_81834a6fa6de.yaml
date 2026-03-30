@@ -1,0 +1,37 @@
+semantic:
+  label: Face
+  value_type: categorical
+  display_name: Face mask
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0001456
+    term_label: face
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C13071
+    term_label: Face
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C126364
+    term_label: Face
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: Face
+  description: 'A face mask.
+
+    '
+sha256: 81834a6fa6de8d1828d58648cc62324b7e9615034f185b48859ab3d39d6c6126

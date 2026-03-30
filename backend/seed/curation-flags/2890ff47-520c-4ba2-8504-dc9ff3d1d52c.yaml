@@ -1,0 +1,11 @@
+id: 2890ff47-520c-4ba2-8504-dc9ff3d1d52c
+entity_type: value
+entity_ref: bold_098aa6e70187.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.722), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C11081
+  top_label: BOLD Regimen
+  top_score: 0.7215
+status: pending
+created_at: '2026-03-30T00:43:41.626142+00:00'

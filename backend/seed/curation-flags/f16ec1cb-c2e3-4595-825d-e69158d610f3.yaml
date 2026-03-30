@@ -1,9 +1,0 @@
-id: f16ec1cb-c2e3-4595-825d-e69158d610f3
-entity_type: element
-entity_ref: calibrationunit_fef38b011a75.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CalibrationUnit
-status: pending
-created_at: '2026-03-30T00:29:03.740113+00:00'

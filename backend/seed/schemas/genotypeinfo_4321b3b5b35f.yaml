@@ -6,6 +6,31 @@ semantic:
   - 62c8d5279aa491f1ab59599323f1cebc122b39c02f27f73c81ff3c2c26f2267a
   - 5ca08adf8c03e5cedf4cc1217ff8c7cb9a7f7d12ce9263a2765f97ee635018f5
   subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C16631
+    term_label: Genotype
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7709
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_topic_0625
+    term_label: Genotype and phenotype
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.73
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0001305
+    term_label: genotype information
+    ontology: obi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7097
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: dandi
   class: GenotypeInfo

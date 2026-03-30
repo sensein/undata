@@ -1,0 +1,9 @@
+id: a907da95-1d7e-402a-a729-fdc460b22c0b
+entity_type: element
+entity_ref: delaytime_65a091b8b677.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DelayTime
+status: pending
+created_at: '2026-03-30T00:40:05.523792+00:00'

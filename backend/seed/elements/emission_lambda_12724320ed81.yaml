@@ -1,11 +1,12 @@
 semantic:
   data_type: float
+  value_domain: numeric
 provenance:
 - source: nwb
   class: nwb
   name: emission_lambda
   description: Emission wavelength for channel, in nm.
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 12724320ed81d42a0b0ae8eb1493180f0d0a6dfe99808a55f926a543ce0398cb

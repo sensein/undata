@@ -1,9 +1,0 @@
-id: 38a7dbfb-a12d-4463-8189-407cfb9c43c6
-entity_type: schema
-entity_ref: contributor_84dc6e068e14.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Contributor
-status: pending
-created_at: '2026-03-30T00:29:09.283308+00:00'

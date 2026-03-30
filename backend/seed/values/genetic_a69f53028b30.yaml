@@ -1,8 +1,0 @@
-semantic:
-  label: Genetic
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: Genetic
-sha256: a69f53028b30d985c11cc2f2eee12d985f00e4a1c854188b3c4c536eaa9b6bfc

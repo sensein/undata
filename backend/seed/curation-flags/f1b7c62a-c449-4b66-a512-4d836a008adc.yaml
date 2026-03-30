@@ -1,0 +1,9 @@
+id: f1b7c62a-c449-4b66-a512-4d836a008adc
+entity_type: schema
+entity_ref: mriaslpcaslspecific_cd7231c5c65b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRIASLPcaslSpecific
+status: pending
+created_at: '2026-03-30T01:18:37.882545+00:00'

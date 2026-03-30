@@ -1,0 +1,21 @@
+semantic:
+  label: SR
+  value_type: categorical
+  display_name: Super-resolution microscopy
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C117126
+    term_label: SR
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: suffixes
+  name: SR
+  description: 'Super-resolution microscopy imaging data
+
+    '
+sha256: af07dc632b990f49d382380471f356b94b9ce89c259d1ca7cf35669715c09887

@@ -1,9 +1,0 @@
-id: d2ac4fbe-ead4-415b-ae2b-8f009e34c59c
-entity_type: value
-entity_ref: space_6a228b6bbaef.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: space
-status: pending
-created_at: '2026-03-30T00:29:09.226833+00:00'

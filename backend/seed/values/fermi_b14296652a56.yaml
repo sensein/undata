@@ -1,6 +1,15 @@
 semantic:
   value_type: categorical
   label: fermi
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_36340
+    term_label: fermion
+    ontology: chebi
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8922
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: bids
   class_: ''

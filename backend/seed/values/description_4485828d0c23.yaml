@@ -1,0 +1,43 @@
+semantic:
+  label: description
+  value_type: categorical
+  display_name: Description file
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25365
+    term_label: Description
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.org/dc/elements/1.1/description
+    term_label: description
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/dc/terms/description
+    term_label: description
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: suffixes
+  name: description
+  description: 'A JSON file describing the entities that occur in the filename.
+
+
+    At present, this is used for atlas descriptions.
+
+
+    This file MUST be located at the root of the dataset.
+
+    '
+sha256: 4485828d0c23673bb27b3b31ba82afdc70732eb28fe0e2adb40cc580f6307439

@@ -1,9 +1,0 @@
-id: 0b8f6f54-e33a-41f8-8e5b-7055198e7c6c
-entity_type: element
-entity_ref: vasculature_image_cadc4b5e546d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: vasculature_image
-status: pending
-created_at: '2026-03-30T00:29:04.084674+00:00'

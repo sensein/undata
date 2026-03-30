@@ -1,0 +1,9 @@
+id: 0ced6b6f-58ee-4283-9d9e-7db638505605
+entity_type: value
+entity_ref: mnicolin27_dd53f48331c1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MNIColin27
+status: pending
+created_at: '2026-03-30T00:43:41.871773+00:00'

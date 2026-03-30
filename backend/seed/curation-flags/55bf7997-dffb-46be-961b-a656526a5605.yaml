@@ -1,9 +1,0 @@
-id: 55bf7997-dffb-46be-961b-a656526a5605
-entity_type: element
-entity_ref: injectionstart_68f0fcafdc14.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: InjectionStart
-status: pending
-created_at: '2026-03-30T00:29:03.875153+00:00'

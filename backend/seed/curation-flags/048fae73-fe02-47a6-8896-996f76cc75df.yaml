@@ -1,0 +1,9 @@
+id: 048fae73-fe02-47a6-8896-996f76cc75df
+entity_type: value
+entity_ref: sinchann_71c1acc58f22.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SINCHANN
+status: pending
+created_at: '2026-03-30T01:18:37.692940+00:00'

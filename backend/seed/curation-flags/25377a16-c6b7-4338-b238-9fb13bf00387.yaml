@@ -1,0 +1,9 @@
+id: 25377a16-c6b7-4338-b238-9fb13bf00387
+entity_type: value
+entity_ref: dcite_isoriginalformof_9dfd3eb90652.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:IsOriginalFormOf
+status: pending
+created_at: '2026-03-30T01:18:37.361791+00:00'

@@ -1,9 +1,0 @@
-id: 94dcdf2c-80cc-4ef1-a0c2-2e0d5ca862b2
-entity_type: element
-entity_ref: tracerradionuclide_13954615480e.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TracerRadionuclide
-status: pending
-created_at: '2026-03-30T00:29:04.067957+00:00'

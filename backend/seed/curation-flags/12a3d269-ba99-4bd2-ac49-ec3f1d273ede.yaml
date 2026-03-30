@@ -1,0 +1,9 @@
+id: 12a3d269-ba99-4bd2-ac49-ec3f1d273ede
+entity_type: schema
+entity_ref: eeg_sidecar_caa76dac8f79.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: eeg_sidecar
+status: pending
+created_at: '2026-03-30T01:18:37.803888+00:00'

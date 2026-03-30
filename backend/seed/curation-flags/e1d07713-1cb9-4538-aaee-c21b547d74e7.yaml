@@ -1,0 +1,9 @@
+id: e1d07713-1cb9-4538-aaee-c21b547d74e7
+entity_type: element
+entity_ref: spectralwidth_fb6ac17f7423.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpectralWidth
+status: pending
+created_at: '2026-03-30T01:18:37.123698+00:00'

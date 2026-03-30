@@ -1,0 +1,9 @@
+id: c8e1af74-7983-4862-ac3e-c710779b812d
+entity_type: element
+entity_ref: tracersnomed_0a5bdea863c3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TracerSNOMED
+status: pending
+created_at: '2026-03-30T00:40:05.781707+00:00'

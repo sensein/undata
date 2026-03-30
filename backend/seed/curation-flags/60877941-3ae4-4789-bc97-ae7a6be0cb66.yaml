@@ -1,0 +1,9 @@
+id: 60877941-3ae4-4789-bc97-ae7a6be0cb66
+entity_type: schema
+entity_ref: mrifunctaskinformation_7b50c0ce2a25.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRIFuncTaskInformation
+status: pending
+created_at: '2026-03-30T00:43:42.155812+00:00'

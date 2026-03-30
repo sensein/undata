@@ -1,0 +1,17 @@
+semantic:
+  data_type: string
+  value_domain: text
+  unit: hertz
+provenance:
+- source: bids
+  class: metadata
+  name: SamplingFrequency__nirs
+  description: 'Sampling frequency (in Hz) of all the data in the recording,
+
+    regardless of their type (for example, `2400`).
+
+    '
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 73920b9d53167bc14363359b730962c586cef9b861f1ebcd91627dae9e4b2d93

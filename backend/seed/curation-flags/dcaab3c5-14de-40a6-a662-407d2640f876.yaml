@@ -1,0 +1,15 @@
+id: dcaab3c5-14de-40a6-a662-407d2640f876
+entity_type: value
+entity_ref: other_biospecimen_b574c17cf349.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.042)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C70699
+    score: 0.8226
+  - uri: http://purl.obolibrary.org/obo/NCIT_C211856
+    score: 0.7805
+  - uri: http://purl.obolibrary.org/obo/NCIT_C178872
+    score: 0.7577
+status: pending
+created_at: '2026-03-30T00:40:06.143786+00:00'

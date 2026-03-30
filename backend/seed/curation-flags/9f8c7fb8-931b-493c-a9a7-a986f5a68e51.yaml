@@ -1,0 +1,9 @@
+id: 9f8c7fb8-931b-493c-a9a7-a986f5a68e51
+entity_type: element
+entity_ref: derivedfrom_99b0301d0d66.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DerivedFrom
+status: pending
+created_at: '2026-03-30T01:18:36.656586+00:00'

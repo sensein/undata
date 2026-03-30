@@ -1,12 +1,13 @@
 semantic:
   data_type: string
   type_ref: FrequencyBandsTable
+  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: bands
   description: Table for describing the bands that this series was generated from.
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: a420f342b0cba8e20a255e395ab1845c4085c4499d178695621e8b6305991759

@@ -1,9 +1,0 @@
-id: 23badf58-640e-4b56-8e3b-0d8a459ed134
-entity_type: element
-entity_ref: samplestaining_4ac6ddcc0b59.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SampleStaining
-status: pending
-created_at: '2026-03-30T00:29:01.037019+00:00'

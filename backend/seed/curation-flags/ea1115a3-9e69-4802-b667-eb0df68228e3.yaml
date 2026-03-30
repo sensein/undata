@@ -1,9 +1,0 @@
-id: ea1115a3-9e69-4802-b667-eb0df68228e3
-entity_type: element
-entity_ref: echoacquisition_a94530dc25aa.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EchoAcquisition
-status: pending
-created_at: '2026-03-30T00:29:03.791293+00:00'

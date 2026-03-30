@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+  min_value: 0.0
+provenance:
+- source: bids
+  class: metadata
+  name: B0ShimmingTechnique
+  description: 'The technique used to shim the *B*<sub>0</sub> field (for example,
+    `"Dynamic shim updating"`
+
+    or `"FASTMAP"`).
+
+    '
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 83fdfd20e66de9c365c6dc75a83c180892b5345f1e7dabf403c58e13482e976f

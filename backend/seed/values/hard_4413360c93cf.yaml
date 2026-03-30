@@ -1,0 +1,29 @@
+semantic:
+  label: HARD
+  value_type: categorical
+  display_name: Hard pulse
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C113682
+    term_label: Hard
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000386
+    term_label: hard
+    ontology: pato
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: HARD
+  description: 'A very brief, strong, rectangular pulse.
+
+    '
+sha256: 4413360c93cf3eb6eabb6ffb0f1bf0e493f036d751e4b39e913f2b66c2585451

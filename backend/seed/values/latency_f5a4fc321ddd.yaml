@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: latency
-provenance:
-- source: bids
-  class_: ''
-  name: LATENCY
-sha256: f5a4fc321ddd5731b53d5771c155edeccb88be5fc26f7e4e085b38e386a36c47

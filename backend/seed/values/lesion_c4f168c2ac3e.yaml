@@ -1,0 +1,89 @@
+semantic:
+  value_type: categorical
+  label: lesion
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C3824
+    term_label: Lesion
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C166231
+    term_label: Lesion Description
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9006
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C93429
+    term_label: Performed Lesion Description
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8455
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C35935
+    term_label: Sessile Lesion
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8292
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/HP_6000914
+    term_label: Single lesion
+    ontology: hp
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.823
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C128698
+    term_label: Not Otherwise Specified Lesion
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8228
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C94189
+    term_label: Lesion Identification
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8165
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C36129
+    term_label: High Grade Lesion
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8102
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C190106
+    term_label: Solid Lesion
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8091
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C215794
+    term_label: Raised Lesion
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.808
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: Lesion
+sha256: c4f168c2ac3e3e7e484fb759b68d2c8a4b99f630993cb31ba1c01b1533c1ea0f

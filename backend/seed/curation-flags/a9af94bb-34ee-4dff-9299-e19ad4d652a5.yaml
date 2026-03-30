@@ -1,9 +1,0 @@
-id: a9af94bb-34ee-4dff-9299-e19ad4d652a5
-entity_type: schema
-entity_ref: compassdirection_933df853b409.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CompassDirection
-status: pending
-created_at: '2026-03-30T00:29:09.281650+00:00'

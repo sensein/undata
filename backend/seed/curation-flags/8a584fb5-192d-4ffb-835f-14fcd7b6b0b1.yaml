@@ -1,9 +1,0 @@
-id: 8a584fb5-192d-4ffb-835f-14fcd7b6b0b1
-entity_type: element
-entity_ref: resistance_2683d63c5223.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: resistance
-status: pending
-created_at: '2026-03-30T00:29:03.987636+00:00'

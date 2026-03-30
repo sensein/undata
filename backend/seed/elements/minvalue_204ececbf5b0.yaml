@@ -1,11 +1,12 @@
 semantic:
   data_type: float
+  value_domain: numeric
 provenance:
 - source: dandi
   class: PropertyValue
   name: minValue
   description: ''
-  generated_at: '2026-03-30T00:29:06.281579+00:00'
+  generated_at: '2026-03-30T00:43:46.045696+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 204ececbf5b0993633bd64cad9b1e7ff30d666ce36f3ac8ce9f136dfda365d82

@@ -1,0 +1,11 @@
+id: 76761af4-d270-4fc7-a8ec-69cd4c666f30
+entity_type: value
+entity_ref: dcite_conferenceproceeding_3b5c1132387c.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.706), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C17453
+  top_label: Conference
+  top_score: 0.7061
+status: pending
+created_at: '2026-03-30T01:18:37.349025+00:00'

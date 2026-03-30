@@ -1,0 +1,29 @@
+semantic:
+  label: detector
+  value_type: categorical
+  display_name: detector
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C41276
+    term_label: Detector
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C49916
+    term_label: Detector Device
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9044
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: detector
+  description: 'A photoelectric transducer, sometimes called a receiver.
+
+    '
+sha256: 17c305834ba7b59f2495b3deda02bbcc3f2631fc91de1ab02a92a84ee44fcf84

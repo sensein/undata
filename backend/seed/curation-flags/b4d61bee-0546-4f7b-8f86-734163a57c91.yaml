@@ -1,9 +1,0 @@
-id: b4d61bee-0546-4f7b-8f86-734163a57c91
-entity_type: element
-entity_ref: spoilingrfphaseincrement_7aee21857b2a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SpoilingRFPhaseIncrement
-status: pending
-created_at: '2026-03-30T00:29:04.043146+00:00'

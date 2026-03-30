@@ -1,0 +1,9 @@
+id: 0429be18-bb41-446a-88db-2ed2368dd6cd
+entity_type: schema
+entity_ref: externalimage_cdee3b937bec.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ExternalImage
+status: pending
+created_at: '2026-03-30T01:18:37.824422+00:00'

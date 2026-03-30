@@ -1,0 +1,9 @@
+id: 6c74e611-6d2c-4409-8123-fbe3188ae7d8
+entity_type: schema
+entity_ref: emg_emgchannels_ab819ddf31f9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: emg_EMGChannels
+status: pending
+created_at: '2026-03-30T00:43:42.085159+00:00'

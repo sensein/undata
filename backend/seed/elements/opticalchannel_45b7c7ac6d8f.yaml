@@ -6,7 +6,7 @@ provenance:
   class: nwb
   name: OpticalChannel
   description: An optical channel used to record from an imaging plane.
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 45b7c7ac6d8f9fe066c0b68213504281c9152d5804134ea46d4c525001330cb2

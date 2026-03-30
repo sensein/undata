@@ -1,0 +1,9 @@
+id: 52cd1955-7d8e-4b4f-8d97-f008a001189f
+entity_type: element
+entity_ref: cohort_c7e5d8f9b75a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: cohort
+status: pending
+created_at: '2026-03-30T01:18:36.627115+00:00'

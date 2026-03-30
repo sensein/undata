@@ -1,13 +1,14 @@
 semantic:
   data_type: string
   type_ref: IntracellularElectrode
+  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: electrode
   description: Link to IntracellularElectrode object that describes the electrode
     that was used to apply or record this data.
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 6a6910dd8e84c7f74af97329cb899f81ef01df131d473294f010e3f3dc0a3abc

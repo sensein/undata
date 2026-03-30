@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  unit: micrometers
+provenance:
+- source: nwb
+  class: nwb
+  name: rel_x
+  description: x coordinate in electrode group. Units should be specified in microns.
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e30c475a574009edca88f835b06753d3aa31337595819b76bdc8ea256ca31f4b

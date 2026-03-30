@@ -1,9 +1,0 @@
-id: ada69dcc-8953-4b49-a954-84c0b1dc0be3
-entity_type: element
-entity_ref: anatomicallandmarkcoordinates_c29d34d18639.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: AnatomicalLandmarkCoordinates
-status: pending
-created_at: '2026-03-30T00:29:00.782828+00:00'

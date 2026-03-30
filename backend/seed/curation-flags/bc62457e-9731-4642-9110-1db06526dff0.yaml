@@ -1,0 +1,9 @@
+id: bc62457e-9731-4642-9110-1db06526dff0
+entity_type: value
+entity_ref: dcite_issupplementto_b971fdd2c455.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:IsSupplementTo
+status: pending
+created_at: '2026-03-30T01:18:37.366935+00:00'

@@ -1,0 +1,11 @@
+id: 8ad59fae-74dd-49df-84ac-66a1fa7c338c
+entity_type: element
+entity_ref: name_db61cbf8d75a.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.934), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C154704
+  top_label: Organizational Affiliation Name
+  top_score: 0.9345
+status: pending
+created_at: '2026-03-30T01:18:36.950668+00:00'

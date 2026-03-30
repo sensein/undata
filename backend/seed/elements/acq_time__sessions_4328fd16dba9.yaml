@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  value_domain: text
+  pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
+provenance:
+- source: bids
+  class: columns
+  name: acq_time__sessions
+  description: 'Acquisition time refers to when the first data point of the first
+    run was acquired.
+
+    Datetime format and their deidentification are described in
+
+    [Units](SPEC_ROOT/common-principles.md#units).
+
+    '
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4328fd16dba91241c145c72de45ec60804c07ffa79508a63f311552c868a94d9

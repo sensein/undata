@@ -1,0 +1,13 @@
+id: fd6c03fe-9f0c-49e8-82db-ba55e196270e
+entity_type: value
+entity_ref: phenotype_5e8b5b592f61.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C16977
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/UPHENO_0001001
+    score: 1.0
+status: pending
+created_at: '2026-03-30T01:18:37.632147+00:00'

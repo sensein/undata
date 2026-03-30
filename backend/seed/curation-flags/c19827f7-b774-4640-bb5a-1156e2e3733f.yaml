@@ -1,0 +1,9 @@
+id: c19827f7-b774-4640-bb5a-1156e2e3733f
+entity_type: element
+entity_ref: megrefchannelcount_1bc0f13d6490.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MEGREFChannelCount
+status: pending
+created_at: '2026-03-30T00:40:05.647390+00:00'

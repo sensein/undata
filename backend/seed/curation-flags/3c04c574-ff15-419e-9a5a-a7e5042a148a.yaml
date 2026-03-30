@@ -1,0 +1,11 @@
+id: 3c04c574-ff15-419e-9a5a-a7e5042a148a
+entity_type: element
+entity_ref: used_76a3ba26d67e.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.714), no LLM verification
+  top_match: http://www.w3.org/ns/prov#activity
+  top_label: activity
+  top_score: 0.7138
+status: pending
+created_at: '2026-03-30T01:18:37.182701+00:00'

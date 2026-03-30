@@ -1,0 +1,9 @@
+id: 924657b2-caa8-474d-98e5-ca9f5c5bf656
+entity_type: element
+entity_ref: initial_access_resistance_987b3dbd0768.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: initial_access_resistance
+status: pending
+created_at: '2026-03-30T01:18:36.849419+00:00'

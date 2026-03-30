@@ -1,12 +1,13 @@
 semantic:
   data_type: string
   type_ref: Clustering
+  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: clustering_interface
   description: Link to Clustering interface that was the source of the clustered data
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: dd101438a236cd50986a4f68ea39be801a157ddbf26c5f1924d7722facbb7c60

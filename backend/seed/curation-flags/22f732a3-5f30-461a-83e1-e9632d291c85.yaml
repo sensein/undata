@@ -1,0 +1,9 @@
+id: 22f732a3-5f30-461a-83e1-e9632d291c85
+entity_type: schema
+entity_ref: basetype_5b0dc7d84ae9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: BaseType
+status: pending
+created_at: '2026-03-30T01:18:37.783329+00:00'

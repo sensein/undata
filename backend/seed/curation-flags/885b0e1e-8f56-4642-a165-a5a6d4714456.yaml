@@ -1,9 +1,0 @@
-id: 885b0e1e-8f56-4642-a165-a5a6d4714456
-entity_type: element
-entity_ref: axis_descriptions_c5f81dbf6f10.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: axis_descriptions
-status: pending
-created_at: '2026-03-30T00:29:08.481550+00:00'

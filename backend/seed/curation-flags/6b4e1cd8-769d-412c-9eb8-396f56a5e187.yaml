@@ -1,9 +1,0 @@
-id: 6b4e1cd8-769d-412c-9eb8-396f56a5e187
-entity_type: element
-entity_ref: email_7c4802a0bdb1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: email
-status: pending
-created_at: '2026-03-30T00:29:08.586119+00:00'

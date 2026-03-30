@@ -1,0 +1,9 @@
+id: 9eebb5c6-33c5-478c-b6c3-51b70a0e318b
+entity_type: element
+entity_ref: ieegelectrodegroups_09c8aa6b1df3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: iEEGElectrodeGroups
+status: pending
+created_at: '2026-03-30T00:40:05.608350+00:00'

@@ -1,9 +1,0 @@
-id: 96931e4e-04e2-4858-b5a6-9ac67e7e8529
-entity_type: element
-entity_ref: band_limits_d619712b8564.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: band_limits
-status: pending
-created_at: '2026-03-30T00:29:08.485657+00:00'

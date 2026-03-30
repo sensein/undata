@@ -1,9 +1,0 @@
-id: c77732f6-d5ef-4a45-99da-8d1aff3277fa
-entity_type: element
-entity_ref: reference__emg_2f57490b257a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: reference__emg
-status: pending
-created_at: '2026-03-30T00:29:08.825226+00:00'

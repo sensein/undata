@@ -1,0 +1,9 @@
+id: 5f2d8e63-cc5d-46d7-8a84-2af04fa92337
+entity_type: element
+entity_ref: emgchannelcount_dc5ab64b39dd.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EMGChannelCount
+status: pending
+created_at: '2026-03-30T01:18:36.709060+00:00'

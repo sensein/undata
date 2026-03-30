@@ -1,0 +1,9 @@
+id: d5332cba-95ae-42c0-be11-3820b091817f
+entity_type: element
+entity_ref: sampleprimaryantibody_06e55b6c80ef.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SamplePrimaryAntibody
+status: pending
+created_at: '2026-03-30T00:43:41.465205+00:00'

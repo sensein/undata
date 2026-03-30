@@ -1,0 +1,9 @@
+id: bc1f8fc4-7049-4adb-a307-6d96d437be34
+entity_type: element
+entity_ref: serial_number_b0b84467a49f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: serial_number
+status: pending
+created_at: '2026-03-30T00:43:41.478813+00:00'

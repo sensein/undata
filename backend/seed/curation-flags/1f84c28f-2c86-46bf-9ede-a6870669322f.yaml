@@ -1,9 +1,0 @@
-id: 1f84c28f-2c86-46bf-9ede-a6870669322f
-entity_type: value
-entity_ref: anat_0d0870d924ab.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: anat
-status: pending
-created_at: '2026-03-30T00:29:01.137277+00:00'

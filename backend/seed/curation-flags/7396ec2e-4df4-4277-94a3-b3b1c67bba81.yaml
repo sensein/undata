@@ -1,0 +1,11 @@
+id: 7396ec2e-4df4-4277-94a3-b3b1c67bba81
+entity_type: value
+entity_ref: cell_line_e7d60c00f16e.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.843), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/CLO_0000031
+  top_label: cell line
+  top_score: 0.8432
+status: pending
+created_at: '2026-03-30T00:40:05.888884+00:00'

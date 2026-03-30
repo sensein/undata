@@ -11,6 +11,15 @@ semantic:
   - c998b4d20a008a2b423b928961f6dd310e010922752d1ff9f40dd56b74745e6b
   - 432d7f9177f7dc0f0a8b37b252453e594fa03c6a25cece6377952a34c7cc43ed
   subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C43412
+    term_label: Biosample
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8185
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: dandi
   class: BioSample

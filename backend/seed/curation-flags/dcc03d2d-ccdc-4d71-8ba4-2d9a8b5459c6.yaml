@@ -1,9 +1,0 @@
-id: dcc03d2d-ccdc-4d71-8ba4-2d9a8b5459c6
-entity_type: element
-entity_ref: placement_description_c0f6050cc764.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: placement_description
-status: pending
-created_at: '2026-03-30T00:29:01.000755+00:00'

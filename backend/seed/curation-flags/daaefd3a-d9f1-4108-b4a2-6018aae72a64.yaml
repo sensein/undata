@@ -1,0 +1,11 @@
+id: daaefd3a-d9f1-4108-b4a2-6018aae72a64
+entity_type: value
+entity_ref: norf_8d9660d90908.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.724), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_data_1807
+  top_label: ORF name
+  top_score: 0.7238
+status: pending
+created_at: '2026-03-30T00:40:06.130847+00:00'

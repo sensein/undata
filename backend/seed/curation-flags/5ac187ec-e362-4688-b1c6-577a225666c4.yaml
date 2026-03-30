@@ -1,0 +1,9 @@
+id: 5ac187ec-e362-4688-b1c6-577a225666c4
+entity_type: schema
+entity_ref: rgbimage_338afbe08636.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: RGBImage
+status: pending
+created_at: '2026-03-30T00:43:42.193103+00:00'

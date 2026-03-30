@@ -1,9 +1,0 @@
-id: 341b1fc1-308d-45b2-bad4-c18e0da3cfe3
-entity_type: value
-entity_ref: macrovascular_b6eea000856a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: macrovascular
-status: pending
-created_at: '2026-03-30T00:29:09.152305+00:00'

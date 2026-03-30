@@ -1,0 +1,11 @@
+id: 015e92f9-fae3-49bb-90c2-179da10caf05
+entity_type: value
+entity_ref: tem_9a37407bb416.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.726), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C152553
+  top_label: Temsavir
+  top_score: 0.7263
+status: pending
+created_at: '2026-03-30T01:18:37.721765+00:00'

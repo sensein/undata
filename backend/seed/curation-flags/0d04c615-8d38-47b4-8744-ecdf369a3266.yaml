@@ -1,9 +1,0 @@
-id: 0d04c615-8d38-47b4-8744-ecdf369a3266
-entity_type: value
-entity_ref: saliva_59d8abbcaaef.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: saliva
-status: pending
-created_at: '2026-03-30T00:29:01.292162+00:00'

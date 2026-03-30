@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: none
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C41132
+    term_label: None
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: NONE
+sha256: 2aa219aff4a051257d66798fafee73861314d39173318899cb90896d4ec021f7

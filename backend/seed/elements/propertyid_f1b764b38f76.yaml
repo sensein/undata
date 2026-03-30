@@ -1,0 +1,30 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: dandi:doi
+    label: dandi:doi
+    ontology_term: https://schema.undata.live/values/d140090a-71e8-444d-85b6-5afc6d3b3437
+  - value: dandi:orcid
+    label: dandi:orcid
+    ontology_term: https://schema.undata.live/values/a23ff0e5-2336-4dd8-8042-9ba61853e2ec
+  - value: dandi:ror
+    label: dandi:ror
+    ontology_term: https://schema.undata.live/values/b5046c48-5bd5-4d86-be03-ca4c31efef36
+  - value: dandi:dandi
+    label: dandi:dandi
+    ontology_term: https://schema.undata.live/values/73840558-e50d-421d-9b84-4e803429b740
+  - value: dandi:rrid
+    label: dandi:rrid
+    ontology_term: https://schema.undata.live/values/efcf758f-cd20-40c6-bce2-f4349873cf9c
+  value_domain: categorical
+  pattern: ^10\.\d{4,}
+provenance:
+- source: dandi
+  class: PropertyValue
+  name: propertyID
+  description: A commonly used identifier for the characteristic represented by the
+    property. For example, a known prefix like DOI or a full URL.
+  generated_at: '2026-03-30T00:43:46.045696+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f1b764b38f76ebf0533da05023f0514fee29df5701dc6e1b384fb0327fb894a0

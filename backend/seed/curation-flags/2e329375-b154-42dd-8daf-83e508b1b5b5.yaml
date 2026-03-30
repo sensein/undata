@@ -1,0 +1,9 @@
+id: 2e329375-b154-42dd-8daf-83e508b1b5b5
+entity_type: element
+entity_ref: resistance_comp_bandwidth_98687623f0db.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: resistance_comp_bandwidth
+status: pending
+created_at: '2026-03-30T01:18:37.039983+00:00'

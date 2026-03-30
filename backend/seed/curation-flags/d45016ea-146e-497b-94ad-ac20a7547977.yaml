@@ -1,9 +1,0 @@
-id: d45016ea-146e-497b-94ad-ac20a7547977
-entity_type: schema
-entity_ref: imagemaskseries_071a82023436.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ImageMaskSeries
-status: pending
-created_at: '2026-03-30T00:29:09.318857+00:00'

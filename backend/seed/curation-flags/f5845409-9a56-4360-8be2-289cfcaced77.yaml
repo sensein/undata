@@ -1,0 +1,11 @@
+id: f5845409-9a56-4360-8be2-289cfcaced77
+entity_type: value
+entity_ref: adc_6abe2d2f1c28.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.771), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/CHEBI_16761
+  top_label: ADP
+  top_score: 0.771
+status: pending
+created_at: '2026-03-30T01:18:37.246065+00:00'

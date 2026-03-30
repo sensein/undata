@@ -5,6 +5,15 @@ semantic:
   - d1598e4a4cfa7de98af09e9a3407208ef9a6a9eb0257db5006667bd291fe1516
   - 6544beaf3b9b8b4df734330a2ac62331c4580ee0e5e0e13f4cff8309a1ebf733
   subclass_of: BaseType
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C103180
+    term_label: Data Standard
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.746
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: dandi
   class: StandardsType

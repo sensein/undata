@@ -1,0 +1,23 @@
+semantic:
+  label: boolean
+  value_type: categorical
+  display_name: Boolean
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C45254
+    term_label: Boolean
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: formats
+  name: boolean
+  description: 'A boolean.
+
+    Must be either "true" or "false".
+
+    '
+sha256: 3c5c44ce617ffe0233179f35e1416e3cec6d7df4564772b185c178281ad59659

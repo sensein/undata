@@ -1,9 +1,0 @@
-id: 27ed7b87-4476-49c1-a369-ba4ecf59025d
-entity_type: schema
-entity_ref: intracellularstimulitable_6bb137577875.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: IntracellularStimuliTable
-status: pending
-created_at: '2026-03-30T00:29:09.325382+00:00'

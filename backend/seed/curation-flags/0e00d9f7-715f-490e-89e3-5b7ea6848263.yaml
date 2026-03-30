@@ -1,0 +1,11 @@
+id: 0e00d9f7-715f-490e-89e3-5b7ea6848263
+entity_type: value
+entity_ref: svs_2fd43aa7ec3a.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.729), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C14279
+  top_label: SV40
+  top_score: 0.7293
+status: pending
+created_at: '2026-03-30T00:43:42.003184+00:00'

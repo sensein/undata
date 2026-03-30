@@ -6,7 +6,7 @@ provenance:
   class: nwb
   name: ElectricalSeries
   description: ElectricalSeries object(s) containing filtered electrophysiology data.
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 5c439fadd909c89388ca9ff00f21477332c6c59d3e8a93e8fd45f9d2f18053e1

@@ -1,0 +1,9 @@
+id: 236d2801-e1aa-4292-9c09-592ed9e9068a
+entity_type: element
+entity_ref: acknowledgements_520d509ef651.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Acknowledgements
+status: pending
+created_at: '2026-03-30T00:40:05.472350+00:00'

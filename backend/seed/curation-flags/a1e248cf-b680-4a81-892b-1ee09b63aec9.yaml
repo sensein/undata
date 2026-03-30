@@ -1,0 +1,11 @@
+id: a1e248cf-b680-4a81-892b-1ee09b63aec9
+entity_type: value
+entity_ref: electrodes_398f4eed3346.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.901), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C49936
+  top_label: Electrode Device
+  top_score: 0.901
+status: pending
+created_at: '2026-03-30T01:18:37.408573+00:00'

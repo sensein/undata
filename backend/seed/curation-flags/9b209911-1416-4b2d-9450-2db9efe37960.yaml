@@ -1,0 +1,9 @@
+id: 9b209911-1416-4b2d-9450-2db9efe37960
+entity_type: value
+entity_ref: fslr_db983a98d24a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: fsLR
+status: pending
+created_at: '2026-03-30T00:40:05.980405+00:00'

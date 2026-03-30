@@ -1,9 +1,0 @@
-id: 88a60fe2-18e1-43a0-ba53-65ce0f5d2e25
-entity_type: value
-entity_ref: vfa_4592c27fa9c3.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: VFA
-status: pending
-created_at: '2026-03-30T00:29:04.326568+00:00'

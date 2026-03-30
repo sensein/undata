@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: date
-provenance:
-- source: bids
-  class_: ''
-  name: date
-sha256: 3daf9a459ed9446ba60d1af734a6f57ac480605e58eabf88e0d2e2fdc3b55fb5

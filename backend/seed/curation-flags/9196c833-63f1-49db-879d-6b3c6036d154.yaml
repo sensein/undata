@@ -1,0 +1,9 @@
+id: 9196c833-63f1-49db-879d-6b3c6036d154
+entity_type: element
+entity_ref: hemisphere_5d1e8d14af6a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: hemisphere
+status: pending
+created_at: '2026-03-30T01:18:36.764568+00:00'

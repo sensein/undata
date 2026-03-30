@@ -2,6 +2,23 @@ semantic:
   label: stim
   value_type: categorical
   display_name: Continuous recording
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C52380
+    term_label: STIM1 wt Allele
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7581
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C20862
+    term_label: STIM1 Gene
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7029
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class: suffixes

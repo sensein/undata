@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: integer
-provenance:
-- source: bids
-  class_: ''
-  name: integer
-sha256: 517139affbc35cf4d3f6d1fb352f40ec3a3474834b019e794728f93783104d7c

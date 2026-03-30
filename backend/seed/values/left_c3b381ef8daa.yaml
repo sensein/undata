@@ -1,0 +1,41 @@
+semantic:
+  value_type: categorical
+  label: left
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/HP_0012835
+    term_label: Left
+    ontology: hp
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000366
+    term_label: left
+    ontology: pato
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25229
+    term_label: Left
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://uri.interlex.org/tgbugs/uris/readable/atlas/Left
+    term_label: left
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: left
+sha256: c3b381ef8daa1d57adb3848edb94353df27a0cdcc4dca8890abc832e32dc0ba5

@@ -1,11 +1,12 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: date_of_birth
   description: Date of birth of subject. Can be supplied instead of 'age'.
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 781df15e3f7d699014ab4796f8cc9842781db907cfb47dea30a161f07212fe38

@@ -1,0 +1,11 @@
+id: 888ddf48-7967-46ee-96c5-5d8b524fc094
+entity_type: value
+entity_ref: chietiitab_c3a07a643a83.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.748), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C14194
+  top_label: Chimera
+  top_score: 0.7475
+status: pending
+created_at: '2026-03-30T00:43:41.653520+00:00'

@@ -1,0 +1,9 @@
+id: dfe0fbc5-8d94-428a-98ec-1479aa8359e5
+entity_type: element
+entity_ref: features_23ce7e44e1c0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: features
+status: pending
+created_at: '2026-03-30T00:43:41.273654+00:00'

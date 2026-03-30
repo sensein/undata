@@ -1,11 +1,12 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: stimulus_type
   description: The type of stimulus used for the sequential recording.
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 6ad5b8a7ca00f8da124f589eecf9f44984e1e7db53a5e6fad8996edbcc12cc89

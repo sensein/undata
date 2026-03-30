@@ -1,0 +1,9 @@
+id: 16f286d0-aae0-48b2-b7cc-12d3da57d4b8
+entity_type: element
+entity_ref: scanningsequence__mrs_711ae4d8c316.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ScanningSequence__mrs
+status: pending
+created_at: '2026-03-30T01:18:37.071574+00:00'

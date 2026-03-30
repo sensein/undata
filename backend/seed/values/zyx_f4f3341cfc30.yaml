@@ -1,6 +1,31 @@
 semantic:
   value_type: categorical
   label: zyx
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C92674
+    term_label: Zyxin
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8888
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C92672
+    term_label: ZYX Gene
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7483
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C92673
+    term_label: ZYX wt Allele
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7455
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class_: ''

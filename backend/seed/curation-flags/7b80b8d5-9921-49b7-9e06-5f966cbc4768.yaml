@@ -1,0 +1,9 @@
+id: 7b80b8d5-9921-49b7-9e06-5f966cbc4768
+entity_type: value
+entity_ref: probseg_5ceb2acb0007.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: probseg
+status: pending
+created_at: '2026-03-30T01:18:37.648450+00:00'

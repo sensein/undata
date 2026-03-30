@@ -2,6 +2,23 @@ semantic:
   label: single-coil
   value_type: categorical
   display_name: single-coil
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C49877
+    term_label: Coil Device
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.789
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0001794
+    term_label: coiling
+    ontology: pato
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7751
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class: enums

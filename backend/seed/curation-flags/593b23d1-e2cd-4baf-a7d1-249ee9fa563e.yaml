@@ -1,9 +1,0 @@
-id: 593b23d1-e2cd-4baf-a7d1-249ee9fa563e
-entity_type: element
-entity_ref: bodypartdetailsontology_dc45686fdbf1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: BodyPartDetailsOntology
-status: pending
-created_at: '2026-03-30T00:29:03.735916+00:00'

@@ -1,9 +1,0 @@
-id: 92a4c415-91ac-436e-9d8f-4eb93efc7b46
-entity_type: element
-entity_ref: matrixsize_a740d4856ee4.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MatrixSize
-status: pending
-created_at: '2026-03-30T00:29:08.723263+00:00'

@@ -1,0 +1,9 @@
+id: e99b477a-91b5-40a6-964c-7985c2a3d911
+entity_type: element
+entity_ref: source_electricalseries_0a21d01062d7.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: source_electricalseries
+status: pending
+created_at: '2026-03-30T00:43:41.494556+00:00'

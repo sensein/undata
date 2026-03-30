@@ -1,0 +1,9 @@
+id: fa751105-46d6-4ec3-b35c-879730445197
+entity_type: element
+entity_ref: component_400770b7b069.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: component
+status: pending
+created_at: '2026-03-30T01:18:36.630022+00:00'

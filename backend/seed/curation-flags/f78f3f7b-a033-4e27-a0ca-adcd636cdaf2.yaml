@@ -1,9 +1,0 @@
-id: f78f3f7b-a033-4e27-a0ca-adcd636cdaf2
-entity_type: element
-entity_ref: citation_e60b9c353858.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: citation
-status: pending
-created_at: '2026-03-30T00:29:08.505899+00:00'

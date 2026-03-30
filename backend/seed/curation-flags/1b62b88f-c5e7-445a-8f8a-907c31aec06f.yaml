@@ -1,9 +1,0 @@
-id: 1b62b88f-c5e7-445a-8f8a-907c31aec06f
-entity_type: schema
-entity_ref: emgplacementschemedescription_245b2a91dae9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EMGPlacementSchemeDescription
-status: pending
-created_at: '2026-03-30T00:29:04.360150+00:00'

@@ -1,9 +1,0 @@
-id: 576bf08a-f825-41c2-ac09-5db46120bfc1
-entity_type: value
-entity_ref: absent_0d582d07f78b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Absent
-status: pending
-created_at: '2026-03-30T00:29:01.134186+00:00'

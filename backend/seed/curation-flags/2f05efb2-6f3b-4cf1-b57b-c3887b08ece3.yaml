@@ -1,9 +1,0 @@
-id: 2f05efb2-6f3b-4cf1-b57b-c3887b08ece3
-entity_type: schema
-entity_ref: microscopychunktransformations_d4f74c4f3da4.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MicroscopyChunkTransformations
-status: pending
-created_at: '2026-03-30T00:29:04.406308+00:00'

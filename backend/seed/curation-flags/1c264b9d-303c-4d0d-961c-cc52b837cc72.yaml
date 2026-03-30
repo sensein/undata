@@ -1,0 +1,9 @@
+id: 1c264b9d-303c-4d0d-961c-cc52b837cc72
+entity_type: value
+entity_ref: .label.gii_7fae35128393.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: labelgii
+status: pending
+created_at: '2026-03-30T00:43:41.577946+00:00'

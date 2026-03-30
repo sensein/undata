@@ -1,12 +1,13 @@
 semantic:
   data_type: string
   type_ref: Units
+  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: units
   description: Data about sorted spike units.
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 8c0d59904e43b15c630716907f0da909165905176f96c82c9cebefdceff3f81f

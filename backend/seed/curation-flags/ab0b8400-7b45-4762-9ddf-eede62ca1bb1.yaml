@@ -1,9 +1,0 @@
-id: ab0b8400-7b45-4762-9ddf-eede62ca1bb1
-entity_type: schema
-entity_ref: mrianatomicallandmarks_966470ada426.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MRIAnatomicalLandmarks
-status: pending
-created_at: '2026-03-30T00:29:09.354665+00:00'

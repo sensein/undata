@@ -1,6 +1,31 @@
 semantic:
   value_type: categorical
   label: macrovascular
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C16900
+    term_label: Neovascularization
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7615
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C27999
+    term_label: Hypervascular
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7555
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C113113
+    term_label: Arterial Hypervascularization
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7032
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class_: ''

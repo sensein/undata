@@ -1,0 +1,9 @@
+id: c9c51e4f-e7ff-416e-8c5c-02d8e84264d0
+entity_type: element
+entity_ref: averagecalibrationerror_54a1d2fa33c4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AverageCalibrationError
+status: pending
+created_at: '2026-03-30T01:18:36.596193+00:00'

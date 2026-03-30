@@ -1,11 +1,12 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: serial_number
   description: The serial number of the device.
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: b0b84467a49fac6d9433ee6a02d5bd604ed6e5e2ad7dcaf46193e11e017c9610

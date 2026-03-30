@@ -1,9 +1,0 @@
-id: 723804a9-208b-4675-bddb-b16410d02dd3
-entity_type: element
-entity_ref: anchorelectrode_1c3e83cf96fc.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: AnchorElectrode
-status: pending
-created_at: '2026-03-30T00:29:08.471216+00:00'

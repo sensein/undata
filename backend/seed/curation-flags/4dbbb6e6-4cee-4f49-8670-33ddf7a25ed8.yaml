@@ -1,9 +1,0 @@
-id: 4dbbb6e6-4cee-4f49-8670-33ddf7a25ed8
-entity_type: element
-entity_ref: tissueorigin_1e1fd23e1ec6.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TissueOrigin
-status: pending
-created_at: '2026-03-30T00:29:04.064713+00:00'

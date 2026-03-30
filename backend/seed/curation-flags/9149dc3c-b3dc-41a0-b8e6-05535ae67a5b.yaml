@@ -1,9 +1,0 @@
-id: 9149dc3c-b3dc-41a0-b8e6-05535ae67a5b
-entity_type: schema
-entity_ref: annotationseries_4b9567efbdaa.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: AnnotationSeries
-status: pending
-created_at: '2026-03-30T00:29:09.266811+00:00'

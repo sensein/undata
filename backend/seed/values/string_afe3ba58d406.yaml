@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: string
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C45253
+    term_label: String
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: string
+sha256: afe3ba58d4067671dcf2ab7e35a851c5eff0fcc10747f394acdcc4eb6f98b6e9

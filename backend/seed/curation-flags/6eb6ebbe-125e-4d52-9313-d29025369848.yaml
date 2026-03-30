@@ -1,0 +1,11 @@
+id: 6eb6ebbe-125e-4d52-9313-d29025369848
+entity_type: value
+entity_ref: epoched_cf46eeffa688.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.787), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C93825
+  top_label: Epoch Name
+  top_score: 0.7872
+status: pending
+created_at: '2026-03-30T00:40:05.960032+00:00'

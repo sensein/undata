@@ -1,0 +1,9 @@
+id: 22cbf91f-5d0e-427a-aa28-faa4bd693deb
+entity_type: element
+entity_ref: ecgchannelcount_c8a2a62a33b3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ECGChannelCount
+status: pending
+created_at: '2026-03-30T00:43:41.244066+00:00'

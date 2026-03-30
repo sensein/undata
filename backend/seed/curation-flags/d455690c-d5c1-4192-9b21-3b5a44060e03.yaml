@@ -1,0 +1,11 @@
+id: d455690c-d5c1-4192-9b21-3b5a44060e03
+entity_type: value
+entity_ref: breast_milk_11852d03a22f.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.769), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/UBERON_0000310
+  top_label: breast
+  top_score: 0.7687
+status: pending
+created_at: '2026-03-30T00:40:05.872584+00:00'

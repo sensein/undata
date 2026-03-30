@@ -1,0 +1,9 @@
+id: 20746d62-22fd-4fd9-bb4b-93cd863299ba
+entity_type: element
+entity_ref: dispersioncorrected_48213b5776c1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DispersionCorrected
+status: pending
+created_at: '2026-03-30T00:43:41.240841+00:00'

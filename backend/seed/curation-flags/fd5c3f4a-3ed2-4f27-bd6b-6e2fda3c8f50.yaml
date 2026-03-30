@@ -1,9 +1,0 @@
-id: fd5c3f4a-3ed2-4f27-bd6b-6e2fda3c8f50
-entity_type: element
-entity_ref: headcoilcoordinates_5230dbdf4ebc.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: HeadCoilCoordinates
-status: pending
-created_at: '2026-03-30T00:29:03.842868+00:00'

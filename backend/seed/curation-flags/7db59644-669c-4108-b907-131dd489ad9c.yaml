@@ -1,0 +1,9 @@
+id: 7db59644-669c-4108-b907-131dd489ad9c
+entity_type: schema
+entity_ref: ieeg_ieegchannels_6d964937a31f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ieeg_iEEGChannels
+status: pending
+created_at: '2026-03-30T01:18:37.831088+00:00'

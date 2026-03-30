@@ -1,0 +1,11 @@
+id: a336ae32-b0d8-4801-b20d-b9fa4375a11e
+entity_type: element
+entity_ref: funding_b80c0c41ba19.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.714), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C19997
+  top_label: Research Funding Categories
+  top_score: 0.7141
+status: pending
+created_at: '2026-03-30T00:43:41.289715+00:00'

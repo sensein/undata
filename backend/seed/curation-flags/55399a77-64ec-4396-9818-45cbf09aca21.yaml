@@ -1,9 +1,0 @@
-id: 55399a77-64ec-4396-9818-45cbf09aca21
-entity_type: schema
-entity_ref: megtaskinformation_00aace4f1bb1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MEGTaskInformation
-status: pending
-created_at: '2026-03-30T00:29:09.331847+00:00'

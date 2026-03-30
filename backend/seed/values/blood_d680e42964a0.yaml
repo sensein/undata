@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: blood
-provenance:
-- source: bids
-  class_: ''
-  name: blood
-sha256: d680e42964a0c6ac389bf055929c3d1226e0a8d63f122ceeb4011c821a5e6642

@@ -1,0 +1,21 @@
+semantic:
+  label: balanced
+  value_type: categorical
+  display_name: balanced
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000757
+    term_label: balanced
+    ontology: pato
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: balanced
+  description: 'PCASL Type: when balanced gradient pulses are used.
+
+    '
+sha256: e75c2c4153acb75de4e84cb85ccd645cc28eed274240e6132e652721dbfcb064

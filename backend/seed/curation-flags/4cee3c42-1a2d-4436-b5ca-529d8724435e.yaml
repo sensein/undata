@@ -1,0 +1,9 @@
+id: 4cee3c42-1a2d-4436-b5ca-529d8724435e
+entity_type: element
+entity_ref: source_timeseries_b92ba91bc5e5.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: source_timeseries
+status: pending
+created_at: '2026-03-30T00:43:41.495556+00:00'

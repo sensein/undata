@@ -1,0 +1,11 @@
+id: 721ee898-0897-4eb3-9c61-d22eb6ce7baa
+entity_type: value
+entity_ref: eyetrack_90c66c4aed62.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.748), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C87142
+  top_label: Eyepatch
+  top_score: 0.7476
+status: pending
+created_at: '2026-03-30T01:18:37.425559+00:00'

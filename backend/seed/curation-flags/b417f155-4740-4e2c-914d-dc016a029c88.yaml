@@ -1,9 +1,0 @@
-id: b417f155-4740-4e2c-914d-dc016a029c88
-entity_type: element
-entity_ref: containertag_bea60248534e.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ContainerTag
-status: pending
-created_at: '2026-03-30T00:29:08.515736+00:00'

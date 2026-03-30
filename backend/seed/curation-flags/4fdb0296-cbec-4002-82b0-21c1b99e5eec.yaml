@@ -1,0 +1,9 @@
+id: 4fdb0296-cbec-4002-82b0-21c1b99e5eec
+entity_type: element
+entity_ref: imageacquisitionprotocol_8819c84a1cb8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ImageAcquisitionProtocol
+status: pending
+created_at: '2026-03-30T00:40:05.610327+00:00'

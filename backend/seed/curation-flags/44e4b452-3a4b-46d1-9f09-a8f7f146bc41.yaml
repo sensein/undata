@@ -1,0 +1,9 @@
+id: 44e4b452-3a4b-46d1-9f09-a8f7f146bc41
+entity_type: schema
+entity_ref: nirsrecommend_fa93059906c2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NirsRecommend
+status: pending
+created_at: '2026-03-30T00:43:42.173472+00:00'

@@ -1,9 +1,0 @@
-id: 713a45e1-d6bb-4f73-91d3-6b0fbe77220e
-entity_type: element
-entity_ref: publishedby_5d5915cc23cf.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: publishedBy
-status: pending
-created_at: '2026-03-30T00:29:08.810763+00:00'

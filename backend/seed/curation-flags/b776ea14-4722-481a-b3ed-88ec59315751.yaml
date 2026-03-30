@@ -1,0 +1,13 @@
+id: b776ea14-4722-481a-b3ed-88ec59315751
+entity_type: value
+entity_ref: cloning_host_5e032aef791d.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.030)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C43458
+    score: 0.7888
+  - uri: http://purl.obolibrary.org/obo/NCIT_C16442
+    score: 0.7589
+status: pending
+created_at: '2026-03-30T01:18:37.305647+00:00'

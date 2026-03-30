@@ -2,6 +2,15 @@ semantic:
   label: FLASH
   value_type: categorical
   display_name: Fast-Low-Angle-Shot image
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C50568
+    term_label: Flasher
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8614
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: bids
   class: suffixes

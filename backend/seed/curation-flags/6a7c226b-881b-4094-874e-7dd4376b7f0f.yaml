@@ -1,0 +1,11 @@
+id: 6a7c226b-881b-4094-874e-7dd4376b7f0f
+entity_type: value
+entity_ref: dseg_0b98ace3fd9f.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.760), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_format_1454
+  top_label: dssp
+  top_score: 0.7597
+status: pending
+created_at: '2026-03-30T00:43:41.695396+00:00'

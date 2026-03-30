@@ -1,9 +1,0 @@
-id: 47346001-d67b-438b-b85c-2ca5be190903
-entity_type: element
-entity_ref: institutionaldepartmentname_e157fa363705.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: InstitutionalDepartmentName
-status: pending
-created_at: '2026-03-30T00:29:08.694412+00:00'

@@ -1,0 +1,9 @@
+id: d1c9c732-2e8e-4c50-8b84-266f3814b5fb
+entity_type: element
+entity_ref: indexed_images_e9ff9d1de36f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: indexed_images
+status: pending
+created_at: '2026-03-30T00:43:41.325524+00:00'

@@ -1,11 +1,12 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: subject_id
   description: ID of animal/person used/participating in experiment (lab convention).
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 88cda39fefca09a37afd26e7566f7a229763dfa8f1929484c5d97b6489281dec

@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: gyro
-provenance:
-- source: bids
-  class_: ''
-  name: GYRO
-sha256: b31abfc90934efc1b8deae949643fab415a0cb63b67d059e10d9afc9ecc7115b

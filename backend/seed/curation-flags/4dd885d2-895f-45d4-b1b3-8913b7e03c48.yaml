@@ -1,0 +1,9 @@
+id: 4dd885d2-895f-45d4-b1b3-8913b7e03c48
+entity_type: element
+entity_ref: binning_16c92ad4f2ca.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: binning
+status: pending
+created_at: '2026-03-30T01:18:36.606663+00:00'

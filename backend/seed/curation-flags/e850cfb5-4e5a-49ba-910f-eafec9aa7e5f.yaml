@@ -1,0 +1,9 @@
+id: e850cfb5-4e5a-49ba-910f-eafec9aa7e5f
+entity_type: element
+entity_ref: interelectrode_distance_ec6e859b64a8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: interelectrode_distance
+status: pending
+created_at: '2026-03-30T01:18:36.865423+00:00'

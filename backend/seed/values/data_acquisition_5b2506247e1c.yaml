@@ -2,6 +2,31 @@ semantic:
   label: data_acquisition
   value_type: categorical
   display_name: Data acquisition
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C142469
+    term_label: Data Acquisition
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8085
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C161785
+    term_label: Data-Dependent Acquisition
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7243
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C161786
+    term_label: Data-Independent Acquisition
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7047
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class: common_principles

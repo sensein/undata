@@ -1,9 +1,0 @@
-id: 142c7274-928e-4f73-b728-b4293808ca60
-entity_type: element
-entity_ref: electricalstimulationparameters_360fa4742979.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ElectricalStimulationParameters
-status: pending
-created_at: '2026-03-30T00:29:08.582421+00:00'

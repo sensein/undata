@@ -1,0 +1,25 @@
+semantic:
+  data_type: string
+  value_domain: text
+  unit: meters
+provenance:
+- source: bids
+  class: metadata
+  name: EyeTrackerDistance
+  description: 'Distance (in meters) between the eye-tracker and the participant eye(s).
+
+    Distance can either be expressed as a single numeric value indicating the shortest
+    distance
+
+    between the participant''s eye and the eye-tracker''s camera, or a three-coordinates
+    array
+
+    indicating the X, Y, Z distances between the participant''s eye and the eye-tracker''s
+
+    camera.
+
+    '
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 56a06d768b93518e48763336c561413aebe74d073355eaf9232cef5b451f0656

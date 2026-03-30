@@ -1,0 +1,11 @@
+id: 4815dc86-db51-4be5-9e8e-863b5a2ede7c
+entity_type: value
+entity_ref: dcite_audiovisual_2de6a88c6475.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.791), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C19695
+  top_label: Audiovisual Material
+  top_score: 0.7906
+status: pending
+created_at: '2026-03-30T01:18:37.341532+00:00'

@@ -1,0 +1,9 @@
+id: c767894f-fb80-4596-99b3-dfbe67133621
+entity_type: schema
+entity_ref: image_66a34555f785.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Image
+status: pending
+created_at: '2026-03-30T00:43:42.106778+00:00'

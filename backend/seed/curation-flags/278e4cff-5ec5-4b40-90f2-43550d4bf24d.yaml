@@ -1,9 +1,0 @@
-id: 278e4cff-5ec5-4b40-90f2-43550d4bf24d
-entity_type: value
-entity_ref: phasediff_3ec02813ce9b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: phasediff
-status: pending
-created_at: '2026-03-30T00:29:09.200429+00:00'

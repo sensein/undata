@@ -1,0 +1,9 @@
+id: c7e2da76-a3da-4350-8b4b-9f964a3b522c
+entity_type: value
+entity_ref: fieldmap_a818c85f0fe1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: fieldmap
+status: pending
+created_at: '2026-03-30T00:43:41.731054+00:00'

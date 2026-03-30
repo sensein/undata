@@ -1,12 +1,13 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: nwb
   class: nwb
   name: image_format
   description: Common name of the image file format. Only widely readable, open file
     formats are allowed. Allowed values are "PNG", "JPEG", and "GIF".
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 4847145f7b0fe7139652420d48061ea1ca7336ad6f480a8d59efcc723d3f71af

@@ -2,6 +2,23 @@ semantic:
   label: .ave
   value_type: categorical
   display_name: AVE
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCBITaxon_8782
+    term_label: Aves
+    ontology: ncbitaxon
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8062
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C14189
+    term_label: Aves
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8062
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class: extensions

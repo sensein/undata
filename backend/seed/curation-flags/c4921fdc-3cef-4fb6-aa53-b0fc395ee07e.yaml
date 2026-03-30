@@ -1,0 +1,11 @@
+id: c4921fdc-3cef-4fb6-aa53-b0fc395ee07e
+entity_type: value
+entity_ref: custom_6844fbb1e294.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.782), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C65167
+  top_label: Customize
+  top_score: 0.7818
+status: pending
+created_at: '2026-03-30T01:18:37.317864+00:00'

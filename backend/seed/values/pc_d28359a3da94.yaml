@@ -2,6 +2,39 @@ semantic:
   label: PC
   value_type: categorical
   display_name: Phase-contrast microscopy
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C117219
+    term_label: PC-3
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7436
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C16464
+    term_label: Computer
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7414
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0400107
+    term_label: computer
+    ontology: obi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7414
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C17435
+    term_label: PC-12
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7034
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class: suffixes

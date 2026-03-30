@@ -1,0 +1,9 @@
+id: 5c1187bb-4804-4421-9c97-17ecc46931a4
+entity_type: element
+entity_ref: angaccelchannelcount_c6298445f496.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ANGACCELChannelCount
+status: pending
+created_at: '2026-03-30T00:40:05.486501+00:00'

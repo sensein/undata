@@ -5,6 +5,15 @@ semantic:
   - ba5a57e8b4aeadf9a6828ab37eed9af72a49386ded84c289b2272114fcbf3235
   - 318240edfe3c2c9250200bce05f59ed4376794a7c56c4341abc67ca2da056c5a
   subclass_of: BaseType
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C210102
+    term_label: Sample Type
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7294
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: dandi
   class: SampleType

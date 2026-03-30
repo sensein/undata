@@ -1,0 +1,9 @@
+id: a373b37a-b51e-409d-8a82-9456ba54f756
+entity_type: element
+entity_ref: labelingduration_72c4eb6d563f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: LabelingDuration
+status: pending
+created_at: '2026-03-30T00:43:41.340863+00:00'

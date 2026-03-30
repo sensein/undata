@@ -1,9 +1,0 @@
-id: cbbc8617-4dd5-40c4-b473-449701c53755
-entity_type: schema
-entity_ref: intracellularrecordingstable_2f951acb8296.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: IntracellularRecordingsTable
-status: pending
-created_at: '2026-03-30T00:29:09.324627+00:00'

@@ -1,9 +1,0 @@
-id: f979e320-8b01-48e0-894d-60cb8682db8c
-entity_type: element
-entity_ref: onset__physioevents_6cb6d8665e67.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: onset__physioevents
-status: pending
-created_at: '2026-03-30T00:29:03.942437+00:00'

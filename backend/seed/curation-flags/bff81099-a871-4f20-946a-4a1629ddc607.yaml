@@ -1,0 +1,11 @@
+id: bff81099-a871-4f20-946a-4a1629ddc607
+entity_type: element
+entity_ref: pharmaceuticalname_40f90a872c0b.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.772), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_data_2899
+  top_label: Drug name
+  top_score: 0.7725
+status: pending
+created_at: '2026-03-30T00:43:41.415852+00:00'

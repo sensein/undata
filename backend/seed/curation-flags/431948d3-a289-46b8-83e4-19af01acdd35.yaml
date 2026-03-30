@@ -1,9 +1,0 @@
-id: 431948d3-a289-46b8-83e4-19af01acdd35
-entity_type: element
-entity_ref: capmanufacturer_85d8986a9cb8.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CapManufacturer
-status: pending
-created_at: '2026-03-30T00:29:03.741548+00:00'

@@ -1,0 +1,9 @@
+id: b973460c-832b-4726-bc7a-9fe8f563969f
+entity_type: schema
+entity_ref: nirstaskinformation_c2337807fb93.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NirsTaskInformation
+status: pending
+created_at: '2026-03-30T00:43:42.174381+00:00'

@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: tissue
-provenance:
-- source: bids
-  class_: ''
-  name: tissue
-sha256: 70424222c88f029fbc49b00ac5a73d547e2b653297f1c6d1fa922873d1f311a7

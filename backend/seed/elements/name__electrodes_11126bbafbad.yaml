@@ -1,6 +1,23 @@
 semantic:
   data_type: string
   value_domain: text
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C50351
+    term_label: Electrode Contact Device
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7277
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C93237
+    term_label: Surface Electrode
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7047
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class: columns
@@ -8,7 +25,7 @@ provenance:
   description: 'Name of the electrode contact point.
 
     '
-  generated_at: '2026-03-30T00:28:57.008136+00:00'
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 11126bbafbadbb3ef4101d141ddb084d7e2ec647d39433a74c535bb39a6a12bb

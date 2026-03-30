@@ -1,0 +1,9 @@
+id: ce93eccb-3e06-40bf-b7c7-67f49daa768c
+entity_type: element
+entity_ref: band_name_aa6e4bd625d2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: band_name
+status: pending
+created_at: '2026-03-30T01:18:36.604226+00:00'

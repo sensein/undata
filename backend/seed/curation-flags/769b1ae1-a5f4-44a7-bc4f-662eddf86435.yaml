@@ -1,9 +1,0 @@
-id: 769b1ae1-a5f4-44a7-bc4f-662eddf86435
-entity_type: element
-entity_ref: ieegcoordinatesystem_c582c981dc78.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: iEEGCoordinateSystem
-status: pending
-created_at: '2026-03-30T00:29:03.859680+00:00'

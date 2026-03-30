@@ -1,0 +1,11 @@
+id: 342de493-9077-46af-ba72-0e8ae055434c
+entity_type: value
+entity_ref: fermi_85d030e28f1e.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.892), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/CHEBI_36340
+  top_label: fermion
+  top_score: 0.8922
+status: pending
+created_at: '2026-03-30T00:43:41.730187+00:00'

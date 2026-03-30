@@ -1,9 +1,0 @@
-id: 96d15407-aa1b-4a7a-a212-c8a7a0271dac
-entity_type: element
-entity_ref: nirsdetectoroptodecount_cb56d64b9495.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: NIRSDetectorOptodeCount
-status: pending
-created_at: '2026-03-30T00:29:08.770892+00:00'

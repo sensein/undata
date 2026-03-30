@@ -1,0 +1,9 @@
+id: 2b97b9c4-bb18-407a-ab23-b11c0c03eded
+entity_type: element
+entity_ref: longname_8f606c189660.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: LongName
+status: pending
+created_at: '2026-03-30T00:43:41.347744+00:00'

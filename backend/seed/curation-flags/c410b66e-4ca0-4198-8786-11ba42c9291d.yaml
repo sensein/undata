@@ -1,0 +1,9 @@
+id: c410b66e-4ca0-4198-8786-11ba42c9291d
+entity_type: element
+entity_ref: schemaversion_aef483f1b232.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: schemaVersion
+status: pending
+created_at: '2026-03-30T01:18:37.090924+00:00'

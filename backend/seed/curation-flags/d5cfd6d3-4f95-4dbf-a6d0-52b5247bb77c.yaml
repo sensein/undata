@@ -1,0 +1,9 @@
+id: d5cfd6d3-4f95-4dbf-a6d0-52b5247bb77c
+entity_type: element
+entity_ref: size_661d52882dcf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: size
+status: pending
+created_at: '2026-03-30T00:43:41.486339+00:00'

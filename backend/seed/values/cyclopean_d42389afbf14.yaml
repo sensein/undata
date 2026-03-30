@@ -1,6 +1,87 @@
 semantic:
   value_type: categorical
   label: cyclopean
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C94881
+    term_label: Cyclotron
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7772
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C65356
+    term_label: Cyclizine
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7641
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000319
+    term_label: cyan
+    ontology: pato
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7593
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0400022
+    term_label: Cyan
+    ontology: obi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7593
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C17349
+    term_label: Cyclin
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7587
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C28899
+    term_label: Cyclodisone
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7583
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/HP_0031776
+    term_label: Cyclotropia
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.757
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C78030
+    term_label: Cyclofenil
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7501
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C221924
+    term_label: Cyclodrine
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7431
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C80852
+    term_label: Cyclomenol
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7429
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class_: ''

@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: continuous
-provenance:
-- source: bids
-  class_: ''
-  name: continuous
-sha256: 31d8c111ed6223137685f45d2a23f7a534e4e885556c908dd93dc3ff909b786b

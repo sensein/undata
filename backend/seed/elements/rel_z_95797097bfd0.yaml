@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  unit: micrometers
+provenance:
+- source: nwb
+  class: nwb
+  name: rel_z
+  description: z coordinate in electrode group. Units should be specified in microns.
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 95797097bfd0a28f5046267ad6e8b691c2f8b18790165571587e9fada46516e5

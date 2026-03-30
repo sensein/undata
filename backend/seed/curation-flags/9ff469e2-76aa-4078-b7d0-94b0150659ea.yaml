@@ -1,0 +1,11 @@
+id: 9ff469e2-76aa-4078-b7d0-94b0150659ea
+entity_type: value
+entity_ref: gaze-in-world_f295570e722d.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.789), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/HP_0025401
+  top_label: Staring gaze
+  top_score: 0.789
+status: pending
+created_at: '2026-03-30T00:43:41.749793+00:00'

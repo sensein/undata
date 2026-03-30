@@ -1,0 +1,11 @@
+id: 75a5f9b9-d0a9-4b9e-ab50-5437ef32226f
+entity_type: value
+entity_ref: pos_942fb4c4d022.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.759), no LLM verification
+  top_match: https://purl.brain-bican.org/ontology/mbao/MBA_771
+  top_label: Pons
+  top_score: 0.7588
+status: pending
+created_at: '2026-03-30T00:43:41.939765+00:00'

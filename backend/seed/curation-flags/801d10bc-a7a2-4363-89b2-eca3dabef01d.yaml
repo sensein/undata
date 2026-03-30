@@ -1,0 +1,9 @@
+id: 801d10bc-a7a2-4363-89b2-eca3dabef01d
+entity_type: element
+entity_ref: sliceencodingdirection_6af3b4aaf581.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SliceEncodingDirection
+status: pending
+created_at: '2026-03-30T01:18:37.109610+00:00'

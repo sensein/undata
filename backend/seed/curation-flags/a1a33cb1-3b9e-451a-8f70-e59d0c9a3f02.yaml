@@ -1,0 +1,9 @@
+id: a1a33cb1-3b9e-451a-8f70-e59d0c9a3f02
+entity_type: schema
+entity_ref: microscopysample_6f2312a3fe75.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MicroscopySample
+status: pending
+created_at: '2026-03-30T00:40:06.346277+00:00'

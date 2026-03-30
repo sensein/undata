@@ -1,0 +1,11 @@
+id: 5c5f8f49-d6b4-467c-8e38-7f888b418985
+entity_type: value
+entity_ref: mrsi_34831903afbe.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.793), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C69168
+  top_label: Mrs
+  top_score: 0.7928
+status: pending
+created_at: '2026-03-30T00:43:41.878104+00:00'

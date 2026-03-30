@@ -1,9 +1,0 @@
-id: 60fb8018-861c-484d-9623-6de922d1d19a
-entity_type: element
-entity_ref: cogatlasid_13322e208320.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CogAtlasID
-status: pending
-created_at: '2026-03-30T00:29:03.751476+00:00'

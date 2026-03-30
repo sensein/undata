@@ -1,0 +1,11 @@
+id: ef2199b7-cb56-4e92-ae9f-4c3e0e79c585
+entity_type: element
+entity_ref: locus_e4e9f0faa37c.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.724), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/OBI_0001305
+  top_label: genotype information
+  top_score: 0.7242
+status: pending
+created_at: '2026-03-30T01:18:36.883743+00:00'

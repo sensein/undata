@@ -1,9 +1,0 @@
-id: e388c566-8655-46a1-95aa-2e8a89631b02
-entity_type: element
-entity_ref: model_name_4ef93ccb8124.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: model_name
-status: pending
-created_at: '2026-03-30T00:29:08.740468+00:00'

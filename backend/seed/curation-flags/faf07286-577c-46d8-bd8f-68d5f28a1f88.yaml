@@ -1,9 +1,0 @@
-id: faf07286-577c-46d8-bd8f-68d5f28a1f88
-entity_type: schema
-entity_ref: commonmodel_9efd8a7c1b12.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CommonModel
-status: pending
-created_at: '2026-03-30T00:29:09.281152+00:00'

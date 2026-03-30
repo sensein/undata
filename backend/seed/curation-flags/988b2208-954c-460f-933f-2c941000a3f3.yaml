@@ -1,9 +1,0 @@
-id: 988b2208-954c-460f-933f-2c941000a3f3
-entity_type: element
-entity_ref: participant_id_3819dda23499.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: participant_id
-status: pending
-created_at: '2026-03-30T00:29:08.790048+00:00'

@@ -1,0 +1,11 @@
+id: 37d4f2ec-a360-4ead-bc66-5a84000c4134
+entity_type: value
+entity_ref: adc_9eb264968ec1.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.771), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/CHEBI_16761
+  top_label: ADP
+  top_score: 0.771
+status: pending
+created_at: '2026-03-30T01:18:37.247291+00:00'

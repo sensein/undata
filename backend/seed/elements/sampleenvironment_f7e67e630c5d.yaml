@@ -1,0 +1,27 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: in vivo
+    label: in vivo
+    ontology_term: https://schema.undata.live/values/fff3ab23-2fb6-4c56-a9f1-59894fcdb499
+  - value: ex vivo
+    label: ex vivo
+    ontology_term: https://schema.undata.live/values/886792ee-79ea-4f84-af88-4a4c98b41f64
+  - value: in vitro
+    label: in vitro
+    ontology_term: https://schema.undata.live/values/92717af1-4638-4dba-97fd-91ec3a33d7a6
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: SampleEnvironment
+  description: 'Environment in which the sample was imaged. MUST be one of: `"in vivo"`,
+    `"ex vivo"`
+
+    or `"in vitro"`.
+
+    '
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f7e67e630c5decdfdfbb7910036ddeea40d13515cbfbd7fc239e191c7407e3c6

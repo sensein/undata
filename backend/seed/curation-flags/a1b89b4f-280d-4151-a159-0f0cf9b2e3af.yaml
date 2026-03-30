@@ -1,0 +1,9 @@
+id: a1b89b4f-280d-4151-a159-0f0cf9b2e3af
+entity_type: element
+entity_ref: sameas_d9c397aaef5a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: sameAs
+status: pending
+created_at: '2026-03-30T01:18:37.057072+00:00'

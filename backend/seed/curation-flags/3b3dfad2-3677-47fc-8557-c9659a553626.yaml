@@ -1,0 +1,11 @@
+id: 3b3dfad2-3677-47fc-8557-c9659a553626
+entity_type: element
+entity_ref: participant_id_3819dda23499.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.705), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/OBI_0003071
+  top_label: participant identifier
+  top_score: 0.7048
+status: pending
+created_at: '2026-03-30T01:18:36.981602+00:00'

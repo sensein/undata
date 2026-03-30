@@ -34,6 +34,15 @@ semantic:
   - 9554428cd08f21108cdb712f7810e4ef1958f24e0344d36b27e816c294014a1f
   - 80ba0f901fcd4e823c8b36136e36f29d01f59f5a3c865838845e96221af46689
   subclass_of: BareAsset
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_2218
+    term_label: Server metadata
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7008
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: dandi
   class: Asset

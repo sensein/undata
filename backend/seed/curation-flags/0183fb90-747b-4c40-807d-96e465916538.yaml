@@ -1,0 +1,15 @@
+id: 0183fb90-747b-4c40-807d-96e465916538
+entity_type: element
+entity_ref: identifier_2cc695308864.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://www.w3.org/ns/prov#Agent
+    score: 0.7241
+  - uri: http://purl.obolibrary.org/obo/NCIT_C1708
+    score: 0.7241
+  - uri: http://www.w3.org/ns/prov#agent
+    score: 0.7241
+status: pending
+created_at: '2026-03-30T01:18:36.816714+00:00'

@@ -1,9 +1,0 @@
-id: 49c775d4-9ed2-4ee8-84b4-22f32d42204a
-entity_type: element
-entity_ref: labelingpulseaverageb1_3697a157eb38.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: LabelingPulseAverageB1
-status: pending
-created_at: '2026-03-30T00:29:00.933855+00:00'

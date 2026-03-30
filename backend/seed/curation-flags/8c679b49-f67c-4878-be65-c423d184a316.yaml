@@ -1,9 +1,0 @@
-id: 8c679b49-f67c-4878-be65-c423d184a316
-entity_type: element
-entity_ref: relatedparticipant_dee4bcc640bd.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: relatedParticipant
-status: pending
-created_at: '2026-03-30T00:29:08.829374+00:00'

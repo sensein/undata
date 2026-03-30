@@ -1,9 +1,0 @@
-id: e24adb79-fe7a-41d5-ac5d-db332ef53e0f
-entity_type: value
-entity_ref: dcite_isvariantformof_3c12a765d57a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: dcite:IsVariantFormOf
-status: pending
-created_at: '2026-03-30T00:29:09.082801+00:00'

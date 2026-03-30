@@ -1,0 +1,9 @@
+id: 7db0dff0-a098-46a1-b799-3d530d3b9fef
+entity_type: schema
+entity_ref: eegtaskinformation_dfbe983c60f6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EEGTaskInformation
+status: pending
+created_at: '2026-03-30T00:43:42.082370+00:00'

@@ -1,9 +1,0 @@
-id: 181ca8de-d837-4050-b705-b3d1354f9ae4
-entity_type: schema
-entity_ref: behinstitutioninformation_93fc800c066d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: BEHInstitutionInformation
-status: pending
-created_at: '2026-03-30T00:29:09.274376+00:00'

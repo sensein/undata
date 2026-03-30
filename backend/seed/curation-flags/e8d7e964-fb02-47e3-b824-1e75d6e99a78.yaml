@@ -1,0 +1,11 @@
+id: e8d7e964-fb02-47e3-b824-1e75d6e99a78
+entity_type: value
+entity_ref: tb1dam_96ae6b8997a6.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.823), no LLM verification
+  top_match: http://identifiers.org/ncbigene/10716
+  top_label: TBR1
+  top_score: 0.8231
+status: pending
+created_at: '2026-03-30T00:40:06.245998+00:00'

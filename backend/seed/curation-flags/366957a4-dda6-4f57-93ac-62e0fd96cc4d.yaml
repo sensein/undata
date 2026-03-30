@@ -1,0 +1,11 @@
+id: 366957a4-dda6-4f57-93ac-62e0fd96cc4d
+entity_type: value
+entity_ref: cloning_host_5e032aef791d.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.789), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C43458
+  top_label: Cloning Site
+  top_score: 0.7888
+status: pending
+created_at: '2026-03-30T01:18:37.305639+00:00'

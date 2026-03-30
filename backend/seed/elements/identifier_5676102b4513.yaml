@@ -1,12 +1,13 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: dandi
   class: Anatomy
   name: identifier
   description: The identifier can be any url or a compact URI, preferably supported
     by identifiers.org.
-  generated_at: '2026-03-30T00:29:06.281579+00:00'
+  generated_at: '2026-03-30T00:43:46.045696+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 5676102b45132d8b8a57957cd38f85db8abc480534e0f8b70da6645ee343b8b0

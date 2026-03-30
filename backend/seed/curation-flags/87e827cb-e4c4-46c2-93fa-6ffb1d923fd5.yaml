@@ -1,9 +1,0 @@
-id: 87e827cb-e4c4-46c2-93fa-6ffb1d923fd5
-entity_type: element
-entity_ref: strain_rrid_ad80d58d9bd0.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: strain_rrid
-status: pending
-created_at: '2026-03-30T00:29:04.052151+00:00'

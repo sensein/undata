@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: absent
-provenance:
-- source: bids
-  class_: ''
-  name: Absent
-sha256: 0d582d07f78b387ed5e21c96cb040bc323b627d1e8cbc81da9b6fdf0b2694582

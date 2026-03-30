@@ -1,0 +1,15 @@
+id: 4ce1a137-8269-4d4e-8372-e3a73fd8c1cc
+entity_type: value
+entity_ref: macrovascular_b6eea000856a.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.006)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C16900
+    score: 0.7615
+  - uri: http://purl.obolibrary.org/obo/NCIT_C27999
+    score: 0.7555
+  - uri: http://purl.obolibrary.org/obo/NCIT_C113113
+    score: 0.7032
+status: pending
+created_at: '2026-03-30T00:40:06.071099+00:00'

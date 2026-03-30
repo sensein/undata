@@ -1,0 +1,93 @@
+semantic:
+  label: bile
+  value_type: categorical
+  display_name: Bile
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0001970
+    term_label: bile
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C13192
+    term_label: Bile
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_3098
+    term_label: bile acid
+    ontology: chebi
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8751
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_138366
+    term_label: bile acids
+    ontology: chebi
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8278
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_22868
+    term_label: bile salt
+    ontology: chebi
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8089
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C32203
+    term_label: Bile Salt
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8089
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0002501
+    term_label: bile specimen
+    ontology: obi
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8025
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C204712
+    term_label: Bile Plug
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7844
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C12376
+    term_label: Bile Duct
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7796
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0002394
+    term_label: bile duct
+    ontology: uberon
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7796
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: bile
+  description: 'The origin of a sample: bile
+
+    '
+sha256: 57b6775da12149f247f704f42f312fd07ace9a8a7b37633c2453b458f026f140

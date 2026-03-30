@@ -1,9 +1,0 @@
-id: 70c2bc02-423a-4c02-abc5-b4c38d5f406a
-entity_type: element
-entity_ref: response_time_887001c29e94.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: response_time
-status: pending
-created_at: '2026-03-30T00:29:03.991793+00:00'

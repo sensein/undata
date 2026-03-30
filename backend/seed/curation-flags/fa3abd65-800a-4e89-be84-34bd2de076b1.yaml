@@ -1,0 +1,11 @@
+id: fa3abd65-800a-4e89-be84-34bd2de076b1
+entity_type: value
+entity_ref: rb1cor_2ee1957d2748.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.758), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C131482
+  top_label: RB1 Negative
+  top_score: 0.7577
+status: pending
+created_at: '2026-03-30T00:40:06.193286+00:00'

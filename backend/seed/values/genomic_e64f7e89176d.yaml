@@ -1,0 +1,89 @@
+semantic:
+  label: Genomic
+  value_type: categorical
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_topic_0622
+    term_label: Genomics
+    ontology: edam
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9191
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C84343
+    term_label: Genomics
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9191
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C95940
+    term_label: Genomic DNA
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8517
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C16629
+    term_label: Genome
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8375
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/RO_0002330
+    term_label: genomically related to
+    ontology: ro
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8205
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C15241
+    term_label: Genomic Library
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7815
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C45766
+    term_label: Genomic Identifier
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7746
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C94411
+    term_label: Genomic Profile
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7727
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C161493
+    term_label: Genomic Equivalents
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7495
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C41097
+    term_label: Genomic Segment
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7433
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: Genomic
+sha256: e64f7e89176dd625503bc97fca3066bb28e439acf929940bcaae02267b19e4ed

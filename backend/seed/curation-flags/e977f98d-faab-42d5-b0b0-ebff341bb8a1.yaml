@@ -1,0 +1,9 @@
+id: e977f98d-faab-42d5-b0b0-ebff341bb8a1
+entity_type: element
+entity_ref: atlasname_a02ce3d8b684.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AtlasName
+status: pending
+created_at: '2026-03-30T01:18:36.593101+00:00'

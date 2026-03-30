@@ -1,0 +1,15 @@
+id: 958d99e7-1461-483c-805b-92dbfea7fded
+entity_type: value
+entity_ref: white_matter_c4a04aa7067d.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: https://purl.brain-bican.org/ontology/hbao/HBA_9218
+    score: 0.9396
+  - uri: http://purl.obolibrary.org/obo/UBERON_0002316
+    score: 0.9396
+  - uri: http://purl.obolibrary.org/obo/NCIT_C33892
+    score: 0.9396
+status: pending
+created_at: '2026-03-30T00:40:06.280619+00:00'

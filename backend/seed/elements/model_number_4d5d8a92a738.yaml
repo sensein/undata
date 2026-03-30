@@ -1,0 +1,16 @@
+semantic:
+  data_type: string
+  value_domain: text
+  unit: volts
+provenance:
+- source: nwb
+  class: nwb
+  name: model_number
+  description: DEPRECATED. The model number (or part/product number) of the device,
+    e.g., PRB_1_4_0480_1, PLX-VP-32-15SE(75)-(260-80)(460-10)-300-(1)CON/32m-V, BERGAMO.
+    Instead of using this field, store the value in DeviceModel.model_number and link
+    to that DeviceModel from this Device.
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4d5d8a92a738c7de7fe16a6b5aef70cedf76116cd486761e995a863c1958e90c

@@ -1,9 +1,0 @@
-id: 03ec3a0b-34fc-448b-90bf-c66e8e18bfc7
-entity_type: element
-entity_ref: comments_9d0850c5934e.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: comments
-status: pending
-created_at: '2026-03-30T00:29:03.754052+00:00'

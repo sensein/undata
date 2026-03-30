@@ -1,9 +1,0 @@
-id: 59eb95c1-27b2-4720-8368-4694286e37de
-entity_type: value
-entity_ref: .kdf_09cec73fac41.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: kdf
-status: pending
-created_at: '2026-03-30T00:29:04.112510+00:00'

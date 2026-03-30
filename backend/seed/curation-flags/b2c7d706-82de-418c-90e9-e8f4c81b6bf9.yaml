@@ -1,0 +1,11 @@
+id: b2c7d706-82de-418c-90e9-e8f4c81b6bf9
+entity_type: element
+entity_ref: id_dc598da7a688.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.831), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C42778
+  top_label: Uniform Resource Identifier
+  top_score: 0.8305
+status: pending
+created_at: '2026-03-30T01:18:36.806049+00:00'

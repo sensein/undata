@@ -2,6 +2,15 @@ semantic:
   label: TB1EPI
   value_type: categorical
   display_name: TB1EPI
+  ontology_annotations:
+  - term_uri: http://identifiers.org/ncbigene/10716
+    term_label: TBR1
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7571
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: bids
   class: suffixes

@@ -1,0 +1,15 @@
+id: e656b811-412c-4e67-b44e-8f62a7761601
+entity_type: value
+entity_ref: z_8f67dedd0720.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.024)
+  candidates:
+  - uri: http://uri.interlex.org/tgbugs/uris/readable/atlas/NegativeZ
+    score: 0.7777
+  - uri: http://uri.interlex.org/tgbugs/uris/readable/atlas/PositiveZ
+    score: 0.7537
+  - uri: http://purl.obolibrary.org/obo/EDAM_data_1668
+    score: 0.7371
+status: pending
+created_at: '2026-03-30T01:18:37.761913+00:00'

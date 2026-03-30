@@ -1,9 +1,0 @@
-id: 0b7bf515-9964-43da-a78d-1bbdb8d34496
-entity_type: schema
-entity_ref: stimuluspresentation_e6468b6fd1f6.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: StimulusPresentation
-status: pending
-created_at: '2026-03-30T00:29:04.470561+00:00'

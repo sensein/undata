@@ -1,0 +1,9 @@
+id: fd163102-d30a-47c4-8a8e-635920cdfa4c
+entity_type: element
+entity_ref: xy_translation_1b0b349cc5c6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: xy_translation
+status: pending
+created_at: '2026-03-30T01:18:37.213094+00:00'

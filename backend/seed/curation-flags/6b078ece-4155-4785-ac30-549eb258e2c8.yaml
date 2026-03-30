@@ -1,9 +1,0 @@
-id: 6b078ece-4155-4785-ac30-549eb258e2c8
-entity_type: value
-entity_ref: tb1tfl_d6b6272d534f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TB1TFL
-status: pending
-created_at: '2026-03-30T00:29:01.314250+00:00'

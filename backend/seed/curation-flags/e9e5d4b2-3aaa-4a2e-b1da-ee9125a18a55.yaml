@@ -1,9 +1,0 @@
-id: e9e5d4b2-3aaa-4a2e-b1da-ee9125a18a55
-entity_type: schema
-entity_ref: lfp_fc08d573efc0.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: LFP
-status: pending
-created_at: '2026-03-30T00:29:04.388220+00:00'

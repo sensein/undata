@@ -1,9 +1,0 @@
-id: 12f7c29d-80a8-415b-ba6b-cf129e883e46
-entity_type: value
-entity_ref: dcite_isnewversionof_c0d249cad578.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: dcite:IsNewVersionOf
-status: pending
-created_at: '2026-03-30T00:29:09.076484+00:00'

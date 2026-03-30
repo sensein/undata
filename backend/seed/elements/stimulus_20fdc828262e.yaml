@@ -1,5 +1,6 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: nwb
   class: nwb
@@ -11,7 +12,7 @@ provenance:
     and stimulus templates, the latter in case the same stimulus is presented multiple
     times, or is pulled from an external stimulus library. Stimuli are here defined
     as any signal that is pushed in
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 20fdc828262e2d391fdb203b2e3b81c41180041eed4181b4fbc479eb0b77b853

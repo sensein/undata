@@ -1,0 +1,19 @@
+semantic:
+  data_type: string
+  value_domain: text
+  unit: centimeters
+provenance:
+- source: bids
+  class: columns
+  name: units
+  description: 'Physical unit of the value represented in this channel,
+
+    for example, `V` for Volt, or `fT/cm` for femto Tesla per centimeter
+
+    (see [Units](SPEC_ROOT/common-principles.md#units)).
+
+    '
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1c2b5a76793cd74facb1e0b54eae6bad5c5e23949526f6e7739a982ffa36fbb4

@@ -1,0 +1,9 @@
+id: 6a903242-53a3-45a7-bf45-d657406c0982
+entity_type: schema
+entity_ref: scratchdata_6b9e0d7542a5.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ScratchData
+status: pending
+created_at: '2026-03-30T00:43:42.193828+00:00'

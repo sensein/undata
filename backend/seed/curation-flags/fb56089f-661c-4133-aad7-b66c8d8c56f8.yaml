@@ -1,9 +1,0 @@
-id: fb56089f-661c-4133-aad7-b66c8d8c56f8
-entity_type: element
-entity_ref: imaging_plane_02e9bad13a47.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: imaging_plane
-status: pending
-created_at: '2026-03-30T00:29:03.865792+00:00'

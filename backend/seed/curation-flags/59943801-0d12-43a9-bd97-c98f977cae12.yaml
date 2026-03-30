@@ -1,0 +1,11 @@
+id: 59943801-0d12-43a9-bd97-c98f977cae12
+entity_type: element
+entity_ref: name_6544beaf3b9b.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.708), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C180547
+  top_label: Terminology Standard Type
+  top_score: 0.7081
+status: pending
+created_at: '2026-03-30T01:18:36.938003+00:00'

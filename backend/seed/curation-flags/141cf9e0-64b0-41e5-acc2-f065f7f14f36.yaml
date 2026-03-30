@@ -1,0 +1,15 @@
+id: 141cf9e0-64b0-41e5-acc2-f065f7f14f36
+entity_type: value
+entity_ref: cell_line_e7d60c00f16e.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/CLO_0000031
+    score: 0.8432
+  - uri: http://purl.obolibrary.org/obo/NCIT_C16403
+    score: 0.8432
+  - uri: http://purl.obolibrary.org/obo/EDAM_data_2316
+    score: 0.8147
+status: pending
+created_at: '2026-03-30T00:40:05.888892+00:00'

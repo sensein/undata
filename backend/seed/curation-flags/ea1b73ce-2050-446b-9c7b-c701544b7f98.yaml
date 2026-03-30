@@ -1,0 +1,13 @@
+id: ea1b73ce-2050-446b-9c7b-c701544b7f98
+entity_type: value
+entity_ref: single-coil_bded609ab6a9.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.014)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C49877
+    score: 0.789
+  - uri: http://purl.obolibrary.org/obo/PATO_0001794
+    score: 0.7751
+status: pending
+created_at: '2026-03-30T01:18:37.694019+00:00'

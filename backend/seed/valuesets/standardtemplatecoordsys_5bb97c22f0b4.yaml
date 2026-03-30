@@ -23,6 +23,15 @@ semantic:
   - db983a98d24a739281c7350f33fb2c71d31cbf5d16a95d5fc623f080d2621cd8
   - 67f1d685c4a8953930bc9a5ccde6de6938fb09193305a9d5e40d36b616d70ee0
   - 6ae10ceca0795eeb3ab4e9001a8a534465a652af3d205e2aacfbb62b4580c374
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0002296
+    term_label: foveate
+    ontology: pato
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7008
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: bids
   class: enums

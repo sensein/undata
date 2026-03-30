@@ -1,0 +1,9 @@
+id: d09b5852-b3ed-48c3-b8d4-da8dc96971d3
+entity_type: value
+entity_ref: mpm_f31bf058f09d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MPM
+status: pending
+created_at: '2026-03-30T00:40:06.113951+00:00'

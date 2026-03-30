@@ -1,9 +1,0 @@
-id: 7034500e-be2c-47a6-b273-e16fecc4de52
-entity_type: schema
-entity_ref: meginstitutioninformation_e2871bf10ea3.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MEGInstitutionInformation
-status: pending
-created_at: '2026-03-30T00:29:01.369116+00:00'

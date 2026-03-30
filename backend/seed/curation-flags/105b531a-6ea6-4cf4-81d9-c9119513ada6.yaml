@@ -1,9 +1,0 @@
-id: 105b531a-6ea6-4cf4-81d9-c9119513ada6
-entity_type: element
-entity_ref: numbershots_4c241c68d900.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: NumberShots
-status: pending
-created_at: '2026-03-30T00:29:08.778696+00:00'

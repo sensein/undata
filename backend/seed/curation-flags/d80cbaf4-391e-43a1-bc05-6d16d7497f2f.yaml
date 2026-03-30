@@ -1,0 +1,11 @@
+id: d80cbaf4-391e-43a1-bc05-6d16d7497f2f
+entity_type: value
+entity_ref: eeg_752b33d6e9ad.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.760), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/HP_0011178
+  top_label: Alpha-EEG
+  top_score: 0.76
+status: pending
+created_at: '2026-03-30T00:43:41.705132+00:00'

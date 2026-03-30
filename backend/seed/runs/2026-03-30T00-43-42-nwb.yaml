@@ -1,0 +1,24 @@
+run_id: 3ba7833b-a95
+source: nwb
+started_at: '2026-03-30T00:43:42.740182+00:00'
+completed_at: '2026-03-30T00:43:42.740300+00:00'
+entity_counts:
+  extract:
+    elements: 179
+    schemas: 80
+    values: 0
+    valuesets: 0
+enrichment_rate:
+  source_metadata: 0
+  elements: 2
+  values: 0
+  valuesets: 0
+  schemas: 5
+curation_flags:
+  low_confidence: 1348
+  ambiguous_match: 228
+  multiple_candidates: 149
+timing:
+  extract: 0.5391099452972412
+  enrich: 200.1287820339203
+  commit: 1.573014736175537

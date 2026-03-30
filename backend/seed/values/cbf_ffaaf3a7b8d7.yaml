@@ -1,6 +1,23 @@
 semantic:
   value_type: categorical
   label: cbf
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_format_3020
+    term_label: BCF
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7754
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_format_1948
+    term_label: nbrf
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7099
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class_: ''

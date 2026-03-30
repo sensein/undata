@@ -1,0 +1,11 @@
+id: 8a596dff-eb9f-4bf9-9ede-4265eb94ff82
+entity_type: element
+entity_ref: attenuationcorrectionmethodreference_2f6c938a8b04.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.738), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C69286
+  top_label: For Attenuation Correction
+  top_score: 0.7381
+status: pending
+created_at: '2026-03-30T01:18:36.595380+00:00'

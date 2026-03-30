@@ -1,0 +1,11 @@
+id: 49aff560-8660-4d81-9dde-d2168f6beb68
+entity_type: value
+entity_ref: tb1epi_5d04d4308ff3.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.757), no LLM verification
+  top_match: http://identifiers.org/ncbigene/10716
+  top_label: TBR1
+  top_score: 0.7571
+status: pending
+created_at: '2026-03-30T01:18:37.717921+00:00'

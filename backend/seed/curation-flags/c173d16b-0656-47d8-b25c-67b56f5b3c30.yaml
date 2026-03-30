@@ -1,0 +1,9 @@
+id: c173d16b-0656-47d8-b25c-67b56f5b3c30
+entity_type: element
+entity_ref: resolution_ff0be0bfd7b3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: resolution
+status: pending
+created_at: '2026-03-30T01:18:37.042265+00:00'

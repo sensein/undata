@@ -1,0 +1,9 @@
+id: fadbaf07-4ebe-4f17-8a37-91042808a0d0
+entity_type: element
+entity_ref: softwarename_78175a31836d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SoftwareName
+status: pending
+created_at: '2026-03-30T01:18:37.112156+00:00'

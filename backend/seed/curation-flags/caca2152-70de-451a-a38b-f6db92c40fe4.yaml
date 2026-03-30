@@ -1,0 +1,9 @@
+id: caca2152-70de-451a-a38b-f6db92c40fe4
+entity_type: element
+entity_ref: casltype_e823ed4bc357.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CASLType
+status: pending
+created_at: '2026-03-30T01:18:36.616596+00:00'

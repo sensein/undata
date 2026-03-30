@@ -1,9 +1,0 @@
-id: 040fa86b-ec8a-4240-90db-fcd702b62a69
-entity_type: element
-entity_ref: spoilinggradientmoment_696f81f7bc0f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SpoilingGradientMoment
-status: pending
-created_at: '2026-03-30T00:29:01.066864+00:00'

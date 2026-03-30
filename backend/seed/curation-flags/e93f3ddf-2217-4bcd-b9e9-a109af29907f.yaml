@@ -1,0 +1,9 @@
+id: e93f3ddf-2217-4bcd-b9e9-a109af29907f
+entity_type: element
+entity_ref: about_ca3502785715.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: about
+status: pending
+created_at: '2026-03-30T01:18:36.562094+00:00'

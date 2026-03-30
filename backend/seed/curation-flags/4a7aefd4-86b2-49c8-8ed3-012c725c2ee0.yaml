@@ -1,9 +1,0 @@
-id: 4a7aefd4-86b2-49c8-8ed3-012c725c2ee0
-entity_type: schema
-entity_ref: modality_agnostic_participants_825a5a9b4c10.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: modality_agnostic_Participants
-status: pending
-created_at: '2026-03-30T00:29:04.409148+00:00'

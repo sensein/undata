@@ -1,9 +1,0 @@
-id: af3bbd8a-a36e-46a3-8cab-caf767981f5c
-entity_type: element
-entity_ref: tableposition_be359b4f79b2.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TablePosition
-status: pending
-created_at: '2026-03-30T00:29:04.054762+00:00'

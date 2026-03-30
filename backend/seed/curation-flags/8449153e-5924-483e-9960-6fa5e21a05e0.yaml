@@ -1,0 +1,9 @@
+id: 8449153e-5924-483e-9960-6fa5e21a05e0
+entity_type: value
+entity_ref: cars_d04af65bd754.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CARS
+status: pending
+created_at: '2026-03-30T01:18:37.290855+00:00'

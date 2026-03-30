@@ -1,0 +1,9 @@
+id: 5883d735-353b-4876-88c2-d84db3edf7fe
+entity_type: element
+entity_ref: numberoftransients_def1e259f346.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NumberOfTransients
+status: pending
+created_at: '2026-03-30T01:18:36.966722+00:00'

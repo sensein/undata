@@ -1,0 +1,9 @@
+id: fa6e461e-cc21-47a1-9a77-d65b984b1cd8
+entity_type: element
+entity_ref: anatomicallandmarkcoordinateunits_a1dde20b4aa9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AnatomicalLandmarkCoordinateUnits
+status: pending
+created_at: '2026-03-30T00:43:41.169938+00:00'

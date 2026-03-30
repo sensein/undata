@@ -1,9 +1,0 @@
-id: aae431e2-e9eb-41b0-b68e-c6f541710432
-entity_type: value
-entity_ref: tb1afi_bcca4d65d881.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TB1AFI
-status: pending
-created_at: '2026-03-30T00:29:09.237324+00:00'

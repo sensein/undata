@@ -1,9 +1,0 @@
-id: 8f62a285-5ef5-42bd-bc05-5414c814fcff
-entity_type: element
-entity_ref: totalreadouttime_d9995bbe0d47.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TotalReadoutTime
-status: pending
-created_at: '2026-03-30T00:29:04.065730+00:00'

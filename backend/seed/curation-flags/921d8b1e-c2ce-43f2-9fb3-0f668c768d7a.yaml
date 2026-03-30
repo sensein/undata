@@ -1,9 +1,0 @@
-id: 921d8b1e-c2ce-43f2-9fb3-0f668c768d7a
-entity_type: value
-entity_ref: adc_9eb264968ec1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ADC
-status: pending
-created_at: '2026-03-30T00:29:09.024746+00:00'

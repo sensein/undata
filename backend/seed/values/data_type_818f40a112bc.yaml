@@ -2,6 +2,31 @@ semantic:
   label: data_type
   value_type: categorical
   display_name: Data type
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C42645
+    term_label: Data Type
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8201
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C95817
+    term_label: Any Data Type
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7315
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C178114
+    term_label: ALL Data Type Terminology
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7211
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class: common_principles

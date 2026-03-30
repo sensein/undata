@@ -1,0 +1,9 @@
+id: 6be5a40f-f1b4-4c66-afd1-ff56e7bdf3b2
+entity_type: element
+entity_ref: contributor_102473cf936f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: contributor
+status: pending
+created_at: '2026-03-30T01:18:36.637166+00:00'

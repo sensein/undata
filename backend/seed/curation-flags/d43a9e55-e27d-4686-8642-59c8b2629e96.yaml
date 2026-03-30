@@ -1,0 +1,15 @@
+id: d43a9e55-e27d-4686-8642-59c8b2629e96
+entity_type: value
+entity_ref: saliva_3e098bcae02a.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/UBERON_0001836
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C13275
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C38017
+    score: 0.8945
+status: pending
+created_at: '2026-03-30T01:18:37.676663+00:00'

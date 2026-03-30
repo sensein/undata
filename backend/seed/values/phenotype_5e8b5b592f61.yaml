@@ -1,0 +1,33 @@
+semantic:
+  label: phenotype
+  value_type: categorical
+  display_name: Phenotype
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C16977
+    term_label: Phenotype
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/UPHENO_0001001
+    term_label: phenotype
+    ontology: upheno
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: datatypes
+  name: phenotype
+  description: 'Participant level measurement data
+
+    (for example, responses from multiple questionnaires)
+
+    split into individual files separate from `participants.tsv`.
+
+    '
+sha256: 5e8b5b592f6100befeb633af8de8bb2733d1c671a2180bde52e8139e26525489

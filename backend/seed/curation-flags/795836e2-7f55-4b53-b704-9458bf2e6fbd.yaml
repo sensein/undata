@@ -1,0 +1,11 @@
+id: 795836e2-7f55-4b53-b704-9458bf2e6fbd
+entity_type: element
+entity_ref: name_c0e05c02477f.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.833), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_data_1046
+  top_label: Strain name
+  top_score: 0.8325
+status: pending
+created_at: '2026-03-30T01:18:36.948004+00:00'

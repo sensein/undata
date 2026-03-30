@@ -1,9 +1,0 @@
-id: 427933f6-d9fa-4dd3-aee5-c4f960de21bc
-entity_type: value
-entity_ref: dcite_issupplementedby_eb12d5a33bbd.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: dcite:IsSupplementedBy
-status: pending
-created_at: '2026-03-30T00:29:09.082009+00:00'

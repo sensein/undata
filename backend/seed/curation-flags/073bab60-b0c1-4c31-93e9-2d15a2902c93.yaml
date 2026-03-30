@@ -1,0 +1,9 @@
+id: 073bab60-b0c1-4c31-93e9-2d15a2902c93
+entity_type: value
+entity_ref: dcite_isdescribedby_a717a2aaa538.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:IsDescribedBy
+status: pending
+created_at: '2026-03-30T01:18:37.358271+00:00'

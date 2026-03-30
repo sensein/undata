@@ -1,0 +1,11 @@
+id: bb872a27-ec9b-4a00-8802-57fa24b32990
+entity_type: value
+entity_ref: bf_54d8fcb0c8b9.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.766), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C89281
+  top_label: Boyfriend
+  top_score: 0.7658
+status: pending
+created_at: '2026-03-30T00:43:41.617568+00:00'

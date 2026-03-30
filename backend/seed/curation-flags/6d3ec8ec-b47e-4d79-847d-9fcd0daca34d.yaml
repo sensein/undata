@@ -1,0 +1,9 @@
+id: 6d3ec8ec-b47e-4d79-847d-9fcd0daca34d
+entity_type: schema
+entity_ref: mrifieldmapb0fieldidentifier_278382a1c22d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRIFieldmapB0FieldIdentifier
+status: pending
+created_at: '2026-03-30T01:18:37.884724+00:00'

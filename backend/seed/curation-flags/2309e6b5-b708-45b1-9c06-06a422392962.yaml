@@ -1,0 +1,9 @@
+id: 2309e6b5-b708-45b1-9c06-06a422392962
+entity_type: schema
+entity_ref: fmap_sidecar_9eadc73ce884.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: fmap_sidecar
+status: pending
+created_at: '2026-03-30T00:40:06.319324+00:00'

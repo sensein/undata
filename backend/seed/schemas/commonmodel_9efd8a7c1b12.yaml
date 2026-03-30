@@ -19,6 +19,15 @@ semantic:
   - d1a1aeff769efecfadfd0756e5e401de1db635f3a97e98b48f549ba3b14509e7
   - db6bf21be7ab2fa28b273b8a95f25d27db1540ff58031b5059d44afa5cdcd8d3
   subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C142487
+    term_label: Common Data Model
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7358
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: dandi
   class: CommonModel

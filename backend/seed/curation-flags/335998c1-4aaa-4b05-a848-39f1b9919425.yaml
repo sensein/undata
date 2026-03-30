@@ -1,0 +1,9 @@
+id: 335998c1-4aaa-4b05-a848-39f1b9919425
+entity_type: element
+entity_ref: rel_y_6bb7c8f3aded.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: rel_y
+status: pending
+created_at: '2026-03-30T00:43:41.445660+00:00'

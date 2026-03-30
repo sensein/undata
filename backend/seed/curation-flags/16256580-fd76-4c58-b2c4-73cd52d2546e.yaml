@@ -1,0 +1,11 @@
+id: 16256580-fd76-4c58-b2c4-73cd52d2546e
+entity_type: element
+entity_ref: description_4b91a8c2cbb7.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.800), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C178920
+  top_label: Equipment Type
+  top_score: 0.8005
+status: pending
+created_at: '2026-03-30T01:18:36.658867+00:00'

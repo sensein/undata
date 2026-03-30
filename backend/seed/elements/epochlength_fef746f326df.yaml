@@ -1,0 +1,20 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+  min_value: 0.0
+  unit: seconds
+provenance:
+- source: bids
+  class: metadata
+  name: EpochLength
+  description: 'Duration of individual epochs in seconds (for example, `1`)
+
+    in case of epoched data.
+
+    If recording was continuous or discontinuous, leave out the field.
+
+    '
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: fef746f326dfcb47a656cc7312018bafc064460b7404a0ee8ba53ce9f0ab9d64

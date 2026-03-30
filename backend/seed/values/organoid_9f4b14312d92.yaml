@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: organoid
-provenance:
-- source: bids
-  class_: ''
-  name: organoid
-sha256: 9f4b14312d9243c0187da51f6a32497afa480bd97f556b09381dfb5ef117fcef

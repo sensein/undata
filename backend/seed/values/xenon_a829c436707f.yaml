@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: xenon
-provenance:
-- source: bids
-  class_: ''
-  name: XENON
-sha256: a829c436707f71b936748ccf5d71e96da4aa5cd05cb02e5013093e2db0cf79f3

@@ -1,0 +1,9 @@
+id: bbadff65-544c-400f-80d3-2f8195ecc221
+entity_type: element
+entity_ref: anatomy_6dac346a5da4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: anatomy
+status: pending
+created_at: '2026-03-30T01:18:36.586970+00:00'

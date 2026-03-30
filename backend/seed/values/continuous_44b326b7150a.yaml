@@ -1,0 +1,33 @@
+semantic:
+  value_type: categorical
+  label: continuous
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000689
+    term_label: continuous
+    ontology: pato
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/RO_0002150
+    term_label: continuous with
+    ontology: ro
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9186
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0005011
+    term_label: continuous with
+    ontology: pato
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9186
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: continuous
+sha256: 44b326b7150a3d533268b8a76ec116f27727553f6be6c957e0dd0c7032f4e523

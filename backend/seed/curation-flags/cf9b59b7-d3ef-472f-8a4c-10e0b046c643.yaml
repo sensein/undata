@@ -1,0 +1,9 @@
+id: cf9b59b7-d3ef-472f-8a4c-10e0b046c643
+entity_type: element
+entity_ref: scratch_5b8fa435c3e9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: scratch
+status: pending
+created_at: '2026-03-30T00:43:41.472750+00:00'

@@ -1,0 +1,9 @@
+id: b323c073-03d8-4e56-9eef-ad6565f42332
+entity_type: value
+entity_ref: .snirf_b2e81f95ad9a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: snirf
+status: pending
+created_at: '2026-03-30T00:43:41.584962+00:00'

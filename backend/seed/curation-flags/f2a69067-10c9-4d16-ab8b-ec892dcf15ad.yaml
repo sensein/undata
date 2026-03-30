@@ -1,0 +1,15 @@
+id: f2a69067-10c9-4d16-ab8b-ec892dcf15ad
+entity_type: element
+entity_ref: name_374634b11448.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.008)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C178919
+    score: 0.7783
+  - uri: http://purl.obolibrary.org/obo/NCIT_C178920
+    score: 0.7707
+  - uri: http://purl.obolibrary.org/obo/NCIT_C85487
+    score: 0.7029
+status: pending
+created_at: '2026-03-30T01:18:36.933519+00:00'

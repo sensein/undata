@@ -1,0 +1,11 @@
+id: b7e80224-99db-4b50-97f4-75aeda7c1c38
+entity_type: value
+entity_ref: pixels_4c623b1b7a5f.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.853), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C48367
+  top_label: Pixel
+  top_score: 0.853
+status: pending
+created_at: '2026-03-30T00:43:41.932921+00:00'

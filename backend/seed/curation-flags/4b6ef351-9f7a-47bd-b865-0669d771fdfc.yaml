@@ -1,0 +1,9 @@
+id: 4b6ef351-9f7a-47bd-b865-0669d771fdfc
+entity_type: element
+entity_ref: intendedfor_fbaa37043e54.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: IntendedFor
+status: pending
+created_at: '2026-03-30T00:43:41.335018+00:00'

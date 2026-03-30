@@ -1,0 +1,9 @@
+id: 419af473-19a3-4ca6-872c-2f59edb6ca3e
+entity_type: value
+entity_ref: yzx_c14fb12183ea.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: YZX
+status: pending
+created_at: '2026-03-30T00:40:06.287063+00:00'

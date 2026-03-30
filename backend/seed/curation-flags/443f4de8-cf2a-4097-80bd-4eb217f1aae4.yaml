@@ -1,0 +1,9 @@
+id: 443f4de8-cf2a-4097-80bd-4eb217f1aae4
+entity_type: element
+entity_ref: z_a47eb4ec8615.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: z
+status: pending
+created_at: '2026-03-30T00:40:05.807175+00:00'

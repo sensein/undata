@@ -1,0 +1,9 @@
+id: a5d54469-2bb9-4d70-9d62-eec76a7d2efd
+entity_type: schema
+entity_ref: accessrequirements_97810af605b8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AccessRequirements
+status: pending
+created_at: '2026-03-30T01:18:37.768106+00:00'

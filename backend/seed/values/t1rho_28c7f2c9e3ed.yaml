@@ -2,6 +2,15 @@ semantic:
   label: T1rho
   value_type: categorical
   display_name: T1 in rotating frame (T1 rho) image
+  ontology_annotations:
+  - term_uri: http://identifiers.org/ensembl/ENSG00000038295
+    term_label: TLL1
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7667
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: bids
   class: suffixes

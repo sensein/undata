@@ -1,11 +1,61 @@
 semantic:
   data_type: string
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C45822
+    term_label: Locus
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8421
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_1893
+    term_label: Locus ID
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7956
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C94514
+    term_label: Locus Heterogeneity
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7601
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C97333
+    term_label: Locus Coeruleus
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7128
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: https://purl.brain-bican.org/ontology/dhbao/DHBA_12819
+    term_label: locus coeruleus
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7128
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_1908
+    term_label: Locus ID (Tropgene)
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7096
+    model: all-MiniLM-L6-v2
+    primary: false
+  value_domain: text
 provenance:
 - source: dandi
   class: Locus
   name: locusType
   description: ''
-  generated_at: '2026-03-30T00:29:06.281579+00:00'
+  generated_at: '2026-03-30T00:43:46.045696+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 4e120fa047b9bad4f25931f8356d2e9219127bf627d11e4a85aab2925c259c91

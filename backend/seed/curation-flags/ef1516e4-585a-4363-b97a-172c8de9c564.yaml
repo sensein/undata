@@ -1,9 +1,0 @@
-id: ef1516e4-585a-4363-b97a-172c8de9c564
-entity_type: value
-entity_ref: meggradaxial_9e1d2bee7d78.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MEGGRADAXIAL
-status: pending
-created_at: '2026-03-30T00:29:01.229291+00:00'

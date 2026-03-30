@@ -1,11 +1,12 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: dandi
   class: Session
   name: startDate
   description: ''
-  generated_at: '2026-03-30T00:29:06.281579+00:00'
+  generated_at: '2026-03-30T00:43:46.045696+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 897ce8a3ae2b0f0c9b139302f27dcf4e024982f20b7c6597ba5959e590600b07

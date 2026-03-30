@@ -1,9 +1,0 @@
-id: 457fa271-a7aa-41a6-84ba-42685efcfd28
-entity_type: schema
-entity_ref: imagingretinotopy_6227b41deb4d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ImagingRetinotopy
-status: pending
-created_at: '2026-03-30T00:29:09.322013+00:00'

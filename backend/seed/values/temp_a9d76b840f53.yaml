@@ -1,6 +1,23 @@
 semantic:
   value_type: categorical
   label: temp
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000146
+    term_label: temperature
+    ontology: pato
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8321
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25206
+    term_label: Temperature
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8321
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class_: ''

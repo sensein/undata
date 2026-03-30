@@ -1,0 +1,89 @@
+semantic:
+  value_type: categorical
+  label: amniotic_fluid
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0000173
+    term_label: amniotic fluid
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.9622
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C13188
+    term_label: Amniotic Fluid
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.9622
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0002500
+    term_label: amniotic fluid specimen
+    ontology: obi
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8613
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/HP_0001560
+    term_label: Abnormality of the amniotic fluid
+    ontology: hp
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8387
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C92824
+    term_label: Amniotic Fluid Leak
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7874
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/HP_0034899
+    term_label: Abnormal amniotic fluid protein concentration
+    ontology: hp
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7791
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C111911
+    term_label: Amniotic Fluid Embolism
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7759
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C13398
+    term_label: Embryonic Fluid
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7499
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C101028
+    term_label: Neonatal Aspiration of Amniotic Fluid
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7459
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C92729
+    term_label: Amnioinfusion
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7372
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: amniotic fluid
+sha256: 303aec51dd4e1f2fb4e89710af5f5c081b77bcbe509f0a76d7695f3dd4d8e496

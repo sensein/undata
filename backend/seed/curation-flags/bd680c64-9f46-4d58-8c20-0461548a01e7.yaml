@@ -1,9 +1,0 @@
-id: bd680c64-9f46-4d58-8c20-0461548a01e7
-entity_type: element
-entity_ref: name__channels_5bc508f15dd7.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: name__channels
-status: pending
-created_at: '2026-03-30T00:29:00.968740+00:00'

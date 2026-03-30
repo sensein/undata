@@ -1,0 +1,11 @@
+id: 7871c517-127d-45ce-a061-b665b6076288
+entity_type: element
+entity_ref: resourcetype_cd9fe42242c4.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.931), no LLM verification
+  top_match: http://purl.org/dc/elements/1.1/type
+  top_label: Resource Type
+  top_score: 0.9315
+status: pending
+created_at: '2026-03-30T01:18:37.048128+00:00'

@@ -1,0 +1,9 @@
+id: 26d7f0d0-f6c0-455c-a38f-7717be1a040b
+entity_type: value
+entity_ref: captrak_4b7160d1710e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CapTrak
+status: pending
+created_at: '2026-03-30T00:43:41.637910+00:00'

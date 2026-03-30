@@ -1,9 +1,0 @@
-id: 914ca359-89d9-44dd-9acc-7892cc13af38
-entity_type: element
-entity_ref: recordingtype_9a059e73d47a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: RecordingType
-status: pending
-created_at: '2026-03-30T00:29:08.823863+00:00'

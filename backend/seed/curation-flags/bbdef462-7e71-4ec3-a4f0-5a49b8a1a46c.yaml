@@ -1,9 +1,0 @@
-id: bbdef462-7e71-4ec3-a4f0-5a49b8a1a46c
-entity_type: element
-entity_ref: access_ecb64f851b85.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: access
-status: pending
-created_at: '2026-03-30T00:29:08.449839+00:00'

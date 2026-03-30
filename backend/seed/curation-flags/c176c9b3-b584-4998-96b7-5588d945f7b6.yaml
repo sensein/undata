@@ -1,0 +1,9 @@
+id: c176c9b3-b584-4998-96b7-5588d945f7b6
+entity_type: schema
+entity_ref: pettask_65f9bc9a7c9c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PETTask
+status: pending
+created_at: '2026-03-30T01:18:37.925141+00:00'

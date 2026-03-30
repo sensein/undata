@@ -1,0 +1,89 @@
+semantic:
+  label: Transcriptomic
+  value_type: categorical
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C153189
+    term_label: Transcriptomics
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.9585
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_topic_0203
+    term_label: Transcriptomics
+    ontology: edam
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 0.9585
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C153194
+    term_label: Transcriptome
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9154
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_operation_3258
+    term_label: Transcriptome assembly
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7838
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C158252
+    term_label: Targeted Transcriptome Sequencing
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7826
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C124261
+    term_label: Whole Transcriptome Sequencing
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7816
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C185299
+    term_label: Transcript Variant
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7504
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_2399
+    term_label: Gene annotation (transcript)
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7378
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C1936
+    term_label: Transcript
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7367
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_operation_3260
+    term_label: Transcriptome assembly (mapping)
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7276
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: Transcriptomic
+sha256: 05437d8e63b080914b158b19b26bff827a205b42b377da942c3181f0f8f3332e

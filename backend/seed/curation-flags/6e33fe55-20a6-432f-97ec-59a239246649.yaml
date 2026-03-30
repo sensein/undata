@@ -1,0 +1,9 @@
+id: 6e33fe55-20a6-432f-97ec-59a239246649
+entity_type: element
+entity_ref: sweep_number_b32ec45c73a8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: sweep_number
+status: pending
+created_at: '2026-03-30T01:18:37.145837+00:00'

@@ -1,9 +1,0 @@
-id: 0eb437e3-c52d-4d5a-8c18-276cba8dbf39
-entity_type: element
-entity_ref: codingschemeversion_a946c13b9395.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CodingSchemeVersion
-status: pending
-created_at: '2026-03-30T00:29:03.751055+00:00'

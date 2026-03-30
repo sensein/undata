@@ -1,0 +1,9 @@
+id: 97f9a59d-276b-4c22-84fa-5b105c2c1f5e
+entity_type: schema
+entity_ref: mrifunctimingparameters_245b46544256.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRIFuncTimingParameters
+status: pending
+created_at: '2026-03-30T01:18:37.888774+00:00'

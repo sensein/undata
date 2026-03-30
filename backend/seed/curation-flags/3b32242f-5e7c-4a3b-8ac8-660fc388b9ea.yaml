@@ -1,9 +1,0 @@
-id: 3b32242f-5e7c-4a3b-8ac8-660fc388b9ea
-entity_type: element
-entity_ref: electricalseries_5c439fadd909.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ElectricalSeries
-status: pending
-created_at: '2026-03-30T00:29:03.804377+00:00'

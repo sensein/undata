@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: uri
-provenance:
-- source: bids
-  class_: ''
-  name: uri
-sha256: 2c1968c2f1ee366f42b13edaf1c3b4f3cb683339e7f6d38c431dbd61cbe9bb5d

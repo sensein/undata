@@ -1,11 +1,21 @@
 semantic:
   data_type: float
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C204095
+    term_label: Excitation Wavelength
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7088
+    model: all-MiniLM-L6-v2
+    primary: true
+  value_domain: numeric
 provenance:
 - source: nwb
   class: nwb
   name: excitation_lambda
   description: Excitation wavelength, in nm.
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: a79de42811ae498d1159062710ad90df2b947adf1682885fab8ace0bef6bae64

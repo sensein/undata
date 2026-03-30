@@ -1,9 +1,0 @@
-id: c5d1613c-2944-471b-946c-aa96387ef900
-entity_type: value
-entity_ref: in_vitro_differentiated_cells_972d49947925.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: in vitro differentiated cells
-status: pending
-created_at: '2026-03-30T00:29:09.135942+00:00'

@@ -1,9 +1,0 @@
-id: 1876e468-6c4d-40fa-9c7f-9f20e21731ac
-entity_type: value
-entity_ref: talairach_d82d5c7ca4b6.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Talairach
-status: pending
-created_at: '2026-03-30T00:29:01.310775+00:00'

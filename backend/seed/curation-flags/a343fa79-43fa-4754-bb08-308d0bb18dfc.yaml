@@ -1,9 +1,0 @@
-id: a343fa79-43fa-4754-bb08-308d0bb18dfc
-entity_type: value
-entity_ref: ctf_89ef6eedc52d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CTF
-status: pending
-created_at: '2026-03-30T00:29:04.153051+00:00'

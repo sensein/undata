@@ -1,0 +1,9 @@
+id: e06b2ce1-23ec-473b-8b6b-5381df4c0895
+entity_type: schema
+entity_ref: entitiesechometadata_5df481ef819f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EntitiesEchoMetadata
+status: pending
+created_at: '2026-03-30T01:18:37.814880+00:00'

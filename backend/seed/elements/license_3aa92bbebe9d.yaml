@@ -6,7 +6,7 @@ provenance:
   name: license
   description: Licenses associated with the item. DANDI only supports a subset of
     Creative Commons Licenses (creativecommons.org) applicable to datasets.
-  generated_at: '2026-03-30T00:29:06.281579+00:00'
+  generated_at: '2026-03-30T00:43:46.045696+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 3aa92bbebe9dac891ae2c9177c50ab4f68de09e10046a5a01d880d09ec4329de

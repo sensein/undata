@@ -2,6 +2,15 @@ semantic:
   label: participant_relative
   value_type: categorical
   display_name: Path relative to the participant directory
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/nbo#has_participant
+    term_label: has_participant
+    ontology: nbo#has
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.708
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: bids
   class: formats

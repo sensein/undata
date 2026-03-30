@@ -1,9 +1,0 @@
-id: 671381f4-8526-4909-96a6-251f0dd1ce9b
-entity_type: element
-entity_ref: metaboliteavail_b98a9a4fe831.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MetaboliteAvail
-status: pending
-created_at: '2026-03-30T00:29:08.735523+00:00'

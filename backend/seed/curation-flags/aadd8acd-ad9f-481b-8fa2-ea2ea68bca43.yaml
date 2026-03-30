@@ -1,9 +1,0 @@
-id: aadd8acd-ad9f-481b-8fa2-ea2ea68bca43
-entity_type: value
-entity_ref: eyetrack_bcb262979174.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PhysioTypeEyetrack
-status: pending
-created_at: '2026-03-30T00:29:09.113074+00:00'

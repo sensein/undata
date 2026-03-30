@@ -1,0 +1,11 @@
+id: d8a6c541-8bcd-469a-aad2-0faa8cd379a8
+entity_type: value
+entity_ref: unit1_6bc3dd42dd38.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.776), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C44278
+  top_label: Unit
+  top_score: 0.7758
+status: pending
+created_at: '2026-03-30T01:18:37.743765+00:00'

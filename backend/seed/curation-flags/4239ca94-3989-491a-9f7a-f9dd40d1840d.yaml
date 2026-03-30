@@ -1,0 +1,9 @@
+id: 4239ca94-3989-491a-9f7a-f9dd40d1840d
+entity_type: element
+entity_ref: molaractivitymeastime_3d6a15c07724.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MolarActivityMeasTime
+status: pending
+created_at: '2026-03-30T00:40:05.655762+00:00'

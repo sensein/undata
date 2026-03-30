@@ -1,0 +1,11 @@
+id: 7dcf8b82-cd28-4e07-b2fe-e99c22ae9718
+entity_type: element
+entity_ref: identifier_2cc695308864.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.724), no LLM verification
+  top_match: http://www.w3.org/ns/prov#Agent
+  top_label: Agent
+  top_score: 0.7241
+status: pending
+created_at: '2026-03-30T01:18:36.816705+00:00'

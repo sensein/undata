@@ -1,0 +1,9 @@
+id: 5991e628-1bed-4483-ac23-bdd9cfc40bf9
+entity_type: value
+entity_ref: t2w_dc9ddd20cbd4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: T2w
+status: pending
+created_at: '2026-03-30T01:18:37.712413+00:00'

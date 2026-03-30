@@ -1,0 +1,9 @@
+id: 387a2d13-720c-4744-8597-62ba9711e09f
+entity_type: value
+entity_ref: t2starmap_79a545bb4e11.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: T2starmap
+status: pending
+created_at: '2026-03-30T01:18:37.711386+00:00'

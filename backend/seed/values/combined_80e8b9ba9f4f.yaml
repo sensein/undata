@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: combined
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25454
+    term_label: Combined
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: COMBINED
+sha256: 80e8b9ba9f4f3463af1b8eb4ee2e10124dbbd45b9d9c71fd34bc51b732934b3f

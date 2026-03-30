@@ -1,0 +1,11 @@
+id: 28b42ac7-e0f2-47fc-9072-ff28a4b9d972
+entity_type: element
+entity_ref: identifier_9e2a0af92abf.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.751), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_data_1893
+  top_label: Locus ID
+  top_score: 0.7506
+status: pending
+created_at: '2026-03-30T01:18:36.824424+00:00'

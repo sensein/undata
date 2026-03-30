@@ -2,6 +2,15 @@ semantic:
   label: .nii
   value_type: categorical
   display_name: NIfTI
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_format_3010
+    term_label: .nib
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7606
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: bids
   class: extensions

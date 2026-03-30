@@ -1,9 +1,0 @@
-id: 9e970b97-b553-433b-9570-2969d8058732
-entity_type: element
-entity_ref: coordinate_system_cabb24300d70.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: coordinate_system
-status: pending
-created_at: '2026-03-30T00:29:03.759608+00:00'

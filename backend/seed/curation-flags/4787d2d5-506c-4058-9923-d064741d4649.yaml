@@ -1,0 +1,9 @@
+id: 4787d2d5-506c-4058-9923-d064741d4649
+entity_type: element
+entity_ref: source_idx_de1183efc72c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: source_idx
+status: pending
+created_at: '2026-03-30T01:18:37.115625+00:00'

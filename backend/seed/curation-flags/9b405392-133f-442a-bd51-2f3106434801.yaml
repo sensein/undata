@@ -1,0 +1,11 @@
+id: 9b405392-133f-442a-bd51-2f3106434801
+entity_type: value
+entity_ref: trig_7d05ba6f848c.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.704), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/CHEBI_9754
+  top_label: tris
+  top_score: 0.7035
+status: pending
+created_at: '2026-03-30T00:43:42.031445+00:00'

@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: study
-provenance:
-- source: bids
-  class_: ''
-  name: study
-sha256: 76495f90720ab45d50e83c7ed6e7dc7969042e5d1a30ed6d2c88e3a0d420397d

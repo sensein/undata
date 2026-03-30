@@ -1,11 +1,12 @@
 semantic:
   data_type: float
+  value_domain: numeric
 provenance:
 - source: nwb
   class: nwb
   name: exposure_time
   description: Exposure time of the sample; often the inverse of the frequency.
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 5f86669a4a9a5fcd1cd9addb358387f935dafd21176b53cc5e7b16ccf6e4ceec

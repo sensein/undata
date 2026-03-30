@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: number
-provenance:
-- source: bids
-  class_: ''
-  name: number
-sha256: af857fb0069e32064e981eecaa3484945626e34dcdfbc98fd7010e528b15b432

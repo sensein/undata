@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: iodine
-provenance:
-- source: bids
-  class_: ''
-  name: IODINE
-sha256: a46fc03b277bdf34538a9316f1f3f00b9d51819a1884bb23bfe107f47197adcb

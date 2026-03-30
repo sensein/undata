@@ -1,9 +1,0 @@
-id: 7f81f470-26d8-49c6-a5a5-3bbd6db416a6
-entity_type: element
-entity_ref: arterialspinlabelingtype_55cbe9804d38.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ArterialSpinLabelingType
-status: pending
-created_at: '2026-03-30T00:29:03.722527+00:00'

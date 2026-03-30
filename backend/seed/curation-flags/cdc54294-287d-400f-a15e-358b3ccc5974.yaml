@@ -1,9 +1,0 @@
-id: cdc54294-287d-400f-a15e-358b3ccc5974
-entity_type: element
-entity_ref: low_cutoff_e735c6a5d85a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: low_cutoff
-status: pending
-created_at: '2026-03-30T00:29:03.891041+00:00'

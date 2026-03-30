@@ -1,9 +1,0 @@
-id: c3959aa2-7d86-4c6d-b092-50d7971af962
-entity_type: schema
-entity_ref: participant_055736a44e00.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Participant
-status: pending
-created_at: '2026-03-30T00:29:09.389373+00:00'

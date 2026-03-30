@@ -1,0 +1,11 @@
+id: 24020e24-159f-44ff-bdd1-67f7d7b7079f
+entity_type: value
+entity_ref: data_acquisition_5b2506247e1c.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.808), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C142469
+  top_label: Data Acquisition
+  top_score: 0.8085
+status: pending
+created_at: '2026-03-30T00:43:41.671015+00:00'

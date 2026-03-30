@@ -1,0 +1,9 @@
+id: f68e2aec-a76c-4269-836a-57cd9d2d2e9d
+entity_type: element
+entity_ref: headcircumference_f2def9f8af9d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: HeadCircumference
+status: pending
+created_at: '2026-03-30T01:18:36.754960+00:00'

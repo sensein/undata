@@ -1,0 +1,45 @@
+semantic:
+  label: generic
+  value_type: categorical
+  display_name: Generic Physiological Recording
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C151960
+    term_label: Generic
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C97054
+    term_label: Generic Name
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8691
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C1312
+    term_label: Generic Drug
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7465
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C101886
+    term_label: Manufactures Non-Generics
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7148
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: PhysioTypeGeneric
+  description: 'Unspecified physiological recording.
+
+    '
+sha256: 8dd896fb30def12abfec4ec8f19e22b1cc0d61ee3619a65b267ed711aa7af827

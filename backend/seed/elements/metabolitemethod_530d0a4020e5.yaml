@@ -1,6 +1,79 @@
 semantic:
   data_type: string
   value_domain: text
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0000366
+    term_label: metabolite profiling assay
+    ontology: obi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7768
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_25212
+    term_label: metabolite
+    ontology: chebi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7655
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C61154
+    term_label: Metabolite
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7655
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C210457
+    term_label: Metabolome
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7541
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_topic_0079
+    term_label: Metabolites
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7503
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_topic_3172
+    term_label: Metabolomics
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7252
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C49019
+    term_label: Metabolomics
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7252
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_77746
+    term_label: human metabolite
+    ontology: chebi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7228
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_78675
+    term_label: fundamental metabolite
+    ontology: chebi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7096
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class: metadata
@@ -8,7 +81,7 @@ provenance:
   description: 'Method used to measure metabolites.
 
     '
-  generated_at: '2026-03-30T00:28:57.008136+00:00'
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 530d0a4020e586fbca52d596522ba92ffe029f2439c4575cc655b98bf5272f25

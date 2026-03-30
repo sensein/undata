@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  value_domain: text
+  unit: seconds
+provenance:
+- source: nwb
+  class: nwb
+  name: axis_2_phase_map
+  description: Phase response to stimulus on the second measured axis.
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 81879980ebad687c259f2e0f5b7132f85eb6868b03e127b88b16b07028c59305

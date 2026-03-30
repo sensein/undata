@@ -1,0 +1,13 @@
+id: b6990288-2912-44bf-9fdc-aee1b5335097
+entity_type: schema
+entity_ref: columns_431ad82cc5a6.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C61516
+    score: 0.8572
+  - uri: http://purl.obolibrary.org/obo/NCIT_C43379
+    score: 0.8572
+status: pending
+created_at: '2026-03-30T01:18:37.792309+00:00'

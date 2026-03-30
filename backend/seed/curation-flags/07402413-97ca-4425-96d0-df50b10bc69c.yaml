@@ -1,0 +1,15 @@
+id: 07402413-97ca-4425-96d0-df50b10bc69c
+entity_type: schema
+entity_ref: agent_d5f459d46408.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://www.w3.org/ns/prov#agent
+    score: 0.9666
+  - uri: http://purl.obolibrary.org/obo/NCIT_C1708
+    score: 0.9666
+  - uri: http://www.w3.org/ns/prov#Agent
+    score: 0.9666
+status: pending
+created_at: '2026-03-30T01:18:37.772091+00:00'

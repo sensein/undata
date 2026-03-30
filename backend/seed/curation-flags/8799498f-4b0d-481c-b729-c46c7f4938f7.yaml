@@ -1,0 +1,9 @@
+id: 8799498f-4b0d-481c-b729-c46c7f4938f7
+entity_type: element
+entity_ref: reconfiltersize_c2b94022a4fd.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ReconFilterSize
+status: pending
+created_at: '2026-03-30T00:43:41.434918+00:00'

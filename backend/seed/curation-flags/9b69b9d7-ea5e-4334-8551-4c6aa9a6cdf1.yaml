@@ -1,0 +1,11 @@
+id: 9b69b9d7-ea5e-4334-8551-4c6aa9a6cdf1
+entity_type: element
+entity_ref: wasassociatedwith_af638bcffbec.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.713), no LLM verification
+  top_match: http://www.w3.org/ns/prov#wasAssociatedWith
+  top_label: wasAssociatedWith
+  top_score: 0.7126
+status: pending
+created_at: '2026-03-30T01:18:37.196992+00:00'

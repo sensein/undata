@@ -1,0 +1,51 @@
+semantic:
+  label: descriptions
+  value_type: categorical
+  display_name: Description Entity Definitions
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25365
+    term_label: Description
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9043
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.org/dc/elements/1.1/description
+    term_label: description
+    ontology: unknown
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9043
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/dc/terms/description
+    term_label: description
+    ontology: unknown
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9043
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: suffixes
+  name: descriptions
+  description: 'A TSV file describing labels found for the `desc` entity in a Derivatives
+    dataset.
+
+
+    This file MAY be located at the root of the derivative dataset,
+
+    or at the subject or session level.
+
+
+    The use of `descriptions.tsv` files together with the desc entity are helpful
+    to
+
+    document how files are generated,
+
+    even if their use may not be sufficient to provide full computational reproducibility.
+
+    '
+sha256: e1ffc06c235b7162aca2e885bcc76cf891d3e562ecde1bb48510b7736367298f

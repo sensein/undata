@@ -1,9 +1,0 @@
-id: 8b878811-06be-475b-9a67-56c14400230d
-entity_type: element
-entity_ref: whole_cell_capacitance_comp_77facd99df3f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: whole_cell_capacitance_comp
-status: pending
-created_at: '2026-03-30T00:29:04.096074+00:00'

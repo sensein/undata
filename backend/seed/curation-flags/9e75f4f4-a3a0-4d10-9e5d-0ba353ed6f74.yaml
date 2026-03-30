@@ -1,9 +1,0 @@
-id: 9e75f4f4-a3a0-4d10-9e5d-0ba353ed6f74
-entity_type: value
-entity_ref: other_biospecimen_7404fc080d0f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: other_biospecimen
-status: pending
-created_at: '2026-03-30T00:29:04.261626+00:00'

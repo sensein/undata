@@ -1,0 +1,11 @@
+id: 8a15dc36-3701-4892-895b-6958d7c16a45
+entity_type: value
+entity_ref: .json_4b3e04e46872.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.751), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C184769
+  top_label: JSON Format
+  top_score: 0.7511
+status: pending
+created_at: '2026-03-30T01:18:37.227090+00:00'

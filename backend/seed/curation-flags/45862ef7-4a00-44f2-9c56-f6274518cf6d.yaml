@@ -1,0 +1,9 @@
+id: 45862ef7-4a00-44f2-9c56-f6274518cf6d
+entity_type: schema
+entity_ref: frequencybandstable_ad79959f64fb.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: FrequencyBandsTable
+status: pending
+created_at: '2026-03-30T00:43:42.100982+00:00'

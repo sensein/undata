@@ -1,0 +1,11 @@
+id: c9830291-c8ee-4f40-92dc-3af627df28c0
+entity_type: schema
+entity_ref: person_68b84353cfc9.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.936), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C25190
+  top_label: Person
+  top_score: 0.9359
+status: pending
+created_at: '2026-03-30T01:18:37.918328+00:00'

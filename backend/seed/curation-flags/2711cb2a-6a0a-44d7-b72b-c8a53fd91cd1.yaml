@@ -1,0 +1,9 @@
+id: 2711cb2a-6a0a-44d7-b72b-c8a53fd91cd1
+entity_type: element
+entity_ref: editpulse_997a081d5aab.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EditPulse
+status: pending
+created_at: '2026-03-30T01:18:36.691756+00:00'

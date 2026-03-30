@@ -1,9 +1,0 @@
-id: 24f07388-b362-4011-99eb-ecd9a977409d
-entity_type: schema
-entity_ref: entitiesinvmetadata_39c122392a1d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EntitiesInvMetadata
-status: pending
-created_at: '2026-03-30T00:29:09.301944+00:00'

@@ -1,9 +1,0 @@
-id: 9449a69c-5c24-435a-9060-dd872bb6d36c
-entity_type: schema
-entity_ref: opticalchannel_9442b0a2360b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: OpticalChannel
-status: pending
-created_at: '2026-03-30T00:29:04.449306+00:00'

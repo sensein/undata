@@ -1,0 +1,9 @@
+id: cbaaeb77-7cb9-4c16-9708-89786df055a5
+entity_type: schema
+entity_ref: eegrequired_7fb6e102fe53.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EEGRequired
+status: pending
+created_at: '2026-03-30T00:40:06.306225+00:00'

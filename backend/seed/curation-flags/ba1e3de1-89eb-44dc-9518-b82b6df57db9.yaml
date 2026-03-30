@@ -1,9 +1,0 @@
-id: ba1e3de1-89eb-44dc-9518-b82b6df57db9
-entity_type: element
-entity_ref: contactpoint_25b76d062511.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: contactPoint
-status: pending
-created_at: '2026-03-30T00:29:08.513731+00:00'

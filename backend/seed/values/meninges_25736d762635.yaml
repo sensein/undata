@@ -1,0 +1,49 @@
+semantic:
+  value_type: categorical
+  label: meninges
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C12348
+    term_label: Meninges
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C12931
+    term_label: Meningeal
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8624
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C12350
+    term_label: Spinal Meninges
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.747
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C12349
+    term_label: Cerebral Meninges
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7428
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0003548
+    term_label: forebrain meninges
+    ontology: uberon
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7198
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class_: ''
+  name: meninges
+sha256: 25736d762635ccd50b068bd3c75226e65d6f0700e93c41bb3ef3f784c73d2622

@@ -1,0 +1,21 @@
+semantic:
+  label: GRADIENT
+  value_type: categorical
+  display_name: GRADIENT
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C70693
+    term_label: Gradient
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: enums
+  name: GRADIENT
+  description: 'A spoiling type: GRADIENT
+
+    '
+sha256: a2ca6e11462b2ee98f797e15c07c60ef5ee4646554cb5c150b8b047e4336fa1a

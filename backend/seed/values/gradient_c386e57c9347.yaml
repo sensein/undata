@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: gradient
-provenance:
-- source: bids
-  class_: ''
-  name: GRADIENT
-sha256: c386e57c9347a5a360d9dc498dc8f76d05a2a1965a0aa6ce08a1450391e230bf

@@ -2,6 +2,23 @@ semantic:
   label: RB1COR
   value_type: categorical
   display_name: RB1COR
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C131482
+    term_label: RB1 Negative
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7577
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C128842
+    term_label: RB1 Positive
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7321
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class: suffixes

@@ -1,0 +1,24 @@
+run_id: 19446534-f45
+source: bids
+started_at: '2026-03-30T00:40:06.851808+00:00'
+completed_at: '2026-03-30T00:40:06.851909+00:00'
+entity_counts:
+  extract:
+    elements: 585
+    schemas: 214
+    values: 670
+    valuesets: 7
+enrichment_rate:
+  source_metadata: 0
+  elements: 15
+  values: 356
+  valuesets: 1
+  schemas: 2
+curation_flags:
+  low_confidence: 1096
+  ambiguous_match: 221
+  multiple_candidates: 149
+timing:
+  extract: 1.4976928234100342
+  enrich: 284.68765687942505
+  commit: 3.191321849822998

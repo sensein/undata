@@ -1,0 +1,11 @@
+id: 6a51471c-e98d-4f89-8244-d726b1a4605e
+entity_type: value
+entity_ref: in_vitro_differentiated_cells_972d49947925.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.805), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/GO_0030154
+  top_label: cell differentiation
+  top_score: 0.8048
+status: pending
+created_at: '2026-03-30T00:43:41.779280+00:00'

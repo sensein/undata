@@ -1,0 +1,9 @@
+id: 037b363f-7a66-408d-a794-e989f8df301e
+entity_type: element
+entity_ref: specificradioactivityunits_91ac7e934e84.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpecificRadioactivityUnits
+status: pending
+created_at: '2026-03-30T00:40:05.759860+00:00'

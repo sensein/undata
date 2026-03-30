@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: boolean
-provenance:
-- source: bids
-  class_: ''
-  name: boolean
-sha256: 6180dd9e99b037fce317faeba48ecfdd2b1c8054aef16bdc511f2544a2478a13

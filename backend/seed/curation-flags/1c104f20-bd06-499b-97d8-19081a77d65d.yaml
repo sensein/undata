@@ -1,0 +1,9 @@
+id: 1c104f20-bd06-499b-97d8-19081a77d65d
+entity_type: schema
+entity_ref: multiparametricmappingmetadata_f41f9c4884c1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MultiParametricMappingMetadata
+status: pending
+created_at: '2026-03-30T00:40:06.377755+00:00'

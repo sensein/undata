@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: pupil
-provenance:
-- source: bids
-  class_: ''
-  name: PUPIL
-sha256: 4fa42d70646d000792418e931a1bb50c989e2d5277b0f7ea58b127def31846d6

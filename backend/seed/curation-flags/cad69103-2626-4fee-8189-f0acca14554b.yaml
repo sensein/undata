@@ -1,9 +1,0 @@
-id: cad69103-2626-4fee-8189-f0acca14554b
-entity_type: element
-entity_ref: cell_id_cac9de9bd4d6.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: cell_id
-status: pending
-created_at: '2026-03-30T00:29:03.743815+00:00'

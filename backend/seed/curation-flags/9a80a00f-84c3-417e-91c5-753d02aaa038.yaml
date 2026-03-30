@@ -1,0 +1,9 @@
+id: 9a80a00f-84c3-417e-91c5-753d02aaa038
+entity_type: value
+entity_ref: accel_e272e1036fc0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ACCEL
+status: pending
+created_at: '2026-03-30T00:43:41.594339+00:00'

@@ -1,0 +1,9 @@
+id: 9f208f82-2408-4432-abf4-de9bff31f0f9
+entity_type: schema
+entity_ref: pet_blood_0905a8e3c1ef.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: pet_Blood
+status: pending
+created_at: '2026-03-30T00:40:06.382796+00:00'

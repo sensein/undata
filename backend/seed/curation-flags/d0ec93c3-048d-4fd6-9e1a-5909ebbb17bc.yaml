@@ -1,0 +1,9 @@
+id: d0ec93c3-048d-4fd6-9e1a-5909ebbb17bc
+entity_type: element
+entity_ref: focal_depth_image_636e9fb0ed1e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: focal_depth_image
+status: pending
+created_at: '2026-03-30T01:18:36.737140+00:00'

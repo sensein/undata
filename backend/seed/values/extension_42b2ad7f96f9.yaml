@@ -1,0 +1,28 @@
+semantic:
+  label: extension
+  value_type: categorical
+  display_name: File extension
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_2000106
+    term_label: extension
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: common_principles
+  name: extension
+  description: 'A portion of the filename after the left-most period (`.`) preceded
+    by any other alphanumeric.
+
+    For example, `.gitignore` does not have a file extension,
+
+    but the file extension of `test.nii.gz` is `.nii.gz`.
+
+    Note that the left-most period is included in the file extension.
+
+    '
+sha256: 42b2ad7f96f918bd27afc26ba337040d641b2d4db4aef42fcebb993c37f5c007

@@ -1,9 +1,0 @@
-id: 380b23ee-f640-4665-9f99-7fac76a709f1
-entity_type: element
-entity_ref: slicethickness_2de1679257a7.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SliceThickness
-status: pending
-created_at: '2026-03-30T00:29:01.054361+00:00'

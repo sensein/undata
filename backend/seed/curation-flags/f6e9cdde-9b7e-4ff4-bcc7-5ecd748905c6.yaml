@@ -1,0 +1,9 @@
+id: f6e9cdde-9b7e-4ff4-bcc7-5ecd748905c6
+entity_type: schema
+entity_ref: mrsconditionalinversiontime_e92551ec068c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRSConditionalInversionTime
+status: pending
+created_at: '2026-03-30T00:40:06.371138+00:00'

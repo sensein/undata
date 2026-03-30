@@ -1,0 +1,9 @@
+id: 649f857d-3501-4c88-b60c-bfd7fefa55c7
+entity_type: element
+entity_ref: labelinglocationdescription_377b055bae59.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: LabelingLocationDescription
+status: pending
+created_at: '2026-03-30T01:18:36.874451+00:00'

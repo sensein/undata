@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: balanced
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000757
+    term_label: balanced
+    ontology: pato
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: balanced
+sha256: bed2adf4829c427605f5e5001354374bb9844ab10ea5726f5fc4ad0370d14b6c

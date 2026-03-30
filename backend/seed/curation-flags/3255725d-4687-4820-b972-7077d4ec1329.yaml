@@ -1,0 +1,13 @@
+id: 3255725d-4687-4820-b972-7077d4ec1329
+entity_type: value
+entity_ref: .ave_61bebba58428.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCBITaxon_8782
+    score: 0.8062
+  - uri: http://purl.obolibrary.org/obo/NCIT_C14189
+    score: 0.8062
+status: pending
+created_at: '2026-03-30T00:40:05.811174+00:00'

@@ -2,6 +2,23 @@ semantic:
   label: SEM
   value_type: categorical
   display_name: Scanning electron microscopy
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0001866
+    term_label: sebum
+    ontology: uberon
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8285
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C13276
+    term_label: Sebum
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8285
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class: suffixes

@@ -1,0 +1,9 @@
+id: e9a4dcdd-5701-4172-8d20-7df350f82bd0
+entity_type: element
+entity_ref: respiratory_b3333ad4eacf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: respiratory
+status: pending
+created_at: '2026-03-30T00:40:05.720594+00:00'

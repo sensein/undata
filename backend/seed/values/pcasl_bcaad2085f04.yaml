@@ -2,6 +2,15 @@ semantic:
   label: PCASL
   value_type: categorical
   display_name: Pseudo-continuous arterial spin labeling
+  ontology_annotations:
+  - term_uri: http://identifiers.org/ensembl/ENSG00000166803
+    term_label: PCLAF
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7438
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: bids
   class: enums

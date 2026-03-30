@@ -1,0 +1,40 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: IODINE
+    label: IODINE
+    ontology_term: https://schema.undata.live/values/7eda0c1e-7114-4643-81d2-0a95d994835e
+  - value: GADOLINIUM
+    label: GADOLINIUM
+    ontology_term: https://schema.undata.live/values/d2a60cf9-fe2b-43f7-867c-b7279e6a722a
+  - value: CARBON DIOXIDE
+    label: CARBON DIOXIDE
+    ontology_term: https://schema.undata.live/values/99c52b38-6892-4c43-b41f-ca720184c6c7
+  - value: BARIUM
+    label: BARIUM
+    ontology_term: https://schema.undata.live/values/b220ea68-e78b-4189-80e4-8f650a0b21d0
+  - value: XENON
+    label: XENON
+    ontology_term: https://schema.undata.live/values/c6137903-82c9-4541-b565-2331f4d1c965
+  - value: UNKNOWN
+    label: UNKNOWN
+    ontology_term: https://schema.undata.live/values/c7467a44-fa78-4328-8b9d-de232b302f9f
+  - value: NONE
+    label: NONE
+    ontology_term: https://schema.undata.live/values/85885de0-1631-4ef8-93f1-3de03072e76f
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: ContrastBolusIngredient
+  description: 'Active ingredient of agent.
+
+    Corresponds to [DICOM Tag 0018, 1048](http://www.dicomlookup.com/dicomtags/(0018,1048))
+
+    `Contrast/Bolus Ingredient`.
+
+    '
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4ce541615765454e0d6b71e5a3fda079957c301c17ea733953421b20329aa71e

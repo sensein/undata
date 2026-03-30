@@ -1,0 +1,9 @@
+id: 13db8dee-fc95-434a-96f7-8def673e207b
+entity_type: schema
+entity_ref: physio_physioeyetracking_0aa10d29526c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: physio_PhysioEyeTracking
+status: pending
+created_at: '2026-03-30T01:18:37.928016+00:00'

@@ -1,9 +1,0 @@
-id: 14382bd2-86f3-474e-a58f-69b246ca4744
-entity_type: value
-entity_ref: megother_98ccaa2d1ca1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MEGOTHER
-status: pending
-created_at: '2026-03-30T00:29:04.228208+00:00'

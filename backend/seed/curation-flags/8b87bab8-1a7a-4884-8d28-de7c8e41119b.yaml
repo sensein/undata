@@ -1,9 +1,0 @@
-id: 8b87bab8-1a7a-4884-8d28-de7c8e41119b
-entity_type: element
-entity_ref: magneticfieldstrength_ca5e502e0b5c.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MagneticFieldStrength
-status: pending
-created_at: '2026-03-30T00:29:08.717522+00:00'

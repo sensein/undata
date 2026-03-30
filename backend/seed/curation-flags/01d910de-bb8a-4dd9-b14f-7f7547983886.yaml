@@ -1,0 +1,9 @@
+id: 01d910de-bb8a-4dd9-b14f-7f7547983886
+entity_type: element
+entity_ref: sourcetype_b646fbc30f30.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SourceType
+status: pending
+created_at: '2026-03-30T01:18:37.117727+00:00'

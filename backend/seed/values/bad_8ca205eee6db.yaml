@@ -1,0 +1,17 @@
+semantic:
+  value_type: categorical
+  label: bad
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C80228
+    term_label: Bad
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class_: ''
+  name: bad
+sha256: 8ca205eee6dbc64703bf6e570de8950e0cdec889d9746bfbf2068c16c8dc8448

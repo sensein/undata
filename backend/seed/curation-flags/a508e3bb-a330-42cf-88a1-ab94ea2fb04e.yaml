@@ -1,0 +1,11 @@
+id: a508e3bb-a330-42cf-88a1-ab94ea2fb04e
+entity_type: value
+entity_ref: conf_39aa87e14c1a.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.706), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/SO_0000149
+  top_label: contig
+  top_score: 0.706
+status: pending
+created_at: '2026-03-30T01:18:37.309052+00:00'

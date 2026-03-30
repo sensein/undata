@@ -1,0 +1,9 @@
+id: e5e130d0-e094-467e-9a27-76f530d244cc
+entity_type: element
+entity_ref: m0estimate_f7b014ce6f3c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: M0Estimate
+status: pending
+created_at: '2026-03-30T00:43:41.349008+00:00'

@@ -1,0 +1,9 @@
+id: fbfa677f-7eca-4786-9a3a-5d1371254b32
+entity_type: element
+entity_ref: molaractivityunits_a7ace75f082a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MolarActivityUnits
+status: pending
+created_at: '2026-03-30T00:40:05.656161+00:00'

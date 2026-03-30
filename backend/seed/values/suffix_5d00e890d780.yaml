@@ -1,0 +1,28 @@
+semantic:
+  label: suffix
+  value_type: categorical
+  display_name: suffix
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C49106
+    term_label: Suffix
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: bids
+  class: common_principles
+  name: suffix
+  description: 'An alphanumeric string that forms part of a filename, located after
+    all
+
+    [entities](SPEC_ROOT/common-principles.md#entities) and
+
+    following a final `_`, right before the **file extension**;
+
+    for example, it is `eeg` in `sub-05_task-matchingpennies_eeg.vhdr`.
+
+    '
+sha256: 5d00e890d78058c115de8e76f05bde49a1a494aa6f72729df58cb144b367c3e5

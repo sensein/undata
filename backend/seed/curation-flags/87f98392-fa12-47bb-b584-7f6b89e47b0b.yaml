@@ -1,9 +1,0 @@
-id: 87f98392-fa12-47bb-b584-7f6b89e47b0b
-entity_type: value
-entity_ref: oasis30antsoasisants_fe4db5450b1f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: OASIS30AntsOASISAnts
-status: pending
-created_at: '2026-03-30T00:29:01.259815+00:00'

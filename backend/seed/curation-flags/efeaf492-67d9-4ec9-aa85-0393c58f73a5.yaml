@@ -1,0 +1,11 @@
+id: efeaf492-67d9-4ec9-aa85-0393c58f73a5
+entity_type: value
+entity_ref: white_matter_c4a04aa7067d.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.940), no LLM verification
+  top_match: https://purl.brain-bican.org/ontology/hbao/HBA_9218
+  top_label: white matter
+  top_score: 0.9396
+status: pending
+created_at: '2026-03-30T00:40:06.280610+00:00'

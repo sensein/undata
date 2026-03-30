@@ -1,0 +1,9 @@
+id: cb56424c-5327-43cd-b87d-a51c3eec2110
+entity_type: value
+entity_ref: dcite_journalarticle_dc7a7b829f66.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:JournalArticle
+status: pending
+created_at: '2026-03-30T01:18:37.369057+00:00'

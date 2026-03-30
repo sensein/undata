@@ -1,0 +1,9 @@
+id: 02ca0f3e-1fa7-4fbe-9504-c5c6882b2453
+entity_type: element
+entity_ref: spatialaxes_61aa8d239ea2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpatialAxes
+status: pending
+created_at: '2026-03-30T00:43:41.498436+00:00'

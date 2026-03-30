@@ -1,9 +1,0 @@
-id: 3f4eb739-4d77-4131-8b78-e7305e8f55ae
-entity_type: value
-entity_ref: dandi_isparentof_ad85ebf0d2c7.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: dandi:isParentOf
-status: pending
-created_at: '2026-03-30T00:29:09.053248+00:00'

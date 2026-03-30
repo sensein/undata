@@ -1,0 +1,9 @@
+id: 8efd25fd-2fd0-4b0d-b0c9-b42c04ef3abf
+entity_type: value
+entity_ref: dcite_isnewversionof_c0d249cad578.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:IsNewVersionOf
+status: pending
+created_at: '2026-03-30T01:18:37.360422+00:00'

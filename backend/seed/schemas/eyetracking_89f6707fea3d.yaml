@@ -2,6 +2,15 @@ semantic:
   properties:
   - 321bee35505bee759e6789f23f2ffe028e7db6d2767e445698c2388413b6cc7e
   subclass_of: NWBDataInterface
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C176742
+    term_label: Eye Tracking
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7849
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: nwb
   class: EyeTracking

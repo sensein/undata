@@ -1,0 +1,15 @@
+id: ed72d6a6-ecc4-4138-9dc4-29c90369c09a
+entity_type: value
+entity_ref: atlas_a59d4590591e.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.030)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C147843
+    score: 0.8514
+  - uri: http://purl.obolibrary.org/obo/UBERON_4200196
+    score: 0.8214
+  - uri: http://purl.obolibrary.org/obo/UBPROP_0000201
+    score: 0.8098
+status: pending
+created_at: '2026-03-30T00:43:41.610501+00:00'

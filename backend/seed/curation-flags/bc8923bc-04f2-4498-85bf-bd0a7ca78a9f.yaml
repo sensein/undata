@@ -1,0 +1,15 @@
+id: bc8923bc-04f2-4498-85bf-bd0a7ca78a9f
+entity_type: value
+entity_ref: label_3c790819bc57.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C45561
+    score: 1.0
+  - uri: http://www.w3.org/2000/01/rdf-schema#label
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C43386
+    score: 0.856
+status: pending
+created_at: '2026-03-30T00:43:41.812488+00:00'

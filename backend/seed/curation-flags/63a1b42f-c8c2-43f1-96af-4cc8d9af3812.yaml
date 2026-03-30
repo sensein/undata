@@ -1,0 +1,9 @@
+id: 63a1b42f-c8c2-43f1-96af-4cc8d9af3812
+entity_type: schema
+entity_ref: relatedparticipant_ad1da9316966.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: RelatedParticipant
+status: pending
+created_at: '2026-03-30T01:18:37.937857+00:00'

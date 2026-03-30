@@ -1,6 +1,23 @@
 semantic:
   value_type: categorical
   label: cm
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C85579
+    term_label: Cmin
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7421
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C70918
+    term_label: Cmax
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7006
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: bids
   class_: ''

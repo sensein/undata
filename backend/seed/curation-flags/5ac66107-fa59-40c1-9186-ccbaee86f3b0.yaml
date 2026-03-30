@@ -1,9 +1,0 @@
-id: 5ac66107-fa59-40c1-9186-ccbaee86f3b0
-entity_type: value
-entity_ref: genetic_a69f53028b30.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Genetic
-status: pending
-created_at: '2026-03-30T00:29:01.197517+00:00'

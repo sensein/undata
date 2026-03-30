@@ -1,0 +1,9 @@
+id: 486f70df-c3d6-4b52-96f7-083c87fabe8f
+entity_type: schema
+entity_ref: mritimingparameters_6979b360de09.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRITimingParameters
+status: pending
+created_at: '2026-03-30T00:43:42.162388+00:00'

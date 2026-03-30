@@ -1,0 +1,9 @@
+id: 502b76bb-bf3a-43df-9840-68128bbaf09d
+entity_type: schema
+entity_ref: approachtype_7a2ed4d3f8fa.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ApproachType
+status: pending
+created_at: '2026-03-30T01:18:37.776492+00:00'

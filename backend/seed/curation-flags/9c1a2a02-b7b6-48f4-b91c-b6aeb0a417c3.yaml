@@ -1,0 +1,9 @@
+id: 9c1a2a02-b7b6-48f4-b91c-b6aeb0a417c3
+entity_type: value
+entity_ref: .bvec_cb96d8d972ce.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: bvec
+status: pending
+created_at: '2026-03-30T00:40:05.812812+00:00'

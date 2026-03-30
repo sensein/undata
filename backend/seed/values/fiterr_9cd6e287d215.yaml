@@ -2,6 +2,15 @@ semantic:
   label: FITERR
   value_type: categorical
   display_name: FITERR
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C205499
+    term_label: Fitter
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.877
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: bids
   class: enums

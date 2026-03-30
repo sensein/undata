@@ -1,0 +1,11 @@
+id: 5c24e198-bc6e-4068-ba01-d9781c4e06b1
+entity_type: value
+entity_ref: 2d_efc0c403e493.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.753), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C48282
+  top_label: 2-Dimensional
+  top_score: 0.7531
+status: pending
+created_at: '2026-03-30T00:43:41.590002+00:00'

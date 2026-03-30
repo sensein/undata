@@ -1,0 +1,9 @@
+id: c319f39b-88b1-4027-9244-f56be007a3bc
+entity_type: element
+entity_ref: distance_abba9214796f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: distance
+status: pending
+created_at: '2026-03-30T00:43:41.241227+00:00'

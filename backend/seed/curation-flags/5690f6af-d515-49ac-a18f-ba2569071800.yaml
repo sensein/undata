@@ -1,9 +1,0 @@
-id: 5690f6af-d515-49ac-a18f-ba2569071800
-entity_type: element
-entity_ref: timezero_f5680c48fbd1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TimeZero
-status: pending
-created_at: '2026-03-30T00:29:01.080004+00:00'

@@ -1,0 +1,37 @@
+semantic:
+  label: white matter
+  value_type: categorical
+  display_name: white matter
+  ontology_annotations:
+  - term_uri: https://purl.brain-bican.org/ontology/hbao/HBA_9218
+    term_label: white matter
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C33892
+    term_label: White Matter
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0002316
+    term_label: white matter
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: enums
+  name: white_matter
+  description: 'The origin of a tissue: white matter
+
+    '
+sha256: 439bc380b3be8766dcd2a7054e044efde029865a0b8f73af2352aa3c0042511f

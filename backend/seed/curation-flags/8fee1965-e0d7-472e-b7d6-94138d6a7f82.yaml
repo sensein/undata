@@ -1,9 +1,0 @@
-id: 8fee1965-e0d7-472e-b7d6-94138d6a7f82
-entity_type: element
-entity_ref: enddate_f98066dec69a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: endDate
-status: pending
-created_at: '2026-03-30T00:29:08.595785+00:00'

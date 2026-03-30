@@ -5,6 +5,15 @@ semantic:
   - 17ee04b3d88413b4eb2e45048a0014ce81550aa8e399ccc16fe38e2d108eefa2
   - db61cbf8d75a87fc799666a33241f0d173f7531561a30ddb69f125d726c7f00b
   subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C25412
+    term_label: Affiliation
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.9499
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: dandi
   class: Affiliation

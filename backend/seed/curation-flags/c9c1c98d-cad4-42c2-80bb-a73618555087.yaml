@@ -1,0 +1,11 @@
+id: c9c1c98d-cad4-42c2-80bb-a73618555087
+entity_type: value
+entity_ref: fiterr_9c238c0a5061.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.877), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C205499
+  top_label: Fitter
+  top_score: 0.877
+status: pending
+created_at: '2026-03-30T01:18:37.431463+00:00'

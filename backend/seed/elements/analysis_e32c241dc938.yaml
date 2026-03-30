@@ -1,5 +1,6 @@
 semantic:
   data_type: string
+  value_domain: text
 provenance:
 - source: nwb
   class: nwb
@@ -11,7 +12,7 @@ provenance:
     The file can store lab-specific and custom data analysis without restriction on
     its form or schema, reducing data formatting restrictions on end users. Such data
     should be placed in the '
-  generated_at: '2026-03-30T00:29:02.454785+00:00'
+  generated_at: '2026-03-30T00:40:19.286404+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: e32c241dc9381630aeb1ce4e768f3c82e5b6bcd965ef93dae3c1dd2c54a32633

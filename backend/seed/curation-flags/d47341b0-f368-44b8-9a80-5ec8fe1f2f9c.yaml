@@ -1,0 +1,9 @@
+id: d47341b0-f368-44b8-9a80-5ec8fe1f2f9c
+entity_type: element
+entity_ref: nucleus_6630ccc6d30a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: nucleus
+status: pending
+created_at: '2026-03-30T00:40:05.675493+00:00'

@@ -1,6 +1,15 @@
 semantic:
   properties: []
   subclass_of: Image
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C85845
+    term_label: Grayscale Image
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8442
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: nwb
   class: GrayscaleImage

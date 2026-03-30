@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: raw
-provenance:
-- source: bids
-  class_: ''
-  name: raw
-sha256: ab3c438c58f6daf1f128ca6342c96fdb9eb4b1b1caed5f86100d6ea83e4e66bb

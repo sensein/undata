@@ -1,0 +1,9 @@
+id: f19e69f3-39a4-4b74-bc96-a7e8db135bd8
+entity_type: schema
+entity_ref: echotimerequiredasl_acc692d6b42b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EchoTimeRequiredASL
+status: pending
+created_at: '2026-03-30T00:40:06.302533+00:00'

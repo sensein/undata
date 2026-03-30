@@ -1,0 +1,9 @@
+id: 2351139f-d859-4371-b411-f78e34738be5
+entity_type: element
+entity_ref: screenresolution_dccfa6a32169.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ScreenResolution
+status: pending
+created_at: '2026-03-30T00:43:41.474601+00:00'

@@ -1,8 +1,0 @@
-semantic:
-  label: Epigenomic
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: Epigenomic
-sha256: 54f5bfb95cb5641071dbc551525346822aa7cdb6222fb4fbc4560189a302f09d

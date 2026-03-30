@@ -1,0 +1,9 @@
+id: eac8a2a7-bb6a-4ef2-a129-c7feee3911d2
+entity_type: element
+entity_ref: sampleextractioninstitution_e5f466896292.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SampleExtractionInstitution
+status: pending
+created_at: '2026-03-30T00:40:05.729154+00:00'

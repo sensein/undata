@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: amniotic_fluid
-provenance:
-- source: bids
-  class_: ''
-  name: amniotic fluid
-sha256: 601c2a9e994dc12d4aee85e89b799758b692354cc6dac4f4795fb613bf4474b9

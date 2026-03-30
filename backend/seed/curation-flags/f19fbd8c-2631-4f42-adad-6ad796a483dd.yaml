@@ -1,0 +1,9 @@
+id: f19fbd8c-2631-4f42-adad-6ad796a483dd
+entity_type: element
+entity_ref: spoilingstate_5f432208e1a8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpoilingState
+status: pending
+created_at: '2026-03-30T01:18:37.127895+00:00'

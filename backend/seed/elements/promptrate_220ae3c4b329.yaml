@@ -7,7 +7,7 @@ provenance:
   description: 'Prompt rate for each frame (same units as `Units`, for example, `"Bq/mL"`).
 
     '
-  generated_at: '2026-03-30T00:28:57.008136+00:00'
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 220ae3c4b329f6f77a27fcd485c6b553e4dd85abae94fddc085d8706c495dc1c

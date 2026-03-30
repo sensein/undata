@@ -1,0 +1,37 @@
+semantic:
+  label: deprecated
+  value_type: categorical
+  display_name: DEPRECATED
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C71491
+    term_label: Deprecated
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C43635
+    term_label: Deprecated Concept
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8542
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: common_principles
+  name: deprecated
+  description: 'A "deprecated" entity or metadata field SHOULD NOT be used in the
+    generation of new datasets.
+
+    It remains in the standard in order to preserve the interpretability of existing
+    datasets.
+
+    Validating software SHOULD warn when deprecated practices are detected
+
+    and provide a suggestion for updating the dataset to preserve the curator''s intent.
+
+    '
+sha256: 65f8822de47eb1d2837361dddb73f98a82f590473e25e537dcbe7c355ea85607

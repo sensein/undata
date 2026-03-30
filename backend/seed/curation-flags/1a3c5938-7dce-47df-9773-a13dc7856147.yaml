@@ -1,9 +1,0 @@
-id: 1a3c5938-7dce-47df-9773-a13dc7856147
-entity_type: value
-entity_ref: angaccel_d9a9de120717.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ANGACCEL
-status: pending
-created_at: '2026-03-30T00:29:04.130007+00:00'

@@ -1,0 +1,15 @@
+id: 0f987651-fe1f-4571-b884-a1ed4944242e
+entity_type: value
+entity_ref: amniotic_fluid_aae605775fbc.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/UBERON_0000173
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C13188
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/HP_0001560
+    score: 0.8907
+status: pending
+created_at: '2026-03-30T00:43:41.603726+00:00'

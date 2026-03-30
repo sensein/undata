@@ -1,0 +1,15 @@
+id: 09307f03-40b4-437b-8f7b-4dcc218ce1cd
+entity_type: element
+entity_ref: pharmaceuticalname_40f90a872c0b.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/EDAM_data_2899
+    score: 0.7725
+  - uri: http://purl.obolibrary.org/obo/NCIT_C164322
+    score: 0.7725
+  - uri: http://purl.obolibrary.org/obo/NCIT_C97104
+    score: 0.7432
+status: pending
+created_at: '2026-03-30T00:40:05.691845+00:00'

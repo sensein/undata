@@ -1,0 +1,9 @@
+id: c08a7be4-3b21-46c0-8678-7c87519decd0
+entity_type: element
+entity_ref: control_58d2d0b93b9d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: control
+status: pending
+created_at: '2026-03-30T00:43:41.210238+00:00'

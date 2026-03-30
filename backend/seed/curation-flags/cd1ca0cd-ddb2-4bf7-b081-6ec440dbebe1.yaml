@@ -1,0 +1,9 @@
+id: cd1ca0cd-ddb2-4bf7-b081-6ec440dbebe1
+entity_type: element
+entity_ref: parentcoordinatesystem_7535e68382c8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ParentCoordinateSystem
+status: pending
+created_at: '2026-03-30T01:18:36.979404+00:00'

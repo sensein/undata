@@ -1,0 +1,95 @@
+semantic:
+  properties:
+  - 45d3c676cab4cf33ff5048cdb049d44f68055096d9ac819e63f6bdd749040bb6
+  - 975e1fd41687fe1f44c667ffc1c0d6ee3727d6cf012801f9d6b335e367d36d1a
+  - c5e0327e8ba1e581ac0ce32595dd2400bfab474d6c268aa746b139338a7ca5a1
+  - 1ff7299382f5cec0d33083c56fd5063f383d29af347a6d10c6f464faafd87114
+  - 9edbea247052a22072293e1dd8f073d44b758f9b7a822de8b688ce4a238e32dc
+  subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C16277
+    term_label: Allele
+    ontology: ncit
+    mapping_relation: skos:exactMatch
+    match_level: concept_match
+    score: 0.956
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C209560
+    term_label: Allele Type
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8426
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0001352
+    term_label: allele information
+    ontology: obi
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8166
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C112877
+    term_label: IDE wt Allele
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7903
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C52937
+    term_label: SHH wt Allele
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7833
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C75605
+    term_label: IDS wt Allele
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7789
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C128477
+    term_label: SELPLG wt Allele
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7725
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C118323
+    term_label: ABO wt Allele
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7717
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C52046
+    term_label: INHA wt Allele
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.769
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C199641
+    term_label: PARG wt Allele
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7683
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: dandi
+  class: Allele
+  name: Allele
+  description: null
+sha256: efd784dedddd09f31f27f57498443dbd0cd25aaf01807adae2c7d7a1c65eaf2f

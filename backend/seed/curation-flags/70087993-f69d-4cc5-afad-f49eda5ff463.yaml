@@ -1,9 +1,0 @@
-id: 70087993-f69d-4cc5-afad-f49eda5ff463
-entity_type: element
-entity_ref: screenorigin_f8b11408c5bb.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ScreenOrigin
-status: pending
-created_at: '2026-03-30T00:29:08.889576+00:00'

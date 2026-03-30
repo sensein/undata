@@ -1,0 +1,42 @@
+semantic:
+  data_type: string
+  value_domain: text
+  unit: days
+provenance:
+- source: bids
+  class: entities
+  name: session
+  description: 'A logical grouping of neuroimaging and behavioral data consistent
+    across subjects.
+
+    Session can (but doesn''t have to) be synonymous to a visit in a longitudinal
+    study.
+
+    In general, subjects will stay in the scanner during one session.
+
+    However, for example, if a subject has to leave the scanner room and then
+
+    be re-positioned on the scanner bed, the set of MRI acquisitions will still
+
+    be considered as a session and match sessions acquired in other subjects.
+
+    Similarly, in situations where different data types are obtained over
+
+    several visits (for example fMRI on one day followed by DWI the day after)
+
+    those can be grouped in one session.
+
+
+    Defining multiple sessions is appropriate when several identical or similar
+
+    data acquisitions are planned and performed on all -or most- subjects,
+
+    often in the case of some intervention between sessions
+
+    (for example, training).
+
+    '
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 5c7e8511dd8a70177889b3766e1a0abd26fd6f4ce430cdd4488f171a417f93e9

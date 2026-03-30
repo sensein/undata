@@ -1,9 +1,0 @@
-id: e22772e9-10c4-4067-aa16-a608dafe3195
-entity_type: schema
-entity_ref: mespinechometadata_266a5fbe08df.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MESpinEchoMetadata
-status: pending
-created_at: '2026-03-30T00:29:01.372199+00:00'

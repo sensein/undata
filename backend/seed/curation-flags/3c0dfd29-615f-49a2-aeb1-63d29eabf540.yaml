@@ -1,9 +1,0 @@
-id: 3c0dfd29-615f-49a2-aeb1-63d29eabf540
-entity_type: schema
-entity_ref: twophotonseries_644d0a6c8ea4.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TwoPhotonSeries
-status: pending
-created_at: '2026-03-30T00:29:04.475728+00:00'

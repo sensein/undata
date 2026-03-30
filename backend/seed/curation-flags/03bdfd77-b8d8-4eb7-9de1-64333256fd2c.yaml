@@ -1,0 +1,9 @@
+id: 03bdfd77-b8d8-4eb7-9de1-64333256fd2c
+entity_type: element
+entity_ref: repository_111699cef749.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: repository
+status: pending
+created_at: '2026-03-30T01:18:37.036962+00:00'

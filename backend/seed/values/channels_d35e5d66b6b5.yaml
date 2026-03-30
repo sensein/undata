@@ -1,0 +1,53 @@
+semantic:
+  label: channels
+  value_type: categorical
+  display_name: Channels File
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C44170
+    term_label: Channel
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: element_match
+    score: 0.9281
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/uberon/core#channel_for
+    term_label: channel for
+    ontology: uberon/core#channel
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.841
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/uberon/core#channels_from
+    term_label: channels_from
+    ontology: uberon/core#channels
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8176
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/GO_0015267
+    term_label: channel activity
+    ontology: go
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7686
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/uberon/core#channels_into
+    term_label: channels_into
+    ontology: uberon/core#channels
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7229
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: suffixes
+  name: channels
+  description: 'Channel information.
+
+    '
+sha256: d35e5d66b6b5ab58a5bb4f14a0acfdc01cab6bc867db416d31357309df084f29

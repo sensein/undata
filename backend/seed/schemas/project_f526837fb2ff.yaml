@@ -2,7 +2,7 @@ semantic:
   properties:
   - 871a1eee74dad5abc78f79ab45fa39e4740e66d5020e0b532f665d49bc2f4df8
   - 68c7445368237a8702d060b1a765e6bddd4a8b73b8dd569152e0781e9b1c6ac1
-  - 2ae5d32ab342692db6f198c3d00b4e43ec9e1a52349514681248de43545feeba
+  - 776c0755ae3b866801040cf2a23634197272029184c0425678c5c28c4e470972
   - 2d2d7e503150c14f55b1043c76ee164e23fb851a9bbe8f72e2f566bd3146af9b
   - 6980f63df2d41771285e2a5f98d8a602278df28173c2fac630dfc0ce2d9851b1
   - 987fab2cad11a67ed3ed485f8619937eb7799b883e7a7b4505df03ffce41f10f
@@ -10,6 +10,39 @@ semantic:
   - 9d54e5d627faff5db5d9183517fb6a119f847aede0b3e014a32e9029548bab64
   - e8c636a8b5e9343715efe09be8cca07f48ed185bf979eefdffa53ceb9538136a
   subclass_of: Activity
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C47885
+    term_label: Project
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8931
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165054
+    term_label: Project Description
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7851
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165058
+    term_label: Project Type
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7427
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165056
+    term_label: Project Name
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7201
+    model: all-MiniLM-L6-v2
+    primary: false
 provenance:
 - source: dandi
   class: Project

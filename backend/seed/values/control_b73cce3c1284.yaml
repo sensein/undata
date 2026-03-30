@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: control
-provenance:
-- source: bids
-  class_: ''
-  name: control
-sha256: b73cce3c128435257b2f0a51e9fd5b40a3255eb1e0e65332a48804b73a4cb737

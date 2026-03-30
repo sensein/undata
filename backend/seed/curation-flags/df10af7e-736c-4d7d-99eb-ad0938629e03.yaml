@@ -1,0 +1,11 @@
+id: df10af7e-736c-4d7d-99eb-ad0938629e03
+entity_type: value
+entity_ref: participant_relative_f7ef25dc9201.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.708), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/nbo#has_participant
+  top_label: has_participant
+  top_score: 0.708
+status: pending
+created_at: '2026-03-30T01:18:37.613567+00:00'

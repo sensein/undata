@@ -1,9 +1,0 @@
-id: ddde437a-051f-4d02-9895-fe96e75c63f2
-entity_type: value
-entity_ref: fsaveragesym_6ae10ceca079.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: fsaverageSym
-status: pending
-created_at: '2026-03-30T00:29:09.120868+00:00'

@@ -1,0 +1,9 @@
+id: 0098602e-763a-4ae1-a938-cecfb763abee
+entity_type: element
+entity_ref: nirsplacementscheme_4f0b968b8bb4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NIRSPlacementScheme
+status: pending
+created_at: '2026-03-30T01:18:36.961175+00:00'

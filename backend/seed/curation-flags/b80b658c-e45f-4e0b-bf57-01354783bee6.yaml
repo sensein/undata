@@ -1,9 +1,0 @@
-id: b80b658c-e45f-4e0b-bf57-01354783bee6
-entity_type: element
-entity_ref: sex_54bc1a7022e1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: sex
-status: pending
-created_at: '2026-03-30T00:29:01.049352+00:00'

@@ -1,0 +1,9 @@
+id: 6dd3d833-56c2-4f1d-9af0-47385357b612
+entity_type: element
+entity_ref: genotype_41a64c4ab9cc.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: genotype
+status: pending
+created_at: '2026-03-30T01:18:36.745806+00:00'

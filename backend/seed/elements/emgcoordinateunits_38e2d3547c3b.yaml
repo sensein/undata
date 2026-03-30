@@ -1,0 +1,30 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: m
+    label: m
+    ontology_term: https://schema.undata.live/values/4788adde-6202-4cfa-8297-b6263bc0f64e
+  - value: mm
+    label: mm
+    ontology_term: https://schema.undata.live/values/bc15c646-0e04-46e1-a757-79c6e5703d95
+  - value: cm
+    label: cm
+    ontology_term: https://schema.undata.live/values/0fecd2fc-1137-454a-8845-61c8398a3a02
+  - value: percent
+    label: percent
+    ontology_term: https://schema.undata.live/values/314593ab-c9e5-4e6c-9dd9-5b6bd89206c7
+  - value: n/a
+    label: n/a
+    ontology_term: https://schema.undata.live/values/5feb951b-0201-446d-9a2e-e0078b8c54ba
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: EMGCoordinateUnits
+  description: 'Units of the coordinates of `EMGCoordinateSystem`.
+
+    '
+  generated_at: '2026-03-30T00:35:16.422198+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 38e2d3547c3b57a3ea6edcbe9df63e28baedb0025ebfbe3a45bb0bb10d0107d8

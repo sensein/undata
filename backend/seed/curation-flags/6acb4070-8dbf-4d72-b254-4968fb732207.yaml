@@ -1,0 +1,11 @@
+id: 6acb4070-8dbf-4d72-b254-4968fb732207
+entity_type: element
+entity_ref: affiliation_e8b1e2aaf649.yaml
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.749), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C154704
+  top_label: Organizational Affiliation Name
+  top_score: 0.7493
+status: pending
+created_at: '2026-03-30T01:18:36.571860+00:00'

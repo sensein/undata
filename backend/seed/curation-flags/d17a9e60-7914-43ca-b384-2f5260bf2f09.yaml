@@ -1,0 +1,15 @@
+id: d17a9e60-7914-43ca-b384-2f5260bf2f09
+entity_type: value
+entity_ref: cyclopean_d42389afbf14.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.013)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C94881
+    score: 0.7772
+  - uri: http://purl.obolibrary.org/obo/NCIT_C65356
+    score: 0.7641
+  - uri: http://purl.obolibrary.org/obo/PATO_0000319
+    score: 0.7593
+status: pending
+created_at: '2026-03-30T01:18:37.320340+00:00'

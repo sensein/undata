@@ -1,0 +1,9 @@
+id: d06be5bc-2263-4107-88a0-235bb708e5dc
+entity_type: element
+entity_ref: units__motion_39deebc62b14.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: units__motion
+status: pending
+created_at: '2026-03-30T00:43:41.546200+00:00'

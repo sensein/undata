@@ -1,0 +1,15 @@
+id: 58e4e89c-ad48-45c8-8b26-4b14ee4b37a7
+entity_type: value
+entity_ref: breast_milk_11852d03a22f.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/UBERON_0000310
+    score: 0.7687
+  - uri: http://purl.obolibrary.org/obo/NCIT_C12971
+    score: 0.7687
+  - uri: http://purl.obolibrary.org/obo/UBERON_0001913
+    score: 0.7286
+status: pending
+created_at: '2026-03-30T00:43:41.632896+00:00'

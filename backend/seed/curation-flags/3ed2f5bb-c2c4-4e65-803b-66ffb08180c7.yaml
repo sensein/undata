@@ -1,0 +1,9 @@
+id: 3ed2f5bb-c2c4-4e65-803b-66ffb08180c7
+entity_type: schema
+entity_ref: devicemodel_8325aa25ba23.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DeviceModel
+status: pending
+created_at: '2026-03-30T01:18:37.800883+00:00'

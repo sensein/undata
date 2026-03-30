@@ -6,6 +6,15 @@ semantic:
   - 7a7fafa42328ca6c80e0032ea15ceab25b103a0ec1bb2b2e0c13d314ab33a25a
   - c3c6621e7743aef2198bb218960906a1f723b2a8007367d4fdcaa7f8fb6671db
   - cdaf6634bfec9d43f951a96cdba69d83db80c2adf8dac4c8505d2ea7877066f1
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C188272
+    term_label: ORCID
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7664
+    model: all-MiniLM-L6-v2
+    primary: true
 provenance:
 - source: dandi
   class: PropertyValue

@@ -1,0 +1,15 @@
+id: 9640953d-918a-4042-b03c-c9690bc76d79
+entity_type: element
+entity_ref: email_fedba9516397.yaml
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/EDAM_data_1691
+    score: 0.7416
+  - uri: http://purl.obolibrary.org/obo/IAO_0000429
+    score: 0.7416
+  - uri: http://purl.obolibrary.org/obo/NCIT_C42775
+    score: 0.7194
+status: pending
+created_at: '2026-03-30T01:18:36.708259+00:00'

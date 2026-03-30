@@ -1,9 +1,0 @@
-id: dcdd2a7d-25a6-4194-943f-9b448880719c
-entity_type: value
-entity_ref: hard_60dc176c2ae9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: HARD
-status: pending
-created_at: '2026-03-30T00:29:04.194252+00:00'

@@ -1,9 +1,0 @@
-id: 11e28185-1277-4e44-b9bc-c17a8a3bfa31
-entity_type: element
-entity_ref: contentsize_78ad18377836.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: contentSize
-status: pending
-created_at: '2026-03-30T00:29:08.517381+00:00'

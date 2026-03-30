@@ -1,9 +1,0 @@
-id: 3aa4cdb2-925e-455d-9c74-dcc6f0bd6217
-entity_type: element
-entity_ref: eegplacementscheme_c4375926e937.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EEGPlacementScheme
-status: pending
-created_at: '2026-03-30T00:29:00.862497+00:00'

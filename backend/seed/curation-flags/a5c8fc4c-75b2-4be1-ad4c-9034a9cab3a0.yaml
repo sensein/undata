@@ -1,9 +1,0 @@
-id: a5c8fc4c-75b2-4be1-ad4c-9034a9cab3a0
-entity_type: element
-entity_ref: description__optode_a92fc528b072.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: description__optode
-status: pending
-created_at: '2026-03-30T00:29:00.834912+00:00'
