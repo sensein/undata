@@ -1,0 +1,9 @@
+id: 3f194861-72d4-4bd1-88fe-9c879ce86d87
+entity_type: schema
+entity_ref: entitiestaskmetadata_f53d9b21e759.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EntitiesTaskMetadata
+status: pending
+created_at: '2026-03-30T00:29:01.358462+00:00'

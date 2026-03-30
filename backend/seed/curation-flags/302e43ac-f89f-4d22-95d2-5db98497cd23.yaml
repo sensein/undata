@@ -1,0 +1,9 @@
+id: 302e43ac-f89f-4d22-95d2-5db98497cd23
+entity_type: schema
+entity_ref: entity_rules_sidecar_196a826e37e1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: entity_rules_sidecar
+status: pending
+created_at: '2026-03-30T00:29:01.358923+00:00'

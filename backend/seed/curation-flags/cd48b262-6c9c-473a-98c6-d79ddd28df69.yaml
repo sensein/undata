@@ -1,9 +1,0 @@
-id: cd48b262-6c9c-473a-98c6-d79ddd28df69
-entity_type: schema
-entity_ref: basemodel_83ef8c4f9b55.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: BaseModel
-status: pending
-created_at: '2026-03-29T19:53:58.331296+00:00'

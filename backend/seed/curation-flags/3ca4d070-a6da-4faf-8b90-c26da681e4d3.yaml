@@ -1,0 +1,9 @@
+id: 3ca4d070-a6da-4faf-8b90-c26da681e4d3
+entity_type: value
+entity_ref: meggradplanar_c1c2ee5772dd.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MEGGRADPLANAR
+status: pending
+created_at: '2026-03-30T00:29:09.157641+00:00'

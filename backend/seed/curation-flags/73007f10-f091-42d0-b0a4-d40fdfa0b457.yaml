@@ -1,0 +1,9 @@
+id: 73007f10-f091-42d0-b0a4-d40fdfa0b457
+entity_type: element
+entity_ref: gyrochannelcount_c1384d8cdfbf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: GYROChannelCount
+status: pending
+created_at: '2026-03-30T00:29:00.892661+00:00'

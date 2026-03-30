@@ -1,9 +1,0 @@
-id: 32a73035-a61b-4c8a-9f89-925d0e06e660
-entity_type: element
-entity_ref: nirscoordinatesystemdescription_5af03b1e6fb8.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: NIRSCoordinateSystemDescription
-status: pending
-created_at: '2026-03-29T19:53:53.162740+00:00'

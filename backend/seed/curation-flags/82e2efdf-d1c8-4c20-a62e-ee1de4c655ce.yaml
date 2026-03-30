@@ -1,0 +1,9 @@
+id: 82e2efdf-d1c8-4c20-a62e-ee1de4c655ce
+entity_type: element
+entity_ref: notch_5dd77cd8b0e8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: notch
+status: pending
+created_at: '2026-03-30T00:29:08.772737+00:00'

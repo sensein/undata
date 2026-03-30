@@ -1,0 +1,9 @@
+id: 29f2f31f-4e93-4544-90b4-f2c09b4856cd
+entity_type: element
+entity_ref: anatomicallandmarkcoordinates__mri_f45bee8fb5c8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AnatomicalLandmarkCoordinates__mri
+status: pending
+created_at: '2026-03-30T00:29:08.462506+00:00'

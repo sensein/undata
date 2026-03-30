@@ -1,0 +1,9 @@
+id: c95f42c0-662f-4950-ad1d-92e0c3651e26
+entity_type: value
+entity_ref: good_2f2406419535.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: good
+status: pending
+created_at: '2026-03-30T00:29:01.198067+00:00'

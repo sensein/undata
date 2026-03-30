@@ -1,0 +1,9 @@
+id: 595cf9ad-6205-40f3-922f-5ddbb99e4ebf
+entity_type: schema
+entity_ref: eegrecommended_31c32692029f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EEGRecommended
+status: pending
+created_at: '2026-03-30T00:29:04.353489+00:00'

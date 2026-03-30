@@ -1,0 +1,9 @@
+id: 638c7f35-ab2c-44da-96ab-f804798c4d22
+entity_type: element
+entity_ref: direction_af3374abe422.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: direction
+status: pending
+created_at: '2026-03-30T00:29:03.786372+00:00'

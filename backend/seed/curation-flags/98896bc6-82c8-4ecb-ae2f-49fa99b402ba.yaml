@@ -1,0 +1,9 @@
+id: 98896bc6-82c8-4ecb-ae2f-49fa99b402ba
+entity_type: value
+entity_ref: generic_4c5570561a3d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PhysioTypeGeneric
+status: pending
+created_at: '2026-03-30T00:29:01.196955+00:00'

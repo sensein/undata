@@ -1,0 +1,9 @@
+id: 795e9b53-615d-4fc8-bba2-4e06c6af6967
+entity_type: schema
+entity_ref: eeghardware_f94ad3162ee5.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EEGHardware
+status: pending
+created_at: '2026-03-30T00:29:04.351844+00:00'

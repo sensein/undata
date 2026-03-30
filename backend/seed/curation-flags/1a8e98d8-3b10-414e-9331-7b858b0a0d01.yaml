@@ -1,0 +1,9 @@
+id: 1a8e98d8-3b10-414e-9331-7b858b0a0d01
+entity_type: value
+entity_ref: sample_c4d0ebdb07fb.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: sample
+status: pending
+created_at: '2026-03-30T00:29:01.292554+00:00'

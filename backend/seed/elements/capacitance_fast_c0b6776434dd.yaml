@@ -5,7 +5,7 @@ provenance:
   class: nwb
   name: capacitance_fast
   description: Fast capacitance, in farads.
-  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  generated_at: '2026-03-30T00:29:02.454785+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: c0b6776434dd179ab8e4e942697f8a66c26cdccc8b4de9a0c055d25d0191d18e

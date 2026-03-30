@@ -1,0 +1,39 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: blood
+    label: blood
+    ontology_term: https://schema.undata.live/values/4c1637be-925c-4583-ab53-f04d3e486a14
+  - value: saliva
+    label: saliva
+    ontology_term: https://schema.undata.live/values/70ad079a-08a2-4119-80ba-254bb52de428
+  - value: brain
+    label: brain
+    ontology_term: https://schema.undata.live/values/36f037a5-1d47-4245-8477-1265c73bfecf
+  - value: csf
+    label: csf
+    ontology_term: https://schema.undata.live/values/f6849163-495f-4f68-8c07-23256b1bbee5
+  - value: breast milk
+    label: breast milk
+    ontology_term: https://schema.undata.live/values/ee4bac1e-461d-4746-a887-040f2a760b7e
+  - value: bile
+    label: bile
+    ontology_term: https://schema.undata.live/values/86ebe7ac-da70-498d-85eb-ce40c9a0ef89
+  - value: amniotic fluid
+    label: amniotic fluid
+    ontology_term: https://schema.undata.live/values/24ed2e2a-07a2-4338-bd21-2928eb63abbd
+  - value: other biospecimen
+    label: other biospecimen
+    ontology_term: https://schema.undata.live/values/9c38e2fa-f73e-46dd-991f-d09e6f4209a8
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: SampleOrigin
+  description: 'Describes from which tissue the genetic information was extracted.
+
+    '
+  generated_at: '2026-03-30T00:28:57.008136+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 95c427ed14040fe334754674fafdc0d518c894d57e8590f46014630a25dc0971

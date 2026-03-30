@@ -1,0 +1,39 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: gaze-on-screen
+    label: gaze-on-screen
+    ontology_term: https://schema.undata.live/values/6c6dac77-61f1-458b-9f94-0b29c6764a18
+  - value: eye-in-head
+    label: eye-in-head
+    ontology_term: https://schema.undata.live/values/ec8c34ec-d44f-41a7-a67d-4bcc385180c9
+  - value: gaze-in-world
+    label: gaze-in-world
+    ontology_term: https://schema.undata.live/values/63b9dde7-f627-4cb7-9f58-2d4c30b92f9c
+  - value: custom
+    label: custom
+    ontology_term: https://schema.undata.live/values/0ebd74ee-bb22-4129-abb8-9aa7391a3855
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: SampleCoordinateSystem
+  description: 'Coordinate system of the gaze position recordings.
+
+    Generally eye-trackers are set to use `"gaze-on-screen"` coordinate system, but
+    you may use
+
+    `"eye-in-head"` or `"gaze-in-world"`.
+
+    If none of the three default options properly describe the coordinate system,
+    the
+
+    `"custom"` keyword MUST be employed and the coordinate system MUST be described
+
+    using additional metadata entries.
+
+    '
+  generated_at: '2026-03-30T00:28:57.008136+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 92c11968c55c9241afefcb25c0a9895bffd271b26deb1f6ae5ff04c55f5cfdd0

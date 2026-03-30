@@ -1,0 +1,9 @@
+id: 48bbc76b-c663-40e6-a31a-a78b683dd632
+entity_type: value
+entity_ref: left_66cad174386d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: left
+status: pending
+created_at: '2026-03-30T00:29:09.149450+00:00'

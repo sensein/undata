@@ -1,9 +1,0 @@
-id: e577dc81-709d-4fd4-b8bb-32402fc98b53
-entity_type: value
-entity_ref: bile_4d5f0ced108f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: bile
-status: pending
-created_at: '2026-03-29T19:53:50.396475+00:00'

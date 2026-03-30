@@ -1,9 +1,0 @@
-id: 3a4536a4-bda7-4f8f-9b86-f2f4341d030c
-entity_type: value
-entity_ref: zyx_f4f3341cfc30.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ZYX
-status: pending
-created_at: '2026-03-29T19:53:58.320305+00:00'

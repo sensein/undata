@@ -1,0 +1,9 @@
+id: 4a37287b-1d5d-48e0-b805-b2f6a7d6c8f0
+entity_type: value
+entity_ref: flair_5d229592eba6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: FLAIR
+status: pending
+created_at: '2026-03-30T00:29:01.188659+00:00'

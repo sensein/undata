@@ -1,9 +1,0 @@
-id: 09fc508a-aa31-4b64-9fa7-83da0b66feca
-entity_type: element
-entity_ref: hardcopydevicesoftwareversion_da9457857405.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: HardcopyDeviceSoftwareVersion
-status: pending
-created_at: '2026-03-29T19:53:57.689775+00:00'

@@ -1,9 +1,0 @@
-id: c61abe7a-e81a-40dd-a4d5-4b1ae2c2b510
-entity_type: element
-entity_ref: sequencevariant_2c1427fad55d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SequenceVariant
-status: pending
-created_at: '2026-03-29T19:53:50.301379+00:00'

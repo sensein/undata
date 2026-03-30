@@ -1,9 +1,0 @@
-id: a491a8f0-7c6a-491d-9034-308c6408ed4b
-entity_type: element
-entity_ref: relation_6034f0d8f69b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: relation
-status: pending
-created_at: '2026-03-29T19:53:57.892240+00:00'

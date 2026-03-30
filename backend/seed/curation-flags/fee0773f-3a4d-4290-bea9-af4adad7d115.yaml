@@ -1,9 +1,0 @@
-id: fee0773f-3a4d-4290-bea9-af4adad7d115
-entity_type: schema
-entity_ref: nirsrequired_94f535454565.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: NirsRequired
-status: pending
-created_at: '2026-03-29T19:53:50.670927+00:00'

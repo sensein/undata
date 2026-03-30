@@ -1,0 +1,9 @@
+id: 63013b5b-bb80-48bf-874d-0a2f8b2020e3
+entity_type: schema
+entity_ref: pethardware_00a3e4f40c9b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PETHardware
+status: pending
+created_at: '2026-03-30T00:29:01.427336+00:00'

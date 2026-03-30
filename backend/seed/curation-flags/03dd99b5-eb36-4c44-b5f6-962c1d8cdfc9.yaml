@@ -1,0 +1,9 @@
+id: 03dd99b5-eb36-4c44-b5f6-962c1d8cdfc9
+entity_type: element
+entity_ref: derivative_478e59cabb57.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Derivative
+status: pending
+created_at: '2026-03-30T00:29:03.769360+00:00'

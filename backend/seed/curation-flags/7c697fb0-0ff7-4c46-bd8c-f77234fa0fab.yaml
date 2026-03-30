@@ -1,0 +1,9 @@
+id: 7c697fb0-0ff7-4c46-bd8c-f77234fa0fab
+entity_type: schema
+entity_ref: nirshardware_ea19a5b1c724.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NirsHardware
+status: pending
+created_at: '2026-03-30T00:29:04.444890+00:00'

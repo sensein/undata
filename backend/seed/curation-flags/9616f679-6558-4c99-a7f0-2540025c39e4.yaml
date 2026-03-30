@@ -1,9 +1,0 @@
-id: 9616f679-6558-4c99-a7f0-2540025c39e4
-entity_type: schema
-entity_ref: mrifieldmapdirectfieldmapping_dacf537aa512.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MRIFieldmapDirectFieldMapping
-status: pending
-created_at: '2026-03-29T19:53:58.423196+00:00'

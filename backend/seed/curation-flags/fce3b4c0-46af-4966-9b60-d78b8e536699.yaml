@@ -1,9 +1,0 @@
-id: fce3b4c0-46af-4966-9b60-d78b8e536699
-entity_type: element
-entity_ref: stain_7ae546a4a72b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: stain
-status: pending
-created_at: '2026-03-29T19:53:50.321926+00:00'

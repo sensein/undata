@@ -1,0 +1,9 @@
+id: 394c9d09-aa91-498e-b615-cc459e8965ef
+entity_type: element
+entity_ref: maxvalue_f13570742ce6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: maxValue
+status: pending
+created_at: '2026-03-30T00:29:08.724840+00:00'

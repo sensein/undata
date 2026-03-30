@@ -1,0 +1,9 @@
+id: 09128451-6ed2-46a0-a676-ceb35d0ff124
+entity_type: element
+entity_ref: scan_line_rate_09a667b52c19.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: scan_line_rate
+status: pending
+created_at: '2026-03-30T00:29:04.007470+00:00'

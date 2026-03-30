@@ -6,7 +6,7 @@ provenance:
   class: nwb
   name: DynamicTable
   description: Tables stored in this collection.
-  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  generated_at: '2026-03-30T00:29:02.454785+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: bfe1f92bcff4fa8ebe31a41645d8c6440d9b959846b295e5ddc1b86d86c31fab

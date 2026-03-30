@@ -1,0 +1,9 @@
+id: 822e4c39-dc38-4c99-8242-5d83c33c20f5
+entity_type: element
+entity_ref: funding_b80c0c41ba19.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Funding
+status: pending
+created_at: '2026-03-30T00:29:00.889099+00:00'

@@ -1,9 +1,0 @@
-id: bcc9f9de-9414-4ab3-ab2c-f12e8a35950b
-entity_type: schema
-entity_ref: straintype_efb5208e5ee2.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: StrainType
-status: pending
-created_at: '2026-03-29T19:53:58.477354+00:00'

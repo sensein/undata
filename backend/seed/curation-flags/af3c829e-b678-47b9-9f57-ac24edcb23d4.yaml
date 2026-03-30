@@ -1,9 +1,0 @@
-id: af3c829e-b678-47b9-9f57-ac24edcb23d4
-entity_type: value
-entity_ref: angio_f02bac397e91.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: angio
-status: pending
-created_at: '2026-03-29T19:53:50.389875+00:00'

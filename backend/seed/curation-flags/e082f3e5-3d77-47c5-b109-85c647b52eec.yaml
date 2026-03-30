@@ -1,9 +1,0 @@
-id: e082f3e5-3d77-47c5-b109-85c647b52eec
-entity_type: value
-entity_ref: j-_19ec064ef53d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: jMinus
-status: pending
-created_at: '2026-03-29T19:53:53.434362+00:00'

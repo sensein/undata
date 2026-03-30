@@ -1,0 +1,9 @@
+id: fdf5b3e5-0662-471f-a090-5ddf63e7ca42
+entity_type: element
+entity_ref: chemicalshiftreference_caec7e5eec35.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ChemicalShiftReference
+status: pending
+created_at: '2026-03-30T00:29:00.810799+00:00'

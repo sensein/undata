@@ -1,0 +1,9 @@
+id: 48e7f712-9e12-449e-9dff-9276a54ee406
+entity_type: schema
+entity_ref: pet_bloodmetabolitecorrection_d3de669a6111.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: pet_BloodMetaboliteCorrection
+status: pending
+created_at: '2026-03-30T00:29:09.391861+00:00'

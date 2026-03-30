@@ -1,9 +1,0 @@
-id: 2d370e3c-daa8-4805-9daf-7de4852cd475
-entity_type: value
-entity_ref: fermi_b14296652a56.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: FERMI
-status: pending
-created_at: '2026-03-29T19:53:58.174764+00:00'

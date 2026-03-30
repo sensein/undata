@@ -1,9 +1,0 @@
-id: 26ae0e6c-c965-4f8e-abeb-6c641c4fd338
-entity_type: element
-entity_ref: variablemeasured_8408932081b0.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: variableMeasured
-status: pending
-created_at: '2026-03-29T19:53:58.031433+00:00'

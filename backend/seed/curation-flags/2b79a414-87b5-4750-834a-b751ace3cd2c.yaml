@@ -1,9 +1,0 @@
-id: 2b79a414-87b5-4750-834a-b751ace3cd2c
-entity_type: element
-entity_ref: sequential_recordings_27eb025713ec.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: sequential_recordings
-status: pending
-created_at: '2026-03-29T19:53:57.950272+00:00'

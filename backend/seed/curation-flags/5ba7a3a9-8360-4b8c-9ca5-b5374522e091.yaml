@@ -1,9 +1,0 @@
-id: 5ba7a3a9-8360-4b8c-9ca5-b5374522e091
-entity_type: schema
-entity_ref: position_a19a84937812.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Position
-status: pending
-created_at: '2026-03-29T19:53:58.462384+00:00'

@@ -1,9 +1,0 @@
-id: 94c14ea2-a206-46e7-b966-ffa6841af2c6
-entity_type: element
-entity_ref: associatedemptyroom_1a1ac38eb0bf.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: AssociatedEmptyRoom
-status: pending
-created_at: '2026-03-29T19:53:57.545507+00:00'

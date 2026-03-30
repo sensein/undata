@@ -1,9 +1,0 @@
-id: 3465cd95-1b56-43e6-b893-60ad38a7aa68
-entity_type: value
-entity_ref: right_220216db0e84.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: right
-status: pending
-created_at: '2026-03-29T19:53:53.506325+00:00'

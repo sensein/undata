@@ -11,7 +11,7 @@ provenance:
     column to indicate which spike events belong to a given unit. For example, if
     the 'waveforms_index_index' column has values [2, 5, 6], then the first 2 elements
     of the '
-  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  generated_at: '2026-03-30T00:29:02.454785+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 1dced53bba61bc34311fefc899612e152bf15c1e4edfa6bec63dcc37eacc6f55

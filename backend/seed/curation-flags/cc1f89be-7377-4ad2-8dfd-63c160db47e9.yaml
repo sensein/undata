@@ -1,9 +1,0 @@
-id: cc1f89be-7377-4ad2-8dfd-63c160db47e9
-entity_type: schema
-entity_ref: eeginstitutioninformation_65be7fe35d1b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EEGInstitutionInformation
-status: pending
-created_at: '2026-03-29T19:53:58.351219+00:00'

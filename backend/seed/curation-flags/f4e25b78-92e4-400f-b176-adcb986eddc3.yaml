@@ -1,0 +1,9 @@
+id: f4e25b78-92e4-400f-b176-adcb986eddc3
+entity_type: value
+entity_ref: .edf_4f4e098efbf6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: edf
+status: pending
+created_at: '2026-03-30T00:29:01.118648+00:00'

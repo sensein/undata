@@ -1,9 +1,0 @@
-id: bf1ee1e7-9cbf-4cb7-941d-c8f4bef200b2
-entity_type: value
-entity_ref: dcite_isoriginalformof_8197e4f3c41d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: dcite:IsOriginalFormOf
-status: pending
-created_at: '2026-03-29T19:53:58.136629+00:00'

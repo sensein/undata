@@ -1,0 +1,9 @@
+id: 6ef2ac2e-5305-4c7c-b4d3-74bb5522ab07
+entity_type: element
+entity_ref: skullstripped_9781dfce6050.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SkullStripped
+status: pending
+created_at: '2026-03-30T00:29:01.052480+00:00'

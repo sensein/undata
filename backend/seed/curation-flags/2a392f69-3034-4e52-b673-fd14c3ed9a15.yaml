@@ -1,0 +1,9 @@
+id: 2a392f69-3034-4e52-b673-fd14c3ed9a15
+entity_type: element
+entity_ref: weight_11e1ecc00163.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: weight
+status: pending
+created_at: '2026-03-30T00:29:08.993406+00:00'

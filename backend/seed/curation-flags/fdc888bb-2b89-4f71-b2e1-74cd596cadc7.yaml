@@ -1,0 +1,9 @@
+id: fdc888bb-2b89-4f71-b2e1-74cd596cadc7
+entity_type: element
+entity_ref: duration_f17e0b956ec5.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: duration
+status: pending
+created_at: '2026-03-30T00:29:03.788940+00:00'

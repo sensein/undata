@@ -5,7 +5,7 @@ provenance:
   class: Allele
   name: identifier
   description: Identifier for genotyping allele.
-  generated_at: '2026-03-29T19:53:55.365104+00:00'
+  generated_at: '2026-03-30T00:29:06.281579+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: c5e0327e8ba1e581ac0ce32595dd2400bfab474d6c268aa746b139338a7ca5a1

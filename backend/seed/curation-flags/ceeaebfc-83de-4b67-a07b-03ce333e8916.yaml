@@ -1,0 +1,9 @@
+id: ceeaebfc-83de-4b67-a07b-03ce333e8916
+entity_type: element
+entity_ref: control_description_05cda5e76599.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: control_description
+status: pending
+created_at: '2026-03-30T00:29:08.523480+00:00'

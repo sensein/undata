@@ -1,9 +1,0 @@
-id: 12e94e7b-9faf-49e0-90c0-3af6a95bf858
-entity_type: element
-entity_ref: celltype_47b1a6087604.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CellType
-status: pending
-created_at: '2026-03-29T19:53:57.569292+00:00'

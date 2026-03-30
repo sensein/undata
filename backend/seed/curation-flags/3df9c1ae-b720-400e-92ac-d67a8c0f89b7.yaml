@@ -1,9 +1,0 @@
-id: 3df9c1ae-b720-400e-92ac-d67a8c0f89b7
-entity_type: element
-entity_ref: digitizedheadpoints__coordsystem_c9df2adcf392.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: DigitizedHeadPoints__coordsystem
-status: pending
-created_at: '2026-03-29T19:53:57.617853+00:00'

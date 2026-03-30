@@ -1,9 +1,0 @@
-id: 3934471c-c80d-4188-a16f-42479c2cabf5
-entity_type: value
-entity_ref: photo_b2c33279b486.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: photo
-status: pending
-created_at: '2026-03-29T19:53:53.492807+00:00'

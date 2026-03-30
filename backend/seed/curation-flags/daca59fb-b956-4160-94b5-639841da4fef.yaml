@@ -1,0 +1,9 @@
+id: daca59fb-b956-4160-94b5-639841da4fef
+entity_type: element
+entity_ref: slicetiming_f0e458554710.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SliceTiming
+status: pending
+created_at: '2026-03-30T00:29:01.055049+00:00'

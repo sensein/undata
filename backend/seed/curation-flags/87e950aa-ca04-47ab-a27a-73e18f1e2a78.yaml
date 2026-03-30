@@ -1,0 +1,9 @@
+id: 87e950aa-ca04-47ab-a27a-73e18f1e2a78
+entity_type: schema
+entity_ref: entitiesreconmethodmetadata_5783ccdecf3d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EntitiesReconMethodMetadata
+status: pending
+created_at: '2026-03-30T00:29:04.364981+00:00'

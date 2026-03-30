@@ -1,0 +1,9 @@
+id: e7669eb9-bf49-4456-b8f7-b61aa2c54a5e
+entity_type: value
+entity_ref: norf_8d9660d90908.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: noRF
+status: pending
+created_at: '2026-03-30T00:29:09.185418+00:00'

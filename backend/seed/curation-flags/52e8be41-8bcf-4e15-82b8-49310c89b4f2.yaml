@@ -1,0 +1,9 @@
+id: 52e8be41-8bcf-4e15-82b8-49310c89b4f2
+entity_type: value
+entity_ref: barium_d14e36b461cd.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: BARIUM
+status: pending
+created_at: '2026-03-30T00:29:09.030959+00:00'

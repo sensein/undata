@@ -1,9 +1,0 @@
-id: 37ac60c2-a185-4203-a054-316fe0bdd0b3
-entity_type: element
-entity_ref: wasderivedfrom_db21c8a2155c.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: wasDerivedFrom
-status: pending
-created_at: '2026-03-29T19:53:58.043486+00:00'

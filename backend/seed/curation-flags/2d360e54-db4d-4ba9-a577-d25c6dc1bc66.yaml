@@ -1,9 +1,0 @@
-id: 2d360e54-db4d-4ba9-a577-d25c6dc1bc66
-entity_type: element
-entity_ref: scan_line_rate_09a667b52c19.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: scan_line_rate
-status: pending
-created_at: '2026-03-29T19:53:57.925466+00:00'

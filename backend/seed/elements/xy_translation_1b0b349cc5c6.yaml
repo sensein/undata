@@ -7,7 +7,7 @@ provenance:
   name: xy_translation
   description: Stores the x,y delta necessary to align each frame to the common coordinates,
     for example, to align each frame to a reference image.
-  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  generated_at: '2026-03-30T00:29:02.454785+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 1b0b349cc5c63c791430e6c2c27c387fce1da63000edc627eba62112ecfdc25f

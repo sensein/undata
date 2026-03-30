@@ -1,0 +1,9 @@
+id: 178c2224-93c4-4a0c-8e9c-61697f7db436
+entity_type: element
+entity_ref: howtoacknowledge_789fce6ec13e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: HowToAcknowledge
+status: pending
+created_at: '2026-03-30T00:29:08.639699+00:00'

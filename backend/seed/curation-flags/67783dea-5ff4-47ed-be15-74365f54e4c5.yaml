@@ -1,0 +1,9 @@
+id: 67783dea-5ff4-47ed-be15-74365f54e4c5
+entity_type: schema
+entity_ref: mrifuncrepetitiontime_79e1f7e725e7.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRIFuncRepetitionTime
+status: pending
+created_at: '2026-03-30T00:29:09.365104+00:00'

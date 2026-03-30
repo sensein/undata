@@ -1,9 +1,0 @@
-id: a13e5b24-fb03-45e6-95fe-2d34ffd97b2b
-entity_type: schema
-entity_ref: slicetimingmri_78f94e67f8b7.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SliceTimingMRI
-status: pending
-created_at: '2026-03-29T19:53:53.682733+00:00'

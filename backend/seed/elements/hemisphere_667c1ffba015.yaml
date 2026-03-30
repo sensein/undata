@@ -1,0 +1,21 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: L
+    label: L
+    ontology_term: https://schema.undata.live/values/5c558177-3b6f-4c0c-87d2-a4adfc5ad49e
+  - value: R
+    label: R
+    ontology_term: https://schema.undata.live/values/5544e3e2-9cec-4221-ad04-f06deaeb217c
+  value_domain: categorical
+provenance:
+- source: bids
+  class: columns
+  name: hemisphere
+  description: 'The hemisphere in which the electrode is placed.
+
+    '
+  generated_at: '2026-03-30T00:28:57.008136+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 667c1ffba015b4c3ee8f61fefcb4bea32a85f365c2050e97a04c9236a609f817

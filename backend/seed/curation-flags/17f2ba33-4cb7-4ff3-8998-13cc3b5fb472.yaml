@@ -1,0 +1,9 @@
+id: 17f2ba33-4cb7-4ff3-8998-13cc3b5fb472
+entity_type: element
+entity_ref: volumeaffinematrix_f52fc4004aac.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: VolumeAffineMatrix
+status: pending
+created_at: '2026-03-30T00:29:04.088416+00:00'

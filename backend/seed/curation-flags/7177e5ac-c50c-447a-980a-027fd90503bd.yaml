@@ -1,0 +1,9 @@
+id: 7177e5ac-c50c-447a-980a-027fd90503bd
+entity_type: value
+entity_ref: primary_cell_325faad422df.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: primary_cell
+status: pending
+created_at: '2026-03-30T00:29:09.205003+00:00'

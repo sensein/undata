@@ -1,0 +1,9 @@
+id: 1171c4a8-8dd4-4a28-a4c8-e94c90cef4a0
+entity_type: element
+entity_ref: phaseencodingdirection_d527562001a1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PhaseEncodingDirection
+status: pending
+created_at: '2026-03-30T00:29:03.955684+00:00'

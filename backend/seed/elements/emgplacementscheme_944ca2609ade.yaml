@@ -1,0 +1,39 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: ChannelSpecific
+    label: ChannelSpecific
+    ontology_term: https://schema.undata.live/values/17776c90-4a83-4d6c-b58c-b9af6180d15f
+  - value: Measured
+    label: Measured
+    ontology_term: https://schema.undata.live/values/b045d6d4-8b71-4f23-b28c-239d59c12c02
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/1b196d1f-2979-48d4-b0c8-508f5fa8160d
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: EMGPlacementScheme
+  description: 'The way in which electrode placement locations were determined.
+
+    If electrode locations are provided as coordinates in `*_electrodes.tsv` in reference
+
+    to a coordinate system defined in `*_coordsystem.json`, then specify `"Measured"`.
+
+    If approach to placement varied across sensor devices, specify `"ChannelSpecific"`
+
+    and include placement details in the `placement_scheme` column of `*_channels.tsv`.
+
+    If a standardized electrode placement procedure (for example, SENIAM 8) was followed,
+
+    or if an ad-hoc procedure was followed, specify `"Other"` and provide details
+    in
+
+    `EMGPlacementSchemeDescription`.
+
+    '
+  generated_at: '2026-03-30T00:28:57.008136+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 944ca2609adef9f20f464b001431802152a5e7c0d6dae6146624255a162c4f31

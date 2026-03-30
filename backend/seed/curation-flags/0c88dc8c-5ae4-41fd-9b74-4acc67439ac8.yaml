@@ -1,9 +1,0 @@
-id: 0c88dc8c-5ae4-41fd-9b74-4acc67439ac8
-entity_type: value
-entity_ref: jntang_181da8085a11.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: JNTANG
-status: pending
-created_at: '2026-03-29T19:53:50.465884+00:00'

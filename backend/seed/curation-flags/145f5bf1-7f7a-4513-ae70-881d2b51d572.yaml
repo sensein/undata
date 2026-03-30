@@ -1,9 +1,0 @@
-id: 145f5bf1-7f7a-4513-ae70-881d2b51d572
-entity_type: element
-entity_ref: capacitance_slow_854603bd9bee.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: capacitance_slow
-status: pending
-created_at: '2026-03-29T19:53:57.565891+00:00'

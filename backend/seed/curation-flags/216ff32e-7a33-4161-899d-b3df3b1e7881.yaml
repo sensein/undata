@@ -1,9 +1,0 @@
-id: 216ff32e-7a33-4161-899d-b3df3b1e7881
-entity_type: element
-entity_ref: pixel_mask_902230b7773a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: pixel_mask
-status: pending
-created_at: '2026-03-29T19:53:53.189017+00:00'

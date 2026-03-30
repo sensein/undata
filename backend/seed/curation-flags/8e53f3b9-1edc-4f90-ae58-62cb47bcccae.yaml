@@ -1,0 +1,9 @@
+id: 8e53f3b9-1edc-4f90-ae58-62cb47bcccae
+entity_type: element
+entity_ref: flip_7c45e8ef7b1d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: flip
+status: pending
+created_at: '2026-03-30T00:29:03.828834+00:00'

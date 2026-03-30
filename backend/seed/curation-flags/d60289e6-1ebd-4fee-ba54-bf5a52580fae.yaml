@@ -1,0 +1,9 @@
+id: d60289e6-1ebd-4fee-ba54-bf5a52580fae
+entity_type: schema
+entity_ref: pet_bloodwholeblood_8a408b0d4016.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: pet_BloodWholeBlood
+status: pending
+created_at: '2026-03-30T00:29:04.453587+00:00'

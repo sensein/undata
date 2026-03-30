@@ -5,7 +5,7 @@ provenance:
   class: Project
   name: name
   description: The name of the project that generated this Dandiset or asset.
-  generated_at: '2026-03-29T19:53:55.365104+00:00'
+  generated_at: '2026-03-30T00:29:06.281579+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 2d2d7e503150c14f55b1043c76ee164e23fb851a9bbe8f72e2f566bd3146af9b

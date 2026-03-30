@@ -1,0 +1,9 @@
+id: 89257c17-4d51-4932-9ad8-595a1a69264d
+entity_type: element
+entity_ref: mtnumberofpulses_07448b5bf704.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MTNumberOfPulses
+status: pending
+created_at: '2026-03-30T00:29:08.744641+00:00'

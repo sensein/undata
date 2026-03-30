@@ -1,0 +1,9 @@
+id: de188304-21a2-4ba0-a5f9-aaf1565177e9
+entity_type: element
+entity_ref: message_d17aad5af521.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: message
+status: pending
+created_at: '2026-03-30T00:29:08.734155+00:00'

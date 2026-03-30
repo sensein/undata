@@ -1,9 +1,0 @@
-id: 9d239575-ae53-42aa-b0ec-9956c48ddfb6
-entity_type: element
-entity_ref: brainlocation_6a5104116206.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: BrainLocation
-status: pending
-created_at: '2026-03-29T19:53:57.562528+00:00'

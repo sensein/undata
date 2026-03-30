@@ -1,0 +1,9 @@
+id: dccc2cba-41b2-48a9-905e-ecdb2063729b
+entity_type: value
+entity_ref: gyro_f3712a15fed8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: GYRO
+status: pending
+created_at: '2026-03-30T00:29:01.200845+00:00'

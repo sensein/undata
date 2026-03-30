@@ -1,9 +1,0 @@
-id: 2600ff49-17d6-4e09-be13-789f33712f6d
-entity_type: schema
-entity_ref: ethicsapproval_23c1764be668.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EthicsApproval
-status: pending
-created_at: '2026-03-29T19:53:58.366166+00:00'

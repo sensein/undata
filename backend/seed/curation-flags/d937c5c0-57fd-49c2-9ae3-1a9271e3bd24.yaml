@@ -1,0 +1,9 @@
+id: d937c5c0-57fd-49c2-9ae3-1a9271e3bd24
+entity_type: schema
+entity_ref: genotypeinfo_4321b3b5b35f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: GenotypeInfo
+status: pending
+created_at: '2026-03-30T00:29:09.313423+00:00'

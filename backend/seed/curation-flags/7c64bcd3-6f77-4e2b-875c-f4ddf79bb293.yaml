@@ -1,0 +1,9 @@
+id: 7c64bcd3-6f77-4e2b-875c-f4ddf79bb293
+entity_type: element
+entity_ref: imagedecaycorrected_024c7d8e5c91.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ImageDecayCorrected
+status: pending
+created_at: '2026-03-30T00:29:03.864961+00:00'

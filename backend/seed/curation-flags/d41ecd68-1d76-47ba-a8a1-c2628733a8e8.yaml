@@ -1,0 +1,9 @@
+id: d41ecd68-1d76-47ba-a8a1-c2628733a8e8
+entity_type: value
+entity_ref: .nii.gz_2f09f9c94f44.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: nii_gz
+status: pending
+created_at: '2026-03-30T00:29:01.123173+00:00'

@@ -1,0 +1,9 @@
+id: 8b05aecb-550e-405a-8917-6194325c489b
+entity_type: value
+entity_ref: chietiitab_c3a07a643a83.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ChietiItab
+status: pending
+created_at: '2026-03-30T00:29:04.147236+00:00'

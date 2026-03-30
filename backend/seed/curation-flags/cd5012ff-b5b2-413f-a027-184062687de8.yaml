@@ -1,9 +1,0 @@
-id: cd5012ff-b5b2-413f-a027-184062687de8
-entity_type: element
-entity_ref: labelingdistance_c10f6b7e948d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: LabelingDistance
-status: pending
-created_at: '2026-03-29T19:53:53.113220+00:00'

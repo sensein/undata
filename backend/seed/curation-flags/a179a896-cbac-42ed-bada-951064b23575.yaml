@@ -1,0 +1,9 @@
+id: a179a896-cbac-42ed-bada-951064b23575
+entity_type: schema
+entity_ref: entitiesinvmetadata_39c122392a1d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EntitiesInvMetadata
+status: pending
+created_at: '2026-03-30T00:29:01.355980+00:00'

@@ -5,7 +5,7 @@ provenance:
   class: nwb
   name: whole_cell_series_resistance_comp
   description: Whole cell series resistance compensation, in ohms.
-  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  generated_at: '2026-03-30T00:29:02.454785+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: dbc173b303fcc840f11c5216b6e71a3f12f40b5f48c42f6b71f54155e6b56206

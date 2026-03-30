@@ -1,9 +1,0 @@
-id: a1c18597-a51e-4439-84ea-ce1862121143
-entity_type: value
-entity_ref: megre_6cbc75923ec0.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MEGRE
-status: pending
-created_at: '2026-03-29T19:53:58.220036+00:00'

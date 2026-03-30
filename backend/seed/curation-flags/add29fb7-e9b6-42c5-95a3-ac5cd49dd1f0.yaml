@@ -1,0 +1,9 @@
+id: add29fb7-e9b6-42c5-95a3-ac5cd49dd1f0
+entity_type: element
+entity_ref: electrodetype_12a54a1768c3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ElectrodeType
+status: pending
+created_at: '2026-03-30T00:29:08.585774+00:00'

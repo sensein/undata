@@ -1,0 +1,9 @@
+id: 6d423fac-b5fd-4a33-a28c-c0f9a28bc62d
+entity_type: value
+entity_ref: primary_cell_d1175a343c57.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: primary cell
+status: pending
+created_at: '2026-03-30T00:29:04.275574+00:00'

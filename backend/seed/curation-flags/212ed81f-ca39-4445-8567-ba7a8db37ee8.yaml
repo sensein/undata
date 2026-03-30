@@ -1,0 +1,9 @@
+id: 212ed81f-ca39-4445-8567-ba7a8db37ee8
+entity_type: element
+entity_ref: spikeeventseries_b870637bdd7e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpikeEventSeries
+status: pending
+created_at: '2026-03-30T00:29:04.041117+00:00'

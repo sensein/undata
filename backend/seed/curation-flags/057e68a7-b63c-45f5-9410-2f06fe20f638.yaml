@@ -1,0 +1,9 @@
+id: 057e68a7-b63c-45f5-9410-2f06fe20f638
+entity_type: value
+entity_ref: nlo_e49971038b45.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NLO
+status: pending
+created_at: '2026-03-30T00:29:01.256843+00:00'

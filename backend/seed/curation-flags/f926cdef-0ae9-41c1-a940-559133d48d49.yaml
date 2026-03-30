@@ -1,9 +1,0 @@
-id: f926cdef-0ae9-41c1-a940-559133d48d49
-entity_type: element
-entity_ref: location_0e3d40fd6880.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: location
-status: pending
-created_at: '2026-03-29T19:53:53.120268+00:00'

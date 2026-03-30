@@ -1,0 +1,9 @@
+id: a571baf4-b9ad-4a7e-9934-2517ebfe9dc6
+entity_type: element
+entity_ref: mtpulseshape_ecbe4f4affed.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MTPulseShape
+status: pending
+created_at: '2026-03-30T00:29:08.747052+00:00'

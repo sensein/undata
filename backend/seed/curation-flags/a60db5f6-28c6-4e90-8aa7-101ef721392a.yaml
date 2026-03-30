@@ -1,9 +1,0 @@
-id: a60db5f6-28c6-4e90-8aa7-101ef721392a
-entity_type: element
-entity_ref: measurementtoolmetadata_55c2cd57b733.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MeasurementToolMetadata
-status: pending
-created_at: '2026-03-29T19:53:57.785031+00:00'

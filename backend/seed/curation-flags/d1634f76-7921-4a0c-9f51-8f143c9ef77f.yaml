@@ -1,0 +1,9 @@
+id: d1634f76-7921-4a0c-9f51-8f143c9ef77f
+entity_type: element
+entity_ref: withdrawalrate_c14c58872b87.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: WithdrawalRate
+status: pending
+created_at: '2026-03-30T00:29:08.995386+00:00'

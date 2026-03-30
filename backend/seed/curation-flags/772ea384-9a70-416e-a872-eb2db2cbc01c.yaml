@@ -1,0 +1,9 @@
+id: 772ea384-9a70-416e-a872-eb2db2cbc01c
+entity_type: value
+entity_ref: uri_2c1968c2f1ee.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: uri
+status: pending
+created_at: '2026-03-30T00:29:09.253729+00:00'

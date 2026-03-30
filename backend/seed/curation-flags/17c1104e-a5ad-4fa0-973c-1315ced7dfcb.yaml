@@ -1,9 +1,0 @@
-id: 17c1104e-a5ad-4fa0-973c-1315ced7dfcb
-entity_type: element
-entity_ref: looklocker_02d4f1605c11.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: LookLocker
-status: pending
-created_at: '2026-03-29T19:53:57.773290+00:00'

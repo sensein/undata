@@ -1,0 +1,9 @@
+id: a877b5ee-b0a3-4103-98ab-8ac4fcd47b01
+entity_type: schema
+entity_ref: sextype_0aa266abb3e6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SexType
+status: pending
+created_at: '2026-03-30T00:29:09.412636+00:00'

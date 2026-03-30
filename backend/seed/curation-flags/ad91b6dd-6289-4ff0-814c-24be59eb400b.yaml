@@ -1,9 +1,0 @@
-id: ad91b6dd-6289-4ff0-814c-24be59eb400b
-entity_type: element
-entity_ref: electrodemanufacturersmodelname_d3954be481f9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ElectrodeManufacturersModelName
-status: pending
-created_at: '2026-03-29T19:53:53.037731+00:00'

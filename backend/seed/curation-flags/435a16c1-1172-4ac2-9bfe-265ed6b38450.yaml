@@ -1,0 +1,9 @@
+id: 435a16c1-1172-4ac2-9bfe-265ed6b38450
+entity_type: element
+entity_ref: anatomicalimage_6e51a01b2a7a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AnatomicalImage
+status: pending
+created_at: '2026-03-30T00:29:03.713385+00:00'

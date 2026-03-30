@@ -1,0 +1,29 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: Other
+    label: Other
+    ontology_term: https://schema.undata.live/values/1b196d1f-2979-48d4-b0c8-508f5fa8160d
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: EMGCoordinateSystem
+  description: 'Defines the coordinate system for the EMG sensors.
+
+
+    See the
+
+    [Coordinate Systems Appendix](SPEC_ROOT/appendices/coordinate-systems.md)
+
+    for a list of restricted keywords for coordinate systems.
+
+    If `"Other"`, provide definition of the coordinate system in
+
+    `EMGCoordinateSystemDescription`.
+
+    '
+  generated_at: '2026-03-30T00:28:57.008136+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e3815e5e1ba4a491fac2992c4f81399d39dda16c1194cfad1079455f1d38a26a

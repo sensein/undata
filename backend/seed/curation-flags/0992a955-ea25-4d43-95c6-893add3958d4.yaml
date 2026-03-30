@@ -1,0 +1,9 @@
+id: 0992a955-ea25-4d43-95c6-893add3958d4
+entity_type: schema
+entity_ref: sampletype_3efad32eefc4.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SampleType
+status: pending
+created_at: '2026-03-30T00:29:09.410867+00:00'

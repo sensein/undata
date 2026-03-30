@@ -1,9 +1,0 @@
-id: 114a32cd-ff0a-4379-ba7f-349e08367d9c
-entity_type: value
-entity_ref: bad_232dc807eb2b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: bad
-status: pending
-created_at: '2026-03-29T19:53:50.392688+00:00'

@@ -1,0 +1,9 @@
+id: 93a70a7f-b58b-4b0e-ad9d-3d03e338a979
+entity_type: schema
+entity_ref: entitiesbolusmetadata_361d1a6e41b7.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EntitiesBolusMetadata
+status: pending
+created_at: '2026-03-30T00:29:01.354365+00:00'

@@ -1,0 +1,9 @@
+id: 8dc290ad-2ce5-4bd7-afc4-ddc0876c8ae3
+entity_type: element
+entity_ref: samplecoordinatesystem_92c11968c55c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SampleCoordinateSystem
+status: pending
+created_at: '2026-03-30T00:29:01.031129+00:00'

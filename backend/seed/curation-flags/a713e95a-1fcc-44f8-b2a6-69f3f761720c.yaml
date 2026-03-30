@@ -1,0 +1,9 @@
+id: a713e95a-1fcc-44f8-b2a6-69f3f761720c
+entity_type: value
+entity_ref: eye-in-head_d73e3a117742.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: eye-in-head
+status: pending
+created_at: '2026-03-30T00:29:09.111921+00:00'

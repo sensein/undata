@@ -1,0 +1,9 @@
+id: a844cbce-13e8-4ec8-94e2-01ce5f77af2f
+entity_type: element
+entity_ref: metaboliterecoverycorrectionapplied_87b65364994d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MetaboliteRecoveryCorrectionApplied
+status: pending
+created_at: '2026-03-30T00:29:03.909650+00:00'

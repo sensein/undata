@@ -1,9 +1,0 @@
-id: 836fe38e-066b-4610-a6a0-72ae592f604b
-entity_type: schema
-entity_ref: person_68b84353cfc9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Person
-status: pending
-created_at: '2026-03-29T19:53:58.450808+00:00'

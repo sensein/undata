@@ -1,9 +1,0 @@
-id: 4189c4b4-00ac-47d2-88f4-44a86d0ceded
-entity_type: schema
-entity_ref: publishactivity_90b297b48e51.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PublishActivity
-status: pending
-created_at: '2026-03-29T19:53:58.464713+00:00'

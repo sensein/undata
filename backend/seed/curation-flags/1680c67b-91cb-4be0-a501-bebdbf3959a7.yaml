@@ -1,9 +1,0 @@
-id: 1680c67b-91cb-4be0-a501-bebdbf3959a7
-entity_type: schema
-entity_ref: sequentialrecordingstable_ac62080f9216.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SequentialRecordingsTable
-status: pending
-created_at: '2026-03-29T19:53:58.471386+00:00'

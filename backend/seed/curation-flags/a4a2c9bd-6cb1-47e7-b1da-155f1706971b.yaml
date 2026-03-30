@@ -1,9 +1,0 @@
-id: a4a2c9bd-6cb1-47e7-b1da-155f1706971b
-entity_type: element
-entity_ref: capmanufacturersmodelname_cabe4fb1802a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CapManufacturersModelName
-status: pending
-created_at: '2026-03-29T19:53:52.973710+00:00'

@@ -1,0 +1,9 @@
+id: 4929de30-d041-437b-9155-6635de56a27b
+entity_type: value
+entity_ref: deprecated_44e2c8f08ee2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: deprecated
+status: pending
+created_at: '2026-03-30T00:29:01.167730+00:00'

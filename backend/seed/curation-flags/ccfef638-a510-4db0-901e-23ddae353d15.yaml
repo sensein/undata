@@ -1,0 +1,9 @@
+id: ccfef638-a510-4db0-901e-23ddae353d15
+entity_type: value
+entity_ref: zxy_ff179b292c8a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ZXY
+status: pending
+created_at: '2026-03-30T00:29:04.331874+00:00'

@@ -1,9 +1,0 @@
-id: ddd579fd-f92c-40ed-a0b1-ce60809fcdb4
-entity_type: schema
-entity_ref: nirs_sidecar_92a8a60599ca.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: nirs_sidecar
-status: pending
-created_at: '2026-03-29T19:53:50.668830+00:00'

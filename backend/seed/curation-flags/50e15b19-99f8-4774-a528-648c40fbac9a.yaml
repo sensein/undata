@@ -1,9 +1,0 @@
-id: 50e15b19-99f8-4774-a528-648c40fbac9a
-entity_type: element
-entity_ref: geneticlevel_2c340a0732e1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: GeneticLevel
-status: pending
-created_at: '2026-03-29T19:53:57.684061+00:00'

@@ -1,9 +1,0 @@
-id: 8521bb90-d01b-4165-83c7-33c79cfca6d8
-entity_type: schema
-entity_ref: physioevents_d1ac1750b20f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PhysioEvents
-status: pending
-created_at: '2026-03-29T19:53:58.460474+00:00'

@@ -1,0 +1,9 @@
+id: 4b385bf1-1ca1-4324-ad24-807495ea3c22
+entity_type: element
+entity_ref: sequencename_2d5a5db05e5a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SequenceName
+status: pending
+created_at: '2026-03-30T00:29:08.892831+00:00'

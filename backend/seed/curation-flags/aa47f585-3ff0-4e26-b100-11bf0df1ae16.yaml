@@ -1,0 +1,9 @@
+id: aa47f585-3ff0-4e26-b100-11bf0df1ae16
+entity_type: element
+entity_ref: field_of_view_4ee373440665.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: field_of_view
+status: pending
+created_at: '2026-03-30T00:29:08.610768+00:00'

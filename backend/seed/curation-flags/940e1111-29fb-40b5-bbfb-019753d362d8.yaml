@@ -1,0 +1,9 @@
+id: 940e1111-29fb-40b5-bbfb-019753d362d8
+entity_type: element
+entity_ref: rotationorder_3bed95f4a743.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: RotationOrder
+status: pending
+created_at: '2026-03-30T00:29:08.853128+00:00'

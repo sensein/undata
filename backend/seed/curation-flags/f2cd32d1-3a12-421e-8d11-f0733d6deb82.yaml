@@ -1,9 +1,0 @@
-id: f2cd32d1-3a12-421e-8d11-f0733d6deb82
-entity_type: value
-entity_ref: emg_202fb4c4d816.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EMG
-status: pending
-created_at: '2026-03-29T19:53:53.397153+00:00'

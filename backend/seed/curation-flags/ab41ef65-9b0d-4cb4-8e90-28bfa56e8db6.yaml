@@ -1,9 +1,0 @@
-id: ab41ef65-9b0d-4cb4-8e90-28bfa56e8db6
-entity_type: element
-entity_ref: releasenotes_cf01b859b572.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: releaseNotes
-status: pending
-created_at: '2026-03-29T19:53:57.893553+00:00'

@@ -1,0 +1,9 @@
+id: 2fca1b10-6f28-46bb-b92b-1dd6556b7281
+entity_type: schema
+entity_ref: spoilingrf_a1a24bb5e44c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpoilingRF
+status: pending
+created_at: '2026-03-30T00:29:01.437276+00:00'

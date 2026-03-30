@@ -5,7 +5,7 @@ provenance:
   class: nwb
   name: feature_units
   description: Units of each feature.
-  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  generated_at: '2026-03-30T00:29:02.454785+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: b430843617de2eb79155572daa587110880f8a84d115b01ad963e43609ac095e

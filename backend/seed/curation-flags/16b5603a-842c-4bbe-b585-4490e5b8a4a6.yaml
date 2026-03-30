@@ -1,9 +1,0 @@
-id: 16b5603a-842c-4bbe-b585-4490e5b8a4a6
-entity_type: schema
-entity_ref: emg_sidecar_229b7b57d3eb.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: emg_sidecar
-status: pending
-created_at: '2026-03-29T19:53:58.356775+00:00'

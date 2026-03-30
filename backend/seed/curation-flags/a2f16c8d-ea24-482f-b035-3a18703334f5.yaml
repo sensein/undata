@@ -1,0 +1,9 @@
+id: a2f16c8d-ea24-482f-b035-3a18703334f5
+entity_type: value
+entity_ref: r2map_d35699a083e0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: R2map
+status: pending
+created_at: '2026-03-30T00:29:01.283433+00:00'

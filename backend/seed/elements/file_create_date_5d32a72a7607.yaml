@@ -10,7 +10,7 @@ provenance:
     timezone offset. Date accuracy is up to milliseconds. The file can be created
     after the experiment was run, so this may differ from the experiment start time.
     Each modification to the nwb file adds a new entry to the array.'
-  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  generated_at: '2026-03-30T00:29:02.454785+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 5d32a72a76079d70978280fe8ce6a2337fb83a98bfc85bb50a906507fc981183

@@ -1,0 +1,15 @@
+run_id: 145e8c23-e48
+source: dandi
+started_at: '2026-03-30T00:29:10.144090+00:00'
+completed_at: '2026-03-30T00:29:10.144139+00:00'
+entity_counts:
+  extract:
+    elements: 398
+    schemas: 44
+    values: 152
+    valuesets: 5
+curation_flags:
+  low_confidence: 2322
+timing:
+  extract: 1.329329013824463
+  commit: 1.8190021514892578

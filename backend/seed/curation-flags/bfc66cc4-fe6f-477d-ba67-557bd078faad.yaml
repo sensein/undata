@@ -1,0 +1,9 @@
+id: bfc66cc4-fe6f-477d-ba67-557bd078faad
+entity_type: schema
+entity_ref: electricalseries_28d8a272cd63.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ElectricalSeries
+status: pending
+created_at: '2026-03-30T00:29:09.293713+00:00'

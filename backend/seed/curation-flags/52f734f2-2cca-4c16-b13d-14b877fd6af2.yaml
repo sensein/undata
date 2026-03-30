@@ -1,0 +1,9 @@
+id: 52f734f2-2cca-4c16-b13d-14b877fd6af2
+entity_type: element
+entity_ref: mtoffsetfrequency_b0eb9bc13d94.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MTOffsetFrequency
+status: pending
+created_at: '2026-03-30T00:29:00.964549+00:00'

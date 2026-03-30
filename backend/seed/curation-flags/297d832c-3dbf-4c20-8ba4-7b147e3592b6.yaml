@@ -1,0 +1,9 @@
+id: 297d832c-3dbf-4c20-8ba4-7b147e3592b6
+entity_type: value
+entity_ref: blood_b5580e26ad8a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: blood
+status: pending
+created_at: '2026-03-30T00:29:09.034290+00:00'

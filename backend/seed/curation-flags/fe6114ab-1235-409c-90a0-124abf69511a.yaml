@@ -1,0 +1,9 @@
+id: fe6114ab-1235-409c-90a0-124abf69511a
+entity_type: element
+entity_ref: detector__channels_edf493b83c3f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: detector__channels
+status: pending
+created_at: '2026-03-30T00:29:00.835897+00:00'

@@ -1,9 +1,0 @@
-id: 63908fcc-b776-4b05-ba17-c440a3418af3
-entity_type: element
-entity_ref: accelchannelcount_a5c3565e7993.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ACCELChannelCount
-status: pending
-created_at: '2026-03-29T19:53:52.938007+00:00'

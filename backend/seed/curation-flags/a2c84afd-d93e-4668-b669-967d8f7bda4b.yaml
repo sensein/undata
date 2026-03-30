@@ -1,0 +1,9 @@
+id: a2c84afd-d93e-4668-b669-967d8f7bda4b
+entity_type: element
+entity_ref: basedon_dbc7d8ab1291.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: BasedOn
+status: pending
+created_at: '2026-03-30T00:29:08.487759+00:00'

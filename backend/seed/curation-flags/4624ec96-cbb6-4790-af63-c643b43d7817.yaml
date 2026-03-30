@@ -1,0 +1,9 @@
+id: 4624ec96-cbb6-4790-af63-c643b43d7817
+entity_type: element
+entity_ref: notes_268f9a9c983b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: notes
+status: pending
+created_at: '2026-03-30T00:29:03.935187+00:00'

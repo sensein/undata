@@ -5,7 +5,7 @@ provenance:
   class: AccessRequirements
   name: embargoedUntil
   description: Date on which embargo ends.
-  generated_at: '2026-03-29T19:53:55.365104+00:00'
+  generated_at: '2026-03-30T00:29:06.281579+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: cd059f105f3617a2a8530f79bc4e542a2e8c74c5d400b0689d89d1a3bad75df9

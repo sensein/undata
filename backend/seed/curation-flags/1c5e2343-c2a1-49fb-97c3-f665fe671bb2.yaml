@@ -1,9 +1,0 @@
-id: 1c5e2343-c2a1-49fb-97c3-f665fe671bb2
-entity_type: value
-entity_ref: eyegaze_ffd528eb904b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EYEGAZE
-status: pending
-created_at: '2026-03-29T19:53:50.435647+00:00'

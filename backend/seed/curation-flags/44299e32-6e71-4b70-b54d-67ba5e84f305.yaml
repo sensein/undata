@@ -1,0 +1,9 @@
+id: 44299e32-6e71-4b70-b54d-67ba5e84f305
+entity_type: element
+entity_ref: codingschemedesignator_10efa326263a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CodingSchemeDesignator
+status: pending
+created_at: '2026-03-30T00:29:08.508605+00:00'

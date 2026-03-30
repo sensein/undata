@@ -1,0 +1,9 @@
+id: 23d5a99f-3362-428e-9898-df2c7ae5a513
+entity_type: value
+entity_ref: gaze-on-screen_bbfa47515cea.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: gaze-on-screen
+status: pending
+created_at: '2026-03-30T00:29:01.196575+00:00'

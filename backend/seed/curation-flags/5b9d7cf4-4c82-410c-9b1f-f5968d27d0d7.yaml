@@ -1,9 +1,0 @@
-id: 5b9d7cf4-4c82-410c-9b1f-f5968d27d0d7
-entity_type: element
-entity_ref: operatingsystem_d746f66dc272.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: OperatingSystem
-status: pending
-created_at: '2026-03-29T19:53:53.174692+00:00'

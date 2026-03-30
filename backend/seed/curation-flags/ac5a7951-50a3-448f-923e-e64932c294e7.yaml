@@ -1,0 +1,9 @@
+id: ac5a7951-50a3-448f-923e-e64932c294e7
+entity_type: value
+entity_ref: fmap_de9e1a312a50.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: fmap
+status: pending
+created_at: '2026-03-30T00:29:09.117711+00:00'

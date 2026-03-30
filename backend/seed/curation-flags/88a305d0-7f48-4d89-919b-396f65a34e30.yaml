@@ -1,0 +1,9 @@
+id: 88a305d0-7f48-4d89-919b-396f65a34e30
+entity_type: value
+entity_ref: nirscwopticaldensity_92c29adc918e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NIRSCWOPTICALDENSITY
+status: pending
+created_at: '2026-03-30T00:29:09.183675+00:00'

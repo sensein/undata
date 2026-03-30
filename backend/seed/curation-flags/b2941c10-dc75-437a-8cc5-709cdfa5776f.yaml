@@ -1,9 +1,0 @@
-id: b2941c10-dc75-437a-8cc5-709cdfa5776f
-entity_type: schema
-entity_ref: eyetrack_0efb6145b828.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EyeTrack
-status: pending
-created_at: '2026-03-29T19:53:53.588840+00:00'

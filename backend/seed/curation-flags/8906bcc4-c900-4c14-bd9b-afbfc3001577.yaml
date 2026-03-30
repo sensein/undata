@@ -1,0 +1,9 @@
+id: 8906bcc4-c900-4c14-bd9b-afbfc3001577
+entity_type: value
+entity_ref: right-hand_d2b4a0b3506f.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: right-hand
+status: pending
+created_at: '2026-03-30T00:29:01.288621+00:00'

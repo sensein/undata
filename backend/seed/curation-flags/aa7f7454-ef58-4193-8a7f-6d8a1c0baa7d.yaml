@@ -1,9 +1,0 @@
-id: aa7f7454-ef58-4193-8a7f-6d8a1c0baa7d
-entity_type: element
-entity_ref: chunktransformationmatrix_f23ac354e36b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ChunkTransformationMatrix
-status: pending
-created_at: '2026-03-29T19:53:52.979044+00:00'

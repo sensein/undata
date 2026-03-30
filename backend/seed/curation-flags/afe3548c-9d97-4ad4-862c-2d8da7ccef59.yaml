@@ -1,9 +1,0 @@
-id: afe3548c-9d97-4ad4-862c-2d8da7ccef59
-entity_type: value
-entity_ref: cloning_host_ee395cbca1b5.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: cloning host
-status: pending
-created_at: '2026-03-29T19:53:53.375601+00:00'

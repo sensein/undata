@@ -6,7 +6,7 @@ provenance:
   name: waveforms_index
   description: Index into the 'waveforms' dataset. One value for every spike event.
     See 'waveforms' for more detail.
-  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  generated_at: '2026-03-30T00:29:02.454785+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 8d008b789c3f631807d28673b45771c1b71ac6a31607e9088ae46cb9a6999ca2

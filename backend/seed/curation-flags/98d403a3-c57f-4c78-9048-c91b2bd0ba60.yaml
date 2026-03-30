@@ -1,0 +1,9 @@
+id: 98d403a3-c57f-4c78-9048-c91b2bd0ba60
+entity_type: value
+entity_ref: nirs_03bbf6f214cf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: nirs
+status: pending
+created_at: '2026-03-30T00:29:01.252046+00:00'

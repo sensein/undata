@@ -1,0 +1,9 @@
+id: 3f1d3d3f-08fa-4577-8936-8e35b1dc4ba7
+entity_type: element
+entity_ref: echotime__fmap_d2a42f6b38a8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EchoTime__fmap
+status: pending
+created_at: '2026-03-30T00:29:03.793187+00:00'

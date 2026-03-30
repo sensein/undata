@@ -1,0 +1,9 @@
+id: 0772fe13-535e-4a05-bb82-96fa8817eaf6
+entity_type: element
+entity_ref: measurementtechnique_d4d7194703ae.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: measurementTechnique
+status: pending
+created_at: '2026-03-30T00:29:08.725869+00:00'

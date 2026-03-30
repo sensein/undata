@@ -1,0 +1,9 @@
+id: 9a2a9298-23c2-4c91-91c2-fa6e2baff065
+entity_type: value
+entity_ref: tem_9a37407bb416.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TEM
+status: pending
+created_at: '2026-03-30T00:29:04.311486+00:00'

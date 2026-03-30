@@ -1,0 +1,9 @@
+id: 584b1516-09fb-4abe-8323-818e37c0946f
+entity_type: element
+entity_ref: protocol_047b83420677.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: protocol
+status: pending
+created_at: '2026-03-30T00:29:08.808550+00:00'

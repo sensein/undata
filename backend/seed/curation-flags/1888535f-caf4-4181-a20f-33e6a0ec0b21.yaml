@@ -1,0 +1,9 @@
+id: 1888535f-caf4-4181-a20f-33e6a0ec0b21
+entity_type: value
+entity_ref: integer_517139affbc3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: integer
+status: pending
+created_at: '2026-03-30T00:29:04.210160+00:00'

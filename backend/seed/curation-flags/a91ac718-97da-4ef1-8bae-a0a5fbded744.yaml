@@ -1,0 +1,9 @@
+id: a91ac718-97da-4ef1-8bae-a0a5fbded744
+entity_type: schema
+entity_ref: organization_928a42f19c8a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Organization
+status: pending
+created_at: '2026-03-30T00:29:09.388701+00:00'

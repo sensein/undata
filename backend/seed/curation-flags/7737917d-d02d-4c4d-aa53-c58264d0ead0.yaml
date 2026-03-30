@@ -1,9 +1,0 @@
-id: 7737917d-d02d-4c4d-aa53-c58264d0ead0
-entity_type: schema
-entity_ref: events_events_f0d9a2ddc535.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: events_Events
-status: pending
-created_at: '2026-03-29T19:53:50.608811+00:00'

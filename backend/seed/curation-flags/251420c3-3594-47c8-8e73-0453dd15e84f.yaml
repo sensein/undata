@@ -1,0 +1,9 @@
+id: 251420c3-3594-47c8-8e73-0453dd15e84f
+entity_type: element
+entity_ref: calibrationposition_98181d3e0a85.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: CalibrationPosition
+status: pending
+created_at: '2026-03-30T00:29:00.805154+00:00'

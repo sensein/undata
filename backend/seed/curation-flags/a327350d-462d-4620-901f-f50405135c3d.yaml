@@ -1,9 +1,0 @@
-id: a327350d-462d-4620-901f-f50405135c3d
-entity_type: value
-entity_ref: stim_6518e6202cf8.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: stim
-status: pending
-created_at: '2026-03-29T19:53:53.518748+00:00'

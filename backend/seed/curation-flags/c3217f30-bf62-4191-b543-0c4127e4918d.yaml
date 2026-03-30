@@ -1,9 +1,0 @@
-id: c3217f30-bf62-4191-b543-0c4127e4918d
-entity_type: value
-entity_ref: boolean_6180dd9e99b0.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: boolean
-status: pending
-created_at: '2026-03-29T19:53:58.093728+00:00'

@@ -5,7 +5,7 @@ provenance:
   class: nwb
   name: resistance_comp_prediction
   description: Resistance compensation prediction, in percent.
-  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  generated_at: '2026-03-30T00:29:02.454785+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 5a13257bb2ce7f637dcc4f7bf1be179625a4a43f01e53401d0259483d87e761b

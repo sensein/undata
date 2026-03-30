@@ -1,0 +1,9 @@
+id: c77755ba-3a25-4670-8c08-f2d26c9f4745
+entity_type: value
+entity_ref: __6e6a2c175a44.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Directory
+status: pending
+created_at: '2026-03-30T00:29:04.125522+00:00'

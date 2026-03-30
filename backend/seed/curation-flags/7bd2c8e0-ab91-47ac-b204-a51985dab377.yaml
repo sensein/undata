@@ -1,0 +1,9 @@
+id: 7bd2c8e0-ab91-47ac-b204-a51985dab377
+entity_type: value
+entity_ref: trig_7d05ba6f848c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TRIG
+status: pending
+created_at: '2026-03-30T00:29:01.318682+00:00'

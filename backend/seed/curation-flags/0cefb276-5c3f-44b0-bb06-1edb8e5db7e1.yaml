@@ -1,0 +1,9 @@
+id: 0cefb276-5c3f-44b0-bb06-1edb8e5db7e1
+entity_type: element
+entity_ref: spoilingtype_3b7266de71f9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SpoilingType
+status: pending
+created_at: '2026-03-30T00:29:01.068459+00:00'

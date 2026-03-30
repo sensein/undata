@@ -1,0 +1,9 @@
+id: 002d17df-427c-4039-8057-82c1f8502a9d
+entity_type: value
+entity_ref: face_98387364462b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Face
+status: pending
+created_at: '2026-03-30T00:29:01.185772+00:00'

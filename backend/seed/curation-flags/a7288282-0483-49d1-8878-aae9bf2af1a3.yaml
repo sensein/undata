@@ -1,0 +1,9 @@
+id: a7288282-0483-49d1-8878-aae9bf2af1a3
+entity_type: schema
+entity_ref: physiotyperequired_8d214cef5286.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PhysioTypeRequired
+status: pending
+created_at: '2026-03-30T00:29:04.462610+00:00'

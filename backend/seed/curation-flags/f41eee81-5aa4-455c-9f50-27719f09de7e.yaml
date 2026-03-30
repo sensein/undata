@@ -1,0 +1,9 @@
+id: f41eee81-5aa4-455c-9f50-27719f09de7e
+entity_type: element
+entity_ref: boluscutoffflag_ea46a3e2b5f5.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: BolusCutOffFlag
+status: pending
+created_at: '2026-03-30T00:29:03.736893+00:00'

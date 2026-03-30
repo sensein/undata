@@ -1,0 +1,9 @@
+id: 34eb6609-47e0-4fd9-97ff-e603adc7d502
+entity_type: element
+entity_ref: waveform_sd_48f04c12e845.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: waveform_sd
+status: pending
+created_at: '2026-03-30T00:29:08.990409+00:00'

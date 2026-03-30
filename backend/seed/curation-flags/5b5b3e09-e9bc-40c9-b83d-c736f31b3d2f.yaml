@@ -1,0 +1,9 @@
+id: 5b5b3e09-e9bc-40c9-b83d-c736f31b3d2f
+entity_type: schema
+entity_ref: roiresponseseries_e38a215f5b6e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: RoiResponseSeries
+status: pending
+created_at: '2026-03-30T00:29:04.466197+00:00'

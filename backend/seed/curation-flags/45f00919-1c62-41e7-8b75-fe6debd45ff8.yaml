@@ -1,0 +1,9 @@
+id: 45f00919-1c62-41e7-8b75-fe6debd45ff8
+entity_type: element
+entity_ref: mapping_4256ad13bb2c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: mapping
+status: pending
+created_at: '2026-03-30T00:29:00.944322+00:00'

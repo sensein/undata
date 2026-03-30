@@ -1,9 +1,0 @@
-id: 39ea35eb-43e9-4739-a862-866e4653752b
-entity_type: element
-entity_ref: dispersionconstant_8a00f3c2dc55.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: DispersionConstant
-status: pending
-created_at: '2026-03-29T19:53:57.627295+00:00'

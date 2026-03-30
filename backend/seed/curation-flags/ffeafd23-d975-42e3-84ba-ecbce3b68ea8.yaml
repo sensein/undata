@@ -1,9 +1,0 @@
-id: ffeafd23-d975-42e3-84ba-ecbce3b68ea8
-entity_type: element
-entity_ref: mtpulsebandwidth_157571f016dc.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MTPulseBandwidth
-status: pending
-created_at: '2026-03-29T19:53:53.149870+00:00'

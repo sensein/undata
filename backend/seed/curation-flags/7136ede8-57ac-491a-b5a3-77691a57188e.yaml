@@ -1,0 +1,9 @@
+id: 7136ede8-57ac-491a-b5a3-77691a57188e
+entity_type: element
+entity_ref: minvalue_204ececbf5b0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: minValue
+status: pending
+created_at: '2026-03-30T00:29:08.737446+00:00'

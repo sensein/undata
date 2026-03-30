@@ -1,0 +1,9 @@
+id: 38dd2137-5583-4062-bf73-858ddce9db5c
+entity_type: value
+entity_ref: scanras_2be927ac2e8a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ScanRAS
+status: pending
+created_at: '2026-03-30T00:29:01.293650+00:00'

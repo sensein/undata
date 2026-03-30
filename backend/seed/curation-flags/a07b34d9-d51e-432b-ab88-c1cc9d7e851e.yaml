@@ -1,0 +1,9 @@
+id: a07b34d9-d51e-432b-ab88-c1cc9d7e851e
+entity_type: element
+entity_ref: partialfourierdirection_104177811498.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PartialFourierDirection
+status: pending
+created_at: '2026-03-30T00:29:08.789563+00:00'

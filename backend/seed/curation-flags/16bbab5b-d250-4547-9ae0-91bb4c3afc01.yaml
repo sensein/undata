@@ -1,0 +1,9 @@
+id: 16bbab5b-d250-4547-9ae0-91bb4c3afc01
+entity_type: element
+entity_ref: emgplacementschemedescription_fee8740ca9a1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EMGPlacementSchemeDescription
+status: pending
+created_at: '2026-03-30T00:29:03.812908+00:00'

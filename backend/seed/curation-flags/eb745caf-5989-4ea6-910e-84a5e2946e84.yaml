@@ -1,9 +1,0 @@
-id: eb745caf-5989-4ea6-910e-84a5e2946e84
-entity_type: schema
-entity_ref: onephotonseries_f326fe5224b6.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: OnePhotonSeries
-status: pending
-created_at: '2026-03-29T19:53:58.446583+00:00'

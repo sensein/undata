@@ -1,0 +1,9 @@
+id: e243ffde-0658-472a-b194-ed08e26f6458
+entity_type: value
+entity_ref: unloc_2ccdabcbf3ef.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: unloc
+status: pending
+created_at: '2026-03-30T00:29:04.324065+00:00'

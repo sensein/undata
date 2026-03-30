@@ -5,7 +5,7 @@ provenance:
   class: nwb
   name: capacitance_compensation
   description: Capacitance compensation, in farads.
-  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  generated_at: '2026-03-30T00:29:02.454785+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 90214875bc4da5006877b46fe1a235b376f97bafd81b3b691634c129a7c19907

@@ -1,0 +1,9 @@
+id: c672f980-1251-485e-b947-f8535abf1972
+entity_type: value
+entity_ref: bold_098aa6e70187.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: bold
+status: pending
+created_at: '2026-03-30T00:29:04.138626+00:00'

@@ -1,0 +1,9 @@
+id: 8b6e9ee6-62ab-46f6-8aab-b65f434e3538
+entity_type: value
+entity_ref: individual_0d605e551b40.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: individual
+status: pending
+created_at: '2026-03-30T00:29:01.211213+00:00'

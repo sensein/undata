@@ -1,9 +1,0 @@
-id: 21535c50-67a7-4387-9756-a29e7023d13b
-entity_type: value
-entity_ref: micr_6202dd69767b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: micr
-status: pending
-created_at: '2026-03-29T19:53:50.485603+00:00'

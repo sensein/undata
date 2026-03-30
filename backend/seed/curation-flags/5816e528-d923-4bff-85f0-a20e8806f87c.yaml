@@ -1,0 +1,9 @@
+id: 5816e528-d923-4bff-85f0-a20e8806f87c
+entity_type: value
+entity_ref: extension_398c9a1b41e2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: extension
+status: pending
+created_at: '2026-03-30T00:29:09.111661+00:00'

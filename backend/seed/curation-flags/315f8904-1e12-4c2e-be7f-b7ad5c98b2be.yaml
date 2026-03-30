@@ -1,0 +1,9 @@
+id: 315f8904-1e12-4c2e-be7f-b7ad5c98b2be
+entity_type: value
+entity_ref: fiterr_9c238c0a5061.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: FITERR
+status: pending
+created_at: '2026-03-30T00:29:09.115857+00:00'

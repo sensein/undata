@@ -1,9 +1,0 @@
-id: a9f7a67b-1757-4e01-9753-21a78c0bd7a0
-entity_type: schema
-entity_ref: propertyvalue_b4d399e7c3eb.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PropertyValue
-status: pending
-created_at: '2026-03-29T19:53:58.463792+00:00'

@@ -1,0 +1,9 @@
+id: c218632c-f969-446b-8ccd-10e7b33477f7
+entity_type: element
+entity_ref: anchorcoordinates_bef22d84af1c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AnchorCoordinates
+status: pending
+created_at: '2026-03-30T00:29:08.470785+00:00'

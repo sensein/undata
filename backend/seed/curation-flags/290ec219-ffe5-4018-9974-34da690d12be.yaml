@@ -1,9 +1,0 @@
-id: 290ec219-ffe5-4018-9974-34da690d12be
-entity_type: element
-entity_ref: triggerchannelcount_3f887962a202.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TriggerChannelCount
-status: pending
-created_at: '2026-03-29T19:53:53.302666+00:00'

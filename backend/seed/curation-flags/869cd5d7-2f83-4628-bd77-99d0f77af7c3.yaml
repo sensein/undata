@@ -1,9 +1,0 @@
-id: 869cd5d7-2f83-4628-bd77-99d0f77af7c3
-entity_type: value
-entity_ref: off_72e6bbf0473c.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: off__mtransfer
-status: pending
-created_at: '2026-03-29T19:53:53.480053+00:00'

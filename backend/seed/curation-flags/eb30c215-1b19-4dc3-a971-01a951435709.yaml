@@ -1,0 +1,9 @@
+id: eb30c215-1b19-4dc3-a971-01a951435709
+entity_type: value
+entity_ref: elektaneuromag_3b27d834d54d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ElektaNeuromag
+status: pending
+created_at: '2026-03-30T00:29:09.105428+00:00'

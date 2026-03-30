@@ -1,9 +1,0 @@
-id: 98e88286-eb04-4be8-9467-99af370276dd
-entity_type: value
-entity_ref: lesion_fca47db1d7eb.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Lesion
-status: pending
-created_at: '2026-03-29T19:53:53.441904+00:00'

@@ -1,9 +1,0 @@
-id: 557f2f26-0a33-40ed-a401-af7f169b9ba4
-entity_type: element
-entity_ref: resistance_comp_correction_644032261ef4.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: resistance_comp_correction
-status: pending
-created_at: '2026-03-29T19:53:57.899728+00:00'

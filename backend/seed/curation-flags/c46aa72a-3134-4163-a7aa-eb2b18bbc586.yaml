@@ -1,0 +1,9 @@
+id: c46aa72a-3134-4163-a7aa-eb2b18bbc586
+entity_type: element
+entity_ref: resourcetype_e293024006b2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: resourceType
+status: pending
+created_at: '2026-03-30T00:29:08.848416+00:00'

@@ -1,0 +1,9 @@
+id: 69a6494e-0d40-456b-abc2-e9a969259fea
+entity_type: value
+entity_ref: spim_68a00d5b2b71.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SPIM
+status: pending
+created_at: '2026-03-30T00:29:01.301098+00:00'

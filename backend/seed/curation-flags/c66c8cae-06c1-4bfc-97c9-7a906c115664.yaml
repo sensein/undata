@@ -1,9 +1,0 @@
-id: c66c8cae-06c1-4bfc-97c9-7a906c115664
-entity_type: value
-entity_ref: bf_54d8fcb0c8b9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: BF
-status: pending
-created_at: '2026-03-29T19:53:58.090954+00:00'

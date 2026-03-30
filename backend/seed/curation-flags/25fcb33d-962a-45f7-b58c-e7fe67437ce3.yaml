@@ -1,9 +1,0 @@
-id: 25fcb33d-962a-45f7-b58c-e7fe67437ce3
-entity_type: schema
-entity_ref: photo_613a9c114205.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Photo
-status: pending
-created_at: '2026-03-29T19:53:53.674449+00:00'

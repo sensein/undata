@@ -1,0 +1,9 @@
+id: f5958242-fd66-4232-b12d-32393d5ad678
+entity_type: element
+entity_ref: repetitiontimepreparation_16bf6ba89b87.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: RepetitionTimePreparation
+status: pending
+created_at: '2026-03-30T00:29:08.839287+00:00'

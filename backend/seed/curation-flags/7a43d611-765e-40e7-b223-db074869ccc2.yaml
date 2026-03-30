@@ -1,0 +1,9 @@
+id: 7a43d611-765e-40e7-b223-db074869ccc2
+entity_type: schema
+entity_ref: emgoptional_0e13fc356853.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EMGOptional
+status: pending
+created_at: '2026-03-30T00:29:04.359756+00:00'

@@ -1,0 +1,9 @@
+id: dc0a6023-73b9-4eb5-8644-4b913acc077e
+entity_type: element
+entity_ref: container_71b5ee81ce4e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Container
+status: pending
+created_at: '2026-03-30T00:29:00.819134+00:00'

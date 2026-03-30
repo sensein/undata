@@ -1,9 +1,0 @@
-id: 49d22a63-52fb-4b91-8c82-701de19796b8
-entity_type: element
-entity_ref: vascularcrushingvenc_20b18de6d61a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: VascularCrushingVENC
-status: pending
-created_at: '2026-03-29T19:53:58.033062+00:00'

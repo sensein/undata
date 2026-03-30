@@ -1,0 +1,9 @@
+id: 26353e6b-1397-4b28-bf79-9e94756d05de
+entity_type: element
+entity_ref: numberofcells_198b12eb7c11.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: numberOfCells
+status: pending
+created_at: '2026-03-30T00:29:08.774692+00:00'

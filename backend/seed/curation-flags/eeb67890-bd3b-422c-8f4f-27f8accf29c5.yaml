@@ -1,0 +1,9 @@
+id: eeb67890-bd3b-422c-8f4f-27f8accf29c5
+entity_type: element
+entity_ref: frameduration_d658ccae6f24.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: FrameDuration
+status: pending
+created_at: '2026-03-30T00:29:03.833178+00:00'

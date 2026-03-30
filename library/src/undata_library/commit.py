@@ -147,8 +147,11 @@ def _resolve_cross_references(output_dir: Path) -> None:
 
     Uses a name→sha256 lookup built from committed elements and values.
     """
-    # Build element name → sha256 lookup
-    elem_lookup: dict[str, str] = {}
+    # Build element (class, name) → sha256 lookup for class-aware resolution
+    # Key: (class_name, slot_name) → sha256
+    elem_by_class: dict[tuple[str, str], str] = {}
+    # Fallback: name → sha256 (first encountered)
+    elem_by_name: dict[str, str] = {}
     elements_dir = output_dir / "elements"
     if elements_dir.exists():
         for f in elements_dir.glob("*.yaml"):
@@ -156,15 +159,17 @@ def _resolve_cross_references(output_dir: Path) -> None:
             if not data or "sha256" not in data:
                 continue
             sha = data["sha256"]
-            # Index by provenance name(s)
             for prov in data.get("provenance", []):
                 if isinstance(prov, dict) and prov.get("name"):
                     name = prov["name"]
-                    # Prefer not overwriting (first provenance entry wins)
-                    if name not in elem_lookup:
-                        elem_lookup[name] = sha
-                    if name.lower() not in elem_lookup:
-                        elem_lookup[name.lower()] = sha
+                    cls = prov.get("class", prov.get("class_", ""))
+                    if cls:
+                        elem_by_class[(cls, name)] = sha
+                        elem_by_class[(cls, name.lower())] = sha
+                    if name not in elem_by_name:
+                        elem_by_name[name] = sha
+                    if name.lower() not in elem_by_name:
+                        elem_by_name[name.lower()] = sha
 
     # Build value label → sha256 lookup
     val_lookup: dict[str, str] = {}
@@ -191,9 +196,9 @@ def _resolve_cross_references(output_dir: Path) -> None:
                     if name.lower() not in val_lookup:
                         val_lookup[name.lower()] = sha
 
-    # Update schema properties
+    # Update schema properties — class-aware resolution
     schemas_dir = output_dir / "schemas"
-    if schemas_dir.exists() and elem_lookup:
+    if schemas_dir.exists() and (elem_by_class or elem_by_name):
         for f in schemas_dir.glob("*.yaml"):
             data = safe_load_yaml(f)
             if not data:
@@ -202,6 +207,14 @@ def _resolve_cross_references(output_dir: Path) -> None:
             props = sem.get("properties", [])
             if not props:
                 continue
+
+            # Get the schema's class name from provenance
+            schema_class = ""
+            for prov in data.get("provenance", []):
+                if isinstance(prov, dict):
+                    schema_class = prov.get("class", prov.get("class_", prov.get("name", "")))
+                    break
+
             resolved = []
             changed = False
             for prop in props:
@@ -209,8 +222,13 @@ def _resolve_cross_references(output_dir: Path) -> None:
                 if len(prop) == 64 and all(c in "0123456789abcdef" for c in prop):
                     resolved.append(prop)
                     continue
-                # Try to resolve name → sha256
-                sha = elem_lookup.get(prop) or elem_lookup.get(prop.lower())
+                # Class-aware: prefer element from same class as the schema
+                sha = (
+                    elem_by_class.get((schema_class, prop))
+                    or elem_by_class.get((schema_class, prop.lower()))
+                    or elem_by_name.get(prop)
+                    or elem_by_name.get(prop.lower())
+                )
                 if sha:
                     resolved.append(sha)
                     changed = True

@@ -1,0 +1,9 @@
+id: a176fae6-2eef-4f71-96d6-6d272ebc3d50
+entity_type: element
+entity_ref: postlabelingdelay_990516cb67d3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PostLabelingDelay
+status: pending
+created_at: '2026-03-30T00:29:03.964375+00:00'

@@ -1,0 +1,28 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: good
+    label: good
+    ontology_term: https://schema.undata.live/values/9fcb4264-791d-4c62-977c-02fa59953583
+  - value: bad
+    label: bad
+    ontology_term: https://schema.undata.live/values/f45ce270-8955-48c8-a904-809e3415c3f3
+  value_domain: categorical
+provenance:
+- source: bids
+  class: columns
+  name: status
+  description: 'Data quality observed on the channel.
+
+    A channel is considered `bad` if its data quality is compromised by excessive
+    noise.
+
+    If quality is unknown, then a value of `n/a` may be used.
+
+    Description of noise type SHOULD be provided in `[status_description]`.
+
+    '
+  generated_at: '2026-03-30T00:28:57.008136+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 518110f451a18894725f048a99866cdb3199216ff01fd0c31d7294f088fcb868

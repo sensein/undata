@@ -1,0 +1,30 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: dandi:isChildOf
+    label: dandi:isChildOf
+    ontology_term: https://schema.undata.live/values/ae6445c6-24ef-491a-8837-a02bdc1cd1b9
+  - value: dandi:isParentOf
+    label: dandi:isParentOf
+    ontology_term: https://schema.undata.live/values/69be8da8-728c-439f-a1d0-917b170be1b6
+  - value: dandi:isSiblingOf
+    label: dandi:isSiblingOf
+    ontology_term: https://schema.undata.live/values/26a3542c-a66b-43d7-b368-46ff8d74234c
+  - value: dandi:isMonozygoticTwinOf
+    label: dandi:isMonozygoticTwinOf
+    ontology_term: https://schema.undata.live/values/9a5b3882-2a37-4cec-8e5a-65fb4d9092cc
+  - value: dandi:isDizygoticTwinOf
+    label: dandi:isDizygoticTwinOf
+    ontology_term: https://schema.undata.live/values/f5902fcf-8648-4d96-9861-3a5bae887851
+  value_domain: categorical
+provenance:
+- source: dandi
+  class: RelatedParticipant
+  name: relation
+  description: 'Indicates how the current participant or subject is related to the
+    other participant or subject. This relation should satisfy: Participant/Subject
+    <relation> relatedParticipant/Subject.'
+  generated_at: '2026-03-30T00:29:06.281579+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 72d1402368fa2985acef07fa1af8e05b3e04e6a38fc69cf559cb20650d218c1e

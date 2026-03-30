@@ -1,9 +1,0 @@
-id: b749f377-b115-4233-8672-c01a7699b971
-entity_type: value
-entity_ref: svs_94e8cba58b3c.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SVS
-status: pending
-created_at: '2026-03-29T19:53:58.292014+00:00'

@@ -1,9 +1,0 @@
-id: 405773f6-3420-405a-9d5a-1cb07bcc5b76
-entity_type: element
-entity_ref: receivecoilname_8730c1f0bcb6.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ReceiveCoilName
-status: pending
-created_at: '2026-03-29T19:53:57.874616+00:00'

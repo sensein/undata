@@ -1,9 +1,0 @@
-id: b121730c-0d2b-432f-8572-b1c95d3bf96f
-entity_type: element
-entity_ref: partialfourier_f70fc37f8c33.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PartialFourier
-status: pending
-created_at: '2026-03-29T19:53:53.181510+00:00'

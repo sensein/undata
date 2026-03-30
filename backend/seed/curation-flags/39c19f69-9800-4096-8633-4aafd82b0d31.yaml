@@ -1,9 +1,0 @@
-id: 39c19f69-9800-4096-8633-4aafd82b0d31
-entity_type: schema
-entity_ref: micr_sidecar_74de186d9f6f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: micr_sidecar
-status: pending
-created_at: '2026-03-29T19:53:50.632681+00:00'

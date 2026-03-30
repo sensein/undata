@@ -1,0 +1,9 @@
+id: 69905213-fc88-4e58-a74b-77b31429f9b4
+entity_type: element
+entity_ref: injectedmass_f69883505c93.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: InjectedMass
+status: pending
+created_at: '2026-03-30T00:29:00.920676+00:00'

@@ -1,9 +1,0 @@
-id: e139bc03-56ed-4432-8cfe-75024295f8f6
-entity_type: element
-entity_ref: onset_86ae705ee0fb.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: onset
-status: pending
-created_at: '2026-03-29T19:53:57.839034+00:00'

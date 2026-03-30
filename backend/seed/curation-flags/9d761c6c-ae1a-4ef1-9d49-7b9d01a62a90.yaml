@@ -1,0 +1,9 @@
+id: 9d761c6c-ae1a-4ef1-9d49-7b9d01a62a90
+entity_type: element
+entity_ref: headcoilcoordinatesystem_a8e23f11ff02.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: HeadCoilCoordinateSystem
+status: pending
+created_at: '2026-03-30T00:29:00.901039+00:00'

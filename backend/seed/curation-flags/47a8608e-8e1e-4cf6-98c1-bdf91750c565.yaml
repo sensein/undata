@@ -1,0 +1,9 @@
+id: 47a8608e-8e1e-4cf6-98c1-bdf91750c565
+entity_type: value
+entity_ref: channelspecific_7c99b571f4b9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ChannelSpecific
+status: pending
+created_at: '2026-03-30T00:29:01.154179+00:00'

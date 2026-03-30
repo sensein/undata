@@ -1,0 +1,9 @@
+id: e97c3788-44a1-4de1-b01b-a4f94a8a2120
+entity_type: schema
+entity_ref: biosample_5132694d42a9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: BioSample
+status: pending
+created_at: '2026-03-30T00:29:09.275359+00:00'

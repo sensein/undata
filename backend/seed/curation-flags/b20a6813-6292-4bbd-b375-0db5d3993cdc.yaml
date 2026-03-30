@@ -1,9 +1,0 @@
-id: b20a6813-6292-4bbd-b375-0db5d3993cdc
-entity_type: value
-entity_ref: colfa_e953ae4beb30.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: colFA
-status: pending
-created_at: '2026-03-29T19:53:58.103298+00:00'

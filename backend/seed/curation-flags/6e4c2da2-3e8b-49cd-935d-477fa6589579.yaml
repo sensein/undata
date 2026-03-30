@@ -1,0 +1,9 @@
+id: 6e4c2da2-3e8b-49cd-935d-477fa6589579
+entity_type: element
+entity_ref: scalefactor_975e3e2ed20d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ScaleFactor
+status: pending
+created_at: '2026-03-30T00:29:08.868264+00:00'

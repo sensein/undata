@@ -6,7 +6,7 @@ provenance:
   name: weight
   description: Weight at time of experiment, at time of surgery and at other important
     times.
-  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  generated_at: '2026-03-30T00:29:02.454785+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: 11e1ecc00163401e705ea3e0fd92174a5bf5b0ed487cacffa7ad2f5c42c42a1a

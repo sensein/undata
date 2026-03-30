@@ -1,0 +1,9 @@
+id: c2f2bbce-481e-454c-8377-03c09a4a06cb
+entity_type: schema
+entity_ref: petmrisequencespecifics_922ac50c6a39.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PETMRISequenceSpecifics
+status: pending
+created_at: '2026-03-30T00:29:04.455268+00:00'

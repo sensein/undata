@@ -1,0 +1,9 @@
+id: 9382b9bd-f324-4c33-8fe3-993e9ab8fd01
+entity_type: value
+entity_ref: gaussian_d4ec6ee3bcac.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: GAUSSIAN
+status: pending
+created_at: '2026-03-30T00:29:01.195990+00:00'

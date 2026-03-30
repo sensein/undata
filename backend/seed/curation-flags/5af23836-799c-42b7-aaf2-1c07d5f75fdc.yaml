@@ -1,9 +1,0 @@
-id: 5af23836-799c-42b7-aaf2-1c07d5f75fdc
-entity_type: element
-entity_ref: fiducialscoordinatesystem_e90813567f0e.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: FiducialsCoordinateSystem
-status: pending
-created_at: '2026-03-29T19:53:53.055409+00:00'

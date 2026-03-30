@@ -1,0 +1,9 @@
+id: afe308ce-aea8-4911-8730-e8d35140068a
+entity_type: schema
+entity_ref: pupiltracking_a2721c50291d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PupilTracking
+status: pending
+created_at: '2026-03-30T00:29:09.407523+00:00'

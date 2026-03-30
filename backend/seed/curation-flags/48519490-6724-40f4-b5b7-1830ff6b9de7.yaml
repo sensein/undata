@@ -1,9 +1,0 @@
-id: 48519490-6724-40f4-b5b7-1830ff6b9de7
-entity_type: schema
-entity_ref: speciestype_00624d9c09e7.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SpeciesType
-status: pending
-created_at: '2026-03-29T19:53:58.474737+00:00'

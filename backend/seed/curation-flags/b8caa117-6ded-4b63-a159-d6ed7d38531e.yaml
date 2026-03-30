@@ -1,0 +1,9 @@
+id: b8caa117-6ded-4b63-a159-d6ed7d38531e
+entity_type: element
+entity_ref: capacitance_compensation_90214875bc4d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: capacitance_compensation
+status: pending
+created_at: '2026-03-30T00:29:08.496762+00:00'

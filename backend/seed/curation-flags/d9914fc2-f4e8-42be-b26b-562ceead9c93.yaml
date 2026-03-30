@@ -1,0 +1,9 @@
+id: d9914fc2-f4e8-42be-b26b-562ceead9c93
+entity_type: value
+entity_ref: mtsat_6b1ea5595580.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MTsat
+status: pending
+created_at: '2026-03-30T00:29:09.176703+00:00'

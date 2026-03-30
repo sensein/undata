@@ -1,0 +1,9 @@
+id: 0f857948-18f2-4a9d-aef5-eeaa9170b920
+entity_type: element
+entity_ref: tissuedeformationscaling_e2014b7c3e0c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TissueDeformationScaling
+status: pending
+created_at: '2026-03-30T00:29:04.063688+00:00'

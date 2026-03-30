@@ -1,0 +1,9 @@
+id: 72c64e34-e5ae-4ad1-a79b-05dc6f01a85f
+entity_type: value
+entity_ref: scanner_1d6843a23ae8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: scanner
+status: pending
+created_at: '2026-03-30T00:29:01.293388+00:00'

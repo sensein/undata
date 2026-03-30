@@ -1,9 +1,0 @@
-id: 0c657632-e229-48b5-8474-887b98d7c032
-entity_type: element
-entity_ref: eyetrackerdistance_a2f5e008cae2.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EyeTrackerDistance
-status: pending
-created_at: '2026-03-29T19:53:57.665181+00:00'

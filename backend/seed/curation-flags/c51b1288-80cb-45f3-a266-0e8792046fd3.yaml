@@ -1,0 +1,9 @@
+id: c51b1288-80cb-45f3-a266-0e8792046fd3
+entity_type: element
+entity_ref: screenrefreshrate_ec05481f994b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ScreenRefreshRate
+status: pending
+created_at: '2026-03-30T00:29:08.890004+00:00'

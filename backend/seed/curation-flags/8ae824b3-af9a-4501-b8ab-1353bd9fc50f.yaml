@@ -1,9 +1,0 @@
-id: 8ae824b3-af9a-4501-b8ab-1353bd9fc50f
-entity_type: element
-entity_ref: whole_cell_series_resistance_comp_dbc173b303fc.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: whole_cell_series_resistance_comp
-status: pending
-created_at: '2026-03-29T19:53:58.052412+00:00'

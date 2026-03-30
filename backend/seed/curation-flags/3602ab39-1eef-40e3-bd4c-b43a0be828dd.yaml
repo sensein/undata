@@ -1,9 +1,0 @@
-id: 3602ab39-1eef-40e3-bd4c-b43a0be828dd
-entity_type: element
-entity_ref: allelesymbol_1ff7299382f5.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: alleleSymbol
-status: pending
-created_at: '2026-03-29T19:53:57.530273+00:00'

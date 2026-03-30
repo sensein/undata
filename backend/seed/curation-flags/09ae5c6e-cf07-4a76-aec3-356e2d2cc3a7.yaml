@@ -1,0 +1,9 @@
+id: 09ae5c6e-cf07-4a76-aec3-356e2d2cc3a7
+entity_type: schema
+entity_ref: nwbfile_c90b6bb936b3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NWBFile
+status: pending
+created_at: '2026-03-30T00:29:04.448445+00:00'

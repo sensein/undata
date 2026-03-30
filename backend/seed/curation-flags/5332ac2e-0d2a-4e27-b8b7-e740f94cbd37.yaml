@@ -1,0 +1,9 @@
+id: 5332ac2e-0d2a-4e27-b8b7-e740f94cbd37
+entity_type: schema
+entity_ref: aslmrisequencespecifics_cb8471424f60.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ASLMRISequenceSpecifics
+status: pending
+created_at: '2026-03-30T00:29:09.268106+00:00'

@@ -1,9 +1,0 @@
-id: 7f1ba89f-2492-4b06-845d-0a90ba09dee9
-entity_type: element
-entity_ref: timeseries_b30cb742ad9a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: timeseries
-status: pending
-created_at: '2026-03-29T19:53:58.001058+00:00'

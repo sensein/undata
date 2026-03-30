@@ -1,9 +1,0 @@
-id: 801fb2df-ea5b-40c3-b00c-b3d67cde6d9f
-entity_type: schema
-entity_ref: intracellularresponsestable_e9e181e882d9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: IntracellularResponsesTable
-status: pending
-created_at: '2026-03-29T19:53:58.385216+00:00'

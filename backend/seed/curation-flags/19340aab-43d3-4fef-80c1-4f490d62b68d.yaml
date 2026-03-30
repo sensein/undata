@@ -1,9 +1,0 @@
-id: 19340aab-43d3-4fef-80c1-4f490d62b68d
-entity_type: element
-entity_ref: softwarefilters_aecba9276ce8.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SoftwareFilters
-status: pending
-created_at: '2026-03-29T19:53:53.259743+00:00'

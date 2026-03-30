@@ -1,0 +1,9 @@
+id: d738ddd6-d22c-4aa4-b4ce-dc95cd6386cd
+entity_type: element
+entity_ref: pharmaceuticaldoseregimen_b71869f29d47.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PharmaceuticalDoseRegimen
+status: pending
+created_at: '2026-03-30T00:29:00.995008+00:00'

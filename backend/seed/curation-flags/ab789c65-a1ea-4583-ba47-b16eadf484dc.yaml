@@ -1,9 +1,0 @@
-id: ab789c65-a1ea-4583-ba47-b16eadf484dc
-entity_type: element
-entity_ref: alleletype_9edbea247052.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: alleleType
-status: pending
-created_at: '2026-03-29T19:53:57.530617+00:00'

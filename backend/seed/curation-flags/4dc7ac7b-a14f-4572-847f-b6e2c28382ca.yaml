@@ -1,0 +1,9 @@
+id: 4dc7ac7b-a14f-4572-847f-b6e2c28382ca
+entity_type: element
+entity_ref: reference_images_03243f345fd5.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: reference_images
+status: pending
+created_at: '2026-03-30T00:29:08.827013+00:00'

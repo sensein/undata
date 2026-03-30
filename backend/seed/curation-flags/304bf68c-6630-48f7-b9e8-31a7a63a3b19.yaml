@@ -1,0 +1,9 @@
+id: 304bf68c-6630-48f7-b9e8-31a7a63a3b19
+entity_type: value
+entity_ref: .bdf_9ac34cd7a03e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: bdf
+status: pending
+created_at: '2026-03-30T00:29:01.115147+00:00'

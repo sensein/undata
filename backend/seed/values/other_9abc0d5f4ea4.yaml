@@ -1,0 +1,14 @@
+semantic:
+  value_type: categorical
+  label: other
+provenance:
+- source: bids
+  class_: ''
+  name: Other
+- source: bids
+  class_: ''
+  name: other
+- source: bids
+  class_: ''
+  name: OTHER
+sha256: 9abc0d5f4ea4842c2531210f0dc25c323ba94d17860e9b57c067030645b9cf05

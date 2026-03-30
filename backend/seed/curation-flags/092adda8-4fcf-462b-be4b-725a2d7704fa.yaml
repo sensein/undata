@@ -1,0 +1,9 @@
+id: 092adda8-4fcf-462b-be4b-725a2d7704fa
+entity_type: element
+entity_ref: pharmaceuticaldosetime_54b51ca6fd52.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PharmaceuticalDoseTime
+status: pending
+created_at: '2026-03-30T00:29:00.995548+00:00'

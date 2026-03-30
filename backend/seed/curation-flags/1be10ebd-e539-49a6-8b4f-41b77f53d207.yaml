@@ -1,9 +1,0 @@
-id: 1be10ebd-e539-49a6-8b4f-41b77f53d207
-entity_type: value
-entity_ref: fluo_f6f538d5e893.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: FLUO
-status: pending
-created_at: '2026-03-29T19:53:53.409489+00:00'

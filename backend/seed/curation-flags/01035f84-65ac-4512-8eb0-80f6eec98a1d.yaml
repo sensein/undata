@@ -1,0 +1,9 @@
+id: 01035f84-65ac-4512-8eb0-80f6eec98a1d
+entity_type: value
+entity_ref: nirscwamplitude_186aa2a05290.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NIRSCWAMPLITUDE
+status: pending
+created_at: '2026-03-30T00:29:01.253056+00:00'

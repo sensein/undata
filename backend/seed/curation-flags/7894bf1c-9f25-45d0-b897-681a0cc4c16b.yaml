@@ -1,0 +1,9 @@
+id: 7894bf1c-9f25-45d0-b897-681a0cc4c16b
+entity_type: element
+entity_ref: digitizedlandmarks_435b2c2f2e49.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DigitizedLandmarks
+status: pending
+created_at: '2026-03-30T00:29:08.560861+00:00'

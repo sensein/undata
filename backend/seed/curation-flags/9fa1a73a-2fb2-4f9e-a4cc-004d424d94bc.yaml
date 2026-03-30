@@ -1,9 +1,0 @@
-id: 9fa1a73a-2fb2-4f9e-a4cc-004d424d94bc
-entity_type: value
-entity_ref: headshape_9c895c9665ac.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: headshape
-status: pending
-created_at: '2026-03-29T19:53:58.190384+00:00'

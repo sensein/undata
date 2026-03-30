@@ -1,0 +1,15 @@
+run_id: a7cfec9a-ed1
+source: bids
+started_at: '2026-03-30T00:29:01.866189+00:00'
+completed_at: '2026-03-30T00:29:01.866238+00:00'
+entity_counts:
+  extract:
+    elements: 585
+    schemas: 214
+    values: 670
+    valuesets: 7
+curation_flags:
+  low_confidence: 1469
+timing:
+  extract: 1.5819101333618164
+  commit: 2.7665412425994873

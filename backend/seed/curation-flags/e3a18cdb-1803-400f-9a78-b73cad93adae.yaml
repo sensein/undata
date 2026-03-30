@@ -1,0 +1,9 @@
+id: e3a18cdb-1803-400f-9a78-b73cad93adae
+entity_type: element
+entity_ref: gestational_age_6ba3a0800f02.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: gestational_age
+status: pending
+created_at: '2026-03-30T00:29:08.622447+00:00'

@@ -1,9 +1,0 @@
-id: f1e9b501-b47f-437e-a242-267ed3cb580b
-entity_type: element
-entity_ref: dosecalibrationfactor_1dd6c9b61947.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: DoseCalibrationFactor
-status: pending
-created_at: '2026-03-29T19:53:53.019820+00:00'

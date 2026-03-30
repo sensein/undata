@@ -1,0 +1,9 @@
+id: c3ebef27-8ed7-4cb0-89e5-26d889a6a6ea
+entity_type: element
+entity_ref: ecogchannelcount_b542b1b0d16e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ECOGChannelCount
+status: pending
+created_at: '2026-03-30T00:29:08.571040+00:00'

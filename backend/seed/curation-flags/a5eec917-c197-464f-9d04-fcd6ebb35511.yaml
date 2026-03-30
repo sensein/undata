@@ -1,0 +1,9 @@
+id: a5eec917-c197-464f-9d04-fcd6ebb35511
+entity_type: value
+entity_ref: mag_c17d78e3a8c2.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: magnitude
+status: pending
+created_at: '2026-03-30T00:29:09.152638+00:00'

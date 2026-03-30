@@ -1,0 +1,9 @@
+id: 3c3d70d0-f066-4f29-bc8c-02d99ef85a32
+entity_type: element
+entity_ref: miscchannelcount_b668741c3c04.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MiscChannelCount
+status: pending
+created_at: '2026-03-30T00:29:08.738276+00:00'

@@ -1,0 +1,9 @@
+id: 536c8622-142f-416e-8661-791952eec63f
+entity_type: schema
+entity_ref: bareasset_3230c1ad4c62.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: BareAsset
+status: pending
+created_at: '2026-03-30T00:29:09.271359+00:00'

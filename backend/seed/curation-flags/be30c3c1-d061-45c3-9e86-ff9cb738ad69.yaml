@@ -1,0 +1,9 @@
+id: be30c3c1-d061-45c3-9e86-ff9cb738ad69
+entity_type: element
+entity_ref: emission_lambda_12724320ed81.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: emission_lambda
+status: pending
+created_at: '2026-03-30T00:29:03.813899+00:00'

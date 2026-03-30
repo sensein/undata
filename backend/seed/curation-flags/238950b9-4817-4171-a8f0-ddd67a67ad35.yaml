@@ -1,9 +1,0 @@
-id: 238950b9-4817-4171-a8f0-ddd67a67ad35
-entity_type: element
-entity_ref: used_c7b22e6c3870.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: used
-status: pending
-created_at: '2026-03-29T19:53:58.029663+00:00'

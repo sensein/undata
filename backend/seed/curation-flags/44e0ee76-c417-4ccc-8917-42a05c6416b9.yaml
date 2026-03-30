@@ -1,0 +1,9 @@
+id: 44e0ee76-c417-4ccc-8917-42a05c6416b9
+entity_type: element
+entity_ref: velchannelcount_b3ed589488de.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: VELChannelCount
+status: pending
+created_at: '2026-03-30T00:29:01.100647+00:00'

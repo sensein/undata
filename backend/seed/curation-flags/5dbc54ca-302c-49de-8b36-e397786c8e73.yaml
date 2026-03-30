@@ -1,0 +1,9 @@
+id: 5dbc54ca-302c-49de-8b36-e397786c8e73
+entity_type: element
+entity_ref: y__optodes_efaf4330d848.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: y__optodes
+status: pending
+created_at: '2026-03-30T00:29:01.110219+00:00'

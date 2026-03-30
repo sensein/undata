@@ -1,0 +1,9 @@
+id: 86bbcad5-81a2-41d6-ba2b-14920f33142f
+entity_type: element
+entity_ref: acquisitionvoxelsize_06d7489ac0a7.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AcquisitionVoxelSize
+status: pending
+created_at: '2026-03-30T00:29:08.456562+00:00'

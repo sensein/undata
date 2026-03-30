@@ -1,0 +1,9 @@
+id: 37e453e3-85c3-437b-a854-55159e2b03dc
+entity_type: element
+entity_ref: samplesecondaryantibody_26172b02d5ec.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SampleSecondaryAntibody
+status: pending
+created_at: '2026-03-30T00:29:04.003774+00:00'

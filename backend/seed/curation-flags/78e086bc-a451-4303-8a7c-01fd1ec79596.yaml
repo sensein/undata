@@ -1,0 +1,9 @@
+id: 78e086bc-a451-4303-8a7c-01fd1ec79596
+entity_type: schema
+entity_ref: timeintervals_4a26ea099acf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TimeIntervals
+status: pending
+created_at: '2026-03-30T00:29:04.474419+00:00'

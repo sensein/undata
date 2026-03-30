@@ -1,9 +1,0 @@
-id: a640fa88-f8e5-42d5-b92e-b224df24abec
-entity_type: value
-entity_ref: sr_3afe8bd10087.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SR
-status: pending
-created_at: '2026-03-29T19:53:50.550250+00:00'

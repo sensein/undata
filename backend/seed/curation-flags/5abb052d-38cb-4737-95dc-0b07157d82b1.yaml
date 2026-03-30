@@ -1,0 +1,9 @@
+id: 5abb052d-38cb-4737-95dc-0b07157d82b1
+entity_type: element
+entity_ref: nwbdatainterface_f15c14e29a53.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NWBDataInterface
+status: pending
+created_at: '2026-03-30T00:29:03.940594+00:00'

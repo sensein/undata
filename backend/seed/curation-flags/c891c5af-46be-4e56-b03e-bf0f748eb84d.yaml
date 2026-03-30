@@ -1,9 +1,0 @@
-id: c891c5af-46be-4e56-b03e-bf0f748eb84d
-entity_type: value
-entity_ref: in_vitro_b11f03df0f54.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: in vitro
-status: pending
-created_at: '2026-03-29T19:53:58.196322+00:00'

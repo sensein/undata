@@ -1,0 +1,9 @@
+id: b81c9567-edda-42f9-9eb5-36101e6b9c6f
+entity_type: value
+entity_ref: sysclock_d8ff889b1fc1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SYSCLOCK
+status: pending
+created_at: '2026-03-30T00:29:09.232185+00:00'

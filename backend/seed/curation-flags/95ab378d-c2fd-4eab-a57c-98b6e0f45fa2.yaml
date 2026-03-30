@@ -1,0 +1,9 @@
+id: 95ab378d-c2fd-4eab-a57c-98b6e0f45fa2
+entity_type: element
+entity_ref: plasmafreefraction_63627d6efe5c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PlasmaFreeFraction
+status: pending
+created_at: '2026-03-30T00:29:01.002659+00:00'

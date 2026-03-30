@@ -1,0 +1,9 @@
+id: c02a67d4-f50a-4f12-a25b-9f017a36ea6d
+entity_type: value
+entity_ref: k-_ee1793114394.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: k-
+status: pending
+created_at: '2026-03-30T00:29:01.216676+00:00'

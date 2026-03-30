@@ -1,0 +1,11 @@
+semantic:
+  value_type: categorical
+  label: measured
+provenance:
+- source: bids
+  class_: ''
+  name: Measured
+- source: bids
+  class_: ''
+  name: measured
+sha256: 8e42bbb30313f14ba787b825e438c791030723cf1ac219fcfaf89b1f9c4e79f6

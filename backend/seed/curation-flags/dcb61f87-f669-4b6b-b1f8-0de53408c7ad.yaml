@@ -1,0 +1,9 @@
+id: dcb61f87-f669-4b6b-b1f8-0de53408c7ad
+entity_type: schema
+entity_ref: deidentificationmethod_8e324eb3d13d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DeidentificationMethod
+status: pending
+created_at: '2026-03-30T00:29:01.344166+00:00'

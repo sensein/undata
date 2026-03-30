@@ -1,9 +1,0 @@
-id: 1c993247-3b43-4d4e-866c-b8b8e0c250b5
-entity_type: element
-entity_ref: trigger_06650423de15.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: trigger
-status: pending
-created_at: '2026-03-29T19:53:58.011863+00:00'

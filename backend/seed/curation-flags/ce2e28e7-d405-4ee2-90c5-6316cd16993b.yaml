@@ -1,9 +1,0 @@
-id: ce2e28e7-d405-4ee2-90c5-6316cd16993b
-entity_type: element
-entity_ref: inversiontime_fda398cc7066.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: InversionTime
-status: pending
-created_at: '2026-03-29T19:53:57.758224+00:00'

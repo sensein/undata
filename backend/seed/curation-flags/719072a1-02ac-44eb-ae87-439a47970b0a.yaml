@@ -1,9 +1,0 @@
-id: 719072a1-02ac-44eb-ae87-439a47970b0a
-entity_type: value
-entity_ref: in_vivo_9e36743c491b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: in_vivo
-status: pending
-created_at: '2026-03-29T19:53:58.197655+00:00'

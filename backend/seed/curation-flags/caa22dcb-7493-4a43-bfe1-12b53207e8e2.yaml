@@ -1,0 +1,9 @@
+id: caa22dcb-7493-4a43-bfe1-12b53207e8e2
+entity_type: element
+entity_ref: repetitiontimeexcitation_943c18e69dad.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: RepetitionTimeExcitation
+status: pending
+created_at: '2026-03-30T00:29:03.986716+00:00'

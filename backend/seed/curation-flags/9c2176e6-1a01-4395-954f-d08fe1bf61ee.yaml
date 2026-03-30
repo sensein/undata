@@ -1,9 +1,0 @@
-id: 9c2176e6-1a01-4395-954f-d08fe1bf61ee
-entity_type: element
-entity_ref: megcoordinateunits_e35bb6a299f2.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MEGCoordinateUnits
-status: pending
-created_at: '2026-03-29T19:53:53.137708+00:00'

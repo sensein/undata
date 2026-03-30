@@ -1,9 +1,0 @@
-id: c909975f-9afb-459e-bfd6-5b8e153e1737
-entity_type: schema
-entity_ref: izeroclampseries_c39e2a67eee6.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: IZeroClampSeries
-status: pending
-created_at: '2026-03-29T19:53:53.604582+00:00'

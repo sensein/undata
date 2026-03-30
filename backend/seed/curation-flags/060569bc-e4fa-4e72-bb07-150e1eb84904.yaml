@@ -1,0 +1,9 @@
+id: 060569bc-e4fa-4e72-bb07-150e1eb84904
+entity_type: value
+entity_ref: .nii_a2596ec9a840.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: nii
+status: pending
+created_at: '2026-03-30T00:29:09.012596+00:00'

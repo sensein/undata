@@ -1,0 +1,9 @@
+id: 4c9dd7bd-d324-4f1c-9b5c-d8c5d05a4d3c
+entity_type: element
+entity_ref: pulsesequencetype_1d91749600f0.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PulseSequenceType
+status: pending
+created_at: '2026-03-30T00:29:01.008292+00:00'

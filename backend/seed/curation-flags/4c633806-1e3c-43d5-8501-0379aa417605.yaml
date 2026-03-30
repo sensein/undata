@@ -1,9 +1,0 @@
-id: 4c633806-1e3c-43d5-8501-0379aa417605
-entity_type: schema
-entity_ref: events_sidecar_668f222f9d87.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: events_sidecar
-status: pending
-created_at: '2026-03-29T19:53:50.609132+00:00'

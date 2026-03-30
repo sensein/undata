@@ -1,0 +1,9 @@
+id: 5088da35-a8ce-4baf-9767-86a66099b0fb
+entity_type: value
+entity_ref: sinc_5eb6dc084839.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SINC
+status: pending
+created_at: '2026-03-30T00:29:09.223719+00:00'

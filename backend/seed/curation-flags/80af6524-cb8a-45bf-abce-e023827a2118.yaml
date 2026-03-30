@@ -1,9 +1,0 @@
-id: 80af6524-cb8a-45bf-abce-e023827a2118
-entity_type: element
-entity_ref: vendor_fa47a9fa3c68.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: vendor
-status: pending
-created_at: '2026-03-29T19:53:58.034202+00:00'

@@ -1,0 +1,9 @@
+id: 19b276dc-3f39-428c-8270-e3f352dbca70
+entity_type: element
+entity_ref: mtstate_f18f0ec7ff8e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MTState
+status: pending
+created_at: '2026-03-30T00:29:00.967563+00:00'

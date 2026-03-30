@@ -1,0 +1,9 @@
+id: c7af8dfa-8b0c-4a6b-bacd-edfc458aacb0
+entity_type: element
+entity_ref: code_7a4083e21bc3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Code
+status: pending
+created_at: '2026-03-30T00:29:08.506818+00:00'

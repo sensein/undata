@@ -1,9 +1,0 @@
-id: ed8803d0-f898-4174-acb8-c67d44d5624f
-entity_type: value
-entity_ref: gaze-in-world_f295570e722d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: gaze-in-world
-status: pending
-created_at: '2026-03-29T19:53:50.447240+00:00'

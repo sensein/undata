@@ -1,0 +1,9 @@
+id: 8692dab9-1b21-4ca5-afa4-6e1a1ae92b85
+entity_type: element
+entity_ref: blooddensity_370e08ea937c.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: BloodDensity
+status: pending
+created_at: '2026-03-30T00:29:03.734701+00:00'

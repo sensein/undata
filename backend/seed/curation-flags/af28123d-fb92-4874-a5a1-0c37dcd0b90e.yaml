@@ -1,9 +1,0 @@
-id: af28123d-fb92-4874-a5a1-0c37dcd0b90e
-entity_type: element
-entity_ref: manual_f4c99d17a1bd.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Manual
-status: pending
-created_at: '2026-03-29T19:53:53.125111+00:00'

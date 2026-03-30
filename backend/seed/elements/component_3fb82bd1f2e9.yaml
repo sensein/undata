@@ -1,0 +1,41 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: x
+    label: x
+    ontology_term: https://schema.undata.live/values/d9225cae-a09e-4463-b8b2-f54991a41b2b
+  - value: y
+    label: y
+    ontology_term: https://schema.undata.live/values/cefd848d-9052-47f6-8eba-f3ace66e8322
+  - value: z
+    label: z
+    ontology_term: https://schema.undata.live/values/e68a6c19-7409-490b-a588-24d9c109b14f
+  - value: quat_x
+    label: quat_x
+    ontology_term: https://schema.undata.live/values/05ddb43a-be30-4c13-a119-a7141a3a9898
+  - value: quat_y
+    label: quat_y
+    ontology_term: https://schema.undata.live/values/f0f33c94-17da-4ac6-a875-a036acb655e1
+  - value: quat_z
+    label: quat_z
+    ontology_term: https://schema.undata.live/values/6ad542bb-521a-4f44-8acc-418d21171320
+  - value: quat_w
+    label: quat_w
+    ontology_term: https://schema.undata.live/values/d0097d82-3f4c-477f-8579-11a388cd9674
+  value_domain: categorical
+provenance:
+- source: bids
+  class: columns
+  name: component
+  description: 'Description of the spatial axis or label of quaternion component associated
+    with the channel.
+
+    For example, `x`,`y`,`z` for position channels,
+
+    or `quat_x`, `quat_y`, `quat_z`, `quat_w` for quaternion orientation channels.
+
+    '
+  generated_at: '2026-03-30T00:28:57.008136+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3fb82bd1f2e93b3ae974d9e62bdea158f1f955dc0aebe41fd987d6c95d1d8b79

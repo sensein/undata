@@ -1,9 +1,0 @@
-id: eaca827c-9965-4043-941b-d37b001d1f05
-entity_type: schema
-entity_ref: pet_bloodmetabolite_a9a1116894f7.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: pet_BloodMetabolite
-status: pending
-created_at: '2026-03-29T19:53:50.672461+00:00'

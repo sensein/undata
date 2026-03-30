@@ -1,9 +1,0 @@
-id: e3126649-de5f-4a3a-b970-40422ef95ea2
-entity_type: schema
-entity_ref: currentclampstimulusseries_7ca5ca50d296.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CurrentClampStimulusSeries
-status: pending
-created_at: '2026-03-29T19:53:53.565769+00:00'

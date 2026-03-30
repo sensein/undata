@@ -1,0 +1,9 @@
+id: 8bc896b6-82d0-4bf1-bbc1-6a82b943e357
+entity_type: value
+entity_ref: veog_58faa18788cb.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: VEOG
+status: pending
+created_at: '2026-03-30T00:29:01.329313+00:00'

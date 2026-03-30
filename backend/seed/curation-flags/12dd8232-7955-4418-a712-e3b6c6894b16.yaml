@@ -1,9 +1,0 @@
-id: 12dd8232-7955-4418-a712-e3b6c6894b16
-entity_type: element
-entity_ref: headstabilization_e8083297d920.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: HeadStabilization
-status: pending
-created_at: '2026-03-29T19:53:57.698878+00:00'

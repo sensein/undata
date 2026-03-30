@@ -1,0 +1,9 @@
+id: ec0356aa-f34f-4058-ac9c-a22666b55e29
+entity_type: value
+entity_ref: dcite_text_21ae78b165db.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:Text
+status: pending
+created_at: '2026-03-30T00:29:09.093799+00:00'

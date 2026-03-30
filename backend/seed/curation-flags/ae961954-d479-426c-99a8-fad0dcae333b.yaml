@@ -1,0 +1,9 @@
+id: ae961954-d479-426c-99a8-fad0dcae333b
+entity_type: value
+entity_ref: nm_aba8e2c16203.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: nm
+status: pending
+created_at: '2026-03-30T00:29:09.184269+00:00'

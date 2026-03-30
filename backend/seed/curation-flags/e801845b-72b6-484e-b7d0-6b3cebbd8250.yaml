@@ -1,0 +1,9 @@
+id: e801845b-72b6-484e-b7d0-6b3cebbd8250
+entity_type: value
+entity_ref: bad_232dc807eb2b.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: bad
+status: pending
+created_at: '2026-03-30T00:29:04.133359+00:00'

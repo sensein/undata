@@ -1,9 +1,0 @@
-id: 1eecae66-4bde-4a2a-81ac-9f87b48f7bf9
-entity_type: element
-entity_ref: contrastbolusingredient_a4133e5707d9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ContrastBolusIngredient
-status: pending
-created_at: '2026-03-29T19:53:52.989718+00:00'

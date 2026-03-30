@@ -1,9 +1,0 @@
-id: 64a18322-bfc2-46ee-a494-e000d2f150e7
-entity_type: value
-entity_ref: amniotic_fluid_078214faafee.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: amniotic_fluid
-status: pending
-created_at: '2026-03-29T19:53:58.084001+00:00'

@@ -1,0 +1,9 @@
+id: 22d73412-6734-4203-9e7c-04c24f34dc3b
+entity_type: value
+entity_ref: magnitude_047a8d115ae3.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: magnitude
+status: pending
+created_at: '2026-03-30T00:29:04.224010+00:00'

@@ -1,9 +1,0 @@
-id: c680bc43-2323-4023-b14a-4f642405379a
-entity_type: element
-entity_ref: disorder_fa7c0d82ea76.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: disorder
-status: pending
-created_at: '2026-03-29T19:53:57.626874+00:00'

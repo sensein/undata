@@ -1,0 +1,9 @@
+id: 2bbddbb7-98a1-4a30-8560-a8756381c242
+entity_type: schema
+entity_ref: entitiesresmetadata_098f64c5a50e.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: EntitiesResMetadata
+status: pending
+created_at: '2026-03-30T00:29:09.303566+00:00'

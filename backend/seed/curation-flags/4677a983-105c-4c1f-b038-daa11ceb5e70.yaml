@@ -1,0 +1,9 @@
+id: 4677a983-105c-4c1f-b038-daa11ceb5e70
+entity_type: element
+entity_ref: tubingtype_29ae198bbe97.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: TubingType
+status: pending
+created_at: '2026-03-30T00:29:08.956060+00:00'

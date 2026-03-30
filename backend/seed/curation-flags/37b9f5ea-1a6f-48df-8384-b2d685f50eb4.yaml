@@ -1,9 +1,0 @@
-id: 37b9f5ea-1a6f-48df-8384-b2d685f50eb4
-entity_type: schema
-entity_ref: nirs_nirschannels_367c521cb36f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: nirs_nirsChannels
-status: pending
-created_at: '2026-03-29T19:53:50.667836+00:00'

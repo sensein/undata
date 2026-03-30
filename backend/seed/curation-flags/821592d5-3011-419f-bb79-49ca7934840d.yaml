@@ -1,0 +1,9 @@
+id: 821592d5-3011-419f-bb79-49ca7934840d
+entity_type: element
+entity_ref: skinpreparation_b4869880c387.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: SkinPreparation
+status: pending
+created_at: '2026-03-30T00:29:04.024338+00:00'

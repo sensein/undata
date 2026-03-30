@@ -1,0 +1,9 @@
+id: 6a5432ef-107d-47da-94cc-c23cc3bdd36d
+entity_type: schema
+entity_ref: nirsbase_e52b4e3728c1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NirsBase
+status: pending
+created_at: '2026-03-30T00:29:04.444486+00:00'

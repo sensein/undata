@@ -1,9 +1,0 @@
-id: 1215f40a-c620-49c6-8cfb-11e252fa3ead
-entity_type: schema
-entity_ref: equipment_6917167fc0f6.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Equipment
-status: pending
-created_at: '2026-03-29T19:53:58.365753+00:00'

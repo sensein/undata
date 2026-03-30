@@ -1,9 +1,0 @@
-id: bfb98f75-96e0-4d80-aa31-3838ce692728
-entity_type: element
-entity_ref: infusionradioactivity_3a7b6f14dee4.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: InfusionRadioactivity
-status: pending
-created_at: '2026-03-29T19:53:57.746777+00:00'

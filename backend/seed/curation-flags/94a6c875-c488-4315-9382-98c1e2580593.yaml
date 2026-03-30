@@ -1,9 +1,0 @@
-id: 94a6c875-c488-4315-9382-98c1e2580593
-entity_type: element
-entity_ref: shortchannelcount_8610dada6180.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ShortChannelCount
-status: pending
-created_at: '2026-03-29T19:53:53.252325+00:00'

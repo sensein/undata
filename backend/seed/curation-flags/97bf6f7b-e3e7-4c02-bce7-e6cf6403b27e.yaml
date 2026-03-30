@@ -1,0 +1,9 @@
+id: 97bf6f7b-e3e7-4c02-bce7-e6cf6403b27e
+entity_type: element
+entity_ref: intensity_53df5141d246.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: intensity
+status: pending
+created_at: '2026-03-30T00:29:03.878047+00:00'

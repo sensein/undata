@@ -1,0 +1,9 @@
+id: 36bf78f5-a55e-414c-8ffd-0d21dd9c4167
+entity_type: value
+entity_ref: 2d_efc0c403e493.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: 2D
+status: pending
+created_at: '2026-03-30T00:29:09.020405+00:00'

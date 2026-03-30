@@ -1,0 +1,9 @@
+id: 74b04ff7-e8bc-454d-851f-245fdfe27ab3
+entity_type: element
+entity_ref: dewarposition_38541c24ed07.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: DewarPosition
+status: pending
+created_at: '2026-03-30T00:29:08.551774+00:00'

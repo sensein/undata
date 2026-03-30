@@ -1,0 +1,9 @@
+id: af879f95-a8b0-4319-a75c-a5a8075ceab6
+entity_type: value
+entity_ref: double-coil_4f3fad7ca5c7.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: double_coil
+status: pending
+created_at: '2026-03-30T00:29:04.163444+00:00'

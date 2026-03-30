@@ -1,0 +1,9 @@
+id: 6b05e5ed-f587-4ed0-9a33-32d1125aa3ee
+entity_type: value
+entity_ref: dcite_isreferencedby_22e7eec19a1d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: dcite:IsReferencedBy
+status: pending
+created_at: '2026-03-30T00:29:09.079653+00:00'

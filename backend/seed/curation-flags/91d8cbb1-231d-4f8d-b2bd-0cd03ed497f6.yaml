@@ -1,9 +1,0 @@
-id: 91d8cbb1-231d-4f8d-b2bd-0cd03ed497f6
-entity_type: schema
-entity_ref: intracellularelectrode_e41919aa6b6c.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: IntracellularElectrode
-status: pending
-created_at: '2026-03-29T19:53:53.602013+00:00'

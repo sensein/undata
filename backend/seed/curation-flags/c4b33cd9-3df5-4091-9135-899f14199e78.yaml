@@ -1,0 +1,9 @@
+id: c4b33cd9-3df5-4091-9135-899f14199e78
+entity_type: schema
+entity_ref: mriaslcommonmetadatafieldsvascularcrushingopt_7e5869e406c1.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MRIASLCommonMetadataFieldsVascularCrushingOpt
+status: pending
+created_at: '2026-03-30T00:29:09.358159+00:00'

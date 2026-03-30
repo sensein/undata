@@ -1,0 +1,9 @@
+id: 7d54e453-b4c5-44b6-b6d7-39ddab73f253
+entity_type: element
+entity_ref: intervals_0338b40fef92.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: intervals
+status: pending
+created_at: '2026-03-30T00:29:03.879525+00:00'

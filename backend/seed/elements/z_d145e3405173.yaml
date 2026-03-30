@@ -6,7 +6,7 @@ provenance:
   name: z
   description: z coordinate of the channel location in the brain (+z is right). Units
     should be specified in microns.
-  generated_at: '2026-03-29T19:53:51.699572+00:00'
+  generated_at: '2026-03-30T00:29:02.454785+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: d145e34051730c79776a4e9b9a093b25d0e221c3efc6496c05d39709138beb5e

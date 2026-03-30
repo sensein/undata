@@ -1,9 +1,0 @@
-id: 9e8ab048-ac38-4e7e-b481-65a954b2157e
-entity_type: element
-entity_ref: numberreceivecoilactiveelements_5deabd7f2140.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: NumberReceiveCoilActiveElements
-status: pending
-created_at: '2026-03-29T19:53:53.169628+00:00'

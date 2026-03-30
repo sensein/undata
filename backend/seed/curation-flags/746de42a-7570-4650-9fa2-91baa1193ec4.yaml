@@ -1,9 +1,0 @@
-id: 746de42a-7570-4650-9fa2-91baa1193ec4
-entity_type: schema
-entity_ref: physiohardware_5ff709b0a062.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PhysioHardware
-status: pending
-created_at: '2026-03-29T19:53:53.676667+00:00'

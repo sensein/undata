@@ -1,0 +1,9 @@
+id: ca14df9a-2359-47db-9a2c-de72c1c7747a
+entity_type: value
+entity_ref: .txt_cf03ca382a78.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: txt
+status: pending
+created_at: '2026-03-30T00:29:04.121177+00:00'

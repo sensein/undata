@@ -1,0 +1,9 @@
+id: 997c042b-7ff4-4d5a-b474-b370bdefcb5f
+entity_type: value
+entity_ref: megrefgradaxial_78e65f9b252a.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MEGREFGRADAXIAL
+status: pending
+created_at: '2026-03-30T00:29:01.232083+00:00'

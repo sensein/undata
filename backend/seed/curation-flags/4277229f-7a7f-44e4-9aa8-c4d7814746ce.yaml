@@ -1,0 +1,9 @@
+id: 4277229f-7a7f-44e4-9aa8-c4d7814746ce
+entity_type: value
+entity_ref: quat_x_b780c7af55a9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: quat_x
+status: pending
+created_at: '2026-03-30T00:29:09.207623+00:00'

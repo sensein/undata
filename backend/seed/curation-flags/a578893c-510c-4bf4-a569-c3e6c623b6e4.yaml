@@ -1,9 +1,0 @@
-id: a578893c-510c-4bf4-a569-c3e6c623b6e4
-entity_type: value
-entity_ref: conf_39aa87e14c1a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CONF
-status: pending
-created_at: '2026-03-29T19:53:50.408665+00:00'

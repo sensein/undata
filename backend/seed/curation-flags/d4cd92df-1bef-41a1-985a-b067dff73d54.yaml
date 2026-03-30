@@ -1,9 +1,0 @@
-id: d4cd92df-1bef-41a1-985a-b067dff73d54
-entity_type: value
-entity_ref: pupil_5c29d9542a91.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PUPIL
-status: pending
-created_at: '2026-03-29T19:53:50.529276+00:00'

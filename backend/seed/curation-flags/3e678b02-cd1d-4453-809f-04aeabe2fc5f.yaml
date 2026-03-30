@@ -1,0 +1,9 @@
+id: 3e678b02-cd1d-4453-809f-04aeabe2fc5f
+entity_type: value
+entity_ref: lesion_5f31bb2c34c7.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Lesion
+status: pending
+created_at: '2026-03-30T00:29:01.221838+00:00'

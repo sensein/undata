@@ -1,0 +1,9 @@
+id: c8a10301-bf53-4c6b-8b6a-251b0f5f0a48
+entity_type: schema
+entity_ref: microscopyhardware_2c9ea4547c62.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: MicroscopyHardware
+status: pending
+created_at: '2026-03-30T00:29:09.346008+00:00'

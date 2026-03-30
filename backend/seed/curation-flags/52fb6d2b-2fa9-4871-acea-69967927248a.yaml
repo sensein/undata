@@ -1,0 +1,9 @@
+id: 52fb6d2b-2fa9-4871-acea-69967927248a
+entity_type: element
+entity_ref: pixelsize_3c5f70e989aa.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PixelSize
+status: pending
+created_at: '2026-03-30T00:29:08.798527+00:00'

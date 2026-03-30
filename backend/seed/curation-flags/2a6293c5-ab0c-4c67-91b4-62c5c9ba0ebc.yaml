@@ -1,9 +1,0 @@
-id: 2a6293c5-ab0c-4c67-91b4-62c5c9ba0ebc
-entity_type: schema
-entity_ref: measurementtechniquetype_a4d1167cfc38.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MeasurementTechniqueType
-status: pending
-created_at: '2026-03-29T19:53:58.387975+00:00'

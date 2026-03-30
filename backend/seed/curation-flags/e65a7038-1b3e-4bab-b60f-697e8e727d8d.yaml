@@ -1,0 +1,9 @@
+id: e65a7038-1b3e-4bab-b60f-697e8e727d8d
+entity_type: value
+entity_ref: .ome.zarr__842edf4b56a8.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: OMEZARR
+status: pending
+created_at: '2026-03-30T00:29:01.125010+00:00'

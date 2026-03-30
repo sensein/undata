@@ -1,9 +1,0 @@
-id: ed714d89-e95c-43a9-abb6-6ea8fbbde6e7
-entity_type: schema
-entity_ref: planesegmentation_94a38ae36b7a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PlaneSegmentation
-status: pending
-created_at: '2026-03-29T19:53:53.677883+00:00'

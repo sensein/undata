@@ -1,0 +1,9 @@
+id: 93824c98-dccb-490d-87ed-cdc8030fcbff
+entity_type: element
+entity_ref: b0shimmingtechnique_7cd9938c5bbb.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: B0ShimmingTechnique
+status: pending
+created_at: '2026-03-30T00:29:03.729200+00:00'

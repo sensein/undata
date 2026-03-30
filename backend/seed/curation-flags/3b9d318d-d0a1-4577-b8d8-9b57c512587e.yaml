@@ -1,0 +1,9 @@
+id: 3b9d318d-d0a1-4577-b8d8-9b57c512587e
+entity_type: value
+entity_ref: percent_f8ca61aa72d9.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: percent
+status: pending
+created_at: '2026-03-30T00:29:04.267492+00:00'

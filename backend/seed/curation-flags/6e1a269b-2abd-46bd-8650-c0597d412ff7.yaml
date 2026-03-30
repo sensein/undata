@@ -1,9 +1,0 @@
-id: 6e1a269b-2abd-46bd-8650-c0597d412ff7
-entity_type: value
-entity_ref: tb1srge_2d50e52069e9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TB1SRGE
-status: pending
-created_at: '2026-03-29T19:53:58.299524+00:00'

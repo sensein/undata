@@ -1,0 +1,9 @@
+id: 28be6451-f6af-4283-b8d0-4da8f5cae8cf
+entity_type: element
+entity_ref: receivecoilactiveelements_1db404ebf743.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ReceiveCoilActiveElements
+status: pending
+created_at: '2026-03-30T00:29:01.011491+00:00'

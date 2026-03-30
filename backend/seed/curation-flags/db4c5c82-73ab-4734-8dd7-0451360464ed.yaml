@@ -1,0 +1,9 @@
+id: db4c5c82-73ab-4734-8dd7-0451360464ed
+entity_type: value
+entity_ref: gausshann_afab5890706d.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: GAUSSHANN
+status: pending
+created_at: '2026-03-30T00:29:01.195394+00:00'

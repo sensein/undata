@@ -1,0 +1,9 @@
+id: 70a0c671-d6d8-41d8-b0f1-f061e3b4d423
+entity_type: element
+entity_ref: pasltype_8a42354528cf.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PASLType
+status: pending
+created_at: '2026-03-30T00:29:03.950941+00:00'

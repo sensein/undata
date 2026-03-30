@@ -1,0 +1,9 @@
+id: c8109427-b412-4a34-8b92-a6cf9a53576a
+entity_type: schema
+entity_ref: electrophys_sidecar_31fe3c618177.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: electrophys_sidecar
+status: pending
+created_at: '2026-03-30T00:29:04.356648+00:00'

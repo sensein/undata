@@ -1,0 +1,9 @@
+id: 779f5479-59bf-4f91-81c8-1c2c164db3d1
+entity_type: value
+entity_ref: ecog_6ee4688f7fdd.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ECOG
+status: pending
+created_at: '2026-03-30T00:29:01.173508+00:00'

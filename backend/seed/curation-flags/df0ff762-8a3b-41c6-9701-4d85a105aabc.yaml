@@ -1,0 +1,9 @@
+id: df0ff762-8a3b-41c6-9701-4d85a105aabc
+entity_type: schema
+entity_ref: agent_fe17bf9aadfe.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Agent
+status: pending
+created_at: '2026-03-30T00:29:09.265160+00:00'

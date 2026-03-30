@@ -1,0 +1,9 @@
+id: 9af1776c-9d21-48d6-897e-12fcbfc87371
+entity_type: element
+entity_ref: cardiac_e8da61eeffb6.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: cardiac
+status: pending
+created_at: '2026-03-30T00:29:08.498795+00:00'

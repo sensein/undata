@@ -1,0 +1,9 @@
+id: 2488e2ce-5dbf-4566-b837-f6381e08811a
+entity_type: element
+entity_ref: labelingpulseduration_4b7d3454aeea.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: LabelingPulseDuration
+status: pending
+created_at: '2026-03-30T00:29:00.934694+00:00'

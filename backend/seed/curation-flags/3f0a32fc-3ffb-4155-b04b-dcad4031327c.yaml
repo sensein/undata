@@ -1,0 +1,9 @@
+id: 3f0a32fc-3ffb-4155-b04b-dcad4031327c
+entity_type: schema
+entity_ref: allele_1bc16ca684ab.yaml
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: Allele
+status: pending
+created_at: '2026-03-30T00:29:09.265625+00:00'
