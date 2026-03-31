@@ -90,10 +90,8 @@ def test_source_meta_has_checksum(store, sample_ttl):
 
 def test_dicom_ttl_generation():
     """DICOM TTL generator produces valid terms."""
-    try:
-        from undata_library.adapters.standalone_scripts.dicom_to_ttl import generate_dicom_ttl
-    except ImportError:
-        pytest.skip("pydicom not installed")
+    pytest.importorskip("pydicom", reason="pydicom not installed")
+    from undata_library.adapters.standalone_scripts.dicom_to_ttl import generate_dicom_ttl
 
     tmp = Path(tempfile.mktemp(suffix=".ttl"))
     try:
