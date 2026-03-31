@@ -13,7 +13,12 @@ import logging
 from pathlib import Path
 from typing import Any
 
+from ..models import SourceRef
 from .base import BaseAdapter, ClassifiedEntity
+
+_DEFAULT_REF = SourceRef(
+    repo="https://github.com/ReproNim/reproschema-library", committish="", file="", checksum=""
+)
 
 logger = logging.getLogger(__name__)
 
@@ -142,6 +147,7 @@ class ReproSchemaAdapter(BaseAdapter):
                         "description": str(activity_desc)[:500] if activity_desc else None,
                     },
                     confidence=0.9,
+                    source_ref=_DEFAULT_REF,
                 )
             )
 
@@ -202,6 +208,7 @@ class ReproSchemaAdapter(BaseAdapter):
                             "description": str(description or question)[:500] or None,
                         },
                         confidence=0.85,
+                        source_ref=_DEFAULT_REF,
                     )
                 )
 

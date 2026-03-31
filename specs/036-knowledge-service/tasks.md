@@ -47,7 +47,7 @@
 - [X] T010 [P] [US1] Create DICOM TTL generator — extract all tags from pydicom.datadict, generate TTL with URIs in library/src/undata_library/adapters/standalone_scripts/dicom_to_ttl.py
 - [X] T011 [P] [US1] Add RadLex ontology config — OWL URL registered in DOMAIN_ONTOLOGIES in library/src/undata_library/ontology_fetch.py
 - [ ] T012 [US1] Re-run enrichment on BIDS+NWB+DANDI elements with expanded ontology store, then assert annotated_count/total_count > 0.40 via `undata-library ontology info` and `validate-ingestion` in library/src/undata_library/enrich.py
-- [ ] T013 [US1] Add unit test verifying ontology term counts after loading all 4 new sources in library/tests/test_ontology_sources.py
+- [X] T013 [US1] Add unit test verifying ontology term counts after loading all 4 new sources in library/tests/test_ontology_sources.py
 - [ ] T013a [US1] Add coverage regression test — assert enrichment produces annotations for >40% of elements, fails if coverage drops below threshold in library/tests/test_enrichment_coverage.py
 
 **Checkpoint**: Ontology store has >50K new terms; enrichment coverage exceeds 40%
@@ -63,8 +63,8 @@
 - [X] T014 [US2] Implement OpenNeuro adapter — datalad clone, scan for all TSV/CSV files, read JSON sidecars for column descriptions, extract elements with data types inferred from values in library/src/undata_library/adapters/openneuro.py
 - [X] T015 [US2] Implement ReproSchema adapter — parse activity JSON-LD as schemas (CLASS), item JSON-LD as elements (ATTRIBUTE), response options as valuesets in library/src/undata_library/adapters/reproschema.py
 - [X] T016 [US2] Register openneuro and reproschema adapters in library/src/undata_library/adapters/registry.py
-- [ ] T017 [US2] Add unit tests for OpenNeuro adapter with a mock dataset structure in library/tests/test_openneuro_adapter.py
-- [ ] T018 [US2] Add unit tests for ReproSchema adapter with sample activity/item files in library/tests/test_reproschema_adapter.py
+- [X] T017 [US2] Add unit tests for OpenNeuro adapter with a mock dataset structure in library/tests/test_openneuro_adapter.py
+- [X] T018 [US2] Add unit tests for ReproSchema adapter with sample activity/item files in library/tests/test_reproschema_adapter.py
 - [ ] T019 [US2] Test full pipeline: ingest ds000228 from OpenNeuro, verify elements extracted from participants.tsv and phenotype/*.tsv
 
 **Checkpoint**: OpenNeuro and ReproSchema adapters produce valid entities

@@ -15,7 +15,12 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
+from ..models import SourceRef
 from .base import BaseAdapter, ClassifiedEntity
+
+_DEFAULT_REF = SourceRef(
+    repo="https://github.com/OpenNeuroDatasets", committish="", file="", checksum=""
+)
 
 logger = logging.getLogger(__name__)
 
@@ -178,6 +183,7 @@ class OpenNeuroAdapter(BaseAdapter):
                                     "description": description[:500] if description else None,
                                 },
                                 confidence=0.8,
+                                source_ref=_DEFAULT_REF,
                             )
                         )
 
