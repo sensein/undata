@@ -215,21 +215,38 @@ class OntologyStore:
         return 0
 
     def list_loaded(self) -> list[dict]:
-        """List loaded ontologies with metadata."""
+        """List loaded ontologies with metadata. Deduplicates by ontology name."""
         sparql = (
-            f"SELECT ?ont ?loaded_at WHERE {{ "
+            f"SELECT DISTINCT ?ont ?loaded_at ?checksum ?fmt ?tc WHERE {{ "
             f"GRAPH <http://schema.undata.live/ontology-meta> {{ "
             f'?ont <{_UNDATA_LOADED}> "true" . '
             f"OPTIONAL {{ ?ont <{_UNDATA_LOADED_AT}> ?loaded_at }} "
+            f"OPTIONAL {{ ?ont <{self._UNDATA_CHECKSUM}> ?checksum }} "
+            f"OPTIONAL {{ ?ont <{self._UNDATA_FORMAT}> ?fmt }} "
+            f"OPTIONAL {{ ?ont <{self._UNDATA_TERM_COUNT}> ?tc }} "
             f"}} }}"
         )
+        seen: set[str] = set()
         results = []
         for row in self.store.query(sparql):
             ont_uri = _val(row[0])
             name = ont_uri.rsplit("/", 1)[-1]
+            if name in seen:
+                continue
+            seen.add(name)
             loaded_at = _val(row[1]) if row[1] else None
-            count = self.term_count(name)
-            results.append({"name": name, "term_count": count, "loaded_at": loaded_at})
+            checksum = _val(row[2]) if row[2] else None
+            fmt = _val(row[3]) if row[3] else None
+            tc = int(_val(row[4])) if row[4] else self.term_count(name)
+            results.append(
+                {
+                    "name": name,
+                    "term_count": tc,
+                    "loaded_at": loaded_at,
+                    "checksum": checksum,
+                    "format": fmt,
+                }
+            )
         return results
 
     def get_ancestors(self, term_uri: str, max_depth: int = 3) -> list[str]:
@@ -291,6 +308,131 @@ class OntologyStore:
                 graph,
             )
         )
+
+    # ------------------------------------------------------------------
+    # Source management (added for knowledge service)
+    # ------------------------------------------------------------------
+
+    _UNDATA_CHECKSUM = "http://schema.undata.live/ontology-meta/checksum"
+    _UNDATA_FORMAT = "http://schema.undata.live/ontology-meta/format"
+    _UNDATA_TERM_COUNT = "http://schema.undata.live/ontology-meta/termCount"
+
+    def _compute_checksum(self, path: Path) -> str:
+        """Compute SHA-256 checksum of a file."""
+        import hashlib
+
+        h = hashlib.sha256()
+        with open(path, "rb") as f:
+            for chunk in iter(lambda: f.read(65536), b""):
+                h.update(chunk)
+        return h.hexdigest()
+
+    def _get_source_meta(self, name: str) -> dict | None:
+        """Read metadata for a named ontology source from its meta graph."""
+        ont_uri = f"http://schema.undata.live/ontology/{name}"
+        meta_graph = pyoxigraph.NamedNode("http://schema.undata.live/ontology-meta")
+        sparql = (
+            f"SELECT ?loaded ?loaded_at ?checksum ?fmt ?tc "
+            f"FROM <{meta_graph.value}> WHERE {{ "
+            f"<{ont_uri}> <{_UNDATA_LOADED}> ?loaded . "
+            f"OPTIONAL {{ <{ont_uri}> <{_UNDATA_LOADED_AT}> ?loaded_at }} "
+            f"OPTIONAL {{ <{ont_uri}> <{self._UNDATA_CHECKSUM}> ?checksum }} "
+            f"OPTIONAL {{ <{ont_uri}> <{self._UNDATA_FORMAT}> ?fmt }} "
+            f"OPTIONAL {{ <{ont_uri}> <{self._UNDATA_TERM_COUNT}> ?tc }} "
+            f"}} LIMIT 1"
+        )
+        for row in self.store.query(sparql):
+            return {
+                "loaded": _val(row[0]) if row[0] else None,
+                "loaded_at": _val(row[1]) if row[1] else None,
+                "checksum": _val(row[2]) if row[2] else None,
+                "format": _val(row[3]) if row[3] else None,
+                "term_count": int(_val(row[4])) if row[4] else 0,
+            }
+        return None
+
+    def _set_source_meta(self, name: str, checksum: str, fmt: str, term_count: int) -> str:
+        """Write (or overwrite) metadata for a named ontology source. Returns timestamp."""
+        meta_graph = pyoxigraph.NamedNode("http://schema.undata.live/ontology-meta")
+        ont_uri = f"http://schema.undata.live/ontology/{name}"
+        now = datetime.now(timezone.utc).isoformat()
+
+        # Clear previous metadata for this source
+        try:
+            self.store.update(
+                f"DELETE WHERE {{ GRAPH <{meta_graph.value}> {{ <{ont_uri}> ?p ?o }} }}"
+            )
+        except Exception:
+            pass
+
+        # Write fresh metadata
+        self._add_triple(ont_uri, _UNDATA_LOADED, "true", meta_graph)
+        self._add_triple(ont_uri, _UNDATA_LOADED_AT, now, meta_graph)
+        self._add_triple(ont_uri, self._UNDATA_CHECKSUM, checksum, meta_graph)
+        self._add_triple(ont_uri, self._UNDATA_FORMAT, fmt, meta_graph)
+        self._add_triple(ont_uri, self._UNDATA_TERM_COUNT, str(term_count), meta_graph)
+        return now
+
+    def add_source(
+        self,
+        name: str,
+        path: Path,
+        fmt: str = "owl",
+    ) -> dict:
+        """Add an ontology source — load from file and return metadata.
+
+        Idempotent: if the file checksum matches a previously loaded version,
+        skips reloading and returns the existing metadata. Each source gets
+        its own named graph; reloading clears the graph first.
+
+        Supported formats: owl, obo, ttl, nt.
+        """
+        checksum = self._compute_checksum(path)
+
+        # Check if already loaded with same checksum
+        existing = self._get_source_meta(name)
+        if existing and existing.get("checksum") == checksum:
+            logger.info("Ontology %s already loaded (checksum match), skipping", name)
+            return {
+                "name": name,
+                "term_count": existing.get("term_count", 0),
+                "loaded_at": existing.get("loaded_at", ""),
+                "format": existing.get("format", fmt),
+                "checksum": checksum,
+                "skipped": True,
+            }
+
+        # Clear existing graph before (re)loading
+        graph_uri = f"http://schema.undata.live/ontology/{name}"
+        try:
+            self.store.update(f"CLEAR GRAPH <{graph_uri}>")
+        except Exception:
+            pass
+
+        # Load the ontology
+        fmt_lower = fmt.lower()
+        if fmt_lower == "obo":
+            count = self.load_obo(name, path)
+        elif fmt_lower in ("owl", "ttl", "nt", "application/rdf+xml", "text/turtle"):
+            count = self.load_rdf(name, path, fmt=fmt_lower)
+        else:
+            raise ValueError(f"Unsupported ontology format: {fmt}")
+
+        # Record metadata (overwrites previous entry for this source)
+        now = self._set_source_meta(name, checksum, fmt, count)
+
+        logger.info("Added ontology source %s: %d terms (checksum: %s)", name, count, checksum[:12])
+        return {
+            "name": name,
+            "term_count": count,
+            "loaded_at": now,
+            "format": fmt,
+            "checksum": checksum,
+        }
+
+    def refresh_source(self, name: str, path: Path, fmt: str = "owl") -> dict:
+        """Re-load an existing ontology source. Same as add_source (idempotent)."""
+        return self.add_source(name, path, fmt)
 
 
 def build_vector_index(

@@ -350,6 +350,22 @@ export const SCHEMAS_USING_ELEMENT = gql`
   }
 `;
 
+export const ONTOLOGY_SOURCES = gql`
+  query OntologySources($active: Boolean) {
+    ontologySources(active: $active) {
+      id
+      name
+      displayName
+      url
+      format
+      termCount
+      active
+      lastRefreshedAt
+      createdAt
+    }
+  }
+`;
+
 export const TRANSFORMS_FOR_ELEMENT = gql`
   query TransformsForElement($sha256: String!, $first: Int = 50) {
     transformsForElement(sha256: $sha256, first: $first) {
@@ -359,11 +375,46 @@ export const TRANSFORMS_FOR_ELEMENT = gql`
   }
 `;
 
+export const INGESTION_QUEUE = gql`
+  query IngestionQueue($status: String, $first: Int = 50) {
+    ingestionQueue(status: $status, first: $first) {
+      id
+      repositoryUrl
+      adapterType
+      status
+      autoApproved
+      entityCounts
+      errorMessage
+      approvedBy
+      startedAt
+      completedAt
+      createdAt
+    }
+  }
+`;
+
 export const FLAGS_FOR_ENTITY = gql`
   query FlagsForEntity($entityType: String!, $entityRef: String!, $first: Int = 50) {
     flagsForEntity(entityType: $entityType, entityRef: $entityRef, first: $first) {
       edges { node { id flagType status context createdAt } }
       totalCount
+    }
+  }
+`;
+
+export const ENRICHMENT_PROPOSALS = gql`
+  query EnrichmentProposals($entityType: String, $entityRef: String, $status: String, $first: Int = 50) {
+    enrichmentProposals(entityType: $entityType, entityRef: $entityRef, status: $status, first: $first) {
+      id
+      entityType
+      entityRef
+      proposalType
+      proposedValue
+      reasoning
+      confidence
+      status
+      reviewedBy
+      createdAt
     }
   }
 `;

@@ -20,6 +20,8 @@ _BUILTIN_ADAPTERS: dict[str, str] = {
     "linkml": "undata_library.adapters.linkml:LinkMLAdapter",
     "csv": "undata_library.adapters.csv_dictionary:CSVDictionaryAdapter",
     "code-repo": "undata_library.adapters.code_repo:CodeRepoAdapter",
+    "openneuro": "undata_library.adapters.openneuro:OpenNeuroAdapter",
+    "reproschema": "undata_library.adapters.reproschema:ReproSchemaAdapter",
 }
 
 # File extension → adapter name for auto-detection

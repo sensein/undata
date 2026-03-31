@@ -404,6 +404,32 @@ def ontology_refresh(ontology: str | None, output_dir: str | None, exclude: tupl
         click.echo(f"  Vector index failed: {exc}")
 
 
+@ontology_group.command("add")
+@click.option(
+    "--name", "-n", required=True, help="Short name for the ontology (e.g., homba, radlex)"
+)
+@click.option("--url", "-u", required=True, help="Download URL or local file path")
+@click.option("--format", "-f", "fmt", default="owl", help="Format: owl, obo, ttl, nt")
+@click.option("--display-name", default=None, help="Human-readable display name")
+def ontology_add(name: str, url: str, fmt: str, display_name: str | None) -> None:
+    """Add a new ontology source to the store."""
+    from .ontology_store import OntologyStore
+
+    store = OntologyStore(get_ontology_store_path())
+    path = Path(url)
+
+    if path.exists():
+        # Local file
+        result = store.add_source(name, path, fmt=fmt)
+    else:
+        # Remote URL — download first
+        from .ontology_fetch import fetch_and_load_source
+
+        result = fetch_and_load_source(name, url, fmt, store)
+
+    click.echo(f"Added {name}: {result['term_count']} terms loaded.")
+
+
 @ontology_group.command("search")
 @click.argument("query")
 @click.option("--ontology", "-o", default=None, help="Filter by ontology")

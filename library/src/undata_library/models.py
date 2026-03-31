@@ -443,3 +443,26 @@ class ValidationReport(BaseModel):
     valid: bool
     path: str
     violations: list[ValidationViolation] = Field(default_factory=list)
+
+
+# ---------------------------------------------------------------------------
+# Knowledge Service (036)
+# ---------------------------------------------------------------------------
+
+
+class OntologySourceConfig(BaseModel):
+    """Configuration for a registered ontology source."""
+
+    name: str
+    display_name: str
+    url: str
+    format: str  # owl, obo, ttl, json-ld, pydicom
+    active: bool = True
+
+
+class IngestionJobConfig(BaseModel):
+    """Configuration for a queued ingestion job."""
+
+    repository_url: str
+    adapter_type: str | None = None  # auto-detected if None
+    auto_approved: bool = False

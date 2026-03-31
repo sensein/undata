@@ -34,6 +34,8 @@ class Element(Base):
     semantic: Mapped[dict] = mapped_column(JSONB, default=dict)
     provenance: Mapped[list] = mapped_column(JSONB, default=list)
     ontology_annotations: Mapped[list] = mapped_column(JSONB, default=list)
+    curated_annotations: Mapped[list | None] = mapped_column(JSONB, nullable=True)  # Curator-approved annotations (protected from re-enrichment)
+    superseded_by: Mapped[str | None] = mapped_column(String, nullable=True)  # sha256 of newer version
     embedding = Column(Vector(384), nullable=True) if Vector else None
     search_tsv = Column(TSVECTOR, nullable=True)
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
@@ -192,6 +194,69 @@ class Transform(Base):
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
     semantic: Mapped[dict] = mapped_column(JSONB, default=dict)
     provenance: Mapped[list] = mapped_column(JSONB, default=list)
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+
+
+class AuditLog(Base):
+    """W3C PROV-O style audit trail for all mutations."""
+
+    __tablename__ = "audit_log"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    activity: Mapped[str] = mapped_column(String, index=True)  # create, update, delete, approve, reject, enrich, ingest, version
+    agent: Mapped[str] = mapped_column(String, index=True)  # user email/name or "system"
+    agent_type: Mapped[str] = mapped_column(String)  # "user" or "system"
+    entity_type: Mapped[str] = mapped_column(String, index=True)
+    entity_ref: Mapped[str] = mapped_column(String, index=True)
+    generated_entity_ref: Mapped[str | None] = mapped_column(String, nullable=True)
+    details: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+
+
+class OntologySource(Base):
+    __tablename__ = "ontology_sources"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    name: Mapped[str] = mapped_column(String, unique=True, index=True)
+    display_name: Mapped[str] = mapped_column(String)
+    url: Mapped[str] = mapped_column(String)
+    format: Mapped[str] = mapped_column(String)  # owl, obo, ttl, json-ld, pydicom
+    term_count: Mapped[int] = mapped_column(default=0)
+    active: Mapped[bool] = mapped_column(Boolean, default=True)
+    last_refreshed_at = mapped_column(TIMESTAMP, nullable=True)
+    checksum: Mapped[str | None] = mapped_column(String, nullable=True)
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+
+
+class IngestionJob(Base):
+    __tablename__ = "ingestion_jobs"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    repository_url: Mapped[str] = mapped_column(String, index=True)
+    adapter_type: Mapped[str] = mapped_column(String)
+    status: Mapped[str] = mapped_column(String, index=True, server_default=text("'pending'"))
+    auto_approved: Mapped[bool] = mapped_column(Boolean, default=False)
+    entity_counts: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+    error_message: Mapped[str | None] = mapped_column(Text, nullable=True)
+    approved_by: Mapped[str | None] = mapped_column(String, nullable=True)
+    started_at = mapped_column(TIMESTAMP, nullable=True)
+    completed_at = mapped_column(TIMESTAMP, nullable=True)
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+
+
+class LLMEnrichmentProposal(Base):
+    __tablename__ = "llm_enrichment_proposals"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    entity_type: Mapped[str] = mapped_column(String, index=True)
+    entity_ref: Mapped[str] = mapped_column(String, index=True)
+    proposal_type: Mapped[str] = mapped_column(String)  # ontology_annotation, unit_correction, description, alignment
+    proposed_value: Mapped[dict] = mapped_column(JSONB, default=dict)
+    reasoning: Mapped[str | None] = mapped_column(Text, nullable=True)
+    confidence: Mapped[float | None] = mapped_column(Float, nullable=True)
+    status: Mapped[str] = mapped_column(String, index=True, server_default=text("'pending'"))
+    reviewed_by: Mapped[str | None] = mapped_column(String, nullable=True)
+    reviewed_at = mapped_column(TIMESTAMP, nullable=True)
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
 
 

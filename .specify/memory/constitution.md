@@ -275,6 +275,24 @@ merged. The following rules apply:
 but fails in CI introduces regressions for all collaborators. Enforcing green
 CI before merge prevents broken main branches and ensures reproducibility.
 
+### Merge Before New Spec (NON-NEGOTIABLE)
+
+Feature branches MUST be merged to main before starting a new feature
+specification. The following rules apply:
+
+- **No orphan branches**: A feature branch that has completed implementation
+  and passed CI MUST be merged to main before `/speckit.specify` creates a
+  new branch for the next feature.
+- **Specs on main**: The `specs/` directory on main MUST reflect all completed
+  work. Unmerged specs are invisible to future feature planning and analysis.
+- **Sequential completion**: If multiple features are in flight, merge them in
+  dependency order before starting dependent features.
+
+**Rationale**: Unmerged branches create invisible state — future specs can't
+reference work that only exists on branches. Merging keeps main as the single
+source of truth for project state and ensures the speckit lifecycle
+(specify→plan→tasks→implement) operates on complete context.
+
 ### Evaluation Record
 
 Pipeline runs, extraction results, and quality metrics MUST be recorded in

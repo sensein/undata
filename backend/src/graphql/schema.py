@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import Optional
 
 import strawberry
+from strawberry.scalars import JSON
 
 from fastapi import HTTPException
 
@@ -163,6 +164,27 @@ class Query:
         async with AsyncSessionLocal() as session:
             return await r.resolve_latest_run(session, source)
 
+    @strawberry.field
+    async def ontology_sources(self, active: Optional[bool] = None) -> list[t.OntologySourceType]:
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_ontology_sources(session, active)
+
+    @strawberry.field
+    async def ingestion_queue(self, status: Optional[str] = None, first: int = 50) -> list[t.IngestionJobType]:
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_ingestion_queue(session, status, first)
+
+    @strawberry.field
+    async def enrichment_proposals(
+        self,
+        entity_type: Optional[str] = None,
+        entity_ref: Optional[str] = None,
+        status: Optional[str] = None,
+        first: int = 50,
+    ) -> list[t.LLMEnrichmentProposalType]:
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_enrichment_proposals(session, entity_type, entity_ref, status, first)
+
 
 @strawberry.type
 class Mutation:
@@ -208,6 +230,39 @@ class Mutation:
         )
         async with AsyncSessionLocal() as session:
             result = await r.resolve_submit_contribution(session, input_with_user)
+            await session.commit()
+            return result
+
+    @strawberry.mutation
+    async def approve_annotation(
+        self,
+        info: strawberry.types.Info,
+        entity_sha256: str,
+        annotation_index: int,
+    ) -> t.Element:
+        """Approve an ontology annotation — moves it to curated_annotations (protected from re-enrichment)."""
+        user = await _require_auth(info, "curator")
+        async with AsyncSessionLocal() as session:
+            result = await r.resolve_approve_annotation(
+                session, entity_sha256, annotation_index, user.get("name", "unknown")
+            )
+            await session.commit()
+            return result
+
+    @strawberry.mutation
+    async def reject_annotation(
+        self,
+        info: strawberry.types.Info,
+        entity_sha256: str,
+        annotation_index: int,
+        reason: Optional[str] = None,
+    ) -> t.Element:
+        """Reject an ontology annotation — removes it and records the rejection."""
+        user = await _require_auth(info, "curator")
+        async with AsyncSessionLocal() as session:
+            result = await r.resolve_reject_annotation(
+                session, entity_sha256, annotation_index, user.get("name", "unknown"), reason
+            )
             await session.commit()
             return result
 
@@ -275,6 +330,86 @@ class Mutation:
                 raise ValueError(f"Value {sha256} not found")
             await session.commit()
             return r._value_from_row(row)
+
+    # --- T022: Element Versioning ---
+
+    @strawberry.mutation
+    async def version_element(
+        self,
+        info: strawberry.types.Info,
+        sha256: str,
+        changes: JSON,
+        reason: Optional[str] = None,
+    ) -> t.Element:
+        """Create a new version of an element with changed semantic fields.
+
+        Recomputes sha256, marks old as superseded, creates a curation_update Transform.
+        """
+        user = await _require_auth(info, "curator")
+        curator = user.get("name", user.get("sub", "unknown"))
+        async with AsyncSessionLocal() as session:
+            result = await r.resolve_version_element(session, sha256, changes, curator)
+            await session.commit()
+            return result
+
+    # --- T034-T035: Ingestion Approval/Rejection ---
+
+    @strawberry.mutation
+    async def approve_ingestion(self, info: strawberry.types.Info, id: strawberry.ID) -> t.IngestionJobType:
+        """Approve an ingestion job — sets status to 'approved' and records approver."""
+        user = await _require_auth(info, "curator")
+        approver = user.get("name", user.get("sub", "unknown"))
+        async with AsyncSessionLocal() as session:
+            result = await r.resolve_approve_ingestion(session, str(id), approver)
+            await session.commit()
+            return result
+
+    @strawberry.mutation
+    async def reject_ingestion(
+        self,
+        info: strawberry.types.Info,
+        id: strawberry.ID,
+        reason: Optional[str] = None,
+    ) -> t.IngestionJobType:
+        """Reject an ingestion job — sets status to 'rejected' and records reason."""
+        user = await _require_auth(info, "curator")
+        rejector = user.get("name", user.get("sub", "unknown"))
+        async with AsyncSessionLocal() as session:
+            result = await r.resolve_reject_ingestion(session, str(id), rejector, reason)
+            await session.commit()
+            return result
+
+    # --- T039-T040: Enrichment Request & Proposal Review ---
+
+    @strawberry.mutation
+    async def request_enrichment(
+        self,
+        info: strawberry.types.Info,
+        entity_type: str,
+        entity_ref: str,
+    ) -> t.LLMEnrichmentProposalType:
+        """Request LLM enrichment for an entity — calls suggest_ontology_annotation."""
+        await _require_auth(info, "curator")
+        async with AsyncSessionLocal() as session:
+            result = await r.resolve_request_enrichment(session, entity_type, entity_ref)
+            await session.commit()
+            return result
+
+    @strawberry.mutation
+    async def review_proposal(
+        self,
+        info: strawberry.types.Info,
+        id: strawberry.ID,
+        decision: str,
+        reason: Optional[str] = None,
+    ) -> t.LLMEnrichmentProposalType:
+        """Approve or reject an LLM enrichment proposal."""
+        user = await _require_auth(info, "curator")
+        reviewer = user.get("name", user.get("sub", "unknown"))
+        async with AsyncSessionLocal() as session:
+            result = await r.resolve_review_proposal(session, str(id), decision, reviewer, reason)
+            await session.commit()
+            return result
 
 
 schema = strawberry.Schema(query=Query, mutation=Mutation)
