@@ -7,8 +7,6 @@ store to be populated (skipped if not available).
 
 from __future__ import annotations
 
-import os
-import tempfile
 from pathlib import Path
 
 import pytest
@@ -24,25 +22,43 @@ def sample_elements(tmp_path):
     samples = [
         {"name": "age", "data_type": "float", "desc": "Age of the participant in years"},
         {"name": "sex", "data_type": "string", "desc": "Biological sex of the participant"},
-        {"name": "EchoTime", "data_type": "float", "desc": "The echo time of the MRI sequence in seconds"},
-        {"name": "RepetitionTime", "data_type": "float", "desc": "The repetition time of the MRI pulse sequence"},
-        {"name": "FlipAngle", "data_type": "float", "desc": "Flip angle for the MRI acquisition in degrees"},
+        {
+            "name": "EchoTime",
+            "data_type": "float",
+            "desc": "The echo time of the MRI sequence in seconds",
+        },
+        {
+            "name": "RepetitionTime",
+            "data_type": "float",
+            "desc": "The repetition time of the MRI pulse sequence",
+        },
+        {
+            "name": "FlipAngle",
+            "data_type": "float",
+            "desc": "Flip angle for the MRI acquisition in degrees",
+        },
         {"name": "brain_region", "data_type": "string", "desc": "Brain region of interest"},
         {"name": "electrode_count", "data_type": "integer", "desc": "Number of electrodes used"},
         {"name": "sampling_rate", "data_type": "float", "desc": "Sampling rate in hertz"},
         {"name": "species", "data_type": "string", "desc": "Species of the subject"},
-        {"name": "diagnosis", "data_type": "string", "desc": "Clinical diagnosis of the participant"},
+        {
+            "name": "diagnosis",
+            "data_type": "string",
+            "desc": "Clinical diagnosis of the participant",
+        },
     ]
 
     for s in samples:
         data = {
             "semantic": {"data_type": s["data_type"]},
-            "provenance": [{
-                "source": "test",
-                "class": "test",
-                "name": s["name"],
-                "description": s["desc"],
-            }],
+            "provenance": [
+                {
+                    "source": "test",
+                    "class": "test",
+                    "name": s["name"],
+                    "description": s["desc"],
+                }
+            ],
         }
         fname = f"{s['name']}_test.yaml"
         (elements_dir / fname).write_text(yaml.dump(data), encoding="utf-8")
@@ -93,7 +109,11 @@ def test_curated_annotations_not_overwritten(sample_elements):
     age_file = elements_dir / "age_test.yaml"
     data = yaml.safe_load(age_file.read_text())
     data["curated_annotations"] = [
-        {"term_uri": "http://example.org/curated", "term_label": "Curated Age", "approved_by": "test"}
+        {
+            "term_uri": "http://example.org/curated",
+            "term_label": "Curated Age",
+            "approved_by": "test",
+        }
     ]
     age_file.write_text(yaml.dump(data))
 

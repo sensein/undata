@@ -24,11 +24,13 @@ def _create_mock_dataset(tmp_path: Path) -> Path:
 
     # participants.json (sidecar)
     (ds / "participants.json").write_text(
-        json.dumps({
-            "age": {"Description": "Age of participant in years", "Units": "years"},
-            "sex": {"Description": "Biological sex", "Levels": {"M": "male", "F": "female"}},
-            "handedness": {"Description": "Handedness", "Levels": {"R": "right", "L": "left"}},
-        }),
+        json.dumps(
+            {
+                "age": {"Description": "Age of participant in years", "Units": "years"},
+                "sex": {"Description": "Biological sex", "Levels": {"M": "male", "F": "female"}},
+                "handedness": {"Description": "Handedness", "Levels": {"R": "right", "L": "left"}},
+            }
+        ),
         encoding="utf-8",
     )
 
@@ -36,9 +38,7 @@ def _create_mock_dataset(tmp_path: Path) -> Path:
     pheno = ds / "phenotype"
     pheno.mkdir()
     (pheno / "iq.tsv").write_text(
-        "participant_id\tiq_score\tiq_type\n"
-        "sub-01\t115\tWASI\n"
-        "sub-02\t120\tWASI\n",
+        "participant_id\tiq_score\tiq_type\nsub-01\t115\tWASI\nsub-02\t120\tWASI\n",
         encoding="utf-8",
     )
 

@@ -18,48 +18,56 @@ def _create_mock_library(tmp_path: Path) -> Path:
 
     # Activity schema
     (act_dir / "PHQ9_schema").write_text(
-        json.dumps({
-            "@context": "https://raw.githubusercontent.com/ReproNim/reproschema/master/contexts/generic",
-            "@type": "reproschema:Activity",
-            "description": {"en": "Patient Health Questionnaire-9"},
-            "ui": {"order": ["phq9_1", "phq9_2", "phq9_total"]},
-        }),
+        json.dumps(
+            {
+                "@context": "https://raw.githubusercontent.com/ReproNim/reproschema/master/contexts/generic",
+                "@type": "reproschema:Activity",
+                "description": {"en": "Patient Health Questionnaire-9"},
+                "ui": {"order": ["phq9_1", "phq9_2", "phq9_total"]},
+            }
+        ),
         encoding="utf-8",
     )
 
     # Items
     (items_dir / "phq9_1").write_text(
-        json.dumps({
-            "question": {"en": "Little interest or pleasure in doing things"},
-            "responseOptions": {
-                "valueType": "integer",
-                "minValue": 0,
-                "maxValue": 3,
-                "choices": [
-                    {"value": 0, "name": "Not at all"},
-                    {"value": 1, "name": "Several days"},
-                    {"value": 2, "name": "More than half the days"},
-                    {"value": 3, "name": "Nearly every day"},
-                ],
-            },
-        }),
+        json.dumps(
+            {
+                "question": {"en": "Little interest or pleasure in doing things"},
+                "responseOptions": {
+                    "valueType": "integer",
+                    "minValue": 0,
+                    "maxValue": 3,
+                    "choices": [
+                        {"value": 0, "name": "Not at all"},
+                        {"value": 1, "name": "Several days"},
+                        {"value": 2, "name": "More than half the days"},
+                        {"value": 3, "name": "Nearly every day"},
+                    ],
+                },
+            }
+        ),
         encoding="utf-8",
     )
 
     (items_dir / "phq9_2").write_text(
-        json.dumps({
-            "question": {"en": "Feeling down, depressed, or hopeless"},
-            "responseOptions": {"valueType": "integer", "minValue": 0, "maxValue": 3},
-        }),
+        json.dumps(
+            {
+                "question": {"en": "Feeling down, depressed, or hopeless"},
+                "responseOptions": {"valueType": "integer", "minValue": 0, "maxValue": 3},
+            }
+        ),
         encoding="utf-8",
     )
 
     (items_dir / "phq9_total").write_text(
-        json.dumps({
-            "question": {"en": "PHQ-9 total score"},
-            "description": {"en": "Sum of all 9 items"},
-            "responseOptions": {"valueType": "integer", "minValue": 0, "maxValue": 27},
-        }),
+        json.dumps(
+            {
+                "question": {"en": "PHQ-9 total score"},
+                "description": {"en": "Sum of all 9 items"},
+                "responseOptions": {"valueType": "integer", "minValue": 0, "maxValue": 27},
+            }
+        ),
         encoding="utf-8",
     )
 

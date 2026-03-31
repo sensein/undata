@@ -74,7 +74,7 @@ def test_list_loaded_no_duplicates(store, sample_ttl):
     store.add_source("test-onto", sample_ttl, fmt="ttl")
 
     loaded = store.list_loaded()
-    names = [l["name"] for l in loaded]
+    names = [entry["name"] for entry in loaded]
     assert len(names) == len(set(names)), f"Duplicate names: {names}"
     assert "test-onto" in names
 
