@@ -145,7 +145,7 @@ As a curator, I need the system to use LLM capabilities to improve the knowledge
 
 - **FR-001**: The ontology store MUST support loading ontologies from OWL, OBO, and TTL formats via URL or local file path.
 - **FR-002**: The system MUST integrate HoMBA (brain anatomy), NIDM (neuroimaging data model), DICOM data element dictionary, and RadLex (radiology) as ontology term sources for enrichment. ReproSchema library is a data source (see FR-004a), not an ontology — its items are ingested as registry entities via adapter, not loaded as ontology terms.
-- **FR-003**: After adding new ontologies, enrichment coverage on BIDS+NWB+DANDI elements MUST increase from the current ~10% to at least 40%.
+- **FR-003**: After adding new ontologies, high-confidence enrichment (score >0.7, exactMatch or closeMatch) on BIDS+NWB+DANDI elements MUST increase from ~3% to at least 15%. The remaining gap to 40%+ MUST be addressed via LLM-assisted enrichment (FR-016) which verifies candidates in the 0.5-0.7 range.
 - **FR-004**: The system MUST support ingesting schema descriptors from OpenNeuro datasets via datalad — scanning each dataset for all CSV/TSV files (participants.tsv, phenotype/*.tsv, etc.) and their corresponding JSON sidecars that describe columns, extracting elements from column headers with data types inferred from values.
 - **FR-004a**: The system MUST ingest schema descriptors from the ReproSchema library (activities and items) and from stats/mapping repositories containing JSON field mappings (e.g., ABCD, HCP data dictionaries).
 - **FR-005**: When multiple datasets use the same BIDS field, the existing element MUST gain additional provenance entries (merge), not create duplicate elements.
@@ -162,6 +162,8 @@ As a curator, I need the system to use LLM capabilities to improve the knowledge
 - **FR-016**: The system MUST provide LLM-powered enrichment skills: ontology mapping with reasoning, unit inference with justification, cross-source element alignment assessment, and description generation.
 - **FR-017**: LLM enrichment proposals MUST be presented as reviewable diffs — not auto-applied — unless the curator explicitly enables auto-apply for high-confidence results.
 - **FR-018**: Batch LLM enrichment MUST be supported — a curator can request enrichment of all unannotated elements from a specific source, with progress tracking.
+- **FR-019**: The backend MUST maintain an audit log recording every mutation (create, update, delete, approve, reject, enrich) as a W3C PROV-O style compact JSON-LD message — capturing who (system or user), did what activity, on what entity, and produced what entity. The audit log MUST be queryable by entity, user, activity type, and time range.
+- **FR-020**: The NCBITaxon ontology MUST be filtered to neuroscience-relevant genus, species, and subspecies only (e.g., Mus musculus, Rattus norvegicus, Macaca mulatta, Homo sapiens, Drosophila melanogaster, Danio rerio, Caenorhabditis elegans) before embedding — not the full 2.7M taxonomy.
 
 ### Key Entities
 
@@ -192,6 +194,9 @@ As a curator, I need the system to use LLM capabilities to improve the knowledge
 - Q: Should the service integrate LLM operations for knowledge improvement? → A: Yes — LLM skills for ontology mapping with reasoning, unit inference, cross-source alignment, and description generation. Proposals presented as reviewable diffs, batch mode supported.
 - Q: What additional vocabulary sources? → A: ReproSchema library (activities/items as data element definitions) and stats/mapping repos with JSON field mappings (ABCD, HCP data dictionaries).
 - Q: How to access OpenNeuro datasets? → A: Via datalad, scanning each dataset for all CSV/TSV files and corresponding JSON sidecars that describe columns, not just participants.tsv.
+- Q: Should enrichment coverage distinguish match quality? → A: Yes. High-confidence (>0.7, exactMatch/closeMatch) and low-confidence (0.5-0.7, relatedMatch/candidates) must be reported separately. The 0.5-0.7 range are candidates for LLM verification, not auto-assigned.
+- Q: Should backend have an audit log? → A: Yes. W3C PROV-O style compact JSON-LD messages recording who (system/user), activity, entity, produced entity. Queryable by entity/user/activity/time.
+- Q: Should NCBITaxon be filtered? → A: Yes. Restrict to neuroscience-relevant species (mouse, rat, macaque, human, zebrafish, fly, worm) before embedding, not full 2.7M taxonomy.
 
 ## Scope Boundaries
 

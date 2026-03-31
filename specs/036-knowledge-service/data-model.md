@@ -57,6 +57,22 @@ Tracks LLM-generated enrichment proposals for curator review.
 | reviewed_at | timestamp (nullable) | When reviewed |
 | created_at | timestamp | When proposed |
 
+### AuditLog
+
+W3C PROV-O style audit trail for all mutations.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | UUID | Primary key |
+| activity | string | "create", "update", "delete", "approve", "reject", "enrich", "ingest", "version" |
+| agent | string | User email/name or "system" |
+| agent_type | string | "user" or "system" |
+| entity_type | string | "element", "schema", "value", "valueset", "transform", "flag", "ontology_source", "ingestion_job" |
+| entity_ref | string | sha256 or ID of the affected entity |
+| generated_entity_ref | string (nullable) | sha256 or ID of the entity produced (e.g., new version) |
+| details | JSONB | Activity-specific context (changed fields, reason, etc.) |
+| created_at | timestamp | When the activity occurred |
+
 ## Modified Entities
 
 ### Element (add optional field)
