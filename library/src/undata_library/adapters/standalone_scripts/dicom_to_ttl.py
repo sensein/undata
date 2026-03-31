@@ -55,9 +55,18 @@ def generate_dicom_ttl(output_path: Path | None = None) -> str:
         safe_keyword = keyword.replace('"', '\\"')
 
         uri = f"dicom:{keyword}"
+        # Use the human-readable name as primary label for better embedding match
+        # Add keyword and tag as synonyms so both forms are searchable
+        primary_label = safe_name if safe_name else safe_keyword
         lines.append(f"{uri} a owl:Class ;")
-        lines.append(f'    rdfs:label "{safe_keyword}" ;')
-        lines.append(f'    rdfs:comment "{safe_name}" ;')
+        lines.append(f'    rdfs:label "{primary_label}" ;')
+        if safe_name != safe_keyword:
+            lines.append(
+                f'    <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "{safe_keyword}" ;'
+            )
+        lines.append(
+            f'    rdfs:comment "DICOM {tag_str} {safe_name} (keyword: {safe_keyword}, VR: {vr})" ;'
+        )
         lines.append(f'    dicom:tag "{tag_str}" ;')
         lines.append(f'    dicom:vr "{vr}" .')
         lines.append("")
