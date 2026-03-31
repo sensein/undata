@@ -412,4 +412,42 @@ class Mutation:
             return result
 
 
+    # --- T015: Export Registry ---
+
+    @strawberry.mutation
+    async def export_registry(
+        self, info: strawberry.types.Info, version: Optional[str] = None
+    ) -> t.ExportResultType:
+        """Export the full registry to YAML + embeddings."""
+        await _require_auth(info, "admin")
+        from src.core.config import settings
+        from src.services.export_service import export_full_registry
+
+        async with AsyncSessionLocal() as session:
+            result = await export_full_registry(session, settings.export_dir, version=version)
+            return t.ExportResultType(
+                version=result["version"],
+                file_path=result["file_path"],
+                file_size=result["file_size"],
+                entity_counts=result["entity_counts"],
+                manifest=result["manifest"],
+            )
+
+    # --- T025-T026: Releases ---
+
+    @strawberry.field
+    async def releases(self, release_type: Optional[str] = None) -> list[t.ReleaseType]:
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_releases(session, release_type)
+
+    @strawberry.mutation
+    async def tag_release(self, info: strawberry.types.Info, version: str) -> t.ReleaseType:
+        """Tag the latest nightly export as a versioned release."""
+        await _require_auth(info, "admin")
+        async with AsyncSessionLocal() as session:
+            result = await r.resolve_tag_release(session, version)
+            await session.commit()
+            return result
+
+
 schema = strawberry.Schema(query=Query, mutation=Mutation)

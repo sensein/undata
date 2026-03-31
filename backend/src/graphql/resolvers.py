@@ -689,6 +689,68 @@ async def resolve_enrichment_proposals(
     ]
 
 
+async def resolve_releases(
+    session: AsyncSession, release_type: str | None = None
+) -> list[t.ReleaseType]:
+    from src.db.models import Release
+
+    stmt = select(Release)
+    if release_type:
+        stmt = stmt.where(Release.release_type == release_type)
+    stmt = stmt.order_by(Release.created_at.desc())
+    rows = (await session.execute(stmt)).scalars().all()
+    return [
+        t.ReleaseType(
+            id=str(r.id),
+            version=r.version,
+            release_type=r.release_type,
+            file_path=r.file_path,
+            file_size=r.file_size,
+            entity_counts=r.entity_counts,
+            download_count=r.download_count,
+            created_at=str(r.created_at),
+        )
+        for r in rows
+    ]
+
+
+async def resolve_tag_release(session: AsyncSession, version: str) -> t.ReleaseType:
+    from src.db.models import Release
+    import uuid as _uuid
+
+    latest = (
+        await session.execute(
+            select(Release)
+            .where(Release.release_type == "nightly")
+            .order_by(Release.created_at.desc())
+            .limit(1)
+        )
+    ).scalar_one_or_none()
+    if not latest:
+        raise ValueError("No nightly release found to tag")
+
+    versioned = Release(
+        id=_uuid.uuid4(),
+        version=version,
+        release_type="versioned",
+        file_path=latest.file_path,
+        file_size=latest.file_size,
+        entity_counts=latest.entity_counts,
+    )
+    session.add(versioned)
+    await session.flush()
+    return t.ReleaseType(
+        id=str(versioned.id),
+        version=versioned.version,
+        release_type=versioned.release_type,
+        file_path=versioned.file_path,
+        file_size=versioned.file_size,
+        entity_counts=versioned.entity_counts,
+        download_count=0,
+        created_at=str(versioned.created_at) if versioned.created_at else "",
+    )
+
+
 async def resolve_approve_annotation(
     session: AsyncSession, entity_sha256: str, annotation_index: int, curator: str
 ) -> t.Element:
