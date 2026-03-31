@@ -79,7 +79,7 @@
 
 - [X] T020 [US3] Add curated_annotations JSONB field and superseded_by field to Element model in backend/src/db/models.py
 - [X] T021 [US3] Extend enrichment pipeline to skip entities with curated_annotations (do not overwrite approved annotations) in library/src/undata_library/enrich.py
-- [ ] T022 [US3] Implement element versioning — when a semantic field changes via curation, create new element with new sha256, mark old as superseded, create curation_update transform in backend/src/graphql/resolvers.py
+- [X] T022 [US3] Implement element versioning — when a semantic field changes via curation, create new element with new sha256, mark old as superseded, create curation_update transform in backend/src/graphql/resolvers.py
 - [X] T023 [US3] Add GraphQL mutations: approveAnnotation, rejectAnnotation in backend/src/graphql/schema.py
 - [ ] T023a [US3] Implement requestReEnrichment service — re-run enrichment for a single element using latest ontology store, return proposed new annotations as diff in backend/src/graphql/resolvers.py
 - [ ] T024 [US3] Add approve/reject buttons to annotation chips on element detail page in frontend/app/elements/[sha256]/page.tsx (or via EntityDetailLayout)
@@ -114,9 +114,9 @@
 - [X] T031 [US6] Implement discovery scanner — poll OpenNeuro GraphQL API and DANDI API for new datasets since last check in library/src/undata_library/discovery.py
 - [X] T032 [US6] Implement discovery background service — schedule daily scans, create IngestionJob records for discovered datasets in backend/src/services/discovery_service.py
 - [X] T033 [US6] Implement auto-ingest logic — when IngestionJob is from pre-approved source with known adapter, auto-approve and run pipeline in backend/src/services/discovery_service.py
-- [ ] T034 [US5] Add GraphQL resolvers for ingestionQueue, approveIngestion, rejectIngestion, queueIngestion in backend/src/graphql/resolvers.py
-- [ ] T035 [US5] Wire ingestion queries and mutations into GraphQL schema in backend/src/graphql/schema.py
-- [ ] T036 [US5] Add GraphQL queries for ingestion queue in frontend/graphql/queries.ts
+- [X] T034 [US5] Add GraphQL resolvers for approveIngestion, rejectIngestion in backend/src/graphql/resolvers.py
+- [X] T035 [US5] Wire ingestion mutations into GraphQL schema in backend/src/graphql/schema.py
+- [X] T036 [US5] Add GraphQL queries for ingestion queue in frontend/graphql/queries.ts (done in Phase 6)
 - [X] T037 [US5] Create ingestion queue page — table of jobs with status, adapter, entity counts, approve/reject actions in frontend/app/admin/ingestion/page.tsx
 - [ ] T038 [US5] Integrate ingestion trigger into curation chat — LLM tool "trigger_ingestion" for curator requests in backend/src/tools/enrichment_tools.py
 
@@ -130,8 +130,8 @@
 
 **Independent Test**: Ask chat "suggest better annotations for EchoTime" → LLM proposes DICOM/NIDM annotation with reasoning
 
-- [ ] T039 [US7] Add LLMEnrichmentProposal GraphQL resolvers: enrichmentProposals, requestEnrichment, batchEnrichment, reviewProposal in backend/src/graphql/resolvers.py
-- [ ] T040 [US7] Wire LLM enrichment queries and mutations into GraphQL schema in backend/src/graphql/schema.py
+- [X] T039 [US7] Add LLMEnrichmentProposal GraphQL resolvers: requestEnrichment, reviewProposal in backend/src/graphql/resolvers.py
+- [X] T040 [US7] Wire LLM enrichment mutations into GraphQL schema in backend/src/graphql/schema.py
 - [X] T041 [P] [US7] Implement suggest_ontology_annotation LLM skill — search ontology store, propose best match with reasoning in backend/src/services/enrichment_service.py
 - [X] T042 [P] [US7] Implement suggest_unit LLM skill — infer unit from name+description+context with justification in backend/src/services/enrichment_service.py
 - [ ] T043 [P] [US7] Implement assess_alignment LLM skill — compare two elements, assess if same concept or different variants in backend/src/services/enrichment_service.py

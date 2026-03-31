@@ -748,3 +748,288 @@ async def resolve_import_registry(session: AsyncSession, registry_path: str) -> 
         flags=stats.get("flags", 0),
         runs=stats.get("runs", 0),
     )
+
+
+# --- T022: Element Versioning ---
+
+
+async def resolve_version_element(
+    session: AsyncSession,
+    sha256: str,
+    changes: dict,
+    curator_name: str,
+) -> t.Element:
+    """Create a new version of an element with changed semantic fields.
+
+    - Recomputes sha256 from the updated semantic content
+    - Marks old element's superseded_by with the new sha256
+    - Creates a Transform with function_type="curation_update" linking old->new
+    - Returns the new element
+    """
+    from undata_library.hashing import canonical_json, compute_sha256
+
+    from src.db.models import Element, Transform
+
+    # Load old element
+    stmt = select(Element).where(Element.sha256.startswith(sha256)).limit(1)
+    row = (await session.execute(stmt)).scalar_one_or_none()
+    if not row:
+        raise ValueError(f"Element not found: {sha256}")
+
+    old_sha256 = row.sha256
+
+    # Build new semantic dict with changes applied
+    new_semantic = dict(row.semantic or {})
+    for field, value in changes.items():
+        if value is not None:
+            new_semantic[field] = value
+
+    # Recompute sha256 from new semantic content
+    canonical = canonical_json(new_semantic)
+    new_sha256 = compute_sha256(canonical)
+
+    if new_sha256 == old_sha256:
+        raise ValueError("No semantic change detected — new hash is identical to old hash")
+
+    # Check that new sha256 doesn't already exist
+    existing = (
+        await session.execute(select(Element).where(Element.sha256 == new_sha256).limit(1))
+    ).scalar_one_or_none()
+    if existing:
+        raise ValueError(f"Element with sha256 {new_sha256[:12]} already exists")
+
+    now_iso = datetime.now(timezone.utc).isoformat()
+
+    # Build provenance for new element — carry forward old provenance + add curation entry
+    new_provenance = list(row.provenance or [])
+    new_provenance.append({
+        "source": "curation",
+        "class": "",
+        "name": curator_name,
+        "description": f"Versioned from {old_sha256[:12]}: {', '.join(changes.keys())}",
+        "activity": "curation_update",
+        "attributed_to": curator_name,
+        "generated_at": now_iso,
+    })
+
+    # Create new element row with changed fields
+    new_row = Element(
+        sha256=new_sha256,
+        file_name=row.file_name,
+        data_type=changes.get("data_type", row.data_type),
+        unit=changes.get("unit", row.unit),
+        unit_uri=changes.get("unit_uri", row.unit_uri),
+        pattern=changes.get("pattern", row.pattern),
+        value_domain=changes.get("value_domain", row.value_domain),
+        description=changes.get("description", row.description),
+        min_value=changes.get("min_value", row.min_value),
+        max_value=changes.get("max_value", row.max_value),
+        type_ref=changes.get("type_ref", row.type_ref),
+        semantic=new_semantic,
+        provenance=new_provenance,
+        ontology_annotations=list(row.ontology_annotations or []),
+        curated_annotations=list(row.curated_annotations or []) if row.curated_annotations else None,
+    )
+    session.add(new_row)
+
+    # Mark old element as superseded
+    row.superseded_by = new_sha256
+
+    # Create a Transform linking old -> new
+    transform_semantic = {
+        "source_element": old_sha256,
+        "target_element": new_sha256,
+        "function_type": "curation_update",
+        "changes": changes,
+    }
+    transform_canonical = canonical_json(transform_semantic)
+    transform_sha256 = compute_sha256(transform_canonical)
+
+    transform = Transform(
+        sha256=transform_sha256,
+        source_element=old_sha256,
+        target_element=new_sha256,
+        function_type="curation_update",
+        description=f"Curation update by {curator_name}: {', '.join(changes.keys())}",
+        semantic=transform_semantic,
+        provenance=[{
+            "source": "curation",
+            "class": "",
+            "name": curator_name,
+            "description": f"Versioned element {old_sha256[:12]} -> {new_sha256[:12]}",
+            "activity": "curation_update",
+            "attributed_to": curator_name,
+            "generated_at": now_iso,
+        }],
+    )
+    session.add(transform)
+
+    await session.flush()
+    return _element_from_row(new_row)
+
+
+# --- T034: Ingestion Approval/Rejection ---
+
+
+def _ingestion_job_to_type(row) -> t.IngestionJobType:
+    return t.IngestionJobType(
+        id=str(row.id),
+        repository_url=row.repository_url,
+        adapter_type=row.adapter_type,
+        status=row.status,
+        auto_approved=row.auto_approved,
+        entity_counts=row.entity_counts,
+        error_message=row.error_message,
+        approved_by=row.approved_by,
+        started_at=str(row.started_at) if row.started_at else None,
+        completed_at=str(row.completed_at) if row.completed_at else None,
+        created_at=str(row.created_at),
+    )
+
+
+async def resolve_approve_ingestion(
+    session: AsyncSession,
+    job_id: str,
+    approver: str,
+) -> t.IngestionJobType:
+    """Approve an ingestion job — set status to 'approved' and record approver."""
+    from src.db.models import IngestionJob
+
+    stmt = select(IngestionJob).where(IngestionJob.id == uuid.UUID(job_id))
+    row = (await session.execute(stmt)).scalar_one_or_none()
+    if not row:
+        raise ValueError(f"Ingestion job not found: {job_id}")
+
+    if row.status not in ("pending", "completed"):
+        raise ValueError(f"Cannot approve job in status '{row.status}' — must be 'pending' or 'completed'")
+
+    row.status = "approved"
+    row.approved_by = approver
+    await session.flush()
+    return _ingestion_job_to_type(row)
+
+
+async def resolve_reject_ingestion(
+    session: AsyncSession,
+    job_id: str,
+    rejector: str,
+    reason: str | None = None,
+) -> t.IngestionJobType:
+    """Reject an ingestion job — set status to 'rejected' and record reason."""
+    from src.db.models import IngestionJob
+
+    stmt = select(IngestionJob).where(IngestionJob.id == uuid.UUID(job_id))
+    row = (await session.execute(stmt)).scalar_one_or_none()
+    if not row:
+        raise ValueError(f"Ingestion job not found: {job_id}")
+
+    if row.status not in ("pending", "completed"):
+        raise ValueError(f"Cannot reject job in status '{row.status}' — must be 'pending' or 'completed'")
+
+    row.status = "rejected"
+    row.error_message = reason or "Rejected by curator"
+    await session.flush()
+    return _ingestion_job_to_type(row)
+
+
+# --- T039-T040: Enrichment Request & Proposal Review ---
+
+
+async def resolve_request_enrichment(
+    session: AsyncSession,
+    entity_type: str,
+    entity_ref: str,
+) -> t.LLMEnrichmentProposalType:
+    """Request enrichment for an entity — calls enrichment_service.suggest_ontology_annotation."""
+    from src.services.enrichment_service import suggest_ontology_annotation
+
+    if entity_type != "element":
+        raise ValueError(f"Enrichment currently only supports entity_type='element', got '{entity_type}'")
+
+    result = await suggest_ontology_annotation(session, entity_ref)
+
+    if "error" in result:
+        raise ValueError(f"Enrichment failed: {result['error']}")
+
+    # Load the created proposal to return it
+    from src.db.models import LLMEnrichmentProposal
+
+    proposal_id = result["proposal_id"]
+    stmt = select(LLMEnrichmentProposal).where(
+        LLMEnrichmentProposal.id == uuid.UUID(proposal_id)
+    )
+    row = (await session.execute(stmt)).scalar_one_or_none()
+    if not row:
+        raise ValueError("Enrichment proposal was created but could not be loaded")
+
+    return _proposal_to_type(row)
+
+
+async def resolve_review_proposal(
+    session: AsyncSession,
+    proposal_id: str,
+    decision: str,
+    reviewer: str,
+    reason: str | None = None,
+) -> t.LLMEnrichmentProposalType:
+    """Approve or reject an LLM enrichment proposal."""
+    from src.db.models import LLMEnrichmentProposal
+
+    stmt = select(LLMEnrichmentProposal).where(
+        LLMEnrichmentProposal.id == uuid.UUID(proposal_id)
+    )
+    row = (await session.execute(stmt)).scalar_one_or_none()
+    if not row:
+        raise ValueError(f"Enrichment proposal not found: {proposal_id}")
+
+    if row.status != "pending":
+        raise ValueError(f"Proposal already resolved with status '{row.status}'")
+
+    if decision not in ("approved", "rejected"):
+        raise ValueError(f"Decision must be 'approved' or 'rejected', got '{decision}'")
+
+    now = datetime.now(timezone.utc)
+    row.status = decision
+    row.reviewed_by = reviewer
+    row.reviewed_at = now
+
+    # If approved, apply the proposed annotation to the entity
+    if decision == "approved" and row.proposal_type == "ontology_annotation":
+        from src.db.models import Element
+
+        elem_stmt = select(Element).where(Element.sha256.startswith(row.entity_ref)).limit(1)
+        elem_row = (await session.execute(elem_stmt)).scalar_one_or_none()
+        if elem_row:
+            annotations = list(elem_row.ontology_annotations or [])
+            proposed = row.proposed_value or {}
+            annotation = {
+                "term_uri": proposed.get("term_uri", ""),
+                "term_label": proposed.get("term_label", ""),
+                "ontology": proposed.get("ontology", ""),
+                "mapping_relation": proposed.get("mapping_relation", ""),
+                "match_level": "llm_enrichment",
+                "score": row.confidence or 0.0,
+                "model": "llm",
+                "primary": False,
+            }
+            annotations.append(annotation)
+            elem_row.ontology_annotations = annotations
+
+    await session.flush()
+    return _proposal_to_type(row)
+
+
+def _proposal_to_type(row) -> t.LLMEnrichmentProposalType:
+    return t.LLMEnrichmentProposalType(
+        id=str(row.id),
+        entity_type=row.entity_type,
+        entity_ref=row.entity_ref,
+        proposal_type=row.proposal_type,
+        proposed_value=row.proposed_value or {},
+        reasoning=row.reasoning,
+        confidence=row.confidence,
+        status=row.status,
+        reviewed_by=row.reviewed_by,
+        reviewed_at=str(row.reviewed_at) if row.reviewed_at else None,
+        created_at=str(row.created_at),
+    )
