@@ -29,7 +29,7 @@
 
 - [ ] T004 Create manifest utility — generate_manifest(output_dir, version, entity_counts) → writes manifest.json with version, format_version, timestamp, entity_counts, source_system in library/src/undata_library/manifest.py
 - [ ] T005 Create archive utility — compress_directory(source_dir) → .tar.gz, compute_checksum(archive_path) → sha256 in library/src/undata_library/archive.py
-- [ ] T006 Create validate_manifest(manifest_path) → check format_version compatibility, entity_counts present in library/src/undata_library/manifest.py
+- [ ] T006 Create validate_export(export_dir) → check manifest.json exists with correct format_version, validate directory structure (elements/, schemas/, values/, valuesets/ subdirs present), and entity_counts match file counts in library/src/undata_library/manifest.py
 
 **Checkpoint**: Can generate manifests and compress/decompress archives
 
@@ -122,7 +122,7 @@
 
 **Purpose**: Verification, cleanup
 
-- [ ] T035 Run quickstart.md validation — verify export, import, round-trip, download page, admin import
+- [ ] T035 Run quickstart.md validation — verify export, import, round-trip, download page, admin import; assert compressed archive <100MB (SC-005)
 - [ ] T036 [P] Verify nightly export produces archive in configured directory
 - [ ] T037 [P] Verify download page renders releases correctly
 - [ ] T038 Verify round-trip test passes in CI-compatible mode
