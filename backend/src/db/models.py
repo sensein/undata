@@ -170,6 +170,22 @@ class Transform(Base):
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
 
 
+class AuditLog(Base):
+    """W3C PROV-O style audit trail for all mutations."""
+
+    __tablename__ = "audit_log"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    activity: Mapped[str] = mapped_column(String, index=True)  # create, update, delete, approve, reject, enrich, ingest, version
+    agent: Mapped[str] = mapped_column(String, index=True)  # user email/name or "system"
+    agent_type: Mapped[str] = mapped_column(String)  # "user" or "system"
+    entity_type: Mapped[str] = mapped_column(String, index=True)
+    entity_ref: Mapped[str] = mapped_column(String, index=True)
+    generated_entity_ref: Mapped[str | None] = mapped_column(String, nullable=True)
+    details: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+
+
 class OntologySource(Base):
     __tablename__ = "ontology_sources"
 

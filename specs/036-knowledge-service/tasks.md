@@ -118,7 +118,7 @@
 - [X] T035 [US5] Wire ingestion mutations into GraphQL schema in backend/src/graphql/schema.py
 - [X] T036 [US5] Add GraphQL queries for ingestion queue in frontend/graphql/queries.ts (done in Phase 6)
 - [X] T037 [US5] Create ingestion queue page — table of jobs with status, adapter, entity counts, approve/reject actions in frontend/app/admin/ingestion/page.tsx
-- [ ] T038 [US5] Integrate ingestion trigger into curation chat — LLM tool "trigger_ingestion" for curator requests in backend/src/tools/enrichment_tools.py
+- [X] T038 [US5] Integrate ingestion trigger into curation chat — LLM tool "trigger_ingestion" for curator requests in backend/src/tools/enrichment_tools.py
 
 **Checkpoint**: Discovery finds new datasets; approved sources auto-ingest; queue UI shows all jobs
 
@@ -137,9 +137,9 @@
 - [X] T043 [P] [US7] Implement assess_alignment LLM skill — compare two elements, assess if same concept or different variants in backend/src/services/enrichment_service.py
 - [X] T044 [P] [US7] Implement generate_description LLM skill — create description from element name, type, unit, source context in backend/src/services/enrichment_service.py
 - [X] T045 [US7] Implement batch enrichment orchestrator — queue elements, process with rate limiting and token budget tracking in backend/src/services/enrichment_service.py
-- [ ] T046 [US7] Add LLM enrichment tool definitions for curation chat integration in backend/src/tools/enrichment_tools.py
+- [X] T046 [US7] Add LLM enrichment tool definitions for curation chat integration in backend/src/tools/enrichment_tools.py
 - [ ] T047 [US7] Add enrichment proposals UI — show pending proposals per entity with approve/reject in frontend (extend entity detail pages)
-- [ ] T048 [US7] Add frontend GraphQL queries for enrichment proposals in frontend/graphql/queries.ts
+- [X] T048 [US7] Add frontend GraphQL queries for enrichment proposals in frontend/graphql/queries.ts
 
 **Checkpoint**: LLM skills propose annotations with reasoning; batch mode processes unannotated elements
 
