@@ -261,6 +261,21 @@ class LLMEnrichmentProposal(Base):
 
 
 # Entity type → ORM model mapping
+class Release(Base):
+    """A versioned or nightly export available for download."""
+
+    __tablename__ = "releases"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    version: Mapped[str] = mapped_column(String, unique=True, index=True)
+    release_type: Mapped[str] = mapped_column(String)  # "nightly" or "versioned"
+    file_path: Mapped[str] = mapped_column(String)
+    file_size: Mapped[int] = mapped_column(default=0)
+    entity_counts: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+    download_count: Mapped[int] = mapped_column(default=0)
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+
+
 ENTITY_MODEL_MAP = {
     "elements": Element,
     "schemas": Schema,

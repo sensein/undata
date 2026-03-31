@@ -16,6 +16,9 @@ class Settings(BaseSettings):
     keycloak_client_secret: str = ""
     frontend_url: str = "http://localhost:3000"
 
+    # Export/download
+    export_dir: str = "/app/exports"
+
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
 

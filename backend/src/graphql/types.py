@@ -295,6 +295,27 @@ class AddOntologySourceInput:
     format: str
 
 
+@strawberry.type
+class ReleaseType:
+    id: strawberry.ID
+    version: str
+    release_type: str
+    file_path: str
+    file_size: int
+    entity_counts: Optional[JSON] = None
+    download_count: int = 0
+    created_at: str = ""
+
+
+@strawberry.type
+class ExportResultType:
+    version: str
+    file_path: str
+    file_size: int
+    entity_counts: JSON
+    manifest: JSON
+
+
 @strawberry.input
 class QueueIngestionInput:
     repository_url: str

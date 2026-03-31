@@ -15,9 +15,9 @@
 
 **Purpose**: Release DB model, shared export format utilities
 
-- [ ] T001 Add Release DB model to backend/src/db/models.py — version, release_type, file_path, file_size, entity_counts, download_count, created_at
-- [ ] T002 Add Release Strawberry GraphQL type and ExportResult type in backend/src/graphql/types.py
-- [ ] T003 Create export directory config — EXPORT_DIR env var defaulting to /app/exports, ensure directory exists in backend/src/main.py
+- [X] T001 Add Release DB model to backend/src/db/models.py — version, release_type, file_path, file_size, entity_counts, download_count, created_at
+- [X] T002 Add Release Strawberry GraphQL type and ExportResult type in backend/src/graphql/types.py
+- [X] T003 Create export directory config — EXPORT_DIR env var defaulting to /app/exports, ensure directory exists in backend/src/main.py
 
 **Checkpoint**: DB model exists, export directory configured
 
@@ -27,9 +27,9 @@
 
 **Purpose**: Manifest generation and archive utilities shared by export and import
 
-- [ ] T004 Create manifest utility — generate_manifest(output_dir, version, entity_counts) → writes manifest.json with version, format_version, timestamp, entity_counts, source_system in library/src/undata_library/manifest.py
-- [ ] T005 Create archive utility — compress_directory(source_dir) → .tar.gz, compute_checksum(archive_path) → sha256 in library/src/undata_library/archive.py
-- [ ] T006 Create validate_export(export_dir) → check manifest.json exists with correct format_version, validate directory structure (elements/, schemas/, values/, valuesets/ subdirs present), and entity_counts match file counts in library/src/undata_library/manifest.py
+- [X] T004 Create manifest utility — generate_manifest(output_dir, version, entity_counts) → writes manifest.json with version, format_version, timestamp, entity_counts, source_system in library/src/undata_library/manifest.py
+- [X] T005 Create archive utility — compress_directory(source_dir) → .tar.gz, compute_checksum(archive_path) → sha256 in library/src/undata_library/archive.py
+- [X] T006 Create validate_export(export_dir) → check manifest.json exists with correct format_version, validate directory structure (elements/, schemas/, values/, valuesets/ subdirs present), and entity_counts match file counts in library/src/undata_library/manifest.py
 
 **Checkpoint**: Can generate manifests and compress/decompress archives
 
@@ -48,7 +48,7 @@
 - [ ] T011 [US1] Add embedding export — query all entities with embeddings, save as parquet (sha256, entity_type, vector) in library/src/undata_library/export.py
 - [ ] T012 [US1] Add manifest generation and optional compression to export flow in library/src/undata_library/export.py
 - [ ] T013 [US1] Add `export-full` CLI command — --output, --version, --compress flags in library/src/undata_library/cli.py
-- [ ] T014 [US1] Add backend export_service.py — export via DatabaseBackend (direct DB, not API) for server-side export in backend/src/services/export_service.py
+- [X] T014 [US1] Add backend export_service.py — export via DatabaseBackend (direct DB, not API) for server-side export in backend/src/services/export_service.py
 - [ ] T015 [US1] Add exportRegistry GraphQL mutation in backend/src/graphql/schema.py wired to export_service
 - [ ] T016 [US1] Add unit test: export produces correct directory structure with all entity types in library/tests/test_export_full.py
 
