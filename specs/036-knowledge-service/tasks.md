@@ -46,9 +46,9 @@
 - [X] T009 [P] [US1] Add NIDM-Terms config — OWL URL registered in DOMAIN_ONTOLOGIES in library/src/undata_library/ontology_fetch.py
 - [X] T010 [P] [US1] Create DICOM TTL generator — extract all tags from pydicom.datadict, generate TTL with URIs in library/src/undata_library/adapters/standalone_scripts/dicom_to_ttl.py
 - [X] T011 [P] [US1] Add RadLex ontology config — OWL URL registered in DOMAIN_ONTOLOGIES in library/src/undata_library/ontology_fetch.py
-- [ ] T012 [US1] Re-run enrichment on BIDS+NWB+DANDI elements with expanded ontology store, then assert annotated_count/total_count > 0.40 via `undata-library ontology info` and `validate-ingestion` in library/src/undata_library/enrich.py
+- [X] T012 [US1] Re-run enrichment on BIDS+NWB+DANDI elements with expanded ontology store, then assert annotated_count/total_count > 0.40 via `undata-library ontology info` and `validate-ingestion` in library/src/undata_library/enrich.py
 - [X] T013 [US1] Add unit test verifying ontology term counts after loading all 4 new sources in library/tests/test_ontology_sources.py
-- [ ] T013a [US1] Add coverage regression test — assert enrichment produces annotations for >40% of elements, fails if coverage drops below threshold in library/tests/test_enrichment_coverage.py
+- [X] T013a [US1] Add coverage regression test — assert enrichment produces annotations for >40% of elements, fails if coverage drops below threshold in library/tests/test_enrichment_coverage.py
 
 **Checkpoint**: Ontology store has >50K new terms; enrichment coverage exceeds 40%
 
@@ -65,7 +65,7 @@
 - [X] T016 [US2] Register openneuro and reproschema adapters in library/src/undata_library/adapters/registry.py
 - [X] T017 [US2] Add unit tests for OpenNeuro adapter with a mock dataset structure in library/tests/test_openneuro_adapter.py
 - [X] T018 [US2] Add unit tests for ReproSchema adapter with sample activity/item files in library/tests/test_reproschema_adapter.py
-- [ ] T019 [US2] Test full pipeline: ingest ds000228 from OpenNeuro, verify elements extracted from participants.tsv and phenotype/*.tsv
+- [X] T019 [US2] Test full pipeline: ingest ds000228 from OpenNeuro, verify elements extracted from participants.tsv and phenotype/*.tsv
 
 **Checkpoint**: OpenNeuro and ReproSchema adapters produce valid entities
 
@@ -81,9 +81,9 @@
 - [X] T021 [US3] Extend enrichment pipeline to skip entities with curated_annotations (do not overwrite approved annotations) in library/src/undata_library/enrich.py
 - [X] T022 [US3] Implement element versioning — when a semantic field changes via curation, create new element with new sha256, mark old as superseded, create curation_update transform in backend/src/graphql/resolvers.py
 - [X] T023 [US3] Add GraphQL mutations: approveAnnotation, rejectAnnotation in backend/src/graphql/schema.py
-- [ ] T023a [US3] Implement requestReEnrichment service — re-run enrichment for a single element using latest ontology store, return proposed new annotations as diff in backend/src/graphql/resolvers.py
-- [ ] T024 [US3] Add approve/reject buttons to annotation chips on element detail page in frontend/app/elements/[sha256]/page.tsx (or via EntityDetailLayout)
-- [ ] T025 [US3] Add unit test for curated annotation protection during re-enrichment in library/tests/test_enrich.py
+- [X] T023a [US3] Implement requestReEnrichment service — re-run enrichment for a single element using latest ontology store, return proposed new annotations as diff in backend/src/graphql/resolvers.py
+- [X] T024 [US3] Add approve/reject buttons to annotation chips on element detail page in frontend/app/elements/[sha256]/page.tsx (or via EntityDetailLayout)
+- [X] T025 [US3] Add unit test for curated annotation protection during re-enrichment in library/tests/test_enrich.py
 
 **Checkpoint**: Curators can approve/reject; semantic changes produce new versions with transforms
 
@@ -138,7 +138,7 @@
 - [X] T044 [P] [US7] Implement generate_description LLM skill — create description from element name, type, unit, source context in backend/src/services/enrichment_service.py
 - [X] T045 [US7] Implement batch enrichment orchestrator — queue elements, process with rate limiting and token budget tracking in backend/src/services/enrichment_service.py
 - [X] T046 [US7] Add LLM enrichment tool definitions for curation chat integration in backend/src/tools/enrichment_tools.py
-- [ ] T047 [US7] Add enrichment proposals UI — show pending proposals per entity with approve/reject in frontend (extend entity detail pages)
+- [X] T047 [US7] Add enrichment proposals UI — show pending proposals per entity with approve/reject in frontend (extend entity detail pages)
 - [X] T048 [US7] Add frontend GraphQL queries for enrichment proposals in frontend/graphql/queries.ts
 
 **Checkpoint**: LLM skills propose annotations with reasoning; batch mode processes unannotated elements
@@ -149,11 +149,11 @@
 
 **Purpose**: Final integration, verification, seed data regeneration
 
-- [ ] T049 Regenerate seed data with expanded ontology store and new sources
-- [ ] T050 Run quickstart.md validation — verify all ontology, ingestion, and enrichment operations
-- [ ] T051 [P] Verify ontology admin page and ingestion queue UI work end-to-end
-- [ ] T052 [P] Verify LLM enrichment via chat produces proposals with reasoning
-- [ ] T053 Verify enrichment coverage exceeds 40% with expanded ontology store
+- [X] T049 Regenerate seed data with expanded ontology store and new sources
+- [X] T050 Run quickstart.md validation — verify all ontology, ingestion, and enrichment operations
+- [X] T051 [P] Verify ontology admin page and ingestion queue UI work end-to-end
+- [X] T052 [P] Verify LLM enrichment via chat produces proposals with reasoning
+- [X] T053 Verify enrichment coverage exceeds 40% with expanded ontology store
 
 ---
 
