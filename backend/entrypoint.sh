@@ -24,7 +24,7 @@ from src.db.session import engine, AsyncSessionLocal
 from src.db.models import Element
 from sqlalchemy import select, func
 
-SEED_DIR = Path('/app/backend/seed')
+SEED_DIR = Path(os.environ.get('UNDATA_SEED_DIR', '/app/backend/seed'))
 
 async def check_and_seed():
     async with AsyncSessionLocal() as session:

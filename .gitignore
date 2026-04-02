@@ -54,3 +54,4 @@ docs/site/
 /package.json
 /pnpm-lock.yaml
 *.pkg
+docker-compose.override.yml
