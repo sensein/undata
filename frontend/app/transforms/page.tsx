@@ -10,6 +10,20 @@ import type { TransformNode, Edge, Connection } from "@/graphql/types";
 
 const columnHelper = createColumnHelper<TransformNode>();
 
+/** Parse element URI or filename like "catheter_design_abc123def456" into {sha, name}. */
+function parseElementRef(val: string): { sha: string; name: string } {
+  // Strip URI prefix if present
+  const slug = val.includes("/") ? val.split("/").pop()! : val;
+  // Split on last underscore — everything before is name, after is hash
+  const lastUnderscore = slug.lastIndexOf("_");
+  if (lastUnderscore > 0) {
+    const name = slug.substring(0, lastUnderscore);
+    const sha = slug.substring(lastUnderscore + 1);
+    return { sha, name };
+  }
+  return { sha: slug.slice(0, 12), name: slug };
+}
+
 export default function TransformsPage() {
   const [functionType, setFunctionType] = useState<string | undefined>();
 
@@ -32,11 +46,8 @@ export default function TransformsPage() {
         header: "Source Element",
         cell: (info) => {
           const val = info.getValue();
-          // Extract sha256 from URI or use directly
-          const sha = val.includes("/") ? val.split("/").pop()! : val;
-          const shortKey = sha.includes("_") ? sha.split("_").pop()! : sha.slice(0, 12);
-          const name = sha.includes("_") ? sha.split("_")[0] : sha.slice(0, 12);
-          return <EntityTag entityType="elements" sha256={shortKey} label={name} />;
+          const { sha, name } = parseElementRef(val);
+          return <EntityTag entityType="elements" sha256={sha} label={name} />;
         },
         enableColumnFilter: false,
       }),
@@ -51,10 +62,8 @@ export default function TransformsPage() {
         header: "Target Element",
         cell: (info) => {
           const val = info.getValue();
-          const sha = val.includes("/") ? val.split("/").pop()! : val;
-          const shortKey = sha.includes("_") ? sha.split("_").pop()! : sha.slice(0, 12);
-          const name = sha.includes("_") ? sha.split("_")[0] : sha.slice(0, 12);
-          return <EntityTag entityType="elements" sha256={shortKey} label={name} />;
+          const { sha, name } = parseElementRef(val);
+          return <EntityTag entityType="elements" sha256={sha} label={name} />;
         },
         enableColumnFilter: false,
       }),

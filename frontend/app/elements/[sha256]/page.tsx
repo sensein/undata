@@ -65,7 +65,16 @@ export default function ElementDetailPage() {
       title={prov?.name ?? element.fileName ?? element.sha256.slice(0, 12)}
       source={prov?.source}
       sha256={element.sha256}
-      description={element.description ?? prov?.description}
+      description={
+        element.description ||
+        // Aggregate unique descriptions from all provenance sources
+        [...new Set(
+          (element.provenance ?? [])
+            .map((p: { description?: string }) => p.description)
+            .filter(Boolean)
+        )].join(" | ") ||
+        undefined
+      }
       provenance={element.provenance}
       annotations={element.ontologyAnnotations}
     >

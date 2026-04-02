@@ -48,6 +48,7 @@ function AnnotationChip({ a }: { a: OntologyAnnotation }) {
     >
       <span className="text-green-600">{icon}</span>
       <span>{curie}</span>
+      <span className="text-green-500 text-[10px]">{a.mappingRelation?.replace("skos:", "")}</span>
       <span className="text-green-500 font-mono">{a.score?.toFixed(2)}</span>
       <span className="text-green-400 text-[10px]">↗</span>
     </a>

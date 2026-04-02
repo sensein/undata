@@ -92,7 +92,7 @@ class ProvenanceEntry:
     source: str
     class_name: str  # 'class' is reserved in Python
     name: str
-    description: str
+    description: Optional[str] = None
 
 
 # --- Core Entity Types ---

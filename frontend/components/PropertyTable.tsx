@@ -28,7 +28,7 @@ const elemColHelper = createColumnHelper<ResolvedElement | { raw: string }>();
 
 export function ElementPropertyTable({ properties, schemaSource }: ElementPropertyTableProps) {
   const { data: elemData } = useQuery<{ browseElements: ElementConnection }>(BROWSE_ELEMENTS, {
-    variables: { first: 2000 },
+    variables: { first: 5000 },
   });
 
   const lookup = useMemo(() => {
@@ -144,7 +144,7 @@ const valColHelper = createColumnHelper<ResolvedValue | { raw: string }>();
 
 export function ValueMemberTable({ members }: ValueMemberTableProps) {
   const { data: valData } = useQuery<{ browseValues: ValueConnection }>(BROWSE_VALUES, {
-    variables: { first: 2000 },
+    variables: { first: 5000 },
   });
 
   const lookup = useMemo(() => {

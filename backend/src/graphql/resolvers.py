@@ -350,6 +350,12 @@ async def resolve_browse_schemas(
     from src.db.models import Schema
 
     stmt = select(Schema)
+    if source:
+        from sqlalchemy import text as sa_text
+
+        stmt = stmt.where(sa_text("provenance @> :src ::jsonb").bindparams(
+            src=f'[{{"source": "{source}"}}]'
+        ))
     if search_text:
         stmt = stmt.where(Schema.description.ilike(f"%{search_text}%"))
 
@@ -375,6 +381,12 @@ async def resolve_browse_values(
     from src.db.models import Value
 
     stmt = select(Value)
+    if source:
+        from sqlalchemy import text as sa_text
+
+        stmt = stmt.where(sa_text("provenance @> :src ::jsonb").bindparams(
+            src=f'[{{"source": "{source}"}}]'
+        ))
     if search_text:
         stmt = stmt.where(Value.label.ilike(f"%{search_text}%"))
 
@@ -400,6 +412,12 @@ async def resolve_browse_valuesets(
     from src.db.models import ValueSet
 
     stmt = select(ValueSet)
+    if source:
+        from sqlalchemy import text as sa_text
+
+        stmt = stmt.where(sa_text("provenance @> :src ::jsonb").bindparams(
+            src=f'[{{"source": "{source}"}}]'
+        ))
     if search_text:
         stmt = stmt.where(ValueSet.name.ilike(f"%{search_text}%"))
 
