@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLazyQuery } from "@apollo/client/react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
@@ -44,6 +44,11 @@ function SearchContent() {
       executeSearch({ variables: { query: query.trim(), first: 100 } });
     }
   };
+
+  // Auto-search on load if ?q= param present
+  useEffect(() => {
+    if (initialQuery) handleSearch();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") handleSearch();

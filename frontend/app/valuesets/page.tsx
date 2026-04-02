@@ -26,10 +26,11 @@ const columnHelper = createColumnHelper<ValueSetNode>();
 
 export default function ValueSetsPage() {
   const [source, setSource] = useState<string | undefined>();
+  const [searchText, setSearchText] = useState("");
 
   const { data, loading, error, fetchMore } = useQuery<{ browseValuesets: VSConnection }>(
     BROWSE_VALUESETS,
-    { variables: { source, first: 50 } },
+    { variables: { source, searchText: searchText || undefined, first: 50 } },
   );
 
   const valuesets = useMemo(
@@ -106,6 +107,13 @@ export default function ValueSetsPage() {
           <option value="openminds">openMINDS</option>
           <option value="aind">AIND</option>
         </select>
+        <input
+          type="text"
+          className="border rounded px-3 py-2 text-sm w-64"
+          placeholder="Search value sets..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
       </div>
       {error && (
         <div className="bg-red-50 border border-red-200 rounded p-4 mb-6">

@@ -235,9 +235,34 @@ export default function CurationPage() {
           <div className="mt-4 border rounded-lg p-4 bg-gray-50">
             <div className="flex items-center gap-3 mb-3">
               <h4 className="text-sm font-semibold">Resolve flag for</h4>
-              <span className="font-mono text-sm text-gray-700">{node.entityRef.slice(0, 16)}...</span>
+              <EntityTag
+                entityType={ENTITY_TYPE_TO_PATH[node.entityType.toLowerCase()] ?? "elements"}
+                sha256={node.entityRef}
+                label={node.entityRef.slice(0, 16)}
+              />
               <StatusBadge status={node.status} />
+              <a
+                href={`/${ENTITY_TYPE_TO_PATH[node.entityType.toLowerCase()] ?? "elements"}/${node.entityRef}`}
+                className="text-xs text-blue-600 hover:underline ml-auto"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View full details ↗
+              </a>
             </div>
+            {/* Flag context */}
+            {node.context && (
+              <div className="bg-white border rounded p-2 mb-3 text-xs">
+                <span className="text-gray-500 font-medium">Flag context: </span>
+                <span className="text-gray-700">
+                  {String(
+                    (node.context as Record<string, unknown>)?.reason ??
+                    (node.context as Record<string, unknown>)?.message ??
+                    JSON.stringify(node.context).slice(0, 200)
+                  )}
+                </span>
+              </div>
+            )}
             {node.resolvedBy && (
               <div className="text-sm text-gray-600 mb-3">
                 <strong>Resolved by:</strong> {node.resolvedBy}
