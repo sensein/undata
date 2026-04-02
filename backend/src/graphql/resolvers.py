@@ -3,12 +3,15 @@
 from __future__ import annotations
 
 import base64
+import logging
 import uuid
 from datetime import datetime, timezone
 from typing import Optional
 
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
+
+logger = logging.getLogger(__name__)
 
 from src.db.models import (
     ENTITY_MODEL_MAP,
@@ -1355,26 +1358,46 @@ async def resolve_review_proposal(
     return _proposal_to_type(row)
 
 
-async def resolve_ontology_store_info() -> list[dict]:
-    """Read ontology info from pyoxigraph store (not from DB)."""
+async def resolve_ontology_store_info(session: AsyncSession) -> list[dict]:
+    """Read ontology info from pyoxigraph store, falling back to DB ontology_sources."""
+    # Try pyoxigraph store first
     try:
-        from undata_library.ontology_store import OntologyStore
-        store = OntologyStore()
-        loaded = store.list_loaded()
-        return [
-            {
-                "name": entry.get("name", ""),
-                "display_name": entry.get("display_name", entry.get("name", "")),
-                "term_count": entry.get("term_count", 0),
-                "format": entry.get("format", ""),
-                "checksum": entry.get("checksum", ""),
-                "last_refreshed": entry.get("last_refreshed", ""),
-            }
-            for entry in loaded
-        ]
+        from pathlib import Path
+        store_path = Path.home() / ".cache" / "undata" / "ontology-store"
+        if store_path.exists():
+            from undata_library.ontology_store import OntologyStore
+            store = OntologyStore(store_path)
+            loaded = store.list_loaded()
+            if loaded:
+                return [
+                    {
+                        "name": entry.get("name", "") or "",
+                        "display_name": entry.get("display_name") or entry.get("name", "") or "",
+                        "term_count": entry.get("term_count", 0) or 0,
+                        "format": entry.get("format", "") or "",
+                        "checksum": entry.get("checksum", "") or "",
+                        "last_refreshed": entry.get("last_refreshed", "") or "",
+                    }
+                    for entry in loaded
+                ]
     except Exception as e:
-        logger.warning("Failed to read ontology store: %s", e)
-        return []
+        logger.debug("Pyoxigraph store not available: %s", e)
+
+    # Fallback: read from DB ontology_sources table
+    from src.db.models import OntologySource
+    stmt = select(OntologySource).where(OntologySource.active == True).order_by(OntologySource.name)
+    rows = (await session.execute(stmt)).scalars().all()
+    return [
+        {
+            "name": r.name,
+            "display_name": r.display_name,
+            "term_count": r.term_count,
+            "format": r.format,
+            "checksum": r.checksum or "",
+            "last_refreshed": str(r.last_refreshed_at) if r.last_refreshed_at else "",
+        }
+        for r in rows
+    ]
 
 
 async def resolve_audit_log(

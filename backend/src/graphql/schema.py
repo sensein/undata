@@ -216,8 +216,9 @@ class Query:
 
     @strawberry.field
     async def ontology_store_info(self) -> list[t.OntologyStoreEntry]:
-        """Read loaded ontologies from pyoxigraph store (not DB)."""
-        raw = await r.resolve_ontology_store_info()
+        """Read loaded ontologies from pyoxigraph store or DB fallback."""
+        async with AsyncSessionLocal() as session:
+            raw = await r.resolve_ontology_store_info(session)
         return [
             t.OntologyStoreEntry(
                 name=e["name"],
