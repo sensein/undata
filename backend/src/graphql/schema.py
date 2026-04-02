@@ -52,6 +52,16 @@ class Query:
             return await r.resolve_valueset(session, sha256)
 
     @strawberry.field
+    async def search(
+        self,
+        query: str,
+        first: int = 50,
+    ) -> list[t.SearchResultType]:
+        """Search across all entity types by text. Returns results ordered by relevance."""
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_search(session, query, first)
+
+    @strawberry.field
     async def browse_elements(
         self,
         source: Optional[str] = None,

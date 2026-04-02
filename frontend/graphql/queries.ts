@@ -1,5 +1,20 @@
 import { gql } from "@apollo/client";
 
+export const SEARCH = gql`
+  query Search($query: String!, $first: Int = 50) {
+    search(query: $query, first: $first) {
+      entityType
+      sha256
+      name
+      source
+      dataType
+      unit
+      description
+      score
+    }
+  }
+`;
+
 export const BROWSE_ELEMENTS = gql`
   query BrowseElements(
     $source: String

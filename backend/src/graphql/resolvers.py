@@ -283,6 +283,93 @@ async def resolve_transform(session: AsyncSession, sha256: str) -> t.Transform |
     return _transform_from_row(row) if row else None
 
 
+# --- Cross-Entity Search ---
+
+
+async def resolve_search(
+    session: AsyncSession, query: str, first: int = 50
+) -> list[t.SearchResultType]:
+    """Search across all entity types using tsvector full-text search + ILIKE fallback."""
+    from src.db.models import Element, Schema, Value, ValueSet
+
+    results: list[t.SearchResultType] = []
+
+    # Search elements
+    elem_stmt = select(Element)
+    if hasattr(Element, "search_tsv") and Element.search_tsv is not None:
+        from sqlalchemy import func as sa_func
+
+        elem_stmt = elem_stmt.where(
+            Element.search_tsv.op("@@")(sa_func.plainto_tsquery("english", query))
+        )
+    else:
+        elem_stmt = elem_stmt.where(
+            Element.file_name.ilike(f"%{query}%") | Element.description.ilike(f"%{query}%")
+        )
+    elem_stmt = elem_stmt.limit(first)
+    for row in (await session.execute(elem_stmt)).scalars():
+        prov = row.provenance[0] if row.provenance else {}
+        results.append(t.SearchResultType(
+            entity_type="element",
+            sha256=row.sha256,
+            name=prov.get("name", row.file_name or row.sha256[:12]),
+            source=prov.get("source"),
+            data_type=row.data_type,
+            unit=row.unit,
+            description=row.description or prov.get("description", ""),
+            score=1.0,
+        ))
+
+    # Search schemas
+    schema_stmt = select(Schema).where(
+        Schema.file_name.ilike(f"%{query}%") | Schema.description.ilike(f"%{query}%")
+    ).limit(first)
+    for row in (await session.execute(schema_stmt)).scalars():
+        prov = row.provenance[0] if row.provenance else {}
+        results.append(t.SearchResultType(
+            entity_type="schema",
+            sha256=row.sha256,
+            name=prov.get("name", row.file_name or row.sha256[:12]),
+            source=prov.get("source"),
+            description=row.description or prov.get("description", ""),
+            score=0.9,
+        ))
+
+    # Search values
+    val_stmt = select(Value).where(
+        Value.label.ilike(f"%{query}%") | Value.description.ilike(f"%{query}%")
+    ).limit(first)
+    for row in (await session.execute(val_stmt)).scalars():
+        prov = row.provenance[0] if row.provenance else {}
+        results.append(t.SearchResultType(
+            entity_type="value",
+            sha256=row.sha256,
+            name=row.label or prov.get("name", row.sha256[:12]),
+            source=prov.get("source"),
+            description=row.description or prov.get("description", ""),
+            score=0.8,
+        ))
+
+    # Search valuesets
+    vs_stmt = select(ValueSet).where(
+        ValueSet.name.ilike(f"%{query}%") | ValueSet.description.ilike(f"%{query}%")
+    ).limit(first)
+    for row in (await session.execute(vs_stmt)).scalars():
+        prov = row.provenance[0] if row.provenance else {}
+        results.append(t.SearchResultType(
+            entity_type="valueset",
+            sha256=row.sha256,
+            name=row.name or prov.get("name", row.sha256[:12]),
+            source=prov.get("source"),
+            description=row.description or prov.get("description", ""),
+            score=0.7,
+        ))
+
+    # Sort by entity type priority (elements first) then name
+    results.sort(key=lambda r: (-r.score, r.name.lower()))
+    return results[:first]
+
+
 # --- Browse Queries ---
 
 

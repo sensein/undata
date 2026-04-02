@@ -296,6 +296,18 @@ class AddOntologySourceInput:
 
 
 @strawberry.type
+class SearchResultType:
+    entity_type: str  # "element", "schema", "value", "valueset"
+    sha256: str
+    name: str
+    source: Optional[str] = None
+    data_type: Optional[str] = None
+    unit: Optional[str] = None
+    description: Optional[str] = None
+    score: float = 0.0  # relevance score
+
+
+@strawberry.type
 class ReleaseType:
     id: strawberry.ID
     version: str
