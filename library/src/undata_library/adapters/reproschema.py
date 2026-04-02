@@ -267,6 +267,52 @@ class ReproSchemaAdapter(BaseAdapter):
                     )
                 )
 
+                # Create ENUM_VALUE entities for each choice + a VALUESET to group them
+                if response_options and len(response_options) > 1:
+                    value_names = []
+                    for opt in response_options:
+                        val = opt.get("value", "")
+                        label = opt.get("label", val)
+                        value_names.append(val)
+                        results.append(
+                            ClassifiedEntity(
+                                entity_type=EntityType.ENUM_VALUE,
+                                semantic={
+                                    "value_type": "categorical",
+                                    "label": str(label)[:200],
+                                    "description": f"Response option for {item_name}: {label}"[:500],
+                                },
+                                provenance={
+                                    "source": "reproschema",
+                                    "class": activity_name,
+                                    "name": f"{item_name}:{val}",
+                                    "description": str(label)[:200],
+                                },
+                                confidence=0.85,
+                                source_ref=_DEFAULT_REF,
+                            )
+                        )
+
+                    # VALUESET grouping all choices for this item
+                    results.append(
+                        ClassifiedEntity(
+                            entity_type=EntityType.VALUESET,
+                            semantic={
+                                "name": f"{item_name}_options",
+                                "members": value_names,
+                                "description": f"Response options for {item_name}"[:500],
+                            },
+                            provenance={
+                                "source": "reproschema",
+                                "class": activity_name,
+                                "name": f"{item_name}_options",
+                                "description": f"Response options for {item_name}",
+                            },
+                            confidence=0.85,
+                            source_ref=_DEFAULT_REF,
+                        )
+                    )
+
         logger.info(
             "Extracted %d entities from reproschema-library at %s",
             len(results),
