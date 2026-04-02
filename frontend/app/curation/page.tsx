@@ -11,19 +11,20 @@ import { useAuth } from "@/components/AuthProvider";
 import { EntityInlineDetail } from "@/components/EntityInlineDetail";
 import type { CurationFlagConnection, CurationFlagNode, Edge } from "@/graphql/types";
 
-/** Parse entity_ref which may be a filename (name_hash.yaml), sha256, or hash prefix. */
+/** Parse entity_ref — should be a sha256 hash. Legacy format (name_hash.yaml) handled as fallback. */
 function parseEntityRef(ref: string): { sha: string; name: string } {
-  // Strip .yaml extension
-  let clean = ref.endsWith(".yaml") ? ref.slice(0, -5) : ref;
-  // If it looks like name_hash format, extract hash and name
-  const lastU = clean.lastIndexOf("_");
-  if (lastU > 0 && clean.length - lastU - 1 >= 8) {
-    const name = clean.substring(0, lastU);
-    const hash = clean.substring(lastU + 1);
-    return { sha: hash, name };
+  // Strip .yaml extension if present (legacy pipeline artifact)
+  const clean = ref.endsWith(".yaml") ? ref.slice(0, -5) : ref;
+  // If it's a 64-char hex string, it's a sha256
+  if (clean.length === 64 && /^[0-9a-f]+$/.test(clean)) {
+    return { sha: clean, name: clean.slice(0, 16) };
   }
-  // Otherwise treat as raw sha256
-  return { sha: clean.slice(0, 12), name: clean.slice(0, 16) };
+  // Legacy: name_hash format — extract hash after last underscore
+  const lastU = clean.lastIndexOf("_");
+  if (lastU > 0) {
+    return { sha: clean.substring(lastU + 1), name: clean.substring(0, lastU) };
+  }
+  return { sha: clean, name: clean.slice(0, 16) };
 }
 
 const ENTITY_TYPE_TO_PATH: Record<string, string> = {

@@ -2,9 +2,12 @@
 
 from __future__ import annotations
 
+import logging
 import shutil
 from pathlib import Path
 from typing import TYPE_CHECKING
+
+logger = logging.getLogger(__name__)
 
 import yaml
 
@@ -42,6 +45,8 @@ def commit_staged(
     if output_dir is None and output_backend is not None and hasattr(output_backend, "base_dir"):
         output_dir = output_backend.base_dir
     stats = {"committed": 0, "merged": 0, "rejected": 0, "per_type": {}}
+    # Track staging filename → sha256 for flag entity_ref resolution
+    staging_to_sha256: dict[str, str] = {}
 
     for entity_type in ("elements", "schemas", "values", "valuesets"):
         type_dir = staging_dir / entity_type
@@ -102,6 +107,10 @@ def commit_staged(
             )
             key = generate_short_key(sha256)
 
+            # Record staging filename → sha256 mapping for flag resolution
+            staging_to_sha256[staged_file.name] = sha256
+            staging_to_sha256[staged_file.stem] = sha256
+
             # Check if any existing file has this hash (for cross-source merge)
             existing_with_hash = list(out_dir.glob(f"*_{key}.yaml"))
             if existing_with_hash:
@@ -130,6 +139,9 @@ def commit_staged(
 
     # Post-commit: resolve schema properties and valueset members to sha256 hashes
     _resolve_cross_references(output_dir)
+
+    # Post-commit: resolve curation flag entity_refs from filenames to sha256 hashes
+    _resolve_flag_entity_refs(output_dir, staging_to_sha256)
 
     # Delete staging directory
     if staging_dir.exists():
@@ -270,6 +282,54 @@ def _resolve_cross_references(output_dir: Path) -> None:
                     yaml.dump(data, default_flow_style=False, sort_keys=False),
                     encoding="utf-8",
                 )
+
+
+def _resolve_flag_entity_refs(
+    output_dir: Path, staging_to_sha256: dict[str, str] | None = None
+) -> None:
+    """Resolve curation flag entity_refs from filenames to sha256 hashes.
+
+    Uses the staging→sha256 mapping built during commit, plus committed
+    entity files as fallback.
+    """
+    file_to_sha: dict[str, str] = dict(staging_to_sha256 or {})
+
+    # Also build from committed entities as fallback
+    for entity_type in ("elements", "schemas", "values", "valuesets"):
+        entity_dir = output_dir / entity_type
+        if not entity_dir.exists():
+            continue
+        for f in entity_dir.glob("*.yaml"):
+            data = safe_load_yaml(f)
+            if data and "sha256" in data:
+                file_to_sha[f.stem] = data["sha256"]
+                file_to_sha[f.name] = data["sha256"]
+
+    if not file_to_sha:
+        return
+
+    # Update flag entity_refs
+    flags_dir = output_dir / "curation-flags"
+    if not flags_dir.exists():
+        return
+
+    updated = 0
+    for f in flags_dir.glob("*.yaml"):
+        data = safe_load_yaml(f)
+        if not data:
+            continue
+        ref = data.get("entity_ref", "")
+        # Check if ref is a filename (not already a sha256)
+        if ref in file_to_sha:
+            data["entity_ref"] = file_to_sha[ref]
+            f.write_text(
+                yaml.dump(data, default_flow_style=False, sort_keys=False),
+                encoding="utf-8",
+            )
+            updated += 1
+
+    if updated:
+        logger.info("Resolved %d flag entity_refs to sha256 hashes", updated)
 
 
 def _derive_name(data: dict, entity_type: str) -> str:

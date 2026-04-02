@@ -721,6 +721,11 @@ def pipeline(
     if total_flags > 0:
         click.echo(f"  {total_flags} curation flags generated")
 
+    # Resolve flag entity_refs from filenames to sha256 hashes
+    from .commit import _resolve_flag_entity_refs
+
+    _resolve_flag_entity_refs(lib)
+
     # Step 7: Generate run summary
     from .run_summary import compute_delta, generate_summary, load_previous_summary, save_summary
 
