@@ -1,9 +1,0 @@
-id: 60c2ea0a-f61e-4f8d-8951-1864a38b80e7
-entity_type: schema
-entity_ref: nwbcontainer_b32a28b1ba8b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: NWBContainer
-status: pending
-created_at: '2026-03-30T00:43:42.174726+00:00'

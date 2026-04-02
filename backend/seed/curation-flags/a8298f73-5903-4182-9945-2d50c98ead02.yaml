@@ -1,9 +1,0 @@
-id: a8298f73-5903-4182-9945-2d50c98ead02
-entity_type: element
-entity_ref: poschannelcount_383468ed7796.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: POSChannelCount
-status: pending
-created_at: '2026-03-30T00:40:05.698825+00:00'

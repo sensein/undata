@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: dcite:isderivedfrom
-provenance:
-- source: dandi
-  class_: ''
-  name: dcite:IsDerivedFrom
-sha256: 599ee7a540c97117591ff09ac7ebd5af72c3600d7d197216a57027ba1d54d0c9

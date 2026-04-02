@@ -1,0 +1,15 @@
+id: 016d957e-2f0a-420b-9aea-e77f0cec705a
+entity_type: value
+entity_ref: 439bc380b3be8766dcd2a7054e044efde029865a0b8f73af2352aa3c0042511f
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: https://purl.brain-bican.org/ontology/hbao/HBA_9218
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/NCIT_C33892
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/UBERON_0002316
+    score: 1.0
+status: pending
+created_at: '2026-04-02T03:57:50.249149+00:00'

@@ -1,0 +1,24 @@
+run_id: 2f7e4428-c34
+source: openminds
+started_at: '2026-04-02T04:14:14.523489+00:00'
+completed_at: '2026-04-02T04:14:14.523638+00:00'
+entity_counts:
+  extract:
+    elements: 473
+    schemas: 202
+    values: 4390
+    valuesets: 123
+enrichment_rate:
+  source_metadata: 0
+  elements: 1
+  values: 882
+  valuesets: 87
+  schemas: 77
+curation_flags:
+  low_confidence: 3579
+  ambiguous_match: 1302
+  multiple_candidates: 768
+timing:
+  extract: 6.006175994873047
+  enrich: 355.22436904907227
+  commit: 35.374980211257935

@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - 9ce1bda52c1de9cc263db6a83d156f071c48a1d61e58079d9a1c033aeeec97f2
+  - 26acf949509c0ae66a83872e2c8ca92f463d37dcb0d0e2a9ed913eec06622635
+  - f17e0b956ec56c4a349aa4cd6b1bb7a24a3b8a8cd1773f6c0056840191185168
+  - ad77ee1e16a4952e61e51708799fea0fd4fc42dbf12d76d5534cd9208b32112f
+  - b8fb3a4a15f6b931f70f734d5acc21a7c669b70d1df9bed1e1830efd1f98a6eb
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/CHEBI_38867
+    term_label: anaesthetic
+    ontology: chebi
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8961
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: aind
+  class: Anaesthetic
+  name: Anaesthetic
+  description: Description of an anaesthetic
+sha256: 52008a54216f1f7b83f85880b8d2eea8e6216391262d06a76da97bf369c8b6c1

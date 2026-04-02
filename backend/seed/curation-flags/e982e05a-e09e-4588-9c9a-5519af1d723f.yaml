@@ -1,9 +1,0 @@
-id: e982e05a-e09e-4588-9c9a-5519af1d723f
-entity_type: schema
-entity_ref: bloodplasmafreefraction_9497bc652a18.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: BloodPlasmaFreeFraction
-status: pending
-created_at: '2026-03-30T00:43:42.068127+00:00'

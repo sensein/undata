@@ -1,9 +1,0 @@
-id: f52b649d-2ec4-47de-8c50-68674a045a0b
-entity_type: schema
-entity_ref: bloodrecording_f41aac8cd524.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: BloodRecording
-status: pending
-created_at: '2026-03-30T01:18:37.787919+00:00'

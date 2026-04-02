@@ -1,0 +1,39 @@
+semantic:
+  properties:
+  - 9ce1bda52c1de9cc263db6a83d156f071c48a1d61e58079d9a1c033aeeec97f2
+  - 8db10752388e8fa255aea5639e15205b9fcb22352f23b2e6cddc599bacfe29d2
+  - 65fbaecbcf99ce0529d79c0fa87e7611744c77acf41e0f77e183a68b906cfe34
+  - 88cda39fefca09a37afd26e7566f7a229763dfa8f1929484c5d97b6489281dec
+  - e83cd61d340265a10f755d5655b1b87d57fc3565ec4372fd0070b2e850374b89
+  - 78c9ea1b68facc870c1705fce2e592c46b094117f58792e4e468ef73837d9ed6
+  - d18e680e33e39c7bdbcaf91e44ae960cf15320078f4eda6071961765b2af7b04
+  - 588fdd781467f655d0de590687dad7056c6524928acca42dc683d97549c1ea27
+  - 5b8027ed4cc5d151cd1326ca855e06e80af4a0290a58caf0bf52f2ad8aa664f6
+  - 64a565abc649576f04da97a2e1b9cd444fa900f618bfaa5940dfca13ab5ccba5
+  - 04a9fb793c62b3cbfc7ab5b5968d097fc18fd010a2f70fc6061728373807e068
+  - e6a6e1aacb36447fd7d937c9a37aaafe5baeeb684b34a9296843ed476a6e1919
+  - 4353a555eae81dae8ad705d1503298cf63eb592ce5c3d202a69f1882cfde4907
+  - 4431b073dcd6ff00c29d47fd0fcc01cd1af2c942c4df0a92f56fe9de8ef5c441
+  - 1a2a6754f11d8ad476e50c192d4f88059ddfa9ef770fa8f6edfdb703c05f2ef5
+  - 9322e286af3a67d2dddfb9b4d8fadea65d5e5f127633664b51c8f9279eb4f403
+  - 9e921c1ef0302b3572a858892117668773e92858e97d0319efb36f99992090e9
+  - 372480d7de71f8fc4481f5b58348be5df3ab24982384c8195a9301eb670e9ef1
+  - ea6829aa534feb92a988200293d89b482b8753314facd923d8208f616a35453c
+  - 458ef153e86341a5bb093f55f987e92e884b928d178b654f3edcaa2cf48fda63
+  - 7b34109f22acec19c2e7e82eb0ac4cf4912c9cbf17df12fcf3481d2eebf2bb41
+provenance:
+- source: aind
+  class: acquisition
+  name: acquisition
+  description: 'Description of data acquisition metadata including streams, stimuli,
+    and experimental setup.
+
+
+    The acquisition metadata is split into two parallel pieces: the DataStream and
+    the StimulusEpoch.
+
+    At any given moment in time the active DataStream(s) represents all modalities
+    of data being acquired,
+
+    while the StimulusEpoch represents all stimuli being presented.'
+sha256: f1c64012318a9d3864666db9474921b7d1f2c5c649acd44d8d45df14c56ea979

@@ -1,9 +1,0 @@
-id: b0cbb016-4622-4480-831f-5fc96722fa96
-entity_type: schema
-entity_ref: slicetimingasl_21045f4431de.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SliceTimingASL
-status: pending
-created_at: '2026-03-30T01:18:37.945562+00:00'

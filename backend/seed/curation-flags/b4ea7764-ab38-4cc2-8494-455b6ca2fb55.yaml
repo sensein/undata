@@ -1,9 +1,0 @@
-id: b4ea7764-ab38-4cc2-8494-455b6ca2fb55
-entity_type: value
-entity_ref: dcite_requires_b211cbb9fe31.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: dcite:Requires
-status: pending
-created_at: '2026-03-30T01:18:37.374474+00:00'

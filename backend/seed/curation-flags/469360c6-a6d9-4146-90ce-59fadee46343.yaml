@@ -1,9 +1,0 @@
-id: 469360c6-a6d9-4146-90ce-59fadee46343
-entity_type: value
-entity_ref: .ome.btf_d43a1ff21f10.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: OMEBigTiff
-status: pending
-created_at: '2026-03-30T00:43:41.581262+00:00'

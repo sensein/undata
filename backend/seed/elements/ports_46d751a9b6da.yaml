@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+  type_ref: ProbePort
+provenance:
+- source: aind
+  class: aind
+  name: ports
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 46d751a9b6dafdf762cb03682a70b4fcd7bc5b8de94693b861e7dddb11383d7c

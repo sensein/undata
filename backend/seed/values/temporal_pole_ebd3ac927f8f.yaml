@@ -1,0 +1,21 @@
+semantic:
+  label: temporal pole
+  value_type: categorical
+  ontology_id: http://purl.obolibrary.org/obo/UBERON_0002576
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0002576
+    term_label: temporal pole
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: source_metadata
+    primary: true
+provenance:
+- source: openminds
+  class: NervousSystemStructure
+  name: temporal pole
+  description: Is a pole of cerebral hemisphere. Is part of the temporal lobe. [auto-generated
+    from properties of the [UBERON ontology term](http://purl.obolibrary.org/obo/UBERON_0002576)
+    ('is_a' and 'relationship')
+sha256: ebd3ac927f8f9031948d5e4574f6244be4fb85bd62aacf2f2639bcc7598ea3a5

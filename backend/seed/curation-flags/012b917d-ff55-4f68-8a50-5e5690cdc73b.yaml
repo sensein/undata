@@ -1,0 +1,11 @@
+id: 012b917d-ff55-4f68-8a50-5e5690cdc73b
+entity_type: value
+entity_ref: bcb26297917494e3af49e1da2677e2f37109b24b64a2960f760c415a568e4e6c
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.748), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C87142
+  top_label: Eyepatch
+  top_score: 0.7476
+status: pending
+created_at: '2026-04-02T04:01:58.739187+00:00'

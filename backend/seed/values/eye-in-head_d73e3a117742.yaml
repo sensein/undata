@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: eye-in-head
-provenance:
-- source: bids
-  class_: ''
-  name: eye-in-head
-sha256: d73e3a1177421c694a420839625ac55967b2c3bf16a5da12f86dfbefcc02a794

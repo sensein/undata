@@ -1,9 +1,0 @@
-id: bba38003-ca17-48cb-96a3-4dc765c828b1
-entity_type: value
-entity_ref: dcite_isobsoletedby_27c9f46752a1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: dcite:IsObsoletedBy
-status: pending
-created_at: '2026-03-30T01:18:37.360967+00:00'

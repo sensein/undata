@@ -1,8 +1,0 @@
-semantic:
-  label: fsaveragesym
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: fsaveragesym
-sha256: 28f2269760b75582eb4a2a0035d9fe4ac4a83a77498079849ad9303ad1432491

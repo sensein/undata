@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: dandi:embargoedaccess
-provenance:
-- source: dandi
-  class_: ''
-  name: dandi:EmbargoedAccess
-sha256: e89ddc94e972185223ccf4ae0346a9f504c3be1c84a01a9527379b7b23735ec5

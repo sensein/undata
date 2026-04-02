@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: sincgauss
-provenance:
-- source: bids
-  class_: ''
-  name: SINCGAUSS
-sha256: 928475263dbde97d458ebb8620e47f4805273e7c53fc00900b4f2c1f81caad79

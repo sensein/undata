@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: fslr
-provenance:
-- source: bids
-  class_: ''
-  name: fsLR
-sha256: db983a98d24a739281c7350f33fb2c71d31cbf5d16a95d5fc623f080d2621cd8

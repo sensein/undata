@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:Reviews
-  value_type: categorical
-provenance:
-- source: dandi
-  class: RelationType
-  name: dcite:Reviews
-sha256: 71dc4dfc28e9c844680fa2e5bb17b157c5a225ae1ce3f6e43a61b2f12983bbab

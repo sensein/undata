@@ -1,9 +1,0 @@
-id: 4dcb2c4c-4b04-4a77-b769-748c5fd080f7
-entity_type: schema
-entity_ref: imagereferences_7419b4afe82a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ImageReferences
-status: pending
-created_at: '2026-03-30T01:18:37.836044+00:00'

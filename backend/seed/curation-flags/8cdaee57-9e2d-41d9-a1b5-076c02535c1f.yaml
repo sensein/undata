@@ -1,9 +1,0 @@
-id: 8cdaee57-9e2d-41d9-a1b5-076c02535c1f
-entity_type: schema
-entity_ref: mrianatomycommonmetadatafields_7ef4c830cfba.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MRIAnatomyCommonMetadataFields
-status: pending
-created_at: '2026-03-30T00:43:42.145120+00:00'

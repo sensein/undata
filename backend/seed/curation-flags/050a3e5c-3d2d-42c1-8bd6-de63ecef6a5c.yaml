@@ -1,9 +1,0 @@
-id: 050a3e5c-3d2d-42c1-8bd6-de63ecef6a5c
-entity_type: schema
-entity_ref: microscopyinstitutioninformation_bd51532aad68.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MicroscopyInstitutionInformation
-status: pending
-created_at: '2026-03-30T00:43:42.136789+00:00'

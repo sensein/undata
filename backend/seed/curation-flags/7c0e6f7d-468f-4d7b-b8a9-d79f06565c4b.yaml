@@ -1,9 +1,0 @@
-id: 7c0e6f7d-468f-4d7b-b8a9-d79f06565c4b
-entity_type: value
-entity_ref: rf_f2b555d2c134.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: RF
-status: pending
-created_at: '2026-03-30T00:40:06.195760+00:00'

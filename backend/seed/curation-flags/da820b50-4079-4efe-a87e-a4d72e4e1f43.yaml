@@ -1,9 +1,0 @@
-id: da820b50-4079-4efe-a87e-a4d72e4e1f43
-entity_type: element
-entity_ref: device_4d7c6826b8d0.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: device
-status: pending
-created_at: '2026-03-30T01:18:36.669971+00:00'

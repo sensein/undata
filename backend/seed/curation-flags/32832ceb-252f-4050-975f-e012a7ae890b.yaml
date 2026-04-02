@@ -1,9 +1,0 @@
-id: 32832ceb-252f-4050-975f-e012a7ae890b
-entity_type: schema
-entity_ref: eegoptional_32708236ed6e.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EEGOptional
-status: pending
-created_at: '2026-03-30T00:40:06.305117+00:00'

@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: scanras
-provenance:
-- source: bids
-  class_: ''
-  name: ScanRAS
-sha256: 2be927ac2e8ae62ad04b81df635e7a628ef68a8fa81d9b52e08f84efb4fa2eeb

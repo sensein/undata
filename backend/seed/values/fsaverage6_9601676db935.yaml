@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: fsaverage6
-provenance:
-- source: bids
-  class_: ''
-  name: fsaverage6
-sha256: 9601676db935ccd203249e541056eb5a752d23d8d6c78e3ce615a94367f1e9a5

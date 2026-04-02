@@ -1,9 +1,0 @@
-id: 7b931911-94fe-41cc-bc1d-dcb86440f7ac
-entity_type: element
-entity_ref: impedance_6a6ef63ff7d0.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: impedance
-status: pending
-created_at: '2026-03-30T00:43:41.324664+00:00'

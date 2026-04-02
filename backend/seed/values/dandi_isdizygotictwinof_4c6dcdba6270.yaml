@@ -1,8 +1,0 @@
-semantic:
-  label: dandi:isDizygoticTwinOf
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ParticipantRelationType
-  name: dandi:isDizygoticTwinOf
-sha256: 4c6dcdba6270ef041c885a14e3f8b1c801cbd5215c72566f993426c6cf8ea412

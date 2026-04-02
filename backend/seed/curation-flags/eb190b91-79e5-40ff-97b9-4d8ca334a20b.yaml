@@ -1,9 +1,0 @@
-id: eb190b91-79e5-40ff-97b9-4d8ca334a20b
-entity_type: element
-entity_ref: obs_intervals_index_89920d723600.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: obs_intervals_index
-status: pending
-created_at: '2026-03-30T00:43:41.401058+00:00'

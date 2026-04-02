@@ -1,8 +1,0 @@
-semantic:
-  label: ICBM452Warp5Space
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: ICBM452Warp5Space
-sha256: f107a667a13dc49d9c1ba09d38cc1df464fcf3b99d06db150edfcb5dfcad84c8

@@ -1,9 +1,0 @@
-id: f2c3f850-8ab7-46d0-917c-52524e41d4a0
-entity_type: element
-entity_ref: pharmaceuticaldoseunits_d7b169d6dfeb.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PharmaceuticalDoseUnits
-status: pending
-created_at: '2026-03-30T00:40:05.690357+00:00'

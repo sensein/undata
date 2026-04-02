@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:HasVersion
-  value_type: categorical
-provenance:
-- source: dandi
-  class: RelationType
-  name: dcite:HasVersion
-sha256: 835ce363470ea3a47280189d09f10a8f5cdd6cce809861d88d942c7b4a6db4d0

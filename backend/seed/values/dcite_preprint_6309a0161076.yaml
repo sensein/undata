@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:Preprint
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ResourceType
-  name: dcite:Preprint
-sha256: 6309a016107654518f17f32ceb3f1f421e0fe4ce93aca05dcb03eecb5e4b589f

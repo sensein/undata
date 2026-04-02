@@ -1,9 +1,0 @@
-id: 2e4e07f9-b3ed-4a6d-b2f4-421defa5ddb0
-entity_type: schema
-entity_ref: megrecommended_e744293a75e1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MEGRecommended
-status: pending
-created_at: '2026-03-30T00:43:42.118454+00:00'

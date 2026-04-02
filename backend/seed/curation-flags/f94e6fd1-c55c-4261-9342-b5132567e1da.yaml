@@ -1,9 +1,0 @@
-id: f94e6fd1-c55c-4261-9342-b5132567e1da
-entity_type: element
-entity_ref: electrodematerial_9d0160754081.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ElectrodeMaterial
-status: pending
-created_at: '2026-03-30T01:18:36.704575+00:00'

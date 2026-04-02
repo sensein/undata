@@ -1,9 +1,0 @@
-id: dda7f2f1-85f4-45da-af7d-e13a64c946a0
-entity_type: element
-entity_ref: whole_blood_radioactivity_a132c9b4e8c4.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: whole_blood_radioactivity
-status: pending
-created_at: '2026-03-30T01:18:37.209416+00:00'

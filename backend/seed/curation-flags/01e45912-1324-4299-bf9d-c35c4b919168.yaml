@@ -1,0 +1,11 @@
+id: 01e45912-1324-4299-bf9d-c35c4b919168
+entity_type: value
+entity_ref: 8c122e4fa35998877ad4022f77ec0d6ef10b67c2a3e86c248cac21b379584562
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.898), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C25745
+  top_label: Failure
+  top_score: 0.8978
+status: pending
+created_at: '2026-04-02T04:07:05.875281+00:00'

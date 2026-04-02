@@ -1,9 +1,0 @@
-id: 5684ac7f-cea6-4b7d-bd1a-2b84206ea5b0
-entity_type: element
-entity_ref: deidentificationmethodcodesequence_63bf0ab564d3.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: DeidentificationMethodCodeSequence
-status: pending
-created_at: '2026-03-30T00:43:41.217960+00:00'

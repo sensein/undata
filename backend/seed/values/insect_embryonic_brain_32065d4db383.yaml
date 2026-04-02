@@ -1,0 +1,20 @@
+semantic:
+  label: insect embryonic brain
+  value_type: categorical
+  ontology_id: http://purl.obolibrary.org/obo/UBERON_6001060
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_6001060
+    term_label: insect embryonic brain
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: source_metadata
+    primary: true
+provenance:
+- source: openminds
+  class: NervousSystemStructure
+  name: insect embryonic brain
+  description: Is a brain. [auto-generated from 'is_a' property of the [UBERON ontology
+    term](http://purl.obolibrary.org/obo/UBERON_6001060)]
+sha256: 32065d4db3832b3c9ece57d1eed49bda7a1be2661f2ab139da2702fb09af8cfe

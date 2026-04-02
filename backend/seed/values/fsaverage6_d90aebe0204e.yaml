@@ -1,8 +1,0 @@
-semantic:
-  label: fsaverage6
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: fsaverage6
-sha256: d90aebe0204e5a9491e0b973bf55a60cd5943ab7ebda5bc7990fc047ee16057e

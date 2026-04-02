@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: um
-provenance:
-- source: bids
-  class_: ''
-  name: um
-sha256: bae05d1f6b631b2380ce33e5ff806cacecfe591c8898dbd878e4338fb927eede

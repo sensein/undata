@@ -1,0 +1,21 @@
+semantic:
+  data_type: array
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/EDAM_data_1059
+    term_label: File name extension
+    ontology: edam
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7139
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: openminds
+  class: openminds
+  name: fileExtension
+  description: String of characters attached as suffix to the names of files of a
+    particular format.
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4bb7b2fa9ea6e8c6946e4bff1c88750b653f3758f257755401cc5966c53c810f

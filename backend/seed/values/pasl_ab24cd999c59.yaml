@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: pasl
-provenance:
-- source: bids
-  class_: ''
-  name: PASL
-sha256: ab24cd999c598fb6e3c41cb12432183eb8b249ee1150e79b6ae118a3f5e5c93d

@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: aind
+  class: aind
+  name: time
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e552149b3c9c18e46e4a7360b391c4b738c8a30d396046b4e30f3c0b9cb3cfce

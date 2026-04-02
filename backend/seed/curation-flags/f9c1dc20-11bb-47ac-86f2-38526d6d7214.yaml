@@ -1,9 +1,0 @@
-id: f9c1dc20-11bb-47ac-86f2-38526d6d7214
-entity_type: element
-entity_ref: physiotype_1936b06d2a7e.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PhysioType
-status: pending
-created_at: '2026-03-30T00:43:41.418054+00:00'

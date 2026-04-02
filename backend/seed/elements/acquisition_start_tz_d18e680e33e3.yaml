@@ -1,0 +1,17 @@
+semantic:
+  data_type: integer
+  value_domain: numeric
+  unit: hours
+  pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
+provenance:
+- source: aind
+  class: aind
+  name: acquisition_start_tz
+  description: Automatically populated by a validator based on acquisition_start_time.
+    Will be a TimeZoneName (IANA name) when the datetime uses a ZoneInfo timezone,
+    or an integer UTC offset in hours for fixed-offset timezones. Use ZoneInfo (from
+    the zoneinfo standard library) to preserve the named timezone.
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d18e680e33e39c7bdbcaf91e44ae960cf15320078f4eda6071961765b2af7b04

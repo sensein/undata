@@ -1,0 +1,11 @@
+id: 01c23de9-0173-48cd-a209-d8cf86c9ae3f
+entity_type: schema
+entity_ref: 168198f7fa77dd9b3c8fb57ee2a9bf8fb2a6b1c8d0d5f1091063b2ebabdf16cc
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.817), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C167351
+  top_label: Musical Instrument
+  top_score: 0.8167
+status: pending
+created_at: '2026-04-02T04:13:59.812434+00:00'

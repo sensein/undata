@@ -1,0 +1,21 @@
+semantic:
+  label: inner plexiform layer of retina
+  value_type: categorical
+  ontology_id: http://purl.obolibrary.org/obo/UBERON_0001795
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0001795
+    term_label: inner plexiform layer of retina
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: source_metadata
+    primary: true
+provenance:
+- source: openminds
+  class: NervousSystemStructure
+  name: inner plexiform layer of retina
+  description: Is a layer of retina. Is part of the retinal neural layer. [auto-generated
+    from properties of the [UBERON ontology term](http://purl.obolibrary.org/obo/UBERON_0001795)
+    ('is_a' and 'relationship')]
+sha256: 13c5d1f13af56e159a16c2c41270f026cc35b55f58959e0dc6dab7a90430222a

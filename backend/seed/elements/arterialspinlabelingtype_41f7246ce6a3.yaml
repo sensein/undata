@@ -1,0 +1,73 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: CASL
+    label: CASL
+    ontology_term: https://schema.undata.live/values/bbfc807a-0383-48a7-b777-1d2862fb7189
+  - value: PCASL
+    label: PCASL
+    ontology_term: https://schema.undata.live/values/984e84fc-41cc-466d-96a1-f3174295704d
+  - value: PASL
+    label: PASL
+    ontology_term: https://schema.undata.live/values/c38f886b-f7f0-4143-bf96-fce03792723b
+  value_domain: categorical
+  ontology_annotations:
+  - term_uri: http://purl.org/nidash/nidm#ArterialSpinLabeling
+    term_label: Arterial Spin Labeling
+    ontology: unknown
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8023
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.org/nidash/nidm#ContinuousArterialSpinLabeling
+    term_label: Continuous Arterial Spin Labeling
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7414
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://dicom.nema.org/resources/ontology/DCM/MRArterialSpinLabelingSequence
+    term_label: MR Arterial Spin Labeling Sequence
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7297
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.org/nidash/nidm#PseudoContinuousArterialSpinLabeling
+    term_label: Pseudo Continuous Arterial Spin Labeling
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7288
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://dicom.nema.org/resources/ontology/DCM/ArterialSpinLabelingContrast
+    term_label: Arterial Spin Labeling Contrast
+    ontology: unknown
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7088
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C116450
+    term_label: Arterial Spin Labeling Magnetic Resonance Imaging
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7057
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: bids
+  class: metadata
+  name: ArterialSpinLabelingType
+  description: 'The arterial spin labeling type.
+
+    '
+  generated_at: '2026-04-02T03:48:02.030097+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 41f7246ce6a34711bfcff6ca51dd3defb325b2948c47720c14d08c07ea7079a4

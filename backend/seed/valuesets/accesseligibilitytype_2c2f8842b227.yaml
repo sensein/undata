@@ -1,0 +1,21 @@
+semantic:
+  name: AccessEligibilityType
+  members:
+  - 51db0ceca858fb11d46768cba8c5e10cd5ec888b0f08ff0e07684b07c1ffb458
+  - b35a9af8a878b6a87abf5cab2503c2289f9dffaa32666775c52122debe335481
+  - d5a9c43a704cbf9d5fec1c032a5a60de0bff23bf42c40c79331a981286dbed9a
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C183346
+    term_label: Unrestricted Access
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.8127
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: openminds
+  class: openminds
+  name: AccessEligibilityType
+  description: ''
+sha256: 2c2f8842b2277bd3b721114fd40db044e23f84f143d2c124244b6ee943b0a07d

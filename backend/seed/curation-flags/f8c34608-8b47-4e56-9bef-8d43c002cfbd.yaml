@@ -1,9 +1,0 @@
-id: f8c34608-8b47-4e56-9bef-8d43c002cfbd
-entity_type: schema
-entity_ref: dfoverf_9f4eb3cd9b0b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: DfOverF
-status: pending
-created_at: '2026-03-30T01:18:37.801288+00:00'

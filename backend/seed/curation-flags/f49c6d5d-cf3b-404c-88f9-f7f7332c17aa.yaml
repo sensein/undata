@@ -1,9 +1,0 @@
-id: f49c6d5d-cf3b-404c-88f9-f7f7332c17aa
-entity_type: schema
-entity_ref: mrifuncrequired_4acb4e3aa0ca.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MRIFuncRequired
-status: pending
-created_at: '2026-03-30T00:43:42.155400+00:00'

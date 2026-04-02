@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: dcite:ispreviousversionof
-provenance:
-- source: dandi
-  class_: ''
-  name: dcite:IsPreviousVersionOf
-sha256: 66f934f0d980cb6e128d2766e3efbc3f6ac41bc684e44aa18773acaa77df0b86

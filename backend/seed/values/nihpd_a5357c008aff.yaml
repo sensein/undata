@@ -1,8 +1,0 @@
-semantic:
-  label: NIHPD
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: NIHPD
-sha256: a5357c008aff6406b1852345e0c7cbee231d771173702e1443388f0297257277

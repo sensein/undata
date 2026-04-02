@@ -1,0 +1,38 @@
+semantic:
+  data_type: string
+  type_ref: Acquisition
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C142469
+    term_label: Data Acquisition
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7975
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C161786
+    term_label: Data-Independent Acquisition
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7186
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C161785
+    term_label: Data-Dependent Acquisition
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7127
+    model: all-MiniLM-L6-v2
+    primary: false
+  value_domain: text
+provenance:
+- source: aind
+  class: aind
+  name: acquisition
+  description: Data acquisition
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 47f71152b56d33236083ec20b9058689deb36687eb769e1cab8882d8da065bc9

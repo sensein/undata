@@ -1,9 +1,0 @@
-id: 987a7980-bfbe-444e-813d-a06b46d6d2aa
-entity_type: element
-entity_ref: seegchannelcount_dbc79e20f8a9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SEEGChannelCount
-status: pending
-created_at: '2026-03-30T01:18:37.095860+00:00'

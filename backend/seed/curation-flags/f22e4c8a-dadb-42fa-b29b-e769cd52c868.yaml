@@ -1,9 +1,0 @@
-id: f22e4c8a-dadb-42fa-b29b-e769cd52c868
-entity_type: element
-entity_ref: numberofbytes_d71aa6b19557.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: numberOfBytes
-status: pending
-created_at: '2026-03-30T01:18:36.964287+00:00'

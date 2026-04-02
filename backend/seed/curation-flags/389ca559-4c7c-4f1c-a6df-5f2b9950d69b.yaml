@@ -1,9 +1,0 @@
-id: 389ca559-4c7c-4f1c-a6df-5f2b9950d69b
-entity_type: schema
-entity_ref: mrsconditionalanatomicalimage_b1fe770ff8a0.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MRSConditionalAnatomicalImage
-status: pending
-created_at: '2026-03-30T01:18:37.895316+00:00'

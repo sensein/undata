@@ -1,8 +1,0 @@
-semantic:
-  label: KitYokogawa
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: KitYokogawa
-sha256: 32fd997804e6ff7ee206e91bc226cb5279c5534860bd166c8de946d4814b1bdd

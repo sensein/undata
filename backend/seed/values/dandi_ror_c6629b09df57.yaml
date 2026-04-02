@@ -1,8 +1,0 @@
-semantic:
-  label: dandi:ror
-  value_type: categorical
-provenance:
-- source: dandi
-  class: IdentifierType
-  name: dandi:ror
-sha256: c6629b09df57c47485386dbb39bd49d1363aaeea05b4ea0ee4ce2894b2457d0a

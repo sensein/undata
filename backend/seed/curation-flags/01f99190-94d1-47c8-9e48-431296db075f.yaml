@@ -1,9 +1,0 @@
-id: 01f99190-94d1-47c8-9e48-431296db075f
-entity_type: value
-entity_ref: dcite_describes_f45a890c6dfe.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: dcite:Describes
-status: pending
-created_at: '2026-03-30T01:18:37.351141+00:00'

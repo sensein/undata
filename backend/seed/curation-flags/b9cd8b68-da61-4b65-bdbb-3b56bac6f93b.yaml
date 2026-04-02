@@ -1,9 +1,0 @@
-id: b9cd8b68-da61-4b65-bdbb-3b56bac6f93b
-entity_type: schema
-entity_ref: patchclampseries_5470b6e10040.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PatchClampSeries
-status: pending
-created_at: '2026-03-30T01:18:37.916088+00:00'

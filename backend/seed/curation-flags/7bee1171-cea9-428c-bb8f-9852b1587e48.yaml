@@ -1,9 +1,0 @@
-id: 7bee1171-cea9-428c-bb8f-9852b1587e48
-entity_type: element
-entity_ref: ieegplacementscheme_7cabd2b6b34f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: iEEGPlacementScheme
-status: pending
-created_at: '2026-03-30T00:43:41.319187+00:00'

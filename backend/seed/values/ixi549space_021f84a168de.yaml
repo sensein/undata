@@ -1,8 +1,0 @@
-semantic:
-  label: IXI549Space
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: IXI549Space
-sha256: 021f84a168de3011b99e8647dc309ef46047521a502729cbf59ba4c95ffd683c

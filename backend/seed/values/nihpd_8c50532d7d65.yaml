@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: nihpd
-provenance:
-- source: bids
-  class_: ''
-  name: NIHPD
-sha256: 8c50532d7d65ea60e5387559756dc45def451c17af93fdb45114bfe390bbeb10

@@ -1,9 +1,0 @@
-semantic:
-  properties: []
-  subclass_of: Image
-provenance:
-- source: nwb
-  class: RGBImage
-  name: RGBImage
-  description: A color image.
-sha256: 338afbe08636576a8ab5b3dd8ef49d1ba7895edb9b30672d15c4f2056aaa3cad

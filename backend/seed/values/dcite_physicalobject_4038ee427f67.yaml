@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:PhysicalObject
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ResourceType
-  name: dcite:PhysicalObject
-sha256: 4038ee427f67635072ca8bb154a2c55004367e1d825fc797d7f4ab8e886169dd

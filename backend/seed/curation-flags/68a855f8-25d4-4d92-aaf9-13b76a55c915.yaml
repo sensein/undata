@@ -1,9 +1,0 @@
-id: 68a855f8-25d4-4d92-aaf9-13b76a55c915
-entity_type: schema
-entity_ref: emgrecommended_569fbe5a926c.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EMGRecommended
-status: pending
-created_at: '2026-03-30T01:18:37.812587+00:00'

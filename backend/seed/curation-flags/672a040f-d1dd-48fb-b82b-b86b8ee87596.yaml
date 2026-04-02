@@ -1,9 +1,0 @@
-id: 672a040f-d1dd-48fb-b82b-b86b8ee87596
-entity_type: schema
-entity_ref: ieegoptional_910ee4fc1e3f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: iEEGOptional
-status: pending
-created_at: '2026-03-30T00:43:42.104711+00:00'

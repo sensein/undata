@@ -1,9 +1,0 @@
-id: 2ec8f96e-e8fa-4835-b34b-fb8bd3871e76
-entity_type: value
-entity_ref: rb1map_add5e00f3967.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: RB1map
-status: pending
-created_at: '2026-03-30T00:40:06.193737+00:00'

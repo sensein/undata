@@ -1,9 +1,0 @@
-id: 39b870b4-947c-4bde-8e4c-5168cfed08e3
-entity_type: schema
-entity_ref: meghardware_b9392004c4ea.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MEGHardware
-status: pending
-created_at: '2026-03-30T00:40:06.325709+00:00'

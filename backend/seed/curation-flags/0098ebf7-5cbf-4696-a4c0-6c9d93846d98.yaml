@@ -1,9 +1,0 @@
-id: 0098ebf7-5cbf-4696-a4c0-6c9d93846d98
-entity_type: element
-entity_ref: jntangchannelcount_f1716d75eee8.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: JNTANGChannelCount
-status: pending
-created_at: '2026-03-30T00:43:41.338835+00:00'

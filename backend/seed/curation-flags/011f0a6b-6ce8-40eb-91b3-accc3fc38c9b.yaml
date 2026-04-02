@@ -1,0 +1,11 @@
+id: 011f0a6b-6ce8-40eb-91b3-accc3fc38c9b
+entity_type: value
+entity_ref: c19f47e0c0f0a8cf3f698eacc2dcce26bb65c521be70428678c4957391283b5a
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.830), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/HP_0020034
+  top_label: Diffuse
+  top_score: 0.8302
+status: pending
+created_at: '2026-04-02T04:07:05.816493+00:00'

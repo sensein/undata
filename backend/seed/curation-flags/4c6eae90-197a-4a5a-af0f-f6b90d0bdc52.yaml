@@ -1,9 +1,0 @@
-id: 4c6eae90-197a-4a5a-af0f-f6b90d0bdc52
-entity_type: element
-entity_ref: numericalaperture_f35d1c804091.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: NumericalAperture
-status: pending
-created_at: '2026-03-30T00:40:05.679456+00:00'

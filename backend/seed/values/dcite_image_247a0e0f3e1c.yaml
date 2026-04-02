@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:Image
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ResourceType
-  name: dcite:Image
-sha256: 247a0e0f3e1c94cc5aa01fe70959e9dc3fed873bf64851250b9d40386d78957e

@@ -1,9 +1,0 @@
-id: f442064d-8bfe-4efa-8e39-87e9aa7281b6
-entity_type: element
-entity_ref: containertype_df2f53522870.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ContainerType
-status: pending
-created_at: '2026-03-30T00:40:05.515017+00:00'

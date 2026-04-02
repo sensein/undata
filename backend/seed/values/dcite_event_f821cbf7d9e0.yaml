@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: dcite:event
-provenance:
-- source: dandi
-  class_: ''
-  name: dcite:Event
-sha256: f821cbf7d9e0b9a0092d37a45d9c8cc4e508410e27a825b383afbb0c4157af25

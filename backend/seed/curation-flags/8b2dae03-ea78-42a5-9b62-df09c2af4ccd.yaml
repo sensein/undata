@@ -1,9 +1,0 @@
-id: 8b2dae03-ea78-42a5-9b62-df09c2af4ccd
-entity_type: element
-entity_ref: manufacturer_fbebb95b16db.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Manufacturer
-status: pending
-created_at: '2026-03-30T01:18:36.892683+00:00'

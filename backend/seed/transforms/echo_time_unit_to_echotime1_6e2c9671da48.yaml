@@ -1,0 +1,15 @@
+source_element: https://schema.undata.live/elements/echo_time_unit_df0f3685ce9f
+target_element: https://schema.undata.live/elements/echotime1_46c286296e64
+function:
+  function_type: unknown
+  input_type: string
+  output_type: float
+  expression_type: none
+provenance:
+- source: auto
+  class: ''
+  name: ''
+  generated_at: '2026-04-02T04:14:31.447890+00:00'
+  attributed_to: urn:undata:transform-pipeline
+  activity: transform
+sha256: 6e2c9671da48d710b5dab200599af9271b9a4358c23f471ef319a25e247c1f80

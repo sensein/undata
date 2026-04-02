@@ -1,9 +1,0 @@
-id: 017498b7-b4da-454e-8a7c-cfa693bad921
-entity_type: schema
-entity_ref: voltageclampseries_f674e9eb5cce.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: VoltageClampSeries
-status: pending
-created_at: '2026-03-30T01:18:37.959944+00:00'

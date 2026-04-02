@@ -1,9 +1,0 @@
-id: 65fd3968-9c94-41a6-883e-dc7971f1feb5
-entity_type: element
-entity_ref: color_73b1fcd02d01.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: color
-status: pending
-created_at: '2026-03-30T00:43:41.204679+00:00'

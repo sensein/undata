@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: mni152nlin2009casym
-provenance:
-- source: bids
-  class_: ''
-  name: MNI152NLin2009cAsym
-sha256: f0893f0e9f93e8794217a6a9320b64c3e87f84daee426aab2b35a51180370f59

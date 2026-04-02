@@ -1,9 +1,0 @@
-id: 1def240e-b9c3-40a5-b7fc-13caeb7f139f
-entity_type: element
-entity_ref: authors_f6f7a923f42d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Authors
-status: pending
-created_at: '2026-03-30T00:43:41.176006+00:00'

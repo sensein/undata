@@ -1,9 +1,0 @@
-id: cc488258-8e61-4836-adca-db5cd0857771
-entity_type: schema
-entity_ref: megoptional_4608cccc2eea.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MEGOptional
-status: pending
-created_at: '2026-03-30T00:43:42.117347+00:00'

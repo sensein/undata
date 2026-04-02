@@ -1,8 +1,0 @@
-semantic:
-  label: dandi:isParentOf
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ParticipantRelationType
-  name: dandi:isParentOf
-sha256: ad85ebf0d2c77126526bc7b3872de7b9b20ca73dfe29fbd8e02f886ee81efa04

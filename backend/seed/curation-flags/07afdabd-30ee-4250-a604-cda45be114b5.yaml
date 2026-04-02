@@ -1,9 +1,0 @@
-id: 07afdabd-30ee-4250-a604-cda45be114b5
-entity_type: schema
-entity_ref: indexseries_67901050e9ff.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: IndexSeries
-status: pending
-created_at: '2026-03-30T00:43:42.110952+00:00'

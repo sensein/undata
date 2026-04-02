@@ -1,9 +1,0 @@
-id: 9f52d416-880f-4dd7-a590-e3234288903e
-entity_type: element
-entity_ref: origin_coords_c5f587e78f20.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: origin_coords
-status: pending
-created_at: '2026-03-30T01:18:36.975582+00:00'

@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:ComputationalNotebook
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ResourceType
-  name: dcite:ComputationalNotebook
-sha256: 4feea09a0f188503789eb3a808e5bb4c7b1dc688752fcccb4e66a1b5ad353894

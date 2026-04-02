@@ -1,0 +1,11 @@
+id: 019238b4-93ac-4f37-ad50-2c92578e3df3
+entity_type: element
+entity_ref: 9819f0e1485ccf447efc95663b0a7c9a0784c1fe62e0a508a1134a197fe41eee
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.798), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C83164
+  top_label: Birth Year
+  top_score: 0.798
+status: pending
+created_at: '2026-04-02T04:13:55.587224+00:00'

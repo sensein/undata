@@ -1,9 +1,0 @@
-id: f11bc2fc-0a05-41f3-ac63-4188178a53fa
-entity_type: element
-entity_ref: labelingslabthickness_46a56370e68a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: LabelingSlabThickness
-status: pending
-created_at: '2026-03-30T01:18:36.878098+00:00'

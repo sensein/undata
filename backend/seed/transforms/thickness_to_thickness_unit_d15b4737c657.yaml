@@ -1,0 +1,15 @@
+source_element: https://schema.undata.live/elements/thickness_b90f9870d437
+target_element: https://schema.undata.live/elements/thickness_unit_d92d8a82521e
+function:
+  function_type: unknown
+  input_type: float
+  output_type: string
+  expression_type: none
+provenance:
+- source: auto
+  class: ''
+  name: ''
+  generated_at: '2026-04-02T04:14:31.447890+00:00'
+  attributed_to: urn:undata:transform-pipeline
+  activity: transform
+sha256: d15b4737c657f96193524c1aca5f40b70b0461d3149f283060cc9674aaaddfbe

@@ -1,9 +1,0 @@
-id: 28d3ad4d-ae66-402d-b8ca-50c8296dacf1
-entity_type: element
-entity_ref: intervalseries_cad2a0235647.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: IntervalSeries
-status: pending
-created_at: '2026-03-30T01:18:36.866902+00:00'

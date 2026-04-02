@@ -1,9 +1,0 @@
-id: c3837311-cad2-4b5b-8454-0087cc285a35
-entity_type: element
-entity_ref: parentcoordinatesystem_7535e68382c8.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ParentCoordinateSystem
-status: pending
-created_at: '2026-03-30T00:43:41.408369+00:00'

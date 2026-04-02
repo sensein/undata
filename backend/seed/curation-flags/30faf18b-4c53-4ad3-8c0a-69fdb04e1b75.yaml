@@ -1,9 +1,0 @@
-id: 30faf18b-4c53-4ad3-8c0a-69fdb04e1b75
-entity_type: element
-entity_ref: target_muscle_fa3a13c39fb1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: target_muscle
-status: pending
-created_at: '2026-03-30T00:43:41.520046+00:00'

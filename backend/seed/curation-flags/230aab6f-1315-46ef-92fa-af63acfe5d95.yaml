@@ -1,9 +1,0 @@
-id: 230aab6f-1315-46ef-92fa-af63acfe5d95
-entity_type: element
-entity_ref: tags_index_b78b4992579e.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: tags_index
-status: pending
-created_at: '2026-03-30T00:43:41.519557+00:00'

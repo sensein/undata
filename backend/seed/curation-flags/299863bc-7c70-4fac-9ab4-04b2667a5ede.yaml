@@ -1,9 +1,0 @@
-id: 299863bc-7c70-4fac-9ab4-04b2667a5ede
-entity_type: schema
-entity_ref: petradiochemistry_f88568a2bf9b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: PETRadioChemistry
-status: pending
-created_at: '2026-03-30T00:43:42.184007+00:00'

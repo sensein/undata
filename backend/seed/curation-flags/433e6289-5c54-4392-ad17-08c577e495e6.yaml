@@ -1,9 +1,0 @@
-id: 433e6289-5c54-4392-ad17-08c577e495e6
-entity_type: element
-entity_ref: frameacquisitionduration_4ca2fff255e4.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: FrameAcquisitionDuration
-status: pending
-created_at: '2026-03-30T01:18:36.740202+00:00'

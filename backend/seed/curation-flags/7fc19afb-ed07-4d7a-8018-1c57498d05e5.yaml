@@ -1,9 +1,0 @@
-id: 7fc19afb-ed07-4d7a-8018-1c57498d05e5
-entity_type: schema
-entity_ref: physio_physioeventscolumns_76651bde43d9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: physio_PhysioEventsColumns
-status: pending
-created_at: '2026-03-30T01:18:37.927592+00:00'

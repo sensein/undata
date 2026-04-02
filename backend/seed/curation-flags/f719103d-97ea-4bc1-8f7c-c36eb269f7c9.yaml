@@ -1,9 +1,0 @@
-id: f719103d-97ea-4bc1-8f7c-c36eb269f7c9
-entity_type: element
-entity_ref: type__electrodes_185f7f3827f4.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: type__electrodes
-status: pending
-created_at: '2026-03-30T00:40:05.792159+00:00'

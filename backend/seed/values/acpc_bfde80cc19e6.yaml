@@ -1,8 +1,0 @@
-semantic:
-  label: ACPC
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: ACPC
-sha256: bfde80cc19e6ee7252ce3f97a49010f4892c2dcdd3a118f8e5835a3ddb7b12e7

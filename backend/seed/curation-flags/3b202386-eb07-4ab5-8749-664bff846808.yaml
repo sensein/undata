@@ -1,9 +1,0 @@
-id: 3b202386-eb07-4ab5-8749-664bff846808
-entity_type: element
-entity_ref: image_mask_43eecf7c7b6b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: image_mask
-status: pending
-created_at: '2026-03-30T00:43:41.320835+00:00'

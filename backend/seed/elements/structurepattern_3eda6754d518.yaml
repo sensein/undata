@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  type_ref: FileRepositoryStructure
+  value_domain: text
+provenance:
+- source: openminds
+  class: openminds
+  name: structurePattern
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 3eda6754d51804d3c9b1c0e052153aaf41e3ffa1a6946616e3c46e0731f86739

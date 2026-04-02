@@ -1,0 +1,22 @@
+semantic:
+  name: AccessProcessType
+  members:
+  - 436113194a22d172019ccb39d40fb1996ffa33f48ae92911cd9390cd41ec1d7b
+  - 9f0ffa0cec131c8468c639885ee71472ebd48a11bc7dda3eabf52ddd3aa81b43
+  - 7442d29170fcd6316dc3feab2ea1c396c275930bc364cbec15732f0210ba95df
+  - 79f34475a992dbcb18bef7633ddffdf346f60fe520e3732b3f7aab8faa9ebdf7
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C41192
+    term_label: Authorization
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.8802
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: openminds
+  class: openminds
+  name: AccessProcessType
+  description: ''
+sha256: 26b11fba08e11824ebabfad96f0b2e6bce64d82b0a3557c9cef4309c55c227b2

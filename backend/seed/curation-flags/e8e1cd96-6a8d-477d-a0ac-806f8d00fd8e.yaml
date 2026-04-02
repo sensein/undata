@@ -1,9 +1,0 @@
-id: e8e1cd96-6a8d-477d-a0ac-806f8d00fd8e
-entity_type: schema
-entity_ref: epochlengthrequired_241798812656.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EpochLengthRequired
-status: pending
-created_at: '2026-03-30T00:43:42.094678+00:00'

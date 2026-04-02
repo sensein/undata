@@ -1,9 +1,0 @@
-id: 5715bc5b-f773-4985-a420-21b6863d3dfb
-entity_type: element
-entity_ref: bias_current_bf507d88539d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: bias_current
-status: pending
-created_at: '2026-03-30T01:18:36.605892+00:00'

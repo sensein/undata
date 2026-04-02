@@ -1,0 +1,15 @@
+source_element: https://schema.undata.live/elements/catheter_design_2593a1cc5049
+target_element: https://schema.undata.live/elements/catheter_port_8114a904eee8
+function:
+  function_type: identity
+  input_type: string
+  output_type: string
+  expression_type: none
+provenance:
+- source: auto
+  class: ''
+  name: ''
+  generated_at: '2026-04-02T04:14:31.447890+00:00'
+  attributed_to: urn:undata:transform-pipeline
+  activity: transform
+sha256: 3f23b1ae05e8429307f91216246f0a4f8c225c31876362678338a774305e0a2e

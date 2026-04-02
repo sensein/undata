@@ -1,9 +1,0 @@
-id: e17741ab-0e2e-43fe-8747-26ddcf610a44
-entity_type: schema
-entity_ref: eventdetection_693a380c01dd.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EventDetection
-status: pending
-created_at: '2026-03-30T00:43:42.095122+00:00'

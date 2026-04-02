@@ -1,9 +1,0 @@
-id: ad009d54-6510-40bd-a827-9b5904018f42
-entity_type: element
-entity_ref: coilcombinationmethod_2626c0bffe10.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CoilCombinationMethod
-status: pending
-created_at: '2026-03-30T00:40:05.511839+00:00'

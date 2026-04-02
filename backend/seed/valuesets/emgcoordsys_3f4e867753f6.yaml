@@ -1,9 +1,0 @@
-semantic:
-  name: EMGCoordSys
-  members:
-  - df6995f1bdf11bb65315cc13c0862c3c5d38c842ed6261532b72c198374bad98
-provenance:
-- source: bids
-  class: enums
-  name: _EMGCoordSys
-sha256: 3f4e867753f677f9b214a7aa49483b51f72a4239189f19387ab9b0494f8ef553

@@ -1,9 +1,0 @@
-id: 72e56629-bddb-49bf-889f-c9eb0c10db9a
-entity_type: schema
-entity_ref: publishable_6899b86942fc.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: Publishable
-status: pending
-created_at: '2026-03-30T01:18:37.933649+00:00'

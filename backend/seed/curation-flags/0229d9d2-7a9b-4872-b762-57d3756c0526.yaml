@@ -1,9 +1,0 @@
-id: 0229d9d2-7a9b-4872-b762-57d3756c0526
-entity_type: value
-entity_ref: dcite_haspart_560a66b46543.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: dcite:HasPart
-status: pending
-created_at: '2026-03-30T01:18:37.353527+00:00'

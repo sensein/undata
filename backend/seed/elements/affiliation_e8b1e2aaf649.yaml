@@ -22,7 +22,7 @@ provenance:
   class: Person
   name: affiliation
   description: An organization that this person is affiliated with.
-  generated_at: '2026-03-30T00:43:46.045696+00:00'
+  generated_at: '2026-04-02T03:57:56.612441+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: e8b1e2aaf649264dc19b8a4eb1627bbd0c38529747810b163039de4b5addb140

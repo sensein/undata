@@ -1,9 +1,0 @@
-id: 65f47eef-04e4-431d-9b1c-3839eca5ba62
-entity_type: element
-entity_ref: softwareversion_9961f9a8b110.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SoftwareVersion
-status: pending
-created_at: '2026-03-30T00:40:05.752704+00:00'

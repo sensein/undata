@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  type_ref: SoftwareFeature
+provenance:
+- source: openminds
+  class: openminds
+  name: feature
+  description: Structure, form, or appearance that characterizes something or someone.
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a16bda118c408808f83216c2f46d01af63d82e49f301f8a5f49a670584c51803

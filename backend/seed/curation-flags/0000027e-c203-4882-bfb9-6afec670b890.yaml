@@ -1,0 +1,11 @@
+id: 0000027e-c203-4882-bfb9-6afec670b890
+entity_type: element
+entity_ref: a1e435e868d8dede520c0fffc09eaf5a540a400f7c2e9b24590eaa4bfe1d058b
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.821), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C204095
+  top_label: Excitation Wavelength
+  top_score: 0.8205
+status: pending
+created_at: '2026-04-02T04:07:04.836069+00:00'

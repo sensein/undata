@@ -1,9 +1,0 @@
-id: ba309a2b-0670-431e-a5db-2360be45c5c4
-entity_type: element
-entity_ref: includeincitation_8b8f94901e72.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: includeInCitation
-status: pending
-created_at: '2026-03-30T01:18:36.845478+00:00'

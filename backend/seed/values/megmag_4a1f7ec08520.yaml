@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: megmag
-provenance:
-- source: bids
-  class_: ''
-  name: MEGMAG
-sha256: 4a1f7ec08520ba778e32216d620314495de283e0eaf2784222a613a2b4e22e39

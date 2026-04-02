@@ -1,9 +1,0 @@
-id: 76d06b26-b46f-47a9-97ab-1498fc20599e
-entity_type: schema
-entity_ref: optogeneticstimulussite_33b9b1ee4416.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: OptogeneticStimulusSite
-status: pending
-created_at: '2026-03-30T01:18:37.911041+00:00'

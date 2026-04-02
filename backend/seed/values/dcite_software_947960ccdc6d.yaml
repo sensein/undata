@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:Software
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ResourceType
-  name: dcite:Software
-sha256: 947960ccdc6d25eb1b4c5da0373f40f5e155e3b53400967799e76fcaf127a1fe

@@ -1,9 +1,0 @@
-id: 50b79f9a-96aa-4110-a40e-8d1bc8e82cf0
-entity_type: element
-entity_ref: wasassociatedwith_e62f8159c2a9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: wasAssociatedWith
-status: pending
-created_at: '2026-03-30T01:18:37.197338+00:00'

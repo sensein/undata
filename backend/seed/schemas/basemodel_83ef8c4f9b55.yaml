@@ -1,8 +1,0 @@
-semantic:
-  properties: []
-provenance:
-- source: dandi
-  class: BaseModel
-  name: BaseModel
-  description: '!!! abstract "Usage Documentation"'
-sha256: 83ef8c4f9b5558bc151e5e74dc22f4069b8e02e0618bf68dba51902d0c11f7fd

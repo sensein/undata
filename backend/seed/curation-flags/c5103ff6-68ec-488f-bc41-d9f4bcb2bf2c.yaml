@@ -1,9 +1,0 @@
-id: c5103ff6-68ec-488f-bc41-d9f4bcb2bf2c
-entity_type: element
-entity_ref: eegcoordinatesystem_44f4c0b69df2.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EEGCoordinateSystem
-status: pending
-created_at: '2026-03-30T00:40:05.555521+00:00'

@@ -1,9 +1,0 @@
-id: 9f358ecf-7cd8-4b67-9c8f-264402ae2d5c
-entity_type: element
-entity_ref: electrode_6a6910dd8e84.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: electrode
-status: pending
-created_at: '2026-03-30T01:18:36.702722+00:00'

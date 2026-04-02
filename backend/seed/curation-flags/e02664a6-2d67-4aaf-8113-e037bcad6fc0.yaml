@@ -1,9 +1,0 @@
-id: e02664a6-2d67-4aaf-8113-e037bcad6fc0
-entity_type: schema
-entity_ref: simultaneousrecordingstable_fa84b0af9d4b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SimultaneousRecordingsTable
-status: pending
-created_at: '2026-03-30T01:18:37.945242+00:00'

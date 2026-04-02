@@ -1,0 +1,11 @@
+id: 017ee416-e015-4521-940a-44a4d13a18bb
+entity_type: value
+entity_ref: 7177cc27e2825872831f5bf43ab5f5488ae0afa879cf512ccb952d981f389262
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.779), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C16810
+  top_label: Magnetic Resonance Spectroscopy
+  top_score: 0.7789
+status: pending
+created_at: '2026-04-02T04:13:59.298536+00:00'

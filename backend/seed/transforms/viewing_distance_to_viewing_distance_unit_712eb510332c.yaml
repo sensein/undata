@@ -1,0 +1,15 @@
+source_element: https://schema.undata.live/elements/viewing_distance_f7035a8f3a53
+target_element: https://schema.undata.live/elements/viewing_distance_unit_c2c8fd9464dc
+function:
+  function_type: unknown
+  input_type: float
+  output_type: string
+  expression_type: none
+provenance:
+- source: auto
+  class: ''
+  name: ''
+  generated_at: '2026-04-02T04:14:31.447890+00:00'
+  attributed_to: urn:undata:transform-pipeline
+  activity: transform
+sha256: 712eb510332cc3d99000301736a7d6a7803b3a3bab4560ed12ea672d309c2851

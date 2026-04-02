@@ -1,9 +1,0 @@
-id: a856f4e3-d2e9-416f-b3fa-049c3f43d064
-entity_type: element
-entity_ref: delayaftertrigger_ab98c58cf35e.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: DelayAfterTrigger
-status: pending
-created_at: '2026-03-30T00:40:05.523142+00:00'

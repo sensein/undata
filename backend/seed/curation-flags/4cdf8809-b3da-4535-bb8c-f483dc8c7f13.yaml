@@ -1,9 +1,0 @@
-id: 4cdf8809-b3da-4535-bb8c-f483dc8c7f13
-entity_type: value
-entity_ref: mwfmap_aee567b12225.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MWFmap
-status: pending
-created_at: '2026-03-30T01:18:37.588517+00:00'

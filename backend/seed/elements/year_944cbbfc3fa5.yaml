@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  unit: years
+provenance:
+- source: openminds
+  class: openminds
+  name: year
+  description: Cycle in the Gregorian calendar specified by a number and comprised
+    of 365 or 366 days divided into 12 months beginning with January and ending with
+    December.
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 944cbbfc3fa59e11601feae7b35326f48b8bb46a7b011300a0155e1926f43bed

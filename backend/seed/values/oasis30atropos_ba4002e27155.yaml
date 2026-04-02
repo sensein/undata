@@ -1,8 +1,0 @@
-semantic:
-  label: OASIS30Atropos
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: OASIS30Atropos
-sha256: ba4002e2715508c4c3dafaf4dfe79a071086036241465bb15de6c8442a199c06

@@ -1,9 +1,0 @@
-id: 977c0ff7-2cf5-4aa9-af03-a270a81be1a4
-entity_type: element
-entity_ref: continuousheadlocalization_3e0ad0dd6b17.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ContinuousHeadLocalization
-status: pending
-created_at: '2026-03-30T00:40:05.515805+00:00'

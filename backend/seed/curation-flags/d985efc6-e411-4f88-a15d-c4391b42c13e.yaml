@@ -1,9 +1,0 @@
-id: d985efc6-e411-4f88-a15d-c4391b42c13e
-entity_type: element
-entity_ref: molaractivity_9665e06dd3d4.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MolarActivity
-status: pending
-created_at: '2026-03-30T00:40:05.655354+00:00'

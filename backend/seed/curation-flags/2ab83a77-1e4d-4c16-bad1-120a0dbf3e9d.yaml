@@ -1,9 +1,0 @@
-id: 2ab83a77-1e4d-4c16-bad1-120a0dbf3e9d
-entity_type: element
-entity_ref: short_channel_b81043feb2e3.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: short_channel
-status: pending
-created_at: '2026-03-30T00:40:05.745542+00:00'

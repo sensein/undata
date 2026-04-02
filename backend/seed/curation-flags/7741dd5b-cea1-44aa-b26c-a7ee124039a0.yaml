@@ -1,9 +1,0 @@
-id: 7741dd5b-cea1-44aa-b26c-a7ee124039a0
-entity_type: element
-entity_ref: indicator_7ae391ba3614.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: indicator
-status: pending
-created_at: '2026-03-30T00:43:41.326353+00:00'

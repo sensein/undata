@@ -1,0 +1,11 @@
+id: 0156f2d0-03a4-4b91-9d9e-913097295a11
+entity_type: value
+entity_ref: 4498bcf947ff57f1cf1e85f5fb934c3cda266144ec7f6870096c4fd44e1124ad
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.937), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/EDAM_topic_0121
+  top_label: Proteomics
+  top_score: 0.9371
+status: pending
+created_at: '2026-04-02T04:13:58.465140+00:00'

@@ -1,9 +1,0 @@
-id: 8b92537d-4844-4bab-a826-d398d9ebf24c
-entity_type: element
-entity_ref: source__optodes_e8c4cdc49a01.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: source__optodes
-status: pending
-created_at: '2026-03-30T01:18:37.114248+00:00'

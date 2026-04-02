@@ -1,0 +1,21 @@
+semantic:
+  label: trigeminal nerve fibers
+  value_type: categorical
+  ontology_id: http://purl.obolibrary.org/obo/UBERON_0003041
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0003041
+    term_label: trigeminal nerve fibers
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: source_metadata
+    primary: true
+provenance:
+- source: openminds
+  class: NervousSystemStructure
+  name: trigeminal nerve fibers
+  description: Is a nerve fiber. Is part of the trigeminal nerve. [auto-generated
+    from properties of the [UBERON ontology term](http://purl.obolibrary.org/obo/UBERON_0003041)
+    ('is_a' and 'relationship')]
+sha256: 95a4d498b0b7a0642e29a672fdb3d9527b34c9af0d98bd589ed85c4952245b7c

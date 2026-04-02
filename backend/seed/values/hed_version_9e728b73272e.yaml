@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: hed_version
-provenance:
-- source: bids
-  class_: ''
-  name: hed_version
-sha256: 9e728b73272ea8f09bdb987089cddca80bb9d9c1ff2f037ca4d71f1569af77ca

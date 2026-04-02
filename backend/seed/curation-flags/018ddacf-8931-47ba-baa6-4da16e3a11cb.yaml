@@ -1,0 +1,11 @@
+id: 018ddacf-8931-47ba-baa6-4da16e3a11cb
+entity_type: value
+entity_ref: 0d605e551b407616a904934989bf16d49f90eccf8f3835a70f86612eee1f93b0
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.729), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C25190
+  top_label: Person
+  top_score: 0.7286
+status: pending
+created_at: '2026-04-02T03:53:16.370782+00:00'

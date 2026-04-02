@@ -1,9 +1,0 @@
-id: 97e0d407-0f4a-4d26-8c68-58643ddbb60a
-entity_type: element
-entity_ref: schemakey_336df453c3c5.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: schemaKey
-status: pending
-created_at: '2026-03-30T01:18:37.076446+00:00'

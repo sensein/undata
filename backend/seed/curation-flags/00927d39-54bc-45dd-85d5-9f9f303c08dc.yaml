@@ -1,0 +1,11 @@
+id: 00927d39-54bc-45dd-85d5-9f9f303c08dc
+entity_type: schema
+entity_ref: 3efad32eefc43a086d1b5bd170ec402113b3729b4e8510bf866dab270205b770
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.729), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C210102
+  top_label: Sample Type
+  top_score: 0.7294
+status: pending
+created_at: '2026-04-02T04:07:06.843064+00:00'

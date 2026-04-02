@@ -1,9 +1,0 @@
-id: 8125c61d-875e-4187-84a1-42ce67cd10a8
-entity_type: value
-entity_ref: defacemask_74c3d62a21dd.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: defacemask
-status: pending
-created_at: '2026-03-30T00:40:05.923697+00:00'

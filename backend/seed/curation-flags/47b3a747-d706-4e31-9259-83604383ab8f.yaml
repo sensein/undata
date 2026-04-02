@@ -1,9 +1,0 @@
-id: 47b3a747-d706-4e31-9259-83604383ab8f
-entity_type: element
-entity_ref: frequencyoffset_86563107b726.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: FrequencyOffset
-status: pending
-created_at: '2026-03-30T00:43:41.288815+00:00'

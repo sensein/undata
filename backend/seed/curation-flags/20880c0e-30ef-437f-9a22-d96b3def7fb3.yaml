@@ -1,9 +1,0 @@
-id: 20880c0e-30ef-437f-9a22-d96b3def7fb3
-entity_type: element
-entity_ref: codingschemedesignator_10efa326263a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: CodingSchemeDesignator
-status: pending
-created_at: '2026-03-30T00:43:41.202037+00:00'

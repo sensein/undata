@@ -1,0 +1,27 @@
+semantic:
+  properties:
+  - 5eaf0fbfdda2235bd5d58edb52fb5be6629425e075a9a73808c3cd59f51ef768
+  - e54753f2e0db0fe10e11082924aeb00ff2fe578cbb3ba354ebf38bc411466b5c
+  - d61f64ade1d193e606ce2804ce764da05841facbb1f05f22f66c683043ed03bc
+  - fe4fbe3eb9ebe2731cb5201aaca5bb11b1948a78be5d037ec66b6c694359328e
+  - 4bb7b2fa9ea6e8c6946e4bff1c88750b653f3758f257755401cc5966c53c810f
+  - 8cdacf45d6329f541776789adacffbdf839d3ce047fd5c2ff1d70f7b301a8456
+  - 40762e6f555ac297fac23cb38fb6b95f2578490d68006f838a93309547c543bf
+  - b24ebc593c2def2fbcd39c25ad054dea7f572ae3283603102fa9b26771d5b844
+  - 7efbc454986721f23df7fe355030f20d5e4f7498a89c2ad659c3c8f1f4ae2e1e
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C114466
+    term_label: Metadata Content Type
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7024
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: openminds
+  class: ContentType
+  name: ContentType
+  description: Structured information on the content type of a file instance, bundle
+    or repository.
+sha256: 5ce62d4453f1cffd8869a677ce14fce422aa11507eb7f518b04426b9b822de35

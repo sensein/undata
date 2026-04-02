@@ -1,0 +1,11 @@
+id: 01018204-f568-4360-aca5-e6cfc89ef8b1
+entity_type: value
+entity_ref: 6844fbb1e2941ac08f747114daac9e6463259a4997fa185d0a5251934864b28b
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.782), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C65167
+  top_label: Customize
+  top_score: 0.7818
+status: pending
+created_at: '2026-04-02T03:57:49.849391+00:00'

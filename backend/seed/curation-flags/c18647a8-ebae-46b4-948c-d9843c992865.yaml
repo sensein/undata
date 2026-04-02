@@ -1,9 +1,0 @@
-id: c18647a8-ebae-46b4-948c-d9843c992865
-entity_type: element
-entity_ref: specificradioactivitymeastime_c480cc41c366.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: SpecificRadioactivityMeasTime
-status: pending
-created_at: '2026-03-30T01:18:37.122788+00:00'

@@ -1,9 +1,0 @@
-id: ee61aad0-5d97-4a77-8544-c956c9da0d89
-entity_type: element
-entity_ref: tubinglength_5db56f0664fa.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: TubingLength
-status: pending
-created_at: '2026-03-30T00:40:05.785258+00:00'

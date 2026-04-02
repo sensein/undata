@@ -1,9 +1,0 @@
-id: fceb19ed-3571-4668-b6a2-da2b8d11f3af
-entity_type: element
-entity_ref: hardwarefilters_33b8a0405556.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: HardwareFilters
-status: pending
-created_at: '2026-03-30T00:43:41.298182+00:00'

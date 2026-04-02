@@ -1,0 +1,11 @@
+id: 014d22d3-1796-4c1f-940a-81543fccb028
+entity_type: value
+entity_ref: be56fcab086726cac61b90037a5bb11c20c287d063115141b3fe096a88b9d0b7
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.722), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C69168
+  top_label: Mrs
+  top_score: 0.7223
+status: pending
+created_at: '2026-04-02T03:53:16.459263+00:00'

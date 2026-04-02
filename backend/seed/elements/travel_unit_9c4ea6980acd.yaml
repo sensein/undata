@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  type_ref: SizeUnit
+  value_domain: text
+provenance:
+- source: aind
+  class: aind
+  name: travel_unit
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9c4ea6980acdaf60639615094d4bedcc975fd2fd05186c6eac997154e8517512

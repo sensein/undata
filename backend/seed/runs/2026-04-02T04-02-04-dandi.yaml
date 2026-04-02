@@ -1,0 +1,24 @@
+run_id: 59765182-693
+source: dandi
+started_at: '2026-04-02T04:02:04.127073+00:00'
+completed_at: '2026-04-02T04:02:04.127171+00:00'
+entity_counts:
+  extract:
+    elements: 398
+    schemas: 44
+    values: 152
+    valuesets: 5
+enrichment_rate:
+  source_metadata: 0
+  elements: 104
+  values: 8
+  valuesets: 1
+  schemas: 22
+curation_flags:
+  low_confidence: 1794
+  ambiguous_match: 353
+  multiple_candidates: 211
+timing:
+  extract: 1.3258719444274902
+  enrich: 235.50746607780457
+  commit: 5.405766010284424

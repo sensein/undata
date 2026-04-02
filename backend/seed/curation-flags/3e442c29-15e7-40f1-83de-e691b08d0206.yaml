@@ -1,9 +1,0 @@
-id: 3e442c29-15e7-40f1-83de-e691b08d0206
-entity_type: element
-entity_ref: wavelength_emission_actual_74bde7161a4b.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: wavelength_emission_actual
-status: pending
-created_at: '2026-03-30T00:43:41.557975+00:00'

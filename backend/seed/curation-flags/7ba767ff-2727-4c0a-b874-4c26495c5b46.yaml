@@ -1,9 +1,0 @@
-id: 7ba767ff-2727-4c0a-b874-4c26495c5b46
-entity_type: element
-entity_ref: b0fieldsource_25251b4dded0.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: B0FieldSource
-status: pending
-created_at: '2026-03-30T01:18:36.600736+00:00'

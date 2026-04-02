@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:Compiles
-  value_type: categorical
-provenance:
-- source: dandi
-  class: RelationType
-  name: dcite:Compiles
-sha256: 270b347aa1afe469478510682ec4b16d94e878ad920c31cb5a8250a1b9fe2055

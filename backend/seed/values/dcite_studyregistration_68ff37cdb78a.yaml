@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:StudyRegistration
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ResourceType
-  name: dcite:StudyRegistration
-sha256: 68ff37cdb78a0b6a17c7279f74aaa0e94392ad6d21b25a2be487c0cd167ee89e

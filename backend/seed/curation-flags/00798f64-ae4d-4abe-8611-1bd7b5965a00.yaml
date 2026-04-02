@@ -1,0 +1,11 @@
+id: 00798f64-ae4d-4abe-8611-1bd7b5965a00
+entity_type: element
+entity_ref: 9cc8697485f4100af090b4f9671f9e4b133fa2c11ef6941935a220e0ac6458db
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.823), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C164516
+  top_label: Expiration Date
+  top_score: 0.8227
+status: pending
+created_at: '2026-04-02T04:13:54.766765+00:00'

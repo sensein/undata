@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:Text
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ResourceType
-  name: dcite:Text
-sha256: 2d1ee1edff97ad02efb2d3eef4623c2c07077cdc933c7361970eb18d801f7399

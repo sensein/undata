@@ -1,9 +1,0 @@
-id: 1990fc40-fd54-40f7-adcd-f39844eaa445
-entity_type: element
-entity_ref: acquisition_9c7eb79364de.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: acquisition
-status: pending
-created_at: '2026-03-30T01:18:36.569671+00:00'

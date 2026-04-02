@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:References
-  value_type: categorical
-provenance:
-- source: dandi
-  class: RelationType
-  name: dcite:References
-sha256: d92a802cd3acbff3d9f62543cd4d29c9cf94e795e6e936ed40e709eb495b7389

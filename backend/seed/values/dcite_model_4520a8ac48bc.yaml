@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:Model
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ResourceType
-  name: dcite:Model
-sha256: 4520a8ac48bc580295382bb3144029a49bef98624cd39fc3bdc7c6a0bdad43cf

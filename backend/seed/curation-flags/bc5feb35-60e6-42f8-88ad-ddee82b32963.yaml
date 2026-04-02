@@ -1,9 +1,0 @@
-id: bc5feb35-60e6-42f8-88ad-ddee82b32963
-entity_type: schema
-entity_ref: entitiesstainmetadata_57431669988d.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EntitiesStainMetadata
-status: pending
-created_at: '2026-03-30T00:40:06.315705+00:00'

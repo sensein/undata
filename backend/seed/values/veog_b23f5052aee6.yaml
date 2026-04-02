@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: veog
-provenance:
-- source: bids
-  class_: ''
-  name: VEOG
-sha256: b23f5052aee6109be41f2a2010bb0fbf15328cb29d46bac08bb61992f4599ae4

@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:IsObsoletedBy
-  value_type: categorical
-provenance:
-- source: dandi
-  class: RelationType
-  name: dcite:IsObsoletedBy
-sha256: 2ebd5bb171e5f7063f4bfc1ac1820014a2a00f77c4e467c31cd2d5706674cf32

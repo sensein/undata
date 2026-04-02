@@ -1,9 +1,0 @@
-id: 74206dab-7a90-42c7-86da-05e4cc10b7b2
-entity_type: schema
-entity_ref: entitiespartmetadata_1b055f714c80.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EntitiesPartMetadata
-status: pending
-created_at: '2026-03-30T00:43:42.091710+00:00'

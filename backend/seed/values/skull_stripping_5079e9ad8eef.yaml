@@ -1,0 +1,26 @@
+semantic:
+  label: Skull stripping
+  value_type: categorical
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C12789
+    term_label: Skull
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7034
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0003129
+    term_label: skull
+    ontology: uberon
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7034
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: aind
+  class: ProcessName
+  name: Skull stripping
+  description: null
+sha256: 5079e9ad8eefa55755c30725c38d34532b952e11dfbe64de2fba9b7cd641580d

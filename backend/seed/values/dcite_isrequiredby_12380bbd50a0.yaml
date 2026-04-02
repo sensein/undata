@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:IsRequiredBy
-  value_type: categorical
-provenance:
-- source: dandi
-  class: RelationType
-  name: dcite:IsRequiredBy
-sha256: 12380bbd50a083d481ade518252933f9a1f009167d01af28483c475cec9fa1d3

@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: misc
-provenance:
-- source: bids
-  class_: ''
-  name: MISC
-sha256: 5e19aa3c252e6036f0dbd1500405b054e75c7d3a5daf83ce5dfc086d146cfbb6

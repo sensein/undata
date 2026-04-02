@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: file_relative
-provenance:
-- source: bids
-  class_: ''
-  name: file_relative
-sha256: 3e66d767f0b92cbbcc07d9d891228a57b519d65208f19fd152c3c798e86b0c2b

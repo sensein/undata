@@ -1,0 +1,15 @@
+id: 017cb26f-df52-4d10-b754-e912117711cf
+entity_type: value
+entity_ref: 41df99688abcc2e9289746e8800420e2dc3b5ee7092813dcee84109fcb917b95
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C69187
+    score: 1.0
+  - uri: http://purl.obolibrary.org/obo/OBI_0000818
+    score: 1.0
+  - uri: http://dicom.nema.org/resources/ontology/DCM/CalibrationProcedure
+    score: 0.9342
+status: pending
+created_at: '2026-04-02T04:07:05.669324+00:00'

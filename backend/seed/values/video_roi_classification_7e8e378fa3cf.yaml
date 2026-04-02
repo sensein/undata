@@ -1,0 +1,9 @@
+semantic:
+  label: Video ROI classification
+  value_type: categorical
+provenance:
+- source: aind
+  class: ProcessName
+  name: Video ROI classification
+  description: null
+sha256: 7e8e378fa3cf0fcbf21a3204a52d5e9d11ff8c1f2bf31b896da64e1fba491647

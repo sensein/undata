@@ -1,9 +1,0 @@
-id: 5138853b-b4e4-41be-8503-2097370f0642
-entity_type: element
-entity_ref: assetssummary_2b85a83d78ca.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: assetsSummary
-status: pending
-created_at: '2026-03-30T01:18:36.591369+00:00'

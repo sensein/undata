@@ -1,9 +1,0 @@
-id: 177c87a2-db75-49e6-b9ca-fdae70f9c535
-entity_type: element
-entity_ref: detectortype_d65e24872cf6.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: DetectorType
-status: pending
-created_at: '2026-03-30T00:43:41.227465+00:00'

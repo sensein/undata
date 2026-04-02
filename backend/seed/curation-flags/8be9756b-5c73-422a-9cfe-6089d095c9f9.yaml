@@ -1,9 +1,0 @@
-id: 8be9756b-5c73-422a-9cfe-6089d095c9f9
-entity_type: element
-entity_ref: mrtransmitcoilsequence_31c0f3ebd93a.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MRTransmitCoilSequence
-status: pending
-created_at: '2026-03-30T00:43:41.377025+00:00'

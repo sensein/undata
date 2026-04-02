@@ -1,9 +1,0 @@
-id: bb569eba-069d-4b28-b112-d849ec491b15
-entity_type: element
-entity_ref: timestamp__eyetrack_34d2ac7a2e59.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: timestamp__eyetrack
-status: pending
-created_at: '2026-03-30T01:18:37.154292+00:00'

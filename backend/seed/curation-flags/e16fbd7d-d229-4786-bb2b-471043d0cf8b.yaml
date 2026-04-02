@@ -1,9 +1,0 @@
-id: e16fbd7d-d229-4786-bb2b-471043d0cf8b
-entity_type: value
-entity_ref: nirscwfluorescenseamplitude_4e0502e0fcb1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: NIRSCWFLUORESCENSEAMPLITUDE
-status: pending
-created_at: '2026-03-30T01:18:37.592357+00:00'

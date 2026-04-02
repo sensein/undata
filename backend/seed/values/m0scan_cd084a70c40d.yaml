@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: m0scan
-provenance:
-- source: bids
-  class_: ''
-  name: m0scan
-sha256: cd084a70c40dc0f8577c0146356af071b90b1884ac648bc01a4dc6dc95bb90a7

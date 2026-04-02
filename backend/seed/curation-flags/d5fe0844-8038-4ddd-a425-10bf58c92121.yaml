@@ -1,9 +1,0 @@
-id: d5fe0844-8038-4ddd-a425-10bf58c92121
-entity_type: element
-entity_ref: leveltype_ea48ff6cb20c.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: LevelType
-status: pending
-created_at: '2026-03-30T00:40:05.631100+00:00'

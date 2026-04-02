@@ -7,7 +7,7 @@ provenance:
   class: nwb
   name: band_mean
   description: The mean Gaussian filters, in Hz.
-  generated_at: '2026-03-30T00:40:19.286404+00:00'
+  generated_at: '2026-04-02T03:53:21.677536+00:00'
   attributed_to: urn:undata:ingestion-pipeline
   activity: ingestion
 sha256: e3678310bbf6aa116d20de96b6cfc45236c2a8b74f509fe29e3b7f593fd0bc75

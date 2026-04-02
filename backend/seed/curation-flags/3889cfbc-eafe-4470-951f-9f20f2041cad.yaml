@@ -1,9 +1,0 @@
-id: 3889cfbc-eafe-4470-951f-9f20f2041cad
-entity_type: element
-entity_ref: scanoptions_172b88925943.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ScanOptions
-status: pending
-created_at: '2026-03-30T01:18:37.072459+00:00'

@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:Instrument
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ResourceType
-  name: dcite:Instrument
-sha256: 91b5361f14a8c299dbb89572fdfd0e15d92caad4cc5ec6f3a9c7e0f45bebec38

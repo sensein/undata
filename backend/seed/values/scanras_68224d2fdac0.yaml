@@ -1,8 +1,0 @@
-semantic:
-  label: ScanRAS
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: ScanRAS
-sha256: 68224d2fdac0c6e1673825c2019ac393fb1816b7c3d567cd7b91126caebb51fd

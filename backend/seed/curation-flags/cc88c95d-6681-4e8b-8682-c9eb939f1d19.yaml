@@ -1,9 +1,0 @@
-id: cc88c95d-6681-4e8b-8682-c9eb939f1d19
-entity_type: element
-entity_ref: labelingorientation_b400417829b9.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: LabelingOrientation
-status: pending
-created_at: '2026-03-30T01:18:36.874932+00:00'

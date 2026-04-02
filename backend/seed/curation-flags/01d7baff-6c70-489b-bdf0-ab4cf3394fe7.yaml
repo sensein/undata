@@ -1,9 +1,0 @@
-id: 01d7baff-6c70-489b-bdf0-ab4cf3394fe7
-entity_type: element
-entity_ref: sign_map_ea7e25dac2fe.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: sign_map
-status: pending
-created_at: '2026-03-30T01:18:37.104563+00:00'

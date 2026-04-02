@@ -1,9 +1,0 @@
-id: 4ad5698c-e2fc-475e-926f-3d5e507fafc9
-entity_type: schema
-entity_ref: dwi_sidecar_6912081554f1.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: dwi_sidecar
-status: pending
-created_at: '2026-03-30T00:43:42.077901+00:00'

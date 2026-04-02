@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: dcite:peerreview
-provenance:
-- source: dandi
-  class_: ''
-  name: dcite:PeerReview
-sha256: 0d59ca97e0193ec1f7a5a3b1d5fd5afe28e0c47a9008681644ded4ea02bcd1e9

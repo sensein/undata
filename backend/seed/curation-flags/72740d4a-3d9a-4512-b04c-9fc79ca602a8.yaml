@@ -1,9 +1,0 @@
-id: 72740d4a-3d9a-4512-b04c-9fc79ca602a8
-entity_type: element
-entity_ref: stimulus_type_6ad5b8a7ca00.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: stimulus_type
-status: pending
-created_at: '2026-03-30T01:18:37.139498+00:00'

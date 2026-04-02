@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: yzx
-provenance:
-- source: bids
-  class_: ''
-  name: YZX
-sha256: c14fb12183eaa9c1fedd436511d8ef1ac92b795c2a5aadb276244d4766753a3a

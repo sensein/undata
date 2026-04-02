@@ -1,9 +1,0 @@
-id: 076c6107-71dd-4813-9aee-445b68464377
-entity_type: element
-entity_ref: handedness_d2031488e9d3.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: handedness
-status: pending
-created_at: '2026-03-30T01:18:36.753157+00:00'

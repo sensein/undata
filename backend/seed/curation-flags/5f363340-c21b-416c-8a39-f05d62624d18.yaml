@@ -1,9 +1,0 @@
-id: 5f363340-c21b-416c-8a39-f05d62624d18
-entity_type: element
-entity_ref: modality_39abfa0bc063.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: modality
-status: pending
-created_at: '2026-03-30T00:40:05.654505+00:00'

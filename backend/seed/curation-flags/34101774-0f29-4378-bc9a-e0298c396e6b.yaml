@@ -1,9 +1,0 @@
-id: 34101774-0f29-4378-bc9a-e0298c396e6b
-entity_type: value
-entity_ref: mni305_f99a8b1dfa6f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: MNI305
-status: pending
-created_at: '2026-03-30T01:18:37.577347+00:00'

@@ -1,8 +1,0 @@
-semantic:
-  label: MNI305
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: MNI305
-sha256: 3dc5b41b3772c91532f38c40e40bc8d34aa035d6d2a6460669036abd1b38ea03

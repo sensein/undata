@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:Workflow
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ResourceType
-  name: dcite:Workflow
-sha256: d655997a5d20d063a3f26e881c5b52e12e0a568b4e22b994507134e2ebcfae0a

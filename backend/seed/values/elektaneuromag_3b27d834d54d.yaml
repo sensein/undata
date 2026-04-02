@@ -1,8 +1,0 @@
-semantic:
-  label: ElektaNeuromag
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: ElektaNeuromag
-sha256: 3b27d834d54d17dcf9a23022d4d9f32be0dda762ae8b7d20651ce1f999d056b7

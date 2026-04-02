@@ -1,9 +1,0 @@
-id: 66056335-b646-493d-9998-aeeee2aa433b
-entity_type: schema
-entity_ref: electrodestable_5a15d4084638.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: ElectrodesTable
-status: pending
-created_at: '2026-03-30T01:18:37.808408+00:00'

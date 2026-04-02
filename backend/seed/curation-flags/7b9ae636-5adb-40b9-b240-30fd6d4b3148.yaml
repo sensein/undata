@@ -1,9 +1,0 @@
-id: 7b9ae636-5adb-40b9-b240-30fd6d4b3148
-entity_type: element
-entity_ref: b0fieldidentifier_87e668e4911f.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: B0FieldIdentifier
-status: pending
-created_at: '2026-03-30T01:18:36.600158+00:00'

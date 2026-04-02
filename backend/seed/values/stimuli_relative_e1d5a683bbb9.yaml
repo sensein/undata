@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: stimuli_relative
-provenance:
-- source: bids
-  class_: ''
-  name: stimuli_relative
-sha256: e1d5a683bbb97aacc84d5b5f6f41cd64c10dac1858a9aed92827fd6f36633f16

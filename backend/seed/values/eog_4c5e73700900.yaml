@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: eog
-provenance:
-- source: bids
-  class_: ''
-  name: EOG
-sha256: 4c5e73700900f032ed7a7f9287af799a10d3c66f3875026781d52ff739c2db92

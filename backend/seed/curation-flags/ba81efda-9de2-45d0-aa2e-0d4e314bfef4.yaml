@@ -1,9 +1,0 @@
-id: ba81efda-9de2-45d0-aa2e-0d4e314bfef4
-entity_type: element
-entity_ref: segmentation_0700cd124846.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: segmentation
-status: pending
-created_at: '2026-03-30T01:18:37.096605+00:00'

@@ -1,8 +1,0 @@
-semantic:
-  label: ICBM452AirSpace
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: ICBM452AirSpace
-sha256: d3979ff2b522dc3646ed8ab551885e178e2aff3cdb2f5ecf4ee5f38d3d801b8f

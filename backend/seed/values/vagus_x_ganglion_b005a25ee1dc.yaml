@@ -1,0 +1,20 @@
+semantic:
+  label: vagus X ganglion
+  value_type: categorical
+  ontology_id: http://purl.obolibrary.org/obo/UBERON_0005362
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0005362
+    term_label: vagus X ganglion
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: source_metadata
+    primary: true
+provenance:
+- source: openminds
+  class: NervousSystemStructure
+  name: vagus X ganglion
+  description: Is an epibranchial ganglion. [auto-generated from 'is_a' property of
+    the [UBERON ontology term](http://purl.obolibrary.org/obo/UBERON_0005362)]
+sha256: b005a25ee1dc223bc2255d96df420675bd3f86c06a4f0b0907cb8188d45edb1a

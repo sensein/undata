@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: megrefgradaxial
-provenance:
-- source: bids
-  class_: ''
-  name: MEGREFGRADAXIAL
-sha256: 78e65f9b252a1ff6d95b6482aac77ff89da1898fade74582703ff29a1e5af0df

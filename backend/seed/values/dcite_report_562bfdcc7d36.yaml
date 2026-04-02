@@ -1,8 +1,0 @@
-semantic:
-  label: dcite:Report
-  value_type: categorical
-provenance:
-- source: dandi
-  class: ResourceType
-  name: dcite:Report
-sha256: 562bfdcc7d36983f80d96204a12493eab049d76ae9cb77e95f908323a5794238

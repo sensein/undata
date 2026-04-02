@@ -1,9 +1,0 @@
-id: eaf738a0-2c10-49be-b82a-2d69ef26d7ce
-entity_type: element
-entity_ref: encodingtechnique_a4d94dc4d530.yaml
-flag_type: low_confidence
-context:
-  reason: no ontology annotations after enrichment
-  name: EncodingTechnique
-status: pending
-created_at: '2026-03-30T00:40:05.566861+00:00'

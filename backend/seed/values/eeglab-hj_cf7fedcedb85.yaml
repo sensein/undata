@@ -1,8 +1,0 @@
-semantic:
-  label: EEGLAB-HJ
-  value_type: categorical
-provenance:
-- source: bids
-  class: enums
-  name: EEGLAB-HJ
-sha256: cf7fedcedb85e751d6ca000451651c6117248a840b6aded6032ea42bbd6cc1de

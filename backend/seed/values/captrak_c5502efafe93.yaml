@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: captrak
-provenance:
-- source: bids
-  class_: ''
-  name: CapTrak
-sha256: c5502efafe93faa98600bab4cef1b088e088274c9ddc89dd57ed5fcfa85c1a46

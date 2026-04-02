@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: dcite:ismetadatafor
-provenance:
-- source: dandi
-  class_: ''
-  name: dcite:IsMetadataFor
-sha256: 0e60a0d388f7e4c18af875faa9b1b4de091885d6d6eb2e040b37a9d838b6a734

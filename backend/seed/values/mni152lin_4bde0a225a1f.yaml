@@ -1,8 +1,0 @@
-semantic:
-  value_type: categorical
-  label: mni152lin
-provenance:
-- source: bids
-  class_: ''
-  name: MNI152Lin
-sha256: 4bde0a225a1fa89725148aafefb81b445d59da84f1398e7e224fa43ee1eecefb
