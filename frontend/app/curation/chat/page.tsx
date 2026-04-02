@@ -7,9 +7,11 @@ import { gql } from "@apollo/client";
 import { SplitPanel } from "@/components/SplitPanel";
 import { ChatPanel } from "@/components/ChatPanel";
 import { EntityDiff } from "@/components/EntityDiff";
-import { GET_ELEMENT, GET_SCHEMA, GET_VALUE, GET_VALUESET } from "@/graphql/queries";
+import { GET_ELEMENT, GET_SCHEMA, GET_VALUE, GET_VALUESET, FLAGS_FOR_ENTITY } from "@/graphql/queries";
 import { EntityInlineDetail } from "@/components/EntityInlineDetail";
+import { StatusBadge } from "@/components/StatusBadge";
 import type { ChatEvent } from "@/lib/chat-api";
+import type { CurationFlagConnection, CurationFlagNode, Edge } from "@/graphql/types";
 
 const UPDATE_ELEMENT = gql`
   mutation UpdateElement($sha256: String!, $input: UpdateElementInput!) {
@@ -55,11 +57,18 @@ function CurationChatContent() {
     skip: !entitySha,
   });
 
+  // Load flags for this entity
+  const { data: flagsData } = useQuery<{ flagsForEntity: CurationFlagConnection }>(FLAGS_FOR_ENTITY, {
+    variables: { entityType, entityRef: entitySha || "" },
+    skip: !entitySha,
+  });
+
   const [pendingDiffs, setPendingDiffs] = useState<DiffEntry[]>([]);
   const [updateElement] = useMutation(UPDATE_ELEMENT);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const entity = (data as any)?.[entityQuery.key];
+  const flags = (flagsData?.flagsForEntity?.edges ?? []) as Edge<CurationFlagNode>[];
   const entityContext = entity
     ? { sha256: entity.sha256, semantic: entity.semantic, provenance: entity.provenance }
     : undefined;
@@ -127,6 +136,29 @@ function CurationChatContent() {
                 </a>
               </div>
               <EntityInlineDetail entityType={entityType} entityRef={entitySha} />
+
+              {/* Curation flags for this entity */}
+              {flags.length > 0 && (
+                <div className="mt-2">
+                  <div className="text-xs text-gray-500 mb-1">Curation Flags ({flags.length})</div>
+                  <div className="space-y-1">
+                    {flags.map((e) => {
+                      const f = e.node;
+                      return (
+                        <div key={f.id} className="flex items-center gap-2 text-xs bg-white border rounded p-1.5">
+                          <StatusBadge status={f.status} />
+                          <span className="px-1.5 py-0.5 bg-yellow-100 text-yellow-800 rounded text-[10px]">
+                            {f.flagType.replace(/_/g, " ")}
+                          </span>
+                          <span className="text-gray-500 truncate">
+                            {String((f.context as Record<string, unknown>)?.reason ?? "")}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
