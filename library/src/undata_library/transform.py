@@ -163,8 +163,67 @@ def generate_transforms(
                     continue  # same source — skip
                 _try_create_transform(uri_a, data_a, uri_b, data_b)
 
+    # Strategy 3: Embedding similarity matching (cross-source, above threshold)
+    if name_similarity_threshold < 1.0:
+        try:
+            from .embeddings import EmbeddingStore, cosine_similarity, DEFAULT_MODEL, _encode_texts
+
+            # Build element embeddings on-the-fly from descriptions
+            uri_to_data: dict[str, dict] = {}
+            uri_to_source: dict[str, str] = {}
+            texts: list[str] = []
+            uris: list[str] = []
+
+            for uri, data, source in all_elements:
+                prov = data.get("provenance", [{}])
+                name = prov[0].get("name", "") if prov else ""
+                desc = data["semantic"].get("description", "")
+                text = f"{name}: {desc}" if desc else name
+                if not text:
+                    continue
+                uri_to_data[uri] = data
+                uri_to_source[uri] = source
+                uris.append(uri)
+                texts.append(text)
+
+            if len(texts) > 1:
+                vectors = _encode_texts(texts, DEFAULT_MODEL)
+                if vectors is not None:
+                    import numpy as np
+
+                    # Compare cross-source pairs above threshold
+                    # Use batched dot product for efficiency
+                    norms = np.linalg.norm(vectors, axis=1, keepdims=True)
+                    norms[norms == 0] = 1e-10
+                    normed = vectors / norms
+
+                    embed_created = 0
+                    for i in range(len(uris)):
+                        if embed_created > 500:  # cap to avoid O(n²) explosion
+                            break
+                        src_i = uri_to_source[uris[i]]
+                        # Compute similarities for this element against all later elements
+                        sims = normed[i] @ normed[i + 1:].T
+                        for j_offset in range(len(sims)):
+                            if sims[j_offset] < name_similarity_threshold:
+                                continue
+                            j = i + 1 + j_offset
+                            if uri_to_source[uris[j]] == src_i:
+                                continue  # same source
+                            # Look up data for this pair from uri_to_data
+                            data_i = uri_to_data[uris[i]]
+                            data_j = uri_to_data[uris[j]]
+                            if _try_create_transform(uris[i], data_i, uris[j], data_j):
+                                embed_created += 1
+
+                    logger.info("Embedding similarity: %d additional transforms", embed_created)
+        except ImportError:
+            logger.debug("sentence-transformers not available, skipping embedding similarity")
+        except Exception as e:
+            logger.warning("Embedding similarity matching failed: %s", e)
+
     logger.info(
-        "Transforms generated: %d (ontology + name-based) from %d pairs",
+        "Transforms generated: %d (ontology + name + embedding) from %d pairs",
         stats["transforms_created"],
         stats["pairs_evaluated"],
     )

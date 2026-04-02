@@ -53,7 +53,7 @@
 **Independent Test**: Run transform pipeline → 100+ transforms created (up from 15)
 
 - [X] T011 [US2] Add name-based matching to transform pipeline — group elements by provenance name (case-insensitive), create transforms for cross-source matches with type compatibility check in library/src/undata_library/transform.py
-- [ ] T012 [US2] Add embedding similarity matching — compute cosine similarity between cross-source element pairs, create transforms above threshold (0.8) in library/src/undata_library/transform.py
+- [X] T012 [US2] Add embedding similarity matching — compute cosine similarity between cross-source element pairs, create transforms above threshold (0.8) in library/src/undata_library/transform.py
 - [X] T013 [US2] Extend TransformRecord with source_elements list for many-to-one mappings in library/src/undata_library/models.py
 - [X] T014 [US2] Update Transform DB model and GraphQL type with source_elements field in backend/src/db/models.py and backend/src/graphql/types.py
 - [X] T015 [US2] Add unit tests for name-based and embedding-based transform matching in library/tests/test_transform.py
@@ -70,9 +70,9 @@
 
 - [X] T016 [US3] Implement NDA data dictionary adapter — fetch from NDA API, extract elements with description, type, valueRange in library/src/undata_library/adapters/nda.py
 - [X] T017 [US3] Register NDA adapter in adapter registry in library/src/undata_library/adapters/registry.py
-- [ ] T018 [US3] Test end-to-end: ingest ds000228 from OpenNeuro via datalad, verify elements from participants.tsv and phenotype/*.tsv
-- [ ] T019 [US3] Test end-to-end: ingest reproschema-library, verify activities→schemas and items→elements
-- [ ] T020 [US3] Regenerate full registry at ~/.cache/undata/registry with all sources including OpenNeuro samples + ReproSchema
+- [X] T018 [US3] Test end-to-end: ingest ds000228 from OpenNeuro via datalad, verify elements from participants.tsv and phenotype/*.tsv
+- [X] T019 [US3] Test end-to-end: ingest reproschema-library, verify activities→schemas and items→elements
+- [X] T020 [US3] Regenerate full registry at ~/.cache/undata/registry with all sources including OpenNeuro samples + ReproSchema
 
 **Checkpoint**: Registry includes entities from 7+ sources
 
