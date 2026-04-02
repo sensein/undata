@@ -115,9 +115,17 @@ function CurationChatContent() {
                 : "Start a conversation or select an entity to edit"}
           </h2>
 
-          {/* Full entity details using EntityInlineDetail */}
+          {/* Full entity details — same as curation queue detail panel */}
           {entitySha && (
-            <div className="mb-4">
+            <div className="mb-4 space-y-2">
+              <div className="flex gap-2 text-xs">
+                <a
+                  href={`/${entityType === "element" ? "elements" : entityType === "schema" ? "schemas" : entityType === "value" ? "values" : entityType === "valueset" ? "valuesets" : "elements"}/${entitySha}`}
+                  className="text-blue-600 hover:underline"
+                >
+                  View full detail page ↗
+                </a>
+              </div>
               <EntityInlineDetail entityType={entityType} entityRef={entitySha} />
             </div>
           )}
