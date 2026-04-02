@@ -7,9 +7,9 @@ import { gql } from "@apollo/client";
 import { SplitPanel } from "@/components/SplitPanel";
 import { ChatPanel } from "@/components/ChatPanel";
 import { EntityDiff } from "@/components/EntityDiff";
-import { GET_ELEMENT } from "@/graphql/queries";
+import { GET_ELEMENT, GET_SCHEMA, GET_VALUE, GET_VALUESET } from "@/graphql/queries";
+import { EntityInlineDetail } from "@/components/EntityInlineDetail";
 import type { ChatEvent } from "@/lib/chat-api";
-import type { ElementNode } from "@/graphql/types";
 
 const UPDATE_ELEMENT = gql`
   mutation UpdateElement($sha256: String!, $input: UpdateElementInput!) {
@@ -39,8 +39,18 @@ export default function CurationChatPage() {
 function CurationChatContent() {
   const searchParams = useSearchParams();
   const entitySha = searchParams.get("entity");
+  const entityType = searchParams.get("type") || "element";
 
-  const { data } = useQuery<{ element: ElementNode | null }>(GET_ELEMENT, {
+  // Query the appropriate entity type
+  const ENTITY_QUERIES: Record<string, { query: typeof GET_ELEMENT; key: string }> = {
+    element: { query: GET_ELEMENT, key: "element" },
+    schema: { query: GET_SCHEMA, key: "schema_" },
+    value: { query: GET_VALUE, key: "value" },
+    valueset: { query: GET_VALUESET, key: "valueset" },
+  };
+  const entityQuery = ENTITY_QUERIES[entityType] ?? ENTITY_QUERIES.element;
+
+  const { data } = useQuery(entityQuery.query, {
     variables: { sha256: entitySha || "" },
     skip: !entitySha,
   });
@@ -48,7 +58,8 @@ function CurationChatContent() {
   const [pendingDiffs, setPendingDiffs] = useState<DiffEntry[]>([]);
   const [updateElement] = useMutation(UPDATE_ELEMENT);
 
-  const entity = data?.element;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const entity = (data as any)?.[entityQuery.key];
   const entityContext = entity
     ? { sha256: entity.sha256, semantic: entity.semantic, provenance: entity.provenance }
     : undefined;
@@ -98,16 +109,16 @@ function CurationChatContent() {
         <div className="p-4">
           <h2 className="font-semibold mb-3">
             {entity
-              ? `Editing: ${entity.provenance?.[0]?.name ?? entity.sha256.slice(0, 12)}`
-              : "Select an entity to edit"}
+              ? `Editing: ${entity.provenance?.[0]?.name ?? entity.sha256?.slice(0, 12)}`
+              : entitySha
+                ? "Loading entity..."
+                : "Start a conversation or select an entity to edit"}
           </h2>
 
-          {entity && (
-            <div className="mb-4 text-xs space-y-1">
-              <div><span className="text-gray-500">Type:</span> {entity.dataType}</div>
-              <div><span className="text-gray-500">Unit:</span> {entity.unit ?? "—"}</div>
-              <div><span className="text-gray-500">Description:</span> {entity.description ?? "—"}</div>
-              <div><span className="text-gray-500">SHA:</span> <span className="font-mono">{entity.sha256.slice(0, 20)}...</span></div>
+          {/* Full entity details using EntityInlineDetail */}
+          {entitySha && (
+            <div className="mb-4">
+              <EntityInlineDetail entityType={entityType} entityRef={entitySha} />
             </div>
           )}
 

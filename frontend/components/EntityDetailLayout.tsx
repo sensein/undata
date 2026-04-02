@@ -137,7 +137,7 @@ export function EntityDetailLayout({
         <div className="text-[10px] text-gray-400 font-mono break-all flex-1">{sha256}</div>
         <div className="flex gap-2 ml-4 flex-shrink-0">
           <a
-            href={`/curation/chat?entity=${sha256}`}
+            href={`/curation/chat?entity=${sha256}&type=${entityType}`}
             className="px-2 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded text-xs hover:bg-blue-100"
           >
             Suggest Change

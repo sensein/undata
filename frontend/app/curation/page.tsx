@@ -153,7 +153,7 @@ export default function CurationPage() {
               className="text-xs text-blue-600 hover:text-blue-800"
               onClick={() => setExpandedId(isExpanded ? null : node.id)}
             >
-              {isExpanded ? "Close" : "Actions"}
+              {isExpanded ? "▲ Close" : "▼ Details"}
             </button>
           );
         },
@@ -228,86 +228,91 @@ export default function CurationPage() {
         }
       />
 
-      {/* Resolve panel (shown below table when a row's "Actions" is clicked) */}
-      {expandedId && canResolve && (() => {
+      {/* Detail panel — shown for EVERYONE when "Details" is clicked */}
+      {expandedId && (() => {
         const node = flags.find((f) => f.id === expandedId);
-        if (!node || node.status.toLowerCase() !== "pending") return null;
+        if (!node) return null;
+        const entityPath = ENTITY_TYPE_TO_PATH[node.entityType.toLowerCase()] ?? "elements";
         return (
           <div className="mt-4 border rounded-lg p-4 bg-gray-50">
+            {/* Header */}
             <div className="flex items-center gap-3 mb-3">
-              <h4 className="text-sm font-semibold">Resolve flag for</h4>
-              <EntityTag
-                entityType={ENTITY_TYPE_TO_PATH[node.entityType.toLowerCase()] ?? "elements"}
-                sha256={node.entityRef}
-                label={node.entityRef.slice(0, 16)}
-              />
               <StatusBadge status={node.status} />
+              <span className="px-2 py-0.5 bg-yellow-100 text-yellow-800 rounded text-xs">{node.flagType.replace(/_/g, " ")}</span>
               <a
-                href={`/${ENTITY_TYPE_TO_PATH[node.entityType.toLowerCase()] ?? "elements"}/${node.entityRef}`}
-                className="text-xs text-blue-600 hover:underline ml-auto"
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/${entityPath}/${node.entityRef}`}
+                className="text-sm text-blue-600 hover:underline font-medium"
               >
-                View full details ↗
+                View full detail page ↗
+              </a>
+              <a
+                href={`/curation/chat?entity=${node.entityRef}&type=${node.entityType}`}
+                className="text-sm text-blue-600 hover:underline"
+              >
+                Open in Chat ↗
               </a>
             </div>
+
             {/* Flag context */}
             {node.context && (
               <div className="bg-white border rounded p-2 mb-3 text-xs">
-                <span className="text-gray-500 font-medium">Flag context: </span>
+                <span className="text-gray-500 font-medium">Flag reason: </span>
                 <span className="text-gray-700">
                   {String(
                     (node.context as Record<string, unknown>)?.reason ??
                     (node.context as Record<string, unknown>)?.message ??
-                    JSON.stringify(node.context).slice(0, 200)
+                    JSON.stringify(node.context).slice(0, 300)
                   )}
                 </span>
               </div>
             )}
-            {/* Full entity details */}
+
+            {/* Full entity details inline */}
             <EntityInlineDetail entityType={node.entityType} entityRef={node.entityRef} />
+
+            {/* Resolution info if already resolved */}
             {node.resolvedBy && (
-              <div className="text-sm text-gray-600 mb-3">
+              <div className="text-sm text-gray-600 mt-3">
                 <strong>Resolved by:</strong> {node.resolvedBy}
-                {node.resolutionNote && <span> &mdash; {node.resolutionNote}</span>}
+                {node.resolutionNote && <span> — {node.resolutionNote}</span>}
               </div>
             )}
-            <textarea
-              className="w-full border rounded p-2 text-sm mb-3"
-              rows={2}
-              placeholder="Resolution note (optional)..."
-              value={resolveNote}
-              onChange={(e) => setResolveNote(e.target.value)}
-            />
-            <div className="flex gap-2">
-              <button
-                className="px-4 py-2 bg-green-600 text-white rounded text-sm hover:bg-green-700 disabled:opacity-50"
-                onClick={() => handleResolve(node.id, "APPROVED")}
-                disabled={resolving}
-              >
-                Approve
-              </button>
-              <button
-                className="px-4 py-2 bg-red-600 text-white rounded text-sm hover:bg-red-700 disabled:opacity-50"
-                onClick={() => handleResolve(node.id, "REJECTED")}
-                disabled={resolving}
-              >
-                Reject
-              </button>
-              <button
-                className="px-4 py-2 bg-gray-500 text-white rounded text-sm hover:bg-gray-600 disabled:opacity-50"
-                onClick={() => handleResolve(node.id, "DEFERRED")}
-                disabled={resolving}
-              >
-                Defer
-              </button>
-              <button
-                className="px-4 py-2 border text-gray-600 rounded text-sm hover:bg-gray-100"
-                onClick={() => setExpandedId(null)}
-              >
-                Cancel
-              </button>
-            </div>
+
+            {/* Resolve actions — curator only, pending flags only */}
+            {canResolve && node.status.toLowerCase() === "pending" && (
+              <div className="mt-3 pt-3 border-t">
+                <textarea
+                  className="w-full border rounded p-2 text-sm mb-2"
+                  rows={2}
+                  placeholder="Resolution note (optional)..."
+                  value={resolveNote}
+                  onChange={(e) => setResolveNote(e.target.value)}
+                />
+                <div className="flex gap-2">
+                  <button
+                    className="px-3 py-1.5 bg-green-600 text-white rounded text-xs hover:bg-green-700 disabled:opacity-50"
+                    onClick={() => handleResolve(node.id, "APPROVED")}
+                    disabled={resolving}
+                  >
+                    Approve
+                  </button>
+                  <button
+                    className="px-3 py-1.5 bg-red-600 text-white rounded text-xs hover:bg-red-700 disabled:opacity-50"
+                    onClick={() => handleResolve(node.id, "REJECTED")}
+                    disabled={resolving}
+                  >
+                    Reject
+                  </button>
+                  <button
+                    className="px-3 py-1.5 bg-gray-500 text-white rounded text-xs hover:bg-gray-600 disabled:opacity-50"
+                    onClick={() => handleResolve(node.id, "DEFERRED")}
+                    disabled={resolving}
+                  >
+                    Defer
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         );
       })()}
