@@ -1,14 +1,30 @@
-import Link from "next/link";
+"use client";
+
+import { useRouter } from "next/navigation";
 import { getSourceColor } from "@/lib/source-colors";
 
-export function SourceBadge({ source }: { source: string }) {
+export function SourceBadge({ source, linkable = true }: { source: string; linkable?: boolean }) {
   const { bg, text } = getSourceColor(source);
-  return (
-    <Link
-      href={`/sources/${encodeURIComponent(source)}`}
-      className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${bg} ${text} hover:opacity-80 transition-opacity`}
-    >
-      {source}
-    </Link>
-  );
+  const router = useRouter();
+
+  const className = `inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${bg} ${text} ${linkable ? "cursor-pointer hover:opacity-80" : ""} transition-opacity`;
+
+  if (linkable) {
+    return (
+      <span
+        className={className}
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          router.push(`/sources/${encodeURIComponent(source)}`);
+        }}
+        role="link"
+        tabIndex={0}
+      >
+        {source}
+      </span>
+    );
+  }
+
+  return <span className={className}>{source}</span>;
 }
