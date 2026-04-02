@@ -890,18 +890,9 @@ def generate_curation_flags(
             annotations = sem.get("ontology_annotations", [])
 
             if not annotations:
-                # No annotations at all — flag as low_confidence (deduplicate)
-                if (f.stem, FlagType.low_confidence.value) not in existing_flags:
-                    prov = data.get("provenance", [{}])
-                    name = prov[0].get("name", f.stem) if prov else f.stem
-                    flag = create_flag(
-                        entity_type=entity_type.rstrip("s"),
-                        entity_ref=f.stem,
-                        flag_type=FlagType.low_confidence,
-                        context={"reason": "no ontology annotations after enrichment", "name": name},
-                    )
-                    flags.append(flag)
-                    existing_flags.add((f.stem, FlagType.low_confidence.value))
+                # No annotations — this is the default state for most entities.
+                # Don't flag every unannotated entity (that would be 90%+ of all entities).
+                # Only flag if the entity had enrichment candidates that were below threshold.
                 continue
 
             # Check for ambiguous matches (top score borderline, no LLM confirmation)
