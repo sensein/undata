@@ -258,37 +258,136 @@ def build_element_embeddings(
     return store
 
 
-# NCBITaxon species relevant to neuroscience — only these (and their parents)
-# are included in the embedding index to avoid 2.7M term bloat
+# NCBITaxon filter for neuroscience-relevant organisms.
+# Includes genus, species, AND subspecies/strains for each model organism.
+# Without this filter, NCBITaxon's 2.7M terms overwhelm the embedding index.
 _NCBITAXON_SPECIES_FILTER: set[str] = {
+    # --- Homo (human) ---
+    "9605",    # Homo (genus)
     "9606",    # Homo sapiens
-    "10090",   # Mus musculus (mouse)
-    "10116",   # Rattus norvegicus (rat)
-    "9544",    # Macaca mulatta (rhesus macaque)
+    "63221",   # Homo sapiens neanderthalensis
+    # --- Mus (mouse) ---
+    "10088",   # Mus (genus)
+    "10090",   # Mus musculus
+    "10091",   # Mus musculus domesticus
+    "10092",   # Mus musculus musculus
+    "10093",   # Mus musculus castaneus
+    "35531",   # Mus musculus bactrianus
+    "947985",  # Mus musculus molossinus (Japanese lab mouse)
+    "39442",   # Mus spretus
+    # --- Rattus (rat) ---
+    "10114",   # Rattus (genus)
+    "10116",   # Rattus norvegicus
+    "10117",   # Rattus rattus
+    # --- Macaca (macaques) ---
+    "9539",    # Macaca (genus)
+    "9541",    # Macaca fascicularis (crab-eating)
+    "9544",    # Macaca mulatta (rhesus)
+    "9545",    # Macaca nemestrina (pig-tailed)
+    "9548",    # Macaca fuscata (Japanese)
+    # --- Other primates ---
+    "9443",    # Primates (order)
+    "9479",    # Callithricidae (family — marmosets/tamarins)
     "9483",    # Callithrix jacchus (marmoset)
-    "7955",    # Danio rerio (zebrafish)
-    "7227",    # Drosophila melanogaster (fruit fly)
-    "6239",    # Caenorhabditis elegans (nematode)
-    "9541",    # Macaca fascicularis (crab-eating macaque)
+    "9593",    # Gorilla (genus)
     "9598",    # Pan troglodytes (chimpanzee)
-    "9615",    # Canis lupus familiaris (dog)
-    "9986",    # Oryctolagus cuniculus (rabbit)
-    "9685",    # Felis catus (cat)
-    "9823",    # Sus scrofa (pig)
-    "9031",    # Gallus gallus (chicken)
-    "8364",    # Xenopus tropicalis (frog)
-    "13616",   # Monodelphis domestica (opossum)
-    "28377",   # Anolis carolinensis (green anole)
-    "7740",    # Branchiostoma floridae (amphioxus)
-    "69293",   # Gasterosteus aculeatus (stickleback)
+    "9597",    # Pan paniscus (bonobo)
+    "9600",    # Pongo (genus)
+    "9606",    # Homo sapiens (duplicated for clarity)
+    # --- Capuchins (BBQS) ---
+    "9527",    # Cebidae (family)
+    "118643",  # Sapajus (genus — robust capuchins)
+    "9515",    # Sapajus apella (brown capuchin / tufted capuchin)
+    # --- Danio (zebrafish) ---
+    "7954",    # Danio (genus)
+    "7955",    # Danio rerio
+    # --- Drosophila (fruit fly) ---
+    "7215",    # Drosophila (genus)
+    "7227",    # Drosophila melanogaster
+    # --- C. elegans (nematode) ---
+    "6237",    # Caenorhabditis (genus)
+    "6239",    # Caenorhabditis elegans
+    # --- Dog ---
+    "9611",    # Canis (genus)
+    "9612",    # Canis lupus
+    "9615",    # Canis lupus familiaris
+    # --- Cat ---
+    "9681",    # Felis (genus)
+    "9685",    # Felis catus
+    # --- Rabbit ---
+    "9984",    # Oryctolagus (genus)
+    "9986",    # Oryctolagus cuniculus
+    # --- Pig ---
+    "9821",    # Sus (genus)
+    "9823",    # Sus scrofa
+    "9825",    # Sus scrofa domesticus
+    # --- Chicken ---
+    "9030",    # Gallus (genus)
+    "9031",    # Gallus gallus
+    # --- Frog ---
+    "8353",    # Xenopus (genus)
+    "8355",    # Xenopus laevis
+    "8364",    # Xenopus tropicalis
+    # --- Sheep (neuroscience model) ---
+    "9935",    # Ovis (genus)
+    "9940",    # Ovis aries
+    # --- Ferret (visual neuroscience) ---
+    "9668",    # Mustela (genus)
+    "9669",    # Mustela putorius furo (ferret)
+    # --- Tree shrew (visual neuroscience) ---
+    "37347",   # Tupaia (genus)
+    "37348",   # Tupaia belangeri
+    # --- Opossum ---
+    "13615",   # Monodelphis (genus)
+    "13616",   # Monodelphis domestica
+    # --- Songbirds (vocal learning) ---
+    "44394",   # Taeniopygia (genus)
+    "59729",   # Taeniopygia guttata (zebra finch)
+    "48883",   # Melopsittacus undulatus (budgerigar)
+    # --- Octopus (cephalopod neuroscience) ---
+    "6644",    # Octopus (genus)
+    "6645",    # Octopus vulgaris
+    # --- Aplysia (learning/memory) ---
+    "6499",    # Aplysia (genus)
+    "6500",    # Aplysia californica
+    # --- Lamprey (motor systems) ---
+    "7745",    # Petromyzon (genus)
+    "7757",    # Petromyzon marinus
+    # --- Gerbil (BBQS — auditory neuroscience) ---
+    "10046",   # Meriones (genus)
+    "10047",   # Meriones unguiculatus (Mongolian gerbil)
+    # --- Cowbird (BBQS — social songbird) ---
+    "84832",   # Molothrus (genus)
+    "84833",   # Molothrus ater (brown-headed cowbird)
+    # --- Cichlids (BBQS — social/evolutionary neuroscience) ---
+    "8113",    # Cichlidae (family)
+    "32507",   # Astatotilapia (genus)
+    "8153",    # Oreochromis (genus — tilapia)
+    # --- Acoel worm (BBQS — regeneration neuroscience) ---
+    "286301",  # Hofstenia (genus)
+    "286302",  # Hofstenia miamia (panther worm)
+    # --- Other model organisms in neuroscience ---
+    "7740",    # Branchiostoma floridae (amphioxus — basal chordate)
+    "69293",   # Gasterosteus aculeatus (stickleback — behavioral genetics)
+    "28377",   # Anolis carolinensis (green anole — neuroethology)
+    # --- Key higher taxonomic ranks ---
+    "40674",   # Mammalia (class)
+    "8287",    # Sarcopterygii (lobe-finned fishes + tetrapods)
+    "7742",    # Vertebrata (subphylum)
+    "33208",   # Metazoa (kingdom — all animals)
+    "7711",    # Chordata (phylum)
+    "6072",    # Eumetazoa (animals with nervous systems)
 }
 
 
 def _is_ncbitaxon_relevant(term_uri: str) -> bool:
-    """Check if an NCBITaxon term should be included in the embedding index."""
-    # Extract the taxon ID from the URI (e.g., http://purl.obolibrary.org/obo/NCBITaxon_9606)
+    """Check if an NCBITaxon term should be included in the embedding index.
+
+    Includes genus, species, and subspecies for neuroscience model organisms,
+    plus key higher taxonomic ranks for context.
+    """
     if "NCBITaxon_" not in term_uri:
-        return True  # not NCBITaxon, include
+        return True  # not NCBITaxon, include everything else
     taxon_id = term_uri.rsplit("NCBITaxon_", 1)[-1]
     return taxon_id in _NCBITAXON_SPECIES_FILTER
 
