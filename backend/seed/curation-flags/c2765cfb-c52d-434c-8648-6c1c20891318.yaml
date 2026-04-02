@@ -1,0 +1,9 @@
+id: c2765cfb-c52d-434c-8648-6c1c20891318
+entity_type: element
+entity_ref: 360fa474297901f4e300fad6f7e09478bede7f33112782091df0fd366f7e210c
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: ElectricalStimulationParameters
+status: pending
+created_at: '2026-04-02T04:13:54.722750+00:00'

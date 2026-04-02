@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  type_ref: ParameterSet
+provenance:
+- source: openminds
+  class: openminds
+  name: parameterSet
+  description: Manner, position, or direction in which digital or physical properties
+    are set to determine a particular function, characteristics or behavior of something.
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: bc3657402e7fbdc8596fb10dda494496ce2ff168094c7002b9eaaa3205da2afa

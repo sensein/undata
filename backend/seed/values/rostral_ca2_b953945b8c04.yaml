@@ -1,0 +1,21 @@
+semantic:
+  label: rostral CA2
+  value_type: categorical
+  ontology_id: http://purl.obolibrary.org/obo/UBERON_0034778
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0034778
+    term_label: rostral CA2
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: source_metadata
+    primary: true
+provenance:
+- source: openminds
+  class: NervousSystemStructure
+  name: rostral CA2
+  description: Is a regional part of brain. Is part of the CA2 field of hippocampus.
+    [auto-generated from properties of the [UBERON ontology term](http://purl.obolibrary.org/obo/UBERON_0034778)
+    ('is_a' and 'relation
+sha256: b953945b8c04859c046513896ce66c13babd45b2050d042f69722f8e9d1767aa

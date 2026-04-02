@@ -1,0 +1,11 @@
+id: b0e22163-76f0-4ad4-8413-c8f3e304815f
+entity_type: element
+entity_ref: ed6aea193e1aa40e4c16b02e8d63836635787a160668e074f406ea7d9a280c60
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.802), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C42778
+  top_label: Uniform Resource Identifier
+  top_score: 0.8023
+status: pending
+created_at: '2026-04-02T19:34:25.001910+00:00'

@@ -1,0 +1,11 @@
+semantic:
+  data_type: integer
+provenance:
+- source: openneuro/ds000228
+  class: participants.tsv
+  name: WPPSI BD scaled
+  description: Scaled score on WPPSI block design task
+  generated_at: '2026-04-02T19:30:10.836157+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: aa3d60be4db583b72af937bf269b5d0d861240a921470a30c9a654b182b7cf42

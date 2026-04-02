@@ -1,0 +1,11 @@
+id: b6be608c-bfc0-4d56-a332-9b75bb724c58
+entity_type: value
+entity_ref: 217b3697c999d096f532760ad17f36960df86c83c99243ecd8785b7a41b8998c
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.701), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/PATO_0002296
+  top_label: foveate
+  top_score: 0.7008
+status: pending
+created_at: '2026-04-02T04:01:58.751122+00:00'

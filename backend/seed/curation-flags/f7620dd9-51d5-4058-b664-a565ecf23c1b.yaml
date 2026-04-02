@@ -1,0 +1,13 @@
+id: f7620dd9-51d5-4058-b664-a565ecf23c1b
+entity_type: value
+entity_ref: 00668ab7ee69c9b0486f16991103f0e701c5914acc9bd727f16e1e861ddf453a
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/NCIT_C25353
+    score: 1.0
+  - uri: http://uri.interlex.org/tgbugs/uris/readable/atlas/Inferior
+    score: 1.0
+status: pending
+created_at: '2026-04-02T04:07:05.971801+00:00'

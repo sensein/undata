@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  type_ref: Contribution
+provenance:
+- source: openminds
+  class: openminds
+  name: otherContribution
+  description: Giving or supplying of something (such as money or time) as a part
+    or share other than what is covered elsewhere.
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 942755bfd8cbdbf18a558b3c0bb9b5b0b9abab797257f75747323a7b924b51c4

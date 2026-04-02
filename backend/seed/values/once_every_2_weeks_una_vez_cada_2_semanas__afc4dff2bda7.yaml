@@ -1,0 +1,11 @@
+semantic:
+  value_type: categorical
+  label: 'Once every 2 weeks Una vez cada 2 semanas '
+  description: 'Response option for sai_p_basket_perwk_l: Once every 2 weeks Una vez
+    cada 2 semanas '
+provenance:
+- source: reproschema
+  class: abcd_lpsaiq01
+  name: sai_p_basket_perwk_l:8
+  description: 'Once every 2 weeks Una vez cada 2 semanas '
+sha256: afc4dff2bda765174bfa5ecaf3f2257bebccdc68039e858ab4ac35268a27067d

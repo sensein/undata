@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  type_ref: ProductSource
+  value_domain: text
+provenance:
+- source: openminds
+  class: openminds
+  name: productSource
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 6807504c2490d16a629bbda4e86580a6f03c0e560d29012f38e46ff343b3b5eb

@@ -1,0 +1,20 @@
+semantic:
+  properties:
+  - PHQ1_schema
+  - PHQ2_schema
+  - PHQ3_schema
+  - PHQq4_schema
+  - PHQ5_schema
+  - PHQ6_schema
+  - PHQ7_schema
+  - 2e12589d3e10ecb8a389c5f3047b6bbd99e85c14421303c2e2bbd014a306d745
+  - ccbb1d39b23d2e93519da87aaf6dcd6459416768d053ee560fcf00a9b294919a
+  - PHQ10_schema
+  - 774f5504e2e69fa642fe4a09c1d629c2d2b1b1a593cf163ad64e76fd67b7f86e
+  description: PHQ-8 assessment schema
+provenance:
+- source: reproschema
+  class: PHQ
+  name: PHQ
+  description: PHQ-8 assessment schema
+sha256: c0b2e36f5a83adcde9b95c9da1910cdbdf3f9d10927dd8c970f84ed236506aa9

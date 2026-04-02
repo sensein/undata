@@ -1,0 +1,42 @@
+semantic:
+  label: Refractive index matching
+  value_type: categorical
+  ontology_annotations:
+  - term_uri: http://dicom.nema.org/resources/ontology/DCM/RefractiveIndexApplied
+    term_label: Refractive Index Applied
+    ontology: unknown
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8321
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://dicom.nema.org/resources/ontology/DCM/EffectiveRefractiveIndex
+    term_label: Effective Refractive Index
+    ontology: unknown
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8074
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C205032
+    term_label: Refractive Index Measurement
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7774
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/OBI_0000583
+    term_label: refractive index detector
+    ontology: obi
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7716
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: aind
+  class: SpecimenProcedureType
+  name: Refractive index matching
+  description: null
+sha256: e0ceebac9db5f3657fdd93cbec11a0624eb67975c9601a8509bc15f40c3d383a

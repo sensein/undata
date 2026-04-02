@@ -1,0 +1,16 @@
+semantic:
+  data_type: integer
+  question_text: Anxious/Depressed ASR Syndrome Scale (number of dependent raw scores
+    missing)
+  min_value: 0.0
+  max_value: 18.0
+provenance:
+- source: reproschema
+  class: abcd_asrs01
+  name: asr_scr_anxdep_nm
+  description: Anxious/Depressed ASR Syndrome Scale (number of dependent raw scores
+    missing)
+  generated_at: '2026-04-02T19:31:06.139505+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: f49bebdac426dc8f1025249bd53662cd6afefe3ea88c5d8fc5e1df15464ad78d

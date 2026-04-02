@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+  question_text: Average correlation between default network and auditory network
+provenance:
+- source: reproschema
+  class: abcd_betnet02
+  name: rsfmri_c_ngd_dt_ngd_ad
+  description: Average correlation between default network and auditory network
+  generated_at: '2026-04-02T19:31:06.139505+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 040a1469aacd49953dc431e0fe8663726a72cfd88b982a692e7157d1ba49acc8

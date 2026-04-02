@@ -1,0 +1,9 @@
+id: cd5a7192-526b-4da1-bc5e-8221661e8725
+entity_type: element
+entity_ref: a02ce3d8b6847eef533879125d3752363759a262d5d7bb2df8f9745d288984c3
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: AtlasName
+status: pending
+created_at: '2026-04-02T04:01:57.905957+00:00'

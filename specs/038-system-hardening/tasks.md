@@ -171,7 +171,7 @@
 
 **Purpose**: Final verification, seed data update
 
-- [ ] T044 Regenerate curated seed subset from full registry (with deduped flags, sha256 entity_refs)
+- [X] T044 Regenerate curated seed subset from full registry (with deduped flags, sha256 entity_refs)
 - [ ] T045 Run quickstart.md validation for all 9 user stories
 - [ ] T046 [P] Verify all browse pages: server-side sort + infinite scroll + source filter + search
 - [ ] T047 [P] Verify curation queue detail panel shows evidence chains for flagged entities

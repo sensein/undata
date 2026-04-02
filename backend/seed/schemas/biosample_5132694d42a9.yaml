@@ -1,0 +1,28 @@
+semantic:
+  properties:
+  - 40b6c95d87e43631ad1bb80896c7a7aa3118e059d417257f1277cc6fa709db33
+  - 76f8697e01eddd96e2ef83619be5c18933147c3822411ab4d3dfbf5b833c3b7c
+  - a85cdbd1db47fad73d8a1154b5aa1b97fb966edae9dbc949e1031aa16b201a61
+  - bb97a570a1e522aebae0b5b5cfa7a20405e94d00a3149bf33940320c384d59ed
+  - f937018bae15c54fbb55b08e452ed8e9cf23b294796aa2d63b022dda3cfc74a1
+  - 6dac346a5da4be9f525e00efed6a6976fdbb29d5e2180304206e91dfb943965a
+  - 60ced626d8a473ad4993053f189cc8d988776d1bc5ac00907ccee4e234ea9a65
+  - eb79be4c60c7b926748a75ebdfa3be559b7f515ec488c47a65eb22ed20d8052d
+  - c998b4d20a008a2b423b928961f6dd310e010922752d1ff9f40dd56b74745e6b
+  - 432d7f9177f7dc0f0a8b37b252453e594fa03c6a25cece6377952a34c7cc43ed
+  subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C43412
+    term_label: Biosample
+    ontology: ncit
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8185
+    model: all-MiniLM-L6-v2
+    primary: true
+provenance:
+- source: dandi
+  class: BioSample
+  name: BioSample
+  description: Description of the sample that was studied
+sha256: 5132694d42a9ece13ab2f00bc723582c09aa1c2f6dd4e2abfb4179e5830e458b

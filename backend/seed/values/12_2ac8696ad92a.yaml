@@ -1,0 +1,10 @@
+semantic:
+  value_type: categorical
+  label: '12'
+  description: 'Response option for sai_ss_art_nmonth_p_l: 12'
+provenance:
+- source: reproschema
+  class: abcd_lsssa01
+  name: sai_ss_art_nmonth_p_l:12
+  description: '12'
+sha256: 2ac8696ad92a8e8dcba3f42c04daa8748f2401a3f8ba0acef9764afd87717b94

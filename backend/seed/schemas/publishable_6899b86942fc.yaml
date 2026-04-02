@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - c45188eebfebdce9b384c978a88935b14bd21acdb7c24225633bb3eaf6810737
+  - 2b3b3da7a0a38383c5e5346895de74e451dc88248339db08b79dcde9aaa73ba4
+  - 5d5915cc23cfbf68a3e6b3182d63bb6b7e5f91776bb2a8224ae03051ef4d455f
+  - 1448cea1525b77fa8277a0149adb3a8bef24949269f63939e407ce0d99aab914
+  subclass_of: DandiBaseModel
+provenance:
+- source: dandi
+  class: Publishable
+  name: Publishable
+  description: null
+sha256: 6899b86942fc459d64a95e49fcfda52ddf82b39b35c6aa43c4682b056c08c6d8

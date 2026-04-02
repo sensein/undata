@@ -1,0 +1,10 @@
+semantic:
+  value_type: categorical
+  label: ''
+  description: 'Response option for bads_6: '
+provenance:
+- source: reproschema
+  class: BADS
+  name: bads_6:4
+  description: ''
+sha256: 775e175f2b162943528c436f58f486be83be6c77a8a996f3e6dcba28aad2b4b4

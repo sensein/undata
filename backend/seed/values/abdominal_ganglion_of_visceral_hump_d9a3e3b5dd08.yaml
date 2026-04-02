@@ -1,0 +1,20 @@
+semantic:
+  label: abdominal ganglion of visceral hump
+  value_type: categorical
+  ontology_id: http://purl.obolibrary.org/obo/UBERON_0008964
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0008964
+    term_label: abdominal ganglion of visceral hump
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: source_metadata
+    primary: true
+provenance:
+- source: openminds
+  class: NervousSystemStructure
+  name: abdominal ganglion of visceral hump
+  description: Is a ganglion. [auto-generated from 'is_a' property of the [UBERON
+    ontology term](http://purl.obolibrary.org/obo/UBERON_0008964)]
+sha256: d9a3e3b5dd083b7afe21b3e965b34273b8a53cb610879bcbf8a51631482ecb75

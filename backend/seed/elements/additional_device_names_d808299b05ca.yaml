@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: aind
+  class: aind
+  name: additional_device_names
+  description: Mirrors, dichroics, etc
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: d808299b05ca6bccb00e8211b895f4ba44f24bf5b97a94e064b778f912a7416a

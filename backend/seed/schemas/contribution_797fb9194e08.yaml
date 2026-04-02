@@ -1,0 +1,10 @@
+semantic:
+  properties:
+  - 52e9e9394e258adfb133c009257c8195987136341d30b99a5c18724a014f8a8b
+  - f7853ffb172de00717f27b9e369a70859b46ef1c9f4361e390517361b4e76b3a
+provenance:
+- source: openminds
+  class: Contribution
+  name: Contribution
+  description: Structured information on the contribution made to a research product.
+sha256: 797fb9194e08d7739c6ac9853b3fc8eafc0c017da63150936259f8d0ac4080bf

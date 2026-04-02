@@ -1,0 +1,13 @@
+semantic:
+  properties:
+  - 3aee1991ca5ebe8daf4094f420b6f75d29a4b895c7fbddfc575c17571f0ee200
+  - d61f64ade1d193e606ce2804ce764da05841facbb1f05f22f66c683043ed03bc
+  - c10dfc8671fb6e63a89265befe7c152ca0d509bfbc340dbcc4cd838486fc818f
+  - f710ac3312975e4281d16b952493859cf89fb7a7095cc3848cc64f3427e476e7
+  - 40762e6f555ac297fac23cb38fb6b95f2578490d68006f838a93309547c543bf
+provenance:
+- source: openminds
+  class: LaunchConfiguration
+  name: LaunchConfiguration
+  description: Structured information about the launch of a computational process.
+sha256: d8d29432a1dbfde661fa5b63aa6783758bd6c01ddaf8f062540f081b15fe8a2d
