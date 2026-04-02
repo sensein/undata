@@ -11,19 +11,19 @@ const SOURCES = ["bids", "nwb", "dandi", "openminds", "aind"];
 function SourceCard({ source }: { source: string }) {
   const { data: elemData } = useQuery<{ browseElements: ElementConnection }>(
     BROWSE_ELEMENTS,
-    { variables: { source, first: 1 } },
+    { variables: { source, first: 1 }, fetchPolicy: "no-cache" },
   );
   const { data: schemaData } = useQuery<{ browseSchemas: SchemaConnection }>(
     BROWSE_SCHEMAS,
-    { variables: { source, first: 1 } },
+    { variables: { source, first: 1 }, fetchPolicy: "no-cache" },
   );
   const { data: valueData } = useQuery<{ browseValues: ValueConnection }>(
     BROWSE_VALUES,
-    { variables: { source, first: 1 } },
+    { variables: { source, first: 1 }, fetchPolicy: "no-cache" },
   );
   const { data: valuesetData } = useQuery<{ browseValuesets: Connection<ValueSetNode> }>(
     BROWSE_VALUESETS,
-    { variables: { source, first: 1 } },
+    { variables: { source, first: 1 }, fetchPolicy: "no-cache" },
   );
 
   const counts = {
