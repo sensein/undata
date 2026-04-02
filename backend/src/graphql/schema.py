@@ -55,11 +55,12 @@ class Query:
     async def search(
         self,
         query: str,
+        mode: Optional[t.SearchMode] = None,
         first: int = 50,
     ) -> list[t.SearchResultType]:
-        """Search across all entity types by text. Returns results ordered by relevance."""
+        """Search across all entity types. Mode: LEXICAL, SEMANTIC, or BOTH (default)."""
         async with AsyncSessionLocal() as session:
-            return await r.resolve_search(session, query, first)
+            return await r.resolve_search(session, query, first, mode=mode.value if mode else "both")
 
     @strawberry.field
     async def browse_elements(
@@ -84,33 +85,48 @@ class Query:
         self,
         source: Optional[str] = None,
         search_text: Optional[str] = None,
+        sort_by: Optional[str] = None,
+        sort_order: Optional[str] = None,
         first: int = 20,
         after: Optional[str] = None,
     ) -> t.SchemaConnection:
         async with AsyncSessionLocal() as session:
-            return await r.resolve_browse_schemas(session, source, search_text, first, after)
+            return await r.resolve_browse_schemas(
+                session, source, search_text, first, after,
+                sort_by=sort_by, sort_order=sort_order,
+            )
 
     @strawberry.field
     async def browse_values(
         self,
         source: Optional[str] = None,
         search_text: Optional[str] = None,
+        sort_by: Optional[str] = None,
+        sort_order: Optional[str] = None,
         first: int = 20,
         after: Optional[str] = None,
     ) -> t.ValueConnection:
         async with AsyncSessionLocal() as session:
-            return await r.resolve_browse_values(session, source, search_text, first, after)
+            return await r.resolve_browse_values(
+                session, source, search_text, first, after,
+                sort_by=sort_by, sort_order=sort_order,
+            )
 
     @strawberry.field
     async def browse_valuesets(
         self,
         source: Optional[str] = None,
         search_text: Optional[str] = None,
+        sort_by: Optional[str] = None,
+        sort_order: Optional[str] = None,
         first: int = 20,
         after: Optional[str] = None,
     ) -> t.ValueSetConnection:
         async with AsyncSessionLocal() as session:
-            return await r.resolve_browse_valuesets(session, source, search_text, first, after)
+            return await r.resolve_browse_valuesets(
+                session, source, search_text, first, after,
+                sort_by=sort_by, sort_order=sort_order,
+            )
 
     @strawberry.field
     async def transform(self, sha256: str) -> t.Transform | None:
@@ -198,6 +214,35 @@ class Query:
         async with AsyncSessionLocal() as session:
             return await r.resolve_enrichment_proposals(session, entity_type, entity_ref, status, first)
 
+    @strawberry.field
+    async def ontology_store_info(self) -> list[t.OntologyStoreEntry]:
+        """Read loaded ontologies from pyoxigraph store (not DB)."""
+        raw = await r.resolve_ontology_store_info()
+        return [
+            t.OntologyStoreEntry(
+                name=e["name"],
+                display_name=e["display_name"],
+                term_count=e["term_count"],
+                format=e.get("format", ""),
+                checksum=e.get("checksum", ""),
+                last_refreshed=e.get("last_refreshed", ""),
+            )
+            for e in raw
+        ]
+
+    @strawberry.field
+    async def audit_log(
+        self,
+        entity_type: Optional[str] = None,
+        entity_ref: Optional[str] = None,
+        agent: Optional[str] = None,
+        activity: Optional[str] = None,
+        first: int = 50,
+    ) -> list[t.AuditLogEntry]:
+        """Query audit log entries with optional filters."""
+        async with AsyncSessionLocal() as session:
+            return await r.resolve_audit_log(session, entity_type, entity_ref, agent, activity, first)
+
 
 @strawberry.type
 class Mutation:
@@ -205,14 +250,20 @@ class Mutation:
     async def resolve_flag(self, info: strawberry.types.Info, input: t.ResolveFlagInput) -> t.CurationFlag:
         user = await _require_auth(info, "curator")
         async with AsyncSessionLocal() as session:
-            # Override resolved_by with authenticated user's name
+            from src.services.audit_service import write_audit
+            curator = user.get("name", user.get("sub", "unknown"))
             input_with_user = t.ResolveFlagInput(
                 flag_id=input.flag_id,
                 action=input.action,
-                resolved_by=user.get("name", user.get("sub", "unknown")),
+                resolved_by=curator,
                 note=input.note,
             )
             result = await r.resolve_resolve_flag(session, input_with_user)
+            await write_audit(
+                session, activity=f"flag_{input.action.value}", agent=curator,
+                entity_type="flag", entity_ref=str(input.flag_id),
+                details={"note": input.note},
+            )
             await session.commit()
             return result
 
@@ -220,13 +271,21 @@ class Mutation:
     async def batch_resolve_flags(self, info: strawberry.types.Info, input: t.BatchResolveFlagInput) -> list[t.CurationFlag]:
         user = await _require_auth(info, "curator")
         async with AsyncSessionLocal() as session:
+            from src.services.audit_service import write_audit
+            curator = user.get("name", user.get("sub", "unknown"))
             input_with_user = t.BatchResolveFlagInput(
                 flag_ids=input.flag_ids,
                 action=input.action,
-                resolved_by=user.get("name", user.get("sub", "unknown")),
+                resolved_by=curator,
                 note=input.note,
             )
             results = await r.resolve_batch_resolve_flags(session, input_with_user)
+            for fid in input.flag_ids:
+                await write_audit(
+                    session, activity=f"flag_{input.action.value}", agent=curator,
+                    entity_type="flag", entity_ref=str(fid),
+                    details={"note": input.note, "batch": True},
+                )
             await session.commit()
             return results
 
@@ -256,8 +315,13 @@ class Mutation:
         """Approve an ontology annotation — moves it to curated_annotations (protected from re-enrichment)."""
         user = await _require_auth(info, "curator")
         async with AsyncSessionLocal() as session:
-            result = await r.resolve_approve_annotation(
-                session, entity_sha256, annotation_index, user.get("name", "unknown")
+            from src.services.audit_service import write_audit
+            curator = user.get("name", "unknown")
+            result = await r.resolve_approve_annotation(session, entity_sha256, annotation_index, curator)
+            await write_audit(
+                session, activity="approve_annotation", agent=curator,
+                entity_type="element", entity_ref=entity_sha256,
+                details={"annotation_index": annotation_index},
             )
             await session.commit()
             return result
@@ -273,17 +337,29 @@ class Mutation:
         """Reject an ontology annotation — removes it and records the rejection."""
         user = await _require_auth(info, "curator")
         async with AsyncSessionLocal() as session:
-            result = await r.resolve_reject_annotation(
-                session, entity_sha256, annotation_index, user.get("name", "unknown"), reason
+            from src.services.audit_service import write_audit
+            curator = user.get("name", "unknown")
+            result = await r.resolve_reject_annotation(session, entity_sha256, annotation_index, curator, reason)
+            await write_audit(
+                session, activity="reject_annotation", agent=curator,
+                entity_type="element", entity_ref=entity_sha256,
+                details={"annotation_index": annotation_index, "reason": reason},
             )
             await session.commit()
             return result
 
     @strawberry.mutation
     async def import_registry(self, info: strawberry.types.Info, registry_path: str) -> t.ImportResult:
-        await _require_auth(info, "admin")
+        user = await _require_auth(info, "admin")
         async with AsyncSessionLocal() as session:
+            from src.services.audit_service import write_audit
             result = await r.resolve_import_registry(session, registry_path)
+            agent = user.get("name", user.get("sub", "system"))
+            await write_audit(
+                session, activity="import", agent=agent,
+                entity_type="registry", entity_ref=registry_path,
+                details={"elements": result.elements, "schemas": result.schemas},
+            )
             await session.commit()
             return result
 
@@ -299,12 +375,16 @@ class Mutation:
             "ontology_annotations": input.ontology_annotations,
         }.items() if v is not None}
         async with AsyncSessionLocal() as session:
-            row = await r.resolve_update_entity(
-                session, "elements", sha256, updates, input.reason,
-                user.get("name", user.get("sub", "unknown")),
-            )
+            from src.services.audit_service import write_audit
+            curator = user.get("name", user.get("sub", "unknown"))
+            row = await r.resolve_update_entity(session, "elements", sha256, updates, input.reason, curator)
             if row is None:
                 raise ValueError(f"Element {sha256} not found")
+            await write_audit(
+                session, activity="update", agent=curator,
+                entity_type="element", entity_ref=sha256,
+                details={"reason": input.reason, "fields": list(updates.keys())},
+            )
             await session.commit()
             return r._element_from_row(row)
 
@@ -317,12 +397,16 @@ class Mutation:
             "ontology_annotations": input.ontology_annotations,
         }.items() if v is not None}
         async with AsyncSessionLocal() as session:
-            row = await r.resolve_update_entity(
-                session, "schemas", sha256, updates, input.reason,
-                user.get("name", user.get("sub", "unknown")),
-            )
+            from src.services.audit_service import write_audit
+            curator = user.get("name", user.get("sub", "unknown"))
+            row = await r.resolve_update_entity(session, "schemas", sha256, updates, input.reason, curator)
             if row is None:
                 raise ValueError(f"Schema {sha256} not found")
+            await write_audit(
+                session, activity="update", agent=curator,
+                entity_type="schema", entity_ref=sha256,
+                details={"reason": input.reason, "fields": list(updates.keys())},
+            )
             await session.commit()
             return r._schema_from_row(row)
 
@@ -335,12 +419,16 @@ class Mutation:
             "ontology_annotations": input.ontology_annotations,
         }.items() if v is not None}
         async with AsyncSessionLocal() as session:
-            row = await r.resolve_update_entity(
-                session, "values", sha256, updates, input.reason,
-                user.get("name", user.get("sub", "unknown")),
-            )
+            from src.services.audit_service import write_audit
+            curator = user.get("name", user.get("sub", "unknown"))
+            row = await r.resolve_update_entity(session, "values", sha256, updates, input.reason, curator)
             if row is None:
                 raise ValueError(f"Value {sha256} not found")
+            await write_audit(
+                session, activity="update", agent=curator,
+                entity_type="value", entity_ref=sha256,
+                details={"reason": input.reason, "fields": list(updates.keys())},
+            )
             await session.commit()
             return r._value_from_row(row)
 
@@ -354,14 +442,18 @@ class Mutation:
         changes: JSON,
         reason: Optional[str] = None,
     ) -> t.Element:
-        """Create a new version of an element with changed semantic fields.
-
-        Recomputes sha256, marks old as superseded, creates a curation_update Transform.
-        """
+        """Create a new version of an element with changed semantic fields."""
         user = await _require_auth(info, "curator")
         curator = user.get("name", user.get("sub", "unknown"))
         async with AsyncSessionLocal() as session:
+            from src.services.audit_service import write_audit
             result = await r.resolve_version_element(session, sha256, changes, curator)
+            await write_audit(
+                session, activity="version", agent=curator,
+                entity_type="element", entity_ref=sha256,
+                generated_entity_ref=result.sha256,
+                details={"changes": changes, "reason": reason},
+            )
             await session.commit()
             return result
 
@@ -373,7 +465,12 @@ class Mutation:
         user = await _require_auth(info, "curator")
         approver = user.get("name", user.get("sub", "unknown"))
         async with AsyncSessionLocal() as session:
+            from src.services.audit_service import write_audit
             result = await r.resolve_approve_ingestion(session, str(id), approver)
+            await write_audit(
+                session, activity="approve_ingestion", agent=approver,
+                entity_type="ingestion_job", entity_ref=str(id),
+            )
             await session.commit()
             return result
 
@@ -388,7 +485,13 @@ class Mutation:
         user = await _require_auth(info, "curator")
         rejector = user.get("name", user.get("sub", "unknown"))
         async with AsyncSessionLocal() as session:
+            from src.services.audit_service import write_audit
             result = await r.resolve_reject_ingestion(session, str(id), rejector, reason)
+            await write_audit(
+                session, activity="reject_ingestion", agent=rejector,
+                entity_type="ingestion_job", entity_ref=str(id),
+                details={"reason": reason},
+            )
             await session.commit()
             return result
 
@@ -420,7 +523,13 @@ class Mutation:
         user = await _require_auth(info, "curator")
         reviewer = user.get("name", user.get("sub", "unknown"))
         async with AsyncSessionLocal() as session:
+            from src.services.audit_service import write_audit
             result = await r.resolve_review_proposal(session, str(id), decision, reviewer, reason)
+            await write_audit(
+                session, activity=f"proposal_{decision}", agent=reviewer,
+                entity_type="proposal", entity_ref=str(id),
+                details={"reason": reason},
+            )
             await session.commit()
             return result
 
@@ -445,6 +554,18 @@ class Mutation:
                 entity_counts=result["entity_counts"],
                 manifest=result["manifest"],
             )
+
+    # --- Version dependency check ---
+
+    @strawberry.mutation
+    async def check_dependency_versions(self, info: strawberry.types.Info) -> JSON:
+        """Check all registered ontologies/sources for version changes."""
+        await _require_auth(info, "admin")
+        from src.services.version_service import check_dependency_versions
+        async with AsyncSessionLocal() as session:
+            transitions = await check_dependency_versions(session)
+            await session.commit()
+            return transitions
 
     # --- T025-T026: Releases ---
 

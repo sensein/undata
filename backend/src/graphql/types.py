@@ -72,6 +72,13 @@ class EntityType(enum.Enum):
     TRANSFORM = "transform"
 
 
+@strawberry.enum
+class SearchMode(enum.Enum):
+    LEXICAL = "lexical"
+    SEMANTIC = "semantic"
+    BOTH = "both"
+
+
 # --- Nested Types ---
 
 
@@ -169,6 +176,7 @@ class Transform:
     file_name: Optional[str] = None
     source_element: str = ""
     target_element: str = ""
+    source_elements: list[str] = strawberry.field(default_factory=list)
     function_type: Optional[str] = None
     input_type: Optional[str] = None
     output_type: Optional[str] = None
@@ -274,6 +282,7 @@ class LLMEnrichmentProposalType:
     proposed_value: JSON
     reasoning: Optional[str] = None
     confidence: Optional[float] = None
+    evidence: Optional[JSON] = None
     status: str
     reviewed_by: Optional[str] = None
     reviewed_at: Optional[str] = None
@@ -293,6 +302,29 @@ class AddOntologySourceInput:
     display_name: str
     url: str
     format: str
+
+
+@strawberry.type
+class OntologyStoreEntry:
+    name: str
+    display_name: str
+    term_count: int
+    format: str = ""
+    checksum: str = ""
+    last_refreshed: str = ""
+
+
+@strawberry.type
+class AuditLogEntry:
+    id: strawberry.ID
+    activity: str
+    agent: str
+    agent_type: str
+    entity_type: str
+    entity_ref: str
+    generated_entity_ref: Optional[str] = None
+    details: Optional[JSON] = None
+    created_at: str = ""
 
 
 @strawberry.type

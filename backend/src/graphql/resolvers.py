@@ -127,6 +127,7 @@ def _transform_from_row(row) -> t.Transform:
         file_name=row.file_name,
         source_element=row.source_element or "",
         target_element=row.target_element or "",
+        source_elements=row.source_elements or [] if hasattr(row, "source_elements") else [],
         function_type=row.function_type,
         input_type=row.input_type,
         output_type=row.output_type,
@@ -287,85 +288,88 @@ async def resolve_transform(session: AsyncSession, sha256: str) -> t.Transform |
 
 
 async def resolve_search(
-    session: AsyncSession, query: str, first: int = 50
+    session: AsyncSession, query: str, first: int = 50, mode: str = "both"
 ) -> list[t.SearchResultType]:
-    """Search across all entity types using tsvector full-text search + ILIKE fallback."""
+    """Search across all entity types.
+
+    Modes: lexical (tsvector/ILIKE), semantic (embedding similarity), both (combined).
+    """
     from src.db.models import Element, Schema, Value, ValueSet
 
     results: list[t.SearchResultType] = []
+    do_lexical = mode in ("lexical", "both")
+    do_semantic = mode in ("semantic", "both")
 
-    # Search elements
-    elem_stmt = select(Element)
-    if hasattr(Element, "search_tsv") and Element.search_tsv is not None:
-        from sqlalchemy import func as sa_func
+    # --- Lexical search ---
+    if do_lexical:
+        elem_stmt = select(Element)
+        if hasattr(Element, "search_tsv") and Element.search_tsv is not None:
+            from sqlalchemy import func as sa_func
+            elem_stmt = elem_stmt.where(
+                Element.search_tsv.op("@@")(sa_func.plainto_tsquery("english", query))
+            )
+        else:
+            elem_stmt = elem_stmt.where(
+                Element.file_name.ilike(f"%{query}%") | Element.description.ilike(f"%{query}%")
+            )
+        elem_stmt = elem_stmt.limit(first)
+        for row in (await session.execute(elem_stmt)).scalars():
+            prov = row.provenance[0] if row.provenance else {}
+            results.append(t.SearchResultType(
+                entity_type="element", sha256=row.sha256,
+                name=prov.get("name", row.file_name or row.sha256[:12]),
+                source=prov.get("source"), data_type=row.data_type, unit=row.unit,
+                description=row.description or prov.get("description", ""), score=1.0,
+            ))
 
-        elem_stmt = elem_stmt.where(
-            Element.search_tsv.op("@@")(sa_func.plainto_tsquery("english", query))
-        )
-    else:
-        elem_stmt = elem_stmt.where(
-            Element.file_name.ilike(f"%{query}%") | Element.description.ilike(f"%{query}%")
-        )
-    elem_stmt = elem_stmt.limit(first)
-    for row in (await session.execute(elem_stmt)).scalars():
-        prov = row.provenance[0] if row.provenance else {}
-        results.append(t.SearchResultType(
-            entity_type="element",
-            sha256=row.sha256,
-            name=prov.get("name", row.file_name or row.sha256[:12]),
-            source=prov.get("source"),
-            data_type=row.data_type,
-            unit=row.unit,
-            description=row.description or prov.get("description", ""),
-            score=1.0,
-        ))
+        for model_cls, etype, score_base in [
+            (Schema, "schema", 0.9), (Value, "value", 0.8), (ValueSet, "valueset", 0.7),
+        ]:
+            name_col = getattr(model_cls, "label", None) or getattr(model_cls, "name", None) or model_cls.file_name
+            stmt = select(model_cls).where(
+                name_col.ilike(f"%{query}%") | model_cls.description.ilike(f"%{query}%")
+            ).limit(first)
+            for row in (await session.execute(stmt)).scalars():
+                prov = row.provenance[0] if row.provenance else {}
+                nm = getattr(row, "label", None) or getattr(row, "name", None) or row.file_name or row.sha256[:12]
+                results.append(t.SearchResultType(
+                    entity_type=etype, sha256=row.sha256,
+                    name=prov.get("name", nm), source=prov.get("source"),
+                    description=row.description or prov.get("description", ""), score=score_base,
+                ))
 
-    # Search schemas
-    schema_stmt = select(Schema).where(
-        Schema.file_name.ilike(f"%{query}%") | Schema.description.ilike(f"%{query}%")
-    ).limit(first)
-    for row in (await session.execute(schema_stmt)).scalars():
-        prov = row.provenance[0] if row.provenance else {}
-        results.append(t.SearchResultType(
-            entity_type="schema",
-            sha256=row.sha256,
-            name=prov.get("name", row.file_name or row.sha256[:12]),
-            source=prov.get("source"),
-            description=row.description or prov.get("description", ""),
-            score=0.9,
-        ))
+    # --- Semantic search (pgvector nearest-neighbor) ---
+    if do_semantic:
+        try:
+            from src.services.embedding_service import compute_embedding
+            query_vec = compute_embedding(query)
+            if query_vec is not None:
+                from sqlalchemy import text as sa_text
+                # Use pgvector cosine distance for element search
+                sem_stmt = sa_text(
+                    "SELECT sha256, file_name, data_type, unit, description, provenance, "
+                    "1 - (embedding <=> :qvec::vector) AS similarity "
+                    "FROM elements WHERE embedding IS NOT NULL "
+                    "ORDER BY embedding <=> :qvec::vector LIMIT :lim"
+                )
+                sem_result = await session.execute(
+                    sem_stmt, {"qvec": str(query_vec.tolist()), "lim": first}
+                )
+                seen_sha = {r.sha256 for r in results}
+                for row in sem_result:
+                    if row.sha256 in seen_sha:
+                        continue
+                    prov = (row.provenance or [{}])[0] if row.provenance else {}
+                    results.append(t.SearchResultType(
+                        entity_type="element", sha256=row.sha256,
+                        name=prov.get("name", row.file_name or row.sha256[:12]),
+                        source=prov.get("source"), data_type=row.data_type, unit=row.unit,
+                        description=row.description or prov.get("description", ""),
+                        score=round(float(row.similarity), 4),
+                    ))
+        except Exception as e:
+            logger.warning("Semantic search failed: %s", e)
 
-    # Search values
-    val_stmt = select(Value).where(
-        Value.label.ilike(f"%{query}%") | Value.description.ilike(f"%{query}%")
-    ).limit(first)
-    for row in (await session.execute(val_stmt)).scalars():
-        prov = row.provenance[0] if row.provenance else {}
-        results.append(t.SearchResultType(
-            entity_type="value",
-            sha256=row.sha256,
-            name=row.label or prov.get("name", row.sha256[:12]),
-            source=prov.get("source"),
-            description=row.description or prov.get("description", ""),
-            score=0.8,
-        ))
-
-    # Search valuesets
-    vs_stmt = select(ValueSet).where(
-        ValueSet.name.ilike(f"%{query}%") | ValueSet.description.ilike(f"%{query}%")
-    ).limit(first)
-    for row in (await session.execute(vs_stmt)).scalars():
-        prov = row.provenance[0] if row.provenance else {}
-        results.append(t.SearchResultType(
-            entity_type="valueset",
-            sha256=row.sha256,
-            name=row.name or prov.get("name", row.sha256[:12]),
-            source=prov.get("source"),
-            description=row.description or prov.get("description", ""),
-            score=0.7,
-        ))
-
-    # Sort by entity type priority (elements first) then name
     results.sort(key=lambda r: (-r.score, r.name.lower()))
     return results[:first]
 
@@ -449,20 +453,31 @@ async def resolve_browse_schemas(
     search_text: str | None = None,
     first: int = 20,
     after: str | None = None,
+    sort_by: str | None = None,
+    sort_order: str | None = None,
 ) -> t.SchemaConnection:
     from src.db.models import Schema
 
     stmt = select(Schema)
     if source:
         from sqlalchemy import text as sa_text
-
         stmt = stmt.where(sa_text("provenance @> :src ::jsonb").bindparams(
             src=f'[{{"source": "{source}"}}]'
         ))
     if search_text:
-        stmt = stmt.where(Schema.description.ilike(f"%{search_text}%"))
+        stmt = stmt.where(
+            Schema.file_name.ilike(f"%{search_text}%") | Schema.description.ilike(f"%{search_text}%")
+        )
 
-    rows, has_next, total = await _paginated_query(session, Schema, stmt, first, after)
+    sort_col_map = {"name": Schema.file_name, "description": Schema.description}
+    sort_col = sort_col_map.get(sort_by or "", None)
+    if sort_col is not None:
+        if sort_order == "desc":
+            sort_col = sort_col.desc().nulls_last()
+        else:
+            sort_col = sort_col.asc().nulls_last()
+
+    rows, has_next, total = await _paginated_query(session, Schema, stmt, first, after, sort_column=sort_col)
     edges = [
         t.SchemaEdge(cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_schema_from_row(r))
         for r in rows
@@ -480,20 +495,31 @@ async def resolve_browse_values(
     search_text: str | None = None,
     first: int = 20,
     after: str | None = None,
+    sort_by: str | None = None,
+    sort_order: str | None = None,
 ) -> t.ValueConnection:
     from src.db.models import Value
 
     stmt = select(Value)
     if source:
         from sqlalchemy import text as sa_text
-
         stmt = stmt.where(sa_text("provenance @> :src ::jsonb").bindparams(
             src=f'[{{"source": "{source}"}}]'
         ))
     if search_text:
-        stmt = stmt.where(Value.label.ilike(f"%{search_text}%"))
+        stmt = stmt.where(
+            Value.label.ilike(f"%{search_text}%") | Value.description.ilike(f"%{search_text}%")
+        )
 
-    rows, has_next, total = await _paginated_query(session, Value, stmt, first, after)
+    sort_col_map = {"name": Value.label, "label": Value.label, "description": Value.description}
+    sort_col = sort_col_map.get(sort_by or "", None)
+    if sort_col is not None:
+        if sort_order == "desc":
+            sort_col = sort_col.desc().nulls_last()
+        else:
+            sort_col = sort_col.asc().nulls_last()
+
+    rows, has_next, total = await _paginated_query(session, Value, stmt, first, after, sort_column=sort_col)
     edges = [
         t.ValueEdge(cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_value_from_row(r))
         for r in rows
@@ -511,20 +537,31 @@ async def resolve_browse_valuesets(
     search_text: str | None = None,
     first: int = 20,
     after: str | None = None,
+    sort_by: str | None = None,
+    sort_order: str | None = None,
 ) -> t.ValueSetConnection:
     from src.db.models import ValueSet
 
     stmt = select(ValueSet)
     if source:
         from sqlalchemy import text as sa_text
-
         stmt = stmt.where(sa_text("provenance @> :src ::jsonb").bindparams(
             src=f'[{{"source": "{source}"}}]'
         ))
     if search_text:
-        stmt = stmt.where(ValueSet.name.ilike(f"%{search_text}%"))
+        stmt = stmt.where(
+            ValueSet.name.ilike(f"%{search_text}%") | ValueSet.description.ilike(f"%{search_text}%")
+        )
 
-    rows, has_next, total = await _paginated_query(session, ValueSet, stmt, first, after)
+    sort_col_map = {"name": ValueSet.name, "description": ValueSet.description}
+    sort_col = sort_col_map.get(sort_by or "", None)
+    if sort_col is not None:
+        if sort_order == "desc":
+            sort_col = sort_col.desc().nulls_last()
+        else:
+            sort_col = sort_col.asc().nulls_last()
+
+    rows, has_next, total = await _paginated_query(session, ValueSet, stmt, first, after, sort_column=sort_col)
     edges = [
         t.ValueSetEdge(cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_valueset_from_row(r))
         for r in rows
@@ -1318,6 +1355,66 @@ async def resolve_review_proposal(
     return _proposal_to_type(row)
 
 
+async def resolve_ontology_store_info() -> list[dict]:
+    """Read ontology info from pyoxigraph store (not from DB)."""
+    try:
+        from undata_library.ontology_store import OntologyStore
+        store = OntologyStore()
+        loaded = store.list_loaded()
+        return [
+            {
+                "name": entry.get("name", ""),
+                "display_name": entry.get("display_name", entry.get("name", "")),
+                "term_count": entry.get("term_count", 0),
+                "format": entry.get("format", ""),
+                "checksum": entry.get("checksum", ""),
+                "last_refreshed": entry.get("last_refreshed", ""),
+            }
+            for entry in loaded
+        ]
+    except Exception as e:
+        logger.warning("Failed to read ontology store: %s", e)
+        return []
+
+
+async def resolve_audit_log(
+    session: AsyncSession,
+    entity_type: str | None = None,
+    entity_ref: str | None = None,
+    agent: str | None = None,
+    activity: str | None = None,
+    first: int = 50,
+) -> list[t.AuditLogEntry]:
+    """Query audit log entries with optional filters."""
+    from src.db.models import AuditLog
+
+    stmt = select(AuditLog)
+    if entity_type:
+        stmt = stmt.where(AuditLog.entity_type == entity_type)
+    if entity_ref:
+        stmt = stmt.where(AuditLog.entity_ref.startswith(entity_ref))
+    if agent:
+        stmt = stmt.where(AuditLog.agent == agent)
+    if activity:
+        stmt = stmt.where(AuditLog.activity == activity)
+    stmt = stmt.order_by(AuditLog.created_at.desc()).limit(first)
+    rows = (await session.execute(stmt)).scalars().all()
+    return [
+        t.AuditLogEntry(
+            id=str(r.id),
+            activity=r.activity,
+            agent=r.agent,
+            agent_type=r.agent_type,
+            entity_type=r.entity_type,
+            entity_ref=r.entity_ref,
+            generated_entity_ref=r.generated_entity_ref,
+            details=r.details,
+            created_at=str(r.created_at) if r.created_at else "",
+        )
+        for r in rows
+    ]
+
+
 def _proposal_to_type(row) -> t.LLMEnrichmentProposalType:
     return t.LLMEnrichmentProposalType(
         id=str(row.id),
@@ -1327,6 +1424,7 @@ def _proposal_to_type(row) -> t.LLMEnrichmentProposalType:
         proposed_value=row.proposed_value or {},
         reasoning=row.reasoning,
         confidence=row.confidence,
+        evidence=getattr(row, "evidence", None),
         status=row.status,
         reviewed_by=row.reviewed_by,
         reviewed_at=str(row.reviewed_at) if row.reviewed_at else None,

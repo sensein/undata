@@ -11,26 +11,35 @@ interface ChatMessage {
 interface ChatPanelProps {
   entityContext?: Record<string, unknown>;
   onToolResult?: (event: ChatEvent) => void;
+  autoSuggest?: boolean;
 }
 
-export function ChatPanel({ entityContext, onToolResult }: ChatPanelProps) {
+export function ChatPanel({ entityContext, onToolResult, autoSuggest = false }: ChatPanelProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
   const [toolStatus, setToolStatus] = useState<string | null>(null);
+  const [hasAutoSuggested, setHasAutoSuggested] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const entityShaRef = useRef<string | undefined>(undefined);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const sendMessage = async () => {
-    if (!input.trim() || isStreaming) return;
+  // Auto-suggest when entity changes
+  useEffect(() => {
+    const sha = entityContext?.sha256 as string | undefined;
+    if (autoSuggest && sha && sha !== entityShaRef.current && !isStreaming) {
+      entityShaRef.current = sha;
+      setHasAutoSuggested(false);
+    }
+  }, [entityContext?.sha256, autoSuggest, isStreaming]);
 
-    const userMsg: ChatMessage = { role: "user", content: input.trim() };
-    const newMessages = [...messages, userMsg];
+  // Auto-suggest effect is below sendMessageInternal definition
+
+  const sendMessageInternal = async (newMessages: ChatMessage[]) => {
     setMessages(newMessages);
-    setInput("");
     setIsStreaming(true);
     setToolStatus(null);
 
@@ -45,7 +54,6 @@ export function ChatPanel({ entityContext, onToolResult }: ChatPanelProps) {
         events.push(event);
       }
 
-      // Process events after stream completes
       for (const event of events) {
         if (event.type === "text" && event.content) {
           assistantContent += event.content;
@@ -62,6 +70,25 @@ export function ChatPanel({ entityContext, onToolResult }: ChatPanelProps) {
     }
     setIsStreaming(false);
   };
+
+  const sendMessage = async () => {
+    if (!input.trim() || isStreaming) return;
+
+    const userMsg: ChatMessage = { role: "user", content: input.trim() };
+    const newMessages = [...messages, userMsg];
+    setInput("");
+    await sendMessageInternal(newMessages);
+  };
+
+  // Auto-suggest when entity loads (after sendMessageInternal is defined)
+  useEffect(() => {
+    if (autoSuggest && entityContext && !hasAutoSuggested && !isStreaming && entityShaRef.current) {
+      setHasAutoSuggested(true);
+      const autoMsg: ChatMessage = { role: "user", content: "Suggest improvements for this entity" };
+      sendMessageInternal([autoMsg]);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hasAutoSuggested, autoSuggest, entityContext, isStreaming]);
 
   return (
     <div className="flex flex-col h-full">

@@ -43,12 +43,11 @@ DOMAIN_ONTOLOGIES = {
         "format": "owl",
         "display_name": "RadLex — Radiology Lexicon (RSNA)",
     },
-    # HoMBA: OWL Functional Syntax (not RDF/XML) — needs conversion before loading
-    # "homba": {
-    #     "url": "https://raw.githubusercontent.com/Cellular-Semantics/.../homba-edit.owl",
-    #     "format": "owl-functional",  # Not supported by pyoxigraph; needs robot or owlapi conversion
-    #     "display_name": "Harmonized Ontology of Mammalian Brain Anatomy",
-    # },
+    "homba": {
+        "url": "https://github.com/brain-bican/harmonized_ontology_of_mammalian_brain_anatomy_ontology/releases/download/v2026-04-02/homba.owl",
+        "format": "owl",
+        "display_name": "Harmonized Ontology of Mammalian Brain Anatomy (HoMBA)",
+    },
 }
 
 # Ontologies small enough for full pronto parse (< 50MB)
@@ -82,6 +81,7 @@ def fetch_and_load_source(
     """Download an ontology from URL and load into the store.
 
     Supports: owl, obo, ttl, nt formats.
+    If OWL loading fails (e.g., OWL Functional Syntax), falls back to TTL.
     Returns metadata dict with term_count.
     """
     suffix_map = {"owl": ".owl", "obo": ".obo", "ttl": ".ttl", "nt": ".nt"}
@@ -90,6 +90,16 @@ def fetch_and_load_source(
     try:
         result = store.add_source(name, tmp_path, fmt=fmt)
         return result
+    except Exception as e:
+        # Fallback: if OWL fails, try TTL (some OWL files are actually Turtle)
+        if fmt.lower() == "owl":
+            logger.warning("OWL loading failed for %s (%s), trying TTL fallback", name, e)
+            try:
+                result = store.add_source(name, tmp_path, fmt="ttl")
+                return result
+            except Exception as e2:
+                logger.warning("TTL fallback also failed for %s: %s", name, e2)
+        raise
     finally:
         tmp_path.unlink(missing_ok=True)
 

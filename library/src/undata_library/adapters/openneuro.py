@@ -194,33 +194,53 @@ class OpenNeuroAdapter(BaseAdapter):
         return results
 
     def _clone_dataset(self, dataset_id: str) -> Path:
-        """Clone an OpenNeuro dataset via datalad (metadata only)."""
+        """Clone an OpenNeuro dataset via datalad Python API (metadata only).
+
+        Uses datalad.api.install() for lightweight clone and datalad.api.get()
+        for selective file download (TSV/JSON only, no imaging data).
+        """
         tmp_dir = Path(tempfile.mkdtemp(prefix=f"openneuro-{dataset_id}-"))
         url = f"https://github.com/OpenNeuroDatasets/{dataset_id}.git"
-        logger.info("Cloning %s via datalad to %s", url, tmp_dir)
+        dataset_path = tmp_dir / dataset_id
+        logger.info("Cloning %s via datalad API to %s", url, dataset_path)
 
         try:
-            subprocess.run(
-                ["datalad", "clone", url, str(tmp_dir / dataset_id)],
-                check=True,
-                capture_output=True,
-                timeout=300,
-            )
-            dataset_path = tmp_dir / dataset_id
+            import datalad.api as dl
 
-            # Get only metadata files (TSV, JSON)
+            # Lightweight clone — only fetches git metadata, not annexed files
+            dl.install(source=url, path=str(dataset_path))
+
+            # Selectively fetch only metadata files (TSV, JSON, phenotype)
+            import glob as _glob
+            for pattern in ["*.tsv", "*.json", "phenotype/*.tsv", "phenotype/*.json"]:
+                matches = list(_glob.glob(str(dataset_path / pattern)))
+                if matches:
+                    try:
+                        dl.get(matches, dataset=str(dataset_path))
+                    except Exception as e:
+                        logger.debug("datalad get for %s: %s", pattern, e)
+
+            return dataset_path
+        except ImportError:
+            logger.warning("datalad not installed, falling back to subprocess clone")
+        except Exception as exc:
+            logger.warning("datalad API clone failed for %s: %s, falling back to subprocess", dataset_id, exc)
+
+        # Fallback: subprocess-based clone
+        try:
+            subprocess.run(
+                ["datalad", "clone", url, str(dataset_path)],
+                check=True, capture_output=True, timeout=300,
+            )
             for pattern in ["*.tsv", "*.json", "phenotype/*"]:
                 try:
                     subprocess.run(
                         ["datalad", "get", "-d", str(dataset_path), pattern],
-                        check=False,
-                        capture_output=True,
-                        timeout=120,
+                        check=False, capture_output=True, timeout=120,
                     )
                 except subprocess.TimeoutExpired:
                     pass
-
             return dataset_path
         except (subprocess.CalledProcessError, FileNotFoundError) as exc:
             logger.warning("datalad clone failed for %s: %s", dataset_id, exc)
-            return tmp_dir / dataset_id
+            return dataset_path

@@ -18,14 +18,23 @@ logger = get_logger(__name__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Create database tables on startup."""
+    """Create database tables on startup, launch background tasks."""
+    import asyncio
+
     from src.db import models  # noqa: F401 — registers models with Base
     from src.db.session import Base, engine
 
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     logger.info("Database tables created")
+
+    # Launch nightly export background task
+    from src.services.nightly_export import nightly_export_loop
+    nightly_task = asyncio.create_task(nightly_export_loop())
+
     yield
+
+    nightly_task.cancel()
     await engine.dispose()
 
 
@@ -207,6 +216,15 @@ async def api_chat(request: Request):
 
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 
+
+# Static file serving for export archives
+import os
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
+
+export_dir = Path(settings.export_dir)
+export_dir.mkdir(parents=True, exist_ok=True)
+app.mount("/api/downloads", StaticFiles(directory=str(export_dir)), name="downloads")
 
 # GraphQL mount
 from strawberry.fastapi import GraphQLRouter

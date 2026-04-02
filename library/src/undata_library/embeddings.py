@@ -258,11 +258,50 @@ def build_element_embeddings(
     return store
 
 
+# NCBITaxon species relevant to neuroscience — only these (and their parents)
+# are included in the embedding index to avoid 2.7M term bloat
+_NCBITAXON_SPECIES_FILTER: set[str] = {
+    "9606",    # Homo sapiens
+    "10090",   # Mus musculus (mouse)
+    "10116",   # Rattus norvegicus (rat)
+    "9544",    # Macaca mulatta (rhesus macaque)
+    "9483",    # Callithrix jacchus (marmoset)
+    "7955",    # Danio rerio (zebrafish)
+    "7227",    # Drosophila melanogaster (fruit fly)
+    "6239",    # Caenorhabditis elegans (nematode)
+    "9541",    # Macaca fascicularis (crab-eating macaque)
+    "9598",    # Pan troglodytes (chimpanzee)
+    "9615",    # Canis lupus familiaris (dog)
+    "9986",    # Oryctolagus cuniculus (rabbit)
+    "9685",    # Felis catus (cat)
+    "9823",    # Sus scrofa (pig)
+    "9031",    # Gallus gallus (chicken)
+    "8364",    # Xenopus tropicalis (frog)
+    "13616",   # Monodelphis domestica (opossum)
+    "28377",   # Anolis carolinensis (green anole)
+    "7740",    # Branchiostoma floridae (amphioxus)
+    "69293",   # Gasterosteus aculeatus (stickleback)
+}
+
+
+def _is_ncbitaxon_relevant(term_uri: str) -> bool:
+    """Check if an NCBITaxon term should be included in the embedding index."""
+    # Extract the taxon ID from the URI (e.g., http://purl.obolibrary.org/obo/NCBITaxon_9606)
+    if "NCBITaxon_" not in term_uri:
+        return True  # not NCBITaxon, include
+    taxon_id = term_uri.rsplit("NCBITaxon_", 1)[-1]
+    return taxon_id in _NCBITAXON_SPECIES_FILTER
+
+
 def build_ontology_embeddings(
     cache_dir: Path,
     model_name: str = DEFAULT_MODEL,
 ) -> EmbeddingStore:
-    """Build embeddings for all ontology terms in cache."""
+    """Build embeddings for all ontology terms in cache.
+
+    NCBITaxon is filtered to neuroscience-relevant species only (~20 terms)
+    to prevent the 2.7M term ontology from diluting the embedding index.
+    """
     term_uris: list[str] = []
     texts: list[str] = []
 
@@ -279,6 +318,9 @@ def build_ontology_embeddings(
                 continue
             label = info.get("label", "")
             if not label:
+                continue
+            # Filter NCBITaxon to relevant species only
+            if not _is_ncbitaxon_relevant(term_uri):
                 continue
             synonyms = info.get("synonyms", [])
             text = _build_ontology_text(label, synonyms)

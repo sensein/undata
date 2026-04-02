@@ -80,6 +80,12 @@ const NAV_GROUPS: NavGroup[] = [
     ],
   },
   {
+    title: "DATA",
+    items: [
+      { label: "Downloads", href: "/downloads", icon: "↓" },
+    ],
+  },
+  {
     title: "ADMIN",
     items: [
       { label: "Ontologies", href: "/admin/ontologies", icon: "🧬" },

@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const SEARCH = gql`
-  query Search($query: String!, $first: Int = 50) {
-    search(query: $query, first: $first) {
+  query Search($query: String!, $mode: SearchMode, $first: Int = 50) {
+    search(query: $query, mode: $mode, first: $first) {
       entityType
       sha256
       name
@@ -71,8 +71,8 @@ export const BROWSE_ELEMENTS = gql`
 `;
 
 export const BROWSE_SCHEMAS = gql`
-  query BrowseSchemas($source: String, $searchText: String, $first: Int = 20, $after: String) {
-    browseSchemas(source: $source, searchText: $searchText, first: $first, after: $after) {
+  query BrowseSchemas($source: String, $searchText: String, $sortBy: String, $sortOrder: String, $first: Int = 20, $after: String) {
+    browseSchemas(source: $source, searchText: $searchText, sortBy: $sortBy, sortOrder: $sortOrder, first: $first, after: $after) {
       edges {
         node {
           sha256
@@ -97,8 +97,8 @@ export const BROWSE_SCHEMAS = gql`
 `;
 
 export const BROWSE_VALUES = gql`
-  query BrowseValues($source: String, $searchText: String, $first: Int = 20, $after: String) {
-    browseValues(source: $source, searchText: $searchText, first: $first, after: $after) {
+  query BrowseValues($source: String, $searchText: String, $sortBy: String, $sortOrder: String, $first: Int = 20, $after: String) {
+    browseValues(source: $source, searchText: $searchText, sortBy: $sortBy, sortOrder: $sortOrder, first: $first, after: $after) {
       edges {
         node {
           sha256
@@ -154,8 +154,8 @@ export const RUN_SUMMARIES = gql`
 `;
 
 export const BROWSE_VALUESETS = gql`
-  query BrowseValueSets($source: String, $searchText: String, $first: Int = 50, $after: String) {
-    browseValuesets(source: $source, searchText: $searchText, first: $first, after: $after) {
+  query BrowseValueSets($source: String, $searchText: String, $sortBy: String, $sortOrder: String, $first: Int = 50, $after: String) {
+    browseValuesets(source: $source, searchText: $searchText, sortBy: $sortBy, sortOrder: $sortOrder, first: $first, after: $after) {
       edges {
         node {
           sha256

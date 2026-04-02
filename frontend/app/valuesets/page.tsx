@@ -24,13 +24,21 @@ interface VSConnection {
 
 const columnHelper = createColumnHelper<ValueSetNode>();
 
+// Map TanStack column IDs to backend sort field names
+const SORT_FIELD_MAP: Record<string, string> = {
+  sha256: "name",
+  description: "description",
+};
+
 export default function ValueSetsPage() {
   const [source, setSource] = useState<string | undefined>();
   const [searchText, setSearchText] = useState("");
+  const [sortBy, setSortBy] = useState<string | undefined>();
+  const [sortOrder, setSortOrder] = useState<string | undefined>();
 
   const { data, loading, error, fetchMore } = useQuery<{ browseValuesets: VSConnection }>(
     BROWSE_VALUESETS,
-    { variables: { source, searchText: searchText || undefined, first: 50 } },
+    { variables: { source, searchText: searchText || undefined, sortBy, sortOrder, first: 50 } },
   );
 
   const valuesets = useMemo(
@@ -127,6 +135,15 @@ export default function ValueSetsPage() {
         totalCount={totalCount}
         hasNextPage={pageInfo?.hasNextPage}
         onLoadMore={() => fetchMore({ variables: { after: pageInfo?.endCursor } })}
+        onSortChange={(columnId, direction) => {
+          if (direction === false) {
+            setSortBy(undefined);
+            setSortOrder(undefined);
+          } else {
+            setSortBy(SORT_FIELD_MAP[columnId] || columnId);
+            setSortOrder(direction);
+          }
+        }}
       />
     </div>
   );

@@ -185,6 +185,7 @@ class Transform(Base):
     file_name: Mapped[str | None] = mapped_column(String, nullable=True)
     source_element: Mapped[str] = mapped_column(String, index=True)  # sha256 or URI of source element
     target_element: Mapped[str] = mapped_column(String, index=True)  # sha256 or URI of target element
+    source_elements: Mapped[list | None] = mapped_column(JSONB, nullable=True)  # many-to-one: list of source sha256/URIs
     function_type: Mapped[str | None] = mapped_column(String, nullable=True)  # identity, unit_conversion, etc.
     input_type: Mapped[str | None] = mapped_column(String, nullable=True)
     output_type: Mapped[str | None] = mapped_column(String, nullable=True)
@@ -254,6 +255,7 @@ class LLMEnrichmentProposal(Base):
     proposed_value: Mapped[dict] = mapped_column(JSONB, default=dict)
     reasoning: Mapped[str | None] = mapped_column(Text, nullable=True)
     confidence: Mapped[float | None] = mapped_column(Float, nullable=True)
+    evidence: Mapped[dict | None] = mapped_column(JSONB, nullable=True)  # EvidenceChain JSONB
     status: Mapped[str] = mapped_column(String, index=True, server_default=text("'pending'"))
     reviewed_by: Mapped[str | None] = mapped_column(String, nullable=True)
     reviewed_at = mapped_column(TIMESTAMP, nullable=True)

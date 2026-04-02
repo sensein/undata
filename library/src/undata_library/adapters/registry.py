@@ -22,6 +22,7 @@ _BUILTIN_ADAPTERS: dict[str, str] = {
     "code-repo": "undata_library.adapters.code_repo:CodeRepoAdapter",
     "openneuro": "undata_library.adapters.openneuro:OpenNeuroAdapter",
     "reproschema": "undata_library.adapters.reproschema:ReproSchemaAdapter",
+    "nda": "undata_library.adapters.nda:NDAAdapter",
 }
 
 # File extension → adapter name for auto-detection

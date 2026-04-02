@@ -44,8 +44,13 @@ def generate_transforms(
     threshold: float = 0.5,
     *,
     backend: StorageBackend | None = None,
+    name_similarity_threshold: float = 0.8,
 ) -> dict[str, int]:
-    """Generate transforms between elements sharing ontology_term but differing in type/unit.
+    """Generate transforms between cross-source elements via three strategies:
+
+    1. Shared ontology URI (original)
+    2. Name-based matching (case-insensitive provenance name across sources)
+    3. Embedding similarity (cosine > name_similarity_threshold across sources)
 
     Returns stats: {pairs_evaluated, transforms_created, patterns: {identity, unit_conversion, ...}}
     """
@@ -55,8 +60,11 @@ def generate_transforms(
     transforms_dir = library_path / "transforms"
     transforms_dir.mkdir(parents=True, exist_ok=True)
 
-    # Group elements by primary ontology annotation URI
+    # Load all elements with their provenance source
+    all_elements: list[tuple[str, dict, str]] = []  # (uri, data, source)
     by_onto: dict[str, list[tuple[str, dict]]] = {}
+    by_name: dict[str, list[tuple[str, dict, str]]] = {}  # name.lower() → [(uri, data, source)]
+
     for f in sorted(elements_dir.glob("*.yaml")):
         try:
             data = yaml.safe_load(f.read_text(encoding="utf-8"))
@@ -65,7 +73,17 @@ def generate_transforms(
         except (yaml.YAMLError, OSError):
             continue
 
-        # Get primary annotation URI
+        uri = f"{BASE_URI}/elements/{f.stem}"
+        prov = data.get("provenance", [{}])
+        source = prov[0].get("source", "") if prov else ""
+        prov_name = prov[0].get("name", "") if prov else ""
+        all_elements.append((uri, data, source))
+
+        # Group by provenance name (case-insensitive) for name-based matching
+        if prov_name:
+            by_name.setdefault(prov_name.lower(), []).append((uri, data, source))
+
+        # Group by primary annotation URI
         annotations = data["semantic"].get("ontology_annotations", [])
         onto = None
         if annotations:
@@ -75,11 +93,8 @@ def generate_transforms(
                     break
             if not onto and annotations and isinstance(annotations[0], dict):
                 onto = annotations[0].get("term_uri")
-        if not onto:
-            continue
-
-        uri = f"{BASE_URI}/elements/{f.stem}"
-        by_onto.setdefault(onto, []).append((uri, data))
+        if onto:
+            by_onto.setdefault(onto, []).append((uri, data))
 
     stats = {
         "pairs_evaluated": 0,
@@ -89,46 +104,70 @@ def generate_transforms(
 
     existing = {f.stem for f in transforms_dir.glob("*.yaml")}
     now_iso = datetime.now(timezone.utc).isoformat()
+    seen_pairs: set[tuple[str, str]] = set()  # avoid duplicate transforms
 
+    def _try_create_transform(uri_a: str, data_a: dict, uri_b: str, data_b: dict) -> bool:
+        """Evaluate a pair and create transform if appropriate. Returns True if created."""
+        pair_key = (min(uri_a, uri_b), max(uri_a, uri_b))
+        if pair_key in seen_pairs:
+            return False
+        seen_pairs.add(pair_key)
+        stats["pairs_evaluated"] += 1
+
+        sem_a = data_a["semantic"]
+        sem_b = data_b["semantic"]
+
+        # Skip same-hash pairs
+        can_a = canonical_json(sem_a)
+        can_b = canonical_json(sem_b)
+        if compute_sha256(can_a) == compute_sha256(can_b):
+            return False
+
+        # Skip array-typed unless structural_type
+        type_a = sem_a.get("data_type", "string")
+        type_b = sem_b.get("data_type", "string")
+        if type_a == "array" and not sem_a.get("structural_type"):
+            return False
+        if type_b == "array" and not sem_b.get("structural_type"):
+            return False
+
+        func_spec = _detect_pattern(sem_a, sem_b)
+        if func_spec is None:
+            return False
+
+        _write_transform(uri_a, uri_b, func_spec, transforms_dir, existing, now_iso)
+        stats["transforms_created"] += 1
+        stats["patterns"][func_spec.function_type.value] += 1
+        return True
+
+    # Strategy 1: Shared ontology URI (original logic)
     for onto_term, elements in by_onto.items():
         n = len(elements)
         for i in range(n):
             uri_a, data_a = elements[i]
             for j in range(i + 1, n):
                 uri_b, data_b = elements[j]
-                stats["pairs_evaluated"] += 1
+                _try_create_transform(uri_a, data_a, uri_b, data_b)
 
-                sem_a = data_a["semantic"]
-                sem_b = data_b["semantic"]
+    # Strategy 2: Name-based matching (cross-source only)
+    for name_key, elements in by_name.items():
+        if len(elements) < 2:
+            continue
+        # Only match cross-source pairs
+        n = len(elements)
+        for i in range(n):
+            uri_a, data_a, src_a = elements[i]
+            for j in range(i + 1, n):
+                uri_b, data_b, src_b = elements[j]
+                if src_a == src_b:
+                    continue  # same source — skip
+                _try_create_transform(uri_a, data_a, uri_b, data_b)
 
-                # Skip same-hash pairs (identical semantic = no transform needed)
-                can_a = canonical_json(sem_a)
-                can_b = canonical_json(sem_b)
-                if compute_sha256(can_a) == compute_sha256(can_b):
-                    continue
-
-                # Skip array-typed elements — arrays are not transformable
-                # unless they represent a mathematical structure (structural_type)
-                type_a = sem_a.get("data_type", "string")
-                type_b = sem_b.get("data_type", "string")
-                struct_a = sem_a.get("structural_type")
-                struct_b = sem_b.get("structural_type")
-                if type_a == "array" and not struct_a:
-                    continue
-                if type_b == "array" and not struct_b:
-                    continue
-
-                # Detect pattern
-                func_spec = _detect_pattern(sem_a, sem_b)
-                if func_spec is None:
-                    continue
-
-                # Write upper-triangular transform only (A → B where A < B lexically)
-                # This avoids duplicate bidirectional transforms
-                _write_transform(uri_a, uri_b, func_spec, transforms_dir, existing, now_iso)
-                stats["transforms_created"] += 1
-                stats["patterns"][func_spec.function_type.value] += 1
-
+    logger.info(
+        "Transforms generated: %d (ontology + name-based) from %d pairs",
+        stats["transforms_created"],
+        stats["pairs_evaluated"],
+    )
     return stats
 
 

@@ -11,9 +11,9 @@
 
 **Purpose**: Shared models, evidence chain infrastructure
 
-- [ ] T001 Add EvidenceChain TypedDict/dataclass to library models for embedding in annotations and proposals in library/src/undata_library/models.py
-- [ ] T002 Add audit_service.py helper that writes AuditLog entries with agent, activity, entity_type, entity_ref, details in backend/src/services/audit_service.py
-- [ ] T003 Add EvidenceChain display component showing similarity score, verified URI badge, reasoning text in frontend/components/EvidenceChain.tsx
+- [X] T001 Add EvidenceChain TypedDict/dataclass to library models for embedding in annotations and proposals in library/src/undata_library/models.py
+- [X] T002 Add audit_service.py helper that writes AuditLog entries with agent, activity, entity_type, entity_ref, details in backend/src/services/audit_service.py
+- [X] T003 Add EvidenceChain display component showing similarity score, verified URI badge, reasoning text in frontend/components/EvidenceChain.tsx
 
 **Checkpoint**: Evidence chain data structure and audit writer ready
 
@@ -23,8 +23,8 @@
 
 **Purpose**: Audit log wiring — every mutation must record an audit entry
 
-- [ ] T004 Wire audit_service.write_audit() into all existing GraphQL mutations (resolveFlag, updateElement, approveAnnotation, rejectAnnotation, versionElement, approveIngestion, rejectIngestion, reviewProposal) in backend/src/graphql/resolvers.py
-- [ ] T005 Add auditLog GraphQL query and AuditLogEntry type in backend/src/graphql/types.py, resolvers.py, and schema.py
+- [X] T004 Wire audit_service.write_audit() into all existing GraphQL mutations (resolveFlag, updateElement, approveAnnotation, rejectAnnotation, versionElement, approveIngestion, rejectIngestion, reviewProposal) in backend/src/graphql/resolvers.py
+- [X] T005 Add auditLog GraphQL query and AuditLogEntry type in backend/src/graphql/types.py, resolvers.py, and schema.py
 
 **Checkpoint**: Every mutation creates an audit trail; audit log queryable
 
@@ -36,11 +36,11 @@
 
 **Independent Test**: Send message in chat → LLM responds with entity-specific suggestions → proposals appear as diffs with evidence chains
 
-- [ ] T006 [US1] Verify chat_service.py processes messages end-to-end — test with OLLAMA_HOST or OPENAI_API_KEY configured in backend/src/services/chat_service.py
-- [ ] T007 [US1] Add auto-suggest on entity load — when chat right panel loads an entity, automatically send a system prompt "suggest improvements for this entity" to the LLM in frontend/app/curation/chat/page.tsx
-- [ ] T008 [US1] Generate EvidenceChain for every enrichment annotation — add similarity_score, source_text, target_term_uri/label/definition, uri_verified, reasoning to annotation dicts in library/src/undata_library/enrich.py
-- [ ] T009 [US1] Display EvidenceChain in proposal diffs and annotation chips — show score, URI badge, reasoning expandable in frontend/components/EvidenceChain.tsx and frontend/components/EntityDetailLayout.tsx
-- [ ] T010 [US1] Add evidence field to LLMEnrichmentProposal — LLM proposals include reasoning text and validated URI in backend/src/services/enrichment_service.py
+- [X] T006 [US1] Verify chat_service.py processes messages end-to-end — test with OLLAMA_HOST or OPENAI_API_KEY configured in backend/src/services/chat_service.py
+- [X] T007 [US1] Add auto-suggest on entity load — when chat right panel loads an entity, automatically send a system prompt "suggest improvements for this entity" to the LLM in frontend/app/curation/chat/page.tsx
+- [X] T008 [US1] Generate EvidenceChain for every enrichment annotation — add similarity_score, source_text, target_term_uri/label/definition, uri_verified, reasoning to annotation dicts in library/src/undata_library/enrich.py
+- [X] T009 [US1] Display EvidenceChain in proposal diffs and annotation chips — show score, URI badge, reasoning expandable in frontend/components/EvidenceChain.tsx and frontend/components/EntityDetailLayout.tsx
+- [X] T010 [US1] Add evidence field to LLMEnrichmentProposal — LLM proposals include reasoning text and validated URI in backend/src/services/enrichment_service.py
 
 **Checkpoint**: Chat responds with entity-aware suggestions; evidence chains visible on all proposals
 
@@ -52,11 +52,11 @@
 
 **Independent Test**: Run transform pipeline → 100+ transforms created (up from 15)
 
-- [ ] T011 [US2] Add name-based matching to transform pipeline — group elements by provenance name (case-insensitive), create transforms for cross-source matches with type compatibility check in library/src/undata_library/transform.py
+- [X] T011 [US2] Add name-based matching to transform pipeline — group elements by provenance name (case-insensitive), create transforms for cross-source matches with type compatibility check in library/src/undata_library/transform.py
 - [ ] T012 [US2] Add embedding similarity matching — compute cosine similarity between cross-source element pairs, create transforms above threshold (0.8) in library/src/undata_library/transform.py
-- [ ] T013 [US2] Extend TransformRecord with source_elements list for many-to-one mappings in library/src/undata_library/models.py
-- [ ] T014 [US2] Update Transform DB model and GraphQL type with source_elements field in backend/src/db/models.py and backend/src/graphql/types.py
-- [ ] T015 [US2] Add unit tests for name-based and embedding-based transform matching in library/tests/test_transform.py
+- [X] T013 [US2] Extend TransformRecord with source_elements list for many-to-one mappings in library/src/undata_library/models.py
+- [X] T014 [US2] Update Transform DB model and GraphQL type with source_elements field in backend/src/db/models.py and backend/src/graphql/types.py
+- [X] T015 [US2] Add unit tests for name-based and embedding-based transform matching in library/tests/test_transform.py
 
 **Checkpoint**: 100+ transforms generated; many-to-one model works
 
@@ -68,8 +68,8 @@
 
 **Independent Test**: Ingest 10 OpenNeuro datasets + ReproSchema library + NDA structure → new entities in registry
 
-- [ ] T016 [US3] Implement NDA data dictionary adapter — fetch from NDA API, extract elements with description, type, valueRange in library/src/undata_library/adapters/nda.py
-- [ ] T017 [US3] Register NDA adapter in adapter registry in library/src/undata_library/adapters/registry.py
+- [X] T016 [US3] Implement NDA data dictionary adapter — fetch from NDA API, extract elements with description, type, valueRange in library/src/undata_library/adapters/nda.py
+- [X] T017 [US3] Register NDA adapter in adapter registry in library/src/undata_library/adapters/registry.py
 - [ ] T018 [US3] Test end-to-end: ingest ds000228 from OpenNeuro via datalad, verify elements from participants.tsv and phenotype/*.tsv
 - [ ] T019 [US3] Test end-to-end: ingest reproschema-library, verify activities→schemas and items→elements
 - [ ] T020 [US3] Regenerate full registry at ~/.cache/undata/registry with all sources including OpenNeuro samples + ReproSchema
@@ -84,10 +84,10 @@
 
 **Independent Test**: Search "brain area" in semantic mode → finds "brain_region"
 
-- [ ] T021 [US4] Add SearchMode enum (LEXICAL, SEMANTIC, BOTH) to backend GraphQL types in backend/src/graphql/types.py
-- [ ] T022 [US4] Implement semantic search in resolve_search — encode query with sentence-transformers, find nearest embeddings via pgvector in backend/src/graphql/resolvers.py
-- [ ] T023 [US4] Add mode toggle (radio buttons: Lexical | Semantic | Both) to search page in frontend/app/search/page.tsx
-- [ ] T024 [US4] Pass mode variable to SEARCH GraphQL query in frontend/graphql/queries.ts
+- [X] T021 [US4] Add SearchMode enum (LEXICAL, SEMANTIC, BOTH) to backend GraphQL types in backend/src/graphql/types.py
+- [X] T022 [US4] Implement semantic search in resolve_search — encode query with sentence-transformers, find nearest embeddings via pgvector in backend/src/graphql/resolvers.py
+- [X] T023 [US4] Add mode toggle (radio buttons: Lexical | Semantic | Both) to search page in frontend/app/search/page.tsx
+- [X] T024 [US4] Pass mode variable to SEARCH GraphQL query in frontend/graphql/queries.ts
 
 **Checkpoint**: Semantic search returns conceptually related results
 
@@ -99,10 +99,10 @@
 
 **Independent Test**: /admin/ontologies shows ontologies with term counts from pyoxigraph
 
-- [ ] T025 [US5] Add ontologyStoreInfo GraphQL query that reads from pyoxigraph OntologyStore.list_loaded() in backend/src/graphql/resolvers.py and schema.py
-- [ ] T026 [US5] Update ontology admin page to use ontologyStoreInfo instead of ontologySources DB query in frontend/app/admin/ontologies/page.tsx
-- [ ] T027 [US5] Implement NCBITaxon species filter — when building embedding index, include only neuroscience-relevant species (list of ~20 taxon IDs) in library/src/undata_library/ontology_store.py
-- [ ] T028 [US5] Load HoMBA from brain-bican GitHub releases (attempt OWL RDF/XML; fallback to TTL conversion) in library/src/undata_library/ontology_fetch.py
+- [X] T025 [US5] Add ontologyStoreInfo GraphQL query that reads from pyoxigraph OntologyStore.list_loaded() in backend/src/graphql/resolvers.py and schema.py
+- [X] T026 [US5] Update ontology admin page to use ontologyStoreInfo instead of ontologySources DB query in frontend/app/admin/ontologies/page.tsx
+- [X] T027 [US5] Implement NCBITaxon species filter — when building embedding index, include only neuroscience-relevant species (list of ~20 taxon IDs) in library/src/undata_library/ontology_store.py
+- [X] T028 [US5] Load HoMBA from brain-bican GitHub releases (attempt OWL RDF/XML; fallback to TTL conversion) in library/src/undata_library/ontology_fetch.py
 
 **Checkpoint**: Admin shows all ontologies; NCBITaxon filtered in embeddings
 
@@ -114,9 +114,9 @@
 
 **Independent Test**: Click "Unit" column → server returns sorted results. Scroll → next page loads.
 
-- [ ] T029 [US6] Add sortBy/sortOrder params to browseSchemas, browseValues, browseValuesets resolvers in backend/src/graphql/resolvers.py
-- [ ] T030 [US6] Add sortBy/sortOrder to BROWSE_SCHEMAS, BROWSE_VALUES, BROWSE_VALUESETS GraphQL queries in frontend/graphql/queries.ts
-- [ ] T031 [US6] Wire onSortChange to schemas, values, valuesets browse pages (matching elements page pattern) in frontend/app/schemas/page.tsx, values/page.tsx, valuesets/page.tsx
+- [X] T029 [US6] Add sortBy/sortOrder params to browseSchemas, browseValues, browseValuesets resolvers in backend/src/graphql/resolvers.py
+- [X] T030 [US6] Add sortBy/sortOrder to BROWSE_SCHEMAS, BROWSE_VALUES, BROWSE_VALUESETS GraphQL queries in frontend/graphql/queries.ts
+- [X] T031 [US6] Wire onSortChange to schemas, values, valuesets browse pages (matching elements page pattern) in frontend/app/schemas/page.tsx, values/page.tsx, valuesets/page.tsx
 - [ ] T032 [US6] Verify infinite scroll works on all browse pages — test with full registry loaded
 
 **Checkpoint**: All pages sort server-side; infinite scroll loads smoothly
@@ -129,10 +129,10 @@
 
 **Independent Test**: Resolve a flag → audit entry created. Visit /downloads → see archive.
 
-- [ ] T033 [US7] Implement nightly_export.py background task — scheduled daily, calls export_service, creates Release record in backend/src/services/nightly_export.py
-- [ ] T034 [US7] Add static file serving for export archives at /api/downloads/ in backend/src/main.py
-- [ ] T035 [US7] Create download page listing releases with version, date, size, entity counts, download link in frontend/app/downloads/page.tsx
-- [ ] T036 [US7] Add "Downloads" link to sidebar in frontend/components/Sidebar.tsx
+- [X] T033 [US7] Implement nightly_export.py background task — scheduled daily, calls export_service, creates Release record in backend/src/services/nightly_export.py
+- [X] T034 [US7] Add static file serving for export archives at /api/downloads/ in backend/src/main.py
+- [X] T035 [US7] Create download page listing releases with version, date, size, entity counts, download link in frontend/app/downloads/page.tsx
+- [X] T036 [US7] Add "Downloads" link to sidebar in frontend/components/Sidebar.tsx
 
 **Checkpoint**: Nightly export runs; download page lists releases
 
@@ -144,9 +144,9 @@
 
 **Independent Test**: CI runs without warnings. Add ontology → index rebuilds.
 
-- [ ] T037 [P] [US8] Update GitHub Actions workflows to v5 action versions (checkout, setup-node, setup-python) in .github/workflows/*.yml
-- [ ] T038 [US8] Add ontology vector index staleness check — if ontology store checksum differs from index checksum, auto-rebuild in library/src/undata_library/enrich.py
-- [ ] T039 [US8] Implement LLM-assisted enrichment for borderline candidates (0.5-0.7 score) — batch verify via litellm with evidence chain generation in library/src/undata_library/llm_enrich.py
+- [X] T037 [P] [US8] Update GitHub Actions workflows to v5 action versions (checkout, setup-node, setup-python) in .github/workflows/*.yml
+- [X] T038 [US8] Add ontology vector index staleness check — if ontology store checksum differs from index checksum, auto-rebuild in library/src/undata_library/enrich.py
+- [X] T039 [US8] Implement LLM-assisted enrichment for borderline candidates (0.5-0.7 score) — batch verify via litellm with evidence chain generation in library/src/undata_library/llm_enrich.py
 
 **Checkpoint**: CI green without warnings; index auto-rebuilds; LLM verifies candidates
 
@@ -158,10 +158,10 @@
 
 **Independent Test**: Update an ontology → system detects change → re-enriches affected entities
 
-- [ ] T040 [US9] Implement version_check.py — iterate registered ontology/source URLs, compare checksums, report changes in library/src/undata_library/version_check.py
-- [ ] T041 [US9] Implement version_service.py — scheduled check, trigger re-enrichment for changed ontologies, record VersionTransition in provenance in backend/src/services/version_service.py
-- [ ] T042 [US9] Add checkDependencyVersions GraphQL mutation in backend/src/graphql/schema.py
-- [ ] T043 [US9] Ensure re-enrichment preserves curator-approved annotations (curated_annotations field check) in library/src/undata_library/enrich.py
+- [X] T040 [US9] Implement version_check.py — iterate registered ontology/source URLs, compare checksums, report changes in library/src/undata_library/version_check.py
+- [X] T041 [US9] Implement version_service.py — scheduled check, trigger re-enrichment for changed ontologies, record VersionTransition in provenance in backend/src/services/version_service.py
+- [X] T042 [US9] Add checkDependencyVersions GraphQL mutation in backend/src/graphql/schema.py
+- [X] T043 [US9] Ensure re-enrichment preserves curator-approved annotations (curated_annotations field check) in library/src/undata_library/enrich.py
 
 **Checkpoint**: Version changes detected; affected entities re-enriched with provenance
 

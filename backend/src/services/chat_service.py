@@ -4,9 +4,17 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 from typing import AsyncIterator
 
 logger = logging.getLogger(__name__)
+
+
+def _get_model() -> str:
+    """Get the LLM model to use. Supports OLLAMA_HOST for local dev."""
+    if os.environ.get("OLLAMA_HOST"):
+        return os.environ.get("UNDATA_LLM_MODEL", "ollama_chat/qwen3")
+    return os.environ.get("UNDATA_LLM_MODEL", "gpt-4.1-mini")
 
 TOOL_DEFINITIONS = [
     {
@@ -130,7 +138,7 @@ async def chat_completion(
     # Call LLM with tools
     try:
         response = await litellm.acompletion(
-            model="gpt-4.1-mini",
+            model=_get_model(),
             messages=full_messages,
             tools=TOOL_DEFINITIONS,
             tool_choice="auto",
@@ -166,7 +174,7 @@ async def chat_completion(
         # Get final response after tool execution
         try:
             follow_up = await litellm.acompletion(
-                model="gpt-4.1-mini",
+                model=_get_model(),
                 messages=full_messages,
                 stream=False,
             )
@@ -176,3 +184,17 @@ async def chat_completion(
     else:
         # No tool calls — just text response
         yield {"type": "text", "content": message.content or ""}
+
+
+AUTO_SUGGEST_PROMPT = """Analyze this entity and suggest improvements. Check for:
+1. Missing or incorrect ontology annotations — use lookup_ontology_term to find proper matches
+2. Missing or incorrect units — suggest the correct unit and QUDT URI if applicable
+3. Description quality — suggest improvements if the description is vague or missing
+4. Data type accuracy — check if the data_type matches the actual content
+
+Be specific and actionable. Use propose_entity_change for each suggestion."""
+
+
+def build_auto_suggest_messages(entity_context: dict) -> list[dict]:
+    """Build the message list for auto-suggest on entity load."""
+    return [{"role": "user", "content": AUTO_SUGGEST_PROMPT}]

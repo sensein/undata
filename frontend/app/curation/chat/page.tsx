@@ -112,7 +112,7 @@ function CurationChatContent() {
       leftLabel="Chat"
       rightLabel="Changes"
       leftContent={
-        <ChatPanel entityContext={entityContext} onToolResult={handleToolResult} />
+        <ChatPanel entityContext={entityContext} onToolResult={handleToolResult} autoSuggest={!!entitySha} />
       }
       rightContent={
         <div className="p-4">

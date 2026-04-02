@@ -15,6 +15,23 @@ class MatchLevel(str, Enum):
     element_match = "element_match"  # ontology term = exact data value
 
 
+class EvidenceChain(BaseModel):
+    """Evidence supporting an automated proposal or annotation.
+
+    Three components: similarity score, URI verification, reasoning chain.
+    Embedded as JSONB in annotations, proposals, and audit entries.
+    """
+
+    similarity_score: float  # cosine similarity 0.0–1.0
+    similarity_method: str  # "cosine_embedding", "exact_name", "llm_reasoning"
+    source_text: str  # element text that was matched (name + description)
+    target_term_uri: str  # URI of the matched ontology term
+    target_term_label: str  # label of the matched term
+    target_term_definition: str | None = None  # definition from the ontology
+    uri_verified: bool = False  # whether the URI was verified as reachable
+    reasoning: str = ""  # step-by-step explanation of why the match was made
+
+
 class OntologyAnnotation(BaseModel):
     """A single ontology alignment for an entity — qualitative + quantitative."""
 
@@ -26,6 +43,7 @@ class OntologyAnnotation(BaseModel):
     score: float  # cosine similarity 0.0–1.0
     model: str  # embedding model name (e.g., "all-MiniLM-L6-v2")
     primary: bool = False  # True for the best match
+    evidence: EvidenceChain | None = None  # evidence supporting this annotation
 
 
 class EntityType(str, Enum):
@@ -346,6 +364,7 @@ class TransformRecord(BaseModel):
 
     source_element: str  # element URI
     target_element: str  # element URI
+    source_elements: list[str] | None = None  # for many-to-one: list of source element sha256/URIs
     function: FunctionSpec
     confidence: float | None = None
     sssom_predicate: str | None = None
