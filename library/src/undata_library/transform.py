@@ -1,4 +1,9 @@
-"""Transform generation engine — detect patterns and create typed bidirectional transforms."""
+"""Transform generation engine — detect patterns and create typed unidirectional transforms.
+
+Upper-triangular cross-walk: each pair compared once (A→B only, not B→A).
+Filters: no array→singleton transforms (unless structural_type annotated).
+Only generates transforms between singleton elements sharing an ontology URI.
+"""
 
 from __future__ import annotations
 
@@ -102,20 +107,27 @@ def generate_transforms(
                 if compute_sha256(can_a) == compute_sha256(can_b):
                     continue
 
+                # Skip array-typed elements — arrays are not transformable
+                # unless they represent a mathematical structure (structural_type)
+                type_a = sem_a.get("data_type", "string")
+                type_b = sem_b.get("data_type", "string")
+                struct_a = sem_a.get("structural_type")
+                struct_b = sem_b.get("structural_type")
+                if type_a == "array" and not struct_a:
+                    continue
+                if type_b == "array" and not struct_b:
+                    continue
+
                 # Detect pattern
                 func_spec = _detect_pattern(sem_a, sem_b)
                 if func_spec is None:
                     continue
 
-                # Write forward transform: A → B
+                # Write upper-triangular transform only (A → B where A < B lexically)
+                # This avoids duplicate bidirectional transforms
                 _write_transform(uri_a, uri_b, func_spec, transforms_dir, existing, now_iso)
                 stats["transforms_created"] += 1
                 stats["patterns"][func_spec.function_type.value] += 1
-
-                # Write reverse transform: B → A
-                reverse_spec = _reverse_function(func_spec)
-                _write_transform(uri_b, uri_a, reverse_spec, transforms_dir, existing, now_iso)
-                stats["transforms_created"] += 1
 
     return stats
 

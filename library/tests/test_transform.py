@@ -142,10 +142,65 @@ def test_bidirectional_transforms(tmp_path):
     (elements_dir / "age_bbb123456789.yaml").write_text(yaml.dump(elem_b))
 
     stats = generate_transforms(elements_dir, tmp_path)
-    assert stats["transforms_created"] == 2  # forward + reverse
+    assert stats["transforms_created"] == 1  # upper-triangular: one direction only
 
     transform_files = list((tmp_path / "transforms").glob("*.yaml"))
-    assert len(transform_files) == 2
+    assert len(transform_files) == 1
+
+
+def test_array_elements_excluded(tmp_path):
+    """Array-typed elements should not produce transforms unless structural_type is set."""
+    elements_dir = tmp_path / "elements"
+    elements_dir.mkdir()
+
+    onto_ann = [{"term_uri": "http://example.org/test", "primary": True}]
+
+    # Element A: array type (should be excluded)
+    elem_array = {
+        "semantic": {"data_type": "array", "ontology_annotations": onto_ann},
+        "provenance": [{"source": "test", "class": "X", "name": "coordinates"}],
+    }
+    # Element B: string type
+    elem_string = {
+        "semantic": {"data_type": "string", "ontology_annotations": onto_ann},
+        "provenance": [{"source": "test", "class": "Y", "name": "label"}],
+    }
+    (elements_dir / "coords_aaa123456789.yaml").write_text(yaml.dump(elem_array))
+    (elements_dir / "label_bbb123456789.yaml").write_text(yaml.dump(elem_string))
+
+    stats = generate_transforms(elements_dir, tmp_path)
+    assert stats["transforms_created"] == 0, "Array→singleton transform should be rejected"
+
+
+def test_array_with_structural_type_allowed(tmp_path):
+    """Array elements WITH structural_type should produce transforms."""
+    elements_dir = tmp_path / "elements"
+    elements_dir.mkdir()
+
+    onto_ann = [{"term_uri": "http://example.org/matrix", "primary": True}]
+
+    # Array with structural_type = allowed
+    elem_matrix = {
+        "semantic": {
+            "data_type": "array",
+            "structural_type": "affine_matrix",
+            "ontology_annotations": onto_ann,
+        },
+        "provenance": [{"source": "test", "class": "X", "name": "affine"}],
+    }
+    elem_quat = {
+        "semantic": {
+            "data_type": "array",
+            "structural_type": "quaternion",
+            "ontology_annotations": onto_ann,
+        },
+        "provenance": [{"source": "test", "class": "Y", "name": "rotation"}],
+    }
+    (elements_dir / "affine_aaa123456789.yaml").write_text(yaml.dump(elem_matrix))
+    (elements_dir / "quat_bbb123456789.yaml").write_text(yaml.dump(elem_quat))
+
+    stats = generate_transforms(elements_dir, tmp_path)
+    assert stats["transforms_created"] >= 1, "Structural array→array transform should be allowed"
 
 
 def test_transform_has_sha256(tmp_path):
