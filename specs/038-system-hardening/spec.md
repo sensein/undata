@@ -136,12 +136,31 @@ As a developer, I need GitHub Actions updated to Node.js 24, the ontology vector
 
 ---
 
+### User Story 9 — Versioned Dependency Management (Priority: P1)
+
+As a system operator, I need the system to automatically detect when an ontology or source schema is updated (new version released), re-ingest or re-enrich affected entities, and record the version transition in provenance — so the registry stays current without manual intervention and every change is traceable.
+
+**Why this priority**: Ontologies and source schemas evolve (e.g., HoMBA v2026-04-02 release at https://github.com/brain-bican/harmonized_ontology_of_mammalian_brain_anatomy_ontology/releases/tag/v2026-04-02). Without version tracking, the registry silently drifts from its sources.
+
+**Independent Test**: HoMBA ontology is updated → scheduled refresh detects checksum change → ontology store reloads → enrichment re-runs on affected elements → provenance records "ontology updated from v1 to v2".
+
+**Acceptance Scenarios**:
+
+1. **Given** a registered ontology source with a URL, **When** the scheduled refresh detects a checksum change, **Then** the old version is replaced with the new one and the ontology store metadata records the version transition.
+2. **Given** an ontology version change, **When** the system detects it, **Then** it automatically re-enriches all entities that had annotations from that ontology, updating or replacing stale annotations while preserving curator-approved ones.
+3. **Given** any version change (ontology, source schema, adapter), **When** re-enrichment completes, **Then** provenance entries record the version transition (old version, new version, timestamp, affected entity count).
+4. **Given** a registered source (e.g., BIDS schema, OpenNeuro dataset), **When** the source publishes a new version, **Then** the discovery service detects the change and queues re-ingestion.
+
+---
+
 ### Edge Cases
 
 - What happens when the LLM is unavailable (no API key, rate limited)? Chat shows a graceful error; auto-suggest is skipped; enrichment falls back to embedding-only matching.
 - What happens when name-based transform matching produces too many false positives? A similarity threshold (configurable, default 0.8) filters out weak matches.
 - What happens when an NDA API request fails? The adapter retries with exponential backoff; failed requests are logged and the curator is notified.
 - What happens when infinite scroll loads the same page twice? The Apollo paginationMerge deduplicates by cursor.
+- What happens when an ontology update changes term URIs? Annotations referencing old URIs are flagged as stale; the link health checker detects broken ontology URIs.
+- What happens when re-enrichment after an ontology update produces different annotations than the old version? A provenance entry records the change; curators can review the diff via the curation queue.
 
 ## Requirements *(mandatory)*
 
@@ -162,6 +181,9 @@ As a developer, I need GitHub Actions updated to Node.js 24, the ontology vector
 - **FR-013**: GitHub Actions workflows MUST use Node.js 24 compatible action versions.
 - **FR-014**: The ontology vector index MUST auto-rebuild when new ontologies are added or refreshed.
 - **FR-015**: LLM-assisted enrichment MUST verify borderline annotation candidates (0.5-0.7 score) and promote confirmed ones.
+- **FR-016**: The system MUST detect version changes in registered ontologies and sources via scheduled checksum comparison, automatically re-enrich affected entities, and record version transitions in provenance.
+- **FR-017**: When an ontology is updated, curator-approved annotations MUST be preserved; only automated annotations from the old version are candidates for re-enrichment.
+- **FR-018**: The HoMBA ontology MUST be loadable from the brain-bican GitHub releases (OWL format from https://github.com/brain-bican/harmonized_ontology_of_mammalian_brain_anatomy_ontology/releases).
 
 ## Success Criteria *(mandatory)*
 
@@ -175,6 +197,12 @@ As a developer, I need GitHub Actions updated to Node.js 24, the ontology vector
 - **SC-006**: Server-side sorting on any column header produces correctly ordered results from the full dataset.
 - **SC-007**: CI runs complete without Node.js deprecation warnings.
 - **SC-008**: Audit log entries are created for every mutation and queryable by entity, user, and time range.
+
+## Clarifications
+
+### Session 2026-04-02
+
+- Q: How should the system handle versioned dependency updates (ontology releases, source schema changes)? → A: Scheduled auto-detect via checksum comparison + automatic re-enrichment of affected entities + version transition recorded in provenance. Curator-approved annotations preserved.
 
 ## Scope Boundaries
 
