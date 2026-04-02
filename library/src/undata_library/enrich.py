@@ -885,7 +885,7 @@ def generate_curation_flags(
                 name = prov[0].get("name", f.stem) if prov else f.stem
                 flag = create_flag(
                     entity_type=entity_type.rstrip("s"),  # elements → element
-                    entity_ref=str(f.name),
+                    entity_ref=f.stem,
                     flag_type=FlagType.low_confidence,
                     context={"reason": "no ontology annotations after enrichment", "name": name},
                 )
@@ -898,7 +898,7 @@ def generate_curation_flags(
             if 0.7 <= top_score < 0.95 and not top.get("llm_verification"):
                 flag = create_flag(
                     entity_type=entity_type.rstrip("s"),
-                    entity_ref=str(f.name),
+                    entity_ref=f.stem,
                     flag_type=FlagType.ambiguous_match,
                     context={
                         "reason": f"borderline match (score={top_score:.3f}), no LLM verification",
@@ -915,7 +915,7 @@ def generate_curation_flags(
                 if len(scores) >= 2 and (scores[0] - scores[1]) < 0.05:
                     flag = create_flag(
                         entity_type=entity_type.rstrip("s"),
-                        entity_ref=str(f.name),
+                        entity_ref=f.stem,
                         flag_type=FlagType.multiple_candidates,
                         context={
                             "reason": f"multiple close candidates (gap={scores[0] - scores[1]:.3f})",

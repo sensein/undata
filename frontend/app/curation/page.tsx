@@ -11,6 +11,21 @@ import { useAuth } from "@/components/AuthProvider";
 import { EntityInlineDetail } from "@/components/EntityInlineDetail";
 import type { CurationFlagConnection, CurationFlagNode, Edge } from "@/graphql/types";
 
+/** Parse entity_ref which may be a filename (name_hash.yaml), sha256, or hash prefix. */
+function parseEntityRef(ref: string): { sha: string; name: string } {
+  // Strip .yaml extension
+  let clean = ref.endsWith(".yaml") ? ref.slice(0, -5) : ref;
+  // If it looks like name_hash format, extract hash and name
+  const lastU = clean.lastIndexOf("_");
+  if (lastU > 0 && clean.length - lastU - 1 >= 8) {
+    const name = clean.substring(0, lastU);
+    const hash = clean.substring(lastU + 1);
+    return { sha: hash, name };
+  }
+  // Otherwise treat as raw sha256
+  return { sha: clean.slice(0, 12), name: clean.slice(0, 16) };
+}
+
 const ENTITY_TYPE_TO_PATH: Record<string, string> = {
   element: "elements",
   schema: "schemas",
@@ -104,12 +119,12 @@ export default function CurationPage() {
         header: "Entity",
         cell: (info) => {
           const entityType = ENTITY_TYPE_TO_PATH[info.row.original.entityType.toLowerCase()] ?? "elements";
-          const ref = info.getValue();
+          const { sha, name } = parseEntityRef(info.getValue());
           return (
             <EntityTag
               entityType={entityType}
-              sha256={ref}
-              label={ref.slice(0, 12)}
+              sha256={sha}
+              label={name}
               showPopover={true}
             />
           );
@@ -228,35 +243,37 @@ export default function CurationPage() {
         }
       />
 
-      {/* Detail panel — sticky at bottom of viewport */}
+      {/* Inline detail panel — expands below the table */}
       {expandedId && (() => {
         const node = flags.find((f) => f.id === expandedId);
         if (!node) return null;
         const entityPath = ENTITY_TYPE_TO_PATH[node.entityType.toLowerCase()] ?? "elements";
+        const { sha, name } = parseEntityRef(node.entityRef);
         return (
-          <div className="fixed bottom-0 left-52 right-0 max-h-[50vh] overflow-y-auto border-t-2 border-blue-300 bg-gray-50 p-4 shadow-lg z-30">
-            <button
-              className="absolute top-2 right-4 text-gray-400 hover:text-gray-600 text-lg"
-              onClick={() => setExpandedId(null)}
-            >
-              ✕
-            </button>
+          <div className="mt-2 border rounded-lg p-4 bg-gray-50">
             {/* Header */}
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex items-center gap-3 mb-3 flex-wrap">
               <StatusBadge status={node.status} />
               <span className="px-2 py-0.5 bg-yellow-100 text-yellow-800 rounded text-xs">{node.flagType.replace(/_/g, " ")}</span>
+              <EntityTag entityType={entityPath} sha256={sha} label={name} />
               <a
-                href={`/${entityPath}/${node.entityRef}`}
-                className="text-sm text-blue-600 hover:underline font-medium"
+                href={`/${entityPath}/${sha}`}
+                className="text-xs text-blue-600 hover:underline"
               >
-                View full detail page ↗
+                Full page ↗
               </a>
               <a
-                href={`/curation/chat?entity=${node.entityRef}&type=${node.entityType}`}
-                className="text-sm text-blue-600 hover:underline"
+                href={`/curation/chat?entity=${sha}&type=${node.entityType}`}
+                className="text-xs text-blue-600 hover:underline"
               >
-                Open in Chat ↗
+                Chat ↗
               </a>
+              <button
+                className="ml-auto text-gray-400 hover:text-gray-600 text-sm"
+                onClick={() => setExpandedId(null)}
+              >
+                ✕ Close
+              </button>
             </div>
 
             {/* Flag context */}
@@ -274,7 +291,7 @@ export default function CurationPage() {
             )}
 
             {/* Full entity details inline */}
-            <EntityInlineDetail entityType={node.entityType} entityRef={node.entityRef} />
+            <EntityInlineDetail entityType={node.entityType} entityRef={sha} />
 
             {/* Resolution info if already resolved */}
             {node.resolvedBy && (
