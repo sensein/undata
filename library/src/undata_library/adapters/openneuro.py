@@ -385,54 +385,44 @@ class OpenNeuroAdapter(BaseAdapter):
         return {}
 
     def _clone_dataset(self, dataset_id: str) -> Path:
-        """Clone an OpenNeuro dataset via datalad Python API (metadata only).
+        """Clone an OpenNeuro dataset and fetch metadata files.
 
-        Uses datalad.api.install() for lightweight clone and datalad.api.get()
-        for selective file download (TSV/JSON only, no imaging data).
+        Strategy: git clone (fast, gets annex branch refs) → datalad get (fetches
+        actual annexed file content for TSV/JSON metadata).
+
+        OpenNeuro datasets use git-annex — plain git clone only gets pointer files.
+        Must use datalad get to retrieve the actual content.
         """
         tmp_dir = Path(tempfile.mkdtemp(prefix=f"openneuro-{dataset_id}-"))
         url = f"https://github.com/OpenNeuroDatasets/{dataset_id}.git"
         dataset_path = tmp_dir / dataset_id
-        logger.info("Cloning %s via datalad API to %s", url, dataset_path)
+        logger.info("Cloning %s to %s", url, dataset_path)
 
-        try:
-            import datalad.api as dl
-
-            # Lightweight clone — only fetches git metadata, not annexed files
-            dl.install(source=url, path=str(dataset_path))
-
-            # Selectively fetch only metadata files (TSV, JSON, phenotype)
-            import glob as _glob
-            for pattern in ["*.tsv", "*.json", "phenotype/*.tsv", "phenotype/*.json",
-                            "derivatives/**/*.tsv", "derivatives/**/*.csv"]:
-                matches = list(_glob.glob(str(dataset_path / pattern), recursive=True))
-                if matches:
-                    try:
-                        dl.get(matches, dataset=str(dataset_path))
-                    except Exception as e:
-                        logger.debug("datalad get for %s: %s", pattern, e)
-
-            return dataset_path
-        except ImportError:
-            logger.warning("datalad not installed, falling back to subprocess clone")
-        except Exception as exc:
-            logger.warning("datalad API clone failed for %s: %s, falling back to subprocess", dataset_id, exc)
-
-        # Fallback: subprocess-based clone
+        # Step 1: git clone (includes annex branch refs)
         try:
             subprocess.run(
-                ["datalad", "clone", url, str(dataset_path)],
+                ["git", "clone", url, str(dataset_path)],
                 check=True, capture_output=True, timeout=300,
             )
-            for pattern in ["*.tsv", "*.json", "phenotype/*"]:
-                try:
-                    subprocess.run(
-                        ["datalad", "get", "-d", str(dataset_path), pattern],
-                        check=False, capture_output=True, timeout=120,
-                    )
-                except subprocess.TimeoutExpired:
-                    pass
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired, FileNotFoundError) as exc:
+            logger.warning("git clone failed for %s: %s", dataset_id, exc)
             return dataset_path
-        except (subprocess.CalledProcessError, FileNotFoundError) as exc:
-            logger.warning("datalad clone failed for %s: %s", dataset_id, exc)
-            return dataset_path
+
+        # Step 2: init git-annex so datalad can work with the repo
+        subprocess.run(
+            ["git", "-C", str(dataset_path), "annex", "init"],
+            check=False, capture_output=True, timeout=30,
+        )
+
+        # Step 3: datalad get for metadata files only (TSV, JSON, phenotype)
+        for pattern in ["*.tsv", "*.json", "phenotype/*.tsv", "phenotype/*.json",
+                        "phenotype/**/*.tsv"]:
+            try:
+                subprocess.run(
+                    ["datalad", "get", "-d", str(dataset_path), pattern],
+                    check=False, capture_output=True, timeout=120,
+                )
+            except subprocess.TimeoutExpired:
+                pass
+
+        return dataset_path
