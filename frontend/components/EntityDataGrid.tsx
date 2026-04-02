@@ -148,7 +148,10 @@ export function EntityDataGrid<T>({
       </div>
 
       {/* Infinite scroll sentinel */}
-      {hasNextPage && onLoadMore && <InfiniteScrollSentinel onIntersect={onLoadMore} />}
+      {hasNextPage && onLoadMore && !isLoading && <InfiniteScrollSentinel onIntersect={onLoadMore} />}
+      {isLoading && data.length > 0 && (
+        <div className="py-2 text-center text-xs text-gray-400">Loading more...</div>
+      )}
     </div>
   );
 }
