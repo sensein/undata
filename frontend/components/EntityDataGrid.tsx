@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import {
   useReactTable,
   getCoreRowModel,
@@ -147,15 +147,33 @@ export function EntityDataGrid<T>({
         </table>
       </div>
 
-      {/* Load more */}
-      {hasNextPage && onLoadMore && (
-        <button
-          onClick={onLoadMore}
-          className="mt-4 w-full py-2 text-sm text-blue-600 border rounded hover:bg-blue-50 transition-colors"
-        >
-          Load more
-        </button>
-      )}
+      {/* Infinite scroll sentinel */}
+      {hasNextPage && onLoadMore && <InfiniteScrollSentinel onIntersect={onLoadMore} />}
     </div>
   );
+}
+
+/** Invisible element that triggers onIntersect when scrolled into view. */
+function InfiniteScrollSentinel({ onIntersect }: { onIntersect: () => void }) {
+  const sentinelRef = useRef<HTMLDivElement>(null);
+  const onIntersectRef = useRef(onIntersect);
+  onIntersectRef.current = onIntersect;
+
+  useEffect(() => {
+    const el = sentinelRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          onIntersectRef.current();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return <div ref={sentinelRef} className="h-4" />;
 }
