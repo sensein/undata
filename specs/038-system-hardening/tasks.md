@@ -117,7 +117,7 @@
 - [X] T029 [US6] Add sortBy/sortOrder params to browseSchemas, browseValues, browseValuesets resolvers in backend/src/graphql/resolvers.py
 - [X] T030 [US6] Add sortBy/sortOrder to BROWSE_SCHEMAS, BROWSE_VALUES, BROWSE_VALUESETS GraphQL queries in frontend/graphql/queries.ts
 - [X] T031 [US6] Wire onSortChange to schemas, values, valuesets browse pages (matching elements page pattern) in frontend/app/schemas/page.tsx, values/page.tsx, valuesets/page.tsx
-- [ ] T032 [US6] Verify infinite scroll works on all browse pages — test with full registry loaded
+- [X] T032 [US6] Verify infinite scroll works on all browse pages — test with full registry loaded
 
 **Checkpoint**: All pages sort server-side; infinite scroll loads smoothly
 
@@ -172,9 +172,9 @@
 **Purpose**: Final verification, seed data update
 
 - [X] T044 Regenerate curated seed subset from full registry (with deduped flags, sha256 entity_refs)
-- [ ] T045 Run quickstart.md validation for all 9 user stories
-- [ ] T046 [P] Verify all browse pages: server-side sort + infinite scroll + source filter + search
-- [ ] T047 [P] Verify curation queue detail panel shows evidence chains for flagged entities
+- [X] T045 Run quickstart.md validation for all 9 user stories
+- [X] T046 [P] Verify all browse pages: server-side sort + infinite scroll + source filter + search
+- [X] T047 [P] Verify curation queue detail panel shows evidence chains for flagged entities
 
 ---
 
