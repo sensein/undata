@@ -18,7 +18,7 @@ As a curator, I need the curation chat to actually connect to an LLM that respon
 **Acceptance Scenarios**:
 
 1. **Given** the chat page with an entity loaded, **When** a curator sends a message, **Then** the LLM receives the entity context (all fields, provenance, annotations) and responds with entity-aware suggestions.
-2. **Given** the chat, **When** the LLM proposes a change (annotation, unit, description), **Then** the proposal appears as a diff in the right panel that can be approved or rejected.
+2. **Given** the chat, **When** the LLM proposes a change (annotation, unit, description), **Then** the proposal appears as a diff in the right panel with an evidence chain (semantic similarity score, source link verification, reasoning text) that can be approved or rejected.
 3. **Given** the chat with no entity loaded (assistant mode), **When** a curator asks "find elements with missing units", **Then** the LLM searches the registry and returns relevant entities.
 4. **Given** the chat, **When** an entity is first loaded, **Then** the system automatically suggests improvements based on the entity's current state (missing annotations, inferred units, description quality).
 
@@ -181,9 +181,12 @@ As a system operator, I need the system to automatically detect when an ontology
 - **FR-013**: GitHub Actions workflows MUST use Node.js 24 compatible action versions.
 - **FR-014**: The ontology vector index MUST auto-rebuild when new ontologies are added or refreshed.
 - **FR-015**: LLM-assisted enrichment MUST verify borderline annotation candidates (0.5-0.7 score) and promote confirmed ones.
-- **FR-016**: The system MUST detect version changes in registered ontologies and sources via scheduled checksum comparison, automatically re-enrich affected entities, and record version transitions in provenance.
-- **FR-017**: When an ontology is updated, curator-approved annotations MUST be preserved; only automated annotations from the old version are candidates for re-enrichment.
-- **FR-018**: The HoMBA ontology MUST be loadable from the brain-bican GitHub releases (OWL format from https://github.com/brain-bican/harmonized_ontology_of_mammalian_brain_anatomy_ontology/releases).
+- **FR-016**: All system-generated changes (enrichment annotations, LLM proposals, automated transforms) MUST go through a curation process — no automated change is applied without review unless explicitly approved by policy.
+- **FR-017**: Every confidence score MUST be evidence-based, not hallucinated. Evidence MUST include: (a) semantic similarity score with the matched term, (b) link/text verification that the referenced URI resolves and the term definition matches, (c) a reasoning chain explaining why the match was made.
+- **FR-018**: Proposals MUST display their evidence chain to curators: the source text that was matched, the target ontology term with its definition, the similarity metric used, and the step-by-step reasoning that led to the claim.
+- **FR-019**: The system MUST detect version changes in registered ontologies and sources via scheduled checksum comparison, automatically re-enrich affected entities, and record version transitions in provenance.
+- **FR-020**: When an ontology is updated, curator-approved annotations MUST be preserved; only automated annotations from the old version are candidates for re-enrichment.
+- **FR-021**: The HoMBA ontology MUST be loadable from the brain-bican GitHub releases (OWL format from https://github.com/brain-bican/harmonized_ontology_of_mammalian_brain_anatomy_ontology/releases).
 
 ## Success Criteria *(mandatory)*
 
@@ -203,6 +206,7 @@ As a system operator, I need the system to automatically detect when an ontology
 ### Session 2026-04-02
 
 - Q: How should the system handle versioned dependency updates (ontology releases, source schema changes)? → A: Scheduled auto-detect via checksum comparison + automatic re-enrichment of affected entities + version transition recorded in provenance. Curator-approved annotations preserved.
+- Q: How should confidence in automated curation be established? → A: All changes go through curation. Confidence must be evidence-based (not hallucinated): semantic similarity score, link/text verification of referenced URIs, and a reasoning chain explaining the claim. No automated change applied without review.
 
 ## Scope Boundaries
 
