@@ -8,6 +8,7 @@ import { EntityDataGrid } from "@/components/EntityDataGrid";
 import { EntityTag } from "@/components/EntityTag";
 import { StatusBadge } from "@/components/StatusBadge";
 import { useAuth } from "@/components/AuthProvider";
+import { EntityInlineDetail } from "@/components/EntityInlineDetail";
 import type { CurationFlagConnection, CurationFlagNode, Edge } from "@/graphql/types";
 
 const ENTITY_TYPE_TO_PATH: Record<string, string> = {
@@ -263,6 +264,8 @@ export default function CurationPage() {
                 </span>
               </div>
             )}
+            {/* Full entity details */}
+            <EntityInlineDetail entityType={node.entityType} entityRef={node.entityRef} />
             {node.resolvedBy && (
               <div className="text-sm text-gray-600 mb-3">
                 <strong>Resolved by:</strong> {node.resolvedBy}
