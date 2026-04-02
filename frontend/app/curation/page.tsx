@@ -232,6 +232,43 @@ export default function CurationPage() {
         </div>
       )}
 
+      {/* Detail panel — renders ABOVE table when expanded for immediate visibility */}
+      {expandedId && (() => {
+        const node = flags.find((f) => f.id === expandedId);
+        if (!node) return null;
+        const entityPath = ENTITY_TYPE_TO_PATH[node.entityType.toLowerCase()] ?? "elements";
+        const { sha, name } = parseEntityRef(node.entityRef);
+        return (
+          <div className="mb-4 border-2 border-blue-200 rounded-lg p-4 bg-blue-50/30">
+            <div className="flex items-center gap-3 mb-3 flex-wrap">
+              <StatusBadge status={node.status} />
+              <span className="px-2 py-0.5 bg-yellow-100 text-yellow-800 rounded text-xs">{node.flagType.replace(/_/g, " ")}</span>
+              <EntityTag entityType={entityPath} sha256={sha} label={name} />
+              <a href={`/${entityPath}/${sha}`} className="text-xs text-blue-600 hover:underline">Full page ↗</a>
+              <a href={`/curation/chat?entity=${sha}&type=${node.entityType}`} className="text-xs text-blue-600 hover:underline">Chat ↗</a>
+              <button className="ml-auto text-gray-400 hover:text-gray-600 text-sm" onClick={() => setExpandedId(null)}>✕ Close</button>
+            </div>
+            {node.context && (
+              <div className="bg-white border rounded p-2 mb-3 text-xs">
+                <span className="text-gray-500 font-medium">Flag reason: </span>
+                <span className="text-gray-700">{String((node.context as Record<string, unknown>)?.reason ?? (node.context as Record<string, unknown>)?.message ?? JSON.stringify(node.context).slice(0, 300))}</span>
+              </div>
+            )}
+            <EntityInlineDetail entityType={node.entityType} entityRef={sha} />
+            {canResolve && node.status.toLowerCase() === "pending" && (
+              <div className="mt-3 pt-3 border-t">
+                <textarea className="w-full border rounded p-2 text-sm mb-2" rows={2} placeholder="Resolution note..." value={resolveNote} onChange={(e) => setResolveNote(e.target.value)} />
+                <div className="flex gap-2">
+                  <button className="px-3 py-1.5 bg-green-600 text-white rounded text-xs hover:bg-green-700 disabled:opacity-50" onClick={() => handleResolve(node.id, "APPROVED")} disabled={resolving}>Approve</button>
+                  <button className="px-3 py-1.5 bg-red-600 text-white rounded text-xs hover:bg-red-700 disabled:opacity-50" onClick={() => handleResolve(node.id, "REJECTED")} disabled={resolving}>Reject</button>
+                  <button className="px-3 py-1.5 bg-gray-500 text-white rounded text-xs hover:bg-gray-600 disabled:opacity-50" onClick={() => handleResolve(node.id, "DEFERRED")} disabled={resolving}>Defer</button>
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })()}
+
       {/* Data grid */}
       <EntityDataGrid
         columns={columns}
@@ -244,102 +281,7 @@ export default function CurationPage() {
         }
       />
 
-      {/* Inline detail panel — expands below the table */}
-      {expandedId && (() => {
-        const node = flags.find((f) => f.id === expandedId);
-        if (!node) return null;
-        const entityPath = ENTITY_TYPE_TO_PATH[node.entityType.toLowerCase()] ?? "elements";
-        const { sha, name } = parseEntityRef(node.entityRef);
-        return (
-          <div className="mt-2 border rounded-lg p-4 bg-gray-50">
-            {/* Header */}
-            <div className="flex items-center gap-3 mb-3 flex-wrap">
-              <StatusBadge status={node.status} />
-              <span className="px-2 py-0.5 bg-yellow-100 text-yellow-800 rounded text-xs">{node.flagType.replace(/_/g, " ")}</span>
-              <EntityTag entityType={entityPath} sha256={sha} label={name} />
-              <a
-                href={`/${entityPath}/${sha}`}
-                className="text-xs text-blue-600 hover:underline"
-              >
-                Full page ↗
-              </a>
-              <a
-                href={`/curation/chat?entity=${sha}&type=${node.entityType}`}
-                className="text-xs text-blue-600 hover:underline"
-              >
-                Chat ↗
-              </a>
-              <button
-                className="ml-auto text-gray-400 hover:text-gray-600 text-sm"
-                onClick={() => setExpandedId(null)}
-              >
-                ✕ Close
-              </button>
-            </div>
-
-            {/* Flag context */}
-            {node.context && (
-              <div className="bg-white border rounded p-2 mb-3 text-xs">
-                <span className="text-gray-500 font-medium">Flag reason: </span>
-                <span className="text-gray-700">
-                  {String(
-                    (node.context as Record<string, unknown>)?.reason ??
-                    (node.context as Record<string, unknown>)?.message ??
-                    JSON.stringify(node.context).slice(0, 300)
-                  )}
-                </span>
-              </div>
-            )}
-
-            {/* Full entity details inline */}
-            <EntityInlineDetail entityType={node.entityType} entityRef={sha} />
-
-            {/* Resolution info if already resolved */}
-            {node.resolvedBy && (
-              <div className="text-sm text-gray-600 mt-3">
-                <strong>Resolved by:</strong> {node.resolvedBy}
-                {node.resolutionNote && <span> — {node.resolutionNote}</span>}
-              </div>
-            )}
-
-            {/* Resolve actions — curator only, pending flags only */}
-            {canResolve && node.status.toLowerCase() === "pending" && (
-              <div className="mt-3 pt-3 border-t">
-                <textarea
-                  className="w-full border rounded p-2 text-sm mb-2"
-                  rows={2}
-                  placeholder="Resolution note (optional)..."
-                  value={resolveNote}
-                  onChange={(e) => setResolveNote(e.target.value)}
-                />
-                <div className="flex gap-2">
-                  <button
-                    className="px-3 py-1.5 bg-green-600 text-white rounded text-xs hover:bg-green-700 disabled:opacity-50"
-                    onClick={() => handleResolve(node.id, "APPROVED")}
-                    disabled={resolving}
-                  >
-                    Approve
-                  </button>
-                  <button
-                    className="px-3 py-1.5 bg-red-600 text-white rounded text-xs hover:bg-red-700 disabled:opacity-50"
-                    onClick={() => handleResolve(node.id, "REJECTED")}
-                    disabled={resolving}
-                  >
-                    Reject
-                  </button>
-                  <button
-                    className="px-3 py-1.5 bg-gray-500 text-white rounded text-xs hover:bg-gray-600 disabled:opacity-50"
-                    onClick={() => handleResolve(node.id, "DEFERRED")}
-                    disabled={resolving}
-                  >
-                    Defer
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-        );
-      })()}
+      {/* Old panel removed — detail panel now renders ABOVE the table */}
     </div>
   );
 }
