@@ -38,18 +38,18 @@ export default function TransformDetailPage() {
   const prov = t.provenance?.[0];
 
   // Extract element names from URIs
-  const srcName = t.sourceElement.includes("/")
-    ? t.sourceElement.split("/").pop()!.split("_")[0]
-    : t.sourceElement.slice(0, 12);
-  const tgtName = t.targetElement.includes("/")
-    ? t.targetElement.split("/").pop()!.split("_")[0]
-    : t.targetElement.slice(0, 12);
-  const srcSha = t.sourceElement.includes("/")
-    ? t.sourceElement.split("/").pop()!.split("_").pop()!
-    : t.sourceElement;
-  const tgtSha = t.targetElement.includes("/")
-    ? t.targetElement.split("/").pop()!.split("_").pop()!
-    : t.targetElement;
+  function parseRef(val: string) {
+    const slug = val.includes("/") ? val.split("/").pop()! : val;
+    const lastU = slug.lastIndexOf("_");
+    if (lastU > 0) return { name: slug.substring(0, lastU), sha: slug.substring(lastU + 1) };
+    return { name: slug, sha: slug.slice(0, 12) };
+  }
+  const src = parseRef(t.sourceElement);
+  const tgt = parseRef(t.targetElement);
+  const srcName = src.name;
+  const tgtName = tgt.name;
+  const srcSha = src.sha;
+  const tgtSha = tgt.sha;
 
   const functionColors: Record<string, string> = {
     identity: "bg-green-100 text-green-800",
@@ -65,9 +65,17 @@ export default function TransformDetailPage() {
         &larr; Back to transforms
       </Link>
 
-      <h1 className="text-2xl font-bold mb-2">
-        {srcName} → {tgtName}
-      </h1>
+      <div className="flex items-center justify-between mb-2">
+        <h1 className="text-2xl font-bold">
+          {srcName} → {tgtName}
+        </h1>
+        <a
+          href={`/curation/chat?entity=${t.sha256}&type=transform`}
+          className="px-2 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded text-xs hover:bg-blue-100"
+        >
+          Suggest Change
+        </a>
+      </div>
 
       {prov?.source && <SourceBadge source={prov.source} />}
 

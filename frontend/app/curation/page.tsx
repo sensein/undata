@@ -228,13 +228,19 @@ export default function CurationPage() {
         }
       />
 
-      {/* Detail panel — shown for EVERYONE when "Details" is clicked */}
+      {/* Detail panel — sticky at bottom of viewport */}
       {expandedId && (() => {
         const node = flags.find((f) => f.id === expandedId);
         if (!node) return null;
         const entityPath = ENTITY_TYPE_TO_PATH[node.entityType.toLowerCase()] ?? "elements";
         return (
-          <div className="mt-4 border rounded-lg p-4 bg-gray-50">
+          <div className="fixed bottom-0 left-52 right-0 max-h-[50vh] overflow-y-auto border-t-2 border-blue-300 bg-gray-50 p-4 shadow-lg z-30">
+            <button
+              className="absolute top-2 right-4 text-gray-400 hover:text-gray-600 text-lg"
+              onClick={() => setExpandedId(null)}
+            >
+              ✕
+            </button>
             {/* Header */}
             <div className="flex items-center gap-3 mb-3">
               <StatusBadge status={node.status} />

@@ -2,6 +2,7 @@
 
 import { useQuery } from "@apollo/client/react";
 import { GET_ELEMENT, GET_SCHEMA, GET_VALUE, GET_VALUESET } from "@/graphql/queries";
+import { EntityTag } from "@/components/EntityTag";
 import { SourceBadge } from "@/components/SourceBadge";
 import type { OntologyAnnotation, ProvenanceEntry } from "@/graphql/types";
 
@@ -75,13 +76,33 @@ export function EntityInlineDetail({ entityType, entityRef }: Props) {
         {entity.label && (
           <span><span className="text-gray-400">Label:</span> {entity.label}</span>
         )}
-        {entity.properties?.length > 0 && (
-          <span><span className="text-gray-400">Properties:</span> {entity.properties.length}</span>
-        )}
-        {entity.members?.length > 0 && (
-          <span><span className="text-gray-400">Members:</span> {entity.members.length}</span>
-        )}
       </div>
+
+      {/* Schema properties list */}
+      {entity.properties?.length > 0 && (
+        <div>
+          <span className="text-gray-400">Properties ({entity.properties.length}):</span>
+          <div className="flex flex-wrap gap-1 mt-1">
+            {(entity.properties as string[]).slice(0, 10).map((p: string, i: number) => (
+              <EntityTag key={i} entityType="elements" sha256={p.slice(0, 12)} label={p.length === 64 ? p.slice(0, 12) : p} />
+            ))}
+            {entity.properties.length > 10 && <span className="text-gray-400 text-[10px]">+{entity.properties.length - 10} more</span>}
+          </div>
+        </div>
+      )}
+
+      {/* Valueset members list */}
+      {entity.members?.length > 0 && (
+        <div>
+          <span className="text-gray-400">Members ({entity.members.length}):</span>
+          <div className="flex flex-wrap gap-1 mt-1">
+            {(entity.members as string[]).slice(0, 10).map((m: string, i: number) => (
+              <EntityTag key={i} entityType="values" sha256={m.slice(0, 12)} label={m.length === 64 ? m.slice(0, 12) : m} />
+            ))}
+            {entity.members.length > 10 && <span className="text-gray-400 text-[10px]">+{entity.members.length - 10} more</span>}
+          </div>
+        </div>
+      )}
 
       {/* Ontology annotations */}
       {anns.length > 0 && (
