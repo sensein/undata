@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useQuery } from "@apollo/client/react";
 import { createColumnHelper } from "@tanstack/react-table";
 import { BROWSE_SCHEMAS } from "@/graphql/queries";
@@ -12,9 +12,11 @@ import type { SchemaConnection, SchemaNode, Edge } from "@/graphql/types";
 const columnHelper = createColumnHelper<SchemaNode>();
 
 export default function SchemasPage() {
+  const [source, setSource] = useState<string | undefined>();
+
   const { data, loading, error, fetchMore } = useQuery<{ browseSchemas: SchemaConnection }>(
     BROWSE_SCHEMAS,
-    { variables: { first: 50 } },
+    { variables: { source, first: 50 } },
   );
 
   const schemas = useMemo(
@@ -34,7 +36,7 @@ export default function SchemasPage() {
             <EntityTag
               entityType="schemas"
               sha256={info.getValue()}
-              label={prov?.name ?? info.row.original.fileName ?? info.getValue().slice(0, 12)}
+              label={prov?.name ?? info.getValue().slice(0, 12)}
             />
           );
         },
@@ -56,24 +58,11 @@ export default function SchemasPage() {
         cell: (info) => {
           const count = info.row.original.properties?.length ?? 0;
           return count > 0 ? (
-            <a
-              href={`/schemas/${info.row.original.sha256}`}
-              className="text-blue-600 hover:underline text-sm"
-            >
+            <a href={`/schemas/${info.row.original.sha256}`} className="text-blue-600 hover:underline text-sm">
               {count} properties
             </a>
           ) : "—";
         },
-        enableSorting: false,
-        enableColumnFilter: false,
-      }),
-      columnHelper.display({
-        id: "mixin",
-        header: "Mixin",
-        cell: (info) =>
-          info.row.original.isMixin ? (
-            <span className="px-2 py-0.5 bg-purple-100 text-purple-800 rounded text-xs">mixin</span>
-          ) : null,
         enableSorting: false,
         enableColumnFilter: false,
       }),
@@ -91,6 +80,20 @@ export default function SchemasPage() {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-6">Schemas</h1>
+      <div className="flex flex-wrap gap-3 mb-6">
+        <select
+          className="border rounded px-3 py-2 text-sm"
+          value={source ?? ""}
+          onChange={(e) => setSource(e.target.value || undefined)}
+        >
+          <option value="">All sources</option>
+          <option value="bids">BIDS</option>
+          <option value="dandi">DANDI</option>
+          <option value="nwb">NWB</option>
+          <option value="openminds">openMINDS</option>
+          <option value="aind">AIND</option>
+        </select>
+      </div>
       {error && (
         <div className="bg-red-50 border border-red-200 rounded p-4 mb-6">
           <p className="text-red-800">Unable to load schemas: {error.message}</p>

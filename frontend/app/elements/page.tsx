@@ -11,10 +11,20 @@ import type { ElementConnection, ElementNode, Edge, OntologyAnnotation } from "@
 
 const columnHelper = createColumnHelper<ElementNode>();
 
+// Map TanStack column IDs to backend sort field names
+const SORT_FIELD_MAP: Record<string, string> = {
+  sha256: "name",
+  dataType: "dataType",
+  unit: "unit",
+  description: "description",
+};
+
 export default function ElementsPage() {
   const [source, setSource] = useState<string | undefined>();
   const [dataType, setDataType] = useState<string | undefined>();
   const [searchText, setSearchText] = useState("");
+  const [sortBy, setSortBy] = useState<string | undefined>();
+  const [sortOrder, setSortOrder] = useState<string | undefined>();
 
   const { data, loading, error, fetchMore } = useQuery<{ browseElements: ElementConnection }>(
     BROWSE_ELEMENTS,
@@ -23,6 +33,8 @@ export default function ElementsPage() {
         source,
         dataType: dataType?.toUpperCase(),
         searchText: searchText || undefined,
+        sortBy,
+        sortOrder,
         first: 50,
       },
     },
@@ -169,6 +181,15 @@ export default function ElementsPage() {
         onLoadMore={() =>
           fetchMore({ variables: { after: pageInfo?.endCursor } })
         }
+        onSortChange={(columnId, direction) => {
+          if (direction === false) {
+            setSortBy(undefined);
+            setSortOrder(undefined);
+          } else {
+            setSortBy(SORT_FIELD_MAP[columnId] || columnId);
+            setSortOrder(direction);
+          }
+        }}
       />
     </div>
   );

@@ -294,6 +294,8 @@ async def resolve_browse_elements(
     search_text: str | None = None,
     first: int = 20,
     after: str | None = None,
+    sort_by: str | None = None,
+    sort_order: str | None = None,
 ) -> t.ElementConnection:
     from src.db.models import Element
 
@@ -323,12 +325,26 @@ async def resolve_browse_elements(
                 | Element.file_name.ilike(pattern)
             )
 
+    # Determine sort column
+    sort_col_map = {
+        "name": Element.file_name,
+        "dataType": Element.data_type,
+        "unit": Element.unit,
+        "valueDomain": Element.value_domain,
+        "description": Element.description,
+    }
+    sort_col = sort_col_map.get(sort_by or "", Element.file_name)
+    if sort_order == "desc":
+        sort_col = sort_col.desc().nulls_last()
+    elif sort_col != Element.file_name:
+        sort_col = sort_col.asc().nulls_last()
+
     rows, has_next, total = await _paginated_query(
-        session, Element, stmt, first, after, sort_column=Element.file_name
+        session, Element, stmt, first, after, sort_column=sort_col
     )
     edges = [
         t.ElementEdge(
-            cursor=_encode_cursor(str(r.file_name or ""), str(r.id)),
+            cursor=_encode_cursor(str(getattr(r, "file_name", "") or ""), str(r.id)),
             node=_element_from_row(r),
         )
         for r in rows

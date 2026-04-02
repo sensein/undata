@@ -6,6 +6,8 @@ export const BROWSE_ELEMENTS = gql`
     $dataType: DataType
     $hasAnnotations: Boolean
     $searchText: String
+    $sortBy: String
+    $sortOrder: String
     $first: Int = 20
     $after: String
   ) {
@@ -14,6 +16,8 @@ export const BROWSE_ELEMENTS = gql`
       dataType: $dataType
       hasAnnotations: $hasAnnotations
       searchText: $searchText
+      sortBy: $sortBy
+      sortOrder: $sortOrder
       first: $first
       after: $after
     ) {

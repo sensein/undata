@@ -20,6 +20,7 @@ interface EntityDataGridProps<T> {
   totalCount?: number;
   onLoadMore?: () => void;
   hasNextPage?: boolean;
+  onSortChange?: (columnId: string, direction: "asc" | "desc" | false) => void;
 }
 
 export function EntityDataGrid<T>({
@@ -29,6 +30,7 @@ export function EntityDataGrid<T>({
   totalCount,
   onLoadMore,
   hasNextPage,
+  onSortChange,
 }: EntityDataGridProps<T>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -38,7 +40,17 @@ export function EntityDataGrid<T>({
     data,
     columns,
     state: { sorting, columnFilters },
-    onSortingChange: setSorting,
+    onSortingChange: (updater) => {
+      const newSorting = typeof updater === "function" ? updater(sorting) : updater;
+      setSorting(newSorting);
+      if (onSortChange) {
+        if (newSorting.length > 0) {
+          onSortChange(newSorting[0].id, newSorting[0].desc ? "desc" : "asc");
+        } else {
+          onSortChange("", false);
+        }
+      }
+    },
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),

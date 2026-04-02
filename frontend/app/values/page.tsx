@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useQuery } from "@apollo/client/react";
 import { createColumnHelper } from "@tanstack/react-table";
 import { BROWSE_VALUES } from "@/graphql/queries";
@@ -12,9 +12,11 @@ import type { ValueConnection, ValueNode, Edge, OntologyAnnotation } from "@/gra
 const columnHelper = createColumnHelper<ValueNode>();
 
 export default function ValuesPage() {
+  const [source, setSource] = useState<string | undefined>();
+
   const { data, loading, error, fetchMore } = useQuery<{ browseValues: ValueConnection }>(
     BROWSE_VALUES,
-    { variables: { first: 50 } },
+    { variables: { source, first: 50 } },
   );
 
   const values = useMemo(
@@ -79,6 +81,20 @@ export default function ValuesPage() {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-6">Values</h1>
+      <div className="flex flex-wrap gap-3 mb-6">
+        <select
+          className="border rounded px-3 py-2 text-sm"
+          value={source ?? ""}
+          onChange={(e) => setSource(e.target.value || undefined)}
+        >
+          <option value="">All sources</option>
+          <option value="bids">BIDS</option>
+          <option value="dandi">DANDI</option>
+          <option value="nwb">NWB</option>
+          <option value="openminds">openMINDS</option>
+          <option value="aind">AIND</option>
+        </select>
+      </div>
       {error && (
         <div className="bg-red-50 border border-red-200 rounded p-4 mb-6">
           <p className="text-red-800">Unable to load values: {error.message}</p>

@@ -58,12 +58,15 @@ class Query:
         data_type: Optional[t.DataType] = None,
         has_annotations: Optional[bool] = None,
         search_text: Optional[str] = None,
+        sort_by: Optional[str] = None,
+        sort_order: Optional[str] = None,
         first: int = 20,
         after: Optional[str] = None,
     ) -> t.ElementConnection:
         async with AsyncSessionLocal() as session:
             return await r.resolve_browse_elements(
-                session, source, data_type, has_annotations, search_text, first, after
+                session, source, data_type, has_annotations, search_text, first, after,
+                sort_by=sort_by, sort_order=sort_order,
             )
 
     @strawberry.field
