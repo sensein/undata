@@ -81,7 +81,7 @@ def commit_staged(
 
                     flag = create_flag(
                         entity_type=entity_type.rstrip("s"),
-                        entity_ref=str(staged_file.name),
+                        entity_ref=data.get("_identifier", data.get("file_name", "")),
                         flag_type=FlagType.suspicious_source,
                         context={
                             "reason": f"unrecognized source(s): {', '.join(sorted(unknown))}",
@@ -298,6 +298,42 @@ def _resolve_cross_references(output_dir: Path) -> None:
                     resolved.append(member)
             if changed:
                 sem["members"] = resolved
+                f.write_text(
+                    yaml.dump(data, default_flow_style=False, sort_keys=False),
+                    encoding="utf-8",
+                )
+
+    # Resolve element type_ref: class names → schema sha256 hashes
+    # Build schema name → sha256 lookup
+    schema_lookup: dict[str, str] = {}
+    if schemas_dir.exists():
+        for f in schemas_dir.glob("*.yaml"):
+            data = safe_load_yaml(f)
+            if not data or "sha256" not in data:
+                continue
+            sha = data["sha256"]
+            for prov in data.get("provenance", []):
+                if isinstance(prov, dict):
+                    name = prov.get("name", prov.get("class", ""))
+                    if name:
+                        schema_lookup[name] = sha
+                        schema_lookup[name.lower()] = sha
+
+    if elements_dir.exists() and schema_lookup:
+        for f in elements_dir.glob("*.yaml"):
+            data = safe_load_yaml(f)
+            if not data:
+                continue
+            sem = data.get("semantic", {})
+            type_ref = sem.get("type_ref")
+            if not type_ref:
+                continue
+            # Already a sha256?
+            if len(type_ref) == 64 and all(c in "0123456789abcdef" for c in type_ref):
+                continue
+            sha = schema_lookup.get(type_ref) or schema_lookup.get(type_ref.lower())
+            if sha:
+                sem["type_ref"] = sha
                 f.write_text(
                     yaml.dump(data, default_flow_style=False, sort_keys=False),
                     encoding="utf-8",

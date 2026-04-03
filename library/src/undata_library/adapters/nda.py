@@ -310,6 +310,7 @@ class NDAAdapter(BaseAdapter):
                 if isinstance(aliases, str) and aliases not in ("[]", "None", ""):
                     try:
                         import json as _json
+
                         alias_list = _json.loads(aliases)
                     except (ValueError, TypeError):
                         alias_list = [aliases]

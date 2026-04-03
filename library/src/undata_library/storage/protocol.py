@@ -65,9 +65,7 @@ class EntityStore(Protocol):
         """
         ...
 
-    def write_batch(
-        self, entity_type: str, entities: list[dict], source: str | None = None
-    ) -> int:
+    def write_batch(self, entity_type: str, entities: list[dict], source: str | None = None) -> int:
         """Write a batch of entities. Returns count written.
 
         For large batches (>1000), implementations SHOULD use binary container
@@ -75,9 +73,7 @@ class EntityStore(Protocol):
         """
         ...
 
-    def read_batch(
-        self, entity_type: str, source: str | None = None
-    ) -> list[dict]:
+    def read_batch(self, entity_type: str, source: str | None = None) -> list[dict]:
         """Read all entities of a type, optionally filtered by source.
 
         Returns list of entity dicts.

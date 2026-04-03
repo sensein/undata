@@ -52,12 +52,8 @@ def _serialize_entity(entity: dict, source: str | None = None) -> dict:
         "source": src or "",
         "semantic": json.dumps(entity.get("semantic", {}), default=str),
         "provenance": json.dumps(prov, default=str),
-        "ontology_annotations": json.dumps(
-            entity.get("ontology_annotations", []), default=str
-        ),
-        "created_at": entity.get(
-            "created_at", datetime.now(timezone.utc).isoformat()
-        ),
+        "ontology_annotations": json.dumps(entity.get("ontology_annotations", []), default=str),
+        "created_at": entity.get("created_at", datetime.now(timezone.utc).isoformat()),
     }
 
 
@@ -78,10 +74,23 @@ def _deserialize_row(row: dict) -> dict:
     # Flatten semantic fields to top level for compatibility with YAML format
     sem = entity.get("semantic", {})
     for key in (
-        "data_type", "unit", "unit_uri", "pattern", "value_domain",
-        "description", "min_value", "max_value", "type_ref",
-        "label", "value_type", "name", "members", "subclass_of",
-        "properties", "response_options", "question_text",
+        "data_type",
+        "unit",
+        "unit_uri",
+        "pattern",
+        "value_domain",
+        "description",
+        "min_value",
+        "max_value",
+        "type_ref",
+        "label",
+        "value_type",
+        "name",
+        "members",
+        "subclass_of",
+        "properties",
+        "response_options",
+        "question_text",
     ):
         if key in sem:
             entity[key] = sem[key]
@@ -137,8 +146,7 @@ class ParquetStore:
                 for row in table.to_pydict()["sha256"]:
                     idx = table.column("sha256").to_pylist().index(row)
                     existing[row] = {
-                        col: table.column(col).to_pylist()[idx]
-                        for col in table.column_names
+                        col: table.column(col).to_pylist()[idx] for col in table.column_names
                     }
             except Exception:
                 pass
@@ -172,7 +180,9 @@ class ParquetStore:
 
         logger.info(
             "Wrote %d entities to %s (%d total in file)",
-            len(entities), path.name, len(all_rows),
+            len(entities),
+            path.name,
+            len(all_rows),
         )
         return len(entities)
 
@@ -184,10 +194,7 @@ class ParquetStore:
                 sha_col = table.column("sha256").to_pylist()
                 for i, sha in enumerate(sha_col):
                     if sha.startswith(sha256):
-                        row = {
-                            col: table.column(col).to_pylist()[i]
-                            for col in table.column_names
-                        }
+                        row = {col: table.column(col).to_pylist()[i] for col in table.column_names}
                         return _deserialize_row(row)
             except Exception:
                 continue
@@ -210,10 +217,7 @@ class ParquetStore:
                 table = pq.read_table(path)
                 n = table.num_rows
                 for i in range(n):
-                    row = {
-                        col: table.column(col).to_pylist()[i]
-                        for col in table.column_names
-                    }
+                    row = {col: table.column(col).to_pylist()[i] for col in table.column_names}
                     yield _deserialize_row(row)
             except Exception as e:
                 logger.warning("Failed to read %s: %s", path, e)
@@ -249,27 +253,29 @@ class ParquetStore:
                     table.column("sha256").to_pylist(),
                     table.column("source").to_pylist(),
                 ):
-                    index_rows.append({
-                        "sha256": sha,
-                        "source": src,
-                        "parquet_file": path.name,
-                    })
+                    index_rows.append(
+                        {
+                            "sha256": sha,
+                            "source": src,
+                            "parquet_file": path.name,
+                        }
+                    )
             except Exception:
                 pass
 
         index_path = self.base_dir / entity_type / "_index.parquet"
         if index_rows:
-            index_schema = pa.schema([
-                pa.field("sha256", pa.string()),
-                pa.field("source", pa.string()),
-                pa.field("parquet_file", pa.string()),
-            ])
+            index_schema = pa.schema(
+                [
+                    pa.field("sha256", pa.string()),
+                    pa.field("source", pa.string()),
+                    pa.field("parquet_file", pa.string()),
+                ]
+            )
             table = pa.table(
                 {col: [r[col] for r in index_rows] for col in index_schema.names},
                 schema=index_schema,
             )
             pq.write_table(table, index_path, compression="snappy")
-            logger.info(
-                "Built index for %s: %d entries", entity_type, len(index_rows)
-            )
+            logger.info("Built index for %s: %d entries", entity_type, len(index_rows))
         return index_path
