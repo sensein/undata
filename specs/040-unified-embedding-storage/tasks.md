@@ -57,7 +57,7 @@
 
 **Independent Test**: Inspect any committed entity → has 384-dim embedding vector
 
-- [ ] T016 [US2] Create build_comprehensive_embedding_text() that uses name + description + type + unit + annotations + provenance in library/src/undata_library/embeddings.py
+- [X] T016 [US2] Create build_comprehensive_embedding_text() that uses name + description + type + unit + annotations + provenance in library/src/undata_library/embeddings.py
 - [ ] T017 [US2] Add embedding computation step to commit_staged — after sha256 computation, compute embeddings for all entities in batch in library/src/undata_library/commit.py
 - [ ] T018 [US2] Ensure all entity types (elements, schemas, values, valuesets) get embeddings at commit in library/src/undata_library/commit.py
 - [ ] T019 [US2] Update backend import to skip embedding model loading when all entities have pre-computed embeddings in backend/src/storage/database_backend.py
@@ -75,10 +75,10 @@
 
 **Independent Test**: Update element description → embedding vector changes
 
-- [ ] T023 [US3] Add recompute_embedding() helper to backend embedding_service that computes from entity dict in backend/src/services/embedding_service.py
-- [ ] T024 [US3] Wire recompute_embedding into resolve_update_entity (element, schema, value updates) in backend/src/graphql/resolvers.py
-- [ ] T025 [US3] Wire recompute_embedding into resolve_approve_annotation and resolve_reject_annotation in backend/src/graphql/resolvers.py
-- [ ] T026 [US3] Wire recompute_embedding into resolve_version_element in backend/src/graphql/resolvers.py
+- [X] T023 [US3] Add recompute_embedding() helper to backend embedding_service that computes from entity dict in backend/src/services/embedding_service.py
+- [X] T024 [US3] Wire recompute_embedding into resolve_update_entity (element, schema, value updates) in backend/src/graphql/resolvers.py
+- [X] T025 [US3] Wire recompute_embedding into resolve_approve_annotation and resolve_reject_annotation in backend/src/graphql/resolvers.py
+- [X] T026 [US3] Wire recompute_embedding into resolve_version_element in backend/src/graphql/resolvers.py
 
 **Checkpoint**: Any entity mutation results in fresh embedding reflecting new content
 

@@ -1012,6 +1012,14 @@ async def resolve_approve_annotation(
     curated.append(approved)
     row.curated_annotations = curated
 
+    # Recompute embedding (annotations changed)
+    if hasattr(row, "embedding"):
+        from src.services.embedding_service import recompute_embedding
+
+        new_emb = recompute_embedding("elements", row)
+        if new_emb:
+            row.embedding = new_emb
+
     await session.flush()
     return _element_from_row(row)
 
@@ -1054,6 +1062,14 @@ async def resolve_reject_annotation(
         }
     )
     row.provenance = prov
+
+    # Recompute embedding (annotations changed)
+    if hasattr(row, "embedding"):
+        from src.services.embedding_service import recompute_embedding
+
+        new_emb = recompute_embedding("elements", row)
+        if new_emb:
+            row.embedding = new_emb
 
     await session.flush()
     return _element_from_row(row)
@@ -1155,6 +1171,14 @@ async def resolve_update_entity(
         }
     )
     row.provenance = provenance
+
+    # Recompute embedding after update
+    if hasattr(row, "embedding"):
+        from src.services.embedding_service import recompute_embedding
+
+        new_emb = recompute_embedding(entity_type, row)
+        if new_emb:
+            row.embedding = new_emb
 
     await session.flush()
     return row
@@ -1258,6 +1282,14 @@ async def resolve_version_element(
         if row.curated_annotations
         else None,
     )
+    # Compute embedding for new version
+    if hasattr(new_row, "embedding"):
+        from src.services.embedding_service import recompute_embedding
+
+        new_emb = recompute_embedding("elements", new_row)
+        if new_emb:
+            new_row.embedding = new_emb
+
     session.add(new_row)
 
     # Mark old element as superseded
