@@ -5,8 +5,85 @@ import { useParams } from "next/navigation";
 import { GET_ELEMENT, SCHEMAS_USING_ELEMENT, TRANSFORMS_FOR_ELEMENT, FLAGS_FOR_ENTITY } from "@/graphql/queries";
 import { EntityDetailLayout } from "@/components/EntityDetailLayout";
 import { EntityTag } from "@/components/EntityTag";
+import Link from "next/link";
 import type { ElementNode, SchemaConnection, TransformConnection, CurationFlagConnection, Edge, SchemaNode, TransformNode, CurationFlagNode } from "@/graphql/types";
 import { getStatusColor } from "@/lib/source-colors";
+
+interface ResponseOption {
+  value: string | number;
+  label?: string;
+}
+
+function RangeConstraintsSection({ element }: { element: ElementNode }) {
+  const hasRange = element.minValue != null || element.maxValue != null;
+  const hasPattern = !!element.pattern;
+  const hasTypeRef = !!element.typeRef;
+  const responseOptions = (element.semantic?.response_options ?? element.semantic?.responseOptions) as ResponseOption[] | undefined;
+  const hasResponseOptions = Array.isArray(responseOptions) && responseOptions.length > 0;
+
+  if (!hasRange && !hasPattern && !hasTypeRef && !hasResponseOptions) return null;
+
+  return (
+    <div className="mt-3">
+      <div className="text-xs text-gray-500 mb-1">Range &amp; Constraints</div>
+      <div className="border rounded p-3 space-y-2 bg-gray-50">
+        {hasRange && (
+          <div className="flex items-center gap-2 text-sm">
+            <span className="text-gray-500 text-xs">Range:</span>
+            <span className="font-mono">
+              {element.minValue != null ? element.minValue : "−∞"}
+              {" – "}
+              {element.maxValue != null ? element.maxValue : "∞"}
+            </span>
+          </div>
+        )}
+
+        {hasPattern && (
+          <div className="flex items-center gap-2 text-sm">
+            <span className="text-gray-500 text-xs">Pattern:</span>
+            <code className="font-mono text-xs bg-white px-1.5 py-0.5 rounded border">{element.pattern}</code>
+          </div>
+        )}
+
+        {hasTypeRef && (
+          <div className="flex items-center gap-2 text-sm">
+            <span className="text-gray-500 text-xs">Type Ref:</span>
+            <Link
+              href={`/schemas/${element.typeRef}`}
+              className="text-blue-600 hover:underline font-mono text-xs"
+            >
+              {element.typeRef}
+            </Link>
+          </div>
+        )}
+
+        {hasResponseOptions && (
+          <div>
+            <div className="text-gray-500 text-xs mb-1">Response Options ({responseOptions!.length})</div>
+            <div className="max-h-48 overflow-y-auto">
+              <table className="w-full text-xs">
+                <thead>
+                  <tr className="text-left text-gray-400 border-b">
+                    <th className="py-0.5 pr-3 font-medium">Value</th>
+                    <th className="py-0.5 font-medium">Label</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {responseOptions!.map((opt, i) => (
+                    <tr key={i} className="border-b border-gray-100 last:border-0">
+                      <td className="py-0.5 pr-3 font-mono">{String(opt.value)}</td>
+                      <td className="py-0.5 text-gray-600">{opt.label ?? "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function ElementDetailPage() {
   const params = useParams();
@@ -95,31 +172,29 @@ export default function ElementDetailPage() {
             </div>
           </div>
         )}
-        {element.pattern && (
-          <div className="border rounded p-2">
-            <div className="text-[10px] text-gray-500 uppercase">Pattern</div>
-            <div className="font-mono text-xs truncate" title={element.pattern}>{element.pattern}</div>
-          </div>
-        )}
         {element.valueDomain && (
           <div className="border rounded p-2">
             <div className="text-[10px] text-gray-500 uppercase">Value Domain</div>
             <div className="text-sm">{element.valueDomain}</div>
           </div>
         )}
-        {element.minValue != null && (
+        {element.typeRef && (
           <div className="border rounded p-2">
-            <div className="text-[10px] text-gray-500 uppercase">Min Value</div>
-            <div className="text-sm">{element.minValue}</div>
-          </div>
-        )}
-        {element.maxValue != null && (
-          <div className="border rounded p-2">
-            <div className="text-[10px] text-gray-500 uppercase">Max Value</div>
-            <div className="text-sm">{element.maxValue}</div>
+            <div className="text-[10px] text-gray-500 uppercase">Type Ref</div>
+            <div className="text-sm">
+              <Link
+                href={`/schemas/${element.typeRef}`}
+                className="text-blue-600 hover:underline font-mono text-xs"
+              >
+                {element.typeRef}
+              </Link>
+            </div>
           </div>
         )}
       </div>
+
+      {/* Range & Constraints — consolidated section */}
+      <RangeConstraintsSection element={element} />
 
       {/* Cross-references */}
       {schemas.length > 0 && (

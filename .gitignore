@@ -55,3 +55,4 @@ docs/site/
 /pnpm-lock.yaml
 *.pkg
 docker-compose.override.yml
+presentation/

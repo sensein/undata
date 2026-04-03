@@ -71,14 +71,53 @@ def align_elements(
 
 
 def _load_embedding_store(lib_path: Path) -> EmbeddingStore | None:
-    """Load precomputed element embeddings if available."""
-    parquet = lib_path / "embeddings.parquet"
-    if not parquet.exists():
-        return None
+    """Load precomputed element embeddings if available.
+
+    Checks multiple locations:
+    1. lib_path/embeddings.parquet (legacy)
+    2. lib_path/elements/embeddings.parquet (per-type)
+    3. Build from Parquet entity files (entities with pre-computed embeddings)
+    """
+    for candidate in [
+        lib_path / "embeddings.parquet",
+        lib_path / "elements" / "embeddings.parquet",
+    ]:
+        if candidate.exists():
+            try:
+                store = EmbeddingStore(uri_col="uri").load(candidate)
+                if store.size > 0:
+                    return store
+            except Exception:
+                pass
+
+    # Build from Parquet entity files that have pre-computed embeddings
     try:
-        return EmbeddingStore(uri_col="uri").load(parquet)
+        import numpy as np
+
+        from .storage.parquet_store import ParquetStore
+        from .utils import BASE_URI
+
+        pq = ParquetStore(lib_path)
+        uris = []
+        vectors = []
+        for entity in pq.list("elements"):
+            emb = entity.get("embedding")
+            if emb and isinstance(emb, list):
+                sha = entity.get("sha256", "")
+                uris.append(f"{BASE_URI}/elements/{sha}")
+                vectors.append(np.array(emb, dtype=np.float32))
+
+        if vectors:
+            store = EmbeddingStore(uri_col="uri")
+            store._uris = uris
+            store._vectors = np.stack(vectors)
+            store._model = "all-MiniLM-L6-v2"
+            store._uri_to_idx = {u: i for i, u in enumerate(uris)}
+            return store
     except Exception:
-        return None
+        pass
+
+    return None
 
 
 def _form_alias_groups(

@@ -136,3 +136,34 @@ def compute_entity_delta(
     )
 
     return {"added": added, "removed": removed, "modified": modified}
+
+
+def save_batch_summary(
+    output_dir: Path,
+    source: str,
+    successful: int,
+    failed: int,
+    skipped: int,
+    total_entities: int,
+    elapsed: float,
+) -> Path:
+    """Save a batch pipeline run summary."""
+    import time
+
+    import yaml
+
+    runs_dir = output_dir / "runs"
+    runs_dir.mkdir(exist_ok=True)
+    ts = time.strftime("%Y-%m-%dT%H-%M-%S")
+    summary = {
+        "source": f"{source}-batch",
+        "started_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
+        "datasets_successful": successful,
+        "datasets_failed": failed,
+        "datasets_skipped": skipped,
+        "total_entities": total_entities,
+        "elapsed_seconds": round(elapsed, 1),
+    }
+    path = runs_dir / f"{ts}-{source}-batch.yaml"
+    path.write_text(yaml.dump(summary, default_flow_style=False), encoding="utf-8")
+    return path

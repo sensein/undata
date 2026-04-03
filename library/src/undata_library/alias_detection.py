@@ -23,10 +23,35 @@ def detect_aliases(
     Optimized: skip pairs with different data_type (can't be aliases).
     """
     # Load all elements grouped by data_type for optimization
+    # Read from both YAML files and Parquet
     by_type: dict[str, list[tuple[str, str, dict]]] = {}
+    seen_sha: set[str] = set()
+
+    # Parquet entities first (have embeddings)
+    try:
+        from .storage.parquet_store import ParquetStore
+
+        pq = ParquetStore(elements_dir.parent)
+        for data in pq.list("elements"):
+            if "semantic" not in data:
+                continue
+            sha = data.get("sha256", "")
+            if sha:
+                seen_sha.add(sha)
+            dt = data["semantic"].get("data_type", "")
+            uri = f"{BASE_URI}/elements/{sha or id(data)}"
+            fname = data.get("file_name", sha[:12] if sha else "")
+            by_type.setdefault(dt, []).append((fname, uri, data))
+    except Exception:
+        pass
+
+    # Then YAML files (skip if already in Parquet)
     for f in sorted(elements_dir.glob("*.yaml")):
         data = safe_load_yaml(f)
         if data is None or "semantic" not in data:
+            continue
+        sha = data.get("sha256", "")
+        if sha and sha in seen_sha:
             continue
         dt = data["semantic"].get("data_type", "")
         uri = f"{BASE_URI}/elements/{f.stem}"
@@ -48,12 +73,24 @@ def detect_aliases(
                     uri_a=uri_a,
                     uri_b=uri_b,
                 )
-                if result["score"] >= threshold:
+
+                score = result["score"]
+
+                # Boost score for elements with shared alias_hints
+                # (e.g., NDA elements appearing in multiple structures)
+                hints_a = set(data_a.get("semantic", {}).get("alias_hints", []))
+                hints_b = set(data_b.get("semantic", {}).get("alias_hints", []))
+                if hints_a and hints_b and hints_a & hints_b:
+                    # Shared alias hints → high-confidence pre-verified alias
+                    score = max(score, 0.95)
+                    result["components"]["alias_hint_boost"] = True
+
+                if score >= threshold:
                     candidates.append(
                         {
                             "element_a": fname_a,
                             "element_b": fname_b,
-                            "score": result["score"],
+                            "score": score,
                             "relation": result["relation"],
                             "components": result["components"],
                         }

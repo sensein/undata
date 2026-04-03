@@ -162,7 +162,24 @@ class DANDIAdapter(BaseAdapter):
 
         co = getattr(core, "__origin__", None)
         if co in (list, tuple, set, frozenset):
-            return "string"  # multivalued handled separately
+            # Extract item type from List[X] → range = X
+            item_args = getattr(core, "__args__", None)
+            if item_args:
+                item_type = item_args[0]
+                if isinstance(item_type, type):
+                    if hasattr(item_type, "model_fields"):
+                        return item_type.__name__  # List[SomeModel] → range = SomeModel
+                    if issubclass(item_type, str):
+                        return "string"
+                    if issubclass(item_type, int):
+                        return "integer"
+                    if issubclass(item_type, float):
+                        return "float"
+                    if issubclass(item_type, bool):
+                        return "boolean"
+                    if issubclass(item_type, enum.Enum):
+                        return item_type.__name__
+            return "string"  # Fallback for unresolvable item type
         if co is dict:
             return "string"
         if isinstance(core, type):

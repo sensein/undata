@@ -48,6 +48,8 @@ def commit_staged(
     # Track staging filename → sha256 for flag entity_ref resolution
     staging_to_sha256: dict[str, str] = {}
 
+    from .staging import iter_staged
+
     for entity_type in ("elements", "schemas", "values", "valuesets"):
         type_dir = staging_dir / entity_type
         if not type_dir.exists():
@@ -59,12 +61,11 @@ def commit_staged(
         type_committed = 0
         type_merged = 0
 
-        for staged_file in sorted(type_dir.glob("*.yaml")):
-            try:
-                data = yaml.safe_load(staged_file.read_text(encoding="utf-8"))
-                if not isinstance(data, dict) or "semantic" not in data:
-                    continue
-            except (yaml.YAMLError, OSError):
+        # Collect entities to commit — may write as Parquet batch
+        committed_entities: list[dict] = []
+
+        for data in iter_staged(staging_dir, entity_type):
+            if not isinstance(data, dict) or "semantic" not in data:
                 continue
 
             semantic = data["semantic"]
@@ -80,7 +81,7 @@ def commit_staged(
 
                     flag = create_flag(
                         entity_type=entity_type.rstrip("s"),
-                        entity_ref=str(staged_file.name),
+                        entity_ref=data.get("_identifier", data.get("file_name", "")),
                         flag_type=FlagType.suspicious_source,
                         context={
                             "reason": f"unrecognized source(s): {', '.join(sorted(unknown))}",
@@ -107,9 +108,12 @@ def commit_staged(
             )
             key = generate_short_key(sha256)
 
-            # Record staging filename → sha256 mapping for flag resolution
-            staging_to_sha256[staged_file.name] = sha256
-            staging_to_sha256[staged_file.stem] = sha256
+            # Record staging identifier → sha256 mapping for flag resolution
+            staging_id = data.get("_identifier", data.get("file_name", ""))
+            if staging_id:
+                staging_to_sha256[staging_id] = sha256
+                if "." in staging_id:
+                    staging_to_sha256[staging_id.rsplit(".", 1)[0]] = sha256
 
             # Check if any existing file has this hash (for cross-source merge)
             existing_with_hash = list(out_dir.glob(f"*_{key}.yaml"))
@@ -133,9 +137,25 @@ def commit_staged(
                 )
                 type_committed += 1
 
+            # Also accumulate for Parquet batch write
+            data["sha256"] = sha256
+            committed_entities.append(data)
+
         stats["per_type"][entity_type] = {"committed": type_committed, "merged": type_merged}
         stats["committed"] += type_committed
         stats["merged"] += type_merged
+
+        # Write committed entities as Parquet (in addition to YAML for now)
+        if committed_entities:
+            from .storage.parquet_store import ParquetStore
+
+            pq_store = ParquetStore(output_dir)
+            source = ""
+            if committed_entities[0].get("provenance"):
+                prov = committed_entities[0]["provenance"]
+                if prov and isinstance(prov[0], dict):
+                    source = prov[0].get("source", "committed")
+            pq_store.write_batch(entity_type, committed_entities, source=source or "committed")
 
     # Post-commit: resolve schema properties and valueset members to sha256 hashes
     _resolve_cross_references(output_dir)
@@ -278,6 +298,42 @@ def _resolve_cross_references(output_dir: Path) -> None:
                     resolved.append(member)
             if changed:
                 sem["members"] = resolved
+                f.write_text(
+                    yaml.dump(data, default_flow_style=False, sort_keys=False),
+                    encoding="utf-8",
+                )
+
+    # Resolve element type_ref: class names → schema sha256 hashes
+    # Build schema name → sha256 lookup
+    schema_lookup: dict[str, str] = {}
+    if schemas_dir.exists():
+        for f in schemas_dir.glob("*.yaml"):
+            data = safe_load_yaml(f)
+            if not data or "sha256" not in data:
+                continue
+            sha = data["sha256"]
+            for prov in data.get("provenance", []):
+                if isinstance(prov, dict):
+                    name = prov.get("name", prov.get("class", ""))
+                    if name:
+                        schema_lookup[name] = sha
+                        schema_lookup[name.lower()] = sha
+
+    if elements_dir.exists() and schema_lookup:
+        for f in elements_dir.glob("*.yaml"):
+            data = safe_load_yaml(f)
+            if not data:
+                continue
+            sem = data.get("semantic", {})
+            type_ref = sem.get("type_ref")
+            if not type_ref:
+                continue
+            # Already a sha256?
+            if len(type_ref) == 64 and all(c in "0123456789abcdef" for c in type_ref):
+                continue
+            sha = schema_lookup.get(type_ref) or schema_lookup.get(type_ref.lower())
+            if sha:
+                sem["type_ref"] = sha
                 f.write_text(
                     yaml.dump(data, default_flow_style=False, sort_keys=False),
                     encoding="utf-8",

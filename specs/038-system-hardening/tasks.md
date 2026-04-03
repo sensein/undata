@@ -101,7 +101,7 @@
 
 - [X] T025 [US5] Add ontologyStoreInfo GraphQL query that reads from pyoxigraph OntologyStore.list_loaded() in backend/src/graphql/resolvers.py and schema.py
 - [X] T026 [US5] Update ontology admin page to use ontologyStoreInfo instead of ontologySources DB query in frontend/app/admin/ontologies/page.tsx
-- [X] T027 [US5] Implement NCBITaxon species filter — when building embedding index, include only neuroscience-relevant species (list of ~20 taxon IDs) in library/src/undata_library/ontology_store.py
+- [X] T027 [US5] Implement NCBITaxon species filter — when building embedding index, include only neuroscience-relevant taxa (~90 genus/species/subspecies incl BBQS) in library/src/undata_library/embeddings.py
 - [X] T028 [US5] Load HoMBA from brain-bican GitHub releases (attempt OWL RDF/XML; fallback to TTL conversion) in library/src/undata_library/ontology_fetch.py
 
 **Checkpoint**: Admin shows all ontologies; NCBITaxon filtered in embeddings
