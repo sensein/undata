@@ -6,7 +6,7 @@ import { SourceBadge } from "@/components/SourceBadge";
 import Link from "next/link";
 import type { ElementConnection, SchemaConnection, ValueConnection, Connection, ValueSetNode } from "@/graphql/types";
 
-const SOURCES = ["bids", "nwb", "dandi", "openminds", "aind"];
+const SOURCES = ["bids", "nwb", "dandi", "openminds", "aind", "reproschema", "nda", "openneuro"];
 
 function SourceCard({ source }: { source: string }) {
   const { data: elemData } = useQuery<{ browseElements: ElementConnection }>(

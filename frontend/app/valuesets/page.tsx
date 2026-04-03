@@ -114,6 +114,9 @@ export default function ValueSetsPage() {
           <option value="nwb">NWB</option>
           <option value="openminds">openMINDS</option>
           <option value="aind">AIND</option>
+          <option value="reproschema">ReproSchema</option>
+          <option value="nda">NDA</option>
+          <option value="openneuro">OpenNeuro</option>
         </select>
         <input
           type="text"

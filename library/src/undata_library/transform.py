@@ -60,41 +60,73 @@ def generate_transforms(
     transforms_dir = library_path / "transforms"
     transforms_dir.mkdir(parents=True, exist_ok=True)
 
-    # Load all elements with their provenance source
+    # Load all elements with their provenance source (Parquet + YAML fallback)
     all_elements: list[tuple[str, dict, str]] = []  # (uri, data, source)
     by_onto: dict[str, list[tuple[str, dict]]] = {}
     by_name: dict[str, list[tuple[str, dict, str]]] = {}  # name.lower() → [(uri, data, source)]
 
-    for f in sorted(elements_dir.glob("*.yaml")):
-        try:
-            data = yaml.safe_load(f.read_text(encoding="utf-8"))
+    # Read from ParquetStore first
+    try:
+        from .storage.parquet_store import ParquetStore
+
+        pq = ParquetStore(elements_dir.parent)
+        for data in pq.list("elements"):
             if not isinstance(data, dict) or "semantic" not in data:
                 continue
-        except (yaml.YAMLError, OSError):
-            continue
+            sha = data.get("sha256", "")
+            uri = f"{BASE_URI}/elements/{sha}" if sha else f"{BASE_URI}/elements/{id(data)}"
+            prov = data.get("provenance", [{}])
+            source = prov[0].get("source", "") if prov and isinstance(prov[0], dict) else ""
+            prov_name = prov[0].get("name", "") if prov and isinstance(prov[0], dict) else ""
+            all_elements.append((uri, data, source))
 
-        uri = f"{BASE_URI}/elements/{f.stem}"
-        prov = data.get("provenance", [{}])
-        source = prov[0].get("source", "") if prov else ""
-        prov_name = prov[0].get("name", "") if prov else ""
-        all_elements.append((uri, data, source))
+            if prov_name:
+                by_name.setdefault(prov_name.lower(), []).append((uri, data, source))
 
-        # Group by provenance name (case-insensitive) for name-based matching
-        if prov_name:
-            by_name.setdefault(prov_name.lower(), []).append((uri, data, source))
+            annotations = data["semantic"].get("ontology_annotations", [])
+            onto = None
+            if annotations:
+                for ann in annotations:
+                    if isinstance(ann, dict) and ann.get("primary"):
+                        onto = ann.get("term_uri")
+                        break
+                if not onto and annotations and isinstance(annotations[0], dict):
+                    onto = annotations[0].get("term_uri")
+            if onto:
+                by_onto.setdefault(onto, []).append((uri, data))
+    except Exception:
+        pass
 
-        # Group by primary annotation URI
-        annotations = data["semantic"].get("ontology_annotations", [])
-        onto = None
-        if annotations:
-            for ann in annotations:
-                if isinstance(ann, dict) and ann.get("primary"):
-                    onto = ann.get("term_uri")
-                    break
-            if not onto and annotations and isinstance(annotations[0], dict):
-                onto = annotations[0].get("term_uri")
-        if onto:
-            by_onto.setdefault(onto, []).append((uri, data))
+    # YAML fallback
+    if not all_elements:
+        for f in sorted(elements_dir.glob("*.yaml")):
+            try:
+                data = yaml.safe_load(f.read_text(encoding="utf-8"))
+                if not isinstance(data, dict) or "semantic" not in data:
+                    continue
+            except (yaml.YAMLError, OSError):
+                continue
+
+            uri = f"{BASE_URI}/elements/{f.stem}"
+            prov = data.get("provenance", [{}])
+            source = prov[0].get("source", "") if prov else ""
+            prov_name = prov[0].get("name", "") if prov else ""
+            all_elements.append((uri, data, source))
+
+            if prov_name:
+                by_name.setdefault(prov_name.lower(), []).append((uri, data, source))
+
+            annotations = data["semantic"].get("ontology_annotations", [])
+            onto = None
+            if annotations:
+                for ann in annotations:
+                    if isinstance(ann, dict) and ann.get("primary"):
+                        onto = ann.get("term_uri")
+                        break
+                if not onto and annotations and isinstance(annotations[0], dict):
+                    onto = annotations[0].get("term_uri")
+            if onto:
+                by_onto.setdefault(onto, []).append((uri, data))
 
     stats = {
         "pairs_evaluated": 0,
