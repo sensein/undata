@@ -11,9 +11,9 @@
 
 **Purpose**: Prepare unified store interface
 
-- [ ] T001 Add dataframe() method to ParquetStore for bulk DataFrame access in library/src/undata_library/storage/parquet_store.py
-- [ ] T002 Add update() method to ParquetStore for in-place entity updates in library/src/undata_library/storage/parquet_store.py
-- [ ] T003 Add tests for dataframe() and update() methods in library/tests/test_parquet_store.py
+- [X] T001 Add dataframe() method to ParquetStore for bulk DataFrame access in library/src/undata_library/storage/parquet_store.py
+- [X] T002 Add update() method to ParquetStore for in-place entity updates in library/src/undata_library/storage/parquet_store.py
+- [X] T003 Add tests for dataframe() and update() methods in library/tests/test_parquet_store.py
 
 **Checkpoint**: ParquetStore has full interface matching data model
 

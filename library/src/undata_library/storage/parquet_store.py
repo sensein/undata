@@ -292,3 +292,78 @@ class ParquetStore:
             pq.write_table(table, index_path, compression="snappy")
             logger.info("Built index for %s: %d entries", entity_type, len(index_rows))
         return index_path
+
+    def dataframe(self, entity_type: str, source: str | None = None) -> pa.Table:
+        """Load all entities as a PyArrow Table for bulk operations.
+
+        Returns an empty table with ENTITY_SCHEMA if no data exists.
+        """
+        files = self._all_parquet_files(entity_type)
+        if source:
+            safe = source.replace("/", "_").replace("\\", "_")
+            files = [f for f in files if f.stem == safe]
+
+        tables = []
+        for path in files:
+            if path.stem.startswith("_"):
+                continue
+            try:
+                tables.append(pq.read_table(path))
+            except Exception:
+                pass
+
+        if not tables:
+            return pa.table({col: [] for col in ENTITY_SCHEMA.names}, schema=ENTITY_SCHEMA)
+        return pa.concat_tables(tables, promote_options="default")
+
+    def update(self, entity_type: str, sha256: str, changes: dict) -> dict | None:
+        """Update an entity in-place by sha256. Returns updated entity or None.
+
+        Reads the entity, applies changes to the semantic dict, writes back.
+        """
+        entity = self.read(entity_type, sha256)
+        if entity is None:
+            return None
+
+        # Apply changes to semantic
+        sem = entity.get("semantic", {})
+        for key, value in changes.items():
+            if key == "embedding":
+                entity["embedding"] = value
+            elif key in ("provenance", "ontology_annotations"):
+                entity[key] = value
+            else:
+                sem[key] = value
+        entity["semantic"] = sem
+
+        # Find which file contains this entity and update it
+        for path in self._all_parquet_files(entity_type):
+            try:
+                table = pq.read_table(path)
+                sha_col = table.column("sha256").to_pylist()
+                if sha256 in sha_col:
+                    idx = sha_col.index(sha256)
+                    # Rebuild the row
+                    source = table.column("source").to_pylist()[idx]
+                    serialized = _serialize_entity(entity, source)
+                    # Replace the row in the table
+                    rows = []
+                    for i in range(table.num_rows):
+                        if i == idx:
+                            rows.append(serialized)
+                        else:
+                            rows.append(
+                                {
+                                    col: table.column(col).to_pylist()[i]
+                                    for col in table.column_names
+                                }
+                            )
+                    new_table = pa.table(
+                        {col: [r.get(col, "") for r in rows] for col in ENTITY_SCHEMA.names},
+                        schema=ENTITY_SCHEMA,
+                    )
+                    pq.write_table(new_table, path, compression="snappy")
+                    return entity
+            except Exception:
+                continue
+        return None
