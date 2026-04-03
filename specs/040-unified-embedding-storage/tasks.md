@@ -25,9 +25,9 @@
 
 - [ ] T004 [US5] Rewrite FileBackend to delegate all entity operations to ParquetStore (remove YAML read/write) in library/src/undata_library/storage/file_backend.py
 - [ ] T005 [US5] Remove FileEntityStore class (YAML-backed entity store) from library/src/undata_library/storage/file_backend.py
-- [ ] T006 [US5] Update StorageBackend protocol — remove write_batch/read_batch (ParquetStore handles natively) in library/src/undata_library/storage/protocol.py
+- [X] T006 [US5] Update StorageBackend protocol — remove write_batch/read_batch (ParquetStore handles natively) in library/src/undata_library/storage/protocol.py
 - [ ] T007 [US5] Update all pipeline callers to use ParquetStore directly: enrich.py, align.py, alias_detection.py, transform.py in library/src/undata_library/
-- [ ] T008 [US5] Remove iter_staged YAML path and write_staged_entity from library/src/undata_library/staging.py
+- [X] T008 [US5] Remove iter_staged YAML path and write_staged_entity from library/src/undata_library/staging.py
 - [ ] T009 [US5] Run full test suite — verify no tests depend on YAML entity files in library/tests/
 
 **Checkpoint**: All entity access goes through ParquetStore; no YAML entity I/O remains

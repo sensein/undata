@@ -172,41 +172,74 @@ class EmbeddingStore:
 
 
 def _build_element_text(element_data: dict) -> str:
-    """Build embedding text from element or value.
+    """Build comprehensive embedding text from ALL entity information.
 
-    Elements: '{class} {name}: {description}'
-    Values: '{label}: {description}' (uses semantic.label)
+    Uses: provenance names/descriptions, semantic fields (type, unit, pattern),
+    ontology annotation labels, and source names. This ensures the embedding
+    captures the full meaning of the entity for search and alignment.
+
+    Format:
+        {class} {name}: {description}
+        type={data_type} unit={unit} pattern={pattern}
+        annotations: {label1}, {label2}
+        sources: {source1}, {source2}
     """
     semantic = element_data.get("semantic", {})
     prov = element_data.get("provenance", [])
-
-    # For values, use semantic label as primary text
-    label = semantic.get("label", "")
-    if label and semantic.get("value_type"):
-        # This is a value concept — use label + optional description
-        desc = semantic.get("description", "")
-        return f"{label}: {desc}".strip(": ") if desc else label
-
-    if not prov:
-        return ""
-
-    first = prov[0] if isinstance(prov[0], dict) else {}
-    # Handle both "class" (alias) and "class_" (field name) keys
-    class_ = first.get("class", "") or first.get("class_", "")
-    name = first.get("name", "")
-    description = first.get("description", "") or semantic.get("description", "")
+    annotations = element_data.get("ontology_annotations", semantic.get("ontology_annotations", []))
 
     parts = []
-    if class_:
-        parts.append(class_)
-    if name:
-        parts.append(name)
 
-    text = " ".join(parts)
-    if description:
-        text = f"{text}: {description}"
+    # 1. Primary identity: class + name + description
+    if prov:
+        first = prov[0] if isinstance(prov[0], dict) else {}
+        class_ = first.get("class", "") or first.get("class_", "")
+        name = first.get("name", "")
+        desc = first.get("description", "") or semantic.get("description", "")
 
-    return text.strip()
+        identity = " ".join(filter(None, [class_, name]))
+        if desc:
+            identity = f"{identity}: {desc}" if identity else desc
+        if identity:
+            parts.append(identity)
+    elif semantic.get("label"):
+        # Value concepts
+        label = semantic["label"]
+        desc = semantic.get("description", "")
+        parts.append(f"{label}: {desc}" if desc else label)
+    elif semantic.get("name"):
+        # ValueSets
+        parts.append(semantic["name"])
+
+    # 2. Type information
+    type_parts = []
+    if semantic.get("data_type"):
+        type_parts.append(f"type={semantic['data_type']}")
+    if semantic.get("unit"):
+        type_parts.append(f"unit={semantic['unit']}")
+    if semantic.get("pattern"):
+        type_parts.append(f"pattern={semantic['pattern']}")
+    if type_parts:
+        parts.append(" ".join(type_parts))
+
+    # 3. Ontology annotations (labels only — captures semantic classification)
+    if annotations:
+        ann_labels = []
+        for ann in annotations[:5]:  # Cap at 5 to avoid noise
+            if isinstance(ann, dict) and ann.get("term_label"):
+                ann_labels.append(ann["term_label"])
+        if ann_labels:
+            parts.append("annotations: " + ", ".join(ann_labels))
+
+    # 4. Source provenance (captures cross-source identity)
+    if prov and len(prov) > 1:
+        sources = sorted(
+            {p.get("source", "") for p in prov if isinstance(p, dict) and p.get("source")}
+        )
+        if sources:
+            parts.append("sources: " + ", ".join(sources))
+
+    return "\n".join(parts).strip()
 
 
 def compute_entity_embeddings(
