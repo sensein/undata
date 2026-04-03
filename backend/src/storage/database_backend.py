@@ -119,17 +119,30 @@ class DatabaseEntityStore:
                 }
             )
 
-        # Compute embedding and search tsvector if model supports it
+        # Use pre-computed embedding if available, otherwise compute
         if hasattr(model, "embedding") and model.embedding is not None:
             from sqlalchemy import func
 
-            from src.services.embedding_service import build_search_text, compute_embedding
+            pre_computed = data.get("embedding")
+            if pre_computed and isinstance(pre_computed, list):
+                kwargs["embedding"] = pre_computed
+            else:
+                from src.services.embedding_service import (
+                    build_search_text,
+                    compute_embedding,
+                )
+
+                search_text = build_search_text(entity_type, data)
+                if search_text:
+                    embedding = compute_embedding(search_text)
+                    if embedding:
+                        kwargs["embedding"] = embedding
+
+            # Always compute search tsvector (fast, no model needed)
+            from src.services.embedding_service import build_search_text
 
             search_text = build_search_text(entity_type, data)
             if search_text:
-                embedding = compute_embedding(search_text)
-                if embedding:
-                    kwargs["embedding"] = embedding
                 kwargs["search_tsv"] = func.to_tsvector("english", search_text)
 
         # Upsert by sha256
