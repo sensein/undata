@@ -69,36 +69,39 @@ function useResolveEntities(
   primaryType: "elements" | "values" | "schemas" | "valuesets" = "elements",
 ): Map<string, ResolvedEntity> {
   // Query all types for each sha256 — Apollo cache deduplicates
-  const elementResults = sha256List.map((sha) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  type QResult = { sha: string; data: any };
+
+  const elementResults: QResult[] = sha256List.map((sha) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { data } = useQuery(GET_ELEMENT, {
+    const { data } = useQuery<{ element: { sha256: string; dataType?: string; unit?: string; provenance: { source: string; name: string }[] } | null }>(GET_ELEMENT, {
       variables: { sha256: sha.slice(0, 12) },
       skip: !sha || sha.length < 12 || (primaryType !== "elements" && primaryType !== "schemas"),
     });
     return { sha, data };
   });
 
-  const schemaResults = sha256List.map((sha) => {
+  const schemaResults: QResult[] = sha256List.map((sha) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { data } = useQuery(GET_SCHEMA, {
+    const { data } = useQuery<{ schema_: { sha256: string; description?: string; provenance: { source: string; name: string }[] } | null }>(GET_SCHEMA, {
       variables: { sha256: sha.slice(0, 12) },
       skip: !sha || sha.length < 12,
     });
     return { sha, data };
   });
 
-  const valueResults = sha256List.map((sha) => {
+  const valueResults: QResult[] = sha256List.map((sha) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { data } = useQuery(GET_VALUE, {
+    const { data } = useQuery<{ value: { sha256: string; label?: string; valueType?: string; provenance: { source: string; name: string }[] } | null }>(GET_VALUE, {
       variables: { sha256: sha.slice(0, 12) },
       skip: !sha || sha.length < 12 || (primaryType !== "values" && primaryType !== "valuesets"),
     });
     return { sha, data };
   });
 
-  const valuesetResults = sha256List.map((sha) => {
+  const valuesetResults: QResult[] = sha256List.map((sha) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { data } = useQuery(GET_VALUESET, {
+    const { data } = useQuery<{ valueset: { sha256: string; name?: string; provenance: { source: string; name: string }[] } | null }>(GET_VALUESET, {
       variables: { sha256: sha.slice(0, 12) },
       skip: !sha || sha.length < 12 || primaryType !== "valuesets",
     });
