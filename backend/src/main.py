@@ -218,13 +218,15 @@ async def api_chat(request: Request):
 
 
 # Static file serving for export archives
-import os
 from pathlib import Path
-from fastapi.staticfiles import StaticFiles
 
-export_dir = Path(settings.export_dir)
-export_dir.mkdir(parents=True, exist_ok=True)
-app.mount("/api/downloads", StaticFiles(directory=str(export_dir)), name="downloads")
+try:
+    from fastapi.staticfiles import StaticFiles
+    export_dir = Path(settings.export_dir)
+    export_dir.mkdir(parents=True, exist_ok=True)
+    app.mount("/api/downloads", StaticFiles(directory=str(export_dir)), name="downloads")
+except (PermissionError, OSError):
+    pass  # Skip static file mount if export dir is not writable (CI, tests)
 
 # GraphQL mount
 from strawberry.fastapi import GraphQLRouter
