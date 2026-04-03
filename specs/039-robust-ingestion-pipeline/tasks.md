@@ -11,9 +11,9 @@
 
 **Purpose**: Parquet infrastructure, pyarrow dependency
 
-- [ ] T001 Add pyarrow dependency to library/pyproject.toml
-- [ ] T002 Create ParquetStore class with read/write/query methods for entity collections in library/src/undata_library/storage/parquet_store.py
-- [ ] T003 Add unit tests for ParquetStore — write entities, read by sha256, dedup on re-write in library/tests/test_parquet_store.py
+- [X] T001 Add pyarrow dependency to library/pyproject.toml
+- [X] T002 Create ParquetStore class with read/write/query methods for entity collections in library/src/undata_library/storage/parquet_store.py
+- [X] T003 Add unit tests for ParquetStore — write entities, read by sha256, dedup on re-write in library/tests/test_parquet_store.py
 
 **Checkpoint**: Parquet read/write working with tests
 
