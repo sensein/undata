@@ -17,10 +17,10 @@ jobs:
 
       - name: Start core services
         run: |
-          cp .env.example .env
-          docker compose up -d db redis meilisearch
+          cp .env.example .env 2>/dev/null || true
+          docker compose up -d db
 
-      - name: Build and start backend (no Keycloak dependency)
+      - name: Build and start backend + frontend
         run: |
           docker compose build backend frontend
           docker compose up -d --no-deps backend
@@ -29,7 +29,7 @@ jobs:
       - name: Wait for backend healthy
         run: |
           for i in $(seq 1 30); do
-            if curl -sf http://localhost:8002/api/v1/sources > /dev/null 2>&1; then
+            if curl -sf http://localhost:8002/health > /dev/null 2>&1; then
               echo "Backend healthy"
               break
             fi
