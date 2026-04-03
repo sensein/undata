@@ -127,6 +127,16 @@ class DatabaseEntityStore:
             if pre_computed and isinstance(pre_computed, list):
                 kwargs["embedding"] = pre_computed
             else:
+                # Missing embedding — compute on demand and log warning
+                import logging
+
+                _logger = logging.getLogger(__name__)
+                sha = data.get("sha256", "?")[:12]
+                _logger.debug(
+                    "Entity %s/%s missing embedding — computing on demand",
+                    entity_type,
+                    sha,
+                )
                 from src.services.embedding_service import (
                     build_search_text,
                     compute_embedding,

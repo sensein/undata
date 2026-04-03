@@ -90,9 +90,9 @@
 
 **Independent Test**: Import entity without embedding → embedding computed → alignment flagged
 
-- [ ] T027 [US4] Add missing embedding detection during import — log warning and compute on demand in backend/src/storage/database_backend.py
-- [ ] T028 [US4] Add alignment_needed flag to entities imported without embeddings for background re-alignment in backend/src/storage/database_backend.py
-- [ ] T029 [US4] Add background task to process alignment_needed entities (compute embedding + check alignment) in backend/src/services/embedding_service.py
+- [X] T027 [US4] Add missing embedding detection during import — log warning and compute on demand in backend/src/storage/database_backend.py
+- [X] T028 [US4] Add alignment_needed flag to entities imported without embeddings for background re-alignment in backend/src/storage/database_backend.py
+- [X] T029 [US4] Add background task to process alignment_needed entities (compute embedding + check alignment) in backend/src/services/embedding_service.py
 
 **Checkpoint**: Legacy entities without embeddings are detected, embedded, and flagged
 
