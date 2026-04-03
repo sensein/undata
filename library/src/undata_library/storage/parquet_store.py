@@ -50,13 +50,18 @@ def _serialize_entity(entity: dict, source: str | None = None) -> dict:
     embedding = entity.get("embedding")
     emb_str = json.dumps(embedding) if embedding is not None else ""
 
+    # ontology_annotations may live at the top level or inside semantic
+    annotations = entity.get("ontology_annotations")
+    if not annotations:
+        annotations = entity.get("semantic", {}).get("ontology_annotations", [])
+
     return {
         "sha256": entity.get("sha256", ""),
         "file_name": entity.get("file_name", ""),
         "source": src or "",
         "semantic": json.dumps(entity.get("semantic", {}), default=str),
         "provenance": json.dumps(prov, default=str),
-        "ontology_annotations": json.dumps(entity.get("ontology_annotations", []), default=str),
+        "ontology_annotations": json.dumps(annotations, default=str),
         "embedding": emb_str,
         "created_at": entity.get("created_at", datetime.now(timezone.utc).isoformat()),
     }
@@ -170,7 +175,7 @@ class ParquetStore:
             serialized = _serialize_entity(entity, source)
             sha = serialized["sha256"]
 
-            if sha in existing:
+            if sha and sha in existing:
                 # Merge provenance
                 old_prov = json.loads(existing[sha].get("provenance", "[]"))
                 new_prov = json.loads(serialized["provenance"])
@@ -181,7 +186,9 @@ class ParquetStore:
                 serialized["provenance"] = json.dumps(old_prov, default=str)
 
             rows.append(serialized)
-            existing[sha] = serialized  # update for subsequent dedup within batch
+            # Use sha as dedup key, or unique index for pre-commit entities without sha
+            dedup_key = sha if sha else f"__pending_{len(rows)}__"
+            existing[dedup_key] = serialized
 
         # Write all (existing merged + new)
         all_rows = list(existing.values())
@@ -292,3 +299,78 @@ class ParquetStore:
             pq.write_table(table, index_path, compression="snappy")
             logger.info("Built index for %s: %d entries", entity_type, len(index_rows))
         return index_path
+
+    def dataframe(self, entity_type: str, source: str | None = None) -> pa.Table:
+        """Load all entities as a PyArrow Table for bulk operations.
+
+        Returns an empty table with ENTITY_SCHEMA if no data exists.
+        """
+        files = self._all_parquet_files(entity_type)
+        if source:
+            safe = source.replace("/", "_").replace("\\", "_")
+            files = [f for f in files if f.stem == safe]
+
+        tables = []
+        for path in files:
+            if path.stem.startswith("_"):
+                continue
+            try:
+                tables.append(pq.read_table(path))
+            except Exception:
+                pass
+
+        if not tables:
+            return pa.table({col: [] for col in ENTITY_SCHEMA.names}, schema=ENTITY_SCHEMA)
+        return pa.concat_tables(tables, promote_options="default")
+
+    def update(self, entity_type: str, sha256: str, changes: dict) -> dict | None:
+        """Update an entity in-place by sha256. Returns updated entity or None.
+
+        Reads the entity, applies changes to the semantic dict, writes back.
+        """
+        entity = self.read(entity_type, sha256)
+        if entity is None:
+            return None
+
+        # Apply changes to semantic
+        sem = entity.get("semantic", {})
+        for key, value in changes.items():
+            if key == "embedding":
+                entity["embedding"] = value
+            elif key in ("provenance", "ontology_annotations"):
+                entity[key] = value
+            else:
+                sem[key] = value
+        entity["semantic"] = sem
+
+        # Find which file contains this entity and update it
+        for path in self._all_parquet_files(entity_type):
+            try:
+                table = pq.read_table(path)
+                sha_col = table.column("sha256").to_pylist()
+                if sha256 in sha_col:
+                    idx = sha_col.index(sha256)
+                    # Rebuild the row
+                    source = table.column("source").to_pylist()[idx]
+                    serialized = _serialize_entity(entity, source)
+                    # Replace the row in the table
+                    rows = []
+                    for i in range(table.num_rows):
+                        if i == idx:
+                            rows.append(serialized)
+                        else:
+                            rows.append(
+                                {
+                                    col: table.column(col).to_pylist()[i]
+                                    for col in table.column_names
+                                }
+                            )
+                    new_table = pa.table(
+                        {col: [r.get(col, "") for r in rows] for col in ENTITY_SCHEMA.names},
+                        schema=ENTITY_SCHEMA,
+                    )
+                    pq.write_table(new_table, path, compression="snappy")
+                    return entity
+            except Exception:
+                continue
+        return None

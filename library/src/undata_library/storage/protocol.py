@@ -66,18 +66,11 @@ class EntityStore(Protocol):
         ...
 
     def write_batch(self, entity_type: str, entities: list[dict], source: str | None = None) -> int:
-        """Write a batch of entities. Returns count written.
-
-        For large batches (>1000), implementations SHOULD use binary container
-        format (Parquet) instead of individual files.
-        """
+        """Write a batch of entities to Parquet. Returns count written."""
         ...
 
-    def read_batch(self, entity_type: str, source: str | None = None) -> list[dict]:
-        """Read all entities of a type, optionally filtered by source.
-
-        Returns list of entity dicts.
-        """
+    def update(self, entity_type: str, sha256: str, changes: dict) -> dict | None:
+        """Update an entity in-place. Returns updated entity or None."""
         ...
 
 

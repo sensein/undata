@@ -9,8 +9,8 @@ from typing import TYPE_CHECKING
 
 import yaml
 
-from .hashing import compute_identity_hash, determine_hash_mode, generate_short_key
-from .utils import safe_load_yaml, sanitize_filename
+from .hashing import compute_identity_hash, determine_hash_mode
+from .utils import safe_load_yaml
 
 logger = logging.getLogger(__name__)
 
@@ -45,10 +45,12 @@ def commit_staged(
     if output_dir is None and output_backend is not None and hasattr(output_backend, "base_dir"):
         output_dir = output_backend.base_dir
     stats = {"committed": 0, "merged": 0, "rejected": 0, "per_type": {}}
-    # Track staging filename → sha256 for flag entity_ref resolution
     staging_to_sha256: dict[str, str] = {}
 
     from .staging import iter_staged
+    from .storage.parquet_store import ParquetStore
+
+    pq_registry = ParquetStore(output_dir)
 
     for entity_type in ("elements", "schemas", "values", "valuesets"):
         type_dir = staging_dir / entity_type
@@ -106,8 +108,6 @@ def commit_staged(
                 ontology_anchored=ontology_anchored,
                 primary_ontology_uri=primary_uri,
             )
-            key = generate_short_key(sha256)
-
             # Record staging identifier → sha256 mapping for flag resolution
             staging_id = data.get("_identifier", data.get("file_name", ""))
             if staging_id:
@@ -115,50 +115,53 @@ def commit_staged(
                 if "." in staging_id:
                     staging_to_sha256[staging_id.rsplit(".", 1)[0]] = sha256
 
-            # Check if any existing file has this hash (for cross-source merge)
-            existing_with_hash = list(out_dir.glob(f"*_{key}.yaml"))
-            if existing_with_hash:
-                target = existing_with_hash[0]
-            else:
-                name = _derive_name(data, entity_type)
-                safe_name = sanitize_filename(name)
-                target = out_dir / f"{safe_name}_{key}.yaml"
-
-            if target.exists():
-                # Merge provenance
-                _merge_provenance(target, data)
+            # Check if entity already exists in registry (for cross-source merge)
+            existing = pq_registry.read(entity_type, sha256)
+            if existing:
+                # Merge provenance into existing
+                existing_prov = existing.get("provenance", [])
+                existing_keys = {
+                    (p.get("source", ""), p.get("name", ""))
+                    for p in existing_prov
+                    if isinstance(p, dict)
+                }
+                for p in provenance:
+                    pk = (p.get("source", ""), p.get("name", ""))
+                    if isinstance(p, dict) and pk not in existing_keys:
+                        existing_prov.append(p)
+                data["provenance"] = existing_prov
                 type_merged += 1
             else:
-                # Write new file with sha256
-                data["sha256"] = sha256
-                target.write_text(
-                    yaml.dump(data, default_flow_style=False, sort_keys=False),
-                    encoding="utf-8",
-                )
                 type_committed += 1
 
-            # Also accumulate for Parquet batch write
             data["sha256"] = sha256
+            data["file_name"] = _derive_name(data, entity_type)
             committed_entities.append(data)
 
         stats["per_type"][entity_type] = {"committed": type_committed, "merged": type_merged}
         stats["committed"] += type_committed
         stats["merged"] += type_merged
 
-        # Write committed entities as Parquet (in addition to YAML for now)
+        # Compute embeddings for all committed entities in batch
         if committed_entities:
-            from .storage.parquet_store import ParquetStore
+            try:
+                from .embeddings import compute_entity_embeddings
 
-            pq_store = ParquetStore(output_dir)
+                committed_entities = compute_entity_embeddings(committed_entities)
+            except ImportError:
+                logger.debug("sentence-transformers not available; skipping embeddings")
+
+        # Write committed entities to Parquet (sole output format)
+        if committed_entities:
             source = ""
             if committed_entities[0].get("provenance"):
                 prov = committed_entities[0]["provenance"]
                 if prov and isinstance(prov[0], dict):
                     source = prov[0].get("source", "committed")
-            pq_store.write_batch(entity_type, committed_entities, source=source or "committed")
+            pq_registry.write_batch(entity_type, committed_entities, source=source or "committed")
 
-    # Post-commit: resolve schema properties and valueset members to sha256 hashes
-    _resolve_cross_references(output_dir)
+    # Post-commit: resolve cross-references using ParquetStore
+    _resolve_cross_references(output_dir, pq_registry)
 
     # Post-commit: resolve curation flag entity_refs from filenames to sha256 hashes
     _resolve_flag_entity_refs(output_dir, staging_to_sha256)
@@ -170,77 +173,61 @@ def commit_staged(
     return stats
 
 
-def _resolve_cross_references(output_dir: Path) -> None:
-    """Resolve schema properties and valueset members from names to sha256 hashes.
+def _resolve_cross_references(output_dir: Path, pq_store=None) -> None:
+    """Resolve schema properties, valueset members, and type_refs via ParquetStore.
 
-    After all entities are committed with their sha256 hashes, this step updates:
-    - Schema properties: slot names → element sha256 hashes
-    - Valueset members: value labels → value sha256 hashes
-
-    Uses a name→sha256 lookup built from committed elements and values.
+    Reads all entities from ParquetStore, builds lookup dicts, resolves references,
+    and writes back resolved entities.
     """
-    # Build element (class, name) → sha256 lookup for class-aware resolution
-    # Key: (class_name, slot_name) → sha256
+    from .storage.parquet_store import ParquetStore
+
+    store = pq_store or ParquetStore(output_dir)
+
+    # Build element (class, name) → sha256 lookup
     elem_by_class: dict[tuple[str, str], str] = {}
-    # Fallback: name → sha256 (first encountered)
     elem_by_name: dict[str, str] = {}
-    elements_dir = output_dir / "elements"
-    if elements_dir.exists():
-        for f in elements_dir.glob("*.yaml"):
-            data = safe_load_yaml(f)
-            if not data or "sha256" not in data:
-                continue
-            sha = data["sha256"]
-            for prov in data.get("provenance", []):
-                if isinstance(prov, dict) and prov.get("name"):
-                    name = prov["name"]
-                    cls = prov.get("class", prov.get("class_", ""))
-                    if cls:
-                        elem_by_class[(cls, name)] = sha
-                        elem_by_class[(cls, name.lower())] = sha
-                    if name not in elem_by_name:
-                        elem_by_name[name] = sha
-                    if name.lower() not in elem_by_name:
-                        elem_by_name[name.lower()] = sha
+    for data in store.list("elements"):
+        sha = data.get("sha256", "")
+        if not sha:
+            continue
+        for prov in data.get("provenance", []):
+            if isinstance(prov, dict) and prov.get("name"):
+                name = prov["name"]
+                cls = prov.get("class", prov.get("class_", ""))
+                if cls:
+                    elem_by_class[(cls, name)] = sha
+                    elem_by_class[(cls, name.lower())] = sha
+                if name not in elem_by_name:
+                    elem_by_name[name] = sha
+                if name.lower() not in elem_by_name:
+                    elem_by_name[name.lower()] = sha
 
     # Build value label → sha256 lookup
     val_lookup: dict[str, str] = {}
-    values_dir = output_dir / "values"
-    if values_dir.exists():
-        for f in values_dir.glob("*.yaml"):
-            data = safe_load_yaml(f)
-            if not data or "sha256" not in data:
-                continue
-            sha = data["sha256"]
-            sem = data.get("semantic", {})
-            label = sem.get("label", "")
-            if label:
-                if label not in val_lookup:
-                    val_lookup[label] = sha
-                if label.lower() not in val_lookup:
-                    val_lookup[label.lower()] = sha
-            # Also index by provenance name
-            for prov in data.get("provenance", []):
-                if isinstance(prov, dict) and prov.get("name"):
-                    name = prov["name"]
-                    if name not in val_lookup:
-                        val_lookup[name] = sha
-                    if name.lower() not in val_lookup:
-                        val_lookup[name.lower()] = sha
+    for data in store.list("values"):
+        sha = data.get("sha256", "")
+        if not sha:
+            continue
+        label = data.get("label", data.get("semantic", {}).get("label", ""))
+        if label:
+            val_lookup.setdefault(label, sha)
+            val_lookup.setdefault(label.lower(), sha)
+        for prov in data.get("provenance", []):
+            if isinstance(prov, dict) and prov.get("name"):
+                name = prov["name"]
+                val_lookup.setdefault(name, sha)
+                val_lookup.setdefault(name.lower(), sha)
 
-    # Update schema properties — class-aware resolution
-    schemas_dir = output_dir / "schemas"
-    if schemas_dir.exists() and (elem_by_class or elem_by_name):
-        for f in schemas_dir.glob("*.yaml"):
-            data = safe_load_yaml(f)
-            if not data:
-                continue
+    # Update schema properties — class-aware resolution via ParquetStore
+    if elem_by_class or elem_by_name:
+        resolved_schemas = []
+        for data in store.list("schemas"):
             sem = data.get("semantic", {})
             props = sem.get("properties", [])
             if not props:
+                resolved_schemas.append(data)
                 continue
 
-            # Get the schema's class name from provenance
             schema_class = ""
             for prov in data.get("provenance", []):
                 if isinstance(prov, dict):
@@ -250,11 +237,9 @@ def _resolve_cross_references(output_dir: Path) -> None:
             resolved = []
             changed = False
             for prop in props:
-                # If it's already a sha256 hash (64 hex chars), keep it
                 if len(prop) == 64 and all(c in "0123456789abcdef" for c in prop):
                     resolved.append(prop)
                     continue
-                # Class-aware: prefer element from same class as the schema
                 sha = (
                     elem_by_class.get((schema_class, prop))
                     or elem_by_class.get((schema_class, prop.lower()))
@@ -265,24 +250,24 @@ def _resolve_cross_references(output_dir: Path) -> None:
                     resolved.append(sha)
                     changed = True
                 else:
-                    resolved.append(prop)  # Keep unresolved name
+                    resolved.append(prop)
             if changed:
                 sem["properties"] = resolved
-                f.write_text(
-                    yaml.dump(data, default_flow_style=False, sort_keys=False),
-                    encoding="utf-8",
-                )
+                data["semantic"] = sem
+            resolved_schemas.append(data)
 
-    # Update valueset members
-    valuesets_dir = output_dir / "valuesets"
-    if valuesets_dir.exists() and val_lookup:
-        for f in valuesets_dir.glob("*.yaml"):
-            data = safe_load_yaml(f)
-            if not data:
-                continue
+        if resolved_schemas:
+            source = _get_source(resolved_schemas)
+            store.write_batch("schemas", resolved_schemas, source=source)
+
+    # Update valueset members via ParquetStore
+    if val_lookup:
+        resolved_vs = []
+        for data in store.list("valuesets"):
             sem = data.get("semantic", {})
             members = sem.get("members", [])
             if not members:
+                resolved_vs.append(data)
                 continue
             resolved = []
             changed = False
@@ -298,46 +283,50 @@ def _resolve_cross_references(output_dir: Path) -> None:
                     resolved.append(member)
             if changed:
                 sem["members"] = resolved
-                f.write_text(
-                    yaml.dump(data, default_flow_style=False, sort_keys=False),
-                    encoding="utf-8",
-                )
+                data["semantic"] = sem
+            resolved_vs.append(data)
+
+        if resolved_vs:
+            source = _get_source(resolved_vs)
+            store.write_batch("valuesets", resolved_vs, source=source)
 
     # Resolve element type_ref: class names → schema sha256 hashes
-    # Build schema name → sha256 lookup
     schema_lookup: dict[str, str] = {}
-    if schemas_dir.exists():
-        for f in schemas_dir.glob("*.yaml"):
-            data = safe_load_yaml(f)
-            if not data or "sha256" not in data:
-                continue
-            sha = data["sha256"]
-            for prov in data.get("provenance", []):
-                if isinstance(prov, dict):
-                    name = prov.get("name", prov.get("class", ""))
-                    if name:
-                        schema_lookup[name] = sha
-                        schema_lookup[name.lower()] = sha
+    for data in store.list("schemas"):
+        sha = data.get("sha256", "")
+        if not sha:
+            continue
+        for prov in data.get("provenance", []):
+            if isinstance(prov, dict):
+                name = prov.get("name", prov.get("class", ""))
+                if name:
+                    schema_lookup[name] = sha
+                    schema_lookup[name.lower()] = sha
 
-    if elements_dir.exists() and schema_lookup:
-        for f in elements_dir.glob("*.yaml"):
-            data = safe_load_yaml(f)
-            if not data:
-                continue
+    if schema_lookup:
+        resolved_elems = []
+        for data in store.list("elements"):
             sem = data.get("semantic", {})
             type_ref = sem.get("type_ref")
-            if not type_ref:
-                continue
-            # Already a sha256?
-            if len(type_ref) == 64 and all(c in "0123456789abcdef" for c in type_ref):
-                continue
-            sha = schema_lookup.get(type_ref) or schema_lookup.get(type_ref.lower())
-            if sha:
-                sem["type_ref"] = sha
-                f.write_text(
-                    yaml.dump(data, default_flow_style=False, sort_keys=False),
-                    encoding="utf-8",
-                )
+            if type_ref and len(type_ref) != 64:
+                sha = schema_lookup.get(type_ref) or schema_lookup.get(type_ref.lower())
+                if sha:
+                    sem["type_ref"] = sha
+                    data["semantic"] = sem
+            resolved_elems.append(data)
+
+        if resolved_elems:
+            source = _get_source(resolved_elems)
+            store.write_batch("elements", resolved_elems, source=source)
+
+
+def _get_source(entities: list[dict]) -> str:
+    """Extract source name from first entity's provenance."""
+    if entities and entities[0].get("provenance"):
+        prov = entities[0]["provenance"]
+        if prov and isinstance(prov[0], dict):
+            return prov[0].get("source", "committed")
+    return "committed"
 
 
 def _resolve_flag_entity_refs(

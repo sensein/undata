@@ -168,3 +168,44 @@ class TestEntityTypes:
         store.write_batch("valuesets", [entity], source="bids")
         result = store.read("valuesets", "vs_sha")
         assert result["members"] == ["male", "female"]
+
+
+class TestDataFrame:
+    def test_dataframe_returns_table(self, store):
+        store.write_batch("elements", [_make_entity("a"), _make_entity("b")], source="test")
+        table = store.dataframe("elements")
+        assert table.num_rows == 2
+        assert "sha256" in table.column_names
+
+    def test_dataframe_filter_by_source(self, store):
+        store.write_batch("elements", [_make_entity("a")], source="s1")
+        store.write_batch("elements", [_make_entity("b")], source="s2")
+        table = store.dataframe("elements", source="s1")
+        assert table.num_rows == 1
+
+    def test_dataframe_empty(self, store):
+        table = store.dataframe("elements")
+        assert table.num_rows == 0
+
+
+class TestUpdate:
+    def test_update_semantic_field(self, store):
+        store.write_batch("elements", [_make_entity("age")], source="test")
+        result = store.update("elements", "sha_age", {"description": "updated"})
+        assert result is not None
+        assert result["semantic"]["description"] == "updated"
+        # Verify persisted
+        reread = store.read("elements", "sha_age")
+        assert reread["description"] == "updated"
+
+    def test_update_embedding(self, store):
+        store.write_batch("elements", [_make_entity("age")], source="test")
+        emb = [0.1] * 384
+        result = store.update("elements", "sha_age", {"embedding": emb})
+        assert result is not None
+        assert result["embedding"] == emb
+
+    def test_update_not_found(self, store):
+        store.write_batch("elements", [_make_entity("age")], source="test")
+        result = store.update("elements", "nonexistent", {"description": "x"})
+        assert result is None

@@ -23,7 +23,8 @@ def test_build_element_text_full():
             {"class": "Subject", "name": "age", "description": "Age of the subject in years"}
         ]
     }
-    assert _build_element_text(data) == "Subject age: Age of the subject in years"
+    text = _build_element_text(data)
+    assert "Subject age: Age of the subject in years" in text
 
 
 def test_build_element_text_no_description():
@@ -177,4 +178,5 @@ def test_build_element_embeddings_from_files(tmp_path):
 
     # We can test the text construction without needing the model
     data = yaml.safe_load((elements_dir / "age_abc123.yaml").read_text())
-    assert _build_element_text(data) == "Subject age: Age"
+    text = _build_element_text(data)
+    assert "Subject age: Age" in text

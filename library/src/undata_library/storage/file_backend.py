@@ -1,12 +1,13 @@
-"""File-based storage backend using YAML files in a directory tree.
+"""File-based storage backend — entities in Parquet, flags/runs in YAML.
 
-Wraps the existing library behavior: entities stored as YAML files in
-entity-type subdirectories (elements/, schemas/, values/, valuesets/),
-curation flags in curation-flags/, run summaries in runs/.
+FileEntityStore is a thin wrapper around ParquetStore for all entity
+operations. FileFlagStore and FileRunStore still use YAML for flags and
+run summaries respectively.
 """
 
 from __future__ import annotations
 
+import logging
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -15,64 +16,60 @@ from typing import Iterator
 
 from ..models import CurationFlag, FlagStatus, FlagType, RunSummary
 from ..utils import safe_load_yaml, write_yaml
+from .parquet_store import ParquetStore
 from .protocol import VALID_ENTITY_TYPES
+
+logger = logging.getLogger(__name__)
 
 
 class FileEntityStore:
-    """EntityStore implementation backed by YAML files."""
+    """EntityStore implementation backed by ParquetStore.
+
+    All entity read/write operations delegate to ParquetStore.
+    This class exists to satisfy the EntityStore protocol and provide
+    a consistent interface with FileBackend.
+    """
 
     def __init__(self, base_dir: Path) -> None:
         self._base = base_dir
+        self._pq = ParquetStore(base_dir)
 
-    def _type_dir(self, entity_type: str) -> Path:
+    def _validate_type(self, entity_type: str) -> None:
         if entity_type not in VALID_ENTITY_TYPES:
             raise ValueError(
                 f"Invalid entity type: {entity_type!r}. Must be one of {VALID_ENTITY_TYPES}"
             )
-        d = self._base / entity_type
-        d.mkdir(parents=True, exist_ok=True)
-        return d
 
     def read(self, entity_type: str, identifier: str) -> dict | None:
-        d = self._type_dir(entity_type)
-        path = d / f"{identifier}.yaml"
-        if not path.exists():
-            # Try with .yaml extension already in identifier
-            if not identifier.endswith(".yaml"):
-                return None
-            path = d / identifier
-            if not path.exists():
-                return None
-        return safe_load_yaml(path)
+        self._validate_type(entity_type)
+        return self._pq.read(entity_type, identifier)
 
     def write(self, entity_type: str, data: dict, identifier: str | None = None) -> str:
-        d = self._type_dir(entity_type)
+        self._validate_type(entity_type)
         if identifier is None:
-            identifier = str(uuid.uuid4())
-        path = d / f"{identifier}.yaml"
-        write_yaml(path, data)
+            identifier = data.get("sha256") or str(uuid.uuid4())
+        # Ensure sha256 is set on the entity
+        if not data.get("sha256"):
+            data["sha256"] = identifier
+        # Determine source from provenance
+        prov = data.get("provenance", [])
+        source = "unknown"
+        if prov and isinstance(prov[0], dict):
+            source = prov[0].get("source", "unknown")
+        self._pq.write_batch(entity_type, [data], source=source)
         return identifier
 
     def list(self, entity_type: str, **filters: object) -> Iterator[dict]:
-        d = self._type_dir(entity_type)
-        if not d.exists():
-            return
-
+        self._validate_type(entity_type)
         source_filter = filters.get("source")
         has_annotations = filters.get("has_annotations")
         data_type_filter = filters.get("data_type")
 
-        # Yield from Parquet files first
-        from .parquet_store import ParquetStore
-
-        pq_store = ParquetStore(self._base)
-        seen_sha: set[str] = set()
-        for entity in pq_store.list(entity_type, source=source_filter if source_filter else None):
-            sha = entity.get("sha256", "")
-            if sha:
-                seen_sha.add(sha)
-
-            # Apply remaining filters
+        for entity in self._pq.list(
+            entity_type,
+            source=source_filter if source_filter else None,
+        ):
+            # Apply additional filters
             if has_annotations is not None:
                 anns = entity.get("ontology_annotations", [])
                 if has_annotations != bool(anns):
@@ -81,62 +78,28 @@ class FileEntityStore:
                 if entity.get("data_type") != data_type_filter:
                     continue
 
-            entity["_identifier"] = sha or entity.get("file_name", "")
+            entity["_identifier"] = entity.get("sha256", "") or entity.get("file_name", "")
             yield entity
 
-        # Then yield from YAML files (skip if already seen in Parquet)
-        for f in sorted(d.glob("*.yaml")):
-            data = safe_load_yaml(f)
-            if data is None:
-                continue
-
-            # Skip if already yielded from Parquet
-            sha = data.get("sha256", data.get("semantic", {}).get("sha256", ""))
-            if sha and sha in seen_sha:
-                continue
-
-            # Inject _identifier for downstream use
-            data["_identifier"] = f.stem
-
-            # Apply filters
-            if source_filter is not None:
-                provenance = data.get("provenance", [])
-                sources = {p.get("source", "") for p in provenance if isinstance(p, dict)}
-                if source_filter not in sources:
-                    continue
-
-            if has_annotations is not None:
-                annotations = data.get("semantic", {}).get("ontology_annotations", [])
-                has_any = bool(annotations)
-                if has_annotations != has_any:
-                    continue
-
-            if data_type_filter is not None:
-                dt = data.get("semantic", {}).get("data_type")
-                if dt != data_type_filter:
-                    continue
-
-            yield data
-
     def exists(self, entity_type: str, identifier: str) -> bool:
-        d = self._type_dir(entity_type)
-        return (d / f"{identifier}.yaml").exists()
+        self._validate_type(entity_type)
+        return self._pq.exists(entity_type, identifier)
 
     def delete(self, entity_type: str, identifier: str) -> bool:
-        d = self._type_dir(entity_type)
-        path = d / f"{identifier}.yaml"
-        if path.exists():
-            path.unlink()
-            return True
+        logger.warning(
+            "delete() is not supported for Parquet-backed store; ignoring delete for %s/%s",
+            entity_type,
+            identifier,
+        )
         return False
 
     def merge_provenance(self, entity_type: str, identifier: str, provenance: list[dict]) -> dict:
-        data = self.read(entity_type, identifier)
-        if data is None:
+        self._validate_type(entity_type)
+        entity = self._pq.read(entity_type, identifier)
+        if entity is None:
             raise KeyError(f"Entity not found: {entity_type}/{identifier}")
 
-        existing_prov = data.get("provenance", [])
-        # Deduplicate by (source, name)
+        existing_prov = entity.get("provenance", [])
         existing_keys = {(p.get("source", ""), p.get("name", "")) for p in existing_prov}
         for p in provenance:
             key = (p.get("source", ""), p.get("name", ""))
@@ -144,32 +107,17 @@ class FileEntityStore:
                 existing_prov.append(p)
                 existing_keys.add(key)
 
-        data["provenance"] = existing_prov
-        # Remove internal metadata before writing
-        clean = {k: v for k, v in data.items() if not k.startswith("_")}
-        self.write(entity_type, clean, identifier)
-        return data
+        return self._pq.update(entity_type, identifier, {"provenance": existing_prov}) or entity
 
     def count(self, entity_type: str, **filters: object) -> int:
+        self._validate_type(entity_type)
         if not filters:
-            d = self._type_dir(entity_type)
-            return len(list(d.glob("*.yaml")))
+            return self._pq.count(entity_type)
         return sum(1 for _ in self.list(entity_type, **filters))
 
     def find_by_hash(self, entity_type: str, short_key: str) -> dict | None:
-        d = self._type_dir(entity_type)
-        matches = list(d.glob(f"*_{short_key}.yaml"))
-        if not matches:
-            # Also try exact match on identifier
-            exact = d / f"{short_key}.yaml"
-            if exact.exists():
-                return safe_load_yaml(exact)
-            # Try Parquet files
-            from .parquet_store import ParquetStore
-
-            pq_store = ParquetStore(self._base)
-            return pq_store.read(entity_type, short_key)
-        return safe_load_yaml(matches[0])
+        self._validate_type(entity_type)
+        return self._pq.read(entity_type, short_key)
 
     def write_batch(
         self,
@@ -177,29 +125,16 @@ class FileEntityStore:
         entities: list[dict],
         source: str | None = None,
     ) -> int:
-        """Write a batch of entities using Parquet format."""
+        """Write a batch of entities to Parquet."""
         if not entities:
             return 0
-
-        from .parquet_store import ParquetStore
-
-        pq_store = ParquetStore(self._base)
-        return pq_store.write_batch(entity_type, entities, source=source or "unknown")
+        self._validate_type(entity_type)
+        return self._pq.write_batch(entity_type, entities, source=source or "unknown")
 
     def read_batch(self, entity_type: str, source: str | None = None) -> list[dict]:
-        """Read all entities of a type, from both YAML files and Parquet."""
-        results = list(self.list(entity_type, **({"source": source} if source else {})))
-
-        # Also read from Parquet files
-        from .parquet_store import ParquetStore
-
-        pq_store = ParquetStore(self._base)
-        seen = {r.get("sha256", r.get("_identifier", "")) for r in results}
-        for entity in pq_store.list(entity_type, source=source):
-            if entity.get("sha256") not in seen:
-                results.append(entity)
-                seen.add(entity.get("sha256", ""))
-        return results
+        """Read all entities of a type from Parquet."""
+        self._validate_type(entity_type)
+        return list(self._pq.list(entity_type, source=source))
 
 
 class FileFlagStore:
@@ -385,14 +320,14 @@ class FileRunStore:
 
 
 class FileBackend:
-    """StorageBackend implementation using YAML files in a directory tree.
+    """StorageBackend implementation — entities in Parquet, flags/runs in YAML.
 
     Directory layout:
         base_dir/
-        ├── elements/*.yaml
-        ├── schemas/*.yaml
-        ├── values/*.yaml
-        ├── valuesets/*.yaml
+        ├── elements/*.parquet
+        ├── schemas/*.parquet
+        ├── values/*.parquet
+        ├── valuesets/*.parquet
         ├── curation-flags/*.yaml
         └── runs/*.yaml
     """

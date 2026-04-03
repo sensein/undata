@@ -95,4 +95,32 @@ def build_search_text(entity_type: str, data: dict) -> str:
         if sem.get("description"):
             parts.append(sem["description"][:200])
 
+    # Ontology annotations
+    annotations = data.get("ontology_annotations", sem.get("ontology_annotations", []))
+    if annotations:
+        for ann in annotations[:5]:
+            if isinstance(ann, dict) and ann.get("term_label"):
+                parts.append(ann["term_label"])
+
     return " ".join(parts).strip()
+
+
+def recompute_embedding(entity_type: str, row) -> list[float] | None:
+    """Recompute embedding for an entity after mutation.
+
+    Accepts an ORM row or dict. Returns the new embedding vector.
+    """
+    if hasattr(row, "semantic"):
+        # ORM row
+        data = {
+            "semantic": row.semantic or {},
+            "provenance": row.provenance or [],
+            "ontology_annotations": row.ontology_annotations or [],
+        }
+    else:
+        data = row
+
+    text = build_search_text(entity_type, data)
+    if not text:
+        return None
+    return compute_embedding(text)
