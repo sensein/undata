@@ -136,8 +136,54 @@ class FileEntityStore:
             exact = d / f"{short_key}.yaml"
             if exact.exists():
                 return safe_load_yaml(exact)
-            return None
+            # Try Parquet files
+            from .parquet_store import ParquetStore
+
+            pq_store = ParquetStore(self._base)
+            return pq_store.read(entity_type, short_key)
         return safe_load_yaml(matches[0])
+
+    def write_batch(
+        self,
+        entity_type: str,
+        entities: list[dict],
+        source: str | None = None,
+        threshold: int = 1000,
+    ) -> int:
+        """Write a batch of entities.
+
+        If count > threshold, uses Parquet format. Otherwise writes individual YAML files.
+        """
+        if not entities:
+            return 0
+
+        if len(entities) > threshold:
+            from .parquet_store import ParquetStore
+
+            pq_store = ParquetStore(self._base)
+            return pq_store.write_batch(entity_type, entities, source=source or "unknown")
+
+        # Small batch — write individual YAML files
+        for entity in entities:
+            identifier = entity.get("sha256") or entity.get("file_name", "")
+            if identifier:
+                self.write(entity_type, entity, identifier)
+        return len(entities)
+
+    def read_batch(self, entity_type: str, source: str | None = None) -> list[dict]:
+        """Read all entities of a type, from both YAML files and Parquet."""
+        results = list(self.list(entity_type, **({"source": source} if source else {})))
+
+        # Also read from Parquet files
+        from .parquet_store import ParquetStore
+
+        pq_store = ParquetStore(self._base)
+        seen = {r.get("sha256", r.get("_identifier", "")) for r in results}
+        for entity in pq_store.list(entity_type, source=source):
+            if entity.get("sha256") not in seen:
+                results.append(entity)
+                seen.add(entity.get("sha256", ""))
+        return results
 
 
 class FileFlagStore:

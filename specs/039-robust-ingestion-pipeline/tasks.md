@@ -23,8 +23,8 @@
 
 **Purpose**: Extend StorageBackend protocol + FileBackend to support Parquet
 
-- [ ] T004 Extend StorageBackend protocol with write_batch() and read_batch() methods in library/src/undata_library/storage/protocol.py
-- [ ] T005 Update FileBackend to use ParquetStore when entity count > threshold (default 1000) in library/src/undata_library/storage/file_backend.py
+- [X] T004 Extend StorageBackend protocol with write_batch() and read_batch() methods in library/src/undata_library/storage/protocol.py
+- [X] T005 Update FileBackend to use ParquetStore when entity count > threshold (default 1000) in library/src/undata_library/storage/file_backend.py
 - [ ] T006 Update staging module to write entities to Parquet when batch size exceeds threshold in library/src/undata_library/staging.py
 - [ ] T007 Update commit module to read from Parquet staging and write Parquet registry in library/src/undata_library/commit.py
 - [ ] T008 Add cross-source index (_index.parquet) generation during commit for sha256→source lookup in library/src/undata_library/commit.py
