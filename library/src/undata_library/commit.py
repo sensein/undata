@@ -48,6 +48,8 @@ def commit_staged(
     # Track staging filename → sha256 for flag entity_ref resolution
     staging_to_sha256: dict[str, str] = {}
 
+    from .staging import iter_staged
+
     for entity_type in ("elements", "schemas", "values", "valuesets"):
         type_dir = staging_dir / entity_type
         if not type_dir.exists():
@@ -59,12 +61,11 @@ def commit_staged(
         type_committed = 0
         type_merged = 0
 
-        for staged_file in sorted(type_dir.glob("*.yaml")):
-            try:
-                data = yaml.safe_load(staged_file.read_text(encoding="utf-8"))
-                if not isinstance(data, dict) or "semantic" not in data:
-                    continue
-            except (yaml.YAMLError, OSError):
+        # Collect entities to commit — may write as Parquet batch
+        committed_entities: list[dict] = []
+
+        for data in iter_staged(staging_dir, entity_type):
+            if not isinstance(data, dict) or "semantic" not in data:
                 continue
 
             semantic = data["semantic"]
@@ -107,9 +108,12 @@ def commit_staged(
             )
             key = generate_short_key(sha256)
 
-            # Record staging filename → sha256 mapping for flag resolution
-            staging_to_sha256[staged_file.name] = sha256
-            staging_to_sha256[staged_file.stem] = sha256
+            # Record staging identifier → sha256 mapping for flag resolution
+            staging_id = data.get("_identifier", data.get("file_name", ""))
+            if staging_id:
+                staging_to_sha256[staging_id] = sha256
+                if "." in staging_id:
+                    staging_to_sha256[staging_id.rsplit(".", 1)[0]] = sha256
 
             # Check if any existing file has this hash (for cross-source merge)
             existing_with_hash = list(out_dir.glob(f"*_{key}.yaml"))
@@ -133,9 +137,25 @@ def commit_staged(
                 )
                 type_committed += 1
 
+            # Also accumulate for Parquet batch write
+            data["sha256"] = sha256
+            committed_entities.append(data)
+
         stats["per_type"][entity_type] = {"committed": type_committed, "merged": type_merged}
         stats["committed"] += type_committed
         stats["merged"] += type_merged
+
+        # Write committed entities as Parquet (in addition to YAML for now)
+        if committed_entities:
+            from .storage.parquet_store import ParquetStore
+
+            pq_store = ParquetStore(output_dir)
+            source = ""
+            if committed_entities[0].get("provenance"):
+                prov = committed_entities[0]["provenance"]
+                if prov and isinstance(prov[0], dict):
+                    source = prov[0].get("source", "committed")
+            pq_store.write_batch(entity_type, committed_entities, source=source or "committed")
 
     # Post-commit: resolve schema properties and valueset members to sha256 hashes
     _resolve_cross_references(output_dir)

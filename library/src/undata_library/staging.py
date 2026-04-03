@@ -69,3 +69,78 @@ def write_staged_entity(
         encoding="utf-8",
     )
     return filepath
+
+
+def write_staged_batch(
+    staging_dir: Path,
+    entity_type: str,
+    entities: list[dict],
+    source: str,
+) -> int:
+    """Write a batch of entities to staging using Parquet format.
+
+    Returns number of entities written.
+    """
+    if not entities:
+        return 0
+
+    from .storage.parquet_store import ParquetStore
+
+    store = ParquetStore(staging_dir)
+    return store.write_batch(entity_type, entities, source=source)
+
+
+def count_staged(staging_dir: Path, entity_type: str) -> int:
+    """Count staged entities (YAML files + Parquet rows)."""
+    d = staging_dir / entity_type
+    if not d.exists():
+        return 0
+
+    yaml_count = len(list(d.glob("*.yaml")))
+
+    parquet_count = 0
+    for pf in d.glob("*.parquet"):
+        if pf.stem.startswith("_"):
+            continue
+        try:
+            import pyarrow.parquet as pq
+
+            parquet_count += pq.read_metadata(pf).num_rows
+        except Exception:
+            pass
+
+    return yaml_count + parquet_count
+
+
+def iter_staged(staging_dir: Path, entity_type: str):
+    """Iterate all staged entities (from YAML files and Parquet)."""
+    import yaml as _yaml
+
+    from .storage.parquet_store import ParquetStore, _deserialize_row
+
+    d = staging_dir / entity_type
+    if not d.exists():
+        return
+
+    # YAML files
+    for f in sorted(d.glob("*.yaml")):
+        try:
+            data = _yaml.safe_load(f.read_text(encoding="utf-8"))
+            if isinstance(data, dict):
+                yield data
+        except Exception:
+            pass
+
+    # Parquet files
+    import pyarrow.parquet as pq
+
+    for pf in sorted(d.glob("*.parquet")):
+        if pf.stem.startswith("_"):
+            continue
+        try:
+            table = pq.read_table(pf)
+            for i in range(table.num_rows):
+                row = {col: table.column(col).to_pylist()[i] for col in table.column_names}
+                yield _deserialize_row(row)
+        except Exception:
+            pass

@@ -62,9 +62,37 @@ class FileEntityStore:
         has_annotations = filters.get("has_annotations")
         data_type_filter = filters.get("data_type")
 
+        # Yield from Parquet files first
+        from .parquet_store import ParquetStore
+
+        pq_store = ParquetStore(self._base)
+        seen_sha: set[str] = set()
+        for entity in pq_store.list(entity_type, source=source_filter if source_filter else None):
+            sha = entity.get("sha256", "")
+            if sha:
+                seen_sha.add(sha)
+
+            # Apply remaining filters
+            if has_annotations is not None:
+                anns = entity.get("ontology_annotations", [])
+                if has_annotations != bool(anns):
+                    continue
+            if data_type_filter is not None:
+                if entity.get("data_type") != data_type_filter:
+                    continue
+
+            entity["_identifier"] = sha or entity.get("file_name", "")
+            yield entity
+
+        # Then yield from YAML files (skip if already seen in Parquet)
         for f in sorted(d.glob("*.yaml")):
             data = safe_load_yaml(f)
             if data is None:
+                continue
+
+            # Skip if already yielded from Parquet
+            sha = data.get("sha256", data.get("semantic", {}).get("sha256", ""))
+            if sha and sha in seen_sha:
                 continue
 
             # Inject _identifier for downstream use
@@ -148,27 +176,15 @@ class FileEntityStore:
         entity_type: str,
         entities: list[dict],
         source: str | None = None,
-        threshold: int = 1000,
     ) -> int:
-        """Write a batch of entities.
-
-        If count > threshold, uses Parquet format. Otherwise writes individual YAML files.
-        """
+        """Write a batch of entities using Parquet format."""
         if not entities:
             return 0
 
-        if len(entities) > threshold:
-            from .parquet_store import ParquetStore
+        from .parquet_store import ParquetStore
 
-            pq_store = ParquetStore(self._base)
-            return pq_store.write_batch(entity_type, entities, source=source or "unknown")
-
-        # Small batch — write individual YAML files
-        for entity in entities:
-            identifier = entity.get("sha256") or entity.get("file_name", "")
-            if identifier:
-                self.write(entity_type, entity, identifier)
-        return len(entities)
+        pq_store = ParquetStore(self._base)
+        return pq_store.write_batch(entity_type, entities, source=source or "unknown")
 
     def read_batch(self, entity_type: str, source: str | None = None) -> list[dict]:
         """Read all entities of a type, from both YAML files and Parquet."""
