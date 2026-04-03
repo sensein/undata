@@ -392,9 +392,9 @@ async def resolve_search(
                     try:
                         sem_stmt = sa_text(
                             f"SELECT sha256, file_name, description, provenance, "
-                            f"1 - (embedding <=> :qvec::vector) AS similarity "
+                            f"1 - (embedding <=> CAST(:qvec AS vector)) AS similarity "
                             f"FROM {table} WHERE embedding IS NOT NULL "
-                            f"ORDER BY embedding <=> :qvec::vector LIMIT :lim"
+                            f"ORDER BY embedding <=> CAST(:qvec AS vector) LIMIT :lim"
                         )
                         sem_result = await session.execute(
                             sem_stmt,
