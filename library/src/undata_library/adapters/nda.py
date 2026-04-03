@@ -143,6 +143,47 @@ def _fetch_structure_list(client: httpx.Client) -> list[str]:
         return []
 
 
+def _dedup_elements(entities: list[ClassifiedEntity]) -> list[ClassifiedEntity]:
+    """Deduplicate ATTRIBUTE entities that share the same (name, data_type).
+
+    When the same element (e.g. "subjectkey", "interview_date") appears in
+    multiple NDA structures with identical semantics, keep a single entity and
+    merge provenance:
+    - ``alias_hints`` accumulates all ``nda:<structure>`` short names
+    - ``provenance`` comes from the first occurrence
+
+    Non-ATTRIBUTE entities (ENUM_VALUE, VALUESET, CLASS) pass through unchanged.
+    """
+    deduped: list[ClassifiedEntity] = []
+    # (name, data_type) → index in deduped list
+    seen: dict[tuple[str, str], int] = {}
+
+    for entity in entities:
+        if entity.entity_type != EntityType.ATTRIBUTE:
+            deduped.append(entity)
+            continue
+
+        name = entity.provenance.get("name", "")
+        data_type = entity.semantic.get("data_type", "")
+        key = (name, data_type)
+
+        structure_hint = f"nda:{entity.provenance.get('class', '')}"
+
+        if key in seen:
+            # Merge: add structure to alias_hints of the existing entity
+            existing = deduped[seen[key]]
+            alias_hints = existing.semantic.setdefault("alias_hints", [])
+            if structure_hint not in alias_hints:
+                alias_hints.append(structure_hint)
+        else:
+            # First occurrence — record it
+            seen[key] = len(deduped)
+            entity.semantic.setdefault("alias_hints", [structure_hint])
+            deduped.append(entity)
+
+    return deduped
+
+
 class NDAAdapter(BaseAdapter):
     """Adapter for the NIMH Data Archive (NDA) data dictionaries."""
 
@@ -183,6 +224,10 @@ class NDAAdapter(BaseAdapter):
                 if structure is None:
                     continue
                 results.extend(self._extract_structure(structure, short_name))
+
+        # Deduplicate elements across structures when extracting multiple
+        if len(structures) > 1:
+            results = _dedup_elements(results)
 
         return results
 

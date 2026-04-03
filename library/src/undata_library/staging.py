@@ -116,7 +116,7 @@ def iter_staged(staging_dir: Path, entity_type: str):
     """Iterate all staged entities (from YAML files and Parquet)."""
     import yaml as _yaml
 
-    from .storage.parquet_store import ParquetStore, _deserialize_row
+    from .storage.parquet_store import _deserialize_row
 
     d = staging_dir / entity_type
     if not d.exists():

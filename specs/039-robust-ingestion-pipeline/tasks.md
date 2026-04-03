@@ -73,8 +73,8 @@
 
 **Independent Test**: Ingest 2 NDA structures sharing elements → alias_hints populated → alignment groups them
 
-- [ ] T021 [US3] Add alias dedup to NDA adapter — group elements by name+type across structures, merge provenance in library/src/undata_library/adapters/nda.py
-- [ ] T022 [US3] Add alias_hints field to ClassifiedEntity semantic dict (list of source refs for shared elements) in library/src/undata_library/adapters/nda.py
+- [X] T021 [US3] Add alias dedup to NDA adapter — group elements by name+type across structures, merge provenance in library/src/undata_library/adapters/nda.py
+- [X] T022 [US3] Add alias_hints field to ClassifiedEntity semantic dict (list of source refs for shared elements) in library/src/undata_library/adapters/nda.py
 - [ ] T023 [US3] Update alignment step to check alias_hints and boost confidence for pre-verified aliases in library/src/undata_library/align.py
 - [ ] T024 [US3] Add test: two NDA structures with shared element → alias_hints populated → alignment links them with higher confidence than embedding-only baseline in library/tests/test_nda_aliases.py
 
@@ -92,9 +92,9 @@
 - [ ] T026 [P] [US4] Audit NWB adapter — add min/max extraction from hdmf attribute metadata in library/src/undata_library/adapters/nwb.py
 - [ ] T027 [P] [US4] Audit openMINDS adapter — add min/max extraction from range constraints in library/src/undata_library/adapters/openminds.py
 - [ ] T028 [P] [US4] Audit OpenNeuro adapter — extract range from JSON sidecar MinValue/MaxValue in library/src/undata_library/adapters/openneuro.py
-- [ ] T029 [US4] Add range display section to EntityDetailLayout — show min/max, pattern, response_options, type_ref in frontend/components/EntityDetailLayout.tsx
-- [ ] T030 [US4] Link response_options values to ValueSet entities in element detail page in frontend/app/elements/[id]/page.tsx
-- [ ] T031 [US4] Link type_ref to Schema detail page in element detail in frontend/app/elements/[id]/page.tsx
+- [X] T029 [US4] Add range display section to EntityDetailLayout — show min/max, pattern, response_options, type_ref in frontend/components/EntityDetailLayout.tsx
+- [X] T030 [US4] Link response_options values to ValueSet entities in element detail page in frontend/app/elements/[id]/page.tsx
+- [X] T031 [US4] Link type_ref to Schema detail page in element detail in frontend/app/elements/[id]/page.tsx
 
 **Checkpoint**: Element detail page shows all range constraints with linked entities
 
@@ -121,7 +121,7 @@
 **Independent Test**: Enrich 220K elements → completes <30min → mouse matches "Mus musculus" not "Mus"
 
 - [ ] T035 [US6] Add chunk-based enrichment — process elements in batches of 10K to control memory in library/src/undata_library/enrich.py
-- [ ] T036 [US6] Add species precision post-filter — remove genus-level matches when species-level exists in library/src/undata_library/enrich.py
+- [X] T036 [US6] Add species precision post-filter — remove genus-level matches when species-level exists in library/src/undata_library/enrich.py
 - [ ] T037 [US6] Test enrichment species precision: element about mouse → primary match is Mus musculus not Mus in library/tests/test_enrich.py
 
 **Checkpoint**: Enrichment scales to 220K+ elements with species-level precision

@@ -1243,7 +1243,57 @@ def _assign_ontology_annotations(
             except Exception:
                 pass  # Hierarchy lookup is best-effort
 
+    annotations = _prefer_species_over_genus(annotations)
+
     return annotations
+
+
+def _prefer_species_over_genus(annotations: list[dict]) -> list[dict]:
+    """Remove genus-level NCBITaxon matches when a more precise species-level match exists.
+
+    For example, if both "Mus" (genus, NCBITaxon_10088) and "Mus musculus"
+    (species, NCBITaxon_10090) are present, the genus-level annotation is
+    removed because the species-level one is more informative.
+
+    The heuristic: among NCBITaxon annotations, if one term's label is a prefix
+    of another (e.g. "Mus" is a prefix of "Mus musculus"), the shorter/less-specific
+    one is redundant and removed.
+    """
+    if not annotations:
+        return annotations
+
+    # Collect NCBITaxon annotations with their indices
+    taxon_entries: list[tuple[int, dict]] = []
+    for i, ann in enumerate(annotations):
+        uri = ann.get("term_uri", "")
+        if "NCBITaxon" in uri or "ncbitaxon" in uri.lower():
+            taxon_entries.append((i, ann))
+
+    if len(taxon_entries) < 2:
+        return annotations
+
+    # Find genus-level URIs to remove: a taxon annotation is genus-level if
+    # another taxon annotation's label starts with it (i.e., it's a prefix).
+    indices_to_remove: set[int] = set()
+    for i, ann_a in taxon_entries:
+        label_a = (ann_a.get("term_label") or "").strip().lower()
+        if not label_a:
+            continue
+        for j, ann_b in taxon_entries:
+            if i == j:
+                continue
+            label_b = (ann_b.get("term_label") or "").strip().lower()
+            if not label_b:
+                continue
+            # If label_a is a strict prefix of label_b, label_a is the genus
+            if label_b.startswith(label_a + " ") and len(label_b) > len(label_a):
+                indices_to_remove.add(i)
+                break
+
+    if not indices_to_remove:
+        return annotations
+
+    return [ann for idx, ann in enumerate(annotations) if idx not in indices_to_remove]
 
 
 def _score_to_skos(score: float) -> str:
