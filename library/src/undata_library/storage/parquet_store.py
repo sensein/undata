@@ -50,13 +50,18 @@ def _serialize_entity(entity: dict, source: str | None = None) -> dict:
     embedding = entity.get("embedding")
     emb_str = json.dumps(embedding) if embedding is not None else ""
 
+    # ontology_annotations may live at the top level or inside semantic
+    annotations = entity.get("ontology_annotations")
+    if not annotations:
+        annotations = entity.get("semantic", {}).get("ontology_annotations", [])
+
     return {
         "sha256": entity.get("sha256", ""),
         "file_name": entity.get("file_name", ""),
         "source": src or "",
         "semantic": json.dumps(entity.get("semantic", {}), default=str),
         "provenance": json.dumps(prov, default=str),
-        "ontology_annotations": json.dumps(entity.get("ontology_annotations", []), default=str),
+        "ontology_annotations": json.dumps(annotations, default=str),
         "embedding": emb_str,
         "created_at": entity.get("created_at", datetime.now(timezone.utc).isoformat()),
     }
