@@ -10,6 +10,9 @@ const SOURCE_COLORS: Record<string, { bg: string; text: string }> = {
   nwb: { bg: "bg-purple-100", text: "text-purple-800" },
   openminds: { bg: "bg-orange-100", text: "text-orange-800" },
   aind: { bg: "bg-teal-100", text: "text-teal-800" },
+  reproschema: { bg: "bg-rose-100", text: "text-rose-800" },
+  nda: { bg: "bg-indigo-100", text: "text-indigo-800" },
+  openneuro: { bg: "bg-amber-100", text: "text-amber-800" },
 };
 
 const DEFAULT_SOURCE_COLOR = { bg: "bg-gray-100", text: "text-gray-800" };
@@ -48,7 +51,9 @@ export const STATUS_COLORS: Record<
 };
 
 export function getSourceColor(source: string): { bg: string; text: string } {
-  return SOURCE_COLORS[source.toLowerCase()] ?? DEFAULT_SOURCE_COLOR;
+  const key = source.toLowerCase();
+  // Exact match first, then prefix match (e.g., "openneuro/ds007615" → "openneuro")
+  return SOURCE_COLORS[key] ?? SOURCE_COLORS[key.split("/")[0]] ?? DEFAULT_SOURCE_COLOR;
 }
 
 export function getEntityColor(
