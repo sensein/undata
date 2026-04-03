@@ -461,8 +461,8 @@ async def resolve_browse_elements(
         from sqlalchemy import text as sa_text
 
         stmt = stmt.where(
-            sa_text("provenance @> :src_filter ::jsonb").bindparams(
-                src_filter=f'[{{"source": "{source}"}}]'
+            sa_text("provenance::text LIKE :src_filter").bindparams(
+                src_filter=f'%"source": "{source}%'
             )
         )
     if data_type:
@@ -530,7 +530,7 @@ async def resolve_browse_schemas(
         from sqlalchemy import text as sa_text
 
         stmt = stmt.where(
-            sa_text("provenance @> :src ::jsonb").bindparams(src=f'[{{"source": "{source}"}}]')
+            sa_text("provenance::text LIKE :src").bindparams(src=f'%"source": "{source}%')
         )
     if search_text:
         stmt = stmt.where(
@@ -578,7 +578,7 @@ async def resolve_browse_values(
         from sqlalchemy import text as sa_text
 
         stmt = stmt.where(
-            sa_text("provenance @> :src ::jsonb").bindparams(src=f'[{{"source": "{source}"}}]')
+            sa_text("provenance::text LIKE :src").bindparams(src=f'%"source": "{source}%')
         )
     if search_text:
         stmt = stmt.where(
@@ -625,7 +625,7 @@ async def resolve_browse_valuesets(
         from sqlalchemy import text as sa_text
 
         stmt = stmt.where(
-            sa_text("provenance @> :src ::jsonb").bindparams(src=f'[{{"source": "{source}"}}]')
+            sa_text("provenance::text LIKE :src").bindparams(src=f'%"source": "{source}%')
         )
     if search_text:
         stmt = stmt.where(
