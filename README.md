@@ -35,20 +35,20 @@ The result is a canonical registry where every neuroscience data concept has a s
 ## Architecture
 
 ```
-┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
-│  Ingestion   │────▶│   Backend    │◀────│ Migration API   │
-│  (Python CLI)│     │ (FastAPI)    │     │ (FastAPI+Celery) │
-└─────────────┘     └──────┬───────┘     └────────┬────────┘
-                           │                      │
-                    ┌──────┴───────┐        ┌─────┴─────┐
-                    │  PostgreSQL  │        │   Redis    │
-                    │  (pgvector)  │        └───────────┘
-                    └──────────────┘
-                           │
-                    ┌──────┴───────┐     ┌─────────────┐
-                    │   Frontend   │────▶│ Meilisearch  │
-                    │  (Next.js)   │     └─────────────┘
-                    └──────────────┘
+┌──────────────┐     ┌──────────────┐     ┌──────────────────┐
+│  Ingestion   │────▶│   Backend    │◀────│  Migration API   │
+│ (Python CLI) │     │  (FastAPI)   │     │ (FastAPI+Celery) │
+└──────────────┘     └──────┬───────┘     └────────┬─────────┘
+                            │                      │
+                     ┌──────┴───────┐       ┌──────┴─────┐
+                     │  PostgreSQL  │       │   Redis    │
+                     │  (pgvector)  │       └────────────┘
+                     └──────────────┘
+                            │
+                     ┌──────┴───────┐     ┌──────────────┐
+                     │   Frontend   │────▶│ Meilisearch  │
+                     │  (Next.js)   │     └──────────────┘
+                     └──────────────┘
 ```
 
 | Service | Port | Description |
