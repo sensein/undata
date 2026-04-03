@@ -46,7 +46,12 @@ def test_count_staged(tmp_path):
     write_staged_batch(
         staging,
         "elements",
-        [{"semantic": {"data_type": "string"}, "provenance": [{"source": "t", "class": "X", "name": "a"}]}],
+        [
+            {
+                "semantic": {"data_type": "string"},
+                "provenance": [{"source": "t", "class": "X", "name": "a"}],
+            }
+        ],
         source="test",
     )
     assert count_staged(staging, "elements") == 1
@@ -57,7 +62,12 @@ def test_iter_staged(tmp_path):
     write_staged_batch(
         staging,
         "elements",
-        [{"semantic": {"data_type": "string"}, "provenance": [{"source": "t", "class": "X", "name": "a"}]}],
+        [
+            {
+                "semantic": {"data_type": "string"},
+                "provenance": [{"source": "t", "class": "X", "name": "a"}],
+            }
+        ],
         source="test",
     )
     entities = list(iter_staged(staging, "elements"))

@@ -12,7 +12,8 @@ from pathlib import Path
 from undata_library.commit import commit_staged
 from undata_library.enrich import enrich_elements
 from undata_library.ingest import ingest_source
-from undata_library.staging import create_staging_dir, generate_run_id
+from undata_library.staging import create_staging_dir, generate_run_id, write_staged_batch
+from undata_library.storage.parquet_store import ParquetStore
 from undata_library.utils import write_yaml
 
 
@@ -71,12 +72,18 @@ class TestNewEntityFlow:
         # Add a synthetic element to a new staging run
         run_id = generate_run_id()
         staging = create_staging_dir(tmp_path, run_id)
-        write_yaml(
-            staging / "elements" / "synthetic_test.yaml",
-            {
-                "semantic": {"data_type": "float", "unit": "meter"},
-                "provenance": [{"source": "test", "class": "synthetic", "name": "test_distance"}],
-            },
+        write_staged_batch(
+            staging,
+            "elements",
+            [
+                {
+                    "semantic": {"data_type": "float", "unit": "meter"},
+                    "provenance": [
+                        {"source": "test", "class": "synthetic", "name": "test_distance"}
+                    ],
+                }
+            ],
+            source="test",
         )
         commit_staged(staging, tmp_path)
 
