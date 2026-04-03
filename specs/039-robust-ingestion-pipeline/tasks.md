@@ -108,7 +108,7 @@
 
 - [X] T032 [US5] Add graceful error handling for individual dataset failures in batch mode in library/src/undata_library/ingest.py
 - [X] T033 [US5] Add consolidated batch run summary with success/fail/skip counts and per-dataset timing in library/src/undata_library/run_summary.py
-- [ ] T034 [US5] Test batch pipeline: --source openneuro --batch 5 completes with summary in library/tests/test_batch_pipeline.py
+- [X] T034 [US5] Test batch pipeline: --source openneuro --batch 5 completes with summary in library/tests/test_batch_pipeline.py
 
 **Checkpoint**: Batch CLI handles failures gracefully and produces consolidated summary
 
@@ -132,10 +132,10 @@
 
 **Purpose**: Final verification, seed update, cleanup
 
-- [ ] T038 Regenerate curated seed subset from Parquet registry with all sources in backend/seed/
-- [ ] T039 Run full pipeline for all 8 sources end-to-end and verify registry integrity
-- [ ] T040 [P] Verify backend imports from Parquet registry correctly
-- [ ] T041 [P] Verify frontend element detail shows range information for seed elements
+- [X] T038 Regenerate curated seed subset from Parquet registry with all sources in backend/seed/
+- [X] T039 Run full pipeline for all 8 sources end-to-end and verify registry integrity
+- [X] T040 [P] Verify backend imports from Parquet registry correctly
+- [X] T041 [P] Verify frontend element detail shows range information for seed elements
 
 ---
 
