@@ -2,19 +2,42 @@
 
 import { useMemo } from "react";
 import { useQuery } from "@apollo/client/react";
+import { gql } from "@apollo/client";
 import { createColumnHelper } from "@tanstack/react-table";
 import { EntityDataGrid } from "@/components/EntityDataGrid";
 import { EntityTag } from "@/components/EntityTag";
 import { SourceBadge } from "@/components/SourceBadge";
-import { BROWSE_ELEMENTS, BROWSE_VALUES } from "@/graphql/queries";
-import type { ElementConnection, ElementNode, ValueConnection, ValueNode, Edge } from "@/graphql/types";
+
+// Query to resolve a batch of sha256 hashes to element details
+const GET_ELEMENTS_BY_SHA = gql`
+  query GetElementsBySha($sha256: String!) {
+    element(sha256: $sha256) {
+      sha256
+      dataType
+      unit
+      provenance {
+        source
+        name
+      }
+    }
+  }
+`;
+
+const GET_VALUE_BY_SHA = gql`
+  query GetValueBySha($sha256: String!) {
+    value(sha256: $sha256) {
+      sha256
+      label
+      valueType
+      provenance {
+        source
+        name
+      }
+    }
+  }
+`;
 
 // --- Element Property Table (for schema properties) ---
-
-interface ElementPropertyTableProps {
-  properties: string[];
-  schemaSource?: string;
-}
 
 interface ResolvedElement {
   sha256: string;
@@ -24,45 +47,48 @@ interface ResolvedElement {
   source: string;
 }
 
+interface ElementPropertyTableProps {
+  properties: string[];
+  schemaSource?: string;
+}
+
 const elemColHelper = createColumnHelper<ResolvedElement | { raw: string }>();
 
-export function ElementPropertyTable({ properties, schemaSource }: ElementPropertyTableProps) {
-  const { data: elemData } = useQuery<{ browseElements: ElementConnection }>(BROWSE_ELEMENTS, {
-    variables: { first: 5000 },
+function useResolveElements(sha256List: string[]): Map<string, ResolvedElement> {
+  // Query each sha256 individually using Apollo's cache
+  const results = sha256List.map((sha) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { data } = useQuery(GET_ELEMENTS_BY_SHA, {
+      variables: { sha256: sha.slice(0, 12) },
+      skip: !sha || sha.length < 12,
+    });
+    return { sha, data };
   });
 
-  const lookup = useMemo(() => {
+  return useMemo(() => {
     const map = new Map<string, ResolvedElement>();
-    for (const edge of (elemData?.browseElements?.edges ?? []) as Edge<ElementNode>[]) {
-      const e = edge.node;
-      const info: ResolvedElement = {
-        sha256: e.sha256,
-        name: e.provenance?.[0]?.name ?? e.sha256.slice(0, 12),
-        dataType: e.dataType ?? "",
-        unit: e.unit ?? "",
-        source: e.provenance?.[0]?.source ?? "",
-      };
-      map.set(e.sha256, info);
-      map.set(e.sha256.slice(0, 12), info);
-      for (const prov of e.provenance ?? []) {
-        if (prov.name) {
-          const existing = map.get(prov.name);
-          // Index by name — prefer element from same source as the schema
-          if (!existing || (prov.source === schemaSource && existing.source !== schemaSource)) {
-            map.set(prov.name, { ...info, name: prov.name, source: prov.source });
-          }
-          if (!map.has(prov.name.toLowerCase())) {
-            map.set(prov.name.toLowerCase(), { ...info, name: prov.name, source: prov.source });
-          }
-        }
+    for (const { sha, data } of results) {
+      const e = data?.element;
+      if (e) {
+        map.set(sha, {
+          sha256: e.sha256,
+          name: e.provenance?.[0]?.name ?? e.sha256.slice(0, 12),
+          dataType: e.dataType ?? "",
+          unit: e.unit ?? "",
+          source: e.provenance?.[0]?.source ?? "",
+        });
       }
     }
     return map;
-  }, [elemData, schemaSource]);
+  }, [results]);
+}
+
+export function ElementPropertyTable({ properties }: ElementPropertyTableProps) {
+  const lookup = useResolveElements(properties);
 
   const rows = useMemo(() => {
     return properties.map((ref) => {
-      const resolved = lookup.get(ref) || lookup.get(ref.slice(0, 12)) || lookup.get(ref.toLowerCase());
+      const resolved = lookup.get(ref);
       return resolved ?? { raw: ref };
     });
   }, [properties, lookup]);
@@ -75,13 +101,20 @@ export function ElementPropertyTable({ properties, schemaSource }: ElementProper
         cell: (info) => {
           const row = info.row.original;
           if ("raw" in row) {
-            return <span className="font-mono text-xs text-gray-400">{row.raw} <span className="text-[10px] bg-gray-100 px-1 rounded">unresolved</span></span>;
+            return (
+              <span className="font-mono text-xs text-gray-400">
+                {String(row.raw).slice(0, 12)}
+                <span className="text-[10px] bg-gray-100 px-1 rounded ml-1">unresolved</span>
+              </span>
+            );
           }
           return <EntityTag entityType="elements" sha256={row.sha256} label={row.name} />;
         },
         sortingFn: (rowA, rowB) => {
-          const get = (o: Record<string, unknown>) => String(o.raw ?? o.name ?? o.label ?? "");
-          return get(rowA.original as Record<string, unknown>).toLowerCase().localeCompare(get(rowB.original as Record<string, unknown>).toLowerCase());
+          const get = (o: Record<string, unknown>) => String(o.raw ?? o.name ?? "");
+          return get(rowA.original as Record<string, unknown>)
+            .toLowerCase()
+            .localeCompare(get(rowB.original as Record<string, unknown>).toLowerCase());
         },
         enableColumnFilter: false,
       }),
@@ -129,10 +162,6 @@ export function ElementPropertyTable({ properties, schemaSource }: ElementProper
 
 // --- Value Member Table (for valueset members) ---
 
-interface ValueMemberTableProps {
-  members: string[];
-}
-
 interface ResolvedValue {
   sha256: string;
   label: string;
@@ -140,42 +169,45 @@ interface ResolvedValue {
   source: string;
 }
 
+interface ValueMemberTableProps {
+  members: string[];
+}
+
 const valColHelper = createColumnHelper<ResolvedValue | { raw: string }>();
 
-export function ValueMemberTable({ members }: ValueMemberTableProps) {
-  const { data: valData } = useQuery<{ browseValues: ValueConnection }>(BROWSE_VALUES, {
-    variables: { first: 5000 },
+function useResolveValues(sha256List: string[]): Map<string, ResolvedValue> {
+  const results = sha256List.map((sha) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { data } = useQuery(GET_VALUE_BY_SHA, {
+      variables: { sha256: sha.slice(0, 12) },
+      skip: !sha || sha.length < 12,
+    });
+    return { sha, data };
   });
 
-  const lookup = useMemo(() => {
+  return useMemo(() => {
     const map = new Map<string, ResolvedValue>();
-    for (const edge of (valData?.browseValues?.edges ?? []) as Edge<ValueNode>[]) {
-      const v = edge.node;
-      const info: ResolvedValue = {
-        sha256: v.sha256,
-        label: v.label ?? v.sha256.slice(0, 12),
-        valueType: v.valueType ?? "",
-        source: v.provenance?.[0]?.source ?? "",
-      };
-      map.set(v.sha256, info);
-      map.set(v.sha256.slice(0, 12), info);
-      if (v.label) {
-        map.set(v.label, info);
-        map.set(v.label.toLowerCase(), info);
-      }
-      for (const prov of v.provenance ?? []) {
-        if (prov.name && !map.has(prov.name)) {
-          map.set(prov.name, { ...info, label: prov.name });
-          map.set(prov.name.toLowerCase(), { ...info, label: prov.name });
-        }
+    for (const { sha, data } of results) {
+      const v = data?.value;
+      if (v) {
+        map.set(sha, {
+          sha256: v.sha256,
+          label: v.label ?? v.provenance?.[0]?.name ?? v.sha256.slice(0, 12),
+          valueType: v.valueType ?? "",
+          source: v.provenance?.[0]?.source ?? "",
+        });
       }
     }
     return map;
-  }, [valData]);
+  }, [results]);
+}
+
+export function ValueMemberTable({ members }: ValueMemberTableProps) {
+  const lookup = useResolveValues(members);
 
   const rows = useMemo(() => {
     return members.map((ref) => {
-      const resolved = lookup.get(ref) || lookup.get(ref.slice(0, 12)) || lookup.get(ref.toLowerCase()) || lookup.get(ref.replace(/_/g, " ").toLowerCase());
+      const resolved = lookup.get(ref);
       return resolved ?? { raw: ref };
     });
   }, [members, lookup]);
@@ -188,13 +220,20 @@ export function ValueMemberTable({ members }: ValueMemberTableProps) {
         cell: (info) => {
           const row = info.row.original;
           if ("raw" in row) {
-            return <span className="font-mono text-xs text-gray-400">{row.raw} <span className="text-[10px] bg-gray-100 px-1 rounded">unresolved</span></span>;
+            return (
+              <span className="font-mono text-xs text-gray-400">
+                {String(row.raw).slice(0, 12)}
+                <span className="text-[10px] bg-gray-100 px-1 rounded ml-1">unresolved</span>
+              </span>
+            );
           }
           return <EntityTag entityType="values" sha256={row.sha256} label={row.label} />;
         },
         sortingFn: (rowA, rowB) => {
-          const get = (o: Record<string, unknown>) => String(o.raw ?? o.name ?? o.label ?? "");
-          return get(rowA.original as Record<string, unknown>).toLowerCase().localeCompare(get(rowB.original as Record<string, unknown>).toLowerCase());
+          const get = (o: Record<string, unknown>) => String(o.raw ?? o.label ?? "");
+          return get(rowA.original as Record<string, unknown>)
+            .toLowerCase()
+            .localeCompare(get(rowB.original as Record<string, unknown>).toLowerCase());
         },
         enableColumnFilter: false,
       }),
