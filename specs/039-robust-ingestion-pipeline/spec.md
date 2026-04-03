@@ -126,8 +126,8 @@ As a system operator, I need enrichment to work efficiently with the expanded NC
 - **FR-004**: No adapter or script MAY write directly to the registry directory, bypassing the pipeline.
 - **FR-005**: The NDA adapter MUST extract and preserve cross-structure aliasing information in element provenance.
 - **FR-006**: The alignment step MUST use NDA alias information as high-confidence hints when grouping cross-source elements.
-- **FR-007**: All adapters MUST populate element range fields (response_options, min_value, max_value, pattern, type_ref) when the source provides this information.
-- **FR-008**: The frontend element detail page MUST display range/constraint information: valueset links, min/max range, pattern, type_ref link.
+- **FR-007**: All adapters MUST populate element range fields (response_options, min_value, max_value, pattern, type_ref) when the source provides this information. Range fields are part of the semantic identity hash — elements with different ranges are distinct entities.
+- **FR-008**: The frontend element detail page MUST display range/constraint information prominently: linked valueset for response_options, numeric range for min/max, regex for pattern, linked schema for type_ref. Range MUST be visible in both browse and detail views.
 - **FR-009**: The pipeline CLI MUST support `--batch N` for multi-dataset sources and `--all` for API-backed sources.
 - **FR-010**: Batch pipeline runs MUST report progress, handle individual dataset failures gracefully, and produce consolidated run summaries.
 - **FR-011**: Enrichment MUST work efficiently on 200K+ elements with the expanded NCBITaxon filter (~90 taxa).
@@ -145,6 +145,12 @@ As a system operator, I need enrichment to work efficiently with the expanded NC
 - **SC-005**: Element detail pages display range information for at least 50% of elements that have constraints.
 - **SC-006**: NDA cross-structure aliases are preserved and used during alignment, increasing alias detection accuracy by 30%+ over embedding-only matching.
 - **SC-007**: Enrichment on 220K elements completes within 30 minutes with peak memory under 8GB.
+
+## Clarifications
+
+### Session 2026-04-03
+
+- Q: How should element ranges be represented when sources provide different constraints? → A: Elements with different ranges (min/max, response_options) produce different content hashes and are therefore distinct entities. Each element contains the range from its source. The UI must display range information in both browse and detail views.
 
 ## Scope Boundaries
 
