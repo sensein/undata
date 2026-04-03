@@ -209,6 +209,30 @@ def _build_element_text(element_data: dict) -> str:
     return text.strip()
 
 
+def compute_entity_embeddings(
+    entities: list[dict],
+    model_name: str = DEFAULT_MODEL,
+) -> list[dict]:
+    """Compute embeddings for a batch of entities (any type) and add to each dict.
+
+    Sets entity["embedding"] = list[float] (384-dim).
+    Returns the same entities with embeddings added.
+    """
+    texts = [_build_element_text(e) for e in entities]
+    non_empty = [(i, t) for i, t in enumerate(texts) if t]
+
+    if not non_empty:
+        return entities
+
+    indices, valid_texts = zip(*non_empty)
+    vectors = _encode_texts(list(valid_texts), model_name)
+
+    for idx, vec in zip(indices, vectors):
+        entities[idx]["embedding"] = vec.tolist()
+
+    return entities
+
+
 def _build_ontology_text(label: str, synonyms: list[str] | None = None) -> str:
     """Build embedding text from ontology term: '{label}: {synonym1}, {synonym2}'."""
     text = label
@@ -419,9 +443,7 @@ def build_ontology_embeddings(
                 text = _build_ontology_text(label, synonyms)
                 term_uris.append(uri)
                 texts.append(text)
-            logger.info(
-                "Read %d terms from ontology store for embedding", len(term_uris)
-            )
+            logger.info("Read %d terms from ontology store for embedding", len(term_uris))
         except Exception as exc:
             logger.warning("Failed to read ontology store: %s", exc)
 

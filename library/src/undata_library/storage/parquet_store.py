@@ -34,6 +34,7 @@ ENTITY_SCHEMA = pa.schema(
         pa.field("semantic", pa.string()),  # JSON-serialized
         pa.field("provenance", pa.string()),  # JSON-serialized
         pa.field("ontology_annotations", pa.string()),  # JSON-serialized
+        pa.field("embedding", pa.string()),  # JSON-serialized float list (384-dim)
         pa.field("created_at", pa.string()),
     ]
 )
@@ -46,6 +47,9 @@ def _serialize_entity(entity: dict, source: str | None = None) -> dict:
     if not src and prov:
         src = prov[0].get("source", "") if isinstance(prov[0], dict) else ""
 
+    embedding = entity.get("embedding")
+    emb_str = json.dumps(embedding) if embedding is not None else ""
+
     return {
         "sha256": entity.get("sha256", ""),
         "file_name": entity.get("file_name", ""),
@@ -53,6 +57,7 @@ def _serialize_entity(entity: dict, source: str | None = None) -> dict:
         "semantic": json.dumps(entity.get("semantic", {}), default=str),
         "provenance": json.dumps(prov, default=str),
         "ontology_annotations": json.dumps(entity.get("ontology_annotations", []), default=str),
+        "embedding": emb_str,
         "created_at": entity.get("created_at", datetime.now(timezone.utc).isoformat()),
     }
 
@@ -70,6 +75,14 @@ def _deserialize_row(row: dict) -> dict:
             entity[field] = json.loads(raw) if raw else ({} if field == "semantic" else [])
         except (json.JSONDecodeError, TypeError):
             entity[field] = {} if field == "semantic" else []
+
+    # Embedding (JSON-serialized float list)
+    emb_raw = row.get("embedding", "")
+    if emb_raw:
+        try:
+            entity["embedding"] = json.loads(emb_raw)
+        except (json.JSONDecodeError, TypeError):
+            pass
 
     # Flatten semantic fields to top level for compatibility with YAML format
     sem = entity.get("semantic", {})
