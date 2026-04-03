@@ -802,3 +802,245 @@ def _generate_transform_mappings(
                     created += 1
 
     return {"created": created}
+
+
+def batch_ingest(
+    source: str,
+    output_dir: Path,
+    max_items: int | None = None,
+    model_name: str = "all-MiniLM-L6-v2",
+    skip_enrich: bool = False,
+    skip_align: bool = False,
+) -> dict:
+    """Batch ingest multiple datasets/structures from a multi-item source.
+
+    For OpenNeuro: clones N datasets via git+datalad, extracts, enriches, commits.
+    For NDA: fetches N structures from API, extracts, enriches, commits.
+
+    All entities from the batch are staged together, then enriched and committed
+    as a single pipeline run.
+
+    Returns: {successful, failed, skipped, total_entities, elapsed_seconds}
+    """
+    import logging
+    import time
+
+    logger = logging.getLogger(__name__)
+
+    from .commit import commit_staged
+    from .staging import create_staging_dir, generate_run_id
+
+    run_id = generate_run_id()
+    staging = create_staging_dir(output_dir, run_id)
+    cache_dir = output_dir / "ontology-cache"
+
+    t0 = time.time()
+    successful = 0
+    failed = 0
+    skipped = 0
+    total_entities = 0
+
+    if source == "openneuro":
+        total_entities, successful, failed, skipped = _batch_openneuro(
+            staging, max_items or 100, logger
+        )
+    elif source == "nda":
+        total_entities, successful, failed, skipped = _batch_nda(staging, max_items, logger)
+    else:
+        logger.error("Batch mode not supported for source: %s", source)
+        return {"successful": 0, "failed": 1, "skipped": 0, "total_entities": 0}
+
+    # Enrich
+    if not skip_enrich and total_entities > 0:
+        logger.info("Enriching %d entities...", total_entities)
+        try:
+            from .enrich import enrich_all
+
+            enrich_all(staging, cache_dir=cache_dir, model_name=model_name)
+        except Exception as e:
+            logger.warning("Enrichment failed: %s", e)
+
+    # Commit
+    if total_entities > 0:
+        logger.info("Committing to registry...")
+        try:
+            stats = commit_staged(staging, output_dir)
+            logger.info(
+                "Committed: %d, merged: %d",
+                stats.get("committed", 0),
+                stats.get("merged", 0),
+            )
+        except Exception as e:
+            logger.warning("Commit failed: %s", e)
+
+    elapsed = time.time() - t0
+
+    # Save run summary
+    from .run_summary import save_batch_summary
+
+    save_batch_summary(
+        output_dir,
+        source=source,
+        successful=successful,
+        failed=failed,
+        skipped=skipped,
+        total_entities=total_entities,
+        elapsed=elapsed,
+    )
+
+    return {
+        "successful": successful,
+        "failed": failed,
+        "skipped": skipped,
+        "total_entities": total_entities,
+        "elapsed_seconds": round(elapsed, 1),
+    }
+
+
+def _batch_openneuro(staging: Path, max_items: int, logger) -> tuple[int, int, int, int]:
+    """Clone and extract OpenNeuro datasets."""
+    import shutil
+    import subprocess
+    import tempfile
+
+    import httpx
+
+    from .adapters.openneuro import OpenNeuroAdapter
+    from .staging import write_staged_batch
+
+    # Get dataset IDs from OpenNeuro API
+    resp = httpx.post(
+        "https://openneuro.org/crn/graphql",
+        json={
+            "query": f"""
+            {{ datasets(first: {max_items}, orderBy: {{created: descending}}) {{
+                edges {{ node {{ id }} }}
+            }} }}
+            """
+        },
+        timeout=30,
+    )
+    dataset_ids = [e["node"]["id"] for e in resp.json()["data"]["datasets"]["edges"]]
+    logger.info("Found %d OpenNeuro datasets", len(dataset_ids))
+
+    adapter = OpenNeuroAdapter()
+    tmp_base = Path(tempfile.mkdtemp(prefix="on-batch-"))
+    total = 0
+    ok = 0
+    fail = 0
+    skip = 0
+
+    for i, did in enumerate(dataset_ids):
+        logger.info("[%d/%d] %s", i + 1, len(dataset_ids), did)
+        dest = tmp_base / did
+        try:
+            subprocess.run(
+                [
+                    "git",
+                    "clone",
+                    "--single-branch",
+                    f"https://github.com/OpenNeuroDatasets/{did}.git",
+                    str(dest),
+                ],
+                check=True,
+                capture_output=True,
+                timeout=120,
+            )
+            subprocess.run(
+                ["git", "-C", str(dest), "annex", "init"],
+                check=False,
+                capture_output=True,
+                timeout=30,
+            )
+            for pattern in ["*.tsv", "*.json", "phenotype/*"]:
+                try:
+                    subprocess.run(
+                        ["datalad", "get", "-d", str(dest), pattern],
+                        check=False,
+                        capture_output=True,
+                        timeout=60,
+                    )
+                except subprocess.TimeoutExpired:
+                    pass
+
+            entities = adapter.extract(dest)
+            shutil.rmtree(dest, ignore_errors=True)
+
+            if not entities:
+                skip += 1
+                continue
+
+            # Stage as Parquet
+            by_type: dict[str, list[dict]] = {}
+            for e in entities:
+                et = {
+                    "attribute": "elements",
+                    "class": "schemas",
+                    "enum_value": "values",
+                    "valueset": "valuesets",
+                }.get(e.entity_type.value, "elements")
+                by_type.setdefault(et, []).append(
+                    {
+                        "semantic": e.semantic,
+                        "provenance": [e.provenance],
+                    }
+                )
+            for et, ents in by_type.items():
+                write_staged_batch(staging, et, ents, source=f"openneuro/{did}")
+
+            total += len(entities)
+            ok += 1
+            logger.info("  → %d entities", len(entities))
+        except Exception as e:
+            fail += 1
+            logger.warning("  → failed: %s", e)
+            shutil.rmtree(dest, ignore_errors=True)
+
+    shutil.rmtree(tmp_base, ignore_errors=True)
+    return total, ok, fail, skip
+
+
+def _batch_nda(staging: Path, max_items: int | None, logger) -> tuple[int, int, int, int]:
+    """Fetch and extract NDA data structures."""
+    import httpx
+
+    from .adapters.nda import NDAAdapter
+    from .staging import write_staged_batch
+
+    # Get structure list from NDA API
+    resp = httpx.get(
+        "https://nda.nih.gov/api/datadictionary/v2/datastructure",
+        timeout=30,
+        headers={"Accept": "application/json"},
+    )
+    all_names = [s.get("shortName", s) if isinstance(s, dict) else s for s in resp.json()]
+    if max_items:
+        all_names = all_names[:max_items]
+    logger.info("Ingesting %d NDA structures", len(all_names))
+
+    adapter = NDAAdapter()
+    entities = adapter.extract(Path("/tmp/nda"), structures=all_names, timeout=10)
+    logger.info("Extracted %d entities from NDA", len(entities))
+
+    if not entities:
+        return 0, 0, 0, len(all_names)
+
+    # Stage as Parquet
+    by_type: dict[str, list[dict]] = {}
+    for e in entities:
+        et = {
+            "attribute": "elements",
+            "class": "schemas",
+            "enum_value": "values",
+            "valueset": "valuesets",
+        }.get(e.entity_type.value, "elements")
+        by_type.setdefault(et, []).append(
+            {
+                "semantic": e.semantic,
+                "provenance": [e.provenance],
+            }
+        )
+    for et, ents in by_type.items():
+        write_staged_batch(staging, et, ents, source="nda")
+
+    return len(entities), len(all_names), 0, 0

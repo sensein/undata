@@ -39,9 +39,9 @@
 
 **Independent Test**: Ingest NDA → entities in .parquet files → CLI can query individual entities
 
-- [ ] T009 [US1] Add CLI inspect command to query individual entities from Parquet files by sha256 or name in library/src/undata_library/cli.py
+- [X] T009 [US1] Add CLI inspect command to query individual entities from Parquet files by sha256 or name in library/src/undata_library/cli.py
 - [ ] T010 [US1] Update import_service.py to read Parquet registry format when importing to database in backend/src/services/import_service.py
-- [ ] T011 [US1] Add integration test: write 10K entities to Parquet, read back, verify dedup works, assert Parquet file size < 10x individual YAML equivalent in library/tests/test_parquet_store.py
+- [X] T011 [US1] Add integration test: write 10K entities to Parquet, read back, verify dedup works, assert Parquet file size < 10x individual YAML equivalent in library/tests/test_parquet_store.py
 - [ ] T012 [US1] Update export_service.py to export Parquet format alongside YAML in backend/src/services/export_service.py
 
 **Checkpoint**: Full Parquet round-trip — write, read, query, import to DB, export
@@ -54,14 +54,14 @@
 
 **Independent Test**: `undata-library pipeline --source nda --all` → all entities enriched + committed with sha256
 
-- [ ] T013 [US2] Add --batch N flag to pipeline CLI for multi-dataset sources in library/src/undata_library/cli.py
-- [ ] T014 [US2] Add --all flag to pipeline CLI for API-backed sources (NDA) in library/src/undata_library/cli.py
-- [ ] T015 [US2] Implement batch_ingest() function — iterate datasets/structures, accumulate entities in staging in library/src/undata_library/ingest.py
-- [ ] T016 [US2] Wire OpenNeuro batch: clone via git+datalad → extract → cleanup → next dataset in library/src/undata_library/ingest.py
-- [ ] T017 [US2] Wire NDA batch: fetch structure from API → extract → next structure in library/src/undata_library/ingest.py
-- [ ] T018 [US2] Add BatchRunSummary with per-dataset breakdown to run summary output in library/src/undata_library/run_summary.py
+- [X] T013 [US2] Add --batch N flag to pipeline CLI for multi-dataset sources in library/src/undata_library/cli.py
+- [X] T014 [US2] Add --all flag to pipeline CLI for API-backed sources (NDA) in library/src/undata_library/cli.py
+- [X] T015 [US2] Implement batch_ingest() function — iterate datasets/structures, accumulate entities in staging in library/src/undata_library/ingest.py
+- [X] T016 [US2] Wire OpenNeuro batch: clone via git+datalad → extract → cleanup → next dataset in library/src/undata_library/ingest.py
+- [X] T017 [US2] Wire NDA batch: fetch structure from API → extract → next structure in library/src/undata_library/ingest.py
+- [X] T018 [US2] Add BatchRunSummary with per-dataset breakdown to run summary output in library/src/undata_library/run_summary.py
 - [ ] T019 [US2] Remove ad-hoc batch scripts (replaced by CLI) and add test asserting no code writes directly to registry outside pipeline in library/scripts/ingest_openneuro_fast.py, library/scripts/ingest_openneuro_batch.py, and library/tests/test_no_direct_writes.py
-- [ ] T020 [US2] Add progress reporting to batch pipeline — log [N/total] dataset_id → entity_count (time) in library/src/undata_library/ingest.py
+- [X] T020 [US2] Add progress reporting to batch pipeline — log [N/total] dataset_id → entity_count (time) in library/src/undata_library/ingest.py
 
 **Checkpoint**: `pipeline --source nda --all` completes through full pipeline stages
 

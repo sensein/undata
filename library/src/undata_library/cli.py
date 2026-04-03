@@ -554,7 +554,11 @@ def ontology_index_cmd(elements_path: str, output: str) -> None:
 
 
 @main.command()
-@click.option("--source", required=True, help="Source name (bids, nwb, dandi, aind, openminds)")
+@click.option(
+    "--source",
+    required=True,
+    help="Source name (bids, nwb, dandi, aind, openminds, openneuro, reproschema, nda)",
+)
 @click.option("--path", "-p", default=None, help="Path to raw schema files")
 @click.option(
     "--output-dir",
@@ -565,6 +569,18 @@ def ontology_index_cmd(elements_path: str, output: str) -> None:
 @click.option("--model", "-m", default="all-MiniLM-L6-v2", help="Embedding model name")
 @click.option("--skip-enrich", is_flag=True, help="Skip enrichment step")
 @click.option("--skip-align", is_flag=True, help="Skip alignment step")
+@click.option(
+    "--batch",
+    type=int,
+    default=None,
+    help="Batch mode: ingest N datasets (OpenNeuro) or structures (NDA)",
+)
+@click.option(
+    "--all",
+    "ingest_all",
+    is_flag=True,
+    help="Ingest all available datasets/structures for the source",
+)
 def pipeline(
     source: str,
     path: str | None,
@@ -572,8 +588,14 @@ def pipeline(
     model: str,
     skip_enrich: bool,
     skip_align: bool,
+    batch: int | None,
+    ingest_all: bool,
 ) -> None:
-    """Run staged pipeline: extract → enrich → commit → align."""
+    """Run staged pipeline: extract → enrich → commit → align.
+
+    For batch sources (openneuro, nda), use --batch N or --all to process
+    multiple datasets/structures through the full pipeline.
+    """
     import time
 
     from .align import align_elements
@@ -586,6 +608,28 @@ def pipeline(
     schema_path = Path(path) if path else None
     cache_dir = lib / "ontology-cache"
     timings: dict[str, float] = {}
+
+    # Batch mode: delegate to batch_ingest for multi-dataset sources
+    if batch is not None or ingest_all:
+        from .ingest import batch_ingest
+
+        max_items = batch if batch else None  # None = all
+        t0 = time.time()
+        result = batch_ingest(
+            source=source,
+            output_dir=lib,
+            max_items=max_items,
+            model_name=model,
+            skip_enrich=skip_enrich,
+            skip_align=skip_align,
+        )
+        elapsed = time.time() - t0
+        click.echo(f"\nBatch complete in {elapsed:.0f}s")
+        click.echo(
+            f"  Datasets: {result.get('successful', 0)} ok, {result.get('failed', 0)} failed, {result.get('skipped', 0)} skipped"
+        )
+        click.echo(f"  Entities: {result.get('total_entities', 0)}")
+        return
 
     # Check source version for idempotency short-circuit
     from .run_summary import load_previous_summary as _load_prev
@@ -1026,3 +1070,58 @@ def cache_clean(older_than: int | None) -> None:
     cache = SourceCache()
     removed = cache.clean(older_than_days=older_than)
     click.echo(f"Removed {removed} cached source(s).")
+
+
+@main.command()
+@click.argument("registry_path", type=click.Path(exists=True))
+@click.option("--sha256", "-s", default=None, help="Look up entity by sha256 (prefix match)")
+@click.option("--entity-type", "-t", default="elements", help="Entity type to query")
+@click.option("--source", default=None, help="Filter by source name")
+@click.option("--count-only", is_flag=True, help="Only show entity count")
+def inspect(
+    registry_path: str, sha256: str | None, entity_type: str, source: str | None, count_only: bool
+) -> None:
+    """Inspect entities in a Parquet registry.
+
+    Query individual entities by sha256, list by source, or count totals.
+    Works with both Parquet and YAML registries.
+    """
+    import json as _json
+
+    from .storage.parquet_store import ParquetStore
+
+    store = ParquetStore(Path(registry_path))
+
+    if count_only:
+        total = store.count(entity_type, source=source)
+        click.echo(f"{entity_type}: {total}")
+        return
+
+    if sha256:
+        entity = store.read(entity_type, sha256)
+        if entity is None:
+            # Try FileBackend YAML fallback
+            from .storage.file_backend import FileEntityStore
+
+            yaml_store = FileEntityStore(Path(registry_path))
+            entity = yaml_store.find_by_hash(entity_type, sha256)
+
+        if entity:
+            click.echo(_json.dumps(entity, indent=2, default=str))
+        else:
+            click.echo(f"Not found: {entity_type}/{sha256}", err=True)
+        return
+
+    # List entities
+    count = 0
+    for entity in store.list(entity_type, source=source):
+        sha = entity.get("sha256", "?")[:12]
+        name = entity.get("file_name", entity.get("name", entity.get("label", "?")))
+        click.echo(f"  {sha}  {name}")
+        count += 1
+        if count >= 50:
+            remaining = store.count(entity_type, source=source) - count
+            if remaining > 0:
+                click.echo(f"  ... and {remaining} more")
+            break
+    click.echo(f"\nTotal: {store.count(entity_type, source=source)}")
