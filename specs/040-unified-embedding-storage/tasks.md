@@ -26,9 +26,9 @@
 - [X] T004 [US5] Rewrite FileBackend to delegate all entity operations to ParquetStore (remove YAML read/write) in library/src/undata_library/storage/file_backend.py
 - [X] T005 [US5] Remove FileEntityStore class (YAML-backed entity store) from library/src/undata_library/storage/file_backend.py
 - [X] T006 [US5] Update StorageBackend protocol — remove write_batch/read_batch (ParquetStore handles natively) in library/src/undata_library/storage/protocol.py
-- [ ] T007 [US5] Update all pipeline callers to use ParquetStore directly: enrich.py, align.py, alias_detection.py, transform.py in library/src/undata_library/
+- [X] T007 [US5] Update all pipeline callers to use ParquetStore directly: enrich.py, align.py, alias_detection.py, transform.py in library/src/undata_library/
 - [X] T008 [US5] Remove iter_staged YAML path and write_staged_entity from library/src/undata_library/staging.py
-- [ ] T009 [US5] Run full test suite — verify no tests depend on YAML entity files in library/tests/
+- [X] T009 [US5] Run full test suite — verify no tests depend on YAML entity files in library/tests/
 
 **Checkpoint**: All entity access goes through ParquetStore; no YAML entity I/O remains
 
@@ -44,7 +44,7 @@
 - [X] T011 [US1] Rewrite commit_staged to read from ParquetStore, compute sha256, write committed entities to ParquetStore (no YAML output) in library/src/undata_library/commit.py
 - [X] T012 [US1] Rewrite cross-reference resolution (_resolve_cross_references) to operate on DataFrames from ParquetStore in library/src/undata_library/commit.py
 - [X] T013 [US1] Remove yaml.dump calls from commit path and yaml_to_parquet conversion step in library/src/undata_library/commit.py and library/src/undata_library/staging.py
-- [ ] T014 [US1] Update batch_ingest to use ParquetStore throughout (no YAML intermediaries) in library/src/undata_library/ingest.py
+- [X] T014 [US1] Update batch_ingest to use ParquetStore throughout (no YAML intermediaries) in library/src/undata_library/ingest.py
 - [ ] T015 [US1] Add test: pipeline run produces zero YAML entity files in library/tests/test_parquet_pipeline.py
 
 **Checkpoint**: `find output -name "*.yaml" -not -path "*/runs/*"` returns 0
@@ -60,7 +60,7 @@
 - [X] T016 [US2] Create build_comprehensive_embedding_text() that uses name + description + type + unit + annotations + provenance in library/src/undata_library/embeddings.py
 - [X] T017 [US2] Add embedding computation step to commit_staged — after sha256 computation, compute embeddings for all entities in batch in library/src/undata_library/commit.py
 - [X] T018 [US2] Ensure all entity types (elements, schemas, values, valuesets) get embeddings at commit in library/src/undata_library/commit.py
-- [ ] T019 [US2] Update backend import to skip embedding model loading when all entities have pre-computed embeddings in backend/src/storage/database_backend.py
+- [X] T019 [US2] Update backend import to skip embedding model loading when all entities have pre-computed embeddings in backend/src/storage/database_backend.py
 - [ ] T020 [US2] Update backend import_service to read Parquet-only (remove YAML import path) in backend/src/services/import_service.py
 - [ ] T021 [US2] Add test: committed entity has embedding field with 384 floats in library/tests/test_parquet_pipeline.py
 - [ ] T022 [US2] Add test: backend import of 100 entities with embeddings completes without loading sentence-transformers model in backend/tests/test_import.py
