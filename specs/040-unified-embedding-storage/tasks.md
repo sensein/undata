@@ -40,7 +40,7 @@
 
 **Independent Test**: Pipeline run for BIDS → find /output -name "*.yaml" | grep -v runs → 0 results
 
-- [ ] T010 [US1] Rewrite ingest_source to collect entities in memory and call ParquetStore.write_batch instead of writing individual YAML files in library/src/undata_library/ingest.py
+- [X] T010 [US1] Rewrite ingest_source to collect entities in memory and call ParquetStore.write_batch instead of writing individual YAML files in library/src/undata_library/ingest.py
 - [X] T011 [US1] Rewrite commit_staged to read from ParquetStore, compute sha256, write committed entities to ParquetStore (no YAML output) in library/src/undata_library/commit.py
 - [X] T012 [US1] Rewrite cross-reference resolution (_resolve_cross_references) to operate on DataFrames from ParquetStore in library/src/undata_library/commit.py
 - [X] T013 [US1] Remove yaml.dump calls from commit path and yaml_to_parquet conversion step in library/src/undata_library/commit.py and library/src/undata_library/staging.py

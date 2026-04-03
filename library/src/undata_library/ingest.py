@@ -42,6 +42,9 @@ def ingest_source(
     Accepts either library_path (Path) or backend (StorageBackend).
     If backend is provided and has a base_dir attribute, uses that as library_path.
 
+    All entities are collected in memory by type and written to ParquetStore
+    via write_staged_batch() at the end.
+
     Returns stats: {created, merged, total}.
     """
     if library_path is None and backend is not None and hasattr(backend, "base_dir"):
@@ -49,6 +52,8 @@ def ingest_source(
     elif library_path is None and backend is None:
         raise ValueError("Either library_path or backend must be provided")
     from datetime import datetime, timezone
+
+    from .staging import write_staged_batch
 
     # Load extractor — returns (attribute_pairs, all_entities)
     pairs, all_entities = _extract(source_name, schema_path)
@@ -68,9 +73,6 @@ def ingest_source(
     # This keeps ingestion pure (source data only) and tracks annotations
     # as separate PROV-O curation events.
 
-    # Route all entity types to their correct directories
-    import uuid
-
     from .models import EntityType
 
     stats_by_type: dict[str, int] = {
@@ -88,16 +90,20 @@ def ingest_source(
         EntityType.VALUESET: "valuesets",
     }
 
-    # Create all directories
-    for dirname in type_to_dir.values():
-        (library_path / dirname).mkdir(parents=True, exist_ok=True)
+    # Collect all entities in memory by type: dict[str, list[dict]]
+    batches: dict[str, list[dict]] = {
+        "elements": [],
+        "schemas": [],
+        "values": [],
+        "valuesets": [],
+    }
 
     # Dedup by (entity_type, source, class, name)
     seen_keys: set[tuple[str, str, str, str]] = set()
     created = 0
     merged = 0
 
-    # Write ATTRIBUTE entities from pairs (legacy path — these have SemanticIdentity)
+    # Collect ATTRIBUTE entities from pairs (these have SemanticIdentity)
     for sem, prov in pairs:
         dedup_key = ("attribute", prov.source, prov.class_, prov.name)
         if dedup_key in seen_keys:
@@ -106,12 +112,12 @@ def ingest_source(
         seen_keys.add(dedup_key)
 
         record = ElementRecord(semantic=sem, provenance=[prov])
-        filepath = library_path / "elements" / f"{uuid.uuid4()}.yaml"
-        _write_element(filepath, record)
+        data = record.model_dump(mode="json", exclude_none=True, by_alias=True)
+        batches["elements"].append(data)
         created += 1
         stats_by_type["elements"] += 1
 
-    # Write CLASS, ENUM_VALUE, VALUESET entities from all_entities
+    # Collect CLASS, ENUM_VALUE, VALUESET entities from all_entities
     for entity in all_entities:
         etype = entity.entity_type
         dirname = type_to_dir.get(etype)
@@ -133,21 +139,22 @@ def ingest_source(
             "semantic": entity.semantic if isinstance(entity.semantic, dict) else {},
             "provenance": [prov],
         }
-        filepath = library_path / dirname / f"{uuid.uuid4()}.yaml"
-        filepath.write_text(
-            yaml.dump(data, default_flow_style=False, sort_keys=False),
-            encoding="utf-8",
-        )
+        batches[dirname].append(data)
         stats_by_type[dirname] += 1
 
-    # Legacy: also extract values from response_options on elements
-    registry_path = library_path / "hash-registry.yaml"
-    registry = _load_registry(registry_path)
-    value_stats = _extract_values(source_name, pairs, library_path, registry)
-    stats_by_type["values"] += value_stats.get("created", 0)
+    # Extract values from response_options on elements (in memory)
+    value_mappings = _load_value_mappings(library_path)
+    extra_values = _collect_response_option_values(source_name, pairs, value_mappings)
+    batches["values"].extend(extra_values)
+    stats_by_type["values"] += len(extra_values)
 
-    # Resolve response_option values to ValueConcept URIs
-    _resolve_response_option_uris(library_path)
+    # Resolve response_option values to ValueConcept URIs (in memory)
+    _resolve_response_option_uris_in_memory(batches["elements"], batches["values"])
+
+    # Write all collected entities to ParquetStore via write_staged_batch
+    for entity_type, entities in batches.items():
+        if entities:
+            write_staged_batch(library_path, entity_type, entities, source=source_name)
 
     return {
         "created": created,
@@ -182,6 +189,97 @@ def _load_value_mappings(library_path: Path) -> dict[str, dict]:
     return lookup
 
 
+def _collect_response_option_values(
+    source_name: str,
+    pairs: list[tuple[SemanticIdentity, ProvenanceEntry]],
+    value_mappings: dict[str, dict],
+) -> list[dict]:
+    """Extract enum values from element response_options and return as dicts.
+
+    Returns a list of entity dicts ready for write_staged_batch.
+    """
+    # Collect all raw enum values with their source
+    raw_values: list[tuple[str, str]] = []  # (raw_value, source_name)
+    for sem, _prov in pairs:
+        if sem.response_options:
+            for opt in sem.response_options:
+                raw_values.append((opt.value, source_name))
+
+    # Group by mapped identity
+    value_groups: dict[str, tuple[ValueSemanticIdentity, list[ProvenanceEntry]]] = {}
+    for raw_val, src in raw_values:
+        mapping = value_mappings.get(raw_val.lower())
+        if mapping:
+            label = mapping["label"]
+        else:
+            label = raw_val.lower().replace(" ", "_")
+
+        sem_id = ValueSemanticIdentity(
+            value_type="categorical",
+            label=label,
+        )
+        sem_dict = sem_id.model_dump(exclude_none=True)
+        sha = compute_sha256(canonical_json(sem_dict))
+
+        prov = ProvenanceEntry(source=src, **{"class": ""}, name=raw_val)
+
+        if sha not in value_groups:
+            value_groups[sha] = (sem_id, [])
+        # Avoid duplicate provenance
+        existing_raw = {(p.source, p.name) for p in value_groups[sha][1]}
+        if (src, raw_val) not in existing_raw:
+            value_groups[sha][1].append(prov)
+
+    results: list[dict] = []
+    for _sha, (sem_id, provs) in value_groups.items():
+        record = ValueConcept(semantic=sem_id, provenance=provs)
+        data = record.model_dump(mode="json", exclude_none=True)
+        results.append(data)
+
+    return results
+
+
+def _resolve_response_option_uris_in_memory(
+    elements: list[dict],
+    values: list[dict],
+) -> int:
+    """Resolve response_option values to ValueConcept URIs in memory.
+
+    Mutates element dicts in place, linking response_option values to
+    matching value labels. Returns number of elements modified.
+    """
+    # Build lookup: raw_value (lowercased) → value label
+    value_lookup: dict[str, str] = {}
+    for val_entity in values:
+        sem = val_entity.get("semantic", {})
+        label = sem.get("label", "")
+        if label:
+            value_lookup[label.lower()] = label
+        for p in val_entity.get("provenance", []):
+            raw_name = p.get("name", "")
+            if raw_name:
+                value_lookup[raw_name.lower()] = label
+
+    resolved = 0
+    for elem in elements:
+        sem = elem.get("semantic", {})
+        opts = sem.get("response_options")
+        if not opts:
+            continue
+        changed = False
+        for opt in opts:
+            raw = opt.get("value", "")
+            match_label = value_lookup.get(raw.lower())
+            if match_label and not opt.get("ontology_term"):
+                # Use label as URI placeholder — will be resolved to
+                # content-addressed URI at commit time
+                opt["ontology_term"] = f"{BASE_URI}/values/{match_label}"
+                changed = True
+        if changed:
+            resolved += 1
+    return resolved
+
+
 def _extract_values(
     source_name: str,
     pairs: list[tuple[SemanticIdentity, ProvenanceEntry]],
@@ -196,7 +294,7 @@ def _extract_values(
 
     # Collect all raw enum values with their source
     raw_values: list[tuple[str, str]] = []  # (raw_value, source_name)
-    for sem, prov in pairs:
+    for sem, _prov in pairs:
         # Extract enum values from response_options
         if sem.response_options:
             for opt in sem.response_options:
