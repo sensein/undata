@@ -2,8 +2,6 @@
 
 from unittest.mock import patch
 
-import pytest
-
 
 def _mock_fetch_structure(client, short_name):
     """Mock NDA API response with shared elements across structures."""

@@ -1,7 +1,5 @@
 """Tests for ParquetStore — Parquet-based entity storage."""
 
-import json
-
 import pytest
 
 from undata_library.storage.parquet_store import ParquetStore
@@ -104,6 +102,7 @@ class TestIndex:
         index_path = store.build_index("elements")
         assert index_path.exists()
         import pyarrow.parquet as pq
+
         table = pq.read_table(index_path)
         assert table.num_rows == 2
 
@@ -120,16 +119,14 @@ class TestScaleAndSize:
     def test_parquet_smaller_than_yaml(self, store, tmp_path):
         """Parquet file should be significantly smaller than equivalent YAML."""
         import yaml
+
         entities = [_make_entity(f"elem_{i:05d}", sha=f"sha_size_{i:05d}") for i in range(1_000)]
         store.write_batch("elements", entities, source="size_test")
 
         parquet_size = (tmp_path / "elements" / "size_test.parquet").stat().st_size
 
         # Estimate YAML size
-        yaml_size = sum(
-            len(yaml.dump(e, default_flow_style=False).encode())
-            for e in entities
-        )
+        yaml_size = sum(len(yaml.dump(e, default_flow_style=False).encode()) for e in entities)
 
         ratio = yaml_size / parquet_size
         assert ratio > 2, f"Parquet should be >2x smaller than YAML, got {ratio:.1f}x"
