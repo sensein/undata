@@ -41,7 +41,7 @@
 
 - [ ] T009 [US1] Add CLI inspect command to query individual entities from Parquet files by sha256 or name in library/src/undata_library/cli.py
 - [ ] T010 [US1] Update import_service.py to read Parquet registry format when importing to database in backend/src/services/import_service.py
-- [ ] T011 [US1] Add integration test: write 10K entities to Parquet, read back, verify dedup works in library/tests/test_parquet_store.py
+- [ ] T011 [US1] Add integration test: write 10K entities to Parquet, read back, verify dedup works, assert Parquet file size < 10x individual YAML equivalent in library/tests/test_parquet_store.py
 - [ ] T012 [US1] Update export_service.py to export Parquet format alongside YAML in backend/src/services/export_service.py
 
 **Checkpoint**: Full Parquet round-trip — write, read, query, import to DB, export
@@ -60,7 +60,7 @@
 - [ ] T016 [US2] Wire OpenNeuro batch: clone via git+datalad → extract → cleanup → next dataset in library/src/undata_library/ingest.py
 - [ ] T017 [US2] Wire NDA batch: fetch structure from API → extract → next structure in library/src/undata_library/ingest.py
 - [ ] T018 [US2] Add BatchRunSummary with per-dataset breakdown to run summary output in library/src/undata_library/run_summary.py
-- [ ] T019 [US2] Remove ad-hoc batch scripts (replaced by CLI) in library/scripts/ingest_openneuro_fast.py and library/scripts/ingest_openneuro_batch.py
+- [ ] T019 [US2] Remove ad-hoc batch scripts (replaced by CLI) and add test asserting no code writes directly to registry outside pipeline in library/scripts/ingest_openneuro_fast.py, library/scripts/ingest_openneuro_batch.py, and library/tests/test_no_direct_writes.py
 - [ ] T020 [US2] Add progress reporting to batch pipeline — log [N/total] dataset_id → entity_count (time) in library/src/undata_library/ingest.py
 
 **Checkpoint**: `pipeline --source nda --all` completes through full pipeline stages
@@ -76,7 +76,7 @@
 - [ ] T021 [US3] Add alias dedup to NDA adapter — group elements by name+type across structures, merge provenance in library/src/undata_library/adapters/nda.py
 - [ ] T022 [US3] Add alias_hints field to ClassifiedEntity semantic dict (list of source refs for shared elements) in library/src/undata_library/adapters/nda.py
 - [ ] T023 [US3] Update alignment step to check alias_hints and boost confidence for pre-verified aliases in library/src/undata_library/align.py
-- [ ] T024 [US3] Add test: two NDA structures with shared element → alias_hints populated → alignment links them in library/tests/test_nda_aliases.py
+- [ ] T024 [US3] Add test: two NDA structures with shared element → alias_hints populated → alignment links them with higher confidence than embedding-only baseline in library/tests/test_nda_aliases.py
 
 **Checkpoint**: NDA aliases used as high-confidence hints in alignment
 
