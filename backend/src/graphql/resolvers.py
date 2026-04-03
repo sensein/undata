@@ -332,7 +332,7 @@ async def resolve_search(
                     data_type=row.data_type,
                     unit=row.unit,
                     description=row.description or prov.get("description", ""),
-                    score=1.0,
+                    score=1.0 if mode == "lexical" else 0.0,
                 )
             )
 
@@ -366,11 +366,11 @@ async def resolve_search(
                         name=prov.get("name", nm),
                         source=prov.get("source"),
                         description=row.description or prov.get("description", ""),
-                        score=score_base,
+                        score=score_base if mode == "lexical" else 0.0,
                     )
                 )
 
-    # --- Semantic search (pgvector nearest-neighbor) ---
+    # --- Semantic search (pgvector nearest-neighbor) across ALL entity types ---
     if do_semantic:
         try:
             from src.services.embedding_service import compute_embedding
@@ -379,33 +379,60 @@ async def resolve_search(
             if query_vec is not None:
                 from sqlalchemy import text as sa_text
 
-                # Use pgvector cosine distance for element search
-                sem_stmt = sa_text(
-                    "SELECT sha256, file_name, data_type, unit, description, provenance, "
-                    "1 - (embedding <=> :qvec::vector) AS similarity "
-                    "FROM elements WHERE embedding IS NOT NULL "
-                    "ORDER BY embedding <=> :qvec::vector LIMIT :lim"
-                )
-                sem_result = await session.execute(
-                    sem_stmt, {"qvec": str(query_vec.tolist()), "lim": first}
-                )
                 seen_sha = {r.sha256 for r in results}
-                for row in sem_result:
-                    if row.sha256 in seen_sha:
-                        continue
-                    prov = (row.provenance or [{}])[0] if row.provenance else {}
-                    results.append(
-                        t.SearchResultType(
-                            entity_type="element",
-                            sha256=row.sha256,
-                            name=prov.get("name", row.file_name or row.sha256[:12]),
-                            source=prov.get("source"),
-                            data_type=row.data_type,
-                            unit=row.unit,
-                            description=row.description or prov.get("description", ""),
-                            score=round(float(row.similarity), 4),
+                sem_scores: dict[str, float] = {}  # sha → similarity
+
+                # Search each entity type that has embeddings
+                for table, etype in [
+                    ("elements", "element"),
+                    ("schemas", "schema"),
+                    ("values", "value"),
+                    ("valuesets", "valueset"),
+                ]:
+                    try:
+                        sem_stmt = sa_text(
+                            f"SELECT sha256, file_name, description, provenance, "
+                            f"1 - (embedding <=> :qvec::vector) AS similarity "
+                            f"FROM {table} WHERE embedding IS NOT NULL "
+                            f"ORDER BY embedding <=> :qvec::vector LIMIT :lim"
                         )
-                    )
+                        sem_result = await session.execute(
+                            sem_stmt,
+                            {"qvec": str(query_vec.tolist()), "lim": first},
+                        )
+                        for row in sem_result:
+                            sim = round(float(row.similarity), 4)
+                            sem_scores[row.sha256] = sim
+                            if row.sha256 in seen_sha:
+                                continue  # Will update score below
+                            prov = (
+                                (row.provenance or [{}])[0]
+                                if row.provenance
+                                else {}
+                            )
+                            results.append(
+                                t.SearchResultType(
+                                    entity_type=etype,
+                                    sha256=row.sha256,
+                                    name=prov.get(
+                                        "name",
+                                        row.file_name or row.sha256[:12],
+                                    ),
+                                    source=prov.get("source"),
+                                    description=row.description
+                                    or prov.get("description", ""),
+                                    score=sim,
+                                )
+                            )
+                            seen_sha.add(row.sha256)
+                    except Exception:
+                        pass  # Table may not have embedding column
+
+                # Update lexical results with semantic scores where available
+                for r in results:
+                    if r.sha256 in sem_scores:
+                        r.score = max(r.score, sem_scores[r.sha256])
+
         except Exception as e:
             logger.warning("Semantic search failed: %s", e)
 
