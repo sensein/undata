@@ -795,56 +795,195 @@ def enrich_all(
     """
     if staging_dir is None and backend is not None and hasattr(backend, "base_dir"):
         staging_dir = backend.base_dir
+
     # Load shared resources once
-    if onto_store is None and cache_dir is not None:
-        onto_store = _load_ontology_embeddings(cache_dir, model_name)
-    if onto_cache is None and cache_dir is not None:
-        onto_cache = _load_ontology_cache(cache_dir)
+    if onto_store is None:
+        onto_store = _load_ontology_embeddings(cache_dir or staging_dir, model_name)
+    if onto_cache is None:
+        onto_cache = _load_ontology_cache(cache_dir or staging_dir)
+    onto_cache = onto_cache or {}
 
     results: dict[str, dict] = {}
 
-    # Phase 0: Pre-enrich from source metadata (ontology IDs already in source data)
+    # Phase 0: Pre-enrich from source metadata
     logger.info("Pre-enriching from source metadata...")
     results["source_metadata"] = enrich_from_source_metadata(staging_dir)
 
-    # Phase 1: elements + values (independent of each other)
-    logger.info("Enriching elements...")
-    results["elements"] = enrich_elements(
-        staging_dir,
-        cache_dir=None,
-        onto_store=onto_store,
-        onto_cache=onto_cache,
-        model_name=model_name,
-        threshold=threshold,
-        use_llm=use_llm,
-    )
-    logger.info("Enriching values...")
-    results["values"] = enrich_values(
-        staging_dir,
-        cache_dir=None,
-        onto_store=onto_store,
-        onto_cache=onto_cache,
-        model_name=model_name,
-        threshold=threshold,
-        use_llm=use_llm,
-    )
+    # Batch enrichment: read all entities via iter_staged, embed, match, write back
 
-    # Phase 2: valuesets (depends on enriched values)
-    logger.info("Enriching valuesets...")
-    results["valuesets"] = enrich_valuesets(staging_dir)
-
-    # Phase 3: schemas (last — may reference enriched elements/valuesets)
-    logger.info("Enriching schemas...")
-    results["schemas"] = enrich_schemas(
-        staging_dir,
-        cache_dir=None,
-        onto_store=onto_store,
-        onto_cache=onto_cache,
-        model_name=model_name,
-        threshold=threshold,
-    )
+    for entity_type in ("elements", "values", "schemas", "valuesets"):
+        logger.info("Enriching %s (batch)...", entity_type)
+        stats = _enrich_batch(
+            staging_dir,
+            entity_type,
+            model_name=model_name,
+            threshold=threshold,
+            onto_store=onto_store,
+            onto_cache=onto_cache,
+            use_llm=use_llm,
+        )
+        results[entity_type] = stats
+        logger.info(
+            "  %s: %d annotated / %d total",
+            entity_type,
+            stats.get("ontology_assigned", 0),
+            stats.get("total", 0),
+        )
 
     return results
+
+
+def _enrich_batch(
+    staging_dir: Path,
+    entity_type: str,
+    model_name: str = "all-MiniLM-L6-v2",
+    threshold: float = 0.7,
+    onto_store: EmbeddingStore | None = None,
+    onto_cache: dict | None = None,
+    use_llm: bool = False,
+) -> dict:
+    """Enrich all entities of a type in batch — Parquet-native.
+
+    1. Read all entities from staging (Parquet + YAML)
+    2. Compute embeddings in one batch
+    3. Build EmbeddingStore from entity embeddings
+    4. Match each against ontology index
+    5. Write enriched entities back to staging Parquet
+    """
+    import numpy as np
+
+    from .embeddings import EmbeddingStore, compute_entity_embeddings
+    from .staging import iter_staged, write_staged_batch
+
+    onto_cache = onto_cache or {}
+    stats = {"total": 0, "ontology_assigned": 0, "unchanged": 0, "embedded": 0}
+
+    # 1. Read all entities
+    entities = list(iter_staged(staging_dir, entity_type))
+    if not entities:
+        return stats
+    stats["total"] = len(entities)
+
+    # Valuesets: aggregate annotations from member values (no embedding needed)
+    if entity_type == "valuesets":
+        stats["ontology_assigned"] = _enrich_valuesets_batch(entities, staging_dir)
+        # Write back
+        source = _get_source(entities)
+        write_staged_batch(staging_dir, entity_type, entities, source=source)
+        return stats
+
+    # 2. Compute embeddings in one batch
+    logger.info("  Computing embeddings for %d %s...", len(entities), entity_type)
+    entities = compute_entity_embeddings(entities, model_name=model_name)
+    stats["embedded"] = sum(1 for e in entities if e.get("embedding"))
+
+    # 3. Build EmbeddingStore from entity embeddings
+    uris = []
+    vectors = []
+    for i, entity in enumerate(entities):
+        emb = entity.get("embedding")
+        if emb is not None:
+            uri = f"{BASE_URI}/{entity_type}/{i}"
+            uris.append(uri)
+            vectors.append(np.array(emb, dtype=np.float32))
+
+    elem_store = None
+    if vectors:
+        elem_store = EmbeddingStore(uri_col="uri")
+        elem_store._uris = uris
+        elem_store._vectors = np.stack(vectors)
+        elem_store._model = model_name
+        elem_store._uri_to_idx = {u: idx for idx, u in enumerate(uris)}
+
+    # 4. Match each entity against ontology index
+    is_value = entity_type == "values"
+    for i, entity in enumerate(entities):
+        sem = entity.get("semantic", {})
+
+        # Skip already enriched or curated
+        if sem.get("ontology_annotations") or entity.get("curated_annotations"):
+            stats["unchanged"] += 1
+            continue
+
+        if onto_store is None or elem_store is None:
+            stats["unchanged"] += 1
+            continue
+
+        uri = f"{BASE_URI}/{entity_type}/{i}"
+        prov = entity.get("provenance", [])
+        first_prov = prov[0] if prov and isinstance(prov[0], dict) else {}
+        element_desc = f"{first_prov.get('name', '')} {sem.get('description', '')}".strip()
+
+        annotations = _assign_ontology_annotations(
+            uri,
+            elem_store,
+            onto_store,
+            onto_cache,
+            threshold,
+            is_value=is_value,
+            model_name=model_name,
+            element_desc=element_desc,
+        )
+
+        if annotations:
+            sem["ontology_annotations"] = annotations
+            entity["semantic"] = sem
+            entity["ontology_annotations"] = annotations
+            stats["ontology_assigned"] += 1
+        else:
+            stats["unchanged"] += 1
+
+        # Enrich semantic fields (unit, value_domain inference)
+        _enrich_semantic_fields(sem)
+        entity["semantic"] = sem
+
+    # 5. Write enriched entities back to staging Parquet
+    source = _get_source(entities)
+    write_staged_batch(staging_dir, entity_type, entities, source=source)
+
+    return stats
+
+
+def _get_source(entities: list[dict]) -> str:
+    """Extract source name from entity provenance."""
+    if entities and entities[0].get("provenance"):
+        prov = entities[0]["provenance"]
+        if prov and isinstance(prov[0], dict):
+            return prov[0].get("source", "enriched")
+    return "enriched"
+
+
+def _enrich_valuesets_batch(entities: list[dict], staging_dir: Path) -> int:
+    """Aggregate ontology annotations from member values into valuesets."""
+    enriched = 0
+    # Build value label → annotations lookup from enriched values
+    val_annotations: dict[str, list] = {}
+    from .staging import iter_staged
+
+    for val in iter_staged(staging_dir, "values"):
+        sem = val.get("semantic", {})
+        label = sem.get("label", "")
+        anns = sem.get("ontology_annotations", [])
+        if label and anns:
+            val_annotations[label] = anns
+
+    for entity in entities:
+        sem = entity.get("semantic", {})
+        if sem.get("ontology_annotations"):
+            continue  # Already enriched
+        members = sem.get("members", [])
+        if not members:
+            continue
+        # Collect annotations from member values
+        collected = []
+        for member in members:
+            if member in val_annotations:
+                collected.extend(val_annotations[member])
+        if collected:
+            sem["ontology_annotations"] = collected[:5]  # Cap at 5
+            entity["semantic"] = sem
+            enriched += 1
+    return enriched
 
 
 def generate_curation_flags(
