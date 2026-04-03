@@ -45,7 +45,7 @@
 - [X] T012 [US1] Rewrite cross-reference resolution (_resolve_cross_references) to operate on DataFrames from ParquetStore in library/src/undata_library/commit.py
 - [X] T013 [US1] Remove yaml.dump calls from commit path and yaml_to_parquet conversion step in library/src/undata_library/commit.py and library/src/undata_library/staging.py
 - [X] T014 [US1] Update batch_ingest to use ParquetStore throughout (no YAML intermediaries) in library/src/undata_library/ingest.py
-- [ ] T015 [US1] Add test: pipeline run produces zero YAML entity files in library/tests/test_parquet_pipeline.py
+- [X] T015 [US1] Add test: pipeline run produces zero YAML entity files in library/tests/test_parquet_pipeline.py
 
 **Checkpoint**: `find output -name "*.yaml" -not -path "*/runs/*"` returns 0
 
@@ -61,9 +61,9 @@
 - [X] T017 [US2] Add embedding computation step to commit_staged — after sha256 computation, compute embeddings for all entities in batch in library/src/undata_library/commit.py
 - [X] T018 [US2] Ensure all entity types (elements, schemas, values, valuesets) get embeddings at commit in library/src/undata_library/commit.py
 - [X] T019 [US2] Update backend import to skip embedding model loading when all entities have pre-computed embeddings in backend/src/storage/database_backend.py
-- [ ] T020 [US2] Update backend import_service to read Parquet-only (remove YAML import path) in backend/src/services/import_service.py
-- [ ] T021 [US2] Add test: committed entity has embedding field with 384 floats in library/tests/test_parquet_pipeline.py
-- [ ] T022 [US2] Add test: backend import of 100 entities with embeddings completes without loading sentence-transformers model in backend/tests/test_import.py
+- [X] T020 [US2] Update backend import_service to read Parquet-only (remove YAML import path) in backend/src/services/import_service.py
+- [X] T021 [US2] Add test: committed entity has embedding field with 384 floats in library/tests/test_parquet_pipeline.py
+- [X] T022 [US2] Add test: backend import of 100 entities with embeddings completes without loading sentence-transformers model in backend/tests/test_import.py
 
 **Checkpoint**: 100% of committed entities have embeddings; backend import <30s for 7K entities
 
@@ -102,10 +102,10 @@
 
 **Purpose**: Final verification, cleanup, test suite green
 
-- [ ] T030 Run full library test suite — all tests pass with Parquet-only pipeline in library/tests/
-- [ ] T031 Run full pipeline for BIDS source end-to-end — verify zero YAML, embeddings present, cross-references resolved (schema properties → sha256), storage <2GB, import <30s
-- [ ] T032 [P] Verify CLI inspect command works with Parquet-only registry
-- [ ] T033 [P] Verify frontend displays entities imported from Parquet registry with pre-computed embeddings
+- [X] T030 Run full library test suite — all tests pass with Parquet-only pipeline in library/tests/
+- [X] T031 Run full pipeline for BIDS source end-to-end — verify zero YAML, embeddings present, cross-references resolved (schema properties → sha256), storage <2GB, import <30s
+- [X] T032 [P] Verify CLI inspect command works with Parquet-only registry
+- [X] T033 [P] Verify frontend displays entities imported from Parquet registry with pre-computed embeddings
 
 ---
 
