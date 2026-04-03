@@ -48,12 +48,24 @@ def detect_aliases(
                     uri_a=uri_a,
                     uri_b=uri_b,
                 )
-                if result["score"] >= threshold:
+
+                score = result["score"]
+
+                # Boost score for elements with shared alias_hints
+                # (e.g., NDA elements appearing in multiple structures)
+                hints_a = set(data_a.get("semantic", {}).get("alias_hints", []))
+                hints_b = set(data_b.get("semantic", {}).get("alias_hints", []))
+                if hints_a and hints_b and hints_a & hints_b:
+                    # Shared alias hints → high-confidence pre-verified alias
+                    score = max(score, 0.95)
+                    result["components"]["alias_hint_boost"] = True
+
+                if score >= threshold:
                     candidates.append(
                         {
                             "element_a": fname_a,
                             "element_b": fname_b,
-                            "score": result["score"],
+                            "score": score,
                             "relation": result["relation"],
                             "components": result["components"],
                         }

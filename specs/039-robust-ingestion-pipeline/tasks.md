@@ -75,8 +75,8 @@
 
 - [X] T021 [US3] Add alias dedup to NDA adapter — group elements by name+type across structures, merge provenance in library/src/undata_library/adapters/nda.py
 - [X] T022 [US3] Add alias_hints field to ClassifiedEntity semantic dict (list of source refs for shared elements) in library/src/undata_library/adapters/nda.py
-- [ ] T023 [US3] Update alignment step to check alias_hints and boost confidence for pre-verified aliases in library/src/undata_library/align.py
-- [ ] T024 [US3] Add test: two NDA structures with shared element → alias_hints populated → alignment links them with higher confidence than embedding-only baseline in library/tests/test_nda_aliases.py
+- [X] T023 [US3] Update alignment step to check alias_hints and boost confidence for pre-verified aliases in library/src/undata_library/align.py
+- [X] T024 [US3] Add test: two NDA structures with shared element → alias_hints populated → alignment links them with higher confidence than embedding-only baseline in library/tests/test_nda_aliases.py
 
 **Checkpoint**: NDA aliases used as high-confidence hints in alignment
 
@@ -106,8 +106,8 @@
 
 **Independent Test**: `undata-library pipeline --source openneuro --batch 10` → 10 datasets processed with summary
 
-- [ ] T032 [US5] Add graceful error handling for individual dataset failures in batch mode in library/src/undata_library/ingest.py
-- [ ] T033 [US5] Add consolidated batch run summary with success/fail/skip counts and per-dataset timing in library/src/undata_library/run_summary.py
+- [X] T032 [US5] Add graceful error handling for individual dataset failures in batch mode in library/src/undata_library/ingest.py
+- [X] T033 [US5] Add consolidated batch run summary with success/fail/skip counts and per-dataset timing in library/src/undata_library/run_summary.py
 - [ ] T034 [US5] Test batch pipeline: --source openneuro --batch 5 completes with summary in library/tests/test_batch_pipeline.py
 
 **Checkpoint**: Batch CLI handles failures gracefully and produces consolidated summary
@@ -120,7 +120,7 @@
 
 **Independent Test**: Enrich 220K elements → completes <30min → mouse matches "Mus musculus" not "Mus"
 
-- [ ] T035 [US6] Add chunk-based enrichment — process elements in batches of 10K to control memory in library/src/undata_library/enrich.py
+- [X] T035 [US6] Add chunk-based enrichment — process elements in batches of 10K to control memory in library/src/undata_library/enrich.py
 - [X] T036 [US6] Add species precision post-filter — remove genus-level matches when species-level exists in library/src/undata_library/enrich.py
 - [ ] T037 [US6] Test enrichment species precision: element about mouse → primary match is Mus musculus not Mus in library/tests/test_enrich.py
 
