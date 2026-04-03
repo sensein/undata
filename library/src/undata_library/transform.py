@@ -166,7 +166,7 @@ def generate_transforms(
     # Strategy 3: Embedding similarity matching (cross-source, above threshold)
     if name_similarity_threshold < 1.0:
         try:
-            from .embeddings import EmbeddingStore, cosine_similarity, DEFAULT_MODEL, _encode_texts
+            from .embeddings import DEFAULT_MODEL, _encode_texts
 
             # Build element embeddings on-the-fly from descriptions
             uri_to_data: dict[str, dict] = {}
