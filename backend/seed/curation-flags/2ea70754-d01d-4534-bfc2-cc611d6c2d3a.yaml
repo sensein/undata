@@ -1,0 +1,9 @@
+id: 2ea70754-d01d-4534-bfc2-cc611d6c2d3a
+entity_type: element
+entity_ref: 33531169d42b51ab119f8c9729f90cfd86c73916d97a2f8fce5717a9825650a8
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: PulseSequenceTiming
+status: pending
+created_at: '2026-04-02T04:01:58.306838+00:00'

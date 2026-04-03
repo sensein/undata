@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  question_text: Symptom - Forgetful in daily activities, Present
+provenance:
+- source: reproschema
+  class: abcd_ksad501
+  name: ksads_14_400_t
+  description: Symptom - Forgetful in daily activities, Present
+  generated_at: '2026-04-02T19:31:06.139505+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b0030639f631b9d43dc28391e7816a2ef8f4084d8b05eb5433da0878afc188a1

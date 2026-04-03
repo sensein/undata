@@ -1,0 +1,15 @@
+id: 9fa7c41d-c3b9-4d28-8103-93efbf6c3c5d
+entity_type: value
+entity_ref: a37b7309a34a4a5227880ce062845762a867180f98dd78817ff274204bd144f6
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.org/nidash/nidm#Perfusion
+    score: 0.7678
+  - uri: http://purl.obolibrary.org/obo/NCIT_C150246
+    score: 0.7678
+  - uri: http://purl.obolibrary.org/obo/NCIT_C21087
+    score: 0.7511
+status: pending
+created_at: '2026-04-02T19:30:41.985930+00:00'

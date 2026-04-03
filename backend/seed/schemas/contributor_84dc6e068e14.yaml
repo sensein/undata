@@ -1,0 +1,35 @@
+semantic:
+  properties:
+  - d59bc3efaa09dc95e685cf26e3e4fa615586b0894f4156b7b41807641c0e62b7
+  - c0c2525eb3a5b604123f79f9c4e405c6c107a896664b2c4f04368d546f947f68
+  - 90bb9c8e5fbe362fe8ad77654ea8c8e41f403a7e85d127fb6ea7e09b370ed701
+  - 1419f82061a927e4b1dbe6d1997f3b9011727edbedc0c3750249af079dec9675
+  - b2c82918f9a2ca94147a3587c8ab16231a2b28b60983f21b0902cfd2f25f55cd
+  - aa96433ca929b07071e34988bc54ff92382b55f95dbadaefc7fa20cb8f765c6c
+  - ab4f1f5a4d47a825d0fb1e5ddfcf326e3c909b55ed280543d518935568e4ab1e
+  - 3e2e3e1034652f6d1a242a223069f2238e978d9dc0c1a69e6cc2006542bf4e62
+  - 9f56fdb5999703b7c2905c0a64e45d357124e48eebd57b8da9c04177e5229786
+  subclass_of: DandiBaseModel
+  ontology_annotations:
+  - term_uri: http://purl.org/dc/terms/contributor
+    term_label: contributor
+    ontology: unknown
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8689
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.org/dc/elements/1.1/contributor
+    term_label: Contributor
+    ontology: unknown
+    mapping_relation: skos:closeMatch
+    match_level: concept_match
+    score: 0.8689
+    model: all-MiniLM-L6-v2
+    primary: false
+provenance:
+- source: dandi
+  class: Contributor
+  name: Contributor
+  description: null
+sha256: 84dc6e068e149872b3e99a474bcc96c3bb6ed276e2b2593f079c9ab05bcb34e5

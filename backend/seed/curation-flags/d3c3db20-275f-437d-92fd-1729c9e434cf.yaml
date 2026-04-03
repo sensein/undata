@@ -1,0 +1,9 @@
+id: d3c3db20-275f-437d-92fd-1729c9e434cf
+entity_type: element
+entity_ref: 102cd83ae43a65a7b0db814ca3a044ec7b49da86bab8770da97ceb658d4cc20a
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: signal_electrode
+status: pending
+created_at: '2026-04-02T03:57:49.667479+00:00'

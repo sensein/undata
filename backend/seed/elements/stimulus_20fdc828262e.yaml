@@ -1,0 +1,18 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: nwb
+  class: nwb
+  name: stimulus
+  description: Data pushed into the system (eg, video stimulus, sound, voltage, etc)
+    and secondary representations of that data (eg, measurements of something used
+    as a stimulus). This group should be made read-only after experiment complete
+    and timestamps are corrected to common timebase. Stores both presented stimuli
+    and stimulus templates, the latter in case the same stimulus is presented multiple
+    times, or is pulled from an external stimulus library. Stimuli are here defined
+    as any signal that is pushed in
+  generated_at: '2026-04-02T03:53:21.677536+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 20fdc828262e2d391fdb203b2e3b81c41180041eed4181b4fbc479eb0b77b853

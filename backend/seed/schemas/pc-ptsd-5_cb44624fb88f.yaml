@@ -1,0 +1,15 @@
+semantic:
+  properties:
+  - ptsd_1
+  - ptsd_2
+  - ptsd_3
+  - ptsd_4
+  - ptsd_5
+  - ptsd_6
+  description: PC-PTSD-5 assessment schema
+provenance:
+- source: reproschema
+  class: PC-PTSD-5
+  name: PC-PTSD-5
+  description: PC-PTSD-5 assessment schema
+sha256: cb44624fb88f38ff983e6068557d6a543990d21502fdc1588f0b6f60dde6b2b1

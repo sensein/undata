@@ -1,0 +1,13 @@
+semantic:
+  data_type: array
+  type_ref: File
+provenance:
+- source: openminds
+  class: openminds
+  name: defaultImage
+  description: Two or three dimensional image that particluarly represents a specific
+    coordinate space.
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: a8c787611c1d6c4a695a72d138dc099e0408e12ea6c3be2823bc277a058ee8bc

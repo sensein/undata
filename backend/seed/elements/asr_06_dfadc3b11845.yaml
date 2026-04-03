@@ -1,0 +1,25 @@
+semantic:
+  data_type: integer
+  response_options:
+  - value: '0'
+    label: 0 = Not True
+    ontology_term: https://schema.undata.live/values/9197ae59-412b-4901-8714-3a05f4d0d8a5
+  - value: '1'
+    label: 1 = Somewhat or Sometimes True
+    ontology_term: https://schema.undata.live/values/9f4504f0-1037-4ed6-980e-455aa241a908
+  - value: '2'
+    label: 2 = Very True or Often True
+    ontology_term: https://schema.undata.live/values/8717bdeb-c06d-4b24-80d9-2727ec2880fe
+  question_text: 'I use drugs (other than alcohol and nicotine) for nonmedical purposes
+    (describe):'
+  min_value: 0.0
+  max_value: 2.0
+provenance:
+- source: reproschema
+  class: hbn_asr
+  name: ASR_06
+  description: Q6 of the Questionnaire Measures of Emotional and Cognitive Status
+  generated_at: '2026-04-02T19:31:06.139505+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: dfadc3b11845870a19426c1fa1ba0d85b4aeffd898ff639cfe5d944e1a6ce999

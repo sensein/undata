@@ -1,0 +1,13 @@
+semantic:
+  name: ASR_42_options
+  members:
+  - 8eb6b0bbc3f9f001873d305391afd2a7bf3d02ff6675ae6f23d35d3332ab425f
+  - b5ae92072ba8fe73c86aef96c8909e693c0cb7073ae622d53a9af73cecd87ef6
+  - ebf51e614de81392e141bee76dbb8fcdbe2ca399134af7e10196363b491cfcb1
+  description: Response options for ASR_42
+provenance:
+- source: reproschema
+  class: hbn_asr
+  name: ASR_42_options
+  description: Response options for ASR_42
+sha256: 1091d0b87122cdcc9e583047f4bf3c4576ba56d1d00aec578cebbef2c53ecbf4

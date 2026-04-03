@@ -1,0 +1,9 @@
+id: b5faecf0-e735-448f-ac04-dfacb533c0e5
+entity_type: schema
+entity_ref: f3fc9b20dee1efe2334b64a26af5439994e9907a2e6d65ff808139ac10d3badb
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: func_sidecar
+status: pending
+created_at: '2026-04-02T03:57:50.303500+00:00'

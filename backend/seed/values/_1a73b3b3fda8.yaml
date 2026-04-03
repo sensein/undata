@@ -1,0 +1,10 @@
+semantic:
+  value_type: categorical
+  label: ''
+  description: 'Response option for SFI_3: '
+provenance:
+- source: reproschema
+  class: SFI
+  name: SFI_3:3
+  description: ''
+sha256: 1a73b3b3fda80d9d7cbc02e516521cd49bcddf456e598e663c82d82aea1115a5

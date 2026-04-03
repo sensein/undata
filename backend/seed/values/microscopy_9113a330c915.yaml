@@ -1,0 +1,20 @@
+semantic:
+  label: microscopy
+  value_type: categorical
+  ontology_id: http://uri.interlex.org/base/ilx_0739404
+  ontology_annotations:
+  - term_uri: http://uri.interlex.org/base/ilx_0739404
+    term_label: microscopy
+    ontology: unknown
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: source_metadata
+    primary: true
+provenance:
+- source: openminds
+  class: ExperimentalApproach
+  name: microscopy
+  description: Any experimental approach focused on using differential contrast of
+    microscopic structures to form an image.
+sha256: 9113a330c9157ffc3f4426f5518b349b983340191fdaa5b227232d0d7c7809c3

@@ -1,0 +1,12 @@
+semantic:
+  data_type: array
+  type_ref: HCRSeries
+provenance:
+- source: aind
+  class: aind
+  name: procedure_details
+  description: Details of the procedures, including reagents and sectioning information.
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 04e3c51861880e607c5cbb1fda20d11a1c93f2f2dde999bff7ea2dd43cc3fcf5

@@ -12,9 +12,9 @@ from pathlib import Path
 
 import yaml
 from sqlalchemy.ext.asyncio import AsyncSession
+from undata_library.models import CurationFlag, FlagStatus, FlagType, RunSummary
 
 from src.storage.database_backend import DatabaseBackend
-from undata_library.models import CurationFlag, FlagStatus, FlagType, RunSummary
 
 logger = logging.getLogger(__name__)
 
@@ -43,11 +43,15 @@ async def import_registry(
     if clear_existing:
         from src.db.models import (
             CurationFlag as CurationFlagModel,
+        )
+        from src.db.models import (
             Element,
-            RunSummary as RunSummaryModel,
             Schema,
             Value,
             ValueSet,
+        )
+        from src.db.models import (
+            RunSummary as RunSummaryModel,
         )
 
         for model in [Element, Schema, Value, ValueSet, CurationFlagModel, RunSummaryModel]:
@@ -89,6 +93,7 @@ async def import_registry(
                 prov = data.get("provenance", [])
                 # Upsert by sha256
                 from sqlalchemy import select
+
                 existing = await session.execute(
                     select(TransformModel).where(TransformModel.sha256 == sha)
                 )
@@ -129,7 +134,9 @@ async def import_registry(
                     id=data.get("id", f.stem),
                     entity_type=data.get("entity_type", ""),
                     entity_ref=data.get("entity_ref", ""),
-                    flag_type=FlagType(data["flag_type"]) if data.get("flag_type") else FlagType.needs_review,
+                    flag_type=FlagType(data["flag_type"])
+                    if data.get("flag_type")
+                    else FlagType.needs_review,
                     context=data.get("context", {}),
                     status=FlagStatus(data["status"]) if data.get("status") else FlagStatus.pending,
                     created_at=data.get("created_at", datetime.now(timezone.utc).isoformat()),

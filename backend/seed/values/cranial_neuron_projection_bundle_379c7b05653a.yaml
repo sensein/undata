@@ -1,0 +1,20 @@
+semantic:
+  label: cranial neuron projection bundle
+  value_type: categorical
+  ontology_id: http://purl.obolibrary.org/obo/UBERON_0034713
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/UBERON_0034713
+    term_label: cranial neuron projection bundle
+    ontology: uberon
+    mapping_relation: skos:exactMatch
+    match_level: element_match
+    score: 1.0
+    model: source_metadata
+    primary: true
+provenance:
+- source: openminds
+  class: NervousSystemStructure
+  name: cranial neuron projection bundle
+  description: Is a neuron projection bundle. [auto-generated from 'is_a' property
+    of the [UBERON ontology term](http://purl.obolibrary.org/obo/UBERON_0034713)]
+sha256: 379c7b05653a171db3a9b8fdc1fbbf04322f963a1275587120c1f70f8dcb8900

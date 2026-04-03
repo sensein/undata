@@ -1,0 +1,32 @@
+semantic:
+  data_type: integer
+  response_options:
+  - value: '0'
+    label: 'None (Never) '
+    ontology_term: https://schema.undata.live/values/9197ae59-412b-4901-8714-3a05f4d0d8a5
+  - value: '1'
+    label: 'Little (2 days over the past month) '
+    ontology_term: https://schema.undata.live/values/9f4504f0-1037-4ed6-980e-455aa241a908
+  - value: '2'
+    label: 'Some (1-2 days a week) '
+    ontology_term: https://schema.undata.live/values/8717bdeb-c06d-4b24-80d9-2727ec2880fe
+  - value: '3'
+    label: 'Much (2-3 days a week) '
+    ontology_term: https://schema.undata.live/values/b3298f63-8c9d-4c51-9f49-f38b31e952ca
+  - value: '4'
+    label: Most (Almost every day)
+    ontology_term: https://schema.undata.live/values/33a6fa77-0389-4049-80ab-39ee856a5281
+  question_text: 19. I think that part of what happened during Hurricane Irma was
+    my fault.
+  min_value: 0.0
+  max_value: 4.0
+provenance:
+- source: reproschema
+  class: abcd_isc01
+  name: irma_dsm5_19
+  description: 19. I think that part of what happened during Hurricane Irma was my
+    fault.
+  generated_at: '2026-04-02T19:31:06.139505+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 1e3524b2f12b705d27606278369a8b38ddae607fa009070aaf532e906bc43531

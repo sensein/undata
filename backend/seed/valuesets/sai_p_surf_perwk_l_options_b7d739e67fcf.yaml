@@ -1,0 +1,22 @@
+semantic:
+  name: sai_p_surf_perwk_l_options
+  members:
+  - de6d455d941ab201238430001964d1081cd3a278e71732b914f4591f98a63f97
+  - 8eb6b0bbc3f9f001873d305391afd2a7bf3d02ff6675ae6f23d35d3332ab425f
+  - b5ae92072ba8fe73c86aef96c8909e693c0cb7073ae622d53a9af73cecd87ef6
+  - ebf51e614de81392e141bee76dbb8fcdbe2ca399134af7e10196363b491cfcb1
+  - 88258008ea044eb1ed4ab16ec2d15bbed70bd25ed2ccf4f865533c5a2cd25cc8
+  - f752dbd14a9458f890189ac431c703cd6b8d4a31318c56ae5b87a2b2f6f66e32
+  - c857ffda01673a8d9db9ab036dd7bc35b7435e50d5492802d2bbb55517c857d4
+  - ca9628148d9286494556b121583dbe0bc15cd8419a08cee37496f6e96088ac2a
+  - 6aef7be5af9200a888d734b659a3245395edba3b738c6b56f68b1c47730d7093
+  - e40f4af614595e88eba23510e752eecb22c94814ba2ff7b74329acefd76ea5cc
+  - db283bfcd76766cb8c7da97075b698b301929031cbf94124a29ef1bf8f7b3184
+  - 721eb8f010f3d1f418a91fad9f30ae2c1621115db26f1f6d2de6b506a82ae6a1
+  description: Response options for sai_p_surf_perwk_l
+provenance:
+- source: reproschema
+  class: abcd_lpsaiq01
+  name: sai_p_surf_perwk_l_options
+  description: Response options for sai_p_surf_perwk_l
+sha256: b7d739e67fcf5606d835f06a61e8578e5bd2f36114866f441a050d9f33d9f0b4

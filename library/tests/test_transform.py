@@ -239,6 +239,144 @@ def test_transform_has_sha256(tmp_path):
         assert len(data["sha256"]) == 64
 
 
+def test_name_matching_cross_source(tmp_path):
+    """Elements with the same provenance name across different sources create transforms."""
+    elements_dir = tmp_path / "elements"
+    elements_dir.mkdir()
+
+    # Two elements from different sources with the same provenance name "age"
+    # Use distinct min_value so semantic hashes differ (description/ontology_annotations
+    # are excluded from hash by canonical_json)
+    elem_a = {
+        "semantic": {
+            "data_type": "float",
+            "unit": "year",
+            "min_value": 0,
+        },
+        "provenance": [{"source": "bids", "class": "Subject", "name": "age"}],
+    }
+    elem_b = {
+        "semantic": {
+            "data_type": "float",
+            "unit": "year",
+            "min_value": 1,
+        },
+        "provenance": [{"source": "openminds", "class": "Subject", "name": "age"}],
+    }
+    (elements_dir / "age_aaa123456789.yaml").write_text(yaml.dump(elem_a))
+    (elements_dir / "age_bbb123456789.yaml").write_text(yaml.dump(elem_b))
+
+    stats = generate_transforms(elements_dir, tmp_path)
+    # Same name, different sources, same type/unit → identity transform
+    assert stats["transforms_created"] == 1
+    assert stats["patterns"]["identity"] == 1
+
+
+def test_name_matching_same_source_excluded(tmp_path):
+    """Elements with the same name within the same source do NOT create transforms."""
+    elements_dir = tmp_path / "elements"
+    elements_dir.mkdir()
+
+    # Two elements from the SAME source with the same provenance name
+    # (no shared ontology URI, so only name-matching strategy applies)
+    elem_a = {
+        "semantic": {
+            "data_type": "float",
+            "unit": "year",
+        },
+        "provenance": [{"source": "bids", "class": "SubjectA", "name": "age"}],
+    }
+    elem_b = {
+        "semantic": {
+            "data_type": "float",
+            "unit": "month",
+        },
+        "provenance": [{"source": "bids", "class": "SubjectB", "name": "age"}],
+    }
+    (elements_dir / "age_aaa123456789.yaml").write_text(yaml.dump(elem_a))
+    (elements_dir / "age_bbb123456789.yaml").write_text(yaml.dump(elem_b))
+
+    stats = generate_transforms(elements_dir, tmp_path)
+    # Same source → name-based matching skips; no shared ontology → no Strategy 1 match
+    assert stats["transforms_created"] == 0
+
+
+def test_name_matching_case_insensitive(tmp_path):
+    """Name-based matching is case-insensitive."""
+    elements_dir = tmp_path / "elements"
+    elements_dir.mkdir()
+
+    # Use distinct min_value so semantic hashes differ
+    elem_a = {
+        "semantic": {
+            "data_type": "string",
+            "min_value": 0,
+        },
+        "provenance": [{"source": "bids", "class": "Subject", "name": "Sex"}],
+    }
+    elem_b = {
+        "semantic": {
+            "data_type": "string",
+            "min_value": 1,
+        },
+        "provenance": [{"source": "openminds", "class": "Subject", "name": "sex"}],
+    }
+    (elements_dir / "sex_aaa123456789.yaml").write_text(yaml.dump(elem_a))
+    (elements_dir / "sex_bbb123456789.yaml").write_text(yaml.dump(elem_b))
+
+    stats = generate_transforms(elements_dir, tmp_path)
+    assert stats["transforms_created"] == 1
+    assert stats["patterns"]["identity"] == 1
+
+
+def test_name_matching_seen_pairs_deduplication(tmp_path):
+    """seen_pairs deduplication prevents duplicate transforms from Strategy 1 + Strategy 2."""
+    elements_dir = tmp_path / "elements"
+    elements_dir.mkdir()
+
+    # Elements share both an ontology URI AND the same provenance name across sources.
+    # Strategy 1 (ontology) and Strategy 2 (name) would both try to match them,
+    # but seen_pairs should ensure only one transform is created.
+    onto_ann = [
+        {
+            "term_uri": "http://example.org/age",
+            "term_label": "Age",
+            "ontology": "test",
+            "mapping_relation": "skos:exactMatch",
+            "match_level": "concept_match",
+            "score": 0.97,
+            "model": "test",
+            "primary": True,
+        }
+    ]
+    elem_a = {
+        "semantic": {
+            "data_type": "float",
+            "unit": "year",
+            "ontology_annotations": onto_ann,
+        },
+        "provenance": [{"source": "bids", "class": "Subject", "name": "age"}],
+    }
+    elem_b = {
+        "semantic": {
+            "data_type": "float",
+            "unit": "month",
+            "ontology_annotations": onto_ann,
+        },
+        "provenance": [{"source": "openminds", "class": "Subject", "name": "age"}],
+    }
+    (elements_dir / "age_aaa123456789.yaml").write_text(yaml.dump(elem_a))
+    (elements_dir / "age_bbb123456789.yaml").write_text(yaml.dump(elem_b))
+
+    stats = generate_transforms(elements_dir, tmp_path)
+    # Both strategies match the same pair, but only one transform should be created
+    assert stats["transforms_created"] == 1
+    assert stats["pairs_evaluated"] == 1  # pair evaluated only once due to seen_pairs
+
+    transform_files = list((tmp_path / "transforms").glob("*.yaml"))
+    assert len(transform_files) == 1
+
+
 def test_reverse_unit_conversion():
     """Reverse of year→month factor=12 is month→year factor=1/12."""
     from undata_library.models import FunctionSpec

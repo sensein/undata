@@ -1,0 +1,12 @@
+semantic:
+  data_type: float
+  unit: s
+provenance:
+- source: openneuro/ds000228
+  class: task-pixar_bold.json
+  name: EchoTime
+  description: 'BIDS metadata field: EchoTime = 0.03'
+  generated_at: '2026-04-02T19:30:10.836157+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 9c93e2910ef6649c0ad689bdb2d9e0fe68dd3d409fc6c57695afa0f08f959767

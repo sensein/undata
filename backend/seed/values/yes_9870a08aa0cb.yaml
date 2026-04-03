@@ -1,0 +1,10 @@
+semantic:
+  value_type: categorical
+  label: 'Yes'
+  description: 'Response option for briefphq_2a: Yes'
+provenance:
+- source: reproschema
+  class: Brief_PHQ
+  name: briefphq_2a:1
+  description: 'Yes'
+sha256: 9870a08aa0cb19870f7e2a1a6bb7384c2312f89abd1622326bda3a596b80d069

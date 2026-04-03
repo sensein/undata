@@ -1,0 +1,12 @@
+semantic:
+  name: demo_prnt_race_acs_p__11_options
+  members:
+  - 8eb6b0bbc3f9f001873d305391afd2a7bf3d02ff6675ae6f23d35d3332ab425f
+  - b5ae92072ba8fe73c86aef96c8909e693c0cb7073ae622d53a9af73cecd87ef6
+  description: Response options for demo_prnt_race_acs_p__11
+provenance:
+- source: reproschema
+  class: abcd_lpds01
+  name: demo_prnt_race_acs_p__11_options
+  description: Response options for demo_prnt_race_acs_p__11
+sha256: ab6250aad0d44c219d53d9b81471af039e4cba7b969af95c61de1bc836705b0a

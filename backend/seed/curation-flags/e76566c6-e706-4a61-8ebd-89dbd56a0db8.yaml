@@ -1,0 +1,9 @@
+id: e76566c6-e706-4a61-8ebd-89dbd56a0db8
+entity_type: element
+entity_ref: a5f10422ca10a5acb6f4fbc52a78d5dd90af651884b9f83e09859978b70a966b
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: photobleaching_date
+status: pending
+created_at: '2026-04-02T04:07:05.204000+00:00'

@@ -7,12 +7,12 @@ import shutil
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-logger = logging.getLogger(__name__)
-
 import yaml
 
 from .hashing import compute_identity_hash, determine_hash_mode, generate_short_key
 from .utils import safe_load_yaml, sanitize_filename
+
+logger = logging.getLogger(__name__)
 
 if TYPE_CHECKING:
     from .storage.protocol import StorageBackend

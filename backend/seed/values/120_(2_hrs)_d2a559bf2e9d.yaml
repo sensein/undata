@@ -1,0 +1,10 @@
+semantic:
+  value_type: categorical
+  label: 120 (2 hrs)
+  description: 'Response option for sai_ss_m_arts_tspent_p_l: 120 (2 hrs)'
+provenance:
+- source: reproschema
+  class: abcd_lsssa01
+  name: sai_ss_m_arts_tspent_p_l:6
+  description: 120 (2 hrs)
+sha256: d2a559bf2e9d22cb5386452fbbf73c895f69fefeaa2d0ae63f01a8846b9ee71b

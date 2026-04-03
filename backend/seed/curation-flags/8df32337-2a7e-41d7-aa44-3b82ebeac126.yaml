@@ -1,0 +1,9 @@
+id: 8df32337-2a7e-41d7-aa44-3b82ebeac126
+entity_type: element
+entity_ref: 950edc8515dd37a8e40b0f6ee1fe203df5d548962435a98d45e1423c6ba9ba23
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: is_clock_generator
+status: pending
+created_at: '2026-04-02T04:13:54.970500+00:00'

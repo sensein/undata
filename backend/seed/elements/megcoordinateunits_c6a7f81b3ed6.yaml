@@ -1,0 +1,27 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: m
+    label: m
+    ontology_term: https://schema.undata.live/values/6ed5a26d-8110-4a5f-b2ff-c3881cb1ce42
+  - value: mm
+    label: mm
+    ontology_term: https://schema.undata.live/values/cee8223d-5bcb-4081-99b8-47dfa2d976b5
+  - value: cm
+    label: cm
+    ontology_term: https://schema.undata.live/values/f55a3e22-29f3-4bba-9d03-d92f36ea846c
+  - value: n/a
+    label: n/a
+    ontology_term: https://schema.undata.live/values/de6cf808-9ddc-4c73-a104-fc8e81e81ee7
+  value_domain: categorical
+provenance:
+- source: bids
+  class: metadata
+  name: MEGCoordinateUnits
+  description: 'Units of the coordinates of `"MEGCoordinateSystem"`.
+
+    '
+  generated_at: '2026-04-02T03:48:02.030097+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c6a7f81b3ed6effdb9afdf8a249007301a54e4abc2a26451b5b31ee7476630cf

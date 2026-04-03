@@ -3,11 +3,10 @@
 from __future__ import annotations
 
 import logging
-from typing import Any
+import os
 
 from fastapi import HTTPException, Request
 from sqlalchemy import select
-from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.auth.middleware import extract_token, is_jwt, validate_jwt
 from src.db.models import UserProfile
@@ -68,17 +67,13 @@ async def get_current_user(request: Request) -> dict | None:
 
 
 # Emails with elevated roles (configurable via CURATOR_EMAILS / ADMIN_EMAILS env vars)
-import os
-
 _CURATOR_EMAILS = set(
     e.strip().lower()
     for e in os.environ.get("CURATOR_EMAILS", "satra@mit.edu").split(",")
     if e.strip()
 )
 _ADMIN_EMAILS = set(
-    e.strip().lower()
-    for e in os.environ.get("ADMIN_EMAILS", "").split(",")
-    if e.strip()
+    e.strip().lower() for e in os.environ.get("ADMIN_EMAILS", "").split(",") if e.strip()
 )
 
 
@@ -151,7 +146,10 @@ def require_role(role: str):
         if not check_role(user, role):
             raise HTTPException(
                 status_code=403,
-                detail=f"Role '{role}' required. Your roles: {user.get('realm_access', {}).get('roles', [])}",
+                detail=(
+                f"Role '{role}' required. "
+                f"Your roles: {user.get('realm_access', {}).get('roles', [])}"
+            ),
             )
         return user
 

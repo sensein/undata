@@ -3,13 +3,12 @@
 from __future__ import annotations
 
 
-async def lookup_ontology_term(
-    query: str, ontology: str | None = None, limit: int = 5
-) -> dict:
+async def lookup_ontology_term(query: str, ontology: str | None = None, limit: int = 5) -> dict:
     """Search the ontology store for a term. Returns validated URIs."""
     try:
-        from undata_library.ontology_store import OntologyStore, load_ontology_config
         from pathlib import Path
+
+        from undata_library.ontology_store import OntologyStore
 
         store_path = Path.home() / ".cache" / "undata" / "ontology-store"
         if not store_path.exists():

@@ -1,0 +1,13 @@
+semantic:
+  data_type: string
+  type_ref: QualityControl
+  value_domain: text
+provenance:
+- source: aind
+  class: aind
+  name: quality_control
+  description: Description of quality metrics for a data asset
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 8600edeb7681f08615bd865df2571ab4cb9c6107d7555d5f90426e7007ad5b3f

@@ -1,0 +1,10 @@
+semantic:
+  value_type: categorical
+  label: American Indian or Alaska Native
+  description: 'Response option for race_ethnicity: American Indian or Alaska Native'
+provenance:
+- source: reproschema
+  class: demographics_and_background_information_v1
+  name: race_ethnicity:0
+  description: American Indian or Alaska Native
+sha256: 0fd2383d3ae149ae63969d9e0be0624ee15182f84f064cdaf79da5cc07e309c1

@@ -1,0 +1,10 @@
+semantic:
+  value_type: categorical
+  label: Nearly every day
+  description: 'Response option for dsm_5_i_1: Nearly every day'
+provenance:
+- source: reproschema
+  class: dsm_5_parent_guardian_rated_level_1_crosscutting_s
+  name: dsm_5_i_1:4
+  description: Nearly every day
+sha256: 877ad82a1a23a78b24932fe1a2c4037e161051acfc6be8d654945b0f574d427b

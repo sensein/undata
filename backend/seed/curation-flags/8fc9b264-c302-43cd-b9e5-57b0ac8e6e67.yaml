@@ -1,0 +1,15 @@
+id: 8fc9b264-c302-43cd-b9e5-57b0ac8e6e67
+entity_type: value
+entity_ref: f3786f94b6a24586950f266369ba22c3b00fd8906463f839cdf61846fdfffb75
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://www.w3.org/ns/prov#Collection
+    score: 0.7433
+  - uri: http://www.w3.org/2004/02/skos/core#Collection
+    score: 0.7433
+  - uri: http://purl.obolibrary.org/obo/NCIT_C25453
+    score: 0.7433
+status: pending
+created_at: '2026-04-02T04:13:56.416398+00:00'

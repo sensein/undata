@@ -1,0 +1,13 @@
+semantic:
+  data_type: float
+provenance:
+- source: openneuro/ds000228
+  class: participants.tsv
+  name: ToM Booklet-Matched
+  description: Proportion of questions answered correctly on n=24 matched items in
+    behavioral battery. These items include the six explicit false-belief questions
+    used to group children based on false-belief task performance.
+  generated_at: '2026-04-02T19:30:10.836157+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 21a3f299f828eed34e7980e15f905911c20e0127c9e115cbc46a48e68ed2aa56

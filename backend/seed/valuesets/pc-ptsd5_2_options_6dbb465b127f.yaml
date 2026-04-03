@@ -1,0 +1,12 @@
+semantic:
+  name: pc-ptsd5_2_options
+  members:
+  - b5ae92072ba8fe73c86aef96c8909e693c0cb7073ae622d53a9af73cecd87ef6
+  - 8eb6b0bbc3f9f001873d305391afd2a7bf3d02ff6675ae6f23d35d3332ab425f
+  description: Response options for pc-ptsd5_2
+provenance:
+- source: reproschema
+  class: PC-PTSD-5
+  name: pc-ptsd5_2_options
+  description: Response options for pc-ptsd5_2
+sha256: 6dbb465b127ffce4e3954880f45fe66aea32116a7eaf67435baecfbbb9badcb5

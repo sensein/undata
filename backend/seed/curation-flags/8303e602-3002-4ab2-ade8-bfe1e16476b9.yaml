@@ -1,0 +1,15 @@
+id: 8303e602-3002-4ab2-ade8-bfe1e16476b9
+entity_type: value
+entity_ref: e5113a4e9d366d5ff416c65e7f1f722523ad69c412f4082388a99f106202445d
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.013)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/uberon/core#sexually_homologous_to
+    score: 0.7714
+  - uri: http://purl.obolibrary.org/obo/uberon/core#homologous_in
+    score: 0.7584
+  - uri: http://purl.obolibrary.org/obo/RO_0002159
+    score: 0.744
+status: pending
+created_at: '2026-04-02T04:13:57.259438+00:00'

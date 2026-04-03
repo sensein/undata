@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  question_text: Symptom - Self injurious behavio, Past
+provenance:
+- source: reproschema
+  class: abcd_ksad501
+  name: ksads_23_144_t
+  description: Symptom - Self injurious behavio, Past
+  generated_at: '2026-04-02T19:31:06.139505+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 972e3cdc0e3f0add08ab22feec045479319286fa73affce0ffad4ab185fcae35

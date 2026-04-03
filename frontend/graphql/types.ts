@@ -1,5 +1,16 @@
 // TypeScript types matching the backend GraphQL schema (feature 029)
 
+export interface EvidenceChainData {
+  similarity_score: number;
+  similarity_method: string;
+  source_text: string;
+  target_term_uri: string;
+  target_term_label: string;
+  target_term_definition?: string | null;
+  uri_verified: boolean;
+  reasoning: string;
+}
+
 export interface OntologyAnnotation {
   termUri: string;
   termLabel: string;
@@ -9,6 +20,7 @@ export interface OntologyAnnotation {
   score: number;
   model?: string;
   primary: boolean;
+  evidence?: EvidenceChainData | null;
 }
 
 export interface ProvenanceEntry {

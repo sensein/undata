@@ -1,0 +1,10 @@
+semantic:
+  data_type: string
+provenance:
+- source: openneuro/ds000228
+  class: participants.tsv
+  name: 'Scanlog: Voxel slize'
+  generated_at: '2026-04-02T19:30:10.836157+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: da0412254024957ff283f5ea45e083f19c32e06133b741826050012fc06ef98e

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { SourceBadge } from "./SourceBadge";
 import { StatusBadge } from "./StatusBadge";
+import { EvidenceChain } from "./EvidenceChain";
 import { getEntityColor } from "@/lib/source-colors";
 import type { ProvenanceEntry, OntologyAnnotation } from "@/graphql/types";
 
@@ -27,7 +28,7 @@ interface EntityDetailLayoutProps {
 }
 
 function AnnotationChip({ a }: { a: OntologyAnnotation }) {
-  // Build CURIE from ontology + label
+  const [showEvidence, setShowEvidence] = useState(false);
   const curie = a.ontology ? `${a.ontology}:${a.termLabel}` : a.termLabel;
   const relationIcons: Record<string, string> = {
     "skos:exactMatch": "≡",
@@ -39,19 +40,37 @@ function AnnotationChip({ a }: { a: OntologyAnnotation }) {
   const icon = relationIcons[a.mappingRelation] ?? "·";
 
   return (
-    <a
-      href={a.termUri}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-green-50 text-green-800 rounded text-xs hover:bg-green-100 transition-colors"
-      title={`${a.mappingRelation} — ${a.termUri}`}
-    >
-      <span className="text-green-600">{icon}</span>
-      <span>{curie}</span>
-      <span className="text-green-500 text-[10px]">{a.mappingRelation?.replace("skos:", "")}</span>
-      <span className="text-green-500 font-mono">{a.score?.toFixed(2)}</span>
-      <span className="text-green-400 text-[10px]">↗</span>
-    </a>
+    <div className="inline-block">
+      <span className="inline-flex items-center gap-1">
+        <a
+          href={a.termUri}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-green-50 text-green-800 rounded text-xs hover:bg-green-100 transition-colors"
+          title={`${a.mappingRelation} — ${a.termUri}`}
+        >
+          <span className="text-green-600">{icon}</span>
+          <span>{curie}</span>
+          <span className="text-green-500 text-[10px]">{a.mappingRelation?.replace("skos:", "")}</span>
+          <span className="text-green-500 font-mono">{a.score?.toFixed(2)}</span>
+          <span className="text-green-400 text-[10px]">↗</span>
+        </a>
+        {a.evidence && (
+          <button
+            onClick={() => setShowEvidence(!showEvidence)}
+            className="text-[10px] text-blue-500 hover:text-blue-700"
+            title="Show evidence chain"
+          >
+            {showEvidence ? "hide" : "evidence"}
+          </button>
+        )}
+      </span>
+      {showEvidence && a.evidence && (
+        <div className="mt-1">
+          <EvidenceChain evidence={a.evidence} />
+        </div>
+      )}
+    </div>
   );
 }
 

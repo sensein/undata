@@ -1,0 +1,9 @@
+id: 570ccf8d-5acc-4648-a12e-8b6c86640a38
+entity_type: schema
+entity_ref: f99bbe8ad21060bd6099a158a3e05f301dd59882594330ccd1a7bb68f655b5e4
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: _Unknown
+status: pending
+created_at: '2026-04-02T04:07:06.522618+00:00'

@@ -4,6 +4,9 @@ ReproSchema uses JSON-LD with a well-defined schema:
 - Activities → SchemaRecord (CLASS) entities
 - Items → ElementRecord (ATTRIBUTE) entities
 - Response options → ValueSet entities
+
+JSON-LD references may be relative paths (e.g., items/foo, ../valueConstraints)
+or absolute URLs. This adapter resolves them relative to the containing file.
 """
 
 from __future__ import annotations
@@ -23,44 +26,92 @@ _DEFAULT_REF = SourceRef(
 logger = logging.getLogger(__name__)
 
 
-def _parse_response_options(item_data: dict) -> list[dict] | None:
-    """Extract response options from a ReproSchema item."""
+def _load_jsonld(path: Path) -> dict | None:
+    """Load a JSON-LD file, trying with and without common extensions."""
+    for candidate in [path, path.with_suffix(".jsonld"), path.with_suffix("")]:
+        if candidate.exists() and candidate.is_file():
+            try:
+                return json.loads(candidate.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, OSError):
+                pass
+    return None
+
+
+def _resolve_ref(ref: str, base_dir: Path) -> dict | None:
+    """Resolve a relative path or URL reference to a JSON-LD object.
+
+    If ref is a relative path, resolve it against base_dir and load the file.
+    If ref is a URL, return None (not fetched).
+    """
+    if ref.startswith("http://") or ref.startswith("https://"):
+        return None  # URL references not resolved locally
+    resolved = (base_dir / ref).resolve()
+    return _load_jsonld(resolved)
+
+
+def _extract_label(obj: Any) -> str:
+    """Extract English label from a multilingual dict or string."""
+    if isinstance(obj, dict):
+        return str(obj.get("en", next(iter(obj.values()), "")))
+    return str(obj) if obj else ""
+
+
+def _parse_response_options(item_data: dict, item_dir: Path) -> tuple[list[dict] | None, dict]:
+    """Extract response options from a ReproSchema item.
+
+    Handles both inline dicts and relative path references.
+    Returns (options_list, resolved_ro_dict).
+    """
     ro = item_data.get("responseOptions", {})
-    if not ro:
-        return None
+
+    # Resolve relative path reference
+    if isinstance(ro, str):
+        resolved = _resolve_ref(ro, item_dir)
+        if resolved:
+            ro = resolved
+        else:
+            return None, {}
+
+    if not isinstance(ro, dict):
+        return None, {}
 
     choices = ro.get("choices", [])
     if not choices:
-        return None
+        return None, ro
 
     options = []
     for choice in choices:
         if isinstance(choice, dict):
+            name = choice.get("name", choice.get("schema:name", ""))
+            label = _extract_label(name) if name else ""
             options.append(
                 {
                     "value": str(choice.get("value", choice.get("schema:value", ""))),
-                    "label": str(choice.get("name", choice.get("schema:name", ""))),
+                    "label": label,
                 }
             )
         elif isinstance(choice, str):
             options.append({"value": choice, "label": choice})
-    return options if options else None
+    return (options if options else None), ro
 
 
-def _infer_type_from_response(item_data: dict) -> str:
-    """Infer data type from ReproSchema item responseOptions."""
-    ro = item_data.get("responseOptions", {})
-    if not ro:
+def _infer_type_from_response(ro: dict) -> str:
+    """Infer data type from resolved responseOptions dict."""
+    if not isinstance(ro, dict):
         return "string"
 
     value_type = ro.get("valueType", ro.get("schema:valueType", ""))
-    if "integer" in str(value_type).lower() or "int" in str(value_type).lower():
-        return "integer"
-    if "float" in str(value_type).lower() or "double" in str(value_type).lower():
-        return "float"
-    if "boolean" in str(value_type).lower() or "bool" in str(value_type).lower():
-        return "boolean"
+    # valueType can be a list like ["xsd:integer"]
+    if isinstance(value_type, list):
+        value_type = value_type[0] if value_type else ""
+    vt_str = str(value_type).lower()
 
+    if "integer" in vt_str or "int" in vt_str:
+        return "integer"
+    if "float" in vt_str or "double" in vt_str or "decimal" in vt_str:
+        return "float"
+    if "boolean" in vt_str or "bool" in vt_str:
+        return "boolean"
     if ro.get("choices"):
         return "string"  # Categorical
 
@@ -111,47 +162,54 @@ class ReproSchemaAdapter(BaseAdapter):
 
             activity_name = activity_dir.name
 
-            # Find activity schema file
-            schema_files = list(activity_dir.glob(f"{activity_name}_schema*")) + list(
-                activity_dir.glob(f"{activity_name}Schema*")
-            )
-            activity_desc = ""
-            item_order = []
+            # Find and load activity schema file
+            activity_data = None
+            for suffix in ["_schema", "Schema", "_schema.jsonld"]:
+                candidate = activity_dir / f"{activity_name}{suffix}"
+                activity_data = _load_jsonld(candidate)
+                if activity_data:
+                    break
 
-            for sf in schema_files:
-                try:
-                    activity_data = json.loads(sf.read_text(encoding="utf-8"))
-                    activity_desc = activity_data.get(
-                        "description",
-                        activity_data.get("schema:description", ""),
-                    )
-                    if isinstance(activity_desc, dict):
-                        activity_desc = activity_desc.get("en", str(activity_desc))
-                    order = activity_data.get("order", activity_data.get("ui", {}).get("order", []))
-                    item_order = [str(o).rsplit("/", 1)[-1] for o in order]
-                except (json.JSONDecodeError, OSError):
-                    pass
+            activity_desc = ""
+            item_refs: list[str] = []  # variable names from addProperties
+
+            if activity_data:
+                desc = activity_data.get("description", activity_data.get("schema:description", ""))
+                activity_desc = _extract_label(desc)
+
+                # Get item references from ui.addProperties or order
+                ui = activity_data.get("ui", {})
+                if isinstance(ui, dict):
+                    add_props = ui.get("addProperties", [])
+                    for prop in add_props:
+                        if isinstance(prop, dict):
+                            var_name = prop.get("variableName", "")
+                            if var_name:
+                                item_refs.append(var_name)
+                    if not item_refs:
+                        order = ui.get("order", activity_data.get("order", []))
+                        item_refs = [str(o).rsplit("/", 1)[-1] for o in order]
 
             # Create activity as CLASS entity
             results.append(
                 ClassifiedEntity(
                     entity_type=EntityType.CLASS,
                     semantic={
-                        "properties": item_order,
-                        "description": str(activity_desc)[:500] if activity_desc else None,
+                        "properties": item_refs,
+                        "description": activity_desc[:500] if activity_desc else None,
                     },
                     provenance={
                         "source": "reproschema",
                         "class": activity_name,
                         "name": activity_name,
-                        "description": str(activity_desc)[:500] if activity_desc else None,
+                        "description": activity_desc[:500] if activity_desc else None,
                     },
                     confidence=0.9,
                     source_ref=_DEFAULT_REF,
                 )
             )
 
-            # Extract items
+            # Extract items from items/ directory
             items_dir = activity_dir / "items"
             if not items_dir.exists():
                 continue
@@ -160,40 +218,39 @@ class ReproSchemaAdapter(BaseAdapter):
                 if item_file.is_dir() or item_file.name.startswith("."):
                     continue
 
-                try:
-                    item_data = json.loads(item_file.read_text(encoding="utf-8"))
-                except (json.JSONDecodeError, OSError):
+                item_data = _load_jsonld(item_file)
+                if not item_data:
                     continue
 
                 item_name = item_file.stem
-                question = item_data.get("question", item_data.get("schema:question", ""))
-                if isinstance(question, dict):
-                    question = question.get("en", str(question))
+                question = _extract_label(
+                    item_data.get("question", item_data.get("schema:question", ""))
+                )
+                description = _extract_label(
+                    item_data.get("description", item_data.get("schema:description", ""))
+                )
 
-                description = item_data.get("description", item_data.get("schema:description", ""))
-                if isinstance(description, dict):
-                    description = description.get("en", str(description))
+                # Parse response options — resolves relative path references
+                response_options, resolved_ro = _parse_response_options(item_data, items_dir)
+                data_type = _infer_type_from_response(resolved_ro)
 
-                data_type = _infer_type_from_response(item_data)
                 semantic: dict[str, Any] = {"data_type": data_type}
 
                 if question:
-                    semantic["question_text"] = str(question)[:500]
+                    semantic["question_text"] = question[:500]
 
-                response_options = _parse_response_options(item_data)
                 if response_options:
                     semantic["response_options"] = response_options
 
-                # Min/max from responseOptions
-                ro = item_data.get("responseOptions", {})
-                if ro.get("minValue") is not None:
+                # Min/max from resolved responseOptions
+                if resolved_ro.get("minValue") is not None:
                     try:
-                        semantic["min_value"] = float(ro["minValue"])
+                        semantic["min_value"] = float(resolved_ro["minValue"])
                     except (ValueError, TypeError):
                         pass
-                if ro.get("maxValue") is not None:
+                if resolved_ro.get("maxValue") is not None:
                     try:
-                        semantic["max_value"] = float(ro["maxValue"])
+                        semantic["max_value"] = float(resolved_ro["maxValue"])
                     except (ValueError, TypeError):
                         pass
 
@@ -205,12 +262,60 @@ class ReproSchemaAdapter(BaseAdapter):
                             "source": "reproschema",
                             "class": activity_name,
                             "name": item_name,
-                            "description": str(description or question)[:500] or None,
+                            "description": (description or question)[:500] or None,
                         },
                         confidence=0.85,
                         source_ref=_DEFAULT_REF,
                     )
                 )
+
+                # Create ENUM_VALUE entities for each choice + a VALUESET to group them
+                if response_options and len(response_options) > 1:
+                    value_names = []
+                    for opt in response_options:
+                        val = opt.get("value", "")
+                        label = opt.get("label", val)
+                        value_names.append(val)
+                        results.append(
+                            ClassifiedEntity(
+                                entity_type=EntityType.ENUM_VALUE,
+                                semantic={
+                                    "value_type": "categorical",
+                                    "label": str(label)[:200],
+                                    "description": f"Response option for {item_name}: {label}"[
+                                        :500
+                                    ],
+                                },
+                                provenance={
+                                    "source": "reproschema",
+                                    "class": activity_name,
+                                    "name": f"{item_name}:{val}",
+                                    "description": str(label)[:200],
+                                },
+                                confidence=0.85,
+                                source_ref=_DEFAULT_REF,
+                            )
+                        )
+
+                    # VALUESET grouping all choices for this item
+                    results.append(
+                        ClassifiedEntity(
+                            entity_type=EntityType.VALUESET,
+                            semantic={
+                                "name": f"{item_name}_options",
+                                "members": value_names,
+                                "description": f"Response options for {item_name}"[:500],
+                            },
+                            provenance={
+                                "source": "reproschema",
+                                "class": activity_name,
+                                "name": f"{item_name}_options",
+                                "description": f"Response options for {item_name}",
+                            },
+                            confidence=0.85,
+                            source_ref=_DEFAULT_REF,
+                        )
+                    )
 
         logger.info(
             "Extracted %d entities from reproschema-library at %s",

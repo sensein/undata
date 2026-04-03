@@ -113,7 +113,10 @@ ENRICHMENT_TOOLS = [
                     },
                     "adapter_type": {
                         "type": "string",
-                        "description": "Adapter to use (bids, dandi, reproschema, csv, json-schema)",
+                        "description": (
+                            "Adapter to use (bids, dandi,"
+                            " reproschema, csv, json-schema)"
+                        ),
                     },
                 },
                 "required": ["repository_url"],
@@ -125,8 +128,7 @@ ENRICHMENT_TOOLS = [
         "function": {
             "name": "batch_enrich",
             "description": (
-                "Run batch LLM enrichment on unannotated elements. "
-                "Optionally filter by source."
+                "Run batch LLM enrichment on unannotated elements. Optionally filter by source."
             ),
             "parameters": {
                 "type": "object",

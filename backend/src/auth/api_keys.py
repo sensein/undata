@@ -6,7 +6,6 @@ import hashlib
 import logging
 
 from sqlalchemy import select
-from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.db.models import APIKey, UserProfile
 from src.db.session import AsyncSessionLocal

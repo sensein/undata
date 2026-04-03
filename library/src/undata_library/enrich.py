@@ -948,31 +948,74 @@ def generate_curation_flags(
 # ---------------------------------------------------------------------------
 
 
-def _load_ontology_embeddings(cache_dir: Path, model_name: str) -> EmbeddingStore | None:
-    """Load ontology embeddings from vector index (024) or legacy cache."""
-    cache_base = Path.home() / ".cache" / "undata"
-    for candidate in [
-        cache_base / "ontology-vectors.parquet",
-        cache_dir / "ontology-vectors.parquet",
-    ]:
-        if candidate.exists():
-            try:
-                store = EmbeddingStore(uri_col="term_uri").load(
-                    candidate, expected_model=model_name
-                )
-                if store.size > 0:
-                    logger.info(
-                        "Loaded ontology embeddings from %s: %d terms", candidate, store.size
-                    )
-                    return store
-            except Exception:
-                pass
+def _get_ontology_store_checksum() -> str | None:
+    """Get a combined checksum of all loaded ontologies for staleness detection."""
+    import hashlib
 
-    # Try to build from legacy cache files
+    try:
+        from .ontology_store import OntologyStore
+
+        store_path = Path.home() / ".cache" / "undata" / "ontology-store"
+        if not store_path.exists():
+            return None
+        store = OntologyStore(store_path)
+        loaded = store.list_loaded()
+        checksums = sorted(e.get("checksum", "") for e in loaded if e.get("checksum"))
+        if not checksums:
+            return None
+        return hashlib.sha256("|".join(checksums).encode()).hexdigest()[:16]
+    except Exception:
+        return None
+
+
+def _load_ontology_embeddings(cache_dir: Path, model_name: str) -> EmbeddingStore | None:
+    """Load ontology embeddings from vector index, with staleness check.
+
+    If the ontology store checksum differs from the index checksum, auto-rebuild.
+    """
+    cache_base = Path.home() / ".cache" / "undata"
+    current_checksum = _get_ontology_store_checksum()
+    checksum_file = cache_base / "ontology-vectors.checksum"
+    stored_checksum = checksum_file.read_text().strip() if checksum_file.exists() else None
+
+    # Check staleness
+    is_stale = current_checksum and stored_checksum and current_checksum != stored_checksum
+    if is_stale:
+        logger.info(
+            "Ontology vector index is stale (store=%s, index=%s), will rebuild",
+            current_checksum,
+            stored_checksum,
+        )
+
+    if not is_stale:
+        for candidate in [
+            cache_base / "ontology-vectors.parquet",
+            cache_dir / "ontology-vectors.parquet",
+        ]:
+            if candidate.exists():
+                try:
+                    store = EmbeddingStore(uri_col="term_uri").load(
+                        candidate, expected_model=model_name
+                    )
+                    if store.size > 0:
+                        logger.info(
+                            "Loaded ontology embeddings from %s: %d terms", candidate, store.size
+                        )
+                        return store
+                except Exception:
+                    pass
+
+    # Build from cache files (stale index or no existing index)
     try:
         store = build_ontology_embeddings(cache_dir, model_name=model_name)
         if store.size > 0:
-            store.save(cache_dir / "embeddings.parquet", model_name=model_name)
+            save_path = cache_base / "ontology-vectors.parquet"
+            save_path.parent.mkdir(parents=True, exist_ok=True)
+            store.save(save_path, model_name=model_name)
+            # Store checksum for future staleness detection
+            if current_checksum:
+                checksum_file.write_text(current_checksum)
+            logger.info("Built ontology embeddings: %d terms", store.size)
             return store
     except ImportError:
         logger.warning(
@@ -1132,6 +1175,20 @@ def _assign_ontology_annotations(
                 logger.info("LLM rejected match: %s ↔ %s (score=%.3f)", element_desc, label, score)
                 continue
 
+        # Build reasoning text
+        term_defn = term_info.get("definition") or term_info.get("description") or ""
+        if llm_result and llm_result.get("justification"):
+            reasoning = str(llm_result["justification"])
+            sim_method = "llm_reasoning"
+        else:
+            reasoning = (
+                f"Cosine embedding similarity {score:.3f} between "
+                f"element '{element_desc[:80]}' and ontology term '{label}'"
+                f"{(' — ' + term_defn[:120]) if term_defn else ''}. "
+                f"Relation: {mapping_relation}."
+            )
+            sim_method = "cosine_embedding"
+
         ann: dict = {
             "term_uri": uri,
             "term_label": label,
@@ -1141,6 +1198,16 @@ def _assign_ontology_annotations(
             "score": round(score, 4),
             "model": model_name,
             "primary": len(annotations) == 0,
+            "evidence": {
+                "similarity_score": round(score, 4),
+                "similarity_method": sim_method,
+                "source_text": element_desc[:500] if element_desc else element_uri,
+                "target_term_uri": uri,
+                "target_term_label": label,
+                "target_term_definition": term_defn[:500] if term_defn else None,
+                "uri_verified": False,
+                "reasoning": reasoning,
+            },
         }
         if llm_result and llm_result.get("error") is None:
             ann["llm_verification"] = llm_result

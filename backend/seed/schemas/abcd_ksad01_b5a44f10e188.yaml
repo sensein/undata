@@ -1,0 +1,34 @@
+semantic:
+  properties:
+  - ksads_section1_schema
+  - ksads_section2_schema
+  - ksads_section3_schema
+  - ksads_section4_schema
+  - ksads_section5_schema
+  - ksads_section6_schema
+  - ksads_section7_schema
+  - ksads_section8_schema
+  - ksads_section9_schema
+  - ksads_section10_schema
+  - ksads_section11_schema
+  - ksads_section12_schema
+  - ksads_section13_schema
+  - ksads_section14_schema
+  - ksads_section15_schema
+  - ksads_section16_schema
+  - ksads_section17_schema
+  - ksads_section18_schema
+  - ksads_section19_schema
+  - ksads_section20_schema
+  - ksads_section21_schema
+  - ksads_section22_schema
+  - ksads_section23_schema
+  - ksads_section24_schema
+  - ksads_section25_schema
+  description: null
+provenance:
+- source: reproschema
+  class: abcd_ksad01
+  name: abcd_ksad01
+  description: null
+sha256: b5a44f10e188a93ba579202dfd30d1582e8fc206d51c8b0815dd69e4ea2790ad

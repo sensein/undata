@@ -1,0 +1,15 @@
+id: c47275d4-f7eb-4be4-a0d4-a52592b7adfc
+entity_type: value
+entity_ref: f5c762429590d4eb1a6930e3009398234ab4aecf750c7ac949bcf47db05117b3
+flag_type: multiple_candidates
+context:
+  reason: multiple close candidates (gap=0.000)
+  candidates:
+  - uri: http://purl.obolibrary.org/obo/PATO_0002016
+    score: 0.8594
+  - uri: http://purl.obolibrary.org/obo/NCIT_C49158
+    score: 0.8594
+  - uri: http://purl.org/nidash/nidm#Magnitude
+    score: 0.8594
+status: pending
+created_at: '2026-04-02T03:53:16.409929+00:00'

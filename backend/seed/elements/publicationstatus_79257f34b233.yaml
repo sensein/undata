@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  type_ref: PublicationStatus
+  value_domain: text
+provenance:
+- source: openminds
+  class: openminds
+  name: publicationStatus
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 79257f34b233ff61cbe390a4fa811b37a755c0760ad5ed3537868968e8030022

@@ -1,0 +1,17 @@
+run_id: cc5e73f3-f76
+source: openneuro
+started_at: '2026-04-02T19:30:58.648867+00:00'
+completed_at: '2026-04-02T19:30:58.648970+00:00'
+entity_counts:
+  extract:
+    elements: 28
+    schemas: 0
+    values: 38
+    valuesets: 7
+curation_flags:
+  ambiguous_match: 1302
+  multiple_candidates: 768
+  unknown_transform: 9
+timing:
+  extract: 0.07984089851379395
+  commit: 20.178961038589478

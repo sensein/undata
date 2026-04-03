@@ -4,9 +4,18 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 from typing import AsyncIterator
 
 logger = logging.getLogger(__name__)
+
+
+def _get_model() -> str:
+    """Get the LLM model to use. Supports OLLAMA_HOST for local dev."""
+    if os.environ.get("OLLAMA_HOST"):
+        return os.environ.get("UNDATA_LLM_MODEL", "ollama_chat/qwen3")
+    return os.environ.get("UNDATA_LLM_MODEL", "gpt-4.1-mini")
+
 
 TOOL_DEFINITIONS = [
     {
@@ -17,9 +26,18 @@ TOOL_DEFINITIONS = [
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "entity_type": {"type": "string", "enum": ["elements", "schemas", "values", "valuesets"]},
-                    "sha256": {"type": "string", "description": "Entity identifier (sha256 prefix)"},
-                    "field": {"type": "string", "description": "Field to change (e.g., unit, description)"},
+                    "entity_type": {
+                        "type": "string",
+                        "enum": ["elements", "schemas", "values", "valuesets"],
+                    },
+                    "sha256": {
+                        "type": "string",
+                        "description": "Entity identifier (sha256 prefix)",
+                    },
+                    "field": {
+                        "type": "string",
+                        "description": "Field to change (e.g., unit, description)",
+                    },
                     "value": {"description": "New value for the field"},
                 },
                 "required": ["entity_type", "sha256", "field", "value"],
@@ -30,12 +48,18 @@ TOOL_DEFINITIONS = [
         "type": "function",
         "function": {
             "name": "lookup_ontology_term",
-            "description": "Search the ontology store for a term. Use this instead of guessing URIs.",
+            "description": (
+                "Search the ontology store for a term."
+                " Use this instead of guessing URIs."
+            ),
             "parameters": {
                 "type": "object",
                 "properties": {
                     "query": {"type": "string"},
-                    "ontology": {"type": "string", "description": "Optional: restrict to ontology (ncit, uberon, pato, etc.)"},
+                    "ontology": {
+                        "type": "string",
+                        "description": "Optional: restrict to ontology (ncit, uberon, pato, etc.)",
+                    },
                     "limit": {"type": "integer", "default": 5},
                 },
                 "required": ["query"],
@@ -50,7 +74,10 @@ TOOL_DEFINITIONS = [
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "entity_type": {"type": "string", "enum": ["elements", "schemas", "values", "valuesets"]},
+                    "entity_type": {
+                        "type": "string",
+                        "enum": ["elements", "schemas", "values", "valuesets"],
+                    },
                     "sha256": {"type": "string"},
                 },
                 "required": ["entity_type", "sha256"],
@@ -66,7 +93,18 @@ TOOL_DEFINITIONS = [
                 "type": "object",
                 "properties": {
                     "source_url": {"type": "string"},
-                    "adapter_pattern": {"type": "string", "enum": ["bids", "nwb", "dandi", "openminds", "aind", "json-schema", "linkml"]},
+                    "adapter_pattern": {
+                        "type": "string",
+                        "enum": [
+                            "bids",
+                            "nwb",
+                            "dandi",
+                            "openminds",
+                            "aind",
+                            "json-schema",
+                            "linkml",
+                        ],
+                    },
                 },
                 "required": ["source_url", "adapter_pattern"],
             },
@@ -87,7 +125,7 @@ Rules:
 
 async def execute_tool(name: str, arguments: dict) -> str:
     """Execute a tool call and return the result as a JSON string."""
-    from src.tools.entity_tools import propose_entity_change, fetch_entity
+    from src.tools.entity_tools import fetch_entity, propose_entity_change
     from src.tools.ontology_tools import lookup_ontology_term
     from src.tools.pipeline_tools import trigger_ingestion
 
@@ -123,14 +161,17 @@ async def chat_completion(
     # Build system message with entity context
     system = SYSTEM_PROMPT
     if entity_context:
-        system += f"\n\nCurrent entity context:\n```json\n{json.dumps(entity_context, indent=2, default=str)}\n```"
+        ctx = json.dumps(entity_context, indent=2, default=str)
+        system += (
+            f"\n\nCurrent entity context:\n```json\n{ctx}\n```"
+        )
 
     full_messages = [{"role": "system", "content": system}] + messages
 
     # Call LLM with tools
     try:
         response = await litellm.acompletion(
-            model="gpt-4.1-mini",
+            model=_get_model(),
             messages=full_messages,
             tools=TOOL_DEFINITIONS,
             tool_choice="auto",
@@ -161,12 +202,14 @@ async def chat_completion(
 
             # Add tool result to messages and get follow-up response
             full_messages.append({"role": "assistant", "content": None, "tool_calls": [tool_call]})
-            full_messages.append({"role": "tool", "tool_call_id": tool_call.id, "content": result_str})
+            full_messages.append(
+                {"role": "tool", "tool_call_id": tool_call.id, "content": result_str}
+            )
 
         # Get final response after tool execution
         try:
             follow_up = await litellm.acompletion(
-                model="gpt-4.1-mini",
+                model=_get_model(),
                 messages=full_messages,
                 stream=False,
             )
@@ -176,3 +219,17 @@ async def chat_completion(
     else:
         # No tool calls — just text response
         yield {"type": "text", "content": message.content or ""}
+
+
+AUTO_SUGGEST_PROMPT = """Analyze this entity and suggest improvements. Check for:
+1. Missing or incorrect ontology annotations — use lookup_ontology_term to find proper matches
+2. Missing or incorrect units — suggest the correct unit and QUDT URI if applicable
+3. Description quality — suggest improvements if the description is vague or missing
+4. Data type accuracy — check if the data_type matches the actual content
+
+Be specific and actionable. Use propose_entity_change for each suggestion."""
+
+
+def build_auto_suggest_messages(entity_context: dict) -> list[dict]:
+    """Build the message list for auto-suggest on entity load."""
+    return [{"role": "user", "content": AUTO_SUGGEST_PROMPT}]

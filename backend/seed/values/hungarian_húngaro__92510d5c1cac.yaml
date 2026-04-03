@@ -1,0 +1,10 @@
+semantic:
+  value_type: categorical
+  label: "Hungarian H\xFAngaro "
+  description: "Response option for demo_prnt_nat_lang_l: Hungarian H\xFAngaro "
+provenance:
+- source: reproschema
+  class: abcd_lpds01
+  name: demo_prnt_nat_lang_l:25
+  description: "Hungarian H\xFAngaro "
+sha256: 92510d5c1cacfe2409358cdd5dfbf9102a940b347c017d5fbe784fc1c6b5b268

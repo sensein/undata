@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  question_text: Symptom - Attempts to suppress or neutralize thoughts Past
+provenance:
+- source: reproschema
+  class: abcd_ksad01
+  name: ksads_11_334_p
+  description: Symptom - Attempts to suppress or neutralize thoughts Past
+  generated_at: '2026-04-02T19:31:06.139505+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 4fa2dbd5f8d7764f3dc6006f52b67c86fd0e0280245fdee5d9ff912f7f11b305

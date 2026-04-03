@@ -1,0 +1,31 @@
+semantic:
+  data_type: integer
+  response_options:
+  - value: '1'
+    label: Almost never
+    ontology_term: https://schema.undata.live/values/9f4504f0-1037-4ed6-980e-455aa241a908
+  - value: '2'
+    label: ''
+    ontology_term: https://schema.undata.live/values/8717bdeb-c06d-4b24-80d9-2727ec2880fe
+  - value: '3'
+    label: ''
+    ontology_term: https://schema.undata.live/values/b3298f63-8c9d-4c51-9f49-f38b31e952ca
+  - value: '4'
+    label: ''
+    ontology_term: https://schema.undata.live/values/33a6fa77-0389-4049-80ab-39ee856a5281
+  - value: '5'
+    label: Almost always
+    ontology_term: https://schema.undata.live/values/d082390d-3026-4fa5-bdc8-5181ec2f16da
+  question_text: When I'm really struggling, I tend to feel like other people must
+    be having an easier time of it.
+  min_value: 0.0
+  max_value: 3.0
+provenance:
+- source: reproschema
+  class: SCS
+  name: selfcompassion_18
+  description: Q18 of the Self Compassion Scale
+  generated_at: '2026-04-02T19:31:06.139505+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 25472672160bc7651710bc3d0ac89f44746bac27571932468ea937e2ab4828e4

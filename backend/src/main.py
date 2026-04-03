@@ -18,14 +18,24 @@ logger = get_logger(__name__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Create database tables on startup."""
+    """Create database tables on startup, launch background tasks."""
+    import asyncio
+
     from src.db import models  # noqa: F401 — registers models with Base
     from src.db.session import Base, engine
 
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     logger.info("Database tables created")
+
+    # Launch nightly export background task
+    from src.services.nightly_export import nightly_export_loop
+
+    nightly_task = asyncio.create_task(nightly_export_loop())
+
     yield
+
+    nightly_task.cancel()
     await engine.dispose()
 
 
@@ -90,23 +100,30 @@ async def health():
 @app.get("/auth/me")
 async def auth_me(request: Request):
     from src.auth.dependencies import get_current_user
-    from src.auth.middleware import extract_token, is_jwt, validate_jwt
+    from src.auth.middleware import extract_token, is_jwt
 
     # Debug: log what we receive
     auth_header = request.headers.get("authorization", "")
     token = extract_token(auth_header)
-    logger.info("auth_me: header=%s, token_found=%s, is_jwt=%s",
-                auth_header[:30] + "..." if len(auth_header) > 30 else auth_header,
-                token is not None,
-                is_jwt(token) if token else False)
+    logger.info(
+        "auth_me: header=%s, token_found=%s, is_jwt=%s",
+        auth_header[:30] + "..." if len(auth_header) > 30 else auth_header,
+        token is not None,
+        is_jwt(token) if token else False,
+    )
 
     if token and is_jwt(token):
         # Try decode without verification to see claims
         import jwt as pyjwt
+
         try:
             unverified = pyjwt.decode(token, options={"verify_signature": False})
-            logger.info("auth_me: unverified claims: iss=%s, aud=%s, sub=%s",
-                        unverified.get("iss"), unverified.get("aud"), unverified.get("sub"))
+            logger.info(
+                "auth_me: unverified claims: iss=%s, aud=%s, sub=%s",
+                unverified.get("iss"),
+                unverified.get("aud"),
+                unverified.get("sub"),
+            )
         except Exception as e:
             logger.info("auth_me: can't decode unverified: %s", e)
 
@@ -152,8 +169,7 @@ async def auth_callback(code: str = ""):
         return JSONResponse(status_code=400, content={"error": "Missing authorization code"})
 
     token_url = (
-        f"{settings.keycloak_url}/realms/{settings.keycloak_realm}"
-        f"/protocol/openid-connect/token"
+        f"{settings.keycloak_url}/realms/{settings.keycloak_realm}/protocol/openid-connect/token"
     )
     redirect_uri = f"{settings.undata_base_url}/auth/callback"
 
@@ -177,20 +193,25 @@ async def auth_callback(code: str = ""):
 
     # Redirect to frontend with token in URL fragment
     # Frontend reads the fragment and stores in localStorage
-    from fastapi.responses import RedirectResponse
-
     # Use query parameter — more reliable than fragment across redirect chains
     from urllib.parse import quote
-    return RedirectResponse(f"{settings.frontend_url}/auth/callback?token={quote(access_token, safe='')}")
+
+    from fastapi.responses import RedirectResponse
+
+    return RedirectResponse(
+        f"{settings.frontend_url}/auth/callback?token={quote(access_token, safe='')}"
+    )
 
 
 # Chat endpoint — LLM curation assistant with tool execution
 @app.post("/api/chat")
 async def api_chat(request: Request):
-    from src.auth.dependencies import get_current_user, require_auth, check_role
-    from src.services.chat_service import chat_completion
-    from starlette.responses import StreamingResponse
     import json as json_module
+
+    from starlette.responses import StreamingResponse
+
+    from src.auth.dependencies import check_role, get_current_user
+    from src.services.chat_service import chat_completion
 
     user = await get_current_user(request)
     if user is None or not check_role(user, "curator"):
@@ -208,10 +229,22 @@ async def api_chat(request: Request):
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 
 
-# GraphQL mount
-from strawberry.fastapi import GraphQLRouter
+# Static file serving for export archives
+import tempfile  # noqa: E402
+from pathlib import Path  # noqa: E402
 
-from src.graphql.schema import schema
+from fastapi.staticfiles import StaticFiles  # noqa: E402
+
+_export_path = Path(settings.export_dir)
+if not _export_path.is_absolute() or not _export_path.parent.exists():
+    _export_path = Path(tempfile.gettempdir()) / "undata-exports"
+_export_path.mkdir(parents=True, exist_ok=True)
+app.mount("/api/downloads", StaticFiles(directory=str(_export_path)), name="downloads")
+
+# GraphQL mount
+from strawberry.fastapi import GraphQLRouter  # noqa: E402
+
+from src.graphql.schema import schema  # noqa: E402
 
 graphql_app = GraphQLRouter(schema)
 app.include_router(graphql_app, prefix="/graphql")

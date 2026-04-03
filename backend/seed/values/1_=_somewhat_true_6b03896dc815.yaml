@@ -1,0 +1,10 @@
+semantic:
+  value_type: categorical
+  label: 1 = Somewhat true
+  description: 'Response option for ICU_P_21: 1 = Somewhat true'
+provenance:
+- source: reproschema
+  class: ICU_P
+  name: ICU_P_21:1
+  description: 1 = Somewhat true
+sha256: 6b03896dc815364e4f36b147f4ba8d915bb0ea1e6e8afe043fd27a31fc6ccf2c

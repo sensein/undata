@@ -1,0 +1,11 @@
+semantic:
+  data_type: string
+  value_domain: text
+provenance:
+- source: aind
+  class: aind
+  name: gpu_usage
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: db5e12a83ecd168cac9a4871c286e6ed090a5504deb18a47c5110ffa882b5df5

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   useReactTable,
   getCoreRowModel,
@@ -160,7 +160,9 @@ export function EntityDataGrid<T>({
 function InfiniteScrollSentinel({ onIntersect }: { onIntersect: () => void }) {
   const sentinelRef = useRef<HTMLDivElement>(null);
   const onIntersectRef = useRef(onIntersect);
-  onIntersectRef.current = onIntersect;
+  useEffect(() => {
+    onIntersectRef.current = onIntersect;
+  }, [onIntersect]);
 
   useEffect(() => {
     const el = sentinelRef.current;

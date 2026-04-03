@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  type_ref: FrequencyUnit
+  value_domain: text
+provenance:
+- source: aind
+  class: aind
+  name: frame_rates_unit
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 87d8ff50b635c165d10f9780220603f42fe30c726a6c2fdbab97848a836ec882

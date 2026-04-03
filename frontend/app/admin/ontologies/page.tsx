@@ -1,7 +1,21 @@
 "use client";
 
 import { useQuery } from "@apollo/client/react";
+import { gql } from "@apollo/client";
 import { ONTOLOGY_SOURCES } from "@/graphql/queries";
+
+const ONTOLOGY_STORE_INFO = gql`
+  query OntologyStoreInfo {
+    ontologyStoreInfo {
+      name
+      displayName
+      termCount
+      format
+      checksum
+      lastRefreshed
+    }
+  }
+`;
 
 interface OntologySourceNode {
   id: string;
@@ -15,14 +29,56 @@ interface OntologySourceNode {
   createdAt: string;
 }
 
+interface StoreEntry {
+  name: string;
+  displayName: string;
+  termCount: number;
+  format: string;
+  checksum: string;
+  lastRefreshed: string;
+}
+
 export default function OntologyAdminPage() {
   const { data, loading, error } = useQuery<{ ontologySources: OntologySourceNode[] }>(ONTOLOGY_SOURCES);
+  const { data: storeData } = useQuery<{ ontologyStoreInfo: StoreEntry[] }>(ONTOLOGY_STORE_INFO);
 
   const sources = data?.ontologySources ?? [];
+  const storeEntries = storeData?.ontologyStoreInfo ?? [];
 
   return (
     <div>
       <h1 className="text-xl font-bold mb-4">Ontology Sources</h1>
+
+      {/* Pyoxigraph Store — live loaded ontologies */}
+      {storeEntries.length > 0 && (
+        <div className="mb-6">
+          <h2 className="text-sm font-semibold text-gray-700 mb-2">Loaded in Ontology Store (pyoxigraph)</h2>
+          <div className="border rounded overflow-hidden">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-blue-50 border-b">
+                  <th className="text-left px-3 py-2 font-medium">Name</th>
+                  <th className="text-left px-3 py-2 font-medium">Terms</th>
+                  <th className="text-left px-3 py-2 font-medium">Format</th>
+                  <th className="text-left px-3 py-2 font-medium">Checksum</th>
+                </tr>
+              </thead>
+              <tbody>
+                {storeEntries.map((e) => (
+                  <tr key={e.name} className="border-b hover:bg-gray-50">
+                    <td className="px-3 py-2 font-medium">{e.displayName || e.name}</td>
+                    <td className="px-3 py-2 font-mono">{e.termCount.toLocaleString()}</td>
+                    <td className="px-3 py-2 text-xs">{e.format}</td>
+                    <td className="px-3 py-2 text-xs font-mono text-gray-400">{e.checksum?.slice(0, 12)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      <h2 className="text-sm font-semibold text-gray-700 mb-2">Registered Sources (database)</h2>
       <p className="text-sm text-gray-500 mb-4">
         Manage ontology sources used for element enrichment. Add new ontologies via CLI:
         <code className="ml-1 bg-gray-100 px-1 rounded text-xs">undata-library ontology add --name NAME --url URL --format owl</code>

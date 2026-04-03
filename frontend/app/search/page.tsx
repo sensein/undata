@@ -33,15 +33,18 @@ const ENTITY_TYPE_PATHS: Record<string, string> = {
   valueset: "valuesets",
 };
 
+type SearchModeType = "LEXICAL" | "SEMANTIC" | "BOTH";
+
 function SearchContent() {
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get("q") ?? "";
   const [query, setQuery] = useState(initialQuery);
+  const [mode, setMode] = useState<SearchModeType>("BOTH");
   const [executeSearch, { data, loading }] = useLazyQuery<{ search: SearchResult[] }>(SEARCH);
 
   const handleSearch = () => {
     if (query.trim()) {
-      executeSearch({ variables: { query: query.trim(), first: 100 } });
+      executeSearch({ variables: { query: query.trim(), mode, first: 100 } });
     }
   };
 
@@ -66,7 +69,7 @@ function SearchContent() {
     <div>
       <h1 className="text-xl font-bold mb-4">Search</h1>
 
-      <div className="flex gap-2 mb-6">
+      <div className="flex gap-2 mb-3">
         <input
           type="text"
           className="border rounded px-3 py-2 text-sm flex-1"
@@ -83,6 +86,25 @@ function SearchContent() {
         >
           {loading ? "Searching..." : "Search"}
         </button>
+      </div>
+
+      <div className="flex gap-1 mb-6">
+        {(["LEXICAL", "SEMANTIC", "BOTH"] as const).map((m) => (
+          <button
+            key={m}
+            onClick={() => setMode(m)}
+            className={`px-3 py-1 text-xs rounded border ${
+              mode === m
+                ? "bg-blue-600 text-white border-blue-600"
+                : "bg-white text-gray-600 border-gray-300 hover:bg-gray-50"
+            }`}
+          >
+            {m === "LEXICAL" ? "Lexical" : m === "SEMANTIC" ? "Semantic" : "Both"}
+          </button>
+        ))}
+        <span className="text-xs text-gray-400 ml-2 self-center">
+          {mode === "LEXICAL" ? "Keyword matching" : mode === "SEMANTIC" ? "Meaning-based similarity" : "Combined search"}
+        </span>
       </div>
 
       {results.length === 0 && data && !loading && (
