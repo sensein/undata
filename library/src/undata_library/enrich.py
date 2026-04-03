@@ -1005,7 +1005,15 @@ def _load_ontology_embeddings(cache_dir: Path, model_name: str) -> EmbeddingStor
                 except Exception:
                     pass
 
-    # Build from cache files (stale index or no existing index)
+    # If stale, rebuild from cache; if missing, warn and skip
+    if not is_stale:
+        logger.warning(
+            "No ontology embedding index found. Run 'undata-library embed --include-ontology' "
+            "to build the ontology vector index before enrichment."
+        )
+        return None
+
+    # Rebuild stale index
     try:
         store = build_ontology_embeddings(cache_dir, model_name=model_name)
         if store.size > 0:
