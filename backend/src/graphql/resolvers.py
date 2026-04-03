@@ -398,7 +398,7 @@ async def resolve_search(
                         )
                         sem_result = await session.execute(
                             sem_stmt,
-                            {"qvec": str(query_vec.tolist()), "lim": first},
+                            {"qvec": str(query_vec if isinstance(query_vec, list) else query_vec.tolist()), "lim": first},
                         )
                         for row in sem_result:
                             sim = round(float(row.similarity), 4)
