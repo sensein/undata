@@ -103,7 +103,7 @@
 **Purpose**: Final verification, cleanup, test suite green
 
 - [ ] T030 Run full library test suite — all tests pass with Parquet-only pipeline in library/tests/
-- [ ] T031 Run full pipeline for BIDS source end-to-end — verify zero YAML, embeddings present, import fast
+- [ ] T031 Run full pipeline for BIDS source end-to-end — verify zero YAML, embeddings present, cross-references resolved (schema properties → sha256), storage <2GB, import <30s
 - [ ] T032 [P] Verify CLI inspect command works with Parquet-only registry
 - [ ] T033 [P] Verify frontend displays entities imported from Parquet registry with pre-computed embeddings
 
