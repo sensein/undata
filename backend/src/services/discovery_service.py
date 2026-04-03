@@ -9,7 +9,6 @@ from __future__ import annotations
 import asyncio
 import logging
 import os
-from datetime import datetime, timezone
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -74,7 +73,11 @@ async def run_discovery_scan(session: AsyncSession) -> dict:
 
     if queued > 0:
         await session.flush()
-        logger.info("Queued %d new ingestion jobs (%d auto-approved)", queued, sum(1 for d in datasets if d.get("source") in APPROVED_SOURCES))
+        logger.info(
+            "Queued %d new ingestion jobs (%d auto-approved)",
+            queued,
+            sum(1 for d in datasets if d.get("source") in APPROVED_SOURCES),
+        )
 
     return {"scanned": len(datasets), "queued": queued}
 

@@ -6,22 +6,27 @@ import base64
 import logging
 import uuid
 from datetime import datetime, timezone
-from typing import Optional
 
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-logger = logging.getLogger(__name__)
-
 from src.db.models import (
     ENTITY_MODEL_MAP,
+)
+from src.db.models import (
     Contribution as ContributionModel,
+)
+from src.db.models import (
     CurationFlag as CurationFlagModel,
+)
+from src.db.models import (
     RunSummary as RunSummaryModel,
 )
 from src.storage.database_backend import DatabaseBackend
 
 from . import types as t
+
+logger = logging.getLogger(__name__)
 
 
 def _encode_cursor(created_at, row_id) -> str:
@@ -224,8 +229,7 @@ async def _paginated_query(session, model, stmt, first, after, sort_column=None)
         else:
             ts_val = dt.fromisoformat(cursor_val)
             stmt = stmt.where(
-                (order_col > ts_val)
-                | ((order_col == ts_val) & (model.id > uuid.UUID(cursor_id)))
+                (order_col > ts_val) | ((order_col == ts_val) & (model.id > uuid.UUID(cursor_id)))
             )
 
     stmt = stmt.order_by(order_col, model.id).limit(first + 1)
@@ -308,6 +312,7 @@ async def resolve_search(
         elem_stmt = select(Element)
         if hasattr(Element, "search_tsv") and Element.search_tsv is not None:
             from sqlalchemy import func as sa_func
+
             elem_stmt = elem_stmt.where(
                 Element.search_tsv.op("@@")(sa_func.plainto_tsquery("english", query))
             )
@@ -318,36 +323,62 @@ async def resolve_search(
         elem_stmt = elem_stmt.limit(first)
         for row in (await session.execute(elem_stmt)).scalars():
             prov = row.provenance[0] if row.provenance else {}
-            results.append(t.SearchResultType(
-                entity_type="element", sha256=row.sha256,
-                name=prov.get("name", row.file_name or row.sha256[:12]),
-                source=prov.get("source"), data_type=row.data_type, unit=row.unit,
-                description=row.description or prov.get("description", ""), score=1.0,
-            ))
+            results.append(
+                t.SearchResultType(
+                    entity_type="element",
+                    sha256=row.sha256,
+                    name=prov.get("name", row.file_name or row.sha256[:12]),
+                    source=prov.get("source"),
+                    data_type=row.data_type,
+                    unit=row.unit,
+                    description=row.description or prov.get("description", ""),
+                    score=1.0,
+                )
+            )
 
         for model_cls, etype, score_base in [
-            (Schema, "schema", 0.9), (Value, "value", 0.8), (ValueSet, "valueset", 0.7),
+            (Schema, "schema", 0.9),
+            (Value, "value", 0.8),
+            (ValueSet, "valueset", 0.7),
         ]:
-            name_col = getattr(model_cls, "label", None) or getattr(model_cls, "name", None) or model_cls.file_name
-            stmt = select(model_cls).where(
-                name_col.ilike(f"%{query}%") | model_cls.description.ilike(f"%{query}%")
-            ).limit(first)
+            name_col = (
+                getattr(model_cls, "label", None)
+                or getattr(model_cls, "name", None)
+                or model_cls.file_name
+            )
+            stmt = (
+                select(model_cls)
+                .where(name_col.ilike(f"%{query}%") | model_cls.description.ilike(f"%{query}%"))
+                .limit(first)
+            )
             for row in (await session.execute(stmt)).scalars():
                 prov = row.provenance[0] if row.provenance else {}
-                nm = getattr(row, "label", None) or getattr(row, "name", None) or row.file_name or row.sha256[:12]
-                results.append(t.SearchResultType(
-                    entity_type=etype, sha256=row.sha256,
-                    name=prov.get("name", nm), source=prov.get("source"),
-                    description=row.description or prov.get("description", ""), score=score_base,
-                ))
+                nm = (
+                    getattr(row, "label", None)
+                    or getattr(row, "name", None)
+                    or row.file_name
+                    or row.sha256[:12]
+                )
+                results.append(
+                    t.SearchResultType(
+                        entity_type=etype,
+                        sha256=row.sha256,
+                        name=prov.get("name", nm),
+                        source=prov.get("source"),
+                        description=row.description or prov.get("description", ""),
+                        score=score_base,
+                    )
+                )
 
     # --- Semantic search (pgvector nearest-neighbor) ---
     if do_semantic:
         try:
             from src.services.embedding_service import compute_embedding
+
             query_vec = compute_embedding(query)
             if query_vec is not None:
                 from sqlalchemy import text as sa_text
+
                 # Use pgvector cosine distance for element search
                 sem_stmt = sa_text(
                     "SELECT sha256, file_name, data_type, unit, description, provenance, "
@@ -363,13 +394,18 @@ async def resolve_search(
                     if row.sha256 in seen_sha:
                         continue
                     prov = (row.provenance or [{}])[0] if row.provenance else {}
-                    results.append(t.SearchResultType(
-                        entity_type="element", sha256=row.sha256,
-                        name=prov.get("name", row.file_name or row.sha256[:12]),
-                        source=prov.get("source"), data_type=row.data_type, unit=row.unit,
-                        description=row.description or prov.get("description", ""),
-                        score=round(float(row.similarity), 4),
-                    ))
+                    results.append(
+                        t.SearchResultType(
+                            entity_type="element",
+                            sha256=row.sha256,
+                            name=prov.get("name", row.file_name or row.sha256[:12]),
+                            source=prov.get("source"),
+                            data_type=row.data_type,
+                            unit=row.unit,
+                            description=row.description or prov.get("description", ""),
+                            score=round(float(row.similarity), 4),
+                        )
+                    )
         except Exception as e:
             logger.warning("Semantic search failed: %s", e)
 
@@ -397,9 +433,11 @@ async def resolve_browse_elements(
     if source:
         from sqlalchemy import text as sa_text
 
-        stmt = stmt.where(sa_text("provenance @> :src_filter ::jsonb").bindparams(
-            src_filter=f'[{{"source": "{source}"}}]'
-        ))
+        stmt = stmt.where(
+            sa_text("provenance @> :src_filter ::jsonb").bindparams(
+                src_filter=f'[{{"source": "{source}"}}]'
+            )
+        )
     if data_type:
         stmt = stmt.where(Element.data_type == data_type.value)
     if has_annotations is True:
@@ -414,10 +452,7 @@ async def resolve_browse_elements(
             )
         else:
             pattern = f"%{search_text}%"
-            stmt = stmt.where(
-                Element.description.ilike(pattern)
-                | Element.file_name.ilike(pattern)
-            )
+            stmt = stmt.where(Element.description.ilike(pattern) | Element.file_name.ilike(pattern))
 
     # Determine sort column
     sort_col_map = {
@@ -445,7 +480,9 @@ async def resolve_browse_elements(
     ]
     return t.ElementConnection(
         edges=edges,
-        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        page_info=t.PageInfo(
+            has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None
+        ),
         total_count=total,
     )
 
@@ -464,12 +501,14 @@ async def resolve_browse_schemas(
     stmt = select(Schema)
     if source:
         from sqlalchemy import text as sa_text
-        stmt = stmt.where(sa_text("provenance @> :src ::jsonb").bindparams(
-            src=f'[{{"source": "{source}"}}]'
-        ))
+
+        stmt = stmt.where(
+            sa_text("provenance @> :src ::jsonb").bindparams(src=f'[{{"source": "{source}"}}]')
+        )
     if search_text:
         stmt = stmt.where(
-            Schema.file_name.ilike(f"%{search_text}%") | Schema.description.ilike(f"%{search_text}%")
+            Schema.file_name.ilike(f"%{search_text}%")
+            | Schema.description.ilike(f"%{search_text}%")
         )
 
     sort_col_map = {"name": Schema.file_name, "description": Schema.description}
@@ -480,14 +519,18 @@ async def resolve_browse_schemas(
         else:
             sort_col = sort_col.asc().nulls_last()
 
-    rows, has_next, total = await _paginated_query(session, Schema, stmt, first, after, sort_column=sort_col)
+    rows, has_next, total = await _paginated_query(
+        session, Schema, stmt, first, after, sort_column=sort_col
+    )
     edges = [
         t.SchemaEdge(cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_schema_from_row(r))
         for r in rows
     ]
     return t.SchemaConnection(
         edges=edges,
-        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        page_info=t.PageInfo(
+            has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None
+        ),
         total_count=total,
     )
 
@@ -506,9 +549,10 @@ async def resolve_browse_values(
     stmt = select(Value)
     if source:
         from sqlalchemy import text as sa_text
-        stmt = stmt.where(sa_text("provenance @> :src ::jsonb").bindparams(
-            src=f'[{{"source": "{source}"}}]'
-        ))
+
+        stmt = stmt.where(
+            sa_text("provenance @> :src ::jsonb").bindparams(src=f'[{{"source": "{source}"}}]')
+        )
     if search_text:
         stmt = stmt.where(
             Value.label.ilike(f"%{search_text}%") | Value.description.ilike(f"%{search_text}%")
@@ -522,14 +566,18 @@ async def resolve_browse_values(
         else:
             sort_col = sort_col.asc().nulls_last()
 
-    rows, has_next, total = await _paginated_query(session, Value, stmt, first, after, sort_column=sort_col)
+    rows, has_next, total = await _paginated_query(
+        session, Value, stmt, first, after, sort_column=sort_col
+    )
     edges = [
         t.ValueEdge(cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_value_from_row(r))
         for r in rows
     ]
     return t.ValueConnection(
         edges=edges,
-        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        page_info=t.PageInfo(
+            has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None
+        ),
         total_count=total,
     )
 
@@ -548,9 +596,10 @@ async def resolve_browse_valuesets(
     stmt = select(ValueSet)
     if source:
         from sqlalchemy import text as sa_text
-        stmt = stmt.where(sa_text("provenance @> :src ::jsonb").bindparams(
-            src=f'[{{"source": "{source}"}}]'
-        ))
+
+        stmt = stmt.where(
+            sa_text("provenance @> :src ::jsonb").bindparams(src=f'[{{"source": "{source}"}}]')
+        )
     if search_text:
         stmt = stmt.where(
             ValueSet.name.ilike(f"%{search_text}%") | ValueSet.description.ilike(f"%{search_text}%")
@@ -564,14 +613,20 @@ async def resolve_browse_valuesets(
         else:
             sort_col = sort_col.asc().nulls_last()
 
-    rows, has_next, total = await _paginated_query(session, ValueSet, stmt, first, after, sort_column=sort_col)
+    rows, has_next, total = await _paginated_query(
+        session, ValueSet, stmt, first, after, sort_column=sort_col
+    )
     edges = [
-        t.ValueSetEdge(cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_valueset_from_row(r))
+        t.ValueSetEdge(
+            cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_valueset_from_row(r)
+        )
         for r in rows
     ]
     return t.ValueSetConnection(
         edges=edges,
-        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        page_info=t.PageInfo(
+            has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None
+        ),
         total_count=total,
     )
 
@@ -596,12 +651,16 @@ async def resolve_browse_transforms(
 
     rows, has_next, total = await _paginated_query(session, Transform, stmt, first, after)
     edges = [
-        t.TransformEdge(cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_transform_from_row(r))
+        t.TransformEdge(
+            cursor=_encode_cursor(str(r.created_at), str(r.id)), node=_transform_from_row(r)
+        )
         for r in rows
     ]
     return t.TransformConnection(
         edges=edges,
-        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        page_info=t.PageInfo(
+            has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None
+        ),
         total_count=total,
     )
 
@@ -610,15 +669,18 @@ async def resolve_schemas_using_element(
     session: AsyncSession, element_sha256: str, first: int = 50
 ) -> t.SchemaConnection:
     """Find schemas whose properties[] JSONB array contains the element sha256."""
-    from src.db.models import Element, Schema
     from sqlalchemy import text as sa_text
+
+    from src.db.models import Element, Schema
 
     # Resolve prefix to full sha256 if needed
     full_sha = element_sha256
     if len(element_sha256) < 64:
-        row = (await session.execute(
-            select(Element.sha256).where(Element.sha256.startswith(element_sha256)).limit(1)
-        )).scalar_one_or_none()
+        row = (
+            await session.execute(
+                select(Element.sha256).where(Element.sha256.startswith(element_sha256)).limit(1)
+            )
+        ).scalar_one_or_none()
         if row:
             full_sha = row
 
@@ -632,7 +694,9 @@ async def resolve_schemas_using_element(
     ]
     return t.SchemaConnection(
         edges=edges,
-        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        page_info=t.PageInfo(
+            has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None
+        ),
         total_count=total,
     )
 
@@ -646,9 +710,11 @@ async def resolve_transforms_for_element(
     # Resolve prefix to full sha256
     full_sha = element_sha256
     if len(element_sha256) < 64:
-        row = (await session.execute(
-            select(Element.sha256).where(Element.sha256.startswith(element_sha256)).limit(1)
-        )).scalar_one_or_none()
+        row = (
+            await session.execute(
+                select(Element.sha256).where(Element.sha256.startswith(element_sha256)).limit(1)
+            )
+        ).scalar_one_or_none()
         if row:
             full_sha = row
 
@@ -665,7 +731,9 @@ async def resolve_transforms_for_element(
     ]
     return t.TransformConnection(
         edges=edges,
-        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        page_info=t.PageInfo(
+            has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None
+        ),
         total_count=total,
     )
 
@@ -687,7 +755,9 @@ async def resolve_flags_for_entity(
     ]
     return t.CurationFlagConnection(
         edges=edges,
-        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        page_info=t.PageInfo(
+            has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None
+        ),
         total_count=total,
     )
 
@@ -714,7 +784,9 @@ async def resolve_curation_queue(
     ]
     return t.CurationFlagConnection(
         edges=edges,
-        page_info=t.PageInfo(has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None),
+        page_info=t.PageInfo(
+            has_next_page=has_next, end_cursor=edges[-1].cursor if edges else None
+        ),
         total_count=total,
     )
 
@@ -748,7 +820,9 @@ async def resolve_run_summaries(
     )
 
 
-async def resolve_latest_run(session: AsyncSession, source: str | None = None) -> t.RunSummary | None:
+async def resolve_latest_run(
+    session: AsyncSession, source: str | None = None
+) -> t.RunSummary | None:
     stmt = select(RunSummaryModel).order_by(RunSummaryModel.started_at.desc()).limit(1)
     if source:
         stmt = stmt.where(RunSummaryModel.source == source)
@@ -876,8 +950,9 @@ async def resolve_releases(
 
 
 async def resolve_tag_release(session: AsyncSession, version: str) -> t.ReleaseType:
-    from src.db.models import Release
     import uuid as _uuid
+
+    from src.db.models import Release
 
     latest = (
         await session.execute(
@@ -929,7 +1004,9 @@ async def resolve_approve_annotation(
 
     approved = annotations[annotation_index]
     approved["approved_by"] = curator
-    approved["approved_at"] = __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat()
+    approved["approved_at"] = (
+        __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat()
+    )
 
     curated = list(row.curated_annotations or [])
     curated.append(approved)
@@ -940,7 +1017,11 @@ async def resolve_approve_annotation(
 
 
 async def resolve_reject_annotation(
-    session: AsyncSession, entity_sha256: str, annotation_index: int, curator: str, reason: str | None = None
+    session: AsyncSession,
+    entity_sha256: str,
+    annotation_index: int,
+    curator: str,
+    reason: str | None = None,
 ) -> t.Element:
     """Remove an ontology annotation and record the rejection."""
     from src.db.models import Element
@@ -959,15 +1040,19 @@ async def resolve_reject_annotation(
 
     # Record rejection in provenance
     prov = list(row.provenance or [])
-    prov.append({
-        "source": "curation",
-        "class": "",
-        "name": f"rejected_annotation:{removed.get('term_uri', '')}",
-        "description": reason or "Annotation rejected by curator",
-        "attributed_to": curator,
-        "activity": "curation",
-        "generated_at": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
-    })
+    prov.append(
+        {
+            "source": "curation",
+            "class": "",
+            "name": f"rejected_annotation:{removed.get('term_uri', '')}",
+            "description": reason or "Annotation rejected by curator",
+            "attributed_to": curator,
+            "activity": "curation",
+            "generated_at": __import__("datetime")
+            .datetime.now(__import__("datetime").timezone.utc)
+            .isoformat(),
+        }
+    )
     row.provenance = prov
 
     await session.flush()
@@ -1030,8 +1115,6 @@ async def resolve_update_entity(
     """Update an entity's fields and record the change in provenance."""
     from datetime import datetime, timezone
 
-    from src.db.models import ENTITY_MODEL_MAP
-
     model = ENTITY_MODEL_MAP.get(entity_type)
     if not model:
         raise ValueError(f"Invalid entity type: {entity_type}")
@@ -1060,15 +1143,17 @@ async def resolve_update_entity(
 
     # Record change in provenance
     provenance = list(row.provenance or [])
-    provenance.append({
-        "source": "curation",
-        "class": "",
-        "name": curator_name,
-        "description": reason,
-        "activity": "curation",
-        "attributed_to": curator_name,
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-    })
+    provenance.append(
+        {
+            "source": "curation",
+            "class": "",
+            "name": curator_name,
+            "description": reason,
+            "activity": "curation",
+            "attributed_to": curator_name,
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+        }
+    )
     row.provenance = provenance
 
     await session.flush()
@@ -1141,15 +1226,17 @@ async def resolve_version_element(
 
     # Build provenance for new element — carry forward old provenance + add curation entry
     new_provenance = list(row.provenance or [])
-    new_provenance.append({
-        "source": "curation",
-        "class": "",
-        "name": curator_name,
-        "description": f"Versioned from {old_sha256[:12]}: {', '.join(changes.keys())}",
-        "activity": "curation_update",
-        "attributed_to": curator_name,
-        "generated_at": now_iso,
-    })
+    new_provenance.append(
+        {
+            "source": "curation",
+            "class": "",
+            "name": curator_name,
+            "description": f"Versioned from {old_sha256[:12]}: {', '.join(changes.keys())}",
+            "activity": "curation_update",
+            "attributed_to": curator_name,
+            "generated_at": now_iso,
+        }
+    )
 
     # Create new element row with changed fields
     new_row = Element(
@@ -1167,7 +1254,9 @@ async def resolve_version_element(
         semantic=new_semantic,
         provenance=new_provenance,
         ontology_annotations=list(row.ontology_annotations or []),
-        curated_annotations=list(row.curated_annotations or []) if row.curated_annotations else None,
+        curated_annotations=list(row.curated_annotations or [])
+        if row.curated_annotations
+        else None,
     )
     session.add(new_row)
 
@@ -1191,15 +1280,17 @@ async def resolve_version_element(
         function_type="curation_update",
         description=f"Curation update by {curator_name}: {', '.join(changes.keys())}",
         semantic=transform_semantic,
-        provenance=[{
-            "source": "curation",
-            "class": "",
-            "name": curator_name,
-            "description": f"Versioned element {old_sha256[:12]} -> {new_sha256[:12]}",
-            "activity": "curation_update",
-            "attributed_to": curator_name,
-            "generated_at": now_iso,
-        }],
+        provenance=[
+            {
+                "source": "curation",
+                "class": "",
+                "name": curator_name,
+                "description": f"Versioned element {old_sha256[:12]} -> {new_sha256[:12]}",
+                "activity": "curation_update",
+                "attributed_to": curator_name,
+                "generated_at": now_iso,
+            }
+        ],
     )
     session.add(transform)
 
@@ -1240,7 +1331,9 @@ async def resolve_approve_ingestion(
         raise ValueError(f"Ingestion job not found: {job_id}")
 
     if row.status not in ("pending", "completed"):
-        raise ValueError(f"Cannot approve job in status '{row.status}' — must be 'pending' or 'completed'")
+        raise ValueError(
+            f"Cannot approve job in status '{row.status}' — must be 'pending' or 'completed'"
+        )
 
     row.status = "approved"
     row.approved_by = approver
@@ -1263,7 +1356,9 @@ async def resolve_reject_ingestion(
         raise ValueError(f"Ingestion job not found: {job_id}")
 
     if row.status not in ("pending", "completed"):
-        raise ValueError(f"Cannot reject job in status '{row.status}' — must be 'pending' or 'completed'")
+        raise ValueError(
+            f"Cannot reject job in status '{row.status}' — must be 'pending' or 'completed'"
+        )
 
     row.status = "rejected"
     row.error_message = reason or "Rejected by curator"
@@ -1283,7 +1378,9 @@ async def resolve_request_enrichment(
     from src.services.enrichment_service import suggest_ontology_annotation
 
     if entity_type != "element":
-        raise ValueError(f"Enrichment currently only supports entity_type='element', got '{entity_type}'")
+        raise ValueError(
+            f"Enrichment currently only supports entity_type='element', got '{entity_type}'"
+        )
 
     result = await suggest_ontology_annotation(session, entity_ref)
 
@@ -1294,9 +1391,7 @@ async def resolve_request_enrichment(
     from src.db.models import LLMEnrichmentProposal
 
     proposal_id = result["proposal_id"]
-    stmt = select(LLMEnrichmentProposal).where(
-        LLMEnrichmentProposal.id == uuid.UUID(proposal_id)
-    )
+    stmt = select(LLMEnrichmentProposal).where(LLMEnrichmentProposal.id == uuid.UUID(proposal_id))
     row = (await session.execute(stmt)).scalar_one_or_none()
     if not row:
         raise ValueError("Enrichment proposal was created but could not be loaded")
@@ -1314,9 +1409,7 @@ async def resolve_review_proposal(
     """Approve or reject an LLM enrichment proposal."""
     from src.db.models import LLMEnrichmentProposal
 
-    stmt = select(LLMEnrichmentProposal).where(
-        LLMEnrichmentProposal.id == uuid.UUID(proposal_id)
-    )
+    stmt = select(LLMEnrichmentProposal).where(LLMEnrichmentProposal.id == uuid.UUID(proposal_id))
     row = (await session.execute(stmt)).scalar_one_or_none()
     if not row:
         raise ValueError(f"Enrichment proposal not found: {proposal_id}")
@@ -1363,9 +1456,11 @@ async def resolve_ontology_store_info(session: AsyncSession) -> list[dict]:
     # Try pyoxigraph store first
     try:
         from pathlib import Path
+
         store_path = Path.home() / ".cache" / "undata" / "ontology-store"
         if store_path.exists():
             from undata_library.ontology_store import OntologyStore
+
             store = OntologyStore(store_path)
             loaded = store.list_loaded()
             if loaded:
@@ -1385,7 +1480,12 @@ async def resolve_ontology_store_info(session: AsyncSession) -> list[dict]:
 
     # Fallback: read from DB ontology_sources table
     from src.db.models import OntologySource
-    stmt = select(OntologySource).where(OntologySource.active == True).order_by(OntologySource.name)
+
+    stmt = (
+        select(OntologySource)
+        .where(OntologySource.active.is_(True))
+        .order_by(OntologySource.name)
+    )
     rows = (await session.execute(stmt)).scalars().all()
     return [
         {

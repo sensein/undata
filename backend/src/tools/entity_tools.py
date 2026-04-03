@@ -2,14 +2,13 @@
 
 from __future__ import annotations
 
-from src.db.models import ENTITY_MODEL_MAP
-from src.db.session import AsyncSessionLocal
 from sqlalchemy import select
 
+from src.db.models import ENTITY_MODEL_MAP
+from src.db.session import AsyncSessionLocal
 
-async def propose_entity_change(
-    entity_type: str, sha256: str, field: str, value: object
-) -> dict:
+
+async def propose_entity_change(entity_type: str, sha256: str, field: str, value: object) -> dict:
     """Propose a field change. Returns diff preview (not applied yet)."""
     async with AsyncSessionLocal() as session:
         model = ENTITY_MODEL_MAP.get(entity_type)
@@ -62,7 +61,10 @@ async def delete_entity(entity_type: str, sha256: str, reason: str) -> dict:
         prov = (row.provenance or [{}])[0] if row.provenance else {}
         return {
             "success": True,
-            "entity_summary": f"{entity_type}/{prov.get('name', sha256[:12])} from {prov.get('source', 'unknown')}",
+            "entity_summary": (
+                f"{entity_type}/{prov.get('name', sha256[:12])}"
+                f" from {prov.get('source', 'unknown')}"
+            ),
         }
 
 

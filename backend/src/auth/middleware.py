@@ -5,7 +5,6 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-import httpx
 import jwt
 from jwt import PyJWKClient
 
@@ -20,7 +19,10 @@ _jwks_client: PyJWKClient | None = None
 def _get_jwks_client() -> PyJWKClient:
     global _jwks_client
     if _jwks_client is None:
-        jwks_url = f"{settings.keycloak_url}/realms/{settings.keycloak_realm}/protocol/openid-connect/certs"
+        jwks_url = (
+            f"{settings.keycloak_url}/realms/{settings.keycloak_realm}"
+            "/protocol/openid-connect/certs"
+        )
         _jwks_client = PyJWKClient(jwks_url)
     return _jwks_client
 

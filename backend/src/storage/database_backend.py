@@ -14,14 +14,17 @@ from typing import AsyncIterator
 from sqlalchemy import delete, func, select, update
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.ext.asyncio import AsyncSession
+from undata_library.models import CurationFlag, FlagStatus, FlagType, RunSummary
 
 from src.db.models import (
     ENTITY_MODEL_MAP,
+)
+from src.db.models import (
     CurationFlag as CurationFlagModel,
+)
+from src.db.models import (
     RunSummary as RunSummaryModel,
 )
-
-from undata_library.models import CurationFlag, FlagStatus, FlagType, RunSummary
 
 VALID_ENTITY_TYPES = frozenset(ENTITY_MODEL_MAP.keys())
 
@@ -76,42 +79,51 @@ class DatabaseEntityStore:
 
         # Entity-type-specific columns
         if entity_type == "elements":
-            kwargs.update({
-                "data_type": sem.get("data_type"),
-                "unit": sem.get("unit"),
-                "unit_uri": sem.get("unit_uri"),
-                "pattern": sem.get("pattern"),
-                "value_domain": sem.get("value_domain"),
-                "description": sem.get("description"),
-                "min_value": sem.get("min_value"),
-                "max_value": sem.get("max_value"),
-                "type_ref": sem.get("type_ref"),
-            })
+            kwargs.update(
+                {
+                    "data_type": sem.get("data_type"),
+                    "unit": sem.get("unit"),
+                    "unit_uri": sem.get("unit_uri"),
+                    "pattern": sem.get("pattern"),
+                    "value_domain": sem.get("value_domain"),
+                    "description": sem.get("description"),
+                    "min_value": sem.get("min_value"),
+                    "max_value": sem.get("max_value"),
+                    "type_ref": sem.get("type_ref"),
+                }
+            )
         elif entity_type == "schemas":
-            kwargs.update({
-                "properties": sem.get("properties", []),
-                "subclass_of": sem.get("subclass_of"),
-                "is_mixin": sem.get("is_mixin", False),
-                "description": sem.get("description"),
-            })
+            kwargs.update(
+                {
+                    "properties": sem.get("properties", []),
+                    "subclass_of": sem.get("subclass_of"),
+                    "is_mixin": sem.get("is_mixin", False),
+                    "description": sem.get("description"),
+                }
+            )
         elif entity_type == "values":
-            kwargs.update({
-                "label": sem.get("label", ""),
-                "value_type": sem.get("value_type"),
-                "ontology_id": sem.get("ontology_id"),
-                "description": sem.get("description"),
-            })
+            kwargs.update(
+                {
+                    "label": sem.get("label", ""),
+                    "value_type": sem.get("value_type"),
+                    "ontology_id": sem.get("ontology_id"),
+                    "description": sem.get("description"),
+                }
+            )
         elif entity_type == "valuesets":
-            kwargs.update({
-                "name": sem.get("name", ""),
-                "members": sem.get("members", []),
-                "description": sem.get("description"),
-            })
+            kwargs.update(
+                {
+                    "name": sem.get("name", ""),
+                    "members": sem.get("members", []),
+                    "description": sem.get("description"),
+                }
+            )
 
         # Compute embedding and search tsvector if model supports it
         if hasattr(model, "embedding") and model.embedding is not None:
-            from src.services.embedding_service import build_search_text, compute_embedding
             from sqlalchemy import func
+
+            from src.services.embedding_service import build_search_text, compute_embedding
 
             search_text = build_search_text(entity_type, data)
             if search_text:
@@ -153,7 +165,9 @@ class DatabaseEntityStore:
             from sqlalchemy.types import Boolean
 
             stmt = stmt.where(
-                literal_column(f"provenance @> '[{{\"source\": \"{source_filter}\"}}]'::jsonb").cast(Boolean)  # noqa: E501
+                literal_column(f'provenance @> \'[{{"source": "{source_filter}"}}]\'::jsonb').cast(
+                    Boolean
+                )  # noqa: E501
             )
 
         if has_annotations is not None:
@@ -175,8 +189,10 @@ class DatabaseEntityStore:
 
     async def exists(self, entity_type: str, identifier: str) -> bool:
         model = self._model(entity_type)
-        stmt = select(func.count()).select_from(model).where(
-            model.sha256.startswith(identifier) | (model.file_name == identifier)
+        stmt = (
+            select(func.count())
+            .select_from(model)
+            .where(model.sha256.startswith(identifier) | (model.file_name == identifier))
         )
         result = await self._session.execute(stmt)
         return result.scalar() > 0
@@ -260,7 +276,9 @@ class DatabaseFlagStore:
             id=uuid.UUID(flag_id) if len(flag_id) == 36 else uuid.uuid4(),
             entity_type=flag.entity_type,
             entity_ref=flag.entity_ref,
-            flag_type=flag.flag_type.value if isinstance(flag.flag_type, FlagType) else str(flag.flag_type),
+            flag_type=flag.flag_type.value
+            if isinstance(flag.flag_type, FlagType)
+            else str(flag.flag_type),
             context=flag.context if isinstance(flag.context, dict) else {},
             status=flag.status.value if isinstance(flag.status, FlagStatus) else str(flag.status),
         )

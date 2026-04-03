@@ -6,7 +6,6 @@ registry directory structure consumed by import_service.py.
 
 from __future__ import annotations
 
-import json
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
@@ -145,9 +144,11 @@ async def _export_embeddings(session: AsyncSession, export_dir: Path) -> None:
 
     # Check if embedding column exists and has data
     try:
-        rows = (await session.execute(
-            select(Element.sha256, Element.embedding).where(Element.embedding.isnot(None))
-        )).all()
+        rows = (
+            await session.execute(
+                select(Element.sha256, Element.embedding).where(Element.embedding.isnot(None))
+            )
+        ).all()
     except Exception:
         return
 
@@ -161,11 +162,13 @@ async def _export_embeddings(session: AsyncSession, export_dir: Path) -> None:
         sha256s = [r[0] for r in rows]
         vectors = [list(r[1]) if r[1] is not None else [] for r in rows]
 
-        table = pa.table({
-            "sha256": sha256s,
-            "entity_type": ["element"] * len(sha256s),
-            "vector": vectors,
-        })
+        table = pa.table(
+            {
+                "sha256": sha256s,
+                "entity_type": ["element"] * len(sha256s),
+                "vector": vectors,
+            }
+        )
         pq.write_table(table, export_dir / "embeddings.parquet")
         logger.info("Exported %d embeddings", len(sha256s))
     except ImportError:

@@ -26,12 +26,15 @@ async def write_audit(
 
     Args:
         session: Database session (caller commits).
-        activity: Action performed (create, update, delete, approve, reject, enrich, ingest, version).
+        activity: Action performed (create, update, delete, approve,
+            reject, enrich, ingest, version).
         agent: Who performed it (user email/name or "system").
         agent_type: "user" or "system".
-        entity_type: Target entity type (element, schema, value, valueset, transform, flag, proposal).
+        entity_type: Target entity type (element, schema, value,
+            valueset, transform, flag, proposal).
         entity_ref: Target entity identifier (sha256 or UUID).
-        generated_entity_ref: Optional new entity created by this activity (e.g., new version sha256).
+        generated_entity_ref: Optional new entity created by this
+            activity (e.g., new version sha256).
         details: Optional JSONB dict with extra context.
 
     Returns:

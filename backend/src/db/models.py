@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import uuid
 
-from sqlalchemy import Boolean, Column, Float, Index, String, Text, text
+from sqlalchemy import Boolean, Column, Float, String, Text, text
 from sqlalchemy.dialects.postgresql import JSONB, TIMESTAMP, TSVECTOR, UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -34,8 +34,12 @@ class Element(Base):
     semantic: Mapped[dict] = mapped_column(JSONB, default=dict)
     provenance: Mapped[list] = mapped_column(JSONB, default=list)
     ontology_annotations: Mapped[list] = mapped_column(JSONB, default=list)
-    curated_annotations: Mapped[list | None] = mapped_column(JSONB, nullable=True)  # Curator-approved annotations (protected from re-enrichment)
-    superseded_by: Mapped[str | None] = mapped_column(String, nullable=True)  # sha256 of newer version
+    curated_annotations: Mapped[list | None] = mapped_column(
+        JSONB, nullable=True
+    )  # Curator-approved annotations (protected from re-enrichment)
+    superseded_by: Mapped[str | None] = mapped_column(
+        String, nullable=True
+    )  # sha256 of newer version
     embedding = Column(Vector(384), nullable=True) if Vector else None
     search_tsv = Column(TSVECTOR, nullable=True)
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
@@ -183,10 +187,18 @@ class Transform(Base):
     id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     sha256: Mapped[str] = mapped_column(String, unique=True, index=True)
     file_name: Mapped[str | None] = mapped_column(String, nullable=True)
-    source_element: Mapped[str] = mapped_column(String, index=True)  # sha256 or URI of source element
-    target_element: Mapped[str] = mapped_column(String, index=True)  # sha256 or URI of target element
-    source_elements: Mapped[list | None] = mapped_column(JSONB, nullable=True)  # many-to-one: list of source sha256/URIs
-    function_type: Mapped[str | None] = mapped_column(String, nullable=True)  # identity, unit_conversion, etc.
+    source_element: Mapped[str] = mapped_column(
+        String, index=True
+    )  # sha256 or URI of source element
+    target_element: Mapped[str] = mapped_column(
+        String, index=True
+    )  # sha256 or URI of target element
+    source_elements: Mapped[list | None] = mapped_column(
+        JSONB, nullable=True
+    )  # many-to-one: list of source sha256/URIs
+    function_type: Mapped[str | None] = mapped_column(
+        String, nullable=True
+    )  # identity, unit_conversion, etc.
     input_type: Mapped[str | None] = mapped_column(String, nullable=True)
     output_type: Mapped[str | None] = mapped_column(String, nullable=True)
     expression: Mapped[str | None] = mapped_column(Text, nullable=True)
@@ -204,7 +216,9 @@ class AuditLog(Base):
     __tablename__ = "audit_log"
 
     id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    activity: Mapped[str] = mapped_column(String, index=True)  # create, update, delete, approve, reject, enrich, ingest, version
+    activity: Mapped[str] = mapped_column(
+        String, index=True
+    )  # create, update, delete, approve, reject, enrich, ingest, version
     agent: Mapped[str] = mapped_column(String, index=True)  # user email/name or "system"
     agent_type: Mapped[str] = mapped_column(String)  # "user" or "system"
     entity_type: Mapped[str] = mapped_column(String, index=True)
@@ -251,7 +265,9 @@ class LLMEnrichmentProposal(Base):
     id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     entity_type: Mapped[str] = mapped_column(String, index=True)
     entity_ref: Mapped[str] = mapped_column(String, index=True)
-    proposal_type: Mapped[str] = mapped_column(String)  # ontology_annotation, unit_correction, description, alignment
+    proposal_type: Mapped[str] = mapped_column(
+        String
+    )  # ontology_annotation, unit_correction, description, alignment
     proposed_value: Mapped[dict] = mapped_column(JSONB, default=dict)
     reasoning: Mapped[str | None] = mapped_column(Text, nullable=True)
     confidence: Mapped[float | None] = mapped_column(Float, nullable=True)

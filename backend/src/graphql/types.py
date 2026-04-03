@@ -8,7 +8,6 @@ from typing import Optional
 import strawberry
 from strawberry.scalars import JSON
 
-
 # --- Enums ---
 
 
