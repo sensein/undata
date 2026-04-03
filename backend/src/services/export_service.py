@@ -62,6 +62,20 @@ async def export_full_registry(
         entity_counts[entity_type] = count
         logger.info("Exported %d %s", count, entity_type)
 
+        # Also export as Parquet for bulk consumption
+        if count > 0:
+            try:
+                from undata_library.storage.parquet_store import ParquetStore
+
+                pq_store = ParquetStore(export_dir)
+                pq_entities = []
+                for row in rows:
+                    pq_entities.append(_row_to_dict(row, entity_type))
+                pq_store.write_batch(entity_type, pq_entities, source="export")
+                logger.info("Exported %d %s as Parquet", count, entity_type)
+            except ImportError:
+                pass  # ParquetStore not available in this environment
+
     # Export curation flags
     flags_dir = export_dir / "curation-flags"
     flags_dir.mkdir(exist_ok=True)

@@ -40,9 +40,9 @@
 **Independent Test**: Ingest NDA → entities in .parquet files → CLI can query individual entities
 
 - [X] T009 [US1] Add CLI inspect command to query individual entities from Parquet files by sha256 or name in library/src/undata_library/cli.py
-- [ ] T010 [US1] Update import_service.py to read Parquet registry format when importing to database in backend/src/services/import_service.py
+- [X] T010 [US1] Update import_service.py to read Parquet registry format when importing to database in backend/src/services/import_service.py
 - [X] T011 [US1] Add integration test: write 10K entities to Parquet, read back, verify dedup works, assert Parquet file size < 10x individual YAML equivalent in library/tests/test_parquet_store.py
-- [ ] T012 [US1] Update export_service.py to export Parquet format alongside YAML in backend/src/services/export_service.py
+- [X] T012 [US1] Update export_service.py to export Parquet format alongside YAML in backend/src/services/export_service.py
 
 **Checkpoint**: Full Parquet round-trip — write, read, query, import to DB, export
 
@@ -88,10 +88,10 @@
 
 **Independent Test**: Browse element with response_options → see linked valueset; element with min/max → see range
 
-- [ ] T025 [P] [US4] Audit BIDS adapter for range field population (response_options, min/max, pattern, type_ref) in library/src/undata_library/adapters/bids.py
-- [ ] T026 [P] [US4] Audit NWB adapter — add min/max extraction from hdmf attribute metadata in library/src/undata_library/adapters/nwb.py
-- [ ] T027 [P] [US4] Audit openMINDS adapter — add min/max extraction from range constraints in library/src/undata_library/adapters/openminds.py
-- [ ] T028 [P] [US4] Audit OpenNeuro adapter — extract range from JSON sidecar MinValue/MaxValue in library/src/undata_library/adapters/openneuro.py
+- [X] T025 [P] [US4] Audit BIDS adapter for range field population (response_options, min/max, pattern, type_ref) in library/src/undata_library/adapters/bids.py
+- [X] T026 [P] [US4] Audit NWB adapter — add min/max extraction from hdmf attribute metadata in library/src/undata_library/adapters/nwb.py
+- [X] T027 [P] [US4] Audit openMINDS adapter — add min/max extraction from range constraints in library/src/undata_library/adapters/openminds.py
+- [X] T028 [P] [US4] Audit OpenNeuro adapter — extract range from JSON sidecar MinValue/MaxValue in library/src/undata_library/adapters/openneuro.py
 - [X] T029 [US4] Add range display section to EntityDetailLayout — show min/max, pattern, response_options, type_ref in frontend/components/EntityDetailLayout.tsx
 - [X] T030 [US4] Link response_options values to ValueSet entities in element detail page in frontend/app/elements/[id]/page.tsx
 - [X] T031 [US4] Link type_ref to Schema detail page in element detail in frontend/app/elements/[id]/page.tsx
