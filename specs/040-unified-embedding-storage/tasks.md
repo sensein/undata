@@ -41,9 +41,9 @@
 **Independent Test**: Pipeline run for BIDS → find /output -name "*.yaml" | grep -v runs → 0 results
 
 - [ ] T010 [US1] Rewrite ingest_source to collect entities in memory and call ParquetStore.write_batch instead of writing individual YAML files in library/src/undata_library/ingest.py
-- [ ] T011 [US1] Rewrite commit_staged to read from ParquetStore, compute sha256, write committed entities to ParquetStore (no YAML output) in library/src/undata_library/commit.py
-- [ ] T012 [US1] Rewrite cross-reference resolution (_resolve_cross_references) to operate on DataFrames from ParquetStore in library/src/undata_library/commit.py
-- [ ] T013 [US1] Remove yaml.dump calls from commit path and yaml_to_parquet conversion step in library/src/undata_library/commit.py and library/src/undata_library/staging.py
+- [X] T011 [US1] Rewrite commit_staged to read from ParquetStore, compute sha256, write committed entities to ParquetStore (no YAML output) in library/src/undata_library/commit.py
+- [X] T012 [US1] Rewrite cross-reference resolution (_resolve_cross_references) to operate on DataFrames from ParquetStore in library/src/undata_library/commit.py
+- [X] T013 [US1] Remove yaml.dump calls from commit path and yaml_to_parquet conversion step in library/src/undata_library/commit.py and library/src/undata_library/staging.py
 - [ ] T014 [US1] Update batch_ingest to use ParquetStore throughout (no YAML intermediaries) in library/src/undata_library/ingest.py
 - [ ] T015 [US1] Add test: pipeline run produces zero YAML entity files in library/tests/test_parquet_pipeline.py
 
@@ -58,8 +58,8 @@
 **Independent Test**: Inspect any committed entity → has 384-dim embedding vector
 
 - [X] T016 [US2] Create build_comprehensive_embedding_text() that uses name + description + type + unit + annotations + provenance in library/src/undata_library/embeddings.py
-- [ ] T017 [US2] Add embedding computation step to commit_staged — after sha256 computation, compute embeddings for all entities in batch in library/src/undata_library/commit.py
-- [ ] T018 [US2] Ensure all entity types (elements, schemas, values, valuesets) get embeddings at commit in library/src/undata_library/commit.py
+- [X] T017 [US2] Add embedding computation step to commit_staged — after sha256 computation, compute embeddings for all entities in batch in library/src/undata_library/commit.py
+- [X] T018 [US2] Ensure all entity types (elements, schemas, values, valuesets) get embeddings at commit in library/src/undata_library/commit.py
 - [ ] T019 [US2] Update backend import to skip embedding model loading when all entities have pre-computed embeddings in backend/src/storage/database_backend.py
 - [ ] T020 [US2] Update backend import_service to read Parquet-only (remove YAML import path) in backend/src/services/import_service.py
 - [ ] T021 [US2] Add test: committed entity has embedding field with 384 floats in library/tests/test_parquet_pipeline.py

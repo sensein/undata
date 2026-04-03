@@ -175,7 +175,7 @@ class ParquetStore:
             serialized = _serialize_entity(entity, source)
             sha = serialized["sha256"]
 
-            if sha in existing:
+            if sha and sha in existing:
                 # Merge provenance
                 old_prov = json.loads(existing[sha].get("provenance", "[]"))
                 new_prov = json.loads(serialized["provenance"])
@@ -186,7 +186,9 @@ class ParquetStore:
                 serialized["provenance"] = json.dumps(old_prov, default=str)
 
             rows.append(serialized)
-            existing[sha] = serialized  # update for subsequent dedup within batch
+            # Use sha as dedup key, or unique index for pre-commit entities without sha
+            dedup_key = sha if sha else f"__pending_{len(rows)}__"
+            existing[dedup_key] = serialized
 
         # Write all (existing merged + new)
         all_rows = list(existing.values())
