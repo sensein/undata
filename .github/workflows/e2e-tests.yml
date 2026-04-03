@@ -15,16 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Start core services
+      - name: Start all services
         run: |
           cp .env.example .env 2>/dev/null || true
-          docker compose up -d db
-
-      - name: Build and start backend + frontend
-        run: |
-          docker compose build backend frontend
-          docker compose up -d --no-deps backend
-          docker compose up -d --no-deps frontend
+          docker compose up -d --build
 
       - name: Wait for backend healthy
         run: |

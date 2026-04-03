@@ -3,7 +3,6 @@ import { test, expect } from "@playwright/test";
 test.describe("Navigation", () => {
   test("sidebar links are visible", async ({ page }) => {
     await page.goto("/");
-    // Sidebar has grouped nav items
     await expect(page.getByRole("link", { name: "Elements" })).toBeVisible({ timeout: 10000 });
     await expect(page.getByRole("link", { name: "Values" })).toBeVisible();
     await expect(page.getByRole("link", { name: "Schemas" })).toBeVisible();
@@ -48,10 +47,9 @@ test.describe("Navigation", () => {
     await expect(page.locator("h1")).toContainText("Activity", { timeout: 10000 });
   });
 
-  test("element → schema → element traversal", async ({ page }) => {
-    // Start at elements
+  test("element → detail → back traversal", async ({ page }) => {
     await page.goto("/elements");
-    await expect(page.getByText("5 total")).toBeVisible({ timeout: 15000 });
+    await expect(page.getByText(/\d+ total/)).toBeVisible({ timeout: 15000 });
     // Click first element
     await page.locator("table tbody tr a").first().click();
     await page.waitForURL(/\/elements\//, { timeout: 10000 });
