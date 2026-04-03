@@ -122,7 +122,7 @@
 
 - [X] T035 [US6] Add chunk-based enrichment — process elements in batches of 10K to control memory in library/src/undata_library/enrich.py
 - [X] T036 [US6] Add species precision post-filter — remove genus-level matches when species-level exists in library/src/undata_library/enrich.py
-- [ ] T037 [US6] Test enrichment species precision: element about mouse → primary match is Mus musculus not Mus in library/tests/test_enrich.py
+- [X] T037 [US6] Test enrichment species precision: element about mouse → primary match is Mus musculus not Mus in library/tests/test_enrich.py
 
 **Checkpoint**: Enrichment scales to 220K+ elements with species-level precision
 
