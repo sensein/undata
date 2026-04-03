@@ -293,6 +293,27 @@ def enrich_elements(
             "total": 0,
         }
 
+    # If no YAML files, delegate to Parquet-native _enrich_batch
+    yaml_files = sorted(elements_dir.glob("*.yaml"))
+    if not yaml_files:
+        batch_stats = _enrich_batch(
+            staging_dir,
+            "elements",
+            model_name=model_name,
+            threshold=threshold,
+            onto_store=onto_store,
+            onto_cache=onto_cache,
+            use_llm=use_llm,
+        )
+        # Map batch stats keys to enrich_elements return format
+        return {
+            "ontology_assigned": batch_stats.get("ontology_assigned", 0),
+            "value_domain_set": batch_stats.get("value_domain_set", 0),
+            "values_resolved": batch_stats.get("values_resolved", 0),
+            "unchanged": batch_stats.get("unchanged", 0),
+            "total": batch_stats.get("total", 0),
+        }
+
     # Load ontology embeddings if not provided
     if onto_store is None and cache_dir is not None:
         onto_store = _load_ontology_embeddings(cache_dir, model_name)
@@ -320,7 +341,7 @@ def enrich_elements(
         "total": 0,
     }
 
-    for f in sorted(elements_dir.glob("*.yaml")):
+    for f in yaml_files:
         try:
             data = yaml.safe_load(f.read_text(encoding="utf-8"))
             if not isinstance(data, dict) or "semantic" not in data:
@@ -537,6 +558,19 @@ def enrich_values(
     if not values_dir.exists():
         return {"ontology_assigned": 0, "unchanged": 0, "total": 0}
 
+    # If no YAML files, delegate to Parquet-native _enrich_batch
+    yaml_files = sorted(values_dir.glob("*.yaml"))
+    if not yaml_files:
+        return _enrich_batch(
+            staging_dir,
+            "values",
+            model_name=model_name,
+            threshold=threshold,
+            onto_store=onto_store,
+            onto_cache=onto_cache,
+            use_llm=use_llm,
+        )
+
     if onto_store is None and cache_dir is not None:
         onto_store = _load_ontology_embeddings(cache_dir, model_name)
     if onto_cache is None and cache_dir is not None:
@@ -548,7 +582,7 @@ def enrich_values(
 
     stats = {"ontology_assigned": 0, "unchanged": 0, "total": 0}
 
-    for f in sorted(values_dir.glob("*.yaml")):
+    for f in yaml_files:
         try:
             data = yaml.safe_load(f.read_text(encoding="utf-8"))
             if not isinstance(data, dict) or "semantic" not in data:
@@ -612,6 +646,18 @@ def enrich_schemas(
     if not schemas_dir.exists():
         return {"ontology_assigned": 0, "unchanged": 0, "total": 0}
 
+    # If no YAML files, delegate to Parquet-native _enrich_batch
+    yaml_files = sorted(schemas_dir.glob("*.yaml"))
+    if not yaml_files:
+        return _enrich_batch(
+            staging_dir,
+            "schemas",
+            model_name=model_name,
+            threshold=threshold,
+            onto_store=onto_store,
+            onto_cache=onto_cache,
+        )
+
     if onto_store is None and cache_dir is not None:
         onto_store = _load_ontology_embeddings(cache_dir, model_name)
     if onto_cache is None and cache_dir is not None:
@@ -623,7 +669,7 @@ def enrich_schemas(
 
     stats = {"ontology_assigned": 0, "unchanged": 0, "total": 0}
 
-    for f in sorted(schemas_dir.glob("*.yaml")):
+    for f in yaml_files:
         try:
             data = yaml.safe_load(f.read_text(encoding="utf-8"))
             if not isinstance(data, dict) or "semantic" not in data:
@@ -856,7 +902,13 @@ def _enrich_batch(
     from .staging import iter_staged, write_staged_batch
 
     onto_cache = onto_cache or {}
-    stats = {"total": 0, "ontology_assigned": 0, "unchanged": 0, "embedded": 0}
+    stats = {
+        "total": 0,
+        "ontology_assigned": 0,
+        "unchanged": 0,
+        "embedded": 0,
+        "value_domain_set": 0,
+    }
 
     # 1. Read all entities
     entities = list(iter_staged(staging_dir, entity_type))
@@ -895,49 +947,61 @@ def _enrich_batch(
         elem_store._model = model_name
         elem_store._uri_to_idx = {u: idx for idx, u in enumerate(uris)}
 
-    # 4. Match each entity against ontology index
+    # 4. Match each entity against ontology index + enrich semantic fields
     is_value = entity_type == "values"
     for i, entity in enumerate(entities):
         sem = entity.get("semantic", {})
+        ontology_changed = False
 
-        # Skip already enriched or curated
-        if sem.get("ontology_annotations") or entity.get("curated_annotations"):
-            stats["unchanged"] += 1
-            continue
+        # Ontology annotation matching (skip if already enriched/curated)
+        if not sem.get("ontology_annotations") and not entity.get("curated_annotations"):
+            if onto_store is not None and elem_store is not None:
+                uri = f"{BASE_URI}/{entity_type}/{i}"
+                prov = entity.get("provenance", [])
+                first_prov = prov[0] if prov and isinstance(prov[0], dict) else {}
+                element_desc = f"{first_prov.get('name', '')} {sem.get('description', '')}".strip()
 
-        if onto_store is None or elem_store is None:
-            stats["unchanged"] += 1
-            continue
+                annotations = _assign_ontology_annotations(
+                    uri,
+                    elem_store,
+                    onto_store,
+                    onto_cache,
+                    threshold,
+                    is_value=is_value,
+                    model_name=model_name,
+                    element_desc=element_desc,
+                )
 
-        uri = f"{BASE_URI}/{entity_type}/{i}"
-        prov = entity.get("provenance", [])
-        first_prov = prov[0] if prov and isinstance(prov[0], dict) else {}
-        element_desc = f"{first_prov.get('name', '')} {sem.get('description', '')}".strip()
-
-        annotations = _assign_ontology_annotations(
-            uri,
-            elem_store,
-            onto_store,
-            onto_cache,
-            threshold,
-            is_value=is_value,
-            model_name=model_name,
-            element_desc=element_desc,
-        )
-
-        if annotations:
-            sem["ontology_annotations"] = annotations
-            entity["semantic"] = sem
-            entity["ontology_annotations"] = annotations
-            stats["ontology_assigned"] += 1
-        else:
-            stats["unchanged"] += 1
+                if annotations:
+                    sem["ontology_annotations"] = annotations
+                    entity["ontology_annotations"] = annotations
+                    stats["ontology_assigned"] += 1
+                    ontology_changed = True
 
         # Enrich semantic fields (unit, value_domain inference)
-        _enrich_semantic_fields(sem)
+        _enrich_semantic_fields(entity)
+
+        # Auto-populate value_domain from data_type
+        if not sem.get("value_domain"):
+            domain = _populate_value_domain(sem)
+            if domain:
+                sem["value_domain"] = domain
+                stats["value_domain_set"] += 1
+                ontology_changed = True
+
+        if not ontology_changed:
+            stats["unchanged"] += 1
+
         entity["semantic"] = sem
 
     # 5. Write enriched entities back to staging Parquet
+    # Remove old parquet files first — we read ALL entities above, so this is a full replace
+    from .storage.parquet_store import ParquetStore
+
+    old_files = ParquetStore(staging_dir)._all_parquet_files(entity_type)
+    for old_f in old_files:
+        old_f.unlink(missing_ok=True)
+
     source = _get_source(entities)
     write_staged_batch(staging_dir, entity_type, entities, source=source)
 

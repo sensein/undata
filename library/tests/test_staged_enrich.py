@@ -1,7 +1,5 @@
 """Tests for staged in-place enrichment across all entity types (T029)."""
 
-import yaml
-
 from undata_library.enrich import (
     _update_entity_in_place,
     enrich_all,
@@ -9,96 +7,125 @@ from undata_library.enrich import (
     enrich_schemas,
     enrich_values,
 )
-
-
-def _write_yaml(path, data):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(yaml.dump(data, default_flow_style=False, sort_keys=False), encoding="utf-8")
+from undata_library.staging import write_staged_batch
+from undata_library.storage.parquet_store import ParquetStore
+from undata_library.utils import write_yaml
 
 
 def _make_staging(tmp_path):
     """Create a staging dir with one entity per type."""
     staging = tmp_path / "staging"
-    _write_yaml(
-        staging / "elements" / "age.yaml",
-        {
-            "semantic": {"data_type": "float", "unit": "year"},
-            "provenance": [{"source": "bids", "class": "participant", "name": "age"}],
-        },
+    write_staged_batch(
+        staging,
+        "elements",
+        [
+            {
+                "semantic": {"data_type": "float", "unit": "year"},
+                "provenance": [{"source": "bids", "class": "participant", "name": "age"}],
+            }
+        ],
+        source="bids",
     )
-    _write_yaml(
-        staging / "values" / "male.yaml",
-        {
-            "semantic": {"label": "male", "value_type": "categorical"},
-            "provenance": [{"source": "bids", "class": "participant", "name": "male"}],
-        },
+    write_staged_batch(
+        staging,
+        "values",
+        [
+            {
+                "semantic": {"label": "male", "value_type": "categorical"},
+                "provenance": [{"source": "bids", "class": "participant", "name": "male"}],
+            }
+        ],
+        source="bids",
     )
-    _write_yaml(
-        staging / "schemas" / "participant.yaml",
-        {
-            "semantic": {"properties": ["age", "sex"], "description": "Participant"},
-            "provenance": [{"source": "bids", "class": "participant", "name": "participant"}],
-        },
+    write_staged_batch(
+        staging,
+        "schemas",
+        [
+            {
+                "semantic": {"properties": ["age", "sex"], "description": "Participant"},
+                "provenance": [{"source": "bids", "class": "participant", "name": "participant"}],
+            }
+        ],
+        source="bids",
     )
-    _write_yaml(
-        staging / "valuesets" / "sex.yaml",
-        {
-            "semantic": {"name": "sex", "members": []},
-            "provenance": [{"source": "bids", "class": "participant", "name": "sex"}],
-        },
+    write_staged_batch(
+        staging,
+        "valuesets",
+        [
+            {
+                "semantic": {"name": "sex", "members": []},
+                "provenance": [{"source": "bids", "class": "participant", "name": "sex"}],
+            }
+        ],
+        source="bids",
     )
     return staging
 
 
 class TestNoNewFilesCreated:
-    """T029a: enrichment never creates new files."""
+    """T029a: enrichment never creates new entities."""
 
-    def test_element_enrichment_no_new_files(self, tmp_path):
+    def test_element_enrichment_no_new_entities(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(
-            staging / "elements" / "age.yaml",
-            {
-                "semantic": {"data_type": "float"},
-                "provenance": [{"source": "test", "class": "T", "name": "age"}],
-            },
+        write_staged_batch(
+            staging,
+            "elements",
+            [
+                {
+                    "semantic": {"data_type": "float"},
+                    "provenance": [{"source": "test", "class": "T", "name": "age"}],
+                }
+            ],
+            source="test",
         )
-        before = set((staging / "elements").glob("*.yaml"))
+        store = ParquetStore(staging)
+        before = store.count("elements")
 
         enrich_elements(staging_dir=staging)
 
-        after = set((staging / "elements").glob("*.yaml"))
+        after = store.count("elements")
         assert before == after
 
-    def test_value_enrichment_no_new_files(self, tmp_path):
+    def test_value_enrichment_no_new_entities(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(
-            staging / "values" / "male.yaml",
-            {
-                "semantic": {"label": "male", "value_type": "categorical"},
-                "provenance": [{"source": "test", "class": "T", "name": "male"}],
-            },
+        write_staged_batch(
+            staging,
+            "values",
+            [
+                {
+                    "semantic": {"label": "male", "value_type": "categorical"},
+                    "provenance": [{"source": "test", "class": "T", "name": "male"}],
+                }
+            ],
+            source="test",
         )
-        before = set((staging / "values").glob("*.yaml"))
+        store = ParquetStore(staging)
+        before = store.count("values")
 
         enrich_values(staging_dir=staging)
 
-        after = set((staging / "values").glob("*.yaml"))
+        after = store.count("values")
         assert before == after
 
-    def test_schema_enrichment_no_new_files(self, tmp_path):
+    def test_schema_enrichment_no_new_entities(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(
-            staging / "schemas" / "participant.yaml",
-            {
-                "semantic": {"properties": [], "description": "Test"},
-                "provenance": [{"source": "test", "class": "T", "name": "p"}],
-            },
+        write_staged_batch(
+            staging,
+            "schemas",
+            [
+                {
+                    "semantic": {"properties": [], "description": "Test"},
+                    "provenance": [{"source": "test", "class": "T", "name": "p"}],
+                }
+            ],
+            source="test",
         )
-        before = set((staging / "schemas").glob("*.yaml"))
+        store = ParquetStore(staging)
+        before = store.count("schemas")
 
         enrich_schemas(staging_dir=staging)
 
-        after = set((staging / "schemas").glob("*.yaml"))
+        after = store.count("schemas")
         assert before == after
 
 
@@ -107,38 +134,50 @@ class TestValueDomainSet:
 
     def test_integer_gets_numeric(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(
-            staging / "elements" / "count.yaml",
-            {
-                "semantic": {"data_type": "integer"},
-                "provenance": [{"source": "test", "class": "T", "name": "count"}],
-            },
+        write_staged_batch(
+            staging,
+            "elements",
+            [
+                {
+                    "semantic": {"data_type": "integer"},
+                    "provenance": [{"source": "test", "class": "T", "name": "count"}],
+                }
+            ],
+            source="test",
         )
 
         stats = enrich_elements(staging_dir=staging)
         assert stats["value_domain_set"] == 1
 
-        data = yaml.safe_load((staging / "elements" / "count.yaml").read_text())
-        assert data["semantic"]["value_domain"] == "numeric"
+        store = ParquetStore(staging)
+        entities = list(store.list("elements"))
+        assert len(entities) == 1
+        assert entities[0]["semantic"]["value_domain"] == "numeric"
 
     def test_categorical_from_response_options(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(
-            staging / "elements" / "sex.yaml",
-            {
-                "semantic": {
-                    "data_type": "string",
-                    "response_options": [{"value": "male"}, {"value": "female"}],
-                },
-                "provenance": [{"source": "test", "class": "T", "name": "sex"}],
-            },
+        write_staged_batch(
+            staging,
+            "elements",
+            [
+                {
+                    "semantic": {
+                        "data_type": "string",
+                        "response_options": [{"value": "male"}, {"value": "female"}],
+                    },
+                    "provenance": [{"source": "test", "class": "T", "name": "sex"}],
+                }
+            ],
+            source="test",
         )
 
         stats = enrich_elements(staging_dir=staging)
         assert stats["value_domain_set"] == 1
 
-        data = yaml.safe_load((staging / "elements" / "sex.yaml").read_text())
-        assert data["semantic"]["value_domain"] == "categorical"
+        store = ParquetStore(staging)
+        entities = list(store.list("elements"))
+        assert len(entities) == 1
+        assert entities[0]["semantic"]["value_domain"] == "categorical"
 
 
 class TestIdempotency:
@@ -146,12 +185,16 @@ class TestIdempotency:
 
     def test_enrich_elements_idempotent(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(
-            staging / "elements" / "age.yaml",
-            {
-                "semantic": {"data_type": "float", "value_domain": "numeric"},
-                "provenance": [{"source": "test", "class": "T", "name": "age"}],
-            },
+        write_staged_batch(
+            staging,
+            "elements",
+            [
+                {
+                    "semantic": {"data_type": "float", "value_domain": "numeric"},
+                    "provenance": [{"source": "test", "class": "T", "name": "age"}],
+                }
+            ],
+            source="test",
         )
 
         stats1 = enrich_elements(staging_dir=staging)
@@ -162,16 +205,20 @@ class TestIdempotency:
 
     def test_enrich_values_idempotent(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(
-            staging / "values" / "male.yaml",
-            {
-                "semantic": {
-                    "label": "male",
-                    "value_type": "categorical",
-                    "ontology_annotations": [{"term_uri": "http://x", "primary": True}],
-                },
-                "provenance": [{"source": "test", "class": "T", "name": "male"}],
-            },
+        write_staged_batch(
+            staging,
+            "values",
+            [
+                {
+                    "semantic": {
+                        "label": "male",
+                        "value_type": "categorical",
+                        "ontology_annotations": [{"term_uri": "http://x", "primary": True}],
+                    },
+                    "provenance": [{"source": "test", "class": "T", "name": "male"}],
+                }
+            ],
+            source="test",
         )
 
         stats = enrich_values(staging_dir=staging)
@@ -179,15 +226,19 @@ class TestIdempotency:
 
     def test_enrich_schemas_idempotent(self, tmp_path):
         staging = tmp_path / "staging"
-        _write_yaml(
-            staging / "schemas" / "p.yaml",
-            {
-                "semantic": {
-                    "properties": [],
-                    "ontology_annotations": [{"term_uri": "http://x", "primary": True}],
-                },
-                "provenance": [{"source": "test", "class": "T", "name": "p"}],
-            },
+        write_staged_batch(
+            staging,
+            "schemas",
+            [
+                {
+                    "semantic": {
+                        "properties": [],
+                        "ontology_annotations": [{"term_uri": "http://x", "primary": True}],
+                    },
+                    "provenance": [{"source": "test", "class": "T", "name": "p"}],
+                }
+            ],
+            source="test",
         )
 
         stats = enrich_schemas(staging_dir=staging)
@@ -233,7 +284,7 @@ class TestUpdateInPlace:
 
     def test_adds_description(self, tmp_path):
         f = tmp_path / "e.yaml"
-        _write_yaml(
+        write_yaml(
             f,
             {
                 "semantic": {"data_type": "string"},
@@ -244,12 +295,14 @@ class TestUpdateInPlace:
         changed = _update_entity_in_place(f, description="A test field")
         assert changed is True
 
+        import yaml
+
         data = yaml.safe_load(f.read_text())
         assert data["semantic"]["description"] == "A test field"
 
     def test_skips_existing_description(self, tmp_path):
         f = tmp_path / "e.yaml"
-        _write_yaml(
+        write_yaml(
             f,
             {
                 "semantic": {"data_type": "string", "description": "Original"},
@@ -260,12 +313,14 @@ class TestUpdateInPlace:
         changed = _update_entity_in_place(f, description="New")
         assert changed is False
 
+        import yaml
+
         data = yaml.safe_load(f.read_text())
         assert data["semantic"]["description"] == "Original"
 
     def test_multiple_updates_at_once(self, tmp_path):
         f = tmp_path / "e.yaml"
-        _write_yaml(
+        write_yaml(
             f,
             {
                 "semantic": {"data_type": "float"},
@@ -278,6 +333,8 @@ class TestUpdateInPlace:
             f, ontology_annotations=anns, value_domain="numeric", description="Test"
         )
         assert changed is True
+
+        import yaml
 
         data = yaml.safe_load(f.read_text())
         assert data["semantic"]["ontology_annotations"] == anns

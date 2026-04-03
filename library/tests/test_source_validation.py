@@ -1,28 +1,25 @@
 """Tests for source validation, provenance dedup, and bloat detection."""
 
-import yaml
-
 from undata_library.commit import commit_staged
 from undata_library.curation import get_known_sources, read_flags
 from undata_library.models import FlagType
-from undata_library.utils import write_yaml
+from undata_library.staging import write_staged_batch
+from undata_library.storage.parquet_store import ParquetStore
 
 
 def _make_staged_element(staging_dir, name, source="bids"):
     """Create a staged element for testing."""
-    elem_dir = staging_dir / "elements"
-    elem_dir.mkdir(parents=True, exist_ok=True)
-    import uuid
-
-    filepath = elem_dir / f"{uuid.uuid4()}.yaml"
-    write_yaml(
-        filepath,
-        {
-            "semantic": {"data_type": "string"},
-            "provenance": [{"source": source, "class": "test", "name": name}],
-        },
+    write_staged_batch(
+        staging_dir,
+        "elements",
+        [
+            {
+                "semantic": {"data_type": "string"},
+                "provenance": [{"source": source, "class": "test", "name": name}],
+            }
+        ],
+        source=source,
     )
-    return filepath
 
 
 class TestSourceValidation:
@@ -67,10 +64,9 @@ class TestProvenanceDedup:
         stats = commit_staged(staging2, tmp_path)
         assert stats["merged"] >= 1 or stats["committed"] >= 0
 
-        # Check the committed file has only 1 provenance entry (not 2)
-        for f in (tmp_path / "elements").glob("*.yaml"):
-            data = yaml.safe_load(f.read_text())
-            # Should have at most 1 entry for (bids, age)
+        # Check the committed registry has only 1 provenance entry for (bids, age)
+        store = ParquetStore(tmp_path)
+        for data in store.list("elements"):
             bids_age = [
                 p
                 for p in data.get("provenance", [])
