@@ -951,8 +951,10 @@ def generate_curation_flags(
 def _get_ontology_store_checksum() -> str | None:
     """Get a combined checksum of all loaded ontologies for staleness detection."""
     import hashlib
+
     try:
         from .ontology_store import OntologyStore
+
         store_path = Path.home() / ".cache" / "undata" / "ontology-store"
         if not store_path.exists():
             return None
@@ -979,8 +981,11 @@ def _load_ontology_embeddings(cache_dir: Path, model_name: str) -> EmbeddingStor
     # Check staleness
     is_stale = current_checksum and stored_checksum and current_checksum != stored_checksum
     if is_stale:
-        logger.info("Ontology vector index is stale (store=%s, index=%s), will rebuild",
-                     current_checksum, stored_checksum)
+        logger.info(
+            "Ontology vector index is stale (store=%s, index=%s), will rebuild",
+            current_checksum,
+            stored_checksum,
+        )
 
     if not is_stale:
         for candidate in [

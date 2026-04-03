@@ -114,9 +114,7 @@ def _parse_notes(notes: str | None) -> list[dict[str, str]]:
     return options
 
 
-def _fetch_structure(
-    client: httpx.Client, short_name: str
-) -> dict[str, Any] | None:
+def _fetch_structure(client: httpx.Client, short_name: str) -> dict[str, Any] | None:
     """Fetch a single data structure from NDA API."""
     url = f"{NDA_API_BASE}/datastructure/{short_name}"
     try:

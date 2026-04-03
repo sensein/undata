@@ -84,10 +84,12 @@ def _parse_response_options(item_data: dict, item_dir: Path) -> tuple[list[dict]
         if isinstance(choice, dict):
             name = choice.get("name", choice.get("schema:name", ""))
             label = _extract_label(name) if name else ""
-            options.append({
-                "value": str(choice.get("value", choice.get("schema:value", ""))),
-                "label": label,
-            })
+            options.append(
+                {
+                    "value": str(choice.get("value", choice.get("schema:value", ""))),
+                    "label": label,
+                }
+            )
         elif isinstance(choice, str):
             options.append({"value": choice, "label": choice})
     return (options if options else None), ro
@@ -280,7 +282,9 @@ class ReproSchemaAdapter(BaseAdapter):
                                 semantic={
                                     "value_type": "categorical",
                                     "label": str(label)[:200],
-                                    "description": f"Response option for {item_name}: {label}"[:500],
+                                    "description": f"Response option for {item_name}: {label}"[
+                                        :500
+                                    ],
                                 },
                                 provenance={
                                     "source": "reproschema",

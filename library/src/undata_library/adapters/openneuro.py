@@ -53,9 +53,17 @@ _MAX_ENUM_VALUES = 30
 
 # JSON keys to skip (not data elements)
 _SKIP_JSON_KEYS = {
-    "Name", "BIDSVersion", "License", "Authors", "Acknowledgements",
-    "HowToAcknowledge", "Funding", "ReferencesAndLinks", "DatasetDOI",
-    "GeneratedBy", "SourceDatasets",
+    "Name",
+    "BIDSVersion",
+    "License",
+    "Authors",
+    "Acknowledgements",
+    "HowToAcknowledge",
+    "Funding",
+    "ReferencesAndLinks",
+    "DatasetDOI",
+    "GeneratedBy",
+    "SourceDatasets",
 }
 
 # Keys whose values are nested dicts describing columns (like participants.json)
@@ -219,7 +227,9 @@ class OpenNeuroAdapter(BaseAdapter):
                         unit = None
                         levels = None
                         if isinstance(col_meta, dict):
-                            description = col_meta.get("Description", col_meta.get("description", ""))
+                            description = col_meta.get(
+                                "Description", col_meta.get("description", "")
+                            )
                             unit = col_meta.get("Units", col_meta.get("units"))
                             levels = col_meta.get("Levels", {})
 
@@ -402,7 +412,9 @@ class OpenNeuroAdapter(BaseAdapter):
         try:
             subprocess.run(
                 ["git", "clone", url, str(dataset_path)],
-                check=True, capture_output=True, timeout=300,
+                check=True,
+                capture_output=True,
+                timeout=300,
             )
         except (subprocess.CalledProcessError, subprocess.TimeoutExpired, FileNotFoundError) as exc:
             logger.warning("git clone failed for %s: %s", dataset_id, exc)
@@ -411,16 +423,25 @@ class OpenNeuroAdapter(BaseAdapter):
         # Step 2: init git-annex so datalad can work with the repo
         subprocess.run(
             ["git", "-C", str(dataset_path), "annex", "init"],
-            check=False, capture_output=True, timeout=30,
+            check=False,
+            capture_output=True,
+            timeout=30,
         )
 
         # Step 3: datalad get for metadata files only (TSV, JSON, phenotype)
-        for pattern in ["*.tsv", "*.json", "phenotype/*.tsv", "phenotype/*.json",
-                        "phenotype/**/*.tsv"]:
+        for pattern in [
+            "*.tsv",
+            "*.json",
+            "phenotype/*.tsv",
+            "phenotype/*.json",
+            "phenotype/**/*.tsv",
+        ]:
             try:
                 subprocess.run(
                     ["datalad", "get", "-d", str(dataset_path), pattern],
-                    check=False, capture_output=True, timeout=120,
+                    check=False,
+                    capture_output=True,
+                    timeout=120,
                 )
             except subprocess.TimeoutExpired:
                 pass

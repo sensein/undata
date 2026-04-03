@@ -25,6 +25,7 @@ def check_ontology_versions(
     """
     if ontology_store is None:
         from .ontology_store import OntologyStore
+
         ontology_store = OntologyStore()
 
     transitions = []
@@ -41,15 +42,22 @@ def check_ontology_versions(
         try:
             new_checksum = _fetch_checksum(url)
             if new_checksum and new_checksum != old_checksum:
-                transitions.append({
-                    "dependency_type": "ontology",
-                    "dependency_name": name,
-                    "old_version": old_checksum,
-                    "new_version": new_checksum,
-                    "affected_entities": 0,  # populated by caller after re-enrichment
-                    "timestamp": datetime.now(timezone.utc).isoformat(),
-                })
-                logger.info("Version change detected for %s: %s -> %s", name, old_checksum[:12], new_checksum[:12])
+                transitions.append(
+                    {
+                        "dependency_type": "ontology",
+                        "dependency_name": name,
+                        "old_version": old_checksum,
+                        "new_version": new_checksum,
+                        "affected_entities": 0,  # populated by caller after re-enrichment
+                        "timestamp": datetime.now(timezone.utc).isoformat(),
+                    }
+                )
+                logger.info(
+                    "Version change detected for %s: %s -> %s",
+                    name,
+                    old_checksum[:12],
+                    new_checksum[:12],
+                )
         except Exception as e:
             logger.warning("Failed to check version for %s: %s", name, e)
 

@@ -203,7 +203,7 @@ def generate_transforms(
                             break
                         src_i = uri_to_source[uris[i]]
                         # Compute similarities for this element against all later elements
-                        sims = normed[i] @ normed[i + 1:].T
+                        sims = normed[i] @ normed[i + 1 :].T
                         for j_offset in range(len(sims)):
                             if sims[j_offset] < name_similarity_threshold:
                                 continue
