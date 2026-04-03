@@ -60,7 +60,7 @@
 - [X] T016 [US2] Wire OpenNeuro batch: clone via git+datalad → extract → cleanup → next dataset in library/src/undata_library/ingest.py
 - [X] T017 [US2] Wire NDA batch: fetch structure from API → extract → next structure in library/src/undata_library/ingest.py
 - [X] T018 [US2] Add BatchRunSummary with per-dataset breakdown to run summary output in library/src/undata_library/run_summary.py
-- [ ] T019 [US2] Remove ad-hoc batch scripts (replaced by CLI) and add test asserting no code writes directly to registry outside pipeline in library/scripts/ingest_openneuro_fast.py, library/scripts/ingest_openneuro_batch.py, and library/tests/test_no_direct_writes.py
+- [X] T019 [US2] Remove ad-hoc batch scripts (replaced by CLI) and add test asserting no code writes directly to registry outside pipeline in library/scripts/ingest_openneuro_fast.py, library/scripts/ingest_openneuro_batch.py, and library/tests/test_no_direct_writes.py
 - [X] T020 [US2] Add progress reporting to batch pipeline — log [N/total] dataset_id → entity_count (time) in library/src/undata_library/ingest.py
 
 **Checkpoint**: `pipeline --source nda --all` completes through full pipeline stages
