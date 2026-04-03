@@ -305,6 +305,18 @@ class NDAAdapter(BaseAdapter):
                 provenance["required"] = required_val in ("Required", True)
             if aliases:
                 provenance["aliases"] = aliases
+                # Also add to semantic for alignment module alias detection
+                alias_list = aliases if isinstance(aliases, list) else []
+                if isinstance(aliases, str) and aliases not in ("[]", "None", ""):
+                    try:
+                        import json as _json
+                        alias_list = _json.loads(aliases)
+                    except (ValueError, TypeError):
+                        alias_list = [aliases]
+                if alias_list:
+                    existing_hints = semantic.get("alias_hints", [])
+                    existing_hints.extend([f"nda_alias:{a}" for a in alias_list])
+                    semantic["alias_hints"] = existing_hints
 
             results.append(
                 ClassifiedEntity(

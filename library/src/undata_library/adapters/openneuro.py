@@ -226,16 +226,35 @@ class OpenNeuroAdapter(BaseAdapter):
                         description = ""
                         unit = None
                         levels = None
+                        min_val = None
+                        max_val = None
                         if isinstance(col_meta, dict):
                             description = col_meta.get(
                                 "Description", col_meta.get("description", "")
                             )
                             unit = col_meta.get("Units", col_meta.get("units"))
                             levels = col_meta.get("Levels", {})
+                            # Extract range info from BIDS sidecar fields
+                            min_val = col_meta.get(
+                                "MinValue", col_meta.get("Minimum", col_meta.get("minimum"))
+                            )
+                            max_val = col_meta.get(
+                                "MaxValue", col_meta.get("Maximum", col_meta.get("maximum"))
+                            )
 
                         semantic: dict[str, Any] = {"data_type": data_type}
                         if unit:
                             semantic["unit"] = unit
+                        if min_val is not None:
+                            try:
+                                semantic["min_value"] = float(min_val)
+                            except (ValueError, TypeError):
+                                pass
+                        if max_val is not None:
+                            try:
+                                semantic["max_value"] = float(max_val)
+                            except (ValueError, TypeError):
+                                pass
 
                         # Build response_options from Levels or unique values
                         if isinstance(levels, dict) and levels:

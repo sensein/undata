@@ -2141,6 +2141,7 @@ dependencies = [
 requires-dist = [
     { name = "click", specifier = ">=8.0" },
     { name = "cmixf", specifier = ">=0.2" },
+    { name = "datalad", marker = "extra == 'knowledge'", specifier = ">=1.0" },
     { name = "docker", marker = "extra == 'docker'", specifier = ">=7.0" },
     { name = "httpx", specifier = ">=0.27" },
     { name = "linkml-runtime", specifier = ">=1.8" },
@@ -2148,6 +2149,7 @@ requires-dist = [
     { name = "pronto", specifier = ">=2.5" },
     { name = "pyarrow", specifier = ">=15.0" },
     { name = "pydantic", specifier = ">=2.0" },
+    { name = "pydicom", marker = "extra == 'knowledge'", specifier = ">=2.4" },
     { name = "pyoxigraph", specifier = ">=0.4" },
     { name = "python-dotenv", specifier = ">=1.0" },
     { name = "pyyaml", specifier = ">=6.0" },
@@ -2155,7 +2157,7 @@ requires-dist = [
     { name = "sentence-transformers", marker = "extra == 'embeddings'", specifier = ">=3.0" },
     { name = "sentence-transformers", marker = "extra == 'similarity'", specifier = ">=3.0" },
 ]
-provides-extras = ["similarity", "embeddings", "llm", "docker"]
+provides-extras = ["similarity", "embeddings", "llm", "docker", "knowledge"]
 
 [package.metadata.requires-dev]
 dev = [

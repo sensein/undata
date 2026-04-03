@@ -1,7 +1,8 @@
-"""Import flat-file YAML registry into PostgreSQL via DatabaseBackend.
+"""Import flat-file YAML (and Parquet) registry into PostgreSQL via DatabaseBackend.
 
 Reads YAML files from a registry directory and writes them through the
 DatabaseBackend, which handles upsert (idempotent re-import).
+Also reads Parquet files using ParquetStore for large-scale registries.
 """
 
 from __future__ import annotations
@@ -13,6 +14,7 @@ from pathlib import Path
 import yaml
 from sqlalchemy.ext.asyncio import AsyncSession
 from undata_library.models import CurationFlag, FlagStatus, FlagType, RunSummary
+from undata_library.storage.parquet_store import ParquetStore
 
 from src.storage.database_backend import DatabaseBackend
 
@@ -58,6 +60,8 @@ async def import_registry(
             await session.execute(model.__table__.delete())
 
     # Import core entity types via DatabaseBackend
+    parquet_store = ParquetStore(registry_dir)
+
     for entity_type in ("elements", "schemas", "values", "valuesets"):
         entity_dir = registry_dir / entity_type
         if not entity_dir.exists():
@@ -65,6 +69,7 @@ async def import_registry(
             continue
 
         count = 0
+        # 1. Import from YAML files
         for f in sorted(entity_dir.glob("*.yaml")):
             try:
                 data = yaml.safe_load(f.read_text(encoding="utf-8"))
@@ -74,6 +79,19 @@ async def import_registry(
                 count += 1
             except Exception as exc:
                 logger.warning("Failed to import %s: %s", f, exc)
+
+        # 2. Import from Parquet files
+        parquet_files = sorted(entity_dir.glob("*.parquet"))
+        if parquet_files:
+            try:
+                for entity in parquet_store.list(entity_type):
+                    sha = entity.get("sha256", "")
+                    if not sha or "semantic" not in entity:
+                        continue
+                    await backend.entities.write(entity_type, entity, identifier=sha)
+                    count += 1
+            except Exception as exc:
+                logger.warning("Failed to import Parquet for %s: %s", entity_type, exc)
 
         stats[entity_type] = count
 

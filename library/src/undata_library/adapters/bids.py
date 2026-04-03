@@ -183,6 +183,9 @@ class BIDSAdapter(BaseAdapter):
                     sem["min_value"] = float(min_val)
                 if max_val is not None:
                     sem["max_value"] = float(max_val)
+                ref = fdef.get("$ref")
+                if ref and isinstance(ref, str):
+                    sem["type_ref"] = ref
                 desc = str(fdef.get("description", "") or "")
                 results.append(
                     ClassifiedEntity(
