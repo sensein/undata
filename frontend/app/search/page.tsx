@@ -40,6 +40,7 @@ function SearchContent() {
   const initialQuery = searchParams.get("q") ?? "";
   const [query, setQuery] = useState(initialQuery);
   const [mode, setMode] = useState<SearchModeType>("BOTH");
+  const [threshold, setThreshold] = useState(0);
   const [executeSearch, { data, loading }] = useLazyQuery<{ search: SearchResult[] }>(SEARCH);
 
   const handleSearch = () => {
@@ -57,7 +58,12 @@ function SearchContent() {
     if (e.key === "Enter") handleSearch();
   };
 
-  const results = data?.search ?? [];
+  const allResults = data?.search ?? [];
+
+  // Filter by threshold and sort by score descending
+  const results = allResults
+    .filter((r) => r.score >= threshold)
+    .sort((a, b) => b.score - a.score);
 
   // Group by entity type
   const grouped: Record<string, SearchResult[]> = {};
@@ -107,8 +113,38 @@ function SearchContent() {
         </span>
       </div>
 
+      {mode !== "LEXICAL" && (
+        <div className="flex items-center gap-3 mb-4">
+          <label className="text-xs text-gray-500">Similarity threshold:</label>
+          <input
+            type="range"
+            min={0}
+            max={100}
+            value={threshold * 100}
+            onChange={(e) => setThreshold(Number(e.target.value) / 100)}
+            className="w-48 h-1.5 accent-blue-600"
+          />
+          <span className="text-xs font-mono w-10">{(threshold * 100).toFixed(0)}%</span>
+          {threshold > 0 && (
+            <button
+              onClick={() => setThreshold(0)}
+              className="text-xs text-blue-600 hover:underline"
+            >
+              Reset
+            </button>
+          )}
+        </div>
+      )}
+
       {results.length === 0 && data && !loading && (
-        <p className="text-gray-500 text-sm">No results found for &ldquo;{query}&rdquo;</p>
+        <p className="text-gray-500 text-sm">
+          No results {threshold > 0 ? `above ${(threshold * 100).toFixed(0)}% threshold ` : ""}for &ldquo;{query}&rdquo;
+          {threshold > 0 && allResults.length > 0 && (
+            <button onClick={() => setThreshold(0)} className="ml-2 text-blue-600 underline">
+              Show all {allResults.length} results
+            </button>
+          )}
+        </p>
       )}
 
       {Object.entries(grouped).map(([type, items]) => (
@@ -120,6 +156,7 @@ function SearchContent() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-gray-50 border-b">
+                  <th className="text-left px-2 py-1.5 font-medium text-xs w-16">Score</th>
                   <th className="text-left px-2 py-1.5 font-medium text-xs">Name</th>
                   <th className="text-left px-2 py-1.5 font-medium text-xs">Source</th>
                   {type === "element" && <th className="text-left px-2 py-1.5 font-medium text-xs">Type</th>}
@@ -130,6 +167,15 @@ function SearchContent() {
               <tbody>
                 {items.map((r) => (
                   <tr key={`${r.entityType}-${r.sha256}`} className="border-b hover:bg-gray-50">
+                    <td className="px-2 py-1">
+                      <span className={`font-mono text-xs px-1.5 py-0.5 rounded ${
+                        r.score >= 0.8 ? "bg-green-100 text-green-800" :
+                        r.score >= 0.5 ? "bg-yellow-100 text-yellow-800" :
+                        "bg-gray-100 text-gray-600"
+                      }`}>
+                        {(r.score * 100).toFixed(0)}%
+                      </span>
+                    </td>
                     <td className="px-2 py-1">
                       <EntityTag
                         entityType={ENTITY_TYPE_PATHS[r.entityType] ?? r.entityType}
