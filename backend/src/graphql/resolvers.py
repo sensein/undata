@@ -449,7 +449,39 @@ async def resolve_search(
             logger.warning("Semantic search failed: %s", e)
 
     results.sort(key=lambda r: (-r.score, r.name.lower()))
-    return results[:first]
+    final = results[:first]
+
+    # Record alignment candidates from search (FR-019)
+    if do_semantic and len(final) >= 2:
+        try:
+            from src.db.models import AlignmentCandidate
+
+            # Find unaligned entities with high pairwise similarity
+            high_sim = [r for r in final if r.score >= 0.8]
+            if len(high_sim) >= 2:
+                for i in range(min(len(high_sim), 5)):
+                    for j in range(i + 1, min(len(high_sim), 5)):
+                        a, b = high_sim[i], high_sim[j]
+                        # Check if already aligned
+                        sha_a, sha_b = sorted([a.sha256, b.sha256])
+                        existing = await session.execute(
+                            select(AlignmentCandidate).where(
+                                AlignmentCandidate.entity_a == sha_a,
+                                AlignmentCandidate.entity_b == sha_b,
+                            )
+                        )
+                        if existing.scalar_one_or_none() is None:
+                            session.add(AlignmentCandidate(
+                                entity_a=sha_a,
+                                entity_b=sha_b,
+                                similarity=min(a.score, b.score),
+                                source="search",
+                            ))
+                await session.flush()
+        except Exception as exc:
+            logger.debug("Failed to record alignment candidates: %s", exc)
+
+    return final
 
 
 # --- Browse Queries ---

@@ -116,9 +116,9 @@
 
 **Goal**: Semantic search results flag unaligned entities as alignment candidates
 
-- [ ] T044 Add alignment candidate recording to search resolver in backend/src/graphql/resolvers.py — after semantic/both search returns results, if 2+ unaligned entities have similarity > 0.8, insert pairs into alignment_candidates table
-- [ ] T045 Add alignment_candidates table to backend/src/db/models.py — entity_a (string), entity_b (string), similarity (float), source (string), created_at (datetime), resolved (bool)
-- [ ] T046 Add `read_search_candidates()` to library/src/undata_library/align.py — at start of alignment, load unresolved candidates from alignment_candidates.parquet and include them in candidate generation; mark as resolved after evaluation
+- [X] T044 Add alignment candidate recording to search resolver in backend/src/graphql/resolvers.py — after semantic/both search returns results, if 2+ unaligned entities have similarity > 0.8, insert pairs into alignment_candidates table
+- [X] T045 Add alignment_candidates table to backend/src/db/models.py — entity_a (string), entity_b (string), similarity (float), source (string), created_at (datetime), resolved (bool)
+- [X] T046 Add `read_search_candidates()` to library/src/undata_library/align.py — at start of alignment, load unresolved candidates from alignment_candidates.parquet and include them in candidate generation; mark as resolved after evaluation
 - [ ] T047 Update search page frontend/app/search/page.tsx — show small indicator when search results contain potential alignment candidates (e.g., "2 potential alignments detected")
 
 ---
@@ -132,7 +132,7 @@
 - [ ] T050 Performance validation: time full alignment of registry and verify <30 minutes; document in eval-record.md
 - [ ] T051 Fix any ruff lint/format issues across all modified files — run `uv run ruff check --fix` and `uv run ruff format` in library/ and backend/
 - [ ] T052 Verify frontend builds cleanly — run `pnpm lint && pnpm build` in frontend/
-- [ ] T053 Update library/src/undata_library/cli.py pipeline command to include alignment as default post-commit step — `pipeline --source X` runs extract→enrich→commit→align→transform
+- [X] T053 Update library/src/undata_library/cli.py pipeline command to include alignment as default post-commit step — `pipeline --source X` runs extract→enrich→commit→align→transform
 
 ---
 

@@ -110,6 +110,18 @@ class ValueSet(Base):
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
 
 
+class AlignmentCandidate(Base):
+    __tablename__ = "alignment_candidates"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    entity_a: Mapped[str] = mapped_column(String, index=True)
+    entity_b: Mapped[str] = mapped_column(String, index=True)
+    similarity: Mapped[float] = mapped_column(Float)
+    source: Mapped[str] = mapped_column(String)  # "search" or "pipeline"
+    resolved: Mapped[bool] = mapped_column(Boolean, default=False)
+    created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
+
+
 class CurationFlag(Base):
     __tablename__ = "curation_flags"
 
