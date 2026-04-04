@@ -21,17 +21,18 @@ Updated after each significant re-extraction or pipeline change.
 | ReproSchema | ~9,500 | ~90 | ~9,900 | ~4,300 | ~24,000 |
 | **Total (7 sources)** | **13,742** | **1,679** | **15,598** | **4,638** | **35,657** |
 
-### Alignment Results (5 sources, pre-ReproSchema)
+### Alignment Results (7 sources)
 
-| Metric | Value |
-|--------|-------|
-| Entities processed | 11,678 |
-| Alignment groups | 521 |
-| Canonical entities | 521 |
-| Member entities (merged) | 925 |
-| Unaligned (unique) | 10,232 |
-| Conflicts (range mismatch) | 0 |
-| Processing time | 2 min 27 sec |
+| Metric | 5 sources | 7 sources (+ ReproSchema) |
+|--------|-----------|---------------------------|
+| Entities processed | 11,678 | 35,657 |
+| Alignment groups | 521 | 708 |
+| Canonical entities | 521 | 708 |
+| Member entities (merged) | 925 | 13,073 |
+| Unaligned (unique) | 10,232 | 21,876 |
+| Conflicts (range mismatch) | 0 | 44 |
+| Processing time | 2 min 27 sec | 48 min 15 sec |
+| **Reduction rate** | **8%** | **37%** |
 
 ### Key Changes from Previous Run
 
@@ -44,8 +45,10 @@ Updated after each significant re-extraction or pipeline change.
 
 - NDA pipeline pending (API-based, takes ~60 min for all structures)
 - OpenNeuro batch ingestion not run yet (requires datalad + network)
-- Full alignment with 35K+ entities takes >5 minutes due to k-NN computation on large embedding matrix — may need chunking or HNSW index for 100K+ scale
+- Full alignment with 35K entities takes 48 minutes (k-NN on 13K element embeddings is the bottleneck). Needs chunking or HNSW index for 100K+ scale.
 - ReproSchema extraction takes ~64 minutes (SchemaView construction for 4,759 slots is slow)
+- 44 alignment conflicts detected — entities with same name but different ranges correctly flagged (not merged)
+- 37% entity reduction from alignment (13,073 merged into 708 groups). ReproSchema drives most merges (many shared items across activities).
 
 ---
 
