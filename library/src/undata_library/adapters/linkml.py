@@ -69,21 +69,210 @@ class LinkMLAdapter(BaseAdapter):
     ) -> list[ClassifiedEntity]:
         """Extract entities from an in-memory LinkML SchemaDefinition object.
 
-        This is the entry point for adapters that build LinkML programmatically.
+        Uses SchemaView for slot deduplication: slots shared across multiple
+        classes produce a single entity with combined provenance listing all
+        classes that use the slot. Slot aliases are resolved so aliased names
+        map to the same canonical slot entity.
         """
         from linkml_runtime.dumpers import yaml_dumper
+        from linkml_runtime.utils.schemaview import SchemaView
 
-        # Serialize to dict via YAML round-trip (simplest, handles all LinkML types)
-        yaml_str = yaml_dumper.dumps(schema_def)
-        data = yaml.safe_load(yaml_str)
-        if not isinstance(data, dict):
-            return []
-
-        schema_name = data.get("name", "schema")
         ref = source_ref or SourceRef(repo="", committish="", file="", checksum="")
 
+        # Build SchemaView for slot/alias resolution
+        try:
+            sv = SchemaView(schema_def)
+            return self._extract_via_schemaview(sv, source_name, ref)
+        except Exception:
+            # Fallback to dict-based extraction if SchemaView fails
+            yaml_str = yaml_dumper.dumps(schema_def)
+            data = yaml.safe_load(yaml_str)
+            if not isinstance(data, dict):
+                return []
+            schema_name = data.get("name", "schema")
+            results: list[ClassifiedEntity] = []
+            self._extract_from_dict(data, schema_name, source_name, ref, results)
+            return results
+
+    def _extract_via_schemaview(
+        self,
+        sv: Any,
+        source_name: str,
+        source_ref: SourceRef,
+    ) -> list[ClassifiedEntity]:
+        """Extract entities using SchemaView for slot deduplication.
+
+        Key behavior:
+        - Slots used by multiple classes → single entity, combined provenance
+        - Slot aliases → resolved to canonical slot name
+        - Classes → CLASS entities with properties list
+        - Enums → VALUESET + ENUM_VALUE entities
+        """
         results: list[ClassifiedEntity] = []
-        self._extract_from_dict(data, schema_name, source_name, ref, results)
+        schema_name = sv.schema.name or "schema"
+
+        # 1. Classes → CLASS entities
+        for cls_name in sv.all_classes():
+            cls_def = sv.get_class(cls_name)
+            if cls_def is None:
+                continue
+            # Get all slots for this class (inherited + direct)
+            try:
+                slot_names = [s.name for s in sv.class_induced_slots(cls_name)]
+            except Exception:
+                slot_names = list(cls_def.slots) if cls_def.slots else []
+
+            semantic: dict[str, Any] = {"properties": slot_names}
+            if cls_def.is_a:
+                semantic["subclass_of"] = cls_def.is_a
+            if cls_def.mixins:
+                semantic["mixins"] = list(cls_def.mixins)
+            if cls_def.mixin:
+                semantic["is_mixin"] = True
+
+            results.append(
+                ClassifiedEntity(
+                    entity_type=EntityType.CLASS,
+                    semantic=semantic,
+                    provenance={
+                        "source": source_name,
+                        "class": str(cls_name),
+                        "name": str(cls_name),
+                        "description": cls_def.description,
+                    },
+                    confidence=0.95,
+                    source_ref=source_ref,
+                )
+            )
+
+        # 2. Slots → ATTRIBUTE entities (deduplicated via SchemaView)
+        # Build slot → classes mapping for combined provenance
+        slot_classes: dict[str, list[str]] = {}
+        for cls_name in sv.all_classes():
+            cls_def = sv.get_class(cls_name)
+            if cls_def is None:
+                continue
+            for sn in cls_def.slots or []:
+                slot_classes.setdefault(str(sn), []).append(str(cls_name))
+            for sn in cls_def.attributes or {}:
+                slot_classes.setdefault(str(sn), []).append(str(cls_name))
+
+        # Track alias → canonical mappings
+        alias_to_canonical: dict[str, str] = {}
+        for slot_name in sv.all_slots():
+            slot_def = sv.get_slot(slot_name)
+            if slot_def and slot_def.aliases:
+                for alias in slot_def.aliases:
+                    alias_to_canonical[str(alias)] = str(slot_name)
+
+        seen_slots: set[str] = set()
+        for slot_name in sv.all_slots():
+            canonical_name = str(slot_name)
+            # Skip if this is an alias that was already processed
+            if canonical_name in alias_to_canonical:
+                canonical_name = alias_to_canonical[canonical_name]
+            if canonical_name in seen_slots:
+                continue
+            seen_slots.add(canonical_name)
+
+            slot_def = sv.get_slot(slot_name)
+            if slot_def is None:
+                continue
+
+            dt = _linkml_type_from_slot(slot_def)
+            sem: dict[str, Any] = {"data_type": dt}
+
+            rng = str(slot_def.range) if slot_def.range else "string"
+            if rng not in _LINKML_TYPE_MAP:
+                sem["type_ref"] = rng
+            if slot_def.pattern:
+                sem["pattern"] = slot_def.pattern
+            if slot_def.multivalued:
+                sem["multivalued"] = True
+            if slot_def.minimum_value is not None:
+                sem["min_value"] = float(slot_def.minimum_value)
+            if slot_def.maximum_value is not None:
+                sem["max_value"] = float(slot_def.maximum_value)
+
+            # Annotations
+            if slot_def.annotations:
+                for ann_key, ann_val in slot_def.annotations.items():
+                    val = ann_val.value if hasattr(ann_val, "value") else str(ann_val)
+                    if ann_key == "unit":
+                        sem["unit"] = val
+
+            # Aliases stored for downstream alignment
+            if slot_def.aliases:
+                sem["alias_hints"] = [str(a) for a in slot_def.aliases]
+
+            # Combined provenance from all classes using this slot
+            using_classes = slot_classes.get(canonical_name, [schema_name])
+            provenance = {
+                "source": source_name,
+                "class": using_classes[0] if len(using_classes) == 1 else schema_name,
+                "name": canonical_name,
+                "description": slot_def.description,
+            }
+            if len(using_classes) > 1:
+                provenance["used_by_classes"] = using_classes
+
+            results.append(
+                ClassifiedEntity(
+                    entity_type=EntityType.ATTRIBUTE,
+                    semantic=sem,
+                    provenance=provenance,
+                    confidence=0.9,
+                    source_ref=source_ref,
+                )
+            )
+
+        # 3. Enums → VALUESET + ENUM_VALUE entities
+        for enum_name in sv.all_enums():
+            enum_def = sv.get_enum(enum_name)
+            if enum_def is None:
+                continue
+            pvs = enum_def.permissible_values or {}
+            members = sorted(pvs.keys())
+
+            results.append(
+                ClassifiedEntity(
+                    entity_type=EntityType.VALUESET,
+                    semantic={"name": str(enum_name), "members": members},
+                    provenance={
+                        "source": source_name,
+                        "class": schema_name,
+                        "name": str(enum_name),
+                        "description": enum_def.description,
+                    },
+                    confidence=0.95,
+                    source_ref=source_ref,
+                )
+            )
+
+            for val_name, val_def in pvs.items():
+                val_sem: dict[str, Any] = {
+                    "label": str(val_name),
+                    "value_type": "categorical",
+                }
+                if hasattr(val_def, "meaning") and val_def.meaning:
+                    val_sem["ontology_id"] = str(val_def.meaning)
+                results.append(
+                    ClassifiedEntity(
+                        entity_type=EntityType.ENUM_VALUE,
+                        semantic=val_sem,
+                        provenance={
+                            "source": source_name,
+                            "class": str(enum_name),
+                            "name": str(val_name),
+                            "description": val_def.description
+                            if hasattr(val_def, "description")
+                            else None,
+                        },
+                        confidence=0.95,
+                        source_ref=source_ref,
+                    )
+                )
+
         return results
 
     def _extract_from_dict(
@@ -280,5 +469,13 @@ _LINKML_TYPE_MAP = {
 def _linkml_type(slot_def: dict) -> str:
     r = slot_def.get("range", "string")
     if slot_def.get("multivalued"):
+        return "array"
+    return _LINKML_TYPE_MAP.get(r, "string")
+
+
+def _linkml_type_from_slot(slot_def: Any) -> str:
+    """Extract data type from a LinkML SlotDefinition object (not dict)."""
+    r = str(slot_def.range) if slot_def.range else "string"
+    if slot_def.multivalued:
         return "array"
     return _LINKML_TYPE_MAP.get(r, "string")

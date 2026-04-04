@@ -23,11 +23,11 @@
 
 **Purpose**: SchemaView-based extraction and multi-signal scoring — required before all user stories
 
-- [ ] T003 Rewrite `extract_from_schema_definition()` in library/src/undata_library/adapters/extractor.py to build a SchemaView from the SchemaDefinition, then use `schemaview.all_slots()` and `schemaview.get_classes_by_slot()` to produce deduplicated entities with combined provenance from all classes that use each slot
-- [ ] T004 Update library/src/undata_library/adapters/linkml.py `_extract_from_dict()` to resolve slot aliases via SchemaView — when SchemaView reports aliases for a slot, map all alias names to the same canonical slot entity
-- [ ] T005 Add `compute_alignment_score()` function in library/src/undata_library/similarity.py implementing the 4-signal weighted scoring: name_sim (0.3), embedding_sim (0.3), ontology_overlap (0.25), alias_match (0.15) — returns AlignmentScore dict per contract
-- [ ] T006 Add `normalize_name()` helper in library/src/undata_library/similarity.py — lowercase, strip underscores/hyphens/spaces, normalize unicode — used for name blocking in candidate generation
-- [ ] T007 [P] Add alignment candidate Parquet schema to library/src/undata_library/storage/parquet_store.py — `CANDIDATE_SCHEMA` with fields: entity_a, entity_b, similarity, source, created_at, resolved — and `write_candidates()` / `read_candidates()` methods
+- [X] T003 Rewrite `extract_from_schema_definition()` in library/src/undata_library/adapters/extractor.py to build a SchemaView from the SchemaDefinition, then use `schemaview.all_slots()` and `schemaview.get_classes_by_slot()` to produce deduplicated entities with combined provenance from all classes that use each slot
+- [X] T004 Update library/src/undata_library/adapters/linkml.py `_extract_from_dict()` to resolve slot aliases via SchemaView — when SchemaView reports aliases for a slot, map all alias names to the same canonical slot entity
+- [X] T005 Add `compute_alignment_score()` function in library/src/undata_library/similarity.py implementing the 4-signal weighted scoring: name_sim (0.3), embedding_sim (0.3), ontology_overlap (0.25), alias_match (0.15) — returns AlignmentScore dict per contract
+- [X] T006 Add `normalize_name()` helper in library/src/undata_library/similarity.py — lowercase, strip underscores/hyphens/spaces, normalize unicode — used for name blocking in candidate generation
+- [X] T007 [P] Add alignment candidate Parquet schema to library/src/undata_library/storage/parquet_store.py — `CANDIDATE_SCHEMA` with fields: entity_a, entity_b, similarity, source, created_at, resolved — and `write_candidates()` / `read_candidates()` methods
 
 ---
 

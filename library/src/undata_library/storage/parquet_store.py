@@ -25,6 +25,18 @@ import pyarrow.parquet as pq
 
 logger = logging.getLogger(__name__)
 
+# Schema for alignment candidate pairs (search-driven feedback)
+CANDIDATE_SCHEMA = pa.schema(
+    [
+        pa.field("entity_a", pa.string()),
+        pa.field("entity_b", pa.string()),
+        pa.field("similarity", pa.float64()),
+        pa.field("source", pa.string()),  # "search" or "pipeline"
+        pa.field("created_at", pa.string()),
+        pa.field("resolved", pa.bool_()),
+    ]
+)
+
 # Schema for entity Parquet files
 ENTITY_SCHEMA = pa.schema(
     [
@@ -374,3 +386,107 @@ class ParquetStore:
             except Exception:
                 continue
         return None
+
+    # ------------------------------------------------------------------
+    # Alignment candidate management (Feature 041)
+    # ------------------------------------------------------------------
+
+    def write_candidates(self, candidates: list[dict]) -> None:
+        """Append alignment candidate pairs to alignment_candidates.parquet."""
+        if not candidates:
+            return
+        path = self.base_dir / "alignment_candidates.parquet"
+        now = datetime.now(timezone.utc).isoformat()
+
+        rows = []
+        for c in candidates:
+            rows.append(
+                {
+                    "entity_a": c.get("entity_a", ""),
+                    "entity_b": c.get("entity_b", ""),
+                    "similarity": float(c.get("similarity", 0.0)),
+                    "source": c.get("source", "pipeline"),
+                    "created_at": c.get("created_at", now),
+                    "resolved": c.get("resolved", False),
+                }
+            )
+
+        new_table = pa.table(
+            {col: [r[col] for r in rows] for col in CANDIDATE_SCHEMA.names},
+            schema=CANDIDATE_SCHEMA,
+        )
+
+        if path.exists():
+            existing = pq.read_table(path)
+            combined = pa.concat_tables([existing, new_table])
+            pq.write_table(combined, path, compression="snappy")
+        else:
+            pq.write_table(new_table, path, compression="snappy")
+
+    def read_candidates(self, resolved: bool | None = None) -> list[dict]:
+        """Read alignment candidates, optionally filtering by resolved status."""
+        path = self.base_dir / "alignment_candidates.parquet"
+        if not path.exists():
+            return []
+        table = pq.read_table(path)
+        results = []
+        for i in range(table.num_rows):
+            row = {col: table.column(col)[i].as_py() for col in table.column_names}
+            if resolved is not None and row.get("resolved") != resolved:
+                continue
+            results.append(row)
+        return results
+
+    def update_alignment_fields(self, entity_type: str, updates: dict[str, dict]) -> int:
+        """Bulk update alignment fields on entities.
+
+        Args:
+            entity_type: "elements", "schemas", "values", or "valuesets"
+            updates: {sha256: {"aligned_to": str, "aligned_members": list,
+                      "alignment_score": float, "alignment_signals": dict}}
+
+        Returns number of entities updated.
+        """
+        if not updates:
+            return 0
+
+        count = 0
+        type_dir = self.base_dir / entity_type
+        if not type_dir.exists():
+            return 0
+
+        for path in sorted(type_dir.glob("*.parquet")):
+            try:
+                table = pq.read_table(path)
+            except Exception:
+                continue
+
+            modified = False
+            rows = []
+            for i in range(table.num_rows):
+                row = {col: table.column(col)[i].as_py() for col in table.column_names}
+                sha = row.get("sha256", "")
+                if sha in updates:
+                    sem = json.loads(row.get("semantic", "{}"))
+                    upd = updates[sha]
+                    if "aligned_to" in upd:
+                        sem["aligned_to"] = upd["aligned_to"]
+                    if "aligned_members" in upd:
+                        sem["aligned_members"] = upd["aligned_members"]
+                    if "alignment_score" in upd:
+                        sem["alignment_score"] = upd["alignment_score"]
+                    if "alignment_signals" in upd:
+                        sem["alignment_signals"] = upd["alignment_signals"]
+                    row["semantic"] = json.dumps(sem)
+                    modified = True
+                    count += 1
+                rows.append(row)
+
+            if modified:
+                new_table = pa.table(
+                    {col: [r.get(col, "") for r in rows] for col in ENTITY_SCHEMA.names},
+                    schema=ENTITY_SCHEMA,
+                )
+                pq.write_table(new_table, path, compression="snappy")
+
+        return count

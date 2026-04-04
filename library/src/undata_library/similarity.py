@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import difflib
+import unicodedata
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -195,3 +196,116 @@ def _extract_choices(sem: dict) -> list[str]:
     if constraints and constraints.get("allowed_values"):
         return constraints["allowed_values"]
     return []
+
+
+# ---------------------------------------------------------------------------
+# Cross-source alignment scoring (Feature 041)
+# ---------------------------------------------------------------------------
+
+
+def normalize_name(name: str) -> str:
+    """Normalize an entity name for blocking-based candidate generation.
+
+    Lowercase, strip underscores/hyphens/spaces, normalize unicode.
+    Used to group entities by normalized name across sources so that
+    exact-after-normalization matches can be found cheaply.
+    """
+    # Unicode NFKD normalization → strip accents
+    n = unicodedata.normalize("NFKD", name)
+    n = "".join(c for c in n if not unicodedata.combining(c))
+    # Lowercase, remove separators
+    n = n.lower().replace("_", "").replace("-", "").replace(" ", "")
+    return n
+
+
+def ontology_overlap(entity_a: dict, entity_b: dict) -> float:
+    """Compute Jaccard similarity of ontology annotation URIs between two entities.
+
+    Returns 0.0–1.0.
+    """
+
+    def _uris(e: dict) -> set[str]:
+        sem = e.get("semantic", e)
+        anns = sem.get("ontology_annotations", [])
+        if isinstance(anns, str):
+            import json
+
+            try:
+                anns = json.loads(anns)
+            except (json.JSONDecodeError, TypeError):
+                return set()
+        return {a.get("term_uri", "") for a in anns if isinstance(a, dict) and a.get("term_uri")}
+
+    uris_a = _uris(entity_a)
+    uris_b = _uris(entity_b)
+    if not uris_a or not uris_b:
+        return 0.0
+    intersection = len(uris_a & uris_b)
+    union = len(uris_a | uris_b)
+    return intersection / union if union > 0 else 0.0
+
+
+def alias_match_score(entity_a: dict, entity_b: dict) -> float:
+    """Compute alias match signal between two entities.
+
+    Returns 0.95 if entities share alias_hints entries, 0.0 otherwise.
+    """
+    sem_a = entity_a.get("semantic", entity_a)
+    sem_b = entity_b.get("semantic", entity_b)
+    hints_a = set(sem_a.get("alias_hints", []))
+    hints_b = set(sem_b.get("alias_hints", []))
+    if hints_a and hints_b and hints_a & hints_b:
+        return 0.95
+    return 0.0
+
+
+def compute_alignment_score(
+    entity_a: dict,
+    entity_b: dict,
+    weights: dict | None = None,
+    embedding_store: "EmbeddingStore | None" = None,
+    uri_a: str = "",
+    uri_b: str = "",
+) -> dict:
+    """Compute multi-signal alignment score between two entities.
+
+    Signals (with default weights):
+    - name_sim (0.3): normalized name similarity via difflib
+    - embedding_sim (0.3): cosine similarity of pre-computed embeddings
+    - ontology_overlap (0.25): Jaccard of ontology annotation URIs
+    - alias_match (0.15): shared alias_hints boost (0 or 0.95)
+
+    Returns AlignmentScore dict:
+        {"composite": float, "name": float, "embedding": float,
+         "ontology": float, "alias": float}
+    """
+    w = weights or {"name": 0.3, "embedding": 0.3, "ontology": 0.25, "alias": 0.15}
+
+    # Signal 1: name similarity
+    name_a = _extract_name(entity_a)
+    name_b = _extract_name(entity_b)
+    name_sim = _difflib_similarity(name_a, name_b) if name_a and name_b else 0.0
+
+    # Signal 2: embedding cosine similarity
+    emb_sim = semantic_embedding_similarity(uri_a, uri_b, embedding_store, entity_a, entity_b)
+
+    # Signal 3: ontology annotation overlap
+    onto = ontology_overlap(entity_a, entity_b)
+
+    # Signal 4: alias hint match
+    alias = alias_match_score(entity_a, entity_b)
+
+    composite = (
+        w.get("name", 0.3) * name_sim
+        + w.get("embedding", 0.3) * emb_sim
+        + w.get("ontology", 0.25) * onto
+        + w.get("alias", 0.15) * alias
+    )
+
+    return {
+        "composite": round(composite, 4),
+        "name": round(name_sim, 4),
+        "embedding": round(emb_sim, 4),
+        "ontology": round(onto, 4),
+        "alias": round(alias, 4),
+    }
