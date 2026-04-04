@@ -1,0 +1,5 @@
+name: reproschema
+repo: https://github.com/ReproNim/reproschema-library
+default_version: latest
+acquisition: git_clone
+adapter: reproschema

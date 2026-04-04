@@ -1,0 +1,6 @@
+name: nda
+repo: https://nda.nih.gov
+default_version: latest
+acquisition: download_file
+download_url: https://nda.nih.gov/api/datadictionary/v2/datastructure
+adapter: nda
