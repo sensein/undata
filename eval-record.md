@@ -5,6 +5,50 @@ Updated after each significant re-extraction or pipeline change.
 
 ---
 
+## 2026-04-04 — Feature 041: Cross-Source Alignment (SchemaView + multi-signal scoring)
+
+**Pipeline**: LinkML-first adapters → SchemaView extraction → enrich → commit → align → transform
+
+### Entity Counts (7 sources — NDA pending)
+
+| Source | Elements | Schemas | Values | Valuesets | Total |
+|--------|----------|---------|--------|-----------|-------|
+| BIDS | ~500 | ~200 | ~400 | ~7 | 1,477 |
+| NWB | ~600 | ~300 | ~100 | ~5 | ~1,000 |
+| DANDI | ~200 | ~100 | ~200 | ~5 | 600 |
+| openMINDS | ~500 | ~300 | ~800 | ~50 | ~1,600 |
+| AIND | ~400 | ~200 | ~300 | ~20 | ~900 |
+| ReproSchema | ~9,500 | ~90 | ~9,900 | ~4,300 | ~24,000 |
+| **Total (7 sources)** | **13,742** | **1,679** | **15,598** | **4,638** | **35,657** |
+
+### Alignment Results (5 sources, pre-ReproSchema)
+
+| Metric | Value |
+|--------|-------|
+| Entities processed | 11,678 |
+| Alignment groups | 521 |
+| Canonical entities | 521 |
+| Member entities (merged) | 925 |
+| Unaligned (unique) | 10,232 |
+| Conflicts (range mismatch) | 0 |
+| Processing time | 2 min 27 sec |
+
+### Key Changes from Previous Run
+
+- **SchemaView dedup**: All 8 adapters now produce LinkML SchemaDefinitions. Slots shared across classes within a source are deduplicated before entity extraction. ReproSchema items shared across activities produce 1 element each (not per-activity).
+- **Multi-signal alignment scoring**: 4-signal weighted composite (name 0.3, embedding 0.3, ontology 0.25, alias 0.15) replaces the old single-signal alias detection.
+- **Graph-based persistence**: Alignment groups stored as aligned_to/aligned_members sha256 references on entities (no separate table).
+- **Pipeline reordering**: Alignment now runs post-commit (after embeddings computed), enabling embedding k-NN candidate generation.
+
+### Known Issues
+
+- NDA pipeline pending (API-based, takes ~60 min for all structures)
+- OpenNeuro batch ingestion not run yet (requires datalad + network)
+- Full alignment with 35K+ entities takes >5 minutes due to k-NN computation on large embedding matrix — may need chunking or HNSW index for 100K+ scale
+- ReproSchema extraction takes ~64 minutes (SchemaView construction for 4,759 slots is slow)
+
+---
+
 ## 2026-03-22 — Feature 027: Library Hardening (post-adapter review)
 
 **Pipeline**: LinkML-first adapters → extract → enrich → commit

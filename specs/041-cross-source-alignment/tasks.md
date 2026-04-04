@@ -43,7 +43,7 @@
 - [X] T011 [US5] Implement `to_linkml()` in library/src/undata_library/adapters/bids.py — convert existing direct extraction to build SchemaDefinition via linkml_builder, mapping BIDS objects/rules → classes, fields → slots; call extract_from_schema_definition() instead of manual entity construction
 - [X] T012 [P] [US5] Update library/src/undata_library/adapters/base.py — make `to_linkml()` abstract method on BaseAdapter with return type `SchemaDefinition`; update `extract()` default implementation to call `to_linkml()` → `extract_from_schema_definition()`
 - [X] T013 [US5] Update each of the 5 existing LinkML adapters (nwb.py, dandi.py, openminds.py, aind.py) to pass aliases through `add_slot()` where applicable — review each adapter for alias opportunities (e.g., openminds has short_name vs full URI)
-- [ ] T014 [US5] Integration test: run all 8 adapters and verify each produces a valid SchemaDefinition with >0 classes and >0 slots — compare entity counts before/after SchemaView dedup
+- [X] T014 [US5] Integration test: run all 8 adapters and verify each produces a valid SchemaDefinition with >0 classes and >0 slots — compare entity counts before/after SchemaView dedup
 
 ---
 
@@ -60,7 +60,7 @@
 - [X] T019 [US1] Implement range compatibility check in library/src/undata_library/align.py — entities with different min/max or different valuesets MUST NOT be merged; entities with identical or absent ranges are compatible
 - [X] T020 [US1] Add lightweight intra-source verification pass in library/src/undata_library/align.py — after SchemaView dedup, scan committed entities for remaining duplicates (slight naming variations not caught by SchemaView)
 - [X] T021 [US1] Update CLI `align` subcommand in library/src/undata_library/cli.py — add --threshold, --weights, --dry-run, --entity-types flags; output alignment report summary to console
-- [ ] T022 [US1] Integration test: run OpenNeuro pipeline → align → verify participant_id appears once with provenance from all datasets, and elements with different ranges remain separate
+- [X] T022 [US1] Integration test: run OpenNeuro pipeline → align → verify participant_id appears once with provenance from all datasets, and elements with different ranges remain separate
 
 ---
 
@@ -79,7 +79,7 @@
 - [X] T029 [US2] Generate alignment report in library/src/undata_library/align.py — produce AlignmentReport dict per contract with total_entities_processed, alignment_groups, canonical_entities, member_entities, unaligned_entities, conflicts, entity_type_breakdown; write to alignment-report.yaml
 - [X] T030 [US2] Implement incremental alignment mode in library/src/undata_library/align.py — when aligning, skip entities that already have `aligned_to` or `aligned_members` set; only process new/unaligned entities against existing canonical entities; add `--incremental` flag to CLI (FR-008)
 - [X] T031 [US2] Implement re-alignment trigger in library/src/undata_library/align.py — detect entities whose embedding was recomputed after last alignment (compare embedding timestamp vs alignment timestamp); clear their alignment fields and re-process them (FR-013)
-- [ ] T032 [US2] Integration test: run BIDS + NDA pipeline → align → verify age↔interview_age and sex↔gender are in same alignment groups with scores above 0.7
+- [X] T032 [US2] Integration test: run BIDS + NDA pipeline → align → verify age↔interview_age and sex↔gender are in same alignment groups with scores above 0.7
 
 ---
 
@@ -127,9 +127,9 @@
 
 **Purpose**: End-to-end validation, eval record, and cleanup
 
-- [ ] T048 Run full pipeline across all 8 sources with alignment enabled — record entity counts before/after alignment in eval-record.md per constitution
-- [ ] T049 Verify alignment report: confirm known cross-source pairs (age↔interview_age, sex↔gender) aligned; confirm no false merges for entities with different ranges
-- [ ] T050 Performance validation: time full alignment of registry and verify <30 minutes; document in eval-record.md
+- [X] T048 Run full pipeline across all 8 sources with alignment enabled — record entity counts before/after alignment in eval-record.md per constitution
+- [X] T049 Verify alignment report: confirm known cross-source pairs (age↔interview_age, sex↔gender) aligned; confirm no false merges for entities with different ranges
+- [X] T050 Performance validation: time full alignment of registry and verify <30 minutes; document in eval-record.md
 - [X] T051 Fix any ruff lint/format issues across all modified files — run `uv run ruff check --fix` and `uv run ruff format` in library/ and backend/
 - [X] T052 Verify frontend builds cleanly — run `pnpm lint && pnpm build` in frontend/
 - [X] T053 Update library/src/undata_library/cli.py pipeline command to include alignment as default post-commit step — `pipeline --source X` runs extract→enrich→commit→align→transform
