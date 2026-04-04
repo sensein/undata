@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import time
 from contextlib import asynccontextmanager
 
@@ -214,7 +215,13 @@ async def api_chat(request: Request):
     from src.services.chat_service import chat_completion
 
     user = await get_current_user(request)
-    if user is None or not check_role(user, "curator"):
+    if user is None:
+        # In dev mode (no Keycloak), allow unauthenticated chat access
+        if not os.environ.get("KEYCLOAK_URL"):
+            user = {"realm_access": {"roles": ["curator"]}}
+        else:
+            return JSONResponse(status_code=403, content={"error": "Curator role required"})
+    elif not check_role(user, "curator"):
         return JSONResponse(status_code=403, content={"error": "Curator role required"})
 
     body = await request.json()
