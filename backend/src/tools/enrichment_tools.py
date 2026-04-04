@@ -114,8 +114,7 @@ ENRICHMENT_TOOLS = [
                     "adapter_type": {
                         "type": "string",
                         "description": (
-                            "Adapter to use (bids, dandi,"
-                            " reproschema, csv, json-schema)"
+                            "Adapter to use (bids, dandi, reproschema, csv, json-schema)"
                         ),
                     },
                 },

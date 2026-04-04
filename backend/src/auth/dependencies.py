@@ -147,9 +147,9 @@ def require_role(role: str):
             raise HTTPException(
                 status_code=403,
                 detail=(
-                f"Role '{role}' required. "
-                f"Your roles: {user.get('realm_access', {}).get('roles', [])}"
-            ),
+                    f"Role '{role}' required. "
+                    f"Your roles: {user.get('realm_access', {}).get('roles', [])}"
+                ),
             )
         return user
 

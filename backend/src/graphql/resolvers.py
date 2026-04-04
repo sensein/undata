@@ -410,18 +410,19 @@ async def resolve_search(
                         )
                         sem_result = await session.execute(
                             sem_stmt,
-                            {"qvec": str(query_vec if isinstance(query_vec, list) else query_vec.tolist()), "lim": first},
+                            {
+                                "qvec": str(
+                                    query_vec if isinstance(query_vec, list) else query_vec.tolist()
+                                ),
+                                "lim": first,
+                            },
                         )
                         for row in sem_result:
                             sim = round(float(row.similarity), 4)
                             sem_scores[row.sha256] = sim
                             if row.sha256 in seen_sha:
                                 continue  # Will update score below
-                            prov = (
-                                (row.provenance or [{}])[0]
-                                if row.provenance
-                                else {}
-                            )
+                            prov = (row.provenance or [{}])[0] if row.provenance else {}
                             results.append(
                                 t.SearchResultType(
                                     entity_type=etype,
@@ -431,8 +432,7 @@ async def resolve_search(
                                         row.file_name or row.sha256[:12],
                                     ),
                                     source=prov.get("source"),
-                                    description=row.description
-                                    or prov.get("description", ""),
+                                    description=row.description or prov.get("description", ""),
                                     score=sim,
                                 )
                             )
@@ -471,12 +471,14 @@ async def resolve_search(
                             )
                         )
                         if existing.scalar_one_or_none() is None:
-                            session.add(AlignmentCandidate(
-                                entity_a=sha_a,
-                                entity_b=sha_b,
-                                similarity=min(a.score, b.score),
-                                source="search",
-                            ))
+                            session.add(
+                                AlignmentCandidate(
+                                    entity_a=sha_a,
+                                    entity_b=sha_b,
+                                    similarity=min(a.score, b.score),
+                                    source="search",
+                                )
+                            )
                 await session.flush()
         except Exception as exc:
             logger.debug("Failed to record alignment candidates: %s", exc)
@@ -1585,9 +1587,7 @@ async def resolve_ontology_store_info(session: AsyncSession) -> list[dict]:
     from src.db.models import OntologySource
 
     stmt = (
-        select(OntologySource)
-        .where(OntologySource.active.is_(True))
-        .order_by(OntologySource.name)
+        select(OntologySource).where(OntologySource.active.is_(True)).order_by(OntologySource.name)
     )
     rows = (await session.execute(stmt)).scalars().all()
     return [

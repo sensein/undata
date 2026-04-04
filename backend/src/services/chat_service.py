@@ -49,8 +49,7 @@ TOOL_DEFINITIONS = [
         "function": {
             "name": "lookup_ontology_term",
             "description": (
-                "Search the ontology store for a term."
-                " Use this instead of guessing URIs."
+                "Search the ontology store for a term. Use this instead of guessing URIs."
             ),
             "parameters": {
                 "type": "object",
@@ -162,9 +161,7 @@ async def chat_completion(
     system = SYSTEM_PROMPT
     if entity_context:
         ctx = json.dumps(entity_context, indent=2, default=str)
-        system += (
-            f"\n\nCurrent entity context:\n```json\n{ctx}\n```"
-        )
+        system += f"\n\nCurrent entity context:\n```json\n{ctx}\n```"
 
     full_messages = [{"role": "system", "content": system}] + messages
 
