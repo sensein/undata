@@ -23,10 +23,13 @@ def extract_from_schema_definition(
     This is THE standard extraction path. All adapters should call this
     after building their SchemaDefinition via to_linkml().
 
-    Delegates to LinkMLAdapter's internal extraction logic.
+    Uses LinkMLAdapter's extraction logic without requiring instantiation.
     """
     from .linkml import LinkMLAdapter
 
-    return LinkMLAdapter().extract_from_schema_definition(
+    # Use __new__ to avoid __init__ / abstract method check,
+    # then call the extraction method directly.
+    adapter = LinkMLAdapter.__new__(LinkMLAdapter)
+    return adapter.extract_from_schema_definition(
         schema_def, source_name=source_name, source_ref=source_ref
     )

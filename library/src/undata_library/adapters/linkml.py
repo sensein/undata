@@ -29,6 +29,28 @@ class LinkMLAdapter(BaseAdapter):
     def supported_formats(self) -> list[str]:
         return [".yaml", ".yml"]
 
+    def to_linkml(self, source_path: Path, **options: Any) -> Any:
+        """Load LinkML SchemaDefinition from YAML files on disk."""
+        from linkml_runtime.loaders import yaml_loader
+        from linkml_runtime.linkml_model import SchemaDefinition
+
+        files = [source_path] if source_path.is_file() else sorted(source_path.glob("**/*.yaml"))
+        # Merge all YAML files into one schema (or return the first valid one)
+        for f in files:
+            try:
+                data = yaml.safe_load(f.read_text(encoding="utf-8"))
+            except (yaml.YAMLError, OSError):
+                continue
+            if not isinstance(data, dict):
+                continue
+            if not any(k in data for k in ("classes", "slots", "enums", "prefixes")):
+                continue
+            try:
+                return yaml_loader.load(str(f), SchemaDefinition)
+            except Exception:
+                pass
+        return None
+
     def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
         """Extract entities from LinkML YAML files on disk."""
         repo = options.get("repo")
