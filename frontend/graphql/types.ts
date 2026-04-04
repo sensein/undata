@@ -44,6 +44,9 @@ export interface ElementNode {
   minValue?: number;
   maxValue?: number;
   typeRef?: string;
+  alignedTo?: string;
+  alignedMembers?: string[];
+  alignmentScore?: number;
   semantic?: Record<string, unknown>;
   provenance: ProvenanceEntry[];
   ontologyAnnotations: OntologyAnnotation[];
@@ -56,6 +59,9 @@ export interface SchemaNode {
   isMixin?: boolean;
   properties: string[];
   description?: string;
+  alignedTo?: string;
+  alignedMembers?: string[];
+  alignmentScore?: number;
   provenance: ProvenanceEntry[];
   ontologyAnnotations: OntologyAnnotation[];
 }
@@ -67,6 +73,9 @@ export interface ValueNode {
   valueType?: string;
   ontologyId?: string;
   description?: string;
+  alignedTo?: string;
+  alignedMembers?: string[];
+  alignmentScore?: number;
   provenance: ProvenanceEntry[];
   ontologyAnnotations: OntologyAnnotation[];
 }
@@ -77,6 +86,9 @@ export interface ValueSetNode {
   name?: string;
   members: string[];
   description?: string;
+  alignedTo?: string;
+  alignedMembers?: string[];
+  alignmentScore?: number;
   provenance: ProvenanceEntry[];
   ontologyAnnotations: OntologyAnnotation[];
 }

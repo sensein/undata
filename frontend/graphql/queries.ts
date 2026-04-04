@@ -224,6 +224,9 @@ export const GET_ELEMENT = gql`
       minValue
       maxValue
       typeRef
+      alignedTo
+      alignedMembers
+      alignmentScore
       semantic
       provenance {
         source
@@ -253,6 +256,9 @@ export const GET_SCHEMA = gql`
       isMixin
       properties
       description
+      alignedTo
+      alignedMembers
+      alignmentScore
       semantic
       provenance { source className name description }
       ontologyAnnotations { termUri termLabel ontology mappingRelation matchLevel score model primary }
@@ -268,6 +274,9 @@ export const GET_VALUE = gql`
       valueType
       ontologyId
       description
+      alignedTo
+      alignedMembers
+      alignmentScore
       semantic
       provenance { source className name description }
       ontologyAnnotations { termUri termLabel ontology mappingRelation score primary }
@@ -282,6 +291,9 @@ export const GET_VALUESET = gql`
       name
       members
       description
+      alignedTo
+      alignedMembers
+      alignmentScore
       semantic
       provenance { source className name description }
       ontologyAnnotations { termUri termLabel ontology score primary }

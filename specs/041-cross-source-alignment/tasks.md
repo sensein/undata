@@ -92,10 +92,10 @@
 - [X] T033 [US3] Add alignment fields to backend DB models in backend/src/db/models.py — add `aligned_to` (nullable string), `aligned_members` (JSON array), `alignment_score` (nullable float) columns to Element, Schema, Value, ValueSet tables
 - [X] T034 [US3] Update database import in backend/src/storage/database_backend.py — when importing entities from ParquetStore, read and store aligned_to, aligned_members, alignment_score from entity semantic JSON
 - [X] T035 [US3] Add alignment resolvers to backend/src/graphql/resolvers.py — for each entity type, add `alignedTo` resolver (fetch entity by sha256), `alignedMembers` resolver (fetch list by sha256s), `alignmentScore` field
-- [ ] T036 [P] [US3] Add GraphQL queries in frontend/graphql/queries.ts — add `alignedTo { sha256 name source }` and `alignedMembers { sha256 name source }` fragments to element/schema/value/valueset detail queries
-- [ ] T037 [US3] Add "Aligned From" section to frontend/app/elements/[id]/page.tsx — show table of aligned member entities with source, original name, and alignment score; show "Canonical for N entities" badge if entity is canonical; paginate if >20 members
-- [ ] T038 [P] [US3] Add alignment section to frontend/app/schemas/[id]/page.tsx, frontend/app/values/[id]/page.tsx, and frontend/app/valuesets/[id]/page.tsx — same pattern as element detail page
-- [ ] T039 [US3] Update browse pages (elements, schemas, values, valuesets) to show canonical count vs total count — e.g., "1,234 canonical elements (from 5,678 source elements)"
+- [X] T036 [P] [US3] Add GraphQL queries in frontend/graphql/queries.ts — add `alignedTo { sha256 name source }` and `alignedMembers { sha256 name source }` fragments to element/schema/value/valueset detail queries
+- [X] T037 [US3] Add "Aligned From" section to frontend/app/elements/[id]/page.tsx — show table of aligned member entities with source, original name, and alignment score; show "Canonical for N entities" badge if entity is canonical; paginate if >20 members
+- [X] T038 [P] [US3] Add alignment section to frontend/app/schemas/[id]/page.tsx, frontend/app/values/[id]/page.tsx, and frontend/app/valuesets/[id]/page.tsx — same pattern as element detail page
+- [X] T039 [US3] Update browse pages (elements, schemas, values, valuesets) to show canonical count vs total count — e.g., "1,234 canonical elements (from 5,678 source elements)"
 
 ---
 
@@ -119,7 +119,7 @@
 - [X] T044 Add alignment candidate recording to search resolver in backend/src/graphql/resolvers.py — after semantic/both search returns results, if 2+ unaligned entities have similarity > 0.8, insert pairs into alignment_candidates table
 - [X] T045 Add alignment_candidates table to backend/src/db/models.py — entity_a (string), entity_b (string), similarity (float), source (string), created_at (datetime), resolved (bool)
 - [X] T046 Add `read_search_candidates()` to library/src/undata_library/align.py — at start of alignment, load unresolved candidates from alignment_candidates.parquet and include them in candidate generation; mark as resolved after evaluation
-- [ ] T047 Update search page frontend/app/search/page.tsx — show small indicator when search results contain potential alignment candidates (e.g., "2 potential alignments detected")
+- [X] T047 Update search page frontend/app/search/page.tsx — show small indicator when search results contain potential alignment candidates (e.g., "2 potential alignments detected")
 
 ---
 

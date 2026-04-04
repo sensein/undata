@@ -249,6 +249,35 @@ export default function ElementDetailPage() {
           </div>
         </div>
       )}
+      {/* Alignment group — shows which source entities merged into this one */}
+      {element.alignedMembers && element.alignedMembers.length > 0 && (
+        <div className="mt-3">
+          <div className="text-xs text-gray-500 mb-1">
+            Canonical for {element.alignedMembers.length} aligned entities
+          </div>
+          <div className="flex flex-wrap gap-1">
+            {element.alignedMembers.slice(0, 20).map((memberSha: string) => (
+              <EntityTag key={memberSha} entityType="elements" sha256={memberSha} label={memberSha.slice(0, 12)} />
+            ))}
+            {element.alignedMembers.length > 20 && (
+              <span className="text-xs text-gray-400">+{element.alignedMembers.length - 20} more</span>
+            )}
+          </div>
+        </div>
+      )}
+      {element.alignedTo && (
+        <div className="mt-3">
+          <div className="text-xs text-gray-500 mb-1">
+            Aligned to canonical
+            {element.alignmentScore != null && (
+              <span className="ml-1 font-mono text-[10px] bg-green-100 text-green-800 px-1 rounded">
+                {(element.alignmentScore * 100).toFixed(0)}%
+              </span>
+            )}
+          </div>
+          <EntityTag entityType="elements" sha256={element.alignedTo} label={element.alignedTo.slice(0, 12)} />
+        </div>
+      )}
     </EntityDetailLayout>
   );
 }
