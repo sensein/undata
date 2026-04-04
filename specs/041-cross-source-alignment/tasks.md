@@ -53,13 +53,13 @@
 
 **Independent Test**: Run pipeline for OpenNeuro → roi_name, participant_id, age each appear exactly once → provenance lists all contributing datasets
 
-- [ ] T015 [US1] Rewrite `align_entities()` in library/src/undata_library/align.py — new signature per contract: accept registry_path, entity_types, threshold, weights, dry_run, backend; implement intra-source dedup pass that groups entities by (source, name, data_type, range) and designates canonical (earliest created_at)
-- [ ] T016 [US1] Implement canonical designation logic in library/src/undata_library/align.py — for identical entities: designate existing entity as canonical, set `aligned_members` on canonical and `aligned_to` on members; for entities requiring content merge: create new entity only when merged content differs
-- [ ] T017 [US1] Implement provenance merging in library/src/undata_library/align.py — combine provenance lists from all group members onto the canonical entity, preserving source identity, dataset path, and original element name
-- [ ] T018 [US1] Add `update_alignment_fields()` method to library/src/undata_library/storage/parquet_store.py — bulk update entities with aligned_to, aligned_members, alignment_score, alignment_signals in their semantic JSON
-- [ ] T019 [US1] Implement range compatibility check in library/src/undata_library/align.py — entities with different min/max or different valuesets MUST NOT be merged; entities with identical or absent ranges are compatible
-- [ ] T020 [US1] Add lightweight intra-source verification pass in library/src/undata_library/align.py — after SchemaView dedup, scan committed entities for remaining duplicates (slight naming variations not caught by SchemaView)
-- [ ] T021 [US1] Update CLI `align` subcommand in library/src/undata_library/cli.py — add --threshold, --weights, --dry-run, --entity-types flags; output alignment report summary to console
+- [X] T015 [US1] Rewrite `align_entities()` in library/src/undata_library/align.py — new signature per contract: accept registry_path, entity_types, threshold, weights, dry_run, backend; implement intra-source dedup pass that groups entities by (source, name, data_type, range) and designates canonical (earliest created_at)
+- [X] T016 [US1] Implement canonical designation logic in library/src/undata_library/align.py — for identical entities: designate existing entity as canonical, set `aligned_members` on canonical and `aligned_to` on members; for entities requiring content merge: create new entity only when merged content differs
+- [X] T017 [US1] Implement provenance merging in library/src/undata_library/align.py — combine provenance lists from all group members onto the canonical entity, preserving source identity, dataset path, and original element name
+- [X] T018 [US1] Add `update_alignment_fields()` method to library/src/undata_library/storage/parquet_store.py — bulk update entities with aligned_to, aligned_members, alignment_score, alignment_signals in their semantic JSON
+- [X] T019 [US1] Implement range compatibility check in library/src/undata_library/align.py — entities with different min/max or different valuesets MUST NOT be merged; entities with identical or absent ranges are compatible
+- [X] T020 [US1] Add lightweight intra-source verification pass in library/src/undata_library/align.py — after SchemaView dedup, scan committed entities for remaining duplicates (slight naming variations not caught by SchemaView)
+- [X] T021 [US1] Update CLI `align` subcommand in library/src/undata_library/cli.py — add --threshold, --weights, --dry-run, --entity-types flags; output alignment report summary to console
 - [ ] T022 [US1] Integration test: run OpenNeuro pipeline → align → verify participant_id appears once with provenance from all datasets, and elements with different ranges remain separate
 
 ---

@@ -598,7 +598,7 @@ def pipeline(
     """
     import time
 
-    from .align import align_elements
+    from .align import align_entities
     from .commit import commit_staged
     from .enrich import enrich_all
     from .ingest import ingest_source
@@ -693,40 +693,8 @@ def pipeline(
     else:
         click.echo("[2/5] Enrichment skipped.")
 
-    # Step 3: Align (on staging, before commit — so transfers inform content hash)
-    align_stats: dict = {}
-    staging_elements_dir = staging_dir / "elements"
-    if not skip_align:
-        click.echo("[3/5] Aligning elements (pre-commit)...")
-        t0 = time.time()
-        align_stats = align_elements(
-            elements_dir=staging_elements_dir,
-            library_path=staging_dir,
-        )
-        timings["align"] = time.time() - t0
-        click.echo(
-            f"  {align_stats.get('total_pairs_evaluated', 0)} pairs, "
-            f"{align_stats.get('exact_match_groups', 0)} exact groups "
-            f"in {timings['align']:.1f}s"
-        )
-
-        # Step 3b: Cross-source alignment (annotation transfer on staging)
-        from .cross_align import cross_source_align
-
-        click.echo("  Cross-source alignment...")
-        t0 = time.time()
-        cross_stats = cross_source_align(staging_dir)
-        timings["cross_align"] = time.time() - t0
-        click.echo(
-            f"  {cross_stats['label_matches']} label matches, "
-            f"{cross_stats['annotations_transferred']} annotations transferred "
-            f"in {timings['cross_align']:.1f}s"
-        )
-    else:
-        click.echo("[3/5] Alignment skipped.")
-
-    # Step 4: Commit (rehash + merge to registry)
-    click.echo("[4/5] Committing to registry...")
+    # Step 3: Commit (rehash + merge to registry)
+    click.echo("[3/5] Committing to registry...")
     t0 = time.time()
     commit_stats = commit_staged(staging_dir, lib)
     timings["commit"] = time.time() - t0
@@ -735,6 +703,24 @@ def pipeline(
         f"{commit_stats['merged']} merged "
         f"in {timings['commit']:.1f}s"
     )
+
+    # Step 4: Align (post-commit — on registry entities with embeddings)
+    align_stats: dict = {}
+    if not skip_align:
+        click.echo("[4/5] Aligning entities (post-commit)...")
+        t0 = time.time()
+        align_stats = align_entities(
+            registry_path=lib,
+        )
+        timings["align"] = time.time() - t0
+        click.echo(
+            f"  {align_stats.get('alignment_groups', 0)} groups, "
+            f"{align_stats.get('canonical_entities', 0)} canonicals, "
+            f"{align_stats.get('member_entities', 0)} members "
+            f"in {timings['align']:.1f}s"
+        )
+    else:
+        click.echo("[4/5] Alignment skipped.")
 
     # Step 5: Transform
     elements_dir = lib / "elements"
@@ -816,33 +802,46 @@ def pipeline(
 
 @main.command()
 @click.argument("path", type=click.Path(exists=True), default=".")
-@click.option("--threshold", "-t", default=0.5, help="Alias detection threshold")
-@click.option("--output", "-o", default=None, help="Output report file path")
+@click.option("--threshold", "-t", default=0.7, help="Minimum alignment score threshold")
+@click.option(
+    "--entity-types",
+    default=None,
+    help="Comma-separated entity types (default: elements,schemas,values,valuesets)",
+)
 @click.option("--dry-run", is_flag=True, help="Preview changes without writing")
-def align(path: str, threshold: float, output: str | None, dry_run: bool) -> None:
-    """Run alias detection, form groups, update provenance, produce alignment report."""
-    from .align import align_elements
+@click.option("--incremental", is_flag=True, help="Skip already-aligned entities")
+def align(
+    path: str,
+    threshold: float,
+    entity_types: str | None,
+    dry_run: bool,
+    incremental: bool,
+) -> None:
+    """Run cross-source alignment: intra-source dedup + multi-signal scoring."""
+    from .align import align_entities
 
     base = Path(path)
-    elements_dir = base / "elements" if (base / "elements").exists() else base
-    output_path = Path(output) if output else None
+    types = entity_types.split(",") if entity_types else None
 
-    stats = align_elements(
-        elements_dir=elements_dir,
-        library_path=base,
+    stats = align_entities(
+        registry_path=base,
+        entity_types=types,
         threshold=threshold,
-        output_path=output_path,
         dry_run=dry_run,
+        incremental=incremental,
     )
 
     prefix = "[DRY RUN] " if dry_run else ""
     click.echo(
-        f"{prefix}Alignment: {stats['total_pairs_evaluated']} pairs evaluated, "
-        f"{stats['exact_match_groups']} exact groups, "
-        f"{stats['close_match_groups']} close groups "
-        f"({stats['new_groups']} new, {stats['unchanged_groups']} unchanged, "
-        f"{stats['dissolved_groups']} dissolved)."
+        f"{prefix}Alignment: {stats['total_entities_processed']} entities, "
+        f"{stats['alignment_groups']} groups, "
+        f"{stats['canonical_entities']} canonicals, "
+        f"{stats['member_entities']} members, "
+        f"{stats['unaligned_entities']} unaligned, "
+        f"{stats['conflicts']} conflicts."
     )
+    for etype, breakdown in stats.get("entity_type_breakdown", {}).items():
+        click.echo(f"  {etype}: {breakdown['groups']} groups, {breakdown['total']} total")
 
 
 @main.command("transform")
