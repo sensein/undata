@@ -131,7 +131,7 @@
 - [ ] T049 Verify alignment report: confirm known cross-source pairs (age↔interview_age, sex↔gender) aligned; confirm no false merges for entities with different ranges
 - [ ] T050 Performance validation: time full alignment of registry and verify <30 minutes; document in eval-record.md
 - [X] T051 Fix any ruff lint/format issues across all modified files — run `uv run ruff check --fix` and `uv run ruff format` in library/ and backend/
-- [ ] T052 Verify frontend builds cleanly — run `pnpm lint && pnpm build` in frontend/
+- [X] T052 Verify frontend builds cleanly — run `pnpm lint && pnpm build` in frontend/
 - [X] T053 Update library/src/undata_library/cli.py pipeline command to include alignment as default post-commit step — `pipeline --source X` runs extract→enrich→commit→align→transform
 
 ---
