@@ -14,8 +14,8 @@
 
 **Purpose**: Add dependencies and prepare shared infrastructure for alignment
 
-- [ ] T001 Add linkml-runtime SchemaView import capability — verify `from linkml_runtime.utils.schemaview import SchemaView` works in library/src/undata_library/adapters/extractor.py
-- [ ] T002 Add alias support to `add_slot()` in library/src/undata_library/adapters/linkml_builder.py — accept optional `aliases: list[str]` parameter that sets `slot.aliases` on the SlotDefinition
+- [X] T001 Add linkml-runtime SchemaView import capability — verify `from linkml_runtime.utils.schemaview import SchemaView` works in library/src/undata_library/adapters/extractor.py
+- [X] T002 Add alias support to `add_slot()` in library/src/undata_library/adapters/linkml_builder.py — accept optional `aliases: list[str]` parameter that sets `slot.aliases` on the SlotDefinition
 
 ---
 

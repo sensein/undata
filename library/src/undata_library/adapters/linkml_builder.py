@@ -42,11 +42,29 @@ def add_slot(
     pattern: str | None = None,
     required: bool = False,
     multivalued: bool = False,
+    aliases: list[str] | None = None,
+    minimum_value: float | None = None,
+    maximum_value: float | None = None,
 ) -> None:
-    """Add a slot to the schema if not already present."""
+    """Add a slot to the schema if not already present.
+
+    Args:
+        aliases: Alternative names for this slot. SchemaView uses these
+                 to resolve alias-based lookups to the canonical slot.
+        minimum_value: Minimum numeric value constraint.
+        maximum_value: Maximum numeric value constraint.
+    """
     from linkml_runtime.linkml_model import SlotDefinition
 
     if name in schema.slots:
+        # If the slot exists, merge aliases into the existing slot
+        existing = schema.slots[name]
+        if aliases:
+            existing_aliases = list(existing.aliases) if existing.aliases else []
+            for a in aliases:
+                if a not in existing_aliases and a != name:
+                    existing_aliases.append(a)
+            existing.aliases = existing_aliases
         return
     slot = SlotDefinition(
         name=name,
@@ -55,10 +73,16 @@ def add_slot(
         required=required or None,
         multivalued=multivalued or None,
     )
+    if aliases:
+        slot.aliases = [a for a in aliases if a != name]
     if unit:
         slot.annotations["unit"] = unit
     if pattern:
         slot.pattern = pattern
+    if minimum_value is not None:
+        slot.minimum_value = minimum_value
+    if maximum_value is not None:
+        slot.maximum_value = maximum_value
     schema.slots[name] = slot
 
 
