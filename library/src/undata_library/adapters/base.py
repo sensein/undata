@@ -34,25 +34,29 @@ class BaseAdapter(ABC):
     These populate source_ref on every ClassifiedEntity.
     """
 
+    @abstractmethod
     def to_linkml(self, source_path: Path, **options: Any) -> Any:
         """Convert source schema to a LinkML SchemaDefinition.
 
-        Override this method to provide LinkML-first extraction.
-        Returns a linkml_runtime SchemaDefinition object.
+        ALL adapters MUST implement this method and return a valid
+        linkml_runtime SchemaDefinition object. The standard extractor
+        uses SchemaView to deduplicate slots and resolve aliases.
 
-        Adapters that implement to_linkml() get extract() for free via the
-        standard extractor. Adapters that don't override to_linkml() must
-        implement extract() directly.
+        Returns None only if the source is unavailable (e.g., network error).
         """
-        return None
 
-    @abstractmethod
     def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
         """Extract and classify all entities from a source.
 
         Default implementation calls to_linkml() then the standard extractor.
-        Override only if the adapter cannot produce LinkML.
+        Override only if the adapter needs custom post-processing.
         """
+        from .extractor import extract_from_schema_definition
+
+        schema_def = self.to_linkml(source_path, **options)
+        if schema_def is None:
+            return []
+        return extract_from_schema_definition(schema_def, source_name=self.name)
 
     @property
     @abstractmethod

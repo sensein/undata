@@ -19,7 +19,7 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-from ..models import EntityType, SourceRef
+from ..models import SourceRef
 from .base import BaseAdapter, ClassifiedEntity
 
 _DEFAULT_REF = SourceRef(
@@ -135,64 +135,48 @@ class OpenNeuroAdapter(BaseAdapter):
         return ["bids-dataset"]
 
     def to_linkml(self, source_path: Path, **options: Any) -> Any:
-        return None  # Direct extraction, no LinkML conversion
+        """Build LinkML SchemaDefinition from OpenNeuro BIDS dataset.
 
-    def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
-        """Extract elements from TSV/CSV + JSON files in a BIDS dataset.
-
-        source_path can be:
-        - A local path to a BIDS dataset directory
-        - An OpenNeuro dataset ID (e.g., "ds000228") — will be cloned via datalad
+        Maps: TSV file types → classes, columns → slots (shared across files),
+        categorical values/Levels → enums, JSON sidecar fields → slots.
         """
+        from . import linkml_builder as lb
+
         dataset_path = source_path
 
-        # If source_path looks like a dataset ID, clone via datalad
         if not dataset_path.exists() and len(str(source_path)) < 20:
             dataset_id = str(source_path)
             dataset_path = self._clone_dataset(dataset_id)
 
         if not dataset_path.exists():
             logger.warning("Dataset path does not exist: %s", dataset_path)
-            return []
+            return None
 
         dataset_id = dataset_path.name
-        source_name = f"openneuro/{dataset_id}"
+        schema = lb.build_schema(
+            f"openneuro_{dataset_id}",
+            f"https://openneuro.org/datasets/{dataset_id}",
+            title=f"OpenNeuro {dataset_id}",
+        )
 
-        results: list[ClassifiedEntity] = []
-
-        # 1. Extract from TSV/CSV files
-        results.extend(self._extract_from_tsvs(dataset_path, source_name))
-
-        # 2. Extract from JSON metadata files (protocol params, column descriptors)
-        results.extend(self._extract_from_jsons(dataset_path, source_name))
-
-        logger.info("Extracted %d entities from %s", len(results), dataset_id)
-        return results
-
-    def _extract_from_tsvs(self, dataset_path: Path, source_name: str) -> list[ClassifiedEntity]:
-        """Extract ATTRIBUTE + ENUM_VALUE + VALUESET from TSV/CSV files."""
-        results: list[ClassifiedEntity] = []
-        seen_columns: set[tuple[str, str]] = set()
-
-        # Also read top-level JSON sidecars for column metadata
+        # Read participants.json for column metadata
         participants_json = self._read_json_sidecar(dataset_path / "participants.tsv")
 
-        tsv_files = []
+        # 1. Scan TSV/CSV files → slots and classes
+        tsv_files: list[Path] = []
         for pattern in _TSV_PATTERNS:
             tsv_files.extend(dataset_path.glob(pattern))
 
         for tsv_path in sorted(set(tsv_files)):
             rel_path = str(tsv_path.relative_to(dataset_path))
             sidecar = self._read_json_sidecar(tsv_path)
-            # Merge with participants.json if this is participants.tsv
+
             if tsv_path.name == "participants.tsv" and participants_json:
-                # participants.json may have nested structure
                 flat_meta = {}
                 for k, v in participants_json.items():
                     if _is_column_descriptor(v):
                         flat_meta[k] = v
                     elif isinstance(v, dict):
-                        # Nested group like "Theory of Mind (ToM) Measures Metadata"
                         for sub_k, sub_v in v.items():
                             if _is_column_descriptor(sub_v):
                                 flat_meta[sub_k] = sub_v
@@ -205,155 +189,92 @@ class OpenNeuroAdapter(BaseAdapter):
                     if not reader.fieldnames:
                         continue
 
-                    # Sample rows for type inference + unique value collection
                     rows = []
                     for i, row in enumerate(reader):
                         if i >= _SAMPLE_ROWS:
                             break
                         rows.append(row)
 
+                    slot_names: list[str] = []
                     for col_name in reader.fieldnames:
-                        key = (rel_path, col_name)
-                        if key in seen_columns:
-                            continue
-                        seen_columns.add(key)
-
                         values = [row.get(col_name, "") for row in rows]
                         data_type = _infer_type(values)
+                        linkml_range = {
+                            "integer": "integer",
+                            "float": "float",
+                            "boolean": "boolean",
+                        }.get(data_type, "string")
 
-                        # Get description from JSON sidecar
                         col_meta = sidecar.get(col_name, {})
                         description = ""
                         unit = None
-                        levels = None
                         min_val = None
                         max_val = None
+                        levels = None
                         if isinstance(col_meta, dict):
                             description = col_meta.get(
                                 "Description", col_meta.get("description", "")
                             )
                             unit = col_meta.get("Units", col_meta.get("units"))
                             levels = col_meta.get("Levels", {})
-                            # Extract range info from BIDS sidecar fields
-                            min_val = col_meta.get(
-                                "MinValue", col_meta.get("Minimum", col_meta.get("minimum"))
+                            min_val_raw = col_meta.get(
+                                "MinValue",
+                                col_meta.get("Minimum", col_meta.get("minimum")),
                             )
-                            max_val = col_meta.get(
-                                "MaxValue", col_meta.get("Maximum", col_meta.get("maximum"))
+                            max_val_raw = col_meta.get(
+                                "MaxValue",
+                                col_meta.get("Maximum", col_meta.get("maximum")),
                             )
+                            if min_val_raw is not None:
+                                try:
+                                    min_val = float(min_val_raw)
+                                except (ValueError, TypeError):
+                                    pass
+                            if max_val_raw is not None:
+                                try:
+                                    max_val = float(max_val_raw)
+                                except (ValueError, TypeError):
+                                    pass
 
-                        semantic: dict[str, Any] = {"data_type": data_type}
-                        if unit:
-                            semantic["unit"] = unit
-                        if min_val is not None:
-                            try:
-                                semantic["min_value"] = float(min_val)
-                            except (ValueError, TypeError):
-                                pass
-                        if max_val is not None:
-                            try:
-                                semantic["max_value"] = float(max_val)
-                            except (ValueError, TypeError):
-                                pass
-
-                        # Build response_options from Levels or unique values
+                        # Build enum from Levels or unique values
+                        enum_name = None
                         if isinstance(levels, dict) and levels:
-                            semantic["response_options"] = [
-                                {"value": k, "label": v if isinstance(v, str) else k}
-                                for k, v in levels.items()
-                            ]
+                            enum_name = f"{col_name}_values"
+                            lb.add_enum(schema, enum_name, sorted(levels.keys()))
+                            linkml_range = enum_name
                         elif data_type == "string":
                             unique_vals = sorted(set(v for v in values if v and v.lower() != "n/a"))
                             if 1 < len(unique_vals) <= _MAX_ENUM_VALUES:
-                                semantic["response_options"] = [
-                                    {"value": v, "label": v} for v in unique_vals
-                                ]
+                                enum_name = f"{col_name}_values"
+                                lb.add_enum(schema, enum_name, unique_vals)
+                                linkml_range = enum_name
 
-                        # ATTRIBUTE entity
-                        results.append(
-                            ClassifiedEntity(
-                                entity_type=EntityType.ATTRIBUTE,
-                                semantic=semantic,
-                                provenance={
-                                    "source": source_name,
-                                    "class": rel_path,
-                                    "name": col_name,
-                                    "description": str(description)[:500] if description else None,
-                                },
-                                confidence=0.8,
-                                source_ref=_DEFAULT_REF,
-                            )
+                        lb.add_slot(
+                            schema,
+                            col_name,
+                            range=linkml_range,
+                            description=str(description)[:500] if description else None,
+                            unit=unit,
+                            minimum_value=min_val,
+                            maximum_value=max_val,
                         )
+                        slot_names.append(col_name)
 
-                        # ENUM_VALUE + VALUESET for categorical columns
-                        ro = semantic.get("response_options")
-                        if ro and len(ro) > 1:
-                            value_names = []
-                            for opt in ro:
-                                val = opt["value"]
-                                label = opt["label"]
-                                value_names.append(val)
-                                results.append(
-                                    ClassifiedEntity(
-                                        entity_type=EntityType.ENUM_VALUE,
-                                        semantic={
-                                            "value_type": "categorical",
-                                            "label": str(label)[:200],
-                                            "description": f"{col_name} option: {label}"[:500],
-                                        },
-                                        provenance={
-                                            "source": source_name,
-                                            "class": rel_path,
-                                            "name": f"{col_name}:{val}",
-                                            "description": str(label)[:200],
-                                        },
-                                        confidence=0.8,
-                                        source_ref=_DEFAULT_REF,
-                                    )
-                                )
-                            results.append(
-                                ClassifiedEntity(
-                                    entity_type=EntityType.VALUESET,
-                                    semantic={
-                                        "name": f"{col_name}_values",
-                                        "members": value_names,
-                                        "description": f"Values for {col_name} in {rel_path}",
-                                    },
-                                    provenance={
-                                        "source": source_name,
-                                        "class": rel_path,
-                                        "name": f"{col_name}_values",
-                                        "description": f"Values for {col_name}",
-                                    },
-                                    confidence=0.8,
-                                    source_ref=_DEFAULT_REF,
-                                )
-                            )
+                    # TSV file → class
+                    class_name = rel_path.replace("/", "_").replace(".", "_")
+                    lb.add_class(schema, class_name, slots=slot_names)
 
             except (OSError, csv.Error) as exc:
                 logger.warning("Failed to read %s: %s", tsv_path, exc)
 
-        return results
-
-    def _extract_from_jsons(self, dataset_path: Path, source_name: str) -> list[ClassifiedEntity]:
-        """Extract ATTRIBUTE elements from top-level JSON files (protocol metadata).
-
-        Keys like EchoTime, RepetitionTime, MagneticFieldStrength become elements.
-        Nested column descriptors (with Description/Levels) are handled by TSV extraction.
-        """
-        results: list[ClassifiedEntity] = []
-        seen_keys: set[tuple[str, str]] = set()
-
-        json_files = []
+        # 2. Scan JSON files → slots for protocol params
+        json_files: list[Path] = []
         for pattern in _JSON_PATTERNS:
             json_files.extend(dataset_path.glob(pattern))
 
         for json_path in sorted(set(json_files)):
-            if json_path.name == "dataset_description.json":
-                continue  # Metadata about the dataset, not data elements
-            if json_path.name == "participants.json":
-                continue  # Handled in TSV extraction
-
+            if json_path.name in ("dataset_description.json", "participants.json"):
+                continue
             try:
                 data = json.loads(json_path.read_text(encoding="utf-8"))
                 if not isinstance(data, dict):
@@ -361,47 +282,45 @@ class OpenNeuroAdapter(BaseAdapter):
             except (json.JSONDecodeError, OSError):
                 continue
 
-            rel_path = str(json_path.relative_to(dataset_path))
-
             for key, value in data.items():
-                if key in _SKIP_JSON_KEYS:
+                if key in _SKIP_JSON_KEYS or key.startswith("dcmmeta_"):
                     continue
-                if key.startswith("dcmmeta_"):
-                    continue  # Internal dcm2niix metadata
                 if _is_column_descriptor(value):
-                    continue  # Column descriptor, handled with TSV
-
-                dup_key = (rel_path, key)
-                if dup_key in seen_keys:
                     continue
-                seen_keys.add(dup_key)
 
                 data_type = _infer_type_from_value(value)
-                semantic: dict[str, Any] = {"data_type": data_type}
+                linkml_range = {
+                    "integer": "integer",
+                    "float": "float",
+                    "boolean": "boolean",
+                }.get(data_type, "string")
 
-                # Extract unit from key name heuristics
+                unit = None
                 if isinstance(value, (int, float)):
                     if "Time" in key or "time" in key:
-                        semantic["unit"] = "s"
+                        unit = "s"
                     elif "Strength" in key:
-                        semantic["unit"] = "T"
+                        unit = "T"
 
-                results.append(
-                    ClassifiedEntity(
-                        entity_type=EntityType.ATTRIBUTE,
-                        semantic=semantic,
-                        provenance={
-                            "source": source_name,
-                            "class": rel_path,
-                            "name": key,
-                            "description": f"BIDS metadata field: {key} = {str(value)[:100]}",
-                        },
-                        confidence=0.7,
-                        source_ref=_DEFAULT_REF,
-                    )
-                )
+                lb.add_slot(schema, key, range=linkml_range, unit=unit)
 
-        return results
+        logger.info("Built LinkML schema from OpenNeuro dataset %s", dataset_id)
+        return schema
+
+    def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
+        """Extract entities via LinkML SchemaDefinition + SchemaView."""
+        from .extractor import extract_from_schema_definition
+
+        schema_def = self.to_linkml(source_path, **options)
+        if schema_def is None:
+            return []
+
+        dataset_id = source_path.name if source_path.exists() else str(source_path)
+        source_name = f"openneuro/{dataset_id}"
+
+        return extract_from_schema_definition(
+            schema_def, source_name=source_name, source_ref=_DEFAULT_REF
+        )
 
     def _read_json_sidecar(self, tsv_path: Path) -> dict:
         """Read companion JSON sidecar for a TSV file (same name, .json extension)."""

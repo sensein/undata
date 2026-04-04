@@ -195,196 +195,110 @@ class NDAAdapter(BaseAdapter):
     def supported_formats(self) -> list[str]:
         return []
 
-    def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
-        """Extract entities from NDA data dictionaries.
+    def to_linkml(self, source_path: Path, **options: Any) -> Any:
+        """Build LinkML SchemaDefinition from NDA data dictionaries.
 
-        Options:
-            structures: list[str] — short names of structures to fetch
-                (e.g., ["image03", "genomics_subject02"]).
-                If omitted, fetches all available structures (can be slow).
-            timeout: float — HTTP timeout in seconds (default 30).
+        Maps: structures → classes, fields → slots (deduplicated across structures),
+        coded values → enums, NDA aliases → slot aliases.
         """
-        structures: list[str] | None = options.get("structures")
+        from . import linkml_builder as lb
+
+        structures_list: list[str] | None = options.get("structures")
         timeout = options.get("timeout", 30.0)
 
-        results: list[ClassifiedEntity] = []
+        schema = lb.build_schema("nda", "https://nda.nih.gov/schema", title="NDA Data Dictionary")
 
-        with httpx.Client(
-            timeout=timeout,
-            headers={"Accept": "application/json"},
-        ) as client:
-            if structures is None:
-                structures = _fetch_structure_list(client)
-                if not structures:
+        with httpx.Client(timeout=timeout, headers={"Accept": "application/json"}) as client:
+            if structures_list is None:
+                structures_list = _fetch_structure_list(client)
+                if not structures_list:
                     logger.warning("No NDA structures found or API unavailable")
-                    return []
+                    return None
 
-            for short_name in structures:
+            for short_name in structures_list:
                 structure = _fetch_structure(client, short_name)
                 if structure is None:
                     continue
-                results.extend(self._extract_structure(structure, short_name))
+                self._add_structure_to_schema(schema, structure, short_name)
 
-        # Deduplicate elements across structures when extracting multiple
-        if len(structures) > 1:
-            results = _dedup_elements(results)
+        return schema
 
-        return results
+    def _add_structure_to_schema(
+        self, schema: Any, structure: dict[str, Any], short_name: str
+    ) -> None:
+        """Add a single NDA structure to the SchemaDefinition."""
+        from . import linkml_builder as lb
 
-    def _extract_structure(
-        self, structure: dict[str, Any], short_name: str
-    ) -> list[ClassifiedEntity]:
-        """Extract entities from a single NDA data structure response."""
-        results: list[ClassifiedEntity] = []
-
-        title = structure.get("title", short_name)
         data_elements = structure.get("dataElements", [])
-
-        source_ref = SourceRef(
-            repo="https://nda.nih.gov",
-            committish=None,
-            file=f"datastructure/{short_name}",
-            checksum="",
-        )
-
-        # Collect element names for the schema class
-        element_names: list[str] = []
+        slot_names: list[str] = []
 
         for elem in data_elements:
             name = elem.get("name", "")
             if not name:
                 continue
-            element_names.append(name)
+            slot_names.append(name)
 
             description = elem.get("description", "") or ""
             nda_type = elem.get("type", "String") or "String"
             value_range = elem.get("valueRange")
             notes = elem.get("notes")
-            required_val = elem.get("required")
-            aliases = elem.get("aliases")
-            size = elem.get("size")
+            aliases_raw = elem.get("aliases")
 
             dt = _map_nda_type(nda_type)
+            linkml_range = {"integer": "integer", "float": "float", "boolean": "boolean"}.get(
+                dt, "string"
+            )
 
-            # Build semantic dict
-            semantic: dict[str, Any] = {"data_type": dt}
-
-            # Parse value range for min/max
+            # Parse value range
             min_val, max_val = _parse_value_range(value_range)
-            if min_val is not None:
-                semantic["min_value"] = min_val
-            if max_val is not None:
-                semantic["max_value"] = max_val
 
-            # Parse notes for coded values (response options)
-            response_options = _parse_notes(notes)
-            if response_options:
-                semantic["response_options"] = response_options
-                semantic["value_domain"] = "categorical"
-            elif dt in ("integer", "float"):
-                semantic["value_domain"] = "numeric"
-            elif dt == "boolean":
-                semantic["value_domain"] = "boolean"
-            elif dt == "string":
-                semantic["value_domain"] = "text"
-
-            if size is not None:
-                try:
-                    semantic["max_length"] = int(size)
-                except (ValueError, TypeError):
-                    pass
-
-            # Build provenance dict
-            provenance: dict[str, Any] = {
-                "source": "nda",
-                "class": short_name,
-                "name": name,
-                "description": description or None,
-            }
-            if required_val is not None:
-                provenance["required"] = required_val in ("Required", True)
-            if aliases:
-                provenance["aliases"] = aliases
-                # Also add to semantic for alignment module alias detection
-                alias_list = aliases if isinstance(aliases, list) else []
-                if isinstance(aliases, str) and aliases not in ("[]", "None", ""):
+            # Parse aliases
+            alias_list: list[str] = []
+            if aliases_raw:
+                if isinstance(aliases_raw, list):
+                    alias_list = aliases_raw
+                elif isinstance(aliases_raw, str) and aliases_raw not in ("[]", "None", ""):
                     try:
                         import json as _json
 
-                        alias_list = _json.loads(aliases)
+                        alias_list = _json.loads(aliases_raw)
                     except (ValueError, TypeError):
-                        alias_list = [aliases]
-                if alias_list:
-                    existing_hints = semantic.get("alias_hints", [])
-                    existing_hints.extend([f"nda_alias:{a}" for a in alias_list])
-                    semantic["alias_hints"] = existing_hints
+                        alias_list = [aliases_raw]
 
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.ATTRIBUTE,
-                    semantic=semantic,
-                    provenance=provenance,
-                    confidence=0.85,
-                    source_ref=source_ref,
-                )
-            )
-
-            # If element has coded values, also emit enum_values + valueset
+            # Parse notes for enum values
+            response_options = _parse_notes(notes)
             if response_options:
-                # Emit individual enum values
-                for opt in response_options:
-                    results.append(
-                        ClassifiedEntity(
-                            entity_type=EntityType.ENUM_VALUE,
-                            semantic={
-                                "label": opt.get("label", opt["value"]),
-                                "value_type": "categorical",
-                            },
-                            provenance={
-                                "source": "nda",
-                                "class": short_name,
-                                "name": opt["value"],
-                                "description": opt.get("label"),
-                            },
-                            confidence=0.90,
-                            source_ref=source_ref,
-                        )
-                    )
+                enum_name = f"{name}_values"
+                vals = [opt["value"] for opt in response_options]
+                lb.add_enum(schema, enum_name, vals, description=f"Coded values for {name}")
+                linkml_range = enum_name
 
-                # Emit valueset grouping the coded values
-                members = [opt["value"] for opt in response_options]
-                results.append(
-                    ClassifiedEntity(
-                        entity_type=EntityType.VALUESET,
-                        semantic={
-                            "name": f"{short_name}_{name}_values",
-                            "members": members,
-                        },
-                        provenance={
-                            "source": "nda",
-                            "class": short_name,
-                            "name": f"{name}_values",
-                        },
-                        confidence=0.90,
-                        source_ref=source_ref,
-                    )
-                )
-
-        # Emit schema class for the data structure
-        if element_names:
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.CLASS,
-                    semantic={"properties": element_names},
-                    provenance={
-                        "source": "nda",
-                        "class": short_name,
-                        "name": short_name,
-                        "description": title,
-                    },
-                    confidence=0.90,
-                    source_ref=source_ref,
-                )
+            lb.add_slot(
+                schema,
+                name,
+                range=linkml_range,
+                description=description[:500] if description else None,
+                minimum_value=min_val,
+                maximum_value=max_val,
+                aliases=alias_list if alias_list else None,
             )
 
-        return results
+        # Structure → class
+        title = structure.get("title", short_name)
+        lb.add_class(schema, short_name, slots=slot_names, description=title)
+
+    def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
+        """Extract entities via LinkML SchemaDefinition + SchemaView."""
+        from .extractor import extract_from_schema_definition
+
+        schema_def = self.to_linkml(source_path, **options)
+        if schema_def is None:
+            return []
+
+        source_ref = SourceRef(
+            repo="https://nda.nih.gov",
+            committish=None,
+            file="datadictionary",
+            checksum="",
+        )
+        return extract_from_schema_definition(schema_def, source_name="nda", source_ref=source_ref)

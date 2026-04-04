@@ -135,26 +135,23 @@ class ReproSchemaAdapter(BaseAdapter):
         return ["reproschema"]
 
     def to_linkml(self, source_path: Path, **options: Any) -> Any:
-        return None  # Direct extraction
+        """Build LinkML SchemaDefinition from ReproSchema activities and items.
 
-    def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
-        """Extract entities from a reproschema-library directory.
-
-        Expected structure:
-        activities/
-          {activity_name}/
-            {activity_name}_schema  (JSON-LD — the activity)
-            items/
-              {item_name}  (JSON-LD — individual items)
+        Maps: activities → classes, items → slots (shared across activities),
+        response options → enums with permissible_values.
         """
-        from ..models import EntityType
+        from . import linkml_builder as lb
 
         activities_dir = source_path / "activities"
         if not activities_dir.exists():
             logger.warning("No activities/ directory found at %s", source_path)
-            return []
+            return None
 
-        results: list[ClassifiedEntity] = []
+        schema = lb.build_schema(
+            "reproschema",
+            "https://repronim.org/reproschema",
+            title="ReproSchema Library",
+        )
 
         for activity_dir in sorted(activities_dir.iterdir()):
             if not activity_dir.is_dir():
@@ -171,13 +168,12 @@ class ReproSchemaAdapter(BaseAdapter):
                     break
 
             activity_desc = ""
-            item_refs: list[str] = []  # variable names from addProperties
+            item_refs: list[str] = []
 
             if activity_data:
                 desc = activity_data.get("description", activity_data.get("schema:description", ""))
                 activity_desc = _extract_label(desc)
 
-                # Get item references from ui.addProperties or order
                 ui = activity_data.get("ui", {})
                 if isinstance(ui, dict):
                     add_props = ui.get("addProperties", [])
@@ -190,136 +186,89 @@ class ReproSchemaAdapter(BaseAdapter):
                         order = ui.get("order", activity_data.get("order", []))
                         item_refs = [str(o).rsplit("/", 1)[-1] for o in order]
 
-            # Create activity as CLASS entity
-            results.append(
-                ClassifiedEntity(
-                    entity_type=EntityType.CLASS,
-                    semantic={
-                        "properties": item_refs,
-                        "description": activity_desc[:500] if activity_desc else None,
-                    },
-                    provenance={
-                        "source": "reproschema",
-                        "class": activity_name,
-                        "name": activity_name,
-                        "description": activity_desc[:500] if activity_desc else None,
-                    },
-                    confidence=0.9,
-                    source_ref=_DEFAULT_REF,
-                )
+            # Extract items → slots
+            items_dir = activity_dir / "items"
+            slot_names: list[str] = []
+            if items_dir.exists():
+                for item_file in sorted(items_dir.iterdir()):
+                    if item_file.is_dir() or item_file.name.startswith("."):
+                        continue
+                    item_data = _load_jsonld(item_file)
+                    if not item_data:
+                        continue
+
+                    item_name = item_file.stem
+                    description = _extract_label(
+                        item_data.get(
+                            "description",
+                            item_data.get(
+                                "schema:description",
+                                item_data.get("question", item_data.get("schema:question", "")),
+                            ),
+                        )
+                    )
+
+                    response_options, resolved_ro = _parse_response_options(item_data, items_dir)
+                    data_type = _infer_type_from_response(resolved_ro)
+                    linkml_range = {
+                        "integer": "integer",
+                        "float": "float",
+                        "boolean": "boolean",
+                    }.get(data_type, "string")
+
+                    min_val = None
+                    max_val = None
+                    if resolved_ro.get("minValue") is not None:
+                        try:
+                            min_val = float(resolved_ro["minValue"])
+                        except (ValueError, TypeError):
+                            pass
+                    if resolved_ro.get("maxValue") is not None:
+                        try:
+                            max_val = float(resolved_ro["maxValue"])
+                        except (ValueError, TypeError):
+                            pass
+
+                    # If choices exist, create an enum and set range
+                    enum_name = None
+                    if response_options and len(response_options) > 1:
+                        enum_name = f"{item_name}_options"
+                        vals = [str(opt.get("value", "")) for opt in response_options]
+                        lb.add_enum(
+                            schema, enum_name, vals, description=f"Response options for {item_name}"
+                        )
+                        linkml_range = enum_name
+
+                    lb.add_slot(
+                        schema,
+                        item_name,
+                        range=linkml_range,
+                        description=description[:500] if description else None,
+                        minimum_value=min_val,
+                        maximum_value=max_val,
+                    )
+                    slot_names.append(item_name)
+
+            # Activity → class using collected slots
+            all_slots = item_refs if item_refs else slot_names
+            lb.add_class(
+                schema,
+                activity_name,
+                slots=all_slots,
+                description=activity_desc[:500] if activity_desc else None,
             )
 
-            # Extract items from items/ directory
-            items_dir = activity_dir / "items"
-            if not items_dir.exists():
-                continue
+        logger.info("Built LinkML schema from reproschema-library at %s", source_path)
+        return schema
 
-            for item_file in sorted(items_dir.iterdir()):
-                if item_file.is_dir() or item_file.name.startswith("."):
-                    continue
+    def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
+        """Extract entities via LinkML SchemaDefinition + SchemaView."""
+        from .extractor import extract_from_schema_definition
 
-                item_data = _load_jsonld(item_file)
-                if not item_data:
-                    continue
+        schema_def = self.to_linkml(source_path, **options)
+        if schema_def is None:
+            return []
 
-                item_name = item_file.stem
-                question = _extract_label(
-                    item_data.get("question", item_data.get("schema:question", ""))
-                )
-                description = _extract_label(
-                    item_data.get("description", item_data.get("schema:description", ""))
-                )
-
-                # Parse response options — resolves relative path references
-                response_options, resolved_ro = _parse_response_options(item_data, items_dir)
-                data_type = _infer_type_from_response(resolved_ro)
-
-                semantic: dict[str, Any] = {"data_type": data_type}
-
-                if question:
-                    semantic["question_text"] = question[:500]
-
-                if response_options:
-                    semantic["response_options"] = response_options
-
-                # Min/max from resolved responseOptions
-                if resolved_ro.get("minValue") is not None:
-                    try:
-                        semantic["min_value"] = float(resolved_ro["minValue"])
-                    except (ValueError, TypeError):
-                        pass
-                if resolved_ro.get("maxValue") is not None:
-                    try:
-                        semantic["max_value"] = float(resolved_ro["maxValue"])
-                    except (ValueError, TypeError):
-                        pass
-
-                results.append(
-                    ClassifiedEntity(
-                        entity_type=EntityType.ATTRIBUTE,
-                        semantic=semantic,
-                        provenance={
-                            "source": "reproschema",
-                            "class": activity_name,
-                            "name": item_name,
-                            "description": (description or question)[:500] or None,
-                        },
-                        confidence=0.85,
-                        source_ref=_DEFAULT_REF,
-                    )
-                )
-
-                # Create ENUM_VALUE entities for each choice + a VALUESET to group them
-                if response_options and len(response_options) > 1:
-                    value_names = []
-                    for opt in response_options:
-                        val = opt.get("value", "")
-                        label = opt.get("label", val)
-                        value_names.append(val)
-                        results.append(
-                            ClassifiedEntity(
-                                entity_type=EntityType.ENUM_VALUE,
-                                semantic={
-                                    "value_type": "categorical",
-                                    "label": str(label)[:200],
-                                    "description": f"Response option for {item_name}: {label}"[
-                                        :500
-                                    ],
-                                },
-                                provenance={
-                                    "source": "reproschema",
-                                    "class": activity_name,
-                                    "name": f"{item_name}:{val}",
-                                    "description": str(label)[:200],
-                                },
-                                confidence=0.85,
-                                source_ref=_DEFAULT_REF,
-                            )
-                        )
-
-                    # VALUESET grouping all choices for this item
-                    results.append(
-                        ClassifiedEntity(
-                            entity_type=EntityType.VALUESET,
-                            semantic={
-                                "name": f"{item_name}_options",
-                                "members": value_names,
-                                "description": f"Response options for {item_name}"[:500],
-                            },
-                            provenance={
-                                "source": "reproschema",
-                                "class": activity_name,
-                                "name": f"{item_name}_options",
-                                "description": f"Response options for {item_name}",
-                            },
-                            confidence=0.85,
-                            source_ref=_DEFAULT_REF,
-                        )
-                    )
-
-        logger.info(
-            "Extracted %d entities from reproschema-library at %s",
-            len(results),
-            source_path,
+        return extract_from_schema_definition(
+            schema_def, source_name="reproschema", source_ref=_DEFAULT_REF
         )
-        return results
