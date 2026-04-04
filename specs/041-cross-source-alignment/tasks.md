@@ -70,15 +70,15 @@
 
 **Independent Test**: Run BIDS + NDA pipeline → age and interview_age in same alignment group → search for "age" returns one unified result
 
-- [ ] T023 [US2] Implement name blocking candidate generation in library/src/undata_library/align.py — use normalize_name() to group entities by normalized name across all sources; each name group becomes a candidate set
-- [ ] T024 [US2] Implement embedding k-NN candidate generation in library/src/undata_library/align.py — load all entity embeddings into numpy matrix, compute dot product for top-k (k=10) neighbors per entity across different sources; add pairs above threshold to candidate set
-- [ ] T025 [US2] Implement cross-source alignment pass in library/src/undata_library/align.py — for each candidate pair: compute_alignment_score(), apply threshold filter, form groups via union-find, check range compatibility, detect conflicts
-- [ ] T026 [US2] Implement conflict detection in library/src/undata_library/align.py — flag pairs where embedding similarity is high but ontology annotations disagree, or units differ (years vs months); store conflicts in alignment report
-- [ ] T027 [US2] Implement alias hint boosting in library/src/undata_library/similarity.py — when two entities share alias_hints entries (e.g., both have "nda_alias:gender"), set alias signal to 0.95
-- [ ] T028 [US2] Implement ontology annotation overlap signal in library/src/undata_library/similarity.py — compute Jaccard similarity of ontology annotation URIs between two entities; return as ontology signal (0-1)
-- [ ] T029 [US2] Generate alignment report in library/src/undata_library/align.py — produce AlignmentReport dict per contract with total_entities_processed, alignment_groups, canonical_entities, member_entities, unaligned_entities, conflicts, entity_type_breakdown; write to alignment-report.yaml
-- [ ] T030 [US2] Implement incremental alignment mode in library/src/undata_library/align.py — when aligning, skip entities that already have `aligned_to` or `aligned_members` set; only process new/unaligned entities against existing canonical entities; add `--incremental` flag to CLI (FR-008)
-- [ ] T031 [US2] Implement re-alignment trigger in library/src/undata_library/align.py — detect entities whose embedding was recomputed after last alignment (compare embedding timestamp vs alignment timestamp); clear their alignment fields and re-process them (FR-013)
+- [X] T023 [US2] Implement name blocking candidate generation in library/src/undata_library/align.py — use normalize_name() to group entities by normalized name across all sources; each name group becomes a candidate set
+- [X] T024 [US2] Implement embedding k-NN candidate generation in library/src/undata_library/align.py — load all entity embeddings into numpy matrix, compute dot product for top-k (k=10) neighbors per entity across different sources; add pairs above threshold to candidate set
+- [X] T025 [US2] Implement cross-source alignment pass in library/src/undata_library/align.py — for each candidate pair: compute_alignment_score(), apply threshold filter, form groups via union-find, check range compatibility, detect conflicts
+- [X] T026 [US2] Implement conflict detection in library/src/undata_library/align.py — flag pairs where embedding similarity is high but ontology annotations disagree, or units differ (years vs months); store conflicts in alignment report
+- [X] T027 [US2] Implement alias hint boosting in library/src/undata_library/similarity.py — when two entities share alias_hints entries (e.g., both have "nda_alias:gender"), set alias signal to 0.95
+- [X] T028 [US2] Implement ontology annotation overlap signal in library/src/undata_library/similarity.py — compute Jaccard similarity of ontology annotation URIs between two entities; return as ontology signal (0-1)
+- [X] T029 [US2] Generate alignment report in library/src/undata_library/align.py — produce AlignmentReport dict per contract with total_entities_processed, alignment_groups, canonical_entities, member_entities, unaligned_entities, conflicts, entity_type_breakdown; write to alignment-report.yaml
+- [X] T030 [US2] Implement incremental alignment mode in library/src/undata_library/align.py — when aligning, skip entities that already have `aligned_to` or `aligned_members` set; only process new/unaligned entities against existing canonical entities; add `--incremental` flag to CLI (FR-008)
+- [X] T031 [US2] Implement re-alignment trigger in library/src/undata_library/align.py — detect entities whose embedding was recomputed after last alignment (compare embedding timestamp vs alignment timestamp); clear their alignment fields and re-process them (FR-013)
 - [ ] T032 [US2] Integration test: run BIDS + NDA pipeline → align → verify age↔interview_age and sex↔gender are in same alignment groups with scores above 0.7
 
 ---
