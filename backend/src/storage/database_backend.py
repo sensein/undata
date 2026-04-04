@@ -119,6 +119,17 @@ class DatabaseEntityStore:
                 }
             )
 
+        # Alignment fields (populated by library alignment pipeline)
+        aligned_to = sem.get("aligned_to")
+        aligned_members = sem.get("aligned_members")
+        alignment_score = sem.get("alignment_score")
+        if aligned_to:
+            kwargs["aligned_to"] = aligned_to
+        if aligned_members:
+            kwargs["aligned_members"] = aligned_members
+        if alignment_score is not None:
+            kwargs["alignment_score"] = alignment_score
+
         # Use pre-computed embedding if available, otherwise compute
         if hasattr(model, "embedding") and model.embedding is not None:
             from sqlalchemy import func

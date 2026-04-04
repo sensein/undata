@@ -89,9 +89,9 @@
 
 **Independent Test**: Browse any element in UI → "Aligned From" section shows contributing source elements with scores
 
-- [ ] T033 [US3] Add alignment fields to backend DB models in backend/src/db/models.py — add `aligned_to` (nullable string), `aligned_members` (JSON array), `alignment_score` (nullable float) columns to Element, Schema, Value, ValueSet tables
-- [ ] T034 [US3] Update database import in backend/src/storage/database_backend.py — when importing entities from ParquetStore, read and store aligned_to, aligned_members, alignment_score from entity semantic JSON
-- [ ] T035 [US3] Add alignment resolvers to backend/src/graphql/resolvers.py — for each entity type, add `alignedTo` resolver (fetch entity by sha256), `alignedMembers` resolver (fetch list by sha256s), `alignmentScore` field
+- [X] T033 [US3] Add alignment fields to backend DB models in backend/src/db/models.py — add `aligned_to` (nullable string), `aligned_members` (JSON array), `alignment_score` (nullable float) columns to Element, Schema, Value, ValueSet tables
+- [X] T034 [US3] Update database import in backend/src/storage/database_backend.py — when importing entities from ParquetStore, read and store aligned_to, aligned_members, alignment_score from entity semantic JSON
+- [X] T035 [US3] Add alignment resolvers to backend/src/graphql/resolvers.py — for each entity type, add `alignedTo` resolver (fetch entity by sha256), `alignedMembers` resolver (fetch list by sha256s), `alignmentScore` field
 - [ ] T036 [P] [US3] Add GraphQL queries in frontend/graphql/queries.ts — add `alignedTo { sha256 name source }` and `alignedMembers { sha256 name source }` fragments to element/schema/value/valueset detail queries
 - [ ] T037 [US3] Add "Aligned From" section to frontend/app/elements/[id]/page.tsx — show table of aligned member entities with source, original name, and alignment score; show "Canonical for N entities" badge if entity is canonical; paginate if >20 members
 - [ ] T038 [P] [US3] Add alignment section to frontend/app/schemas/[id]/page.tsx, frontend/app/values/[id]/page.tsx, and frontend/app/valuesets/[id]/page.tsx — same pattern as element detail page
@@ -105,10 +105,10 @@
 
 **Independent Test**: Run pipeline → duplicate values (Male/Female) merged → duplicate schemas merged → alignment report covers all types
 
-- [ ] T040 [US4] Extend alignment passes in library/src/undata_library/align.py to iterate over all entity types — apply intra-source dedup and cross-source alignment to schemas (by property structure), values (by label + value type), and valuesets (by member overlap ≥80%)
-- [ ] T041 [US4] Implement valueset alignment heuristic in library/src/undata_library/align.py — compute Jaccard similarity of member sha256 sets between valuesets; merge if overlap ≥ 80%
-- [ ] T042 [US4] Implement schema alignment in library/src/undata_library/align.py — compare schemas by their properties list (set of property sha256 hashes); merge if property sets match
-- [ ] T043 [US4] Integration test: run all 8 sources → align → verify "Male"/"Female" values from BIDS+NDA+openMINDS are merged; verify sex/gender valuesets are merged; verify alignment report shows per-type stats
+- [X] T040 [US4] Extend alignment passes in library/src/undata_library/align.py to iterate over all entity types — apply intra-source dedup and cross-source alignment to schemas (by property structure), values (by label + value type), and valuesets (by member overlap ≥80%)
+- [X] T041 [US4] Implement valueset alignment heuristic in library/src/undata_library/align.py — compute Jaccard similarity of member sha256 sets between valuesets; merge if overlap ≥ 80%
+- [X] T042 [US4] Implement schema alignment in library/src/undata_library/align.py — compare schemas by their properties list (set of property sha256 hashes); merge if property sets match
+- [X] T043 [US4] Integration test: run all 8 sources → align → verify "Male"/"Female" values from BIDS+NDA+openMINDS are merged; verify sex/gender valuesets are merged; verify alignment report shows per-type stats
 
 ---
 

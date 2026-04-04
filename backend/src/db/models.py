@@ -40,6 +40,9 @@ class Element(Base):
     superseded_by: Mapped[str | None] = mapped_column(
         String, nullable=True
     )  # sha256 of newer version
+    aligned_to: Mapped[str | None] = mapped_column(String, nullable=True, index=True)
+    aligned_members: Mapped[list | None] = mapped_column(JSONB, nullable=True)
+    alignment_score: Mapped[float | None] = mapped_column(Float, nullable=True)
     embedding = Column(Vector(384), nullable=True) if Vector else None
     search_tsv = Column(TSVECTOR, nullable=True)
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
@@ -58,6 +61,9 @@ class Schema(Base):
     semantic: Mapped[dict] = mapped_column(JSONB, default=dict)
     provenance: Mapped[list] = mapped_column(JSONB, default=list)
     ontology_annotations: Mapped[list] = mapped_column(JSONB, default=list)
+    aligned_to: Mapped[str | None] = mapped_column(String, nullable=True, index=True)
+    aligned_members: Mapped[list | None] = mapped_column(JSONB, nullable=True)
+    alignment_score: Mapped[float | None] = mapped_column(Float, nullable=True)
     embedding = Column(Vector(384), nullable=True) if Vector else None
     search_tsv = Column(TSVECTOR, nullable=True)
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
@@ -76,6 +82,9 @@ class Value(Base):
     semantic: Mapped[dict] = mapped_column(JSONB, default=dict)
     provenance: Mapped[list] = mapped_column(JSONB, default=list)
     ontology_annotations: Mapped[list] = mapped_column(JSONB, default=list)
+    aligned_to: Mapped[str | None] = mapped_column(String, nullable=True, index=True)
+    aligned_members: Mapped[list | None] = mapped_column(JSONB, nullable=True)
+    alignment_score: Mapped[float | None] = mapped_column(Float, nullable=True)
     embedding = Column(Vector(384), nullable=True) if Vector else None
     search_tsv = Column(TSVECTOR, nullable=True)
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))
@@ -93,6 +102,9 @@ class ValueSet(Base):
     semantic: Mapped[dict] = mapped_column(JSONB, default=dict)
     provenance: Mapped[list] = mapped_column(JSONB, default=list)
     ontology_annotations: Mapped[list] = mapped_column(JSONB, default=list)
+    aligned_to: Mapped[str | None] = mapped_column(String, nullable=True, index=True)
+    aligned_members: Mapped[list | None] = mapped_column(JSONB, nullable=True)
+    alignment_score: Mapped[float | None] = mapped_column(Float, nullable=True)
     embedding = Column(Vector(384), nullable=True) if Vector else None
     search_tsv = Column(TSVECTOR, nullable=True)
     created_at = mapped_column(TIMESTAMP, server_default=text("now()"))

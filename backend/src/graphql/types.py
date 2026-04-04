@@ -117,6 +117,9 @@ class Element:
     min_value: Optional[float] = None
     max_value: Optional[float] = None
     type_ref: Optional[str] = None
+    aligned_to: Optional[str] = None
+    aligned_members: Optional[list[str]] = None
+    alignment_score: Optional[float] = None
     semantic: JSON = strawberry.field(default_factory=dict)
     provenance: list[ProvenanceEntry] = strawberry.field(default_factory=list)
     ontology_annotations: list[OntologyAnnotation] = strawberry.field(default_factory=list)
@@ -130,6 +133,9 @@ class Schema:
     is_mixin: Optional[bool] = None
     properties: list[str] = strawberry.field(default_factory=list)
     description: Optional[str] = None
+    aligned_to: Optional[str] = None
+    aligned_members: Optional[list[str]] = None
+    alignment_score: Optional[float] = None
     semantic: JSON = strawberry.field(default_factory=dict)
     provenance: list[ProvenanceEntry] = strawberry.field(default_factory=list)
     ontology_annotations: list[OntologyAnnotation] = strawberry.field(default_factory=list)
@@ -143,6 +149,9 @@ class Value:
     value_type: Optional[str] = None
     ontology_id: Optional[str] = None
     description: Optional[str] = None
+    aligned_to: Optional[str] = None
+    aligned_members: Optional[list[str]] = None
+    alignment_score: Optional[float] = None
     semantic: JSON = strawberry.field(default_factory=dict)
     provenance: list[ProvenanceEntry] = strawberry.field(default_factory=list)
     ontology_annotations: list[OntologyAnnotation] = strawberry.field(default_factory=list)
@@ -155,6 +164,9 @@ class ValueSet:
     name: Optional[str] = None
     members: list[str] = strawberry.field(default_factory=list)
     description: Optional[str] = None
+    aligned_to: Optional[str] = None
+    aligned_members: Optional[list[str]] = None
+    alignment_score: Optional[float] = None
     semantic: JSON = strawberry.field(default_factory=dict)
     provenance: list[ProvenanceEntry] = strawberry.field(default_factory=list)
     ontology_annotations: list[OntologyAnnotation] = strawberry.field(default_factory=list)
