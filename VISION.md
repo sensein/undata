@@ -290,7 +290,7 @@ phase ("brainstorm v1") and defines the architecture for a production system.
 │   FastAPI · Strawberry GraphQL · Auth (OIDC + API keys)     │
 │   Task manager (async jobs) · Thin service layer            │
 ├─────────────────────────────────────────────────────────────┤
-│                   Storage Layer                              │
+│                   Storage Layer                             │
 │   PostgreSQL 16 (JSONB entities, provenance, audit log)     │
 │   pgvector (embeddings, similarity search)                  │
 │   RDF store (ontology terms, hierarchy, SPARQL)             │
@@ -301,11 +301,11 @@ phase ("brainstorm v1") and defines the architecture for a production system.
 ┌──────────────────────────┴──────────────────────────────────┐
 │                        Library                              │
 │   Pipeline: extract → enrich → align → commit → transform   │
-│   Adapters: BIDS, NWB, DANDI, openMINDS, AIND, ...         │
+│   Adapters: BIDS, NWB, DANDI, openMINDS, AIND, ...          │
 │   Ontology store · Embeddings · LLM verification            │
 │   Hashing · Curation flags · Run summaries                  │
 ├─────────────────────────────────────────────────────────────┤
-│                   Storage Layer (File)                       │
+│                   Storage Layer (File)                      │
 │   YAML flat files · Parquet vectors · pyoxigraph RDF        │
 │   Implements StorageBackend protocol                        │
 └─────────────────────────────────────────────────────────────┘

@@ -22,29 +22,29 @@ through the backend API.
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│  undata-library (Python package)                     │
+│  undata-library (Python package)                    │
 │  ├─ models.py (SemanticIdentity, ProvenanceEntry, …)│
-│  ├─ hashing.py (content-addressed identity)          │
+│  ├─ hashing.py (content-addressed identity)         │
 │  └─ extractors/ (BIDS, NWB, DANDI, AIND, openMINDS) │
 └──────────────┬───────────────────────┬──────────────┘
                │ imported by           │ CLI tools
                ▼                       ▼
 ┌──────────────────────┐   ┌──────────────────────────┐
-│  Backend (FastAPI)    │   │  Library CLI             │
-│  ├─ Postgres tables   │   │  ├─ validate             │
-│  │  (mirrors library) │   │  ├─ ingest (→ backend)   │
-│  ├─ API endpoints     │◄──│  ├─ export (← backend)   │
-│  └─ Auth (Keycloak)   │   │  ├─ import (→ backend)   │
+│  Backend (FastAPI)   │   │  Library CLI             │
+│  ├─ Postgres tables  │   │  ├─ validate             │
+│  │  (mirrors library)│   │  ├─ ingest (→ backend)   │
+│  ├─ API endpoints    │◄──│  ├─ export (← backend)   │
+│  └─ Auth (Keycloak)  │   │  ├─ import (→ backend)   │
 └──────────┬───────────┘   │  └─ hash, diff, index    │
-           │                └──────────────────────────┘
+           │               └──────────────────────────┘
            ▼
 ┌──────────────────────┐
-│  Frontend (Next.js)   │
-│  ├─ Element detail    │
-│  │  (semantic+prov)   │
-│  ├─ Value concepts    │
-│  ├─ Cross-source view │
-│  └─ Mapping explorer  │
+│  Frontend (Next.js)  │
+│  ├─ Element detail   │
+│  │  (semantic+prov)  │
+│  ├─ Value concepts   │
+│  ├─ Cross-source view│
+│  └─ Mapping explorer │
 └──────────────────────┘
 ```
 
