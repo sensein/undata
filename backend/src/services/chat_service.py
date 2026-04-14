@@ -12,9 +12,11 @@ logger = logging.getLogger(__name__)
 
 def _get_model() -> str:
     """Get the LLM model to use. Supports OLLAMA_HOST for local dev."""
+    if os.environ.get("UNDATA_LLM_MODEL"):
+        return os.environ["UNDATA_LLM_MODEL"]
     if os.environ.get("OLLAMA_HOST"):
-        return os.environ.get("UNDATA_LLM_MODEL", "ollama_chat/qwen3")
-    return os.environ.get("UNDATA_LLM_MODEL", "gpt-4.1-mini")
+        return "ollama_chat/qwen3.5"
+    return "gpt-4.1-mini"
 
 
 TOOL_DEFINITIONS = [
@@ -167,13 +169,21 @@ async def chat_completion(
 
     # Call LLM with tools
     try:
-        response = await litellm.acompletion(
-            model=_get_model(),
-            messages=full_messages,
-            tools=TOOL_DEFINITIONS,
-            tool_choice="auto",
-            stream=False,
-        )
+        model = _get_model()
+        kwargs: dict = {
+            "model": model,
+            "messages": full_messages,
+            "tools": TOOL_DEFINITIONS,
+            "tool_choice": "auto",
+            "stream": False,
+        }
+        # Ollama config: explicit API base + disable thinking mode
+        if "ollama" in model:
+            if os.environ.get("OLLAMA_HOST"):
+                kwargs["api_base"] = os.environ["OLLAMA_HOST"]
+            kwargs["extra_body"] = {"options": {"num_predict": 2048}, "think": False}
+            litellm.drop_params = True
+        response = await litellm.acompletion(**kwargs)
     except Exception as e:
         yield {"type": "text", "content": f"Error calling LLM: {e}"}
         return
@@ -205,11 +215,15 @@ async def chat_completion(
 
         # Get final response after tool execution
         try:
-            follow_up = await litellm.acompletion(
-                model=_get_model(),
-                messages=full_messages,
-                stream=False,
-            )
+            follow_kwargs: dict = {
+                "model": model,
+                "messages": full_messages,
+                "stream": False,
+            }
+            if "ollama" in model and os.environ.get("OLLAMA_HOST"):
+                follow_kwargs["api_base"] = os.environ["OLLAMA_HOST"]
+                follow_kwargs["extra_body"] = {"options": {"num_predict": 2048}, "think": False}
+            follow_up = await litellm.acompletion(**follow_kwargs)
             yield {"type": "text", "content": follow_up.choices[0].message.content or ""}
         except Exception as e:
             yield {"type": "text", "content": f"Error in follow-up: {e}"}

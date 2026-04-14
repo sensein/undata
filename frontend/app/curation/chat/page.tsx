@@ -85,10 +85,12 @@ function CurationChatContent() {
   const handleApply = async (diff: DiffEntry) => {
     if (!entitySha) return;
     try {
+      // Convert snake_case field names to camelCase for GraphQL
+      const camelField = diff.field.replace(/_([a-z])/g, (_: string, c: string) => c.toUpperCase());
       await updateElement({
         variables: {
           sha256: entitySha,
-          input: { [diff.field]: diff.new_value, reason: `Changed ${diff.field}` },
+          input: { [camelField]: diff.new_value, reason: `Changed ${diff.field}` },
         },
       });
       setPendingDiffs((prev) => prev.filter((d) => d !== diff));
