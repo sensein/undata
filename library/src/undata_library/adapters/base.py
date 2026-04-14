@@ -34,16 +34,16 @@ class BaseAdapter(ABC):
     These populate source_ref on every ClassifiedEntity.
     """
 
-    @abstractmethod
     def to_linkml(self, source_path: Path, **options: Any) -> Any:
         """Convert source schema to a LinkML SchemaDefinition.
 
-        ALL adapters MUST implement this method and return a valid
-        linkml_runtime SchemaDefinition object. The standard extractor
-        uses SchemaView to deduplicate slots and resolve aliases.
+        All neuroscience source adapters (bids, nwb, dandi, openminds, aind,
+        reproschema, nda, openneuro) MUST implement this. Generic adapters
+        (json-schema, csv, code-repo) may return None and override extract().
 
-        Returns None only if the source is unavailable (e.g., network error).
+        Returns None if not implemented or source unavailable.
         """
+        return None
 
     def extract(self, source_path: Path, **options: Any) -> list[ClassifiedEntity]:
         """Extract and classify all entities from a source.
