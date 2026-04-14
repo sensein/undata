@@ -52,10 +52,13 @@ class TestNDAAliasDedup:
         subjectkeys = [e for e in attributes if e.provenance.get("name") == "subjectkey"]
 
         assert len(subjectkeys) == 1, f"Expected 1 subjectkey, got {len(subjectkeys)}"
-        hints = subjectkeys[0].semantic.get("alias_hints", [])
-        assert len(hints) >= 2, f"Expected ≥2 alias_hints, got {hints}"
-        assert any("struct_a" in h for h in hints)
-        assert any("struct_b" in h for h in hints)
+        # In the LinkML SchemaView extraction path, slots shared across multiple
+        # classes get a used_by_classes list in provenance instead of alias_hints
+        # in semantic. alias_hints come from slot.aliases (NDA element aliases).
+        used_by = subjectkeys[0].provenance.get("used_by_classes", [])
+        assert len(used_by) >= 2, f"Expected ≥2 used_by_classes, got {used_by}"
+        assert any("struct_a" in c for c in used_by)
+        assert any("struct_b" in c for c in used_by)
 
     def test_unique_elements_not_deduplicated(self):
         """Elements unique to one structure are not deduplicated."""

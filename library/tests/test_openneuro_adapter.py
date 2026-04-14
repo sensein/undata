@@ -86,15 +86,30 @@ def test_json_sidecar_unit(tmp_path):
 
 
 def test_json_sidecar_response_options(tmp_path):
+    """Levels from JSON sidecar become VALUESET + ENUM_VALUE entities via LinkML enums."""
     ds = _create_mock_dataset(tmp_path)
     adapter = OpenNeuroAdapter()
     entities = adapter.extract(ds)
 
+    # The "sex" slot should reference the enum via type_ref
     by_name = {e.provenance["name"]: e for e in entities}
     sex = by_name["sex"]
-    opts = sex.semantic.get("response_options", [])
-    assert len(opts) == 2
-    vals = {o["value"] for o in opts}
+    assert sex.semantic.get("type_ref") == "sex_values"
+
+    # VALUESET entity for the enum
+    valuesets = [e for e in entities if e.entity_type.value == "valueset"]
+    sex_vs = [v for v in valuesets if v.provenance["name"] == "sex_values"]
+    assert len(sex_vs) == 1
+    assert sorted(sex_vs[0].semantic["members"]) == ["F", "M"]
+
+    # ENUM_VALUE entities for each level
+    enum_vals = [
+        e
+        for e in entities
+        if e.entity_type.value == "enum_value" and e.provenance.get("class") == "sex_values"
+    ]
+    assert len(enum_vals) == 2
+    vals = {e.provenance["name"] for e in enum_vals}
     assert "M" in vals
     assert "F" in vals
 

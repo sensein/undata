@@ -97,15 +97,32 @@ def test_extract_items_as_attributes(tmp_path):
 
 
 def test_response_options_extracted(tmp_path):
+    """Response options become VALUESET + ENUM_VALUE entities via LinkML enums."""
     lib = _create_mock_library(tmp_path)
     adapter = ReproSchemaAdapter()
     entities = adapter.extract(lib)
 
+    # The phq9_1 slot should reference the enum via type_ref
     by_name = {e.provenance["name"]: e for e in entities if e.entity_type == EntityType.ATTRIBUTE}
     phq1 = by_name["phq9_1"]
-    opts = phq1.semantic.get("response_options", [])
-    assert len(opts) == 4
-    assert opts[0]["value"] == "0"
+    assert phq1.semantic.get("type_ref") == "phq9_1_options"
+
+    # VALUESET entity for the enum
+    valuesets = [e for e in entities if e.entity_type == EntityType.VALUESET]
+    phq1_vs = [v for v in valuesets if v.provenance["name"] == "phq9_1_options"]
+    assert len(phq1_vs) == 1
+    assert len(phq1_vs[0].semantic["members"]) == 4
+
+    # ENUM_VALUE entities for each choice
+    enum_vals = [
+        e
+        for e in entities
+        if e.entity_type == EntityType.ENUM_VALUE
+        and e.provenance.get("class") == "phq9_1_options"
+    ]
+    assert len(enum_vals) == 4
+    val_names = sorted(e.provenance["name"] for e in enum_vals)
+    assert val_names == ["0", "1", "2", "3"]
 
 
 def test_min_max_extracted(tmp_path):
@@ -125,7 +142,10 @@ def test_data_type_inferred(tmp_path):
     entities = adapter.extract(lib)
 
     by_name = {e.provenance["name"]: e for e in entities if e.entity_type == EntityType.ATTRIBUTE}
-    assert by_name["phq9_1"].semantic["data_type"] == "integer"
+    # phq9_1 has response options (choices), so its range is the enum
+    # "phq9_1_options" which maps to data_type "string" in the LinkML
+    # type map (enum names are not in _LINKML_TYPE_MAP)
+    assert by_name["phq9_1"].semantic["data_type"] == "string"
 
 
 def test_provenance_source(tmp_path):
