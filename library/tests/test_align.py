@@ -225,5 +225,5 @@ def test_align_entities_empty(tmp_path):
 
 def test_align_entities_dry_run(tmp_path):
     """Dry run doesn't write alignment report."""
-    stats = align_entities(registry_path=tmp_path, dry_run=True)
+    align_entities(registry_path=tmp_path, dry_run=True)
     assert not (tmp_path / "alignment-report.yaml").exists()

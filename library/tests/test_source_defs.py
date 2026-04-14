@@ -6,9 +6,9 @@ from undata_library.acquisition import list_bundled_sources, load_source_def
 
 
 def test_all_bundled_defs_load():
-    """All 5 bundled source definitions load successfully."""
+    """All 8 bundled source definitions load successfully."""
     names = list_bundled_sources()
-    assert set(names) == {"aind", "bids", "dandi", "nwb", "openminds"}
+    assert set(names) == {"aind", "bids", "dandi", "nda", "nwb", "openminds", "openneuro", "reproschema"}
     for name in names:
         sd = load_source_def(name)
         assert sd.name == name
