@@ -1,204 +1,229 @@
-"""Tests for the alignment pipeline."""
+"""Tests for the alignment pipeline (Feature 041)."""
 
-import yaml
+import json
 
 from undata_library.align import (
-    _build_report,
-    _compute_diff,
-    _form_alias_groups,
-    align_elements,
+    _designate_canonical,
+    _form_groups,
+    _has_alignment,
+    _intra_source_dedup,
+    _ranges_compatible,
+    align_entities,
 )
+from undata_library.similarity import compute_alignment_score, normalize_name
 
 
-# -- union-find grouping tests --
+# -- normalize_name tests --
 
 
-def test_form_alias_groups_exact_match():
-    candidates = [
+def test_normalize_name_basic():
+    assert normalize_name("participant_id") == "participantid"
+    assert normalize_name("interview_age") == "interviewage"
+    assert normalize_name("ParticipantID") == "participantid"
+
+
+def test_normalize_name_strips_separators():
+    assert normalize_name("roi-name") == "roiname"
+    assert normalize_name("roi name") == "roiname"
+    assert normalize_name("roi_name") == "roiname"
+
+
+def test_normalize_name_unicode():
+    assert normalize_name("café") == "cafe"
+
+
+# -- range compatibility tests --
+
+
+def test_ranges_compatible_both_absent():
+    a = {"semantic": {}}
+    b = {"semantic": {}}
+    assert _ranges_compatible(a, b) is True
+
+
+def test_ranges_compatible_one_absent():
+    a = {"semantic": {"min_value": 0, "max_value": 100}}
+    b = {"semantic": {}}
+    assert _ranges_compatible(a, b) is True
+
+
+def test_ranges_compatible_same():
+    a = {"semantic": {"min_value": 0, "max_value": 100}}
+    b = {"semantic": {"min_value": 0, "max_value": 100}}
+    assert _ranges_compatible(a, b) is True
+
+
+def test_ranges_incompatible():
+    a = {"semantic": {"min_value": 0, "max_value": 100}}
+    b = {"semantic": {"min_value": 18, "max_value": 65}}
+    assert _ranges_compatible(a, b) is False
+
+
+# -- has_alignment tests --
+
+
+def test_has_alignment_none():
+    assert _has_alignment({"semantic": {}}) is False
+
+
+def test_has_alignment_aligned_to():
+    assert _has_alignment({"semantic": {"aligned_to": "abc123"}}) is True
+
+
+def test_has_alignment_aligned_members():
+    assert _has_alignment({"semantic": {"aligned_members": ["a", "b"]}}) is True
+
+
+def test_has_alignment_json_string():
+    assert _has_alignment({"semantic": json.dumps({"aligned_to": "abc"})}) is True
+
+
+# -- intra-source dedup tests --
+
+
+def test_intra_source_dedup_same_name_type():
+    entities = [
         {
-            "element_a": "a.yaml",
-            "element_b": "b.yaml",
-            "score": 0.96,
-            "relation": "skos:exactMatch",
-            "components": {},
+            "sha256": "aaa",
+            "semantic": {"data_type": "integer"},
+            "provenance": [{"source": "openneuro/ds001", "name": "age"}],
         },
         {
-            "element_a": "b.yaml",
-            "element_b": "c.yaml",
-            "score": 0.97,
-            "relation": "skos:exactMatch",
-            "components": {},
-        },
-    ]
-    exact, close = _form_alias_groups(candidates)
-    assert len(exact) == 1
-    assert set(exact[0]) == {"a.yaml", "b.yaml", "c.yaml"}
-    assert len(close) == 0
-
-
-def test_form_alias_groups_close_match():
-    candidates = [
-        {
-            "element_a": "a.yaml",
-            "element_b": "b.yaml",
-            "score": 0.85,
-            "relation": "skos:closeMatch",
-            "components": {},
-        },
-    ]
-    exact, close = _form_alias_groups(candidates)
-    assert len(exact) == 0
-    assert len(close) == 1
-    assert set(close[0]) == {"a.yaml", "b.yaml"}
-
-
-def test_form_alias_groups_mixed():
-    candidates = [
-        {
-            "element_a": "a.yaml",
-            "element_b": "b.yaml",
-            "score": 0.96,
-            "relation": "skos:exactMatch",
-            "components": {},
-        },
-        {
-            "element_a": "c.yaml",
-            "element_b": "d.yaml",
-            "score": 0.85,
-            "relation": "skos:closeMatch",
-            "components": {},
-        },
-    ]
-    exact, close = _form_alias_groups(candidates)
-    assert len(exact) == 1
-    assert len(close) == 1
-
-
-def test_form_alias_groups_no_candidates():
-    exact, close = _form_alias_groups([])
-    assert exact == []
-    assert close == []
-
-
-# -- diff tests --
-
-
-def test_compute_diff_no_previous():
-    diff = _compute_diff([["a", "b"]], [["c", "d"]], None)
-    assert diff["new_groups"] == 2
-    assert diff["unchanged_groups"] == 0
-    assert diff["dissolved_groups"] == 0
-
-
-def test_compute_diff_with_previous():
-    prev = {
-        "groups": [
-            {"members": ["a", "b"], "relation": "skos:exactMatch"},
-            {"members": ["e", "f"], "relation": "skos:closeMatch"},
-        ]
-    }
-    diff = _compute_diff([["a", "b"]], [["c", "d"]], prev)
-    assert diff["unchanged_groups"] == 1  # [a, b] still exists
-    assert diff["new_groups"] == 1  # [c, d] is new
-    assert diff["dissolved_groups"] == 1  # [e, f] dissolved
-
-
-# -- report building tests --
-
-
-def test_build_report_structure():
-    candidates = [
-        {
-            "element_a": "a.yaml",
-            "element_b": "b.yaml",
-            "score": 0.96,
-            "relation": "skos:exactMatch",
-            "components": {},
+            "sha256": "bbb",
+            "semantic": {"data_type": "integer"},
+            "provenance": [{"source": "openneuro/ds002", "name": "age"}],
         },
     ]
-    report = _build_report(
-        [["a.yaml", "b.yaml"]],
-        [],
-        candidates,
-        {"new_groups": 1, "unchanged_groups": 0, "dissolved_groups": 0},
-    )
-    assert "generated_at" in report
-    assert report["stats"]["exact_match_groups"] == 1
-    assert len(report["groups"]) == 1
-    assert report["groups"][0]["relation"] == "skos:exactMatch"
+    # Same source prefix doesn't match — these are different sources
+    groups = _intra_source_dedup(entities)
+    assert len(groups) == 0  # Different sources → no intra-source group
 
 
-# -- integration tests --
-
-
-def _make_elements(tmp_path, elements):
-    """Create element YAML files."""
-    elem_dir = tmp_path / "elements"
-    elem_dir.mkdir(exist_ok=True)
-    for name, data in elements.items():
-        (elem_dir / name).write_text(yaml.dump(data, default_flow_style=False))
-    return elem_dir
-
-
-def test_align_elements_basic(tmp_path):
-    """Elements with same data_type get compared."""
-    elements = {
-        "age_a.yaml": {
-            "semantic": {"data_type": "string", "ontology_term": "http://example.org/age"},
+def test_intra_source_dedup_same_source():
+    entities = [
+        {
+            "sha256": "aaa",
+            "semantic": {"data_type": "integer"},
             "provenance": [{"source": "bids", "name": "age"}],
         },
-        "age_b.yaml": {
-            "semantic": {"data_type": "string", "ontology_term": "http://example.org/age"},
-            "provenance": [{"source": "nwb", "name": "age"}],
+        {
+            "sha256": "bbb",
+            "semantic": {"data_type": "integer"},
+            "provenance": [{"source": "bids", "name": "age"}],
         },
-    }
-    elem_dir = _make_elements(tmp_path, elements)
-
-    stats = align_elements(
-        elements_dir=elem_dir,
-        library_path=tmp_path,
-        threshold=0.3,
-    )
-
-    assert stats["total_pairs_evaluated"] >= 1
-    # Report should be written
-    report_path = tmp_path / "alignment-report.yaml"
-    assert report_path.exists()
-    report = yaml.safe_load(report_path.read_text())
-    assert "groups" in report
+    ]
+    groups = _intra_source_dedup(entities)
+    assert len(groups) == 1
+    assert set(groups[0]) == {"aaa", "bbb"}
 
 
-def test_align_dry_run(tmp_path):
-    elements = {
-        "x_a.yaml": {
+def test_intra_source_dedup_different_types():
+    entities = [
+        {
+            "sha256": "aaa",
+            "semantic": {"data_type": "integer"},
+            "provenance": [{"source": "bids", "name": "age"}],
+        },
+        {
+            "sha256": "bbb",
             "semantic": {"data_type": "string"},
-            "provenance": [{"source": "a", "name": "x"}],
+            "provenance": [{"source": "bids", "name": "age"}],
         },
+    ]
+    groups = _intra_source_dedup(entities)
+    assert len(groups) == 0  # Different types → separate
+
+
+# -- group formation tests --
+
+
+def test_form_groups_basic():
+    pairs = [("a", "b", 0.9), ("b", "c", 0.85)]
+    by_sha = {
+        "a": {"semantic": {}},
+        "b": {"semantic": {}},
+        "c": {"semantic": {}},
     }
-    _make_elements(tmp_path, elements)
+    groups, conflicts = _form_groups(pairs, by_sha)
+    assert len(groups) == 1
+    assert set(groups[0]) == {"a", "b", "c"}
+    assert conflicts == 0
 
-    align_elements(
-        elements_dir=tmp_path / "elements",
-        library_path=tmp_path,
-        dry_run=True,
-    )
 
+def test_form_groups_range_conflict():
+    pairs = [("a", "b", 0.9)]
+    by_sha = {
+        "a": {"semantic": {"min_value": 0, "max_value": 100}},
+        "b": {"semantic": {"min_value": 18, "max_value": 65}},
+    }
+    groups, conflicts = _form_groups(pairs, by_sha)
+    assert len(groups) == 0
+    assert conflicts == 1
+
+
+def test_form_groups_empty():
+    groups, conflicts = _form_groups([], {})
+    assert groups == []
+    assert conflicts == 0
+
+
+# -- canonical designation tests --
+
+
+def test_designate_canonical_earliest():
+    group = ["sha_b", "sha_a", "sha_c"]
+    by_sha = {
+        "sha_a": {"created_at": "2026-01-01T00:00:00"},
+        "sha_b": {"created_at": "2026-01-02T00:00:00"},
+        "sha_c": {"created_at": "2026-01-03T00:00:00"},
+    }
+    canonical, members = _designate_canonical(group, by_sha)
+    assert canonical == "sha_a"
+    assert set(members) == {"sha_b", "sha_c"}
+
+
+# -- alignment scoring tests --
+
+
+def test_compute_alignment_score_identical_names():
+    a = {"provenance": [{"source": "bids", "name": "age"}], "semantic": {}}
+    b = {"provenance": [{"source": "nda", "name": "age"}], "semantic": {}}
+    score = compute_alignment_score(a, b)
+    assert score["name"] == 1.0
+    assert score["composite"] > 0.0
+
+
+def test_compute_alignment_score_different_names():
+    a = {"provenance": [{"source": "bids", "name": "age"}], "semantic": {}}
+    b = {"provenance": [{"source": "nda", "name": "sex"}], "semantic": {}}
+    score = compute_alignment_score(a, b)
+    assert score["name"] < 0.5
+
+
+def test_compute_alignment_score_alias_boost():
+    a = {
+        "provenance": [{"source": "nda", "name": "sex"}],
+        "semantic": {"alias_hints": ["nda_alias:gender"]},
+    }
+    b = {
+        "provenance": [{"source": "bids", "name": "gender"}],
+        "semantic": {"alias_hints": ["nda_alias:gender"]},
+    }
+    score = compute_alignment_score(a, b)
+    assert score["alias"] == 0.95
+
+
+# -- integration test --
+
+
+def test_align_entities_empty(tmp_path):
+    """Alignment on empty registry returns zero stats."""
+    stats = align_entities(registry_path=tmp_path)
+    assert stats["total_entities_processed"] == 0
+    assert stats["alignment_groups"] == 0
+
+
+def test_align_entities_dry_run(tmp_path):
+    """Dry run doesn't write alignment report."""
+    stats = align_entities(registry_path=tmp_path, dry_run=True)
     assert not (tmp_path / "alignment-report.yaml").exists()
-
-
-def test_align_idempotent(tmp_path):
-    """Second run with same data produces no new groups."""
-    elements = {
-        "a.yaml": {
-            "semantic": {"data_type": "string"},
-            "provenance": [{"source": "test", "name": "field_a"}],
-        },
-    }
-    _make_elements(tmp_path, elements)
-
-    # First run
-    align_elements(elements_dir=tmp_path / "elements", library_path=tmp_path)
-    # Second run
-    stats = align_elements(elements_dir=tmp_path / "elements", library_path=tmp_path)
-
-    assert stats["new_groups"] == 0
