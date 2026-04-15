@@ -169,11 +169,16 @@ class OpenMINDSAdapter(BaseAdapter):
                 prop_def.get("_linkedTypes") and len(prop_def.get("_linkedTypes", [])) > 1
             )
 
+            desc = (
+                prop_def.get("description")
+                or prop_def.get("_instruction")
+                or ""
+            )[:500] or None
             lb.add_slot(
                 ld,
                 name,
                 range=rng,
-                description=(prop_def.get("description") or "")[:500] or None,
+                description=desc,
                 multivalued=multivalued,
             )
             slot_names.append(name)

@@ -182,6 +182,7 @@ async def chat_completion(
             if os.environ.get("OLLAMA_HOST"):
                 kwargs["api_base"] = os.environ["OLLAMA_HOST"]
             kwargs["extra_body"] = {"options": {"num_predict": 2048}, "think": False}
+            kwargs["reasoning_effort"] = "none"
             litellm.drop_params = True
         response = await litellm.acompletion(**kwargs)
     except Exception as e:
@@ -223,6 +224,7 @@ async def chat_completion(
             if "ollama" in model and os.environ.get("OLLAMA_HOST"):
                 follow_kwargs["api_base"] = os.environ["OLLAMA_HOST"]
                 follow_kwargs["extra_body"] = {"options": {"num_predict": 2048}, "think": False}
+                follow_kwargs["reasoning_effort"] = "none"
             follow_up = await litellm.acompletion(**follow_kwargs)
             yield {"type": "text", "content": follow_up.choices[0].message.content or ""}
         except Exception as e:
