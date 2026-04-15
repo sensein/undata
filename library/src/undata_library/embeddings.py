@@ -211,7 +211,11 @@ def _build_element_text(element_data: dict) -> str:
         # ValueSets
         parts.append(semantic["name"])
 
-    # 2. Type information
+    # 2. Data collection prompt (instruction/question — carries semantic meaning)
+    if semantic.get("prompt"):
+        parts.append(f"prompt: {semantic['prompt']}")
+
+    # 3. Type information
     type_parts = []
     if semantic.get("data_type"):
         type_parts.append(f"type={semantic['data_type']}")

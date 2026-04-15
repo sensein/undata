@@ -201,12 +201,22 @@ class ReproSchemaAdapter(BaseAdapter):
                     description = _extract_label(
                         item_data.get(
                             "description",
-                            item_data.get(
-                                "schema:description",
-                                item_data.get("question", item_data.get("schema:question", "")),
-                            ),
+                            item_data.get("schema:description", ""),
                         )
                     )
+                    question = _extract_label(
+                        item_data.get(
+                            "question",
+                            item_data.get("schema:question", ""),
+                        )
+                    )
+                    # Build prompt: activity preamble + item question
+                    prompt_parts = []
+                    if activity_desc:
+                        prompt_parts.append(activity_desc)
+                    if question:
+                        prompt_parts.append(question)
+                    item_prompt = " — ".join(prompt_parts) if prompt_parts else None
 
                     response_options, resolved_ro = _parse_response_options(item_data, items_dir)
                     data_type = _infer_type_from_response(resolved_ro)
@@ -243,9 +253,12 @@ class ReproSchemaAdapter(BaseAdapter):
                         schema,
                         item_name,
                         range=linkml_range,
-                        description=description[:500] if description else None,
+                        description=(description or question)[:500]
+                        if (description or question)
+                        else None,
                         minimum_value=min_val,
                         maximum_value=max_val,
+                        prompt=item_prompt[:500] if item_prompt else None,
                     )
                     slot_names.append(item_name)
 

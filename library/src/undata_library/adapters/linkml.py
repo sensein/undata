@@ -222,6 +222,8 @@ class LinkMLAdapter(BaseAdapter):
                     val = ann_val.value if hasattr(ann_val, "value") else str(ann_val)
                     if ann_key == "unit":
                         sem["unit"] = val
+                    elif ann_key == "prompt":
+                        sem["prompt"] = val
 
             # Aliases stored for downstream alignment
             if slot_def.aliases:

@@ -45,6 +45,7 @@ def add_slot(
     aliases: list[str] | None = None,
     minimum_value: float | None = None,
     maximum_value: float | None = None,
+    prompt: str | None = None,
 ) -> None:
     """Add a slot to the schema if not already present.
 
@@ -53,6 +54,11 @@ def add_slot(
                  to resolve alias-based lookups to the canonical slot.
         minimum_value: Minimum numeric value constraint.
         maximum_value: Maximum numeric value constraint.
+        prompt: Data collection prompt — the instruction or question presented
+                to the person/process filling this field. Carries semantic meaning
+                beyond the description (e.g., "Enter the physical pixel size for
+                this grid image (in x,y order)"). Stored as a LinkML annotation
+                and included in embedding computation for alignment.
     """
     from linkml_runtime.linkml_model import SlotDefinition
 
@@ -83,6 +89,8 @@ def add_slot(
         slot.minimum_value = minimum_value
     if maximum_value is not None:
         slot.maximum_value = maximum_value
+    if prompt:
+        slot.annotations["prompt"] = prompt
     schema.slots[name] = slot
 
 
