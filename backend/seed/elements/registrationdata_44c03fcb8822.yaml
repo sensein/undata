@@ -1,0 +1,11 @@
+semantic:
+  data_type: array
+  type_ref: File
+provenance:
+- source: openminds
+  class: openminds
+  name: registrationData
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 44c03fcb882217af07dfe0c487d391cbfc86e2fb3962c5a727622e64cd2658f2

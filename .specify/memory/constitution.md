@@ -1,29 +1,23 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: 1.2.1 → 1.3.0
-Bump rationale: MINOR — new "Git Commit Discipline" subsection added to the
-  Development Workflow section. Materially expanded guidance requiring the agent
-  to commit every meaningful unit of work and leave no uncommitted changes at
-  session end.
+Version change: 1.5.0 → 2.0.0
+Bump rationale: MAJOR — Principle V rewritten from "Versioning & Stability"
+  (CalVer + deprecation retention) to "No Deprecation, No Migration" (system
+  has no consumers, anything can be rewritten). New Principle VII "Developer
+  Experience" added (single-command startup, library standalone, hot reload,
+  seed data). CLAUDE.md fully rewritten for iteration 2.
 
-Modified principles: None renamed.
+Modified principles:
+  - V: "Versioning & Stability" → "No Deprecation, No Migration" (breaking change)
 
 Added sections:
-  - Development Workflow > Git Commit Discipline (new subsection)
+  - VII: Developer Experience (new principle)
 
-Removed sections: None
+Removed sections: None (V was replaced, not removed)
 
 Templates requiring updates:
-  - .specify/templates/plan-template.md  ✅ No changes required.
-  - .specify/templates/spec-template.md  ✅ No changes required.
-  - .specify/templates/tasks-template.md ✅ No changes required.
-  - .specify/templates/agent-file-template.md  ✅ No changes required.
-  - .specify/templates/checklist-template.md   ✅ No changes required.
-  - CLAUDE.md (root agent file)  ✅ No changes required; rule is agent-session
-    behaviour, not a project technology baseline.
-
-Deferred TODOs: None.
+  - CLAUDE.md ✅ Updated — rewritten for iteration 2
 -->
 
 # undata Constitution
@@ -80,19 +74,27 @@ Silent failures are prohibited.
 **Rationale**: Systems that cannot be observed cannot be reliably operated or
 debugged in production.
 
-### V. Versioning & Stability
+### V. No Deprecation, No Migration
 
-Public interfaces MUST follow Calendar Versioning (CalVer) using the format
-`YYYY.MM.MICRO`, where `YYYY` is the four-digit year, `MM` is the two-digit
-month, and `MICRO` is a zero-based release counter reset each month
-(e.g., `2026.03.0`, `2026.03.1`). Breaking changes MUST be accompanied by a
-migration guide documented before the change is merged. Deprecated interfaces
-MUST be marked and retained for at least one calendar-month release cycle
-before removal.
+This system has never been deployed and has no external consumers. Any code,
+schema, API, or interface can be rewritten from scratch at any time. The
+following are prohibited:
 
-**Rationale**: CalVer communicates the release timeline directly in the
-version string, making it easy to assess freshness and coordinate upgrades
-in time-aware workflows.
+- Deprecation markers, warnings, or "kept for one release cycle" shims
+- Backwards-compatibility wrappers or renamed-but-preserved interfaces
+- API versioning prefixes (`/api/v2/`) when `/api/v1/` has no consumers
+- Migration scripts for schema changes (use `create_all` or fresh DDL)
+- Re-exporting removed types, adding `_unused` suffixes, or `# removed` comments
+
+When something needs to change, change it directly. Delete old code. Rewrite
+modules. The goal is to deliver a working system, not to maintain compatibility
+with a system that does not exist.
+
+**Rationale**: Deprecation and migration are taxes paid to protect existing
+users. With zero users, these taxes produce pure overhead — dead code, confusing
+interfaces, and wasted development time. When the system is deployed and has
+real consumers, this principle will be revised to add appropriate stability
+guarantees.
 
 ### VI. Environment Isolation & Reproducibility
 
@@ -147,6 +149,35 @@ CI/CD and local developer runs execute against identical dependency graphs.
 The bridge venv exception acknowledges real-world library adoption lag while
 preserving the 3.14+ baseline for all first-party development and preventing
 silent fallbacks or mixed-interpreter contamination.
+
+### VII. Developer Experience
+
+A new developer MUST be able to run the complete system locally with minimal
+setup. The following rules apply:
+
+- **Single command startup**: `docker compose up` MUST bring up all services
+  (database, backend, frontend, task queue) in a working state with sample data.
+- **No external dependencies for dev**: Development MUST NOT require access to
+  external services (cloud databases, SaaS APIs, production Keycloak). All
+  dependencies MUST be local or mocked.
+- **Library standalone**: The library MUST be fully usable without Docker or any
+  running services. `uv run undata-library pipeline --source bids` MUST work
+  with only Python and uv installed.
+- **Hot reload**: Backend and frontend MUST support hot reload in development
+  mode so code changes are reflected without restart.
+- **Seed data**: A seed script or compose profile MUST populate the database
+  with representative data (import from library registry) so the UI has
+  content on first load.
+- **Documented setup**: README or CLAUDE.md MUST contain copy-pasteable
+  commands for: full stack startup, running tests, running individual
+  components, and common development tasks.
+- **Consistent environments**: `docker compose` and local `uv run` MUST produce
+  the same behavior. Tests that pass locally MUST pass in CI.
+
+**Rationale**: Developer friction compounds over time. Every minute spent on
+setup, debugging environment differences, or hunting for documentation is a
+minute not spent on the product. A system that is hard to run locally is a
+system that doesn't get tested.
 
 ## Technology & Quality Standards
 
@@ -224,6 +255,90 @@ reviewed or reverted atomically, and are at risk of being lost. Committing per
 task creates an auditable, recoverable history that mirrors the speckit lifecycle
 and supports parallel work across branches.
 
+### CI Green Before Merge (NON-NEGOTIABLE)
+
+Remote CI MUST be green before any feature branch is considered complete or
+merged. The following rules apply:
+
+- **Push and verify**: After pushing a feature branch, the developer MUST wait
+  for CI to report status before declaring the branch ready.
+- **Fix, don't skip**: If CI fails, the fix MUST be applied to the branch and
+  CI re-run. Disabling tests, skipping checks, or merging with red CI is
+  prohibited.
+- **CI defines done**: A feature is not complete until CI passes. Local test
+  success is necessary but not sufficient — CI catches environment differences,
+  dependency issues, and integration problems that local runs may miss.
+- **Branch protection**: The main branch SHOULD have branch protection requiring
+  CI status checks to pass before merge.
+
+**Rationale**: CI is the shared verification layer. Code that passes locally
+but fails in CI introduces regressions for all collaborators. Enforcing green
+CI before merge prevents broken main branches and ensures reproducibility.
+
+### Merge Before New Spec (NON-NEGOTIABLE)
+
+Feature branches MUST be merged to main before starting a new feature
+specification. The following rules apply:
+
+- **No orphan branches**: A feature branch that has completed implementation
+  and passed CI MUST be merged to main before `/speckit.specify` creates a
+  new branch for the next feature.
+- **Specs on main**: The `specs/` directory on main MUST reflect all completed
+  work. Unmerged specs are invisible to future feature planning and analysis.
+- **Sequential completion**: If multiple features are in flight, merge them in
+  dependency order before starting dependent features.
+
+**Rationale**: Unmerged branches create invisible state — future specs can't
+reference work that only exists on branches. Merging keeps main as the single
+source of truth for project state and ensures the speckit lifecycle
+(specify→plan→tasks→implement) operates on complete context.
+
+### Evaluation Record
+
+Pipeline runs, extraction results, and quality metrics MUST be recorded in
+`eval-record.md` at the repository root. The following rules apply:
+
+- **Record after extraction**: Every significant re-extraction or pipeline run
+  MUST append a dated section to `eval-record.md` with: source counts, entity
+  counts, ontology term counts, transform counts, enrichment rates, known
+  issues, and performance timings.
+- **Record from any source**: Results from chat outputs, CLI runs, CI pipelines,
+  or manual testing MUST all be captured in `eval-record.md` — not only in
+  commit messages or conversation context.
+- **Quantitative and qualitative**: Each record MUST include both numbers
+  (element count, ontology assignment rate) and qualitative notes (known issues,
+  what changed from previous run, what to investigate).
+- **Baseline comparison**: When recording new results, note significant changes
+  from the previous record (e.g., "element count increased from 7,756 to 14,114
+  due to enrichment creating new elements with ontology_term").
+
+**Rationale**: Extraction results are the primary evidence that the pipeline is
+working correctly. Without a persistent record, regressions go undetected and
+progress is invisible. Commit messages capture intent; `eval-record.md` captures
+outcomes.
+
+### Secret & Token Handling (NON-NEGOTIABLE)
+
+Tokens, API keys, and credentials MUST NEVER appear in plain text in:
+
+- Terminal commands or shell scripts (including inline `export KEY=value`)
+- Source code, configuration files, or test fixtures committed to git
+- Agent output visible in the conversation window
+
+The following rules MUST be followed:
+
+1. **Load from .env**: All secrets MUST be loaded via `python-dotenv`
+   (`from dotenv import load_dotenv; load_dotenv(...)`) or equivalent
+   mechanism at runtime. The `.env` file MUST be listed in `.gitignore`.
+2. **Environment variables only**: Code that requires tokens (e.g., HF_TOKEN)
+   MUST read them from `os.environ`, never from hardcoded strings.
+3. **No inline export**: Shell commands MUST NOT contain
+   `export TOKEN=<value>` or `KEY=value command`. Use dotenv or source the
+   env file in a subprocess that does not echo the values.
+
+**Rationale**: Tokens in terminal history, conversation logs, or CI output are
+a persistent security risk. Once exposed, secrets cannot be revoked from logs.
+
 ### Bash Task Hygiene
 
 Every bash command the agent runs MUST be verified for completion and its result
@@ -287,7 +402,8 @@ addressed here defaults to the principle of Simplicity First (Principle I).
 - MINOR: Addition of a new principle or materially expanded guidance.
 - PATCH: Clarifications, wording improvements, typo fixes.
 
-Project releases MUST use CalVer `YYYY.MM.MICRO` as defined in Principle V.
+Project releases will use CalVer `YYYY.MM.MICRO` when the system has external
+consumers. Until then, versioning is not required (see Principle V).
 
 **Compliance review**:
 
@@ -295,4 +411,4 @@ All PRs and implementation plans MUST include a Constitution Check section
 confirming compliance with active principles. Violations require documented
 justification or the work is blocked.
 
-**Version**: 1.3.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-12
+**Version**: 2.1.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-24

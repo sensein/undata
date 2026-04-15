@@ -1,0 +1,10 @@
+name: dandi
+repo: https://github.com/dandi/dandischema
+default_version: latest
+acquisition: pip_install
+package: dandischema
+adapter: dandi
+isolation: venv
+extra_deps:
+  - linkml-runtime
+output_format: linkml_yaml

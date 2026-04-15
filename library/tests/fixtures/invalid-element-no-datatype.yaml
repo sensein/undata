@@ -1,0 +1,8 @@
+semantic:
+  # data_type is MISSING — required field
+  unit: kg
+
+provenance:
+  - source: test
+    class: TestClass
+    name: broken_field

@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C68616
+    term_label: Start Date
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7521
+    model: all-MiniLM-L6-v2
+    primary: true
+  value_domain: text
+provenance:
+- source: aind
+  class: aind
+  name: start_date_time
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c5ef718eeb6b11daf327162a068df755689940c2c7ef13879f4a71c13ca1b837

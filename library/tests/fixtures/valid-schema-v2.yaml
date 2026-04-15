@@ -1,0 +1,17 @@
+semantic:
+  properties:
+    - https://schema.undata.live/elements/age_x7k2m9
+    - https://schema.undata.live/elements/sex_y8l3n0
+    - https://schema.undata.live/elements/species_z9m4o1
+  subclass_of: null
+  mixins: []
+
+provenance:
+  - source: bids
+    class: BIDS
+    name: Participant
+    description: "A participant in a study"
+  - source: dandi
+    class: DANDI
+    name: DandiModel
+    description: "Subject metadata"

@@ -1,0 +1,7 @@
+name: nwb
+repo: https://github.com/NeurodataWithoutBorders/nwb-schema
+default_version: latest
+acquisition: git_clone
+schema_path: "core/*.yaml"
+adapter: nwb
+isolation: none

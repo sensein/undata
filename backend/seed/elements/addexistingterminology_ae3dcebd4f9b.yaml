@@ -1,0 +1,14 @@
+semantic:
+  data_type: string
+  type_ref: Terminology
+  value_domain: text
+provenance:
+- source: openminds
+  class: openminds
+  name: addExistingTerminology
+  description: Reference to an existing terminology (distinct class to group related
+    terms).
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: ae3dcebd4f9bc61b7e804bb80036a98c50746c242f7b24000bfba042755c8f37

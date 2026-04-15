@@ -1,0 +1,165 @@
+# Feature Specification: Staged Enrichment Pipeline
+
+**Feature Branch**: `026-staged-enrichment`
+**Created**: 2026-03-21
+**Status**: Draft
+**Input**: All registry entities (elements, schemas, valuesets, values — collectively "registry entities") should be staged, enriched, and then committed to the registry. Enriching should not create new entities. Ontology annotations, value_domain, and other enrichment metadata are NOT part of the identity hash — they are provenance/metadata that gets added in-place to staged entities before committing.
+
+## Clarifications
+
+### Session 2026-03-21
+
+- Q: Should (subject, age) and (participant, age) merge or link? → A: Merge if structurally + semantically identical (same data_type + unit + response_options + ontology URI). Link via transform if same concept but different representation (float/year vs string/ISO8601).
+- Q: What determines structural identity? → A: Post-enrichment hash = `data_type + unit + response_options + primary_ontology_uri` (when high-precision match exists). Fallback: `data_type + unit + response_options + class + attribute + description` (when no ontology match). Hashing only at commit time, not at extraction.
+- Q: Should primary ontology annotation be part of identity hash? → A: Yes — always include primary_ontology_uri, but restricted to high-precision matches (skos:exactMatch / element_match). Low-confidence annotations are metadata only, not in hash.
+- Q: How to handle (device, name) vs (device, name, "MRI device")? → A: Ontology annotation differentiates them (different concepts → different ontology URIs → different hashes). Fallback: hash includes class + attribute + description when no ontology match.
+- Q: Should undata adopt reproschema structure? → A: No — undata stays independent. The identity model is rooted in RDF triple relationships (class-property-data_shape), not reproschema's Activity-Item-ResponseOption hierarchy. reproschema is one ingestion source among many.
+
+---
+
+## User Scenarios & Testing
+
+### User Story 1 — Staged Pipeline: Extract → Enrich → Commit (Priority: P1)
+
+A data curator runs the pipeline and elements flow through three stages: (1) extraction produces staged elements with semantic identity only, (2) enrichment adds ontology annotations, value_domain, and resolved values in-place without changing the element's identity hash or creating new elements, (3) commit finalizes the elements into the registry. No element duplication occurs.
+
+**Why this priority**: The current enrichment creates new elements when ontology_term is assigned (because ontology_term is in the identity hash). This doubles the element count (7,756 → 14,114) with derived copies that share the same concept. The registry should contain one element per unique semantic identity, enriched with metadata.
+
+**Independent Test**: Run the full pipeline. Verify element count after enrichment equals element count after extraction (no new elements created by enrichment).
+
+**Acceptance Scenarios**:
+
+1. **Given** 7,756 elements are extracted, **When** enrichment runs, **Then** exactly 7,756 elements exist afterward (no new elements created).
+2. **Given** an element is enriched with ontology annotations, **When** its sha256 is recomputed, **Then** the hash is unchanged (annotations are not in the identity hash).
+3. **Given** enrichment assigns `ontology_annotations` and `value_domain`, **When** the element YAML is read, **Then** the annotations appear alongside the semantic block but the sha256 matches the original.
+4. **Given** enrichment resolves response_options to ValueConcept URIs, **When** the element is read, **Then** the resolution is recorded in annotations/metadata, not by modifying response_options in the semantic identity.
+
+---
+
+### User Story 2 — ontology_term Removed from Identity Hash (Priority: P1)
+
+The `ontology_term` field is removed entirely (not just moved — no service launched). Identity is computed post-enrichment via two modes: ontology-anchored (`data_type + unit + pattern + response_options + primary_ontology_uri`) or structural fallback (`data_type + unit + pattern + response_options + class + attribute + description`).
+
+**Why this priority**: This is the root cause of enrichment creating new elements. When ontology_term is in the hash, assigning it changes the identity → new element. Moving it out means enrichment is purely additive metadata, never identity-changing.
+
+**Independent Test**: Create two elements differing only in ontology_term. Verify they have the same sha256 hash.
+
+**Acceptance Scenarios**:
+
+1. **Given** element A and element B have the same data_type/unit/response_options and the same primary ontology annotation URI, **Then** they produce the same sha256 hash (merged).
+2. **Given** the existing registry has elements with ontology_term in the hash, **When** migration runs, **Then** elements are rehashed without ontology_term and duplicates are merged.
+
+---
+
+### User Story 3 — Enrichment Updates In-Place (Priority: P1)
+
+Enrichment modifies elements in-place (adding ontology_annotations, value_domain, resolved values) without creating new files or derived_from chains. The enrichment provenance is recorded as a provenance entry on the existing element, not on a new element.
+
+**Why this priority**: In-place enrichment is simpler, produces no element proliferation, and makes the registry easier to reason about. One element = one file = one identity, enriched over time.
+
+**Independent Test**: Enrich an element, verify the same file was updated (not a new file created), and the sha256 is unchanged.
+
+**Acceptance Scenarios**:
+
+1. **Given** element `age_abc123.yaml` exists, **When** enrichment adds ontology_annotations, **Then** the same file `age_abc123.yaml` is updated in-place with the annotations.
+2. **Given** enrichment runs, **When** a provenance entry is added, **Then** it has `activity: enrichment` and `attributed_to: urn:undata:enrichment-pipeline` — appended to the existing provenance list.
+3. **Given** enrichment runs twice, **When** the second run finds no changes, **Then** no modifications are made (idempotent).
+
+---
+
+### User Story 4 — Commit Stage Rehashes and Finalizes (Priority: P1)
+
+After enrichment, the commit stage computes the final content-addressed hash of each element, writes it to the registry under its final filename, and deletes the staged version. Staged elements carry a pipeline run ID and are ephemeral — only the final committed element persists. No provenance for intermediate pipeline stages.
+
+**Why this priority**: Staged elements are working copies. The registry should only contain finalized, content-addressed entities. Keeping staged intermediates would pollute the registry with temporary files.
+
+**Acceptance Scenarios**:
+
+1. **Given** a staged element with pipeline run ID, **When** commit runs, **Then** the element is rehashed from its final semantic content, written to `elements/{name}_{hash}.yaml`, and the staged copy is deleted.
+2. **Given** two staged elements that produce the same final hash, **When** committed, **Then** they merge (provenance combined) into a single registry file.
+3. **Given** the pipeline is interrupted before commit, **When** restarted, **Then** staged elements from the incomplete run are cleaned up.
+
+---
+
+### Edge Cases
+
+- What if an element already has ontology_annotations from a prior enrichment? Replace with the new annotations (enrichment is not cumulative across runs — it's a snapshot of the current ontology alignment).
+- What if ontology_term was previously in the identity hash and existing elements have different hashes because of it? Migration rehashes all elements without ontology_term; duplicates (same structural identity) are merged with combined provenance.
+- What about future curation that intentionally changes identity? Curation is a separate activity type that CAN create new elements (with derived_from). Enrichment never does.
+- What if the pipeline crashes between enrich and commit? Staged elements are in a separate staging directory; the registry is untouched until commit.
+
+## Requirements
+
+### Functional Requirements
+
+**Identity Hash Changes**
+
+- **FR-001**: `ontology_term` MUST be removed from `SemanticIdentity` and `ValueSemanticIdentity` (no service launched — just remove, no deprecation). Ontology alignment is stored exclusively in `ontology_annotations: list[OntologyAnnotation]` (as defined in 025).
+- **FR-002**: The identity hash MUST be computed **post-enrichment at commit time** using two modes:
+  - **Ontology-anchored** (preferred, when high-precision match exists): `data_type + unit + response_options + primary_ontology_uri` where primary_ontology_uri comes from the highest-scoring annotation with `skos:exactMatch` or `element_match`.
+  - **Structural fallback** (when no high-precision ontology match): `data_type + unit + response_options + class + attribute + description` where class/attribute/description come from the **first provenance entry** (the original ingestion source).
+  - The excluded set is: `question_text`, `value_domain`, `ontology_annotations` (the full annotation list — only the primary URI enters the hash when ontology-anchored; all other annotations are metadata only).
+  - `source_attribute` and `source_class` are removed from SemanticIdentity (replaced by class + attribute + description from provenance in fallback mode).
+  - `constraints` field is removed; `pattern` moves directly to SemanticIdentity.
+- **FR-002b**: Hashing MUST NOT happen at extraction time. Staged entities use UUIDs. Hashing happens only at commit, after enrichment + alignment have determined what the element represents.
+- **FR-003**: Since no service has launched, existing registry output is simply deleted and re-extracted with the new identity model. No migration of existing files needed — a clean re-extraction replaces the registry entirely.
+
+**Staged Pipeline**
+
+- **FR-004**: The pipeline MUST follow three stages: extract (creates elements) → enrich (modifies elements in-place) → commit (finalizes to registry). Enrichment MUST NOT create new elements.
+- **FR-005**: Enrichment MUST only modify non-hash fields: `ontology_annotations`, `value_domain`, `question_text`, and provenance entries. It MUST NOT modify any field in `_EXCLUDED_FROM_HASH`'s complement (the hashed fields).
+- **FR-006**: After enrichment, the sha256 of every element MUST match its pre-enrichment sha256 (identity unchanged).
+
+**In-Place Enrichment (Multi-Annotation Model from 025)**
+
+- **FR-007**: `enrich` command MUST update registry entity files in-place — writing `ontology_annotations: list[OntologyAnnotation]` (multiple terms per entity with SKOS relation + match_level + score + model), `value_domain`, and enrichment provenance. No new files created.
+- **FR-008**: Each `OntologyAnnotation` in the list MUST include: `term_uri`, `term_label`, `ontology`, `mapping_relation` (skos:exactMatch/closeMatch/broadMatch/narrowMatch/relatedMatch), `match_level` (concept_match or element_match), `score` (cosine similarity), `model` (embedding model name), `primary` (bool — highest score marked True).
+- **FR-009**: The number of annotations per entity MUST be determined by the 025 heuristic: threshold (elements 0.5, values 0.8) + gap cutoff (>0.15 drop) + max 10.
+- **FR-010**: Enrichment provenance MUST be appended to the existing provenance list with `activity: enrichment`.
+- **FR-011**: Re-running enrichment MUST be idempotent when ontology state hasn't changed.
+- **FR-012**: The `_create_enriched_element()` function (which creates new elements with derived_from) MUST be removed. Enrichment uses `_update_entity_in_place()` instead, calling `_assign_ontology_annotations()` from 025.
+
+**Commit Stage**
+
+- **FR-013**: The commit stage MUST rehash each enriched entity from its final semantic content (excl ontology_annotations + other excluded fields) and write to the registry under the content-addressed filename `{name}_{hash}.yaml`.
+- **FR-014**: Staged entities MUST be stored in a temporary staging directory (`{output_dir}/.staging/{run_id}/`), separate from the registry.
+- **FR-015**: After commit, staged entities MUST be deleted. Only the final content-addressed entity in the registry persists.
+- **FR-016**: If two staged entities produce the same final hash at commit time, they MUST be merged — provenance entries combined into a single registry file.
+- **FR-017**: No provenance for intermediate pipeline stages.
+- **FR-018**: If the pipeline is interrupted before commit, the staging directory MUST be cleaned up on the next run.
+
+**All Registry Entity Types**
+
+- **FR-019**: The staged pipeline (extract → enrich → commit) MUST apply uniformly to all four registry entity types: elements, schemas, valuesets, and values. "Registry entity" is the collective term.
+- **FR-020**: Enrichment MUST process registry entities in dependency order:
+  1. **Elements + Values** (parallel): elements get `ontology_annotations` with `match_level: concept_match` + SKOS relation from score + `value_domain`; values get `ontology_annotations` with `match_level: element_match` for score ≥ 0.9, threshold 0.8
+  2. **Valuesets** (depends on values): `ontology_namespace` derived from enriched member value annotations; own `ontology_annotations` for the collection concept
+  3. **Schemas** (depends on elements): `ontology_annotations` with `match_level: concept_match` for class concepts, informed by enriched element properties
+- **FR-021**: `ontology_annotations` MUST be supported on all four entity types' semantic identity blocks (excluded from hash in all cases).
+- **FR-022**: The enrichment order (elements+values → valuesets → schemas) MUST be enforced by the pipeline.
+
+**Curation Exception**
+
+- **FR-023**: Manual curation (`activity: curation`) MAY create new registry entities with `derived_from` links in the future. This is explicitly out of scope for enrichment but the architecture MUST support it.
+
+### Key Entities
+
+- **Staged Element**: An element in the extract stage — has semantic identity + provenance but no enrichment metadata yet.
+- **Enriched Element**: Same element with ontology_annotations, value_domain, and enrichment provenance added in-place. Same sha256 as staged.
+
+## Success Criteria
+
+### Measurable Outcomes
+
+- **SC-001**: Element count after enrichment equals element count after extraction (zero new elements from enrichment).
+- **SC-002**: sha256 of every element is identical before and after enrichment.
+- **SC-003**: All enriched elements have ontology_annotations (where matches exist above threshold).
+- **SC-004**: Full pipeline (extract 5 sources + enrich) produces ≤ 8,000 elements (not 14,000+ as currently).
+- **SC-005**: Two elements differing only in ontology_term produce the same sha256.
+
+### Assumptions
+
+- ontology_term is moved from identity to metadata. This is a one-time migration for existing elements.
+- response_options resolution (matching to ValueConcept URIs) updates the annotation metadata, not the semantic identity block's response_options field.
+- The `derived_from` chain from enrichment is eliminated. Elements have a flat provenance list, not a derivation tree.
+- Future curation features will re-introduce identity-changing operations with explicit user approval.

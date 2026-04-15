@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  question_text: Symptom - Irritability Past
+provenance:
+- source: reproschema
+  class: abcd_ksad01
+  name: ksads_1_4_p
+  description: Symptom - Irritability Past
+  generated_at: '2026-04-02T19:31:06.139505+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e84384063191893427603d490b27f25a7a7a21d962344ea11a991c974e69a5db

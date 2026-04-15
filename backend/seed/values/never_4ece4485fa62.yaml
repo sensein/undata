@@ -1,0 +1,10 @@
+semantic:
+  value_type: categorical
+  label: Never
+  description: 'Response option for RCADS25_15: Never'
+provenance:
+- source: reproschema
+  class: RCADS-25-C
+  name: RCADS25_15:0
+  description: Never
+sha256: 4ece4485fa62fcfe96e4566c0ca6381b640718bde6b0e850e36f1f23ca0f3a8b

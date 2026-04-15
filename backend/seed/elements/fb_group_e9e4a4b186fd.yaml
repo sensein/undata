@@ -1,0 +1,22 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: Pass
+    label: 5-6 out of 6 FB questions correct
+    ontology_term: https://schema.undata.live/values/f41c772f-4d1c-472e-98f3-2880f7739fb2
+  - value: Inc
+    label: 3-4 out of 6 FB questions correct
+    ontology_term: https://schema.undata.live/values/7fa466e9-1b4f-4c56-a5b7-3add32dbfa63
+  - value: Fail
+    label: 0-2 out of 6 FB questions correct
+    ontology_term: https://schema.undata.live/values/1463115d-15fd-4ed4-adee-535364cda470
+provenance:
+- source: openneuro/ds000228
+  class: participants.tsv
+  name: FB_Group
+  description: Explicit false-belief task groups. Groups were assigned based on the
+    number of explicit FB questions answered correctly (see FB_Composite)
+  generated_at: '2026-04-02T19:30:10.836157+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: e9e4a4b186fd180deded36a29e5a51aeec940bd1d3c960a3bf6221ff09c61af3

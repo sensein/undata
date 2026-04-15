@@ -1,0 +1,10 @@
+semantic:
+  value_type: categorical
+  label: Somewhat difficult
+  description: 'Response option for briefphq_3: Somewhat difficult'
+provenance:
+- source: reproschema
+  class: Brief_PHQ
+  name: briefphq_3:1
+  description: Somewhat difficult
+sha256: 7e15dbf4dc4bc58bdd0dddfbefe2a05d0c28e38de8f1a758c57a198fab584de1

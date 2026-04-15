@@ -1,0 +1,11 @@
+id: b1ec494f-8dcf-44b7-b051-3e4f1ace7a52
+entity_type: value
+entity_ref: 27004ddc3eea99e12bc3df1597986db390a12345a3be7ba77fa18f6dbd01e2d4
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.705), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/NCIT_C142748
+  top_label: Web Browser
+  top_score: 0.7053
+status: pending
+created_at: '2026-04-02T04:13:59.467601+00:00'

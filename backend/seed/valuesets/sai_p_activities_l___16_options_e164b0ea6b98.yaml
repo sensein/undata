@@ -1,0 +1,12 @@
+semantic:
+  name: sai_p_activities_l___16_options
+  members:
+  - 8eb6b0bbc3f9f001873d305391afd2a7bf3d02ff6675ae6f23d35d3332ab425f
+  - b5ae92072ba8fe73c86aef96c8909e693c0cb7073ae622d53a9af73cecd87ef6
+  description: Response options for sai_p_activities_l___16
+provenance:
+- source: reproschema
+  class: abcd_lpsaiq01
+  name: sai_p_activities_l___16_options
+  description: Response options for sai_p_activities_l___16
+sha256: e164b0ea6b98957bba403991ab8b87b63cc5d64a3e89e152b3d174cff091777c

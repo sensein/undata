@@ -1,0 +1,5 @@
+name: nda
+repo: https://nda.nih.gov
+default_version: latest
+acquisition: download_file
+adapter: nda

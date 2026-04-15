@@ -1,0 +1,27 @@
+semantic:
+  ontology_term: http://purl.obolibrary.org/obo/NCIT_C25150
+  data_type: float
+  unit: year
+  min_value: 0
+  max_value: 150
+  question_text: "How old is the participant?"
+  value_domain: numeric
+  response_options: null
+
+provenance:
+  - source: bids
+    class: Participant
+    name: age
+    description: "Age of the participant in years"
+    required: true
+    generated_at: "2026-03-17T12:00:00Z"
+    attributed_to: urn:undata:ingestion-pipeline
+    activity: ingestion
+  - source: curator
+    class: Participant
+    name: age
+    description: "Ontology annotation added"
+    generated_at: "2026-03-18T09:30:00Z"
+    attributed_to: urn:orcid:0000-0001-2345-6789
+    activity: curation
+    derived_from: https://schema.undata.live/elements/age_3c1gtm

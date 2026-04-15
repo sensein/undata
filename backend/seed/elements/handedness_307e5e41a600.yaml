@@ -1,0 +1,20 @@
+semantic:
+  data_type: string
+  response_options:
+  - value: Ambi
+    label: Ambi
+    ontology_term: https://schema.undata.live/values/fbe42ddb-e4ba-4851-ab8a-4ab10ae77d37
+  - value: L
+    label: L
+    ontology_term: https://schema.undata.live/values/37b79eb0-b7cc-4d6b-a702-75d1129bc5a3
+  - value: R
+    label: R
+    ontology_term: https://schema.undata.live/values/b45db304-a9eb-4ba0-ae20-db83900278c7
+provenance:
+- source: openneuro/ds000228
+  class: participants.tsv
+  name: Handedness
+  generated_at: '2026-04-02T19:30:10.836157+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 307e5e41a6003111adf5b77b109ed658f400595ddef178238e9085a48515715a

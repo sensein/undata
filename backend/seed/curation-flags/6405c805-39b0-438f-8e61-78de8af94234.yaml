@@ -1,0 +1,9 @@
+id: 6405c805-39b0-438f-8e61-78de8af94234
+entity_type: schema
+entity_ref: 12a56a01c1358f0c98102b4367c2ac66ed3e2a0bb2025dde7a150f871d34beab
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: NonViralMaterial
+status: pending
+created_at: '2026-04-02T04:07:06.772700+00:00'

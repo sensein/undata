@@ -1,0 +1,10 @@
+semantic:
+  data_type: integer
+provenance:
+- source: openneuro/ds000228
+  class: participants.tsv
+  name: DCCS Summary
+  generated_at: '2026-04-02T19:30:10.836157+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: b8e589d5e295b9950bbd9d496fbc72054991a260dc8c855d1403828271cd8717

@@ -1,0 +1,17 @@
+run_id: e3e38326-341
+source: reproschema
+started_at: '2026-04-02T19:35:07.296742+00:00'
+completed_at: '2026-04-02T19:35:07.296889+00:00'
+entity_counts:
+  extract:
+    elements: 4836
+    schemas: 90
+    values: 10347
+    valuesets: 2205
+curation_flags:
+  ambiguous_match: 1302
+  multiple_candidates: 768
+  unknown_transform: 9
+timing:
+  extract: 15.964197874069214
+  commit: 174.5050003528595

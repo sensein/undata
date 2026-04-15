@@ -1,0 +1,9 @@
+id: 44af11cf-fe26-4922-a40d-360115dccb8f
+entity_type: schema
+entity_ref: 92a8a60599ca19fdcb144496014d47fa2c5f89b0d8597c3601ec8f13f20ec495
+flag_type: low_confidence
+context:
+  reason: no ontology annotations after enrichment
+  name: nirs_sidecar
+status: pending
+created_at: '2026-04-02T04:07:06.769045+00:00'

@@ -1,151 +1,257 @@
-"""FastAPI application entry point for the Schema Backend service."""
+"""FastAPI application — GraphQL API for the undata registry."""
 
 from __future__ import annotations
 
+import os
 import time
 from contextlib import asynccontextmanager
-from typing import AsyncGenerator
 
 from fastapi import FastAPI, Request
-from sqlalchemy import text
-from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from starlette.middleware.base import BaseHTTPMiddleware
 
 from src.core.config import settings
 from src.core.logging import get_logger
-from src.db.session import AsyncSessionLocal
 
 logger = get_logger(__name__)
 
 
-async def _seed_undata_source(session: AsyncSession) -> None:
-    """Idempotently insert the canonical undata SchemaSource row.
-
-    Uses ON CONFLICT (name) DO NOTHING so it is safe to call on every startup.
-    """
-    await session.execute(
-        text(
-            """
-            INSERT INTO schema_source (id, name, format, content_hash, ingested_at, is_active, version_num)
-            VALUES (gen_random_uuid(), 'undata', 'canonical', 'seeded', now(), true, 1)
-            ON CONFLICT (name) DO NOTHING
-            """
-        )
-    )
-    logger.info("undata canonical source seeding complete (idempotent)")
-
-
 @asynccontextmanager
-async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
-    """Application lifespan handler.
+async def lifespan(app: FastAPI):
+    """Create database tables on startup, launch background tasks."""
+    import asyncio
 
-    On startup:
-    1. Run Alembic migrations to head.
-    2. Seed the canonical undata SchemaSource (idempotent).
-    """
-    # 1. Migrations are run by the entrypoint script before uvicorn starts.
-    #    Nothing to do here — log confirmation only.
-    logger.info("alembic.upgrade.complete")
+    from src.db import models  # noqa: F401 — registers models with Base
+    from src.db.session import Base, engine
 
-    # 2. Initialize UnitResolutionService (loads QUDT TTL ~100ms)
-    from src.services.units import UnitResolutionService
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+    logger.info("Database tables created")
 
-    app.state.unit_service = UnitResolutionService(ttl_path=settings.qudt_ttl_path)
-    logger.info(
-        "unit_service.initialized",
-        extra={"units": len(app.state.unit_service.list_known())},
-    )
+    # Launch nightly export background task
+    from src.services.nightly_export import nightly_export_loop
 
-    # 3. Seed canonical undata source
-    async with AsyncSessionLocal() as session:
-        async with session.begin():
-            await _seed_undata_source(session)
+    nightly_task = asyncio.create_task(nightly_export_loop())
 
     yield
-    # Shutdown — nothing to clean up
+
+    nightly_task.cancel()
+    await engine.dispose()
 
 
-app = FastAPI(
-    title="Schema Backend",
-    version="2026.03.0",
-    lifespan=lifespan,
+app = FastAPI(title="undata API", lifespan=lifespan)
+
+# CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[settings.frontend_url, "http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
-# ---------------------------------------------------------------------------
 # Request logging middleware
-# ---------------------------------------------------------------------------
+class RequestLoggingMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        t0 = time.time()
+        response = await call_next(request)
+        duration_ms = (time.time() - t0) * 1000
+        logger.info(
+            "request",
+            extra={
+                "method": request.method,
+                "path": request.url.path,
+                "status": response.status_code,
+                "duration_ms": round(duration_ms, 1),
+            },
+        )
+        return response
 
 
-@app.middleware("http")
-async def request_logging_middleware(request: Request, call_next):
-    start = time.monotonic()
-    response = await call_next(request)
-    duration_ms = round((time.monotonic() - start) * 1000, 2)
-    logger.info(
-        "http.request",
-        extra={
-            "method": request.method,
-            "path": request.url.path,
-            "status_code": response.status_code,
-            "duration_ms": duration_ms,
-        },
-    )
-    return response
+app.add_middleware(RequestLoggingMiddleware)
 
 
-# ---------------------------------------------------------------------------
+# Error handlers
+@app.exception_handler(Exception)
+async def generic_exception_handler(request: Request, exc: Exception):
+    logger.error("unhandled_error", extra={"error": str(exc), "path": request.url.path})
+    return JSONResponse(status_code=500, content={"error": "Internal server error"})
+
+
 # Health endpoint
-# ---------------------------------------------------------------------------
+@app.get("/health")
+async def health():
+    from sqlalchemy import text as sa_text
+
+    from src.db.session import engine
+
+    try:
+        async with engine.connect() as conn:
+            await conn.execute(sa_text("SELECT 1"))
+        db_status = "connected"
+    except Exception as e:
+        db_status = f"error: {e}"
+
+    return {"status": "ok", "database": db_status}
 
 
-@app.get("/health", tags=["ops"])
-async def health() -> dict:
-    return {"status": "ok", "version": "2026.03.0"}
+# Auth endpoint — token validity check (FR-012)
+@app.get("/auth/me")
+async def auth_me(request: Request):
+    from src.auth.dependencies import get_current_user
+    from src.auth.middleware import extract_token, is_jwt
+
+    # Debug: log what we receive
+    auth_header = request.headers.get("authorization", "")
+    token = extract_token(auth_header)
+    logger.info(
+        "auth_me: header=%s, token_found=%s, is_jwt=%s",
+        auth_header[:30] + "..." if len(auth_header) > 30 else auth_header,
+        token is not None,
+        is_jwt(token) if token else False,
+    )
+
+    if token and is_jwt(token):
+        # Try decode without verification to see claims
+        import jwt as pyjwt
+
+        try:
+            unverified = pyjwt.decode(token, options={"verify_signature": False})
+            logger.info(
+                "auth_me: unverified claims: iss=%s, aud=%s, sub=%s",
+                unverified.get("iss"),
+                unverified.get("aud"),
+                unverified.get("sub"),
+            )
+        except Exception as e:
+            logger.info("auth_me: can't decode unverified: %s", e)
+
+    user = await get_current_user(request)
+    if user is None:
+        return JSONResponse(status_code=401, content={"error": "Not authenticated"})
+    return {
+        "sub": user.get("sub"),
+        "email": user.get("email"),
+        "name": user.get("name"),
+        "roles": user.get("realm_access", {}).get("roles", []),
+    }
 
 
-# ---------------------------------------------------------------------------
-# API routers
-# ---------------------------------------------------------------------------
+# Auth login — redirect to Keycloak
+@app.get("/auth/login")
+async def auth_login():
+    from src.core.config import settings
 
-# Phase 3 (US4): Auth, Users, Tokens
-from src.api.v1.auth import router as auth_router  # noqa: E402
-from src.api.v1.tokens import router as tokens_router  # noqa: E402
-from src.api.v1.users import router as users_router  # noqa: E402
+    redirect_uri = f"{settings.undata_base_url}/auth/callback"
+    # Use external URL for browser redirect (not Docker-internal keycloak_url)
+    keycloak_auth_url = (
+        f"{settings.keycloak_external_url}/realms/{settings.keycloak_realm}"
+        f"/protocol/openid-connect/auth"
+        f"?client_id={settings.keycloak_client_id}"
+        f"&redirect_uri={redirect_uri}"
+        f"&response_type=code"
+        f"&scope=openid+profile+email"
+    )
+    from fastapi.responses import RedirectResponse
 
-app.include_router(auth_router, prefix="/api/v1")
-app.include_router(users_router, prefix="/api/v1")
-app.include_router(tokens_router, prefix="/api/v1")
+    return RedirectResponse(keycloak_auth_url)
 
-# Phase 4 (US1): Sources, Elements
-from src.api.v1.elements import router as elements_router  # noqa: E402
-from src.api.v1.sources import router as sources_router  # noqa: E402
 
-app.include_router(sources_router, prefix="/api/v1")
-app.include_router(elements_router, prefix="/api/v1")
+# Auth callback — exchange code for token, set cookie
+@app.get("/auth/callback")
+async def auth_callback(code: str = ""):
+    import httpx as httpx_client
 
-# Phase 5 (US5): Schemas
-from src.api.v1.schemas import router as schemas_router  # noqa: E402
+    from src.core.config import settings
 
-app.include_router(schemas_router, prefix="/api/v1")
+    if not code:
+        return JSONResponse(status_code=400, content={"error": "Missing authorization code"})
 
-# Phase 6 (US2): Mappings, Aliases
-from src.api.v1.aliases import router as aliases_router  # noqa: E402
-from src.api.v1.mappings import router as mappings_router  # noqa: E402
+    token_url = (
+        f"{settings.keycloak_url}/realms/{settings.keycloak_realm}/protocol/openid-connect/token"
+    )
+    redirect_uri = f"{settings.undata_base_url}/auth/callback"
 
-app.include_router(mappings_router, prefix="/api/v1")
-app.include_router(aliases_router, prefix="/api/v1")
+    async with httpx_client.AsyncClient() as client:
+        resp = await client.post(
+            token_url,
+            data={
+                "grant_type": "authorization_code",
+                "code": code,
+                "redirect_uri": redirect_uri,
+                "client_id": settings.keycloak_client_id,
+                "client_secret": settings.keycloak_client_secret,
+            },
+        )
 
-# Phase 7 (US3): Audit
-from src.api.v1.audit import router as audit_router  # noqa: E402
+    if resp.status_code != 200:
+        return JSONResponse(status_code=401, content={"error": "Token exchange failed"})
 
-app.include_router(audit_router, prefix="/api/v1")
+    tokens = resp.json()
+    access_token = tokens.get("access_token", "")
 
-# Phase 10 (US7): Units
-from src.api.v1.units import router as units_router  # noqa: E402
+    # Redirect to frontend with token in URL fragment
+    # Frontend reads the fragment and stores in localStorage
+    # Use query parameter — more reliable than fragment across redirect chains
+    from urllib.parse import quote
 
-app.include_router(units_router, prefix="/api/v1")
+    from fastapi.responses import RedirectResponse
 
-# 004-migration-api: Migration Pathways
-from src.api.v1.pathways import router as pathways_router  # noqa: E402
+    return RedirectResponse(
+        f"{settings.frontend_url}/auth/callback?token={quote(access_token, safe='')}"
+    )
 
-app.include_router(pathways_router, prefix="/api/v1")
+
+# Chat endpoint — LLM curation assistant with tool execution
+@app.post("/api/chat")
+async def api_chat(request: Request):
+    import json as json_module
+
+    from starlette.responses import StreamingResponse
+
+    from src.auth.dependencies import check_role, get_current_user
+    from src.services.chat_service import chat_completion
+
+    user = await get_current_user(request)
+    if user is None:
+        # In dev mode (no Keycloak), allow unauthenticated chat access
+        if not os.environ.get("KEYCLOAK_URL"):
+            user = {"realm_access": {"roles": ["curator"]}}
+        else:
+            return JSONResponse(status_code=403, content={"error": "Curator role required"})
+    elif not check_role(user, "curator"):
+        return JSONResponse(status_code=403, content={"error": "Curator role required"})
+
+    body = await request.json()
+    messages = body.get("messages", [])
+    entity_context = body.get("entityContext")
+
+    async def event_stream():
+        async for event in chat_completion(messages, entity_context):
+            yield f"data: {json_module.dumps(event)}\n\n"
+        yield "data: [DONE]\n\n"
+
+    return StreamingResponse(event_stream(), media_type="text/event-stream")
+
+
+# Static file serving for export archives
+import tempfile  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+from fastapi.staticfiles import StaticFiles  # noqa: E402
+
+_export_path = Path(settings.export_dir)
+if not _export_path.is_absolute() or not _export_path.parent.exists():
+    _export_path = Path(tempfile.gettempdir()) / "undata-exports"
+_export_path.mkdir(parents=True, exist_ok=True)
+app.mount("/api/downloads", StaticFiles(directory=str(_export_path)), name="downloads")
+
+# GraphQL mount
+from strawberry.fastapi import GraphQLRouter  # noqa: E402
+
+from src.graphql.schema import schema  # noqa: E402
+
+graphql_app = GraphQLRouter(schema)
+app.include_router(graphql_app, prefix="/graphql")

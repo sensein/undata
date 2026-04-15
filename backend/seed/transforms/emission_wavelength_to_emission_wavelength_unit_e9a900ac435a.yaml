@@ -1,0 +1,15 @@
+source_element: https://schema.undata.live/elements/emission_wavelength_a3b1b627fdc9
+target_element: https://schema.undata.live/elements/emission_wavelength_unit_9def0205ad66
+function:
+  function_type: unknown
+  input_type: integer
+  output_type: string
+  expression_type: none
+provenance:
+- source: auto
+  class: ''
+  name: ''
+  generated_at: '2026-04-02T04:14:31.447890+00:00'
+  attributed_to: urn:undata:transform-pipeline
+  activity: transform
+sha256: e9a900ac435afc4483ee526df85c0c22c13e2054b675e8cfbe3d3a1b2364bcd3

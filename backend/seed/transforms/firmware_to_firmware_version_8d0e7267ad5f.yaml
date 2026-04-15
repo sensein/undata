@@ -1,0 +1,15 @@
+source_element: https://schema.undata.live/elements/firmware_fca199adc7a0
+target_element: https://schema.undata.live/elements/firmware_version_79f979d6cb66
+function:
+  function_type: identity
+  input_type: string
+  output_type: string
+  expression_type: none
+provenance:
+- source: auto
+  class: ''
+  name: ''
+  generated_at: '2026-04-02T04:14:31.447890+00:00'
+  attributed_to: urn:undata:transform-pipeline
+  activity: transform
+sha256: 8d0e7267ad5f2a7fa59a3eedf4e82495f5d25cc182048649249f1e72ebdf1cfe

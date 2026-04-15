@@ -1,0 +1,7 @@
+semantic:
+  data_type: not_a_real_type
+
+provenance:
+  - source: test
+    class: TestClass
+    name: bad_enum_field

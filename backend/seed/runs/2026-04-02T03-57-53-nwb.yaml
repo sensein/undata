@@ -1,0 +1,24 @@
+run_id: 32970cf4-a3c
+source: nwb
+started_at: '2026-04-02T03:57:53.537494+00:00'
+completed_at: '2026-04-02T03:57:53.537570+00:00'
+entity_counts:
+  extract:
+    elements: 179
+    schemas: 80
+    values: 0
+    valuesets: 0
+enrichment_rate:
+  source_metadata: 0
+  elements: 2
+  values: 0
+  valuesets: 0
+  schemas: 6
+curation_flags:
+  low_confidence: 1334
+  ambiguous_match: 235
+  multiple_candidates: 166
+timing:
+  extract: 0.5279078483581543
+  enrich: 264.256560087204
+  commit: 3.245957851409912

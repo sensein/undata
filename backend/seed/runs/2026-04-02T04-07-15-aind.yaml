@@ -1,0 +1,24 @@
+run_id: e24dfe31-ce0
+source: aind
+started_at: '2026-04-02T04:07:15.450785+00:00'
+completed_at: '2026-04-02T04:07:15.450902+00:00'
+entity_counts:
+  extract:
+    elements: 556
+    schemas: 375
+    values: 389
+    valuesets: 79
+enrichment_rate:
+  source_metadata: 0
+  elements: 207
+  values: 267
+  valuesets: 19
+  schemas: 82
+curation_flags:
+  low_confidence: 2558
+  ambiguous_match: 760
+  multiple_candidates: 449
+timing:
+  extract: 1.3469572067260742
+  enrich: 285.81228494644165
+  commit: 11.105081796646118

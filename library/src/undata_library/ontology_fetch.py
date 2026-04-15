@@ -1,0 +1,334 @@
+"""Fetch ontology terms via bulk OBO download from OBO Foundry.
+
+Small ontologies (PATO, HP, OBI): full OBO download + pronto parse.
+Large ontologies (NCIT, NCBITaxon): OBO download + streaming line parse
+(no full pronto load — too slow for 200MB+ files).
+"""
+
+from __future__ import annotations
+
+import logging
+import re
+import tempfile
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import TYPE_CHECKING
+
+import httpx
+
+if TYPE_CHECKING:
+    from .ontology_store import OntologyStore
+
+logger = logging.getLogger(__name__)
+
+# Canonical OBO download URLs (original set)
+SUPPORTED_ONTOLOGIES = {
+    "ncit": "http://purl.obolibrary.org/obo/ncit.obo",
+    "pato": "http://purl.obolibrary.org/obo/pato.obo",
+    "hp": "http://purl.obolibrary.org/obo/hp.obo",
+    "obi": "http://purl.obolibrary.org/obo/obi.obo",
+    "ncbitaxon": "http://purl.obolibrary.org/obo/ncbitaxon.obo",
+}
+
+# Domain-specific ontologies (knowledge service — feature 036)
+# These use OWL format and are loaded via ontology_store.add_source()
+DOMAIN_ONTOLOGIES = {
+    "nidm": {
+        "url": "https://raw.githubusercontent.com/incf-nidash/nidm/master/nidm/nidm-experiment/terms/nidm-experiment.owl",
+        "format": "ttl",  # Actually Turtle despite .owl extension
+        "display_name": "Neuroimaging Data Model (NIDM)",
+    },
+    "radlex": {
+        "url": "http://aber-owl.net/media/ontologies/RADLEX/37/radlex.owl",
+        "format": "owl",
+        "display_name": "RadLex — Radiology Lexicon (RSNA)",
+    },
+    "homba": {
+        "url": "https://github.com/brain-bican/harmonized_ontology_of_mammalian_brain_anatomy_ontology/releases/download/v2026-04-02/homba.owl",
+        "format": "owl",
+        "display_name": "Harmonized Ontology of Mammalian Brain Anatomy (HoMBA)",
+    },
+}
+
+# Ontologies small enough for full pronto parse (< 50MB)
+_PRONTO_ONTOLOGIES = {"pato", "hp", "obi"}
+
+# Large ontologies — use fast line-based OBO parser
+_LARGE_ONTOLOGIES = {"ncit", "ncbitaxon"}
+
+
+def download_file(url: str, suffix: str = ".owl") -> Path:
+    """Download a file from URL, return path to temp file."""
+    logger.info("Downloading %s", url)
+    tmp = tempfile.NamedTemporaryFile(suffix=suffix, delete=False)
+    tmp_path = Path(tmp.name)
+    tmp.close()
+
+    with httpx.stream("GET", url, follow_redirects=True, timeout=600) as resp:
+        resp.raise_for_status()
+        with open(tmp_path, "wb") as f:
+            for chunk in resp.iter_bytes(chunk_size=65536):
+                f.write(chunk)
+    return tmp_path
+
+
+def fetch_and_load_source(
+    name: str,
+    url: str,
+    fmt: str,
+    store: "OntologyStore",
+) -> dict:
+    """Download an ontology from URL and load into the store.
+
+    Supports: owl, obo, ttl, nt formats.
+    If OWL loading fails (e.g., OWL Functional Syntax), falls back to TTL.
+    Returns metadata dict with term_count.
+    """
+    suffix_map = {"owl": ".owl", "obo": ".obo", "ttl": ".ttl", "nt": ".nt"}
+    suffix = suffix_map.get(fmt.lower(), ".owl")
+    tmp_path = download_file(url, suffix=suffix)
+    try:
+        result = store.add_source(name, tmp_path, fmt=fmt)
+        return result
+    except Exception as e:
+        # Fallback: if OWL fails, try TTL (some OWL files are actually Turtle)
+        if fmt.lower() == "owl":
+            logger.warning("OWL loading failed for %s (%s), trying TTL fallback", name, e)
+            try:
+                result = store.add_source(name, tmp_path, fmt="ttl")
+                return result
+            except Exception as e2:
+                logger.warning("TTL fallback also failed for %s: %s", name, e2)
+        raise
+    finally:
+        tmp_path.unlink(missing_ok=True)
+
+
+def load_domain_ontologies(store: "OntologyStore") -> list[dict]:
+    """Load all domain-specific ontologies into the store.
+
+    Downloads HoMBA, NIDM, RadLex from their URLs and generates DICOM TTL
+    from pydicom. Returns list of metadata dicts.
+    """
+    results = []
+
+    for name, config in DOMAIN_ONTOLOGIES.items():
+        try:
+            result = fetch_and_load_source(name, config["url"], config["format"], store)
+            results.append(result)
+            logger.info("Loaded domain ontology %s: %d terms", name, result["term_count"])
+        except Exception as exc:
+            logger.warning("Failed to load domain ontology %s: %s", name, exc)
+            results.append({"name": name, "term_count": 0, "error": str(exc)})
+
+    # DICOM — generate TTL from pydicom
+    try:
+        from .adapters.standalone_scripts.dicom_to_ttl import generate_dicom_ttl
+
+        tmp = tempfile.NamedTemporaryFile(suffix=".ttl", delete=False)
+        tmp_path = Path(tmp.name)
+        tmp.close()
+        generate_dicom_ttl(tmp_path)
+        result = store.add_source("dicom", tmp_path, fmt="ttl")
+        results.append(result)
+        logger.info("Loaded DICOM ontology: %d terms", result["term_count"])
+        tmp_path.unlink(missing_ok=True)
+    except Exception as exc:
+        logger.warning("Failed to generate DICOM TTL: %s", exc)
+        results.append({"name": "dicom", "term_count": 0, "error": str(exc)})
+
+    return results
+
+
+def fetch_ontology(name: str) -> dict:
+    """Fetch ontology via bulk OBO download.
+
+    Uses pronto for small ontologies, fast line parser for large ones.
+    Falls back to OLS API on failure.
+    """
+    url = SUPPORTED_ONTOLOGIES.get(name.lower())
+    if not url:
+        raise ValueError(f"Unsupported ontology: {name}. Supported: {list(SUPPORTED_ONTOLOGIES)}")
+
+    try:
+        obo_path = download_obo(name, url)
+        try:
+            if name.lower() in _PRONTO_ONTOLOGIES:
+                return _parse_with_pronto(name, obo_path)
+            else:
+                return _parse_obo_fast(name, obo_path)
+        finally:
+            obo_path.unlink(missing_ok=True)
+    except Exception as exc:
+        logger.warning("Bulk OBO failed for %s: %s. Falling back to OLS API.", name, exc)
+        return _fetch_ols_fallback(name)
+
+
+def download_obo(name: str, url: str) -> Path:
+    """Download OBO file, return path to temp file."""
+    logger.info("Downloading %s from %s", name, url)
+    tmp = tempfile.NamedTemporaryFile(suffix=".obo", delete=False)
+    tmp_path = Path(tmp.name)
+    tmp.close()
+
+    # Content negotiation for RDF resources
+    headers = {}
+    if url.endswith("#") or "w3.org/ns/" in url:
+        headers["Accept"] = "text/turtle, application/rdf+xml;q=0.9, */*;q=0.1"
+
+    with httpx.stream("GET", url, follow_redirects=True, timeout=600, headers=headers) as resp:
+        resp.raise_for_status()
+        with open(tmp_path, "wb") as f:
+            for chunk in resp.iter_bytes(chunk_size=65536):
+                f.write(chunk)
+
+    size_mb = tmp_path.stat().st_size / 1024 / 1024
+    logger.info("Downloaded %s: %.1f MB", name, size_mb)
+    return tmp_path
+
+
+def _parse_with_pronto(name: str, obo_path: Path) -> dict:
+    """Parse small ontologies with pronto (full object model)."""
+    import pronto
+
+    logger.info("Parsing %s with pronto", name)
+    ont = pronto.Ontology(str(obo_path))
+
+    terms: dict[str, dict] = {}
+    for term in ont.terms():
+        uri = _obo_id_to_uri(str(term.id))
+        terms[uri] = {
+            "label": term.name or "",
+            "synonyms": [s.description for s in term.synonyms] if term.synonyms else [],
+            "parents": [
+                _obo_id_to_uri(str(p.id)) for p in term.superclasses(distance=1, with_self=False)
+            ],
+            "deprecated": term.obsolete,
+        }
+
+    logger.info("Parsed %s: %d terms", name, len(terms))
+    return _build_result(name, terms)
+
+
+def _parse_obo_fast(name: str, obo_path: Path) -> dict:
+    """Fast line-based OBO parser for large ontologies (NCIT, NCBITaxon).
+
+    Parses [Term] stanzas without building a full object graph.
+    ~10x faster than pronto for 200MB+ files.
+    """
+    logger.info("Fast-parsing %s (%d MB)", name, obo_path.stat().st_size // 1024 // 1024)
+
+    terms: dict[str, dict] = {}
+    current_id: str | None = None
+    current: dict | None = None
+
+    with open(obo_path, encoding="utf-8", errors="replace") as f:
+        in_term = False
+        for line in f:
+            line = line.rstrip("\n")
+
+            if line == "[Term]":
+                # Save previous term
+                if current_id and current:
+                    terms[current_id] = current
+                in_term = True
+                current_id = None
+                current = {"label": "", "synonyms": [], "parents": [], "deprecated": False}
+                continue
+
+            if line.startswith("[") and line.endswith("]"):
+                # End of [Term] stanza (start of [Typedef] or another)
+                if current_id and current:
+                    terms[current_id] = current
+                in_term = False
+                current_id = None
+                current = None
+                continue
+
+            if not in_term or current is None:
+                continue
+
+            if line.startswith("id: "):
+                current_id = _obo_id_to_uri(line[4:].strip())
+            elif line.startswith("name: "):
+                current["label"] = line[6:].strip()
+            elif line.startswith("synonym: "):
+                # synonym: "text" SCOPE [xref]
+                m = re.match(r'^synonym:\s+"([^"]*)"', line)
+                if m:
+                    current["synonyms"].append(m.group(1))
+            elif line.startswith("is_a: "):
+                parent_id = line[6:].strip().split("!")[0].strip()
+                current["parents"].append(_obo_id_to_uri(parent_id))
+            elif line.startswith("is_obsolete: true"):
+                current["deprecated"] = True
+
+        # Save last term
+        if current_id and current:
+            terms[current_id] = current
+
+    logger.info("Fast-parsed %s: %d terms", name, len(terms))
+    return _build_result(name, terms)
+
+
+def _obo_id_to_uri(obo_id: str) -> str:
+    """Convert OBO ID (NCIT:C25150) to full URI."""
+    if obo_id.startswith("http"):
+        return obo_id
+    if ":" in obo_id:
+        prefix, local = obo_id.split(":", 1)
+        return f"http://purl.obolibrary.org/obo/{prefix}_{local}"
+    return obo_id
+
+
+def _build_result(name: str, terms: dict) -> dict:
+    return {
+        "ontology": name.upper(),
+        "version": "bulk",
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "terms": terms,
+    }
+
+
+def _fetch_ols_fallback(name: str, max_terms: int = 10000) -> dict:
+    """Legacy OLS API fallback."""
+    import time
+
+    import requests
+
+    OLS_BASE = "https://www.ebi.ac.uk/ols4/api"
+
+    terms: dict[str, dict] = {}
+    page = 0
+
+    while len(terms) < max_terms:
+        url = f"{OLS_BASE}/ontologies/{name.lower()}/terms"
+        try:
+            resp = requests.get(url, params={"page": page, "size": 500}, timeout=30)
+            resp.raise_for_status()
+        except Exception:
+            break
+
+        data = resp.json()
+        embedded = data.get("_embedded", {}).get("terms", [])
+        if not embedded:
+            break
+
+        for term in embedded:
+            iri = term.get("iri", "")
+            if not iri:
+                continue
+            terms[iri] = {
+                "label": term.get("label", ""),
+                "synonyms": term.get("synonyms", []) or [],
+                "parents": [],
+                "deprecated": term.get("is_obsolete", False),
+            }
+
+        total_pages = data.get("page", {}).get("totalPages", 0)
+        page += 1
+        if page >= total_pages:
+            break
+        time.sleep(0.5)
+
+    return _build_result(name, terms)

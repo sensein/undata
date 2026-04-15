@@ -44,3 +44,15 @@ Thumbs.db
 # ingestion: downloaded schema fixtures (run scripts/fetch-schemas.sh to populate)
 ingestion/schemas/
 ingestion/unified.yaml
+
+# docs: gen-doc generated output and MkDocs build
+docs/generated/
+docs/site/
+
+# Root-level artifacts (not project code)
+/node_modules/
+/package.json
+/pnpm-lock.yaml
+*.pkg
+docker-compose.override.yml
+presentation/

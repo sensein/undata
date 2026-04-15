@@ -1,0 +1,14 @@
+semantic:
+  data_type: array
+  type_ref: Handedness
+  unit: degrees
+provenance:
+- source: openminds
+  class: openminds
+  name: handedness
+  description: Degree to which an organism prefers one hand or foot over the other
+    hand or foot during the performance of a task.
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: c11d06dfcfbce9bd8afa4ea79475b8a02c5b6a8a8898b5778a8aa3596915c947

@@ -8,26 +8,15 @@ jobs:
   ruff:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v8.0.0
         with:
           enable-cache: true
 
-      - name: Install Python 3.14
-        run: uv python install 3.14
-
-      - name: Lint ingestion
-        working-directory: ingestion
+      - name: Lint library
+        working-directory: library
         run: |
-          uv sync --all-extras
-          uv run ruff check .
-          uv run ruff format --check .
-
-      - name: Lint tutorials
-        working-directory: tutorials
-        run: |
-          uv sync --all-extras
-          uv run ruff check .
-          uv run ruff format --check .
+          uvx ruff check src/ tests/
+          uvx ruff format --check src/ tests/

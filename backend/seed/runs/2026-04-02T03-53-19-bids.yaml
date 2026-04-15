@@ -1,0 +1,24 @@
+run_id: a4f9c6bc-20f
+source: bids
+started_at: '2026-04-02T03:53:19.117094+00:00'
+completed_at: '2026-04-02T03:53:19.117170+00:00'
+entity_counts:
+  extract:
+    elements: 585
+    schemas: 214
+    values: 670
+    valuesets: 7
+enrichment_rate:
+  source_metadata: 0
+  elements: 23
+  values: 361
+  valuesets: 1
+  schemas: 2
+curation_flags:
+  low_confidence: 1083
+  ambiguous_match: 227
+  multiple_candidates: 165
+timing:
+  extract: 1.4602367877960205
+  enrich: 308.4076089859009
+  commit: 4.290242910385132

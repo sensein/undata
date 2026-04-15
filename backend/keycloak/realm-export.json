@@ -1,49 +1,43 @@
 {
   "realm": "undata",
   "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": true,
+  "loginWithEmailAllowed": true,
   "clients": [
     {
       "clientId": "undata-backend",
       "enabled": true,
       "protocol": "openid-connect",
-      "publicClient": false,
+      "publicClient": true,
       "standardFlowEnabled": true,
-      "directAccessGrantsEnabled": false,
-      "redirectUris": ["http://localhost:8002/*"],
-      "webOrigins": ["http://localhost:8002"]
+      "directAccessGrantsEnabled": true,
+      "redirectUris": ["http://localhost:8002/*", "http://localhost:3000/*"],
+      "webOrigins": ["http://localhost:8002", "http://localhost:3000"],
+      "defaultClientScopes": ["openid", "profile", "email"]
     }
   ],
   "identityProviders": [
     {
       "alias": "globus",
       "providerId": "oidc",
-      "enabled": false,
-      "displayName": "Globus",
+      "enabled": true,
+      "trustEmail": true,
+      "firstBrokerLoginFlowAlias": "first broker login",
+      "displayName": "Globus (Institutional Login)",
       "config": {
-        "clientId": "",
-        "clientSecret": "",
+        "clientId": "PLACEHOLDER_GLOBUS_CLIENT_ID",
+        "clientSecret": "PLACEHOLDER_GLOBUS_CLIENT_SECRET",
         "authorizationUrl": "https://auth.globus.org/v2/oauth2/authorize",
-        "tokenUrl": "https://auth.globus.org/v2/oauth2/token"
-      }
-    },
-    {
-      "alias": "github",
-      "providerId": "github",
-      "enabled": false,
-      "displayName": "GitHub",
-      "config": {
-        "clientId": "",
-        "clientSecret": ""
-      }
-    },
-    {
-      "alias": "incommon",
-      "providerId": "saml",
-      "enabled": false,
-      "displayName": "InCommon (SAML)",
-      "config": {
-        "entityId": "",
-        "singleSignOnServiceUrl": ""
+        "tokenUrl": "https://auth.globus.org/v2/oauth2/token",
+        "userInfoUrl": "https://auth.globus.org/v2/oauth2/userinfo",
+        "jwksUrl": "https://auth.globus.org/jwk.json",
+        "logoutUrl": "https://auth.globus.org/v2/web/logout",
+        "defaultScope": "openid profile email",
+        "clientAuthMethod": "client_secret_basic",
+        "syncMode": "IMPORT",
+        "validateSignature": "true",
+        "useJwksUrl": "true"
       }
     }
   ],
@@ -54,5 +48,6 @@
       {"name": "contributor"},
       {"name": "viewer"}
     ]
-  }
+  },
+  "defaultRoles": ["viewer"]
 }

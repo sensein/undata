@@ -1,0 +1,12 @@
+semantic:
+  data_type: string
+  type_ref: Measurement
+  value_domain: text
+provenance:
+- source: openminds
+  class: openminds
+  name: sealResistance
+  generated_at: '2026-04-02T04:07:20.518477+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 33e245d2c86ff533885eb95f9e3bc2bbbde480c95dbb66e21ed9c64303c756e5

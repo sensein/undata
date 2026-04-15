@@ -1,0 +1,11 @@
+semantic:
+  data_type: integer
+provenance:
+- source: openneuro/ds000228
+  class: participants.tsv
+  name: KBIT_raw
+  description: Raw score on KBIT nonverbal matrices task
+  generated_at: '2026-04-02T19:30:10.836157+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 223ea88bed21caf93bdff7eb14c94255c473c1a08f4a9638d86be669649d5951

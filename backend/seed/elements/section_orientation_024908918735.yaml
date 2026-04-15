@@ -1,0 +1,37 @@
+semantic:
+  data_type: string
+  type_ref: SectionOrientation
+  ontology_annotations:
+  - term_uri: http://purl.obolibrary.org/obo/PATO_0000133
+    term_label: orientation
+    ontology: pato
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7345
+    model: all-MiniLM-L6-v2
+    primary: true
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C77821
+    term_label: Orientation
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7345
+    model: all-MiniLM-L6-v2
+    primary: false
+  - term_uri: http://purl.obolibrary.org/obo/NCIT_C165680
+    term_label: Orientation
+    ontology: ncit
+    mapping_relation: skos:relatedMatch
+    match_level: concept_match
+    score: 0.7345
+    model: all-MiniLM-L6-v2
+    primary: false
+  value_domain: text
+provenance:
+- source: aind
+  class: aind
+  name: section_orientation
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 024908918735a6aa0e1885a3cf14423630ab81cddd859d8576619c7b28ff8ecb

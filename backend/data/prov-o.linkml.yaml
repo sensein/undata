@@ -1,0 +1,119 @@
+# PROV-O LinkML subset — hand-authored fallback
+#
+# NOTE: linkml-owl-to-linkml and gen-pydantic both fail on Python 3.14 due to
+# AttributeError in linkml.__init__ (Format.JSON vs Format.JSONLD). This file was
+# authored manually from the W3C PROV-O spec (https://www.w3.org/TR/prov-o/) and
+# the data-model.md spec for feature 011-metamodel-provenance.
+#
+# Regenerate when linkml supports Python 3.14:
+#   uv run linkml-owl-to-linkml --input https://www.w3.org/ns/prov-o \
+#       --output backend/data/prov-o-raw.linkml.yaml
+#   # prune to subset → backend/data/prov-o.linkml.yaml
+#   uv run gen-pydantic backend/data/prov-o.linkml.yaml \
+#       --output backend/src/models/prov_o.py
+
+id: https://schema.undata.live/prov-o-subset
+name: prov-o-subset
+description: Minimal W3C PROV-O subset for undata provenance JSON-LD assembly
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  prov: http://www.w3.org/ns/prov#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: prov
+default_range: string
+
+imports:
+  - linkml:types
+
+classes:
+  Entity:
+    class_uri: prov:Entity
+    description: A thing that may have provenance — an element, schema, or data record.
+    attributes:
+      id:
+        identifier: true
+        range: uriorcurie
+        description: Persistent URI for this entity.
+      wasGeneratedBy:
+        range: Activity
+        description: The activity that produced this entity.
+      wasAttributedTo:
+        range: Agent
+        description: The agent responsible for this entity.
+      wasDerivedFrom:
+        range: Entity
+        description: A prior entity from which this one was derived.
+
+  Activity:
+    class_uri: prov:Activity
+    description: An occurrence of an action or process that generated or used entities.
+    attributes:
+      id:
+        identifier: true
+        range: uriorcurie
+      startedAtTime:
+        range: datetime
+        description: When this activity started (ISO 8601).
+      endedAtTime:
+        range: datetime
+        description: When this activity ended (ISO 8601).
+      wasAssociatedWith:
+        range: Agent
+        description: Agent that carried out this activity.
+
+  Agent:
+    class_uri: prov:Agent
+    description: Something that bears responsibility for an activity or entity.
+    attributes:
+      id:
+        identifier: true
+        range: uriorcurie
+      name:
+        range: string
+        description: Human-readable name for this agent.
+
+  Generation:
+    class_uri: prov:Generation
+    description: The completion of production of a new entity by an activity.
+    attributes:
+      entity:
+        range: Entity
+        required: true
+      activity:
+        range: Activity
+      atTime:
+        range: datetime
+
+  Usage:
+    class_uri: prov:Usage
+    description: The beginning of utilizing an entity by an activity.
+    attributes:
+      entity:
+        range: Entity
+        required: true
+      activity:
+        range: Activity
+      atTime:
+        range: datetime
+
+  Bundle:
+    class_uri: prov:Bundle
+    description: A named set of provenance descriptions.
+    attributes:
+      id:
+        identifier: true
+        range: uriorcurie
+      entity:
+        range: Entity
+        multivalued: true
+        inlined_as_list: true
+      activity:
+        range: Activity
+        multivalued: true
+        inlined_as_list: true
+      agent:
+        range: Agent
+        multivalued: true
+        inlined_as_list: true

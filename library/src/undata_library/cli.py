@@ -1,0 +1,1126 @@
+"""CLI entry point for undata-library v2."""
+
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+import click
+import yaml
+from dotenv import load_dotenv
+
+from .utils import safe_load_yaml
+
+from .hashing import (
+    build_element_uri,
+    build_schema_uri,
+    canonical_json,
+    compute_sha256,
+    generate_short_key,
+)
+from .models import RegistryConfig
+from .validation import validate_directory, validate_file
+
+
+def get_output_dir(cli_value: str | None) -> Path:
+    """Resolve output directory from CLI flag, env var, or XDG default."""
+    return RegistryConfig.resolve(cli_value)
+
+
+_ONTOLOGY_STORE_DIR = Path.home() / ".cache" / "undata" / "ontology-store"
+
+
+def get_ontology_store_path() -> Path:
+    """Ontology store lives in cache (rebuildable), not output dir."""
+    _ONTOLOGY_STORE_DIR.mkdir(parents=True, exist_ok=True)
+    return _ONTOLOGY_STORE_DIR
+
+
+@click.group()
+def main() -> None:
+    """undata-library: content-addressed neuroscience data element registry."""
+    # Load .env for HF_TOKEN and other secrets
+    load_dotenv(Path(__file__).resolve().parents[3] / ".env", override=False)
+    load_dotenv(override=False)  # also check CWD/.env
+
+
+@main.command()
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option("--strict", is_flag=True, help="Exit 1 on any violation")
+def validate(path: str, strict: bool) -> None:
+    """Validate YAML files against the library schema."""
+    target = Path(path)
+
+    if target.is_file():
+        reports = [validate_file(target)]
+    else:
+        reports = validate_directory(target)
+
+    if not reports:
+        click.echo("No YAML files found.")
+        sys.exit(1)
+
+    total_violations = 0
+    for report in reports:
+        if report.valid:
+            click.echo(f"  OK  {report.path}")
+        else:
+            click.echo(f"  FAIL  {report.path}")
+            for v in report.violations:
+                click.echo(f"    {v.severity}: {v.field} — {v.message}")
+                total_violations += 1
+
+    click.echo(f"\n{len(reports)} files checked, {total_violations} violations.")
+
+    if total_violations > 0:
+        sys.exit(1)
+
+
+@main.command("hash")
+@click.argument("file", type=click.Path(exists=True))
+def hash_cmd(file: str) -> None:
+    """Compute and display the content hash for a YAML file."""
+    data = safe_load_yaml(Path(file))
+
+    if data is None or "semantic" not in data:
+        click.echo("Error: file must contain a 'semantic' block.", err=True)
+        sys.exit(1)
+
+    semantic = data["semantic"]
+
+    # Determine if element or schema
+    if "properties" in semantic:
+        record_type = "schema"
+        canonical = canonical_json(semantic)
+        sha = compute_sha256(canonical)
+        key = generate_short_key(sha)
+        name = data.get("provenance", [{}])[0].get("name", "unknown")
+        uri = build_schema_uri(name, key)
+    else:
+        record_type = "element"
+        canonical = canonical_json(semantic)
+        sha = compute_sha256(canonical)
+        key = generate_short_key(sha)
+        name = data.get("provenance", [{}])[0].get("name", "unknown")
+        uri = build_element_uri(name, key)
+
+    click.echo(f"type:      {record_type}")
+    click.echo(f"attribute: {name}")
+    click.echo(f"key:       {key}")
+    click.echo(f"sha256:    {sha}")
+    click.echo(f"uri:       {uri}")
+    click.echo(f"canonical: {canonical}")
+
+
+@main.command()
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option("--output", "-o", default="index.yaml", help="Output file path")
+def index(path: str, output: str) -> None:
+    """Build an index.yaml registry of all elements and schemas."""
+    from .index import write_index
+
+    base = Path(path)
+    out = base / output if not Path(output).is_absolute() else Path(output)
+    idx = write_index(base, out)
+    click.echo(
+        f"Index written to {out}: "
+        f"{idx['element_count']} elements, {idx['schema_count']} schemas, "
+        f"{idx.get('value_count', 0)} values."
+    )
+
+
+@main.command()
+@click.argument("file", type=click.Path(exists=True))
+@click.option(
+    "--format",
+    "fmt",
+    type=click.Choice(["text", "json"]),
+    default="text",
+)
+def diff(file: str, fmt: str) -> None:
+    """Show provenance differences in an element file."""
+    from .diff import diff_provenance
+
+    diffs = diff_provenance(Path(file))
+
+    if not diffs:
+        click.echo("Single provenance entry — nothing to diff.")
+        return
+
+    if fmt == "json":
+        click.echo(json.dumps(diffs, indent=2, default=str))
+    else:
+        for d in diffs:
+            click.echo(f"  {d['field']}:")
+            click.echo(f"    {d['source_a']} → {d['value_a']}")
+            click.echo(f"    {d['source_b']} → {d['value_b']}")
+
+
+@main.command()
+@click.option(
+    "--source",
+    required=True,
+    help="Source name (bids, nwb, dandi, aind, openminds, json-schema, linkml, csv, code-repo)",
+)
+@click.option("--path", "-p", default=None, help="Path to raw schema files")
+@click.option(
+    "--output-dir",
+    "-o",
+    default=None,
+    help="Output directory (default: ~/.local/share/undata/registry/)",
+)
+@click.option(
+    "--adapter", default=None, help="Force adapter name (overrides --source for adapter selection)"
+)
+@click.option("--adapter-module", default=None, help="Import path for third-party adapter")
+@click.option(
+    "--workflow",
+    "workflow_path",
+    default=None,
+    type=click.Path(exists=True),
+    help="Workflow YAML file",
+)
+@click.option(
+    "--llm-model", default=None, help="LLM model for classification (e.g., ollama/llama3)"
+)
+@click.option("--llm-threshold", default=0.7, help="Confidence threshold for LLM invocation")
+@click.option("--docker", "docker_enabled", is_flag=True, help="Enable Docker code inspection")
+@click.option("--docker-image", default=None, help="Custom Docker base image")
+@click.option("--docker-timeout", default=300, help="Container timeout in seconds")
+@click.option("--strict", is_flag=True, help="Exit 1 on any validation violation")
+@click.option("--skip-validation", is_flag=True, help="Skip post-ingestion validation")
+@click.option(
+    "--version", "source_version", default=None, help="Pin source version (git tag/branch/SHA)"
+)
+@click.option("--refresh", is_flag=True, help="Force re-download even if cached")
+@click.option("--offline", is_flag=True, help="Use only cached sources (no network)")
+@click.option("--keep-envs", is_flag=True, help="Keep temporary venvs after extraction")
+@click.option("--source-def", "source_def_path", default=None, help="Custom source definition YAML")
+def ingest(
+    source: str,
+    path: str | None,
+    output_dir: str | None,
+    adapter: str | None,
+    adapter_module: str | None,
+    workflow_path: str | None,
+    llm_model: str | None,
+    llm_threshold: float,
+    docker_enabled: bool,
+    docker_image: str | None,
+    docker_timeout: int,
+    strict: bool,
+    skip_validation: bool,
+    source_version: str | None,
+    refresh: bool,
+    offline: bool,
+    keep_envs: bool,
+    source_def_path: str | None,
+) -> None:
+    """Ingest elements from raw schema files into the library."""
+    resolved_dir = get_output_dir(output_dir)
+
+    if workflow_path:
+        from .workflow import load_workflow, run_workflow
+
+        spec = load_workflow(Path(workflow_path))
+        report = run_workflow(spec, resolved_dir)
+        click.echo(
+            f"Workflow complete: {report.sources_processed} sources, "
+            f"{len(report.violations)} violations."
+        )
+        if strict and not report.validation_passed:
+            sys.exit(1)
+        return
+
+    from .ingest import ingest_source
+
+    schema_path = Path(path) if path else None
+    adapter_name = adapter or source
+    stats = ingest_source(adapter_name, schema_path, resolved_dir)
+    click.echo(
+        f"Ingested {source}: {stats['total']} unique elements "
+        f"({stats['created']} created, {stats['merged']} merged)."
+    )
+
+    if not skip_validation:
+        from .validation import validate_ingestion_output
+
+        violations = validate_ingestion_output(resolved_dir)
+        if violations:
+            click.echo(f"Validation: {len(violations)} violations found.")
+            for v in violations[:10]:
+                click.echo(f"  {v['severity']}: {v['file']} — {v['message']}")
+            if strict:
+                sys.exit(1)
+        else:
+            click.echo("Validation: passed.")
+
+
+@main.command("validate-ingestion")
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option("--strict", is_flag=True, help="Exit 1 on any violation")
+def validate_ingestion_cmd(path: str, strict: bool) -> None:
+    """Validate library output: data_types, sha256, URI uniqueness, references."""
+    from .validation import validate_ingestion_output
+
+    violations = validate_ingestion_output(Path(path))
+    if not violations:
+        click.echo("Validation passed. 0 violations.")
+        return
+
+    for v in violations:
+        click.echo(f"  {v['severity']}: {v['file']} — {v['message']}")
+    click.echo(f"\n{len(violations)} violations found.")
+    if strict:
+        sys.exit(1)
+
+
+@main.command("export")
+@click.option("--backend-url", required=True, help="Backend API base URL")
+@click.option("--output", "-o", default=".", help="Output directory")
+@click.option("--token", envvar="API_TOKEN", help="Bearer token for auth")
+def export_cmd(backend_url: str, output: str, token: str | None) -> None:
+    """Export elements, values, and schemas from backend to v2 YAML files."""
+    import asyncio
+
+    from .export import export_elements, export_schemas, export_values
+
+    out = Path(output)
+    el = asyncio.run(export_elements(backend_url, out / "elements", token))
+    val = asyncio.run(export_values(backend_url, out / "values", token))
+    sch = asyncio.run(export_schemas(backend_url, out / "schemas", token))
+    click.echo(f"Exported {el} elements, {val} values, {sch} schemas to {out}.")
+
+
+@main.command("import")
+@click.option("--backend-url", required=True, help="Backend API base URL")
+@click.option("--path", "-p", default=".", help="Path to library root")
+@click.option("--token", envvar="API_TOKEN", help="Bearer token for auth")
+def import_cmd(backend_url: str, path: str, token: str | None) -> None:
+    """Import v2 YAML files to backend."""
+    import asyncio
+
+    from .import_lib import import_elements, import_schemas, import_values
+
+    lib = Path(path)
+    el_c, el_m = asyncio.run(import_elements(backend_url, lib / "elements", token))
+    val_c, val_m = asyncio.run(import_values(backend_url, lib / "values", token))
+    sch_c, sch_m = asyncio.run(import_schemas(backend_url, lib / "schemas", token))
+    click.echo(
+        f"Imported: {el_c} elements created, {el_m} merged; "
+        f"{val_c} values created, {val_m} merged; "
+        f"{sch_c} schemas created, {sch_m} merged."
+    )
+
+
+@main.command()
+@click.argument("path", type=click.Path(exists=True), default="elements")
+@click.option("--cache-dir", default="ontology-cache", help="Ontology cache directory")
+def verify(path: str, cache_dir: str) -> None:
+    """Verify ontology alignment of elements against ontology store."""
+    from .verify import verify_elements
+
+    # Try OntologyStore first, fall back to legacy cache
+    store_path = get_ontology_store_path()
+    store = None
+    cache = None
+    if store_path.exists():
+        from .ontology_store import OntologyStore
+
+        store = OntologyStore(store_path)
+    else:
+        from .ontology_cache import OntologyCache
+
+        cache = OntologyCache(Path(cache_dir))
+
+    warnings = verify_elements(Path(path), store=store, cache=cache)
+
+    if not warnings:
+        click.echo("All ontology terms verified. 0 warnings.")
+        return
+
+    for w in warnings:
+        click.echo(f"  {w['severity']}: {w['file']} — {w['issue']}")
+
+    click.echo(f"\n{len(warnings)} warnings found.")
+    sys.exit(1 if any(w["severity"] == "WARNING" for w in warnings) else 0)
+
+
+@main.group("ontology")
+def ontology_group() -> None:
+    """Manage the ontology term cache."""
+
+
+@ontology_group.command("refresh")
+@click.option(
+    "--ontology",
+    "-o",
+    default=None,
+    help="Specific ontology to refresh (ncit, pato, hp, obi, ncbitaxon)",
+)
+@click.option("--output-dir", default=None, help="Output directory")
+@click.option("--exclude", multiple=True, help="Ontologies to skip (e.g., --exclude ncbitaxon)")
+def ontology_refresh(ontology: str | None, output_dir: str | None, exclude: tuple) -> None:
+    """Download ontologies from OBO Foundry and load into local store."""
+    from .ontology_fetch import download_obo
+    from .ontology_store import OntologyStore, build_vector_index, load_ontology_config
+
+    store = OntologyStore(get_ontology_store_path())
+    configs = load_ontology_config()
+
+    if ontology:
+        configs = [c for c in configs if c["name"] == ontology]
+    if exclude:
+        configs = [c for c in configs if c["name"] not in exclude]
+
+    for cfg in configs:
+        name = cfg["name"]
+        url = cfg["url"]
+        fmt = cfg.get("format", "obo")
+        click.echo(f"Fetching {name} ({fmt})...")
+        try:
+            dl_path = download_obo(name, url)
+            try:
+                if fmt == "obo":
+                    count = store.load_obo(name, dl_path)
+                else:
+                    # OWL/TTL/RDF-XML → load directly into pyoxigraph
+                    count = store.load_rdf(name, dl_path, fmt)
+                click.echo(f"  {name}: {count} terms loaded into store.")
+            finally:
+                dl_path.unlink(missing_ok=True)
+        except Exception as exc:
+            click.echo(f"  {name}: FAILED — {exc}")
+
+    # Build vector index
+    try:
+        vectors_path = get_ontology_store_path().parent / "ontology-vectors.parquet"
+        count = build_vector_index(store, vectors_path)
+        click.echo(f"Vector index: {count} terms embedded.")
+    except ImportError:
+        click.echo("  (skipping vector index — sentence-transformers not installed)")
+    except Exception as exc:
+        click.echo(f"  Vector index failed: {exc}")
+
+
+@ontology_group.command("add")
+@click.option(
+    "--name", "-n", required=True, help="Short name for the ontology (e.g., homba, radlex)"
+)
+@click.option("--url", "-u", required=True, help="Download URL or local file path")
+@click.option("--format", "-f", "fmt", default="owl", help="Format: owl, obo, ttl, nt")
+@click.option("--display-name", default=None, help="Human-readable display name")
+def ontology_add(name: str, url: str, fmt: str, display_name: str | None) -> None:
+    """Add a new ontology source to the store."""
+    from .ontology_store import OntologyStore
+
+    store = OntologyStore(get_ontology_store_path())
+    path = Path(url)
+
+    if path.exists():
+        # Local file
+        result = store.add_source(name, path, fmt=fmt)
+    else:
+        # Remote URL — download first
+        from .ontology_fetch import fetch_and_load_source
+
+        result = fetch_and_load_source(name, url, fmt, store)
+
+    click.echo(f"Added {name}: {result['term_count']} terms loaded.")
+
+
+@ontology_group.command("search")
+@click.argument("query")
+@click.option("--ontology", "-o", default=None, help="Filter by ontology")
+@click.option("--limit", "-l", default=20, help="Max results")
+@click.option("--output-dir", default=None, help="Output directory")
+def ontology_search(query: str, ontology: str | None, limit: int, output_dir: str | None) -> None:
+    """Search ontology terms by label or synonym."""
+    from .ontology_store import OntologyStore
+
+    store = OntologyStore(get_ontology_store_path())
+    results = store.search_terms(query, ontology=ontology, limit=limit)
+
+    if not results:
+        click.echo("No matching terms found.")
+        return
+
+    for r in results:
+        click.echo(f"  {r['uri']}  {r['label']}")
+    click.echo(f"\n{len(results)} results.")
+
+
+@ontology_group.command("info")
+@click.option("--output-dir", default=None, help="Output directory")
+def ontology_info(output_dir: str | None) -> None:
+    """Show loaded ontologies, term counts, and store status."""
+    from .ontology_store import OntologyStore
+
+    store_path = get_ontology_store_path()
+    if not store_path.exists():
+        click.echo("No ontology store found. Run `ontology refresh` first.")
+        return
+
+    store = OntologyStore(store_path)
+    loaded = store.list_loaded()
+    total = store.term_count()
+
+    if not loaded:
+        click.echo("No ontologies loaded.")
+        return
+
+    for ont in loaded:
+        click.echo(
+            f"  {ont['name']}: {ont['term_count']} terms (loaded {ont.get('loaded_at', '?')})"
+        )
+    click.echo(f"\nTotal: {total} terms across {len(loaded)} ontologies.")
+
+    vectors = get_ontology_store_path().parent / "ontology-vectors.parquet"
+    if vectors.exists():
+        size_mb = vectors.stat().st_size / 1024 / 1024
+        click.echo(f"Vector index: {size_mb:.1f} MB")
+    else:
+        click.echo("Vector index: not built")
+
+
+@main.command("similarity")
+@click.argument("file_a", type=click.Path(exists=True))
+@click.argument("file_b", type=click.Path(exists=True))
+def similarity_cmd(file_a: str, file_b: str) -> None:
+    """Compute similarity between two element files."""
+    from .similarity import compute_similarity
+
+    data_a = safe_load_yaml(Path(file_a))
+    data_b = safe_load_yaml(Path(file_b))
+
+    result = compute_similarity(data_a, data_b)
+
+    click.echo(f"Score:    {result['score']}")
+    click.echo(f"Relation: {result['relation']}")
+    click.echo("Components:")
+    for k, v in result["components"].items():
+        click.echo(f"  {k}: {v}")
+
+
+@main.command("detect-aliases")
+@click.argument("path", type=click.Path(exists=True), default="elements")
+@click.option("--threshold", "-t", default=0.5, help="Minimum similarity score")
+@click.option("--limit", "-l", default=50, help="Max candidates to show")
+@click.option("--format", "fmt", type=click.Choice(["text", "yaml"]), default="text")
+def detect_aliases_cmd(path: str, threshold: float, limit: int, fmt: str) -> None:
+    """Detect alias candidates by semantic similarity."""
+    from .alias_detection import detect_aliases
+
+    click.echo(f"Scanning {path} for alias candidates (threshold={threshold})...")
+    candidates = detect_aliases(Path(path), threshold=threshold)
+
+    if not candidates:
+        click.echo("No alias candidates found.")
+        return
+
+    shown = candidates[:limit]
+    if fmt == "yaml":
+        click.echo(yaml.dump(shown, default_flow_style=False))
+    else:
+        for c in shown:
+            click.echo(
+                f"  {c['score']:.3f} {c['relation']:20s} {c['element_a']} ↔ {c['element_b']}"
+            )
+
+    click.echo(f"\n{len(candidates)} candidates (showing top {len(shown)}).")
+
+    # `annotate` command removed — element-mappings.yaml is no longer used.
+    # Ontology annotations are tracked as curation provenance entries.
+    # Use `ontology-index` to explore ontology → element relationships.
+
+
+@main.command("ontology-index")
+@click.argument("elements_path", type=click.Path(exists=True), default="elements")
+@click.option("--output", "-o", default="ontology-index.yaml", help="Output file")
+def ontology_index_cmd(elements_path: str, output: str) -> None:
+    """Build a reverse index: ontology_term → element URIs."""
+    from .index import build_ontology_index
+
+    elem_path = Path(elements_path)
+    lib_path = elem_path.parent if elem_path.name == "elements" else elem_path
+    idx = build_ontology_index(elem_path, library_path=lib_path)
+    out_path = Path(output)
+    out_path.write_text(yaml.dump(idx, default_flow_style=False, sort_keys=False), encoding="utf-8")
+    click.echo(
+        f"Ontology index written to {out_path}: "
+        f"{idx['ontology_term_count']} terms, {idx.get('entity_count', idx.get('element_count', 0))} entities."
+    )
+
+
+@main.command()
+@click.option(
+    "--source",
+    required=True,
+    help="Source name (bids, nwb, dandi, aind, openminds, openneuro, reproschema, nda)",
+)
+@click.option("--path", "-p", default=None, help="Path to raw schema files")
+@click.option(
+    "--output-dir",
+    "-o",
+    default=None,
+    help="Output directory (default: ~/.local/share/undata/registry/)",
+)
+@click.option("--model", "-m", default="all-MiniLM-L6-v2", help="Embedding model name")
+@click.option("--skip-enrich", is_flag=True, help="Skip enrichment step")
+@click.option("--skip-align", is_flag=True, help="Skip alignment step")
+@click.option(
+    "--batch",
+    type=int,
+    default=None,
+    help="Batch mode: ingest N datasets (OpenNeuro) or structures (NDA)",
+)
+@click.option(
+    "--all",
+    "ingest_all",
+    is_flag=True,
+    help="Ingest all available datasets/structures for the source",
+)
+def pipeline(
+    source: str,
+    path: str | None,
+    output_dir: str | None,
+    model: str,
+    skip_enrich: bool,
+    skip_align: bool,
+    batch: int | None,
+    ingest_all: bool,
+) -> None:
+    """Run staged pipeline: extract → enrich → commit → align.
+
+    For batch sources (openneuro, nda), use --batch N or --all to process
+    multiple datasets/structures through the full pipeline.
+    """
+    import time
+
+    from .align import align_entities
+    from .commit import commit_staged
+    from .enrich import enrich_all
+    from .ingest import ingest_source
+    from .staging import create_staging_dir, generate_run_id
+
+    lib = get_output_dir(output_dir)
+    schema_path = Path(path) if path else None
+    cache_dir = lib / "ontology-cache"
+    timings: dict[str, float] = {}
+
+    # Batch mode: delegate to batch_ingest for multi-dataset sources
+    if batch is not None or ingest_all:
+        from .ingest import batch_ingest
+
+        max_items = batch if batch else None  # None = all
+        t0 = time.time()
+        result = batch_ingest(
+            source=source,
+            output_dir=lib,
+            max_items=max_items,
+            model_name=model,
+            skip_enrich=skip_enrich,
+            skip_align=skip_align,
+        )
+        elapsed = time.time() - t0
+        click.echo(f"\nBatch complete in {elapsed:.0f}s")
+        click.echo(
+            f"  Datasets: {result.get('successful', 0)} ok, {result.get('failed', 0)} failed, {result.get('skipped', 0)} skipped"
+        )
+        click.echo(f"  Entities: {result.get('total_entities', 0)}")
+        return
+
+    # Check source version for idempotency short-circuit
+    from .run_summary import load_previous_summary as _load_prev
+
+    prev_summary = _load_prev(lib, source)
+
+    # Idempotency check: compare source committish with previous run
+    _source_changed = True
+    try:
+        from .acquisition import SourceCache, load_source_def
+
+        source_def = load_source_def(source)
+        cache = SourceCache()
+        cache_path = (
+            cache.get_cached_path(source_def) if hasattr(cache, "get_cached_path") else None
+        )
+        if cache_path:
+            committish_file = cache_path / "_resolved_committish"
+            if committish_file.exists() and prev_summary:
+                current_committish = committish_file.read_text().strip()
+                prev_committish = (prev_summary.timing or {}).get("committish", "")
+                if current_committish and current_committish == prev_committish:
+                    _source_changed = False
+                    click.echo(
+                        f"Source {source} unchanged (committish={current_committish[:12]}). No changes detected."
+                    )
+                    return
+    except Exception:
+        pass  # Continue with extraction if check fails
+
+    # Step 1: Extract to staging
+    run_id = generate_run_id()
+    staging_dir = create_staging_dir(lib, run_id)
+    click.echo(f"[1/5] Extracting {source} to staging ({run_id})...")
+    t0 = time.time()
+    ingest_stats = ingest_source(source, schema_path, staging_dir)
+    timings["extract"] = time.time() - t0
+    click.echo(
+        f"  {ingest_stats['total']} entities "
+        f"({ingest_stats['created']} created, {ingest_stats['merged']} merged) "
+        f"in {timings['extract']:.1f}s"
+    )
+
+    # Step 2: Enrich in-place
+    enrich_results: dict = {}
+    if not skip_enrich:
+        click.echo("[2/5] Enriching all entity types...")
+        t0 = time.time()
+        enrich_results = enrich_all(
+            staging_dir=staging_dir,
+            cache_dir=cache_dir,
+            model_name=model,
+        )
+        timings["enrich"] = time.time() - t0
+        for etype, stats in enrich_results.items():
+            assigned = stats.get(
+                "ontology_assigned", stats.get("assigned", stats.get("enriched", 0))
+            )
+            click.echo(f"  {etype}: {assigned} enriched, {stats.get('total', 0)} total")
+        click.echo(f"  in {timings['enrich']:.1f}s")
+    else:
+        click.echo("[2/5] Enrichment skipped.")
+
+    # Step 3: Commit (rehash + merge to registry)
+    click.echo("[3/5] Committing to registry...")
+    t0 = time.time()
+    commit_stats = commit_staged(staging_dir, lib)
+    timings["commit"] = time.time() - t0
+    click.echo(
+        f"  {commit_stats['committed']} committed, "
+        f"{commit_stats['merged']} merged "
+        f"in {timings['commit']:.1f}s"
+    )
+
+    # Step 4: Align (post-commit — on registry entities with embeddings)
+    align_stats: dict = {}
+    if not skip_align:
+        click.echo("[4/5] Aligning entities (post-commit)...")
+        t0 = time.time()
+        align_stats = align_entities(
+            registry_path=lib,
+        )
+        timings["align"] = time.time() - t0
+        click.echo(
+            f"  {align_stats.get('alignment_groups', 0)} groups, "
+            f"{align_stats.get('canonical_entities', 0)} canonicals, "
+            f"{align_stats.get('member_entities', 0)} members "
+            f"in {timings['align']:.1f}s"
+        )
+    else:
+        click.echo("[4/5] Alignment skipped.")
+
+    # Step 5: Transform
+    elements_dir = lib / "elements"
+    if not skip_align:  # transforms depend on alignment
+        click.echo("[5/5] Generating transforms...")
+        t0 = time.time()
+        from .transform import generate_transforms
+
+        transform_stats = generate_transforms(
+            elements_dir=elements_dir,
+            library_path=lib,
+        )
+        timings["transform"] = time.time() - t0
+        click.echo(
+            f"  {transform_stats.get('transforms_created', 0)} transforms "
+            f"in {timings['transform']:.1f}s"
+        )
+    else:
+        click.echo("[5/5] Transforms skipped (requires alignment).")
+
+    # Step 6: Generate curation flags
+    from .enrich import generate_curation_flags
+    from .transform import flag_unknown_transforms
+
+    flags = generate_curation_flags(staging_dir=lib, output_dir=lib)
+    transform_flags = flag_unknown_transforms(transforms_dir=lib / "transforms", output_dir=lib)
+    total_flags = len(flags) + len(transform_flags)
+    if total_flags > 0:
+        click.echo(f"  {total_flags} curation flags generated")
+
+    # Resolve flag entity_refs from filenames to sha256 hashes
+    from .commit import _resolve_flag_entity_refs
+
+    _resolve_flag_entity_refs(lib)
+
+    # Step 7: Generate run summary
+    from .run_summary import compute_delta, generate_summary, load_previous_summary, save_summary
+
+    entity_counts = {
+        "elements": ingest_stats.get("created", 0) + ingest_stats.get("merged", 0),
+        "schemas": ingest_stats.get("schemas_created", 0),
+        "values": ingest_stats.get("values_created", 0),
+        "valuesets": ingest_stats.get("valuesets_created", 0),
+    }
+    enrichment_rate = {}
+    for etype, stats in enrich_results.items():
+        enrichment_rate[etype] = stats.get("ontology_assigned", stats.get("enriched", 0))
+
+    # Compute delta from previous run
+    prev = load_previous_summary(lib, source)
+    delta = None
+    if prev and prev.entity_counts:
+        prev_counts = prev.entity_counts.get("extract", prev.entity_counts)
+        delta = compute_delta(entity_counts, prev_counts)
+
+    flag_counts = {}
+    for f in flags + transform_flags:
+        ft = f.flag_type.value if hasattr(f.flag_type, "value") else str(f.flag_type)
+        flag_counts[ft] = flag_counts.get(ft, 0) + 1
+
+    summary = generate_summary(
+        run_id=run_id,
+        source=source,
+        entity_counts={"extract": entity_counts},
+        enrichment_rate=enrichment_rate or None,
+        curation_flags=flag_counts or None,
+        timing=timings or None,
+    )
+    summary.delta = delta
+    summary.completed_at = (
+        __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat()
+    )
+    summary_path = save_summary(lib, summary)
+    click.echo(f"\nRun summary saved to {summary_path}")
+
+    total_time = sum(timings.values())
+    click.echo(f"Pipeline complete in {total_time:.1f}s.")
+
+
+@main.command()
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option("--threshold", "-t", default=0.7, help="Minimum alignment score threshold")
+@click.option(
+    "--entity-types",
+    default=None,
+    help="Comma-separated entity types (default: elements,schemas,values,valuesets)",
+)
+@click.option("--dry-run", is_flag=True, help="Preview changes without writing")
+@click.option("--incremental", is_flag=True, help="Skip already-aligned entities")
+def align(
+    path: str,
+    threshold: float,
+    entity_types: str | None,
+    dry_run: bool,
+    incremental: bool,
+) -> None:
+    """Run cross-source alignment: intra-source dedup + multi-signal scoring."""
+    from .align import align_entities
+
+    base = Path(path)
+    types = entity_types.split(",") if entity_types else None
+
+    stats = align_entities(
+        registry_path=base,
+        entity_types=types,
+        threshold=threshold,
+        dry_run=dry_run,
+        incremental=incremental,
+    )
+
+    prefix = "[DRY RUN] " if dry_run else ""
+    click.echo(
+        f"{prefix}Alignment: {stats['total_entities_processed']} entities, "
+        f"{stats['alignment_groups']} groups, "
+        f"{stats['canonical_entities']} canonicals, "
+        f"{stats['member_entities']} members, "
+        f"{stats['unaligned_entities']} unaligned, "
+        f"{stats['conflicts']} conflicts."
+    )
+    for etype, breakdown in stats.get("entity_type_breakdown", {}).items():
+        click.echo(f"  {etype}: {breakdown['groups']} groups, {breakdown['total']} total")
+
+
+@main.command("transform")
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option("--threshold", "-t", default=0.5, help="Minimum pattern confidence")
+@click.option(
+    "--output-dir", default=None, help="Output directory for transforms (default: transforms/)"
+)
+def transform_cmd(path: str, threshold: float, output_dir: str | None) -> None:
+    """Generate transforms between overlapping elements."""
+    from .transform import generate_transforms
+
+    base = Path(path)
+    elements_dir = base / "elements" if (base / "elements").exists() else base
+    lib_path = base if (base / "elements").exists() else base.parent
+
+    stats = generate_transforms(elements_dir, lib_path, threshold=threshold)
+    click.echo(
+        f"Transforms: {stats['pairs_evaluated']} pairs evaluated, "
+        f"{stats['transforms_created']} created."
+    )
+    for pattern, count in stats.get("patterns", {}).items():
+        if count > 0:
+            click.echo(f"  {pattern}: {count}")
+
+
+@main.command()
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option("--cache-dir", default="ontology-cache", help="Ontology cache directory")
+@click.option("--threshold", "-t", default=0.7, help="Ontology assignment threshold")
+@click.option("--model", "-m", default="all-MiniLM-L6-v2", help="Embedding model name")
+@click.option("--dry-run", is_flag=True, help="Preview changes without writing")
+def enrich(path: str, cache_dir: str, threshold: float, model: str, dry_run: bool) -> None:
+    """Enrich elements: auto-assign ontology_term, resolve values, populate value_domain."""
+    from .enrich import enrich_elements
+
+    base = Path(path)
+
+    stats = enrich_elements(
+        staging_dir=base,
+        cache_dir=Path(cache_dir),
+        model_name=model,
+        threshold=threshold,
+        dry_run=dry_run,
+    )
+
+    prefix = "[DRY RUN] " if dry_run else ""
+    click.echo(
+        f"{prefix}Enriched: {stats['total']} elements — "
+        f"{stats['ontology_assigned']} ontology assigned, "
+        f"{stats['unchanged']} unchanged, "
+        f"{stats['values_resolved']} values resolved, "
+        f"{stats['value_domain_set']} value_domain set."
+    )
+
+
+@main.command("embed")
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option("--model", "-m", default="all-MiniLM-L6-v2", help="Embedding model name")
+@click.option("--include-ontology", is_flag=True, help="Also build ontology embeddings")
+def embed_cmd(path: str, model: str, include_ontology: bool) -> None:
+    """Build precomputed embeddings for elements (and optionally ontology terms)."""
+    from .embeddings import build_element_embeddings, build_ontology_embeddings
+
+    base = Path(path)
+    elements_dir = base / "elements" if (base / "elements").exists() else base
+
+    click.echo(f"Building element embeddings (model={model})...")
+    store = build_element_embeddings(elements_dir, model_name=model)
+    out = base / "embeddings.parquet"
+    store.save(out, model_name=model)
+    click.echo(f"  {store.size} elements → {out}")
+
+    if include_ontology:
+        cache_dir = base / "ontology-cache"
+        if cache_dir.exists():
+            click.echo("Building ontology embeddings...")
+            onto_store = build_ontology_embeddings(cache_dir, model_name=model)
+            onto_out = cache_dir / "embeddings.parquet"
+            onto_store.save(onto_out, model_name=model)
+            click.echo(f"  {onto_store.size} terms → {onto_out}")
+        else:
+            click.echo("  No ontology-cache/ found — skipping ontology embeddings.")
+
+
+@main.command("curation-queue")
+@click.argument("path", type=click.Path(exists=True), default=".")
+@click.option(
+    "--status",
+    "-s",
+    default="pending",
+    help="Filter by status (pending, approved, rejected, deferred)",
+)
+@click.option("--type", "-t", "flag_type", default=None, help="Filter by flag type")
+def curation_queue_cmd(path: str, status: str, flag_type: str | None) -> None:
+    """List curation flags requiring human review."""
+    from .curation import read_flags
+    from .models import FlagStatus, FlagType
+
+    base = Path(path)
+    try:
+        fs = FlagStatus(status)
+    except ValueError:
+        click.echo(f"Invalid status: {status}. Use: pending, approved, rejected, deferred")
+        return
+
+    ft = None
+    if flag_type:
+        try:
+            ft = FlagType(flag_type)
+        except ValueError:
+            click.echo(
+                f"Invalid flag type: {flag_type}. Use: {', '.join(t.value for t in FlagType)}"
+            )
+            return
+
+    flags = read_flags(base, status=fs, flag_type=ft)
+    if not flags:
+        click.echo(f"No {status} flags found.")
+        return
+
+    click.echo(f"{len(flags)} {status} flag(s):\n")
+    for flag in flags:
+        ctx = flag.context
+        reason = ctx.get("reason", "") if isinstance(ctx, dict) else ""
+        click.echo(
+            f"  {flag.id[:12]}  {flag.flag_type.value:20s}  {flag.entity_type:10s}  {flag.entity_ref}"
+        )
+        if reason:
+            click.echo(f"    → {reason}")
+
+
+@main.command("resolve-flag")
+@click.argument("path", type=click.Path(exists=True))
+@click.option("--id", "flag_id", required=True, help="Flag ID to resolve")
+@click.option("--action", required=True, type=click.Choice(["approved", "rejected", "deferred"]))
+@click.option("--by", "resolved_by", required=True, help="Curator identity")
+@click.option("--note", default=None, help="Resolution note")
+def resolve_flag_cmd(
+    path: str, flag_id: str, action: str, resolved_by: str, note: str | None
+) -> None:
+    """Resolve a curation flag by ID."""
+    from .curation import resolve_flag
+    from .models import FlagStatus
+
+    base = Path(path)
+    result = resolve_flag(base, flag_id, FlagStatus(action), resolved_by, note)
+    if result is None:
+        click.echo(f"Flag {flag_id} not found.")
+    else:
+        click.echo(f"Flag {result.id[:12]} → {result.status.value} by {resolved_by}")
+
+
+@main.command("discovery-scan")
+@click.argument("path", type=click.Path(exists=True), default=".")
+def discovery_scan_cmd(path: str) -> None:
+    """Scan registries for candidate neuroscience data element sources."""
+    from .discovery import save_candidates, scan_for_candidates
+
+    base = Path(path)
+    click.echo("Scanning registries for candidates...")
+    candidates = scan_for_candidates()
+    if candidates:
+        filepath = save_candidates(base, candidates)
+        click.echo(f"  {len(candidates)} candidates found → {filepath}")
+    else:
+        click.echo("  No new candidates found.")
+
+
+@main.command("discovery-approve")
+@click.argument("path", type=click.Path(exists=True))
+@click.option("--url", required=True, help="Candidate URL to approve")
+@click.option("--by", "curator", required=True, help="Curator identity")
+def discovery_approve_cmd(path: str, url: str, curator: str) -> None:
+    """Approve a discovered source candidate for ingestion."""
+    from .discovery import approve_candidate
+
+    if approve_candidate(Path(path), url, curator):
+        click.echo(f"Candidate approved: {url}")
+    else:
+        click.echo(f"Candidate not found: {url}")
+
+
+@main.command("discovery-reject")
+@click.argument("path", type=click.Path(exists=True))
+@click.option("--url", required=True, help="Candidate URL to reject")
+@click.option("--by", "curator", required=True, help="Curator identity")
+@click.option("--reason", default="", help="Rejection reason")
+def discovery_reject_cmd(path: str, url: str, curator: str, reason: str) -> None:
+    """Reject a discovered source candidate."""
+    from .discovery import reject_candidate
+
+    if reject_candidate(Path(path), url, curator, reason):
+        click.echo(f"Candidate rejected: {url}")
+    else:
+        click.echo(f"Candidate not found: {url}")
+
+
+@main.group("cache")
+def cache_group() -> None:
+    """Manage the source cache."""
+
+
+@cache_group.command("list")
+def cache_list() -> None:
+    """Show all cached sources."""
+    from .acquisition import SourceCache
+
+    cache = SourceCache()
+    entries = cache.list_cached()
+    if not entries:
+        click.echo("No cached sources.")
+        return
+    for e in entries:
+        click.echo(f"  {e['source']}/{e['version']}  {e['size_mb']}MB  {e['downloaded_at']}")
+    click.echo(f"\n{len(entries)} cached sources.")
+
+
+@cache_group.command("clean")
+@click.option("--older-than", default=None, type=int, help="Remove sources older than N days")
+def cache_clean(older_than: int | None) -> None:
+    """Remove cached sources."""
+    from .acquisition import SourceCache
+
+    cache = SourceCache()
+    removed = cache.clean(older_than_days=older_than)
+    click.echo(f"Removed {removed} cached source(s).")
+
+
+@main.command()
+@click.argument("registry_path", type=click.Path(exists=True))
+@click.option("--sha256", "-s", default=None, help="Look up entity by sha256 (prefix match)")
+@click.option("--entity-type", "-t", default="elements", help="Entity type to query")
+@click.option("--source", default=None, help="Filter by source name")
+@click.option("--count-only", is_flag=True, help="Only show entity count")
+def inspect(
+    registry_path: str, sha256: str | None, entity_type: str, source: str | None, count_only: bool
+) -> None:
+    """Inspect entities in a Parquet registry.
+
+    Query individual entities by sha256, list by source, or count totals.
+    Works with both Parquet and YAML registries.
+    """
+    import json as _json
+
+    from .storage.parquet_store import ParquetStore
+
+    store = ParquetStore(Path(registry_path))
+
+    if count_only:
+        total = store.count(entity_type, source=source)
+        click.echo(f"{entity_type}: {total}")
+        return
+
+    if sha256:
+        entity = store.read(entity_type, sha256)
+        if entity is None:
+            # Try FileBackend YAML fallback
+            from .storage.file_backend import FileEntityStore
+
+            yaml_store = FileEntityStore(Path(registry_path))
+            entity = yaml_store.find_by_hash(entity_type, sha256)
+
+        if entity:
+            click.echo(_json.dumps(entity, indent=2, default=str))
+        else:
+            click.echo(f"Not found: {entity_type}/{sha256}", err=True)
+        return
+
+    # List entities
+    count = 0
+    for entity in store.list(entity_type, source=source):
+        sha = entity.get("sha256", "?")[:12]
+        name = entity.get("file_name", entity.get("name", entity.get("label", "?")))
+        click.echo(f"  {sha}  {name}")
+        count += 1
+        if count >= 50:
+            remaining = store.count(entity_type, source=source) - count
+            if remaining > 0:
+                click.echo(f"  ... and {remaining} more")
+            break
+    click.echo(f"\nTotal: {store.count(entity_type, source=source)}")

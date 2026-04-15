@@ -1,62 +1,58 @@
 services:
-  backend:
-    build: .
-    ports:
-      - "8002:8002"
-    env_file: .env
-    environment:
-      UNDATA_BASE_URL: "http://localhost:8002"
-    depends_on:
-      db:
-        condition: service_healthy
-      keycloak:
-        condition: service_started
-
   db:
     image: pgvector/pgvector:pg16
-    ports:
-      - "5432:5432"
     environment:
       POSTGRES_USER: undata
       POSTGRES_PASSWORD: undata
       POSTGRES_DB: undata
+    ports:
+      - "5432:5432"
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
       - ./postgres-init:/docker-entrypoint-initdb.d
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U undata"]
       interval: 5s
-      timeout: 5s
+      timeout: 3s
       retries: 10
 
   keycloak:
     image: quay.io/keycloak/keycloak:24.0
     command: start-dev --import-realm
-    ports:
-      - "8080:8080"
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
     volumes:
-      - ./keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json
+      - ./keycloak:/opt/keycloak/data/import
     healthcheck:
-      test: ["CMD-SHELL", "curl -sf http://localhost:8080/health/ready || exit 1"]
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/8080 && echo -e 'GET /health/ready HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && cat <&3 | grep -q '200'"]
       interval: 10s
       timeout: 5s
-      retries: 20
+      retries: 15
       start_period: 30s
 
-  test:
-    build: .
-    entrypoint: ["/app/.venv/bin/python", "-m", "pytest"]
-    command: tests/ -v --tb=short
-    env_file: .env
+  backend:
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8002:8002"
     environment:
-      DATABASE_URL: "postgresql+asyncpg://undata:undata@db:5432/undata_test"
-      TEST_DATABASE_URL: "postgresql+asyncpg://undata:undata@db:5432/undata_test"
+      DATABASE_URL: postgresql+asyncpg://undata:undata@db:5432/undata
+      LOG_LEVEL: INFO
+      UNDATA_BASE_URL: http://localhost:8002
+      KEYCLOAK_URL: http://keycloak:8080
+      KEYCLOAK_REALM: undata
+      KEYCLOAK_CLIENT_ID: undata-backend
+      KEYCLOAK_CLIENT_SECRET: ""
+    volumes:
+      - ./src:/app/backend/src
+      - ./seed:/app/backend/seed
     depends_on:
       db:
         condition: service_healthy
 
 volumes:
-  pg_data:
+  pgdata:

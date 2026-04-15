@@ -1,0 +1,22 @@
+semantic:
+  properties:
+  - 75c9514326dfd84337fe335465dffd9a968d514f829cb8e205397de066877f93
+  - d1b6bb65d74288f99da66872fab19b8b6370fbd9143ef374a7b17a60b568a070
+  - 89920d723600109f23f40630a33e11acf7f007dacc81ce4cbb8e4e99bb0c77b7
+  - 2351adede2460ef6cc0812371e96eb66edcd27d3dda2fa0a974474cf9f76e27a
+  - 6a6cb3e818e89461a35e0f9f2c9792a8e784a12281b1395be5f36bc10bd478ca
+  - ad3c1ca46b207a1daf8390d09d710679995e7c6157dfd5ec1ca13bb936ed3d61
+  - 77a7783ca3aba1ecea93853ad1453c727bcfd429b5a1525153a0ae3d18b2494b
+  - 9f2cc952adb0bf1c4d1d7e5b4cd66f89f3364333723d0eb590c865499293a9e4
+  - 48f04c12e845548c254114f756cbf14417079e91dd495649e4fbffa59e0c3a33
+  - 1dced53bba61bc34311fefc899612e152bf15c1e4edfa6bec63dcc37eacc6f55
+  - 8d008b789c3f631807d28673b45771c1b71ac6a31607e9088ae46cb9a6999ca2
+  - 9222ae98ab203f63eda32cff04a97be3bcce9bfab5e563f44f8810e2fe849e7b
+  subclass_of: DynamicTable
+provenance:
+- source: nwb
+  class: Units
+  name: Units
+  description: Data about spiking units. Event times of observed units (e.g. cell,
+    synapse, etc.) should be concatenated and stored in spike_times.
+sha256: a6cce68c71512c51b8d0cc37f7e555b0477d59ebbea9e5943034c7164984a8ef

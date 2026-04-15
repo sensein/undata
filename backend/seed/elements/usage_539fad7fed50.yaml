@@ -1,0 +1,11 @@
+semantic:
+  data_type: float
+  value_domain: numeric
+provenance:
+- source: aind
+  class: aind
+  name: usage
+  generated_at: '2026-04-02T04:02:06.990400+00:00'
+  attributed_to: urn:undata:ingestion-pipeline
+  activity: ingestion
+sha256: 539fad7fed507674316beace0e2e7e8b5cc0f75347e93f4c9b4293ed9c778289

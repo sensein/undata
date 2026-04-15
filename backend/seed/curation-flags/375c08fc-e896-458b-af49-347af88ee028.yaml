@@ -1,0 +1,11 @@
+id: 375c08fc-e896-458b-af49-347af88ee028
+entity_type: value
+entity_ref: a90ee0e89c827739b1e509ef40cdb26e6277b7ce09fc7e261b2b9ff08ef22d68
+flag_type: ambiguous_match
+context:
+  reason: borderline match (score=0.805), no LLM verification
+  top_match: http://purl.obolibrary.org/obo/OBI_0002127
+  top_label: single cell specimen
+  top_score: 0.8053
+status: pending
+created_at: '2026-04-02T19:30:42.566731+00:00'

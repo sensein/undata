@@ -1,0 +1,15 @@
+source_element: https://schema.undata.live/elements/radius_75faa7ba1d87
+target_element: https://schema.undata.live/elements/radius_unit_049928a639b6
+function:
+  function_type: unknown
+  input_type: float
+  output_type: string
+  expression_type: none
+provenance:
+- source: auto
+  class: ''
+  name: ''
+  generated_at: '2026-04-02T04:14:31.447890+00:00'
+  attributed_to: urn:undata:transform-pipeline
+  activity: transform
+sha256: 167447c169b359ccdf13138b5a9468d49f1cf142b1164ff57e30871376d3ab50

@@ -1,0 +1,5 @@
+name: openneuro
+repo: https://github.com/OpenNeuroDatasets
+default_version: latest
+acquisition: download_file
+adapter: openneuro
