@@ -75,7 +75,7 @@ def add_slot(
     slot = SlotDefinition(
         name=name,
         range=range,
-        description=description[:500] if description else None,
+        description=description if description else None,
         required=required or None,
         multivalued=multivalued or None,
     )
@@ -109,7 +109,7 @@ def add_class(
 
     cls = ClassDefinition(
         name=name,
-        description=description[:500] if description else None,
+        description=description if description else None,
         is_a=is_a,
         mixin=mixin or None,
     )

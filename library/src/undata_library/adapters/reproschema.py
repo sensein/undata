@@ -253,12 +253,12 @@ class ReproSchemaAdapter(BaseAdapter):
                         schema,
                         item_name,
                         range=linkml_range,
-                        description=(description or question)[:500]
+                        description=(description or question)
                         if (description or question)
                         else None,
                         minimum_value=min_val,
                         maximum_value=max_val,
-                        prompt=item_prompt[:500] if item_prompt else None,
+                        prompt=item_prompt if item_prompt else None,
                     )
                     slot_names.append(item_name)
 
@@ -268,7 +268,7 @@ class ReproSchemaAdapter(BaseAdapter):
                 schema,
                 activity_name,
                 slots=all_slots,
-                description=activity_desc[:500] if activity_desc else None,
+                description=activity_desc if activity_desc else None,
             )
 
         logger.info("Built LinkML schema from reproschema-library at %s", source_path)

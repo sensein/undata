@@ -277,7 +277,7 @@ class NDAAdapter(BaseAdapter):
                 schema,
                 name,
                 range=linkml_range,
-                description=description[:500] if description else None,
+                description=description if description else None,
                 minimum_value=min_val,
                 maximum_value=max_val,
                 aliases=alias_list if alias_list else None,

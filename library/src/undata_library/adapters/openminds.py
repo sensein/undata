@@ -169,8 +169,8 @@ class OpenMINDSAdapter(BaseAdapter):
                 prop_def.get("_linkedTypes") and len(prop_def.get("_linkedTypes", [])) > 1
             )
 
-            desc = (prop_def.get("description") or "")[:500] or None
-            instruction = (prop_def.get("_instruction") or "")[:500] or None
+            desc = (prop_def.get("description") or "") or None
+            instruction = (prop_def.get("_instruction") or "") or None
             lb.add_slot(
                 ld,
                 name,
